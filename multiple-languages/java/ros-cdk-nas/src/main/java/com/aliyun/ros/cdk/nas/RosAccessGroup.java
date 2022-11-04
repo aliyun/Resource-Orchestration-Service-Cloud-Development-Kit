@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * A ROS template type:  `ALIYUN::NAS::AccessGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.982Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosAccessGroup")
 public class RosAccessGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -116,6 +116,24 @@ public class RosAccessGroup extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getFileSystemType() {
+        return software.amazon.jsii.Kernel.get(this, "fileSystemType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setFileSystemType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "fileSystemType", value);
+    }
+
+    /**
+     */
+    public void setFileSystemType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "fileSystemType", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.nas.RosAccessGroup}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.nas.RosAccessGroup> {
@@ -189,6 +207,23 @@ public class RosAccessGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param fileSystemType This parameter is required.
+         */
+        public Builder fileSystemType(final java.lang.String fileSystemType) {
+            this.props.fileSystemType(fileSystemType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param fileSystemType This parameter is required.
+         */
+        public Builder fileSystemType(final com.aliyun.ros.cdk.core.IResolvable fileSystemType) {
+            this.props.fileSystemType(fileSystemType);
             return this;
         }
 

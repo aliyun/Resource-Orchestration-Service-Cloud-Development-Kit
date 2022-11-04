@@ -11,7 +11,7 @@ export interface MonitorGroupInstancesProps {
     /**
      * Property groupId: The ID of the application group.
      */
-    readonly groupId: number | ros.IResolvable;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * Property instances:

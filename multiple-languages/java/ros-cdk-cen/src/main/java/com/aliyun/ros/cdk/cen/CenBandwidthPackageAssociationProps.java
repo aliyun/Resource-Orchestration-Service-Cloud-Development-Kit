@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenBandwidthPackageAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.198Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.231Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthPackageAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthPackageAssociationProps.Jsii$Proxy.class)
 public interface CenBandwidthPackageAssociationProps extends software.amazon.jsii.JsiiSerializable {

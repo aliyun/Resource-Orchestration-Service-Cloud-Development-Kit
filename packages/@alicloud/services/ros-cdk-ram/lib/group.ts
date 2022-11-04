@@ -61,9 +61,9 @@ export class Group extends ros.Resource {
 
         const rosGroup = new RosGroup(this, id,  {
             groupName: props.groupName,
-            policyAttachments: props.policyAttachments,
-            policies: props.policies,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
+            policies: props.policies,
+            policyAttachments: props.policyAttachments,
             comments: props.comments,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosGroup;

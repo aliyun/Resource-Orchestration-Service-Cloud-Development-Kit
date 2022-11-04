@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * Properties for defining a `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.391Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.529Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -80,6 +80,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateWhitelist() {
         return null;
     }
@@ -143,6 +149,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object kibanaWhitelist;
         java.lang.Object masterNode;
         java.lang.Object period;
+        java.lang.Object periodUnit;
         java.lang.Object privateWhitelist;
         java.lang.Object publicWhitelist;
         java.lang.Object resourceGroupId;
@@ -412,6 +419,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getPeriodUnit}
+         * @param periodUnit the value to be set.
+         * @return {@code this}
+         */
+        public Builder periodUnit(java.lang.String periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getPeriodUnit}
+         * @param periodUnit the value to be set.
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getPrivateWhitelist}
          * @param privateWhitelist the value to be set.
          * @return {@code this}
@@ -571,6 +598,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object kibanaWhitelist;
         private final java.lang.Object masterNode;
         private final java.lang.Object period;
+        private final java.lang.Object periodUnit;
         private final java.lang.Object privateWhitelist;
         private final java.lang.Object publicWhitelist;
         private final java.lang.Object resourceGroupId;
@@ -598,6 +626,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.kibanaWhitelist = software.amazon.jsii.Kernel.get(this, "kibanaWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterNode = software.amazon.jsii.Kernel.get(this, "masterNode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateWhitelist = software.amazon.jsii.Kernel.get(this, "privateWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.publicWhitelist = software.amazon.jsii.Kernel.get(this, "publicWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -626,6 +655,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.kibanaWhitelist = builder.kibanaWhitelist;
             this.masterNode = builder.masterNode;
             this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
             this.privateWhitelist = builder.privateWhitelist;
             this.publicWhitelist = builder.publicWhitelist;
             this.resourceGroupId = builder.resourceGroupId;
@@ -701,6 +731,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getPeriodUnit() {
+            return this.periodUnit;
+        }
+
+        @Override
         public final java.lang.Object getPrivateWhitelist() {
             return this.privateWhitelist;
         }
@@ -772,6 +807,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
+            if (this.getPeriodUnit() != null) {
+                data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
+            }
             if (this.getPrivateWhitelist() != null) {
                 data.set("privateWhitelist", om.valueToTree(this.getPrivateWhitelist()));
             }
@@ -824,6 +862,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.kibanaWhitelist != null ? !this.kibanaWhitelist.equals(that.kibanaWhitelist) : that.kibanaWhitelist != null) return false;
             if (this.masterNode != null ? !this.masterNode.equals(that.masterNode) : that.masterNode != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.privateWhitelist != null ? !this.privateWhitelist.equals(that.privateWhitelist) : that.privateWhitelist != null) return false;
             if (this.publicWhitelist != null ? !this.publicWhitelist.equals(that.publicWhitelist) : that.publicWhitelist != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -848,6 +887,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.kibanaWhitelist != null ? this.kibanaWhitelist.hashCode() : 0);
             result = 31 * result + (this.masterNode != null ? this.masterNode.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.privateWhitelist != null ? this.privateWhitelist.hashCode() : 0);
             result = 31 * result + (this.publicWhitelist != null ? this.publicWhitelist.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

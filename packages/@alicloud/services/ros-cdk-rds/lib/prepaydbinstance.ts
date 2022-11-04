@@ -80,7 +80,7 @@ export interface PrepayDBInstanceProps {
     readonly archiveBackupRetentionPeriod?: number | ros.IResolvable;
 
     /**
-     * Property autoPay: Automatic Payment. Default is false.
+     * Property autoPay: Automatic Payment. Default is true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -341,6 +341,11 @@ export interface PrepayDBInstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * Property serverlessConfig: The config of RDS serverless instance. This is required when creating serverless instance.
+     */
+    readonly serverlessConfig?: RosPrepayDBInstance.ServerlessConfigProperty | ros.IResolvable;
+
+    /**
      * Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     readonly slaveZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -520,7 +525,7 @@ export class PrepayDBInstance extends ros.Resource {
             preferredBackupTime: props.preferredBackupTime,
             securityGroupId: props.securityGroupId,
             quantity: props.quantity === undefined || props.quantity === null ? 1 : props.quantity,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             dbInstanceStorageType: props.dbInstanceStorageType,
             backUpCategory: props.backUpCategory,
             compressType: props.compressType,
@@ -528,6 +533,7 @@ export class PrepayDBInstance extends ros.Resource {
             connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
             couponCode: props.couponCode,
             masterUserType: props.masterUserType === undefined || props.masterUserType === null ? 'Normal' : props.masterUserType,
+            serverlessConfig: props.serverlessConfig,
             enableBackupLog: props.enableBackupLog,
             sqlCollectorStatus: props.sqlCollectorStatus,
             backupRetentionPeriod: props.backupRetentionPeriod === undefined || props.backupRetentionPeriod === null ? 7 : props.backupRetentionPeriod,

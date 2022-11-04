@@ -566,7 +566,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoPay: Automatic Payment. Default is false.
+        /// <strong>Property</strong>: autoPay: Automatic Payment. Default is true.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2089,6 +2089,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: serverlessConfig: The config of RDS serverless instance. This is required when creating serverless instance.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "serverlessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-rds.RosPrepayDBInstance.ServerlessConfigProperty\"}]}}", isOptional: true)]
+        public virtual object? ServerlessConfig
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Rds.RosPrepayDBInstance.IServerlessConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Rds.RosPrepayDBInstance.IServerlessConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
         /// </remarks>
         [JsiiOptional]
@@ -2580,6 +2611,286 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
                         }
                     }
                     _dbDescription = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IServerlessConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-rds.RosPrepayDBInstance.ServerlessConfigProperty")]
+        public interface IServerlessConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: maxCapacity: The maximum value of the automatic scaling range of an instance RCU (RDS Capacity Unit). Value: 0.5-8.
+            /// </remarks>
+            [JsiiProperty(name: "maxCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object MaxCapacity
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: minCapacity: The minimum value of the automatic scaling range of an instance RCU (RDS Capacity Unit). Value: 0.5-8.
+            /// </remarks>
+            [JsiiProperty(name: "minCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object MinCapacity
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: autoPause: Whether to enable intelligent pause and start of serverless instances. Value:
+            /// true: enabled.
+            /// false: not enabled (default).
+            /// </remarks>
+            [JsiiProperty(name: "autoPause", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? AutoPause
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: switchForce: Whether to enable mandatory elastic scaling of serverless instances. Value:
+            /// true: enabled.
+            /// false: not enabled (default).
+            /// </remarks>
+            [JsiiProperty(name: "switchForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? SwitchForce
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IServerlessConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-rds.RosPrepayDBInstance.ServerlessConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.RosPrepayDBInstance.IServerlessConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: maxCapacity: The maximum value of the automatic scaling range of an instance RCU (RDS Capacity Unit). Value: 0.5-8.
+                /// </remarks>
+                [JsiiProperty(name: "maxCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object MaxCapacity
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: minCapacity: The minimum value of the automatic scaling range of an instance RCU (RDS Capacity Unit). Value: 0.5-8.
+                /// </remarks>
+                [JsiiProperty(name: "minCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object MinCapacity
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: autoPause: Whether to enable intelligent pause and start of serverless instances. Value:
+                /// true: enabled.
+                /// false: not enabled (default).
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "autoPause", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AutoPause
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: switchForce: Whether to enable mandatory elastic scaling of serverless instances. Value:
+                /// true: enabled.
+                /// false: not enabled (default).
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "switchForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? SwitchForce
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.RosPrepayDBInstance.ServerlessConfigProperty")]
+        public class ServerlessConfigProperty : AlibabaCloud.SDK.ROS.CDK.Rds.RosPrepayDBInstance.IServerlessConfigProperty
+        {
+            private object _maxCapacity;
+
+            /// <remarks>
+            /// <strong>Property</strong>: maxCapacity: The maximum value of the automatic scaling range of an instance RCU (RDS Capacity Unit). Value: 0.5-8.
+            /// </remarks>
+            [JsiiProperty(name: "maxCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object MaxCapacity
+            {
+                get => _maxCapacity;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _maxCapacity = value;
+                }
+            }
+
+            private object _minCapacity;
+
+            /// <remarks>
+            /// <strong>Property</strong>: minCapacity: The minimum value of the automatic scaling range of an instance RCU (RDS Capacity Unit). Value: 0.5-8.
+            /// </remarks>
+            [JsiiProperty(name: "minCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object MinCapacity
+            {
+                get => _minCapacity;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _minCapacity = value;
+                }
+            }
+
+            private object? _autoPause;
+
+            /// <remarks>
+            /// <strong>Property</strong>: autoPause: Whether to enable intelligent pause and start of serverless instances. Value:
+            /// true: enabled.
+            /// false: not enabled (default).
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoPause", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoPause
+            {
+                get => _autoPause;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _autoPause = value;
+                }
+            }
+
+            private object? _switchForce;
+
+            /// <remarks>
+            /// <strong>Property</strong>: switchForce: Whether to enable mandatory elastic scaling of serverless instances. Value:
+            /// true: enabled.
+            /// false: not enabled (default).
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "switchForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SwitchForce
+            {
+                get => _switchForce;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _switchForce = value;
                 }
             }
         }

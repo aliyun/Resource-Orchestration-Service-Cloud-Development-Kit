@@ -69,9 +69,14 @@ export interface InstanceProps {
     readonly masterNode?: RosInstance.MasterNodeProperty | ros.IResolvable;
 
     /**
-     * Property period: The duration that you will buy Elasticsearch instance (in month). It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+     * Property period: The duration that you will buy Elasticsearch instance. It is valid when instance_charge_type is PrePaid. Unit is Month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Unit is Year, it could be from 1 to 3. Default value is 1.
      */
     readonly period?: number | ros.IResolvable;
+
+    /**
+     * Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * Property privateWhitelist: Set the instance's IP whitelist in VPC network.
@@ -185,12 +190,12 @@ export class Instance extends ros.Resource {
             masterNode: props.masterNode,
             description: props.description,
             kibanaNode: props.kibanaNode,
+            enableKibanaPrivate: props.enableKibanaPrivate,
             zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
-            enableKibanaPrivate: props.enableKibanaPrivate,
             publicWhitelist: props.publicWhitelist,
-            enableKibanaPublic: props.enableKibanaPublic,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
+            enableKibanaPublic: props.enableKibanaPublic,
             vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             enablePublic: props.enablePublic,
@@ -200,6 +205,7 @@ export class Instance extends ros.Resource {
             kibanaWhitelist: props.kibanaWhitelist,
             ymlConfig: props.ymlConfig,
             tags: props.tags,
+            periodUnit: props.periodUnit,
             zoneCount: props.zoneCount,
             password: props.password,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

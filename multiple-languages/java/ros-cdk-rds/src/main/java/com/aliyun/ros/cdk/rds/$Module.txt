@@ -28,6 +28,7 @@
 @alicloud/ros-cdk-rds.RosAccountProps=com.aliyun.ros.cdk.rds.RosAccountProps
 @alicloud/ros-cdk-rds.RosDBInstance=com.aliyun.ros.cdk.rds.RosDBInstance
 @alicloud/ros-cdk-rds.RosDBInstance.DBMappingsProperty=com.aliyun.ros.cdk.rds.RosDBInstance$DBMappingsProperty
+@alicloud/ros-cdk-rds.RosDBInstance.ServerlessConfigProperty=com.aliyun.ros.cdk.rds.RosDBInstance$ServerlessConfigProperty
 @alicloud/ros-cdk-rds.RosDBInstanceClone=com.aliyun.ros.cdk.rds.RosDBInstanceClone
 @alicloud/ros-cdk-rds.RosDBInstanceClone.DBMappingsProperty=com.aliyun.ros.cdk.rds.RosDBInstanceClone$DBMappingsProperty
 @alicloud/ros-cdk-rds.RosDBInstanceClone.TableMetaProperty=com.aliyun.ros.cdk.rds.RosDBInstanceClone$TableMetaProperty
@@ -45,6 +46,7 @@
 @alicloud/ros-cdk-rds.RosMigrateTaskProps=com.aliyun.ros.cdk.rds.RosMigrateTaskProps
 @alicloud/ros-cdk-rds.RosPrepayDBInstance=com.aliyun.ros.cdk.rds.RosPrepayDBInstance
 @alicloud/ros-cdk-rds.RosPrepayDBInstance.DBMappingsProperty=com.aliyun.ros.cdk.rds.RosPrepayDBInstance$DBMappingsProperty
+@alicloud/ros-cdk-rds.RosPrepayDBInstance.ServerlessConfigProperty=com.aliyun.ros.cdk.rds.RosPrepayDBInstance$ServerlessConfigProperty
 @alicloud/ros-cdk-rds.RosPrepayDBInstanceProps=com.aliyun.ros.cdk.rds.RosPrepayDBInstanceProps
 @alicloud/ros-cdk-rds.RosReadOnlyDBInstance=com.aliyun.ros.cdk.rds.RosReadOnlyDBInstance
 @alicloud/ros-cdk-rds.RosReadOnlyDBInstanceProps=com.aliyun.ros.cdk.rds.RosReadOnlyDBInstanceProps

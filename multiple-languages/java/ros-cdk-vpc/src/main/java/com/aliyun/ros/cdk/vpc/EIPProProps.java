@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::EIPPro`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.841Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:44.072Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.EIPProProps")
 @software.amazon.jsii.Jsii.Proxy(EIPProProps.Jsii$Proxy.class)
 public interface EIPProProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,7 +11,7 @@ public interface EIPProProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property autoPay: Automatic Payment.
      * <p>
-     * Default is false.
+     * Default is true.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -169,7 +169,7 @@ public interface EIPProProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link EIPProProps#getAutoPay}
          * @param autoPay Property autoPay: Automatic Payment.
-         *                Default is false.
+         *                Default is true.
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -180,7 +180,7 @@ public interface EIPProProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link EIPProProps#getAutoPay}
          * @param autoPay Property autoPay: Automatic Payment.
-         *                Default is false.
+         *                Default is true.
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {

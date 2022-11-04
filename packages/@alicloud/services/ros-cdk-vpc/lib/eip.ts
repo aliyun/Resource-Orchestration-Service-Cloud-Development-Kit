@@ -9,7 +9,7 @@ export { RosEIP as EIPProperty };
 export interface EIPProps {
 
     /**
-     * Property autoPay: Automatic Payment. Default is false.
+     * Property autoPay: Automatic Payment. Default is true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -126,7 +126,7 @@ export class Eip extends ros.Resource {
             isp: props.isp,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             name: props.name,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByBandwidth' : props.internetChargeType,
             netmode: props.netmode,

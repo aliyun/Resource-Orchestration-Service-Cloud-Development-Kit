@@ -86,8 +86,8 @@ export class RuleAction extends ros.Resource {
         const rosRuleAction = new RosRuleAction(this, id,  {
             errorActionFlag: props.errorActionFlag,
             type: props.type,
-            configuration: props.configuration,
             iotInstanceId: props.iotInstanceId,
+            configuration: props.configuration,
             ruleId: props.ruleId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRuleAction;

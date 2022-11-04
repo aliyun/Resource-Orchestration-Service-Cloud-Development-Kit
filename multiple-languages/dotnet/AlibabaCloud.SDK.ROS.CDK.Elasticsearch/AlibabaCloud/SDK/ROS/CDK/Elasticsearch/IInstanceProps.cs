@@ -139,13 +139,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             }
         }
 
-        /// <summary>Property period: The duration that you will buy Elasticsearch instance (in month).</summary>
+        /// <summary>Property period: The duration that you will buy Elasticsearch instance.</summary>
         /// <remarks>
-        /// It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+        /// It is valid when instance_charge_type is PrePaid. Unit is Month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Unit is Year, it could be from 1 to 3. Default value is 1.
         /// </remarks>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Period
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month/Year.</summary>
+        /// <remarks>
+        /// Default value is Month.
+        /// </remarks>
+        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PeriodUnit
         {
             get
             {
@@ -351,13 +365,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property period: The duration that you will buy Elasticsearch instance (in month).</summary>
+            /// <summary>Property period: The duration that you will buy Elasticsearch instance.</summary>
             /// <remarks>
-            /// It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+            /// It is valid when instance_charge_type is PrePaid. Unit is Month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Unit is Year, it could be from 1 to 3. Default value is 1.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Period
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month/Year.</summary>
+            /// <remarks>
+            /// Default value is Month.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PeriodUnit
             {
                 get => GetInstanceProperty<object?>();
             }

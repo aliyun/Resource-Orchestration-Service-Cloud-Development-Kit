@@ -931,8 +931,8 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('scalingConfigurationName', ros.validateString)(properties.scalingConfigurationName));
-    errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosScalingConfiguration_DiskMappingsPropertyValidator))(properties.diskMappings));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosScalingConfiguration_DiskMappingsPropertyValidator))(properties.diskMappings));
     if(properties.systemDiskSize && (typeof properties.systemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskSize', ros.validateRange)({
             data: properties.systemDiskSize,
@@ -1003,13 +1003,6 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
-    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
-          data: properties.internetChargeType,
-          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
@@ -1017,6 +1010,13 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
     if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
@@ -2669,6 +2669,18 @@ export interface RosScalingRuleProps {
     readonly predictiveValueBuffer?: number | ros.IResolvable;
 
     /**
+     * @Property scaleInEvaluationCount: The number of consecutive times that the event-triggered task created for scale-in activities meets the threshold conditions before an alert is triggered. After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
+     * Default value: 15.
+     */
+    readonly scaleInEvaluationCount?: number | ros.IResolvable;
+
+    /**
+     * @Property scaleOutEvaluationCount: The number of consecutive times that the event-triggered task created for scale-out activities meets the threshold conditions before an alert is triggered. After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
+     * Default value: 3.
+     */
+    readonly scaleOutEvaluationCount?: number | ros.IResolvable;
+
+    /**
      * @Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
      */
     readonly scalingRuleName?: string | ros.IResolvable;
@@ -2761,6 +2773,7 @@ function RosScalingRulePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('adjustmentValue', ros.validateNumber)(properties.adjustmentValue));
+    errors.collect(ros.propertyValidator('scaleOutEvaluationCount', ros.validateNumber)(properties.scaleOutEvaluationCount));
     if(properties.initialMaxSize && (typeof properties.initialMaxSize) !== 'object') {
         errors.collect(ros.propertyValidator('initialMaxSize', ros.validateRange)({
             data: properties.initialMaxSize,
@@ -2807,6 +2820,7 @@ function RosScalingRulePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('predictiveValueBuffer', ros.validateNumber)(properties.predictiveValueBuffer));
+    errors.collect(ros.propertyValidator('scaleInEvaluationCount', ros.validateNumber)(properties.scaleInEvaluationCount));
     return errors.wrap('supplied properties not correct for "RosScalingRuleProps"');
 }
 
@@ -2837,6 +2851,8 @@ function rosScalingRulePropsToRosTemplate(properties: any, enableResourcePropert
       PredictiveTaskBufferTime: ros.numberToRosTemplate(properties.predictiveTaskBufferTime),
       PredictiveValueBehavior: ros.stringToRosTemplate(properties.predictiveValueBehavior),
       PredictiveValueBuffer: ros.numberToRosTemplate(properties.predictiveValueBuffer),
+      ScaleInEvaluationCount: ros.numberToRosTemplate(properties.scaleInEvaluationCount),
+      ScaleOutEvaluationCount: ros.numberToRosTemplate(properties.scaleOutEvaluationCount),
       ScalingRuleName: ros.stringToRosTemplate(properties.scalingRuleName),
       ScalingRuleType: ros.stringToRosTemplate(properties.scalingRuleType),
       StepAdjustment: ros.listMapper(rosScalingRuleStepAdjustmentPropertyToRosTemplate)(properties.stepAdjustment),
@@ -2967,6 +2983,18 @@ export class RosScalingRule extends ros.RosResource {
     public predictiveValueBuffer: number | ros.IResolvable | undefined;
 
     /**
+     * @Property scaleInEvaluationCount: The number of consecutive times that the event-triggered task created for scale-in activities meets the threshold conditions before an alert is triggered. After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
+     * Default value: 15.
+     */
+    public scaleInEvaluationCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property scaleOutEvaluationCount: The number of consecutive times that the event-triggered task created for scale-out activities meets the threshold conditions before an alert is triggered. After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
+     * Default value: 3.
+     */
+    public scaleOutEvaluationCount: number | ros.IResolvable | undefined;
+
+    /**
      * @Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
      */
     public scalingRuleName: string | ros.IResolvable | undefined;
@@ -3017,6 +3045,8 @@ export class RosScalingRule extends ros.RosResource {
         this.predictiveTaskBufferTime = props.predictiveTaskBufferTime;
         this.predictiveValueBehavior = props.predictiveValueBehavior;
         this.predictiveValueBuffer = props.predictiveValueBuffer;
+        this.scaleInEvaluationCount = props.scaleInEvaluationCount;
+        this.scaleOutEvaluationCount = props.scaleOutEvaluationCount;
         this.scalingRuleName = props.scalingRuleName;
         this.scalingRuleType = props.scalingRuleType;
         this.stepAdjustment = props.stepAdjustment;
@@ -3039,6 +3069,8 @@ export class RosScalingRule extends ros.RosResource {
             predictiveTaskBufferTime: this.predictiveTaskBufferTime,
             predictiveValueBehavior: this.predictiveValueBehavior,
             predictiveValueBuffer: this.predictiveValueBuffer,
+            scaleInEvaluationCount: this.scaleInEvaluationCount,
+            scaleOutEvaluationCount: this.scaleOutEvaluationCount,
             scalingRuleName: this.scalingRuleName,
             scalingRuleType: this.scalingRuleType,
             stepAdjustment: this.stepAdjustment,

@@ -20,7 +20,7 @@ export interface LoadBalancerProps {
 
     /**
      * Property autoPay: Optional. Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-     * Valid values: true | false (default value)
+     * Valid values: true | false. Default true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -236,7 +236,7 @@ export class LoadBalancer extends ros.Resource {
             vSwitchId: props.vSwitchId,
             addressIpVersion: props.addressIpVersion,
             duration: props.duration === undefined || props.duration === null ? 1 : props.duration,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             payType: props.payType,
             slaveZoneId: props.slaveZoneId,

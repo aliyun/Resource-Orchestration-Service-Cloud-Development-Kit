@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudphone;
 /**
  * A ROS resource type:  `ALIYUN::CloudPhone::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.360Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.394Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -409,6 +409,31 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
+            return this;
+        }
+
+        /**
+         * Property periodUnit: Unit of prepaid time period, it could be Month/Year.
+         * <p>
+         * Default value is Month.
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Month/Year. This parameter is required.
+         */
+        public Builder periodUnit(final java.lang.String periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+        /**
+         * Property periodUnit: Unit of prepaid time period, it could be Month/Year.
+         * <p>
+         * Default value is Month.
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Month/Year. This parameter is required.
+         */
+        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.props.periodUnit(periodUnit);
             return this;
         }
 

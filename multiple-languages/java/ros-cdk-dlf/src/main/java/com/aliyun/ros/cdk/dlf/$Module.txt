@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-dlf.Catalog=com.aliyun.ros.cdk.dlf.Catalog
+@alicloud/ros-cdk-dlf.CatalogProps=com.aliyun.ros.cdk.dlf.CatalogProps
+@alicloud/ros-cdk-dlf.RosCatalog=com.aliyun.ros.cdk.dlf.RosCatalog
+@alicloud/ros-cdk-dlf.RosCatalogProps=com.aliyun.ros.cdk.dlf.RosCatalogProps

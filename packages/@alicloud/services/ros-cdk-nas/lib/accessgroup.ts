@@ -22,6 +22,12 @@ export interface AccessGroupProps {
      * Property description: Permission group description. It is the same as the permission group name by default.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property fileSystemType: File system type.
+     * Values: standard (default), extreme
+     */
+    readonly fileSystemType?: string | ros.IResolvable;
 }
 
 /**
@@ -52,6 +58,7 @@ export class AccessGroup extends ros.Resource {
         const rosAccessGroup = new RosAccessGroup(this, id,  {
             accessGroupType: props.accessGroupType,
             description: props.description,
+            fileSystemType: props.fileSystemType === undefined || props.fileSystemType === null ? 'standard' : props.fileSystemType,
             accessGroupName: props.accessGroupName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccessGroup;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudphone;
 /**
  * Properties for defining a `ALIYUN::CloudPhone::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.367Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.405Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.RosInstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceGroupProps.Jsii$Proxy.class)
 public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -80,6 +80,12 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResolution() {
         return null;
     }
@@ -119,6 +125,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object instanceName;
         java.lang.Object keyPairName;
         java.lang.Object period;
+        java.lang.Object periodUnit;
         java.lang.Object resolution;
         java.lang.Object tag;
         java.lang.Object vncPassword;
@@ -384,6 +391,26 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getPeriodUnit}
+         * @param periodUnit the value to be set.
+         * @return {@code this}
+         */
+        public Builder periodUnit(java.lang.String periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getPeriodUnit}
+         * @param periodUnit the value to be set.
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getResolution}
          * @param resolution the value to be set.
          * @return {@code this}
@@ -472,6 +499,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object instanceName;
         private final java.lang.Object keyPairName;
         private final java.lang.Object period;
+        private final java.lang.Object periodUnit;
         private final java.lang.Object resolution;
         private final java.lang.Object tag;
         private final java.lang.Object vncPassword;
@@ -495,6 +523,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resolution = software.amazon.jsii.Kernel.get(this, "resolution", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tag = software.amazon.jsii.Kernel.get(this, "tag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vncPassword = software.amazon.jsii.Kernel.get(this, "vncPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -518,6 +547,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             this.instanceName = builder.instanceName;
             this.keyPairName = builder.keyPairName;
             this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
             this.resolution = builder.resolution;
             this.tag = builder.tag;
             this.vncPassword = builder.vncPassword;
@@ -589,6 +619,11 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getPeriodUnit() {
+            return this.periodUnit;
+        }
+
+        @Override
         public final java.lang.Object getResolution() {
             return this.resolution;
         }
@@ -640,6 +675,9 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
+            if (this.getPeriodUnit() != null) {
+                data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
+            }
             if (this.getResolution() != null) {
                 data.set("resolution", om.valueToTree(this.getResolution()));
             }
@@ -680,6 +718,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
             if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.resolution != null ? !this.resolution.equals(that.resolution) : that.resolution != null) return false;
             if (this.tag != null ? !this.tag.equals(that.tag) : that.tag != null) return false;
             return this.vncPassword != null ? this.vncPassword.equals(that.vncPassword) : that.vncPassword == null;
@@ -700,6 +739,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
             result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.resolution != null ? this.resolution.hashCode() : 0);
             result = 31 * result + (this.tag != null ? this.tag.hashCode() : 0);
             result = 31 * result + (this.vncPassword != null ? this.vncPassword.hashCode() : 0);

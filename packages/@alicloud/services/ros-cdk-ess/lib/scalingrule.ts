@@ -104,6 +104,18 @@ export interface ScalingRuleProps {
     readonly predictiveValueBuffer?: number | ros.IResolvable;
 
     /**
+     * Property scaleInEvaluationCount: The number of consecutive times that the event-triggered task created for scale-in activities meets the threshold conditions before an alert is triggered. After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
+     * Default value: 15.
+     */
+    readonly scaleInEvaluationCount?: number | ros.IResolvable;
+
+    /**
+     * Property scaleOutEvaluationCount: The number of consecutive times that the event-triggered task created for scale-out activities meets the threshold conditions before an alert is triggered. After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
+     * Default value: 3.
+     */
+    readonly scaleOutEvaluationCount?: number | ros.IResolvable;
+
+    /**
      * Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
      */
     readonly scalingRuleName?: string | ros.IResolvable;
@@ -171,12 +183,14 @@ export class ScalingRule extends ros.Resource {
             metricName: props.metricName,
             scalingRuleName: props.scalingRuleName,
             adjustmentValue: props.adjustmentValue,
+            scaleOutEvaluationCount: props.scaleOutEvaluationCount,
             initialMaxSize: props.initialMaxSize,
             scalingRuleType: props.scalingRuleType,
             estimatedInstanceWarmup: props.estimatedInstanceWarmup,
             predictiveScalingMode: props.predictiveScalingMode,
             predictiveTaskBufferTime: props.predictiveTaskBufferTime,
             predictiveValueBuffer: props.predictiveValueBuffer,
+            scaleInEvaluationCount: props.scaleInEvaluationCount,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingRule;
         this.attrScalingRuleAri = rosScalingRule.attrScalingRuleAri;

@@ -21,6 +21,12 @@ export interface RosAccessGroupProps {
      * @Property description: Permission group description. It is the same as the permission group name by default.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property fileSystemType: File system type.
+     * Values: standard (default), extreme
+     */
+    readonly fileSystemType?: string | ros.IResolvable;
 }
 
 /**
@@ -42,6 +48,13 @@ function RosAccessGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('accessGroupType', ros.validateString)(properties.accessGroupType));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.fileSystemType && (typeof properties.fileSystemType) !== 'object') {
+        errors.collect(ros.propertyValidator('fileSystemType', ros.validateAllowedValues)({
+          data: properties.fileSystemType,
+          allowedValues: ["standard","extreme"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('fileSystemType', ros.validateString)(properties.fileSystemType));
     errors.collect(ros.propertyValidator('accessGroupName', ros.requiredValidator)(properties.accessGroupName));
     if(properties.accessGroupName && (typeof properties.accessGroupName) !== 'object') {
         errors.collect(ros.propertyValidator('accessGroupName', ros.validateAllowedPattern)({
@@ -70,6 +83,7 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
       AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
       AccessGroupType: ros.stringToRosTemplate(properties.accessGroupType),
       Description: ros.stringToRosTemplate(properties.description),
+      FileSystemType: ros.stringToRosTemplate(properties.fileSystemType),
     };
 }
 
@@ -111,6 +125,12 @@ export class RosAccessGroup extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property fileSystemType: File system type.
+     * Values: standard (default), extreme
+     */
+    public fileSystemType: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::NAS::AccessGroup`.
      *
      * @param scope - scope in which this resource is defined
@@ -125,6 +145,7 @@ export class RosAccessGroup extends ros.RosResource {
         this.accessGroupName = props.accessGroupName;
         this.accessGroupType = props.accessGroupType;
         this.description = props.description;
+        this.fileSystemType = props.fileSystemType;
     }
 
 
@@ -133,6 +154,7 @@ export class RosAccessGroup extends ros.RosResource {
             accessGroupName: this.accessGroupName,
             accessGroupType: this.accessGroupType,
             description: this.description,
+            fileSystemType: this.fileSystemType,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -319,12 +341,17 @@ export class RosAccessRule extends ros.RosResource {
 export interface RosFileSystemProps {
 
     /**
-     * @Property protocolType: Type of protocol used. Currently includes the NFS type and the SMB type
+     * @Property protocolType: Type of protocol used. Valid values: NFS, SMB, cpfs.
      */
     readonly protocolType: string | ros.IResolvable;
 
     /**
-     * @Property storageType: The file system type. Currently includes the Performance type and the Capacity type
+     * @Property storageType: The storage type of the file System.
+     * Valid values:
+     * Performance、Capacity(Available when the file_system_type is standard)
+     * standard、advance(Available when the file_system_type is extreme)
+     * advance_100、advance_200(Available when the file_system_type is cpfs)
+     *
      */
     readonly storageType: string | ros.IResolvable;
 
@@ -369,7 +396,7 @@ export interface RosFileSystemProps {
     readonly encryptType?: number | ros.IResolvable;
 
     /**
-     * @Property fileSystemType: File system type. Allowed values: standard, extreme, cpfs
+     * @Property fileSystemType: File system type. Allowed values: standard(default), extreme, cpfs
      */
     readonly fileSystemType?: string | ros.IResolvable;
 
@@ -411,6 +438,12 @@ function RosFileSystemPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('storageType', ros.requiredValidator)(properties.storageType));
+    if(properties.storageType && (typeof properties.storageType) !== 'object') {
+        errors.collect(ros.propertyValidator('storageType', ros.validateAllowedValues)({
+          data: properties.storageType,
+          allowedValues: ["Performance","Capacity","standard","advance","advance_100","advance_200"],
+        }));
+    }
     errors.collect(ros.propertyValidator('storageType', ros.validateString)(properties.storageType));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
@@ -424,7 +457,7 @@ function RosFileSystemPropsValidator(properties: any): ros.ValidationResult {
     if(properties.protocolType && (typeof properties.protocolType) !== 'object') {
         errors.collect(ros.propertyValidator('protocolType', ros.validateAllowedValues)({
           data: properties.protocolType,
-          allowedValues: ["NFS","SMB"],
+          allowedValues: ["NFS","SMB","cpfs"],
         }));
     }
     errors.collect(ros.propertyValidator('protocolType', ros.validateString)(properties.protocolType));
@@ -435,6 +468,12 @@ function RosFileSystemPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    if(properties.fileSystemType && (typeof properties.fileSystemType) !== 'object') {
+        errors.collect(ros.propertyValidator('fileSystemType', ros.validateAllowedValues)({
+          data: properties.fileSystemType,
+          allowedValues: ["standard","extreme","cpfs"],
+        }));
+    }
     errors.collect(ros.propertyValidator('fileSystemType', ros.validateString)(properties.fileSystemType));
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -503,12 +542,17 @@ export class RosFileSystem extends ros.RosResource {
 
 
     /**
-     * @Property protocolType: Type of protocol used. Currently includes the NFS type and the SMB type
+     * @Property protocolType: Type of protocol used. Valid values: NFS, SMB, cpfs.
      */
     public protocolType: string | ros.IResolvable;
 
     /**
-     * @Property storageType: The file system type. Currently includes the Performance type and the Capacity type
+     * @Property storageType: The storage type of the file System.
+     * Valid values:
+     * Performance、Capacity(Available when the file_system_type is standard)
+     * standard、advance(Available when the file_system_type is extreme)
+     * advance_100、advance_200(Available when the file_system_type is cpfs)
+     *
      */
     public storageType: string | ros.IResolvable;
 
@@ -553,7 +597,7 @@ export class RosFileSystem extends ros.RosResource {
     public encryptType: number | ros.IResolvable | undefined;
 
     /**
-     * @Property fileSystemType: File system type. Allowed values: standard, extreme, cpfs
+     * @Property fileSystemType: File system type. Allowed values: standard(default), extreme, cpfs
      */
     public fileSystemType: string | ros.IResolvable | undefined;
 

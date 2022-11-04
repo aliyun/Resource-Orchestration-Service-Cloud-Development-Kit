@@ -86,6 +86,11 @@ export interface RosInstanceGroupProps {
     readonly period?: number | ros.IResolvable;
 
     /**
+     * @Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
      * @Property resolution: You can use the DescribeInstanceTypes interface to query the list of 
      * resolutions supported by the current specification and select an appropriate resolution.
      */
@@ -136,7 +141,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -159,6 +164,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tag', ros.listValidator(ros.validateRosTag))(properties.tag));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     errors.collect(ros.propertyValidator('resolution', ros.validateString)(properties.resolution));
     return errors.wrap('supplied properties not correct for "RosInstanceGroupProps"');
 }
@@ -190,6 +196,7 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
       Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       Resolution: ros.stringToRosTemplate(properties.resolution),
       Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
       VncPassword: ros.stringToRosTemplate(properties.vncPassword),
@@ -307,6 +314,11 @@ export class RosInstanceGroup extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
+     * @Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resolution: You can use the DescribeInstanceTypes interface to query the list of 
      * resolutions supported by the current specification and select an appropriate resolution.
      */
@@ -351,6 +363,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.instanceName = props.instanceName;
         this.keyPairName = props.keyPairName;
         this.period = props.period;
+        this.periodUnit = props.periodUnit;
         this.resolution = props.resolution;
         this.tag = props.tag;
         this.vncPassword = props.vncPassword;
@@ -372,6 +385,7 @@ export class RosInstanceGroup extends ros.RosResource {
             instanceName: this.instanceName,
             keyPairName: this.keyPairName,
             period: this.period,
+            periodUnit: this.periodUnit,
             resolution: this.resolution,
             tag: this.tag,
             vncPassword: this.vncPassword,

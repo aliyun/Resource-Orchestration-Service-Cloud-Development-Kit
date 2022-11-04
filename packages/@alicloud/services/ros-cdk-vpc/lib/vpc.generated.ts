@@ -1715,7 +1715,7 @@ export class RosDhcpOptionsSetAttachment extends ros.RosResource {
 export interface RosEIPProps {
 
     /**
-     * @Property autoPay: Automatic Payment. Default is false.
+     * @Property autoPay: Automatic Payment. Default is true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -1799,7 +1799,7 @@ function RosEIPPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["Prepaid","Postpaid"],
+          allowedValues: ["Postpaid","Prepaid"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -1909,7 +1909,7 @@ export class RosEIP extends ros.RosResource {
 
 
     /**
-     * @Property autoPay: Automatic Payment. Default is false.
+     * @Property autoPay: Automatic Payment. Default is true.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -2246,7 +2246,7 @@ export class RosEIPAssociation extends ros.RosResource {
 export interface RosEIPProProps {
 
     /**
-     * @Property autoPay: Automatic Payment. Default is false.
+     * @Property autoPay: Automatic Payment. Default is true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -2341,7 +2341,7 @@ function RosEIPProPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["Prepaid","Postpaid"],
+          allowedValues: ["Postpaid","Prepaid"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -2454,7 +2454,7 @@ export class RosEIPPro extends ros.RosResource {
 
 
     /**
-     * @Property autoPay: Automatic Payment. Default is false.
+     * @Property autoPay: Automatic Payment. Default is true.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -4067,7 +4067,7 @@ export interface RosNatGatewayProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Specifies whether to enable automatic payment. Default is false.
+     * @Property autoPay: Specifies whether to enable automatic payment. Default is true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -4158,7 +4158,7 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -4291,7 +4291,7 @@ export class RosNatGateway extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Specifies whether to enable automatic payment. Default is false.
+     * @Property autoPay: Specifies whether to enable automatic payment. Default is true.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -4468,6 +4468,212 @@ function rosNatGatewayTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::NatIp`
+ */
+export interface RosNatIpProps {
+
+    /**
+     * @Property natGatewayId: The ID of the Virtual Private Cloud (VPC) NAT gateway for which you want to create
+     * the NAT IP address.
+     */
+    readonly natGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property natIpCidr: The CIDR block to which the NAT IP address belongs.
+     */
+    readonly natIpCidr: string | ros.IResolvable;
+
+    /**
+     * @Property natIpDescription: The description of the NAT IP address.
+     * The description must be 2 to 256 characters in length. It must start with a letter
+     * but cannot start with http:// or https://.
+     */
+    readonly natIpDescription: string | ros.IResolvable;
+
+    /**
+     * @Property natIpName: The name of the NAT IP address.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter. It cannot start
+     * with http:// or https://.
+     */
+    readonly natIpName: string | ros.IResolvable;
+
+    /**
+     * @Property natIp: The NAT IP address that you want to create.
+     * If you do not specify an IP address, the system selects a random IP address from the
+     * specified CIDR block.
+     */
+    readonly natIp?: string | ros.IResolvable;
+
+    /**
+     * @Property natIpCidrId: The ID of the CIDR block to which the NAT IP address belongs.
+     */
+    readonly natIpCidrId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNatIpProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNatIpProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNatIpPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('natIp', ros.validateString)(properties.natIp));
+    errors.collect(ros.propertyValidator('natIpCidr', ros.requiredValidator)(properties.natIpCidr));
+    errors.collect(ros.propertyValidator('natIpCidr', ros.validateString)(properties.natIpCidr));
+    errors.collect(ros.propertyValidator('natIpCidrId', ros.validateString)(properties.natIpCidrId));
+    errors.collect(ros.propertyValidator('natIpDescription', ros.requiredValidator)(properties.natIpDescription));
+    if(properties.natIpDescription && (Array.isArray(properties.natIpDescription) || (typeof properties.natIpDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('natIpDescription', ros.validateLength)({
+            data: properties.natIpDescription.length,
+            min: 2,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('natIpDescription', ros.validateString)(properties.natIpDescription));
+    errors.collect(ros.propertyValidator('natIpName', ros.requiredValidator)(properties.natIpName));
+    if(properties.natIpName && (Array.isArray(properties.natIpName) || (typeof properties.natIpName) === 'string')) {
+        errors.collect(ros.propertyValidator('natIpName', ros.validateLength)({
+            data: properties.natIpName.length,
+            min: 2,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('natIpName', ros.validateString)(properties.natIpName));
+    errors.collect(ros.propertyValidator('natGatewayId', ros.requiredValidator)(properties.natGatewayId));
+    errors.collect(ros.propertyValidator('natGatewayId', ros.validateString)(properties.natGatewayId));
+    return errors.wrap('supplied properties not correct for "RosNatIpProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::NatIp` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNatIpProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::NatIp` resource.
+ */
+// @ts-ignore TS6133
+function rosNatIpPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNatIpPropsValidator(properties).assertSuccess();
+    }
+    return {
+      NatGatewayId: ros.stringToRosTemplate(properties.natGatewayId),
+      NatIpCidr: ros.stringToRosTemplate(properties.natIpCidr),
+      NatIpDescription: ros.stringToRosTemplate(properties.natIpDescription),
+      NatIpName: ros.stringToRosTemplate(properties.natIpName),
+      NatIp: ros.stringToRosTemplate(properties.natIp),
+      NatIpCidrId: ros.stringToRosTemplate(properties.natIpCidrId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::NatIp`
+ */
+export class RosNatIp extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::NatIp";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute NatIp: NAT IP address.
+     */
+    public readonly attrNatIp: ros.IResolvable;
+
+    /**
+     * @Attribute NatIpId: The ID of the NAT IP address.
+     */
+    public readonly attrNatIpId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property natGatewayId: The ID of the Virtual Private Cloud (VPC) NAT gateway for which you want to create
+     * the NAT IP address.
+     */
+    public natGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property natIpCidr: The CIDR block to which the NAT IP address belongs.
+     */
+    public natIpCidr: string | ros.IResolvable;
+
+    /**
+     * @Property natIpDescription: The description of the NAT IP address.
+     * The description must be 2 to 256 characters in length. It must start with a letter
+     * but cannot start with http:// or https://.
+     */
+    public natIpDescription: string | ros.IResolvable;
+
+    /**
+     * @Property natIpName: The name of the NAT IP address.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter. It cannot start
+     * with http:// or https://.
+     */
+    public natIpName: string | ros.IResolvable;
+
+    /**
+     * @Property natIp: The NAT IP address that you want to create.
+     * If you do not specify an IP address, the system selects a random IP address from the
+     * specified CIDR block.
+     */
+    public natIp: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property natIpCidrId: The ID of the CIDR block to which the NAT IP address belongs.
+     */
+    public natIpCidrId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::NatIp`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNatIpProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNatIp.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNatIp = this.getAtt('NatIp');
+        this.attrNatIpId = this.getAtt('NatIpId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.natGatewayId = props.natGatewayId;
+        this.natIpCidr = props.natIpCidr;
+        this.natIpDescription = props.natIpDescription;
+        this.natIpName = props.natIpName;
+        this.natIp = props.natIp;
+        this.natIpCidrId = props.natIpCidrId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            natGatewayId: this.natGatewayId,
+            natIpCidr: this.natIpCidr,
+            natIpDescription: this.natIpDescription,
+            natIpName: this.natIpName,
+            natIp: this.natIp,
+            natIpCidrId: this.natIpCidrId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNatIpPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**
@@ -5662,6 +5868,7 @@ export interface RosRouterInterfaceProps {
      * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
      * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
      * true: Automatic payment is enabled. The payment is automatically made.
+     * Default: true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -5766,7 +5973,7 @@ function RosRouterInterfacePropsValidator(properties: any): ros.ValidationResult
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -5888,6 +6095,7 @@ export class RosRouterInterface extends ros.RosResource {
      * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
      * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
      * true: Automatic payment is enabled. The payment is automatically made.
+     * Default: true.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -7550,7 +7758,8 @@ export interface RosVpnGatewayProps {
     /**
      * @Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
      * true: Automatically pays the bill for the VPN gateway.
-     * false (default): Does not automatically pay the bill for the VPN gateway.
+     * false: Does not automatically pay the bill for the VPN gateway.
+     * Default true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -7634,7 +7843,7 @@ function RosVpnGatewayPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PREPAY","POSTPAY"],
+          allowedValues: ["POSTPAY","PREPAY"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -7759,7 +7968,8 @@ export class RosVpnGateway extends ros.RosResource {
     /**
      * @Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
      * true: Automatically pays the bill for the VPN gateway.
-     * false (default): Does not automatically pay the bill for the VPN gateway.
+     * false: Does not automatically pay the bill for the VPN gateway.
+     * Default true.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 

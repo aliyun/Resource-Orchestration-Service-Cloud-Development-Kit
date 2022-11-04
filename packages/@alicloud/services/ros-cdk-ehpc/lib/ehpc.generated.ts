@@ -3,6 +3,792 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::EHPC::AutoScaleConfig`
+ */
+export interface RosAutoScaleConfigProps {
+
+    /**
+     * @Property clusterId: Cluster ID.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property enableAutoGrow: Specifies whether to enable auto scale-out. Valid values:
+     * true: enables auto scale-out.
+     * false: disables auto scale-out
+     * Default value: false
+     */
+    readonly enableAutoGrow?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableAutoShrink: Specifies whether to enable auto scale-in. Valid values:
+     * true: enables auto scale-in.
+     * false: disables auto scale-in
+     * Default value: false
+     */
+    readonly enableAutoShrink?: boolean | ros.IResolvable;
+
+    /**
+     * @Property excludeNodes: The compute nodes that are excluded from the list of auto scaling nodes. Separate multiple compute nodes with commas (,). If you want to retain a compute node, you can set the node as an exceptional node. Then, the node is not released if it is idle.
+     */
+    readonly excludeNodes?: string | ros.IResolvable;
+
+    /**
+     * @Property extraNodesGrowRatio: The percentage of extra compute nodes.
+     * Default value: 0
+     */
+    readonly extraNodesGrowRatio?: number | ros.IResolvable;
+
+    /**
+     * @Property growIntervalInMinutes: The interval between two consecutive rounds of scale-out. Unit: minutes.
+     * Default value: 2
+     */
+    readonly growIntervalInMinutes?: number | ros.IResolvable;
+
+    /**
+     * @Property growRatio: The percentage of each round of scale-out.
+     * Default value: 100
+     */
+    readonly growRatio?: number | ros.IResolvable;
+
+    /**
+     * @Property growTimeoutInMinutes: The scale-out timeout period. Unit: minutes.
+     * Default value: 20
+     */
+    readonly growTimeoutInMinutes?: number | ros.IResolvable;
+
+    /**
+     * @Property imageId: The ID of the image.
+     * If you set both Queues.N.QueueImageId and ImageId, Queues.N.QueueImageId prevails.
+     * If you set Queues.N.QueueImageId or ImageId, the parameter that you set takes effect.
+     * If you leave both Queues.N.QueueImageId and ImageId empty, the image that was specified when you created the cluster or the last time when you scaled out the cluster is used by default.
+     */
+    readonly imageId?: string | ros.IResolvable;
+
+    /**
+     * @Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
+     * Default value: 100
+     */
+    readonly maxNodesInCluster?: number | ros.IResolvable;
+
+    /**
+     * @Property queues:
+     */
+    readonly queues?: Array<RosAutoScaleConfig.QueuesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property shrinkIdleTimes: The number of consecutive times that a compute node is idle during the resource scale-in check.
+     * Default value: 3
+     */
+    readonly shrinkIdleTimes?: number | ros.IResolvable;
+
+    /**
+     * @Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in. Unit: minutes.
+     * Default value: 2
+     */
+    readonly shrinkIntervalInMinutes?: number | ros.IResolvable;
+
+    /**
+     * @Property spotPriceLimit: The maximum hourly price of the compute nodes. The value can be accurate to three decimal places. The parameter takes effect only when SpotStrategy is set to SpotWithPriceLimit.
+     */
+    readonly spotPriceLimit?: number | ros.IResolvable;
+
+    /**
+     * @Property spotStrategy: The preemption policy of the compute nodes. Valid values:
+     * NoSpot: The compute nodes are pay-as-you-go instances.
+     * SpotWithPriceLimit: The compute nodes are preemptible instances that have a user-defined maximum hourly price.
+     * SpotAsPriceGo: The compute nodes are preemptible instances for which the market price at the time of purchase is used as the bid price.
+     * Default value: NoSpot
+     */
+    readonly spotStrategy?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAutoScaleConfigProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAutoScaleConfigProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoScaleConfigPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.extraNodesGrowRatio && (typeof properties.extraNodesGrowRatio) !== 'object') {
+        errors.collect(ros.propertyValidator('extraNodesGrowRatio', ros.validateRange)({
+            data: properties.extraNodesGrowRatio,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('extraNodesGrowRatio', ros.validateNumber)(properties.extraNodesGrowRatio));
+    errors.collect(ros.propertyValidator('enableAutoGrow', ros.validateBoolean)(properties.enableAutoGrow));
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    if(properties.shrinkIdleTimes && (typeof properties.shrinkIdleTimes) !== 'object') {
+        errors.collect(ros.propertyValidator('shrinkIdleTimes', ros.validateRange)({
+            data: properties.shrinkIdleTimes,
+            min: 2,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('shrinkIdleTimes', ros.validateNumber)(properties.shrinkIdleTimes));
+    if(properties.maxNodesInCluster && (typeof properties.maxNodesInCluster) !== 'object') {
+        errors.collect(ros.propertyValidator('maxNodesInCluster', ros.validateRange)({
+            data: properties.maxNodesInCluster,
+            min: 1,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxNodesInCluster', ros.validateNumber)(properties.maxNodesInCluster));
+    errors.collect(ros.propertyValidator('enableAutoShrink', ros.validateBoolean)(properties.enableAutoShrink));
+    if(properties.growRatio && (typeof properties.growRatio) !== 'object') {
+        errors.collect(ros.propertyValidator('growRatio', ros.validateRange)({
+            data: properties.growRatio,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('growRatio', ros.validateNumber)(properties.growRatio));
+    if(properties.growIntervalInMinutes && (typeof properties.growIntervalInMinutes) !== 'object') {
+        errors.collect(ros.propertyValidator('growIntervalInMinutes', ros.validateRange)({
+            data: properties.growIntervalInMinutes,
+            min: 2,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('growIntervalInMinutes', ros.validateNumber)(properties.growIntervalInMinutes));
+    if(properties.growTimeoutInMinutes && (typeof properties.growTimeoutInMinutes) !== 'object') {
+        errors.collect(ros.propertyValidator('growTimeoutInMinutes', ros.validateRange)({
+            data: properties.growTimeoutInMinutes,
+            min: 10,
+            max: 60,
+          }));
+    }
+    errors.collect(ros.propertyValidator('growTimeoutInMinutes', ros.validateNumber)(properties.growTimeoutInMinutes));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.shrinkIntervalInMinutes && (typeof properties.shrinkIntervalInMinutes) !== 'object') {
+        errors.collect(ros.propertyValidator('shrinkIntervalInMinutes', ros.validateRange)({
+            data: properties.shrinkIntervalInMinutes,
+            min: 2,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('shrinkIntervalInMinutes', ros.validateNumber)(properties.shrinkIntervalInMinutes));
+    errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateNumber)(properties.spotPriceLimit));
+    if(properties.queues && (Array.isArray(properties.queues) || (typeof properties.queues) === 'string')) {
+        errors.collect(ros.propertyValidator('queues', ros.validateLength)({
+            data: properties.queues.length,
+            min: undefined,
+            max: 8,
+          }));
+    }
+    errors.collect(ros.propertyValidator('queues', ros.listValidator(RosAutoScaleConfig_QueuesPropertyValidator))(properties.queues));
+    errors.collect(ros.propertyValidator('excludeNodes', ros.validateString)(properties.excludeNodes));
+    if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
+          data: properties.spotStrategy,
+          allowedValues: ["NoSpot","SpotWithPriceLimit","SpotAsPriceGo"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
+    return errors.wrap('supplied properties not correct for "RosAutoScaleConfigProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::AutoScaleConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAutoScaleConfigProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::AutoScaleConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoScaleConfigPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAutoScaleConfigPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
+      EnableAutoGrow: ros.booleanToRosTemplate(properties.enableAutoGrow),
+      EnableAutoShrink: ros.booleanToRosTemplate(properties.enableAutoShrink),
+      ExcludeNodes: ros.stringToRosTemplate(properties.excludeNodes),
+      ExtraNodesGrowRatio: ros.numberToRosTemplate(properties.extraNodesGrowRatio),
+      GrowIntervalInMinutes: ros.numberToRosTemplate(properties.growIntervalInMinutes),
+      GrowRatio: ros.numberToRosTemplate(properties.growRatio),
+      GrowTimeoutInMinutes: ros.numberToRosTemplate(properties.growTimeoutInMinutes),
+      ImageId: ros.stringToRosTemplate(properties.imageId),
+      MaxNodesInCluster: ros.numberToRosTemplate(properties.maxNodesInCluster),
+      Queues: ros.listMapper(rosAutoScaleConfigQueuesPropertyToRosTemplate)(properties.queues),
+      ShrinkIdleTimes: ros.numberToRosTemplate(properties.shrinkIdleTimes),
+      ShrinkIntervalInMinutes: ros.numberToRosTemplate(properties.shrinkIntervalInMinutes),
+      SpotPriceLimit: ros.numberToRosTemplate(properties.spotPriceLimit),
+      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::EHPC::AutoScaleConfig`
+ */
+export class RosAutoScaleConfig extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EHPC::AutoScaleConfig";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ClusterId: Cluster Id.
+     */
+    public readonly attrClusterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterId: Cluster ID.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property enableAutoGrow: Specifies whether to enable auto scale-out. Valid values:
+     * true: enables auto scale-out.
+     * false: disables auto scale-out
+     * Default value: false
+     */
+    public enableAutoGrow: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableAutoShrink: Specifies whether to enable auto scale-in. Valid values:
+     * true: enables auto scale-in.
+     * false: disables auto scale-in
+     * Default value: false
+     */
+    public enableAutoShrink: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property excludeNodes: The compute nodes that are excluded from the list of auto scaling nodes. Separate multiple compute nodes with commas (,). If you want to retain a compute node, you can set the node as an exceptional node. Then, the node is not released if it is idle.
+     */
+    public excludeNodes: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property extraNodesGrowRatio: The percentage of extra compute nodes.
+     * Default value: 0
+     */
+    public extraNodesGrowRatio: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property growIntervalInMinutes: The interval between two consecutive rounds of scale-out. Unit: minutes.
+     * Default value: 2
+     */
+    public growIntervalInMinutes: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property growRatio: The percentage of each round of scale-out.
+     * Default value: 100
+     */
+    public growRatio: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property growTimeoutInMinutes: The scale-out timeout period. Unit: minutes.
+     * Default value: 20
+     */
+    public growTimeoutInMinutes: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageId: The ID of the image.
+     * If you set both Queues.N.QueueImageId and ImageId, Queues.N.QueueImageId prevails.
+     * If you set Queues.N.QueueImageId or ImageId, the parameter that you set takes effect.
+     * If you leave both Queues.N.QueueImageId and ImageId empty, the image that was specified when you created the cluster or the last time when you scaled out the cluster is used by default.
+     */
+    public imageId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
+     * Default value: 100
+     */
+    public maxNodesInCluster: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property queues:
+     */
+    public queues: Array<RosAutoScaleConfig.QueuesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property shrinkIdleTimes: The number of consecutive times that a compute node is idle during the resource scale-in check.
+     * Default value: 3
+     */
+    public shrinkIdleTimes: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in. Unit: minutes.
+     * Default value: 2
+     */
+    public shrinkIntervalInMinutes: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property spotPriceLimit: The maximum hourly price of the compute nodes. The value can be accurate to three decimal places. The parameter takes effect only when SpotStrategy is set to SpotWithPriceLimit.
+     */
+    public spotPriceLimit: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property spotStrategy: The preemption policy of the compute nodes. Valid values:
+     * NoSpot: The compute nodes are pay-as-you-go instances.
+     * SpotWithPriceLimit: The compute nodes are preemptible instances that have a user-defined maximum hourly price.
+     * SpotAsPriceGo: The compute nodes are preemptible instances for which the market price at the time of purchase is used as the bid price.
+     * Default value: NoSpot
+     */
+    public spotStrategy: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::EHPC::AutoScaleConfig`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAutoScaleConfigProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAutoScaleConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClusterId = this.getAtt('ClusterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterId = props.clusterId;
+        this.enableAutoGrow = props.enableAutoGrow;
+        this.enableAutoShrink = props.enableAutoShrink;
+        this.excludeNodes = props.excludeNodes;
+        this.extraNodesGrowRatio = props.extraNodesGrowRatio;
+        this.growIntervalInMinutes = props.growIntervalInMinutes;
+        this.growRatio = props.growRatio;
+        this.growTimeoutInMinutes = props.growTimeoutInMinutes;
+        this.imageId = props.imageId;
+        this.maxNodesInCluster = props.maxNodesInCluster;
+        this.queues = props.queues;
+        this.shrinkIdleTimes = props.shrinkIdleTimes;
+        this.shrinkIntervalInMinutes = props.shrinkIntervalInMinutes;
+        this.spotPriceLimit = props.spotPriceLimit;
+        this.spotStrategy = props.spotStrategy;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterId: this.clusterId,
+            enableAutoGrow: this.enableAutoGrow,
+            enableAutoShrink: this.enableAutoShrink,
+            excludeNodes: this.excludeNodes,
+            extraNodesGrowRatio: this.extraNodesGrowRatio,
+            growIntervalInMinutes: this.growIntervalInMinutes,
+            growRatio: this.growRatio,
+            growTimeoutInMinutes: this.growTimeoutInMinutes,
+            imageId: this.imageId,
+            maxNodesInCluster: this.maxNodesInCluster,
+            queues: this.queues,
+            shrinkIdleTimes: this.shrinkIdleTimes,
+            shrinkIntervalInMinutes: this.shrinkIntervalInMinutes,
+            spotPriceLimit: this.spotPriceLimit,
+            spotStrategy: this.spotStrategy,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAutoScaleConfigPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAutoScaleConfig {
+    /**
+     * @stability external
+     */
+    export interface DataDisksProperty {
+        /**
+         * @Property dataDiskKmsKeyId: The KMS key ID of the data disk.
+         */
+        readonly dataDiskKmsKeyId?: string | ros.IResolvable;
+        /**
+         * @Property dataDiskPerformanceLevel: The performance level of the ESSD used as the data disk. The parameter takes effect only when the Queues.N.DataDisks.M.DataDiskCategory parameter is set to cloud_essd. Valid values:
+     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     * Default value: PL1
+         */
+        readonly dataDiskPerformanceLevel?: string | ros.IResolvable;
+        /**
+         * @Property dataDiskEncrypted: Specifies whether to encrypt the data disk.
+         */
+        readonly dataDiskEncrypted?: boolean | ros.IResolvable;
+        /**
+         * @Property dataDiskDeleteWithInstance: Specifies whether the data disk is released when the node is released.
+         */
+        readonly dataDiskDeleteWithInstance?: boolean | ros.IResolvable;
+        /**
+         * @Property dataDiskSize: The size of the data disk. Unit: GB.
+     * Default value: 40
+         */
+        readonly dataDiskSize?: number | ros.IResolvable;
+        /**
+         * @Property dataDiskCategory: The type of the data disk. Valid values:
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: SSD.
+     * cloud_essd: ESSD.
+     * Default value: cloud_efficiency
+         */
+        readonly dataDiskCategory?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DataDisksProperty`
+ *
+ * @param properties - the TypeScript properties of a `DataDisksProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoScaleConfig_DataDisksPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dataDiskKmsKeyId', ros.validateString)(properties.dataDiskKmsKeyId));
+    errors.collect(ros.propertyValidator('dataDiskPerformanceLevel', ros.validateString)(properties.dataDiskPerformanceLevel));
+    errors.collect(ros.propertyValidator('dataDiskEncrypted', ros.validateBoolean)(properties.dataDiskEncrypted));
+    errors.collect(ros.propertyValidator('dataDiskDeleteWithInstance', ros.validateBoolean)(properties.dataDiskDeleteWithInstance));
+    if(properties.dataDiskSize && (typeof properties.dataDiskSize) !== 'object') {
+        errors.collect(ros.propertyValidator('dataDiskSize', ros.validateRange)({
+            data: properties.dataDiskSize,
+            min: 40,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dataDiskSize', ros.validateNumber)(properties.dataDiskSize));
+    errors.collect(ros.propertyValidator('dataDiskCategory', ros.validateString)(properties.dataDiskCategory));
+    return errors.wrap('supplied properties not correct for "DataDisksProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::AutoScaleConfig.DataDisks` resource
+ *
+ * @param properties - the TypeScript properties of a `DataDisksProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::AutoScaleConfig.DataDisks` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoScaleConfigDataDisksPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAutoScaleConfig_DataDisksPropertyValidator(properties).assertSuccess();
+    return {
+      DataDiskKMSKeyId: ros.stringToRosTemplate(properties.dataDiskKmsKeyId),
+      DataDiskPerformanceLevel: ros.stringToRosTemplate(properties.dataDiskPerformanceLevel),
+      DataDiskEncrypted: ros.booleanToRosTemplate(properties.dataDiskEncrypted),
+      DataDiskDeleteWithInstance: ros.booleanToRosTemplate(properties.dataDiskDeleteWithInstance),
+      DataDiskSize: ros.numberToRosTemplate(properties.dataDiskSize),
+      DataDiskCategory: ros.stringToRosTemplate(properties.dataDiskCategory),
+    };
+}
+
+export namespace RosAutoScaleConfig {
+    /**
+     * @stability external
+     */
+    export interface InstanceTypesProperty {
+        /**
+         * @Property zoneId: The zone ID of the compute nodes that are automatically added in the queue belongs.
+         */
+        readonly zoneId: string | ros.IResolvable;
+        /**
+         * @Property vSwitchId: The vSwitch ID of the compute nodes that are automatically added in the queue.
+         */
+        readonly vSwitchId: string | ros.IResolvable;
+        /**
+         * @Property spotPriceLimit: The maximum hourly price of the compute nodes that are automatically added in the queue. The value can be accurate to three decimal places. The parameter takes effect only when Queues.N.InstanceTypes.M.SpotStrategy is set to SpotWithPriceLimit
+         */
+        readonly spotPriceLimit?: number | ros.IResolvable;
+        /**
+         * @Property instanceType: The instance type of the compute nodes that are automatically added in the queue.
+         */
+        readonly instanceType: string | ros.IResolvable;
+        /**
+         * @Property spotStrategy: The bidding method of the compute nodes that are automatically added in the queue. Valid values:
+     * NoSpot: The compute nodes are pay-as-you-go instances.
+     * SpotWithPriceLimit: The compute nodes are preemptible instances that have a user-defined maximum hourly price.
+     * SpotAsPriceGo: The compute nodes are preemptible instances for which the market price at the time of purchase is used as the bid price.
+     * Default value: NoSpot
+         */
+        readonly spotStrategy?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InstanceTypesProperty`
+ *
+ * @param properties - the TypeScript properties of a `InstanceTypesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoScaleConfig_InstanceTypesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateNumber)(properties.spotPriceLimit));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
+          data: properties.spotStrategy,
+          allowedValues: ["NoSpot","SpotWithPriceLimit","SpotAsPriceGo"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
+    return errors.wrap('supplied properties not correct for "InstanceTypesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::AutoScaleConfig.InstanceTypes` resource
+ *
+ * @param properties - the TypeScript properties of a `InstanceTypesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::AutoScaleConfig.InstanceTypes` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoScaleConfigInstanceTypesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAutoScaleConfig_InstanceTypesPropertyValidator(properties).assertSuccess();
+    return {
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      SpotPriceLimit: ros.numberToRosTemplate(properties.spotPriceLimit),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
+    };
+}
+
+export namespace RosAutoScaleConfig {
+    /**
+     * @stability external
+     */
+    export interface QueuesProperty {
+        /**
+         * @Property hostNameSuffix: The hostname suffix of the host that is used to perform scale-out for the queue. You can manage nodes that have a specified hostname suffix.
+         */
+        readonly hostNameSuffix?: string | ros.IResolvable;
+        /**
+         * @Property minNodesInQueue: The minimum number of the compute nodes that can be removed in the queue.
+     * Default value: 0
+         */
+        readonly minNodesInQueue?: number | ros.IResolvable;
+        /**
+         * @Property maxNodesInQueue: The maximum number of the compute nodes that can be added in the queue.
+     * Default value: 100
+         */
+        readonly maxNodesInQueue?: number | ros.IResolvable;
+        /**
+         * @Property enableAutoGrow: Specifies whether the queue enables auto scale-out. Valid values:
+     * true: enables auto scale-out.
+     * false: disables auto scale-out
+     * Default value: false
+         */
+        readonly enableAutoGrow?: boolean | ros.IResolvable;
+        /**
+         * @Property dataDisks: undefined
+         */
+        readonly dataDisks?: Array<RosAutoScaleConfig.DataDisksProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property systemDiskSize: The size of the system disk specified for the compute nodes that are added in the queue. Unit: GB.
+     * Default value: 40
+         */
+        readonly systemDiskSize?: number | ros.IResolvable;
+        /**
+         * @Property systemDiskLevel: The performance level of the system disk specified for the compute nodes that are added in the queue. Valid values:
+     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     * Default value: PL1
+         */
+        readonly systemDiskLevel?: string | ros.IResolvable;
+        /**
+         * @Property queueImageId: The image ID of the queue where scale-out is performed.
+     * If you set both Queues.N.QueueImageId and ImageId, Queues.N.QueueImageId prevails.
+     * If you set Queues.N.QueueImageId or ImageId, the parameter that you set takes effect.
+     * If you leave both Queues.N.QueueImageId and ImageId empty, the image that was specified when you created the cluster or the last time when you scaled out the cluster is used by default.
+         */
+        readonly queueImageId?: string | ros.IResolvable;
+        /**
+         * @Property minNodesPerCycle: The minimum number of compute nodes that can be added in each round of scale-out.
+     * Default value: 1
+         */
+        readonly minNodesPerCycle?: number | ros.IResolvable;
+        /**
+         * @Property maxNodesPerCycle: The maximum number of compute nodes that can be added in each round of scale-out.
+     * Default value: 0
+         */
+        readonly maxNodesPerCycle?: number | ros.IResolvable;
+        /**
+         * @Property enableAutoShrink: Specifies whether the queue enables auto scale-in. Valid values:
+     * true: enables auto scale-in.
+     * false: disables auto scale-in
+     * Default value: false
+         */
+        readonly enableAutoShrink?: boolean | ros.IResolvable;
+        /**
+         * @Property systemDiskCategory: The type of the system disk specified for the compute nodes that are added in the queue. Valid values:
+     * cloud_efficiency: ultra disk.
+     * cloud_ssd: SSD.
+     * cloud_essd: ESSD.
+     * Default value: cloud_efficiency
+         */
+        readonly systemDiskCategory?: string | ros.IResolvable;
+        /**
+         * @Property hostNamePrefix: The hostname prefix of the host that is used to perform scale-out for the queue. You can manage compute nodes that have a specified hostname prefix.
+         */
+        readonly hostNamePrefix?: string | ros.IResolvable;
+        /**
+         * @Property spotPriceLimit: The maximum hourly price of the compute nodes that are automatically added in the queue. The value can be accurate to three decimal places. The parameter takes effect only when Queues.N.SpotStrategy is set to SpotWithPriceLimit.
+         */
+        readonly spotPriceLimit?: number | ros.IResolvable;
+        /**
+         * @Property instanceTypes: undefined
+         */
+        readonly instanceTypes?: Array<RosAutoScaleConfig.InstanceTypesProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property instanceType: The instance type of the compute nodes that are automatically added in the queue.
+         */
+        readonly instanceType?: string | ros.IResolvable;
+        /**
+         * @Property queueName: The name of the queue.
+         */
+        readonly queueName?: string | ros.IResolvable;
+        /**
+         * @Property spotStrategy: The bidding method of the compute nodes that are automatically added in the queue. Valid values:
+     * NoSpot: The compute nodes are pay-as-you-go instances.
+     * SpotWithPriceLimit: The compute nodes are preemptible instances that have a user-defined maximum hourly price.
+     * SpotAsPriceGo: The compute nodes are preemptible instances for which the market price at the time of purchase is used as the bid price.
+     * Default value: NoSpot
+         */
+        readonly spotStrategy?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `QueuesProperty`
+ *
+ * @param properties - the TypeScript properties of a `QueuesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoScaleConfig_QueuesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('hostNameSuffix', ros.validateString)(properties.hostNameSuffix));
+    if(properties.minNodesInQueue && (typeof properties.minNodesInQueue) !== 'object') {
+        errors.collect(ros.propertyValidator('minNodesInQueue', ros.validateRange)({
+            data: properties.minNodesInQueue,
+            min: 0,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('minNodesInQueue', ros.validateNumber)(properties.minNodesInQueue));
+    if(properties.maxNodesInQueue && (typeof properties.maxNodesInQueue) !== 'object') {
+        errors.collect(ros.propertyValidator('maxNodesInQueue', ros.validateRange)({
+            data: properties.maxNodesInQueue,
+            min: 0,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxNodesInQueue', ros.validateNumber)(properties.maxNodesInQueue));
+    errors.collect(ros.propertyValidator('enableAutoGrow', ros.validateBoolean)(properties.enableAutoGrow));
+    if(properties.dataDisks && (Array.isArray(properties.dataDisks) || (typeof properties.dataDisks) === 'string')) {
+        errors.collect(ros.propertyValidator('dataDisks', ros.validateLength)({
+            data: properties.dataDisks.length,
+            min: undefined,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dataDisks', ros.listValidator(RosAutoScaleConfig_DataDisksPropertyValidator))(properties.dataDisks));
+    if(properties.systemDiskSize && (typeof properties.systemDiskSize) !== 'object') {
+        errors.collect(ros.propertyValidator('systemDiskSize', ros.validateRange)({
+            data: properties.systemDiskSize,
+            min: 40,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('systemDiskLevel', ros.validateString)(properties.systemDiskLevel));
+    errors.collect(ros.propertyValidator('queueImageId', ros.validateString)(properties.queueImageId));
+    if(properties.minNodesPerCycle && (typeof properties.minNodesPerCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('minNodesPerCycle', ros.validateRange)({
+            data: properties.minNodesPerCycle,
+            min: 1,
+            max: 99,
+          }));
+    }
+    errors.collect(ros.propertyValidator('minNodesPerCycle', ros.validateNumber)(properties.minNodesPerCycle));
+    if(properties.maxNodesPerCycle && (typeof properties.maxNodesPerCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('maxNodesPerCycle', ros.validateRange)({
+            data: properties.maxNodesPerCycle,
+            min: 0,
+            max: 99,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxNodesPerCycle', ros.validateNumber)(properties.maxNodesPerCycle));
+    errors.collect(ros.propertyValidator('enableAutoShrink', ros.validateBoolean)(properties.enableAutoShrink));
+    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    errors.collect(ros.propertyValidator('hostNamePrefix', ros.validateString)(properties.hostNamePrefix));
+    errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateNumber)(properties.spotPriceLimit));
+    if(properties.instanceTypes && (Array.isArray(properties.instanceTypes) || (typeof properties.instanceTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceTypes', ros.validateLength)({
+            data: properties.instanceTypes.length,
+            min: undefined,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(RosAutoScaleConfig_InstanceTypesPropertyValidator))(properties.instanceTypes));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('queueName', ros.validateString)(properties.queueName));
+    if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
+          data: properties.spotStrategy,
+          allowedValues: ["NoSpot","SpotWithPriceLimit","SpotAsPriceGo"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
+    return errors.wrap('supplied properties not correct for "QueuesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::AutoScaleConfig.Queues` resource
+ *
+ * @param properties - the TypeScript properties of a `QueuesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::AutoScaleConfig.Queues` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoScaleConfigQueuesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAutoScaleConfig_QueuesPropertyValidator(properties).assertSuccess();
+    return {
+      HostNameSuffix: ros.stringToRosTemplate(properties.hostNameSuffix),
+      MinNodesInQueue: ros.numberToRosTemplate(properties.minNodesInQueue),
+      MaxNodesInQueue: ros.numberToRosTemplate(properties.maxNodesInQueue),
+      EnableAutoGrow: ros.booleanToRosTemplate(properties.enableAutoGrow),
+      DataDisks: ros.listMapper(rosAutoScaleConfigDataDisksPropertyToRosTemplate)(properties.dataDisks),
+      SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
+      SystemDiskLevel: ros.stringToRosTemplate(properties.systemDiskLevel),
+      QueueImageId: ros.stringToRosTemplate(properties.queueImageId),
+      MinNodesPerCycle: ros.numberToRosTemplate(properties.minNodesPerCycle),
+      MaxNodesPerCycle: ros.numberToRosTemplate(properties.maxNodesPerCycle),
+      EnableAutoShrink: ros.booleanToRosTemplate(properties.enableAutoShrink),
+      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
+      HostNamePrefix: ros.stringToRosTemplate(properties.hostNamePrefix),
+      SpotPriceLimit: ros.numberToRosTemplate(properties.spotPriceLimit),
+      InstanceTypes: ros.listMapper(rosAutoScaleConfigInstanceTypesPropertyToRosTemplate)(properties.instanceTypes),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      QueueName: ros.stringToRosTemplate(properties.queueName),
+      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::EHPC::Cluster`
  */
 export interface RosClusterProps {
@@ -429,6 +1215,12 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('haEnable', ros.validateBoolean)(properties.haEnable));
     errors.collect(ros.propertyValidator('osTag', ros.requiredValidator)(properties.osTag));
     errors.collect(ros.propertyValidator('osTag', ros.validateString)(properties.osTag));
+    if(properties.ecsChargeType && (typeof properties.ecsChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('ecsChargeType', ros.validateAllowedValues)({
+          data: properties.ecsChargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+        }));
+    }
     errors.collect(ros.propertyValidator('ecsChargeType', ros.validateString)(properties.ecsChargeType));
     return errors.wrap('supplied properties not correct for "RosClusterProps"');
 }

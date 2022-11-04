@@ -100,8 +100,8 @@ export class QosCar extends ros.Resource {
         const rosQosCar = new RosQosCar(this, id,  {
             minBandwidthAbs: props.minBandwidthAbs,
             description: props.description,
-            maxBandwidthPercent: props.maxBandwidthPercent,
             priority: props.priority,
+            maxBandwidthPercent: props.maxBandwidthPercent,
             maxBandwidthAbs: props.maxBandwidthAbs,
             qosId: props.qosId,
             percentSourceType: props.percentSourceType,

@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _autoPay;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoPay: Automatic Payment. Default is false.
+        /// <strong>Property</strong>: autoPay: Automatic Payment. Default is true.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -186,8 +186,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 
         /// <remarks>
         /// <strong>Property</strong>: autoPay: Whether to automatically pay the bill. Valid value:
-        /// true
-        /// false (Default)
+        /// true (default)
+        /// false
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

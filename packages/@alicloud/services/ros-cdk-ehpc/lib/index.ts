@@ -1,3 +1,4 @@
+export * from './autoscaleconfig';
 export * from './cluster';
 
 // ALIYUN::EHPC Resources:

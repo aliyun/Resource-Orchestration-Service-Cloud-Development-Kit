@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::NatGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.860Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:44.091Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NatGateway")
 public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
 
@@ -148,7 +148,7 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property autoPay: Specifies whether to enable automatic payment.
          * <p>
-         * Default is false.
+         * Default is true.
          * <p>
          * @return {@code this}
          * @param autoPay Property autoPay: Specifies whether to enable automatic payment. This parameter is required.
@@ -160,7 +160,7 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property autoPay: Specifies whether to enable automatic payment.
          * <p>
-         * Default is false.
+         * Default is true.
          * <p>
          * @return {@code this}
          * @param autoPay Property autoPay: Specifies whether to enable automatic payment. This parameter is required.

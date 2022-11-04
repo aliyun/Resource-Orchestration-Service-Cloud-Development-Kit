@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * A ROS resource type:  `ALIYUN::NAS::FileSystem`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.961Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.153Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.FileSystem")
 public class FileSystem extends com.aliyun.ros.cdk.core.Resource {
 
@@ -92,7 +92,7 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property protocolType: Type of protocol used.
          * <p>
-         * Currently includes the NFS type and the SMB type
+         * Valid values: NFS, SMB, cpfs.
          * <p>
          * @return {@code this}
          * @param protocolType Property protocolType: Type of protocol used. This parameter is required.
@@ -104,7 +104,7 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property protocolType: Type of protocol used.
          * <p>
-         * Currently includes the NFS type and the SMB type
+         * Valid values: NFS, SMB, cpfs.
          * <p>
          * @return {@code this}
          * @param protocolType Property protocolType: Type of protocol used. This parameter is required.
@@ -115,24 +115,30 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property storageType: The file system type.
+         * Property storageType: The storage type of the file System.
          * <p>
-         * Currently includes the Performance type and the Capacity type
+         * Valid values:
+         * Performance、Capacity(Available when the file_system_type is standard)
+         * standard、advance(Available when the file_system_type is extreme)
+         * advance_100、advance_200(Available when the file_system_type is cpfs)
          * <p>
          * @return {@code this}
-         * @param storageType Property storageType: The file system type. This parameter is required.
+         * @param storageType Property storageType: The storage type of the file System. This parameter is required.
          */
         public Builder storageType(final java.lang.String storageType) {
             this.props.storageType(storageType);
             return this;
         }
         /**
-         * Property storageType: The file system type.
+         * Property storageType: The storage type of the file System.
          * <p>
-         * Currently includes the Performance type and the Capacity type
+         * Valid values:
+         * Performance、Capacity(Available when the file_system_type is standard)
+         * standard、advance(Available when the file_system_type is extreme)
+         * advance_100、advance_200(Available when the file_system_type is cpfs)
          * <p>
          * @return {@code this}
-         * @param storageType Property storageType: The file system type. This parameter is required.
+         * @param storageType Property storageType: The storage type of the file System. This parameter is required.
          */
         public Builder storageType(final com.aliyun.ros.cdk.core.IResolvable storageType) {
             this.props.storageType(storageType);
@@ -315,7 +321,7 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property fileSystemType: File system type.
          * <p>
-         * Allowed values: standard, extreme, cpfs
+         * Allowed values: standard(default), extreme, cpfs
          * <p>
          * @return {@code this}
          * @param fileSystemType Property fileSystemType: File system type. This parameter is required.
@@ -327,7 +333,7 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property fileSystemType: File system type.
          * <p>
-         * Allowed values: standard, extreme, cpfs
+         * Allowed values: standard(default), extreme, cpfs
          * <p>
          * @return {@code this}
          * @param fileSystemType Property fileSystemType: File system type. This parameter is required.

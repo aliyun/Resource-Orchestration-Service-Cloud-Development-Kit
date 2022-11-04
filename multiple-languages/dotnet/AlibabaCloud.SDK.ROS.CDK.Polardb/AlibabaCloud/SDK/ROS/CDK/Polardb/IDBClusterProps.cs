@@ -50,6 +50,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             get;
         }
 
+        /// <summary>Property allowShutDown: Whether to turn on No activity pause.</summary>
+        /// <remarks>
+        /// The default is false.
+        /// </remarks>
+        [JsiiProperty(name: "allowShutDown", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AllowShutDown
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property autoRenewPeriod: Set the cluster auto renewal time.</summary>
         /// <remarks>
         /// Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
@@ -119,7 +133,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
         /// <summary>Property creationCategory: Cluster series.</summary>
         /// <remarks>
-        /// The value could be Normal (standard version).
+        /// The value could be Normal (standard version), Basic and ArchiveNormal.
         /// </remarks>
         [JsiiProperty(name: "creationCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -300,6 +314,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
+        /// <summary>Property scaleMax: Maximum limit of single-node scaling.</summary>
+        [JsiiProperty(name: "scaleMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ScaleMax
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property scaleMin: Minimum limit of single-node scaling.</summary>
+        [JsiiProperty(name: "scaleMin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ScaleMin
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.</summary>
+        [JsiiProperty(name: "scaleRoNumMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ScaleRoNumMax
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.</summary>
+        [JsiiProperty(name: "scaleRoNumMin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ScaleRoNumMin
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property securityGroupIds: The ID of the security group.</summary>
         /// <remarks>
         /// You can add up to three security groups to a cluster.
@@ -318,6 +376,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SecurityIpList
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property serverlessType: Serverless type.</summary>
+        [JsiiProperty(name: "serverlessType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ServerlessType
         {
             get
             {
@@ -458,6 +527,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property allowShutDown: Whether to turn on No activity pause.</summary>
+            /// <remarks>
+            /// The default is false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "allowShutDown", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AllowShutDown
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property autoRenewPeriod: Set the cluster auto renewal time.</summary>
             /// <remarks>
             /// Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
@@ -515,7 +595,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
             /// <summary>Property creationCategory: Cluster series.</summary>
             /// <remarks>
-            /// The value could be Normal (standard version).
+            /// The value could be Normal (standard version), Basic and ArchiveNormal.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "creationCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -660,6 +740,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property scaleMax: Maximum limit of single-node scaling.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "scaleMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ScaleMax
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property scaleMin: Minimum limit of single-node scaling.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "scaleMin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ScaleMin
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "scaleRoNumMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ScaleRoNumMax
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "scaleRoNumMin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ScaleRoNumMin
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property securityGroupIds: The ID of the security group.</summary>
             /// <remarks>
             /// You can add up to three security groups to a cluster.
@@ -675,6 +787,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             [JsiiOptional]
             [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityIpList
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property serverlessType: Serverless type.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "serverlessType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ServerlessType
             {
                 get => GetInstanceProperty<object?>();
             }

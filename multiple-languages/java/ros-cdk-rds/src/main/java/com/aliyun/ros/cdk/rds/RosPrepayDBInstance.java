@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS template type:  `ALIYUN::RDS::PrepayDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.363Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.545Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosPrepayDBInstance")
 public class RosPrepayDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -1062,6 +1062,24 @@ public class RosPrepayDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getServerlessConfig() {
+        return software.amazon.jsii.Kernel.get(this, "serverlessConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setServerlessConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "serverlessConfig", value);
+    }
+
+    /**
+     */
+    public void setServerlessConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.rds.RosPrepayDBInstance.ServerlessConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "serverlessConfig", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSlaveZoneIds() {
         return software.amazon.jsii.Kernel.get(this, "slaveZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -1452,6 +1470,256 @@ public class RosPrepayDBInstance extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.characterSetName.hashCode();
                 result = 31 * result + (this.dbName.hashCode());
                 result = 31 * result + (this.dbDescription != null ? this.dbDescription.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosPrepayDBInstance.ServerlessConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(ServerlessConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ServerlessConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getMaxCapacity();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getMinCapacity();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPause() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSwitchForce() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ServerlessConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ServerlessConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ServerlessConfigProperty> {
+            java.lang.Object maxCapacity;
+            java.lang.Object minCapacity;
+            java.lang.Object autoPause;
+            java.lang.Object switchForce;
+
+            /**
+             * Sets the value of {@link ServerlessConfigProperty#getMaxCapacity}
+             * @param maxCapacity the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxCapacity(java.lang.Number maxCapacity) {
+                this.maxCapacity = maxCapacity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerlessConfigProperty#getMaxCapacity}
+             * @param maxCapacity the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxCapacity(com.aliyun.ros.cdk.core.IResolvable maxCapacity) {
+                this.maxCapacity = maxCapacity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerlessConfigProperty#getMinCapacity}
+             * @param minCapacity the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder minCapacity(java.lang.Number minCapacity) {
+                this.minCapacity = minCapacity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerlessConfigProperty#getMinCapacity}
+             * @param minCapacity the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder minCapacity(com.aliyun.ros.cdk.core.IResolvable minCapacity) {
+                this.minCapacity = minCapacity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerlessConfigProperty#getAutoPause}
+             * @param autoPause the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoPause(java.lang.Boolean autoPause) {
+                this.autoPause = autoPause;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerlessConfigProperty#getAutoPause}
+             * @param autoPause the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoPause(com.aliyun.ros.cdk.core.IResolvable autoPause) {
+                this.autoPause = autoPause;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerlessConfigProperty#getSwitchForce}
+             * @param switchForce the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder switchForce(java.lang.Boolean switchForce) {
+                this.switchForce = switchForce;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerlessConfigProperty#getSwitchForce}
+             * @param switchForce the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder switchForce(com.aliyun.ros.cdk.core.IResolvable switchForce) {
+                this.switchForce = switchForce;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ServerlessConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ServerlessConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ServerlessConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ServerlessConfigProperty {
+            private final java.lang.Object maxCapacity;
+            private final java.lang.Object minCapacity;
+            private final java.lang.Object autoPause;
+            private final java.lang.Object switchForce;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.maxCapacity = software.amazon.jsii.Kernel.get(this, "maxCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.minCapacity = software.amazon.jsii.Kernel.get(this, "minCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.autoPause = software.amazon.jsii.Kernel.get(this, "autoPause", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.switchForce = software.amazon.jsii.Kernel.get(this, "switchForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.maxCapacity = java.util.Objects.requireNonNull(builder.maxCapacity, "maxCapacity is required");
+                this.minCapacity = java.util.Objects.requireNonNull(builder.minCapacity, "minCapacity is required");
+                this.autoPause = builder.autoPause;
+                this.switchForce = builder.switchForce;
+            }
+
+            @Override
+            public final java.lang.Object getMaxCapacity() {
+                return this.maxCapacity;
+            }
+
+            @Override
+            public final java.lang.Object getMinCapacity() {
+                return this.minCapacity;
+            }
+
+            @Override
+            public final java.lang.Object getAutoPause() {
+                return this.autoPause;
+            }
+
+            @Override
+            public final java.lang.Object getSwitchForce() {
+                return this.switchForce;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("maxCapacity", om.valueToTree(this.getMaxCapacity()));
+                data.set("minCapacity", om.valueToTree(this.getMinCapacity()));
+                if (this.getAutoPause() != null) {
+                    data.set("autoPause", om.valueToTree(this.getAutoPause()));
+                }
+                if (this.getSwitchForce() != null) {
+                    data.set("switchForce", om.valueToTree(this.getSwitchForce()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-rds.RosPrepayDBInstance.ServerlessConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ServerlessConfigProperty.Jsii$Proxy that = (ServerlessConfigProperty.Jsii$Proxy) o;
+
+                if (!maxCapacity.equals(that.maxCapacity)) return false;
+                if (!minCapacity.equals(that.minCapacity)) return false;
+                if (this.autoPause != null ? !this.autoPause.equals(that.autoPause) : that.autoPause != null) return false;
+                return this.switchForce != null ? this.switchForce.equals(that.switchForce) : that.switchForce == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.maxCapacity.hashCode();
+                result = 31 * result + (this.minCapacity.hashCode());
+                result = 31 * result + (this.autoPause != null ? this.autoPause.hashCode() : 0);
+                result = 31 * result + (this.switchForce != null ? this.switchForce.hashCode() : 0);
                 return result;
             }
         }
@@ -2364,6 +2632,23 @@ public class RosPrepayDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param serverlessConfig This parameter is required.
+         */
+        public Builder serverlessConfig(final com.aliyun.ros.cdk.core.IResolvable serverlessConfig) {
+            this.props.serverlessConfig(serverlessConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serverlessConfig This parameter is required.
+         */
+        public Builder serverlessConfig(final com.aliyun.ros.cdk.rds.RosPrepayDBInstance.ServerlessConfigProperty serverlessConfig) {
+            this.props.serverlessConfig(serverlessConfig);
             return this;
         }
 

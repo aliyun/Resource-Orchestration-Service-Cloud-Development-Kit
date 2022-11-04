@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenBandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.198Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.231Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthPackageProps.Jsii$Proxy.class)
 public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,8 +33,8 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
      * Property autoPay: Whether to automatically pay the bill.
      * <p>
      * Valid value:
-     * true
-     * false (Default)
+     * true (default)
+     * false
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -201,8 +201,8 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
          * Sets the value of {@link CenBandwidthPackageProps#getAutoPay}
          * @param autoPay Property autoPay: Whether to automatically pay the bill.
          *                Valid value:
-         *                true
-         *                false (Default)
+         *                true (default)
+         *                false
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -214,8 +214,8 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
          * Sets the value of {@link CenBandwidthPackageProps#getAutoPay}
          * @param autoPay Property autoPay: Whether to automatically pay the bill.
          *                Valid value:
-         *                true
-         *                false (Default)
+         *                true (default)
+         *                false
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS resource type:  `ALIYUN::ALB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:08.893Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:40.907Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -309,7 +309,7 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property idleTimeout: The timeout period of idle connections.
          * <p>
-         * Valid values: 1 to 60. Unit: seconds.
+         * Valid values: 1 to 180. Unit: seconds.
          * Default value: 15.
          * If no request is received within the specified timeout period, ALB closes the connection.
          * ALB recreates the connection when a new connection request is received.
@@ -324,7 +324,7 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property idleTimeout: The timeout period of idle connections.
          * <p>
-         * Valid values: 1 to 60. Unit: seconds.
+         * Valid values: 1 to 180. Unit: seconds.
          * Default value: 15.
          * If no request is received within the specified timeout period, ALB closes the connection.
          * ALB recreates the connection when a new connection request is received.

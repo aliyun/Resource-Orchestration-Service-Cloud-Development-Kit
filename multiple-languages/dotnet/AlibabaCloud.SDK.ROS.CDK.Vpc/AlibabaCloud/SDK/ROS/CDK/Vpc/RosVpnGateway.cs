@@ -192,7 +192,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
         /// true: Automatically pays the bill for the VPN gateway.
-        /// false (default): Does not automatically pay the bill for the VPN gateway.
+        /// false: Does not automatically pay the bill for the VPN gateway.
+        /// Default true.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

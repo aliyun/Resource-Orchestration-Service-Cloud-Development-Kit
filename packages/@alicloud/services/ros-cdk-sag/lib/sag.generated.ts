@@ -858,7 +858,7 @@ export class RosAppUser extends ros.RosResource {
     public readonly attrSmartAgId: ros.IResolvable;
 
     /**
-     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7f9e467f45d0>
+     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7ff3cab53810>
      */
     public readonly attrUserName: ros.IResolvable;
 
@@ -1596,7 +1596,6 @@ function RosQosCarPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('minBandwidthAbs', ros.validateNumber)(properties.minBandwidthAbs));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('maxBandwidthPercent', ros.validateNumber)(properties.maxBandwidthPercent));
     errors.collect(ros.propertyValidator('priority', ros.requiredValidator)(properties.priority));
     if(properties.priority && (typeof properties.priority) !== 'object') {
         errors.collect(ros.propertyValidator('priority', ros.validateRange)({
@@ -1606,6 +1605,7 @@ function RosQosCarPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    errors.collect(ros.propertyValidator('maxBandwidthPercent', ros.validateNumber)(properties.maxBandwidthPercent));
     errors.collect(ros.propertyValidator('maxBandwidthAbs', ros.validateNumber)(properties.maxBandwidthAbs));
     errors.collect(ros.propertyValidator('qosId', ros.requiredValidator)(properties.qosId));
     errors.collect(ros.propertyValidator('qosId', ros.validateString)(properties.qosId));

@@ -19,9 +19,9 @@ export interface BandwidthPackageProps {
     readonly type: string | ros.IResolvable;
 
     /**
-     * Property autoPay: The AutoPay of the bandwidth
+     * Property autoPay: Specifies whether to enable automatic payment.
      */
-    readonly autoPay?: string | ros.IResolvable;
+    readonly autoPay?: boolean | ros.IResolvable;
 
     /**
      * Property autoUseCoupon: The AutoUseCoupon  of the bandwidth
@@ -165,7 +165,7 @@ export class BandwidthPackage extends ros.Resource {
             bandwidth: props.bandwidth,
             ratio: props.ratio,
             duration: props.duration,
-            autoPay: props.autoPay,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             billingType: props.billingType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBandwidthPackage;

@@ -22,8 +22,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             get;
         }
 
-        /// <summary>Property autoPay: The AutoPay of the bandwidth.</summary>
-        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        /// <summary>Property autoPay: Specifies whether to enable automatic payment.</summary>
+        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AutoPay
         {
@@ -154,9 +154,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property autoPay: The AutoPay of the bandwidth.</summary>
+            /// <summary>Property autoPay: Specifies whether to enable automatic payment.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AutoPay
             {
                 get => GetInstanceProperty<object?>();

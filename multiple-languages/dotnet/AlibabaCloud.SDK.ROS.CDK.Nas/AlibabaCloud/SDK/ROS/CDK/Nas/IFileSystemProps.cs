@@ -10,7 +10,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
     {
         /// <summary>Property protocolType: Type of protocol used.</summary>
         /// <remarks>
-        /// Currently includes the NFS type and the SMB type
+        /// Valid values: NFS, SMB, cpfs.
         /// </remarks>
         [JsiiProperty(name: "protocolType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ProtocolType
@@ -18,9 +18,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             get;
         }
 
-        /// <summary>Property storageType: The file system type.</summary>
+        /// <summary>Property storageType: The storage type of the file System.</summary>
         /// <remarks>
-        /// Currently includes the Performance type and the Capacity type
+        /// Valid values:
+        /// Performance、Capacity(Available when the file_system_type is standard)
+        /// standard、advance(Available when the file_system_type is extreme)
+        /// advance_100、advance_200(Available when the file_system_type is cpfs)
         /// </remarks>
         [JsiiProperty(name: "storageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object StorageType
@@ -125,7 +128,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 
         /// <summary>Property fileSystemType: File system type.</summary>
         /// <remarks>
-        /// Allowed values: standard, extreme, cpfs
+        /// Allowed values: standard(default), extreme, cpfs
         /// </remarks>
         [JsiiProperty(name: "fileSystemType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -205,7 +208,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 
             /// <summary>Property protocolType: Type of protocol used.</summary>
             /// <remarks>
-            /// Currently includes the NFS type and the SMB type
+            /// Valid values: NFS, SMB, cpfs.
             /// </remarks>
             [JsiiProperty(name: "protocolType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ProtocolType
@@ -213,9 +216,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property storageType: The file system type.</summary>
+            /// <summary>Property storageType: The storage type of the file System.</summary>
             /// <remarks>
-            /// Currently includes the Performance type and the Capacity type
+            /// Valid values:
+            /// Performance、Capacity(Available when the file_system_type is standard)
+            /// standard、advance(Available when the file_system_type is extreme)
+            /// advance_100、advance_200(Available when the file_system_type is cpfs)
             /// </remarks>
             [JsiiProperty(name: "storageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object StorageType
@@ -299,7 +305,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 
             /// <summary>Property fileSystemType: File system type.</summary>
             /// <remarks>
-            /// Allowed values: standard, extreme, cpfs
+            /// Allowed values: standard(default), extreme, cpfs
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "fileSystemType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -1,4 +1,6 @@
 @alicloud/ros-cdk-emr.Cluster=com.aliyun.ros.cdk.emr.Cluster
+@alicloud/ros-cdk-emr.Cluster2=com.aliyun.ros.cdk.emr.Cluster2
+@alicloud/ros-cdk-emr.Cluster2Props=com.aliyun.ros.cdk.emr.Cluster2Props
 @alicloud/ros-cdk-emr.ClusterProps=com.aliyun.ros.cdk.emr.ClusterProps
 @alicloud/ros-cdk-emr.ClusterServiceConfigs=com.aliyun.ros.cdk.emr.ClusterServiceConfigs
 @alicloud/ros-cdk-emr.ClusterServiceConfigsProps=com.aliyun.ros.cdk.emr.ClusterServiceConfigsProps
@@ -8,6 +10,20 @@
 @alicloud/ros-cdk-emr.RosCluster.HostGroupProperty=com.aliyun.ros.cdk.emr.RosCluster$HostGroupProperty
 @alicloud/ros-cdk-emr.RosCluster.TagsProperty=com.aliyun.ros.cdk.emr.RosCluster$TagsProperty
 @alicloud/ros-cdk-emr.RosCluster.UserInfoProperty=com.aliyun.ros.cdk.emr.RosCluster$UserInfoProperty
+@alicloud/ros-cdk-emr.RosCluster2=com.aliyun.ros.cdk.emr.RosCluster2
+@alicloud/ros-cdk-emr.RosCluster2.ApplicationConfigsProperty=com.aliyun.ros.cdk.emr.RosCluster2$ApplicationConfigsProperty
+@alicloud/ros-cdk-emr.RosCluster2.ApplicationsProperty=com.aliyun.ros.cdk.emr.RosCluster2$ApplicationsProperty
+@alicloud/ros-cdk-emr.RosCluster2.BootstrapScriptsProperty=com.aliyun.ros.cdk.emr.RosCluster2$BootstrapScriptsProperty
+@alicloud/ros-cdk-emr.RosCluster2.CostOptimizedConfigProperty=com.aliyun.ros.cdk.emr.RosCluster2$CostOptimizedConfigProperty
+@alicloud/ros-cdk-emr.RosCluster2.DataDisksProperty=com.aliyun.ros.cdk.emr.RosCluster2$DataDisksProperty
+@alicloud/ros-cdk-emr.RosCluster2.NodeAttributesProperty=com.aliyun.ros.cdk.emr.RosCluster2$NodeAttributesProperty
+@alicloud/ros-cdk-emr.RosCluster2.NodeGroupsProperty=com.aliyun.ros.cdk.emr.RosCluster2$NodeGroupsProperty
+@alicloud/ros-cdk-emr.RosCluster2.NodeSelectorProperty=com.aliyun.ros.cdk.emr.RosCluster2$NodeSelectorProperty
+@alicloud/ros-cdk-emr.RosCluster2.SpotBidPricesProperty=com.aliyun.ros.cdk.emr.RosCluster2$SpotBidPricesProperty
+@alicloud/ros-cdk-emr.RosCluster2.SubscriptionConfigProperty=com.aliyun.ros.cdk.emr.RosCluster2$SubscriptionConfigProperty
+@alicloud/ros-cdk-emr.RosCluster2.SystemDiskProperty=com.aliyun.ros.cdk.emr.RosCluster2$SystemDiskProperty
+@alicloud/ros-cdk-emr.RosCluster2.TagsProperty=com.aliyun.ros.cdk.emr.RosCluster2$TagsProperty
+@alicloud/ros-cdk-emr.RosCluster2Props=com.aliyun.ros.cdk.emr.RosCluster2Props
 @alicloud/ros-cdk-emr.RosClusterProps=com.aliyun.ros.cdk.emr.RosClusterProps
 @alicloud/ros-cdk-emr.RosClusterServiceConfigs=com.aliyun.ros.cdk.emr.RosClusterServiceConfigs
 @alicloud/ros-cdk-emr.RosClusterServiceConfigs.ServiceConfigsProperty=com.aliyun.ros.cdk.emr.RosClusterServiceConfigs$ServiceConfigsProperty

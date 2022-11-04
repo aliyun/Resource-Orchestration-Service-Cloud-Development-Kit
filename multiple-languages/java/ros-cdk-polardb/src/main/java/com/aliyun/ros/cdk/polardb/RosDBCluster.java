@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  `ALIYUN::POLARDB::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.108Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.295Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -179,6 +179,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPayType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "payType", java.util.Objects.requireNonNull(value, "payType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAllowShutDown() {
+        return software.amazon.jsii.Kernel.get(this, "allowShutDown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAllowShutDown(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "allowShutDown", value);
+    }
+
+    /**
+     */
+    public void setAllowShutDown(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "allowShutDown", value);
     }
 
     /**
@@ -471,6 +489,78 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScaleMax() {
+        return software.amazon.jsii.Kernel.get(this, "scaleMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setScaleMax(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "scaleMax", value);
+    }
+
+    /**
+     */
+    public void setScaleMax(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scaleMax", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScaleMin() {
+        return software.amazon.jsii.Kernel.get(this, "scaleMin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setScaleMin(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "scaleMin", value);
+    }
+
+    /**
+     */
+    public void setScaleMin(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scaleMin", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScaleRoNumMax() {
+        return software.amazon.jsii.Kernel.get(this, "scaleRoNumMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setScaleRoNumMax(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "scaleRoNumMax", value);
+    }
+
+    /**
+     */
+    public void setScaleRoNumMax(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scaleRoNumMax", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScaleRoNumMin() {
+        return software.amazon.jsii.Kernel.get(this, "scaleRoNumMin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setScaleRoNumMin(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "scaleRoNumMin", value);
+    }
+
+    /**
+     */
+    public void setScaleRoNumMin(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scaleRoNumMin", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
         return software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -519,6 +609,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSecurityIpList(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityIpList", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getServerlessType() {
+        return software.amazon.jsii.Kernel.get(this, "serverlessType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setServerlessType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "serverlessType", value);
+    }
+
+    /**
+     */
+    public void setServerlessType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "serverlessType", value);
     }
 
     /**
@@ -1059,6 +1167,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param allowShutDown This parameter is required.
+         */
+        public Builder allowShutDown(final java.lang.Boolean allowShutDown) {
+            this.props.allowShutDown(allowShutDown);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param allowShutDown This parameter is required.
+         */
+        public Builder allowShutDown(final com.aliyun.ros.cdk.core.IResolvable allowShutDown) {
+            this.props.allowShutDown(allowShutDown);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param autoRenewPeriod This parameter is required.
          */
         public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
@@ -1331,6 +1456,74 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param scaleMax This parameter is required.
+         */
+        public Builder scaleMax(final java.lang.Number scaleMax) {
+            this.props.scaleMax(scaleMax);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scaleMax This parameter is required.
+         */
+        public Builder scaleMax(final com.aliyun.ros.cdk.core.IResolvable scaleMax) {
+            this.props.scaleMax(scaleMax);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param scaleMin This parameter is required.
+         */
+        public Builder scaleMin(final java.lang.Number scaleMin) {
+            this.props.scaleMin(scaleMin);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scaleMin This parameter is required.
+         */
+        public Builder scaleMin(final com.aliyun.ros.cdk.core.IResolvable scaleMin) {
+            this.props.scaleMin(scaleMin);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param scaleRoNumMax This parameter is required.
+         */
+        public Builder scaleRoNumMax(final java.lang.Number scaleRoNumMax) {
+            this.props.scaleRoNumMax(scaleRoNumMax);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scaleRoNumMax This parameter is required.
+         */
+        public Builder scaleRoNumMax(final com.aliyun.ros.cdk.core.IResolvable scaleRoNumMax) {
+            this.props.scaleRoNumMax(scaleRoNumMax);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param scaleRoNumMin This parameter is required.
+         */
+        public Builder scaleRoNumMin(final java.lang.Number scaleRoNumMin) {
+            this.props.scaleRoNumMin(scaleRoNumMin);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scaleRoNumMin This parameter is required.
+         */
+        public Builder scaleRoNumMin(final com.aliyun.ros.cdk.core.IResolvable scaleRoNumMin) {
+            this.props.scaleRoNumMin(scaleRoNumMin);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param securityGroupIds This parameter is required.
          */
         public Builder securityGroupIds(final com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
@@ -1360,6 +1553,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.props.securityIpList(securityIpList);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param serverlessType This parameter is required.
+         */
+        public Builder serverlessType(final java.lang.String serverlessType) {
+            this.props.serverlessType(serverlessType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serverlessType This parameter is required.
+         */
+        public Builder serverlessType(final com.aliyun.ros.cdk.core.IResolvable serverlessType) {
+            this.props.serverlessType(serverlessType);
             return this;
         }
 

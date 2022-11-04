@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.115Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.302Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterProps.Jsii$Proxy.class)
 public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPayType();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAllowShutDown() {
+        return null;
+    }
 
     /**
      */
@@ -122,6 +128,30 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScaleMax() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScaleMin() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScaleRoNumMax() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScaleRoNumMin() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
         return null;
     }
@@ -129,6 +159,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpList() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServerlessType() {
         return null;
     }
 
@@ -182,6 +218,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object dbType;
         java.lang.Object dbVersion;
         java.lang.Object payType;
+        java.lang.Object allowShutDown;
         java.lang.Object autoRenewPeriod;
         java.lang.Object backupRetentionPolicyOnClusterDeletion;
         java.lang.Object cloneDataPoint;
@@ -198,8 +235,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object periodUnit;
         java.lang.Object renewalStatus;
         java.lang.Object resourceGroupId;
+        java.lang.Object scaleMax;
+        java.lang.Object scaleMin;
+        java.lang.Object scaleRoNumMax;
+        java.lang.Object scaleRoNumMin;
         java.lang.Object securityGroupIds;
         java.lang.Object securityIpList;
+        java.lang.Object serverlessType;
         java.lang.Object sourceResourceId;
         java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty> tags;
         java.lang.Object tdeStatus;
@@ -284,6 +326,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
             this.payType = payType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getAllowShutDown}
+         * @param allowShutDown the value to be set.
+         * @return {@code this}
+         */
+        public Builder allowShutDown(java.lang.Boolean allowShutDown) {
+            this.allowShutDown = allowShutDown;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getAllowShutDown}
+         * @param allowShutDown the value to be set.
+         * @return {@code this}
+         */
+        public Builder allowShutDown(com.aliyun.ros.cdk.core.IResolvable allowShutDown) {
+            this.allowShutDown = allowShutDown;
             return this;
         }
 
@@ -608,6 +670,86 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getScaleMax}
+         * @param scaleMax the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleMax(java.lang.Number scaleMax) {
+            this.scaleMax = scaleMax;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getScaleMax}
+         * @param scaleMax the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleMax(com.aliyun.ros.cdk.core.IResolvable scaleMax) {
+            this.scaleMax = scaleMax;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getScaleMin}
+         * @param scaleMin the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleMin(java.lang.Number scaleMin) {
+            this.scaleMin = scaleMin;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getScaleMin}
+         * @param scaleMin the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleMin(com.aliyun.ros.cdk.core.IResolvable scaleMin) {
+            this.scaleMin = scaleMin;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getScaleRoNumMax}
+         * @param scaleRoNumMax the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleRoNumMax(java.lang.Number scaleRoNumMax) {
+            this.scaleRoNumMax = scaleRoNumMax;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getScaleRoNumMax}
+         * @param scaleRoNumMax the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleRoNumMax(com.aliyun.ros.cdk.core.IResolvable scaleRoNumMax) {
+            this.scaleRoNumMax = scaleRoNumMax;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getScaleRoNumMin}
+         * @param scaleRoNumMin the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleRoNumMin(java.lang.Number scaleRoNumMin) {
+            this.scaleRoNumMin = scaleRoNumMin;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getScaleRoNumMin}
+         * @param scaleRoNumMin the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleRoNumMin(com.aliyun.ros.cdk.core.IResolvable scaleRoNumMin) {
+            this.scaleRoNumMin = scaleRoNumMin;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getSecurityGroupIds}
          * @param securityGroupIds the value to be set.
          * @return {@code this}
@@ -644,6 +786,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder securityIpList(com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.securityIpList = securityIpList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getServerlessType}
+         * @param serverlessType the value to be set.
+         * @return {@code this}
+         */
+        public Builder serverlessType(java.lang.String serverlessType) {
+            this.serverlessType = serverlessType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getServerlessType}
+         * @param serverlessType the value to be set.
+         * @return {@code this}
+         */
+        public Builder serverlessType(com.aliyun.ros.cdk.core.IResolvable serverlessType) {
+            this.serverlessType = serverlessType;
             return this;
         }
 
@@ -778,6 +940,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object dbType;
         private final java.lang.Object dbVersion;
         private final java.lang.Object payType;
+        private final java.lang.Object allowShutDown;
         private final java.lang.Object autoRenewPeriod;
         private final java.lang.Object backupRetentionPolicyOnClusterDeletion;
         private final java.lang.Object cloneDataPoint;
@@ -794,8 +957,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object periodUnit;
         private final java.lang.Object renewalStatus;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object scaleMax;
+        private final java.lang.Object scaleMin;
+        private final java.lang.Object scaleRoNumMax;
+        private final java.lang.Object scaleRoNumMin;
         private final java.lang.Object securityGroupIds;
         private final java.lang.Object securityIpList;
+        private final java.lang.Object serverlessType;
         private final java.lang.Object sourceResourceId;
         private final java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty> tags;
         private final java.lang.Object tdeStatus;
@@ -813,6 +981,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.dbType = software.amazon.jsii.Kernel.get(this, "dbType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbVersion = software.amazon.jsii.Kernel.get(this, "dbVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.allowShutDown = software.amazon.jsii.Kernel.get(this, "allowShutDown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backupRetentionPolicyOnClusterDeletion = software.amazon.jsii.Kernel.get(this, "backupRetentionPolicyOnClusterDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloneDataPoint = software.amazon.jsii.Kernel.get(this, "cloneDataPoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -829,8 +998,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.renewalStatus = software.amazon.jsii.Kernel.get(this, "renewalStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scaleMax = software.amazon.jsii.Kernel.get(this, "scaleMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scaleMin = software.amazon.jsii.Kernel.get(this, "scaleMin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scaleRoNumMax = software.amazon.jsii.Kernel.get(this, "scaleRoNumMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scaleRoNumMin = software.amazon.jsii.Kernel.get(this, "scaleRoNumMin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupIds = software.amazon.jsii.Kernel.get(this, "securityGroupIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serverlessType = software.amazon.jsii.Kernel.get(this, "serverlessType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceResourceId = software.amazon.jsii.Kernel.get(this, "sourceResourceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty.class)));
             this.tdeStatus = software.amazon.jsii.Kernel.get(this, "tdeStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -849,6 +1023,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.dbType = java.util.Objects.requireNonNull(builder.dbType, "dbType is required");
             this.dbVersion = java.util.Objects.requireNonNull(builder.dbVersion, "dbVersion is required");
             this.payType = java.util.Objects.requireNonNull(builder.payType, "payType is required");
+            this.allowShutDown = builder.allowShutDown;
             this.autoRenewPeriod = builder.autoRenewPeriod;
             this.backupRetentionPolicyOnClusterDeletion = builder.backupRetentionPolicyOnClusterDeletion;
             this.cloneDataPoint = builder.cloneDataPoint;
@@ -865,8 +1040,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.periodUnit = builder.periodUnit;
             this.renewalStatus = builder.renewalStatus;
             this.resourceGroupId = builder.resourceGroupId;
+            this.scaleMax = builder.scaleMax;
+            this.scaleMin = builder.scaleMin;
+            this.scaleRoNumMax = builder.scaleRoNumMax;
+            this.scaleRoNumMin = builder.scaleRoNumMin;
             this.securityGroupIds = builder.securityGroupIds;
             this.securityIpList = builder.securityIpList;
+            this.serverlessType = builder.serverlessType;
             this.sourceResourceId = builder.sourceResourceId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty>)builder.tags;
             this.tdeStatus = builder.tdeStatus;
@@ -893,6 +1073,11 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getPayType() {
             return this.payType;
+        }
+
+        @Override
+        public final java.lang.Object getAllowShutDown() {
+            return this.allowShutDown;
         }
 
         @Override
@@ -976,6 +1161,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getScaleMax() {
+            return this.scaleMax;
+        }
+
+        @Override
+        public final java.lang.Object getScaleMin() {
+            return this.scaleMin;
+        }
+
+        @Override
+        public final java.lang.Object getScaleRoNumMax() {
+            return this.scaleRoNumMax;
+        }
+
+        @Override
+        public final java.lang.Object getScaleRoNumMin() {
+            return this.scaleRoNumMin;
+        }
+
+        @Override
         public final java.lang.Object getSecurityGroupIds() {
             return this.securityGroupIds;
         }
@@ -983,6 +1188,11 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getSecurityIpList() {
             return this.securityIpList;
+        }
+
+        @Override
+        public final java.lang.Object getServerlessType() {
+            return this.serverlessType;
         }
 
         @Override
@@ -1025,6 +1235,9 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             data.set("dbType", om.valueToTree(this.getDbType()));
             data.set("dbVersion", om.valueToTree(this.getDbVersion()));
             data.set("payType", om.valueToTree(this.getPayType()));
+            if (this.getAllowShutDown() != null) {
+                data.set("allowShutDown", om.valueToTree(this.getAllowShutDown()));
+            }
             if (this.getAutoRenewPeriod() != null) {
                 data.set("autoRenewPeriod", om.valueToTree(this.getAutoRenewPeriod()));
             }
@@ -1073,11 +1286,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
+            if (this.getScaleMax() != null) {
+                data.set("scaleMax", om.valueToTree(this.getScaleMax()));
+            }
+            if (this.getScaleMin() != null) {
+                data.set("scaleMin", om.valueToTree(this.getScaleMin()));
+            }
+            if (this.getScaleRoNumMax() != null) {
+                data.set("scaleRoNumMax", om.valueToTree(this.getScaleRoNumMax()));
+            }
+            if (this.getScaleRoNumMin() != null) {
+                data.set("scaleRoNumMin", om.valueToTree(this.getScaleRoNumMin()));
+            }
             if (this.getSecurityGroupIds() != null) {
                 data.set("securityGroupIds", om.valueToTree(this.getSecurityGroupIds()));
             }
             if (this.getSecurityIpList() != null) {
                 data.set("securityIpList", om.valueToTree(this.getSecurityIpList()));
+            }
+            if (this.getServerlessType() != null) {
+                data.set("serverlessType", om.valueToTree(this.getServerlessType()));
             }
             if (this.getSourceResourceId() != null) {
                 data.set("sourceResourceId", om.valueToTree(this.getSourceResourceId()));
@@ -1119,6 +1347,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (!dbType.equals(that.dbType)) return false;
             if (!dbVersion.equals(that.dbVersion)) return false;
             if (!payType.equals(that.payType)) return false;
+            if (this.allowShutDown != null ? !this.allowShutDown.equals(that.allowShutDown) : that.allowShutDown != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
             if (this.backupRetentionPolicyOnClusterDeletion != null ? !this.backupRetentionPolicyOnClusterDeletion.equals(that.backupRetentionPolicyOnClusterDeletion) : that.backupRetentionPolicyOnClusterDeletion != null) return false;
             if (this.cloneDataPoint != null ? !this.cloneDataPoint.equals(that.cloneDataPoint) : that.cloneDataPoint != null) return false;
@@ -1135,8 +1364,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.renewalStatus != null ? !this.renewalStatus.equals(that.renewalStatus) : that.renewalStatus != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.scaleMax != null ? !this.scaleMax.equals(that.scaleMax) : that.scaleMax != null) return false;
+            if (this.scaleMin != null ? !this.scaleMin.equals(that.scaleMin) : that.scaleMin != null) return false;
+            if (this.scaleRoNumMax != null ? !this.scaleRoNumMax.equals(that.scaleRoNumMax) : that.scaleRoNumMax != null) return false;
+            if (this.scaleRoNumMin != null ? !this.scaleRoNumMin.equals(that.scaleRoNumMin) : that.scaleRoNumMin != null) return false;
             if (this.securityGroupIds != null ? !this.securityGroupIds.equals(that.securityGroupIds) : that.securityGroupIds != null) return false;
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
+            if (this.serverlessType != null ? !this.serverlessType.equals(that.serverlessType) : that.serverlessType != null) return false;
             if (this.sourceResourceId != null ? !this.sourceResourceId.equals(that.sourceResourceId) : that.sourceResourceId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tdeStatus != null ? !this.tdeStatus.equals(that.tdeStatus) : that.tdeStatus != null) return false;
@@ -1151,6 +1385,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.dbType.hashCode());
             result = 31 * result + (this.dbVersion.hashCode());
             result = 31 * result + (this.payType.hashCode());
+            result = 31 * result + (this.allowShutDown != null ? this.allowShutDown.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
             result = 31 * result + (this.backupRetentionPolicyOnClusterDeletion != null ? this.backupRetentionPolicyOnClusterDeletion.hashCode() : 0);
             result = 31 * result + (this.cloneDataPoint != null ? this.cloneDataPoint.hashCode() : 0);
@@ -1167,8 +1402,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.renewalStatus != null ? this.renewalStatus.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.scaleMax != null ? this.scaleMax.hashCode() : 0);
+            result = 31 * result + (this.scaleMin != null ? this.scaleMin.hashCode() : 0);
+            result = 31 * result + (this.scaleRoNumMax != null ? this.scaleRoNumMax.hashCode() : 0);
+            result = 31 * result + (this.scaleRoNumMin != null ? this.scaleRoNumMin.hashCode() : 0);
             result = 31 * result + (this.securityGroupIds != null ? this.securityGroupIds.hashCode() : 0);
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
+            result = 31 * result + (this.serverlessType != null ? this.serverlessType.hashCode() : 0);
             result = 31 * result + (this.sourceResourceId != null ? this.sourceResourceId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tdeStatus != null ? this.tdeStatus.hashCode() : 0);

@@ -22,7 +22,8 @@ export interface VpnGatewayProps {
     /**
      * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
      * true: Automatically pays the bill for the VPN gateway.
-     * false (default): Does not automatically pay the bill for the VPN gateway.
+     * false: Does not automatically pay the bill for the VPN gateway.
+     * Default true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -135,7 +136,7 @@ export class VpnGateway extends ros.Resource {
             bandwidth: props.bandwidth,
             vSwitchId: props.vSwitchId,
             period: props.period,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             tags: props.tags,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

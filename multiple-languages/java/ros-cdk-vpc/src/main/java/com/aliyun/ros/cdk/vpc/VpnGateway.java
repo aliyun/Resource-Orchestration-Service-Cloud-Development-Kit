@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::VpnGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.981Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:44.245Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnGateway")
 public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
 
@@ -166,7 +166,8 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
          * <p>
-         * false (default): Does not automatically pay the bill for the VPN gateway.
+         * false: Does not automatically pay the bill for the VPN gateway.
+         * Default true.
          * <p>
          * @return {@code this}
          * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway. This parameter is required.
@@ -178,7 +179,8 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
          * <p>
-         * false (default): Does not automatically pay the bill for the VPN gateway.
+         * false: Does not automatically pay the bill for the VPN gateway.
+         * Default true.
          * <p>
          * @return {@code this}
          * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway. This parameter is required.

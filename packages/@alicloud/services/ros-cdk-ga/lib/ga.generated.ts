@@ -235,9 +235,9 @@ export interface RosBandwidthPackageProps {
     readonly type: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: The AutoPay of the bandwidth
+     * @Property autoPay: Specifies whether to enable automatic payment.
      */
-    readonly autoPay?: string | ros.IResolvable;
+    readonly autoPay?: boolean | ros.IResolvable;
 
     /**
      * @Property autoUseCoupon: The AutoUseCoupon  of the bandwidth
@@ -307,7 +307,7 @@ function RosBandwidthPackagePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('ratio', ros.validateString)(properties.ratio));
     errors.collect(ros.propertyValidator('duration', ros.validateString)(properties.duration));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateString)(properties.autoPay));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('billingType', ros.validateString)(properties.billingType));
     return errors.wrap('supplied properties not correct for "RosBandwidthPackageProps"');
 }
@@ -328,7 +328,7 @@ function rosBandwidthPackagePropsToRosTemplate(properties: any, enableResourcePr
     return {
       Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
       Type: ros.stringToRosTemplate(properties.type),
-      AutoPay: ros.stringToRosTemplate(properties.autoPay),
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
       AutoUseCoupon: ros.stringToRosTemplate(properties.autoUseCoupon),
       BandwidthType: ros.stringToRosTemplate(properties.bandwidthType),
       BillingType: ros.stringToRosTemplate(properties.billingType),
@@ -434,9 +434,9 @@ export class RosBandwidthPackage extends ros.RosResource {
     public type: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: The AutoPay of the bandwidth
+     * @Property autoPay: Specifies whether to enable automatic payment.
      */
-    public autoPay: string | ros.IResolvable | undefined;
+    public autoPay: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property autoUseCoupon: The AutoUseCoupon  of the bandwidth

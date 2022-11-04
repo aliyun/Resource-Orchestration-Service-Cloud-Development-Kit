@@ -72,6 +72,11 @@ export class MigrateTask extends ros.Resource {
      */
 
     /**
+     * Attribute DBName: The name of the database that you want to restore.
+     */
+    public readonly attrDbName: ros.IResolvable;
+
+    /**
      * Attribute MigrateTaskId: The ID of the migrate task.
      */
     public readonly attrMigrateTaskId: ros.IResolvable;
@@ -96,6 +101,7 @@ export class MigrateTask extends ros.Resource {
             ossUrls: props.ossUrls,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosMigrateTask;
+        this.attrDbName = rosMigrateTask.attrDbName;
         this.attrMigrateTaskId = rosMigrateTask.attrMigrateTaskId;
     }
 }

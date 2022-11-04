@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::VpnGateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.983Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:44.247Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(VpnGatewayProps.Jsii$Proxy.class)
 public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,7 +23,8 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
      * <p>
-     * false (default): Does not automatically pay the bill for the VPN gateway.
+     * false: Does not automatically pay the bill for the VPN gateway.
+     * Default true.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -177,7 +178,8 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link VpnGatewayProps#getAutoPay}
          * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
-         *                false (default): Does not automatically pay the bill for the VPN gateway.
+         *                false: Does not automatically pay the bill for the VPN gateway.
+         *                Default true.
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -188,7 +190,8 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link VpnGatewayProps#getAutoPay}
          * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
-         *                false (default): Does not automatically pay the bill for the VPN gateway.
+         *                false: Does not automatically pay the bill for the VPN gateway.
+         *                Default true.
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {

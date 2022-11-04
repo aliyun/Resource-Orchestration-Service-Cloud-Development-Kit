@@ -493,6 +493,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
             }
         }
 
+        private object? _periodUnit;
+
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Month/Year.</summary>
+        /// <remarks>
+        /// Default value is Month.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? PeriodUnit
+        {
+            get => _periodUnit;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _periodUnit = value;
+            }
+        }
+
         private object? _resolution;
 
         /// <summary>Property resolution: You can use the DescribeInstanceTypes interface to query the list of  resolutions supported by the current specification and select an appropriate resolution.</summary>

@@ -153,6 +153,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <strong>Property</strong>: accountType: Privilege type of account.
         /// Normal: Common privilege.
         /// Super: High privilege. And the default value is Normal.
+        /// Sysadmin: Super privileges (SA) (only supported by SQL Server)
         /// This parameter is valid for MySQL 5.5/5.6 only.
         /// MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
         /// </remarks>

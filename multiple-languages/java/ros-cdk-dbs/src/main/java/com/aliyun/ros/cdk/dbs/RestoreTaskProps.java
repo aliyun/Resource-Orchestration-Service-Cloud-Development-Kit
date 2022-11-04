@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs;
 /**
  * Properties for defining a `ALIYUN::DBS::RestoreTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.706Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.798Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.RestoreTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RestoreTaskProps.Jsii$Proxy.class)
 public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable {

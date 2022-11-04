@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * A ROS template type:  `ALIYUN::SAE::SlbBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.554Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.767Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosSlbBinding")
 public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
 

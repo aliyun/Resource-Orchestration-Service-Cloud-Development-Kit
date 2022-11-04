@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * Properties for defining a `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.384Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.519Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -95,11 +95,20 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property period: The duration that you will buy Elasticsearch instance (in month).
+     * Property period: The duration that you will buy Elasticsearch instance.
      * <p>
-     * It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+     * It is valid when instance_charge_type is PrePaid. Unit is Month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Unit is Year, it could be from 1 to 3. Default value is 1.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
+        return null;
+    }
+
+    /**
+     * Property periodUnit: Unit of prepaid time period, it could be Month/Year.
+     * <p>
+     * Default value is Month.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
     }
 
@@ -179,6 +188,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object kibanaWhitelist;
         java.lang.Object masterNode;
         java.lang.Object period;
+        java.lang.Object periodUnit;
         java.lang.Object privateWhitelist;
         java.lang.Object publicWhitelist;
         java.lang.Object resourceGroupId;
@@ -439,8 +449,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period Property period: The duration that you will buy Elasticsearch instance (in month).
-         *               It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+         * @param period Property period: The duration that you will buy Elasticsearch instance.
+         *               It is valid when instance_charge_type is PrePaid. Unit is Month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Unit is Year, it could be from 1 to 3. Default value is 1.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -450,12 +460,34 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period Property period: The duration that you will buy Elasticsearch instance (in month).
-         *               It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+         * @param period Property period: The duration that you will buy Elasticsearch instance.
+         *               It is valid when instance_charge_type is PrePaid. Unit is Month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Unit is Year, it could be from 1 to 3. Default value is 1.
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
             this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Month/Year.
+         *                   Default value is Month.
+         * @return {@code this}
+         */
+        public Builder periodUnit(java.lang.String periodUnit) {
+            this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPeriodUnit}
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Month/Year.
+         *                   Default value is Month.
+         * @return {@code this}
+         */
+        public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.periodUnit = periodUnit;
             return this;
         }
 
@@ -622,6 +654,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object kibanaWhitelist;
         private final java.lang.Object masterNode;
         private final java.lang.Object period;
+        private final java.lang.Object periodUnit;
         private final java.lang.Object privateWhitelist;
         private final java.lang.Object publicWhitelist;
         private final java.lang.Object resourceGroupId;
@@ -649,6 +682,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.kibanaWhitelist = software.amazon.jsii.Kernel.get(this, "kibanaWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterNode = software.amazon.jsii.Kernel.get(this, "masterNode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateWhitelist = software.amazon.jsii.Kernel.get(this, "privateWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.publicWhitelist = software.amazon.jsii.Kernel.get(this, "publicWhitelist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -677,6 +711,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.kibanaWhitelist = builder.kibanaWhitelist;
             this.masterNode = builder.masterNode;
             this.period = builder.period;
+            this.periodUnit = builder.periodUnit;
             this.privateWhitelist = builder.privateWhitelist;
             this.publicWhitelist = builder.publicWhitelist;
             this.resourceGroupId = builder.resourceGroupId;
@@ -752,6 +787,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getPeriodUnit() {
+            return this.periodUnit;
+        }
+
+        @Override
         public final java.lang.Object getPrivateWhitelist() {
             return this.privateWhitelist;
         }
@@ -823,6 +863,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
+            if (this.getPeriodUnit() != null) {
+                data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
+            }
             if (this.getPrivateWhitelist() != null) {
                 data.set("privateWhitelist", om.valueToTree(this.getPrivateWhitelist()));
             }
@@ -875,6 +918,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.kibanaWhitelist != null ? !this.kibanaWhitelist.equals(that.kibanaWhitelist) : that.kibanaWhitelist != null) return false;
             if (this.masterNode != null ? !this.masterNode.equals(that.masterNode) : that.masterNode != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.privateWhitelist != null ? !this.privateWhitelist.equals(that.privateWhitelist) : that.privateWhitelist != null) return false;
             if (this.publicWhitelist != null ? !this.publicWhitelist.equals(that.publicWhitelist) : that.publicWhitelist != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -899,6 +943,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.kibanaWhitelist != null ? this.kibanaWhitelist.hashCode() : 0);
             result = 31 * result + (this.masterNode != null ? this.masterNode.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.privateWhitelist != null ? this.privateWhitelist.hashCode() : 0);
             result = 31 * result + (this.publicWhitelist != null ? this.publicWhitelist.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mps;
 /**
  * A ROS resource type:  `ALIYUN::MPS::Pipeline`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.940Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.122Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.Pipeline")
 public class Pipeline extends com.aliyun.ros.cdk.core.Resource {
 

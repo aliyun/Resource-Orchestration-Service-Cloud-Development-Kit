@@ -91,8 +91,8 @@ export class LoadBalancerClone extends ros.Resource {
         const rosLoadBalancerClone = new RosLoadBalancerClone(this, id,  {
             loadBalancerName: props.loadBalancerName,
             sourceLoadBalancerId: props.sourceLoadBalancerId,
-            tagsPolicy: props.tagsPolicy === undefined || props.tagsPolicy === null ? 'empty' : props.tagsPolicy,
             resourceGroupId: props.resourceGroupId,
+            tagsPolicy: props.tagsPolicy === undefined || props.tagsPolicy === null ? 'empty' : props.tagsPolicy,
             instanceChargeType: props.instanceChargeType,
             vSwitchId: props.vSwitchId,
             backendServers: props.backendServers,

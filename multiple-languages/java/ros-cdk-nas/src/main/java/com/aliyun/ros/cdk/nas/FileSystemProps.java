@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a `ALIYUN::NAS::FileSystem`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.979Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.155Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.FileSystemProps")
 @software.amazon.jsii.Jsii.Proxy(FileSystemProps.Jsii$Proxy.class)
 public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,14 +11,17 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property protocolType: Type of protocol used.
      * <p>
-     * Currently includes the NFS type and the SMB type
+     * Valid values: NFS, SMB, cpfs.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getProtocolType();
 
     /**
-     * Property storageType: The file system type.
+     * Property storageType: The storage type of the file System.
      * <p>
-     * Currently includes the Performance type and the Capacity type
+     * Valid values:
+     * Performance、Capacity(Available when the file_system_type is standard)
+     * standard、advance(Available when the file_system_type is extreme)
+     * advance_100、advance_200(Available when the file_system_type is cpfs)
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getStorageType();
 
@@ -87,7 +90,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property fileSystemType: File system type.
      * <p>
-     * Allowed values: standard, extreme, cpfs
+     * Allowed values: standard(default), extreme, cpfs
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFileSystemType() {
         return null;
@@ -159,7 +162,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FileSystemProps#getProtocolType}
          * @param protocolType Property protocolType: Type of protocol used. This parameter is required.
-         *                     Currently includes the NFS type and the SMB type
+         *                     Valid values: NFS, SMB, cpfs.
          * @return {@code this}
          */
         public Builder protocolType(java.lang.String protocolType) {
@@ -170,7 +173,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FileSystemProps#getProtocolType}
          * @param protocolType Property protocolType: Type of protocol used. This parameter is required.
-         *                     Currently includes the NFS type and the SMB type
+         *                     Valid values: NFS, SMB, cpfs.
          * @return {@code this}
          */
         public Builder protocolType(com.aliyun.ros.cdk.core.IResolvable protocolType) {
@@ -180,8 +183,11 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getStorageType}
-         * @param storageType Property storageType: The file system type. This parameter is required.
-         *                    Currently includes the Performance type and the Capacity type
+         * @param storageType Property storageType: The storage type of the file System. This parameter is required.
+         *                    Valid values:
+         *                    Performance、Capacity(Available when the file_system_type is standard)
+         *                    standard、advance(Available when the file_system_type is extreme)
+         *                    advance_100、advance_200(Available when the file_system_type is cpfs)
          * @return {@code this}
          */
         public Builder storageType(java.lang.String storageType) {
@@ -191,8 +197,11 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FileSystemProps#getStorageType}
-         * @param storageType Property storageType: The file system type. This parameter is required.
-         *                    Currently includes the Performance type and the Capacity type
+         * @param storageType Property storageType: The storage type of the file System. This parameter is required.
+         *                    Valid values:
+         *                    Performance、Capacity(Available when the file_system_type is standard)
+         *                    standard、advance(Available when the file_system_type is extreme)
+         *                    advance_100、advance_200(Available when the file_system_type is cpfs)
          * @return {@code this}
          */
         public Builder storageType(com.aliyun.ros.cdk.core.IResolvable storageType) {
@@ -359,7 +368,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FileSystemProps#getFileSystemType}
          * @param fileSystemType Property fileSystemType: File system type.
-         *                       Allowed values: standard, extreme, cpfs
+         *                       Allowed values: standard(default), extreme, cpfs
          * @return {@code this}
          */
         public Builder fileSystemType(java.lang.String fileSystemType) {
@@ -370,7 +379,7 @@ public interface FileSystemProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FileSystemProps#getFileSystemType}
          * @param fileSystemType Property fileSystemType: File system type.
-         *                       Allowed values: standard, extreme, cpfs
+         *                       Allowed values: standard(default), extreme, cpfs
          * @return {@code this}
          */
         public Builder fileSystemType(com.aliyun.ros.cdk.core.IResolvable fileSystemType) {

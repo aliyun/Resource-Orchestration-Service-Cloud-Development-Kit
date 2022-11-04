@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.470Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.648Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingRuleProps.Jsii$Proxy.class)
 public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -86,6 +86,18 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScaleInEvaluationCount() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScaleOutEvaluationCount() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getScalingRuleName() {
         return null;
     }
@@ -131,6 +143,8 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object predictiveTaskBufferTime;
         java.lang.Object predictiveValueBehavior;
         java.lang.Object predictiveValueBuffer;
+        java.lang.Object scaleInEvaluationCount;
+        java.lang.Object scaleOutEvaluationCount;
         java.lang.Object scalingRuleName;
         java.lang.Object scalingRuleType;
         java.lang.Object stepAdjustment;
@@ -397,6 +411,46 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosScalingRuleProps#getScaleInEvaluationCount}
+         * @param scaleInEvaluationCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleInEvaluationCount(java.lang.Number scaleInEvaluationCount) {
+            this.scaleInEvaluationCount = scaleInEvaluationCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingRuleProps#getScaleInEvaluationCount}
+         * @param scaleInEvaluationCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleInEvaluationCount(com.aliyun.ros.cdk.core.IResolvable scaleInEvaluationCount) {
+            this.scaleInEvaluationCount = scaleInEvaluationCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingRuleProps#getScaleOutEvaluationCount}
+         * @param scaleOutEvaluationCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleOutEvaluationCount(java.lang.Number scaleOutEvaluationCount) {
+            this.scaleOutEvaluationCount = scaleOutEvaluationCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingRuleProps#getScaleOutEvaluationCount}
+         * @param scaleOutEvaluationCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder scaleOutEvaluationCount(com.aliyun.ros.cdk.core.IResolvable scaleOutEvaluationCount) {
+            this.scaleOutEvaluationCount = scaleOutEvaluationCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingRuleProps#getScalingRuleName}
          * @param scalingRuleName the value to be set.
          * @return {@code this}
@@ -505,6 +559,8 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object predictiveTaskBufferTime;
         private final java.lang.Object predictiveValueBehavior;
         private final java.lang.Object predictiveValueBuffer;
+        private final java.lang.Object scaleInEvaluationCount;
+        private final java.lang.Object scaleOutEvaluationCount;
         private final java.lang.Object scalingRuleName;
         private final java.lang.Object scalingRuleType;
         private final java.lang.Object stepAdjustment;
@@ -529,6 +585,8 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
             this.predictiveTaskBufferTime = software.amazon.jsii.Kernel.get(this, "predictiveTaskBufferTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.predictiveValueBehavior = software.amazon.jsii.Kernel.get(this, "predictiveValueBehavior", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.predictiveValueBuffer = software.amazon.jsii.Kernel.get(this, "predictiveValueBuffer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scaleInEvaluationCount = software.amazon.jsii.Kernel.get(this, "scaleInEvaluationCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scaleOutEvaluationCount = software.amazon.jsii.Kernel.get(this, "scaleOutEvaluationCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingRuleName = software.amazon.jsii.Kernel.get(this, "scalingRuleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingRuleType = software.amazon.jsii.Kernel.get(this, "scalingRuleType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.stepAdjustment = software.amazon.jsii.Kernel.get(this, "stepAdjustment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -553,6 +611,8 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
             this.predictiveTaskBufferTime = builder.predictiveTaskBufferTime;
             this.predictiveValueBehavior = builder.predictiveValueBehavior;
             this.predictiveValueBuffer = builder.predictiveValueBuffer;
+            this.scaleInEvaluationCount = builder.scaleInEvaluationCount;
+            this.scaleOutEvaluationCount = builder.scaleOutEvaluationCount;
             this.scalingRuleName = builder.scalingRuleName;
             this.scalingRuleType = builder.scalingRuleType;
             this.stepAdjustment = builder.stepAdjustment;
@@ -625,6 +685,16 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getScaleInEvaluationCount() {
+            return this.scaleInEvaluationCount;
+        }
+
+        @Override
+        public final java.lang.Object getScaleOutEvaluationCount() {
+            return this.scaleOutEvaluationCount;
+        }
+
+        @Override
         public final java.lang.Object getScalingRuleName() {
             return this.scalingRuleName;
         }
@@ -687,6 +757,12 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
             if (this.getPredictiveValueBuffer() != null) {
                 data.set("predictiveValueBuffer", om.valueToTree(this.getPredictiveValueBuffer()));
             }
+            if (this.getScaleInEvaluationCount() != null) {
+                data.set("scaleInEvaluationCount", om.valueToTree(this.getScaleInEvaluationCount()));
+            }
+            if (this.getScaleOutEvaluationCount() != null) {
+                data.set("scaleOutEvaluationCount", om.valueToTree(this.getScaleOutEvaluationCount()));
+            }
             if (this.getScalingRuleName() != null) {
                 data.set("scalingRuleName", om.valueToTree(this.getScalingRuleName()));
             }
@@ -730,6 +806,8 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
             if (this.predictiveTaskBufferTime != null ? !this.predictiveTaskBufferTime.equals(that.predictiveTaskBufferTime) : that.predictiveTaskBufferTime != null) return false;
             if (this.predictiveValueBehavior != null ? !this.predictiveValueBehavior.equals(that.predictiveValueBehavior) : that.predictiveValueBehavior != null) return false;
             if (this.predictiveValueBuffer != null ? !this.predictiveValueBuffer.equals(that.predictiveValueBuffer) : that.predictiveValueBuffer != null) return false;
+            if (this.scaleInEvaluationCount != null ? !this.scaleInEvaluationCount.equals(that.scaleInEvaluationCount) : that.scaleInEvaluationCount != null) return false;
+            if (this.scaleOutEvaluationCount != null ? !this.scaleOutEvaluationCount.equals(that.scaleOutEvaluationCount) : that.scaleOutEvaluationCount != null) return false;
             if (this.scalingRuleName != null ? !this.scalingRuleName.equals(that.scalingRuleName) : that.scalingRuleName != null) return false;
             if (this.scalingRuleType != null ? !this.scalingRuleType.equals(that.scalingRuleType) : that.scalingRuleType != null) return false;
             if (this.stepAdjustment != null ? !this.stepAdjustment.equals(that.stepAdjustment) : that.stepAdjustment != null) return false;
@@ -751,6 +829,8 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.predictiveTaskBufferTime != null ? this.predictiveTaskBufferTime.hashCode() : 0);
             result = 31 * result + (this.predictiveValueBehavior != null ? this.predictiveValueBehavior.hashCode() : 0);
             result = 31 * result + (this.predictiveValueBuffer != null ? this.predictiveValueBuffer.hashCode() : 0);
+            result = 31 * result + (this.scaleInEvaluationCount != null ? this.scaleInEvaluationCount.hashCode() : 0);
+            result = 31 * result + (this.scaleOutEvaluationCount != null ? this.scaleOutEvaluationCount.hashCode() : 0);
             result = 31 * result + (this.scalingRuleName != null ? this.scalingRuleName.hashCode() : 0);
             result = 31 * result + (this.scalingRuleType != null ? this.scalingRuleType.hashCode() : 0);
             result = 31 * result + (this.stepAdjustment != null ? this.stepAdjustment.hashCode() : 0);

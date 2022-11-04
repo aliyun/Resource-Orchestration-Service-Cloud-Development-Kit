@@ -1,5 +1,11 @@
 @alicloud/ros-cdk-cs.AnyCluster=com.aliyun.ros.cdk.cs.AnyCluster
 @alicloud/ros-cdk-cs.AnyClusterProps=com.aliyun.ros.cdk.cs.AnyClusterProps
+@alicloud/ros-cdk-cs.ClusterAddons=com.aliyun.ros.cdk.cs.ClusterAddons
+@alicloud/ros-cdk-cs.ClusterAddonsProps=com.aliyun.ros.cdk.cs.ClusterAddonsProps
+@alicloud/ros-cdk-cs.ClusterApplication=com.aliyun.ros.cdk.cs.ClusterApplication
+@alicloud/ros-cdk-cs.ClusterApplicationProps=com.aliyun.ros.cdk.cs.ClusterApplicationProps
+@alicloud/ros-cdk-cs.ClusterHelmApplication=com.aliyun.ros.cdk.cs.ClusterHelmApplication
+@alicloud/ros-cdk-cs.ClusterHelmApplicationProps=com.aliyun.ros.cdk.cs.ClusterHelmApplicationProps
 @alicloud/ros-cdk-cs.ClusterNodePool=com.aliyun.ros.cdk.cs.ClusterNodePool
 @alicloud/ros-cdk-cs.ClusterNodePoolProps=com.aliyun.ros.cdk.cs.ClusterNodePoolProps
 @alicloud/ros-cdk-cs.KubernetesCluster=com.aliyun.ros.cdk.cs.KubernetesCluster
@@ -10,6 +16,13 @@
 @alicloud/ros-cdk-cs.ManagedKubernetesClusterProps=com.aliyun.ros.cdk.cs.ManagedKubernetesClusterProps
 @alicloud/ros-cdk-cs.RosAnyCluster=com.aliyun.ros.cdk.cs.RosAnyCluster
 @alicloud/ros-cdk-cs.RosAnyClusterProps=com.aliyun.ros.cdk.cs.RosAnyClusterProps
+@alicloud/ros-cdk-cs.RosClusterAddons=com.aliyun.ros.cdk.cs.RosClusterAddons
+@alicloud/ros-cdk-cs.RosClusterAddons.AddonsProperty=com.aliyun.ros.cdk.cs.RosClusterAddons$AddonsProperty
+@alicloud/ros-cdk-cs.RosClusterAddonsProps=com.aliyun.ros.cdk.cs.RosClusterAddonsProps
+@alicloud/ros-cdk-cs.RosClusterApplication=com.aliyun.ros.cdk.cs.RosClusterApplication
+@alicloud/ros-cdk-cs.RosClusterApplicationProps=com.aliyun.ros.cdk.cs.RosClusterApplicationProps
+@alicloud/ros-cdk-cs.RosClusterHelmApplication=com.aliyun.ros.cdk.cs.RosClusterHelmApplication
+@alicloud/ros-cdk-cs.RosClusterHelmApplicationProps=com.aliyun.ros.cdk.cs.RosClusterHelmApplicationProps
 @alicloud/ros-cdk-cs.RosClusterNodePool=com.aliyun.ros.cdk.cs.RosClusterNodePool
 @alicloud/ros-cdk-cs.RosClusterNodePool.AutoScalingProperty=com.aliyun.ros.cdk.cs.RosClusterNodePool$AutoScalingProperty
 @alicloud/ros-cdk-cs.RosClusterNodePool.DataDisksProperty=com.aliyun.ros.cdk.cs.RosClusterNodePool$DataDisksProperty

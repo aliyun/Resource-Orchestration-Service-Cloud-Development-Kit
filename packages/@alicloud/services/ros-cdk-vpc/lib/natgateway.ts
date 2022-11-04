@@ -19,7 +19,7 @@ export interface NatGatewayProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * Property autoPay: Specifies whether to enable automatic payment. Default is false.
+     * Property autoPay: Specifies whether to enable automatic payment. Default is true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -139,7 +139,7 @@ export class NatGateway extends ros.Resource {
             vSwitchId: props.vSwitchId,
             duration: props.duration === undefined || props.duration === null ? 1 : props.duration,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             natType: props.natType === undefined || props.natType === null ? 'Enhanced' : props.natType,
             internetChargeType: props.internetChargeType,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,

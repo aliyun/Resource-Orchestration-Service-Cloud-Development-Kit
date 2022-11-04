@@ -39,6 +39,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: fileSystemType: File system type.
+        /// Values: standard (default), extreme
+        /// </remarks>
+        [JsiiProperty(name: "fileSystemType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? FileSystemType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::NAS::AccessGroup`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IRosAccessGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.RosAccessGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nas.IRosAccessGroupProps
@@ -71,6 +85,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: fileSystemType: File system type.
+            /// Values: standard (default), extreme
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "fileSystemType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FileSystemType
             {
                 get => GetInstanceProperty<object?>();
             }

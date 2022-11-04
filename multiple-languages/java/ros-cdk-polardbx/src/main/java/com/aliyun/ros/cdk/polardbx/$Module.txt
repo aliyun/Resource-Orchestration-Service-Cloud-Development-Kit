@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-polardbx.DBInstance=com.aliyun.ros.cdk.polardbx.DBInstance
+@alicloud/ros-cdk-polardbx.DBInstanceProps=com.aliyun.ros.cdk.polardbx.DBInstanceProps
+@alicloud/ros-cdk-polardbx.RosDBInstance=com.aliyun.ros.cdk.polardbx.RosDBInstance
+@alicloud/ros-cdk-polardbx.RosDBInstanceProps=com.aliyun.ros.cdk.polardbx.RosDBInstanceProps
