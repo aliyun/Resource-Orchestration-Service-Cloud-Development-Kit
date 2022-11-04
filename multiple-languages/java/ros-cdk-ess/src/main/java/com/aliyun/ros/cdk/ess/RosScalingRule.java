@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::ScalingRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.468Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.645Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingRule")
 public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -299,6 +299,42 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPredictiveValueBuffer(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "predictiveValueBuffer", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScaleInEvaluationCount() {
+        return software.amazon.jsii.Kernel.get(this, "scaleInEvaluationCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setScaleInEvaluationCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "scaleInEvaluationCount", value);
+    }
+
+    /**
+     */
+    public void setScaleInEvaluationCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scaleInEvaluationCount", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScaleOutEvaluationCount() {
+        return software.amazon.jsii.Kernel.get(this, "scaleOutEvaluationCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setScaleOutEvaluationCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "scaleOutEvaluationCount", value);
+    }
+
+    /**
+     */
+    public void setScaleOutEvaluationCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scaleOutEvaluationCount", value);
     }
 
     /**
@@ -848,6 +884,40 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder predictiveValueBuffer(final com.aliyun.ros.cdk.core.IResolvable predictiveValueBuffer) {
             this.props.predictiveValueBuffer(predictiveValueBuffer);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param scaleInEvaluationCount This parameter is required.
+         */
+        public Builder scaleInEvaluationCount(final java.lang.Number scaleInEvaluationCount) {
+            this.props.scaleInEvaluationCount(scaleInEvaluationCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scaleInEvaluationCount This parameter is required.
+         */
+        public Builder scaleInEvaluationCount(final com.aliyun.ros.cdk.core.IResolvable scaleInEvaluationCount) {
+            this.props.scaleInEvaluationCount(scaleInEvaluationCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param scaleOutEvaluationCount This parameter is required.
+         */
+        public Builder scaleOutEvaluationCount(final java.lang.Number scaleOutEvaluationCount) {
+            this.props.scaleOutEvaluationCount(scaleOutEvaluationCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scaleOutEvaluationCount This parameter is required.
+         */
+        public Builder scaleOutEvaluationCount(final com.aliyun.ros.cdk.core.IResolvable scaleOutEvaluationCount) {
+            this.props.scaleOutEvaluationCount(scaleOutEvaluationCount);
             return this;
         }
 

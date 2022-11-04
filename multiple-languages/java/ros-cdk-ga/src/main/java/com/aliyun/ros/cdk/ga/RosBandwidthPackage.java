@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  `ALIYUN::GA::BandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.665Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosBandwidthPackage")
 public class RosBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -177,7 +177,7 @@ public class RosBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setAutoPay(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+    public void setAutoPay(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "autoPay", value);
     }
 
@@ -413,7 +413,7 @@ public class RosBandwidthPackage extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param autoPay This parameter is required.
          */
-        public Builder autoPay(final java.lang.String autoPay) {
+        public Builder autoPay(final java.lang.Boolean autoPay) {
             this.props.autoPay(autoPay);
             return this;
         }

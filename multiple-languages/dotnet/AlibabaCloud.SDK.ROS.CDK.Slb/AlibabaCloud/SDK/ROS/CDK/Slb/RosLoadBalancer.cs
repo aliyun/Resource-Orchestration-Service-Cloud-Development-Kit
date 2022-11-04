@@ -262,7 +262,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
         /// <remarks>
         /// <strong>Property</strong>: autoPay: Optional. Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-        /// Valid values: true | false (default value)
+        /// Valid values: true | false. Default true.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

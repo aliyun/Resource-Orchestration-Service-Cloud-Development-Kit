@@ -169,8 +169,8 @@ export interface RosCenBandwidthPackageProps {
 
     /**
      * @Property autoPay: Whether to automatically pay the bill. Valid value:
-     * true
-     * false (Default)
+     * true (default)
+     * false
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -230,7 +230,7 @@ function RosCenBandwidthPackagePropsValidator(properties: any): ros.ValidationRe
     if(properties.bandwidthPackageChargeType && (typeof properties.bandwidthPackageChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('bandwidthPackageChargeType', ros.validateAllowedValues)({
           data: properties.bandwidthPackageChargeType,
-          allowedValues: ["PREPAY","POSTPAY"],
+          allowedValues: ["POSTPAY","PREPAY"],
         }));
     }
     errors.collect(ros.propertyValidator('bandwidthPackageChargeType', ros.validateString)(properties.bandwidthPackageChargeType));
@@ -352,8 +352,8 @@ export class RosCenBandwidthPackage extends ros.RosResource {
 
     /**
      * @Property autoPay: Whether to automatically pay the bill. Valid value:
-     * true
-     * false (Default)
+     * true (default)
+     * false
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 

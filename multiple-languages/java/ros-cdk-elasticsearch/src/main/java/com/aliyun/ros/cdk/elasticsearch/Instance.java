@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * A ROS resource type:  `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.372Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.515Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -427,27 +427,52 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property period: The duration that you will buy Elasticsearch instance (in month).
+         * Property period: The duration that you will buy Elasticsearch instance.
          * <p>
-         * It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+         * It is valid when instance_charge_type is PrePaid. Unit is Month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Unit is Year, it could be from 1 to 3. Default value is 1.
          * <p>
          * @return {@code this}
-         * @param period Property period: The duration that you will buy Elasticsearch instance (in month). This parameter is required.
+         * @param period Property period: The duration that you will buy Elasticsearch instance. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The duration that you will buy Elasticsearch instance (in month).
+         * Property period: The duration that you will buy Elasticsearch instance.
          * <p>
-         * It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+         * It is valid when instance_charge_type is PrePaid. Unit is Month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Unit is Year, it could be from 1 to 3. Default value is 1.
          * <p>
          * @return {@code this}
-         * @param period Property period: The duration that you will buy Elasticsearch instance (in month). This parameter is required.
+         * @param period Property period: The duration that you will buy Elasticsearch instance. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
+            return this;
+        }
+
+        /**
+         * Property periodUnit: Unit of prepaid time period, it could be Month/Year.
+         * <p>
+         * Default value is Month.
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Month/Year. This parameter is required.
+         */
+        public Builder periodUnit(final java.lang.String periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
+        /**
+         * Property periodUnit: Unit of prepaid time period, it could be Month/Year.
+         * <p>
+         * Default value is Month.
+         * <p>
+         * @return {@code this}
+         * @param periodUnit Property periodUnit: Unit of prepaid time period, it could be Month/Year. This parameter is required.
+         */
+        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.props.periodUnit(periodUnit);
             return this;
         }
 

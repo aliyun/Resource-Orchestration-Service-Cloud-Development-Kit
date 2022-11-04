@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::MonitorGroupInstances`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.446Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMonitorGroupInstances")
 public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -69,7 +69,7 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public void setGroupId(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
+    public void setGroupId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
         software.amazon.jsii.Kernel.set(this, "groupId", java.util.Objects.requireNonNull(value, "groupId is required"));
     }
 
@@ -385,7 +385,7 @@ public class RosMonitorGroupInstances extends com.aliyun.ros.cdk.core.RosResourc
          * @return {@code this}
          * @param groupId This parameter is required.
          */
-        public Builder groupId(final java.lang.Number groupId) {
+        public Builder groupId(final java.lang.String groupId) {
             this.props.groupId(groupId);
             return this;
         }

@@ -154,6 +154,466 @@ export class RosAnyCluster extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::CS::ClusterAddons`
+ */
+export interface RosClusterAddonsProps {
+
+    /**
+     * @Property clusterId: Cluster ID.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property addons: A combination of addon plugins for Kubernetes clusters.
+     * Network plug-in: including Flannel and Terway network plug-ins
+     * Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
+     * Ingress: The installation of the Ingress component is enabled by default.
+     */
+    readonly addons?: Array<RosClusterAddons.AddonsProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosClusterAddonsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosClusterAddonsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterAddonsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('addons', ros.listValidator(RosClusterAddons_AddonsPropertyValidator))(properties.addons));
+    return errors.wrap('supplied properties not correct for "RosClusterAddonsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterAddons` resource
+ *
+ * @param properties - the TypeScript properties of a `RosClusterAddonsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterAddons` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterAddonsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosClusterAddonsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
+      Addons: ros.listMapper(rosClusterAddonsAddonsPropertyToRosTemplate)(properties.addons),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CS::ClusterAddons`
+ */
+export class RosClusterAddons extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ClusterAddons";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ClusterId: Cluster ID.
+     */
+    public readonly attrClusterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterId: Cluster ID.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property addons: A combination of addon plugins for Kubernetes clusters.
+     * Network plug-in: including Flannel and Terway network plug-ins
+     * Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
+     * Ingress: The installation of the Ingress component is enabled by default.
+     */
+    public addons: Array<RosClusterAddons.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CS::ClusterAddons`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosClusterAddonsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosClusterAddons.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClusterId = this.getAtt('ClusterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterId = props.clusterId;
+        this.addons = props.addons;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterId: this.clusterId,
+            addons: this.addons,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosClusterAddonsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosClusterAddons {
+    /**
+     * @stability external
+     */
+    export interface AddonsProperty {
+        /**
+         * @Property version: When the value is empty, the latest version is selected by default.
+         */
+        readonly version?: string | ros.IResolvable;
+        /**
+         * @Property config: When the value is empty, no configuration is required.
+         */
+        readonly config?: string | ros.IResolvable;
+        /**
+         * @Property name: Addon plugin name
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AddonsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AddonsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterAddons_AddonsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "AddonsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterAddons.Addons` resource
+ *
+ * @param properties - the TypeScript properties of a `AddonsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterAddons.Addons` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterAddonsAddonsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterAddons_AddonsPropertyValidator(properties).assertSuccess();
+    return {
+      Version: ros.stringToRosTemplate(properties.version),
+      Config: ros.stringToRosTemplate(properties.config),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
+ * Properties for defining a `ALIYUN::CS::ClusterApplication`
+ */
+export interface RosClusterApplicationProps {
+
+    /**
+     * @Property clusterId: The ID of the kubernetes cluster.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property yamlContent: The yaml content of application.
+     */
+    readonly yamlContent: string | ros.IResolvable;
+
+    /**
+     * @Property defaultNamespace: The default namespace for the application, default value is default.
+     * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+     */
+    readonly defaultNamespace?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosClusterApplicationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosClusterApplicationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterApplicationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('yamlContent', ros.requiredValidator)(properties.yamlContent));
+    errors.collect(ros.propertyValidator('yamlContent', ros.validateString)(properties.yamlContent));
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('defaultNamespace', ros.validateString)(properties.defaultNamespace));
+    return errors.wrap('supplied properties not correct for "RosClusterApplicationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterApplication` resource
+ *
+ * @param properties - the TypeScript properties of a `RosClusterApplicationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterApplication` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterApplicationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosClusterApplicationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
+      YamlContent: ros.stringToRosTemplate(properties.yamlContent),
+      DefaultNamespace: ros.stringToRosTemplate(properties.defaultNamespace),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CS::ClusterApplication`
+ */
+export class RosClusterApplication extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ClusterApplication";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ClusterId: The ID of the cluster.
+     */
+    public readonly attrClusterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterId: The ID of the kubernetes cluster.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property yamlContent: The yaml content of application.
+     */
+    public yamlContent: string | ros.IResolvable;
+
+    /**
+     * @Property defaultNamespace: The default namespace for the application, default value is default.
+     * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+     */
+    public defaultNamespace: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CS::ClusterApplication`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosClusterApplicationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosClusterApplication.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClusterId = this.getAtt('ClusterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterId = props.clusterId;
+        this.yamlContent = props.yamlContent;
+        this.defaultNamespace = props.defaultNamespace;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterId: this.clusterId,
+            yamlContent: this.yamlContent,
+            defaultNamespace: this.defaultNamespace,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosClusterApplicationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::CS::ClusterHelmApplication`
+ */
+export interface RosClusterHelmApplicationProps {
+
+    /**
+     * @Property chartUrl: The URL of chart. Supports HTTP or HTTPS.
+     */
+    readonly chartUrl: string | ros.IResolvable;
+
+    /**
+     * @Property clusterId: The ID of the kubernetes cluster.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name for helm release.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property chartValues: Chart custom values.
+     */
+    readonly chartValues?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property namespace: Namespace to use with helm. Default is default
+     */
+    readonly namespace?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosClusterHelmApplicationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosClusterHelmApplicationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterHelmApplicationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('chartValues', ros.hashValidator(ros.validateAny))(properties.chartValues));
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('chartUrl', ros.requiredValidator)(properties.chartUrl));
+    if(properties.chartUrl && (typeof properties.chartUrl) !== 'object') {
+        errors.collect(ros.propertyValidator('chartUrl', ros.validateAllowedPattern)({
+          data: properties.chartUrl,
+          reg: /^(http|https):\/\/[\w\W]+$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('chartUrl', ros.validateString)(properties.chartUrl));
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosClusterHelmApplicationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterHelmApplication` resource
+ *
+ * @param properties - the TypeScript properties of a `RosClusterHelmApplicationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterHelmApplication` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterHelmApplicationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosClusterHelmApplicationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ChartUrl: ros.stringToRosTemplate(properties.chartUrl),
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
+      Name: ros.stringToRosTemplate(properties.name),
+      ChartValues: ros.hashMapper(ros.objectToRosTemplate)(properties.chartValues),
+      Namespace: ros.stringToRosTemplate(properties.namespace),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CS::ClusterHelmApplication`
+ */
+export class RosClusterHelmApplication extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ClusterHelmApplication";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ClusterId: The ID of the cluster.
+     */
+    public readonly attrClusterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property chartUrl: The URL of chart. Supports HTTP or HTTPS.
+     */
+    public chartUrl: string | ros.IResolvable;
+
+    /**
+     * @Property clusterId: The ID of the kubernetes cluster.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name for helm release.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property chartValues: Chart custom values.
+     */
+    public chartValues: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property namespace: Namespace to use with helm. Default is default
+     */
+    public namespace: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CS::ClusterHelmApplication`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosClusterHelmApplicationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosClusterHelmApplication.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClusterId = this.getAtt('ClusterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.chartUrl = props.chartUrl;
+        this.clusterId = props.clusterId;
+        this.name = props.name;
+        this.chartValues = props.chartValues;
+        this.namespace = props.namespace;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            chartUrl: this.chartUrl,
+            clusterId: this.clusterId,
+            name: this.name,
+            chartValues: this.chartValues,
+            namespace: this.namespace,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosClusterHelmApplicationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::CS::ClusterNodePool`
  */
 export interface RosClusterNodePoolProps {
@@ -1968,7 +2428,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -3946,7 +4406,7 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -5025,7 +5485,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));

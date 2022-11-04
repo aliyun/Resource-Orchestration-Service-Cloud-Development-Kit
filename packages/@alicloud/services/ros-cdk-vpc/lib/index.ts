@@ -18,6 +18,7 @@ export * from './ipsecserver';
 export * from './ipv6gateway';
 export * from './ipv6internetbandwidth';
 export * from './natgateway';
+export * from './natip';
 export * from './networkacl';
 export * from './networkaclassociation';
 export * from './peeringrouterinterfacebinding';

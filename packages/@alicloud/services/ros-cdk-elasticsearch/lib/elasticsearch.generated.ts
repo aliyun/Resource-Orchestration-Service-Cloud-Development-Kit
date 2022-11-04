@@ -68,9 +68,14 @@ export interface RosInstanceProps {
     readonly masterNode?: RosInstance.MasterNodeProperty | ros.IResolvable;
 
     /**
-     * @Property period: The duration that you will buy Elasticsearch instance (in month). It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+     * @Property period: The duration that you will buy Elasticsearch instance. It is valid when instance_charge_type is PrePaid. Unit is Month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Unit is Year, it could be from 1 to 3. Default value is 1.
      */
     readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * @Property privateWhitelist: Set the instance's IP whitelist in VPC network.
@@ -130,18 +135,18 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('kibanaNode', RosInstance_KibanaNodePropertyValidator)(properties.kibanaNode));
+    errors.collect(ros.propertyValidator('enableKibanaPrivate', ros.validateBoolean)(properties.enableKibanaPrivate));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('enableKibanaPrivate', ros.validateBoolean)(properties.enableKibanaPrivate));
     errors.collect(ros.propertyValidator('publicWhitelist', ros.listValidator(ros.validateAny))(properties.publicWhitelist));
-    errors.collect(ros.propertyValidator('enableKibanaPublic', ros.validateBoolean)(properties.enableKibanaPublic));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('enableKibanaPublic', ros.validateBoolean)(properties.enableKibanaPublic));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
@@ -167,6 +172,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     if(properties.zoneCount && (typeof properties.zoneCount) !== 'object') {
         errors.collect(ros.propertyValidator('zoneCount', ros.validateAllowedValues)({
           data: properties.zoneCount,
@@ -206,6 +218,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       KibanaWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.kibanaWhitelist),
       MasterNode: rosInstanceMasterNodePropertyToRosTemplate(properties.masterNode),
       Period: ros.numberToRosTemplate(properties.period),
+      PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       PrivateWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.privateWhitelist),
       PublicWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.publicWhitelist),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
@@ -344,9 +357,14 @@ export class RosInstance extends ros.RosResource {
     public masterNode: RosInstance.MasterNodeProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The duration that you will buy Elasticsearch instance (in month). It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+     * @Property period: The duration that you will buy Elasticsearch instance. It is valid when instance_charge_type is PrePaid. Unit is Month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Unit is Year, it could be from 1 to 3. Default value is 1.
      */
     public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     */
+    public periodUnit: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateWhitelist: Set the instance's IP whitelist in VPC network.
@@ -419,6 +437,7 @@ export class RosInstance extends ros.RosResource {
         this.kibanaWhitelist = props.kibanaWhitelist;
         this.masterNode = props.masterNode;
         this.period = props.period;
+        this.periodUnit = props.periodUnit;
         this.privateWhitelist = props.privateWhitelist;
         this.publicWhitelist = props.publicWhitelist;
         this.resourceGroupId = props.resourceGroupId;
@@ -444,6 +463,7 @@ export class RosInstance extends ros.RosResource {
             kibanaWhitelist: this.kibanaWhitelist,
             masterNode: this.masterNode,
             period: this.period,
+            periodUnit: this.periodUnit,
             privateWhitelist: this.privateWhitelist,
             publicWhitelist: this.publicWhitelist,
             resourceGroupId: this.resourceGroupId,

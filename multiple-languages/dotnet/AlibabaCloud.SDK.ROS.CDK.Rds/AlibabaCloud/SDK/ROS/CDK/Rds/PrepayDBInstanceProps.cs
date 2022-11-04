@@ -467,7 +467,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property autoPay: Automatic Payment.</summary>
         /// <remarks>
-        /// Default is false.
+        /// Default is true.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2052,6 +2052,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
                     }
                 }
                 _securityGroupId = value;
+            }
+        }
+
+        private object? _serverlessConfig;
+
+        /// <summary>Property serverlessConfig: The config of RDS serverless instance.</summary>
+        /// <remarks>
+        /// This is required when creating serverless instance.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "serverlessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-rds.RosPrepayDBInstance.ServerlessConfigProperty\"}]}}", isOptional: true)]
+        public object? ServerlessConfig
+        {
+            get => _serverlessConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Rds.RosPrepayDBInstance.IServerlessConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Rds.RosPrepayDBInstance.IServerlessConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _serverlessConfig = value;
             }
         }
 

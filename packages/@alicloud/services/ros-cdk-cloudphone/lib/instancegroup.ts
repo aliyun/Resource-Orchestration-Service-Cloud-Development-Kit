@@ -87,6 +87,11 @@ export interface InstanceGroupProps {
     readonly period?: number | ros.IResolvable;
 
     /**
+     * Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     */
+    readonly periodUnit?: string | ros.IResolvable;
+
+    /**
      * Property resolution: You can use the DescribeInstanceTypes interface to query the list of 
      * resolutions supported by the current specification and select an appropriate resolution.
      */
@@ -156,6 +161,7 @@ export class InstanceGroup extends ros.Resource {
             vncPassword: props.vncPassword,
             tag: props.tag,
             instanceType: props.instanceType,
+            periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
             resolution: props.resolution,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceGroup;

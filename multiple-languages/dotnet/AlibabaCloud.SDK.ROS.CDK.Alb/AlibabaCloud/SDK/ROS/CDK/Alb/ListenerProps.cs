@@ -379,7 +379,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <summary>Property idleTimeout: The timeout period of idle connections.</summary>
         /// <remarks>
-        /// Valid values: 1 to 60. Unit: seconds.
+        /// Valid values: 1 to 180. Unit: seconds.
         /// Default value: 15.
         /// If no request is received within the specified timeout period, ALB closes the connection.
         /// ALB recreates the connection when a new connection request is received.

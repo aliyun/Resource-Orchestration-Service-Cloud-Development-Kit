@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::DBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.248Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.439Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -1440,6 +1440,31 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * Property serverlessConfig: The config of RDS serverless instance.
+         * <p>
+         * This is required when creating serverless instance.
+         * <p>
+         * @return {@code this}
+         * @param serverlessConfig Property serverlessConfig: The config of RDS serverless instance. This parameter is required.
+         */
+        public Builder serverlessConfig(final com.aliyun.ros.cdk.core.IResolvable serverlessConfig) {
+            this.props.serverlessConfig(serverlessConfig);
+            return this;
+        }
+        /**
+         * Property serverlessConfig: The config of RDS serverless instance.
+         * <p>
+         * This is required when creating serverless instance.
+         * <p>
+         * @return {@code this}
+         * @param serverlessConfig Property serverlessConfig: The config of RDS serverless instance. This parameter is required.
+         */
+        public Builder serverlessConfig(final com.aliyun.ros.cdk.rds.RosDBInstance.ServerlessConfigProperty serverlessConfig) {
+            this.props.serverlessConfig(serverlessConfig);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.665Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.881Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,7 +30,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      * Property autoPay: Optional.
      * <p>
      * Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-     * Valid values: true | false (default value)
+     * Valid values: true | false. Default true.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -284,7 +284,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link LoadBalancerProps#getAutoPay}
          * @param autoPay Property autoPay: Optional.
          *                Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-         *                Valid values: true | false (default value)
+         *                Valid values: true | false. Default true.
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -296,7 +296,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link LoadBalancerProps#getAutoPay}
          * @param autoPay Property autoPay: Optional.
          *                Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-         *                Valid values: true | false (default value)
+         *                Valid values: true | false. Default true.
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {

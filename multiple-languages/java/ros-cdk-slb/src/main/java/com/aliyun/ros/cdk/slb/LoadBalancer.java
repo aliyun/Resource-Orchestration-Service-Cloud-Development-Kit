@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.641Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.875Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -259,7 +259,7 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          * Property autoPay: Optional.
          * <p>
          * Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-         * Valid values: true | false (default value)
+         * Valid values: true | false. Default true.
          * <p>
          * @return {@code this}
          * @param autoPay Property autoPay: Optional. This parameter is required.
@@ -272,7 +272,7 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          * Property autoPay: Optional.
          * <p>
          * Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-         * Valid values: true | false (default value)
+         * Valid values: true | false. Default true.
          * <p>
          * @return {@code this}
          * @param autoPay Property autoPay: Optional. This parameter is required.

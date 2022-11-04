@@ -150,7 +150,7 @@ export function specGenerator() {
     }
     let allTypesArray = Array.from(allTypes)
     let diffArr = getArrDifference(allTypesArray, codeMappingTypesArray)
-    if(diffArr){
+    if(diffArr != null && diffArr != ""){
         throw new Error(`code_mapping file diff with types file "${diffArr}", please add information with code_mapping file.`);
     }
     fs.writeFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/types.json'), JSON.stringify(allTypesArray, null, '\t'));

@@ -403,7 +403,7 @@ function RosDrdsInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
         errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
           data: properties.pricingCycle,
-          allowedValues: ["year","month"],
+          allowedValues: ["year","month","Year","Month"],
         }));
     }
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));

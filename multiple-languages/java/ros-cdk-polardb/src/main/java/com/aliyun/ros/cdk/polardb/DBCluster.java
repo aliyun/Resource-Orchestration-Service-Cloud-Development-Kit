@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS resource type:  `ALIYUN::POLARDB::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.074Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.263Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -252,6 +252,31 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property allowShutDown: Whether to turn on No activity pause.
+         * <p>
+         * The default is false.
+         * <p>
+         * @return {@code this}
+         * @param allowShutDown Property allowShutDown: Whether to turn on No activity pause. This parameter is required.
+         */
+        public Builder allowShutDown(final java.lang.Boolean allowShutDown) {
+            this.props.allowShutDown(allowShutDown);
+            return this;
+        }
+        /**
+         * Property allowShutDown: Whether to turn on No activity pause.
+         * <p>
+         * The default is false.
+         * <p>
+         * @return {@code this}
+         * @param allowShutDown Property allowShutDown: Whether to turn on No activity pause. This parameter is required.
+         */
+        public Builder allowShutDown(final com.aliyun.ros.cdk.core.IResolvable allowShutDown) {
+            this.props.allowShutDown(allowShutDown);
+            return this;
+        }
+
+        /**
          * Property autoRenewPeriod: Set the cluster auto renewal time.
          * <p>
          * Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
@@ -376,7 +401,7 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property creationCategory: Cluster series.
          * <p>
-         * The value could be Normal (standard version).
+         * The value could be Normal (standard version), Basic and ArchiveNormal.
          * <p>
          * @return {@code this}
          * @param creationCategory Property creationCategory: Cluster series. This parameter is required.
@@ -388,7 +413,7 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property creationCategory: Cluster series.
          * <p>
-         * The value could be Normal (standard version).
+         * The value could be Normal (standard version), Basic and ArchiveNormal.
          * <p>
          * @return {@code this}
          * @param creationCategory Property creationCategory: Cluster series. This parameter is required.
@@ -710,6 +735,90 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property scaleMax: Maximum limit of single-node scaling.
+         * <p>
+         * @return {@code this}
+         * @param scaleMax Property scaleMax: Maximum limit of single-node scaling. This parameter is required.
+         */
+        public Builder scaleMax(final java.lang.Number scaleMax) {
+            this.props.scaleMax(scaleMax);
+            return this;
+        }
+        /**
+         * Property scaleMax: Maximum limit of single-node scaling.
+         * <p>
+         * @return {@code this}
+         * @param scaleMax Property scaleMax: Maximum limit of single-node scaling. This parameter is required.
+         */
+        public Builder scaleMax(final com.aliyun.ros.cdk.core.IResolvable scaleMax) {
+            this.props.scaleMax(scaleMax);
+            return this;
+        }
+
+        /**
+         * Property scaleMin: Minimum limit of single-node scaling.
+         * <p>
+         * @return {@code this}
+         * @param scaleMin Property scaleMin: Minimum limit of single-node scaling. This parameter is required.
+         */
+        public Builder scaleMin(final java.lang.Number scaleMin) {
+            this.props.scaleMin(scaleMin);
+            return this;
+        }
+        /**
+         * Property scaleMin: Minimum limit of single-node scaling.
+         * <p>
+         * @return {@code this}
+         * @param scaleMin Property scaleMin: Minimum limit of single-node scaling. This parameter is required.
+         */
+        public Builder scaleMin(final com.aliyun.ros.cdk.core.IResolvable scaleMin) {
+            this.props.scaleMin(scaleMin);
+            return this;
+        }
+
+        /**
+         * Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.
+         * <p>
+         * @return {@code this}
+         * @param scaleRoNumMax Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes. This parameter is required.
+         */
+        public Builder scaleRoNumMax(final java.lang.Number scaleRoNumMax) {
+            this.props.scaleRoNumMax(scaleRoNumMax);
+            return this;
+        }
+        /**
+         * Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.
+         * <p>
+         * @return {@code this}
+         * @param scaleRoNumMax Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes. This parameter is required.
+         */
+        public Builder scaleRoNumMax(final com.aliyun.ros.cdk.core.IResolvable scaleRoNumMax) {
+            this.props.scaleRoNumMax(scaleRoNumMax);
+            return this;
+        }
+
+        /**
+         * Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.
+         * <p>
+         * @return {@code this}
+         * @param scaleRoNumMin Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes. This parameter is required.
+         */
+        public Builder scaleRoNumMin(final java.lang.Number scaleRoNumMin) {
+            this.props.scaleRoNumMin(scaleRoNumMin);
+            return this;
+        }
+        /**
+         * Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.
+         * <p>
+         * @return {@code this}
+         * @param scaleRoNumMin Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes. This parameter is required.
+         */
+        public Builder scaleRoNumMin(final com.aliyun.ros.cdk.core.IResolvable scaleRoNumMin) {
+            this.props.scaleRoNumMin(scaleRoNumMin);
+            return this;
+        }
+
+        /**
          * Property securityGroupIds: The ID of the security group.
          * <p>
          * You can add up to three security groups to a cluster.
@@ -752,6 +861,27 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.props.securityIpList(securityIpList);
+            return this;
+        }
+
+        /**
+         * Property serverlessType: Serverless type.
+         * <p>
+         * @return {@code this}
+         * @param serverlessType Property serverlessType: Serverless type. This parameter is required.
+         */
+        public Builder serverlessType(final java.lang.String serverlessType) {
+            this.props.serverlessType(serverlessType);
+            return this;
+        }
+        /**
+         * Property serverlessType: Serverless type.
+         * <p>
+         * @return {@code this}
+         * @param serverlessType Property serverlessType: Serverless type. This parameter is required.
+         */
+        public Builder serverlessType(final com.aliyun.ros.cdk.core.IResolvable serverlessType) {
+            this.props.serverlessType(serverlessType);
             return this;
         }
 

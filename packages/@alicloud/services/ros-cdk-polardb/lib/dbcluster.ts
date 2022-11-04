@@ -37,6 +37,11 @@ export interface DBClusterProps {
     readonly payType: string | ros.IResolvable;
 
     /**
+     * Property allowShutDown: Whether to turn on No activity pause. The default is false.
+     */
+    readonly allowShutDown?: boolean | ros.IResolvable;
+
+    /**
      * Property autoRenewPeriod: Set the cluster auto renewal time. Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
@@ -70,7 +75,7 @@ export interface DBClusterProps {
     readonly clusterNetworkType?: string | ros.IResolvable;
 
     /**
-     * Property creationCategory: Cluster series. The value could be Normal (standard version).
+     * Property creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
      */
     readonly creationCategory?: string | ros.IResolvable;
 
@@ -164,6 +169,26 @@ export interface DBClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * Property scaleMax: Maximum limit of single-node scaling.
+     */
+    readonly scaleMax?: number | ros.IResolvable;
+
+    /**
+     * Property scaleMin: Minimum limit of single-node scaling.
+     */
+    readonly scaleMin?: number | ros.IResolvable;
+
+    /**
+     * Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.
+     */
+    readonly scaleRoNumMax?: number | ros.IResolvable;
+
+    /**
+     * Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.
+     */
+    readonly scaleRoNumMin?: number | ros.IResolvable;
+
+    /**
      * Property securityGroupIds: The ID of the security group. 
      * You can add up to three security groups to a cluster.
      *
@@ -174,6 +199,11 @@ export interface DBClusterProps {
      * Property securityIpList: The whitelist of the Apsara PolarDB cluster.
      */
     readonly securityIpList?: string | ros.IResolvable;
+
+    /**
+     * Property serverlessType: Serverless type.
+     */
+    readonly serverlessType?: string | ros.IResolvable;
 
     /**
      * Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.
@@ -285,6 +315,7 @@ export class DBCluster extends ros.Resource {
             backupRetentionPolicyOnClusterDeletion: props.backupRetentionPolicyOnClusterDeletion,
             sourceResourceId: props.sourceResourceId,
             dbType: props.dbType,
+            scaleRoNumMin: props.scaleRoNumMin,
             dbVersion: props.dbVersion,
             clusterNetworkType: props.clusterNetworkType === undefined || props.clusterNetworkType === null ? 'VPC' : props.clusterNetworkType,
             securityIpList: props.securityIpList,
@@ -296,15 +327,20 @@ export class DBCluster extends ros.Resource {
             tdeStatus: props.tdeStatus,
             zoneId: props.zoneId,
             vSwitchId: props.vSwitchId,
+            scaleRoNumMax: props.scaleRoNumMax,
             renewalStatus: props.renewalStatus === undefined || props.renewalStatus === null ? 'Normal' : props.renewalStatus,
             dbClusterDescription: props.dbClusterDescription,
             period: props.period,
             payType: props.payType,
+            scaleMax: props.scaleMax,
             creationCategory: props.creationCategory,
             securityGroupIds: props.securityGroupIds,
             dbNodeClass: props.dbNodeClass,
             creationOption: props.creationOption === undefined || props.creationOption === null ? 'Normal' : props.creationOption,
+            allowShutDown: props.allowShutDown,
             vpcId: props.vpcId,
+            serverlessType: props.serverlessType,
+            scaleMin: props.scaleMin,
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;

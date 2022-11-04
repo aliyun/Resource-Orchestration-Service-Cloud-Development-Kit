@@ -9,12 +9,17 @@ export { RosFileSystem as FileSystemProperty };
 export interface FileSystemProps {
 
     /**
-     * Property protocolType: Type of protocol used. Currently includes the NFS type and the SMB type
+     * Property protocolType: Type of protocol used. Valid values: NFS, SMB, cpfs.
      */
     readonly protocolType: string | ros.IResolvable;
 
     /**
-     * Property storageType: The file system type. Currently includes the Performance type and the Capacity type
+     * Property storageType: The storage type of the file System.
+     * Valid values:
+     * Performance、Capacity(Available when the file_system_type is standard)
+     * standard、advance(Available when the file_system_type is extreme)
+     * advance_100、advance_200(Available when the file_system_type is cpfs)
+     *
      */
     readonly storageType: string | ros.IResolvable;
 
@@ -59,7 +64,7 @@ export interface FileSystemProps {
     readonly encryptType?: number | ros.IResolvable;
 
     /**
-     * Property fileSystemType: File system type. Allowed values: standard, extreme, cpfs
+     * Property fileSystemType: File system type. Allowed values: standard(default), extreme, cpfs
      */
     readonly fileSystemType?: string | ros.IResolvable;
 
@@ -127,7 +132,7 @@ export class FileSystem extends ros.Resource {
             capacity: props.capacity,
             protocolType: props.protocolType,
             chargeType: props.chargeType,
-            fileSystemType: props.fileSystemType,
+            fileSystemType: props.fileSystemType === undefined || props.fileSystemType === null ? 'standard' : props.fileSystemType,
             bandwidth: props.bandwidth,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

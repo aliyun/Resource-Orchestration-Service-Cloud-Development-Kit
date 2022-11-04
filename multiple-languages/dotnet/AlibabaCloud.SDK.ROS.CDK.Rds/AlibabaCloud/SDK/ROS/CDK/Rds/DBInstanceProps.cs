@@ -1976,6 +1976,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
+        private object? _serverlessConfig;
+
+        /// <summary>Property serverlessConfig: The config of RDS serverless instance.</summary>
+        /// <remarks>
+        /// This is required when creating serverless instance.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "serverlessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-rds.RosDBInstance.ServerlessConfigProperty\"}]}}", isOptional: true)]
+        public object? ServerlessConfig
+        {
+            get => _serverlessConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Rds.RosDBInstance.IServerlessConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Rds.RosDBInstance.IServerlessConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _serverlessConfig = value;
+            }
+        }
+
         private object? _slaveZoneIds;
 
         /// <summary>Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance.</summary>

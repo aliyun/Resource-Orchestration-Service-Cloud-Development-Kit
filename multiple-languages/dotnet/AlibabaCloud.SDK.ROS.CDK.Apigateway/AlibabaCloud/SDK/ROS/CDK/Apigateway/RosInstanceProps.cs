@@ -145,6 +145,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <strong>Property</strong>: autoPay: Indicates whether automatic payment is enabled. Valid values:
         /// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
         /// true: Automatic payment is enabled. The payment is automatically made.
+        /// Default true.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

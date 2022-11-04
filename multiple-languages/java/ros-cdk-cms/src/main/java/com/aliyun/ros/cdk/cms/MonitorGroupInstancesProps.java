@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MonitorGroupInstances`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:09.389Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.436Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitorGroupInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(MonitorGroupInstancesProps.Jsii$Proxy.class)
 public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,7 +36,7 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
          * @param groupId Property groupId: The ID of the application group. This parameter is required.
          * @return {@code this}
          */
-        public Builder groupId(java.lang.Number groupId) {
+        public Builder groupId(java.lang.String groupId) {
             this.groupId = groupId;
             return this;
         }

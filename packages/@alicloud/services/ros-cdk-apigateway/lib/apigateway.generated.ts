@@ -152,10 +152,10 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('resultType', ros.validateString)(properties.resultType));
     errors.collect(ros.propertyValidator('failResultSample', ros.validateString)(properties.failResultSample));
     errors.collect(ros.propertyValidator('errorCodeSamples', ros.listValidator(RosApi_ErrorCodeSamplesPropertyValidator))(properties.errorCodeSamples));
+    errors.collect(ros.propertyValidator('requestParameters', ros.listValidator(RosApi_RequestParametersPropertyValidator))(properties.requestParameters));
     errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
     errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     errors.collect(ros.propertyValidator('serviceParametersMap', ros.listValidator(RosApi_ServiceParametersMapPropertyValidator))(properties.serviceParametersMap));
-    errors.collect(ros.propertyValidator('requestParameters', ros.listValidator(RosApi_RequestParametersPropertyValidator))(properties.requestParameters));
     if(properties.appCodeAuthType && (typeof properties.appCodeAuthType) !== 'object') {
         errors.collect(ros.propertyValidator('appCodeAuthType', ros.validateAllowedValues)({
           data: properties.appCodeAuthType,
@@ -176,7 +176,6 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('visibility', ros.validateString)(properties.visibility));
-    errors.collect(ros.propertyValidator('serviceParameters', ros.listValidator(RosApi_ServiceParametersPropertyValidator))(properties.serviceParameters));
     if(properties.authType && (typeof properties.authType) !== 'object') {
         errors.collect(ros.propertyValidator('authType', ros.validateAllowedValues)({
           data: properties.authType,
@@ -184,6 +183,7 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
+    errors.collect(ros.propertyValidator('serviceParameters', ros.listValidator(RosApi_ServiceParametersPropertyValidator))(properties.serviceParameters));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -2465,6 +2465,7 @@ export interface RosInstanceProps {
      * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
      * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
      * true: Automatic payment is enabled. The payment is automatically made.
+     * Default true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -2523,7 +2524,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["PostPaid","PrePaid"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -2655,6 +2656,7 @@ export class RosInstance extends ros.RosResource {
      * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
      * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
      * true: Automatic payment is enabled. The payment is automatically made.
+     * Default true.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 

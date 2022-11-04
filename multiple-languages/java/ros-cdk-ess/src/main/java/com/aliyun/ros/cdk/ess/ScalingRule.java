@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS resource type:  `ALIYUN::ESS::ScalingRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.510Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.693Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingRule")
 public class ScalingRule extends com.aliyun.ros.cdk.core.Resource {
 
@@ -508,6 +508,60 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder predictiveValueBuffer(final com.aliyun.ros.cdk.core.IResolvable predictiveValueBuffer) {
             this.props.predictiveValueBuffer(predictiveValueBuffer);
+            return this;
+        }
+
+        /**
+         * Property scaleInEvaluationCount: The number of consecutive times that the event-triggered task created for scale-in activities meets the threshold conditions before an alert is triggered.
+         * <p>
+         * After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
+         * Default value: 15.
+         * <p>
+         * @return {@code this}
+         * @param scaleInEvaluationCount Property scaleInEvaluationCount: The number of consecutive times that the event-triggered task created for scale-in activities meets the threshold conditions before an alert is triggered. This parameter is required.
+         */
+        public Builder scaleInEvaluationCount(final java.lang.Number scaleInEvaluationCount) {
+            this.props.scaleInEvaluationCount(scaleInEvaluationCount);
+            return this;
+        }
+        /**
+         * Property scaleInEvaluationCount: The number of consecutive times that the event-triggered task created for scale-in activities meets the threshold conditions before an alert is triggered.
+         * <p>
+         * After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
+         * Default value: 15.
+         * <p>
+         * @return {@code this}
+         * @param scaleInEvaluationCount Property scaleInEvaluationCount: The number of consecutive times that the event-triggered task created for scale-in activities meets the threshold conditions before an alert is triggered. This parameter is required.
+         */
+        public Builder scaleInEvaluationCount(final com.aliyun.ros.cdk.core.IResolvable scaleInEvaluationCount) {
+            this.props.scaleInEvaluationCount(scaleInEvaluationCount);
+            return this;
+        }
+
+        /**
+         * Property scaleOutEvaluationCount: The number of consecutive times that the event-triggered task created for scale-out activities meets the threshold conditions before an alert is triggered.
+         * <p>
+         * After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
+         * Default value: 3.
+         * <p>
+         * @return {@code this}
+         * @param scaleOutEvaluationCount Property scaleOutEvaluationCount: The number of consecutive times that the event-triggered task created for scale-out activities meets the threshold conditions before an alert is triggered. This parameter is required.
+         */
+        public Builder scaleOutEvaluationCount(final java.lang.Number scaleOutEvaluationCount) {
+            this.props.scaleOutEvaluationCount(scaleOutEvaluationCount);
+            return this;
+        }
+        /**
+         * Property scaleOutEvaluationCount: The number of consecutive times that the event-triggered task created for scale-out activities meets the threshold conditions before an alert is triggered.
+         * <p>
+         * After a target tracking scaling rule is created, an event-triggered task is automatically created and then associated with the target tracking scaling rule.
+         * Default value: 3.
+         * <p>
+         * @return {@code this}
+         * @param scaleOutEvaluationCount Property scaleOutEvaluationCount: The number of consecutive times that the event-triggered task created for scale-out activities meets the threshold conditions before an alert is triggered. This parameter is required.
+         */
+        public Builder scaleOutEvaluationCount(final com.aliyun.ros.cdk.core.IResolvable scaleOutEvaluationCount) {
+            this.props.scaleOutEvaluationCount(scaleOutEvaluationCount);
             return this;
         }
 

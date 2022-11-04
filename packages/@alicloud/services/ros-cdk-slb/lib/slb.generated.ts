@@ -2061,7 +2061,7 @@ export interface RosLoadBalancerProps {
 
     /**
      * @Property autoPay: Optional. Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-     * Valid values: true | false (default value)
+     * Valid values: true | false. Default true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -2226,7 +2226,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -2419,7 +2419,7 @@ export class RosLoadBalancer extends ros.RosResource {
 
     /**
      * @Property autoPay: Optional. Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-     * Valid values: true | false (default value)
+     * Valid values: true | false. Default true.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -2733,6 +2733,7 @@ function RosLoadBalancerClonePropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
     errors.collect(ros.propertyValidator('sourceLoadBalancerId', ros.requiredValidator)(properties.sourceLoadBalancerId));
     errors.collect(ros.propertyValidator('sourceLoadBalancerId', ros.validateString)(properties.sourceLoadBalancerId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.tagsPolicy && (typeof properties.tagsPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('tagsPolicy', ros.validateAllowedValues)({
           data: properties.tagsPolicy,
@@ -2740,7 +2741,6 @@ function RosLoadBalancerClonePropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('tagsPolicy', ros.validateString)(properties.tagsPolicy));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,

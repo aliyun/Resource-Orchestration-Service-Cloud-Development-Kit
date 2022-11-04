@@ -449,6 +449,11 @@ export interface RosDBClusterProps {
     readonly payType: string | ros.IResolvable;
 
     /**
+     * @Property allowShutDown: Whether to turn on No activity pause. The default is false.
+     */
+    readonly allowShutDown?: boolean | ros.IResolvable;
+
+    /**
      * @Property autoRenewPeriod: Set the cluster auto renewal time. Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
@@ -482,7 +487,7 @@ export interface RosDBClusterProps {
     readonly clusterNetworkType?: string | ros.IResolvable;
 
     /**
-     * @Property creationCategory: Cluster series. The value could be Normal (standard version).
+     * @Property creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
      */
     readonly creationCategory?: string | ros.IResolvable;
 
@@ -576,6 +581,26 @@ export interface RosDBClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property scaleMax: Maximum limit of single-node scaling.
+     */
+    readonly scaleMax?: number | ros.IResolvable;
+
+    /**
+     * @Property scaleMin: Minimum limit of single-node scaling.
+     */
+    readonly scaleMin?: number | ros.IResolvable;
+
+    /**
+     * @Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.
+     */
+    readonly scaleRoNumMax?: number | ros.IResolvable;
+
+    /**
+     * @Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.
+     */
+    readonly scaleRoNumMin?: number | ros.IResolvable;
+
+    /**
      * @Property securityGroupIds: The ID of the security group. 
      * You can add up to three security groups to a cluster.
      *
@@ -586,6 +611,11 @@ export interface RosDBClusterProps {
      * @Property securityIpList: The whitelist of the Apsara PolarDB cluster.
      */
     readonly securityIpList?: string | ros.IResolvable;
+
+    /**
+     * @Property serverlessType: Serverless type.
+     */
+    readonly serverlessType?: string | ros.IResolvable;
 
     /**
      * @Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.
@@ -654,6 +684,14 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dbType', ros.validateString)(properties.dbType));
+    if(properties.scaleRoNumMin && (typeof properties.scaleRoNumMin) !== 'object') {
+        errors.collect(ros.propertyValidator('scaleRoNumMin', ros.validateRange)({
+            data: properties.scaleRoNumMin,
+            min: 0,
+            max: 15,
+          }));
+    }
+    errors.collect(ros.propertyValidator('scaleRoNumMin', ros.validateNumber)(properties.scaleRoNumMin));
     errors.collect(ros.propertyValidator('dbVersion', ros.requiredValidator)(properties.dbVersion));
     errors.collect(ros.propertyValidator('dbVersion', ros.validateString)(properties.dbVersion));
     if(properties.clusterNetworkType && (typeof properties.clusterNetworkType) !== 'object') {
@@ -691,6 +729,14 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tdeStatus', ros.validateBoolean)(properties.tdeStatus));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.scaleRoNumMax && (typeof properties.scaleRoNumMax) !== 'object') {
+        errors.collect(ros.propertyValidator('scaleRoNumMax', ros.validateRange)({
+            data: properties.scaleRoNumMax,
+            min: 0,
+            max: 15,
+          }));
+    }
+    errors.collect(ros.propertyValidator('scaleRoNumMax', ros.validateNumber)(properties.scaleRoNumMax));
     if(properties.renewalStatus && (typeof properties.renewalStatus) !== 'object') {
         errors.collect(ros.propertyValidator('renewalStatus', ros.validateAllowedValues)({
           data: properties.renewalStatus,
@@ -717,10 +763,18 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    if(properties.scaleMax && (typeof properties.scaleMax) !== 'object') {
+        errors.collect(ros.propertyValidator('scaleMax', ros.validateRange)({
+            data: properties.scaleMax,
+            min: 1,
+            max: 32,
+          }));
+    }
+    errors.collect(ros.propertyValidator('scaleMax', ros.validateNumber)(properties.scaleMax));
     errors.collect(ros.propertyValidator('creationCategory', ros.validateString)(properties.creationCategory));
     errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     errors.collect(ros.propertyValidator('dbNodeClass', ros.requiredValidator)(properties.dbNodeClass));
@@ -732,7 +786,23 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('creationOption', ros.validateString)(properties.creationOption));
+    errors.collect(ros.propertyValidator('allowShutDown', ros.validateBoolean)(properties.allowShutDown));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.serverlessType && (typeof properties.serverlessType) !== 'object') {
+        errors.collect(ros.propertyValidator('serverlessType', ros.validateAllowedValues)({
+          data: properties.serverlessType,
+          allowedValues: ["AgileServerless"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('serverlessType', ros.validateString)(properties.serverlessType));
+    if(properties.scaleMin && (typeof properties.scaleMin) !== 'object') {
+        errors.collect(ros.propertyValidator('scaleMin', ros.validateRange)({
+            data: properties.scaleMin,
+            min: 1,
+            max: 31,
+          }));
+    }
+    errors.collect(ros.propertyValidator('scaleMin', ros.validateNumber)(properties.scaleMin));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -761,6 +831,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       DBType: ros.stringToRosTemplate(properties.dbType),
       DBVersion: ros.stringToRosTemplate(properties.dbVersion),
       PayType: ros.stringToRosTemplate(properties.payType),
+      AllowShutDown: ros.booleanToRosTemplate(properties.allowShutDown),
       AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
       BackupRetentionPolicyOnClusterDeletion: ros.stringToRosTemplate(properties.backupRetentionPolicyOnClusterDeletion),
       CloneDataPoint: ros.stringToRosTemplate(properties.cloneDataPoint),
@@ -777,8 +848,13 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       RenewalStatus: ros.stringToRosTemplate(properties.renewalStatus),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      ScaleMax: ros.numberToRosTemplate(properties.scaleMax),
+      ScaleMin: ros.numberToRosTemplate(properties.scaleMin),
+      ScaleRoNumMax: ros.numberToRosTemplate(properties.scaleRoNumMax),
+      ScaleRoNumMin: ros.numberToRosTemplate(properties.scaleRoNumMin),
       SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
+      ServerlessType: ros.stringToRosTemplate(properties.serverlessType),
       SourceResourceId: ros.stringToRosTemplate(properties.sourceResourceId),
       Tags: ros.listMapper(rosDBClusterTagsPropertyToRosTemplate)(properties.tags),
       TDEStatus: ros.booleanToRosTemplate(properties.tdeStatus),
@@ -879,6 +955,11 @@ export class RosDBCluster extends ros.RosResource {
     public payType: string | ros.IResolvable;
 
     /**
+     * @Property allowShutDown: Whether to turn on No activity pause. The default is false.
+     */
+    public allowShutDown: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property autoRenewPeriod: Set the cluster auto renewal time. Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
      */
     public autoRenewPeriod: number | ros.IResolvable | undefined;
@@ -912,7 +993,7 @@ export class RosDBCluster extends ros.RosResource {
     public clusterNetworkType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property creationCategory: Cluster series. The value could be Normal (standard version).
+     * @Property creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
      */
     public creationCategory: string | ros.IResolvable | undefined;
 
@@ -1006,6 +1087,26 @@ export class RosDBCluster extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property scaleMax: Maximum limit of single-node scaling.
+     */
+    public scaleMax: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property scaleMin: Minimum limit of single-node scaling.
+     */
+    public scaleMin: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.
+     */
+    public scaleRoNumMax: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.
+     */
+    public scaleRoNumMin: number | ros.IResolvable | undefined;
+
+    /**
      * @Property securityGroupIds: The ID of the security group. 
      * You can add up to three security groups to a cluster.
      *
@@ -1016,6 +1117,11 @@ export class RosDBCluster extends ros.RosResource {
      * @Property securityIpList: The whitelist of the Apsara PolarDB cluster.
      */
     public securityIpList: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serverlessType: Serverless type.
+     */
+    public serverlessType: string | ros.IResolvable | undefined;
 
     /**
      * @Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.
@@ -1077,6 +1183,7 @@ export class RosDBCluster extends ros.RosResource {
         this.dbType = props.dbType;
         this.dbVersion = props.dbVersion;
         this.payType = props.payType;
+        this.allowShutDown = props.allowShutDown;
         this.autoRenewPeriod = props.autoRenewPeriod;
         this.backupRetentionPolicyOnClusterDeletion = props.backupRetentionPolicyOnClusterDeletion;
         this.cloneDataPoint = props.cloneDataPoint;
@@ -1093,8 +1200,13 @@ export class RosDBCluster extends ros.RosResource {
         this.periodUnit = props.periodUnit;
         this.renewalStatus = props.renewalStatus;
         this.resourceGroupId = props.resourceGroupId;
+        this.scaleMax = props.scaleMax;
+        this.scaleMin = props.scaleMin;
+        this.scaleRoNumMax = props.scaleRoNumMax;
+        this.scaleRoNumMin = props.scaleRoNumMin;
         this.securityGroupIds = props.securityGroupIds;
         this.securityIpList = props.securityIpList;
+        this.serverlessType = props.serverlessType;
         this.sourceResourceId = props.sourceResourceId;
         this.tags = props.tags;
         this.tdeStatus = props.tdeStatus;
@@ -1110,6 +1222,7 @@ export class RosDBCluster extends ros.RosResource {
             dbType: this.dbType,
             dbVersion: this.dbVersion,
             payType: this.payType,
+            allowShutDown: this.allowShutDown,
             autoRenewPeriod: this.autoRenewPeriod,
             backupRetentionPolicyOnClusterDeletion: this.backupRetentionPolicyOnClusterDeletion,
             cloneDataPoint: this.cloneDataPoint,
@@ -1126,8 +1239,13 @@ export class RosDBCluster extends ros.RosResource {
             periodUnit: this.periodUnit,
             renewalStatus: this.renewalStatus,
             resourceGroupId: this.resourceGroupId,
+            scaleMax: this.scaleMax,
+            scaleMin: this.scaleMin,
+            scaleRoNumMax: this.scaleRoNumMax,
+            scaleRoNumMin: this.scaleRoNumMin,
             securityGroupIds: this.securityGroupIds,
             securityIpList: this.securityIpList,
+            serverlessType: this.serverlessType,
             sourceResourceId: this.sourceResourceId,
             tags: this.tags,
             tdeStatus: this.tdeStatus,

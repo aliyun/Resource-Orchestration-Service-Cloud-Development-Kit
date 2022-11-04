@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::PrepayDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.311Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.496Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayDBInstanceProps.Jsii$Proxy.class)
 public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -105,7 +105,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
     /**
      * Property autoPay: Automatic Payment.
      * <p>
-     * Default is false.
+     * Default is true.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -488,6 +488,15 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
+     * Property serverlessConfig: The config of RDS serverless instance.
+     * <p>
+     * This is required when creating serverless instance.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServerlessConfig() {
+        return null;
+    }
+
+    /**
      * Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance.
      * <p>
      * Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
@@ -648,6 +657,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object resourceGroupId;
         java.lang.Object roleArn;
         java.lang.Object securityGroupId;
+        java.lang.Object serverlessConfig;
         java.lang.Object slaveZoneIds;
         java.lang.Object sqlCollectorStatus;
         java.lang.Object sslSetting;
@@ -928,7 +938,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getAutoPay}
          * @param autoPay Property autoPay: Automatic Payment.
-         *                Default is false.
+         *                Default is true.
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -939,7 +949,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getAutoPay}
          * @param autoPay Property autoPay: Automatic Payment.
-         *                Default is false.
+         *                Default is true.
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -1890,6 +1900,28 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link PrepayDBInstanceProps#getServerlessConfig}
+         * @param serverlessConfig Property serverlessConfig: The config of RDS serverless instance.
+         *                         This is required when creating serverless instance.
+         * @return {@code this}
+         */
+        public Builder serverlessConfig(com.aliyun.ros.cdk.core.IResolvable serverlessConfig) {
+            this.serverlessConfig = serverlessConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayDBInstanceProps#getServerlessConfig}
+         * @param serverlessConfig Property serverlessConfig: The config of RDS serverless instance.
+         *                         This is required when creating serverless instance.
+         * @return {@code this}
+         */
+        public Builder serverlessConfig(com.aliyun.ros.cdk.rds.RosPrepayDBInstance.ServerlessConfigProperty serverlessConfig) {
+            this.serverlessConfig = serverlessConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link PrepayDBInstanceProps#getSlaveZoneIds}
          * @param slaveZoneIds Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance.
          *                     Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
@@ -2180,6 +2212,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object roleArn;
         private final java.lang.Object securityGroupId;
+        private final java.lang.Object serverlessConfig;
         private final java.lang.Object slaveZoneIds;
         private final java.lang.Object sqlCollectorStatus;
         private final java.lang.Object sslSetting;
@@ -2249,6 +2282,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.roleArn = software.amazon.jsii.Kernel.get(this, "roleArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serverlessConfig = software.amazon.jsii.Kernel.get(this, "serverlessConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slaveZoneIds = software.amazon.jsii.Kernel.get(this, "slaveZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sqlCollectorStatus = software.amazon.jsii.Kernel.get(this, "sqlCollectorStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sslSetting = software.amazon.jsii.Kernel.get(this, "sslSetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2319,6 +2353,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.resourceGroupId = builder.resourceGroupId;
             this.roleArn = builder.roleArn;
             this.securityGroupId = builder.securityGroupId;
+            this.serverlessConfig = builder.serverlessConfig;
             this.slaveZoneIds = builder.slaveZoneIds;
             this.sqlCollectorStatus = builder.sqlCollectorStatus;
             this.sslSetting = builder.sslSetting;
@@ -2592,6 +2627,11 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getServerlessConfig() {
+            return this.serverlessConfig;
+        }
+
+        @Override
         public final java.lang.Object getSlaveZoneIds() {
             return this.slaveZoneIds;
         }
@@ -2789,6 +2829,9 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
+            if (this.getServerlessConfig() != null) {
+                data.set("serverlessConfig", om.valueToTree(this.getServerlessConfig()));
+            }
             if (this.getSlaveZoneIds() != null) {
                 data.set("slaveZoneIds", om.valueToTree(this.getSlaveZoneIds()));
             }
@@ -2889,6 +2932,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.roleArn != null ? !this.roleArn.equals(that.roleArn) : that.roleArn != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
+            if (this.serverlessConfig != null ? !this.serverlessConfig.equals(that.serverlessConfig) : that.serverlessConfig != null) return false;
             if (this.slaveZoneIds != null ? !this.slaveZoneIds.equals(that.slaveZoneIds) : that.slaveZoneIds != null) return false;
             if (this.sqlCollectorStatus != null ? !this.sqlCollectorStatus.equals(that.sqlCollectorStatus) : that.sqlCollectorStatus != null) return false;
             if (this.sslSetting != null ? !this.sslSetting.equals(that.sslSetting) : that.sslSetting != null) return false;
@@ -2955,6 +2999,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.roleArn != null ? this.roleArn.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
+            result = 31 * result + (this.serverlessConfig != null ? this.serverlessConfig.hashCode() : 0);
             result = 31 * result + (this.slaveZoneIds != null ? this.slaveZoneIds.hashCode() : 0);
             result = 31 * result + (this.sqlCollectorStatus != null ? this.sqlCollectorStatus.hashCode() : 0);
             result = 31 * result + (this.sslSetting != null ? this.sslSetting.hashCode() : 0);

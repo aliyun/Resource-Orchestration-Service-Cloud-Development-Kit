@@ -38,6 +38,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         {
         }
 
+        /// <summary>Attribute DBName: The name of the database that you want to restore.</summary>
+        [JsiiProperty(name: "attrDbName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute MigrateTaskId: The ID of the migrate task.</summary>
         [JsiiProperty(name: "attrMigrateTaskId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMigrateTaskId

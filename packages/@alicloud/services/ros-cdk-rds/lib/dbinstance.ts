@@ -335,6 +335,11 @@ export interface DBInstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * Property serverlessConfig: The config of RDS serverless instance. This is required when creating serverless instance.
+     */
+    readonly serverlessConfig?: RosDBInstance.ServerlessConfigProperty | ros.IResolvable;
+
+    /**
      * Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     readonly slaveZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -515,6 +520,7 @@ export class DBInstance extends ros.Resource {
             logBackupFrequency: props.logBackupFrequency,
             connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
             masterUserType: props.masterUserType === undefined || props.masterUserType === null ? 'Normal' : props.masterUserType,
+            serverlessConfig: props.serverlessConfig,
             enableBackupLog: props.enableBackupLog,
             sqlCollectorStatus: props.sqlCollectorStatus,
             backupRetentionPeriod: props.backupRetentionPeriod === undefined || props.backupRetentionPeriod === null ? 7 : props.backupRetentionPeriod,

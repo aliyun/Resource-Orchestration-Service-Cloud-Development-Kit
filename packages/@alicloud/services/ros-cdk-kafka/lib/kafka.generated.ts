@@ -686,6 +686,8 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('config', ros.hashValidator(ros.validateAny))(properties.config));
+    errors.collect(ros.propertyValidator('topic', ros.requiredValidator)(properties.topic));
+    errors.collect(ros.propertyValidator('topic', ros.validateString)(properties.topic));
     if(properties.minInsyncReplicas && (typeof properties.minInsyncReplicas) !== 'object') {
         errors.collect(ros.propertyValidator('minInsyncReplicas', ros.validateRange)({
             data: properties.minInsyncReplicas,
@@ -694,8 +696,6 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('minInsyncReplicas', ros.validateNumber)(properties.minInsyncReplicas));
-    errors.collect(ros.propertyValidator('topic', ros.requiredValidator)(properties.topic));
-    errors.collect(ros.propertyValidator('topic', ros.validateString)(properties.topic));
     errors.collect(ros.propertyValidator('localTopic', ros.validateBoolean)(properties.localTopic));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({

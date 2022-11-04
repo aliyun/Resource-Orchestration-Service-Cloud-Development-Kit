@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::BandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:10.655Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.826Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(BandwidthPackageProps.Jsii$Proxy.class)
 public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,7 +19,7 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
     @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
-     * Property autoPay: The AutoPay of the bandwidth.
+     * Property autoPay: Specifies whether to enable automatic payment.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -153,17 +153,17 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link BandwidthPackageProps#getAutoPay}
-         * @param autoPay Property autoPay: The AutoPay of the bandwidth.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment.
          * @return {@code this}
          */
-        public Builder autoPay(java.lang.String autoPay) {
+        public Builder autoPay(java.lang.Boolean autoPay) {
             this.autoPay = autoPay;
             return this;
         }
 
         /**
          * Sets the value of {@link BandwidthPackageProps#getAutoPay}
-         * @param autoPay Property autoPay: The AutoPay of the bandwidth.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment.
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {

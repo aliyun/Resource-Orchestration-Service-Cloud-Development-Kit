@@ -27,8 +27,8 @@ export interface CenBandwidthPackageProps {
 
     /**
      * Property autoPay: Whether to automatically pay the bill. Valid value:
-     * true
-     * false (Default)
+     * true (default)
+     * false
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -110,7 +110,7 @@ export class CenBandwidthPackage extends ros.Resource {
             autoRenew: props.autoRenew,
             bandwidth: props.bandwidth,
             period: props.period === undefined || props.period === null ? 1 : props.period,
-            autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             name: props.name,
             autoRenewDuration: props.autoRenewDuration,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

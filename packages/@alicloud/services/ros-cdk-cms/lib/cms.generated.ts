@@ -2897,7 +2897,7 @@ export interface RosMonitorGroupInstancesProps {
     /**
      * @Property groupId: The ID of the application group.
      */
-    readonly groupId: number | ros.IResolvable;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * @Property instances:
@@ -2925,7 +2925,7 @@ function RosMonitorGroupInstancesPropsValidator(properties: any): ros.Validation
     }
     errors.collect(ros.propertyValidator('instances', ros.listValidator(RosMonitorGroupInstances_InstancesPropertyValidator))(properties.instances));
     errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
-    errors.collect(ros.propertyValidator('groupId', ros.validateNumber)(properties.groupId));
+    errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     return errors.wrap('supplied properties not correct for "RosMonitorGroupInstancesProps"');
 }
 
@@ -2943,7 +2943,7 @@ function rosMonitorGroupInstancesPropsToRosTemplate(properties: any, enableResou
         RosMonitorGroupInstancesPropsValidator(properties).assertSuccess();
     }
     return {
-      GroupId: ros.numberToRosTemplate(properties.groupId),
+      GroupId: ros.stringToRosTemplate(properties.groupId),
       Instances: ros.listMapper(rosMonitorGroupInstancesInstancesPropertyToRosTemplate)(properties.instances),
     };
 }
@@ -2973,7 +2973,7 @@ export class RosMonitorGroupInstances extends ros.RosResource {
     /**
      * @Property groupId: The ID of the application group.
      */
-    public groupId: number | ros.IResolvable;
+    public groupId: string | ros.IResolvable;
 
     /**
      * @Property instances:

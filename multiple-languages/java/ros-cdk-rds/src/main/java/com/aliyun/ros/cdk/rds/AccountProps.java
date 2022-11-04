@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::Account`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.68.0 (build b45f2f6)", date = "2022-09-23T09:09:11.246Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.438Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.AccountProps")
 @software.amazon.jsii.Jsii.Proxy(AccountProps.Jsii$Proxy.class)
 public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,6 +46,7 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
      * <p>
      * Normal: Common privilege.
      * Super: High privilege. And the default value is Normal.
+     * Sysadmin: Super privileges (SA) (only supported by SQL Server)
      * This parameter is valid for MySQL 5.5/5.6 only.
      * MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
      */
@@ -170,6 +171,7 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
          * @param accountType Property accountType: Privilege type of account.
          *                    Normal: Common privilege.
          *                    Super: High privilege. And the default value is Normal.
+         *                    Sysadmin: Super privileges (SA) (only supported by SQL Server)
          *                    This parameter is valid for MySQL 5.5/5.6 only.
          *                    MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
          * @return {@code this}
@@ -184,6 +186,7 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
          * @param accountType Property accountType: Privilege type of account.
          *                    Normal: Common privilege.
          *                    Super: High privilege. And the default value is Normal.
+         *                    Sysadmin: Super privileges (SA) (only supported by SQL Server)
          *                    This parameter is valid for MySQL 5.5/5.6 only.
          *                    MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
          * @return {@code this}

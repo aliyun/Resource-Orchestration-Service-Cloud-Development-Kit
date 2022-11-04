@@ -33,6 +33,7 @@ export interface InstanceProps {
      * Property autoPay: Indicates whether automatic payment is enabled. Valid values:
      * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
      * true: Automatic payment is enabled. The payment is automatically made.
+     * Default true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -131,7 +132,7 @@ export class Instance extends ros.Resource {
             pricingCycle: props.pricingCycle,
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
             duration: props.duration,
-            autoPay: props.autoPay,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;

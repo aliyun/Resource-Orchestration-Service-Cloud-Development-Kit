@@ -202,6 +202,7 @@ export interface RosAccountProps {
      * @Property accountType: Privilege type of account.
      * Normal: Common privilege.
      * Super: High privilege. And the default value is Normal.
+     * Sysadmin: Super privileges (SA) (only supported by SQL Server)
      * This parameter is valid for MySQL 5.5/5.6 only.
      * MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
      */
@@ -224,7 +225,7 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
     if(properties.accountType && (typeof properties.accountType) !== 'object') {
         errors.collect(ros.propertyValidator('accountType', ros.validateAllowedValues)({
           data: properties.accountType,
-          allowedValues: ["Normal","Super"],
+          allowedValues: ["Normal","Super","Sysadmin"],
         }));
     }
     errors.collect(ros.propertyValidator('accountType', ros.validateString)(properties.accountType));
@@ -318,6 +319,7 @@ export class RosAccount extends ros.RosResource {
      * @Property accountType: Privilege type of account.
      * Normal: Common privilege.
      * Super: High privilege. And the default value is Normal.
+     * Sysadmin: Super privileges (SA) (only supported by SQL Server)
      * This parameter is valid for MySQL 5.5/5.6 only.
      * MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
      */
@@ -831,6 +833,11 @@ export interface RosDBInstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property serverlessConfig: The config of RDS serverless instance. This is required when creating serverless instance.
+     */
+    readonly serverlessConfig?: RosDBInstance.ServerlessConfigProperty | ros.IResolvable;
+
+    /**
      * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     readonly slaveZoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -1008,7 +1015,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE","Serverless"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -1123,6 +1130,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('masterUserType', ros.validateString)(properties.masterUserType));
+    errors.collect(ros.propertyValidator('serverlessConfig', RosDBInstance_ServerlessConfigPropertyValidator)(properties.serverlessConfig));
     errors.collect(ros.propertyValidator('enableBackupLog', ros.validateBoolean)(properties.enableBackupLog));
     if(properties.sqlCollectorStatus && (typeof properties.sqlCollectorStatus) !== 'object') {
         errors.collect(ros.propertyValidator('sqlCollectorStatus', ros.validateAllowedValues)({
@@ -1199,6 +1207,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       RoleARN: ros.stringToRosTemplate(properties.roleArn),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      ServerlessConfig: rosDBInstanceServerlessConfigPropertyToRosTemplate(properties.serverlessConfig),
       SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
       SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
       SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
@@ -1591,6 +1600,11 @@ export class RosDBInstance extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property serverlessConfig: The config of RDS serverless instance. This is required when creating serverless instance.
+     */
+    public serverlessConfig: RosDBInstance.ServerlessConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     public slaveZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
@@ -1725,6 +1739,7 @@ export class RosDBInstance extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.roleArn = props.roleArn;
         this.securityGroupId = props.securityGroupId;
+        this.serverlessConfig = props.serverlessConfig;
         this.slaveZoneIds = props.slaveZoneIds;
         this.sqlCollectorStatus = props.sqlCollectorStatus;
         this.sslSetting = props.sslSetting;
@@ -1790,6 +1805,7 @@ export class RosDBInstance extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             roleArn: this.roleArn,
             securityGroupId: this.securityGroupId,
+            serverlessConfig: this.serverlessConfig,
             slaveZoneIds: this.slaveZoneIds,
             sqlCollectorStatus: this.sqlCollectorStatus,
             sslSetting: this.sslSetting,
@@ -1866,6 +1882,85 @@ function rosDBInstanceDBMappingsPropertyToRosTemplate(properties: any): any {
       CharacterSetName: ros.stringToRosTemplate(properties.characterSetName),
       DBDescription: ros.stringToRosTemplate(properties.dbDescription),
       DBName: ros.stringToRosTemplate(properties.dbName),
+    };
+}
+
+export namespace RosDBInstance {
+    /**
+     * @stability external
+     */
+    export interface ServerlessConfigProperty {
+        /**
+         * @Property switchForce: Whether to enable mandatory elastic scaling of serverless instances. Value:
+     * true: enabled.
+     * false: not enabled (default).
+         */
+        readonly switchForce?: boolean | ros.IResolvable;
+        /**
+         * @Property minCapacity: The minimum value of the automatic scaling range of an instance RCU (RDS Capacity Unit). Value: 0.5-8.
+         */
+        readonly minCapacity: number | ros.IResolvable;
+        /**
+         * @Property autoPause: Whether to enable intelligent pause and start of serverless instances. Value:
+     * true: enabled.
+     * false: not enabled (default).
+         */
+        readonly autoPause?: boolean | ros.IResolvable;
+        /**
+         * @Property maxCapacity: The maximum value of the automatic scaling range of an instance RCU (RDS Capacity Unit). Value: 0.5-8.
+         */
+        readonly maxCapacity: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ServerlessConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `ServerlessConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBInstance_ServerlessConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('switchForce', ros.validateBoolean)(properties.switchForce));
+    errors.collect(ros.propertyValidator('minCapacity', ros.requiredValidator)(properties.minCapacity));
+    if(properties.minCapacity && (typeof properties.minCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('minCapacity', ros.validateRange)({
+            data: properties.minCapacity,
+            min: 0.5,
+            max: 8,
+          }));
+    }
+    errors.collect(ros.propertyValidator('minCapacity', ros.validateNumber)(properties.minCapacity));
+    errors.collect(ros.propertyValidator('autoPause', ros.validateBoolean)(properties.autoPause));
+    errors.collect(ros.propertyValidator('maxCapacity', ros.requiredValidator)(properties.maxCapacity));
+    if(properties.maxCapacity && (typeof properties.maxCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('maxCapacity', ros.validateRange)({
+            data: properties.maxCapacity,
+            min: 0.5,
+            max: 8,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxCapacity', ros.validateNumber)(properties.maxCapacity));
+    return errors.wrap('supplied properties not correct for "ServerlessConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RDS::DBInstance.ServerlessConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `ServerlessConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RDS::DBInstance.ServerlessConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosDBInstanceServerlessConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDBInstance_ServerlessConfigPropertyValidator(properties).assertSuccess();
+    return {
+      SwitchForce: ros.booleanToRosTemplate(properties.switchForce),
+      MinCapacity: ros.numberToRosTemplate(properties.minCapacity),
+      AutoPause: ros.booleanToRosTemplate(properties.autoPause),
+      MaxCapacity: ros.numberToRosTemplate(properties.maxCapacity),
     };
 }
 
@@ -2211,7 +2306,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE","Serverless"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -3525,6 +3620,11 @@ export class RosMigrateTask extends ros.RosResource {
      */
 
     /**
+     * @Attribute DBName: The name of the database that you want to restore.
+     */
+    public readonly attrDbName: ros.IResolvable;
+
+    /**
      * @Attribute MigrateTaskId: The ID of the migrate task.
      */
     public readonly attrMigrateTaskId: ros.IResolvable;
@@ -3593,6 +3693,7 @@ export class RosMigrateTask extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMigrateTaskProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMigrateTask.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDbName = this.getAtt('DBName');
         this.attrMigrateTaskId = this.getAtt('MigrateTaskId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -3699,7 +3800,7 @@ export interface RosPrepayDBInstanceProps {
     readonly archiveBackupRetentionPeriod?: number | ros.IResolvable;
 
     /**
-     * @Property autoPay: Automatic Payment. Default is false.
+     * @Property autoPay: Automatic Payment. Default is true.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -3958,6 +4059,11 @@ export interface RosPrepayDBInstanceProps {
      *
      */
     readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property serverlessConfig: The config of RDS serverless instance. This is required when creating serverless instance.
+     */
+    readonly serverlessConfig?: RosPrepayDBInstance.ServerlessConfigProperty | ros.IResolvable;
 
     /**
      * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
@@ -4264,6 +4370,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('masterUserType', ros.validateString)(properties.masterUserType));
+    errors.collect(ros.propertyValidator('serverlessConfig', RosPrepayDBInstance_ServerlessConfigPropertyValidator)(properties.serverlessConfig));
     errors.collect(ros.propertyValidator('enableBackupLog', ros.validateBoolean)(properties.enableBackupLog));
     if(properties.sqlCollectorStatus && (typeof properties.sqlCollectorStatus) !== 'object') {
         errors.collect(ros.propertyValidator('sqlCollectorStatus', ros.validateAllowedValues)({
@@ -4342,6 +4449,7 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       RoleARN: ros.stringToRosTemplate(properties.roleArn),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      ServerlessConfig: rosPrepayDBInstanceServerlessConfigPropertyToRosTemplate(properties.serverlessConfig),
       SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
       SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
       SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
@@ -4484,7 +4592,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public archiveBackupRetentionPeriod: number | ros.IResolvable | undefined;
 
     /**
-     * @Property autoPay: Automatic Payment. Default is false.
+     * @Property autoPay: Automatic Payment. Default is true.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -4745,6 +4853,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property serverlessConfig: The config of RDS serverless instance. This is required when creating serverless instance.
+     */
+    public serverlessConfig: RosPrepayDBInstance.ServerlessConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b".
      */
     public slaveZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
@@ -4882,6 +4995,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.roleArn = props.roleArn;
         this.securityGroupId = props.securityGroupId;
+        this.serverlessConfig = props.serverlessConfig;
         this.slaveZoneIds = props.slaveZoneIds;
         this.sqlCollectorStatus = props.sqlCollectorStatus;
         this.sslSetting = props.sslSetting;
@@ -4949,6 +5063,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             roleArn: this.roleArn,
             securityGroupId: this.securityGroupId,
+            serverlessConfig: this.serverlessConfig,
             slaveZoneIds: this.slaveZoneIds,
             sqlCollectorStatus: this.sqlCollectorStatus,
             sslSetting: this.sslSetting,
@@ -5025,6 +5140,85 @@ function rosPrepayDBInstanceDBMappingsPropertyToRosTemplate(properties: any): an
       CharacterSetName: ros.stringToRosTemplate(properties.characterSetName),
       DBDescription: ros.stringToRosTemplate(properties.dbDescription),
       DBName: ros.stringToRosTemplate(properties.dbName),
+    };
+}
+
+export namespace RosPrepayDBInstance {
+    /**
+     * @stability external
+     */
+    export interface ServerlessConfigProperty {
+        /**
+         * @Property switchForce: Whether to enable mandatory elastic scaling of serverless instances. Value:
+     * true: enabled.
+     * false: not enabled (default).
+         */
+        readonly switchForce?: boolean | ros.IResolvable;
+        /**
+         * @Property minCapacity: The minimum value of the automatic scaling range of an instance RCU (RDS Capacity Unit). Value: 0.5-8.
+         */
+        readonly minCapacity: number | ros.IResolvable;
+        /**
+         * @Property autoPause: Whether to enable intelligent pause and start of serverless instances. Value:
+     * true: enabled.
+     * false: not enabled (default).
+         */
+        readonly autoPause?: boolean | ros.IResolvable;
+        /**
+         * @Property maxCapacity: The maximum value of the automatic scaling range of an instance RCU (RDS Capacity Unit). Value: 0.5-8.
+         */
+        readonly maxCapacity: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ServerlessConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `ServerlessConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrepayDBInstance_ServerlessConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('switchForce', ros.validateBoolean)(properties.switchForce));
+    errors.collect(ros.propertyValidator('minCapacity', ros.requiredValidator)(properties.minCapacity));
+    if(properties.minCapacity && (typeof properties.minCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('minCapacity', ros.validateRange)({
+            data: properties.minCapacity,
+            min: 0.5,
+            max: 8,
+          }));
+    }
+    errors.collect(ros.propertyValidator('minCapacity', ros.validateNumber)(properties.minCapacity));
+    errors.collect(ros.propertyValidator('autoPause', ros.validateBoolean)(properties.autoPause));
+    errors.collect(ros.propertyValidator('maxCapacity', ros.requiredValidator)(properties.maxCapacity));
+    if(properties.maxCapacity && (typeof properties.maxCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('maxCapacity', ros.validateRange)({
+            data: properties.maxCapacity,
+            min: 0.5,
+            max: 8,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxCapacity', ros.validateNumber)(properties.maxCapacity));
+    return errors.wrap('supplied properties not correct for "ServerlessConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RDS::PrepayDBInstance.ServerlessConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `ServerlessConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RDS::PrepayDBInstance.ServerlessConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosPrepayDBInstanceServerlessConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPrepayDBInstance_ServerlessConfigPropertyValidator(properties).assertSuccess();
+    return {
+      SwitchForce: ros.booleanToRosTemplate(properties.switchForce),
+      MinCapacity: ros.numberToRosTemplate(properties.minCapacity),
+      AutoPause: ros.booleanToRosTemplate(properties.autoPause),
+      MaxCapacity: ros.numberToRosTemplate(properties.maxCapacity),
     };
 }
 
@@ -5189,7 +5383,7 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POST","Subscription","PrePaid","PrePay","Prepaid","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));

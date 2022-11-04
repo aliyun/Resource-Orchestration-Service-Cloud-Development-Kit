@@ -181,6 +181,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('sid', ros.validateString)(properties.sid));
     errors.collect(ros.propertyValidator('ecsInstanceId', ros.validateString)(properties.ecsInstanceId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('instanceAlias', ros.requiredValidator)(properties.instanceAlias));
+    errors.collect(ros.propertyValidator('instanceAlias', ros.validateString)(properties.instanceAlias));
     errors.collect(ros.propertyValidator('dbaUid', ros.requiredValidator)(properties.dbaUid));
     errors.collect(ros.propertyValidator('dbaUid', ros.validateNumber)(properties.dbaUid));
     errors.collect(ros.propertyValidator('ecsRegion', ros.validateString)(properties.ecsRegion));
@@ -192,8 +194,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
-    errors.collect(ros.propertyValidator('instanceAlias', ros.requiredValidator)(properties.instanceAlias));
-    errors.collect(ros.propertyValidator('instanceAlias', ros.validateString)(properties.instanceAlias));
     errors.collect(ros.propertyValidator('databaseUser', ros.requiredValidator)(properties.databaseUser));
     errors.collect(ros.propertyValidator('databaseUser', ros.validateString)(properties.databaseUser));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
