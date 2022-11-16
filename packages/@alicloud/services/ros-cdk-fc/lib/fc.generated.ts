@@ -597,7 +597,7 @@ export interface RosFunctionProps {
     readonly memorySize?: number | ros.IResolvable;
 
     /**
-     * @Property timeout: The maximum time duration a function can run, in seconds. After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
+     * @Property timeout: The maximum time duration a function can run, in seconds. After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 86400 seconds.
      */
     readonly timeout?: number | ros.IResolvable;
 }
@@ -625,7 +625,7 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
             data: properties.timeout,
             min: 1,
-            max: 600,
+            max: 86400,
           }));
     }
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
@@ -820,7 +820,7 @@ export class RosFunction extends ros.RosResource {
     public memorySize: number | ros.IResolvable | undefined;
 
     /**
-     * @Property timeout: The maximum time duration a function can run, in seconds. After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
+     * @Property timeout: The maximum time duration a function can run, in seconds. After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 86400 seconds.
      */
     public timeout: number | ros.IResolvable | undefined;
 

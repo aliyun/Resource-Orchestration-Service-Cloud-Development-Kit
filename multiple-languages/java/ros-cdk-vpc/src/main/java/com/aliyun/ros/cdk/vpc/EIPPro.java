@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::EIPPro`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:44.069Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:11.363Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.EIPPro")
 public class EIPPro extends com.aliyun.ros.cdk.core.Resource {
 
@@ -450,6 +450,31 @@ public class EIPPro extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property publicIpAddressPoolId: The ID of the IP address pool.
+         * <p>
+         * The EIP is allocated from the IP address pool.
+         * <p>
+         * @return {@code this}
+         * @param publicIpAddressPoolId Property publicIpAddressPoolId: The ID of the IP address pool. This parameter is required.
+         */
+        public Builder publicIpAddressPoolId(final java.lang.String publicIpAddressPoolId) {
+            this.props().publicIpAddressPoolId(publicIpAddressPoolId);
+            return this;
+        }
+        /**
+         * Property publicIpAddressPoolId: The ID of the IP address pool.
+         * <p>
+         * The EIP is allocated from the IP address pool.
+         * <p>
+         * @return {@code this}
+         * @param publicIpAddressPoolId Property publicIpAddressPoolId: The ID of the IP address pool. This parameter is required.
+         */
+        public Builder publicIpAddressPoolId(final com.aliyun.ros.cdk.core.IResolvable publicIpAddressPoolId) {
+            this.props().publicIpAddressPoolId(publicIpAddressPoolId);
+            return this;
+        }
+
+        /**
          * Property resourceGroupId: Resource group id.
          * <p>
          * @return {@code this}
@@ -467,6 +492,33 @@ public class EIPPro extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property securityProtectionTypes: The edition of Anti-DDoS.
+         * <p>
+         * If you do not set this parameter, Anti-DDoS Origin Basic is used.
+         * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+         * <p>
+         * @return {@code this}
+         * @param securityProtectionTypes Property securityProtectionTypes: The edition of Anti-DDoS. This parameter is required.
+         */
+        public Builder securityProtectionTypes(final com.aliyun.ros.cdk.core.IResolvable securityProtectionTypes) {
+            this.props().securityProtectionTypes(securityProtectionTypes);
+            return this;
+        }
+        /**
+         * Property securityProtectionTypes: The edition of Anti-DDoS.
+         * <p>
+         * If you do not set this parameter, Anti-DDoS Origin Basic is used.
+         * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+         * <p>
+         * @return {@code this}
+         * @param securityProtectionTypes Property securityProtectionTypes: The edition of Anti-DDoS. This parameter is required.
+         */
+        public Builder securityProtectionTypes(final java.util.List<? extends java.lang.Object> securityProtectionTypes) {
+            this.props().securityProtectionTypes(securityProtectionTypes);
             return this;
         }
 

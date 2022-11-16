@@ -84,7 +84,7 @@ export interface FunctionProps {
     readonly memorySize?: number | ros.IResolvable;
 
     /**
-     * Property timeout: The maximum time duration a function can run, in seconds. After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
+     * Property timeout: The maximum time duration a function can run, in seconds. After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 86400 seconds.
      */
     readonly timeout?: number | ros.IResolvable;
 }

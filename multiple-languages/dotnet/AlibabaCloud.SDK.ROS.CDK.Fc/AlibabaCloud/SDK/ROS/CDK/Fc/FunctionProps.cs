@@ -573,7 +573,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property timeout: The maximum time duration a function can run, in seconds.</summary>
         /// <remarks>
-        /// After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
+        /// After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 86400 seconds.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

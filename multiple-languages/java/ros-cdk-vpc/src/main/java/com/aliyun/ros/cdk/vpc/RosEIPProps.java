@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::EIP`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:44.132Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:11.434Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPProps")
 @software.amazon.jsii.Jsii.Proxy(RosEIPProps.Jsii$Proxy.class)
 public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
@@ -76,7 +76,19 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPublicIpAddressPoolId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityProtectionTypes() {
         return null;
     }
 
@@ -107,7 +119,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object netmode;
         java.lang.Object period;
         java.lang.Object pricingCycle;
+        java.lang.Object publicIpAddressPoolId;
         java.lang.Object resourceGroupId;
+        java.lang.Object securityProtectionTypes;
         java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags;
 
         /**
@@ -331,6 +345,26 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosEIPProps#getPublicIpAddressPoolId}
+         * @param publicIpAddressPoolId the value to be set.
+         * @return {@code this}
+         */
+        public Builder publicIpAddressPoolId(java.lang.String publicIpAddressPoolId) {
+            this.publicIpAddressPoolId = publicIpAddressPoolId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getPublicIpAddressPoolId}
+         * @param publicIpAddressPoolId the value to be set.
+         * @return {@code this}
+         */
+        public Builder publicIpAddressPoolId(com.aliyun.ros.cdk.core.IResolvable publicIpAddressPoolId) {
+            this.publicIpAddressPoolId = publicIpAddressPoolId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEIPProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
@@ -347,6 +381,26 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getSecurityProtectionTypes}
+         * @param securityProtectionTypes the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityProtectionTypes(com.aliyun.ros.cdk.core.IResolvable securityProtectionTypes) {
+            this.securityProtectionTypes = securityProtectionTypes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getSecurityProtectionTypes}
+         * @param securityProtectionTypes the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityProtectionTypes(java.util.List<? extends java.lang.Object> securityProtectionTypes) {
+            this.securityProtectionTypes = securityProtectionTypes;
             return this;
         }
 
@@ -388,7 +442,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object netmode;
         private final java.lang.Object period;
         private final java.lang.Object pricingCycle;
+        private final java.lang.Object publicIpAddressPoolId;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object securityProtectionTypes;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags;
 
         /**
@@ -408,7 +464,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             this.netmode = software.amazon.jsii.Kernel.get(this, "netmode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.publicIpAddressPoolId = software.amazon.jsii.Kernel.get(this, "publicIpAddressPoolId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityProtectionTypes = software.amazon.jsii.Kernel.get(this, "securityProtectionTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty.class)));
         }
 
@@ -429,7 +487,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             this.netmode = builder.netmode;
             this.period = builder.period;
             this.pricingCycle = builder.pricingCycle;
+            this.publicIpAddressPoolId = builder.publicIpAddressPoolId;
             this.resourceGroupId = builder.resourceGroupId;
+            this.securityProtectionTypes = builder.securityProtectionTypes;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty>)builder.tags;
         }
 
@@ -489,8 +549,18 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getPublicIpAddressPoolId() {
+            return this.publicIpAddressPoolId;
+        }
+
+        @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityProtectionTypes() {
+            return this.securityProtectionTypes;
         }
 
         @Override
@@ -537,8 +607,14 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
             }
+            if (this.getPublicIpAddressPoolId() != null) {
+                data.set("publicIpAddressPoolId", om.valueToTree(this.getPublicIpAddressPoolId()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getSecurityProtectionTypes() != null) {
+                data.set("securityProtectionTypes", om.valueToTree(this.getSecurityProtectionTypes()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -572,7 +648,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             if (this.netmode != null ? !this.netmode.equals(that.netmode) : that.netmode != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
+            if (this.publicIpAddressPoolId != null ? !this.publicIpAddressPoolId.equals(that.publicIpAddressPoolId) : that.publicIpAddressPoolId != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.securityProtectionTypes != null ? !this.securityProtectionTypes.equals(that.securityProtectionTypes) : that.securityProtectionTypes != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -589,7 +667,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.netmode != null ? this.netmode.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
+            result = 31 * result + (this.publicIpAddressPoolId != null ? this.publicIpAddressPoolId.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.securityProtectionTypes != null ? this.securityProtectionTypes.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

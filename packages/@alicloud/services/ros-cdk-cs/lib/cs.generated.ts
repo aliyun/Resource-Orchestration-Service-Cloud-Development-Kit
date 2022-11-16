@@ -159,17 +159,23 @@ export class RosAnyCluster extends ros.RosResource {
 export interface RosClusterAddonsProps {
 
     /**
-     * @Property clusterId: Cluster ID.
-     */
-    readonly clusterId: string | ros.IResolvable;
-
-    /**
      * @Property addons: A combination of addon plugins for Kubernetes clusters.
      * Network plug-in: including Flannel and Terway network plug-ins
      * Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
      * Ingress: The installation of the Ingress component is enabled by default.
      */
-    readonly addons?: Array<RosClusterAddons.AddonsProperty | ros.IResolvable> | ros.IResolvable;
+    readonly addons: Array<RosClusterAddons.AddonsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property clusterId: Cluster ID.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property installedIgnore: Whether to ignore already installed addons when creating. If true, when creating, only install addons that are not yet installed. When deleting, only uninstall addons that are installed during the creation stage.
+     * Default false.
+     */
+    readonly installedIgnore?: boolean | ros.IResolvable;
 }
 
 /**
@@ -184,7 +190,16 @@ function RosClusterAddonsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('addons', ros.requiredValidator)(properties.addons));
+    if(properties.addons && (Array.isArray(properties.addons) || (typeof properties.addons) === 'string')) {
+        errors.collect(ros.propertyValidator('addons', ros.validateLength)({
+            data: properties.addons.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosClusterAddons_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('installedIgnore', ros.validateBoolean)(properties.installedIgnore));
     return errors.wrap('supplied properties not correct for "RosClusterAddonsProps"');
 }
 
@@ -202,8 +217,9 @@ function rosClusterAddonsPropsToRosTemplate(properties: any, enableResourcePrope
         RosClusterAddonsPropsValidator(properties).assertSuccess();
     }
     return {
-      ClusterId: ros.stringToRosTemplate(properties.clusterId),
       Addons: ros.listMapper(rosClusterAddonsAddonsPropertyToRosTemplate)(properties.addons),
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
+      InstalledIgnore: ros.booleanToRosTemplate(properties.installedIgnore),
     };
 }
 
@@ -230,17 +246,23 @@ export class RosClusterAddons extends ros.RosResource {
 
 
     /**
-     * @Property clusterId: Cluster ID.
-     */
-    public clusterId: string | ros.IResolvable;
-
-    /**
      * @Property addons: A combination of addon plugins for Kubernetes clusters.
      * Network plug-in: including Flannel and Terway network plug-ins
      * Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
      * Ingress: The installation of the Ingress component is enabled by default.
      */
-    public addons: Array<RosClusterAddons.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+    public addons: Array<RosClusterAddons.AddonsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property clusterId: Cluster ID.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property installedIgnore: Whether to ignore already installed addons when creating. If true, when creating, only install addons that are not yet installed. When deleting, only uninstall addons that are installed during the creation stage.
+     * Default false.
+     */
+    public installedIgnore: boolean | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CS::ClusterAddons`.
@@ -254,15 +276,17 @@ export class RosClusterAddons extends ros.RosResource {
         this.attrClusterId = this.getAtt('ClusterId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.clusterId = props.clusterId;
         this.addons = props.addons;
+        this.clusterId = props.clusterId;
+        this.installedIgnore = props.installedIgnore;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            clusterId: this.clusterId,
             addons: this.addons,
+            clusterId: this.clusterId,
+            installedIgnore: this.installedIgnore,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

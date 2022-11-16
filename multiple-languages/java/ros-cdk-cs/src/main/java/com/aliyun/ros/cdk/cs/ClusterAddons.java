@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ClusterAddons`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.579Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.952Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterAddons")
 public class ClusterAddons extends com.aliyun.ros.cdk.core.Resource {
 
@@ -90,27 +90,6 @@ public class ClusterAddons extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property clusterId: Cluster ID.
-         * <p>
-         * @return {@code this}
-         * @param clusterId Property clusterId: Cluster ID. This parameter is required.
-         */
-        public Builder clusterId(final java.lang.String clusterId) {
-            this.props.clusterId(clusterId);
-            return this;
-        }
-        /**
-         * Property clusterId: Cluster ID.
-         * <p>
-         * @return {@code this}
-         * @param clusterId Property clusterId: Cluster ID. This parameter is required.
-         */
-        public Builder clusterId(final com.aliyun.ros.cdk.core.IResolvable clusterId) {
-            this.props.clusterId(clusterId);
-            return this;
-        }
-
-        /**
          * Property addons: A combination of addon plugins for Kubernetes clusters.
          * <p>
          * Network plug-in: including Flannel and Terway network plug-ins
@@ -136,6 +115,54 @@ public class ClusterAddons extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder addons(final java.util.List<? extends java.lang.Object> addons) {
             this.props.addons(addons);
+            return this;
+        }
+
+        /**
+         * Property clusterId: Cluster ID.
+         * <p>
+         * @return {@code this}
+         * @param clusterId Property clusterId: Cluster ID. This parameter is required.
+         */
+        public Builder clusterId(final java.lang.String clusterId) {
+            this.props.clusterId(clusterId);
+            return this;
+        }
+        /**
+         * Property clusterId: Cluster ID.
+         * <p>
+         * @return {@code this}
+         * @param clusterId Property clusterId: Cluster ID. This parameter is required.
+         */
+        public Builder clusterId(final com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.props.clusterId(clusterId);
+            return this;
+        }
+
+        /**
+         * Property installedIgnore: Whether to ignore already installed addons when creating.
+         * <p>
+         * If true, when creating, only install addons that are not yet installed. When deleting, only uninstall addons that are installed during the creation stage.
+         * Default false.
+         * <p>
+         * @return {@code this}
+         * @param installedIgnore Property installedIgnore: Whether to ignore already installed addons when creating. This parameter is required.
+         */
+        public Builder installedIgnore(final java.lang.Boolean installedIgnore) {
+            this.props.installedIgnore(installedIgnore);
+            return this;
+        }
+        /**
+         * Property installedIgnore: Whether to ignore already installed addons when creating.
+         * <p>
+         * If true, when creating, only install addons that are not yet installed. When deleting, only uninstall addons that are installed during the creation stage.
+         * Default false.
+         * <p>
+         * @return {@code this}
+         * @param installedIgnore Property installedIgnore: Whether to ignore already installed addons when creating. This parameter is required.
+         */
+        public Builder installedIgnore(final com.aliyun.ros.cdk.core.IResolvable installedIgnore) {
+            this.props.installedIgnore(installedIgnore);
             return this;
         }
 

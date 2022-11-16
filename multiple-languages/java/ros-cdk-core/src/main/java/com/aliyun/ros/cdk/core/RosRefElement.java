@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * own, more specific types returned from the .ref attribute. Also, some
  * resources aren't referenceable at all (such as BucketPolicies or GatewayAttachments).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:40.819Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.140Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosRefElement")
 public abstract class RosRefElement extends com.aliyun.ros.cdk.core.RosElement {
 

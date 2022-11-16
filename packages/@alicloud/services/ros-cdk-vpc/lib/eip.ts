@@ -68,9 +68,21 @@ export interface EIPProps {
     readonly pricingCycle?: string | ros.IResolvable;
 
     /**
+     * Property publicIpAddressPoolId: The ID of the IP address pool. The EIP is allocated from the IP address pool.
+     */
+    readonly publicIpAddressPoolId?: string | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property securityProtectionTypes: The edition of Anti-DDoS.
+     * If you do not set this parameter, Anti-DDoS Origin Basic is used.
+     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+     */
+    readonly securityProtectionTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
@@ -125,12 +137,14 @@ export class Eip extends ros.Resource {
             pricingCycle: props.pricingCycle === undefined || props.pricingCycle === null ? 'Month' : props.pricingCycle,
             isp: props.isp,
             period: props.period === undefined || props.period === null ? 1 : props.period,
+            publicIpAddressPoolId: props.publicIpAddressPoolId,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             name: props.name,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByBandwidth' : props.internetChargeType,
             netmode: props.netmode,
             bandwidth: props.bandwidth === undefined || props.bandwidth === null ? 5 : props.bandwidth,
+            securityProtectionTypes: props.securityProtectionTypes,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosEIP;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dfs;
 /**
  * Properties for defining a `ALIYUN::DFS::MountPoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.837Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:09.209Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.RosMountPointProps")
 @software.amazon.jsii.Jsii.Proxy(RosMountPointProps.Jsii$Proxy.class)
 public interface RosMountPointProps extends software.amazon.jsii.JsiiSerializable {
