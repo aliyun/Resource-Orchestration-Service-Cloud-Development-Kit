@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Function`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.739Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.076Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.FunctionProps")
 @software.amazon.jsii.Jsii.Proxy(FunctionProps.Jsii$Proxy.class)
 public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
@@ -120,7 +120,7 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property timeout: The maximum time duration a function can run, in seconds.
      * <p>
-     * After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
+     * After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 86400 seconds.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
         return null;
@@ -468,7 +468,7 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FunctionProps#getTimeout}
          * @param timeout Property timeout: The maximum time duration a function can run, in seconds.
-         *                After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
+         *                After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 86400 seconds.
          * @return {@code this}
          */
         public Builder timeout(java.lang.Number timeout) {
@@ -479,7 +479,7 @@ public interface FunctionProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link FunctionProps#getTimeout}
          * @param timeout Property timeout: The maximum time duration a function can run, in seconds.
-         *                After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
+         *                After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 86400 seconds.
          * @return {@code this}
          */
         public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Interface to implement tags.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:40.793Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.123Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ITaggable")
 @software.amazon.jsii.Jsii.Proxy(ITaggable.Jsii$Proxy.class)
 public interface ITaggable extends software.amazon.jsii.JsiiSerializable {

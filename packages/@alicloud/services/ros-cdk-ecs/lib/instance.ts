@@ -173,7 +173,7 @@ export interface InstanceProps {
     readonly spotStrategy?: string | ros.IResolvable;
 
     /**
-     * Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+     * Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 

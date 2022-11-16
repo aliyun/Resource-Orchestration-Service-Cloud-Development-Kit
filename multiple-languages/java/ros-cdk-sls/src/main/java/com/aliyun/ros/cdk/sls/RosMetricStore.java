@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::MetricStore`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:44.018Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:11.313Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosMetricStore")
 public class RosMetricStore extends com.aliyun.ros.cdk.core.RosResource {
 

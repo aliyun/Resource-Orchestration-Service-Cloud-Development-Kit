@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS template type:  `ALIYUN::ROS::AutoEnableService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.697Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:11.015Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosAutoEnableService")
 public class RosAutoEnableService extends com.aliyun.ros.cdk.core.RosResource {
 

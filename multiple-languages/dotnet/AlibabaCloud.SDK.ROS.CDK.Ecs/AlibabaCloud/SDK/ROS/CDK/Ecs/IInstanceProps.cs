@@ -421,7 +421,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property systemDiskCategory: Category of system disk.</summary>
         /// <remarks>
-        /// Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+        /// Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
         /// </remarks>
         [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -888,7 +888,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <summary>Property systemDiskCategory: Category of system disk.</summary>
             /// <remarks>
-            /// Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+            /// Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

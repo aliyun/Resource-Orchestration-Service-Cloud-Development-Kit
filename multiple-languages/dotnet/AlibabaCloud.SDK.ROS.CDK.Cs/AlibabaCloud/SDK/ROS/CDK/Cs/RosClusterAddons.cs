@@ -66,6 +66,56 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: addons: A combination of addon plugins for Kubernetes clusters.
+        /// Network plug-in: including Flannel and Terway network plug-ins
+        /// Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
+        /// Ingress: The installation of the Ingress component is enabled by default.
+        /// </remarks>
+        [JsiiProperty(name: "addons", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosClusterAddons.AddonsProperty\"}]}},\"kind\":\"array\"}}]}}")]
+        public virtual object Addons
+        {
+            get => GetInstanceProperty<object>()!;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Cs.RosClusterAddons.IAddonsProperty cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosClusterAddons.IAddonsProperty).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosClusterAddons.IAddonsProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received null", nameof(value));
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: clusterId: Cluster ID.
         /// </remarks>
         [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -103,14 +153,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: addons: A combination of addon plugins for Kubernetes clusters.
-        /// Network plug-in: including Flannel and Terway network plug-ins
-        /// Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
-        /// Ingress: The installation of the Ingress component is enabled by default.
+        /// <strong>Property</strong>: installedIgnore: Whether to ignore already installed addons when creating. If true, when creating, only install addons that are not yet installed. When deleting, only uninstall addons that are installed during the creation stage.
+        /// Default false.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "addons", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosClusterAddons.AddonsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        public virtual object? Addons
+        [JsiiProperty(name: "installedIgnore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InstalledIgnore
         {
             get => GetInstanceProperty<object?>();
             set
@@ -119,26 +167,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                 {
                     switch (value)
                     {
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                        case bool cast_cd4240:
                             break;
-                        case object[] cast_cd4240:
-                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
-                            {
-                                switch (cast_cd4240[__idx_f64a5c])
-                                {
-                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
-                                        break;
-                                    case AlibabaCloud.SDK.ROS.CDK.Cs.RosClusterAddons.IAddonsProperty cast_201718:
-                                        break;
-                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
-                                        // Not enough information to type-check...
-                                        break;
-                                    case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosClusterAddons.IAddonsProperty).FullName}; received null", nameof(value));
-                                    default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosClusterAddons.IAddonsProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
-                                }
-                            }
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
                             break;
                         case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
                             // Not enough information to type-check...
@@ -146,7 +177,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                         case null:
                             break;
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);

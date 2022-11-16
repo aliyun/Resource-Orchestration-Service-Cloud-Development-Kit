@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS template type:  `ALIYUN::ALB::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:40.938Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.279Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 

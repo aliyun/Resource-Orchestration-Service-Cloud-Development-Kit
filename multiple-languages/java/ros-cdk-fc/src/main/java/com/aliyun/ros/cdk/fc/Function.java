@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS resource type:  `ALIYUN::FC::Function`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.721Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.073Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Function")
 public class Function extends com.aliyun.ros.cdk.core.Resource {
 
@@ -459,7 +459,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property timeout: The maximum time duration a function can run, in seconds.
          * <p>
-         * After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
+         * After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 86400 seconds.
          * <p>
          * @return {@code this}
          * @param timeout Property timeout: The maximum time duration a function can run, in seconds. This parameter is required.
@@ -471,7 +471,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property timeout: The maximum time duration a function can run, in seconds.
          * <p>
-         * After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
+         * After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 86400 seconds.
          * <p>
          * @return {@code this}
          * @param timeout Property timeout: The maximum time duration a function can run, in seconds. This parameter is required.

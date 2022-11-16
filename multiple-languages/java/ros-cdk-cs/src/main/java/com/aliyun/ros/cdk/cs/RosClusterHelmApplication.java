@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::ClusterHelmApplication`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.700Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:09.057Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterHelmApplication")
 public class RosClusterHelmApplication extends com.aliyun.ros.cdk.core.RosResource {
 

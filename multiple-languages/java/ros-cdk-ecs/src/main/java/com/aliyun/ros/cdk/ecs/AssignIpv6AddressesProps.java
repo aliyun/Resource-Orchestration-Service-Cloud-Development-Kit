@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AssignIpv6Addresses`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.011Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:09.373Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignIpv6AddressesProps")
 @software.amazon.jsii.Jsii.Proxy(AssignIpv6AddressesProps.Jsii$Proxy.class)
 public interface AssignIpv6AddressesProps extends software.amazon.jsii.JsiiSerializable {

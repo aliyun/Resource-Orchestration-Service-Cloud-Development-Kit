@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS resource type:  `ALIYUN::ALB::BackendServerAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:40.899Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.231Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.BackendServerAttachment")
 public class BackendServerAttachment extends com.aliyun.ros.cdk.core.Resource {
 

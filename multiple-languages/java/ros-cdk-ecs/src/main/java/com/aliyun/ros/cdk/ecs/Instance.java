@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.068Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:09.431Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -909,7 +909,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property systemDiskCategory: Category of system disk.
          * <p>
-         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
          * <p>
          * @return {@code this}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk. This parameter is required.
@@ -921,7 +921,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property systemDiskCategory: Category of system disk.
          * <p>
-         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
          * <p>
          * @return {@code this}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk. This parameter is required.

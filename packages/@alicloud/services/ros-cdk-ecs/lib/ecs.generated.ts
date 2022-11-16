@@ -4029,7 +4029,7 @@ export interface RosInstanceProps {
     readonly spotStrategy?: string | ros.IResolvable;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -4219,7 +4219,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
@@ -4534,7 +4534,7 @@ export class RosInstance extends ros.RosResource {
     public spotStrategy: string | ros.IResolvable | undefined;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
 

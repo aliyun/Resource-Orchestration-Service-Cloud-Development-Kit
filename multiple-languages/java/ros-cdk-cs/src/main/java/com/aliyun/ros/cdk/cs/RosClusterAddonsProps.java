@@ -3,10 +3,14 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ClusterAddons`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:41.699Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:09.055Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterAddonsProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterAddonsProps.Jsii$Proxy.class)
 public interface RosClusterAddonsProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAddons();
 
     /**
      */
@@ -14,7 +18,7 @@ public interface RosClusterAddonsProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAddons() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstalledIgnore() {
         return null;
     }
 
@@ -28,8 +32,29 @@ public interface RosClusterAddonsProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosClusterAddonsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosClusterAddonsProps> {
-        java.lang.Object clusterId;
         java.lang.Object addons;
+        java.lang.Object clusterId;
+        java.lang.Object installedIgnore;
+
+        /**
+         * Sets the value of {@link RosClusterAddonsProps#getAddons}
+         * @param addons the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder addons(com.aliyun.ros.cdk.core.IResolvable addons) {
+            this.addons = addons;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterAddonsProps#getAddons}
+         * @param addons the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder addons(java.util.List<? extends java.lang.Object> addons) {
+            this.addons = addons;
+            return this;
+        }
 
         /**
          * Sets the value of {@link RosClusterAddonsProps#getClusterId}
@@ -52,22 +77,22 @@ public interface RosClusterAddonsProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
-         * Sets the value of {@link RosClusterAddonsProps#getAddons}
-         * @param addons the value to be set.
+         * Sets the value of {@link RosClusterAddonsProps#getInstalledIgnore}
+         * @param installedIgnore the value to be set.
          * @return {@code this}
          */
-        public Builder addons(com.aliyun.ros.cdk.core.IResolvable addons) {
-            this.addons = addons;
+        public Builder installedIgnore(java.lang.Boolean installedIgnore) {
+            this.installedIgnore = installedIgnore;
             return this;
         }
 
         /**
-         * Sets the value of {@link RosClusterAddonsProps#getAddons}
-         * @param addons the value to be set.
+         * Sets the value of {@link RosClusterAddonsProps#getInstalledIgnore}
+         * @param installedIgnore the value to be set.
          * @return {@code this}
          */
-        public Builder addons(java.util.List<? extends java.lang.Object> addons) {
-            this.addons = addons;
+        public Builder installedIgnore(com.aliyun.ros.cdk.core.IResolvable installedIgnore) {
+            this.installedIgnore = installedIgnore;
             return this;
         }
 
@@ -87,8 +112,9 @@ public interface RosClusterAddonsProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosClusterAddonsProps {
-        private final java.lang.Object clusterId;
         private final java.lang.Object addons;
+        private final java.lang.Object clusterId;
+        private final java.lang.Object installedIgnore;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -96,8 +122,9 @@ public interface RosClusterAddonsProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.installedIgnore = software.amazon.jsii.Kernel.get(this, "installedIgnore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -105,13 +132,9 @@ public interface RosClusterAddonsProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.addons = java.util.Objects.requireNonNull(builder.addons, "addons is required");
             this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
-            this.addons = builder.addons;
-        }
-
-        @Override
-        public final java.lang.Object getClusterId() {
-            return this.clusterId;
+            this.installedIgnore = builder.installedIgnore;
         }
 
         @Override
@@ -120,14 +143,25 @@ public interface RosClusterAddonsProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getClusterId() {
+            return this.clusterId;
+        }
+
+        @Override
+        public final java.lang.Object getInstalledIgnore() {
+            return this.installedIgnore;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            data.set("addons", om.valueToTree(this.getAddons()));
             data.set("clusterId", om.valueToTree(this.getClusterId()));
-            if (this.getAddons() != null) {
-                data.set("addons", om.valueToTree(this.getAddons()));
+            if (this.getInstalledIgnore() != null) {
+                data.set("installedIgnore", om.valueToTree(this.getInstalledIgnore()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -147,14 +181,16 @@ public interface RosClusterAddonsProps extends software.amazon.jsii.JsiiSerializ
 
             RosClusterAddonsProps.Jsii$Proxy that = (RosClusterAddonsProps.Jsii$Proxy) o;
 
+            if (!addons.equals(that.addons)) return false;
             if (!clusterId.equals(that.clusterId)) return false;
-            return this.addons != null ? this.addons.equals(that.addons) : that.addons == null;
+            return this.installedIgnore != null ? this.installedIgnore.equals(that.installedIgnore) : that.installedIgnore == null;
         }
 
         @Override
         public final int hashCode() {
-            int result = this.clusterId.hashCode();
-            result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
+            int result = this.addons.hashCode();
+            result = 31 * result + (this.clusterId.hashCode());
+            result = 31 * result + (this.installedIgnore != null ? this.installedIgnore.hashCode() : 0);
             return result;
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.flink;
 /**
  * Properties for defining a `ALIYUN::Flink::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.779Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.129Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {

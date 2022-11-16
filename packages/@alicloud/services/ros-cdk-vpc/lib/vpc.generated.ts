@@ -1774,9 +1774,21 @@ export interface RosEIPProps {
     readonly pricingCycle?: string | ros.IResolvable;
 
     /**
+     * @Property publicIpAddressPoolId: The ID of the IP address pool. The EIP is allocated from the IP address pool.
+     */
+    readonly publicIpAddressPoolId?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityProtectionTypes: The edition of Anti-DDoS.
+     * If you do not set this parameter, Anti-DDoS Origin Basic is used.
+     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+     */
+    readonly securityProtectionTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
@@ -1818,6 +1830,7 @@ function RosEIPPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('publicIpAddressPoolId', ros.validateString)(properties.publicIpAddressPoolId));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -1830,6 +1843,14 @@ function RosEIPPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     errors.collect(ros.propertyValidator('netmode', ros.validateString)(properties.netmode));
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    if(properties.securityProtectionTypes && (Array.isArray(properties.securityProtectionTypes) || (typeof properties.securityProtectionTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('securityProtectionTypes', ros.validateLength)({
+            data: properties.securityProtectionTypes.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityProtectionTypes', ros.listValidator(ros.validateString))(properties.securityProtectionTypes));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1866,7 +1887,9 @@ function rosEIPPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       Netmode: ros.stringToRosTemplate(properties.netmode),
       Period: ros.numberToRosTemplate(properties.period),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+      PublicIpAddressPoolId: ros.stringToRosTemplate(properties.publicIpAddressPoolId),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecurityProtectionTypes: ros.listMapper(ros.stringToRosTemplate)(properties.securityProtectionTypes),
       Tags: ros.listMapper(rosEIPTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -1968,9 +1991,21 @@ export class RosEIP extends ros.RosResource {
     public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
+     * @Property publicIpAddressPoolId: The ID of the IP address pool. The EIP is allocated from the IP address pool.
+     */
+    public publicIpAddressPoolId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityProtectionTypes: The edition of Anti-DDoS.
+     * If you do not set this parameter, Anti-DDoS Origin Basic is used.
+     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+     */
+    public securityProtectionTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
@@ -2003,7 +2038,9 @@ export class RosEIP extends ros.RosResource {
         this.netmode = props.netmode;
         this.period = props.period;
         this.pricingCycle = props.pricingCycle;
+        this.publicIpAddressPoolId = props.publicIpAddressPoolId;
         this.resourceGroupId = props.resourceGroupId;
+        this.securityProtectionTypes = props.securityProtectionTypes;
         this.tags = props.tags;
     }
 
@@ -2021,7 +2058,9 @@ export class RosEIP extends ros.RosResource {
             netmode: this.netmode,
             period: this.period,
             pricingCycle: this.pricingCycle,
+            publicIpAddressPoolId: this.publicIpAddressPoolId,
             resourceGroupId: this.resourceGroupId,
+            securityProtectionTypes: this.securityProtectionTypes,
             tags: this.tags,
         };
     }
@@ -2315,9 +2354,21 @@ export interface RosEIPProProps {
     readonly pricingCycle?: string | ros.IResolvable;
 
     /**
+     * @Property publicIpAddressPoolId: The ID of the IP address pool. The EIP is allocated from the IP address pool.
+     */
+    readonly publicIpAddressPoolId?: string | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityProtectionTypes: The edition of Anti-DDoS.
+     * If you do not set this parameter, Anti-DDoS Origin Basic is used.
+     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+     */
+    readonly securityProtectionTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
@@ -2360,6 +2411,7 @@ function RosEIPProPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('publicIpAddressPoolId', ros.validateString)(properties.publicIpAddressPoolId));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -2372,6 +2424,14 @@ function RosEIPProPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     errors.collect(ros.propertyValidator('netmode', ros.validateString)(properties.netmode));
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    if(properties.securityProtectionTypes && (Array.isArray(properties.securityProtectionTypes) || (typeof properties.securityProtectionTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('securityProtectionTypes', ros.validateLength)({
+            data: properties.securityProtectionTypes.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityProtectionTypes', ros.listValidator(ros.validateString))(properties.securityProtectionTypes));
     errors.collect(ros.propertyValidator('ipAddress', ros.validateString)(properties.ipAddress));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
@@ -2411,7 +2471,9 @@ function rosEIPProPropsToRosTemplate(properties: any, enableResourcePropertyCons
       Netmode: ros.stringToRosTemplate(properties.netmode),
       Period: ros.numberToRosTemplate(properties.period),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+      PublicIpAddressPoolId: ros.stringToRosTemplate(properties.publicIpAddressPoolId),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecurityProtectionTypes: ros.listMapper(ros.stringToRosTemplate)(properties.securityProtectionTypes),
       Tags: ros.listMapper(rosEIPProTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -2523,9 +2585,21 @@ export class RosEIPPro extends ros.RosResource {
     public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
+     * @Property publicIpAddressPoolId: The ID of the IP address pool. The EIP is allocated from the IP address pool.
+     */
+    public publicIpAddressPoolId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: Resource group id.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityProtectionTypes: The edition of Anti-DDoS.
+     * If you do not set this parameter, Anti-DDoS Origin Basic is used.
+     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+     */
+    public securityProtectionTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
@@ -2560,7 +2634,9 @@ export class RosEIPPro extends ros.RosResource {
         this.netmode = props.netmode;
         this.period = props.period;
         this.pricingCycle = props.pricingCycle;
+        this.publicIpAddressPoolId = props.publicIpAddressPoolId;
         this.resourceGroupId = props.resourceGroupId;
+        this.securityProtectionTypes = props.securityProtectionTypes;
         this.tags = props.tags;
     }
 
@@ -2580,7 +2656,9 @@ export class RosEIPPro extends ros.RosResource {
             netmode: this.netmode,
             period: this.period,
             pricingCycle: this.pricingCycle,
+            publicIpAddressPoolId: this.publicIpAddressPoolId,
             resourceGroupId: this.resourceGroupId,
+            securityProtectionTypes: this.securityProtectionTypes,
             tags: this.tags,
         };
     }

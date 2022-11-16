@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.267Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.587Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterAccessWhiteListProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterAccessWhiteListProps.Jsii$Proxy.class)
 public interface DBClusterAccessWhiteListProps extends software.amazon.jsii.JsiiSerializable {

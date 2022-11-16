@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query to hosted zone context provider.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:40.731Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.HostedZoneContextQuery")
 @software.amazon.jsii.Jsii.Proxy(HostedZoneContextQuery.Jsii$Proxy.class)
 public interface HostedZoneContextQuery extends software.amazon.jsii.JsiiSerializable {

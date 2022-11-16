@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:42.118Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:09.477Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -277,7 +277,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property systemDiskCategory: Category of system disk.
      * <p>
-     * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+     * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return null;
@@ -1110,7 +1110,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InstanceProps#getSystemDiskCategory}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
-         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
          * @return {@code this}
          */
         public Builder systemDiskCategory(java.lang.String systemDiskCategory) {
@@ -1121,7 +1121,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InstanceProps#getSystemDiskCategory}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
-         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+         *                           Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
          * @return {@code this}
          */
         public Builder systemDiskCategory(com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {

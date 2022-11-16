@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::EIPPro`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:44.129Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:11.431Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPPro")
 public class RosEIPPro extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -315,6 +315,24 @@ public class RosEIPPro extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPublicIpAddressPoolId() {
+        return software.amazon.jsii.Kernel.get(this, "publicIpAddressPoolId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPublicIpAddressPoolId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "publicIpAddressPoolId", value);
+    }
+
+    /**
+     */
+    public void setPublicIpAddressPoolId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "publicIpAddressPoolId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -329,6 +347,40 @@ public class RosEIPPro extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityProtectionTypes() {
+        return software.amazon.jsii.Kernel.get(this, "securityProtectionTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityProtectionTypes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityProtectionTypes", value);
+    }
+
+    /**
+     */
+    public void setSecurityProtectionTypes(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "securityProtectionTypes", value);
     }
 
     /**
@@ -760,6 +812,23 @@ public class RosEIPPro extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param publicIpAddressPoolId This parameter is required.
+         */
+        public Builder publicIpAddressPoolId(final java.lang.String publicIpAddressPoolId) {
+            this.props.publicIpAddressPoolId(publicIpAddressPoolId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param publicIpAddressPoolId This parameter is required.
+         */
+        public Builder publicIpAddressPoolId(final com.aliyun.ros.cdk.core.IResolvable publicIpAddressPoolId) {
+            this.props.publicIpAddressPoolId(publicIpAddressPoolId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param resourceGroupId This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
@@ -772,6 +841,23 @@ public class RosEIPPro extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param securityProtectionTypes This parameter is required.
+         */
+        public Builder securityProtectionTypes(final com.aliyun.ros.cdk.core.IResolvable securityProtectionTypes) {
+            this.props.securityProtectionTypes(securityProtectionTypes);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityProtectionTypes This parameter is required.
+         */
+        public Builder securityProtectionTypes(final java.util.List<? extends java.lang.Object> securityProtectionTypes) {
+            this.props.securityProtectionTypes(securityProtectionTypes);
             return this;
         }
 

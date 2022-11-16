@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::ADInfo`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:43.520Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.839Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosADInfoProps")
 @software.amazon.jsii.Jsii.Proxy(RosADInfoProps.Jsii$Proxy.class)
 public interface RosADInfoProps extends software.amazon.jsii.JsiiSerializable {

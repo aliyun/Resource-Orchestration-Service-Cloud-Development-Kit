@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Properties for defining a `ALIYUN::ALB::AclAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.70.0 (build 03c2f6f)", date = "2022-11-04T06:18:40.920Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.252Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosAclAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosAclAssociationProps.Jsii$Proxy.class)
 public interface RosAclAssociationProps extends software.amazon.jsii.JsiiSerializable {
