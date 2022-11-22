@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ClusterHelmApplication`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:09.058Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.140Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterHelmApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterHelmApplicationProps.Jsii$Proxy.class)
 public interface RosClusterHelmApplicationProps extends software.amazon.jsii.JsiiSerializable {

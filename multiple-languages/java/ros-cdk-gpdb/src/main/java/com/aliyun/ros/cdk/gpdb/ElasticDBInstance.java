@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * A ROS resource type:  `ALIYUN::GPDB::ElasticDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.206Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.456Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.ElasticDBInstance")
 public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
 

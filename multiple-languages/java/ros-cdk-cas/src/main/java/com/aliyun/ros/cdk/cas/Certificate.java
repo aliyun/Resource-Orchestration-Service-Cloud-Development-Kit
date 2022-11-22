@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cas;
 /**
  * A ROS resource type:  `ALIYUN::CAS::Certificate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.527Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.667Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.Certificate")
 public class Certificate extends com.aliyun.ros.cdk.core.Resource {
 

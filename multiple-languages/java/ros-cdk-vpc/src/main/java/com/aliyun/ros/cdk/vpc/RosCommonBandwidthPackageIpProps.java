@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::CommonBandwidthPackageIp`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:11.424Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.631Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosCommonBandwidthPackageIpProps")
 @software.amazon.jsii.Jsii.Proxy(RosCommonBandwidthPackageIpProps.Jsii$Proxy.class)
 public interface RosCommonBandwidthPackageIpProps extends software.amazon.jsii.JsiiSerializable {

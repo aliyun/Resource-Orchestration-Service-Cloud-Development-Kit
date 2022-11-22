@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * A ROS resource type:  `ALIYUN::MSE::Gateway`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.444Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.688Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Gateway")
 public class Gateway extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:11.202Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.400Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosBackendServerToVServerGroupAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackendServerToVServerGroupAdditionProps.Jsii$Proxy.class)
 public interface RosBackendServerToVServerGroupAdditionProps extends software.amazon.jsii.JsiiSerializable {

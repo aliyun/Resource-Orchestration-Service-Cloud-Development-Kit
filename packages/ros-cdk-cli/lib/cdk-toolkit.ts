@@ -6,6 +6,7 @@ import * as util from 'util';
 import {decipher, cipher} from './util/cipher';
 import {format} from 'util';
 import {RewritableBlock} from './util/display';
+import {isString, isNumber} from 'lodash';
 
 const rosClient = require('@alicloud/ros-2019-09-10');
 const os = require('os');
@@ -208,10 +209,41 @@ export class CdkToolkit {
 
     public async config(global: boolean) {
         let configSavePath = (global ? GLOBAL_PATH : LOCAL_PATH) + CONFIG_NAME;
+        let sourceModeType: string = '';
+        let sourceEndpoint: string = '';
+        let sourceRegionId: string = '';
+        let sourceAccessKeyId: string = '';
+        let sourceAccessKeySecret: string = '';
+        let sourceSecurityToken: string = '';
+        let sourceRoleArn: string = '';
+        let sourceRoleSessionName: string = '';
+        if (fs.existsSync(configSavePath)) {
+            let configFile = JSON.parse(fs.readFileSync(configSavePath).toString());
+            sourceModeType = configFile['type']
+            sourceEndpoint = configFile['endpoint']
+            sourceRegionId = configFile['regionId']
+            sourceAccessKeyId = configFile['accessKeyId']
+            sourceAccessKeySecret = configFile['accessKeySecret']
+            sourceSecurityToken = configFile['securityToken']
+            sourceRoleArn = configFile['roleArn']
+            sourceRoleSessionName = configFile['roleSessionName']
+        }
+        let modeTypeObj = {
+            ecs_ram_role: 'EcsRamRole',
+            sts: 'StsToken',
+            ram_role_arn: 'RamRoleArn',
+            access_key: 'AK'
+        }
+        // @ts-ignore
+        let defaultModeType = sourceModeType ? modeTypeObj[sourceModeType] : ''
+        let defaultEndpoint = sourceEndpoint ? sourceEndpoint : 'https://ros.aliyuncs.com'
+        let defaultRegionId = sourceRegionId ? sourceRegionId : 'cn-hangzhou'
         let modeType = ['AK', 'StsToken', 'RamRoleArn', 'EcsRamRole']
-        let endpoint = readlineSync.question('endpoint(optional, default:https://ros.aliyuncs.com):', {defaultInput: 'https://ros.aliyuncs.com'});
-        let regionId = readlineSync.question('defaultRegionId(optional, default:cn-hangzhou):', {defaultInput: 'cn-hangzhou'});
-        let modeIndex = readlineSync.keyInSelect(modeType, 'Authenticate mode:');
+
+
+        let endpoint = readlineSync.question(`Endpoint(optional, [${defaultEndpoint.toString()}]):`, {defaultInput: defaultEndpoint});
+        let regionId = readlineSync.question(`RegionId(optional, [${defaultRegionId.toString()}]):`, {defaultInput: defaultRegionId});
+        let modeIndex = readlineSync.keyInSelect(modeType, `Authenticate mode [${defaultModeType.toString()}]:`);
         let inputConfigInfo: any = {};
         let checkCommand: string;
         let curlCommand: string;
@@ -238,15 +270,36 @@ export class CdkToolkit {
                 exit(1);
             }
             const {stdout: curlStdout} = await exec(curlCommand);
-            let roleName = readlineSync.question(`roleName, The configured role of the host: [${curlStdout.trim()}]`, {defaultInput: curlStdout.trim()});
+            let roleName = readlineSync.question(`RoleName, The configured role of the host: [${curlStdout.trim()}]`, {defaultInput: curlStdout.trim()});
             inputConfigInfo = {
                 type: 'ecs_ram_role',
                 roleName: roleName
             };
         } else if (modeType[modeIndex] === 'StsToken') {
-            let accessKeyId = readlineSync.question('accessKeyId:', {hideEchoBack: true});
-            let accessKeySecret = readlineSync.question('accessKeySecret:', {hideEchoBack: true});
-            let securityToken = readlineSync.question('securityToken:', {hideEchoBack: true});
+            let accessKeyId: string;
+            let accessKeySecret: string;
+            let securityToken: string;
+            if (sourceModeType === 'sts') {
+                let defaultAccessKeyId = desensitization(await decipher(sourceAccessKeyId.toString()))
+                let defaultAccessKeySecret = desensitization(await decipher(sourceAccessKeySecret.toString()))
+                let defaultSecurityToken = desensitization(await decipher(sourceSecurityToken.toString()))
+                accessKeyId = readlineSync.question(`AccessKeyId [${defaultAccessKeyId}]:`, {
+                    hideEchoBack: true,
+                    defaultInput: await decipher(sourceAccessKeyId.toString())
+                });
+                accessKeySecret = readlineSync.question(`AccessKeySecret [${defaultAccessKeySecret}]:`, {
+                    hideEchoBack: true,
+                    defaultInput: await decipher(sourceAccessKeySecret.toString())
+                });
+                securityToken = readlineSync.question(`SecurityToken [${defaultSecurityToken}]:`, {
+                    hideEchoBack: true,
+                    defaultInput: await decipher(sourceSecurityToken.toString())
+                });
+            } else {
+                accessKeyId = readlineSync.question('AccessKeyId:', {hideEchoBack: true});
+                accessKeySecret = readlineSync.question('AccessKeySecret:', {hideEchoBack: true});
+                securityToken = readlineSync.question('SecurityToken:', {hideEchoBack: true});
+            }
             inputConfigInfo = {
                 type: 'sts',
                 accessKeyId: await cipher(accessKeyId),
@@ -254,10 +307,31 @@ export class CdkToolkit {
                 securityToken: await cipher(securityToken)
             };
         } else if (modeType[modeIndex] === 'RamRoleArn') {
-            let accessKeyId = readlineSync.question('accessKeyId:', {hideEchoBack: true});
-            let accessKeySecret = readlineSync.question('accessKeySecret:', {hideEchoBack: true});
-            let roleArn = readlineSync.question('roleArn(eg: acs:ram::******:role/******):');
-            let roleSessionName = readlineSync.question('roleSessionName:');
+            let accessKeyId: string;
+            let accessKeySecret: string;
+            let roleArn: string;
+            let roleSessionName: string;
+            if (sourceModeType === 'ram_role_arn') {
+                let defaultAccessKeyId = desensitization(await decipher(sourceAccessKeyId.toString()))
+                let defaultAccessKeySecret = desensitization(await decipher(sourceAccessKeySecret.toString()))
+                let defaultRoleArn = sourceRoleArn.toString()
+                let defaultRoleSessionName = sourceRoleSessionName.toString()
+                accessKeyId = readlineSync.question(`AccessKeyId [${defaultAccessKeyId}]:`, {
+                    hideEchoBack: true,
+                    defaultInput: await decipher(sourceAccessKeyId.toString())
+                });
+                accessKeySecret = readlineSync.question(`AccessKeySecret [${defaultAccessKeySecret}]:`, {
+                    hideEchoBack: true,
+                    defaultInput: await decipher(sourceAccessKeySecret.toString())
+                });
+                roleArn = readlineSync.question(`RoleArn [${defaultRoleArn}]:`);
+                roleSessionName = readlineSync.question(`RoleSessionName [${defaultRoleSessionName}]:`);
+            } else {
+                accessKeyId = readlineSync.question('AccessKeyId:', {hideEchoBack: true});
+                accessKeySecret = readlineSync.question('AccessKeySecret:', {hideEchoBack: true});
+                roleArn = readlineSync.question('RoleArn(eg: acs:ram::******:role/******):');
+                roleSessionName = readlineSync.question('RoleSessionName:');
+            }
             inputConfigInfo = {
                 type: 'ram_role_arn',
                 accessKeyId: await cipher(accessKeyId),
@@ -266,8 +340,23 @@ export class CdkToolkit {
                 roleSessionName: roleSessionName
             };
         } else if (modeType[modeIndex] === 'AK') {
-            let accessKeyId = readlineSync.question('accessKeyId:', {hideEchoBack: true});
-            let accessKeySecret = readlineSync.question('accessKeySecret:', {hideEchoBack: true});
+            let accessKeyId: string;
+            let accessKeySecret: string;
+            if (sourceModeType === 'access_key') {
+                let defaultAccessKeyId = desensitization(await decipher(sourceAccessKeyId.toString()))
+                let defaultAccessKeySecret = desensitization(await decipher(sourceAccessKeySecret.toString()))
+                accessKeyId = readlineSync.question(`AccessKeyId [${defaultAccessKeyId}]:`, {
+                    hideEchoBack: true,
+                    defaultInput: await decipher(sourceAccessKeyId.toString())
+                });
+                accessKeySecret = readlineSync.question(`AccessKeySecret [${defaultAccessKeySecret}]:`, {
+                    hideEchoBack: true,
+                    defaultInput: await decipher(sourceAccessKeySecret.toString())
+                });
+            } else {
+                accessKeyId = readlineSync.question('AccessKeyId:', {hideEchoBack: true});
+                accessKeySecret = readlineSync.question('AccessKeySecret:', {hideEchoBack: true});
+            }
             inputConfigInfo = {
                 type: 'access_key',
                 accessKeyId: await cipher(accessKeyId),
@@ -1847,4 +1936,22 @@ export function shorten(maxWidth: number, p: string) {
     }
     const half = Math.floor((maxWidth - 3) / 2);
     return p.substr(0, half) + '...' + p.substr(p.length - half);
+}
+
+export function desensitization(inputString: string, mixLength = 3) {
+    // mixLength 字符串少于一定值则脱敏全部，增加脱敏位数
+    if (isString(inputString) || isNumber(inputString)) {
+        const str = String(inputString);
+        if (str.length <= mixLength) {
+            return '*'.repeat(mixLength);
+        }
+        const len = str.length;
+        const firstStr = str.substr(0, str.length / mixLength);
+        const lastStr = str.substr(-str.length / mixLength);
+        const middleStr = str
+            .substring(str.length / mixLength, len - Math.abs(-str.length / mixLength))
+            .replace(/[\s\S]/gi, '*');
+        return firstStr + middleStr + lastStr;
+    }
+    return '';
 }

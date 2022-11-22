@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Properties for defining a `ALIYUN::PVTZ::UserVpcAuthorization`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.661Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.902Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosUserVpcAuthorizationProps")
 @software.amazon.jsii.Jsii.Proxy(RosUserVpcAuthorizationProps.Jsii$Proxy.class)
 public interface RosUserVpcAuthorizationProps extends software.amazon.jsii.JsiiSerializable {

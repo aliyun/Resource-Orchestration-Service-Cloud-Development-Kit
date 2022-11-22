@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * Properties for defining a `ALIYUN::DTS::SubscriptionInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:09.276Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.347Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosSubscriptionInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosSubscriptionInstanceProps.Jsii$Proxy.class)
 public interface RosSubscriptionInstanceProps extends software.amazon.jsii.JsiiSerializable {

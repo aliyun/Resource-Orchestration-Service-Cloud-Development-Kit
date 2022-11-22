@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * Interface so it can be exported via jsii.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.124Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.278Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ITokenMapper")
 @software.amazon.jsii.Jsii.Proxy(ITokenMapper.Jsii$Proxy.class)
 public interface ITokenMapper extends software.amazon.jsii.JsiiSerializable {

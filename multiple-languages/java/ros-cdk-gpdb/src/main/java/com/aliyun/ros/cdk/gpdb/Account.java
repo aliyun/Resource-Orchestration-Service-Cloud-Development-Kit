@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * A ROS resource type:  `ALIYUN::GPDB::Account`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.201Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.431Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource {
 

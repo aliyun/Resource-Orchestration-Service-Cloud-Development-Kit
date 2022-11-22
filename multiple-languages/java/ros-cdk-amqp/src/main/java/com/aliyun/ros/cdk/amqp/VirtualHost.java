@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * A ROS resource type:  `ALIYUN::AMQP::VirtualHost`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.358Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.490Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.VirtualHost")
 public class VirtualHost extends com.aliyun.ros.cdk.core.Resource {
 

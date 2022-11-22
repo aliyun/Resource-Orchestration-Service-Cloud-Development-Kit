@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents a mapping.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.134Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.288Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosMapping")
 public class RosMapping extends com.aliyun.ros.cdk.core.RosRefElement {
 

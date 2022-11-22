@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * A ROS resource type:  `ALIYUN::Config::DeliveryChannel`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:08.909Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.993Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.DeliveryChannel")
 public class DeliveryChannel extends com.aliyun.ros.cdk.core.Resource {
 
