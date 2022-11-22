@@ -162,3 +162,4 @@ export declare function readLanguageInfo(): any;
 export declare function padLeft(n: number, x: string): string;
 export declare function padRight(n: number, x: string): string;
 export declare function shorten(maxWidth: number, p: string): string;
+export declare function desensitization(inputString: string, mixLength?: number): string;

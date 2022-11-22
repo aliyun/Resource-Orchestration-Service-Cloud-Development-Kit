@@ -1,4 +1,16 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
+## [ros-cdk-cli 1.0.35] (2022-11-22)
+
+### Features
+
+-  Supports ros-cdk-cli reading the user's original configuration information for quick configuration ([issues](https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit/issues/66)) .
+
+## [ros-cdk-cli 1.0.32~1.0.34] (2022-09-23)
+
+### Features
+
+-  Update ROS resource sdk packages.
+
 ## [ros-cdk-cli 1.0.31] (2022-08-05)
 
 ### Bug Fixes

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.flink;
 /**
  * A ROS resource type:  `ALIYUN::Flink::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.107Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.340Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

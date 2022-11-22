@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::GrantInstanceToCen`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:11.396Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.592Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.GrantInstanceToCenProps")
 @software.amazon.jsii.Jsii.Proxy(GrantInstanceToCenProps.Jsii$Proxy.class)
 public interface GrantInstanceToCenProps extends software.amazon.jsii.JsiiSerializable {

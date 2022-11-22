@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mps;
 /**
  * A ROS template type:  `ALIYUN::MPS::Pipeline`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-16T03:59:10.436Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.680Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.RosPipeline")
 public class RosPipeline extends com.aliyun.ros.cdk.core.RosResource {
 
