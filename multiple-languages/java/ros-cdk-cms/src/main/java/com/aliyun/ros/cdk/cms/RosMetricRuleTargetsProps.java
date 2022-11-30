@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MetricRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.955Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.397Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMetricRuleTargetsProps")
 @software.amazon.jsii.Jsii.Proxy(RosMetricRuleTargetsProps.Jsii$Proxy.class)
 public interface RosMetricRuleTargetsProps extends software.amazon.jsii.JsiiSerializable {

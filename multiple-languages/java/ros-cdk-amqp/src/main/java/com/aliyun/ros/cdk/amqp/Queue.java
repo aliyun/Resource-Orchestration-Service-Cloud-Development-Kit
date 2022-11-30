@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * A ROS resource type:  `ALIYUN::AMQP::Queue`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.473Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:17.897Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.Queue")
 public class Queue extends com.aliyun.ros.cdk.core.Resource {
 

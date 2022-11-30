@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.foas;
 /**
  * A ROS template type:  `ALIYUN::FOAS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.397Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.654Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 

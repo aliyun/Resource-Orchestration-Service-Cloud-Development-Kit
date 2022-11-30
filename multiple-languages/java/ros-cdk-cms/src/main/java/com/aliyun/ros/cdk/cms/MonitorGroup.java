@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS resource type:  `ALIYUN::CMS::MonitorGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.897Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.358Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitorGroup")
 public class MonitorGroup extends com.aliyun.ros.cdk.core.Resource {
 

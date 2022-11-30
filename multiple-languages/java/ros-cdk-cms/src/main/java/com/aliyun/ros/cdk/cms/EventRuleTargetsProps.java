@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::EventRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.887Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.330Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRuleTargetsProps")
 @software.amazon.jsii.Jsii.Proxy(EventRuleTargetsProps.Jsii$Proxy.class)
 public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializable {

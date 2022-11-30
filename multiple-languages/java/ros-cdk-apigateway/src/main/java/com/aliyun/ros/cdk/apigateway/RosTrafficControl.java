@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS template type:  `ALIYUN::ApiGateway::TrafficControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.568Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.004Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosTrafficControl")
 public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
 

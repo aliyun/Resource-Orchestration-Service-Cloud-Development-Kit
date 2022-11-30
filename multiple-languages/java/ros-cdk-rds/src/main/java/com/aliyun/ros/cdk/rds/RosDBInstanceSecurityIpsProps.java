@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::DBInstanceSecurityIps`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.084Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.418Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceSecurityIpsProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceSecurityIpsProps.Jsii$Proxy.class)
 public interface RosDBInstanceSecurityIpsProps extends software.amazon.jsii.JsiiSerializable {

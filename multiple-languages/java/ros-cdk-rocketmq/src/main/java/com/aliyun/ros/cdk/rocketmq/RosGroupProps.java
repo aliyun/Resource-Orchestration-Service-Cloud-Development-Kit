@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * Properties for defining a `ALIYUN::ROCKETMQ::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.185Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.516Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.RosGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosGroupProps.Jsii$Proxy.class)
 public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * A ROS resource type:  `ALIYUN::CR::Repository`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.036Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.473Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.Repository")
 public class Repository extends com.aliyun.ros.cdk.core.Resource {
 

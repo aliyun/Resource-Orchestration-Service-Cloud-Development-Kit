@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::K8sCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.041Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.300Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosK8sClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosK8sClusterProps.Jsii$Proxy.class)
 public interface RosK8sClusterProps extends software.amazon.jsii.JsiiSerializable {

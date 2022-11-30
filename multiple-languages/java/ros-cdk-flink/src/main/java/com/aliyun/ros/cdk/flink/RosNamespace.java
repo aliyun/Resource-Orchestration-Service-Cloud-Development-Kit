@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.flink;
 /**
  * A ROS template type:  `ALIYUN::Flink::Namespace`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.346Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.628Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.RosNamespace")
 public class RosNamespace extends com.aliyun.ros.cdk.core.RosResource {
 

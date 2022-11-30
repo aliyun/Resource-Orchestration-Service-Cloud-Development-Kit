@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::Layer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.322Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.587Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosLayer")
 public class RosLayer extends com.aliyun.ros.cdk.core.RosResource {
 

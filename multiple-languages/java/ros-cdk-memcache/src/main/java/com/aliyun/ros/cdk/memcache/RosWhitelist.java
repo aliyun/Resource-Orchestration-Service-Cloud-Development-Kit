@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * A ROS template type:  `ALIYUN::Memcache::Whitelist`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.624Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.902Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.RosWhitelist")
 public class RosWhitelist extends com.aliyun.ros.cdk.core.RosResource {
 

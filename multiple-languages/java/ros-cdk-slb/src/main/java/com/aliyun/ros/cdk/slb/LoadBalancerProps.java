@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.390Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.726Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * A ROS template type:  `ALIYUN::HBR::BackupClients`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.508Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.773Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosBackupClients")
 public class RosBackupClients extends com.aliyun.ros.cdk.core.RosResource {
 

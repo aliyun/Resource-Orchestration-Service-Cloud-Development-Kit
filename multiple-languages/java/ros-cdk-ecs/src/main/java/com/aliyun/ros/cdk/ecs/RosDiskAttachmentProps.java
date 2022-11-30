@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::DiskAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.800Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.061Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDiskAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosDiskAttachmentProps.Jsii$Proxy.class)
 public interface RosDiskAttachmentProps extends software.amazon.jsii.JsiiSerializable {

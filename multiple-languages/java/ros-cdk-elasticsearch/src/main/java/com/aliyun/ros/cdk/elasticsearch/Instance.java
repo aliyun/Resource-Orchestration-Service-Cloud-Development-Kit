@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * A ROS resource type:  `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.109Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.364Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

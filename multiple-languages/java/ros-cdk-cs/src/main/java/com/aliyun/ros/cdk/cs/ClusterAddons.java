@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ClusterAddons`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.048Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.486Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterAddons")
 public class ClusterAddons extends com.aliyun.ros.cdk.core.Resource {
 

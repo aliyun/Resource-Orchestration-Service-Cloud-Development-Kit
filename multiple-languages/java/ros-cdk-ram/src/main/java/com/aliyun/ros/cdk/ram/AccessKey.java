@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS resource type:  `ALIYUN::RAM::AccessKey`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.917Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.228Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.AccessKey")
 public class AccessKey extends com.aliyun.ros.cdk.core.Resource {
 

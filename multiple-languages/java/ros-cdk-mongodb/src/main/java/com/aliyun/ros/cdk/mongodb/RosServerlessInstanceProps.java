@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * Properties for defining a `ALIYUN::MONGODB::ServerlessInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.663Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.945Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosServerlessInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosServerlessInstanceProps.Jsii$Proxy.class)
 public interface RosServerlessInstanceProps extends software.amazon.jsii.JsiiSerializable {

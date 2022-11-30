@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::SiteMonitor`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.989Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.429Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.SiteMonitorProps")
 @software.amazon.jsii.Jsii.Proxy(SiteMonitorProps.Jsii$Proxy.class)
 public interface SiteMonitorProps extends software.amazon.jsii.JsiiSerializable {

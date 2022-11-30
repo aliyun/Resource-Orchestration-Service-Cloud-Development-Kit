@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS resource type:  `ALIYUN::CMS::Contact`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.879Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.322Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.Contact")
 public class Contact extends com.aliyun.ros.cdk.core.Resource {
 

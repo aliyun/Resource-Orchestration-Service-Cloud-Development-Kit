@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * A ROS template type:  `ALIYUN::ARMS::AlertContactGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.603Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.028Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosAlertContactGroup")
 public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 

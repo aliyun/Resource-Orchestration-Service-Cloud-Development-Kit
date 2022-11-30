@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::MetricStore`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.467Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.799Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.MetricStoreProps")
 @software.amazon.jsii.Jsii.Proxy(MetricStoreProps.Jsii$Proxy.class)
 public interface MetricStoreProps extends software.amazon.jsii.JsiiSerializable {

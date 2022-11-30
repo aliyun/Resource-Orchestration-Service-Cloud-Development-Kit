@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.525Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:17.949Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.GroupProps")
 @software.amazon.jsii.Jsii.Proxy(GroupProps.Jsii$Proxy.class)
 public interface GroupProps extends software.amazon.jsii.JsiiSerializable {

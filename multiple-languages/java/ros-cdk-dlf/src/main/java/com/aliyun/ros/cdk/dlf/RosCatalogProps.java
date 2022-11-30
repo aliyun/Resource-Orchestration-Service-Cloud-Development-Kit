@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dlf;
 /**
  * Properties for defining a `ALIYUN::DLF::Catalog`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.274Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.720Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dlf.$Module.class, fqn = "@alicloud/ros-cdk-dlf.RosCatalogProps")
 @software.amazon.jsii.Jsii.Proxy(RosCatalogProps.Jsii$Proxy.class)
 public interface RosCatalogProps extends software.amazon.jsii.JsiiSerializable {

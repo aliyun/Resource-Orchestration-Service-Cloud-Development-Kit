@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Properties for defining a `ALIYUN::HBR::BackupClients`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.486Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.745Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.BackupClientsProps")
 @software.amazon.jsii.Jsii.Proxy(BackupClientsProps.Jsii$Proxy.class)
 public interface BackupClientsProps extends software.amazon.jsii.JsiiSerializable {

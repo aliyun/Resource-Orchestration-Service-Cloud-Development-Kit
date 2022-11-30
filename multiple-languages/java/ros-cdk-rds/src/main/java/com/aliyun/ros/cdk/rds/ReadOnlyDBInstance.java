@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::ReadOnlyDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.056Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.389Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstance")
 public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Properties for defining a `ALIYUN::CR::InstanceEndpointAclPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.039Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.477Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceEndpointAclPolicyProps.Jsii$Proxy.class)
 public interface RosInstanceEndpointAclPolicyProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.558Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:17.994Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {

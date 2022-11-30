@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * A ROS template type:  `ALIYUN::IOT::RuleAction`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.540Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.808Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RosRuleAction")
 public class RosRuleAction extends com.aliyun.ros.cdk.core.RosResource {
 

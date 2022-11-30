@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::BgpGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.953Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosBgpGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosBgpGroupProps.Jsii$Proxy.class)
 public interface RosBgpGroupProps extends software.amazon.jsii.JsiiSerializable {

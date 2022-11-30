@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * Properties for defining a `ALIYUN::ClickHouse::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.826Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.266Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.RosDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterProps.Jsii$Proxy.class)
 public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable {

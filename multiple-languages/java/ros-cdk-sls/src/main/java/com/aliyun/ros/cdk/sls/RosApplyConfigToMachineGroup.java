@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::ApplyConfigToMachineGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.491Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.820Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosApplyConfigToMachineGroup")
 public class RosApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.RosResource {
 

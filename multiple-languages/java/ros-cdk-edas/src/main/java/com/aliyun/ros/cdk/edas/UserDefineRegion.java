@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * A ROS resource type:  `ALIYUN::EDAS::UserDefineRegion`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.045Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.304Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.UserDefineRegion")
 public class UserDefineRegion extends com.aliyun.ros.cdk.core.Resource {
 

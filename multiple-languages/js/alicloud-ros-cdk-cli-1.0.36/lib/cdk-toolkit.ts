@@ -324,8 +324,13 @@ export class CdkToolkit {
                     hideEchoBack: true,
                     defaultInput: await decipher(sourceAccessKeySecret.toString())
                 });
-                roleArn = readlineSync.question(`RoleArn [${defaultRoleArn}]:`);
-                roleSessionName = readlineSync.question(`RoleSessionName [${defaultRoleSessionName}]:`);
+                roleArn = readlineSync.question(`RoleArn [${defaultRoleArn}]:`, {
+                    defaultInput: defaultRoleArn
+                });
+                roleSessionName = readlineSync.question(`RoleSessionName [${defaultRoleSessionName}]:`,
+                    {
+                        defaultInput: defaultRoleSessionName
+                    });
             } else {
                 accessKeyId = readlineSync.question('AccessKeyId:', {hideEchoBack: true});
                 accessKeySecret = readlineSync.question('AccessKeySecret:', {hideEchoBack: true});
@@ -576,15 +581,22 @@ export class CdkToolkit {
     }
 
     public async deploy(options: DeployOptions) {
+        let templateBody: any;
         await this.syncStackInfo();
         const stacks = await this.selectStacksForDeploy(options.stackNames, options.exclusively);
         const stackName = options.stackNames.length !== 0 ? options.stackNames[0] : stacks.stackArtifacts[0].id;
         let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId', true);
         region = region ? region : process.env.REGION_ID;
         const client = await this.getRosClient();
-        let templateBody = fs.readFileSync(`./cdk.out/${stackName}.template.json`);
+        let templateFileBody = fs.readFileSync(`./cdk.out/${stackName}.template.json`);
         let ClientToken = generateSafeId();
         let disableRollback = options.disableRollback
+        let templateBodyBase64Data = templateFileBody.toString('base64').trim();
+        if (Buffer.byteLength(templateFileBody, 'utf8') < 524273) {
+            templateBody = `@Base64Encoded: ${templateBodyBase64Data}`
+        } else {
+            templateBody = templateFileBody
+        }
         let content: { [name: string]: any } = {
             StackName: stackName.toString(),
             RegionId: region,

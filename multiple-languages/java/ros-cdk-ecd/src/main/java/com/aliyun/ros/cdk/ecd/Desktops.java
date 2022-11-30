@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * A ROS resource type:  `ALIYUN::ECD::Desktops`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.363Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.830Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.Desktops")
 public class Desktops extends com.aliyun.ros.cdk.core.Resource {
 

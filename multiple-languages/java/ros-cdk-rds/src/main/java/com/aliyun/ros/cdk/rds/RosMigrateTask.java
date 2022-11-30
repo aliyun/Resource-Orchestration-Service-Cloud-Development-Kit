@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS template type:  `ALIYUN::RDS::MigrateTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.086Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.419Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosMigrateTask")
 public class RosMigrateTask extends com.aliyun.ros.cdk.core.RosResource {
 

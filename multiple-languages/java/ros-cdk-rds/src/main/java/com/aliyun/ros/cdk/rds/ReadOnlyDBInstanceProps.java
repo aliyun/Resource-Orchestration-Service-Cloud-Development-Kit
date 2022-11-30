@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.058Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ReadOnlyDBInstanceProps.Jsii$Proxy.class)
 public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerializable {

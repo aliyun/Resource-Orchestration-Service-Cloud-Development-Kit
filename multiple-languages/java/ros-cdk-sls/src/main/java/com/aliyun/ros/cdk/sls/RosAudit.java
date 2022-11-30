@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::Audit`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.493Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.821Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAudit")
 public class RosAudit extends com.aliyun.ros.cdk.core.RosResource {
 

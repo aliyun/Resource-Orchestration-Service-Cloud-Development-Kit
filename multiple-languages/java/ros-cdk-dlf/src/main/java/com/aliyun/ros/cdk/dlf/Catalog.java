@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dlf;
 /**
  * A ROS resource type:  `ALIYUN::DLF::Catalog`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.272Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.717Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dlf.$Module.class, fqn = "@alicloud/ros-cdk-dlf.Catalog")
 public class Catalog extends com.aliyun.ros.cdk.core.Resource {
 

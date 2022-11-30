@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * Properties for defining a `ALIYUN::GPDB::DBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.454Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.715Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {

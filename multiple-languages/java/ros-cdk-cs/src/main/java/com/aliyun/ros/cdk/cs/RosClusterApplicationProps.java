@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ClusterApplication`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.138Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.575Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterApplicationProps.Jsii$Proxy.class)
 public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSerializable {

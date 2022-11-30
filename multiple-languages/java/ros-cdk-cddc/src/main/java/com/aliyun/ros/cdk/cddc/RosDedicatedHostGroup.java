@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cddc;
 /**
  * A ROS template type:  `ALIYUN::CDDC::DedicatedHostGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.691Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.120Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.RosDedicatedHostGroup")
 public class RosDedicatedHostGroup extends com.aliyun.ros.cdk.core.RosResource {
 

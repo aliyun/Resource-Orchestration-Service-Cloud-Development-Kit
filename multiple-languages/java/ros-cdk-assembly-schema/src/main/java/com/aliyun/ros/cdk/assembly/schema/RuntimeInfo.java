@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Information about the application's runtime components.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.222Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:17.615Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.RuntimeInfo")
 @software.amazon.jsii.Jsii.Proxy(RuntimeInfo.Jsii$Proxy.class)
 public interface RuntimeInfo extends software.amazon.jsii.JsiiSerializable {

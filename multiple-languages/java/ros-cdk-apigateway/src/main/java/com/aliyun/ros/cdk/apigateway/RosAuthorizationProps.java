@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Authorization`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.551Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:17.987Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosAuthorizationProps")
 @software.amazon.jsii.Jsii.Proxy(RosAuthorizationProps.Jsii$Proxy.class)
 public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializable {

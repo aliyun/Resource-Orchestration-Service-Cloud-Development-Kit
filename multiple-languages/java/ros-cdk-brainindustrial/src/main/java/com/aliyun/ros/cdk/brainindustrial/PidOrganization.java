@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.brainindustrial;
 /**
  * A ROS resource type:  `ALIYUN::BrainIndustrial::PidOrganization`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.629Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.072Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.brainindustrial.$Module.class, fqn = "@alicloud/ros-cdk-brainindustrial.PidOrganization")
 public class PidOrganization extends com.aliyun.ros.cdk.core.Resource {
 

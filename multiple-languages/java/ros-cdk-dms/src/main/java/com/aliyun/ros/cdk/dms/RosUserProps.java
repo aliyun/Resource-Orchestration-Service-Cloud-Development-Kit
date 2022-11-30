@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * Properties for defining a `ALIYUN::DMS::User`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.296Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.744Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosUserProps")
 @software.amazon.jsii.Jsii.Proxy(RosUserProps.Jsii$Proxy.class)
 public interface RosUserProps extends software.amazon.jsii.JsiiSerializable {

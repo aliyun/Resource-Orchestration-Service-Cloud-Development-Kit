@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::JoinSecurityGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.717Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.995Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.JoinSecurityGroupProps")
 @software.amazon.jsii.Jsii.Proxy(JoinSecurityGroupProps.Jsii$Proxy.class)
 public interface JoinSecurityGroupProps extends software.amazon.jsii.JsiiSerializable {

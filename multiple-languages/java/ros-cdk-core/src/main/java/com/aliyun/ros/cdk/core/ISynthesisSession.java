@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * Passed into <code>Construct.synthesize()</code> methods.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.277Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:17.682Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ISynthesisSession")
 @software.amazon.jsii.Jsii.Proxy(ISynthesisSession.Jsii$Proxy.class)
 public interface ISynthesisSession extends software.amazon.jsii.JsiiSerializable {

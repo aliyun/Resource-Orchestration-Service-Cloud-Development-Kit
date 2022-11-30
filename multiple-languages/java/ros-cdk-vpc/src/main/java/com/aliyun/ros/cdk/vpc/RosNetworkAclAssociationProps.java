@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::NetworkAclAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.682Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:21.014Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNetworkAclAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosNetworkAclAssociationProps.Jsii$Proxy.class)
 public interface RosNetworkAclAssociationProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Properties for defining a `ALIYUN::HBR::DbVault`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.493Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.770Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.DbVaultProps")
 @software.amazon.jsii.Jsii.Proxy(DbVaultProps.Jsii$Proxy.class)
 public interface DbVaultProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * Properties for defining a `ALIYUN::FNF::Schedule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.390Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.647Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.RosScheduleProps")
 @software.amazon.jsii.Jsii.Proxy(RosScheduleProps.Jsii$Proxy.class)
 public interface RosScheduleProps extends software.amazon.jsii.JsiiSerializable {

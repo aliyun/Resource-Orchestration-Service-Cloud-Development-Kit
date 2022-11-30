@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.634Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.948Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
 

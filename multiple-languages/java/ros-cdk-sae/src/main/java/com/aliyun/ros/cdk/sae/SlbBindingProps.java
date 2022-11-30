@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * Properties for defining a `ALIYUN::SAE::SlbBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.282Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.605Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.SlbBindingProps")
 @software.amazon.jsii.Jsii.Proxy(SlbBindingProps.Jsii$Proxy.class)
 public interface SlbBindingProps extends software.amazon.jsii.JsiiSerializable {

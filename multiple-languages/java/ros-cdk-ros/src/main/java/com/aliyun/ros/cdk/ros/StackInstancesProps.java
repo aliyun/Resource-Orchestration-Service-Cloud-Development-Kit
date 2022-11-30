@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::StackInstances`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.569Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.StackInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(StackInstancesProps.Jsii$Proxy.class)
 public interface StackInstancesProps extends software.amazon.jsii.JsiiSerializable {
