@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * A ROS resource type:  `ALIYUN::SAG::AppUser`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.291Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.614Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.AppUser")
 public class AppUser extends com.aliyun.ros.cdk.core.Resource {
 

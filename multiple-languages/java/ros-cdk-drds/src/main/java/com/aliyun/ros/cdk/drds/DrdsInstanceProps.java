@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds;
 /**
  * Properties for defining a `ALIYUN::DRDS::DrdsInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.313Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.773Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DrdsInstanceProps.Jsii$Proxy.class)
 public interface DrdsInstanceProps extends software.amazon.jsii.JsiiSerializable {

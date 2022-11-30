@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * https://help.aliyun.com/document_detail/28852.html
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.257Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:17.653Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Fn")
 public class Fn extends software.amazon.jsii.JsiiObject {
 

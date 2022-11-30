@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eventbridge;
 /**
  * A ROS template type:  `ALIYUN::EventBridge::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.281Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.546Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eventbridge.$Module.class, fqn = "@alicloud/ros-cdk-eventbridge.RosRule")
 public class RosRule extends com.aliyun.ros.cdk.core.RosResource {
 

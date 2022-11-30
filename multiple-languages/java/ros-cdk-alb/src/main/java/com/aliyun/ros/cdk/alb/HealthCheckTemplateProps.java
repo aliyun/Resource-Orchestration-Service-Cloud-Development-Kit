@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Properties for defining a `ALIYUN::ALB::HealthCheckTemplate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.386Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:17.793Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.HealthCheckTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(HealthCheckTemplateProps.Jsii$Proxy.class)
 public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSerializable {

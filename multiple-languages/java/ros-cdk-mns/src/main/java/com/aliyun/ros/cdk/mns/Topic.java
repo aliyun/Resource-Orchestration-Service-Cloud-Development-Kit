@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns;
 /**
  * A ROS resource type:  `ALIYUN::MNS::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.637Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.916Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * Properties for defining a `ALIYUN::NLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.021Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {

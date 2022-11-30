@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::SearchIndex`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.793Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:20.095Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.SearchIndexProps")
 @software.amazon.jsii.Jsii.Proxy(SearchIndexProps.Jsii$Proxy.class)
 public interface SearchIndexProps extends software.amazon.jsii.JsiiSerializable {

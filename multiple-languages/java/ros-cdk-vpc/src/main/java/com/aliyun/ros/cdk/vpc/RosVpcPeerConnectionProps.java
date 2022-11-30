@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::VpcPeerConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:30.697Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:21.030Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpcPeerConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcPeerConnectionProps.Jsii$Proxy.class)
 public interface RosVpcPeerConnectionProps extends software.amazon.jsii.JsiiSerializable {

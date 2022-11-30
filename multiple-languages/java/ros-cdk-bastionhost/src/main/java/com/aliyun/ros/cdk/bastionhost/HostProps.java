@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bastionhost;
 /**
  * Properties for defining a `ALIYUN::BastionHost::Host`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.624Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.066Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.HostProps")
 @software.amazon.jsii.Jsii.Proxy(HostProps.Jsii$Proxy.class)
 public interface HostProps extends software.amazon.jsii.JsiiSerializable {

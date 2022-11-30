@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Artifact properties for ROS stacks.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:27.207Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:17.598Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.AliyunRosStackProperties")
 @software.amazon.jsii.Jsii.Proxy(AliyunRosStackProperties.Jsii$Proxy.class)
 public interface AliyunRosStackProperties extends software.amazon.jsii.JsiiSerializable {

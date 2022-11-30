@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.marketplace;
 /**
  * A ROS template type:  `ALIYUN::MarketPlace::Order`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:29.590Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.866Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.marketplace.$Module.class, fqn = "@alicloud/ros-cdk-marketplace.RosOrder")
 public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
 

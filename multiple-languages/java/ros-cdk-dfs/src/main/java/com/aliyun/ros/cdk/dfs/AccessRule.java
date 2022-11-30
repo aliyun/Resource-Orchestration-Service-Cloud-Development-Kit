@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dfs;
 /**
  * A ROS resource type:  `ALIYUN::DFS::AccessRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-22T06:16:28.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.701Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.AccessRule")
 public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
 
