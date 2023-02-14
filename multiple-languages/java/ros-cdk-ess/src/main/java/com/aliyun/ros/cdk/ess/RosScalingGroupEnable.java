@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::ScalingGroupEnable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.471Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.472Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupEnable")
 public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -123,6 +123,42 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAttachOptions() {
+        return software.amazon.jsii.Kernel.get(this, "attachOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAttachOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "attachOptions", value);
+    }
+
+    /**
+     */
+    public void setAttachOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ess.RosScalingGroupEnable.AttachOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "attachOptions", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDetachOptions() {
+        return software.amazon.jsii.Kernel.get(this, "detachOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDetachOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "detachOptions", value);
+    }
+
+    /**
+     */
+    public void setDetachOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ess.RosScalingGroupEnable.DetachOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "detachOptions", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceIds() {
         return software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -225,6 +261,393 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
     public void setScalingRuleArisExecuteVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "scalingRuleArisExecuteVersion", value);
     }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupEnable.AttachOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(AttachOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface AttachOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEntrusted() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLifecycleHook() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link AttachOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link AttachOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<AttachOptionsProperty> {
+            java.lang.Object entrusted;
+            java.lang.Object lifecycleHook;
+
+            /**
+             * Sets the value of {@link AttachOptionsProperty#getEntrusted}
+             * @param entrusted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder entrusted(java.lang.Boolean entrusted) {
+                this.entrusted = entrusted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AttachOptionsProperty#getEntrusted}
+             * @param entrusted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder entrusted(com.aliyun.ros.cdk.core.IResolvable entrusted) {
+                this.entrusted = entrusted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AttachOptionsProperty#getLifecycleHook}
+             * @param lifecycleHook the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder lifecycleHook(java.lang.Boolean lifecycleHook) {
+                this.lifecycleHook = lifecycleHook;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AttachOptionsProperty#getLifecycleHook}
+             * @param lifecycleHook the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder lifecycleHook(com.aliyun.ros.cdk.core.IResolvable lifecycleHook) {
+                this.lifecycleHook = lifecycleHook;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link AttachOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public AttachOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link AttachOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AttachOptionsProperty {
+            private final java.lang.Object entrusted;
+            private final java.lang.Object lifecycleHook;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.entrusted = software.amazon.jsii.Kernel.get(this, "entrusted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.lifecycleHook = software.amazon.jsii.Kernel.get(this, "lifecycleHook", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.entrusted = builder.entrusted;
+                this.lifecycleHook = builder.lifecycleHook;
+            }
+
+            @Override
+            public final java.lang.Object getEntrusted() {
+                return this.entrusted;
+            }
+
+            @Override
+            public final java.lang.Object getLifecycleHook() {
+                return this.lifecycleHook;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getEntrusted() != null) {
+                    data.set("entrusted", om.valueToTree(this.getEntrusted()));
+                }
+                if (this.getLifecycleHook() != null) {
+                    data.set("lifecycleHook", om.valueToTree(this.getLifecycleHook()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ess.RosScalingGroupEnable.AttachOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                AttachOptionsProperty.Jsii$Proxy that = (AttachOptionsProperty.Jsii$Proxy) o;
+
+                if (this.entrusted != null ? !this.entrusted.equals(that.entrusted) : that.entrusted != null) return false;
+                return this.lifecycleHook != null ? this.lifecycleHook.equals(that.lifecycleHook) : that.lifecycleHook == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.entrusted != null ? this.entrusted.hashCode() : 0;
+                result = 31 * result + (this.lifecycleHook != null ? this.lifecycleHook.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupEnable.DetachOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(DetachOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DetachOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDecreaseDesiredCapacity() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDetachOption() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLifecycleHook() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link DetachOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DetachOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DetachOptionsProperty> {
+            java.lang.Object decreaseDesiredCapacity;
+            java.lang.Object detachOption;
+            java.lang.Object lifecycleHook;
+
+            /**
+             * Sets the value of {@link DetachOptionsProperty#getDecreaseDesiredCapacity}
+             * @param decreaseDesiredCapacity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder decreaseDesiredCapacity(java.lang.Boolean decreaseDesiredCapacity) {
+                this.decreaseDesiredCapacity = decreaseDesiredCapacity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DetachOptionsProperty#getDecreaseDesiredCapacity}
+             * @param decreaseDesiredCapacity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder decreaseDesiredCapacity(com.aliyun.ros.cdk.core.IResolvable decreaseDesiredCapacity) {
+                this.decreaseDesiredCapacity = decreaseDesiredCapacity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DetachOptionsProperty#getDetachOption}
+             * @param detachOption the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder detachOption(java.lang.String detachOption) {
+                this.detachOption = detachOption;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DetachOptionsProperty#getDetachOption}
+             * @param detachOption the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder detachOption(com.aliyun.ros.cdk.core.IResolvable detachOption) {
+                this.detachOption = detachOption;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DetachOptionsProperty#getLifecycleHook}
+             * @param lifecycleHook the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder lifecycleHook(java.lang.Boolean lifecycleHook) {
+                this.lifecycleHook = lifecycleHook;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DetachOptionsProperty#getLifecycleHook}
+             * @param lifecycleHook the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder lifecycleHook(com.aliyun.ros.cdk.core.IResolvable lifecycleHook) {
+                this.lifecycleHook = lifecycleHook;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DetachOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DetachOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DetachOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DetachOptionsProperty {
+            private final java.lang.Object decreaseDesiredCapacity;
+            private final java.lang.Object detachOption;
+            private final java.lang.Object lifecycleHook;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.decreaseDesiredCapacity = software.amazon.jsii.Kernel.get(this, "decreaseDesiredCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.detachOption = software.amazon.jsii.Kernel.get(this, "detachOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.lifecycleHook = software.amazon.jsii.Kernel.get(this, "lifecycleHook", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.decreaseDesiredCapacity = builder.decreaseDesiredCapacity;
+                this.detachOption = builder.detachOption;
+                this.lifecycleHook = builder.lifecycleHook;
+            }
+
+            @Override
+            public final java.lang.Object getDecreaseDesiredCapacity() {
+                return this.decreaseDesiredCapacity;
+            }
+
+            @Override
+            public final java.lang.Object getDetachOption() {
+                return this.detachOption;
+            }
+
+            @Override
+            public final java.lang.Object getLifecycleHook() {
+                return this.lifecycleHook;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getDecreaseDesiredCapacity() != null) {
+                    data.set("decreaseDesiredCapacity", om.valueToTree(this.getDecreaseDesiredCapacity()));
+                }
+                if (this.getDetachOption() != null) {
+                    data.set("detachOption", om.valueToTree(this.getDetachOption()));
+                }
+                if (this.getLifecycleHook() != null) {
+                    data.set("lifecycleHook", om.valueToTree(this.getLifecycleHook()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ess.RosScalingGroupEnable.DetachOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DetachOptionsProperty.Jsii$Proxy that = (DetachOptionsProperty.Jsii$Proxy) o;
+
+                if (this.decreaseDesiredCapacity != null ? !this.decreaseDesiredCapacity.equals(that.decreaseDesiredCapacity) : that.decreaseDesiredCapacity != null) return false;
+                if (this.detachOption != null ? !this.detachOption.equals(that.detachOption) : that.detachOption != null) return false;
+                return this.lifecycleHook != null ? this.lifecycleHook.equals(that.lifecycleHook) : that.lifecycleHook == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.decreaseDesiredCapacity != null ? this.decreaseDesiredCapacity.hashCode() : 0;
+                result = 31 * result + (this.detachOption != null ? this.detachOption.hashCode() : 0);
+                result = 31 * result + (this.lifecycleHook != null ? this.lifecycleHook.hashCode() : 0);
+                return result;
+            }
+        }
+    }
 
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.ess.RosScalingGroupEnable}.
@@ -266,6 +689,40 @@ public class RosScalingGroupEnable extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder scalingGroupId(final com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
             this.props.scalingGroupId(scalingGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param attachOptions This parameter is required.
+         */
+        public Builder attachOptions(final com.aliyun.ros.cdk.core.IResolvable attachOptions) {
+            this.props.attachOptions(attachOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param attachOptions This parameter is required.
+         */
+        public Builder attachOptions(final com.aliyun.ros.cdk.ess.RosScalingGroupEnable.AttachOptionsProperty attachOptions) {
+            this.props.attachOptions(attachOptions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param detachOptions This parameter is required.
+         */
+        public Builder detachOptions(final com.aliyun.ros.cdk.core.IResolvable detachOptions) {
+            this.props.detachOptions(detachOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param detachOptions This parameter is required.
+         */
+        public Builder detachOptions(final com.aliyun.ros.cdk.ess.RosScalingGroupEnable.DetachOptionsProperty detachOptions) {
+            this.props.detachOptions(detachOptions);
             return this;
         }
 

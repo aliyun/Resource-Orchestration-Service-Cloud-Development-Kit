@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::Disk`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.059Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.044Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDisk")
 public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -227,6 +227,24 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setKmsKeyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "kmsKeyId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMultiAttach() {
+        return software.amazon.jsii.Kernel.get(this, "multiAttach", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMultiAttach(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "multiAttach", value);
+    }
+
+    /**
+     */
+    public void setMultiAttach(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "multiAttach", value);
     }
 
     /**
@@ -711,6 +729,23 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder kmsKeyId(final com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
             this.props.kmsKeyId(kmsKeyId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param multiAttach This parameter is required.
+         */
+        public Builder multiAttach(final java.lang.String multiAttach) {
+            this.props.multiAttach(multiAttach);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param multiAttach This parameter is required.
+         */
+        public Builder multiAttach(final com.aliyun.ros.cdk.core.IResolvable multiAttach) {
+            this.props.multiAttach(multiAttach);
             return this;
         }
 

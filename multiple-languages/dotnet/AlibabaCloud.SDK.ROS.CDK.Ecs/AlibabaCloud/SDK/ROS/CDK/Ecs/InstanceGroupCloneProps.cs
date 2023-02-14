@@ -1508,6 +1508,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             set;
         }
 
+        private object? _updatePolicy;
+
+        /// <summary>Property updatePolicy: Specify the policy at update.</summary>
+        /// <remarks>
+        /// The value can be 'ForNewInstances' or 'ForAllInstances'.
+        /// If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+        /// The default is 'ForNewInstances'
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "updatePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? UpdatePolicy
+        {
+            get => _updatePolicy;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _updatePolicy = value;
+            }
+        }
+
         private object? _zoneId;
 
         /// <summary>Property zoneId: The ID of the zone to which the instance belongs.</summary>

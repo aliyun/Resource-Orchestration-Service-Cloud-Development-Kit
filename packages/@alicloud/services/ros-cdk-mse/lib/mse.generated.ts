@@ -877,3 +877,388 @@ export class RosGateway extends ros.RosResource {
         return rosGatewayPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `ALIYUN::MSE::NacosConfig`
+ */
+export interface RosNacosConfigProps {
+
+    /**
+     * @Property dataId: The data ID.
+     */
+    readonly dataId: string | ros.IResolvable;
+
+    /**
+     * @Property group: The ID of the group.
+     */
+    readonly group: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property appName: The name of the application.
+     */
+    readonly appName?: string | ros.IResolvable;
+
+    /**
+     * @Property betaIps: The list of IP addresses where the beta release of the configuration is performed.
+     */
+    readonly betaIps?: string | ros.IResolvable;
+
+    /**
+     * @Property content: The content of the configuration.
+     */
+    readonly content?: string | ros.IResolvable;
+
+    /**
+     * @Property desc: The description of the configuration.
+     */
+    readonly desc?: string | ros.IResolvable;
+
+    /**
+     * @Property namespaceId: The ID of the namespace.
+     */
+    readonly namespaceId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: The tag of the configuration.
+     */
+    readonly tags?: string;
+
+    /**
+     * @Property type: The format of the configuration. Supported formats include TEXT, JSON, and XML.
+     */
+    readonly type?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNacosConfigProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNacosConfigProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNacosConfigPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('group', ros.requiredValidator)(properties.group));
+    errors.collect(ros.propertyValidator('group', ros.validateString)(properties.group));
+    errors.collect(ros.propertyValidator('desc', ros.validateString)(properties.desc));
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('dataId', ros.requiredValidator)(properties.dataId));
+    errors.collect(ros.propertyValidator('dataId', ros.validateString)(properties.dataId));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('content', ros.validateString)(properties.content));
+    errors.collect(ros.propertyValidator('betaIps', ros.validateString)(properties.betaIps));
+    errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('tags', ros.validateString)(properties.tags));
+    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
+    return errors.wrap('supplied properties not correct for "RosNacosConfigProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::NacosConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNacosConfigProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::NacosConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosNacosConfigPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNacosConfigPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DataId: ros.stringToRosTemplate(properties.dataId),
+      Group: ros.stringToRosTemplate(properties.group),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      AppName: ros.stringToRosTemplate(properties.appName),
+      BetaIps: ros.stringToRosTemplate(properties.betaIps),
+      Content: ros.stringToRosTemplate(properties.content),
+      Desc: ros.stringToRosTemplate(properties.desc),
+      NamespaceId: ros.stringToRosTemplate(properties.namespaceId),
+      Tags: ros.stringToRosTemplate(properties.tags),
+      Type: ros.stringToRosTemplate(properties.type),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::MSE::NacosConfig`
+ */
+export class RosNacosConfig extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::NacosConfig";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dataId: The data ID.
+     */
+    public dataId: string | ros.IResolvable;
+
+    /**
+     * @Property group: The ID of the group.
+     */
+    public group: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property appName: The name of the application.
+     */
+    public appName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property betaIps: The list of IP addresses where the beta release of the configuration is performed.
+     */
+    public betaIps: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property content: The content of the configuration.
+     */
+    public content: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property desc: The description of the configuration.
+     */
+    public desc: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property namespaceId: The ID of the namespace.
+     */
+    public namespaceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: The tag of the configuration.
+     */
+    public tags: string | undefined;
+
+    /**
+     * @Property type: The format of the configuration. Supported formats include TEXT, JSON, and XML.
+     */
+    public type: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::MSE::NacosConfig`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNacosConfigProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNacosConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dataId = props.dataId;
+        this.group = props.group;
+        this.instanceId = props.instanceId;
+        this.appName = props.appName;
+        this.betaIps = props.betaIps;
+        this.content = props.content;
+        this.desc = props.desc;
+        this.namespaceId = props.namespaceId;
+        this.tags = props.tags;
+        this.type = props.type;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dataId: this.dataId,
+            group: this.group,
+            instanceId: this.instanceId,
+            appName: this.appName,
+            betaIps: this.betaIps,
+            content: this.content,
+            desc: this.desc,
+            namespaceId: this.namespaceId,
+            tags: this.tags,
+            type: this.type,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNacosConfigPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::MSE::NacosService`
+ */
+export interface RosNacosServiceProps {
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property serviceName: The name of the service.
+     */
+    readonly serviceName: string | ros.IResolvable;
+
+    /**
+     * @Property ephemeral: Specifies whether the instance is a temporary node. Valid values:
+     * true: yes
+     * false: no
+     */
+    readonly ephemeral?: boolean | ros.IResolvable;
+
+    /**
+     * @Property groupName: The name of the group.
+     */
+    readonly groupName?: string | ros.IResolvable;
+
+    /**
+     * @Property namespaceId: The ID of the namespace.
+     */
+    readonly namespaceId?: string | ros.IResolvable;
+
+    /**
+     * @Property protectThreshold: The protection threshold.
+     */
+    readonly protectThreshold?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNacosServiceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNacosServiceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNacosServicePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
+    errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    errors.collect(ros.propertyValidator('protectThreshold', ros.validateString)(properties.protectThreshold));
+    errors.collect(ros.propertyValidator('ephemeral', ros.validateBoolean)(properties.ephemeral));
+    errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    return errors.wrap('supplied properties not correct for "RosNacosServiceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::NacosService` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNacosServiceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::NacosService` resource.
+ */
+// @ts-ignore TS6133
+function rosNacosServicePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNacosServicePropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      ServiceName: ros.stringToRosTemplate(properties.serviceName),
+      Ephemeral: ros.booleanToRosTemplate(properties.ephemeral),
+      GroupName: ros.stringToRosTemplate(properties.groupName),
+      NamespaceId: ros.stringToRosTemplate(properties.namespaceId),
+      ProtectThreshold: ros.stringToRosTemplate(properties.protectThreshold),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::MSE::NacosService`
+ */
+export class RosNacosService extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::NacosService";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property serviceName: The name of the service.
+     */
+    public serviceName: string | ros.IResolvable;
+
+    /**
+     * @Property ephemeral: Specifies whether the instance is a temporary node. Valid values:
+     * true: yes
+     * false: no
+     */
+    public ephemeral: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property groupName: The name of the group.
+     */
+    public groupName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property namespaceId: The ID of the namespace.
+     */
+    public namespaceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property protectThreshold: The protection threshold.
+     */
+    public protectThreshold: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::MSE::NacosService`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNacosServiceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNacosService.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.serviceName = props.serviceName;
+        this.ephemeral = props.ephemeral;
+        this.groupName = props.groupName;
+        this.namespaceId = props.namespaceId;
+        this.protectThreshold = props.protectThreshold;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            serviceName: this.serviceName,
+            ephemeral: this.ephemeral,
+            groupName: this.groupName,
+            namespaceId: this.namespaceId,
+            protectThreshold: this.protectThreshold,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNacosServicePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}

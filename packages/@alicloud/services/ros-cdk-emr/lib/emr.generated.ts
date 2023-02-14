@@ -2732,3 +2732,159 @@ function rosClusterServiceConfigsServiceConfigsPropertyToRosTemplate(properties:
       GroupId: ros.stringToRosTemplate(properties.groupId),
     };
 }
+
+/**
+ * Properties for defining a `ALIYUN::EMR::FlowProject`
+ */
+export interface RosFlowProjectProps {
+
+    /**
+     * @Property description: The description of the project.
+     */
+    readonly description: string | ros.IResolvable;
+
+    /**
+     * @Property flowProjectName: The name of the project.
+     */
+    readonly flowProjectName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the enterprise resource group to which the EMR instances and ECS node instances belong.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosFlowProjectProps`
+ *
+ * @param properties - the TypeScript properties of a `RosFlowProjectProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosFlowProjectPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('flowProjectName', ros.requiredValidator)(properties.flowProjectName));
+    errors.collect(ros.propertyValidator('flowProjectName', ros.validateString)(properties.flowProjectName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    return errors.wrap('supplied properties not correct for "RosFlowProjectProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EMR::FlowProject` resource
+ *
+ * @param properties - the TypeScript properties of a `RosFlowProjectProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EMR::FlowProject` resource.
+ */
+// @ts-ignore TS6133
+function rosFlowProjectPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosFlowProjectPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Description: ros.stringToRosTemplate(properties.description),
+      FlowProjectName: ros.stringToRosTemplate(properties.flowProjectName),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::EMR::FlowProject`
+ */
+export class RosFlowProject extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EMR::FlowProject";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute CreateTime: The time when the project was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the project.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute FlowProjectId: The ID of the project.
+     */
+    public readonly attrFlowProjectId: ros.IResolvable;
+
+    /**
+     * @Attribute FlowProjectName: The name of the project.
+     */
+    public readonly attrFlowProjectName: ros.IResolvable;
+
+    /**
+     * @Attribute GmtModified: The time when the project was modified.
+     */
+    public readonly attrGmtModified: ros.IResolvable;
+
+    /**
+     * @Attribute UserId: The ID of the primary account.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property description: The description of the project.
+     */
+    public description: string | ros.IResolvable;
+
+    /**
+     * @Property flowProjectName: The name of the project.
+     */
+    public flowProjectName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the enterprise resource group to which the EMR instances and ECS node instances belong.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::EMR::FlowProject`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosFlowProjectProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosFlowProject.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrFlowProjectId = this.getAtt('FlowProjectId');
+        this.attrFlowProjectName = this.getAtt('FlowProjectName');
+        this.attrGmtModified = this.getAtt('GmtModified');
+        this.attrUserId = this.getAtt('UserId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.description = props.description;
+        this.flowProjectName = props.flowProjectName;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            description: this.description,
+            flowProjectName: this.flowProjectName,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosFlowProjectPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}

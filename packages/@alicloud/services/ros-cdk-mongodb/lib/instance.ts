@@ -59,9 +59,16 @@ export interface InstanceProps {
     readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
-     * Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2
+     * Property engineVersion: Database instance version.
      */
     readonly engineVersion?: string | ros.IResolvable;
+
+    /**
+     * Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment.
+     * When the value of the EngineVersion is 4.4 and later, this parameter is available and required.
+     * The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
+     */
+    readonly hiddenZoneId?: string | ros.IResolvable;
 
     /**
      * Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
@@ -94,6 +101,12 @@ export interface InstanceProps {
     readonly restoreTime?: string | ros.IResolvable;
 
     /**
+     * Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment.
+     * When the value of the EngineVersion is 4.4 and later, this parameter is available and required.The value of this parameter cannot be the same as that of ZoneId and HiddenZoneId.
+     */
+    readonly secondaryZoneId?: string | ros.IResolvable;
+
+    /**
      * Property securityGroupId: The ID of the ECS security group.
      * Each ApsaraDB for MongoDB instance can be added in up to 10 security group. 
      * You can call the ECS DescribeSecurityGroup to describe the ID of the security group in the target region.
@@ -114,6 +127,13 @@ export interface InstanceProps {
      * Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
     readonly storageEngine?: string | ros.IResolvable;
+
+    /**
+     * Property storageType: The storage type of the instance.
+     * Instances of MongoDB 4.4 and later only support cloud disks. cloud_essd1 is selected if you leave this parameter empty.
+     * Instances of MongoDB 4.2 and earlier support only local disks. local_ssd is selected if you leave this parameter empty.
+     */
+    readonly storageType?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -199,6 +219,7 @@ export class Instance extends ros.Resource {
         const rosInstance = new RosInstance(this, id,  {
             businessInfo: props.businessInfo,
             resourceGroupId: props.resourceGroupId,
+            hiddenZoneId: props.hiddenZoneId,
             autoRenew: props.autoRenew,
             securityIpArray: props.securityIpArray,
             backupId: props.backupId,
@@ -211,6 +232,7 @@ export class Instance extends ros.Resource {
             couponNo: props.couponNo,
             tdeStatus: props.tdeStatus,
             engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '3.4' : props.engineVersion,
+            storageType: props.storageType,
             readonlyReplicas: props.readonlyReplicas,
             replicationFactor: props.replicationFactor,
             zoneId: props.zoneId,
@@ -219,6 +241,7 @@ export class Instance extends ros.Resource {
             securityGroupId: props.securityGroupId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             vpcPasswordFree: props.vpcPasswordFree,
+            secondaryZoneId: props.secondaryZoneId,
             accountPassword: props.accountPassword,
             vpcId: props.vpcId,
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,

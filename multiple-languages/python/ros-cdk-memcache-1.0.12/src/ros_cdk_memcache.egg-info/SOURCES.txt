@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+NOTICE
+README.md
+pyproject.toml
+setup.py
+src/ros_cdk_memcache/__init__.py
+src/ros_cdk_memcache/py.typed
+src/ros_cdk_memcache.egg-info/PKG-INFO
+src/ros_cdk_memcache.egg-info/SOURCES.txt
+src/ros_cdk_memcache.egg-info/dependency_links.txt
+src/ros_cdk_memcache.egg-info/requires.txt
+src/ros_cdk_memcache.egg-info/top_level.txt
+src/ros_cdk_memcache/_jsii/__init__.py
+src/ros_cdk_memcache/_jsii/ros-cdk-memcache@1.0.12.jsii.tgz

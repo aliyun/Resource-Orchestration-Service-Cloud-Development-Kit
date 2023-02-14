@@ -43,7 +43,9 @@ export interface RosDBClusterProps {
     readonly dbNodeStorageType: string | ros.IResolvable;
 
     /**
-     * @Property paymentType: PayType
+     * @Property paymentType: The billing method of the cluster. Valid values:
+     * Postpaid: pay-as-you-go
+     * Prepaid: subscription
      */
     readonly paymentType: string | ros.IResolvable;
 
@@ -68,9 +70,11 @@ export interface RosDBClusterProps {
     readonly period?: string | ros.IResolvable;
 
     /**
-     * @Property usedTime: When Period is Month, the value of UsedTime is [1-9].  When Period is Year, the value of UsedTime is [1-3]
+     * @Property usedTime: The subscription duration. Valid values:
+     * When Period is Month, it could be from 1 to 9, 12, 24, 36.
+     *  When Period is Year, it could be from 1 to 3.
      */
-    readonly usedTime?: string | ros.IResolvable;
+    readonly usedTime?: number | ros.IResolvable;
 
     /**
      * @Property vpcId: VpcId
@@ -119,8 +123,20 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbClusterVersion', ros.validateString)(properties.dbClusterVersion));
     errors.collect(ros.propertyValidator('dbNodeCount', ros.requiredValidator)(properties.dbNodeCount));
     errors.collect(ros.propertyValidator('dbNodeCount', ros.validateNumber)(properties.dbNodeCount));
-    errors.collect(ros.propertyValidator('usedTime', ros.validateString)(properties.usedTime));
+    if(properties.usedTime && (typeof properties.usedTime) !== 'object') {
+        errors.collect(ros.propertyValidator('usedTime', ros.validateAllowedValues)({
+          data: properties.usedTime,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+        }));
+    }
+    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
     errors.collect(ros.propertyValidator('paymentType', ros.requiredValidator)(properties.paymentType));
+    if(properties.paymentType && (typeof properties.paymentType) !== 'object') {
+        errors.collect(ros.propertyValidator('paymentType', ros.validateAllowedValues)({
+          data: properties.paymentType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+        }));
+    }
     errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
     return errors.wrap('supplied properties not correct for "RosDBClusterProps"');
 }
@@ -151,7 +167,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
       EncryptionType: ros.stringToRosTemplate(properties.encryptionType),
       Period: ros.stringToRosTemplate(properties.period),
-      UsedTime: ros.stringToRosTemplate(properties.usedTime),
+      UsedTime: ros.numberToRosTemplate(properties.usedTime),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -366,7 +382,9 @@ export class RosDBCluster extends ros.RosResource {
     public dbNodeStorageType: string | ros.IResolvable;
 
     /**
-     * @Property paymentType: PayType
+     * @Property paymentType: The billing method of the cluster. Valid values:
+     * Postpaid: pay-as-you-go
+     * Prepaid: subscription
      */
     public paymentType: string | ros.IResolvable;
 
@@ -391,9 +409,11 @@ export class RosDBCluster extends ros.RosResource {
     public period: string | ros.IResolvable | undefined;
 
     /**
-     * @Property usedTime: When Period is Month, the value of UsedTime is [1-9].  When Period is Year, the value of UsedTime is [1-3]
+     * @Property usedTime: The subscription duration. Valid values:
+     * When Period is Month, it could be from 1 to 9, 12, 24, 36.
+     *  When Period is Year, it could be from 1 to 3.
      */
-    public usedTime: string | ros.IResolvable | undefined;
+    public usedTime: number | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: VpcId

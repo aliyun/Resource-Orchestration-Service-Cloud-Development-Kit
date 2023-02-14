@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.960Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.946Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupCloneProps.Jsii$Proxy.class)
 public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -345,6 +345,17 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property updatePolicy: Specify the policy at update.
+     * <p>
+     * The value can be 'ForNewInstances' or 'ForAllInstances'.
+     * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+     * The default is 'ForNewInstances'
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUpdatePolicy() {
+        return null;
+    }
+
+    /**
      * Property zoneId: The ID of the zone to which the instance belongs.
      * <p>
      * For more information,
@@ -405,6 +416,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object systemDiskDiskName;
         java.lang.Object systemDiskProvisionedIops;
         java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
+        java.lang.Object updatePolicy;
         java.lang.Object zoneId;
 
         /**
@@ -1262,6 +1274,32 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link InstanceGroupCloneProps#getUpdatePolicy}
+         * @param updatePolicy Property updatePolicy: Specify the policy at update.
+         *                     The value can be 'ForNewInstances' or 'ForAllInstances'.
+         *                     If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+         *                     The default is 'ForNewInstances'
+         * @return {@code this}
+         */
+        public Builder updatePolicy(java.lang.String updatePolicy) {
+            this.updatePolicy = updatePolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupCloneProps#getUpdatePolicy}
+         * @param updatePolicy Property updatePolicy: Specify the policy at update.
+         *                     The value can be 'ForNewInstances' or 'ForAllInstances'.
+         *                     If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+         *                     The default is 'ForNewInstances'
+         * @return {@code this}
+         */
+        public Builder updatePolicy(com.aliyun.ros.cdk.core.IResolvable updatePolicy) {
+            this.updatePolicy = updatePolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupCloneProps#getZoneId}
          * @param zoneId Property zoneId: The ID of the zone to which the instance belongs.
          *               For more information,
@@ -1343,6 +1381,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object systemDiskDiskName;
         private final java.lang.Object systemDiskProvisionedIops;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
+        private final java.lang.Object updatePolicy;
         private final java.lang.Object zoneId;
 
         /**
@@ -1391,6 +1430,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskProvisionedIops = software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty.class)));
+            this.updatePolicy = software.amazon.jsii.Kernel.get(this, "updatePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -1440,6 +1480,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             this.systemDiskDiskName = builder.systemDiskDiskName;
             this.systemDiskProvisionedIops = builder.systemDiskProvisionedIops;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty>)builder.tags;
+            this.updatePolicy = builder.updatePolicy;
             this.zoneId = builder.zoneId;
         }
 
@@ -1644,6 +1685,11 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getUpdatePolicy() {
+            return this.updatePolicy;
+        }
+
+        @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
@@ -1770,6 +1816,9 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getUpdatePolicy() != null) {
+                data.set("updatePolicy", om.valueToTree(this.getUpdatePolicy()));
+            }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
             }
@@ -1831,6 +1880,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.systemDiskDiskName != null ? !this.systemDiskDiskName.equals(that.systemDiskDiskName) : that.systemDiskDiskName != null) return false;
             if (this.systemDiskProvisionedIops != null ? !this.systemDiskProvisionedIops.equals(that.systemDiskProvisionedIops) : that.systemDiskProvisionedIops != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.updatePolicy != null ? !this.updatePolicy.equals(that.updatePolicy) : that.updatePolicy != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
@@ -1876,6 +1926,7 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.systemDiskDiskName != null ? this.systemDiskDiskName.hashCode() : 0);
             result = 31 * result + (this.systemDiskProvisionedIops != null ? this.systemDiskProvisionedIops.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.updatePolicy != null ? this.updatePolicy.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }

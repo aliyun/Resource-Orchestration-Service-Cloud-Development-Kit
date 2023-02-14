@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.110Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.097Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceGroupProps.Jsii$Proxy.class)
 public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -304,6 +304,12 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUpdatePolicy() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
         return null;
     }
@@ -392,6 +398,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object systemDiskProvisionedIops;
         java.lang.Object systemDiskSize;
         java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
+        java.lang.Object updatePolicy;
         java.lang.Object userData;
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
@@ -1390,6 +1397,26 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupProps#getUpdatePolicy}
+         * @param updatePolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder updatePolicy(java.lang.String updatePolicy) {
+            this.updatePolicy = updatePolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupProps#getUpdatePolicy}
+         * @param updatePolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder updatePolicy(com.aliyun.ros.cdk.core.IResolvable updatePolicy) {
+            this.updatePolicy = updatePolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupProps#getUserData}
          * @param userData the value to be set.
          * @return {@code this}
@@ -1555,6 +1582,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object systemDiskProvisionedIops;
         private final java.lang.Object systemDiskSize;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
+        private final java.lang.Object updatePolicy;
         private final java.lang.Object userData;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
@@ -1617,6 +1645,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             this.systemDiskProvisionedIops = software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty.class)));
+            this.updatePolicy = software.amazon.jsii.Kernel.get(this, "updatePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1680,6 +1709,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             this.systemDiskProvisionedIops = builder.systemDiskProvisionedIops;
             this.systemDiskSize = builder.systemDiskSize;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty>)builder.tags;
+            this.updatePolicy = builder.updatePolicy;
             this.userData = builder.userData;
             this.vpcId = builder.vpcId;
             this.vSwitchId = builder.vSwitchId;
@@ -1938,6 +1968,11 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getUpdatePolicy() {
+            return this.updatePolicy;
+        }
+
+        @Override
         public final java.lang.Object getUserData() {
             return this.userData;
         }
@@ -2112,6 +2147,9 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getUpdatePolicy() != null) {
+                data.set("updatePolicy", om.valueToTree(this.getUpdatePolicy()));
+            }
             if (this.getUserData() != null) {
                 data.set("userData", om.valueToTree(this.getUserData()));
             }
@@ -2195,6 +2233,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             if (this.systemDiskProvisionedIops != null ? !this.systemDiskProvisionedIops.equals(that.systemDiskProvisionedIops) : that.systemDiskProvisionedIops != null) return false;
             if (this.systemDiskSize != null ? !this.systemDiskSize.equals(that.systemDiskSize) : that.systemDiskSize != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.updatePolicy != null ? !this.updatePolicy.equals(that.updatePolicy) : that.updatePolicy != null) return false;
             if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
@@ -2254,6 +2293,7 @@ public interface RosInstanceGroupProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.systemDiskProvisionedIops != null ? this.systemDiskProvisionedIops.hashCode() : 0);
             result = 31 * result + (this.systemDiskSize != null ? this.systemDiskSize.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.updatePolicy != null ? this.updatePolicy.hashCode() : 0);
             result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

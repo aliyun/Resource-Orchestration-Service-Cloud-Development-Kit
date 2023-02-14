@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.966Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.951Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupProps.Jsii$Proxy.class)
 public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -113,7 +113,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property hostName: Host name of created ecs instance.
      * <p>
-     * at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
+     * at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 64 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
      * Support to use the regular expression to set the different instance name for each ECS instance. HostName could be specified as 'name_prefix[begin_number,bits]name_suffix', such as 'host[123,4]tail'. If you creates 3 instances with hostname 'host[123,4]tail', all the host names of instances are host0123tail, host0124tail, host0125tail. The 'name_prefix[begin_number,bits]name_suffix' should follow those rules:
      * <p>
      * <ol>
@@ -439,6 +439,17 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property updatePolicy: Specify the policy at update.
+     * <p>
+     * The value can be 'ForNewInstances' or 'ForAllInstances'.
+     * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+     * The default is 'ForNewInstances'
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUpdatePolicy() {
+        return null;
+    }
+
+    /**
      * Property userData: User data to pass to instance.
      * <p>
      * [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -539,6 +550,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object systemDiskProvisionedIops;
         java.lang.Object systemDiskSize;
         java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
+        java.lang.Object updatePolicy;
         java.lang.Object userData;
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
@@ -826,7 +838,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link InstanceGroupProps#getHostName}
          * @param hostName Property hostName: Host name of created ecs instance.
-         *                 at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
+         *                 at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 64 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
          *                 Support to use the regular expression to set the different instance name for each ECS instance. HostName could be specified as 'name_prefix[begin_number,bits]name_suffix', such as 'host[123,4]tail'. If you creates 3 instances with hostname 'host[123,4]tail', all the host names of instances are host0123tail, host0124tail, host0125tail. The 'name_prefix[begin_number,bits]name_suffix' should follow those rules:
          *                 <p>
          *                 <ol>
@@ -850,7 +862,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link InstanceGroupProps#getHostName}
          * @param hostName Property hostName: Host name of created ecs instance.
-         *                 at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
+         *                 at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 64 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
          *                 Support to use the regular expression to set the different instance name for each ECS instance. HostName could be specified as 'name_prefix[begin_number,bits]name_suffix', such as 'host[123,4]tail'. If you creates 3 instances with hostname 'host[123,4]tail', all the host names of instances are host0123tail, host0124tail, host0125tail. The 'name_prefix[begin_number,bits]name_suffix' should follow those rules:
          *                 <p>
          *                 <ol>
@@ -1642,6 +1654,32 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link InstanceGroupProps#getUpdatePolicy}
+         * @param updatePolicy Property updatePolicy: Specify the policy at update.
+         *                     The value can be 'ForNewInstances' or 'ForAllInstances'.
+         *                     If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+         *                     The default is 'ForNewInstances'
+         * @return {@code this}
+         */
+        public Builder updatePolicy(java.lang.String updatePolicy) {
+            this.updatePolicy = updatePolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getUpdatePolicy}
+         * @param updatePolicy Property updatePolicy: Specify the policy at update.
+         *                     The value can be 'ForNewInstances' or 'ForAllInstances'.
+         *                     If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+         *                     The default is 'ForNewInstances'
+         * @return {@code this}
+         */
+        public Builder updatePolicy(com.aliyun.ros.cdk.core.IResolvable updatePolicy) {
+            this.updatePolicy = updatePolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupProps#getUserData}
          * @param userData Property userData: User data to pass to instance.
          *                 [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -1815,6 +1853,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object systemDiskProvisionedIops;
         private final java.lang.Object systemDiskSize;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
+        private final java.lang.Object updatePolicy;
         private final java.lang.Object userData;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
@@ -1877,6 +1916,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.systemDiskProvisionedIops = software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty.class)));
+            this.updatePolicy = software.amazon.jsii.Kernel.get(this, "updatePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1940,6 +1980,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.systemDiskProvisionedIops = builder.systemDiskProvisionedIops;
             this.systemDiskSize = builder.systemDiskSize;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty>)builder.tags;
+            this.updatePolicy = builder.updatePolicy;
             this.userData = builder.userData;
             this.vpcId = builder.vpcId;
             this.vSwitchId = builder.vSwitchId;
@@ -2198,6 +2239,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getUpdatePolicy() {
+            return this.updatePolicy;
+        }
+
+        @Override
         public final java.lang.Object getUserData() {
             return this.userData;
         }
@@ -2372,6 +2418,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getUpdatePolicy() != null) {
+                data.set("updatePolicy", om.valueToTree(this.getUpdatePolicy()));
+            }
             if (this.getUserData() != null) {
                 data.set("userData", om.valueToTree(this.getUserData()));
             }
@@ -2455,6 +2504,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.systemDiskProvisionedIops != null ? !this.systemDiskProvisionedIops.equals(that.systemDiskProvisionedIops) : that.systemDiskProvisionedIops != null) return false;
             if (this.systemDiskSize != null ? !this.systemDiskSize.equals(that.systemDiskSize) : that.systemDiskSize != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.updatePolicy != null ? !this.updatePolicy.equals(that.updatePolicy) : that.updatePolicy != null) return false;
             if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
@@ -2514,6 +2564,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.systemDiskProvisionedIops != null ? this.systemDiskProvisionedIops.hashCode() : 0);
             result = 31 * result + (this.systemDiskSize != null ? this.systemDiskSize.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.updatePolicy != null ? this.updatePolicy.hashCode() : 0);
             result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

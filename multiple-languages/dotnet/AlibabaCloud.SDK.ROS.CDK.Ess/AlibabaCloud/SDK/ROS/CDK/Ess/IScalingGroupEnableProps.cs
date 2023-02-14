@@ -15,6 +15,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             get;
         }
 
+        /// <summary>Property attachOptions: Options for attaching instances.</summary>
+        [JsiiProperty(name: "attachOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingGroupEnable.AttachOptionsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AttachOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property detachOptions: Options for detaching instances.</summary>
+        [JsiiProperty(name: "detachOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingGroupEnable.DetachOptionsProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DetachOptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property instanceIds: The id list of ECS instance which will be attached.</summary>
         /// <remarks>
         /// Max support 1000 instances.
@@ -94,6 +116,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             public object ScalingGroupId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property attachOptions: Options for attaching instances.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "attachOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingGroupEnable.AttachOptionsProperty\"}]}}", isOptional: true)]
+            public object? AttachOptions
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property detachOptions: Options for detaching instances.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "detachOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingGroupEnable.DetachOptionsProperty\"}]}}", isOptional: true)]
+            public object? DetachOptions
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property instanceIds: The id list of ECS instance which will be attached.</summary>

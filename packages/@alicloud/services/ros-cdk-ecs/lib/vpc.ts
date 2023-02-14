@@ -47,18 +47,10 @@ export interface VPCProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property secondaryCidrBlock: The secondary IPv4 CIDR block. 
-     * You can specify one of the following standard IPv4 CIDR blocks or their 
-     * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12, 
-     * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block, 
-     * submit a ticket. When you add a secondary IPv4 CIDR block, take note of 
-     * the following rules: 
-     * 1. The CIDR block cannot start with 0. 
-     * 2. The subnet mask must be 8 to 24 bits in length.
-     * The secondary CIDR block cannot overlap with the primary 
-     * CIDR block or an existing secondary CIDR block.
+     * Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks. 
+     *
      */
-    readonly secondaryCidrBlock?: string | ros.IResolvable;
+    readonly secondaryCidrBlocks?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to vpc. Max support 20 tags to add during create vpc. Each tag with two properties Key and Value, and Key is required.
@@ -114,8 +106,8 @@ export class Vpc extends ros.Resource {
         const rosVPC = new RosVPC(this, id,  {
             ipv6Isp: props.ipv6Isp,
             description: props.description,
-            secondaryCidrBlock: props.secondaryCidrBlock,
             resourceGroupId: props.resourceGroupId,
+            secondaryCidrBlocks: props.secondaryCidrBlocks,
             cidrBlock: props.cidrBlock,
             vpcName: props.vpcName,
             ipv6CidrBlock: props.ipv6CidrBlock,

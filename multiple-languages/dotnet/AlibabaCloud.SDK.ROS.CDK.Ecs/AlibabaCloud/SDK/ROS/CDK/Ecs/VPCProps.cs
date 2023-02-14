@@ -211,37 +211,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        private object? _secondaryCidrBlock;
+        private object? _secondaryCidrBlocks;
 
-        /// <summary>Property secondaryCidrBlock: The secondary IPv4 CIDR block.</summary>
-        /// <remarks>
-        /// You can specify one of the following standard IPv4 CIDR blocks or their
-        /// subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
-        /// and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
-        /// submit a ticket. When you add a secondary IPv4 CIDR block, take note of
-        /// the following rules:
-        ///
-        /// <list type="number">
-        /// <description>The CIDR block cannot start with 0.</description>
-        /// <description>The subnet mask must be 8 to 24 bits in length.
-        /// The secondary CIDR block cannot overlap with the primary
-        /// CIDR block or an existing secondary CIDR block.</description>
-        /// </list>
-        /// </remarks>
+        /// <summary>Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "secondaryCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? SecondaryCidrBlock
+        [JsiiProperty(name: "secondaryCidrBlocks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? SecondaryCidrBlocks
         {
-            get => _secondaryCidrBlock;
+            get => _secondaryCidrBlocks;
             set
             {
                 if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
                 {
                     switch (value)
                     {
-                        case string cast_cd4240:
-                            break;
                         case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case string cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
                             break;
                         case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
                             // Not enough information to type-check...
@@ -249,10 +252,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                         case null:
                             break;
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
                     }
                 }
-                _secondaryCidrBlock = value;
+                _secondaryCidrBlocks = value;
             }
         }
 

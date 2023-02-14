@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::VPC`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.225Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.215Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.VPCProps")
 @software.amazon.jsii.Jsii.Proxy(VPCProps.Jsii$Proxy.class)
 public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
@@ -65,22 +65,9 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property secondaryCidrBlock: The secondary IPv4 CIDR block.
-     * <p>
-     * You can specify one of the following standard IPv4 CIDR blocks or their
-     * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
-     * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
-     * submit a ticket. When you add a secondary IPv4 CIDR block, take note of
-     * the following rules:
-     * <p>
-     * <ol>
-     * <li>The CIDR block cannot start with 0.</li>
-     * <li>The subnet mask must be 8 to 24 bits in length.
-     * The secondary CIDR block cannot overlap with the primary
-     * CIDR block or an existing secondary CIDR block.</li>
-     * </ol>
+     * Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryCidrBlock() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryCidrBlocks() {
         return null;
     }
 
@@ -125,7 +112,7 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object ipv6CidrBlock;
         java.lang.Object ipv6Isp;
         java.lang.Object resourceGroupId;
-        java.lang.Object secondaryCidrBlock;
+        java.lang.Object secondaryCidrBlocks;
         java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> tags;
         java.lang.Object userCidr;
         java.lang.Object vpcName;
@@ -273,46 +260,22 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link VPCProps#getSecondaryCidrBlock}
-         * @param secondaryCidrBlock Property secondaryCidrBlock: The secondary IPv4 CIDR block.
-         *                           You can specify one of the following standard IPv4 CIDR blocks or their
-         *                           subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
-         *                           and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
-         *                           submit a ticket. When you add a secondary IPv4 CIDR block, take note of
-         *                           the following rules:
-         *                           <p>
-         *                           <ol>
-         *                           <li>The CIDR block cannot start with 0.</li>
-         *                           <li>The subnet mask must be 8 to 24 bits in length.
-         *                           The secondary CIDR block cannot overlap with the primary
-         *                           CIDR block or an existing secondary CIDR block.</li>
-         *                           </ol>
+         * Sets the value of {@link VPCProps#getSecondaryCidrBlocks}
+         * @param secondaryCidrBlocks Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks.
          * @return {@code this}
          */
-        public Builder secondaryCidrBlock(java.lang.String secondaryCidrBlock) {
-            this.secondaryCidrBlock = secondaryCidrBlock;
+        public Builder secondaryCidrBlocks(com.aliyun.ros.cdk.core.IResolvable secondaryCidrBlocks) {
+            this.secondaryCidrBlocks = secondaryCidrBlocks;
             return this;
         }
 
         /**
-         * Sets the value of {@link VPCProps#getSecondaryCidrBlock}
-         * @param secondaryCidrBlock Property secondaryCidrBlock: The secondary IPv4 CIDR block.
-         *                           You can specify one of the following standard IPv4 CIDR blocks or their
-         *                           subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
-         *                           and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
-         *                           submit a ticket. When you add a secondary IPv4 CIDR block, take note of
-         *                           the following rules:
-         *                           <p>
-         *                           <ol>
-         *                           <li>The CIDR block cannot start with 0.</li>
-         *                           <li>The subnet mask must be 8 to 24 bits in length.
-         *                           The secondary CIDR block cannot overlap with the primary
-         *                           CIDR block or an existing secondary CIDR block.</li>
-         *                           </ol>
+         * Sets the value of {@link VPCProps#getSecondaryCidrBlocks}
+         * @param secondaryCidrBlocks Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks.
          * @return {@code this}
          */
-        public Builder secondaryCidrBlock(com.aliyun.ros.cdk.core.IResolvable secondaryCidrBlock) {
-            this.secondaryCidrBlock = secondaryCidrBlock;
+        public Builder secondaryCidrBlocks(java.util.List<? extends java.lang.Object> secondaryCidrBlocks) {
+            this.secondaryCidrBlocks = secondaryCidrBlocks;
             return this;
         }
 
@@ -392,7 +355,7 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object ipv6CidrBlock;
         private final java.lang.Object ipv6Isp;
         private final java.lang.Object resourceGroupId;
-        private final java.lang.Object secondaryCidrBlock;
+        private final java.lang.Object secondaryCidrBlocks;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty> tags;
         private final java.lang.Object userCidr;
         private final java.lang.Object vpcName;
@@ -409,7 +372,7 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
             this.ipv6CidrBlock = software.amazon.jsii.Kernel.get(this, "ipv6CidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6Isp = software.amazon.jsii.Kernel.get(this, "ipv6Isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.secondaryCidrBlock = software.amazon.jsii.Kernel.get(this, "secondaryCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.secondaryCidrBlocks = software.amazon.jsii.Kernel.get(this, "secondaryCidrBlocks", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty.class)));
             this.userCidr = software.amazon.jsii.Kernel.get(this, "userCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcName = software.amazon.jsii.Kernel.get(this, "vpcName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -427,7 +390,7 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
             this.ipv6CidrBlock = builder.ipv6CidrBlock;
             this.ipv6Isp = builder.ipv6Isp;
             this.resourceGroupId = builder.resourceGroupId;
-            this.secondaryCidrBlock = builder.secondaryCidrBlock;
+            this.secondaryCidrBlocks = builder.secondaryCidrBlocks;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosVPC.TagsProperty>)builder.tags;
             this.userCidr = builder.userCidr;
             this.vpcName = builder.vpcName;
@@ -464,8 +427,8 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getSecondaryCidrBlock() {
-            return this.secondaryCidrBlock;
+        public final java.lang.Object getSecondaryCidrBlocks() {
+            return this.secondaryCidrBlocks;
         }
 
         @Override
@@ -507,8 +470,8 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
-            if (this.getSecondaryCidrBlock() != null) {
-                data.set("secondaryCidrBlock", om.valueToTree(this.getSecondaryCidrBlock()));
+            if (this.getSecondaryCidrBlocks() != null) {
+                data.set("secondaryCidrBlocks", om.valueToTree(this.getSecondaryCidrBlocks()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -543,7 +506,7 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
             if (this.ipv6CidrBlock != null ? !this.ipv6CidrBlock.equals(that.ipv6CidrBlock) : that.ipv6CidrBlock != null) return false;
             if (this.ipv6Isp != null ? !this.ipv6Isp.equals(that.ipv6Isp) : that.ipv6Isp != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
-            if (this.secondaryCidrBlock != null ? !this.secondaryCidrBlock.equals(that.secondaryCidrBlock) : that.secondaryCidrBlock != null) return false;
+            if (this.secondaryCidrBlocks != null ? !this.secondaryCidrBlocks.equals(that.secondaryCidrBlocks) : that.secondaryCidrBlocks != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.userCidr != null ? !this.userCidr.equals(that.userCidr) : that.userCidr != null) return false;
             return this.vpcName != null ? this.vpcName.equals(that.vpcName) : that.vpcName == null;
@@ -557,7 +520,7 @@ public interface VPCProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.ipv6CidrBlock != null ? this.ipv6CidrBlock.hashCode() : 0);
             result = 31 * result + (this.ipv6Isp != null ? this.ipv6Isp.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
-            result = 31 * result + (this.secondaryCidrBlock != null ? this.secondaryCidrBlock.hashCode() : 0);
+            result = 31 * result + (this.secondaryCidrBlocks != null ? this.secondaryCidrBlocks.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.userCidr != null ? this.userCidr.hashCode() : 0);
             result = 31 * result + (this.vpcName != null ? this.vpcName.hashCode() : 0);

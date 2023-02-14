@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * A ROS template type:  `ALIYUN::MONGODB::ShardingInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.946Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.925Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosShardingInstance")
 public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -267,6 +267,24 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHiddenZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "hiddenZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHiddenZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "hiddenZoneId", value);
+    }
+
+    /**
+     */
+    public void setHiddenZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "hiddenZoneId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -357,6 +375,24 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "secondaryZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecondaryZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "secondaryZoneId", value);
+    }
+
+    /**
+     */
+    public void setSecondaryZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "secondaryZoneId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpArray() {
         return software.amazon.jsii.Kernel.get(this, "securityIpArray", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -407,6 +443,24 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setStorageEngine(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "storageEngine", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageType() {
+        return software.amazon.jsii.Kernel.get(this, "storageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "storageType", value);
+    }
+
+    /**
+     */
+    public void setStorageType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageType", value);
     }
 
     /**
@@ -1321,6 +1375,23 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param hiddenZoneId This parameter is required.
+         */
+        public Builder hiddenZoneId(final java.lang.String hiddenZoneId) {
+            this.props.hiddenZoneId(hiddenZoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param hiddenZoneId This parameter is required.
+         */
+        public Builder hiddenZoneId(final com.aliyun.ros.cdk.core.IResolvable hiddenZoneId) {
+            this.props.hiddenZoneId(hiddenZoneId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param networkType This parameter is required.
          */
         public Builder networkType(final java.lang.String networkType) {
@@ -1406,6 +1477,23 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param secondaryZoneId This parameter is required.
+         */
+        public Builder secondaryZoneId(final java.lang.String secondaryZoneId) {
+            this.props.secondaryZoneId(secondaryZoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param secondaryZoneId This parameter is required.
+         */
+        public Builder secondaryZoneId(final com.aliyun.ros.cdk.core.IResolvable secondaryZoneId) {
+            this.props.secondaryZoneId(secondaryZoneId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param securityIpArray This parameter is required.
          */
         public Builder securityIpArray(final java.lang.String securityIpArray) {
@@ -1452,6 +1540,23 @@ public class RosShardingInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder storageEngine(final com.aliyun.ros.cdk.core.IResolvable storageEngine) {
             this.props.storageEngine(storageEngine);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageType This parameter is required.
+         */
+        public Builder storageType(final java.lang.String storageType) {
+            this.props.storageType(storageType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageType This parameter is required.
+         */
+        public Builder storageType(final com.aliyun.ros.cdk.core.IResolvable storageType) {
+            this.props.storageType(storageType);
             return this;
         }
 

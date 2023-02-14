@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::RunCommand`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.178Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.172Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RunCommand")
 public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
 
@@ -141,7 +141,7 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property instanceIds: The instance id list.
          * <p>
-         * Select up to 20 instances at a time.Instances status must be running.
+         * Instances status must be running.
          * <p>
          * @return {@code this}
          * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
@@ -153,7 +153,7 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property instanceIds: The instance id list.
          * <p>
-         * Select up to 20 instances at a time.Instances status must be running.
+         * Instances status must be running.
          * <p>
          * @return {@code this}
          * @param instanceIds Property instanceIds: The instance id list. This parameter is required.

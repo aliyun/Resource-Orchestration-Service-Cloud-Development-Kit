@@ -31,6 +31,13 @@ export interface ScalingConfigurationProps {
     readonly diskMappings?: Array<RosScalingConfiguration.DiskMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property hostName: The hostname of the ECS instance. The hostname cannot start or end with a period (.) or a hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-). Naming conventions for different types of instances:
+     * Windows instances: The hostname must be 2 to 15 characters in length, and can contain letters, digits, and hyphens (-). The hostname cannot contain periods (.) or contain only digits.
+     * Other instances such as Linux instances: The hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+     */
+    readonly hostName?: string | ros.IResolvable;
+
+    /**
      * Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
     readonly hpcClusterId?: string | ros.IResolvable;
@@ -104,6 +111,11 @@ export interface ScalingConfigurationProps {
     readonly loadBalancerWeight?: number | ros.IResolvable;
 
     /**
+     * Property password: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
+     */
+    readonly password?: string | ros.IResolvable;
+
+    /**
      * Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
      */
     readonly passwordInherit?: boolean | ros.IResolvable;
@@ -160,7 +172,7 @@ export interface ScalingConfigurationProps {
     readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
-     * Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+     * Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -239,8 +251,10 @@ export class ScalingConfiguration extends ros.Resource {
             tagList: props.tagList,
             instanceTypes: props.instanceTypes,
             instanceType: props.instanceType,
+            hostName: props.hostName,
             spotStrategy: props.spotStrategy,
             passwordInherit: props.passwordInherit,
+            password: props.password,
             keyPairName: props.keyPairName,
             loadBalancerWeight: props.loadBalancerWeight,
             ioOptimized: props.ioOptimized,

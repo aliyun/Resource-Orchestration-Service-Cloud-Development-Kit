@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * A ROS resource type:  `ALIYUN::MONGODB::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.919Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.914Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -344,23 +344,50 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2.
+         * Property engineVersion: Database instance version.
          * <p>
          * @return {@code this}
-         * @param engineVersion Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2. This parameter is required.
+         * @param engineVersion Property engineVersion: Database instance version. This parameter is required.
          */
         public Builder engineVersion(final java.lang.String engineVersion) {
             this.props.engineVersion(engineVersion);
             return this;
         }
         /**
-         * Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2.
+         * Property engineVersion: Database instance version.
          * <p>
          * @return {@code this}
-         * @param engineVersion Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2. This parameter is required.
+         * @param engineVersion Property engineVersion: Database instance version. This parameter is required.
          */
         public Builder engineVersion(final com.aliyun.ros.cdk.core.IResolvable engineVersion) {
             this.props.engineVersion(engineVersion);
+            return this;
+        }
+
+        /**
+         * Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment.
+         * <p>
+         * When the value of the EngineVersion is 4.4 and later, this parameter is available and required.
+         * The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
+         * <p>
+         * @return {@code this}
+         * @param hiddenZoneId Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment. This parameter is required.
+         */
+        public Builder hiddenZoneId(final java.lang.String hiddenZoneId) {
+            this.props.hiddenZoneId(hiddenZoneId);
+            return this;
+        }
+        /**
+         * Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment.
+         * <p>
+         * When the value of the EngineVersion is 4.4 and later, this parameter is available and required.
+         * The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
+         * <p>
+         * @return {@code this}
+         * @param hiddenZoneId Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment. This parameter is required.
+         */
+        public Builder hiddenZoneId(final com.aliyun.ros.cdk.core.IResolvable hiddenZoneId) {
+            this.props.hiddenZoneId(hiddenZoneId);
             return this;
         }
 
@@ -503,6 +530,31 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment.
+         * <p>
+         * When the value of the EngineVersion is 4.4 and later, this parameter is available and required.The value of this parameter cannot be the same as that of ZoneId and HiddenZoneId.
+         * <p>
+         * @return {@code this}
+         * @param secondaryZoneId Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment. This parameter is required.
+         */
+        public Builder secondaryZoneId(final java.lang.String secondaryZoneId) {
+            this.props.secondaryZoneId(secondaryZoneId);
+            return this;
+        }
+        /**
+         * Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment.
+         * <p>
+         * When the value of the EngineVersion is 4.4 and later, this parameter is available and required.The value of this parameter cannot be the same as that of ZoneId and HiddenZoneId.
+         * <p>
+         * @return {@code this}
+         * @param secondaryZoneId Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment. This parameter is required.
+         */
+        public Builder secondaryZoneId(final com.aliyun.ros.cdk.core.IResolvable secondaryZoneId) {
+            this.props.secondaryZoneId(secondaryZoneId);
+            return this;
+        }
+
+        /**
          * Property securityGroupId: The ID of the ECS security group.
          * <p>
          * Each ApsaraDB for MongoDB instance can be added in up to 10 security group.
@@ -589,6 +641,33 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder storageEngine(final com.aliyun.ros.cdk.core.IResolvable storageEngine) {
             this.props.storageEngine(storageEngine);
+            return this;
+        }
+
+        /**
+         * Property storageType: The storage type of the instance.
+         * <p>
+         * Instances of MongoDB 4.4 and later only support cloud disks. cloud_essd1 is selected if you leave this parameter empty.
+         * Instances of MongoDB 4.2 and earlier support only local disks. local_ssd is selected if you leave this parameter empty.
+         * <p>
+         * @return {@code this}
+         * @param storageType Property storageType: The storage type of the instance. This parameter is required.
+         */
+        public Builder storageType(final java.lang.String storageType) {
+            this.props.storageType(storageType);
+            return this;
+        }
+        /**
+         * Property storageType: The storage type of the instance.
+         * <p>
+         * Instances of MongoDB 4.4 and later only support cloud disks. cloud_essd1 is selected if you leave this parameter empty.
+         * Instances of MongoDB 4.2 and earlier support only local disks. local_ssd is selected if you leave this parameter empty.
+         * <p>
+         * @return {@code this}
+         * @param storageType Property storageType: The storage type of the instance. This parameter is required.
+         */
+        public Builder storageType(final com.aliyun.ros.cdk.core.IResolvable storageType) {
+            this.props.storageType(storageType);
             return this;
         }
 

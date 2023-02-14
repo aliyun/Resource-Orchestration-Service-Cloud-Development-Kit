@@ -3,6 +3,262 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::PVTZ::Rule`
+ */
+export interface RosRuleProps {
+
+    /**
+     * @Property endpointId: The ID of the endpoint.
+     */
+    readonly endpointId: string | ros.IResolvable;
+
+    /**
+     * @Property forwardIp: The destination external server.
+     */
+    readonly forwardIp: Array<RosRule.ForwardIpProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ruleName: The name of the forwarding rule.
+     */
+    readonly ruleName: string | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the forwarding rule. Valid value:
+     * OUTBOUND: forwards Domain Name System (DNS) traffic to one or more external IP addresses.
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property zoneName: The domain name that requires DNS traffic forwarding.
+     */
+    readonly zoneName: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('forwardIp', ros.requiredValidator)(properties.forwardIp));
+    errors.collect(ros.propertyValidator('forwardIp', ros.listValidator(RosRule_ForwardIpPropertyValidator))(properties.forwardIp));
+    errors.collect(ros.propertyValidator('zoneName', ros.requiredValidator)(properties.zoneName));
+    errors.collect(ros.propertyValidator('zoneName', ros.validateString)(properties.zoneName));
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["OUTBOUND"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('endpointId', ros.requiredValidator)(properties.endpointId));
+    errors.collect(ros.propertyValidator('endpointId', ros.validateString)(properties.endpointId));
+    errors.collect(ros.propertyValidator('ruleName', ros.requiredValidator)(properties.ruleName));
+    errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    return errors.wrap('supplied properties not correct for "RosRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::Rule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::Rule` resource.
+ */
+// @ts-ignore TS6133
+function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      EndpointId: ros.stringToRosTemplate(properties.endpointId),
+      ForwardIp: ros.listMapper(rosRuleForwardIpPropertyToRosTemplate)(properties.forwardIp),
+      RuleName: ros.stringToRosTemplate(properties.ruleName),
+      Type: ros.stringToRosTemplate(properties.type),
+      ZoneName: ros.stringToRosTemplate(properties.zoneName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::PVTZ::Rule`
+ */
+export class RosRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PVTZ::Rule";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute CreateTime: The timestamp when the forwarding rule was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute EndpointId: The ID of the endpoint.
+     */
+    public readonly attrEndpointId: ros.IResolvable;
+
+    /**
+     * @Attribute EndpointName: The name of the endpoint.
+     */
+    public readonly attrEndpointName: ros.IResolvable;
+
+    /**
+     * @Attribute ForwardIp: The information about each destination external server.
+     */
+    public readonly attrForwardIp: ros.IResolvable;
+
+    /**
+     * @Attribute RuleName: The name of the forwarding rule.
+     */
+    public readonly attrRuleName: ros.IResolvable;
+
+    /**
+     * @Attribute Type: The type of the forwarding rule.
+     */
+    public readonly attrType: ros.IResolvable;
+
+    /**
+     * @Attribute Vpcs: The information about each virtual private cloud (VPC) that is associated with the forwarding rule.
+     */
+    public readonly attrVpcs: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneName: The domain name that requires Domain Name System (DNS) traffic forwarding.
+     */
+    public readonly attrZoneName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property endpointId: The ID of the endpoint.
+     */
+    public endpointId: string | ros.IResolvable;
+
+    /**
+     * @Property forwardIp: The destination external server.
+     */
+    public forwardIp: Array<RosRule.ForwardIpProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ruleName: The name of the forwarding rule.
+     */
+    public ruleName: string | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the forwarding rule. Valid value:
+     * OUTBOUND: forwards Domain Name System (DNS) traffic to one or more external IP addresses.
+     */
+    public type: string | ros.IResolvable;
+
+    /**
+     * @Property zoneName: The domain name that requires DNS traffic forwarding.
+     */
+    public zoneName: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::PVTZ::Rule`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrEndpointId = this.getAtt('EndpointId');
+        this.attrEndpointName = this.getAtt('EndpointName');
+        this.attrForwardIp = this.getAtt('ForwardIp');
+        this.attrRuleName = this.getAtt('RuleName');
+        this.attrType = this.getAtt('Type');
+        this.attrVpcs = this.getAtt('Vpcs');
+        this.attrZoneName = this.getAtt('ZoneName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.endpointId = props.endpointId;
+        this.forwardIp = props.forwardIp;
+        this.ruleName = props.ruleName;
+        this.type = props.type;
+        this.zoneName = props.zoneName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            endpointId: this.endpointId,
+            forwardIp: this.forwardIp,
+            ruleName: this.ruleName,
+            type: this.type,
+            zoneName: this.zoneName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosRule {
+    /**
+     * @stability external
+     */
+    export interface ForwardIpProperty {
+        /**
+         * @Property ip: The IP address of the destination external server.
+         */
+        readonly ip: string | ros.IResolvable;
+        /**
+         * @Property port: The port number of the destination external server.
+         */
+        readonly port: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ForwardIpProperty`
+ *
+ * @param properties - the TypeScript properties of a `ForwardIpProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRule_ForwardIpPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ip', ros.requiredValidator)(properties.ip));
+    errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    return errors.wrap('supplied properties not correct for "ForwardIpProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::Rule.ForwardIp` resource
+ *
+ * @param properties - the TypeScript properties of a `ForwardIpProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PVTZ::Rule.ForwardIp` resource.
+ */
+// @ts-ignore TS6133
+function rosRuleForwardIpPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRule_ForwardIpPropertyValidator(properties).assertSuccess();
+    return {
+      Ip: ros.stringToRosTemplate(properties.ip),
+      Port: ros.numberToRosTemplate(properties.port),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::PVTZ::UserVpcAuthorization`
  */
 export interface RosUserVpcAuthorizationProps {

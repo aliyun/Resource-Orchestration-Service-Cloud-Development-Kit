@@ -293,9 +293,19 @@ export class DBCluster extends ros.Resource {
     public readonly attrPrimaryConnectionString: ros.IResolvable;
 
     /**
+     * Attribute PrimaryConnectionStrings: The primary connection strings of the db cluster.
+     */
+    public readonly attrPrimaryConnectionStrings: ros.IResolvable;
+
+    /**
      * Attribute PrimaryEndpointId: The primary endpoint ID of the db cluster.
      */
     public readonly attrPrimaryEndpointId: ros.IResolvable;
+
+    /**
+     * Attribute PrimaryEndpointIds: The primary endpoint IDs of the db cluster.
+     */
+    public readonly attrPrimaryEndpointIds: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBCluster`.
@@ -352,6 +362,8 @@ export class DBCluster extends ros.Resource {
         this.attrDbNodeIds = rosDBCluster.attrDbNodeIds;
         this.attrOrderId = rosDBCluster.attrOrderId;
         this.attrPrimaryConnectionString = rosDBCluster.attrPrimaryConnectionString;
+        this.attrPrimaryConnectionStrings = rosDBCluster.attrPrimaryConnectionStrings;
         this.attrPrimaryEndpointId = rosDBCluster.attrPrimaryEndpointId;
+        this.attrPrimaryEndpointIds = rosDBCluster.attrPrimaryEndpointIds;
     }
 }

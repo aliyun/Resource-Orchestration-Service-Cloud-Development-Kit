@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * All constructs besides the root construct must be created within the scope of
  * another construct.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:17.642Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:09.664Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Construct")
 public class Construct extends software.constructs.Construct implements com.aliyun.ros.cdk.core.IConstruct {
 

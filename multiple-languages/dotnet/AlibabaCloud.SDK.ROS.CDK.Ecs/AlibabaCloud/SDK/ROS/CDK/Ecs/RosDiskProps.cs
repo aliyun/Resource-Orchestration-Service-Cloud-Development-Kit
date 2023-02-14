@@ -306,6 +306,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        private object? _multiAttach;
+
+        /// <remarks>
+        /// <strong>Property</strong>: multiAttach: Specifies whether to enable the multi-attach feature for the disk. Valid values:
+        /// Disabled: disables the multi-attach feature.
+        /// Enabled: enables the multi-attach feature. Set the value to Enabled only for ESSDs.
+        /// Default value: Disabled.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "multiAttach", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? MultiAttach
+        {
+            get => _multiAttach;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _multiAttach = value;
+            }
+        }
+
         private object? _performanceLevel;
 
         /// <remarks>

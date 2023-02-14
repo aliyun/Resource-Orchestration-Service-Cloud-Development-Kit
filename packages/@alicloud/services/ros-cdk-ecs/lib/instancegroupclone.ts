@@ -224,6 +224,14 @@ export interface InstanceGroupCloneProps {
     readonly tags?: RosInstanceGroupClone.TagsProperty[];
 
     /**
+     * Property updatePolicy: Specify the policy at update. 
+     * The value can be 'ForNewInstances' or 'ForAllInstances'.
+     * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+     * The default is 'ForNewInstances'
+     */
+    readonly updatePolicy?: string | ros.IResolvable;
+
+    /**
      * Property zoneId: The ID of the zone to which the instance belongs. For more information, 
      * call the DescribeZones operation to query the most recent zone list. 
      * Default value is empty, which means random selection.
@@ -320,6 +328,7 @@ export class InstanceGroupClone extends ros.Resource {
             backendServerWeight: props.backendServerWeight === undefined || props.backendServerWeight === null ? 100 : props.backendServerWeight,
             keyPairName: props.keyPairName,
             launchTemplateName: props.launchTemplateName,
+            updatePolicy: props.updatePolicy === undefined || props.updatePolicy === null ? 'ForNewInstances' : props.updatePolicy,
             zoneId: props.zoneId,
             hpcClusterId: props.hpcClusterId,
             securityGroupId: props.securityGroupId,

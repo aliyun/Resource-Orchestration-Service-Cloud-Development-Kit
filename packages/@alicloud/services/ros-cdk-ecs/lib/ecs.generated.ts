@@ -3026,6 +3026,14 @@ export interface RosDiskProps {
     readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
+     * @Property multiAttach: Specifies whether to enable the multi-attach feature for the disk. Valid values:
+     * Disabled: disables the multi-attach feature.
+     * Enabled: enables the multi-attach feature. Set the value to Enabled only for ESSDs.
+     * Default value: Disabled.
+     */
+    readonly multiAttach?: string | ros.IResolvable;
+
+    /**
      * @Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     readonly performanceLevel?: string | ros.IResolvable;
@@ -3098,6 +3106,13 @@ function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('storageSetPartitionNumber', ros.validateNumber)(properties.storageSetPartitionNumber));
     errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
     errors.collect(ros.propertyValidator('provisionedIops', ros.validateNumber)(properties.provisionedIops));
+    if(properties.multiAttach && (typeof properties.multiAttach) !== 'object') {
+        errors.collect(ros.propertyValidator('multiAttach', ros.validateAllowedValues)({
+          data: properties.multiAttach,
+          allowedValues: ["Disabled","Enabled"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('multiAttach', ros.validateString)(properties.multiAttach));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     errors.collect(ros.propertyValidator('storageSetId', ros.validateString)(properties.storageSetId));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -3134,6 +3149,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
       DiskName: ros.stringToRosTemplate(properties.diskName),
       Encrypted: ros.booleanToRosTemplate(properties.encrypted),
       KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
+      MultiAttach: ros.stringToRosTemplate(properties.multiAttach),
       PerformanceLevel: ros.stringToRosTemplate(properties.performanceLevel),
       ProvisionedIops: ros.numberToRosTemplate(properties.provisionedIops),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
@@ -3218,6 +3234,14 @@ export class RosDisk extends ros.RosResource {
     public kmsKeyId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property multiAttach: Specifies whether to enable the multi-attach feature for the disk. Valid values:
+     * Disabled: disables the multi-attach feature.
+     * Enabled: enables the multi-attach feature. Set the value to Enabled only for ESSDs.
+     * Default value: Disabled.
+     */
+    public multiAttach: string | ros.IResolvable | undefined;
+
+    /**
      * @Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     public performanceLevel: string | ros.IResolvable | undefined;
@@ -3279,6 +3303,7 @@ export class RosDisk extends ros.RosResource {
         this.diskName = props.diskName;
         this.encrypted = props.encrypted;
         this.kmsKeyId = props.kmsKeyId;
+        this.multiAttach = props.multiAttach;
         this.performanceLevel = props.performanceLevel;
         this.provisionedIops = props.provisionedIops;
         this.resourceGroupId = props.resourceGroupId;
@@ -3301,6 +3326,7 @@ export class RosDisk extends ros.RosResource {
             diskName: this.diskName,
             encrypted: this.encrypted,
             kmsKeyId: this.kmsKeyId,
+            multiAttach: this.multiAttach,
             performanceLevel: this.performanceLevel,
             provisionedIops: this.provisionedIops,
             resourceGroupId: this.resourceGroupId,
@@ -5494,7 +5520,7 @@ export interface RosInstanceGroupProps {
     readonly eniMappings?: Array<RosInstanceGroup.EniMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property hostName: Host name of created ecs instance. at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components. 
+     * @Property hostName: Host name of created ecs instance. at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 64 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components. 
      * Support to use the regular expression to set the different instance name for each ECS instance. HostName could be specified as 'name_prefix[begin_number,bits]name_suffix', such as 'host[123,4]tail'. If you creates 3 instances with hostname 'host[123,4]tail', all the host names of instances are host0123tail, host0124tail, host0125tail. The 'name_prefix[begin_number,bits]name_suffix' should follow those rules: 
      * 1. 'name_prefix' is required. 
      * 2. 'name_suffix' is optional. 
@@ -5706,6 +5732,14 @@ export interface RosInstanceGroupProps {
     readonly tags?: RosInstanceGroup.TagsProperty[];
 
     /**
+     * @Property updatePolicy: Specify the policy at update. 
+     * The value can be 'ForNewInstances' or 'ForAllInstances'.
+     * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+     * The default is 'ForNewInstances'
+     */
+    readonly updatePolicy?: string | ros.IResolvable;
+
+    /**
      * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
     readonly userData?: string | ros.IResolvable;
@@ -5769,6 +5803,13 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstanceGroup_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
     errors.collect(ros.propertyValidator('launchTemplateName', ros.validateString)(properties.launchTemplateName));
+    if(properties.updatePolicy && (typeof properties.updatePolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('updatePolicy', ros.validateAllowedValues)({
+          data: properties.updatePolicy,
+          allowedValues: ["ForNewInstances","ForAllInstances"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('updatePolicy', ros.validateString)(properties.updatePolicy));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -6002,6 +6043,7 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       SystemDiskProvisionedIops: ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
       SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
       Tags: ros.listMapper(rosInstanceGroupTagsPropertyToRosTemplate)(properties.tags),
+      UpdatePolicy: ros.stringToRosTemplate(properties.updatePolicy),
       UserData: ros.stringToRosTemplate(properties.userData),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -6139,7 +6181,7 @@ export class RosInstanceGroup extends ros.RosResource {
     public eniMappings: Array<RosInstanceGroup.EniMappingsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property hostName: Host name of created ecs instance. at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components. 
+     * @Property hostName: Host name of created ecs instance. at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 64 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components. 
      * Support to use the regular expression to set the different instance name for each ECS instance. HostName could be specified as 'name_prefix[begin_number,bits]name_suffix', such as 'host[123,4]tail'. If you creates 3 instances with hostname 'host[123,4]tail', all the host names of instances are host0123tail, host0124tail, host0125tail. The 'name_prefix[begin_number,bits]name_suffix' should follow those rules: 
      * 1. 'name_prefix' is required. 
      * 2. 'name_suffix' is optional. 
@@ -6351,6 +6393,14 @@ export class RosInstanceGroup extends ros.RosResource {
     public tags: RosInstanceGroup.TagsProperty[] | undefined;
 
     /**
+     * @Property updatePolicy: Specify the policy at update. 
+     * The value can be 'ForNewInstances' or 'ForAllInstances'.
+     * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+     * The default is 'ForNewInstances'
+     */
+    public updatePolicy: string | ros.IResolvable | undefined;
+
+    /**
      * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
     public userData: string | ros.IResolvable | undefined;
@@ -6447,6 +6497,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.systemDiskProvisionedIops = props.systemDiskProvisionedIops;
         this.systemDiskSize = props.systemDiskSize;
         this.tags = props.tags;
+        this.updatePolicy = props.updatePolicy;
         this.userData = props.userData;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
@@ -6507,6 +6558,7 @@ export class RosInstanceGroup extends ros.RosResource {
             systemDiskProvisionedIops: this.systemDiskProvisionedIops,
             systemDiskSize: this.systemDiskSize,
             tags: this.tags,
+            updatePolicy: this.updatePolicy,
             userData: this.userData,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
@@ -6972,6 +7024,14 @@ export interface RosInstanceGroupCloneProps {
     readonly tags?: RosInstanceGroupClone.TagsProperty[];
 
     /**
+     * @Property updatePolicy: Specify the policy at update. 
+     * The value can be 'ForNewInstances' or 'ForAllInstances'.
+     * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+     * The default is 'ForNewInstances'
+     */
+    readonly updatePolicy?: string | ros.IResolvable;
+
+    /**
      * @Property zoneId: The ID of the zone to which the instance belongs. For more information, 
      * call the DescribeZones operation to query the most recent zone list. 
      * Default value is empty, which means random selection.
@@ -7074,6 +7134,13 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('backendServerWeight', ros.validateNumber)(properties.backendServerWeight));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
     errors.collect(ros.propertyValidator('launchTemplateName', ros.validateString)(properties.launchTemplateName));
+    if(properties.updatePolicy && (typeof properties.updatePolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('updatePolicy', ros.validateAllowedValues)({
+          data: properties.updatePolicy,
+          allowedValues: ["ForNewInstances","ForAllInstances"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('updatePolicy', ros.validateString)(properties.updatePolicy));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
@@ -7200,6 +7267,7 @@ function rosInstanceGroupClonePropsToRosTemplate(properties: any, enableResource
       SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
       SystemDiskProvisionedIops: ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
       Tags: ros.listMapper(rosInstanceGroupCloneTagsPropertyToRosTemplate)(properties.tags),
+      UpdatePolicy: ros.stringToRosTemplate(properties.updatePolicy),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
     };
 }
@@ -7482,6 +7550,14 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public tags: RosInstanceGroupClone.TagsProperty[] | undefined;
 
     /**
+     * @Property updatePolicy: Specify the policy at update. 
+     * The value can be 'ForNewInstances' or 'ForAllInstances'.
+     * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+     * The default is 'ForNewInstances'
+     */
+    public updatePolicy: string | ros.IResolvable | undefined;
+
+    /**
      * @Property zoneId: The ID of the zone to which the instance belongs. For more information, 
      * call the DescribeZones operation to query the most recent zone list. 
      * Default value is empty, which means random selection.
@@ -7548,6 +7624,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.systemDiskDiskName = props.systemDiskDiskName;
         this.systemDiskProvisionedIops = props.systemDiskProvisionedIops;
         this.tags = props.tags;
+        this.updatePolicy = props.updatePolicy;
         this.zoneId = props.zoneId;
     }
 
@@ -7594,6 +7671,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
             systemDiskDiskName: this.systemDiskDiskName,
             systemDiskProvisionedIops: this.systemDiskProvisionedIops,
             tags: this.tags,
+            updatePolicy: this.updatePolicy,
             zoneId: this.zoneId,
         };
     }
@@ -7845,7 +7923,7 @@ export interface RosInvocationProps {
     readonly commandId: string | ros.IResolvable;
 
     /**
-     * @Property instanceIds: The instance id list. Select up to 50 instances at a time.Instances status must be running.
+     * @Property instanceIds: The instance id list. Instances status must be running.
      */
     readonly instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
@@ -7960,7 +8038,7 @@ export class RosInvocation extends ros.RosResource {
     public commandId: string | ros.IResolvable;
 
     /**
-     * @Property instanceIds: The instance id list. Select up to 50 instances at a time.Instances status must be running.
+     * @Property instanceIds: The instance id list. Instances status must be running.
      */
     public instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
@@ -10249,7 +10327,7 @@ export interface RosRunCommandProps {
     readonly commandContent: string | ros.IResolvable;
 
     /**
-     * @Property instanceIds: The instance id list. Select up to 20 instances at a time.Instances status must be running.
+     * @Property instanceIds: The instance id list. Instances status must be running.
      */
     readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -10367,7 +10445,7 @@ function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
             data: properties.instanceIds.length,
             min: 1,
-            max: 20,
+            max: 50,
           }));
     }
     errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
@@ -10449,7 +10527,7 @@ export class RosRunCommand extends ros.RosResource {
     public commandContent: string | ros.IResolvable;
 
     /**
-     * @Property instanceIds: The instance id list. Select up to 20 instances at a time.Instances status must be running.
+     * @Property instanceIds: The instance id list. Instances status must be running.
      */
     public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -12728,18 +12806,10 @@ export interface RosVPCProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property secondaryCidrBlock: The secondary IPv4 CIDR block. 
-     * You can specify one of the following standard IPv4 CIDR blocks or their 
-     * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12, 
-     * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block, 
-     * submit a ticket. When you add a secondary IPv4 CIDR block, take note of 
-     * the following rules: 
-     * 1. The CIDR block cannot start with 0. 
-     * 2. The subnet mask must be 8 to 24 bits in length.
-     * The secondary CIDR block cannot overlap with the primary 
-     * CIDR block or an existing secondary CIDR block.
+     * @Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks. 
+     *
      */
-    readonly secondaryCidrBlock?: string | ros.IResolvable;
+    readonly secondaryCidrBlocks?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to vpc. Max support 20 tags to add during create vpc. Each tag with two properties Key and Value, and Key is required.
@@ -12769,8 +12839,15 @@ function RosVPCPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('ipv6Isp', ros.validateString)(properties.ipv6Isp));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('secondaryCidrBlock', ros.validateString)(properties.secondaryCidrBlock));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.secondaryCidrBlocks && (Array.isArray(properties.secondaryCidrBlocks) || (typeof properties.secondaryCidrBlocks) === 'string')) {
+        errors.collect(ros.propertyValidator('secondaryCidrBlocks', ros.validateLength)({
+            data: properties.secondaryCidrBlocks.length,
+            min: 0,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('secondaryCidrBlocks', ros.listValidator(ros.validateString))(properties.secondaryCidrBlocks));
     errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
     errors.collect(ros.propertyValidator('vpcName', ros.validateString)(properties.vpcName));
     if(properties.ipv6CidrBlock && (Array.isArray(properties.ipv6CidrBlock) || (typeof properties.ipv6CidrBlock) === 'string')) {
@@ -12814,7 +12891,7 @@ function rosVPCPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       Ipv6CidrBlock: ros.stringToRosTemplate(properties.ipv6CidrBlock),
       Ipv6Isp: ros.stringToRosTemplate(properties.ipv6Isp),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecondaryCidrBlock: ros.stringToRosTemplate(properties.secondaryCidrBlock),
+      SecondaryCidrBlocks: ros.listMapper(ros.stringToRosTemplate)(properties.secondaryCidrBlocks),
       Tags: ros.listMapper(rosVPCTagsPropertyToRosTemplate)(properties.tags),
       UserCidr: ros.stringToRosTemplate(properties.userCidr),
       VpcName: ros.stringToRosTemplate(properties.vpcName),
@@ -12892,18 +12969,10 @@ export class RosVPC extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property secondaryCidrBlock: The secondary IPv4 CIDR block. 
-     * You can specify one of the following standard IPv4 CIDR blocks or their 
-     * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12, 
-     * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block, 
-     * submit a ticket. When you add a secondary IPv4 CIDR block, take note of 
-     * the following rules: 
-     * 1. The CIDR block cannot start with 0. 
-     * 2. The subnet mask must be 8 to 24 bits in length.
-     * The secondary CIDR block cannot overlap with the primary 
-     * CIDR block or an existing secondary CIDR block.
+     * @Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks. 
+     *
      */
-    public secondaryCidrBlock: string | ros.IResolvable | undefined;
+    public secondaryCidrBlocks: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to vpc. Max support 20 tags to add during create vpc. Each tag with two properties Key and Value, and Key is required.
@@ -12940,7 +13009,7 @@ export class RosVPC extends ros.RosResource {
         this.ipv6CidrBlock = props.ipv6CidrBlock;
         this.ipv6Isp = props.ipv6Isp;
         this.resourceGroupId = props.resourceGroupId;
-        this.secondaryCidrBlock = props.secondaryCidrBlock;
+        this.secondaryCidrBlocks = props.secondaryCidrBlocks;
         this.tags = props.tags;
         this.userCidr = props.userCidr;
         this.vpcName = props.vpcName;
@@ -12955,7 +13024,7 @@ export class RosVPC extends ros.RosResource {
             ipv6CidrBlock: this.ipv6CidrBlock,
             ipv6Isp: this.ipv6Isp,
             resourceGroupId: this.resourceGroupId,
-            secondaryCidrBlock: this.secondaryCidrBlock,
+            secondaryCidrBlocks: this.secondaryCidrBlocks,
             tags: this.tags,
             userCidr: this.userCidr,
             vpcName: this.vpcName,

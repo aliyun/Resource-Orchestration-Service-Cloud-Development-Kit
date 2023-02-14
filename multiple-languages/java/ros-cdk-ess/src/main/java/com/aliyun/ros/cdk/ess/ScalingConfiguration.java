@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS resource type:  `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.485Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.485Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfiguration")
 public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
 
@@ -178,6 +178,35 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder diskMappings(final java.util.List<? extends java.lang.Object> diskMappings) {
             this.props.diskMappings(diskMappings);
+            return this;
+        }
+
+        /**
+         * Property hostName: The hostname of the ECS instance.
+         * <p>
+         * The hostname cannot start or end with a period (.) or a hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-). Naming conventions for different types of instances:
+         * Windows instances: The hostname must be 2 to 15 characters in length, and can contain letters, digits, and hyphens (-). The hostname cannot contain periods (.) or contain only digits.
+         * Other instances such as Linux instances: The hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+         * <p>
+         * @return {@code this}
+         * @param hostName Property hostName: The hostname of the ECS instance. This parameter is required.
+         */
+        public Builder hostName(final java.lang.String hostName) {
+            this.props.hostName(hostName);
+            return this;
+        }
+        /**
+         * Property hostName: The hostname of the ECS instance.
+         * <p>
+         * The hostname cannot start or end with a period (.) or a hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-). Naming conventions for different types of instances:
+         * Windows instances: The hostname must be 2 to 15 characters in length, and can contain letters, digits, and hyphens (-). The hostname cannot contain periods (.) or contain only digits.
+         * Other instances such as Linux instances: The hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+         * <p>
+         * @return {@code this}
+         * @param hostName Property hostName: The hostname of the ECS instance. This parameter is required.
+         */
+        public Builder hostName(final com.aliyun.ros.cdk.core.IResolvable hostName) {
+            this.props.hostName(hostName);
             return this;
         }
 
@@ -504,6 +533,31 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property password: Password of created ecs instance.
+         * <p>
+         * Must contain at least 3 types of special character, lower character, upper character, number.
+         * <p>
+         * @return {@code this}
+         * @param password Property password: Password of created ecs instance. This parameter is required.
+         */
+        public Builder password(final java.lang.String password) {
+            this.props.password(password);
+            return this;
+        }
+        /**
+         * Property password: Password of created ecs instance.
+         * <p>
+         * Must contain at least 3 types of special character, lower character, upper character, number.
+         * <p>
+         * @return {@code this}
+         * @param password Property password: Password of created ecs instance. This parameter is required.
+         */
+        public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
+            this.props.password(password);
+            return this;
+        }
+
+        /**
          * Property passwordInherit: Whether to use the password pre-configured in the image you select or not.
          * <p>
          * When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
@@ -735,7 +789,7 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property systemDiskCategory: Category of system disk.
          * <p>
-         * Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+         * Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
          * <p>
          * @return {@code this}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk. This parameter is required.
@@ -747,7 +801,7 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property systemDiskCategory: Category of system disk.
          * <p>
-         * Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+         * Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
          * <p>
          * @return {@code this}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk. This parameter is required.

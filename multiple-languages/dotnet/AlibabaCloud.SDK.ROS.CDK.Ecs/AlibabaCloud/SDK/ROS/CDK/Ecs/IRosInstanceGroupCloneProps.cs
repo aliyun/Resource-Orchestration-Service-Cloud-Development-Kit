@@ -536,6 +536,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: updatePolicy: Specify the policy at update.
+        /// The value can be 'ForNewInstances' or 'ForAllInstances'.
+        /// If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+        /// The default is 'ForNewInstances'
+        /// </remarks>
+        [JsiiProperty(name: "updatePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? UpdatePolicy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: zoneId: The ID of the zone to which the instance belongs. For more information,
         /// call the DescribeZones operation to query the most recent zone list.
         /// Default value is empty, which means random selection.
@@ -969,6 +985,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroupClone.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroupClone.ITagsProperty[]?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: updatePolicy: Specify the policy at update.
+            /// The value can be 'ForNewInstances' or 'ForAllInstances'.
+            /// If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+            /// The default is 'ForNewInstances'
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "updatePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? UpdatePolicy
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

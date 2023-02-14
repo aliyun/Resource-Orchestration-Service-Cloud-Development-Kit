@@ -919,9 +919,19 @@ export class RosDBCluster extends ros.RosResource {
     public readonly attrPrimaryConnectionString: ros.IResolvable;
 
     /**
+     * @Attribute PrimaryConnectionStrings: The primary connection strings of the db cluster.
+     */
+    public readonly attrPrimaryConnectionStrings: ros.IResolvable;
+
+    /**
      * @Attribute PrimaryEndpointId: The primary endpoint ID of the db cluster.
      */
     public readonly attrPrimaryEndpointId: ros.IResolvable;
+
+    /**
+     * @Attribute PrimaryEndpointIds: The primary endpoint IDs of the db cluster.
+     */
+    public readonly attrPrimaryEndpointIds: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1176,7 +1186,9 @@ export class RosDBCluster extends ros.RosResource {
         this.attrDbNodeIds = this.getAtt('DBNodeIds');
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrimaryConnectionString = this.getAtt('PrimaryConnectionString');
+        this.attrPrimaryConnectionStrings = this.getAtt('PrimaryConnectionStrings');
         this.attrPrimaryEndpointId = this.getAtt('PrimaryEndpointId');
+        this.attrPrimaryEndpointIds = this.getAtt('PrimaryEndpointIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbNodeClass = props.dbNodeClass;

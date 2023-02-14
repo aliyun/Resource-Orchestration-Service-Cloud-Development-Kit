@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::VPC`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.229Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.220Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Vpc")
 public class Vpc extends com.aliyun.ros.cdk.core.Resource {
 
@@ -272,49 +272,23 @@ public class Vpc extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property secondaryCidrBlock: The secondary IPv4 CIDR block.
-         * <p>
-         * You can specify one of the following standard IPv4 CIDR blocks or their
-         * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
-         * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
-         * submit a ticket. When you add a secondary IPv4 CIDR block, take note of
-         * the following rules:
-         * <p>
-         * <ol>
-         * <li>The CIDR block cannot start with 0.</li>
-         * <li>The subnet mask must be 8 to 24 bits in length.
-         * The secondary CIDR block cannot overlap with the primary
-         * CIDR block or an existing secondary CIDR block.</li>
-         * </ol>
+         * Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks.
          * <p>
          * @return {@code this}
-         * @param secondaryCidrBlock Property secondaryCidrBlock: The secondary IPv4 CIDR block. This parameter is required.
+         * @param secondaryCidrBlocks Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks. This parameter is required.
          */
-        public Builder secondaryCidrBlock(final java.lang.String secondaryCidrBlock) {
-            this.props().secondaryCidrBlock(secondaryCidrBlock);
+        public Builder secondaryCidrBlocks(final com.aliyun.ros.cdk.core.IResolvable secondaryCidrBlocks) {
+            this.props().secondaryCidrBlocks(secondaryCidrBlocks);
             return this;
         }
         /**
-         * Property secondaryCidrBlock: The secondary IPv4 CIDR block.
-         * <p>
-         * You can specify one of the following standard IPv4 CIDR blocks or their
-         * subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
-         * and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
-         * submit a ticket. When you add a secondary IPv4 CIDR block, take note of
-         * the following rules:
-         * <p>
-         * <ol>
-         * <li>The CIDR block cannot start with 0.</li>
-         * <li>The subnet mask must be 8 to 24 bits in length.
-         * The secondary CIDR block cannot overlap with the primary
-         * CIDR block or an existing secondary CIDR block.</li>
-         * </ol>
+         * Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks.
          * <p>
          * @return {@code this}
-         * @param secondaryCidrBlock Property secondaryCidrBlock: The secondary IPv4 CIDR block. This parameter is required.
+         * @param secondaryCidrBlocks Property secondaryCidrBlocks: The secondary IPv4 CIDR blocks. This parameter is required.
          */
-        public Builder secondaryCidrBlock(final com.aliyun.ros.cdk.core.IResolvable secondaryCidrBlock) {
-            this.props().secondaryCidrBlock(secondaryCidrBlock);
+        public Builder secondaryCidrBlocks(final java.util.List<? extends java.lang.Object> secondaryCidrBlocks) {
+            this.props().secondaryCidrBlocks(secondaryCidrBlocks);
             return this;
         }
 

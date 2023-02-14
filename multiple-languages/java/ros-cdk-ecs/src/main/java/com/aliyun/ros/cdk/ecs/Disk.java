@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::Disk`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.916Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.895Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Disk")
 public class Disk extends com.aliyun.ros.cdk.core.Resource {
 
@@ -290,6 +290,37 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder kmsKeyId(final com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
             this.props.kmsKeyId(kmsKeyId);
+            return this;
+        }
+
+        /**
+         * Property multiAttach: Specifies whether to enable the multi-attach feature for the disk.
+         * <p>
+         * Valid values:
+         * Disabled: disables the multi-attach feature.
+         * Enabled: enables the multi-attach feature. Set the value to Enabled only for ESSDs.
+         * Default value: Disabled.
+         * <p>
+         * @return {@code this}
+         * @param multiAttach Property multiAttach: Specifies whether to enable the multi-attach feature for the disk. This parameter is required.
+         */
+        public Builder multiAttach(final java.lang.String multiAttach) {
+            this.props.multiAttach(multiAttach);
+            return this;
+        }
+        /**
+         * Property multiAttach: Specifies whether to enable the multi-attach feature for the disk.
+         * <p>
+         * Valid values:
+         * Disabled: disables the multi-attach feature.
+         * Enabled: enables the multi-attach feature. Set the value to Enabled only for ESSDs.
+         * Default value: Disabled.
+         * <p>
+         * @return {@code this}
+         * @param multiAttach Property multiAttach: Specifies whether to enable the multi-attach feature for the disk. This parameter is required.
+         */
+        public Builder multiAttach(final com.aliyun.ros.cdk.core.IResolvable multiAttach) {
+            this.props.multiAttach(multiAttach);
             return this;
         }
 

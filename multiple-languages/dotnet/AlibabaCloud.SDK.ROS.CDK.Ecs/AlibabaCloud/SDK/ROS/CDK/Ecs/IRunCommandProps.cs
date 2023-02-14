@@ -25,7 +25,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property instanceIds: The instance id list.</summary>
         /// <remarks>
-        /// Select up to 20 instances at a time.Instances status must be running.
+        /// Instances status must be running.
         /// </remarks>
         [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         object InstanceIds
@@ -240,7 +240,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <summary>Property instanceIds: The instance id list.</summary>
             /// <remarks>
-            /// Select up to 20 instances at a time.Instances status must be running.
+            /// Instances status must be running.
             /// </remarks>
             [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
             public object InstanceIds

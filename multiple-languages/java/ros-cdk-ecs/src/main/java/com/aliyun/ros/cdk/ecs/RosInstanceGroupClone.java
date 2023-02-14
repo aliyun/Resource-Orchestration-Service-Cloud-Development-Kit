@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.082Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.068Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupClone")
 public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -863,6 +863,24 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUpdatePolicy() {
+        return software.amazon.jsii.Kernel.get(this, "updatePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setUpdatePolicy(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "updatePolicy", value);
+    }
+
+    /**
+     */
+    public void setUpdatePolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "updatePolicy", value);
     }
 
     /**
@@ -2637,6 +2655,23 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param updatePolicy This parameter is required.
+         */
+        public Builder updatePolicy(final java.lang.String updatePolicy) {
+            this.props.updatePolicy(updatePolicy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param updatePolicy This parameter is required.
+         */
+        public Builder updatePolicy(final com.aliyun.ros.cdk.core.IResolvable updatePolicy) {
+            this.props.updatePolicy(updatePolicy);
             return this;
         }
 

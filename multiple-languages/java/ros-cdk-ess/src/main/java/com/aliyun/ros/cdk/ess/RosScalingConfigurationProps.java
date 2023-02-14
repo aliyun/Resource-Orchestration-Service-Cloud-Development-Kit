@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.462Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.465Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingConfigurationProps.Jsii$Proxy.class)
 public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,6 +27,12 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskMappings() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHostName() {
         return null;
     }
 
@@ -111,6 +117,12 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerWeight() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return null;
     }
 
@@ -212,6 +224,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         java.lang.Object creditSpecification;
         java.lang.Object deploymentSetId;
         java.lang.Object diskMappings;
+        java.lang.Object hostName;
         java.lang.Object hpcClusterId;
         java.lang.Object imageFamily;
         java.lang.Object imageId;
@@ -226,6 +239,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         java.lang.Object ipv6AddressCount;
         java.lang.Object keyPairName;
         java.lang.Object loadBalancerWeight;
+        java.lang.Object password;
         java.lang.Object passwordInherit;
         java.lang.Object ramRoleName;
         java.lang.Object resourceGroupId;
@@ -318,6 +332,26 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
          */
         public Builder diskMappings(java.util.List<? extends java.lang.Object> diskMappings) {
             this.diskMappings = diskMappings;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getHostName}
+         * @param hostName the value to be set.
+         * @return {@code this}
+         */
+        public Builder hostName(java.lang.String hostName) {
+            this.hostName = hostName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getHostName}
+         * @param hostName the value to be set.
+         * @return {@code this}
+         */
+        public Builder hostName(com.aliyun.ros.cdk.core.IResolvable hostName) {
+            this.hostName = hostName;
             return this;
         }
 
@@ -598,6 +632,26 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
          */
         public Builder loadBalancerWeight(com.aliyun.ros.cdk.core.IResolvable loadBalancerWeight) {
             this.loadBalancerWeight = loadBalancerWeight;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getPassword}
+         * @param password the value to be set.
+         * @return {@code this}
+         */
+        public Builder password(java.lang.String password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingConfigurationProps#getPassword}
+         * @param password the value to be set.
+         * @return {@code this}
+         */
+        public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
+            this.password = password;
             return this;
         }
 
@@ -901,6 +955,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         private final java.lang.Object creditSpecification;
         private final java.lang.Object deploymentSetId;
         private final java.lang.Object diskMappings;
+        private final java.lang.Object hostName;
         private final java.lang.Object hpcClusterId;
         private final java.lang.Object imageFamily;
         private final java.lang.Object imageId;
@@ -915,6 +970,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         private final java.lang.Object ipv6AddressCount;
         private final java.lang.Object keyPairName;
         private final java.lang.Object loadBalancerWeight;
+        private final java.lang.Object password;
         private final java.lang.Object passwordInherit;
         private final java.lang.Object ramRoleName;
         private final java.lang.Object resourceGroupId;
@@ -940,6 +996,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             this.creditSpecification = software.amazon.jsii.Kernel.get(this, "creditSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageFamily = software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -954,6 +1011,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerWeight = software.amazon.jsii.Kernel.get(this, "loadBalancerWeight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.passwordInherit = software.amazon.jsii.Kernel.get(this, "passwordInherit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -979,6 +1037,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             this.creditSpecification = builder.creditSpecification;
             this.deploymentSetId = builder.deploymentSetId;
             this.diskMappings = builder.diskMappings;
+            this.hostName = builder.hostName;
             this.hpcClusterId = builder.hpcClusterId;
             this.imageFamily = builder.imageFamily;
             this.imageId = builder.imageId;
@@ -993,6 +1052,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             this.ipv6AddressCount = builder.ipv6AddressCount;
             this.keyPairName = builder.keyPairName;
             this.loadBalancerWeight = builder.loadBalancerWeight;
+            this.password = builder.password;
             this.passwordInherit = builder.passwordInherit;
             this.ramRoleName = builder.ramRoleName;
             this.resourceGroupId = builder.resourceGroupId;
@@ -1027,6 +1087,11 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         @Override
         public final java.lang.Object getDiskMappings() {
             return this.diskMappings;
+        }
+
+        @Override
+        public final java.lang.Object getHostName() {
+            return this.hostName;
         }
 
         @Override
@@ -1097,6 +1162,11 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
         @Override
         public final java.lang.Object getLoadBalancerWeight() {
             return this.loadBalancerWeight;
+        }
+
+        @Override
+        public final java.lang.Object getPassword() {
+            return this.password;
         }
 
         @Override
@@ -1185,6 +1255,9 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             if (this.getDiskMappings() != null) {
                 data.set("diskMappings", om.valueToTree(this.getDiskMappings()));
             }
+            if (this.getHostName() != null) {
+                data.set("hostName", om.valueToTree(this.getHostName()));
+            }
             if (this.getHpcClusterId() != null) {
                 data.set("hpcClusterId", om.valueToTree(this.getHpcClusterId()));
             }
@@ -1226,6 +1299,9 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             }
             if (this.getLoadBalancerWeight() != null) {
                 data.set("loadBalancerWeight", om.valueToTree(this.getLoadBalancerWeight()));
+            }
+            if (this.getPassword() != null) {
+                data.set("password", om.valueToTree(this.getPassword()));
             }
             if (this.getPasswordInherit() != null) {
                 data.set("passwordInherit", om.valueToTree(this.getPasswordInherit()));
@@ -1291,6 +1367,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             if (this.creditSpecification != null ? !this.creditSpecification.equals(that.creditSpecification) : that.creditSpecification != null) return false;
             if (this.deploymentSetId != null ? !this.deploymentSetId.equals(that.deploymentSetId) : that.deploymentSetId != null) return false;
             if (this.diskMappings != null ? !this.diskMappings.equals(that.diskMappings) : that.diskMappings != null) return false;
+            if (this.hostName != null ? !this.hostName.equals(that.hostName) : that.hostName != null) return false;
             if (this.hpcClusterId != null ? !this.hpcClusterId.equals(that.hpcClusterId) : that.hpcClusterId != null) return false;
             if (this.imageFamily != null ? !this.imageFamily.equals(that.imageFamily) : that.imageFamily != null) return false;
             if (this.imageId != null ? !this.imageId.equals(that.imageId) : that.imageId != null) return false;
@@ -1305,6 +1382,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             if (this.ipv6AddressCount != null ? !this.ipv6AddressCount.equals(that.ipv6AddressCount) : that.ipv6AddressCount != null) return false;
             if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
             if (this.loadBalancerWeight != null ? !this.loadBalancerWeight.equals(that.loadBalancerWeight) : that.loadBalancerWeight != null) return false;
+            if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
             if (this.passwordInherit != null ? !this.passwordInherit.equals(that.passwordInherit) : that.passwordInherit != null) return false;
             if (this.ramRoleName != null ? !this.ramRoleName.equals(that.ramRoleName) : that.ramRoleName != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -1327,6 +1405,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             result = 31 * result + (this.creditSpecification != null ? this.creditSpecification.hashCode() : 0);
             result = 31 * result + (this.deploymentSetId != null ? this.deploymentSetId.hashCode() : 0);
             result = 31 * result + (this.diskMappings != null ? this.diskMappings.hashCode() : 0);
+            result = 31 * result + (this.hostName != null ? this.hostName.hashCode() : 0);
             result = 31 * result + (this.hpcClusterId != null ? this.hpcClusterId.hashCode() : 0);
             result = 31 * result + (this.imageFamily != null ? this.imageFamily.hashCode() : 0);
             result = 31 * result + (this.imageId != null ? this.imageId.hashCode() : 0);
@@ -1341,6 +1420,7 @@ public interface RosScalingConfigurationProps extends software.amazon.jsii.JsiiS
             result = 31 * result + (this.ipv6AddressCount != null ? this.ipv6AddressCount.hashCode() : 0);
             result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);
             result = 31 * result + (this.loadBalancerWeight != null ? this.loadBalancerWeight.hashCode() : 0);
+            result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
             result = 31 * result + (this.passwordInherit != null ? this.passwordInherit.hashCode() : 0);
             result = 31 * result + (this.ramRoleName != null ? this.ramRoleName.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

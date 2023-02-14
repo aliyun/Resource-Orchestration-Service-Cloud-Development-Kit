@@ -122,10 +122,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2.</summary>
+        /// <summary>Property engineVersion: Database instance version.</summary>
         [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EngineVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment.</summary>
+        /// <remarks>
+        /// When the value of the EngineVersion is 4.4 and later, this parameter is available and required.
+        /// The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
+        /// </remarks>
+        [JsiiProperty(name: "hiddenZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HiddenZoneId
         {
             get
             {
@@ -208,6 +223,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
+        /// <summary>Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment.</summary>
+        /// <remarks>
+        /// When the value of the EngineVersion is 4.4 and later, this parameter is available and required.The value of this parameter cannot be the same as that of ZoneId and HiddenZoneId.
+        /// </remarks>
+        [JsiiProperty(name: "secondaryZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecondaryZoneId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property securityGroupId: The ID of the ECS security group.</summary>
         /// <remarks>
         /// Each ApsaraDB for MongoDB instance can be added in up to 10 security group.
@@ -249,6 +278,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         [JsiiProperty(name: "storageEngine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? StorageEngine
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property storageType: The storage type of the instance.</summary>
+        /// <remarks>
+        /// Instances of MongoDB 4.4 and later only support cloud disks. cloud_essd1 is selected if you leave this parameter empty.
+        /// Instances of MongoDB 4.2 and earlier support only local disks. local_ssd is selected if you leave this parameter empty.
+        /// </remarks>
+        [JsiiProperty(name: "storageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageType
         {
             get
             {
@@ -440,10 +484,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2.</summary>
+            /// <summary>Property engineVersion: Database instance version.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EngineVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment.</summary>
+            /// <remarks>
+            /// When the value of the EngineVersion is 4.4 and later, this parameter is available and required.
+            /// The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "hiddenZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HiddenZoneId
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -505,6 +561,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment.</summary>
+            /// <remarks>
+            /// When the value of the EngineVersion is 4.4 and later, this parameter is available and required.The value of this parameter cannot be the same as that of ZoneId and HiddenZoneId.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "secondaryZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecondaryZoneId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property securityGroupId: The ID of the ECS security group.</summary>
             /// <remarks>
             /// Each ApsaraDB for MongoDB instance can be added in up to 10 security group.
@@ -537,6 +604,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             [JsiiOptional]
             [JsiiProperty(name: "storageEngine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? StorageEngine
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property storageType: The storage type of the instance.</summary>
+            /// <remarks>
+            /// Instances of MongoDB 4.4 and later only support cloud disks. cloud_essd1 is selected if you leave this parameter empty.
+            /// Instances of MongoDB 4.2 and earlier support only local disks. local_ssd is selected if you leave this parameter empty.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageType
             {
                 get => GetInstanceProperty<object?>();
             }

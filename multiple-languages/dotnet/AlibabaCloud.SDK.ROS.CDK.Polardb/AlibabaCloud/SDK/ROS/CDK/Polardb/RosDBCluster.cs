@@ -123,10 +123,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: PrimaryConnectionStrings: The primary connection strings of the db cluster.
+        /// </remarks>
+        [JsiiProperty(name: "attrPrimaryConnectionStrings", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrimaryConnectionStrings
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: PrimaryEndpointId: The primary endpoint ID of the db cluster.
         /// </remarks>
         [JsiiProperty(name: "attrPrimaryEndpointId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrimaryEndpointId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: PrimaryEndpointIds: The primary endpoint IDs of the db cluster.
+        /// </remarks>
+        [JsiiProperty(name: "attrPrimaryEndpointIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrimaryEndpointIds
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
