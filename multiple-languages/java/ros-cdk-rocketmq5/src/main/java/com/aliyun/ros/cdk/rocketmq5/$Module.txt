@@ -1,0 +1,16 @@
+@alicloud/ros-cdk-rocketmq5.ConsumerGroup=com.aliyun.ros.cdk.rocketmq5.ConsumerGroup
+@alicloud/ros-cdk-rocketmq5.ConsumerGroupProps=com.aliyun.ros.cdk.rocketmq5.ConsumerGroupProps
+@alicloud/ros-cdk-rocketmq5.Instance=com.aliyun.ros.cdk.rocketmq5.Instance
+@alicloud/ros-cdk-rocketmq5.InstanceProps=com.aliyun.ros.cdk.rocketmq5.InstanceProps
+@alicloud/ros-cdk-rocketmq5.RosConsumerGroup=com.aliyun.ros.cdk.rocketmq5.RosConsumerGroup
+@alicloud/ros-cdk-rocketmq5.RosConsumerGroup.ConsumeRetryPolicyProperty=com.aliyun.ros.cdk.rocketmq5.RosConsumerGroup$ConsumeRetryPolicyProperty
+@alicloud/ros-cdk-rocketmq5.RosConsumerGroupProps=com.aliyun.ros.cdk.rocketmq5.RosConsumerGroupProps
+@alicloud/ros-cdk-rocketmq5.RosInstance=com.aliyun.ros.cdk.rocketmq5.RosInstance
+@alicloud/ros-cdk-rocketmq5.RosInstance.InternetInfoProperty=com.aliyun.ros.cdk.rocketmq5.RosInstance$InternetInfoProperty
+@alicloud/ros-cdk-rocketmq5.RosInstance.ProductInfoProperty=com.aliyun.ros.cdk.rocketmq5.RosInstance$ProductInfoProperty
+@alicloud/ros-cdk-rocketmq5.RosInstance.VpcInfoProperty=com.aliyun.ros.cdk.rocketmq5.RosInstance$VpcInfoProperty
+@alicloud/ros-cdk-rocketmq5.RosInstanceProps=com.aliyun.ros.cdk.rocketmq5.RosInstanceProps
+@alicloud/ros-cdk-rocketmq5.RosTopic=com.aliyun.ros.cdk.rocketmq5.RosTopic
+@alicloud/ros-cdk-rocketmq5.RosTopicProps=com.aliyun.ros.cdk.rocketmq5.RosTopicProps
+@alicloud/ros-cdk-rocketmq5.Topic=com.aliyun.ros.cdk.rocketmq5.Topic
+@alicloud/ros-cdk-rocketmq5.TopicProps=com.aliyun.ros.cdk.rocketmq5.TopicProps

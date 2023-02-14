@@ -54,6 +54,14 @@ export interface DiskProps {
     readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
+     * Property multiAttach: Specifies whether to enable the multi-attach feature for the disk. Valid values:
+     * Disabled: disables the multi-attach feature.
+     * Enabled: enables the multi-attach feature. Set the value to Enabled only for ESSDs.
+     * Default value: Disabled.
+     */
+    readonly multiAttach?: string | ros.IResolvable;
+
+    /**
      * Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     readonly performanceLevel?: string | ros.IResolvable;
@@ -139,6 +147,7 @@ export class Disk extends ros.Resource {
             storageSetPartitionNumber: props.storageSetPartitionNumber,
             diskName: props.diskName,
             provisionedIops: props.provisionedIops,
+            multiAttach: props.multiAttach,
             snapshotId: props.snapshotId,
             storageSetId: props.storageSetId,
             tags: props.tags,

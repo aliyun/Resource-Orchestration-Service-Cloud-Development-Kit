@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.956Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.941Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupClone")
 public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -1098,6 +1098,35 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property updatePolicy: Specify the policy at update.
+         * <p>
+         * The value can be 'ForNewInstances' or 'ForAllInstances'.
+         * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+         * The default is 'ForNewInstances'
+         * <p>
+         * @return {@code this}
+         * @param updatePolicy Property updatePolicy: Specify the policy at update. This parameter is required.
+         */
+        public Builder updatePolicy(final java.lang.String updatePolicy) {
+            this.props.updatePolicy(updatePolicy);
+            return this;
+        }
+        /**
+         * Property updatePolicy: Specify the policy at update.
+         * <p>
+         * The value can be 'ForNewInstances' or 'ForAllInstances'.
+         * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+         * The default is 'ForNewInstances'
+         * <p>
+         * @return {@code this}
+         * @param updatePolicy Property updatePolicy: Specify the policy at update. This parameter is required.
+         */
+        public Builder updatePolicy(final com.aliyun.ros.cdk.core.IResolvable updatePolicy) {
+            this.props.updatePolicy(updatePolicy);
             return this;
         }
 

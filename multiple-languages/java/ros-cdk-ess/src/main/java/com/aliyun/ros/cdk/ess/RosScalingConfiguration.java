@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.458Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.459Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingConfiguration")
 public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -147,6 +147,24 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             }
         }
         software.amazon.jsii.Kernel.set(this, "diskMappings", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHostName() {
+        return software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHostName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "hostName", value);
+    }
+
+    /**
+     */
+    public void setHostName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "hostName", value);
     }
 
     /**
@@ -404,6 +422,24 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
      */
     public void setLoadBalancerWeight(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "loadBalancerWeight", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
+        return software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPassword(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "password", value);
+    }
+
+    /**
+     */
+    public void setPassword(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "password", value);
     }
 
     /**
@@ -1466,6 +1502,23 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
         /**
          * @return {@code this}
+         * @param hostName This parameter is required.
+         */
+        public Builder hostName(final java.lang.String hostName) {
+            this.props.hostName(hostName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param hostName This parameter is required.
+         */
+        public Builder hostName(final com.aliyun.ros.cdk.core.IResolvable hostName) {
+            this.props.hostName(hostName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param hpcClusterId This parameter is required.
          */
         public Builder hpcClusterId(final java.lang.String hpcClusterId) {
@@ -1699,6 +1752,23 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          */
         public Builder loadBalancerWeight(final com.aliyun.ros.cdk.core.IResolvable loadBalancerWeight) {
             this.props.loadBalancerWeight(loadBalancerWeight);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param password This parameter is required.
+         */
+        public Builder password(final java.lang.String password) {
+            this.props.password(password);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param password This parameter is required.
+         */
+        public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
+            this.props.password(password);
             return this;
         }
 

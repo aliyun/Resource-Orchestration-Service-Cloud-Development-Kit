@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.510Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.510Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingConfigurationProps.Jsii$Proxy.class)
 public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,6 +35,17 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
      * Property diskMappings: Disk mappings to attach to instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskMappings() {
+        return null;
+    }
+
+    /**
+     * Property hostName: The hostname of the ECS instance.
+     * <p>
+     * The hostname cannot start or end with a period (.) or a hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-). Naming conventions for different types of instances:
+     * Windows instances: The hostname must be 2 to 15 characters in length, and can contain letters, digits, and hyphens (-). The hostname cannot contain periods (.) or contain only digits.
+     * Other instances such as Linux instances: The hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHostName() {
         return null;
     }
 
@@ -151,6 +162,15 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
+     * Property password: Password of created ecs instance.
+     * <p>
+     * Must contain at least 3 types of special character, lower character, upper character, number.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
+        return null;
+    }
+
+    /**
      * Property passwordInherit: Whether to use the password pre-configured in the image you select or not.
      * <p>
      * When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
@@ -236,7 +256,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
     /**
      * Property systemDiskCategory: Category of system disk.
      * <p>
-     * Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+     * Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return null;
@@ -302,6 +322,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object creditSpecification;
         java.lang.Object deploymentSetId;
         java.lang.Object diskMappings;
+        java.lang.Object hostName;
         java.lang.Object hpcClusterId;
         java.lang.Object imageFamily;
         java.lang.Object imageId;
@@ -316,6 +337,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object ipv6AddressCount;
         java.lang.Object keyPairName;
         java.lang.Object loadBalancerWeight;
+        java.lang.Object password;
         java.lang.Object passwordInherit;
         java.lang.Object ramRoleName;
         java.lang.Object resourceGroupId;
@@ -414,6 +436,32 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
          */
         public Builder diskMappings(java.util.List<? extends java.lang.Object> diskMappings) {
             this.diskMappings = diskMappings;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingConfigurationProps#getHostName}
+         * @param hostName Property hostName: The hostname of the ECS instance.
+         *                 The hostname cannot start or end with a period (.) or a hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-). Naming conventions for different types of instances:
+         *                 Windows instances: The hostname must be 2 to 15 characters in length, and can contain letters, digits, and hyphens (-). The hostname cannot contain periods (.) or contain only digits.
+         *                 Other instances such as Linux instances: The hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+         * @return {@code this}
+         */
+        public Builder hostName(java.lang.String hostName) {
+            this.hostName = hostName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingConfigurationProps#getHostName}
+         * @param hostName Property hostName: The hostname of the ECS instance.
+         *                 The hostname cannot start or end with a period (.) or a hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-). Naming conventions for different types of instances:
+         *                 Windows instances: The hostname must be 2 to 15 characters in length, and can contain letters, digits, and hyphens (-). The hostname cannot contain periods (.) or contain only digits.
+         *                 Other instances such as Linux instances: The hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+         * @return {@code this}
+         */
+        public Builder hostName(com.aliyun.ros.cdk.core.IResolvable hostName) {
+            this.hostName = hostName;
             return this;
         }
 
@@ -714,6 +762,28 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link ScalingConfigurationProps#getPassword}
+         * @param password Property password: Password of created ecs instance.
+         *                 Must contain at least 3 types of special character, lower character, upper character, number.
+         * @return {@code this}
+         */
+        public Builder password(java.lang.String password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingConfigurationProps#getPassword}
+         * @param password Property password: Password of created ecs instance.
+         *                 Must contain at least 3 types of special character, lower character, upper character, number.
+         * @return {@code this}
+         */
+        public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingConfigurationProps#getPasswordInherit}
          * @param passwordInherit Property passwordInherit: Whether to use the password pre-configured in the image you select or not.
          *                        When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
@@ -926,7 +996,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         /**
          * Sets the value of {@link ScalingConfigurationProps#getSystemDiskCategory}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
-         *                           Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+         *                           Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
          * @return {@code this}
          */
         public Builder systemDiskCategory(java.lang.String systemDiskCategory) {
@@ -937,7 +1007,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         /**
          * Sets the value of {@link ScalingConfigurationProps#getSystemDiskCategory}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
-         *                           Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+         *                           Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
          * @return {@code this}
          */
         public Builder systemDiskCategory(com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
@@ -1075,6 +1145,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object creditSpecification;
         private final java.lang.Object deploymentSetId;
         private final java.lang.Object diskMappings;
+        private final java.lang.Object hostName;
         private final java.lang.Object hpcClusterId;
         private final java.lang.Object imageFamily;
         private final java.lang.Object imageId;
@@ -1089,6 +1160,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object ipv6AddressCount;
         private final java.lang.Object keyPairName;
         private final java.lang.Object loadBalancerWeight;
+        private final java.lang.Object password;
         private final java.lang.Object passwordInherit;
         private final java.lang.Object ramRoleName;
         private final java.lang.Object resourceGroupId;
@@ -1114,6 +1186,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             this.creditSpecification = software.amazon.jsii.Kernel.get(this, "creditSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deploymentSetId = software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hpcClusterId = software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageFamily = software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1128,6 +1201,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerWeight = software.amazon.jsii.Kernel.get(this, "loadBalancerWeight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.passwordInherit = software.amazon.jsii.Kernel.get(this, "passwordInherit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1153,6 +1227,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             this.creditSpecification = builder.creditSpecification;
             this.deploymentSetId = builder.deploymentSetId;
             this.diskMappings = builder.diskMappings;
+            this.hostName = builder.hostName;
             this.hpcClusterId = builder.hpcClusterId;
             this.imageFamily = builder.imageFamily;
             this.imageId = builder.imageId;
@@ -1167,6 +1242,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             this.ipv6AddressCount = builder.ipv6AddressCount;
             this.keyPairName = builder.keyPairName;
             this.loadBalancerWeight = builder.loadBalancerWeight;
+            this.password = builder.password;
             this.passwordInherit = builder.passwordInherit;
             this.ramRoleName = builder.ramRoleName;
             this.resourceGroupId = builder.resourceGroupId;
@@ -1201,6 +1277,11 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         @Override
         public final java.lang.Object getDiskMappings() {
             return this.diskMappings;
+        }
+
+        @Override
+        public final java.lang.Object getHostName() {
+            return this.hostName;
         }
 
         @Override
@@ -1271,6 +1352,11 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
         @Override
         public final java.lang.Object getLoadBalancerWeight() {
             return this.loadBalancerWeight;
+        }
+
+        @Override
+        public final java.lang.Object getPassword() {
+            return this.password;
         }
 
         @Override
@@ -1359,6 +1445,9 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             if (this.getDiskMappings() != null) {
                 data.set("diskMappings", om.valueToTree(this.getDiskMappings()));
             }
+            if (this.getHostName() != null) {
+                data.set("hostName", om.valueToTree(this.getHostName()));
+            }
             if (this.getHpcClusterId() != null) {
                 data.set("hpcClusterId", om.valueToTree(this.getHpcClusterId()));
             }
@@ -1400,6 +1489,9 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             }
             if (this.getLoadBalancerWeight() != null) {
                 data.set("loadBalancerWeight", om.valueToTree(this.getLoadBalancerWeight()));
+            }
+            if (this.getPassword() != null) {
+                data.set("password", om.valueToTree(this.getPassword()));
             }
             if (this.getPasswordInherit() != null) {
                 data.set("passwordInherit", om.valueToTree(this.getPasswordInherit()));
@@ -1465,6 +1557,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             if (this.creditSpecification != null ? !this.creditSpecification.equals(that.creditSpecification) : that.creditSpecification != null) return false;
             if (this.deploymentSetId != null ? !this.deploymentSetId.equals(that.deploymentSetId) : that.deploymentSetId != null) return false;
             if (this.diskMappings != null ? !this.diskMappings.equals(that.diskMappings) : that.diskMappings != null) return false;
+            if (this.hostName != null ? !this.hostName.equals(that.hostName) : that.hostName != null) return false;
             if (this.hpcClusterId != null ? !this.hpcClusterId.equals(that.hpcClusterId) : that.hpcClusterId != null) return false;
             if (this.imageFamily != null ? !this.imageFamily.equals(that.imageFamily) : that.imageFamily != null) return false;
             if (this.imageId != null ? !this.imageId.equals(that.imageId) : that.imageId != null) return false;
@@ -1479,6 +1572,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             if (this.ipv6AddressCount != null ? !this.ipv6AddressCount.equals(that.ipv6AddressCount) : that.ipv6AddressCount != null) return false;
             if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
             if (this.loadBalancerWeight != null ? !this.loadBalancerWeight.equals(that.loadBalancerWeight) : that.loadBalancerWeight != null) return false;
+            if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
             if (this.passwordInherit != null ? !this.passwordInherit.equals(that.passwordInherit) : that.passwordInherit != null) return false;
             if (this.ramRoleName != null ? !this.ramRoleName.equals(that.ramRoleName) : that.ramRoleName != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -1501,6 +1595,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.creditSpecification != null ? this.creditSpecification.hashCode() : 0);
             result = 31 * result + (this.deploymentSetId != null ? this.deploymentSetId.hashCode() : 0);
             result = 31 * result + (this.diskMappings != null ? this.diskMappings.hashCode() : 0);
+            result = 31 * result + (this.hostName != null ? this.hostName.hashCode() : 0);
             result = 31 * result + (this.hpcClusterId != null ? this.hpcClusterId.hashCode() : 0);
             result = 31 * result + (this.imageFamily != null ? this.imageFamily.hashCode() : 0);
             result = 31 * result + (this.imageId != null ? this.imageId.hashCode() : 0);
@@ -1515,6 +1610,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.ipv6AddressCount != null ? this.ipv6AddressCount.hashCode() : 0);
             result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);
             result = 31 * result + (this.loadBalancerWeight != null ? this.loadBalancerWeight.hashCode() : 0);
+            result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
             result = 31 * result + (this.passwordInherit != null ? this.passwordInherit.hashCode() : 0);
             result = 31 * result + (this.ramRoleName != null ? this.ramRoleName.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

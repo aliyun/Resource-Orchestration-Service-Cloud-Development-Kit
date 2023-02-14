@@ -14,6 +14,16 @@ export interface ScalingGroupEnableProps {
     readonly scalingGroupId: string | ros.IResolvable;
 
     /**
+     * Property attachOptions: Options for attaching instances.
+     */
+    readonly attachOptions?: RosScalingGroupEnable.AttachOptionsProperty | ros.IResolvable;
+
+    /**
+     * Property detachOptions: Options for detaching instances.
+     */
+    readonly detachOptions?: RosScalingGroupEnable.DetachOptionsProperty | ros.IResolvable;
+
+    /**
      * Property instanceIds: The id list of ECS instance which will be attached. Max support 1000 instances.
      */
     readonly instanceIds?: Array<any | ros.IResolvable> | ros.IResolvable;
@@ -102,6 +112,8 @@ export class ScalingGroupEnable extends ros.Resource {
         super(scope, id);
 
         const rosScalingGroupEnable = new RosScalingGroupEnable(this, id,  {
+            attachOptions: props.attachOptions,
+            detachOptions: props.detachOptions,
             scalingRuleArisExecuteVersion: props.scalingRuleArisExecuteVersion,
             scalingGroupId: props.scalingGroupId,
             scalingRuleAris: props.scalingRuleAris,

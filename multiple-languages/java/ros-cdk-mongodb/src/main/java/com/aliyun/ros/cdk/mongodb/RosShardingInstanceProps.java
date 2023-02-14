@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * Properties for defining a `ALIYUN::MONGODB::ShardingInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.950Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.929Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosShardingInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosShardingInstanceProps.Jsii$Proxy.class)
 public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,6 +52,12 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHiddenZoneId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return null;
     }
@@ -82,6 +88,12 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryZoneId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpArray() {
         return null;
     }
@@ -95,6 +107,12 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStorageEngine() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageType() {
         return null;
     }
 
@@ -146,14 +164,17 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
         java.lang.Object chargeType;
         java.lang.Object dbInstanceDescription;
         java.lang.Object engineVersion;
+        java.lang.Object hiddenZoneId;
         java.lang.Object networkType;
         java.lang.Object period;
         java.lang.Object protocolType;
         java.lang.Object resourceGroupId;
         java.lang.Object restoreTime;
+        java.lang.Object secondaryZoneId;
         java.lang.Object securityIpArray;
         java.lang.Object srcDbInstanceId;
         java.lang.Object storageEngine;
+        java.lang.Object storageType;
         java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags;
         java.lang.Object tdeStatus;
         java.lang.Object vpcId;
@@ -321,6 +342,26 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosShardingInstanceProps#getHiddenZoneId}
+         * @param hiddenZoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder hiddenZoneId(java.lang.String hiddenZoneId) {
+            this.hiddenZoneId = hiddenZoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosShardingInstanceProps#getHiddenZoneId}
+         * @param hiddenZoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder hiddenZoneId(com.aliyun.ros.cdk.core.IResolvable hiddenZoneId) {
+            this.hiddenZoneId = hiddenZoneId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosShardingInstanceProps#getNetworkType}
          * @param networkType the value to be set.
          * @return {@code this}
@@ -421,6 +462,26 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosShardingInstanceProps#getSecondaryZoneId}
+         * @param secondaryZoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder secondaryZoneId(java.lang.String secondaryZoneId) {
+            this.secondaryZoneId = secondaryZoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosShardingInstanceProps#getSecondaryZoneId}
+         * @param secondaryZoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder secondaryZoneId(com.aliyun.ros.cdk.core.IResolvable secondaryZoneId) {
+            this.secondaryZoneId = secondaryZoneId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosShardingInstanceProps#getSecurityIpArray}
          * @param securityIpArray the value to be set.
          * @return {@code this}
@@ -477,6 +538,26 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
          */
         public Builder storageEngine(com.aliyun.ros.cdk.core.IResolvable storageEngine) {
             this.storageEngine = storageEngine;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosShardingInstanceProps#getStorageType}
+         * @param storageType the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageType(java.lang.String storageType) {
+            this.storageType = storageType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosShardingInstanceProps#getStorageType}
+         * @param storageType the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageType(com.aliyun.ros.cdk.core.IResolvable storageType) {
+            this.storageType = storageType;
             return this;
         }
 
@@ -595,14 +676,17 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
         private final java.lang.Object chargeType;
         private final java.lang.Object dbInstanceDescription;
         private final java.lang.Object engineVersion;
+        private final java.lang.Object hiddenZoneId;
         private final java.lang.Object networkType;
         private final java.lang.Object period;
         private final java.lang.Object protocolType;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object restoreTime;
+        private final java.lang.Object secondaryZoneId;
         private final java.lang.Object securityIpArray;
         private final java.lang.Object srcDbInstanceId;
         private final java.lang.Object storageEngine;
+        private final java.lang.Object storageType;
         private final java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty> tags;
         private final java.lang.Object tdeStatus;
         private final java.lang.Object vpcId;
@@ -623,14 +707,17 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.hiddenZoneId = software.amazon.jsii.Kernel.get(this, "hiddenZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protocolType = software.amazon.jsii.Kernel.get(this, "protocolType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.restoreTime = software.amazon.jsii.Kernel.get(this, "restoreTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.secondaryZoneId = software.amazon.jsii.Kernel.get(this, "secondaryZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpArray = software.amazon.jsii.Kernel.get(this, "securityIpArray", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.srcDbInstanceId = software.amazon.jsii.Kernel.get(this, "srcDbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageEngine = software.amazon.jsii.Kernel.get(this, "storageEngine", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storageType = software.amazon.jsii.Kernel.get(this, "storageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty.class)));
             this.tdeStatus = software.amazon.jsii.Kernel.get(this, "tdeStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -652,14 +739,17 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             this.chargeType = builder.chargeType;
             this.dbInstanceDescription = builder.dbInstanceDescription;
             this.engineVersion = builder.engineVersion;
+            this.hiddenZoneId = builder.hiddenZoneId;
             this.networkType = builder.networkType;
             this.period = builder.period;
             this.protocolType = builder.protocolType;
             this.resourceGroupId = builder.resourceGroupId;
             this.restoreTime = builder.restoreTime;
+            this.secondaryZoneId = builder.secondaryZoneId;
             this.securityIpArray = builder.securityIpArray;
             this.srcDbInstanceId = builder.srcDbInstanceId;
             this.storageEngine = builder.storageEngine;
+            this.storageType = builder.storageType;
             this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.RosShardingInstance.TagsProperty>)builder.tags;
             this.tdeStatus = builder.tdeStatus;
             this.vpcId = builder.vpcId;
@@ -708,6 +798,11 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getHiddenZoneId() {
+            return this.hiddenZoneId;
+        }
+
+        @Override
         public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
@@ -733,6 +828,11 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getSecondaryZoneId() {
+            return this.secondaryZoneId;
+        }
+
+        @Override
         public final java.lang.Object getSecurityIpArray() {
             return this.securityIpArray;
         }
@@ -745,6 +845,11 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
         @Override
         public final java.lang.Object getStorageEngine() {
             return this.storageEngine;
+        }
+
+        @Override
+        public final java.lang.Object getStorageType() {
+            return this.storageType;
         }
 
         @Override
@@ -796,6 +901,9 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             if (this.getEngineVersion() != null) {
                 data.set("engineVersion", om.valueToTree(this.getEngineVersion()));
             }
+            if (this.getHiddenZoneId() != null) {
+                data.set("hiddenZoneId", om.valueToTree(this.getHiddenZoneId()));
+            }
             if (this.getNetworkType() != null) {
                 data.set("networkType", om.valueToTree(this.getNetworkType()));
             }
@@ -811,6 +919,9 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             if (this.getRestoreTime() != null) {
                 data.set("restoreTime", om.valueToTree(this.getRestoreTime()));
             }
+            if (this.getSecondaryZoneId() != null) {
+                data.set("secondaryZoneId", om.valueToTree(this.getSecondaryZoneId()));
+            }
             if (this.getSecurityIpArray() != null) {
                 data.set("securityIpArray", om.valueToTree(this.getSecurityIpArray()));
             }
@@ -819,6 +930,9 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             }
             if (this.getStorageEngine() != null) {
                 data.set("storageEngine", om.valueToTree(this.getStorageEngine()));
+            }
+            if (this.getStorageType() != null) {
+                data.set("storageType", om.valueToTree(this.getStorageType()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -861,14 +975,17 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
             if (this.dbInstanceDescription != null ? !this.dbInstanceDescription.equals(that.dbInstanceDescription) : that.dbInstanceDescription != null) return false;
             if (this.engineVersion != null ? !this.engineVersion.equals(that.engineVersion) : that.engineVersion != null) return false;
+            if (this.hiddenZoneId != null ? !this.hiddenZoneId.equals(that.hiddenZoneId) : that.hiddenZoneId != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.protocolType != null ? !this.protocolType.equals(that.protocolType) : that.protocolType != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.restoreTime != null ? !this.restoreTime.equals(that.restoreTime) : that.restoreTime != null) return false;
+            if (this.secondaryZoneId != null ? !this.secondaryZoneId.equals(that.secondaryZoneId) : that.secondaryZoneId != null) return false;
             if (this.securityIpArray != null ? !this.securityIpArray.equals(that.securityIpArray) : that.securityIpArray != null) return false;
             if (this.srcDbInstanceId != null ? !this.srcDbInstanceId.equals(that.srcDbInstanceId) : that.srcDbInstanceId != null) return false;
             if (this.storageEngine != null ? !this.storageEngine.equals(that.storageEngine) : that.storageEngine != null) return false;
+            if (this.storageType != null ? !this.storageType.equals(that.storageType) : that.storageType != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tdeStatus != null ? !this.tdeStatus.equals(that.tdeStatus) : that.tdeStatus != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
@@ -886,14 +1003,17 @@ public interface RosShardingInstanceProps extends software.amazon.jsii.JsiiSeria
             result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
             result = 31 * result + (this.dbInstanceDescription != null ? this.dbInstanceDescription.hashCode() : 0);
             result = 31 * result + (this.engineVersion != null ? this.engineVersion.hashCode() : 0);
+            result = 31 * result + (this.hiddenZoneId != null ? this.hiddenZoneId.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.protocolType != null ? this.protocolType.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.restoreTime != null ? this.restoreTime.hashCode() : 0);
+            result = 31 * result + (this.secondaryZoneId != null ? this.secondaryZoneId.hashCode() : 0);
             result = 31 * result + (this.securityIpArray != null ? this.securityIpArray.hashCode() : 0);
             result = 31 * result + (this.srcDbInstanceId != null ? this.srcDbInstanceId.hashCode() : 0);
             result = 31 * result + (this.storageEngine != null ? this.storageEngine.hashCode() : 0);
+            result = 31 * result + (this.storageType != null ? this.storageType.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tdeStatus != null ? this.tdeStatus.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);

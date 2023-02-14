@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * A ROS resource type:  `ALIYUN::ClickHouse::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.257Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.242Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -459,20 +459,28 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property paymentType: PayType.
+         * Property paymentType: The billing method of the cluster.
+         * <p>
+         * Valid values:
+         * Postpaid: pay-as-you-go
+         * Prepaid: subscription
          * <p>
          * @return {@code this}
-         * @param paymentType Property paymentType: PayType. This parameter is required.
+         * @param paymentType Property paymentType: The billing method of the cluster. This parameter is required.
          */
         public Builder paymentType(final java.lang.String paymentType) {
             this.props.paymentType(paymentType);
             return this;
         }
         /**
-         * Property paymentType: PayType.
+         * Property paymentType: The billing method of the cluster.
+         * <p>
+         * Valid values:
+         * Postpaid: pay-as-you-go
+         * Prepaid: subscription
          * <p>
          * @return {@code this}
-         * @param paymentType Property paymentType: PayType. This parameter is required.
+         * @param paymentType Property paymentType: The billing method of the cluster. This parameter is required.
          */
         public Builder paymentType(final com.aliyun.ros.cdk.core.IResolvable paymentType) {
             this.props.paymentType(paymentType);
@@ -564,24 +572,28 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property usedTime: When Period is Month, the value of UsedTime is [1-9].
+         * Property usedTime: The subscription duration.
          * <p>
-         * When Period is Year, the value of UsedTime is [1-3]
+         * Valid values:
+         * When Period is Month, it could be from 1 to 9, 12, 24, 36.
+         * When Period is Year, it could be from 1 to 3.
          * <p>
          * @return {@code this}
-         * @param usedTime Property usedTime: When Period is Month, the value of UsedTime is [1-9]. This parameter is required.
+         * @param usedTime Property usedTime: The subscription duration. This parameter is required.
          */
-        public Builder usedTime(final java.lang.String usedTime) {
+        public Builder usedTime(final java.lang.Number usedTime) {
             this.props.usedTime(usedTime);
             return this;
         }
         /**
-         * Property usedTime: When Period is Month, the value of UsedTime is [1-9].
+         * Property usedTime: The subscription duration.
          * <p>
-         * When Period is Year, the value of UsedTime is [1-3]
+         * Valid values:
+         * When Period is Month, it could be from 1 to 9, 12, 24, 36.
+         * When Period is Year, it could be from 1 to 3.
          * <p>
          * @return {@code this}
-         * @param usedTime Property usedTime: When Period is Month, the value of UsedTime is [1-9]. This parameter is required.
+         * @param usedTime Property usedTime: The subscription duration. This parameter is required.
          */
         public Builder usedTime(final com.aliyun.ros.cdk.core.IResolvable usedTime) {
             this.props.usedTime(usedTime);

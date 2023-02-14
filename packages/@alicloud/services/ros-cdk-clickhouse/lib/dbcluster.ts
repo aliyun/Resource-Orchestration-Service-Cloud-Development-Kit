@@ -44,7 +44,9 @@ export interface DBClusterProps {
     readonly dbNodeStorageType: string | ros.IResolvable;
 
     /**
-     * Property paymentType: PayType
+     * Property paymentType: The billing method of the cluster. Valid values:
+     * Postpaid: pay-as-you-go
+     * Prepaid: subscription
      */
     readonly paymentType: string | ros.IResolvable;
 
@@ -69,9 +71,11 @@ export interface DBClusterProps {
     readonly period?: string | ros.IResolvable;
 
     /**
-     * Property usedTime: When Period is Month, the value of UsedTime is [1-9].  When Period is Year, the value of UsedTime is [1-3]
+     * Property usedTime: The subscription duration. Valid values:
+     * When Period is Month, it could be from 1 to 9, 12, 24, 36.
+     *  When Period is Year, it could be from 1 to 3.
      */
-    readonly usedTime?: string | ros.IResolvable;
+    readonly usedTime?: number | ros.IResolvable;
 
     /**
      * Property vpcId: VpcId

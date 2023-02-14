@@ -753,6 +753,13 @@ export interface RosScalingConfigurationProps {
     readonly diskMappings?: Array<RosScalingConfiguration.DiskMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property hostName: The hostname of the ECS instance. The hostname cannot start or end with a period (.) or a hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-). Naming conventions for different types of instances:
+     * Windows instances: The hostname must be 2 to 15 characters in length, and can contain letters, digits, and hyphens (-). The hostname cannot contain periods (.) or contain only digits.
+     * Other instances such as Linux instances: The hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+     */
+    readonly hostName?: string | ros.IResolvable;
+
+    /**
      * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
     readonly hpcClusterId?: string | ros.IResolvable;
@@ -826,6 +833,11 @@ export interface RosScalingConfigurationProps {
     readonly loadBalancerWeight?: number | ros.IResolvable;
 
     /**
+     * @Property password: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
+     */
+    readonly password?: string | ros.IResolvable;
+
+    /**
      * @Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
      */
     readonly passwordInherit?: boolean | ros.IResolvable;
@@ -882,7 +894,7 @@ export interface RosScalingConfigurationProps {
     readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+     * @Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -973,6 +985,7 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     }
     errors.collect(ros.propertyValidator('instanceTypes', ros.listValidator(ros.validateAny))(properties.instanceTypes));
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
     if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
           data: properties.spotStrategy,
@@ -981,6 +994,7 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     }
     errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
     errors.collect(ros.propertyValidator('passwordInherit', ros.validateBoolean)(properties.passwordInherit));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
     if(properties.loadBalancerWeight && (typeof properties.loadBalancerWeight) !== 'object') {
         errors.collect(ros.propertyValidator('loadBalancerWeight', ros.validateRange)({
@@ -1006,7 +1020,7 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd"],
+          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
         }));
     }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
@@ -1063,6 +1077,7 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
       CreditSpecification: ros.stringToRosTemplate(properties.creditSpecification),
       DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
       DiskMappings: ros.listMapper(rosScalingConfigurationDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
+      HostName: ros.stringToRosTemplate(properties.hostName),
       HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
       ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
       ImageId: ros.stringToRosTemplate(properties.imageId),
@@ -1077,6 +1092,7 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
       Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
       LoadBalancerWeight: ros.numberToRosTemplate(properties.loadBalancerWeight),
+      Password: ros.stringToRosTemplate(properties.password),
       PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
       RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
@@ -1137,6 +1153,13 @@ export class RosScalingConfiguration extends ros.RosResource {
      * @Property diskMappings: Disk mappings to attach to instance.
      */
     public diskMappings: Array<RosScalingConfiguration.DiskMappingsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property hostName: The hostname of the ECS instance. The hostname cannot start or end with a period (.) or a hyphen (-). The hostname cannot contain consecutive periods (.) or hyphens (-). Naming conventions for different types of instances:
+     * Windows instances: The hostname must be 2 to 15 characters in length, and can contain letters, digits, and hyphens (-). The hostname cannot contain periods (.) or contain only digits.
+     * Other instances such as Linux instances: The hostname must be 2 to 64 characters in length. You can use periods (.) to separate a hostname into multiple segments. Each segment can contain letters, digits, and hyphens (-).
+     */
+    public hostName: string | ros.IResolvable | undefined;
 
     /**
      * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
@@ -1212,6 +1235,11 @@ export class RosScalingConfiguration extends ros.RosResource {
     public loadBalancerWeight: number | ros.IResolvable | undefined;
 
     /**
+     * @Property password: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
+     */
+    public password: string | ros.IResolvable | undefined;
+
+    /**
      * @Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
      */
     public passwordInherit: boolean | ros.IResolvable | undefined;
@@ -1268,7 +1296,7 @@ export class RosScalingConfiguration extends ros.RosResource {
     public systemDiskAutoSnapshotPolicyId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+     * @Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
@@ -1321,6 +1349,7 @@ export class RosScalingConfiguration extends ros.RosResource {
         this.creditSpecification = props.creditSpecification;
         this.deploymentSetId = props.deploymentSetId;
         this.diskMappings = props.diskMappings;
+        this.hostName = props.hostName;
         this.hpcClusterId = props.hpcClusterId;
         this.imageFamily = props.imageFamily;
         this.imageId = props.imageId;
@@ -1335,6 +1364,7 @@ export class RosScalingConfiguration extends ros.RosResource {
         this.ipv6AddressCount = props.ipv6AddressCount;
         this.keyPairName = props.keyPairName;
         this.loadBalancerWeight = props.loadBalancerWeight;
+        this.password = props.password;
         this.passwordInherit = props.passwordInherit;
         this.ramRoleName = props.ramRoleName;
         this.resourceGroupId = props.resourceGroupId;
@@ -1358,6 +1388,7 @@ export class RosScalingConfiguration extends ros.RosResource {
             creditSpecification: this.creditSpecification,
             deploymentSetId: this.deploymentSetId,
             diskMappings: this.diskMappings,
+            hostName: this.hostName,
             hpcClusterId: this.hpcClusterId,
             imageFamily: this.imageFamily,
             imageId: this.imageId,
@@ -1372,6 +1403,7 @@ export class RosScalingConfiguration extends ros.RosResource {
             ipv6AddressCount: this.ipv6AddressCount,
             keyPairName: this.keyPairName,
             loadBalancerWeight: this.loadBalancerWeight,
+            password: this.password,
             passwordInherit: this.passwordInherit,
             ramRoleName: this.ramRoleName,
             resourceGroupId: this.resourceGroupId,
@@ -2338,6 +2370,16 @@ export interface RosScalingGroupEnableProps {
     readonly scalingGroupId: string | ros.IResolvable;
 
     /**
+     * @Property attachOptions: Options for attaching instances.
+     */
+    readonly attachOptions?: RosScalingGroupEnable.AttachOptionsProperty | ros.IResolvable;
+
+    /**
+     * @Property detachOptions: Options for detaching instances.
+     */
+    readonly detachOptions?: RosScalingGroupEnable.DetachOptionsProperty | ros.IResolvable;
+
+    /**
      * @Property instanceIds: The id list of ECS instance which will be attached. Max support 1000 instances.
      */
     readonly instanceIds?: Array<any | ros.IResolvable> | ros.IResolvable;
@@ -2375,6 +2417,8 @@ export interface RosScalingGroupEnableProps {
 function RosScalingGroupEnablePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('attachOptions', RosScalingGroupEnable_AttachOptionsPropertyValidator)(properties.attachOptions));
+    errors.collect(ros.propertyValidator('detachOptions', RosScalingGroupEnable_DetachOptionsPropertyValidator)(properties.detachOptions));
     if(properties.scalingRuleArisExecuteVersion && (typeof properties.scalingRuleArisExecuteVersion) !== 'object') {
         errors.collect(ros.propertyValidator('scalingRuleArisExecuteVersion', ros.validateRange)({
             data: properties.scalingRuleArisExecuteVersion,
@@ -2428,6 +2472,8 @@ function rosScalingGroupEnablePropsToRosTemplate(properties: any, enableResource
     }
     return {
       ScalingGroupId: ros.stringToRosTemplate(properties.scalingGroupId),
+      AttachOptions: rosScalingGroupEnableAttachOptionsPropertyToRosTemplate(properties.attachOptions),
+      DetachOptions: rosScalingGroupEnableDetachOptionsPropertyToRosTemplate(properties.detachOptions),
       InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
       RemoveInstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.removeInstanceIds),
       ScalingConfigurationId: ros.stringToRosTemplate(properties.scalingConfigurationId),
@@ -2499,6 +2545,16 @@ export class RosScalingGroupEnable extends ros.RosResource {
     public scalingGroupId: string | ros.IResolvable;
 
     /**
+     * @Property attachOptions: Options for attaching instances.
+     */
+    public attachOptions: RosScalingGroupEnable.AttachOptionsProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property detachOptions: Options for detaching instances.
+     */
+    public detachOptions: RosScalingGroupEnable.DetachOptionsProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property instanceIds: The id list of ECS instance which will be attached. Max support 1000 instances.
      */
     public instanceIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
@@ -2545,6 +2601,8 @@ export class RosScalingGroupEnable extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.scalingGroupId = props.scalingGroupId;
+        this.attachOptions = props.attachOptions;
+        this.detachOptions = props.detachOptions;
         this.instanceIds = props.instanceIds;
         this.removeInstanceIds = props.removeInstanceIds;
         this.scalingConfigurationId = props.scalingConfigurationId;
@@ -2556,6 +2614,8 @@ export class RosScalingGroupEnable extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             scalingGroupId: this.scalingGroupId,
+            attachOptions: this.attachOptions,
+            detachOptions: this.detachOptions,
             instanceIds: this.instanceIds,
             removeInstanceIds: this.removeInstanceIds,
             scalingConfigurationId: this.scalingConfigurationId,
@@ -2566,6 +2626,120 @@ export class RosScalingGroupEnable extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosScalingGroupEnablePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosScalingGroupEnable {
+    /**
+     * @stability external
+     */
+    export interface AttachOptionsProperty {
+        /**
+         * @Property entrusted: Specifies whether the scaling group manages the lifecycle of instances that are manually added to the scaling group. Valid values:
+     * - true: The scaling group manages the lifecycle of instances that are manually added in a similar manner in which the scaling group manages the lifecycle of automatically created instances. When the instances are removed from the scaling group, the instances are automatically released. However, if you call the DetachInstances operation to remove the instances from the scaling group, the instances are not released.
+     * - false: The scaling group does not manage the lifecycle of instances that are manually added. After the instances are removed from the scaling group, the instances are not released.
+     * Default value: false.
+     * Note: This property is unavailable for subscription instances.
+         */
+        readonly entrusted?: boolean | ros.IResolvable;
+        /**
+         * @Property lifecycleHook: Specifies whether to trigger a lifecycle hook for the scaling group to which instances are being added. Valid values:
+     * - true
+     * - false
+     * Default value: false.
+         */
+        readonly lifecycleHook?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AttachOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AttachOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosScalingGroupEnable_AttachOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('entrusted', ros.validateBoolean)(properties.entrusted));
+    errors.collect(ros.propertyValidator('lifecycleHook', ros.validateBoolean)(properties.lifecycleHook));
+    return errors.wrap('supplied properties not correct for "AttachOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingGroupEnable.AttachOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `AttachOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingGroupEnable.AttachOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosScalingGroupEnableAttachOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosScalingGroupEnable_AttachOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      Entrusted: ros.booleanToRosTemplate(properties.entrusted),
+      LifecycleHook: ros.booleanToRosTemplate(properties.lifecycleHook),
+    };
+}
+
+export namespace RosScalingGroupEnable {
+    /**
+     * @stability external
+     */
+    export interface DetachOptionsProperty {
+        /**
+         * @Property detachOption: Specifies whether to remove the instances from the default server groups and vServer groups of the Server Load Balancer (SLB) instance that is associated with the scaling group, and whether to remove the IP addresses of the instances from the whitelist that manages access to the ApsaraDB RDS instance that is associated with the scaling group.
+     * If you set this parameter to both, the instances are removed from the default sever groups and vServer groups of the associated SLB instance, and the IP addresses of the instances are removed from the whitelist that manages access to the associated ApsaraDB RDS instance.
+         */
+        readonly detachOption?: string | ros.IResolvable;
+        /**
+         * @Property decreaseDesiredCapacity: Specifies whether to adjust the expected number of instances in the scaling group. Valid values:
+     * - true: After a specific number of instances are removed from the scaling group, the expected number of instances in the scaling group decreases.
+     * - false: After a specific number of instances are removed from the scaling group, the expected number of instances in the scaling group remains unchanged.
+     * Default value: true.
+         */
+        readonly decreaseDesiredCapacity?: boolean | ros.IResolvable;
+        /**
+         * @Property lifecycleHook: Specifies whether to trigger the lifecycle hook for the scaling group when you remove instances from the scaling group. Valid values:
+     * - true
+     * - false
+     * Default value: false.
+         */
+        readonly lifecycleHook?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DetachOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `DetachOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosScalingGroupEnable_DetachOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('detachOption', ros.validateString)(properties.detachOption));
+    errors.collect(ros.propertyValidator('decreaseDesiredCapacity', ros.validateBoolean)(properties.decreaseDesiredCapacity));
+    errors.collect(ros.propertyValidator('lifecycleHook', ros.validateBoolean)(properties.lifecycleHook));
+    return errors.wrap('supplied properties not correct for "DetachOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingGroupEnable.DetachOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `DetachOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingGroupEnable.DetachOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosScalingGroupEnableDetachOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosScalingGroupEnable_DetachOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      DetachOption: ros.stringToRosTemplate(properties.detachOption),
+      DecreaseDesiredCapacity: ros.booleanToRosTemplate(properties.decreaseDesiredCapacity),
+      LifecycleHook: ros.booleanToRosTemplate(properties.lifecycleHook),
+    };
 }
 
 /**

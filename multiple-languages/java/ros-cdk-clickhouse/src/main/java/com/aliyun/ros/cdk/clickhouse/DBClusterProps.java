@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * Properties for defining a `ALIYUN::ClickHouse::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.260Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.245Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -48,7 +48,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDbNodeStorageType();
 
     /**
-     * Property paymentType: PayType.
+     * Property paymentType: The billing method of the cluster.
+     * <p>
+     * Valid values:
+     * Postpaid: pay-as-you-go
+     * Prepaid: subscription
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPaymentType();
 
@@ -81,9 +85,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property usedTime: When Period is Month, the value of UsedTime is [1-9].
+     * Property usedTime: The subscription duration.
      * <p>
-     * When Period is Year, the value of UsedTime is [1-3]
+     * Valid values:
+     * When Period is Month, it could be from 1 to 9, 12, 24, 36.
+     * When Period is Year, it could be from 1 to 3.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
         return null;
@@ -283,7 +289,10 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getPaymentType}
-         * @param paymentType Property paymentType: PayType. This parameter is required.
+         * @param paymentType Property paymentType: The billing method of the cluster. This parameter is required.
+         *                    Valid values:
+         *                    Postpaid: pay-as-you-go
+         *                    Prepaid: subscription
          * @return {@code this}
          */
         public Builder paymentType(java.lang.String paymentType) {
@@ -293,7 +302,10 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getPaymentType}
-         * @param paymentType Property paymentType: PayType. This parameter is required.
+         * @param paymentType Property paymentType: The billing method of the cluster. This parameter is required.
+         *                    Valid values:
+         *                    Postpaid: pay-as-you-go
+         *                    Prepaid: subscription
          * @return {@code this}
          */
         public Builder paymentType(com.aliyun.ros.cdk.core.IResolvable paymentType) {
@@ -383,19 +395,23 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getUsedTime}
-         * @param usedTime Property usedTime: When Period is Month, the value of UsedTime is [1-9].
-         *                 When Period is Year, the value of UsedTime is [1-3]
+         * @param usedTime Property usedTime: The subscription duration.
+         *                 Valid values:
+         *                 When Period is Month, it could be from 1 to 9, 12, 24, 36.
+         *                 When Period is Year, it could be from 1 to 3.
          * @return {@code this}
          */
-        public Builder usedTime(java.lang.String usedTime) {
+        public Builder usedTime(java.lang.Number usedTime) {
             this.usedTime = usedTime;
             return this;
         }
 
         /**
          * Sets the value of {@link DBClusterProps#getUsedTime}
-         * @param usedTime Property usedTime: When Period is Month, the value of UsedTime is [1-9].
-         *                 When Period is Year, the value of UsedTime is [1-3]
+         * @param usedTime Property usedTime: The subscription duration.
+         *                 Valid values:
+         *                 When Period is Month, it could be from 1 to 9, 12, 24, 36.
+         *                 When Period is Year, it could be from 1 to 3.
          * @return {@code this}
          */
         public Builder usedTime(com.aliyun.ros.cdk.core.IResolvable usedTime) {

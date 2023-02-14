@@ -4,6 +4,8 @@
 @alicloud/ros-cdk-emr.ClusterProps=com.aliyun.ros.cdk.emr.ClusterProps
 @alicloud/ros-cdk-emr.ClusterServiceConfigs=com.aliyun.ros.cdk.emr.ClusterServiceConfigs
 @alicloud/ros-cdk-emr.ClusterServiceConfigsProps=com.aliyun.ros.cdk.emr.ClusterServiceConfigsProps
+@alicloud/ros-cdk-emr.FlowProject=com.aliyun.ros.cdk.emr.FlowProject
+@alicloud/ros-cdk-emr.FlowProjectProps=com.aliyun.ros.cdk.emr.FlowProjectProps
 @alicloud/ros-cdk-emr.RosCluster=com.aliyun.ros.cdk.emr.RosCluster
 @alicloud/ros-cdk-emr.RosCluster.BootstrapActionProperty=com.aliyun.ros.cdk.emr.RosCluster$BootstrapActionProperty
 @alicloud/ros-cdk-emr.RosCluster.ConfigProperty=com.aliyun.ros.cdk.emr.RosCluster$ConfigProperty
@@ -28,3 +30,5 @@
 @alicloud/ros-cdk-emr.RosClusterServiceConfigs=com.aliyun.ros.cdk.emr.RosClusterServiceConfigs
 @alicloud/ros-cdk-emr.RosClusterServiceConfigs.ServiceConfigsProperty=com.aliyun.ros.cdk.emr.RosClusterServiceConfigs$ServiceConfigsProperty
 @alicloud/ros-cdk-emr.RosClusterServiceConfigsProps=com.aliyun.ros.cdk.emr.RosClusterServiceConfigsProps
+@alicloud/ros-cdk-emr.RosFlowProject=com.aliyun.ros.cdk.emr.RosFlowProject
+@alicloud/ros-cdk-emr.RosFlowProjectProps=com.aliyun.ros.cdk.emr.RosFlowProjectProps

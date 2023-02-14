@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS resource type:  `ALIYUN::ESS::ScalingGroupEnable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.522Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.520Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroupEnable")
 public class ScalingGroupEnable extends com.aliyun.ros.cdk.core.Resource {
 
@@ -156,6 +156,48 @@ public class ScalingGroupEnable extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder scalingGroupId(final com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
             this.props.scalingGroupId(scalingGroupId);
+            return this;
+        }
+
+        /**
+         * Property attachOptions: Options for attaching instances.
+         * <p>
+         * @return {@code this}
+         * @param attachOptions Property attachOptions: Options for attaching instances. This parameter is required.
+         */
+        public Builder attachOptions(final com.aliyun.ros.cdk.core.IResolvable attachOptions) {
+            this.props.attachOptions(attachOptions);
+            return this;
+        }
+        /**
+         * Property attachOptions: Options for attaching instances.
+         * <p>
+         * @return {@code this}
+         * @param attachOptions Property attachOptions: Options for attaching instances. This parameter is required.
+         */
+        public Builder attachOptions(final com.aliyun.ros.cdk.ess.RosScalingGroupEnable.AttachOptionsProperty attachOptions) {
+            this.props.attachOptions(attachOptions);
+            return this;
+        }
+
+        /**
+         * Property detachOptions: Options for detaching instances.
+         * <p>
+         * @return {@code this}
+         * @param detachOptions Property detachOptions: Options for detaching instances. This parameter is required.
+         */
+        public Builder detachOptions(final com.aliyun.ros.cdk.core.IResolvable detachOptions) {
+            this.props.detachOptions(detachOptions);
+            return this;
+        }
+        /**
+         * Property detachOptions: Options for detaching instances.
+         * <p>
+         * @return {@code this}
+         * @param detachOptions Property detachOptions: Options for detaching instances. This parameter is required.
+         */
+        public Builder detachOptions(final com.aliyun.ros.cdk.ess.RosScalingGroupEnable.DetachOptionsProperty detachOptions) {
+            this.props.detachOptions(detachOptions);
             return this;
         }
 

@@ -528,6 +528,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property updatePolicy: Specify the policy at update.</summary>
+        /// <remarks>
+        /// The value can be 'ForNewInstances' or 'ForAllInstances'.
+        /// If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+        /// The default is 'ForNewInstances'
+        /// </remarks>
+        [JsiiProperty(name: "updatePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? UpdatePolicy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property zoneId: The ID of the zone to which the instance belongs.</summary>
         /// <remarks>
         /// For more information,
@@ -956,6 +972,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroupClone.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosInstanceGroupClone.ITagsProperty[]?>();
+            }
+
+            /// <summary>Property updatePolicy: Specify the policy at update.</summary>
+            /// <remarks>
+            /// The value can be 'ForNewInstances' or 'ForAllInstances'.
+            /// If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+            /// The default is 'ForNewInstances'
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "updatePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? UpdatePolicy
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property zoneId: The ID of the zone to which the instance belongs.</summary>

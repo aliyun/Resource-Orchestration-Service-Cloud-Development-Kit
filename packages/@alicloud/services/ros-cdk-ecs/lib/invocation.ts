@@ -14,7 +14,7 @@ export interface InvocationProps {
     readonly commandId: string | ros.IResolvable;
 
     /**
-     * Property instanceIds: The instance id list. Select up to 50 instances at a time.Instances status must be running.
+     * Property instanceIds: The instance id list. Instances status must be running.
      */
     readonly instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
 

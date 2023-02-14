@@ -75,7 +75,7 @@ export interface InstanceGroupProps {
     readonly eniMappings?: Array<RosInstanceGroup.EniMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property hostName: Host name of created ecs instance. at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components. 
+     * Property hostName: Host name of created ecs instance. at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 64 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components. 
      * Support to use the regular expression to set the different instance name for each ECS instance. HostName could be specified as 'name_prefix[begin_number,bits]name_suffix', such as 'host[123,4]tail'. If you creates 3 instances with hostname 'host[123,4]tail', all the host names of instances are host0123tail, host0124tail, host0125tail. The 'name_prefix[begin_number,bits]name_suffix' should follow those rules: 
      * 1. 'name_prefix' is required. 
      * 2. 'name_suffix' is optional. 
@@ -287,6 +287,14 @@ export interface InstanceGroupProps {
     readonly tags?: RosInstanceGroup.TagsProperty[];
 
     /**
+     * Property updatePolicy: Specify the policy at update. 
+     * The value can be 'ForNewInstances' or 'ForAllInstances'.
+     * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
+     * The default is 'ForNewInstances'
+     */
+    readonly updatePolicy?: string | ros.IResolvable;
+
+    /**
      * Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
     readonly userData?: string | ros.IResolvable;
@@ -392,6 +400,7 @@ export class InstanceGroup extends ros.Resource {
             tags: props.tags,
             hostName: props.hostName,
             launchTemplateName: props.launchTemplateName,
+            updatePolicy: props.updatePolicy === undefined || props.updatePolicy === null ? 'ForNewInstances' : props.updatePolicy,
             vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             launchTemplateId: props.launchTemplateId,

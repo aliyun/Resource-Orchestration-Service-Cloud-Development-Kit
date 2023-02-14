@@ -1,3 +1,4 @@
+export * from './rule';
 export * from './uservpcauthorization';
 export * from './zone';
 export * from './zonerecord';

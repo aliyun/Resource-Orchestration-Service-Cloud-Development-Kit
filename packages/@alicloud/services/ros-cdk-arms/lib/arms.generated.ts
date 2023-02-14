@@ -336,6 +336,188 @@ export class RosAlertContactGroup extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::ARMS::ManagedPrometheus`
+ */
+export interface RosManagedPrometheusProps {
+
+    /**
+     * @Property clusterType: The type of the cluster.
+     */
+    readonly clusterType: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The security group ID of the cluster.
+     */
+    readonly securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The vpc ID of the cluster.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The vswith ID of the cluster.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property clusterName: The name of the cluster.
+     */
+    readonly clusterName?: string | ros.IResolvable;
+
+    /**
+     * @Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster. When empty or "free", binds to the shared version of Grafana.
+     */
+    readonly grafanaInstanceId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosManagedPrometheusProps`
+ *
+ * @param properties - the TypeScript properties of a `RosManagedPrometheusProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedPrometheusPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('clusterName', ros.validateString)(properties.clusterName));
+    errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
+    if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterType', ros.validateAllowedValues)({
+          data: properties.clusterType,
+          allowedValues: ["ecs"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
+    errors.collect(ros.propertyValidator('grafanaInstanceId', ros.validateString)(properties.grafanaInstanceId));
+    return errors.wrap('supplied properties not correct for "RosManagedPrometheusProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ARMS::ManagedPrometheus` resource
+ *
+ * @param properties - the TypeScript properties of a `RosManagedPrometheusProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ARMS::ManagedPrometheus` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedPrometheusPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosManagedPrometheusPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ClusterType: ros.stringToRosTemplate(properties.clusterType),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      ClusterName: ros.stringToRosTemplate(properties.clusterName),
+      GrafanaInstanceId: ros.stringToRosTemplate(properties.grafanaInstanceId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ARMS::ManagedPrometheus`
+ */
+export class RosManagedPrometheus extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ARMS::ManagedPrometheus";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ClusterType: The type of the cluster.
+     */
+    public readonly attrClusterType: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The vpc ID of the cluster.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterType: The type of the cluster.
+     */
+    public clusterType: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The security group ID of the cluster.
+     */
+    public securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The vpc ID of the cluster.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The vswith ID of the cluster.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property clusterName: The name of the cluster.
+     */
+    public clusterName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster. When empty or "free", binds to the shared version of Grafana.
+     */
+    public grafanaInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ARMS::ManagedPrometheus`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosManagedPrometheusProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosManagedPrometheus.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClusterType = this.getAtt('ClusterType');
+        this.attrVpcId = this.getAtt('VpcId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterType = props.clusterType;
+        this.securityGroupId = props.securityGroupId;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.clusterName = props.clusterName;
+        this.grafanaInstanceId = props.grafanaInstanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterType: this.clusterType,
+            securityGroupId: this.securityGroupId,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            clusterName: this.clusterName,
+            grafanaInstanceId: this.grafanaInstanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosManagedPrometheusPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::ARMS::RetcodeApp`
  */
 export interface RosRetcodeAppProps {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.993Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.977Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InvocationProps")
 @software.amazon.jsii.Jsii.Proxy(InvocationProps.Jsii$Proxy.class)
 public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,7 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property instanceIds: The instance id list.
      * <p>
-     * Select up to 50 instances at a time.Instances status must be running.
+     * Instances status must be running.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
 
@@ -99,7 +99,7 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InvocationProps#getInstanceIds}
          * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
-         *                    Select up to 50 instances at a time.Instances status must be running.
+         *                    Instances status must be running.
          * @return {@code this}
          */
         public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
@@ -110,7 +110,7 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InvocationProps#getInstanceIds}
          * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
-         *                    Select up to 50 instances at a time.Instances status must be running.
+         *                    Instances status must be running.
          * @return {@code this}
          */
         public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {

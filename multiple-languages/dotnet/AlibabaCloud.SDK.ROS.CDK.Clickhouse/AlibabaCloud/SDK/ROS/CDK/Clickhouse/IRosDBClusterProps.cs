@@ -72,7 +72,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: paymentType: PayType
+        /// <strong>Property</strong>: paymentType: The billing method of the cluster. Valid values:
+        /// Postpaid: pay-as-you-go
+        /// Prepaid: subscription
         /// </remarks>
         [JsiiProperty(name: "paymentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object PaymentType
@@ -133,9 +135,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: usedTime: When Period is Month, the value of UsedTime is [1-9].  When Period is Year, the value of UsedTime is [1-3]
+        /// <strong>Property</strong>: usedTime: The subscription duration. Valid values:
+        /// When Period is Month, it could be from 1 to 9, 12, 24, 36.
+        /// When Period is Year, it could be from 1 to 3.
         /// </remarks>
-        [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? UsedTime
         {
@@ -256,7 +260,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: paymentType: PayType
+            /// <strong>Property</strong>: paymentType: The billing method of the cluster. Valid values:
+            /// Postpaid: pay-as-you-go
+            /// Prepaid: subscription
             /// </remarks>
             [JsiiProperty(name: "paymentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PaymentType
@@ -305,10 +311,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: usedTime: When Period is Month, the value of UsedTime is [1-9].  When Period is Year, the value of UsedTime is [1-3]
+            /// <strong>Property</strong>: usedTime: The subscription duration. Valid values:
+            /// When Period is Month, it could be from 1 to 9, 12, 24, 36.
+            /// When Period is Year, it could be from 1 to 3.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? UsedTime
             {
                 get => GetInstanceProperty<object?>();

@@ -277,7 +277,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         private object _paymentType;
 
         /// <remarks>
-        /// <strong>Property</strong>: paymentType: PayType
+        /// <strong>Property</strong>: paymentType: The billing method of the cluster. Valid values:
+        /// Postpaid: pay-as-you-go
+        /// Prepaid: subscription
         /// </remarks>
         [JsiiProperty(name: "paymentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object PaymentType
@@ -441,10 +443,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         private object? _usedTime;
 
         /// <remarks>
-        /// <strong>Property</strong>: usedTime: When Period is Month, the value of UsedTime is [1-9].  When Period is Year, the value of UsedTime is [1-3]
+        /// <strong>Property</strong>: usedTime: The subscription duration. Valid values:
+        /// When Period is Month, it could be from 1 to 9, 12, 24, 36.
+        /// When Period is Year, it could be from 1 to 3.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? UsedTime
         {
             get => _usedTime;
@@ -454,7 +458,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
                 {
                     switch (value)
                     {
-                        case string cast_cd4240:
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
                             break;
                         case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
                             break;
@@ -464,7 +488,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
                         case null:
                             break;
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 _usedTime = value;

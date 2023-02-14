@@ -587,7 +587,7 @@ export default class CodeGenerator {
         this.code.openBlock(`if(properties.${propName} && (typeof properties.${propName}) !== 'object')`);
         this.code.line(`errors.collect(${CORE}.propertyValidator('${propName}', ${CORE}.validateAllowedPattern)({
           data: properties.${propName},
-          reg: /${Object.values(constraint)[0].replace('/', `\\/`)}/
+          reg: /${Object.values(constraint)[0].replaceAll('/', `\\/`)}/
         }));`);
         this.code.closeBlock();
       }

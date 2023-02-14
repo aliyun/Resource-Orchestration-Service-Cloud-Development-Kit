@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Disk`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.062Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.047Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDiskProps")
 @software.amazon.jsii.Jsii.Proxy(RosDiskProps.Jsii$Proxy.class)
 public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
@@ -57,6 +57,12 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKmsKeyId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMultiAttach() {
         return null;
     }
 
@@ -127,6 +133,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object diskName;
         java.lang.Object encrypted;
         java.lang.Object kmsKeyId;
+        java.lang.Object multiAttach;
         java.lang.Object performanceLevel;
         java.lang.Object provisionedIops;
         java.lang.Object resourceGroupId;
@@ -317,6 +324,26 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDiskProps#getMultiAttach}
+         * @param multiAttach the value to be set.
+         * @return {@code this}
+         */
+        public Builder multiAttach(java.lang.String multiAttach) {
+            this.multiAttach = multiAttach;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDiskProps#getMultiAttach}
+         * @param multiAttach the value to be set.
+         * @return {@code this}
+         */
+        public Builder multiAttach(com.aliyun.ros.cdk.core.IResolvable multiAttach) {
+            this.multiAttach = multiAttach;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDiskProps#getPerformanceLevel}
          * @param performanceLevel the value to be set.
          * @return {@code this}
@@ -492,6 +519,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object diskName;
         private final java.lang.Object encrypted;
         private final java.lang.Object kmsKeyId;
+        private final java.lang.Object multiAttach;
         private final java.lang.Object performanceLevel;
         private final java.lang.Object provisionedIops;
         private final java.lang.Object resourceGroupId;
@@ -516,6 +544,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             this.diskName = software.amazon.jsii.Kernel.get(this, "diskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.multiAttach = software.amazon.jsii.Kernel.get(this, "multiAttach", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.provisionedIops = software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -541,6 +570,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             this.diskName = builder.diskName;
             this.encrypted = builder.encrypted;
             this.kmsKeyId = builder.kmsKeyId;
+            this.multiAttach = builder.multiAttach;
             this.performanceLevel = builder.performanceLevel;
             this.provisionedIops = builder.provisionedIops;
             this.resourceGroupId = builder.resourceGroupId;
@@ -594,6 +624,11 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getKmsKeyId() {
             return this.kmsKeyId;
+        }
+
+        @Override
+        public final java.lang.Object getMultiAttach() {
+            return this.multiAttach;
         }
 
         @Override
@@ -667,6 +702,9 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getKmsKeyId() != null) {
                 data.set("kmsKeyId", om.valueToTree(this.getKmsKeyId()));
             }
+            if (this.getMultiAttach() != null) {
+                data.set("multiAttach", om.valueToTree(this.getMultiAttach()));
+            }
             if (this.getPerformanceLevel() != null) {
                 data.set("performanceLevel", om.valueToTree(this.getPerformanceLevel()));
             }
@@ -718,6 +756,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             if (this.diskName != null ? !this.diskName.equals(that.diskName) : that.diskName != null) return false;
             if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
             if (this.kmsKeyId != null ? !this.kmsKeyId.equals(that.kmsKeyId) : that.kmsKeyId != null) return false;
+            if (this.multiAttach != null ? !this.multiAttach.equals(that.multiAttach) : that.multiAttach != null) return false;
             if (this.performanceLevel != null ? !this.performanceLevel.equals(that.performanceLevel) : that.performanceLevel != null) return false;
             if (this.provisionedIops != null ? !this.provisionedIops.equals(that.provisionedIops) : that.provisionedIops != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -739,6 +778,7 @@ public interface RosDiskProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.diskName != null ? this.diskName.hashCode() : 0);
             result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
             result = 31 * result + (this.kmsKeyId != null ? this.kmsKeyId.hashCode() : 0);
+            result = 31 * result + (this.multiAttach != null ? this.multiAttach.hashCode() : 0);
             result = 31 * result + (this.performanceLevel != null ? this.performanceLevel.hashCode() : 0);
             result = 31 * result + (this.provisionedIops != null ? this.provisionedIops.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

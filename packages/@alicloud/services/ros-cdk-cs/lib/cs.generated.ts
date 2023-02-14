@@ -381,6 +381,13 @@ function RosClusterApplicationPropsValidator(properties: any): ros.ValidationRes
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('yamlContent', ros.requiredValidator)(properties.yamlContent));
+    if(properties.yamlContent && (Array.isArray(properties.yamlContent) || (typeof properties.yamlContent) === 'string')) {
+        errors.collect(ros.propertyValidator('yamlContent', ros.validateLength)({
+            data: properties.yamlContent.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('yamlContent', ros.validateString)(properties.yamlContent));
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));

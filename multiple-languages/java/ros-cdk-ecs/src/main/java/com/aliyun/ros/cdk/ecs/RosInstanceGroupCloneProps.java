@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.107Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.094Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceGroupCloneProps.Jsii$Proxy.class)
 public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -246,6 +246,12 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUpdatePolicy() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
@@ -300,6 +306,7 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
         java.lang.Object systemDiskDiskName;
         java.lang.Object systemDiskProvisionedIops;
         java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
+        java.lang.Object updatePolicy;
         java.lang.Object zoneId;
 
         /**
@@ -1094,6 +1101,26 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupCloneProps#getUpdatePolicy}
+         * @param updatePolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder updatePolicy(java.lang.String updatePolicy) {
+            this.updatePolicy = updatePolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupCloneProps#getUpdatePolicy}
+         * @param updatePolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder updatePolicy(com.aliyun.ros.cdk.core.IResolvable updatePolicy) {
+            this.updatePolicy = updatePolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupCloneProps#getZoneId}
          * @param zoneId the value to be set.
          * @return {@code this}
@@ -1169,6 +1196,7 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
         private final java.lang.Object systemDiskDiskName;
         private final java.lang.Object systemDiskProvisionedIops;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
+        private final java.lang.Object updatePolicy;
         private final java.lang.Object zoneId;
 
         /**
@@ -1217,6 +1245,7 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
             this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskProvisionedIops = software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty.class)));
+            this.updatePolicy = software.amazon.jsii.Kernel.get(this, "updatePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -1266,6 +1295,7 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
             this.systemDiskDiskName = builder.systemDiskDiskName;
             this.systemDiskProvisionedIops = builder.systemDiskProvisionedIops;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty>)builder.tags;
+            this.updatePolicy = builder.updatePolicy;
             this.zoneId = builder.zoneId;
         }
 
@@ -1470,6 +1500,11 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
+        public final java.lang.Object getUpdatePolicy() {
+            return this.updatePolicy;
+        }
+
+        @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
@@ -1596,6 +1631,9 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getUpdatePolicy() != null) {
+                data.set("updatePolicy", om.valueToTree(this.getUpdatePolicy()));
+            }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
             }
@@ -1657,6 +1695,7 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
             if (this.systemDiskDiskName != null ? !this.systemDiskDiskName.equals(that.systemDiskDiskName) : that.systemDiskDiskName != null) return false;
             if (this.systemDiskProvisionedIops != null ? !this.systemDiskProvisionedIops.equals(that.systemDiskProvisionedIops) : that.systemDiskProvisionedIops != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.updatePolicy != null ? !this.updatePolicy.equals(that.updatePolicy) : that.updatePolicy != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
@@ -1702,6 +1741,7 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
             result = 31 * result + (this.systemDiskDiskName != null ? this.systemDiskDiskName.hashCode() : 0);
             result = 31 * result + (this.systemDiskProvisionedIops != null ? this.systemDiskProvisionedIops.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.updatePolicy != null ? this.updatePolicy.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }

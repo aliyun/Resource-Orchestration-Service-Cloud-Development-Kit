@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * A ROS template type:  `ALIYUN::ClickHouse::DBCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:18.262Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.246Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -465,7 +465,7 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setUsedTime(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+    public void setUsedTime(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
         software.amazon.jsii.Kernel.set(this, "usedTime", value);
     }
 
@@ -763,7 +763,7 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param usedTime This parameter is required.
          */
-        public Builder usedTime(final java.lang.String usedTime) {
+        public Builder usedTime(final java.lang.Number usedTime) {
             this.props.usedTime(usedTime);
             return this;
         }

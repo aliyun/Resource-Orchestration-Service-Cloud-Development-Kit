@@ -44,9 +44,16 @@ export interface ShardingInstanceProps {
     readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
-     * Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2
+     * Property engineVersion: Database instance version.
      */
     readonly engineVersion?: string | ros.IResolvable;
+
+    /**
+     * Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment.
+     * When the value of the EngineVersion is 4.4 and later, this parameter is available and required.
+     * The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
+     */
+    readonly hiddenZoneId?: string | ros.IResolvable;
 
     /**
      * Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
@@ -74,6 +81,12 @@ export interface ShardingInstanceProps {
     readonly restoreTime?: string | ros.IResolvable;
 
     /**
+     * Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment.
+     * When the value of the EngineVersion is 4.4 and later, this parameter is available and required.The value of this parameter cannot be the same as that of ZoneId and HiddenZoneId.
+     */
+    readonly secondaryZoneId?: string | ros.IResolvable;
+
+    /**
      * Property securityIpArray: Security ips to add or remove.
      */
     readonly securityIpArray?: string | ros.IResolvable;
@@ -87,6 +100,13 @@ export interface ShardingInstanceProps {
      * Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
     readonly storageEngine?: string | ros.IResolvable;
+
+    /**
+     * Property storageType: The storage type of the instance.
+     * Instances of MongoDB 4.4 and later only support cloud disks. cloud_essd1 is selected if you leave this parameter empty.
+     * Instances of MongoDB 4.2 and earlier support only local disks. local_ssd is selected if you leave this parameter empty.
+     */
+    readonly storageType?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -155,16 +175,19 @@ export class ShardingInstance extends ros.Resource {
         const rosShardingInstance = new RosShardingInstance(this, id,  {
             tdeStatus: props.tdeStatus,
             engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '3.4' : props.engineVersion,
-            zoneId: props.zoneId,
+            storageType: props.storageType,
             resourceGroupId: props.resourceGroupId,
+            zoneId: props.zoneId,
+            hiddenZoneId: props.hiddenZoneId,
             autoRenew: props.autoRenew,
             vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             securityIpArray: props.securityIpArray,
             mongos: props.mongos,
             storageEngine: props.storageEngine === undefined || props.storageEngine === null ? 'WiredTiger' : props.storageEngine,
-            restoreTime: props.restoreTime,
+            secondaryZoneId: props.secondaryZoneId,
             accountPassword: props.accountPassword,
+            restoreTime: props.restoreTime,
             vpcId: props.vpcId,
             protocolType: props.protocolType,
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
@@ -172,8 +195,8 @@ export class ShardingInstance extends ros.Resource {
             configServer: props.configServer,
             srcDbInstanceId: props.srcDbInstanceId,
             replicaSet: props.replicaSet,
-            dbInstanceDescription: props.dbInstanceDescription,
             tags: props.tags,
+            dbInstanceDescription: props.dbInstanceDescription,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosShardingInstance;
         this.attrDbInstanceId = rosShardingInstance.attrDbInstanceId;

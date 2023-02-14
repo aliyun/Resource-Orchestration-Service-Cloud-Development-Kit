@@ -95,20 +95,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: secondaryCidrBlock: The secondary IPv4 CIDR block.
-        /// You can specify one of the following standard IPv4 CIDR blocks or their
-        /// subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
-        /// and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
-        /// submit a ticket. When you add a secondary IPv4 CIDR block, take note of
-        /// the following rules:
-        /// 1. The CIDR block cannot start with 0.
-        /// 2. The subnet mask must be 8 to 24 bits in length.
-        /// The secondary CIDR block cannot overlap with the primary
-        /// CIDR block or an existing secondary CIDR block.
+        /// <strong>Property</strong>: secondaryCidrBlocks: The secondary IPv4 CIDR blocks.
         /// </remarks>
-        [JsiiProperty(name: "secondaryCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "secondaryCidrBlocks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? SecondaryCidrBlock
+        object? SecondaryCidrBlocks
         {
             get
             {
@@ -232,20 +223,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: secondaryCidrBlock: The secondary IPv4 CIDR block.
-            /// You can specify one of the following standard IPv4 CIDR blocks or their
-            /// subnets as the secondary IPv4 CIDR block: 192.168.0.0/16, 172.16.0.0/12,
-            /// and 10.0.0.0/8.To use a public CIDR block as the secondary IPv4 CIDR block,
-            /// submit a ticket. When you add a secondary IPv4 CIDR block, take note of
-            /// the following rules:
-            /// 1. The CIDR block cannot start with 0.
-            /// 2. The subnet mask must be 8 to 24 bits in length.
-            /// The secondary CIDR block cannot overlap with the primary
-            /// CIDR block or an existing secondary CIDR block.
+            /// <strong>Property</strong>: secondaryCidrBlocks: The secondary IPv4 CIDR blocks.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "secondaryCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? SecondaryCidrBlock
+            [JsiiProperty(name: "secondaryCidrBlocks", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? SecondaryCidrBlocks
             {
                 get => GetInstanceProperty<object?>();
             }

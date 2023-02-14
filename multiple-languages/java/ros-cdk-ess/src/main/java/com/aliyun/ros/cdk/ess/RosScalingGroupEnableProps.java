@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingGroupEnable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.71.0 (build f1f58ae)", date = "2022-11-30T05:21:19.474Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.476Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupEnableProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingGroupEnableProps.Jsii$Proxy.class)
 public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,6 +11,18 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroupId();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAttachOptions() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDetachOptions() {
+        return null;
+    }
 
     /**
      */
@@ -53,6 +65,8 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScalingGroupEnableProps> {
         java.lang.Object scalingGroupId;
+        java.lang.Object attachOptions;
+        java.lang.Object detachOptions;
         java.lang.Object instanceIds;
         java.lang.Object removeInstanceIds;
         java.lang.Object scalingConfigurationId;
@@ -76,6 +90,46 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
          */
         public Builder scalingGroupId(com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
             this.scalingGroupId = scalingGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupEnableProps#getAttachOptions}
+         * @param attachOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder attachOptions(com.aliyun.ros.cdk.core.IResolvable attachOptions) {
+            this.attachOptions = attachOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupEnableProps#getAttachOptions}
+         * @param attachOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder attachOptions(com.aliyun.ros.cdk.ess.RosScalingGroupEnable.AttachOptionsProperty attachOptions) {
+            this.attachOptions = attachOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupEnableProps#getDetachOptions}
+         * @param detachOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder detachOptions(com.aliyun.ros.cdk.core.IResolvable detachOptions) {
+            this.detachOptions = detachOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingGroupEnableProps#getDetachOptions}
+         * @param detachOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder detachOptions(com.aliyun.ros.cdk.ess.RosScalingGroupEnable.DetachOptionsProperty detachOptions) {
+            this.detachOptions = detachOptions;
             return this;
         }
 
@@ -196,6 +250,8 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosScalingGroupEnableProps {
         private final java.lang.Object scalingGroupId;
+        private final java.lang.Object attachOptions;
+        private final java.lang.Object detachOptions;
         private final java.lang.Object instanceIds;
         private final java.lang.Object removeInstanceIds;
         private final java.lang.Object scalingConfigurationId;
@@ -209,6 +265,8 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.attachOptions = software.amazon.jsii.Kernel.get(this, "attachOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.detachOptions = software.amazon.jsii.Kernel.get(this, "detachOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.removeInstanceIds = software.amazon.jsii.Kernel.get(this, "removeInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingConfigurationId = software.amazon.jsii.Kernel.get(this, "scalingConfigurationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -222,6 +280,8 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.scalingGroupId = java.util.Objects.requireNonNull(builder.scalingGroupId, "scalingGroupId is required");
+            this.attachOptions = builder.attachOptions;
+            this.detachOptions = builder.detachOptions;
             this.instanceIds = builder.instanceIds;
             this.removeInstanceIds = builder.removeInstanceIds;
             this.scalingConfigurationId = builder.scalingConfigurationId;
@@ -232,6 +292,16 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
         @Override
         public final java.lang.Object getScalingGroupId() {
             return this.scalingGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getAttachOptions() {
+            return this.attachOptions;
+        }
+
+        @Override
+        public final java.lang.Object getDetachOptions() {
+            return this.detachOptions;
         }
 
         @Override
@@ -266,6 +336,12 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("scalingGroupId", om.valueToTree(this.getScalingGroupId()));
+            if (this.getAttachOptions() != null) {
+                data.set("attachOptions", om.valueToTree(this.getAttachOptions()));
+            }
+            if (this.getDetachOptions() != null) {
+                data.set("detachOptions", om.valueToTree(this.getDetachOptions()));
+            }
             if (this.getInstanceIds() != null) {
                 data.set("instanceIds", om.valueToTree(this.getInstanceIds()));
             }
@@ -300,6 +376,8 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
             RosScalingGroupEnableProps.Jsii$Proxy that = (RosScalingGroupEnableProps.Jsii$Proxy) o;
 
             if (!scalingGroupId.equals(that.scalingGroupId)) return false;
+            if (this.attachOptions != null ? !this.attachOptions.equals(that.attachOptions) : that.attachOptions != null) return false;
+            if (this.detachOptions != null ? !this.detachOptions.equals(that.detachOptions) : that.detachOptions != null) return false;
             if (this.instanceIds != null ? !this.instanceIds.equals(that.instanceIds) : that.instanceIds != null) return false;
             if (this.removeInstanceIds != null ? !this.removeInstanceIds.equals(that.removeInstanceIds) : that.removeInstanceIds != null) return false;
             if (this.scalingConfigurationId != null ? !this.scalingConfigurationId.equals(that.scalingConfigurationId) : that.scalingConfigurationId != null) return false;
@@ -310,6 +388,8 @@ public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSer
         @Override
         public final int hashCode() {
             int result = this.scalingGroupId.hashCode();
+            result = 31 * result + (this.attachOptions != null ? this.attachOptions.hashCode() : 0);
+            result = 31 * result + (this.detachOptions != null ? this.detachOptions.hashCode() : 0);
             result = 31 * result + (this.instanceIds != null ? this.instanceIds.hashCode() : 0);
             result = 31 * result + (this.removeInstanceIds != null ? this.removeInstanceIds.hashCode() : 0);
             result = 31 * result + (this.scalingConfigurationId != null ? this.scalingConfigurationId.hashCode() : 0);
