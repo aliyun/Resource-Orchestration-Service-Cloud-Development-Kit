@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dfs;
 /**
  * A ROS resource type:  `ALIYUN::DFS::MountPoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.686Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.894Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.MountPoint")
 public class MountPoint extends com.aliyun.ros.cdk.core.Resource {
 

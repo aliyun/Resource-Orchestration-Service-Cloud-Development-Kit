@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.105Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.360Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocation")
 public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -54,27 +54,15 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
         return software.amazon.jsii.Kernel.get(this, "attrInvokeInstances", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInvokeResults() {
+        return software.amazon.jsii.Kernel.get(this, "attrInvokeResults", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
     @Override
     protected @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> getRosProperties() {
         return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.get(this, "rosProperties", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getCommandId() {
-        return software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setCommandId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "commandId", java.util.Objects.requireNonNull(value, "commandId is required"));
-    }
-
-    /**
-     */
-    public void setCommandId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "commandId", java.util.Objects.requireNonNull(value, "commandId is required"));
     }
 
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -106,6 +94,42 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInstanceIds(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceIds", java.util.Objects.requireNonNull(value, "instanceIds is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCommandId() {
+        return software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCommandId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "commandId", value);
+    }
+
+    /**
+     */
+    public void setCommandId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "commandId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCommandName() {
+        return software.amazon.jsii.Kernel.get(this, "commandName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCommandName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "commandName", value);
+    }
+
+    /**
+     */
+    public void setCommandName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "commandName", value);
     }
 
     /**
@@ -220,6 +244,23 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param instanceIds This parameter is required.
+         */
+        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
+            this.props.instanceIds(instanceIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceIds This parameter is required.
+         */
+        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+            this.props.instanceIds(instanceIds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param commandId This parameter is required.
          */
         public Builder commandId(final java.lang.String commandId) {
@@ -237,18 +278,18 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param instanceIds This parameter is required.
+         * @param commandName This parameter is required.
          */
-        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
-            this.props.instanceIds(instanceIds);
+        public Builder commandName(final java.lang.String commandName) {
+            this.props.commandName(commandName);
             return this;
         }
         /**
          * @return {@code this}
-         * @param instanceIds This parameter is required.
+         * @param commandName This parameter is required.
          */
-        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
-            this.props.instanceIds(instanceIds);
+        public Builder commandName(final com.aliyun.ros.cdk.core.IResolvable commandName) {
+            this.props.commandName(commandName);
             return this;
         }
 

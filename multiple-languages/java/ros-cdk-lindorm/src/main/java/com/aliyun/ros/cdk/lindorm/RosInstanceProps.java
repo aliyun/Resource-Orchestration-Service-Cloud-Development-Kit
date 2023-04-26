@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * Properties for defining a `ALIYUN::Lindorm::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.861Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.202Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -106,6 +106,18 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStreamNum() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStreamSpec() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTsdbNum() {
         return null;
     }
@@ -155,6 +167,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object securityIpList;
         java.lang.Object solrNum;
         java.lang.Object solrSpec;
+        java.lang.Object streamNum;
+        java.lang.Object streamSpec;
         java.lang.Object tsdbNum;
         java.lang.Object tsdbSpec;
         java.lang.Object vSwitchId;
@@ -501,6 +515,46 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getStreamNum}
+         * @param streamNum the value to be set.
+         * @return {@code this}
+         */
+        public Builder streamNum(java.lang.Number streamNum) {
+            this.streamNum = streamNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getStreamNum}
+         * @param streamNum the value to be set.
+         * @return {@code this}
+         */
+        public Builder streamNum(com.aliyun.ros.cdk.core.IResolvable streamNum) {
+            this.streamNum = streamNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getStreamSpec}
+         * @param streamSpec the value to be set.
+         * @return {@code this}
+         */
+        public Builder streamSpec(java.lang.String streamSpec) {
+            this.streamSpec = streamSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getStreamSpec}
+         * @param streamSpec the value to be set.
+         * @return {@code this}
+         */
+        public Builder streamSpec(com.aliyun.ros.cdk.core.IResolvable streamSpec) {
+            this.streamSpec = streamSpec;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getTsdbNum}
          * @param tsdbNum the value to be set.
          * @return {@code this}
@@ -613,6 +667,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object securityIpList;
         private final java.lang.Object solrNum;
         private final java.lang.Object solrSpec;
+        private final java.lang.Object streamNum;
+        private final java.lang.Object streamSpec;
         private final java.lang.Object tsdbNum;
         private final java.lang.Object tsdbSpec;
         private final java.lang.Object vSwitchId;
@@ -641,6 +697,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.solrNum = software.amazon.jsii.Kernel.get(this, "solrNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.solrSpec = software.amazon.jsii.Kernel.get(this, "solrSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.streamNum = software.amazon.jsii.Kernel.get(this, "streamNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.streamSpec = software.amazon.jsii.Kernel.get(this, "streamSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tsdbNum = software.amazon.jsii.Kernel.get(this, "tsdbNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tsdbSpec = software.amazon.jsii.Kernel.get(this, "tsdbSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -669,6 +727,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.securityIpList = builder.securityIpList;
             this.solrNum = builder.solrNum;
             this.solrSpec = builder.solrSpec;
+            this.streamNum = builder.streamNum;
+            this.streamSpec = builder.streamSpec;
             this.tsdbNum = builder.tsdbNum;
             this.tsdbSpec = builder.tsdbSpec;
             this.vSwitchId = builder.vSwitchId;
@@ -761,6 +821,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getStreamNum() {
+            return this.streamNum;
+        }
+
+        @Override
+        public final java.lang.Object getStreamSpec() {
+            return this.streamSpec;
+        }
+
+        @Override
         public final java.lang.Object getTsdbNum() {
             return this.tsdbNum;
         }
@@ -831,6 +901,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getSolrSpec() != null) {
                 data.set("solrSpec", om.valueToTree(this.getSolrSpec()));
             }
+            if (this.getStreamNum() != null) {
+                data.set("streamNum", om.valueToTree(this.getStreamNum()));
+            }
+            if (this.getStreamSpec() != null) {
+                data.set("streamSpec", om.valueToTree(this.getStreamSpec()));
+            }
             if (this.getTsdbNum() != null) {
                 data.set("tsdbNum", om.valueToTree(this.getTsdbNum()));
             }
@@ -878,6 +954,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
             if (this.solrNum != null ? !this.solrNum.equals(that.solrNum) : that.solrNum != null) return false;
             if (this.solrSpec != null ? !this.solrSpec.equals(that.solrSpec) : that.solrSpec != null) return false;
+            if (this.streamNum != null ? !this.streamNum.equals(that.streamNum) : that.streamNum != null) return false;
+            if (this.streamSpec != null ? !this.streamSpec.equals(that.streamSpec) : that.streamSpec != null) return false;
             if (this.tsdbNum != null ? !this.tsdbNum.equals(that.tsdbNum) : that.tsdbNum != null) return false;
             if (this.tsdbSpec != null ? !this.tsdbSpec.equals(that.tsdbSpec) : that.tsdbSpec != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
@@ -903,6 +981,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
             result = 31 * result + (this.solrNum != null ? this.solrNum.hashCode() : 0);
             result = 31 * result + (this.solrSpec != null ? this.solrSpec.hashCode() : 0);
+            result = 31 * result + (this.streamNum != null ? this.streamNum.hashCode() : 0);
+            result = 31 * result + (this.streamSpec != null ? this.streamSpec.hashCode() : 0);
             result = 31 * result + (this.tsdbNum != null ? this.tsdbNum.hashCode() : 0);
             result = 31 * result + (this.tsdbSpec != null ? this.tsdbSpec.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

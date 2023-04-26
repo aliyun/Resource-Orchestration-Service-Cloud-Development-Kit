@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS resource type:  `ALIYUN::ALB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:09.811Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.008Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -359,6 +359,27 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder listenerDescription(final com.aliyun.ros.cdk.core.IResolvable listenerDescription) {
             this.props.listenerDescription(listenerDescription);
+            return this;
+        }
+
+        /**
+         * Property listenerStatus: The status of the listener.
+         * <p>
+         * @return {@code this}
+         * @param listenerStatus Property listenerStatus: The status of the listener. This parameter is required.
+         */
+        public Builder listenerStatus(final java.lang.String listenerStatus) {
+            this.props.listenerStatus(listenerStatus);
+            return this;
+        }
+        /**
+         * Property listenerStatus: The status of the listener.
+         * <p>
+         * @return {@code this}
+         * @param listenerStatus Property listenerStatus: The status of the listener. This parameter is required.
+         */
+        public Builder listenerStatus(final com.aliyun.ros.cdk.core.IResolvable listenerStatus) {
+            this.props.listenerStatus(listenerStatus);
             return this;
         }
 

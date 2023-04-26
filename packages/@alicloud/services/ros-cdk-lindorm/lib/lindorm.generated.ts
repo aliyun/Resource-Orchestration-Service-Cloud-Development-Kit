@@ -133,6 +133,24 @@ export interface RosInstanceProps {
     readonly solrSpec?: string | ros.IResolvable;
 
     /**
+     * @Property streamNum: The number of LindormStream nodes in the instance. Valid values: integers from 0 to 90.
+     */
+    readonly streamNum?: number | ros.IResolvable;
+
+    /**
+     * @Property streamSpec: The specification of LindormStream nodes in the instance. Valid values:
+     * lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+     * lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+     * lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+     * lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+     */
+    readonly streamSpec?: string | ros.IResolvable;
+
+    /**
      * @Property tsdbNum: The number of the LindormTSDB nodes in the instance. The valid values of this parameter depend on the value of the PayType parameter.
      * If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 24.
      * If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 32.
@@ -169,6 +187,7 @@ export interface RosInstanceProps {
 function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('streamSpec', ros.validateString)(properties.streamSpec));
     errors.collect(ros.propertyValidator('instanceStorage', ros.validateNumber)(properties.instanceStorage));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
@@ -179,7 +198,14 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.streamNum && (typeof properties.streamNum) !== 'object') {
+        errors.collect(ros.propertyValidator('streamNum', ros.validateRange)({
+            data: properties.streamNum,
+            min: 0,
+            max: 90,
+          }));
+    }
+    errors.collect(ros.propertyValidator('streamNum', ros.validateNumber)(properties.streamNum));
     if(properties.coldStorage && (typeof properties.coldStorage) !== 'object') {
         errors.collect(ros.propertyValidator('coldStorage', ros.validateRange)({
             data: properties.coldStorage,
@@ -188,13 +214,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('coldStorage', ros.validateNumber)(properties.coldStorage));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('diskCategory', ros.requiredValidator)(properties.diskCategory));
     if(properties.diskCategory && (typeof properties.diskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('diskCategory', ros.validateAllowedValues)({
@@ -203,6 +223,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     if(properties.solrNum && (typeof properties.solrNum) !== 'object') {
@@ -214,8 +241,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('solrNum', ros.validateNumber)(properties.solrNum));
     errors.collect(ros.propertyValidator('solrSpec', ros.validateString)(properties.solrSpec));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.filestoreNum && (typeof properties.filestoreNum) !== 'object') {
         errors.collect(ros.propertyValidator('filestoreNum', ros.validateRange)({
             data: properties.filestoreNum,
@@ -224,6 +249,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('filestoreNum', ros.validateNumber)(properties.filestoreNum));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('securityIpList', ros.listValidator(ros.validateString))(properties.securityIpList));
     errors.collect(ros.propertyValidator('lindormSpec', ros.validateString)(properties.lindormSpec));
     errors.collect(ros.propertyValidator('tsdbSpec', ros.validateString)(properties.tsdbSpec));
@@ -236,6 +263,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('lindormNum', ros.validateNumber)(properties.lindormNum));
+    errors.collect(ros.propertyValidator('filestoreSpec', ros.validateString)(properties.filestoreSpec));
     if(properties.tsdbNum && (typeof properties.tsdbNum) !== 'object') {
         errors.collect(ros.propertyValidator('tsdbNum', ros.validateRange)({
             data: properties.tsdbNum,
@@ -244,7 +272,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tsdbNum', ros.validateNumber)(properties.tsdbNum));
-    errors.collect(ros.propertyValidator('filestoreSpec', ros.validateString)(properties.filestoreSpec));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -286,6 +313,8 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       SecurityIpList: ros.listMapper(ros.stringToRosTemplate)(properties.securityIpList),
       SolrNum: ros.numberToRosTemplate(properties.solrNum),
       SolrSpec: ros.stringToRosTemplate(properties.solrSpec),
+      StreamNum: ros.numberToRosTemplate(properties.streamNum),
+      StreamSpec: ros.stringToRosTemplate(properties.streamSpec),
       TsdbNum: ros.numberToRosTemplate(properties.tsdbNum),
       TsdbSpec: ros.stringToRosTemplate(properties.tsdbSpec),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -446,6 +475,24 @@ export class RosInstance extends ros.RosResource {
     public solrSpec: string | ros.IResolvable | undefined;
 
     /**
+     * @Property streamNum: The number of LindormStream nodes in the instance. Valid values: integers from 0 to 90.
+     */
+    public streamNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property streamSpec: The specification of LindormStream nodes in the instance. Valid values:
+     * lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+     * lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+     * lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+     * lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+     */
+    public streamSpec: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tsdbNum: The number of the LindormTSDB nodes in the instance. The valid values of this parameter depend on the value of the PayType parameter.
      * If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 24.
      * If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 32.
@@ -501,6 +548,8 @@ export class RosInstance extends ros.RosResource {
         this.securityIpList = props.securityIpList;
         this.solrNum = props.solrNum;
         this.solrSpec = props.solrSpec;
+        this.streamNum = props.streamNum;
+        this.streamSpec = props.streamSpec;
         this.tsdbNum = props.tsdbNum;
         this.tsdbSpec = props.tsdbSpec;
         this.vSwitchId = props.vSwitchId;
@@ -527,6 +576,8 @@ export class RosInstance extends ros.RosResource {
             securityIpList: this.securityIpList,
             solrNum: this.solrNum,
             solrSpec: this.solrSpec,
+            streamNum: this.streamNum,
+            streamSpec: this.streamSpec,
             tsdbNum: this.tsdbNum,
             tsdbSpec: this.tsdbSpec,
             vSwitchId: this.vSwitchId,
@@ -741,6 +792,24 @@ export interface RosMultiZoneInstanceProps {
     readonly standbyZoneId?: string | ros.IResolvable;
 
     /**
+     * @Property streamNum: The number of LindormStream nodes in the instance. Valid values: integers from 0 to 90.
+     */
+    readonly streamNum?: number | ros.IResolvable;
+
+    /**
+     * @Property streamSpec: The specification of LindormStream nodes in the instance. Valid values:
+     * lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+     * lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+     * lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+     * lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+     */
+    readonly streamSpec?: string | ros.IResolvable;
+
+    /**
      * @Property tsdbNum: The number of the LindormTSDB nodes in the instance. The valid values of this parameter depend on the value of the PayType parameter.
      * If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 24.
      * If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 32.
@@ -804,6 +873,7 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
     }
     errors.collect(ros.propertyValidator('tsdbNum', ros.validateNumber)(properties.tsdbNum));
     errors.collect(ros.propertyValidator('arbiterZoneId', ros.validateString)(properties.arbiterZoneId));
+    errors.collect(ros.propertyValidator('streamSpec', ros.validateString)(properties.streamSpec));
     errors.collect(ros.propertyValidator('primaryZoneId', ros.validateString)(properties.primaryZoneId));
     errors.collect(ros.propertyValidator('multiZoneCombination', ros.validateString)(properties.multiZoneCombination));
     if(properties.coreSingleStorage && (typeof properties.coreSingleStorage) !== 'object') {
@@ -814,6 +884,14 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('coreSingleStorage', ros.validateNumber)(properties.coreSingleStorage));
+    if(properties.streamNum && (typeof properties.streamNum) !== 'object') {
+        errors.collect(ros.propertyValidator('streamNum', ros.validateRange)({
+            data: properties.streamNum,
+            min: 0,
+            max: 90,
+          }));
+    }
+    errors.collect(ros.propertyValidator('streamNum', ros.validateNumber)(properties.streamNum));
     if(properties.coldStorage && (typeof properties.coldStorage) !== 'object') {
         errors.collect(ros.propertyValidator('coldStorage', ros.validateRange)({
             data: properties.coldStorage,
@@ -822,6 +900,7 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('coldStorage', ros.validateNumber)(properties.coldStorage));
+    errors.collect(ros.propertyValidator('logSpec', ros.validateString)(properties.logSpec));
     errors.collect(ros.propertyValidator('diskCategory', ros.requiredValidator)(properties.diskCategory));
     if(properties.diskCategory && (typeof properties.diskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('diskCategory', ros.validateAllowedValues)({
@@ -830,7 +909,6 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
-    errors.collect(ros.propertyValidator('logSpec', ros.validateString)(properties.logSpec));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -842,6 +920,8 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('arbiterVSwitchId', ros.validateString)(properties.arbiterVSwitchId));
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.filestoreNum && (typeof properties.filestoreNum) !== 'object') {
         errors.collect(ros.propertyValidator('filestoreNum', ros.validateRange)({
             data: properties.filestoreNum,
@@ -850,8 +930,6 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('filestoreNum', ros.validateNumber)(properties.filestoreNum));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('securityIpList', ros.listValidator(ros.validateString))(properties.securityIpList));
     errors.collect(ros.propertyValidator('lindormSpec', ros.validateString)(properties.lindormSpec));
     errors.collect(ros.propertyValidator('tsdbSpec', ros.validateString)(properties.tsdbSpec));
@@ -931,6 +1009,8 @@ function rosMultiZoneInstancePropsToRosTemplate(properties: any, enableResourceP
       SolrSpec: ros.stringToRosTemplate(properties.solrSpec),
       StandbyVSwitchId: ros.stringToRosTemplate(properties.standbyVSwitchId),
       StandbyZoneId: ros.stringToRosTemplate(properties.standbyZoneId),
+      StreamNum: ros.numberToRosTemplate(properties.streamNum),
+      StreamSpec: ros.stringToRosTemplate(properties.streamSpec),
       TsdbNum: ros.numberToRosTemplate(properties.tsdbNum),
       TsdbSpec: ros.stringToRosTemplate(properties.tsdbSpec),
     };
@@ -1161,6 +1241,24 @@ export class RosMultiZoneInstance extends ros.RosResource {
     public standbyZoneId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property streamNum: The number of LindormStream nodes in the instance. Valid values: integers from 0 to 90.
+     */
+    public streamNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property streamSpec: The specification of LindormStream nodes in the instance. Valid values:
+     * lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+     * lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+     * lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+     * lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+     */
+    public streamSpec: string | ros.IResolvable | undefined;
+
+    /**
      * @Property tsdbNum: The number of the LindormTSDB nodes in the instance. The valid values of this parameter depend on the value of the PayType parameter.
      * If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 24.
      * If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 32.
@@ -1217,6 +1315,8 @@ export class RosMultiZoneInstance extends ros.RosResource {
         this.solrSpec = props.solrSpec;
         this.standbyVSwitchId = props.standbyVSwitchId;
         this.standbyZoneId = props.standbyZoneId;
+        this.streamNum = props.streamNum;
+        this.streamSpec = props.streamSpec;
         this.tsdbNum = props.tsdbNum;
         this.tsdbSpec = props.tsdbSpec;
     }
@@ -1252,6 +1352,8 @@ export class RosMultiZoneInstance extends ros.RosResource {
             solrSpec: this.solrSpec,
             standbyVSwitchId: this.standbyVSwitchId,
             standbyZoneId: this.standbyZoneId,
+            streamNum: this.streamNum,
+            streamSpec: this.streamSpec,
             tsdbNum: this.tsdbNum,
             tsdbSpec: this.tsdbSpec,
         };

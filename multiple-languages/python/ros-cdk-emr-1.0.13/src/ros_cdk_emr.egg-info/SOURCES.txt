@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+NOTICE
+README.md
+pyproject.toml
+setup.py
+src/ros_cdk_emr/__init__.py
+src/ros_cdk_emr/py.typed
+src/ros_cdk_emr.egg-info/PKG-INFO
+src/ros_cdk_emr.egg-info/SOURCES.txt
+src/ros_cdk_emr.egg-info/dependency_links.txt
+src/ros_cdk_emr.egg-info/requires.txt
+src/ros_cdk_emr.egg-info/top_level.txt
+src/ros_cdk_emr/_jsii/__init__.py
+src/ros_cdk_emr/_jsii/ros-cdk-emr@1.0.13.jsii.tgz

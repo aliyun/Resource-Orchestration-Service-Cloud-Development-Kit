@@ -23,6 +23,11 @@ export interface ClusterApplicationProps {
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
      */
     readonly defaultNamespace?: string | ros.IResolvable;
+
+    /**
+     * Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+     */
+    readonly defaultNamespaceDeletion?: boolean | ros.IResolvable;
 }
 
 /**
@@ -54,6 +59,7 @@ export class ClusterApplication extends ros.Resource {
             yamlContent: props.yamlContent,
             clusterId: props.clusterId,
             defaultNamespace: props.defaultNamespace === undefined || props.defaultNamespace === null ? 'default' : props.defaultNamespace,
+            defaultNamespaceDeletion: props.defaultNamespaceDeletion,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosClusterApplication;
         this.attrClusterId = rosClusterApplication.attrClusterId;

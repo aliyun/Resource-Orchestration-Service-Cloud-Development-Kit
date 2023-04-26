@@ -3,6 +3,278 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::CR::Instance`
+ */
+export interface RosInstanceProps {
+
+    /**
+     * @Property imageScanner: Security scan engine.
+     */
+    readonly imageScanner: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).
+     */
+    readonly instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The Value configuration of the Group 1 attribute of Container Mirror Service Enterprise Edition. Valid values:
+     * Basic: Basic instance
+     * Standard: Standard instance
+     * Advanced: Advanced Edition Instance.
+     */
+    readonly instanceType: string | ros.IResolvable;
+
+    /**
+     * @Property period: Prepaid cycle. The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     */
+    readonly period: number | ros.IResolvable;
+
+    /**
+     * @Property instanceStorageName: Custom OSS Bucket name.
+     */
+    readonly instanceStorageName?: string | ros.IResolvable;
+
+    /**
+     * @Property renewalStatus: Automatic renewal status, value:
+     * - AutoRenewal: automatic renewal.
+     * - ManualRenewal: manual renewal.
+     * Default ManualRenewal.
+     */
+    readonly renewalStatus?: string | ros.IResolvable;
+
+    /**
+     * @Property renewPeriod: Automatic renewal cycle, in months.
+     * When RenewalStatus is set to AutoRenewal, it must be set.
+     */
+    readonly renewPeriod?: number | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceStorageName', ros.validateString)(properties.instanceStorageName));
+    errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
+    if(properties.instanceName && (typeof properties.instanceName) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceName', ros.validateAllowedPattern)({
+          data: properties.instanceName,
+          reg: /^[a-z0-9][a-z0-9-]{1,28}[a-z0-9]$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('imageScanner', ros.requiredValidator)(properties.imageScanner));
+    if(properties.imageScanner && (typeof properties.imageScanner) !== 'object') {
+        errors.collect(ros.propertyValidator('imageScanner', ros.validateAllowedValues)({
+          data: properties.imageScanner,
+          allowedValues: ["ACR","SAS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('imageScanner', ros.validateString)(properties.imageScanner));
+    if(properties.renewalStatus && (typeof properties.renewalStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('renewalStatus', ros.validateAllowedValues)({
+          data: properties.renewalStatus,
+          allowedValues: ["AutoRenewal","ManualRenewal"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('renewalStatus', ros.validateString)(properties.renewalStatus));
+    errors.collect(ros.propertyValidator('renewPeriod', ros.validateNumber)(properties.renewPeriod));
+    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,6,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
+          data: properties.instanceType,
+          allowedValues: ["Basic","Standard","Advanced"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CR::Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CR::Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      ImageScanner: ros.stringToRosTemplate(properties.imageScanner),
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      Period: ros.numberToRosTemplate(properties.period),
+      InstanceStorageName: ros.stringToRosTemplate(properties.instanceStorageName),
+      RenewalStatus: ros.stringToRosTemplate(properties.renewalStatus),
+      RenewPeriod: ros.numberToRosTemplate(properties.renewPeriod),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CR::Instance`
+ */
+export class RosInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::Instance";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The first ID of the resource.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: InstanceName.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceSpecification: InstanceSpecification.
+     */
+    public readonly attrInstanceSpecification: ros.IResolvable;
+
+    /**
+     * @Attribute ModifiedTime: Last modification time.
+     */
+    public readonly attrModifiedTime: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property imageScanner: Security scan engine.
+     */
+    public imageScanner: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: Instance name.The value contains 3 to 30 lowercase letters, digits, and delimiters "-"(it can not be first or last).
+     */
+    public instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The Value configuration of the Group 1 attribute of Container Mirror Service Enterprise Edition. Valid values:
+     * Basic: Basic instance
+     * Standard: Standard instance
+     * Advanced: Advanced Edition Instance.
+     */
+    public instanceType: string | ros.IResolvable;
+
+    /**
+     * @Property period: Prepaid cycle. The unit is Monthly, please enter an integer multiple of 12 for annual paid products.
+     */
+    public period: number | ros.IResolvable;
+
+    /**
+     * @Property instanceStorageName: Custom OSS Bucket name.
+     */
+    public instanceStorageName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property renewalStatus: Automatic renewal status, value:
+     * - AutoRenewal: automatic renewal.
+     * - ManualRenewal: manual renewal.
+     * Default ManualRenewal.
+     */
+    public renewalStatus: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property renewPeriod: Automatic renewal cycle, in months.
+     * When RenewalStatus is set to AutoRenewal, it must be set.
+     */
+    public renewPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CR::Instance`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrInstanceSpecification = this.getAtt('InstanceSpecification');
+        this.attrModifiedTime = this.getAtt('ModifiedTime');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.imageScanner = props.imageScanner;
+        this.instanceName = props.instanceName;
+        this.instanceType = props.instanceType;
+        this.period = props.period;
+        this.instanceStorageName = props.instanceStorageName;
+        this.renewalStatus = props.renewalStatus;
+        this.renewPeriod = props.renewPeriod;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            imageScanner: this.imageScanner,
+            instanceName: this.instanceName,
+            instanceType: this.instanceType,
+            period: this.period,
+            instanceStorageName: this.instanceStorageName,
+            renewalStatus: this.renewalStatus,
+            renewPeriod: this.renewPeriod,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::CR::InstanceEndpointAclPolicy`
  */
 export interface RosInstanceEndpointAclPolicyProps {

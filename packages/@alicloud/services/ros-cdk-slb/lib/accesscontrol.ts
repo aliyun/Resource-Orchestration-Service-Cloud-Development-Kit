@@ -14,9 +14,9 @@ export interface AccessControlProps {
     readonly aclName: string | ros.IResolvable;
 
     /**
-     * Property aclEntrys: A list of acl entrys. Each entry can be IP addresses or CIDR blocks. Max length: 50.
+     * Property aclEntries: A list of acl entries. Each entry can be IP addresses or CIDR blocks. Max length: 50.
      */
-    readonly aclEntrys?: Array<RosAccessControl.AclEntrysProperty | ros.IResolvable> | ros.IResolvable;
+    readonly aclEntries?: Array<RosAccessControl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
@@ -60,7 +60,7 @@ export class AccessControl extends ros.Resource {
         super(scope, id);
 
         const rosAccessControl = new RosAccessControl(this, id,  {
-            aclEntrys: props.aclEntrys,
+            aclEntries: props.aclEntries,
             resourceGroupId: props.resourceGroupId,
             addressIpVersion: props.addressIpVersion,
             aclName: props.aclName,

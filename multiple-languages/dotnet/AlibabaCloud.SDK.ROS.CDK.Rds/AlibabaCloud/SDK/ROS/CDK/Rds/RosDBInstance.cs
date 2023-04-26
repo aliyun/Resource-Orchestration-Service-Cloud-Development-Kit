@@ -629,10 +629,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <remarks>
         /// <strong>Property</strong>: category: The edition of the instance. Valid values:
-        /// Basic: specifies to use the Basic Edition.
-        /// HighAvailability: specifies to use the High-availability Edition.
-        /// AlwaysOn: specifies to use the Cluster Edition.
-        /// Finance: specifies to use the Enterprise Edition.
+        /// Basic: RDS Basic Edition
+        /// HighAvailability: RDS High-availability Edition
+        /// cluster: RDS Cluster Edition
+        /// AlwaysOn: RDS Cluster Edition for SQL Server
+        /// Finance: RDS Enterprise Edition
+        /// serverless_basic: RDS Serverless Basic Edition
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

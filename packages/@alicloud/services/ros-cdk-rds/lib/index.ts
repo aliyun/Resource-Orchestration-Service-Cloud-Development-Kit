@@ -1,6 +1,7 @@
 export * from './adinfo';
 export * from './account';
 export * from './accountprivilege';
+export * from './connection';
 export * from './dbinstance';
 export * from './dbinstanceclone';
 export * from './dbinstanceparametergroup';

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ClusterApplication`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.473Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.696Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterApplication")
 public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource {
 
@@ -153,6 +153,31 @@ public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder defaultNamespace(final com.aliyun.ros.cdk.core.IResolvable defaultNamespace) {
             this.props.defaultNamespace(defaultNamespace);
+            return this;
+        }
+
+        /**
+         * Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.
+         * <p>
+         * If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+         * <p>
+         * @return {@code this}
+         * @param defaultNamespaceDeletion Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. This parameter is required.
+         */
+        public Builder defaultNamespaceDeletion(final java.lang.Boolean defaultNamespaceDeletion) {
+            this.props.defaultNamespaceDeletion(defaultNamespaceDeletion);
+            return this;
+        }
+        /**
+         * Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.
+         * <p>
+         * If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+         * <p>
+         * @return {@code this}
+         * @param defaultNamespaceDeletion Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. This parameter is required.
+         */
+        public Builder defaultNamespaceDeletion(final com.aliyun.ros.cdk.core.IResolvable defaultNamespaceDeletion) {
+            this.props.defaultNamespaceDeletion(defaultNamespaceDeletion);
             return this;
         }
 

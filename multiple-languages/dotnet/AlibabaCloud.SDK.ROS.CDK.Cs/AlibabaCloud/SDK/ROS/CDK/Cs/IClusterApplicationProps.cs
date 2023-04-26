@@ -36,6 +36,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.</summary>
+        /// <remarks>
+        /// If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+        /// </remarks>
+        [JsiiProperty(name: "defaultNamespaceDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DefaultNamespaceDeletion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::CS::ClusterApplication`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IClusterApplicationProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.ClusterApplicationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.IClusterApplicationProps
@@ -65,6 +79,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "defaultNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DefaultNamespace
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.</summary>
+            /// <remarks>
+            /// If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "defaultNamespaceDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DefaultNamespaceDeletion
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -14,6 +14,10 @@
 @alicloud/ros-cdk-polardb.DBInstanceProps=com.aliyun.ros.cdk.polardb.DBInstanceProps
 @alicloud/ros-cdk-polardb.DBNodes=com.aliyun.ros.cdk.polardb.DBNodes
 @alicloud/ros-cdk-polardb.DBNodesProps=com.aliyun.ros.cdk.polardb.DBNodesProps
+@alicloud/ros-cdk-polardb.GlobalDatabaseNetwork=com.aliyun.ros.cdk.polardb.GlobalDatabaseNetwork
+@alicloud/ros-cdk-polardb.GlobalDatabaseNetworkProps=com.aliyun.ros.cdk.polardb.GlobalDatabaseNetworkProps
+@alicloud/ros-cdk-polardb.ParameterGroup=com.aliyun.ros.cdk.polardb.ParameterGroup
+@alicloud/ros-cdk-polardb.ParameterGroupProps=com.aliyun.ros.cdk.polardb.ParameterGroupProps
 @alicloud/ros-cdk-polardb.RosAccount=com.aliyun.ros.cdk.polardb.RosAccount
 @alicloud/ros-cdk-polardb.RosAccountPrivilege=com.aliyun.ros.cdk.polardb.RosAccountPrivilege
 @alicloud/ros-cdk-polardb.RosAccountPrivilegeProps=com.aliyun.ros.cdk.polardb.RosAccountPrivilegeProps
@@ -33,3 +37,8 @@
 @alicloud/ros-cdk-polardb.RosDBInstanceProps=com.aliyun.ros.cdk.polardb.RosDBInstanceProps
 @alicloud/ros-cdk-polardb.RosDBNodes=com.aliyun.ros.cdk.polardb.RosDBNodes
 @alicloud/ros-cdk-polardb.RosDBNodesProps=com.aliyun.ros.cdk.polardb.RosDBNodesProps
+@alicloud/ros-cdk-polardb.RosGlobalDatabaseNetwork=com.aliyun.ros.cdk.polardb.RosGlobalDatabaseNetwork
+@alicloud/ros-cdk-polardb.RosGlobalDatabaseNetworkProps=com.aliyun.ros.cdk.polardb.RosGlobalDatabaseNetworkProps
+@alicloud/ros-cdk-polardb.RosParameterGroup=com.aliyun.ros.cdk.polardb.RosParameterGroup
+@alicloud/ros-cdk-polardb.RosParameterGroup.ParametersProperty=com.aliyun.ros.cdk.polardb.RosParameterGroup$ParametersProperty
+@alicloud/ros-cdk-polardb.RosParameterGroupProps=com.aliyun.ros.cdk.polardb.RosParameterGroupProps

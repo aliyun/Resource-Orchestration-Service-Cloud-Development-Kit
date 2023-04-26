@@ -368,6 +368,11 @@ export interface RosClusterApplicationProps {
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
      */
     readonly defaultNamespace?: string | ros.IResolvable;
+
+    /**
+     * @Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+     */
+    readonly defaultNamespaceDeletion?: boolean | ros.IResolvable;
 }
 
 /**
@@ -392,6 +397,7 @@ function RosClusterApplicationPropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('defaultNamespace', ros.validateString)(properties.defaultNamespace));
+    errors.collect(ros.propertyValidator('defaultNamespaceDeletion', ros.validateBoolean)(properties.defaultNamespaceDeletion));
     return errors.wrap('supplied properties not correct for "RosClusterApplicationProps"');
 }
 
@@ -412,6 +418,7 @@ function rosClusterApplicationPropsToRosTemplate(properties: any, enableResource
       ClusterId: ros.stringToRosTemplate(properties.clusterId),
       YamlContent: ros.stringToRosTemplate(properties.yamlContent),
       DefaultNamespace: ros.stringToRosTemplate(properties.defaultNamespace),
+      DefaultNamespaceDeletion: ros.booleanToRosTemplate(properties.defaultNamespaceDeletion),
     };
 }
 
@@ -454,6 +461,11 @@ export class RosClusterApplication extends ros.RosResource {
     public defaultNamespace: string | ros.IResolvable | undefined;
 
     /**
+     * @Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+     */
+    public defaultNamespaceDeletion: boolean | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::CS::ClusterApplication`.
      *
      * @param scope - scope in which this resource is defined
@@ -468,6 +480,7 @@ export class RosClusterApplication extends ros.RosResource {
         this.clusterId = props.clusterId;
         this.yamlContent = props.yamlContent;
         this.defaultNamespace = props.defaultNamespace;
+        this.defaultNamespaceDeletion = props.defaultNamespaceDeletion;
     }
 
 
@@ -476,6 +489,7 @@ export class RosClusterApplication extends ros.RosResource {
             clusterId: this.clusterId,
             yamlContent: this.yamlContent,
             defaultNamespace: this.defaultNamespace,
+            defaultNamespaceDeletion: this.defaultNamespaceDeletion,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -6993,455 +7007,5 @@ function rosManagedKubernetesClusterWorkerDataDisksPropertyToRosTemplate(propert
     return {
       Category: ros.stringToRosTemplate(properties.category),
       Size: ros.numberToRosTemplate(properties.size),
-    };
-}
-
-/**
- * Properties for defining a `ALIYUN::CS::ServerlessKubernetesCluster`
- */
-export interface RosServerlessKubernetesClusterProps {
-
-    /**
-     * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
-     */
-    readonly name: string | ros.IResolvable;
-
-    /**
-     * @Property addons: The add-ons to be installed for the cluster.
-     */
-    readonly addons?: Array<RosServerlessKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property endpointPublicAccess: Whether to enable the public network API Server:
-     * true: which means that the public network API Server is open.
-     * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.
-     */
-    readonly endpointPublicAccess?: boolean | ros.IResolvable;
-
-    /**
-     * @Property kubernetesVersion: The version of the Kubernetes cluster.
-     */
-    readonly kubernetesVersion?: string | ros.IResolvable;
-
-    /**
-     * @Property natGateway: Whether to create a NAT gateway. The value can be true or false. If not set, the system defaults to false.
-     */
-    readonly natGateway?: boolean | ros.IResolvable;
-
-    /**
-     * @Property privateZone: Whether to enable PrivateZone for service discovery.
-     */
-    readonly privateZone?: boolean | ros.IResolvable;
-
-    /**
-     * @Property resourceGroupId: The ID of resource group.
-     */
-    readonly resourceGroupId?: string | ros.IResolvable;
-
-    /**
-     * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
-     */
-    readonly securityGroupId?: string | ros.IResolvable;
-
-    /**
-     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
-     */
-    readonly serviceCidr?: string | ros.IResolvable;
-
-    /**
-     * @Property tags: Tag the cluster.
-     */
-    readonly tags?: RosServerlessKubernetesCluster.TagsProperty[];
-
-    /**
-     * @Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
-     * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
-     */
-    readonly vpcId?: string | ros.IResolvable;
-
-    /**
-     * @Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.
-     */
-    readonly vSwitchId?: string | ros.IResolvable;
-
-    /**
-     * @Property vSwitchIds: The IDs of VSwitches. If you leave this property empty, the system automatically creates a VSwitch.
-     * Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
-     */
-    readonly vSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property zoneId: The zone ID.
-     */
-    readonly zoneId?: string | ros.IResolvable;
-}
-
-/**
- * Determine whether the given properties match those of a `RosServerlessKubernetesClusterProps`
- *
- * @param properties - the TypeScript properties of a `RosServerlessKubernetesClusterProps`
- *
- * @returns the result of the validation.
- */
-function RosServerlessKubernetesClusterPropsValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
-    errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
-        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
-            data: properties.vSwitchIds.length,
-            min: 1,
-            max: 10,
-          }));
-    }
-    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('addons', ros.listValidator(RosServerlessKubernetesCluster_AddonsPropertyValidator))(properties.addons));
-    errors.collect(ros.propertyValidator('natGateway', ros.validateBoolean)(properties.natGateway));
-    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosServerlessKubernetesCluster_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('privateZone', ros.validateBoolean)(properties.privateZone));
-    return errors.wrap('supplied properties not correct for "RosServerlessKubernetesClusterProps"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ServerlessKubernetesCluster` resource
- *
- * @param properties - the TypeScript properties of a `RosServerlessKubernetesClusterProps`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ServerlessKubernetesCluster` resource.
- */
-// @ts-ignore TS6133
-function rosServerlessKubernetesClusterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    if(enableResourcePropertyConstraint) {
-        RosServerlessKubernetesClusterPropsValidator(properties).assertSuccess();
-    }
-    return {
-      Name: ros.stringToRosTemplate(properties.name),
-      Addons: ros.listMapper(rosServerlessKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
-      EndpointPublicAccess: ros.booleanToRosTemplate(properties.endpointPublicAccess),
-      KubernetesVersion: ros.stringToRosTemplate(properties.kubernetesVersion),
-      NatGateway: ros.booleanToRosTemplate(properties.natGateway),
-      PrivateZone: ros.booleanToRosTemplate(properties.privateZone),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
-      Tags: ros.listMapper(rosServerlessKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
-      VpcId: ros.stringToRosTemplate(properties.vpcId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
-      ZoneId: ros.stringToRosTemplate(properties.zoneId),
-    };
-}
-
-/**
- * A ROS template type:  `ALIYUN::CS::ServerlessKubernetesCluster`
- */
-export class RosServerlessKubernetesCluster extends ros.RosResource {
-    /**
-     * The resource type name for this resource class.
-     */
-    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ServerlessKubernetesCluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
-
-    /**
-     * @Attribute APIServerSLBId: The id of API server SLB
-     */
-    public readonly attrApiServerSlbId: ros.IResolvable;
-
-    /**
-     * @Attribute ClusterId: Cluster instance ID.
-     */
-    public readonly attrClusterId: ros.IResolvable;
-
-    /**
-     * @Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
-     */
-    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
-
-    /**
-     * @Attribute Nodes: The list of cluster nodes.
-     */
-    public readonly attrNodes: ros.IResolvable;
-
-    /**
-     * @Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
-     */
-    public readonly attrPrivateUserKubConfig: ros.IResolvable;
-
-    /**
-     * @Attribute ScalingConfigurationId: Scaling configuration id
-     */
-    public readonly attrScalingConfigurationId: ros.IResolvable;
-
-    /**
-     * @Attribute ScalingGroupId: Scaling group id
-     */
-    public readonly attrScalingGroupId: ros.IResolvable;
-
-    /**
-     * @Attribute ScalingRuleId: Scaling rule id
-     */
-    public readonly attrScalingRuleId: ros.IResolvable;
-
-    /**
-     * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
-     */
-    public readonly attrTaskId: ros.IResolvable;
-
-    /**
-     * @Attribute WorkerRamRoleName: Worker ram role name.
-     */
-    public readonly attrWorkerRamRoleName: ros.IResolvable;
-
-    public enableResourcePropertyConstraint: boolean;
-
-
-    /**
-     * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
-     */
-    public name: string | ros.IResolvable;
-
-    /**
-     * @Property addons: The add-ons to be installed for the cluster.
-     */
-    public addons: Array<RosServerlessKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
-     * @Property endpointPublicAccess: Whether to enable the public network API Server:
-     * true: which means that the public network API Server is open.
-     * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.
-     */
-    public endpointPublicAccess: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property kubernetesVersion: The version of the Kubernetes cluster.
-     */
-    public kubernetesVersion: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property natGateway: Whether to create a NAT gateway. The value can be true or false. If not set, the system defaults to false.
-     */
-    public natGateway: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property privateZone: Whether to enable PrivateZone for service discovery.
-     */
-    public privateZone: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property resourceGroupId: The ID of resource group.
-     */
-    public resourceGroupId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
-     */
-    public securityGroupId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
-     */
-    public serviceCidr: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property tags: Tag the cluster.
-     */
-    public tags: RosServerlessKubernetesCluster.TagsProperty[] | undefined;
-
-    /**
-     * @Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
-     * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
-     */
-    public vpcId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.
-     */
-    public vSwitchId: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property vSwitchIds: The IDs of VSwitches. If you leave this property empty, the system automatically creates a VSwitch.
-     * Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
-     */
-    public vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
-     * @Property zoneId: The zone ID.
-     */
-    public zoneId: string | ros.IResolvable | undefined;
-
-    /**
-     * Create a new `ALIYUN::CS::ServerlessKubernetesCluster`.
-     *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
-     */
-    constructor(scope: ros.Construct, id: string, props: RosServerlessKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
-        super(scope, id, { type: RosServerlessKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
-        this.attrClusterId = this.getAtt('ClusterId');
-        this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
-        this.attrNodes = this.getAtt('Nodes');
-        this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
-        this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
-        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
-        this.attrScalingRuleId = this.getAtt('ScalingRuleId');
-        this.attrTaskId = this.getAtt('TaskId');
-        this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
-
-        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.name = props.name;
-        this.addons = props.addons;
-        this.endpointPublicAccess = props.endpointPublicAccess;
-        this.kubernetesVersion = props.kubernetesVersion;
-        this.natGateway = props.natGateway;
-        this.privateZone = props.privateZone;
-        this.resourceGroupId = props.resourceGroupId;
-        this.securityGroupId = props.securityGroupId;
-        this.serviceCidr = props.serviceCidr;
-        this.tags = props.tags;
-        this.vpcId = props.vpcId;
-        this.vSwitchId = props.vSwitchId;
-        this.vSwitchIds = props.vSwitchIds;
-        this.zoneId = props.zoneId;
-    }
-
-
-    protected get rosProperties(): { [key: string]: any }  {
-        return {
-            name: this.name,
-            addons: this.addons,
-            endpointPublicAccess: this.endpointPublicAccess,
-            kubernetesVersion: this.kubernetesVersion,
-            natGateway: this.natGateway,
-            privateZone: this.privateZone,
-            resourceGroupId: this.resourceGroupId,
-            securityGroupId: this.securityGroupId,
-            serviceCidr: this.serviceCidr,
-            tags: this.tags,
-            vpcId: this.vpcId,
-            vSwitchId: this.vSwitchId,
-            vSwitchIds: this.vSwitchIds,
-            zoneId: this.zoneId,
-        };
-    }
-    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
-        return rosServerlessKubernetesClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
-    }
-}
-
-export namespace RosServerlessKubernetesCluster {
-    /**
-     * @stability external
-     */
-    export interface AddonsProperty {
-        /**
-         * @Property config: When the value is empty, no configuration is required.
-         */
-        readonly config?: string | ros.IResolvable;
-        /**
-         * @Property disabled: Specifies whether to disable default installation.
-         */
-        readonly disabled?: boolean | ros.IResolvable;
-        /**
-         * @Property name: The name of the add-on.
-         */
-        readonly name: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `AddonsProperty`
- *
- * @param properties - the TypeScript properties of a `AddonsProperty`
- *
- * @returns the result of the validation.
- */
-function RosServerlessKubernetesCluster_AddonsPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
-    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
-    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    return errors.wrap('supplied properties not correct for "AddonsProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ServerlessKubernetesCluster.Addons` resource
- *
- * @param properties - the TypeScript properties of a `AddonsProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ServerlessKubernetesCluster.Addons` resource.
- */
-// @ts-ignore TS6133
-function rosServerlessKubernetesClusterAddonsPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosServerlessKubernetesCluster_AddonsPropertyValidator(properties).assertSuccess();
-    return {
-      Config: ros.stringToRosTemplate(properties.config),
-      Disabled: ros.booleanToRosTemplate(properties.disabled),
-      Name: ros.stringToRosTemplate(properties.name),
-    };
-}
-
-export namespace RosServerlessKubernetesCluster {
-    /**
-     * @stability external
-     */
-    export interface TagsProperty {
-        /**
-         * @Property value: Tag value.
-         */
-        readonly value?: string | ros.IResolvable;
-        /**
-         * @Property key: Tag key.
-         */
-        readonly key: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `TagsProperty`
- *
- * @param properties - the TypeScript properties of a `TagsProperty`
- *
- * @returns the result of the validation.
- */
-function RosServerlessKubernetesCluster_TagsPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
-    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
-    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
-    return errors.wrap('supplied properties not correct for "TagsProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ServerlessKubernetesCluster.Tags` resource
- *
- * @param properties - the TypeScript properties of a `TagsProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ServerlessKubernetesCluster.Tags` resource.
- */
-// @ts-ignore TS6133
-function rosServerlessKubernetesClusterTagsPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosServerlessKubernetesCluster_TagsPropertyValidator(properties).assertSuccess();
-    return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
     };
 }

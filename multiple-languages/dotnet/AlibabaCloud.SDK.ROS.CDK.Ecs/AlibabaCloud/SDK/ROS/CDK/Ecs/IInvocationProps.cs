@@ -8,13 +8,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     [JsiiInterface(nativeType: typeof(IInvocationProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.InvocationProps")]
     public interface IInvocationProps
     {
-        /// <summary>Property commandId: The id of command.</summary>
-        [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object CommandId
-        {
-            get;
-        }
-
         /// <summary>Property instanceIds: The instance id list.</summary>
         /// <remarks>
         /// Instances status must be running.
@@ -23,6 +16,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         object InstanceIds
         {
             get;
+        }
+
+        /// <summary>Property commandId: The id of command.</summary>
+        [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CommandId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property commandName: The name of command.</summary>
+        /// <remarks>
+        /// Only system commands whose provide is AlibabaCloud are supported
+        /// </remarks>
+        [JsiiProperty(name: "commandName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CommandName
+        {
+            get
+            {
+                return null;
+            }
         }
 
         /// <summary>Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute).</summary>
@@ -91,13 +109,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             {
             }
 
-            /// <summary>Property commandId: The id of command.</summary>
-            [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object CommandId
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property instanceIds: The instance id list.</summary>
             /// <remarks>
             /// Instances status must be running.
@@ -106,6 +117,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public object InstanceIds
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property commandId: The id of command.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CommandId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property commandName: The name of command.</summary>
+            /// <remarks>
+            /// Only system commands whose provide is AlibabaCloud are supported
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "commandName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CommandName
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute).</summary>

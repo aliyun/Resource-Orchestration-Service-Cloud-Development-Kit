@@ -77,6 +77,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <remarks>
+        /// <strong>Attribute</strong>: InvokeResults: The results of invoke command.
+        /// </remarks>
+        [JsiiProperty(name: "attrInvokeResults", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInvokeResults
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties
         {

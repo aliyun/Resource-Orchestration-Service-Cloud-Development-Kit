@@ -2,6 +2,8 @@
 @alicloud/ros-cdk-alb.AclAssociation=com.aliyun.ros.cdk.alb.AclAssociation
 @alicloud/ros-cdk-alb.AclAssociationProps=com.aliyun.ros.cdk.alb.AclAssociationProps
 @alicloud/ros-cdk-alb.AclProps=com.aliyun.ros.cdk.alb.AclProps
+@alicloud/ros-cdk-alb.AdditionalCertificateAssociation=com.aliyun.ros.cdk.alb.AdditionalCertificateAssociation
+@alicloud/ros-cdk-alb.AdditionalCertificateAssociationProps=com.aliyun.ros.cdk.alb.AdditionalCertificateAssociationProps
 @alicloud/ros-cdk-alb.BackendServerAttachment=com.aliyun.ros.cdk.alb.BackendServerAttachment
 @alicloud/ros-cdk-alb.BackendServerAttachmentProps=com.aliyun.ros.cdk.alb.BackendServerAttachmentProps
 @alicloud/ros-cdk-alb.HealthCheckTemplate=com.aliyun.ros.cdk.alb.HealthCheckTemplate
@@ -15,6 +17,9 @@
 @alicloud/ros-cdk-alb.RosAclAssociation=com.aliyun.ros.cdk.alb.RosAclAssociation
 @alicloud/ros-cdk-alb.RosAclAssociationProps=com.aliyun.ros.cdk.alb.RosAclAssociationProps
 @alicloud/ros-cdk-alb.RosAclProps=com.aliyun.ros.cdk.alb.RosAclProps
+@alicloud/ros-cdk-alb.RosAdditionalCertificateAssociation=com.aliyun.ros.cdk.alb.RosAdditionalCertificateAssociation
+@alicloud/ros-cdk-alb.RosAdditionalCertificateAssociation.CertificatesProperty=com.aliyun.ros.cdk.alb.RosAdditionalCertificateAssociation$CertificatesProperty
+@alicloud/ros-cdk-alb.RosAdditionalCertificateAssociationProps=com.aliyun.ros.cdk.alb.RosAdditionalCertificateAssociationProps
 @alicloud/ros-cdk-alb.RosBackendServerAttachment=com.aliyun.ros.cdk.alb.RosBackendServerAttachment
 @alicloud/ros-cdk-alb.RosBackendServerAttachment.ServersProperty=com.aliyun.ros.cdk.alb.RosBackendServerAttachment$ServersProperty
 @alicloud/ros-cdk-alb.RosBackendServerAttachmentProps=com.aliyun.ros.cdk.alb.RosBackendServerAttachmentProps

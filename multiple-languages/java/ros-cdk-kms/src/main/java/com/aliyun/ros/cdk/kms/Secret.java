@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * A ROS resource type:  `ALIYUN::KMS::Secret`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.829Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.161Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Secret")
 public class Secret extends com.aliyun.ros.cdk.core.Resource {
 
@@ -193,6 +193,56 @@ public class Secret extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dkmsInstanceId: The ID of the dedicated KMS instance.
+         * <p>
+         * @return {@code this}
+         * @param dkmsInstanceId Property dkmsInstanceId: The ID of the dedicated KMS instance. This parameter is required.
+         */
+        public Builder dkmsInstanceId(final java.lang.String dkmsInstanceId) {
+            this.props.dkmsInstanceId(dkmsInstanceId);
+            return this;
+        }
+        /**
+         * Property dkmsInstanceId: The ID of the dedicated KMS instance.
+         * <p>
+         * @return {@code this}
+         * @param dkmsInstanceId Property dkmsInstanceId: The ID of the dedicated KMS instance. This parameter is required.
+         */
+        public Builder dkmsInstanceId(final com.aliyun.ros.cdk.core.IResolvable dkmsInstanceId) {
+            this.props.dkmsInstanceId(dkmsInstanceId);
+            return this;
+        }
+
+        /**
+         * Property enableAutomaticRotation: Specifies whether to enable automatic rotation.
+         * <p>
+         * Valid values:
+         * true: specifies to enable automatic rotation.
+         * false: specifies to disable automatic rotation. This is the default value.
+         * <p>
+         * @return {@code this}
+         * @param enableAutomaticRotation Property enableAutomaticRotation: Specifies whether to enable automatic rotation. This parameter is required.
+         */
+        public Builder enableAutomaticRotation(final java.lang.Boolean enableAutomaticRotation) {
+            this.props.enableAutomaticRotation(enableAutomaticRotation);
+            return this;
+        }
+        /**
+         * Property enableAutomaticRotation: Specifies whether to enable automatic rotation.
+         * <p>
+         * Valid values:
+         * true: specifies to enable automatic rotation.
+         * false: specifies to disable automatic rotation. This is the default value.
+         * <p>
+         * @return {@code this}
+         * @param enableAutomaticRotation Property enableAutomaticRotation: Specifies whether to enable automatic rotation. This parameter is required.
+         */
+        public Builder enableAutomaticRotation(final com.aliyun.ros.cdk.core.IResolvable enableAutomaticRotation) {
+            this.props.enableAutomaticRotation(enableAutomaticRotation);
+            return this;
+        }
+
+        /**
          * Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
          * <p>
          * If you do not specify this parameter, Secrets Manager automatically creates an encryption
@@ -218,6 +268,31 @@ public class Secret extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder encryptionKeyId(final com.aliyun.ros.cdk.core.IResolvable encryptionKeyId) {
             this.props.encryptionKeyId(encryptionKeyId);
+            return this;
+        }
+
+        /**
+         * Property extendedConfig: The extended configuration of the secret.
+         * <p>
+         * This parameter specifies the properties of the secret of the specific type.
+         * <p>
+         * @return {@code this}
+         * @param extendedConfig Property extendedConfig: The extended configuration of the secret. This parameter is required.
+         */
+        public Builder extendedConfig(final com.aliyun.ros.cdk.core.IResolvable extendedConfig) {
+            this.props.extendedConfig(extendedConfig);
+            return this;
+        }
+        /**
+         * Property extendedConfig: The extended configuration of the secret.
+         * <p>
+         * This parameter specifies the properties of the secret of the specific type.
+         * <p>
+         * @return {@code this}
+         * @param extendedConfig Property extendedConfig: The extended configuration of the secret. This parameter is required.
+         */
+        public Builder extendedConfig(final java.util.Map<java.lang.String, ? extends java.lang.Object> extendedConfig) {
+            this.props.extendedConfig(extendedConfig);
             return this;
         }
 
@@ -276,6 +351,35 @@ public class Secret extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property rotationInterval: The interval for automatic rotation.
+         * <p>
+         * Valid values: 6 hours to 8,760 hours (365 days).
+         * The value is in the integer[unit] format.
+         * The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+         * <p>
+         * @return {@code this}
+         * @param rotationInterval Property rotationInterval: The interval for automatic rotation. This parameter is required.
+         */
+        public Builder rotationInterval(final java.lang.String rotationInterval) {
+            this.props.rotationInterval(rotationInterval);
+            return this;
+        }
+        /**
+         * Property rotationInterval: The interval for automatic rotation.
+         * <p>
+         * Valid values: 6 hours to 8,760 hours (365 days).
+         * The value is in the integer[unit] format.
+         * The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+         * <p>
+         * @return {@code this}
+         * @param rotationInterval Property rotationInterval: The interval for automatic rotation. This parameter is required.
+         */
+        public Builder rotationInterval(final com.aliyun.ros.cdk.core.IResolvable rotationInterval) {
+            this.props.rotationInterval(rotationInterval);
+            return this;
+        }
+
+        /**
          * Property secretDataType: The type of the secret value.
          * <p>
          * Valid values:
@@ -301,6 +405,39 @@ public class Secret extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder secretDataType(final com.aliyun.ros.cdk.core.IResolvable secretDataType) {
             this.props.secretDataType(secretDataType);
+            return this;
+        }
+
+        /**
+         * Property secretType: The type of the secret.
+         * <p>
+         * Valid values:
+         * Generic: specifies a generic secret.
+         * Rds: specifies a managed ApsaraDB RDS secret.
+         * RAMCredentials: specifies a managed RAM secret.
+         * ECS: specifies a managed ECS secret.
+         * <p>
+         * @return {@code this}
+         * @param secretType Property secretType: The type of the secret. This parameter is required.
+         */
+        public Builder secretType(final java.lang.String secretType) {
+            this.props.secretType(secretType);
+            return this;
+        }
+        /**
+         * Property secretType: The type of the secret.
+         * <p>
+         * Valid values:
+         * Generic: specifies a generic secret.
+         * Rds: specifies a managed ApsaraDB RDS secret.
+         * RAMCredentials: specifies a managed RAM secret.
+         * ECS: specifies a managed ECS secret.
+         * <p>
+         * @return {@code this}
+         * @param secretType Property secretType: The type of the secret. This parameter is required.
+         */
+        public Builder secretType(final com.aliyun.ros.cdk.core.IResolvable secretType) {
+            this.props.secretType(secretType);
             return this;
         }
 

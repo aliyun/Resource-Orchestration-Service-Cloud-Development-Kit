@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.951Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.219Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupProps.Jsii$Proxy.class)
 public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -407,6 +407,43 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
+     * Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>ase-256</li>
+     * <li>sm4-128
+     * Default value: ase-256.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskEncryptAlgorithm() {
+        return null;
+    }
+
+    /**
+     * Property systemDiskEncrypted: Specifies whether to encrypt the system disk.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true: encrypts the system disk.</li>
+     * <li>false: does not encrypt the system disk.
+     * Default value: false.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskEncrypted() {
+        return null;
+    }
+
+    /**
+     * Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskKmsKeyId() {
+        return null;
+    }
+
+    /**
      * Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
@@ -426,6 +463,15 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
      * If you specify with your own image, make sure the system disk size bigger than image size.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskSize() {
+        return null;
+    }
+
+    /**
+     * Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster.
+     * <p>
+     * If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskStorageClusterId() {
         return null;
     }
 
@@ -546,9 +592,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object systemDiskCategory;
         java.lang.Object systemDiskDescription;
         java.lang.Object systemDiskDiskName;
+        java.lang.Object systemDiskEncryptAlgorithm;
+        java.lang.Object systemDiskEncrypted;
+        java.lang.Object systemDiskKmsKeyId;
         java.lang.Object systemDiskPerformanceLevel;
         java.lang.Object systemDiskProvisionedIops;
         java.lang.Object systemDiskSize;
+        java.lang.Object systemDiskStorageClusterId;
         java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
         java.lang.Object updatePolicy;
         java.lang.Object userData;
@@ -1580,6 +1630,94 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskEncryptAlgorithm}
+         * @param systemDiskEncryptAlgorithm Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk.
+         *                                   Valid values:
+         *                                   <p>
+         *                                   <ul>
+         *                                   <li>ase-256</li>
+         *                                   <li>sm4-128
+         *                                   Default value: ase-256.</li>
+         *                                   </ul>
+         * @return {@code this}
+         */
+        public Builder systemDiskEncryptAlgorithm(java.lang.String systemDiskEncryptAlgorithm) {
+            this.systemDiskEncryptAlgorithm = systemDiskEncryptAlgorithm;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskEncryptAlgorithm}
+         * @param systemDiskEncryptAlgorithm Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk.
+         *                                   Valid values:
+         *                                   <p>
+         *                                   <ul>
+         *                                   <li>ase-256</li>
+         *                                   <li>sm4-128
+         *                                   Default value: ase-256.</li>
+         *                                   </ul>
+         * @return {@code this}
+         */
+        public Builder systemDiskEncryptAlgorithm(com.aliyun.ros.cdk.core.IResolvable systemDiskEncryptAlgorithm) {
+            this.systemDiskEncryptAlgorithm = systemDiskEncryptAlgorithm;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskEncrypted}
+         * @param systemDiskEncrypted Property systemDiskEncrypted: Specifies whether to encrypt the system disk.
+         *                            Valid values:
+         *                            <p>
+         *                            <ul>
+         *                            <li>true: encrypts the system disk.</li>
+         *                            <li>false: does not encrypt the system disk.
+         *                            Default value: false.</li>
+         *                            </ul>
+         * @return {@code this}
+         */
+        public Builder systemDiskEncrypted(java.lang.String systemDiskEncrypted) {
+            this.systemDiskEncrypted = systemDiskEncrypted;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskEncrypted}
+         * @param systemDiskEncrypted Property systemDiskEncrypted: Specifies whether to encrypt the system disk.
+         *                            Valid values:
+         *                            <p>
+         *                            <ul>
+         *                            <li>true: encrypts the system disk.</li>
+         *                            <li>false: does not encrypt the system disk.
+         *                            Default value: false.</li>
+         *                            </ul>
+         * @return {@code this}
+         */
+        public Builder systemDiskEncrypted(com.aliyun.ros.cdk.core.IResolvable systemDiskEncrypted) {
+            this.systemDiskEncrypted = systemDiskEncrypted;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskKmsKeyId}
+         * @param systemDiskKmsKeyId Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+         * @return {@code this}
+         */
+        public Builder systemDiskKmsKeyId(java.lang.String systemDiskKmsKeyId) {
+            this.systemDiskKmsKeyId = systemDiskKmsKeyId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskKmsKeyId}
+         * @param systemDiskKmsKeyId Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+         * @return {@code this}
+         */
+        public Builder systemDiskKmsKeyId(com.aliyun.ros.cdk.core.IResolvable systemDiskKmsKeyId) {
+            this.systemDiskKmsKeyId = systemDiskKmsKeyId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceGroupProps#getSystemDiskPerformanceLevel}
          * @param systemDiskPerformanceLevel Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
          * @return {@code this}
@@ -1638,6 +1776,28 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder systemDiskSize(com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
             this.systemDiskSize = systemDiskSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskStorageClusterId}
+         * @param systemDiskStorageClusterId Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster.
+         *                                   If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+         * @return {@code this}
+         */
+        public Builder systemDiskStorageClusterId(java.lang.String systemDiskStorageClusterId) {
+            this.systemDiskStorageClusterId = systemDiskStorageClusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getSystemDiskStorageClusterId}
+         * @param systemDiskStorageClusterId Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster.
+         *                                   If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+         * @return {@code this}
+         */
+        public Builder systemDiskStorageClusterId(com.aliyun.ros.cdk.core.IResolvable systemDiskStorageClusterId) {
+            this.systemDiskStorageClusterId = systemDiskStorageClusterId;
             return this;
         }
 
@@ -1849,9 +2009,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object systemDiskCategory;
         private final java.lang.Object systemDiskDescription;
         private final java.lang.Object systemDiskDiskName;
+        private final java.lang.Object systemDiskEncryptAlgorithm;
+        private final java.lang.Object systemDiskEncrypted;
+        private final java.lang.Object systemDiskKmsKeyId;
         private final java.lang.Object systemDiskPerformanceLevel;
         private final java.lang.Object systemDiskProvisionedIops;
         private final java.lang.Object systemDiskSize;
+        private final java.lang.Object systemDiskStorageClusterId;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty> tags;
         private final java.lang.Object updatePolicy;
         private final java.lang.Object userData;
@@ -1912,9 +2076,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskEncryptAlgorithm = software.amazon.jsii.Kernel.get(this, "systemDiskEncryptAlgorithm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskEncrypted = software.amazon.jsii.Kernel.get(this, "systemDiskEncrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskKmsKeyId = software.amazon.jsii.Kernel.get(this, "systemDiskKmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskProvisionedIops = software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskStorageClusterId = software.amazon.jsii.Kernel.get(this, "systemDiskStorageClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty.class)));
             this.updatePolicy = software.amazon.jsii.Kernel.get(this, "updatePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1976,9 +2144,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.systemDiskCategory = builder.systemDiskCategory;
             this.systemDiskDescription = builder.systemDiskDescription;
             this.systemDiskDiskName = builder.systemDiskDiskName;
+            this.systemDiskEncryptAlgorithm = builder.systemDiskEncryptAlgorithm;
+            this.systemDiskEncrypted = builder.systemDiskEncrypted;
+            this.systemDiskKmsKeyId = builder.systemDiskKmsKeyId;
             this.systemDiskPerformanceLevel = builder.systemDiskPerformanceLevel;
             this.systemDiskProvisionedIops = builder.systemDiskProvisionedIops;
             this.systemDiskSize = builder.systemDiskSize;
+            this.systemDiskStorageClusterId = builder.systemDiskStorageClusterId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroup.TagsProperty>)builder.tags;
             this.updatePolicy = builder.updatePolicy;
             this.userData = builder.userData;
@@ -2219,6 +2391,21 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getSystemDiskEncryptAlgorithm() {
+            return this.systemDiskEncryptAlgorithm;
+        }
+
+        @Override
+        public final java.lang.Object getSystemDiskEncrypted() {
+            return this.systemDiskEncrypted;
+        }
+
+        @Override
+        public final java.lang.Object getSystemDiskKmsKeyId() {
+            return this.systemDiskKmsKeyId;
+        }
+
+        @Override
         public final java.lang.Object getSystemDiskPerformanceLevel() {
             return this.systemDiskPerformanceLevel;
         }
@@ -2231,6 +2418,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getSystemDiskSize() {
             return this.systemDiskSize;
+        }
+
+        @Override
+        public final java.lang.Object getSystemDiskStorageClusterId() {
+            return this.systemDiskStorageClusterId;
         }
 
         @Override
@@ -2406,6 +2598,15 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getSystemDiskDiskName() != null) {
                 data.set("systemDiskDiskName", om.valueToTree(this.getSystemDiskDiskName()));
             }
+            if (this.getSystemDiskEncryptAlgorithm() != null) {
+                data.set("systemDiskEncryptAlgorithm", om.valueToTree(this.getSystemDiskEncryptAlgorithm()));
+            }
+            if (this.getSystemDiskEncrypted() != null) {
+                data.set("systemDiskEncrypted", om.valueToTree(this.getSystemDiskEncrypted()));
+            }
+            if (this.getSystemDiskKmsKeyId() != null) {
+                data.set("systemDiskKmsKeyId", om.valueToTree(this.getSystemDiskKmsKeyId()));
+            }
             if (this.getSystemDiskPerformanceLevel() != null) {
                 data.set("systemDiskPerformanceLevel", om.valueToTree(this.getSystemDiskPerformanceLevel()));
             }
@@ -2414,6 +2615,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getSystemDiskSize() != null) {
                 data.set("systemDiskSize", om.valueToTree(this.getSystemDiskSize()));
+            }
+            if (this.getSystemDiskStorageClusterId() != null) {
+                data.set("systemDiskStorageClusterId", om.valueToTree(this.getSystemDiskStorageClusterId()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -2500,9 +2704,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
             if (this.systemDiskDescription != null ? !this.systemDiskDescription.equals(that.systemDiskDescription) : that.systemDiskDescription != null) return false;
             if (this.systemDiskDiskName != null ? !this.systemDiskDiskName.equals(that.systemDiskDiskName) : that.systemDiskDiskName != null) return false;
+            if (this.systemDiskEncryptAlgorithm != null ? !this.systemDiskEncryptAlgorithm.equals(that.systemDiskEncryptAlgorithm) : that.systemDiskEncryptAlgorithm != null) return false;
+            if (this.systemDiskEncrypted != null ? !this.systemDiskEncrypted.equals(that.systemDiskEncrypted) : that.systemDiskEncrypted != null) return false;
+            if (this.systemDiskKmsKeyId != null ? !this.systemDiskKmsKeyId.equals(that.systemDiskKmsKeyId) : that.systemDiskKmsKeyId != null) return false;
             if (this.systemDiskPerformanceLevel != null ? !this.systemDiskPerformanceLevel.equals(that.systemDiskPerformanceLevel) : that.systemDiskPerformanceLevel != null) return false;
             if (this.systemDiskProvisionedIops != null ? !this.systemDiskProvisionedIops.equals(that.systemDiskProvisionedIops) : that.systemDiskProvisionedIops != null) return false;
             if (this.systemDiskSize != null ? !this.systemDiskSize.equals(that.systemDiskSize) : that.systemDiskSize != null) return false;
+            if (this.systemDiskStorageClusterId != null ? !this.systemDiskStorageClusterId.equals(that.systemDiskStorageClusterId) : that.systemDiskStorageClusterId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.updatePolicy != null ? !this.updatePolicy.equals(that.updatePolicy) : that.updatePolicy != null) return false;
             if (this.userData != null ? !this.userData.equals(that.userData) : that.userData != null) return false;
@@ -2560,9 +2768,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.systemDiskDescription != null ? this.systemDiskDescription.hashCode() : 0);
             result = 31 * result + (this.systemDiskDiskName != null ? this.systemDiskDiskName.hashCode() : 0);
+            result = 31 * result + (this.systemDiskEncryptAlgorithm != null ? this.systemDiskEncryptAlgorithm.hashCode() : 0);
+            result = 31 * result + (this.systemDiskEncrypted != null ? this.systemDiskEncrypted.hashCode() : 0);
+            result = 31 * result + (this.systemDiskKmsKeyId != null ? this.systemDiskKmsKeyId.hashCode() : 0);
             result = 31 * result + (this.systemDiskPerformanceLevel != null ? this.systemDiskPerformanceLevel.hashCode() : 0);
             result = 31 * result + (this.systemDiskProvisionedIops != null ? this.systemDiskProvisionedIops.hashCode() : 0);
             result = 31 * result + (this.systemDiskSize != null ? this.systemDiskSize.hashCode() : 0);
+            result = 31 * result + (this.systemDiskStorageClusterId != null ? this.systemDiskStorageClusterId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.updatePolicy != null ? this.updatePolicy.hashCode() : 0);
             result = 31 * result + (this.userData != null ? this.userData.hashCode() : 0);

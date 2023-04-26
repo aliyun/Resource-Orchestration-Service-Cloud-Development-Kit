@@ -2160,6 +2160,13 @@ function RosEIPAssociationPropsValidator(properties: any): ros.ValidationResult 
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    if(properties.instanceId && (Array.isArray(properties.instanceId) || (typeof properties.instanceId) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceId', ros.validateLength)({
+            data: properties.instanceId.length,
+            min: 1,
+            max: undefined,
+          }));
+    }
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     if(properties.mode && (typeof properties.mode) !== 'object') {
         errors.collect(ros.propertyValidator('mode', ros.validateAllowedValues)({
@@ -3670,6 +3677,161 @@ function rosIpsecServerIpsecConfigPropertyToRosTemplate(properties: any): any {
       IpsecAuthAlg: ros.stringToRosTemplate(properties.ipsecAuthAlg),
       IpsecLifetime: ros.numberToRosTemplate(properties.ipsecLifetime),
     };
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::Ipv4Gateway`
+ */
+export interface RosIpv4GatewayProps {
+
+    /**
+     * @Property vpcId: The ID of the VPC associated with the IPv4 Gateway.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property ipv4GatewayDescription: Description information.
+     */
+    readonly ipv4GatewayDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property ipv4GatewayName: Resource name.
+     */
+    readonly ipv4GatewayName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosIpv4GatewayProps`
+ *
+ * @param properties - the TypeScript properties of a `RosIpv4GatewayProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpv4GatewayPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ipv4GatewayName', ros.validateString)(properties.ipv4GatewayName));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('ipv4GatewayDescription', ros.validateString)(properties.ipv4GatewayDescription));
+    return errors.wrap('supplied properties not correct for "RosIpv4GatewayProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipv4Gateway` resource
+ *
+ * @param properties - the TypeScript properties of a `RosIpv4GatewayProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipv4Gateway` resource.
+ */
+// @ts-ignore TS6133
+function rosIpv4GatewayPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosIpv4GatewayPropsValidator(properties).assertSuccess();
+    }
+    return {
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      Ipv4GatewayDescription: ros.stringToRosTemplate(properties.ipv4GatewayDescription),
+      Ipv4GatewayName: ros.stringToRosTemplate(properties.ipv4GatewayName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::Ipv4Gateway`
+ */
+export class RosIpv4Gateway extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::Ipv4Gateway";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv4GatewayDescription: Description information.
+     */
+    public readonly attrIpv4GatewayDescription: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv4GatewayId: The resource attribute field that represents the resource level 1 ID.
+     */
+    public readonly attrIpv4GatewayId: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv4GatewayName: Resource name.
+     */
+    public readonly attrIpv4GatewayName: ros.IResolvable;
+
+    /**
+     * @Attribute Ipv4GatewayRouteTableId: ID of the route table associated with IPv4 Gateway.
+     */
+    public readonly attrIpv4GatewayRouteTableId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The ID of the VPC associated with the IPv4 Gateway.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vpcId: The ID of the VPC associated with the IPv4 Gateway.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property ipv4GatewayDescription: Description information.
+     */
+    public ipv4GatewayDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv4GatewayName: Resource name.
+     */
+    public ipv4GatewayName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::Ipv4Gateway`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosIpv4GatewayProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosIpv4Gateway.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrIpv4GatewayDescription = this.getAtt('Ipv4GatewayDescription');
+        this.attrIpv4GatewayId = this.getAtt('Ipv4GatewayId');
+        this.attrIpv4GatewayName = this.getAtt('Ipv4GatewayName');
+        this.attrIpv4GatewayRouteTableId = this.getAtt('Ipv4GatewayRouteTableId');
+        this.attrVpcId = this.getAtt('VpcId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vpcId = props.vpcId;
+        this.ipv4GatewayDescription = props.ipv4GatewayDescription;
+        this.ipv4GatewayName = props.ipv4GatewayName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vpcId: this.vpcId,
+            ipv4GatewayDescription: this.ipv4GatewayDescription,
+            ipv4GatewayName: this.ipv4GatewayName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosIpv4GatewayPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**
@@ -5583,6 +5745,368 @@ export class RosPeeringRouterInterfaceConnection extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::VPC::PrefixList`
+ */
+export interface RosPrefixListProps {
+
+    /**
+     * @Property entries: The CIDR address block list of the prefix list.
+     */
+    readonly entries?: Array<RosPrefixList.EntriesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ipVersion: The IP version of the prefix list. Value:
+     * - **IPvv4**:IPv4 version.
+     * - **IPv6**:IPv6.
+     */
+    readonly ipVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property maxEntries: The maximum number of entries for CIDR address blocks in the prefix list.
+     */
+    readonly maxEntries?: number | ros.IResolvable;
+
+    /**
+     * @Property prefixListDescription: The description of the prefix list.
+     * It must be 2 to 256 characters in length and must start with a letter or Chinese, but cannot start with http:// or https.
+     */
+    readonly prefixListDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property prefixListName: The name of the prefix list.
+     */
+    readonly prefixListName?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the VPC belongs.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of prefix list.
+     */
+    readonly tags?: RosPrefixList.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPrefixListProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPrefixListProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrefixListPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.maxEntries && (typeof properties.maxEntries) !== 'object') {
+        errors.collect(ros.propertyValidator('maxEntries', ros.validateRange)({
+            data: properties.maxEntries,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxEntries', ros.validateNumber)(properties.maxEntries));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('prefixListDescription', ros.validateString)(properties.prefixListDescription));
+    if(properties.ipVersion && (typeof properties.ipVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('ipVersion', ros.validateAllowedValues)({
+          data: properties.ipVersion,
+          allowedValues: ["IPv4","IPv6"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipVersion', ros.validateString)(properties.ipVersion));
+    errors.collect(ros.propertyValidator('prefixListName', ros.validateString)(properties.prefixListName));
+    errors.collect(ros.propertyValidator('entries', ros.listValidator(RosPrefixList_EntriesPropertyValidator))(properties.entries));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPrefixList_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosPrefixListProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::PrefixList` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPrefixListProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::PrefixList` resource.
+ */
+// @ts-ignore TS6133
+function rosPrefixListPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPrefixListPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Entries: ros.listMapper(rosPrefixListEntriesPropertyToRosTemplate)(properties.entries),
+      IpVersion: ros.stringToRosTemplate(properties.ipVersion),
+      MaxEntries: ros.numberToRosTemplate(properties.maxEntries),
+      PrefixListDescription: ros.stringToRosTemplate(properties.prefixListDescription),
+      PrefixListName: ros.stringToRosTemplate(properties.prefixListName),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosPrefixListTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::PrefixList`
+ */
+export class RosPrefixList extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::PrefixList";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute CreateTime: The time when the prefix list was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Entries: The CIDR address block list of the prefix list.
+     */
+    public readonly attrEntries: ros.IResolvable;
+
+    /**
+     * @Attribute IpVersion: The IP version of the prefix list.
+     */
+    public readonly attrIpVersion: ros.IResolvable;
+
+    /**
+     * @Attribute MaxEntries: The maximum number of entries for CIDR address blocks in the prefix list.
+     */
+    public readonly attrMaxEntries: ros.IResolvable;
+
+    /**
+     * @Attribute OwnerId: The Alibaba Cloud account (primary account) to which the prefix list belongs.
+     */
+    public readonly attrOwnerId: ros.IResolvable;
+
+    /**
+     * @Attribute PrefixListDescription: The description of the prefix list.
+     */
+    public readonly attrPrefixListDescription: ros.IResolvable;
+
+    /**
+     * @Attribute PrefixListId: The ID of the query Prefix List.
+     */
+    public readonly attrPrefixListId: ros.IResolvable;
+
+    /**
+     * @Attribute PrefixListName: The name of the prefix list.
+     */
+    public readonly attrPrefixListName: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group to which the VPC belongs.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ShareType: The share type of the prefix list.
+     */
+    public readonly attrShareType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of PrefixList.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property entries: The CIDR address block list of the prefix list.
+     */
+    public entries: Array<RosPrefixList.EntriesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipVersion: The IP version of the prefix list. Value:
+     * - **IPvv4**:IPv4 version.
+     * - **IPv6**:IPv6.
+     */
+    public ipVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxEntries: The maximum number of entries for CIDR address blocks in the prefix list.
+     */
+    public maxEntries: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property prefixListDescription: The description of the prefix list.
+     * It must be 2 to 256 characters in length and must start with a letter or Chinese, but cannot start with http:// or https.
+     */
+    public prefixListDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property prefixListName: The name of the prefix list.
+     */
+    public prefixListName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the VPC belongs.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of prefix list.
+     */
+    public tags: RosPrefixList.TagsProperty[] | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::PrefixList`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPrefixListProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPrefixList.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrEntries = this.getAtt('Entries');
+        this.attrIpVersion = this.getAtt('IpVersion');
+        this.attrMaxEntries = this.getAtt('MaxEntries');
+        this.attrOwnerId = this.getAtt('OwnerId');
+        this.attrPrefixListDescription = this.getAtt('PrefixListDescription');
+        this.attrPrefixListId = this.getAtt('PrefixListId');
+        this.attrPrefixListName = this.getAtt('PrefixListName');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrShareType = this.getAtt('ShareType');
+        this.attrTags = this.getAtt('Tags');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.entries = props.entries;
+        this.ipVersion = props.ipVersion;
+        this.maxEntries = props.maxEntries;
+        this.prefixListDescription = props.prefixListDescription;
+        this.prefixListName = props.prefixListName;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            entries: this.entries,
+            ipVersion: this.ipVersion,
+            maxEntries: this.maxEntries,
+            prefixListDescription: this.prefixListDescription,
+            prefixListName: this.prefixListName,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPrefixListPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosPrefixList {
+    /**
+     * @stability external
+     */
+    export interface EntriesProperty {
+        /**
+         * @Property description: The description of the CIDR entry.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property cidr: CIDR block.
+         */
+        readonly cidr: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EntriesProperty`
+ *
+ * @param properties - the TypeScript properties of a `EntriesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrefixList_EntriesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('cidr', ros.requiredValidator)(properties.cidr));
+    errors.collect(ros.propertyValidator('cidr', ros.validateString)(properties.cidr));
+    return errors.wrap('supplied properties not correct for "EntriesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::PrefixList.Entries` resource
+ *
+ * @param properties - the TypeScript properties of a `EntriesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::PrefixList.Entries` resource.
+ */
+// @ts-ignore TS6133
+function rosPrefixListEntriesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPrefixList_EntriesPropertyValidator(properties).assertSuccess();
+    return {
+      Description: ros.stringToRosTemplate(properties.description),
+      Cidr: ros.stringToRosTemplate(properties.cidr),
+    };
+}
+
+export namespace RosPrefixList {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrefixList_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::PrefixList.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::PrefixList.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosPrefixListTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPrefixList_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::VPC::RouteTable`
  */
 export interface RosRouteTableProps {
@@ -6814,6 +7338,376 @@ export class RosSslVpnServer extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosSslVpnServerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::TrafficMirrorFilter`
+ */
+export interface RosTrafficMirrorFilterProps {
+
+    /**
+     * @Property egressRules: Egress rules.
+     */
+    readonly egressRules?: Array<RosTrafficMirrorFilter.EgressRulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ingressRules: Ingress rules.
+     */
+    readonly ingressRules?: Array<RosTrafficMirrorFilter.IngressRulesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorFilterDescription: The description of the filter. The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     */
+    readonly trafficMirrorFilterDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+     */
+    readonly trafficMirrorFilterName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTrafficMirrorFilterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTrafficMirrorFilterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrafficMirrorFilterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('trafficMirrorFilterDescription', ros.validateString)(properties.trafficMirrorFilterDescription));
+    if(properties.egressRules && (Array.isArray(properties.egressRules) || (typeof properties.egressRules) === 'string')) {
+        errors.collect(ros.propertyValidator('egressRules', ros.validateLength)({
+            data: properties.egressRules.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('egressRules', ros.listValidator(RosTrafficMirrorFilter_EgressRulesPropertyValidator))(properties.egressRules));
+    errors.collect(ros.propertyValidator('trafficMirrorFilterName', ros.validateString)(properties.trafficMirrorFilterName));
+    if(properties.ingressRules && (Array.isArray(properties.ingressRules) || (typeof properties.ingressRules) === 'string')) {
+        errors.collect(ros.propertyValidator('ingressRules', ros.validateLength)({
+            data: properties.ingressRules.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ingressRules', ros.listValidator(RosTrafficMirrorFilter_IngressRulesPropertyValidator))(properties.ingressRules));
+    return errors.wrap('supplied properties not correct for "RosTrafficMirrorFilterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorFilter` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTrafficMirrorFilterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorFilter` resource.
+ */
+// @ts-ignore TS6133
+function rosTrafficMirrorFilterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTrafficMirrorFilterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      EgressRules: ros.listMapper(rosTrafficMirrorFilterEgressRulesPropertyToRosTemplate)(properties.egressRules),
+      IngressRules: ros.listMapper(rosTrafficMirrorFilterIngressRulesPropertyToRosTemplate)(properties.ingressRules),
+      TrafficMirrorFilterDescription: ros.stringToRosTemplate(properties.trafficMirrorFilterDescription),
+      TrafficMirrorFilterName: ros.stringToRosTemplate(properties.trafficMirrorFilterName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::TrafficMirrorFilter`
+ */
+export class RosTrafficMirrorFilter extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::TrafficMirrorFilter";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute EgressRules: Egress rules.
+     */
+    public readonly attrEgressRules: ros.IResolvable;
+
+    /**
+     * @Attribute IngressRules: Ingress rules.
+     */
+    public readonly attrIngressRules: ros.IResolvable;
+
+    /**
+     * @Attribute TrafficMirrorFilterDescription: The description of the filter.
+     */
+    public readonly attrTrafficMirrorFilterDescription: ros.IResolvable;
+
+    /**
+     * @Attribute TrafficMirrorFilterId: The ID of the filter.
+     */
+    public readonly attrTrafficMirrorFilterId: ros.IResolvable;
+
+    /**
+     * @Attribute TrafficMirrorFilterName: The name of the filter.
+     */
+    public readonly attrTrafficMirrorFilterName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property egressRules: Egress rules.
+     */
+    public egressRules: Array<RosTrafficMirrorFilter.EgressRulesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ingressRules: Ingress rules.
+     */
+    public ingressRules: Array<RosTrafficMirrorFilter.IngressRulesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property trafficMirrorFilterDescription: The description of the filter. The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     */
+    public trafficMirrorFilterDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+     */
+    public trafficMirrorFilterName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::TrafficMirrorFilter`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTrafficMirrorFilterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTrafficMirrorFilter.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEgressRules = this.getAtt('EgressRules');
+        this.attrIngressRules = this.getAtt('IngressRules');
+        this.attrTrafficMirrorFilterDescription = this.getAtt('TrafficMirrorFilterDescription');
+        this.attrTrafficMirrorFilterId = this.getAtt('TrafficMirrorFilterId');
+        this.attrTrafficMirrorFilterName = this.getAtt('TrafficMirrorFilterName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.egressRules = props.egressRules;
+        this.ingressRules = props.ingressRules;
+        this.trafficMirrorFilterDescription = props.trafficMirrorFilterDescription;
+        this.trafficMirrorFilterName = props.trafficMirrorFilterName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            egressRules: this.egressRules,
+            ingressRules: this.ingressRules,
+            trafficMirrorFilterDescription: this.trafficMirrorFilterDescription,
+            trafficMirrorFilterName: this.trafficMirrorFilterName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTrafficMirrorFilterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosTrafficMirrorFilter {
+    /**
+     * @stability external
+     */
+    export interface EgressRulesProperty {
+        /**
+         * @Property destinationPortRange: The destination port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80. You cannot set this parameter to only -1/-1. The value -1/-1 specifies all ports.
+         */
+        readonly destinationPortRange?: string | ros.IResolvable;
+        /**
+         * @Property action: The action of the outbound rule. Valid values:
+     * accept: collects network traffic.
+     * drop: does not collect network traffic.
+         */
+        readonly action: string | ros.IResolvable;
+        /**
+         * @Property sourcePortRange: The source port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80. You cannot set this parameter to only -1/-1. The value -1/-1 specifies all ports.
+         */
+        readonly sourcePortRange?: string | ros.IResolvable;
+        /**
+         * @Property priority: The priority of the outbound rule. A smaller value specifies a higher priority..
+         */
+        readonly priority?: number | ros.IResolvable;
+        /**
+         * @Property sourceCidrBlock: The source CIDR block of the outbound traffic..
+         */
+        readonly sourceCidrBlock?: string | ros.IResolvable;
+        /**
+         * @Property destinationCidrBlock: The destination CIDR block of the outbound traffic.
+         */
+        readonly destinationCidrBlock?: string | ros.IResolvable;
+        /**
+         * @Property protocol: The protocol that is used by the outbound traffic to be mirrored. Valid values:
+     * ALL: all protocols
+     * ICMP: ICMP
+     * TCP: TCP
+     * UDP: User Datagram Protocol (UDP)
+         */
+        readonly protocol: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EgressRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `EgressRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrafficMirrorFilter_EgressRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('destinationPortRange', ros.validateString)(properties.destinationPortRange));
+    errors.collect(ros.propertyValidator('action', ros.requiredValidator)(properties.action));
+    if(properties.action && (typeof properties.action) !== 'object') {
+        errors.collect(ros.propertyValidator('action', ros.validateAllowedValues)({
+          data: properties.action,
+          allowedValues: ["accept","drop"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('action', ros.validateString)(properties.action));
+    errors.collect(ros.propertyValidator('sourcePortRange', ros.validateString)(properties.sourcePortRange));
+    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    errors.collect(ros.propertyValidator('sourceCidrBlock', ros.validateString)(properties.sourceCidrBlock));
+    errors.collect(ros.propertyValidator('destinationCidrBlock', ros.validateString)(properties.destinationCidrBlock));
+    errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
+    if(properties.protocol && (typeof properties.protocol) !== 'object') {
+        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
+          data: properties.protocol,
+          allowedValues: ["ALL","ICMP","TCP","UDP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    return errors.wrap('supplied properties not correct for "EgressRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorFilter.EgressRules` resource
+ *
+ * @param properties - the TypeScript properties of a `EgressRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorFilter.EgressRules` resource.
+ */
+// @ts-ignore TS6133
+function rosTrafficMirrorFilterEgressRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTrafficMirrorFilter_EgressRulesPropertyValidator(properties).assertSuccess();
+    return {
+      DestinationPortRange: ros.stringToRosTemplate(properties.destinationPortRange),
+      Action: ros.stringToRosTemplate(properties.action),
+      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
+      Priority: ros.numberToRosTemplate(properties.priority),
+      SourceCidrBlock: ros.stringToRosTemplate(properties.sourceCidrBlock),
+      DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
+      Protocol: ros.stringToRosTemplate(properties.protocol),
+    };
+}
+
+export namespace RosTrafficMirrorFilter {
+    /**
+     * @stability external
+     */
+    export interface IngressRulesProperty {
+        /**
+         * @Property destinationPortRange: The destination port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80.
+         */
+        readonly destinationPortRange?: string | ros.IResolvable;
+        /**
+         * @Property action: The action of the inbound rule. Valid values:
+     * accept: collects network traffic.
+     * drop: does not collect network traffic.
+         */
+        readonly action: string | ros.IResolvable;
+        /**
+         * @Property sourcePortRange: The source port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80.
+         */
+        readonly sourcePortRange?: string | ros.IResolvable;
+        /**
+         * @Property priority: The priority of the inbound rule. A smaller value specifies a higher priority..
+         */
+        readonly priority?: number | ros.IResolvable;
+        /**
+         * @Property sourceCidrBlock: The source CIDR block of the inbound traffic..
+         */
+        readonly sourceCidrBlock?: string | ros.IResolvable;
+        /**
+         * @Property destinationCidrBlock: The destination CIDR block of the inbound traffic.
+         */
+        readonly destinationCidrBlock?: string | ros.IResolvable;
+        /**
+         * @Property protocol: The protocol that is used by the inbound traffic to be mirrored. Valid values:
+     * ALL: all protocols
+     * ICMP: ICMP
+     * TCP: TCP
+     * UDP: User Datagram Protocol (UDP)
+         */
+        readonly protocol: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `IngressRulesProperty`
+ *
+ * @param properties - the TypeScript properties of a `IngressRulesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrafficMirrorFilter_IngressRulesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('destinationPortRange', ros.validateString)(properties.destinationPortRange));
+    errors.collect(ros.propertyValidator('action', ros.requiredValidator)(properties.action));
+    if(properties.action && (typeof properties.action) !== 'object') {
+        errors.collect(ros.propertyValidator('action', ros.validateAllowedValues)({
+          data: properties.action,
+          allowedValues: ["accept","drop"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('action', ros.validateString)(properties.action));
+    errors.collect(ros.propertyValidator('sourcePortRange', ros.validateString)(properties.sourcePortRange));
+    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    errors.collect(ros.propertyValidator('sourceCidrBlock', ros.validateString)(properties.sourceCidrBlock));
+    errors.collect(ros.propertyValidator('destinationCidrBlock', ros.validateString)(properties.destinationCidrBlock));
+    errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
+    if(properties.protocol && (typeof properties.protocol) !== 'object') {
+        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
+          data: properties.protocol,
+          allowedValues: ["ALL","ICMP","TCP","UDP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    return errors.wrap('supplied properties not correct for "IngressRulesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorFilter.IngressRules` resource
+ *
+ * @param properties - the TypeScript properties of a `IngressRulesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorFilter.IngressRules` resource.
+ */
+// @ts-ignore TS6133
+function rosTrafficMirrorFilterIngressRulesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTrafficMirrorFilter_IngressRulesPropertyValidator(properties).assertSuccess();
+    return {
+      DestinationPortRange: ros.stringToRosTemplate(properties.destinationPortRange),
+      Action: ros.stringToRosTemplate(properties.action),
+      SourcePortRange: ros.stringToRosTemplate(properties.sourcePortRange),
+      Priority: ros.numberToRosTemplate(properties.priority),
+      SourceCidrBlock: ros.stringToRosTemplate(properties.sourceCidrBlock),
+      DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
+      Protocol: ros.stringToRosTemplate(properties.protocol),
+    };
 }
 
 /**

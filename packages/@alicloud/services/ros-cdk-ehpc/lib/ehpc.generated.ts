@@ -794,7 +794,7 @@ function rosAutoScaleConfigQueuesPropertyToRosTemplate(properties: any): any {
 export interface RosClusterProps {
 
     /**
-     * @Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99.
+     * @Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99.
      */
     readonly ecsOrderComputeCount: number | ros.IResolvable;
 
@@ -1158,7 +1158,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.ecsOrderComputeCount && (typeof properties.ecsOrderComputeCount) !== 'object') {
         errors.collect(ros.propertyValidator('ecsOrderComputeCount', ros.validateRange)({
             data: properties.ecsOrderComputeCount,
-            min: 1,
+            min: 0,
             max: 99,
           }));
     }
@@ -1330,7 +1330,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
 
 
     /**
-     * @Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99.
+     * @Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99.
      */
     public ecsOrderComputeCount: number | ros.IResolvable;
 

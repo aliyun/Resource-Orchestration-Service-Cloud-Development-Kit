@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.976Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.235Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Invocation")
 public class Invocation extends com.aliyun.ros.cdk.core.Resource {
 
@@ -63,6 +63,13 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute InvokeResults: The results of invoke command.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInvokeResults() {
+        return software.amazon.jsii.Kernel.get(this, "attrInvokeResults", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.ecs.Invocation}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.Invocation> {
@@ -97,27 +104,6 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property commandId: The id of command.
-         * <p>
-         * @return {@code this}
-         * @param commandId Property commandId: The id of command. This parameter is required.
-         */
-        public Builder commandId(final java.lang.String commandId) {
-            this.props.commandId(commandId);
-            return this;
-        }
-        /**
-         * Property commandId: The id of command.
-         * <p>
-         * @return {@code this}
-         * @param commandId Property commandId: The id of command. This parameter is required.
-         */
-        public Builder commandId(final com.aliyun.ros.cdk.core.IResolvable commandId) {
-            this.props.commandId(commandId);
-            return this;
-        }
-
-        /**
          * Property instanceIds: The instance id list.
          * <p>
          * Instances status must be running.
@@ -139,6 +125,52 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
             this.props.instanceIds(instanceIds);
+            return this;
+        }
+
+        /**
+         * Property commandId: The id of command.
+         * <p>
+         * @return {@code this}
+         * @param commandId Property commandId: The id of command. This parameter is required.
+         */
+        public Builder commandId(final java.lang.String commandId) {
+            this.props.commandId(commandId);
+            return this;
+        }
+        /**
+         * Property commandId: The id of command.
+         * <p>
+         * @return {@code this}
+         * @param commandId Property commandId: The id of command. This parameter is required.
+         */
+        public Builder commandId(final com.aliyun.ros.cdk.core.IResolvable commandId) {
+            this.props.commandId(commandId);
+            return this;
+        }
+
+        /**
+         * Property commandName: The name of command.
+         * <p>
+         * Only system commands whose provide is AlibabaCloud are supported
+         * <p>
+         * @return {@code this}
+         * @param commandName Property commandName: The name of command. This parameter is required.
+         */
+        public Builder commandName(final java.lang.String commandName) {
+            this.props.commandName(commandName);
+            return this;
+        }
+        /**
+         * Property commandName: The name of command.
+         * <p>
+         * Only system commands whose provide is AlibabaCloud are supported
+         * <p>
+         * @return {@code this}
+         * @param commandName Property commandName: The name of command. This parameter is required.
+         */
+        public Builder commandName(final com.aliyun.ros.cdk.core.IResolvable commandName) {
+            this.props.commandName(commandName);
             return this;
         }
 

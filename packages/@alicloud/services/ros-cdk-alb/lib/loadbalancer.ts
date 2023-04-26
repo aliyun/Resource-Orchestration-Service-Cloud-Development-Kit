@@ -24,6 +24,7 @@ export interface LoadBalancerProps {
      * Property loadBalancerEdition: The edition of the ALB instance. Different editions have different limits and billing methods. Valid values:
      * Basic: Basic Edition
      * Standard: Standard Edition
+     * StandardWithWaf: Standard Edition with WAF
      */
     readonly loadBalancerEdition: string | ros.IResolvable;
 

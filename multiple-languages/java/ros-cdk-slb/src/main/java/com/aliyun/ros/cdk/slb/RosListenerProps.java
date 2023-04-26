@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.737Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.152Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListenerProps")
 @software.amazon.jsii.Jsii.Proxy(RosListenerProps.Jsii$Proxy.class)
 public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -63,6 +63,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableHttp2() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGzip() {
         return null;
     }
 
@@ -128,6 +134,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTlsCipherPolicy() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVServerGroupId() {
         return null;
     }
@@ -153,6 +165,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object caCertificateId;
         java.lang.Object description;
         java.lang.Object enableHttp2;
+        java.lang.Object gzip;
         java.lang.Object healthCheck;
         java.lang.Object httpConfig;
         java.lang.Object idleTimeout;
@@ -163,6 +176,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object scheduler;
         java.lang.Object serverCertificateId;
         java.lang.Object startListener;
+        java.lang.Object tlsCipherPolicy;
         java.lang.Object vServerGroupId;
 
         /**
@@ -386,6 +400,26 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getGzip}
+         * @param gzip the value to be set.
+         * @return {@code this}
+         */
+        public Builder gzip(java.lang.String gzip) {
+            this.gzip = gzip;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getGzip}
+         * @param gzip the value to be set.
+         * @return {@code this}
+         */
+        public Builder gzip(com.aliyun.ros.cdk.core.IResolvable gzip) {
+            this.gzip = gzip;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getHealthCheck}
          * @param healthCheck the value to be set.
          * @return {@code this}
@@ -586,6 +620,26 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getTlsCipherPolicy}
+         * @param tlsCipherPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder tlsCipherPolicy(java.lang.String tlsCipherPolicy) {
+            this.tlsCipherPolicy = tlsCipherPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getTlsCipherPolicy}
+         * @param tlsCipherPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder tlsCipherPolicy(com.aliyun.ros.cdk.core.IResolvable tlsCipherPolicy) {
+            this.tlsCipherPolicy = tlsCipherPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getVServerGroupId}
          * @param vServerGroupId the value to be set.
          * @return {@code this}
@@ -632,6 +686,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object caCertificateId;
         private final java.lang.Object description;
         private final java.lang.Object enableHttp2;
+        private final java.lang.Object gzip;
         private final java.lang.Object healthCheck;
         private final java.lang.Object httpConfig;
         private final java.lang.Object idleTimeout;
@@ -642,6 +697,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object scheduler;
         private final java.lang.Object serverCertificateId;
         private final java.lang.Object startListener;
+        private final java.lang.Object tlsCipherPolicy;
         private final java.lang.Object vServerGroupId;
 
         /**
@@ -661,6 +717,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.caCertificateId = software.amazon.jsii.Kernel.get(this, "caCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableHttp2 = software.amazon.jsii.Kernel.get(this, "enableHttp2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.gzip = software.amazon.jsii.Kernel.get(this, "gzip", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheck = software.amazon.jsii.Kernel.get(this, "healthCheck", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.httpConfig = software.amazon.jsii.Kernel.get(this, "httpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.idleTimeout = software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -671,6 +728,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.scheduler = software.amazon.jsii.Kernel.get(this, "scheduler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverCertificateId = software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.startListener = software.amazon.jsii.Kernel.get(this, "startListener", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tlsCipherPolicy = software.amazon.jsii.Kernel.get(this, "tlsCipherPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -690,6 +748,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.caCertificateId = builder.caCertificateId;
             this.description = builder.description;
             this.enableHttp2 = builder.enableHttp2;
+            this.gzip = builder.gzip;
             this.healthCheck = builder.healthCheck;
             this.httpConfig = builder.httpConfig;
             this.idleTimeout = builder.idleTimeout;
@@ -700,6 +759,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.scheduler = builder.scheduler;
             this.serverCertificateId = builder.serverCertificateId;
             this.startListener = builder.startListener;
+            this.tlsCipherPolicy = builder.tlsCipherPolicy;
             this.vServerGroupId = builder.vServerGroupId;
         }
 
@@ -759,6 +819,11 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getGzip() {
+            return this.gzip;
+        }
+
+        @Override
         public final java.lang.Object getHealthCheck() {
             return this.healthCheck;
         }
@@ -809,6 +874,11 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getTlsCipherPolicy() {
+            return this.tlsCipherPolicy;
+        }
+
+        @Override
         public final java.lang.Object getVServerGroupId() {
             return this.vServerGroupId;
         }
@@ -844,6 +914,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getEnableHttp2() != null) {
                 data.set("enableHttp2", om.valueToTree(this.getEnableHttp2()));
             }
+            if (this.getGzip() != null) {
+                data.set("gzip", om.valueToTree(this.getGzip()));
+            }
             if (this.getHealthCheck() != null) {
                 data.set("healthCheck", om.valueToTree(this.getHealthCheck()));
             }
@@ -873,6 +946,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getStartListener() != null) {
                 data.set("startListener", om.valueToTree(this.getStartListener()));
+            }
+            if (this.getTlsCipherPolicy() != null) {
+                data.set("tlsCipherPolicy", om.valueToTree(this.getTlsCipherPolicy()));
             }
             if (this.getVServerGroupId() != null) {
                 data.set("vServerGroupId", om.valueToTree(this.getVServerGroupId()));
@@ -906,6 +982,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.caCertificateId != null ? !this.caCertificateId.equals(that.caCertificateId) : that.caCertificateId != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.enableHttp2 != null ? !this.enableHttp2.equals(that.enableHttp2) : that.enableHttp2 != null) return false;
+            if (this.gzip != null ? !this.gzip.equals(that.gzip) : that.gzip != null) return false;
             if (this.healthCheck != null ? !this.healthCheck.equals(that.healthCheck) : that.healthCheck != null) return false;
             if (this.httpConfig != null ? !this.httpConfig.equals(that.httpConfig) : that.httpConfig != null) return false;
             if (this.idleTimeout != null ? !this.idleTimeout.equals(that.idleTimeout) : that.idleTimeout != null) return false;
@@ -916,6 +993,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.scheduler != null ? !this.scheduler.equals(that.scheduler) : that.scheduler != null) return false;
             if (this.serverCertificateId != null ? !this.serverCertificateId.equals(that.serverCertificateId) : that.serverCertificateId != null) return false;
             if (this.startListener != null ? !this.startListener.equals(that.startListener) : that.startListener != null) return false;
+            if (this.tlsCipherPolicy != null ? !this.tlsCipherPolicy.equals(that.tlsCipherPolicy) : that.tlsCipherPolicy != null) return false;
             return this.vServerGroupId != null ? this.vServerGroupId.equals(that.vServerGroupId) : that.vServerGroupId == null;
         }
 
@@ -932,6 +1010,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.caCertificateId != null ? this.caCertificateId.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.enableHttp2 != null ? this.enableHttp2.hashCode() : 0);
+            result = 31 * result + (this.gzip != null ? this.gzip.hashCode() : 0);
             result = 31 * result + (this.healthCheck != null ? this.healthCheck.hashCode() : 0);
             result = 31 * result + (this.httpConfig != null ? this.httpConfig.hashCode() : 0);
             result = 31 * result + (this.idleTimeout != null ? this.idleTimeout.hashCode() : 0);
@@ -942,6 +1021,7 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.scheduler != null ? this.scheduler.hashCode() : 0);
             result = 31 * result + (this.serverCertificateId != null ? this.serverCertificateId.hashCode() : 0);
             result = 31 * result + (this.startListener != null ? this.startListener.hashCode() : 0);
+            result = 31 * result + (this.tlsCipherPolicy != null ? this.tlsCipherPolicy.hashCode() : 0);
             result = 31 * result + (this.vServerGroupId != null ? this.vServerGroupId.hashCode() : 0);
             return result;
         }

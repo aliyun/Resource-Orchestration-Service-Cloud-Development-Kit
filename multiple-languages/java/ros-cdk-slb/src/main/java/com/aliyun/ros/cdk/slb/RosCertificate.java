@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::Certificate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.144Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosCertificate")
 public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -59,24 +59,6 @@ public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
         return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.get(this, "rosProperties", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
     }
 
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getCertificate() {
-        return software.amazon.jsii.Kernel.get(this, "certificate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setCertificate(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "certificate", java.util.Objects.requireNonNull(value, "certificate is required"));
-    }
-
-    /**
-     */
-    public void setCertificate(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "certificate", java.util.Objects.requireNonNull(value, "certificate is required"));
-    }
-
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
@@ -119,6 +101,24 @@ public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAliCloudCertificateName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "aliCloudCertificateName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCertificate() {
+        return software.amazon.jsii.Kernel.get(this, "certificate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCertificate(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "certificate", value);
+    }
+
+    /**
+     */
+    public void setCertificate(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "certificate", value);
     }
 
     /**
@@ -401,23 +401,6 @@ public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param certificate This parameter is required.
-         */
-        public Builder certificate(final java.lang.String certificate) {
-            this.props.certificate(certificate);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param certificate This parameter is required.
-         */
-        public Builder certificate(final com.aliyun.ros.cdk.core.IResolvable certificate) {
-            this.props.certificate(certificate);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param aliCloudCertificateId This parameter is required.
          */
         public Builder aliCloudCertificateId(final java.lang.String aliCloudCertificateId) {
@@ -447,6 +430,23 @@ public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder aliCloudCertificateName(final com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateName) {
             this.props.aliCloudCertificateName(aliCloudCertificateName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param certificate This parameter is required.
+         */
+        public Builder certificate(final java.lang.String certificate) {
+            this.props.certificate(certificate);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param certificate This parameter is required.
+         */
+        public Builder certificate(final com.aliyun.ros.cdk.core.IResolvable certificate) {
+            this.props.certificate(certificate);
             return this;
         }
 

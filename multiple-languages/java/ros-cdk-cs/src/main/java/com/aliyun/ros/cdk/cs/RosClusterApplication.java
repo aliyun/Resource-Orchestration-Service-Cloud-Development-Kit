@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  `ALIYUN::CS::ClusterApplication`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.567Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.775Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterApplication")
 public class RosClusterApplication extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -116,6 +116,24 @@ public class RosClusterApplication extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDefaultNamespaceDeletion() {
+        return software.amazon.jsii.Kernel.get(this, "defaultNamespaceDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDefaultNamespaceDeletion(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "defaultNamespaceDeletion", value);
+    }
+
+    /**
+     */
+    public void setDefaultNamespaceDeletion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "defaultNamespaceDeletion", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.cs.RosClusterApplication}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cs.RosClusterApplication> {
@@ -189,6 +207,23 @@ public class RosClusterApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder defaultNamespace(final com.aliyun.ros.cdk.core.IResolvable defaultNamespace) {
             this.props.defaultNamespace(defaultNamespace);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param defaultNamespaceDeletion This parameter is required.
+         */
+        public Builder defaultNamespaceDeletion(final java.lang.Boolean defaultNamespaceDeletion) {
+            this.props.defaultNamespaceDeletion(defaultNamespaceDeletion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param defaultNamespaceDeletion This parameter is required.
+         */
+        public Builder defaultNamespaceDeletion(final com.aliyun.ros.cdk.core.IResolvable defaultNamespaceDeletion) {
+            this.props.defaultNamespaceDeletion(defaultNamespaceDeletion);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * A ROS resource type:  `ALIYUN::KMS::Key`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.821Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.152Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Key")
 public class Key extends com.aliyun.ros.cdk.core.Resource {
 
@@ -129,6 +129,27 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dkmsInstanceId: The ID of the dedicated KMS instance.
+         * <p>
+         * @return {@code this}
+         * @param dkmsInstanceId Property dkmsInstanceId: The ID of the dedicated KMS instance. This parameter is required.
+         */
+        public Builder dkmsInstanceId(final java.lang.String dkmsInstanceId) {
+            this.props().dkmsInstanceId(dkmsInstanceId);
+            return this;
+        }
+        /**
+         * Property dkmsInstanceId: The ID of the dedicated KMS instance.
+         * <p>
+         * @return {@code this}
+         * @param dkmsInstanceId Property dkmsInstanceId: The ID of the dedicated KMS instance. This parameter is required.
+         */
+        public Builder dkmsInstanceId(final com.aliyun.ros.cdk.core.IResolvable dkmsInstanceId) {
+            this.props().dkmsInstanceId(dkmsInstanceId);
+            return this;
+        }
+
+        /**
          * Property enable: Specifies whether the key is enabled.
          * <p>
          * Defaults to true.
@@ -204,24 +225,30 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property keyUsage: The intended use of the CMK.
+         * Property keyUsage: The usage of the CMK.
          * <p>
-         * Default value: ENCRYPT/DECRYPT.
+         * Valid values:
+         * ENCRYPT/DECRYPT: encrypts or decrypts data.
+         * SIGN/VERIFY: generates or verifies a digital signature.
+         * If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
          * <p>
          * @return {@code this}
-         * @param keyUsage Property keyUsage: The intended use of the CMK. This parameter is required.
+         * @param keyUsage Property keyUsage: The usage of the CMK. This parameter is required.
          */
         public Builder keyUsage(final java.lang.String keyUsage) {
             this.props().keyUsage(keyUsage);
             return this;
         }
         /**
-         * Property keyUsage: The intended use of the CMK.
+         * Property keyUsage: The usage of the CMK.
          * <p>
-         * Default value: ENCRYPT/DECRYPT.
+         * Valid values:
+         * ENCRYPT/DECRYPT: encrypts or decrypts data.
+         * SIGN/VERIFY: generates or verifies a digital signature.
+         * If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
          * <p>
          * @return {@code this}
-         * @param keyUsage Property keyUsage: The intended use of the CMK. This parameter is required.
+         * @param keyUsage Property keyUsage: The usage of the CMK. This parameter is required.
          */
         public Builder keyUsage(final com.aliyun.ros.cdk.core.IResolvable keyUsage) {
             this.props().keyUsage(keyUsage);

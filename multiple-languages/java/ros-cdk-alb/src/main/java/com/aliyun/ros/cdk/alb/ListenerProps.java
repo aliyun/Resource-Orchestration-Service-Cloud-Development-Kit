@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Properties for defining a `ALIYUN::ALB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:09.813Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.010Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -99,6 +99,13 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property listenerStatus: The status of the listener.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getListenerStatus() {
+        return null;
+    }
+
+    /**
      * Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getQuicConfig() {
@@ -157,6 +164,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object http2Enabled;
         java.lang.Object idleTimeout;
         java.lang.Object listenerDescription;
+        java.lang.Object listenerStatus;
         java.lang.Object quicConfig;
         java.lang.Object requestTimeout;
         java.lang.Object securityPolicyId;
@@ -411,6 +419,26 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ListenerProps#getListenerStatus}
+         * @param listenerStatus Property listenerStatus: The status of the listener.
+         * @return {@code this}
+         */
+        public Builder listenerStatus(java.lang.String listenerStatus) {
+            this.listenerStatus = listenerStatus;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getListenerStatus}
+         * @param listenerStatus Property listenerStatus: The status of the listener.
+         * @return {@code this}
+         */
+        public Builder listenerStatus(com.aliyun.ros.cdk.core.IResolvable listenerStatus) {
+            this.listenerStatus = listenerStatus;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ListenerProps#getQuicConfig}
          * @param quicConfig Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
          * @return {@code this}
@@ -533,6 +561,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object http2Enabled;
         private final java.lang.Object idleTimeout;
         private final java.lang.Object listenerDescription;
+        private final java.lang.Object listenerStatus;
         private final java.lang.Object quicConfig;
         private final java.lang.Object requestTimeout;
         private final java.lang.Object securityPolicyId;
@@ -555,6 +584,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.http2Enabled = software.amazon.jsii.Kernel.get(this, "http2Enabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.idleTimeout = software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.listenerDescription = software.amazon.jsii.Kernel.get(this, "listenerDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.listenerStatus = software.amazon.jsii.Kernel.get(this, "listenerStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.quicConfig = software.amazon.jsii.Kernel.get(this, "quicConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.requestTimeout = software.amazon.jsii.Kernel.get(this, "requestTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityPolicyId = software.amazon.jsii.Kernel.get(this, "securityPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -577,6 +607,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.http2Enabled = builder.http2Enabled;
             this.idleTimeout = builder.idleTimeout;
             this.listenerDescription = builder.listenerDescription;
+            this.listenerStatus = builder.listenerStatus;
             this.quicConfig = builder.quicConfig;
             this.requestTimeout = builder.requestTimeout;
             this.securityPolicyId = builder.securityPolicyId;
@@ -639,6 +670,11 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getListenerStatus() {
+            return this.listenerStatus;
+        }
+
+        @Override
         public final java.lang.Object getQuicConfig() {
             return this.quicConfig;
         }
@@ -689,6 +725,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getListenerDescription() != null) {
                 data.set("listenerDescription", om.valueToTree(this.getListenerDescription()));
             }
+            if (this.getListenerStatus() != null) {
+                data.set("listenerStatus", om.valueToTree(this.getListenerStatus()));
+            }
             if (this.getQuicConfig() != null) {
                 data.set("quicConfig", om.valueToTree(this.getQuicConfig()));
             }
@@ -730,6 +769,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.http2Enabled != null ? !this.http2Enabled.equals(that.http2Enabled) : that.http2Enabled != null) return false;
             if (this.idleTimeout != null ? !this.idleTimeout.equals(that.idleTimeout) : that.idleTimeout != null) return false;
             if (this.listenerDescription != null ? !this.listenerDescription.equals(that.listenerDescription) : that.listenerDescription != null) return false;
+            if (this.listenerStatus != null ? !this.listenerStatus.equals(that.listenerStatus) : that.listenerStatus != null) return false;
             if (this.quicConfig != null ? !this.quicConfig.equals(that.quicConfig) : that.quicConfig != null) return false;
             if (this.requestTimeout != null ? !this.requestTimeout.equals(that.requestTimeout) : that.requestTimeout != null) return false;
             if (this.securityPolicyId != null ? !this.securityPolicyId.equals(that.securityPolicyId) : that.securityPolicyId != null) return false;
@@ -749,6 +789,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.http2Enabled != null ? this.http2Enabled.hashCode() : 0);
             result = 31 * result + (this.idleTimeout != null ? this.idleTimeout.hashCode() : 0);
             result = 31 * result + (this.listenerDescription != null ? this.listenerDescription.hashCode() : 0);
+            result = 31 * result + (this.listenerStatus != null ? this.listenerStatus.hashCode() : 0);
             result = 31 * result + (this.quicConfig != null ? this.quicConfig.hashCode() : 0);
             result = 31 * result + (this.requestTimeout != null ? this.requestTimeout.hashCode() : 0);
             result = 31 * result + (this.securityPolicyId != null ? this.securityPolicyId.hashCode() : 0);

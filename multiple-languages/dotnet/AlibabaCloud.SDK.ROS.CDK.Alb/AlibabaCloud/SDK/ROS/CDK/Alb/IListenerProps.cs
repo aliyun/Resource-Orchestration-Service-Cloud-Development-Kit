@@ -141,6 +141,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        /// <summary>Property listenerStatus: The status of the listener.</summary>
+        [JsiiProperty(name: "listenerStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ListenerStatus
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property quicConfig: Select a QUIC listener and associate it with the ALB instance.</summary>
         [JsiiProperty(name: "quicConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.QuicConfigProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -313,6 +324,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiOptional]
             [JsiiProperty(name: "listenerDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ListenerDescription
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property listenerStatus: The status of the listener.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "listenerStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ListenerStatus
             {
                 get => GetInstanceProperty<object?>();
             }

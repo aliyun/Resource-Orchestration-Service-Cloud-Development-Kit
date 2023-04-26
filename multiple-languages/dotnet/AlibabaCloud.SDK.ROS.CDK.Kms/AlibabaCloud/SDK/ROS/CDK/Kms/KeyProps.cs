@@ -42,6 +42,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
         }
 
+        private object? _dkmsInstanceId;
+
+        /// <summary>Property dkmsInstanceId: The ID of the dedicated KMS instance.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "dkmsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DkmsInstanceId
+        {
+            get => _dkmsInstanceId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _dkmsInstanceId = value;
+            }
+        }
+
         private object? _enable;
 
         /// <summary>Property enable: Specifies whether the key is enabled.</summary>
@@ -146,9 +177,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 
         private object? _keyUsage;
 
-        /// <summary>Property keyUsage: The intended use of the CMK.</summary>
+        /// <summary>Property keyUsage: The usage of the CMK.</summary>
         /// <remarks>
-        /// Default value: ENCRYPT/DECRYPT.
+        /// Valid values:
+        /// ENCRYPT/DECRYPT: encrypts or decrypts data.
+        /// SIGN/VERIFY: generates or verifies a digital signature.
+        /// If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "keyUsage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

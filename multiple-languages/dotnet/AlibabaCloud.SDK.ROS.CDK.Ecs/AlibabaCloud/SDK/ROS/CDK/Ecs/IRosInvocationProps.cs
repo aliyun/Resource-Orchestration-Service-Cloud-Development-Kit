@@ -9,21 +9,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public interface IRosInvocationProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: commandId: The id of command.
-        /// </remarks>
-        [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object CommandId
-        {
-            get;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: instanceIds: The instance id list. Instances status must be running.
         /// </remarks>
         [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InstanceIds
         {
             get;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: commandId: The id of command.
+        /// </remarks>
+        [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CommandId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: commandName: The name of command. Only system commands whose provide is AlibabaCloud are supported
+        /// </remarks>
+        [JsiiProperty(name: "commandName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CommandName
+        {
+            get
+            {
+                return null;
+            }
         }
 
         /// <remarks>
@@ -93,21 +110,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: commandId: The id of command.
-            /// </remarks>
-            [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object CommandId
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: instanceIds: The instance id list. Instances status must be running.
             /// </remarks>
             [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceIds
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: commandId: The id of command.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CommandId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: commandName: The name of command. Only system commands whose provide is AlibabaCloud are supported
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "commandName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CommandName
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

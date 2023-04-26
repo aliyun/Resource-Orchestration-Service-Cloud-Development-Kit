@@ -40,17 +40,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
-        private object? _aclEntrys;
+        private object? _aclEntries;
 
-        /// <summary>Property aclEntrys: A list of acl entrys.</summary>
+        /// <summary>Property aclEntries: A list of acl entries.</summary>
         /// <remarks>
         /// Each entry can be IP addresses or CIDR blocks. Max length: 50.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "aclEntrys", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosAccessControl.AclEntrysProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        public object? AclEntrys
+        [JsiiProperty(name: "aclEntries", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosAccessControl.AclEntriesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? AclEntries
         {
-            get => _aclEntrys;
+            get => _aclEntries;
             set
             {
                 if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
@@ -66,15 +66,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                                 {
                                     case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
                                         break;
-                                    case AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntrysProperty cast_201718:
+                                    case AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntriesProperty cast_201718:
                                         break;
                                     case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
                                         // Not enough information to type-check...
                                         break;
                                     case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntrysProperty).FullName}; received null", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntriesProperty).FullName}; received null", nameof(value));
                                     default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntrysProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntriesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
                                 }
                             }
                             break;
@@ -87,7 +87,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
                     }
                 }
-                _aclEntrys = value;
+                _aclEntries = value;
             }
         }
 

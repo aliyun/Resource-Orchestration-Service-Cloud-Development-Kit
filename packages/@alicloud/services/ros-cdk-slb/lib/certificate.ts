@@ -9,11 +9,6 @@ export { RosCertificate as CertificateProperty };
 export interface CertificateProps {
 
     /**
-     * Property certificate: The content of the certificate public key.
-     */
-    readonly certificate: string | ros.IResolvable;
-
-    /**
      * Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
      */
     readonly aliCloudCertificateId?: string | ros.IResolvable;
@@ -22,6 +17,11 @@ export interface CertificateProps {
      * Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
      */
     readonly aliCloudCertificateName?: string | ros.IResolvable;
+
+    /**
+     * Property certificate: The content of the certificate public key.
+     */
+    readonly certificate?: string | ros.IResolvable;
 
     /**
      * Property certificateName: The name of the certificate.
@@ -76,7 +76,7 @@ export class Certificate extends ros.Resource {
      * Param id    - scoped id of the resource
      * Param props - resource properties
      */
-    constructor(scope: ros.Construct, id: string, props: CertificateProps, enableResourcePropertyConstraint:boolean = true) {
+    constructor(scope: ros.Construct, id: string, props: CertificateProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
 
         const rosCertificate = new RosCertificate(this, id,  {

@@ -44,10 +44,12 @@ export interface DBInstanceCloneProps {
 
     /**
      * Property category: The edition of the instance. Valid values:
-     * Basic: specifies to use the Basic Edition.
-     * HighAvailability: specifies to use the High-availability Edition.
-     * AlwaysOn: specifies to use the Cluster Edition.
-     * Finance: specifies to use the Enterprise Edition.
+     * Basic: RDS Basic Edition
+     * HighAvailability: RDS High-availability Edition
+     * cluster: RDS Cluster Edition
+     * AlwaysOn: RDS Cluster Edition for SQL Server
+     * Finance: RDS Enterprise Edition
+     * serverless_basic: RDS Serverless Basic Edition
      */
     readonly category?: string | ros.IResolvable;
 

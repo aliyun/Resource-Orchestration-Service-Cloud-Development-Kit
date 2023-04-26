@@ -4,42 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    #pragma warning disable CS8618
-
     /// <summary>Properties for defining a `ALIYUN::SLB::Certificate`.</summary>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.CertificateProps")]
     public class CertificateProps : AlibabaCloud.SDK.ROS.CDK.Slb.ICertificateProps
     {
-        private object _certificate;
-
-        /// <summary>Property certificate: The content of the certificate public key.</summary>
-        [JsiiProperty(name: "certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public object Certificate
-        {
-            get => _certificate;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _certificate = value;
-            }
-        }
-
         private object? _aliCloudCertificateId;
 
         /// <summary>Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.</summary>
@@ -99,6 +67,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                     }
                 }
                 _aliCloudCertificateName = value;
+            }
+        }
+
+        private object? _certificate;
+
+        /// <summary>Property certificate: The content of the certificate public key.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Certificate
+        {
+            get => _certificate;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _certificate = value;
             }
         }
 

@@ -23,6 +23,11 @@ export interface RuleProps {
      * Property ruleList: The forwarding rules to add.
      */
     readonly ruleList: Array<RosRule.RuleListProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+     */
+    readonly listenerProtocol?: string | ros.IResolvable;
 }
 
 /**
@@ -54,6 +59,7 @@ export class Rule extends ros.Resource {
             listenerPort: props.listenerPort,
             ruleList: props.ruleList,
             loadBalancerId: props.loadBalancerId,
+            listenerProtocol: props.listenerProtocol,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRule;
         this.attrRules = rosRule.attrRules;

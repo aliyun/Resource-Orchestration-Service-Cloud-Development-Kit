@@ -33,6 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             get;
         }
 
+        /// <summary>Property listenerProtocol: The frontend protocol that is used by the SLB instance.</summary>
+        [JsiiProperty(name: "listenerProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ListenerProtocol
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::SLB::Rule`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.RuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.IRuleProps
@@ -64,6 +75,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             public object RuleList
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property listenerProtocol: The frontend protocol that is used by the SLB instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "listenerProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ListenerProtocol
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }
