@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::AccessControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.676Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.098Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.AccessControl")
 public class AccessControl extends com.aliyun.ros.cdk.core.Resource {
 
@@ -111,27 +111,27 @@ public class AccessControl extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property aclEntrys: A list of acl entrys.
+         * Property aclEntries: A list of acl entries.
          * <p>
          * Each entry can be IP addresses or CIDR blocks. Max length: 50.
          * <p>
          * @return {@code this}
-         * @param aclEntrys Property aclEntrys: A list of acl entrys. This parameter is required.
+         * @param aclEntries Property aclEntries: A list of acl entries. This parameter is required.
          */
-        public Builder aclEntrys(final com.aliyun.ros.cdk.core.IResolvable aclEntrys) {
-            this.props.aclEntrys(aclEntrys);
+        public Builder aclEntries(final com.aliyun.ros.cdk.core.IResolvable aclEntries) {
+            this.props.aclEntries(aclEntries);
             return this;
         }
         /**
-         * Property aclEntrys: A list of acl entrys.
+         * Property aclEntries: A list of acl entries.
          * <p>
          * Each entry can be IP addresses or CIDR blocks. Max length: 50.
          * <p>
          * @return {@code this}
-         * @param aclEntrys Property aclEntrys: A list of acl entrys. This parameter is required.
+         * @param aclEntries Property aclEntries: A list of acl entries. This parameter is required.
          */
-        public Builder aclEntrys(final java.util.List<? extends java.lang.Object> aclEntrys) {
-            this.props.aclEntrys(aclEntrys);
+        public Builder aclEntries(final java.util.List<? extends java.lang.Object> aclEntries) {
+            this.props.aclEntries(aclEntries);
             return this;
         }
 

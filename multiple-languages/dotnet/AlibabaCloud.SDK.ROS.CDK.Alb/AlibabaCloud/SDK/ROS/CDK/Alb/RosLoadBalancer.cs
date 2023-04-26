@@ -183,6 +183,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         /// <strong>Property</strong>: loadBalancerEdition: The edition of the ALB instance. Different editions have different limits and billing methods. Valid values:
         /// Basic: Basic Edition
         /// Standard: Standard Edition
+        /// StandardWithWaf: Standard Edition with WAF
         /// </remarks>
         [JsiiProperty(name: "loadBalancerEdition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object LoadBalancerEdition

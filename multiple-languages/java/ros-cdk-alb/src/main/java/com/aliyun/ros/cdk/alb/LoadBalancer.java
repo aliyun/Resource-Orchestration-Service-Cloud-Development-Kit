@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS resource type:  `ALIYUN::ALB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:09.816Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.013Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -180,6 +180,7 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          * Different editions have different limits and billing methods. Valid values:
          * Basic: Basic Edition
          * Standard: Standard Edition
+         * StandardWithWaf: Standard Edition with WAF
          * <p>
          * @return {@code this}
          * @param loadBalancerEdition Property loadBalancerEdition: The edition of the ALB instance. This parameter is required.
@@ -194,6 +195,7 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          * Different editions have different limits and billing methods. Valid values:
          * Basic: Basic Edition
          * Standard: Standard Edition
+         * StandardWithWaf: Standard Edition with WAF
          * <p>
          * @return {@code this}
          * @param loadBalancerEdition Property loadBalancerEdition: The edition of the ALB instance. This parameter is required.

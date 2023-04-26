@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * Interface so it could potentially be exposed over jsii.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:09.685Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.887Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IFragmentConcatenator")
 @software.amazon.jsii.Jsii.Proxy(IFragmentConcatenator.Jsii$Proxy.class)
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)

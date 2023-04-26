@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * Properties for defining a `ALIYUN::KMS::Key`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.823Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.154Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.KeyProps")
 @software.amazon.jsii.Jsii.Proxy(KeyProps.Jsii$Proxy.class)
 public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,6 +14,13 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
      * Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     * Property dkmsInstanceId: The ID of the dedicated KMS instance.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDkmsInstanceId() {
         return null;
     }
 
@@ -45,9 +52,12 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property keyUsage: The intended use of the CMK.
+     * Property keyUsage: The usage of the CMK.
      * <p>
-     * Default value: ENCRYPT/DECRYPT.
+     * Valid values:
+     * ENCRYPT/DECRYPT: encrypts or decrypts data.
+     * SIGN/VERIFY: generates or verifies a digital signature.
+     * If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKeyUsage() {
         return null;
@@ -93,6 +103,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<KeyProps> {
         java.lang.Object description;
+        java.lang.Object dkmsInstanceId;
         java.lang.Object enable;
         java.lang.Object enableAutomaticRotation;
         java.lang.Object keySpec;
@@ -120,6 +131,26 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KeyProps#getDkmsInstanceId}
+         * @param dkmsInstanceId Property dkmsInstanceId: The ID of the dedicated KMS instance.
+         * @return {@code this}
+         */
+        public Builder dkmsInstanceId(java.lang.String dkmsInstanceId) {
+            this.dkmsInstanceId = dkmsInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link KeyProps#getDkmsInstanceId}
+         * @param dkmsInstanceId Property dkmsInstanceId: The ID of the dedicated KMS instance.
+         * @return {@code this}
+         */
+        public Builder dkmsInstanceId(com.aliyun.ros.cdk.core.IResolvable dkmsInstanceId) {
+            this.dkmsInstanceId = dkmsInstanceId;
             return this;
         }
 
@@ -191,8 +222,11 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link KeyProps#getKeyUsage}
-         * @param keyUsage Property keyUsage: The intended use of the CMK.
-         *                 Default value: ENCRYPT/DECRYPT.
+         * @param keyUsage Property keyUsage: The usage of the CMK.
+         *                 Valid values:
+         *                 ENCRYPT/DECRYPT: encrypts or decrypts data.
+         *                 SIGN/VERIFY: generates or verifies a digital signature.
+         *                 If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
          * @return {@code this}
          */
         public Builder keyUsage(java.lang.String keyUsage) {
@@ -202,8 +236,11 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link KeyProps#getKeyUsage}
-         * @param keyUsage Property keyUsage: The intended use of the CMK.
-         *                 Default value: ENCRYPT/DECRYPT.
+         * @param keyUsage Property keyUsage: The usage of the CMK.
+         *                 Valid values:
+         *                 ENCRYPT/DECRYPT: encrypts or decrypts data.
+         *                 SIGN/VERIFY: generates or verifies a digital signature.
+         *                 If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
          * @return {@code this}
          */
         public Builder keyUsage(com.aliyun.ros.cdk.core.IResolvable keyUsage) {
@@ -298,6 +335,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements KeyProps {
         private final java.lang.Object description;
+        private final java.lang.Object dkmsInstanceId;
         private final java.lang.Object enable;
         private final java.lang.Object enableAutomaticRotation;
         private final java.lang.Object keySpec;
@@ -313,6 +351,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dkmsInstanceId = software.amazon.jsii.Kernel.get(this, "dkmsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableAutomaticRotation = software.amazon.jsii.Kernel.get(this, "enableAutomaticRotation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keySpec = software.amazon.jsii.Kernel.get(this, "keySpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -328,6 +367,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.description = builder.description;
+            this.dkmsInstanceId = builder.dkmsInstanceId;
             this.enable = builder.enable;
             this.enableAutomaticRotation = builder.enableAutomaticRotation;
             this.keySpec = builder.keySpec;
@@ -340,6 +380,11 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getDkmsInstanceId() {
+            return this.dkmsInstanceId;
         }
 
         @Override
@@ -386,6 +431,9 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getDkmsInstanceId() != null) {
+                data.set("dkmsInstanceId", om.valueToTree(this.getDkmsInstanceId()));
+            }
             if (this.getEnable() != null) {
                 data.set("enable", om.valueToTree(this.getEnable()));
             }
@@ -426,6 +474,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
             KeyProps.Jsii$Proxy that = (KeyProps.Jsii$Proxy) o;
 
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.dkmsInstanceId != null ? !this.dkmsInstanceId.equals(that.dkmsInstanceId) : that.dkmsInstanceId != null) return false;
             if (this.enable != null ? !this.enable.equals(that.enable) : that.enable != null) return false;
             if (this.enableAutomaticRotation != null ? !this.enableAutomaticRotation.equals(that.enableAutomaticRotation) : that.enableAutomaticRotation != null) return false;
             if (this.keySpec != null ? !this.keySpec.equals(that.keySpec) : that.keySpec != null) return false;
@@ -438,6 +487,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.description != null ? this.description.hashCode() : 0;
+            result = 31 * result + (this.dkmsInstanceId != null ? this.dkmsInstanceId.hashCode() : 0);
             result = 31 * result + (this.enable != null ? this.enable.hashCode() : 0);
             result = 31 * result + (this.enableAutomaticRotation != null ? this.enableAutomaticRotation.hashCode() : 0);
             result = 31 * result + (this.keySpec != null ? this.keySpec.hashCode() : 0);

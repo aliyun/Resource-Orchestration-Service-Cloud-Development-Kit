@@ -3,6 +3,165 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::PolarDBX::Account`
+ */
+export interface RosAccountProps {
+
+    /**
+     * @Property accountName: Account name.
+     */
+    readonly accountName: string | ros.IResolvable;
+
+    /**
+     * @Property accountPassword: The password of the account.
+     */
+    readonly accountPassword: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The ID of the instance.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property accountDescription: Account description information.
+     */
+    readonly accountDescription?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccountProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccountPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('accountDescription', ros.validateString)(properties.accountDescription));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('accountPassword', ros.requiredValidator)(properties.accountPassword));
+    errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    return errors.wrap('supplied properties not correct for "RosAccountProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PolarDBX::Account` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PolarDBX::Account` resource.
+ */
+// @ts-ignore TS6133
+function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccountPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AccountName: ros.stringToRosTemplate(properties.accountName),
+      AccountPassword: ros.stringToRosTemplate(properties.accountPassword),
+      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+      AccountDescription: ros.stringToRosTemplate(properties.accountDescription),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::PolarDBX::Account`
+ */
+export class RosAccount extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PolarDBX::Account";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AccountDescription: Account description information.
+     */
+    public readonly attrAccountDescription: ros.IResolvable;
+
+    /**
+     * @Attribute AccountName: Account name.
+     */
+    public readonly attrAccountName: ros.IResolvable;
+
+    /**
+     * @Attribute AccountType: Account type. 0 represents an ordinary account, and 1 represents a high-privilege account.
+     */
+    public readonly attrAccountType: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceId: The ID of the instance.
+     */
+    public readonly attrDbInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountName: Account name.
+     */
+    public accountName: string | ros.IResolvable;
+
+    /**
+     * @Property accountPassword: The password of the account.
+     */
+    public accountPassword: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The ID of the instance.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property accountDescription: Account description information.
+     */
+    public accountDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::PolarDBX::Account`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccountProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountDescription = this.getAtt('AccountDescription');
+        this.attrAccountName = this.getAtt('AccountName');
+        this.attrAccountType = this.getAtt('AccountType');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountName = props.accountName;
+        this.accountPassword = props.accountPassword;
+        this.dbInstanceId = props.dbInstanceId;
+        this.accountDescription = props.accountDescription;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountName: this.accountName,
+            accountPassword: this.accountPassword,
+            dbInstanceId: this.dbInstanceId,
+            accountDescription: this.accountDescription,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccountPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::PolarDBX::DBInstance`
  */
 export interface RosDBInstanceProps {
@@ -331,4 +490,271 @@ export class RosDBInstance extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDBInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `ALIYUN::PolarDBX::Database`
+ */
+export interface RosDatabaseProps {
+
+    /**
+     * @Property accounts: List of accounts.
+     */
+    readonly accounts: Array<RosDatabase.AccountsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property characterSetName: Character set, which supports the following character sets:
+     * - **utf8 * *
+     * - **gbk**
+     * - **latin1 * *
+     * - **utf8mb4 * *.
+     */
+    readonly characterSetName: string | ros.IResolvable;
+
+    /**
+     * @Property databaseName: The name of the database.
+     */
+    readonly databaseName: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The ID of the instance.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property databaseDescription: Database description information.
+     */
+    readonly databaseDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property mode: The mode selected when creating the database. The values are as follows:
+     * - **auto**: The database in this mode supports automatic partitioning, that is, you do not need to specify a partition key when creating a table;
+     * - **drds**: databases in this mode do not support automatic partitioning. When creating tables, you must use the dedicated database Shard syntax and specify the database shard key.
+     */
+    readonly mode?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDatabaseProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDatabaseProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDatabasePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('characterSetName', ros.requiredValidator)(properties.characterSetName));
+    if(properties.characterSetName && (typeof properties.characterSetName) !== 'object') {
+        errors.collect(ros.propertyValidator('characterSetName', ros.validateAllowedValues)({
+          data: properties.characterSetName,
+          allowedValues: ["utf8","gbk","latin1","utf8mb4"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('characterSetName', ros.validateString)(properties.characterSetName));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('mode', ros.validateString)(properties.mode));
+    errors.collect(ros.propertyValidator('databaseName', ros.requiredValidator)(properties.databaseName));
+    errors.collect(ros.propertyValidator('databaseName', ros.validateString)(properties.databaseName));
+    errors.collect(ros.propertyValidator('databaseDescription', ros.validateString)(properties.databaseDescription));
+    errors.collect(ros.propertyValidator('accounts', ros.requiredValidator)(properties.accounts));
+    errors.collect(ros.propertyValidator('accounts', ros.listValidator(RosDatabase_AccountsPropertyValidator))(properties.accounts));
+    return errors.wrap('supplied properties not correct for "RosDatabaseProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PolarDBX::Database` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDatabaseProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PolarDBX::Database` resource.
+ */
+// @ts-ignore TS6133
+function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDatabasePropsValidator(properties).assertSuccess();
+    }
+    return {
+      Accounts: ros.listMapper(rosDatabaseAccountsPropertyToRosTemplate)(properties.accounts),
+      CharacterSetName: ros.stringToRosTemplate(properties.characterSetName),
+      DatabaseName: ros.stringToRosTemplate(properties.databaseName),
+      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+      DatabaseDescription: ros.stringToRosTemplate(properties.databaseDescription),
+      Mode: ros.stringToRosTemplate(properties.mode),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::PolarDBX::Database`
+ */
+export class RosDatabase extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PolarDBX::Database";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Accounts: List of accounts.
+     */
+    public readonly attrAccounts: ros.IResolvable;
+
+    /**
+     * @Attribute CharacterSetName: Character set, which supports the following character sets:.
+     */
+    public readonly attrCharacterSetName: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceId: The ID of the instance.
+     */
+    public readonly attrDbInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute DatabaseDescription: Database description information.
+     */
+    public readonly attrDatabaseDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DatabaseName: The name of the database.
+     */
+    public readonly attrDatabaseName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accounts: List of accounts.
+     */
+    public accounts: Array<RosDatabase.AccountsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property characterSetName: Character set, which supports the following character sets:
+     * - **utf8 * *
+     * - **gbk**
+     * - **latin1 * *
+     * - **utf8mb4 * *.
+     */
+    public characterSetName: string | ros.IResolvable;
+
+    /**
+     * @Property databaseName: The name of the database.
+     */
+    public databaseName: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The ID of the instance.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property databaseDescription: Database description information.
+     */
+    public databaseDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property mode: The mode selected when creating the database. The values are as follows:
+     * - **auto**: The database in this mode supports automatic partitioning, that is, you do not need to specify a partition key when creating a table;
+     * - **drds**: databases in this mode do not support automatic partitioning. When creating tables, you must use the dedicated database Shard syntax and specify the database shard key.
+     */
+    public mode: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::PolarDBX::Database`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDatabaseProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDatabase.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccounts = this.getAtt('Accounts');
+        this.attrCharacterSetName = this.getAtt('CharacterSetName');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrDatabaseDescription = this.getAtt('DatabaseDescription');
+        this.attrDatabaseName = this.getAtt('DatabaseName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accounts = props.accounts;
+        this.characterSetName = props.characterSetName;
+        this.databaseName = props.databaseName;
+        this.dbInstanceId = props.dbInstanceId;
+        this.databaseDescription = props.databaseDescription;
+        this.mode = props.mode;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accounts: this.accounts,
+            characterSetName: this.characterSetName,
+            databaseName: this.databaseName,
+            dbInstanceId: this.dbInstanceId,
+            databaseDescription: this.databaseDescription,
+            mode: this.mode,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDatabasePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosDatabase {
+    /**
+     * @stability external
+     */
+    export interface AccountsProperty {
+        /**
+         * @Property accountPrivilege: Permission.
+         */
+        readonly accountPrivilege: string | ros.IResolvable;
+        /**
+         * @Property accountName: Account name.
+         */
+        readonly accountName: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AccountsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AccountsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDatabase_AccountsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('accountPrivilege', ros.requiredValidator)(properties.accountPrivilege));
+    if(properties.accountPrivilege && (typeof properties.accountPrivilege) !== 'object') {
+        errors.collect(ros.propertyValidator('accountPrivilege', ros.validateAllowedValues)({
+          data: properties.accountPrivilege,
+          allowedValues: ["ReadWrite","ReadOnly","DMLOnly","DDLOnly"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountPrivilege', ros.validateString)(properties.accountPrivilege));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    return errors.wrap('supplied properties not correct for "AccountsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PolarDBX::Database.Accounts` resource
+ *
+ * @param properties - the TypeScript properties of a `AccountsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PolarDBX::Database.Accounts` resource.
+ */
+// @ts-ignore TS6133
+function rosDatabaseAccountsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDatabase_AccountsPropertyValidator(properties).assertSuccess();
+    return {
+      AccountPrivilege: ros.stringToRosTemplate(properties.accountPrivilege),
+      AccountName: ros.stringToRosTemplate(properties.accountName),
+    };
 }

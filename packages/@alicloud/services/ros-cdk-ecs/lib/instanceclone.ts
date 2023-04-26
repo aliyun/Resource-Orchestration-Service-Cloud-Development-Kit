@@ -50,7 +50,7 @@ export interface InstanceCloneProps {
     readonly instanceName?: string | ros.IResolvable;
 
     /**
-     * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
+     * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [0,200], default is 200 Mbps.
      */
     readonly internetMaxBandwidthIn?: number | ros.IResolvable;
 

@@ -4906,7 +4906,7 @@ export interface RosInstanceCloneProps {
     readonly instanceName?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
+     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [0,200], default is 200 Mbps.
      */
     readonly internetMaxBandwidthIn?: number | ros.IResolvable;
 
@@ -5028,7 +5028,7 @@ function RosInstanceClonePropsValidator(properties: any): ros.ValidationResult {
     if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
         errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
             data: properties.internetMaxBandwidthIn,
-            min: 1,
+            min: 0,
             max: 200,
           }));
     }
@@ -5190,7 +5190,7 @@ export class RosInstanceClone extends ros.RosResource {
     public instanceName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
+     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [0,200], default is 200 Mbps.
      */
     public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
 
@@ -5712,6 +5712,27 @@ export interface RosInstanceGroupProps {
     readonly systemDiskDiskName?: string | ros.IResolvable;
 
     /**
+     * @Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
+     * - ase-256
+     * - sm4-128
+     * Default value: ase-256.
+     */
+    readonly systemDiskEncryptAlgorithm?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskEncrypted: Specifies whether to encrypt the system disk. Valid values:
+     * - true: encrypts the system disk.
+     * - false: does not encrypt the system disk.
+     * Default value: false.
+     */
+    readonly systemDiskEncrypted?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+     */
+    readonly systemDiskKmsKeyId?: string | ros.IResolvable;
+
+    /**
      * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
@@ -5725,6 +5746,11 @@ export interface RosInstanceGroupProps {
      * @Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
      */
     readonly systemDiskSize?: number | ros.IResolvable;
+
+    /**
+     * @Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster. If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+     */
+    readonly systemDiskStorageClusterId?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -5788,6 +5814,13 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('systemDiskProvisionedIops', ros.validateNumber)(properties.systemDiskProvisionedIops));
+    if(properties.systemDiskEncryptAlgorithm && (typeof properties.systemDiskEncryptAlgorithm) !== 'object') {
+        errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateAllowedValues)({
+          data: properties.systemDiskEncryptAlgorithm,
+          allowedValues: ["ase-256","sm4-128"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateString)(properties.systemDiskEncryptAlgorithm));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
     errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
     errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
@@ -5802,6 +5835,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstanceGroup_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
+    errors.collect(ros.propertyValidator('systemDiskStorageClusterId', ros.validateString)(properties.systemDiskStorageClusterId));
     errors.collect(ros.propertyValidator('launchTemplateName', ros.validateString)(properties.launchTemplateName));
     if(properties.updatePolicy && (typeof properties.updatePolicy) !== 'object') {
         errors.collect(ros.propertyValidator('updatePolicy', ros.validateAllowedValues)({
@@ -5810,6 +5844,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('updatePolicy', ros.validateString)(properties.updatePolicy));
+    errors.collect(ros.propertyValidator('systemDiskKmsKeyId', ros.validateString)(properties.systemDiskKmsKeyId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -5903,6 +5938,13 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('ipv6Addresses', ros.listValidator(ros.validateAny))(properties.ipv6Addresses));
+    if(properties.systemDiskEncrypted && (typeof properties.systemDiskEncrypted) !== 'object') {
+        errors.collect(ros.propertyValidator('systemDiskEncrypted', ros.validateAllowedValues)({
+          data: properties.systemDiskEncrypted,
+          allowedValues: ["true","false"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('systemDiskEncrypted', ros.validateString)(properties.systemDiskEncrypted));
     errors.collect(ros.propertyValidator('maxAmount', ros.requiredValidator)(properties.maxAmount));
     if(properties.maxAmount && (typeof properties.maxAmount) !== 'object') {
         errors.collect(ros.propertyValidator('maxAmount', ros.validateRange)({
@@ -6039,9 +6081,13 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
       SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
       SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
+      SystemDiskEncryptAlgorithm: ros.stringToRosTemplate(properties.systemDiskEncryptAlgorithm),
+      SystemDiskEncrypted: ros.stringToRosTemplate(properties.systemDiskEncrypted),
+      SystemDiskKMSKeyId: ros.stringToRosTemplate(properties.systemDiskKmsKeyId),
       SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
       SystemDiskProvisionedIops: ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
       SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
+      SystemDiskStorageClusterId: ros.stringToRosTemplate(properties.systemDiskStorageClusterId),
       Tags: ros.listMapper(rosInstanceGroupTagsPropertyToRosTemplate)(properties.tags),
       UpdatePolicy: ros.stringToRosTemplate(properties.updatePolicy),
       UserData: ros.stringToRosTemplate(properties.userData),
@@ -6373,6 +6419,27 @@ export class RosInstanceGroup extends ros.RosResource {
     public systemDiskDiskName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
+     * - ase-256
+     * - sm4-128
+     * Default value: ase-256.
+     */
+    public systemDiskEncryptAlgorithm: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskEncrypted: Specifies whether to encrypt the system disk. Valid values:
+     * - true: encrypts the system disk.
+     * - false: does not encrypt the system disk.
+     * Default value: false.
+     */
+    public systemDiskEncrypted: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+     */
+    public systemDiskKmsKeyId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     public systemDiskPerformanceLevel: string | ros.IResolvable | undefined;
@@ -6386,6 +6453,11 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
      */
     public systemDiskSize: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster. If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+     */
+    public systemDiskStorageClusterId: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -6493,9 +6565,13 @@ export class RosInstanceGroup extends ros.RosResource {
         this.systemDiskCategory = props.systemDiskCategory;
         this.systemDiskDescription = props.systemDiskDescription;
         this.systemDiskDiskName = props.systemDiskDiskName;
+        this.systemDiskEncryptAlgorithm = props.systemDiskEncryptAlgorithm;
+        this.systemDiskEncrypted = props.systemDiskEncrypted;
+        this.systemDiskKmsKeyId = props.systemDiskKmsKeyId;
         this.systemDiskPerformanceLevel = props.systemDiskPerformanceLevel;
         this.systemDiskProvisionedIops = props.systemDiskProvisionedIops;
         this.systemDiskSize = props.systemDiskSize;
+        this.systemDiskStorageClusterId = props.systemDiskStorageClusterId;
         this.tags = props.tags;
         this.updatePolicy = props.updatePolicy;
         this.userData = props.userData;
@@ -6554,9 +6630,13 @@ export class RosInstanceGroup extends ros.RosResource {
             systemDiskCategory: this.systemDiskCategory,
             systemDiskDescription: this.systemDiskDescription,
             systemDiskDiskName: this.systemDiskDiskName,
+            systemDiskEncryptAlgorithm: this.systemDiskEncryptAlgorithm,
+            systemDiskEncrypted: this.systemDiskEncrypted,
+            systemDiskKmsKeyId: this.systemDiskKmsKeyId,
             systemDiskPerformanceLevel: this.systemDiskPerformanceLevel,
             systemDiskProvisionedIops: this.systemDiskProvisionedIops,
             systemDiskSize: this.systemDiskSize,
+            systemDiskStorageClusterId: this.systemDiskStorageClusterId,
             tags: this.tags,
             updatePolicy: this.updatePolicy,
             userData: this.userData,
@@ -6890,7 +6970,7 @@ export interface RosInstanceGroupCloneProps {
     readonly instanceName?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
+     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [0,200], default is 200 Mbps.
      */
     readonly internetMaxBandwidthIn?: number | ros.IResolvable;
 
@@ -7014,9 +7094,35 @@ export interface RosInstanceGroupCloneProps {
     readonly systemDiskDiskName?: string | ros.IResolvable;
 
     /**
+     * @Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
+     * - ase-256
+     * - sm4-128
+     * Default value: ase-256.
+     */
+    readonly systemDiskEncryptAlgorithm?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskEncrypted: Specifies whether to encrypt the system disk. Valid values:
+     * - true: encrypts the system disk.
+     * - false: does not encrypt the system disk.
+     * Default value: false.
+     */
+    readonly systemDiskEncrypted?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+     */
+    readonly systemDiskKmsKeyId?: string | ros.IResolvable;
+
+    /**
      * @Property systemDiskProvisionedIops: Provisioning IOPS.
      */
     readonly systemDiskProvisionedIops?: number | ros.IResolvable;
+
+    /**
+     * @Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster. If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+     */
+    readonly systemDiskStorageClusterId?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -7078,6 +7184,13 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('ipv6Addresses', ros.listValidator(ros.validateAny))(properties.ipv6Addresses));
     errors.collect(ros.propertyValidator('sourceInstanceId', ros.requiredValidator)(properties.sourceInstanceId));
     errors.collect(ros.propertyValidator('sourceInstanceId', ros.validateString)(properties.sourceInstanceId));
+    if(properties.systemDiskEncrypted && (typeof properties.systemDiskEncrypted) !== 'object') {
+        errors.collect(ros.propertyValidator('systemDiskEncrypted', ros.validateAllowedValues)({
+          data: properties.systemDiskEncrypted,
+          allowedValues: ["true","false"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('systemDiskEncrypted', ros.validateString)(properties.systemDiskEncrypted));
     errors.collect(ros.propertyValidator('maxAmount', ros.requiredValidator)(properties.maxAmount));
     if(properties.maxAmount && (typeof properties.maxAmount) !== 'object') {
         errors.collect(ros.propertyValidator('maxAmount', ros.validateRange)({
@@ -7088,6 +7201,13 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     }
     errors.collect(ros.propertyValidator('maxAmount', ros.validateNumber)(properties.maxAmount));
     errors.collect(ros.propertyValidator('systemDiskAutoSnapshotPolicyId', ros.validateString)(properties.systemDiskAutoSnapshotPolicyId));
+    if(properties.systemDiskEncryptAlgorithm && (typeof properties.systemDiskEncryptAlgorithm) !== 'object') {
+        errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateAllowedValues)({
+          data: properties.systemDiskEncryptAlgorithm,
+          allowedValues: ["ase-256","sm4-128"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateString)(properties.systemDiskEncryptAlgorithm));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
     if(properties.ipv6AddressCount && (typeof properties.ipv6AddressCount) !== 'object') {
         errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateRange)({
@@ -7117,6 +7237,7 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
     errors.collect(ros.propertyValidator('passwordInherit', ros.validateBoolean)(properties.passwordInherit));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    errors.collect(ros.propertyValidator('systemDiskStorageClusterId', ros.validateString)(properties.systemDiskStorageClusterId));
     if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
           data: properties.autoRenewPeriod,
@@ -7142,6 +7263,7 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     }
     errors.collect(ros.propertyValidator('updatePolicy', ros.validateString)(properties.updatePolicy));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('systemDiskKmsKeyId', ros.validateString)(properties.systemDiskKmsKeyId));
     errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     if(properties.period && (typeof properties.period) !== 'object') {
@@ -7190,7 +7312,7 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     if(properties.internetMaxBandwidthIn && (typeof properties.internetMaxBandwidthIn) !== 'object') {
         errors.collect(ros.propertyValidator('internetMaxBandwidthIn', ros.validateRange)({
             data: properties.internetMaxBandwidthIn,
-            min: 1,
+            min: 0,
             max: 200,
           }));
     }
@@ -7265,7 +7387,11 @@ function rosInstanceGroupClonePropsToRosTemplate(properties: any, enableResource
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
       SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
       SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
+      SystemDiskEncryptAlgorithm: ros.stringToRosTemplate(properties.systemDiskEncryptAlgorithm),
+      SystemDiskEncrypted: ros.stringToRosTemplate(properties.systemDiskEncrypted),
+      SystemDiskKMSKeyId: ros.stringToRosTemplate(properties.systemDiskKmsKeyId),
       SystemDiskProvisionedIops: ros.numberToRosTemplate(properties.systemDiskProvisionedIops),
+      SystemDiskStorageClusterId: ros.stringToRosTemplate(properties.systemDiskStorageClusterId),
       Tags: ros.listMapper(rosInstanceGroupCloneTagsPropertyToRosTemplate)(properties.tags),
       UpdatePolicy: ros.stringToRosTemplate(properties.updatePolicy),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -7416,7 +7542,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public instanceName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
+     * @Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [0,200], default is 200 Mbps.
      */
     public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
 
@@ -7540,9 +7666,35 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public systemDiskDiskName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
+     * - ase-256
+     * - sm4-128
+     * Default value: ase-256.
+     */
+    public systemDiskEncryptAlgorithm: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskEncrypted: Specifies whether to encrypt the system disk. Valid values:
+     * - true: encrypts the system disk.
+     * - false: does not encrypt the system disk.
+     * Default value: false.
+     */
+    public systemDiskEncrypted: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+     */
+    public systemDiskKmsKeyId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property systemDiskProvisionedIops: Provisioning IOPS.
      */
     public systemDiskProvisionedIops: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster. If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+     */
+    public systemDiskStorageClusterId: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -7622,7 +7774,11 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.systemDiskCategory = props.systemDiskCategory;
         this.systemDiskDescription = props.systemDiskDescription;
         this.systemDiskDiskName = props.systemDiskDiskName;
+        this.systemDiskEncryptAlgorithm = props.systemDiskEncryptAlgorithm;
+        this.systemDiskEncrypted = props.systemDiskEncrypted;
+        this.systemDiskKmsKeyId = props.systemDiskKmsKeyId;
         this.systemDiskProvisionedIops = props.systemDiskProvisionedIops;
+        this.systemDiskStorageClusterId = props.systemDiskStorageClusterId;
         this.tags = props.tags;
         this.updatePolicy = props.updatePolicy;
         this.zoneId = props.zoneId;
@@ -7669,7 +7825,11 @@ export class RosInstanceGroupClone extends ros.RosResource {
             systemDiskCategory: this.systemDiskCategory,
             systemDiskDescription: this.systemDiskDescription,
             systemDiskDiskName: this.systemDiskDiskName,
+            systemDiskEncryptAlgorithm: this.systemDiskEncryptAlgorithm,
+            systemDiskEncrypted: this.systemDiskEncrypted,
+            systemDiskKmsKeyId: this.systemDiskKmsKeyId,
             systemDiskProvisionedIops: this.systemDiskProvisionedIops,
+            systemDiskStorageClusterId: this.systemDiskStorageClusterId,
             tags: this.tags,
             updatePolicy: this.updatePolicy,
             zoneId: this.zoneId,
@@ -7918,14 +8078,19 @@ function rosInstanceGroupCloneTagsPropertyToRosTemplate(properties: any): any {
 export interface RosInvocationProps {
 
     /**
-     * @Property commandId: The id of command.
-     */
-    readonly commandId: string | ros.IResolvable;
-
-    /**
      * @Property instanceIds: The instance id list. Instances status must be running.
      */
     readonly instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property commandId: The id of command.
+     */
+    readonly commandId?: string | ros.IResolvable;
+
+    /**
+     * @Property commandName: The name of command. Only system commands whose provide is AlibabaCloud are supported
+     */
+    readonly commandName?: string | ros.IResolvable;
 
     /**
      * @Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
@@ -7967,7 +8132,7 @@ function RosInvocationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
     errors.collect(ros.propertyValidator('timed', ros.validateBoolean)(properties.timed));
     errors.collect(ros.propertyValidator('frequency', ros.validateString)(properties.frequency));
-    errors.collect(ros.propertyValidator('commandId', ros.requiredValidator)(properties.commandId));
+    errors.collect(ros.propertyValidator('commandName', ros.validateString)(properties.commandName));
     errors.collect(ros.propertyValidator('commandId', ros.validateString)(properties.commandId));
     errors.collect(ros.propertyValidator('sync', ros.validateBoolean)(properties.sync));
     errors.collect(ros.propertyValidator('instanceIds', ros.requiredValidator)(properties.instanceIds));
@@ -7996,8 +8161,9 @@ function rosInvocationPropsToRosTemplate(properties: any, enableResourceProperty
         RosInvocationPropsValidator(properties).assertSuccess();
     }
     return {
-      CommandId: ros.stringToRosTemplate(properties.commandId),
       InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
+      CommandId: ros.stringToRosTemplate(properties.commandId),
+      CommandName: ros.stringToRosTemplate(properties.commandName),
       Frequency: ros.stringToRosTemplate(properties.frequency),
       Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
       Sync: ros.booleanToRosTemplate(properties.sync),
@@ -8029,18 +8195,28 @@ export class RosInvocation extends ros.RosResource {
      */
     public readonly attrInvokeInstances: ros.IResolvable;
 
+    /**
+     * @Attribute InvokeResults: The results of invoke command.
+     */
+    public readonly attrInvokeResults: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
-
-    /**
-     * @Property commandId: The id of command.
-     */
-    public commandId: string | ros.IResolvable;
 
     /**
      * @Property instanceIds: The instance id list. Instances status must be running.
      */
     public instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property commandId: The id of command.
+     */
+    public commandId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property commandName: The name of command. Only system commands whose provide is AlibabaCloud are supported
+     */
+    public commandName: string | ros.IResolvable | undefined;
 
     /**
      * @Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
@@ -8079,10 +8255,12 @@ export class RosInvocation extends ros.RosResource {
         super(scope, id, { type: RosInvocation.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrInvokeId = this.getAtt('InvokeId');
         this.attrInvokeInstances = this.getAtt('InvokeInstances');
+        this.attrInvokeResults = this.getAtt('InvokeResults');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.commandId = props.commandId;
         this.instanceIds = props.instanceIds;
+        this.commandId = props.commandId;
+        this.commandName = props.commandName;
         this.frequency = props.frequency;
         this.parameters = props.parameters;
         this.sync = props.sync;
@@ -8092,8 +8270,9 @@ export class RosInvocation extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            commandId: this.commandId,
             instanceIds: this.instanceIds,
+            commandId: this.commandId,
+            commandName: this.commandName,
             frequency: this.frequency,
             parameters: this.parameters,
             sync: this.sync,
@@ -10513,6 +10692,11 @@ export class RosRunCommand extends ros.RosResource {
      */
     public readonly attrInvokeInstances: ros.IResolvable;
 
+    /**
+     * @Attribute InvokeResults: The results of invoke command.
+     */
+    public readonly attrInvokeResults: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -10627,6 +10811,7 @@ export class RosRunCommand extends ros.RosResource {
         this.attrCommandId = this.getAtt('CommandId');
         this.attrInvokeId = this.getAtt('InvokeId');
         this.attrInvokeInstances = this.getAtt('InvokeInstances');
+        this.attrInvokeResults = this.getAtt('InvokeResults');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.commandContent = props.commandContent;

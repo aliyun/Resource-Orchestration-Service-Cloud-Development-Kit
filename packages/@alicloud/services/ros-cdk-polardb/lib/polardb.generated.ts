@@ -2312,3 +2312,437 @@ export class RosDBNodes extends ros.RosResource {
         return rosDBNodesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `ALIYUN::POLARDB::GlobalDatabaseNetwork`
+ */
+export interface RosGlobalDatabaseNetworkProps {
+
+    /**
+     * @Property dbClusterId: The ID of the primary cluster.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property gdnDescription: The description of the GDN.
+     */
+    readonly gdnDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosGlobalDatabaseNetworkProps`
+ *
+ * @param properties - the TypeScript properties of a `RosGlobalDatabaseNetworkProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosGlobalDatabaseNetworkPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('gdnDescription', ros.validateString)(properties.gdnDescription));
+    return errors.wrap('supplied properties not correct for "RosGlobalDatabaseNetworkProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::GlobalDatabaseNetwork` resource
+ *
+ * @param properties - the TypeScript properties of a `RosGlobalDatabaseNetworkProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::GlobalDatabaseNetwork` resource.
+ */
+// @ts-ignore TS6133
+function rosGlobalDatabaseNetworkPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosGlobalDatabaseNetworkPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DbClusterId: ros.stringToRosTemplate(properties.dbClusterId),
+      GdnDescription: ros.stringToRosTemplate(properties.gdnDescription),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::POLARDB::GlobalDatabaseNetwork`
+ */
+export class RosGlobalDatabaseNetwork extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::GlobalDatabaseNetwork";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Connections: The information about the connection to the cluster.
+     */
+    public readonly attrConnections: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time at which the GDN was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DbClusters: The clusters that are included in the GDN.
+     */
+    public readonly attrDbClusters: ros.IResolvable;
+
+    /**
+     * @Attribute DbType: The type of the database engine.
+     */
+    public readonly attrDbType: ros.IResolvable;
+
+    /**
+     * @Attribute DbVersion: The version of the database engine.
+     */
+    public readonly attrDbVersion: ros.IResolvable;
+
+    /**
+     * @Attribute GdnDescription: The description of the GDN.
+     */
+    public readonly attrGdnDescription: ros.IResolvable;
+
+    /**
+     * @Attribute GdnId: The ID of the GDN.
+     */
+    public readonly attrGdnId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbClusterId: The ID of the primary cluster.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property gdnDescription: The description of the GDN.
+     */
+    public gdnDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::POLARDB::GlobalDatabaseNetwork`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosGlobalDatabaseNetworkProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosGlobalDatabaseNetwork.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConnections = this.getAtt('Connections');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDbClusters = this.getAtt('DbClusters');
+        this.attrDbType = this.getAtt('DbType');
+        this.attrDbVersion = this.getAtt('DbVersion');
+        this.attrGdnDescription = this.getAtt('GdnDescription');
+        this.attrGdnId = this.getAtt('GdnId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbClusterId = props.dbClusterId;
+        this.gdnDescription = props.gdnDescription;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbClusterId: this.dbClusterId,
+            gdnDescription: this.gdnDescription,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosGlobalDatabaseNetworkPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::POLARDB::ParameterGroup`
+ */
+export interface RosParameterGroupProps {
+
+    /**
+     * @Property dbType: The type of the database engine.
+     */
+    readonly dbType: string | ros.IResolvable;
+
+    /**
+     * @Property dbVersion: The version of the database engine.
+     */
+    readonly dbVersion: string | ros.IResolvable;
+
+    /**
+     * @Property parameterGroupName: The name of the parameter template.
+     */
+    readonly parameterGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property parameters: The list of the parameters.
+     */
+    readonly parameters: Array<RosParameterGroup.ParametersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property parameterGroupDesc: The description of the parameter template.
+     */
+    readonly parameterGroupDesc?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosParameterGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosParameterGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosParameterGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('parameters', ros.requiredValidator)(properties.parameters));
+    errors.collect(ros.propertyValidator('parameters', ros.listValidator(RosParameterGroup_ParametersPropertyValidator))(properties.parameters));
+    errors.collect(ros.propertyValidator('dbVersion', ros.requiredValidator)(properties.dbVersion));
+    errors.collect(ros.propertyValidator('dbVersion', ros.validateString)(properties.dbVersion));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('parameterGroupName', ros.requiredValidator)(properties.parameterGroupName));
+    errors.collect(ros.propertyValidator('parameterGroupName', ros.validateString)(properties.parameterGroupName));
+    errors.collect(ros.propertyValidator('parameterGroupDesc', ros.validateString)(properties.parameterGroupDesc));
+    errors.collect(ros.propertyValidator('dbType', ros.requiredValidator)(properties.dbType));
+    errors.collect(ros.propertyValidator('dbType', ros.validateString)(properties.dbType));
+    return errors.wrap('supplied properties not correct for "RosParameterGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::ParameterGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosParameterGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::ParameterGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosParameterGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosParameterGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DbType: ros.stringToRosTemplate(properties.dbType),
+      DbVersion: ros.stringToRosTemplate(properties.dbVersion),
+      ParameterGroupName: ros.stringToRosTemplate(properties.parameterGroupName),
+      Parameters: ros.listMapper(rosParameterGroupParametersPropertyToRosTemplate)(properties.parameters),
+      ParameterGroupDesc: ros.stringToRosTemplate(properties.parameterGroupDesc),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::POLARDB::ParameterGroup`
+ */
+export class RosParameterGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::ParameterGroup";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute CreateTime: The time when the parameter template was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DbType: The type of the database engine.
+     */
+    public readonly attrDbType: ros.IResolvable;
+
+    /**
+     * @Attribute DbVersion: The version of the database engine.
+     */
+    public readonly attrDbVersion: ros.IResolvable;
+
+    /**
+     * @Attribute ForceRestart: Indicates whether to restart the cluster when this parameter template is applied.
+     */
+    public readonly attrForceRestart: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterCounts: The number of parameters in the parameter template.
+     */
+    public readonly attrParameterCounts: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterGroupDesc: The description of the parameter template.
+     */
+    public readonly attrParameterGroupDesc: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterGroupId: The ID of the parameter group.
+     */
+    public readonly attrParameterGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterGroupName: The name of the parameter template.
+     */
+    public readonly attrParameterGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterGroupType: The type of the parameter template.
+     */
+    public readonly attrParameterGroupType: ros.IResolvable;
+
+    /**
+     * @Attribute Parameters: The list of the parameters.
+     */
+    public readonly attrParameters: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbType: The type of the database engine.
+     */
+    public dbType: string | ros.IResolvable;
+
+    /**
+     * @Property dbVersion: The version of the database engine.
+     */
+    public dbVersion: string | ros.IResolvable;
+
+    /**
+     * @Property parameterGroupName: The name of the parameter template.
+     */
+    public parameterGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property parameters: The list of the parameters.
+     */
+    public parameters: Array<RosParameterGroup.ParametersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property parameterGroupDesc: The description of the parameter template.
+     */
+    public parameterGroupDesc: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::POLARDB::ParameterGroup`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosParameterGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosParameterGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDbType = this.getAtt('DbType');
+        this.attrDbVersion = this.getAtt('DbVersion');
+        this.attrForceRestart = this.getAtt('ForceRestart');
+        this.attrParameterCounts = this.getAtt('ParameterCounts');
+        this.attrParameterGroupDesc = this.getAtt('ParameterGroupDesc');
+        this.attrParameterGroupId = this.getAtt('ParameterGroupId');
+        this.attrParameterGroupName = this.getAtt('ParameterGroupName');
+        this.attrParameterGroupType = this.getAtt('ParameterGroupType');
+        this.attrParameters = this.getAtt('Parameters');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbType = props.dbType;
+        this.dbVersion = props.dbVersion;
+        this.parameterGroupName = props.parameterGroupName;
+        this.parameters = props.parameters;
+        this.parameterGroupDesc = props.parameterGroupDesc;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbType: this.dbType,
+            dbVersion: this.dbVersion,
+            parameterGroupName: this.parameterGroupName,
+            parameters: this.parameters,
+            parameterGroupDesc: this.parameterGroupDesc,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosParameterGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosParameterGroup {
+    /**
+     * @stability external
+     */
+    export interface ParametersProperty {
+        /**
+         * @Property paramValue: Parameter value.
+         */
+        readonly paramValue: string | ros.IResolvable;
+        /**
+         * @Property paramName: Parameter name.
+         */
+        readonly paramName: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ParametersProperty`
+ *
+ * @param properties - the TypeScript properties of a `ParametersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosParameterGroup_ParametersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('paramValue', ros.requiredValidator)(properties.paramValue));
+    errors.collect(ros.propertyValidator('paramValue', ros.validateString)(properties.paramValue));
+    errors.collect(ros.propertyValidator('paramName', ros.requiredValidator)(properties.paramName));
+    errors.collect(ros.propertyValidator('paramName', ros.validateString)(properties.paramName));
+    return errors.wrap('supplied properties not correct for "ParametersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::ParameterGroup.Parameters` resource
+ *
+ * @param properties - the TypeScript properties of a `ParametersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::ParameterGroup.Parameters` resource.
+ */
+// @ts-ignore TS6133
+function rosParameterGroupParametersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosParameterGroup_ParametersPropertyValidator(properties).assertSuccess();
+    return {
+      ParamValue: ros.stringToRosTemplate(properties.paramValue),
+      ParamName: ros.stringToRosTemplate(properties.paramName),
+    };
+}

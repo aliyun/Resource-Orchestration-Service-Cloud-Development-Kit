@@ -17,7 +17,7 @@
 @alicloud/ros-cdk-slb.MasterSlaveServerGroup=com.aliyun.ros.cdk.slb.MasterSlaveServerGroup
 @alicloud/ros-cdk-slb.MasterSlaveServerGroupProps=com.aliyun.ros.cdk.slb.MasterSlaveServerGroupProps
 @alicloud/ros-cdk-slb.RosAccessControl=com.aliyun.ros.cdk.slb.RosAccessControl
-@alicloud/ros-cdk-slb.RosAccessControl.AclEntrysProperty=com.aliyun.ros.cdk.slb.RosAccessControl$AclEntrysProperty
+@alicloud/ros-cdk-slb.RosAccessControl.AclEntriesProperty=com.aliyun.ros.cdk.slb.RosAccessControl$AclEntriesProperty
 @alicloud/ros-cdk-slb.RosAccessControl.TagsProperty=com.aliyun.ros.cdk.slb.RosAccessControl$TagsProperty
 @alicloud/ros-cdk-slb.RosAccessControlProps=com.aliyun.ros.cdk.slb.RosAccessControlProps
 @alicloud/ros-cdk-slb.RosBackendServerAttachment=com.aliyun.ros.cdk.slb.RosBackendServerAttachment
@@ -48,6 +48,7 @@
 @alicloud/ros-cdk-slb.RosMasterSlaveServerGroup.MasterSlaveBackendServersProperty=com.aliyun.ros.cdk.slb.RosMasterSlaveServerGroup$MasterSlaveBackendServersProperty
 @alicloud/ros-cdk-slb.RosMasterSlaveServerGroupProps=com.aliyun.ros.cdk.slb.RosMasterSlaveServerGroupProps
 @alicloud/ros-cdk-slb.RosRule=com.aliyun.ros.cdk.slb.RosRule
+@alicloud/ros-cdk-slb.RosRule.AdvancedSettingsProperty=com.aliyun.ros.cdk.slb.RosRule$AdvancedSettingsProperty
 @alicloud/ros-cdk-slb.RosRule.RuleListProperty=com.aliyun.ros.cdk.slb.RosRule$RuleListProperty
 @alicloud/ros-cdk-slb.RosRuleProps=com.aliyun.ros.cdk.slb.RosRuleProps
 @alicloud/ros-cdk-slb.RosVServerGroup=com.aliyun.ros.cdk.slb.RosVServerGroup

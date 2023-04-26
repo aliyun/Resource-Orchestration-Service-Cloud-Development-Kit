@@ -14,6 +14,11 @@ export interface KeyProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property dkmsInstanceId: The ID of the dedicated KMS instance.
+     */
+    readonly dkmsInstanceId?: string | ros.IResolvable;
+
+    /**
      * Property enable: Specifies whether the key is enabled. Defaults to true.
      */
     readonly enable?: boolean | ros.IResolvable;
@@ -29,7 +34,10 @@ export interface KeyProps {
     readonly keySpec?: string | ros.IResolvable;
 
     /**
-     * Property keyUsage: The intended use of the CMK. Default value: ENCRYPT/DECRYPT.
+     * Property keyUsage: The usage of the CMK. Valid values:
+     * ENCRYPT/DECRYPT: encrypts or decrypts data.
+     * SIGN/VERIFY: generates or verifies a digital signature.
+     * If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
      */
     readonly keyUsage?: string | ros.IResolvable;
 
@@ -80,11 +88,12 @@ export class Key extends ros.Resource {
             protectionLevel: props.protectionLevel,
             description: props.description,
             rotationInterval: props.rotationInterval,
-            enableAutomaticRotation: props.enableAutomaticRotation,
             pendingWindowInDays: props.pendingWindowInDays === undefined || props.pendingWindowInDays === null ? 30 : props.pendingWindowInDays,
+            enableAutomaticRotation: props.enableAutomaticRotation,
             keySpec: props.keySpec,
             enable: props.enable === undefined || props.enable === null ? true : props.enable,
-            keyUsage: props.keyUsage === undefined || props.keyUsage === null ? 'ENCRYPT/DECRYPT' : props.keyUsage,
+            keyUsage: props.keyUsage,
+            dkmsInstanceId: props.dkmsInstanceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosKey;
         this.attrKeyId = rosKey.attrKeyId;

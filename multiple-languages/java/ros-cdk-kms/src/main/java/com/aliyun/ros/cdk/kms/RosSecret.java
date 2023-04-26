@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * A ROS template type:  `ALIYUN::KMS::Secret`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.827Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.158Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosSecret")
 public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -141,6 +141,42 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDkmsInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "dkmsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDkmsInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dkmsInstanceId", value);
+    }
+
+    /**
+     */
+    public void setDkmsInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dkmsInstanceId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableAutomaticRotation() {
+        return software.amazon.jsii.Kernel.get(this, "enableAutomaticRotation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableAutomaticRotation(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableAutomaticRotation", value);
+    }
+
+    /**
+     */
+    public void setEnableAutomaticRotation(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableAutomaticRotation", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionKeyId() {
         return software.amazon.jsii.Kernel.get(this, "encryptionKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -155,6 +191,36 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEncryptionKeyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "encryptionKeyId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getExtendedConfig() {
+        return software.amazon.jsii.Kernel.get(this, "extendedConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setExtendedConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "extendedConfig", value);
+    }
+
+    /**
+     */
+    public void setExtendedConfig(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            if (!(value.keySet().toArray()[0] instanceof String)) {
+                throw new IllegalArgumentException(
+                    new java.lang.StringBuilder("Expected ")
+                        .append("value").append(".keySet()")
+                        .append(" to contain class String; received ")
+                        .append(value.keySet().toArray()[0].getClass()).toString());
+            }
+            for (final java.util.Map.Entry<String, java.lang.Object> __item_ac66f0: value.entrySet()) {
+                final java.lang.Object __val_ac66f0 = __item_ac66f0.getValue();
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "extendedConfig", value);
     }
 
     /**
@@ -195,6 +261,24 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRotationInterval() {
+        return software.amazon.jsii.Kernel.get(this, "rotationInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRotationInterval(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "rotationInterval", value);
+    }
+
+    /**
+     */
+    public void setRotationInterval(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "rotationInterval", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSecretDataType() {
         return software.amazon.jsii.Kernel.get(this, "secretDataType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -209,6 +293,24 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSecretDataType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "secretDataType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecretType() {
+        return software.amazon.jsii.Kernel.get(this, "secretType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecretType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "secretType", value);
+    }
+
+    /**
+     */
+    public void setSecretType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "secretType", value);
     }
 
     /**
@@ -341,6 +443,40 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param dkmsInstanceId This parameter is required.
+         */
+        public Builder dkmsInstanceId(final java.lang.String dkmsInstanceId) {
+            this.props.dkmsInstanceId(dkmsInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dkmsInstanceId This parameter is required.
+         */
+        public Builder dkmsInstanceId(final com.aliyun.ros.cdk.core.IResolvable dkmsInstanceId) {
+            this.props.dkmsInstanceId(dkmsInstanceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param enableAutomaticRotation This parameter is required.
+         */
+        public Builder enableAutomaticRotation(final java.lang.Boolean enableAutomaticRotation) {
+            this.props.enableAutomaticRotation(enableAutomaticRotation);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableAutomaticRotation This parameter is required.
+         */
+        public Builder enableAutomaticRotation(final com.aliyun.ros.cdk.core.IResolvable enableAutomaticRotation) {
+            this.props.enableAutomaticRotation(enableAutomaticRotation);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param encryptionKeyId This parameter is required.
          */
         public Builder encryptionKeyId(final java.lang.String encryptionKeyId) {
@@ -353,6 +489,23 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder encryptionKeyId(final com.aliyun.ros.cdk.core.IResolvable encryptionKeyId) {
             this.props.encryptionKeyId(encryptionKeyId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param extendedConfig This parameter is required.
+         */
+        public Builder extendedConfig(final com.aliyun.ros.cdk.core.IResolvable extendedConfig) {
+            this.props.extendedConfig(extendedConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param extendedConfig This parameter is required.
+         */
+        public Builder extendedConfig(final java.util.Map<java.lang.String, ? extends java.lang.Object> extendedConfig) {
+            this.props.extendedConfig(extendedConfig);
             return this;
         }
 
@@ -392,6 +545,23 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param rotationInterval This parameter is required.
+         */
+        public Builder rotationInterval(final java.lang.String rotationInterval) {
+            this.props.rotationInterval(rotationInterval);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param rotationInterval This parameter is required.
+         */
+        public Builder rotationInterval(final com.aliyun.ros.cdk.core.IResolvable rotationInterval) {
+            this.props.rotationInterval(rotationInterval);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param secretDataType This parameter is required.
          */
         public Builder secretDataType(final java.lang.String secretDataType) {
@@ -404,6 +574,23 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder secretDataType(final com.aliyun.ros.cdk.core.IResolvable secretDataType) {
             this.props.secretDataType(secretDataType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param secretType This parameter is required.
+         */
+        public Builder secretType(final java.lang.String secretType) {
+            this.props.secretType(secretType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param secretType This parameter is required.
+         */
+        public Builder secretType(final com.aliyun.ros.cdk.core.IResolvable secretType) {
+            this.props.secretType(secretType);
             return this;
         }
 

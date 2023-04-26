@@ -139,6 +139,73 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
         }
 
+        private object? _dkmsInstanceId;
+
+        /// <summary>Property dkmsInstanceId: The ID of the dedicated KMS instance.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "dkmsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DkmsInstanceId
+        {
+            get => _dkmsInstanceId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _dkmsInstanceId = value;
+            }
+        }
+
+        private object? _enableAutomaticRotation;
+
+        /// <summary>Property enableAutomaticRotation: Specifies whether to enable automatic rotation.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// true: specifies to enable automatic rotation.
+        /// false: specifies to disable automatic rotation. This is the default value.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableAutomaticRotation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EnableAutomaticRotation
+        {
+            get => _enableAutomaticRotation;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _enableAutomaticRotation = value;
+            }
+        }
+
         private object? _encryptionKeyId;
 
         /// <summary>Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.</summary>
@@ -172,6 +239,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
                     }
                 }
                 _encryptionKeyId = value;
+            }
+        }
+
+        private object? _extendedConfig;
+
+        /// <summary>Property extendedConfig: The extended configuration of the secret.</summary>
+        /// <remarks>
+        /// This parameter specifies the properties of the secret of the specific type.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "extendedConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        public object? ExtendedConfig
+        {
+            get => _extendedConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case System.Collections.Generic.IDictionary<string, object> cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, System.Collections.Generic.IDictionary<string, object>; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _extendedConfig = value;
             }
         }
 
@@ -265,6 +366,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
         }
 
+        private object? _rotationInterval;
+
+        /// <summary>Property rotationInterval: The interval for automatic rotation.</summary>
+        /// <remarks>
+        /// Valid values: 6 hours to 8,760 hours (365 days).
+        /// The value is in the integer[unit] format.
+        /// The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "rotationInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RotationInterval
+        {
+            get => _rotationInterval;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _rotationInterval = value;
+            }
+        }
+
         private object? _secretDataType;
 
         /// <summary>Property secretDataType: The type of the secret value.</summary>
@@ -298,6 +435,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
                     }
                 }
                 _secretDataType = value;
+            }
+        }
+
+        private object? _secretType;
+
+        /// <summary>Property secretType: The type of the secret.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// Generic: specifies a generic secret.
+        /// Rds: specifies a managed ApsaraDB RDS secret.
+        /// RAMCredentials: specifies a managed RAM secret.
+        /// ECS: specifies a managed ECS secret.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "secretType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SecretType
+        {
+            get => _secretType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _secretType = value;
             }
         }
 

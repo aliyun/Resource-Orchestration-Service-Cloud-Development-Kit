@@ -1700,6 +1700,117 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        private object? _systemDiskEncryptAlgorithm;
+
+        /// <summary>Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>ase-256</description>
+        /// <description>sm4-128
+        /// Default value: ase-256.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "systemDiskEncryptAlgorithm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SystemDiskEncryptAlgorithm
+        {
+            get => _systemDiskEncryptAlgorithm;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _systemDiskEncryptAlgorithm = value;
+            }
+        }
+
+        private object? _systemDiskEncrypted;
+
+        /// <summary>Property systemDiskEncrypted: Specifies whether to encrypt the system disk.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true: encrypts the system disk.</description>
+        /// <description>false: does not encrypt the system disk.
+        /// Default value: false.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "systemDiskEncrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SystemDiskEncrypted
+        {
+            get => _systemDiskEncrypted;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _systemDiskEncrypted = value;
+            }
+        }
+
+        private object? _systemDiskKmsKeyId;
+
+        /// <summary>Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "systemDiskKmsKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SystemDiskKmsKeyId
+        {
+            get => _systemDiskKmsKeyId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _systemDiskKmsKeyId = value;
+            }
+        }
+
         private object? _systemDiskPerformanceLevel;
 
         /// <summary>Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.</summary>
@@ -1833,6 +1944,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                     }
                 }
                 _systemDiskSize = value;
+            }
+        }
+
+        private object? _systemDiskStorageClusterId;
+
+        /// <summary>Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster.</summary>
+        /// <remarks>
+        /// If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "systemDiskStorageClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SystemDiskStorageClusterId
+        {
+            get => _systemDiskStorageClusterId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _systemDiskStorageClusterId = value;
             }
         }
 

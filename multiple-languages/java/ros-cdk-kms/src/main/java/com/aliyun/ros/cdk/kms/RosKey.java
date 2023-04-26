@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * A ROS template type:  `ALIYUN::KMS::Key`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.825Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.156Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosKey")
 public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -77,6 +77,24 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDkmsInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "dkmsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDkmsInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dkmsInstanceId", value);
+    }
+
+    /**
+     */
+    public void setDkmsInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dkmsInstanceId", value);
     }
 
     /**
@@ -245,6 +263,23 @@ public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param dkmsInstanceId This parameter is required.
+         */
+        public Builder dkmsInstanceId(final java.lang.String dkmsInstanceId) {
+            this.props.dkmsInstanceId(dkmsInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dkmsInstanceId This parameter is required.
+         */
+        public Builder dkmsInstanceId(final com.aliyun.ros.cdk.core.IResolvable dkmsInstanceId) {
+            this.props.dkmsInstanceId(dkmsInstanceId);
             return this;
         }
 

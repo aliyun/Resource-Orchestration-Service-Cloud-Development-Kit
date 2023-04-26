@@ -3,13 +3,13 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * Properties for defining a `ALIYUN::EHPC::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.334Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.616Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99.
+     * Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEcsOrderComputeCount();
 
@@ -495,7 +495,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getEcsOrderComputeCount}
-         * @param ecsOrderComputeCount Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99. This parameter is required.
+         * @param ecsOrderComputeCount Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99. This parameter is required.
          * @return {@code this}
          */
         public Builder ecsOrderComputeCount(java.lang.Number ecsOrderComputeCount) {
@@ -505,7 +505,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterProps#getEcsOrderComputeCount}
-         * @param ecsOrderComputeCount Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99. This parameter is required.
+         * @param ecsOrderComputeCount Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99. This parameter is required.
          * @return {@code this}
          */
         public Builder ecsOrderComputeCount(com.aliyun.ros.cdk.core.IResolvable ecsOrderComputeCount) {

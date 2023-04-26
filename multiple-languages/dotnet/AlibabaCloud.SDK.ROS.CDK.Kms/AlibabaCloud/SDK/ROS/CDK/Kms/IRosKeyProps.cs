@@ -22,6 +22,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: dkmsInstanceId: The ID of the dedicated KMS instance.
+        /// </remarks>
+        [JsiiProperty(name: "dkmsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DkmsInstanceId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: enable: Specifies whether the key is enabled. Defaults to true.
         /// </remarks>
         [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -61,7 +74,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: keyUsage: The intended use of the CMK. Default value: ENCRYPT/DECRYPT.
+        /// <strong>Property</strong>: keyUsage: The usage of the CMK. Valid values:
+        /// ENCRYPT/DECRYPT: encrypts or decrypts data.
+        /// SIGN/VERIFY: generates or verifies a digital signature.
+        /// If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
         /// </remarks>
         [JsiiProperty(name: "keyUsage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -133,6 +149,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: dkmsInstanceId: The ID of the dedicated KMS instance.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dkmsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DkmsInstanceId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: enable: Specifies whether the key is enabled. Defaults to true.
             /// </remarks>
             [JsiiOptional]
@@ -163,7 +189,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: keyUsage: The intended use of the CMK. Default value: ENCRYPT/DECRYPT.
+            /// <strong>Property</strong>: keyUsage: The usage of the CMK. Valid values:
+            /// ENCRYPT/DECRYPT: encrypts or decrypts data.
+            /// SIGN/VERIFY: generates or verifies a digital signature.
+            /// If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "keyUsage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -1,4 +1,14 @@
+@alicloud/ros-cdk-ebs.DiskReplicaGroup=com.aliyun.ros.cdk.ebs.DiskReplicaGroup
+@alicloud/ros-cdk-ebs.DiskReplicaGroupProps=com.aliyun.ros.cdk.ebs.DiskReplicaGroupProps
+@alicloud/ros-cdk-ebs.DiskReplicaPair=com.aliyun.ros.cdk.ebs.DiskReplicaPair
 @alicloud/ros-cdk-ebs.DiskReplicaPairAddition=com.aliyun.ros.cdk.ebs.DiskReplicaPairAddition
 @alicloud/ros-cdk-ebs.DiskReplicaPairAdditionProps=com.aliyun.ros.cdk.ebs.DiskReplicaPairAdditionProps
+@alicloud/ros-cdk-ebs.DiskReplicaPairProps=com.aliyun.ros.cdk.ebs.DiskReplicaPairProps
+@alicloud/ros-cdk-ebs.RosDiskReplicaGroup=com.aliyun.ros.cdk.ebs.RosDiskReplicaGroup
+@alicloud/ros-cdk-ebs.RosDiskReplicaGroup.TagsProperty=com.aliyun.ros.cdk.ebs.RosDiskReplicaGroup$TagsProperty
+@alicloud/ros-cdk-ebs.RosDiskReplicaGroupProps=com.aliyun.ros.cdk.ebs.RosDiskReplicaGroupProps
+@alicloud/ros-cdk-ebs.RosDiskReplicaPair=com.aliyun.ros.cdk.ebs.RosDiskReplicaPair
+@alicloud/ros-cdk-ebs.RosDiskReplicaPair.TagsProperty=com.aliyun.ros.cdk.ebs.RosDiskReplicaPair$TagsProperty
 @alicloud/ros-cdk-ebs.RosDiskReplicaPairAddition=com.aliyun.ros.cdk.ebs.RosDiskReplicaPairAddition
 @alicloud/ros-cdk-ebs.RosDiskReplicaPairAdditionProps=com.aliyun.ros.cdk.ebs.RosDiskReplicaPairAdditionProps
+@alicloud/ros-cdk-ebs.RosDiskReplicaPairProps=com.aliyun.ros.cdk.ebs.RosDiskReplicaPairProps

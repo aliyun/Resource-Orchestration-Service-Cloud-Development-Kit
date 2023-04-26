@@ -1,4 +1,13 @@
+@alicloud/ros-cdk-polardbx.Account=com.aliyun.ros.cdk.polardbx.Account
+@alicloud/ros-cdk-polardbx.AccountProps=com.aliyun.ros.cdk.polardbx.AccountProps
 @alicloud/ros-cdk-polardbx.DBInstance=com.aliyun.ros.cdk.polardbx.DBInstance
 @alicloud/ros-cdk-polardbx.DBInstanceProps=com.aliyun.ros.cdk.polardbx.DBInstanceProps
+@alicloud/ros-cdk-polardbx.Database=com.aliyun.ros.cdk.polardbx.Database
+@alicloud/ros-cdk-polardbx.DatabaseProps=com.aliyun.ros.cdk.polardbx.DatabaseProps
+@alicloud/ros-cdk-polardbx.RosAccount=com.aliyun.ros.cdk.polardbx.RosAccount
+@alicloud/ros-cdk-polardbx.RosAccountProps=com.aliyun.ros.cdk.polardbx.RosAccountProps
 @alicloud/ros-cdk-polardbx.RosDBInstance=com.aliyun.ros.cdk.polardbx.RosDBInstance
 @alicloud/ros-cdk-polardbx.RosDBInstanceProps=com.aliyun.ros.cdk.polardbx.RosDBInstanceProps
+@alicloud/ros-cdk-polardbx.RosDatabase=com.aliyun.ros.cdk.polardbx.RosDatabase
+@alicloud/ros-cdk-polardbx.RosDatabase.AccountsProperty=com.aliyun.ros.cdk.polardbx.RosDatabase$AccountsProperty
+@alicloud/ros-cdk-polardbx.RosDatabaseProps=com.aliyun.ros.cdk.polardbx.RosDatabaseProps

@@ -558,6 +558,522 @@ export class RosParameter extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::OOS::PatchBaseline`
+ */
+export interface RosPatchBaselineProps {
+
+    /**
+     * @Property approvalRules: The rules of scanning and installing patches for the specified operating system.
+     */
+    readonly approvalRules: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property operationSystem: The type of the operating system.
+     */
+    readonly operationSystem: string | ros.IResolvable;
+
+    /**
+     * @Property patchBaselineName: The name of the patch baseline.
+     */
+    readonly patchBaselineName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the patch baseline.
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPatchBaselineProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPatchBaselineProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPatchBaselinePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('patchBaselineName', ros.requiredValidator)(properties.patchBaselineName));
+    errors.collect(ros.propertyValidator('patchBaselineName', ros.validateString)(properties.patchBaselineName));
+    errors.collect(ros.propertyValidator('operationSystem', ros.requiredValidator)(properties.operationSystem));
+    errors.collect(ros.propertyValidator('operationSystem', ros.validateString)(properties.operationSystem));
+    errors.collect(ros.propertyValidator('approvalRules', ros.requiredValidator)(properties.approvalRules));
+    errors.collect(ros.propertyValidator('approvalRules', ros.hashValidator(ros.validateAny))(properties.approvalRules));
+    return errors.wrap('supplied properties not correct for "RosPatchBaselineProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::PatchBaseline` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPatchBaselineProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::PatchBaseline` resource.
+ */
+// @ts-ignore TS6133
+function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPatchBaselinePropsValidator(properties).assertSuccess();
+    }
+    return {
+      ApprovalRules: ros.hashMapper(ros.objectToRosTemplate)(properties.approvalRules),
+      OperationSystem: ros.stringToRosTemplate(properties.operationSystem),
+      PatchBaselineName: ros.stringToRosTemplate(properties.patchBaselineName),
+      Description: ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::OOS::PatchBaseline`
+ */
+export class RosPatchBaseline extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::PatchBaseline";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ApprovalRules: The rules of scanning and installing patches for the specified operating system.
+     */
+    public readonly attrApprovalRules: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the patch baseline was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedBy: The creator of the patch baseline.
+     */
+    public readonly attrCreatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the patch baseline.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute IsDefault: Indicates whether the patch baseline is set as the default patch baseline.
+     */
+    public readonly attrIsDefault: ros.IResolvable;
+
+    /**
+     * @Attribute OperationSystem: The type of the operating system.
+     */
+    public readonly attrOperationSystem: ros.IResolvable;
+
+    /**
+     * @Attribute PatchBaselineId: The ID of the patch baseline.
+     */
+    public readonly attrPatchBaselineId: ros.IResolvable;
+
+    /**
+     * @Attribute PatchBaselineName: The name of the patch baseline.
+     */
+    public readonly attrPatchBaselineName: ros.IResolvable;
+
+    /**
+     * @Attribute ShareType: The share type of the patch baseline.
+     */
+    public readonly attrShareType: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedBy: The user who last modified the patch baseline.
+     */
+    public readonly attrUpdatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedDate: The time when the patch baseline was last modified.
+     */
+    public readonly attrUpdatedDate: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property approvalRules: The rules of scanning and installing patches for the specified operating system.
+     */
+    public approvalRules: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property operationSystem: The type of the operating system.
+     */
+    public operationSystem: string | ros.IResolvable;
+
+    /**
+     * @Property patchBaselineName: The name of the patch baseline.
+     */
+    public patchBaselineName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the patch baseline.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::OOS::PatchBaseline`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPatchBaselineProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPatchBaseline.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApprovalRules = this.getAtt('ApprovalRules');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrCreatedBy = this.getAtt('CreatedBy');
+        this.attrDescription = this.getAtt('Description');
+        this.attrIsDefault = this.getAtt('IsDefault');
+        this.attrOperationSystem = this.getAtt('OperationSystem');
+        this.attrPatchBaselineId = this.getAtt('PatchBaselineId');
+        this.attrPatchBaselineName = this.getAtt('PatchBaselineName');
+        this.attrShareType = this.getAtt('ShareType');
+        this.attrUpdatedBy = this.getAtt('UpdatedBy');
+        this.attrUpdatedDate = this.getAtt('UpdatedDate');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.approvalRules = props.approvalRules;
+        this.operationSystem = props.operationSystem;
+        this.patchBaselineName = props.patchBaselineName;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            approvalRules: this.approvalRules,
+            operationSystem: this.operationSystem,
+            patchBaselineName: this.patchBaselineName,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPatchBaselinePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::OOS::SecretParameter`
+ */
+export interface RosSecretParameterProps {
+
+    /**
+     * @Property secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+     */
+    readonly secretParameterName: string | ros.IResolvable;
+
+    /**
+     * @Property value: The value of the encryption parameter. The value must be 1 to 4096 characters in length.
+     */
+    readonly value: string | ros.IResolvable;
+
+    /**
+     * @Property constraints: The constraints of the encryption parameter.
+     */
+    readonly constraints?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the encryption parameter. The description must be 1 to 200 characters in length.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property keyId: The Customer Master Key (CMK) of Key Management Service (KMS) that is used to encrypt the parameter.
+     */
+    readonly keyId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of encryption parameter.
+     */
+    readonly tags?: RosSecretParameter.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecretParameterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecretParameterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecretParameterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('constraints', ros.hashValidator(ros.validateAny))(properties.constraints));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('secretParameterName', ros.requiredValidator)(properties.secretParameterName));
+    errors.collect(ros.propertyValidator('secretParameterName', ros.validateString)(properties.secretParameterName));
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('keyId', ros.validateString)(properties.keyId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSecretParameter_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosSecretParameterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::SecretParameter` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecretParameterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::SecretParameter` resource.
+ */
+// @ts-ignore TS6133
+function rosSecretParameterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecretParameterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      SecretParameterName: ros.stringToRosTemplate(properties.secretParameterName),
+      Value: ros.stringToRosTemplate(properties.value),
+      Constraints: ros.hashMapper(ros.objectToRosTemplate)(properties.constraints),
+      Description: ros.stringToRosTemplate(properties.description),
+      KeyId: ros.stringToRosTemplate(properties.keyId),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosSecretParameterTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::OOS::SecretParameter`
+ */
+export class RosSecretParameter extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::SecretParameter";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Constraints: The constraints of the encryption parameter.
+     */
+    public readonly attrConstraints: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the encryption parameter was created.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedBy: The user who created the encryption parameter.
+     */
+    public readonly attrCreatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the encryption parameter.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute KeyId: The Customer Master Key (CMK) of Key Management Service (KMS) that is used to encrypt the parameter.
+     */
+    public readonly attrKeyId: ros.IResolvable;
+
+    /**
+     * @Attribute ParameterVersion: The version number of the encryption parameter.
+     */
+    public readonly attrParameterVersion: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SecretParameterId: The ID of the encryption parameter.
+     */
+    public readonly attrSecretParameterId: ros.IResolvable;
+
+    /**
+     * @Attribute SecretParameterName: The name of the encryption parameter.
+     */
+    public readonly attrSecretParameterName: ros.IResolvable;
+
+    /**
+     * @Attribute ShareType: The share type of the encryption parameter.
+     */
+    public readonly attrShareType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: Tags of encryption parameter.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute Type: The data type of the encryption parameter.
+     */
+    public readonly attrType: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedBy: The user who updated the encryption parameter.
+     */
+    public readonly attrUpdatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedDate: The time when the encryption parameter was updated.
+     */
+    public readonly attrUpdatedDate: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property secretParameterName: The name of the encryption parameter. The name must be 1 to 180 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
+     */
+    public secretParameterName: string | ros.IResolvable;
+
+    /**
+     * @Property value: The value of the encryption parameter. The value must be 1 to 4096 characters in length.
+     */
+    public value: string | ros.IResolvable;
+
+    /**
+     * @Property constraints: The constraints of the encryption parameter.
+     */
+    public constraints: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the encryption parameter. The description must be 1 to 200 characters in length.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property keyId: The Customer Master Key (CMK) of Key Management Service (KMS) that is used to encrypt the parameter.
+     */
+    public keyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of encryption parameter.
+     */
+    public tags: RosSecretParameter.TagsProperty[] | undefined;
+
+    /**
+     * Create a new `ALIYUN::OOS::SecretParameter`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecretParameterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecretParameter.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConstraints = this.getAtt('Constraints');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrCreatedBy = this.getAtt('CreatedBy');
+        this.attrDescription = this.getAtt('Description');
+        this.attrKeyId = this.getAtt('KeyId');
+        this.attrParameterVersion = this.getAtt('ParameterVersion');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSecretParameterId = this.getAtt('SecretParameterId');
+        this.attrSecretParameterName = this.getAtt('SecretParameterName');
+        this.attrShareType = this.getAtt('ShareType');
+        this.attrTags = this.getAtt('Tags');
+        this.attrType = this.getAtt('Type');
+        this.attrUpdatedBy = this.getAtt('UpdatedBy');
+        this.attrUpdatedDate = this.getAtt('UpdatedDate');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.secretParameterName = props.secretParameterName;
+        this.value = props.value;
+        this.constraints = props.constraints;
+        this.description = props.description;
+        this.keyId = props.keyId;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            secretParameterName: this.secretParameterName,
+            value: this.value,
+            constraints: this.constraints,
+            description: this.description,
+            keyId: this.keyId,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecretParameterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSecretParameter {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecretParameter_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::SecretParameter.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::SecretParameter.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosSecretParameterTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSecretParameter_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::OOS::Template`
  */
 export interface RosTemplateProps {

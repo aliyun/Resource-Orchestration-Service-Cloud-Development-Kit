@@ -441,6 +441,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        private object? _gzip;
+
+        /// <remarks>
+        /// <strong>Property</strong>: gzip: Specifies whether to enable Gzip compression to compress specific types of files. Valid values:
+        /// on (default): yes
+        /// off: no
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "gzip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Gzip
+        {
+            get => _gzip;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _gzip = value;
+            }
+        }
+
         private object? _healthCheck;
 
         /// <remarks>
@@ -831,6 +866,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                     }
                 }
                 _startListener = value;
+            }
+        }
+
+        private object? _tlsCipherPolicy;
+
+        /// <remarks>
+        /// <strong>Property</strong>: tlsCipherPolicy: The Transport Layer Security (TLS) security policy. Each security policy contains TLS protocol versions and cipher suites available for HTTPS. It takes effect when Protocol=https.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tlsCipherPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? TlsCipherPolicy
+        {
+            get => _tlsCipherPolicy;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _tlsCipherPolicy = value;
             }
         }
 

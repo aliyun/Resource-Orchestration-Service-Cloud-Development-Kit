@@ -502,6 +502,203 @@ export class RosAccountPrivilege extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::RDS::Connection`
+ */
+export interface RosConnectionProps {
+
+    /**
+     * @Property dbInstanceId: RDS instance ID.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property port: The port of the database service.
+     */
+    readonly port: number | ros.IResolvable;
+
+    /**
+     * @Property babelfishPort: The Tabular Data Stream (TDS) port of the instance for which Babelfish is enabled.
+     * Note This parameter applies only to ApsaraDB RDS for PostgreSQL instances. 
+     * For more information about Babelfish for ApsaraDB RDS for PostgreSQL, see Introduction to Babelfish.
+     */
+    readonly babelfishPort?: string | ros.IResolvable;
+
+    /**
+     * @Property connectionStringPrefix: The prefix of the endpoint. 
+     * Only the prefix of the CurrentConnectionString parameter value can be modified.
+     * The prefix must be 5 to 40 characters in length and can contain letters, digits, and hyphens (-).
+     */
+    readonly connectionStringPrefix?: string | ros.IResolvable;
+
+    /**
+     * @Property generalGroupName: The name of the dedicated cluster to which the instance belongs. 
+     * This parameter takes effect only when the instance runs MySQL on RDS 
+     * Standard Edition and is created in a dedicated cluster.
+     */
+    readonly generalGroupName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosConnectionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosConnectionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosConnectionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 1,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('babelfishPort', ros.validateString)(properties.babelfishPort));
+    if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
+          data: properties.connectionStringPrefix,
+          reg: /[a-zA-Z0-9-]{5,40}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
+    errors.collect(ros.propertyValidator('generalGroupName', ros.validateString)(properties.generalGroupName));
+    return errors.wrap('supplied properties not correct for "RosConnectionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RDS::Connection` resource
+ *
+ * @param properties - the TypeScript properties of a `RosConnectionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RDS::Connection` resource.
+ */
+// @ts-ignore TS6133
+function rosConnectionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosConnectionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+      Port: ros.numberToRosTemplate(properties.port),
+      BabelfishPort: ros.stringToRosTemplate(properties.babelfishPort),
+      ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
+      GeneralGroupName: ros.stringToRosTemplate(properties.generalGroupName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::RDS::Connection`
+ */
+export class RosConnection extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RDS::Connection";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute BabelfishPort: The name of the dedicated cluster to which the instance belongs.
+     */
+    public readonly attrBabelfishPort: ros.IResolvable;
+
+    /**
+     * @Attribute ConnectionString: Connection string
+     */
+    public readonly attrConnectionString: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceId: RDS instance ID.
+     */
+    public readonly attrDbInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute Port: The port of the database service.
+     */
+    public readonly attrPort: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbInstanceId: RDS instance ID.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property port: The port of the database service.
+     */
+    public port: number | ros.IResolvable;
+
+    /**
+     * @Property babelfishPort: The Tabular Data Stream (TDS) port of the instance for which Babelfish is enabled.
+     * Note This parameter applies only to ApsaraDB RDS for PostgreSQL instances. 
+     * For more information about Babelfish for ApsaraDB RDS for PostgreSQL, see Introduction to Babelfish.
+     */
+    public babelfishPort: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property connectionStringPrefix: The prefix of the endpoint. 
+     * Only the prefix of the CurrentConnectionString parameter value can be modified.
+     * The prefix must be 5 to 40 characters in length and can contain letters, digits, and hyphens (-).
+     */
+    public connectionStringPrefix: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property generalGroupName: The name of the dedicated cluster to which the instance belongs. 
+     * This parameter takes effect only when the instance runs MySQL on RDS 
+     * Standard Edition and is created in a dedicated cluster.
+     */
+    public generalGroupName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::RDS::Connection`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosConnectionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosConnection.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBabelfishPort = this.getAtt('BabelfishPort');
+        this.attrConnectionString = this.getAtt('ConnectionString');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrPort = this.getAtt('Port');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbInstanceId = props.dbInstanceId;
+        this.port = props.port;
+        this.babelfishPort = props.babelfishPort;
+        this.connectionStringPrefix = props.connectionStringPrefix;
+        this.generalGroupName = props.generalGroupName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbInstanceId: this.dbInstanceId,
+            port: this.port,
+            babelfishPort: this.babelfishPort,
+            connectionStringPrefix: this.connectionStringPrefix,
+            generalGroupName: this.generalGroupName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosConnectionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::RDS::DBInstance`
  */
 export interface RosDBInstanceProps {
@@ -596,10 +793,12 @@ export interface RosDBInstanceProps {
 
     /**
      * @Property category: The edition of the instance. Valid values:
-     * Basic: specifies to use the Basic Edition.
-     * HighAvailability: specifies to use the High-availability Edition.
-     * AlwaysOn: specifies to use the Cluster Edition.
-     * Finance: specifies to use the Enterprise Edition.
+     * Basic: RDS Basic Edition
+     * HighAvailability: RDS High-availability Edition
+     * cluster: RDS Cluster Edition
+     * AlwaysOn: RDS Cluster Edition for SQL Server
+     * Finance: RDS Enterprise Edition
+     * serverless_basic: RDS Serverless Basic Edition
      */
     readonly category?: string | ros.IResolvable;
 
@@ -1056,7 +1255,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance"],
+          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance","cluster","serverless_basic"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
@@ -1363,10 +1562,12 @@ export class RosDBInstance extends ros.RosResource {
 
     /**
      * @Property category: The edition of the instance. Valid values:
-     * Basic: specifies to use the Basic Edition.
-     * HighAvailability: specifies to use the High-availability Edition.
-     * AlwaysOn: specifies to use the Cluster Edition.
-     * Finance: specifies to use the Enterprise Edition.
+     * Basic: RDS Basic Edition
+     * HighAvailability: RDS High-availability Edition
+     * cluster: RDS Cluster Edition
+     * AlwaysOn: RDS Cluster Edition for SQL Server
+     * Finance: RDS Enterprise Edition
+     * serverless_basic: RDS Serverless Basic Edition
      */
     public category: string | ros.IResolvable | undefined;
 
@@ -2005,10 +2206,12 @@ export interface RosDBInstanceCloneProps {
 
     /**
      * @Property category: The edition of the instance. Valid values:
-     * Basic: specifies to use the Basic Edition.
-     * HighAvailability: specifies to use the High-availability Edition.
-     * AlwaysOn: specifies to use the Cluster Edition.
-     * Finance: specifies to use the Enterprise Edition.
+     * Basic: RDS Basic Edition
+     * HighAvailability: RDS High-availability Edition
+     * cluster: RDS Cluster Edition
+     * AlwaysOn: RDS Cluster Edition for SQL Server
+     * Finance: RDS Enterprise Edition
+     * serverless_basic: RDS Serverless Basic Edition
      */
     readonly category?: string | ros.IResolvable;
 
@@ -2240,7 +2443,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance"],
+          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance","cluster","serverless_basic"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
@@ -2507,10 +2710,12 @@ export class RosDBInstanceClone extends ros.RosResource {
 
     /**
      * @Property category: The edition of the instance. Valid values:
-     * Basic: specifies to use the Basic Edition.
-     * HighAvailability: specifies to use the High-availability Edition.
-     * AlwaysOn: specifies to use the Cluster Edition.
-     * Finance: specifies to use the Enterprise Edition.
+     * Basic: RDS Basic Edition
+     * HighAvailability: RDS High-availability Edition
+     * cluster: RDS Cluster Edition
+     * AlwaysOn: RDS Cluster Edition for SQL Server
+     * Finance: RDS Enterprise Edition
+     * serverless_basic: RDS Serverless Basic Edition
      */
     public category: string | ros.IResolvable | undefined;
 
@@ -3831,10 +4036,12 @@ export interface RosPrepayDBInstanceProps {
 
     /**
      * @Property category: The edition of the instance. Valid values:
-     * Basic: specifies to use the Basic Edition.
-     * HighAvailability: specifies to use the High-availability Edition.
-     * AlwaysOn: specifies to use the Cluster Edition.
-     * Finance: specifies to use the Enterprise Edition.
+     * Basic: RDS Basic Edition
+     * HighAvailability: RDS High-availability Edition
+     * cluster: RDS Cluster Edition
+     * AlwaysOn: RDS Cluster Edition for SQL Server
+     * Finance: RDS Enterprise Edition
+     * serverless_basic: RDS Serverless Basic Edition
      */
     readonly category?: string | ros.IResolvable;
 
@@ -4280,7 +4487,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
-          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance"],
+          allowedValues: ["Basic","HighAvailability","AlwaysOn","Finance","cluster","serverless_basic"],
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
@@ -4623,10 +4830,12 @@ export class RosPrepayDBInstance extends ros.RosResource {
 
     /**
      * @Property category: The edition of the instance. Valid values:
-     * Basic: specifies to use the Basic Edition.
-     * HighAvailability: specifies to use the High-availability Edition.
-     * AlwaysOn: specifies to use the Cluster Edition.
-     * Finance: specifies to use the Enterprise Edition.
+     * Basic: RDS Basic Edition
+     * HighAvailability: RDS High-availability Edition
+     * cluster: RDS Cluster Edition
+     * AlwaysOn: RDS Cluster Edition for SQL Server
+     * Finance: RDS Enterprise Edition
+     * serverless_basic: RDS Serverless Basic Edition
      */
     public category: string | ros.IResolvable | undefined;
 

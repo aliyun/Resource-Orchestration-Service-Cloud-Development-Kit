@@ -103,11 +103,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: aclEntrys: A list of acl entrys. Each entry can be IP addresses or CIDR blocks. Max length: 50.
+        /// <strong>Property</strong>: aclEntries: A list of acl entries. Each entry can be IP addresses or CIDR blocks. Max length: 50.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "aclEntrys", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosAccessControl.AclEntrysProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
-        public virtual object? AclEntrys
+        [JsiiProperty(name: "aclEntries", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosAccessControl.AclEntriesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? AclEntries
         {
             get => GetInstanceProperty<object?>();
             set
@@ -125,15 +125,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                                 {
                                     case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
                                         break;
-                                    case AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntrysProperty cast_201718:
+                                    case AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntriesProperty cast_201718:
                                         break;
                                     case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
                                         // Not enough information to type-check...
                                         break;
                                     case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntrysProperty).FullName}; received null", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntriesProperty).FullName}; received null", nameof(value));
                                     default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntrysProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntriesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
                                 }
                             }
                             break;
@@ -222,8 +222,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.ITagsProperty[]?>();
             set => SetInstanceProperty(value);
         }
-        [JsiiInterface(nativeType: typeof(IAclEntrysProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosAccessControl.AclEntrysProperty")]
-        public interface IAclEntrysProperty
+        [JsiiInterface(nativeType: typeof(IAclEntriesProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosAccessControl.AclEntriesProperty")]
+        public interface IAclEntriesProperty
         {
             /// <remarks>
             /// <strong>Property</strong>: entry: IP addresses or CIDR blocks. For example: "10.0.0.1" or "192.168.0.0/16"
@@ -247,8 +247,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 }
             }
 
-            [JsiiTypeProxy(nativeType: typeof(IAclEntrysProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosAccessControl.AclEntrysProperty")]
-            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntrysProperty
+            [JsiiTypeProxy(nativeType: typeof(IAclEntriesProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosAccessControl.AclEntriesProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntriesProperty
             {
                 private _Proxy(ByRefValue reference): base(reference)
                 {
@@ -276,8 +276,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
         #pragma warning disable CS8618
 
-        [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.RosAccessControl.AclEntrysProperty")]
-        public class AclEntrysProperty : AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntrysProperty
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.RosAccessControl.AclEntriesProperty")]
+        public class AclEntriesProperty : AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.IAclEntriesProperty
         {
             private object _entry;
 

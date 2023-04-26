@@ -3,18 +3,26 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.106Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.362Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocationProps")
 @software.amazon.jsii.Jsii.Proxy(RosInvocationProps.Jsii$Proxy.class)
 public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getCommandId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCommandId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCommandName() {
+        return null;
+    }
 
     /**
      */
@@ -50,32 +58,13 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosInvocationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInvocationProps> {
-        java.lang.Object commandId;
         java.lang.Object instanceIds;
+        java.lang.Object commandId;
+        java.lang.Object commandName;
         java.lang.Object frequency;
         java.lang.Object parameters;
         java.lang.Object sync;
         java.lang.Object timed;
-
-        /**
-         * Sets the value of {@link RosInvocationProps#getCommandId}
-         * @param commandId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder commandId(java.lang.String commandId) {
-            this.commandId = commandId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosInvocationProps#getCommandId}
-         * @param commandId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder commandId(com.aliyun.ros.cdk.core.IResolvable commandId) {
-            this.commandId = commandId;
-            return this;
-        }
 
         /**
          * Sets the value of {@link RosInvocationProps#getInstanceIds}
@@ -94,6 +83,46 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
             this.instanceIds = instanceIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInvocationProps#getCommandId}
+         * @param commandId the value to be set.
+         * @return {@code this}
+         */
+        public Builder commandId(java.lang.String commandId) {
+            this.commandId = commandId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInvocationProps#getCommandId}
+         * @param commandId the value to be set.
+         * @return {@code this}
+         */
+        public Builder commandId(com.aliyun.ros.cdk.core.IResolvable commandId) {
+            this.commandId = commandId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInvocationProps#getCommandName}
+         * @param commandName the value to be set.
+         * @return {@code this}
+         */
+        public Builder commandName(java.lang.String commandName) {
+            this.commandName = commandName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInvocationProps#getCommandName}
+         * @param commandName the value to be set.
+         * @return {@code this}
+         */
+        public Builder commandName(com.aliyun.ros.cdk.core.IResolvable commandName) {
+            this.commandName = commandName;
             return this;
         }
 
@@ -193,8 +222,9 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosInvocationProps {
-        private final java.lang.Object commandId;
         private final java.lang.Object instanceIds;
+        private final java.lang.Object commandId;
+        private final java.lang.Object commandName;
         private final java.lang.Object frequency;
         private final java.lang.Object parameters;
         private final java.lang.Object sync;
@@ -206,8 +236,9 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.commandId = software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.commandId = software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.commandName = software.amazon.jsii.Kernel.get(this, "commandName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sync = software.amazon.jsii.Kernel.get(this, "sync", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -219,12 +250,18 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.commandId = java.util.Objects.requireNonNull(builder.commandId, "commandId is required");
             this.instanceIds = java.util.Objects.requireNonNull(builder.instanceIds, "instanceIds is required");
+            this.commandId = builder.commandId;
+            this.commandName = builder.commandName;
             this.frequency = builder.frequency;
             this.parameters = builder.parameters;
             this.sync = builder.sync;
             this.timed = builder.timed;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceIds() {
+            return this.instanceIds;
         }
 
         @Override
@@ -233,8 +270,8 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.Object getInstanceIds() {
-            return this.instanceIds;
+        public final java.lang.Object getCommandName() {
+            return this.commandName;
         }
 
         @Override
@@ -263,8 +300,13 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("commandId", om.valueToTree(this.getCommandId()));
             data.set("instanceIds", om.valueToTree(this.getInstanceIds()));
+            if (this.getCommandId() != null) {
+                data.set("commandId", om.valueToTree(this.getCommandId()));
+            }
+            if (this.getCommandName() != null) {
+                data.set("commandName", om.valueToTree(this.getCommandName()));
+            }
             if (this.getFrequency() != null) {
                 data.set("frequency", om.valueToTree(this.getFrequency()));
             }
@@ -295,8 +337,9 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
 
             RosInvocationProps.Jsii$Proxy that = (RosInvocationProps.Jsii$Proxy) o;
 
-            if (!commandId.equals(that.commandId)) return false;
             if (!instanceIds.equals(that.instanceIds)) return false;
+            if (this.commandId != null ? !this.commandId.equals(that.commandId) : that.commandId != null) return false;
+            if (this.commandName != null ? !this.commandName.equals(that.commandName) : that.commandName != null) return false;
             if (this.frequency != null ? !this.frequency.equals(that.frequency) : that.frequency != null) return false;
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
             if (this.sync != null ? !this.sync.equals(that.sync) : that.sync != null) return false;
@@ -305,8 +348,9 @@ public interface RosInvocationProps extends software.amazon.jsii.JsiiSerializabl
 
         @Override
         public final int hashCode() {
-            int result = this.commandId.hashCode();
-            result = 31 * result + (this.instanceIds.hashCode());
+            int result = this.instanceIds.hashCode();
+            result = 31 * result + (this.commandId != null ? this.commandId.hashCode() : 0);
+            result = 31 * result + (this.commandName != null ? this.commandName.hashCode() : 0);
             result = 31 * result + (this.frequency != null ? this.frequency.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             result = 31 * result + (this.sync != null ? this.sync.hashCode() : 0);

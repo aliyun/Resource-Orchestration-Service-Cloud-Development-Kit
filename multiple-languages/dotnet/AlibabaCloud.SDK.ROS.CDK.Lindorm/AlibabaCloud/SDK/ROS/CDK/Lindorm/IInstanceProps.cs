@@ -261,6 +261,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
             }
         }
 
+        /// <summary>Property streamNum: The number of LindormStream nodes in the instance.</summary>
+        /// <remarks>
+        /// Valid values: integers from 0 to 90.
+        /// </remarks>
+        [JsiiProperty(name: "streamNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StreamNum
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property streamSpec: The specification of LindormStream nodes in the instance.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+        /// lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+        /// lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+        /// lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+        /// lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+        /// lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+        /// lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+        /// lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+        /// </remarks>
+        [JsiiProperty(name: "streamSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StreamSpec
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property tsdbNum: The number of the LindormTSDB nodes in the instance.</summary>
         /// <remarks>
         /// The valid values of this parameter depend on the value of the PayType parameter.
@@ -532,6 +568,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
             [JsiiOptional]
             [JsiiProperty(name: "solrSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SolrSpec
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property streamNum: The number of LindormStream nodes in the instance.</summary>
+            /// <remarks>
+            /// Valid values: integers from 0 to 90.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "streamNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StreamNum
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property streamSpec: The specification of LindormStream nodes in the instance.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+            /// lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+            /// lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+            /// lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+            /// lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+            /// lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+            /// lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+            /// lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "streamSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StreamSpec
             {
                 get => GetInstanceProperty<object?>();
             }

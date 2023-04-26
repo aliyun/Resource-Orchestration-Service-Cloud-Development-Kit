@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::InstanceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.933Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.180Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -1284,6 +1284,101 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ase-256</li>
+         * <li>sm4-128
+         * Default value: ase-256.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskEncryptAlgorithm Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. This parameter is required.
+         */
+        public Builder systemDiskEncryptAlgorithm(final java.lang.String systemDiskEncryptAlgorithm) {
+            this.props.systemDiskEncryptAlgorithm(systemDiskEncryptAlgorithm);
+            return this;
+        }
+        /**
+         * Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ase-256</li>
+         * <li>sm4-128
+         * Default value: ase-256.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskEncryptAlgorithm Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. This parameter is required.
+         */
+        public Builder systemDiskEncryptAlgorithm(final com.aliyun.ros.cdk.core.IResolvable systemDiskEncryptAlgorithm) {
+            this.props.systemDiskEncryptAlgorithm(systemDiskEncryptAlgorithm);
+            return this;
+        }
+
+        /**
+         * Property systemDiskEncrypted: Specifies whether to encrypt the system disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: encrypts the system disk.</li>
+         * <li>false: does not encrypt the system disk.
+         * Default value: false.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskEncrypted Property systemDiskEncrypted: Specifies whether to encrypt the system disk. This parameter is required.
+         */
+        public Builder systemDiskEncrypted(final java.lang.String systemDiskEncrypted) {
+            this.props.systemDiskEncrypted(systemDiskEncrypted);
+            return this;
+        }
+        /**
+         * Property systemDiskEncrypted: Specifies whether to encrypt the system disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: encrypts the system disk.</li>
+         * <li>false: does not encrypt the system disk.
+         * Default value: false.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param systemDiskEncrypted Property systemDiskEncrypted: Specifies whether to encrypt the system disk. This parameter is required.
+         */
+        public Builder systemDiskEncrypted(final com.aliyun.ros.cdk.core.IResolvable systemDiskEncrypted) {
+            this.props.systemDiskEncrypted(systemDiskEncrypted);
+            return this;
+        }
+
+        /**
+         * Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskKmsKeyId Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk. This parameter is required.
+         */
+        public Builder systemDiskKmsKeyId(final java.lang.String systemDiskKmsKeyId) {
+            this.props.systemDiskKmsKeyId(systemDiskKmsKeyId);
+            return this;
+        }
+        /**
+         * Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskKmsKeyId Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk. This parameter is required.
+         */
+        public Builder systemDiskKmsKeyId(final com.aliyun.ros.cdk.core.IResolvable systemDiskKmsKeyId) {
+            this.props.systemDiskKmsKeyId(systemDiskKmsKeyId);
+            return this;
+        }
+
+        /**
          * Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
          * <p>
          * @return {@code this}
@@ -1347,6 +1442,31 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder systemDiskSize(final com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
             this.props.systemDiskSize(systemDiskSize);
+            return this;
+        }
+
+        /**
+         * Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster.
+         * <p>
+         * If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskStorageClusterId Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster. This parameter is required.
+         */
+        public Builder systemDiskStorageClusterId(final java.lang.String systemDiskStorageClusterId) {
+            this.props.systemDiskStorageClusterId(systemDiskStorageClusterId);
+            return this;
+        }
+        /**
+         * Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster.
+         * <p>
+         * If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+         * <p>
+         * @return {@code this}
+         * @param systemDiskStorageClusterId Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster. This parameter is required.
+         */
+        public Builder systemDiskStorageClusterId(final com.aliyun.ros.cdk.core.IResolvable systemDiskStorageClusterId) {
+            this.props.systemDiskStorageClusterId(systemDiskStorageClusterId);
             return this;
         }
 

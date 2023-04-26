@@ -143,6 +143,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
+        /// <summary>Property gzip: Specifies whether to enable Gzip compression to compress specific types of files.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// on (default): yes
+        /// off: no
+        /// </remarks>
+        [JsiiProperty(name: "gzip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Gzip
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property healthCheck: The properties of health checking setting.</summary>
         [JsiiProperty(name: "healthCheck", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosListener.HealthCheckProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -267,6 +283,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         [JsiiProperty(name: "startListener", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? StartListener
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy.</summary>
+        /// <remarks>
+        /// Each security policy contains TLS protocol versions and cipher suites available for HTTPS. It takes effect when Protocol=https.
+        /// </remarks>
+        [JsiiProperty(name: "tlsCipherPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TlsCipherPolicy
         {
             get
             {
@@ -407,6 +437,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property gzip: Specifies whether to enable Gzip compression to compress specific types of files.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// on (default): yes
+            /// off: no
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "gzip", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Gzip
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property healthCheck: The properties of health checking setting.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "healthCheck", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosListener.HealthCheckProperty\"}]}}", isOptional: true)]
@@ -504,6 +547,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "startListener", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? StartListener
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy.</summary>
+            /// <remarks>
+            /// Each security policy contains TLS protocol versions and cipher suites available for HTTPS. It takes effect when Protocol=https.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tlsCipherPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TlsCipherPolicy
             {
                 get => GetInstanceProperty<object?>();
             }

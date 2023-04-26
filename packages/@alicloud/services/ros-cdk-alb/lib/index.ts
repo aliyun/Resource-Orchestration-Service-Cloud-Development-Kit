@@ -1,5 +1,6 @@
 export * from './acl';
 export * from './aclassociation';
+export * from './additionalcertificateassociation';
 export * from './backendserverattachment';
 export * from './healthchecktemplate';
 export * from './listener';

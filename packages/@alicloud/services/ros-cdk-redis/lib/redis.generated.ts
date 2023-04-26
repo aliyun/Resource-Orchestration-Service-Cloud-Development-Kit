@@ -210,6 +210,177 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::REDIS::Connection`
+ */
+export interface RosConnectionProps {
+
+    /**
+     * @Property connectionStringPrefix: The prefix of the public endpoint. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
+     */
+    readonly connectionStringPrefix: string | ros.IResolvable;
+
+    /**
+     * @Property connectionType: Allowed values:
+     * - Public: Public address.
+     * - Direct: Direct connection address. The instance is a cluster instance. You can apply for a direct connection endpoint as required.
+     */
+    readonly connectionType: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Instance ID (globally unique)
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property port: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+     */
+    readonly port: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosConnectionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosConnectionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosConnectionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionType', ros.requiredValidator)(properties.connectionType));
+    if(properties.connectionType && (typeof properties.connectionType) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionType', ros.validateAllowedValues)({
+          data: properties.connectionType,
+          allowedValues: ["Public","Direct"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionType', ros.validateString)(properties.connectionType));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 1024,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('connectionStringPrefix', ros.requiredValidator)(properties.connectionStringPrefix));
+    if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
+        errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
+          data: properties.connectionStringPrefix,
+          reg: /^[a-z][a-z0-9-]{7,63}/
+        }));
+    }
+    errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
+    return errors.wrap('supplied properties not correct for "RosConnectionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Connection` resource
+ *
+ * @param properties - the TypeScript properties of a `RosConnectionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Connection` resource.
+ */
+// @ts-ignore TS6133
+function rosConnectionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosConnectionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ConnectionStringPrefix: ros.stringToRosTemplate(properties.connectionStringPrefix),
+      ConnectionType: ros.stringToRosTemplate(properties.connectionType),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      Port: ros.numberToRosTemplate(properties.port),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::REDIS::Connection`
+ */
+export class RosConnection extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::REDIS::Connection";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ConnectionString: The allocated connection string.
+     */
+    public readonly attrConnectionString: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property connectionStringPrefix: The prefix of the public endpoint. 
+     * The prefix must be 8 to 64 characters in length, 
+     * and can contain lowercase letters and digits. 
+     * It must start with a lowercase letter.
+     */
+    public connectionStringPrefix: string | ros.IResolvable;
+
+    /**
+     * @Property connectionType: Allowed values:
+     * - Public: Public address.
+     * - Direct: Direct connection address. The instance is a cluster instance. You can apply for a direct connection endpoint as required.
+     */
+    public connectionType: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Instance ID (globally unique)
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property port: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
+     */
+    public port: number | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::REDIS::Connection`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosConnectionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosConnection.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConnectionString = this.getAtt('ConnectionString');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.connectionStringPrefix = props.connectionStringPrefix;
+        this.connectionType = props.connectionType;
+        this.instanceId = props.instanceId;
+        this.port = props.port;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            connectionStringPrefix: this.connectionStringPrefix,
+            connectionType: this.connectionType,
+            instanceId: this.instanceId,
+            port: this.port,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosConnectionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::REDIS::Instance`
  */
 export interface RosInstanceProps {

@@ -184,7 +184,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).</summary>
         /// <remarks>
-        /// The range is [1,200], default is 200 Mbps.
+        /// The range is [0,200], default is 200 Mbps.
         /// </remarks>
         [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -503,10 +503,75 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>ase-256</description>
+        /// <description>sm4-128
+        /// Default value: ase-256.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "systemDiskEncryptAlgorithm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SystemDiskEncryptAlgorithm
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property systemDiskEncrypted: Specifies whether to encrypt the system disk.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true: encrypts the system disk.</description>
+        /// <description>false: does not encrypt the system disk.
+        /// Default value: false.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "systemDiskEncrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SystemDiskEncrypted
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.</summary>
+        [JsiiProperty(name: "systemDiskKmsKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SystemDiskKmsKeyId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property systemDiskProvisionedIops: Provisioning IOPS.</summary>
         [JsiiProperty(name: "systemDiskProvisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SystemDiskProvisionedIops
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster.</summary>
+        /// <remarks>
+        /// If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+        /// </remarks>
+        [JsiiProperty(name: "systemDiskStorageClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SystemDiskStorageClusterId
         {
             get
             {
@@ -708,7 +773,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <summary>Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).</summary>
             /// <remarks>
-            /// The range is [1,200], default is 200 Mbps.
+            /// The range is [0,200], default is 200 Mbps.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "internetMaxBandwidthIn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -955,10 +1020,63 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>ase-256</description>
+            /// <description>sm4-128
+            /// Default value: ase-256.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "systemDiskEncryptAlgorithm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SystemDiskEncryptAlgorithm
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property systemDiskEncrypted: Specifies whether to encrypt the system disk.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>true: encrypts the system disk.</description>
+            /// <description>false: does not encrypt the system disk.
+            /// Default value: false.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "systemDiskEncrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SystemDiskEncrypted
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "systemDiskKmsKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SystemDiskKmsKeyId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property systemDiskProvisionedIops: Provisioning IOPS.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "systemDiskProvisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SystemDiskProvisionedIops
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster.</summary>
+            /// <remarks>
+            /// If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "systemDiskStorageClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SystemDiskStorageClusterId
             {
                 get => GetInstanceProperty<object?>();
             }

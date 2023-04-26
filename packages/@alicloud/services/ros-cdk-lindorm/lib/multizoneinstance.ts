@@ -206,6 +206,24 @@ export interface MultiZoneInstanceProps {
     readonly standbyZoneId?: string | ros.IResolvable;
 
     /**
+     * Property streamNum: The number of LindormStream nodes in the instance. Valid values: integers from 0 to 90.
+     */
+    readonly streamNum?: number | ros.IResolvable;
+
+    /**
+     * Property streamSpec: The specification of LindormStream nodes in the instance. Valid values:
+     * lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+     * lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+     * lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+     * lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+     */
+    readonly streamSpec?: string | ros.IResolvable;
+
+    /**
      * Property tsdbNum: The number of the LindormTSDB nodes in the instance. The valid values of this parameter depend on the value of the PayType parameter.
      * If the PayType parameter is set to PREPAY, set this parameter to an integer that ranges from 0 to 24.
      * If the PayType parameter is set to POSTPAY, set this parameter to an integer that ranges from 0 to 32.
@@ -264,18 +282,20 @@ export class MultiZoneInstance extends ros.Resource {
             filestoreSpec: props.filestoreSpec,
             tsdbNum: props.tsdbNum,
             arbiterZoneId: props.arbiterZoneId,
+            streamSpec: props.streamSpec,
             primaryZoneId: props.primaryZoneId,
             multiZoneCombination: props.multiZoneCombination,
             coreSingleStorage: props.coreSingleStorage,
+            streamNum: props.streamNum,
             coldStorage: props.coldStorage,
-            diskCategory: props.diskCategory,
             logSpec: props.logSpec,
+            diskCategory: props.diskCategory,
             period: props.period,
             primaryVSwitchId: props.primaryVSwitchId,
             arbiterVSwitchId: props.arbiterVSwitchId,
             instanceName: props.instanceName,
-            filestoreNum: props.filestoreNum,
             vpcId: props.vpcId,
+            filestoreNum: props.filestoreNum,
             securityIpList: props.securityIpList,
             lindormSpec: props.lindormSpec,
             tsdbSpec: props.tsdbSpec,

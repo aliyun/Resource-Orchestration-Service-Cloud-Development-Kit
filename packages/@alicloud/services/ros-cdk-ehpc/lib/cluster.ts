@@ -9,7 +9,7 @@ export { RosCluster as ClusterProperty };
 export interface ClusterProps {
 
     /**
-     * Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99.
+     * Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99.
      */
     readonly ecsOrderComputeCount: number | ros.IResolvable;
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query to SSM Parameter Context Provider.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:09.632Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.841Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.SSMParameterContextQuery")
 @software.amazon.jsii.Jsii.Proxy(SSMParameterContextQuery.Jsii$Proxy.class)
 public interface SSMParameterContextQuery extends software.amazon.jsii.JsiiSerializable {
