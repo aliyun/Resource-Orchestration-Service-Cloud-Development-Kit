@@ -267,6 +267,27 @@ export interface InstanceGroupProps {
     readonly systemDiskDiskName?: string | ros.IResolvable;
 
     /**
+     * Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
+     * - ase-256
+     * - sm4-128
+     * Default value: ase-256.
+     */
+    readonly systemDiskEncryptAlgorithm?: string | ros.IResolvable;
+
+    /**
+     * Property systemDiskEncrypted: Specifies whether to encrypt the system disk. Valid values:
+     * - true: encrypts the system disk.
+     * - false: does not encrypt the system disk.
+     * Default value: false.
+     */
+    readonly systemDiskEncrypted?: string | ros.IResolvable;
+
+    /**
+     * Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+     */
+    readonly systemDiskKmsKeyId?: string | ros.IResolvable;
+
+    /**
      * Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
     readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
@@ -280,6 +301,11 @@ export interface InstanceGroupProps {
      * Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB. If you specify with your own image, make sure the system disk size bigger than image size.
      */
     readonly systemDiskSize?: number | ros.IResolvable;
+
+    /**
+     * Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster. If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+     */
+    readonly systemDiskStorageClusterId?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -393,14 +419,17 @@ export class InstanceGroup extends ros.Resource {
             systemDiskDescription: props.systemDiskDescription,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             systemDiskProvisionedIops: props.systemDiskProvisionedIops,
+            systemDiskEncryptAlgorithm: props.systemDiskEncryptAlgorithm,
             ramRoleName: props.ramRoleName,
             systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
             imageId: props.imageId,
             systemDiskDiskName: props.systemDiskDiskName,
             tags: props.tags,
             hostName: props.hostName,
+            systemDiskStorageClusterId: props.systemDiskStorageClusterId,
             launchTemplateName: props.launchTemplateName,
             updatePolicy: props.updatePolicy === undefined || props.updatePolicy === null ? 'ForNewInstances' : props.updatePolicy,
+            systemDiskKmsKeyId: props.systemDiskKmsKeyId,
             vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             launchTemplateId: props.launchTemplateId,
@@ -424,6 +453,7 @@ export class InstanceGroup extends ros.Resource {
             autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
             spotDuration: props.spotDuration,
             ipv6Addresses: props.ipv6Addresses,
+            systemDiskEncrypted: props.systemDiskEncrypted,
             maxAmount: props.maxAmount,
             systemDiskAutoSnapshotPolicyId: props.systemDiskAutoSnapshotPolicyId,
             networkType: props.networkType,

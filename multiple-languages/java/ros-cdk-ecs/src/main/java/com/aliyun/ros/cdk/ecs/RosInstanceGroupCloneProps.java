@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.094Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:50.447Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceGroupCloneProps.Jsii$Proxy.class)
 public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -234,7 +234,31 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskEncryptAlgorithm() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskEncrypted() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskKmsKeyId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskProvisionedIops() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskStorageClusterId() {
         return null;
     }
 
@@ -304,7 +328,11 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
         java.lang.Object systemDiskCategory;
         java.lang.Object systemDiskDescription;
         java.lang.Object systemDiskDiskName;
+        java.lang.Object systemDiskEncryptAlgorithm;
+        java.lang.Object systemDiskEncrypted;
+        java.lang.Object systemDiskKmsKeyId;
         java.lang.Object systemDiskProvisionedIops;
+        java.lang.Object systemDiskStorageClusterId;
         java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
         java.lang.Object updatePolicy;
         java.lang.Object zoneId;
@@ -1070,6 +1098,66 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosInstanceGroupCloneProps#getSystemDiskEncryptAlgorithm}
+         * @param systemDiskEncryptAlgorithm the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskEncryptAlgorithm(java.lang.String systemDiskEncryptAlgorithm) {
+            this.systemDiskEncryptAlgorithm = systemDiskEncryptAlgorithm;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupCloneProps#getSystemDiskEncryptAlgorithm}
+         * @param systemDiskEncryptAlgorithm the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskEncryptAlgorithm(com.aliyun.ros.cdk.core.IResolvable systemDiskEncryptAlgorithm) {
+            this.systemDiskEncryptAlgorithm = systemDiskEncryptAlgorithm;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupCloneProps#getSystemDiskEncrypted}
+         * @param systemDiskEncrypted the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskEncrypted(java.lang.String systemDiskEncrypted) {
+            this.systemDiskEncrypted = systemDiskEncrypted;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupCloneProps#getSystemDiskEncrypted}
+         * @param systemDiskEncrypted the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskEncrypted(com.aliyun.ros.cdk.core.IResolvable systemDiskEncrypted) {
+            this.systemDiskEncrypted = systemDiskEncrypted;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupCloneProps#getSystemDiskKmsKeyId}
+         * @param systemDiskKmsKeyId the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskKmsKeyId(java.lang.String systemDiskKmsKeyId) {
+            this.systemDiskKmsKeyId = systemDiskKmsKeyId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupCloneProps#getSystemDiskKmsKeyId}
+         * @param systemDiskKmsKeyId the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskKmsKeyId(com.aliyun.ros.cdk.core.IResolvable systemDiskKmsKeyId) {
+            this.systemDiskKmsKeyId = systemDiskKmsKeyId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceGroupCloneProps#getSystemDiskProvisionedIops}
          * @param systemDiskProvisionedIops the value to be set.
          * @return {@code this}
@@ -1086,6 +1174,26 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
          */
         public Builder systemDiskProvisionedIops(com.aliyun.ros.cdk.core.IResolvable systemDiskProvisionedIops) {
             this.systemDiskProvisionedIops = systemDiskProvisionedIops;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupCloneProps#getSystemDiskStorageClusterId}
+         * @param systemDiskStorageClusterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskStorageClusterId(java.lang.String systemDiskStorageClusterId) {
+            this.systemDiskStorageClusterId = systemDiskStorageClusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceGroupCloneProps#getSystemDiskStorageClusterId}
+         * @param systemDiskStorageClusterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder systemDiskStorageClusterId(com.aliyun.ros.cdk.core.IResolvable systemDiskStorageClusterId) {
+            this.systemDiskStorageClusterId = systemDiskStorageClusterId;
             return this;
         }
 
@@ -1194,7 +1302,11 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
         private final java.lang.Object systemDiskCategory;
         private final java.lang.Object systemDiskDescription;
         private final java.lang.Object systemDiskDiskName;
+        private final java.lang.Object systemDiskEncryptAlgorithm;
+        private final java.lang.Object systemDiskEncrypted;
+        private final java.lang.Object systemDiskKmsKeyId;
         private final java.lang.Object systemDiskProvisionedIops;
+        private final java.lang.Object systemDiskStorageClusterId;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty> tags;
         private final java.lang.Object updatePolicy;
         private final java.lang.Object zoneId;
@@ -1243,7 +1355,11 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
             this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskEncryptAlgorithm = software.amazon.jsii.Kernel.get(this, "systemDiskEncryptAlgorithm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskEncrypted = software.amazon.jsii.Kernel.get(this, "systemDiskEncrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskKmsKeyId = software.amazon.jsii.Kernel.get(this, "systemDiskKmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemDiskProvisionedIops = software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskStorageClusterId = software.amazon.jsii.Kernel.get(this, "systemDiskStorageClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty.class)));
             this.updatePolicy = software.amazon.jsii.Kernel.get(this, "updatePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1293,7 +1409,11 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
             this.systemDiskCategory = builder.systemDiskCategory;
             this.systemDiskDescription = builder.systemDiskDescription;
             this.systemDiskDiskName = builder.systemDiskDiskName;
+            this.systemDiskEncryptAlgorithm = builder.systemDiskEncryptAlgorithm;
+            this.systemDiskEncrypted = builder.systemDiskEncrypted;
+            this.systemDiskKmsKeyId = builder.systemDiskKmsKeyId;
             this.systemDiskProvisionedIops = builder.systemDiskProvisionedIops;
+            this.systemDiskStorageClusterId = builder.systemDiskStorageClusterId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosInstanceGroupClone.TagsProperty>)builder.tags;
             this.updatePolicy = builder.updatePolicy;
             this.zoneId = builder.zoneId;
@@ -1490,8 +1610,28 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
+        public final java.lang.Object getSystemDiskEncryptAlgorithm() {
+            return this.systemDiskEncryptAlgorithm;
+        }
+
+        @Override
+        public final java.lang.Object getSystemDiskEncrypted() {
+            return this.systemDiskEncrypted;
+        }
+
+        @Override
+        public final java.lang.Object getSystemDiskKmsKeyId() {
+            return this.systemDiskKmsKeyId;
+        }
+
+        @Override
         public final java.lang.Object getSystemDiskProvisionedIops() {
             return this.systemDiskProvisionedIops;
+        }
+
+        @Override
+        public final java.lang.Object getSystemDiskStorageClusterId() {
+            return this.systemDiskStorageClusterId;
         }
 
         @Override
@@ -1625,8 +1765,20 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
             if (this.getSystemDiskDiskName() != null) {
                 data.set("systemDiskDiskName", om.valueToTree(this.getSystemDiskDiskName()));
             }
+            if (this.getSystemDiskEncryptAlgorithm() != null) {
+                data.set("systemDiskEncryptAlgorithm", om.valueToTree(this.getSystemDiskEncryptAlgorithm()));
+            }
+            if (this.getSystemDiskEncrypted() != null) {
+                data.set("systemDiskEncrypted", om.valueToTree(this.getSystemDiskEncrypted()));
+            }
+            if (this.getSystemDiskKmsKeyId() != null) {
+                data.set("systemDiskKmsKeyId", om.valueToTree(this.getSystemDiskKmsKeyId()));
+            }
             if (this.getSystemDiskProvisionedIops() != null) {
                 data.set("systemDiskProvisionedIops", om.valueToTree(this.getSystemDiskProvisionedIops()));
+            }
+            if (this.getSystemDiskStorageClusterId() != null) {
+                data.set("systemDiskStorageClusterId", om.valueToTree(this.getSystemDiskStorageClusterId()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -1693,7 +1845,11 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
             if (this.systemDiskCategory != null ? !this.systemDiskCategory.equals(that.systemDiskCategory) : that.systemDiskCategory != null) return false;
             if (this.systemDiskDescription != null ? !this.systemDiskDescription.equals(that.systemDiskDescription) : that.systemDiskDescription != null) return false;
             if (this.systemDiskDiskName != null ? !this.systemDiskDiskName.equals(that.systemDiskDiskName) : that.systemDiskDiskName != null) return false;
+            if (this.systemDiskEncryptAlgorithm != null ? !this.systemDiskEncryptAlgorithm.equals(that.systemDiskEncryptAlgorithm) : that.systemDiskEncryptAlgorithm != null) return false;
+            if (this.systemDiskEncrypted != null ? !this.systemDiskEncrypted.equals(that.systemDiskEncrypted) : that.systemDiskEncrypted != null) return false;
+            if (this.systemDiskKmsKeyId != null ? !this.systemDiskKmsKeyId.equals(that.systemDiskKmsKeyId) : that.systemDiskKmsKeyId != null) return false;
             if (this.systemDiskProvisionedIops != null ? !this.systemDiskProvisionedIops.equals(that.systemDiskProvisionedIops) : that.systemDiskProvisionedIops != null) return false;
+            if (this.systemDiskStorageClusterId != null ? !this.systemDiskStorageClusterId.equals(that.systemDiskStorageClusterId) : that.systemDiskStorageClusterId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.updatePolicy != null ? !this.updatePolicy.equals(that.updatePolicy) : that.updatePolicy != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
@@ -1739,7 +1895,11 @@ public interface RosInstanceGroupCloneProps extends software.amazon.jsii.JsiiSer
             result = 31 * result + (this.systemDiskCategory != null ? this.systemDiskCategory.hashCode() : 0);
             result = 31 * result + (this.systemDiskDescription != null ? this.systemDiskDescription.hashCode() : 0);
             result = 31 * result + (this.systemDiskDiskName != null ? this.systemDiskDiskName.hashCode() : 0);
+            result = 31 * result + (this.systemDiskEncryptAlgorithm != null ? this.systemDiskEncryptAlgorithm.hashCode() : 0);
+            result = 31 * result + (this.systemDiskEncrypted != null ? this.systemDiskEncrypted.hashCode() : 0);
+            result = 31 * result + (this.systemDiskKmsKeyId != null ? this.systemDiskKmsKeyId.hashCode() : 0);
             result = 31 * result + (this.systemDiskProvisionedIops != null ? this.systemDiskProvisionedIops.hashCode() : 0);
+            result = 31 * result + (this.systemDiskStorageClusterId != null ? this.systemDiskStorageClusterId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.updatePolicy != null ? this.updatePolicy.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);

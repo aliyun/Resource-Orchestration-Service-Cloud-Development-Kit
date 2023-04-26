@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::InstanceClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:50.289Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceCloneProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceCloneProps.Jsii$Proxy.class)
 public interface InstanceCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -76,7 +76,7 @@ public interface InstanceCloneProps extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).
      * <p>
-     * The range is [1,200], default is 200 Mbps.
+     * The range is [0,200], default is 200 Mbps.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
         return null;
@@ -385,7 +385,7 @@ public interface InstanceCloneProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link InstanceCloneProps#getInternetMaxBandwidthIn}
          * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).
-         *                               The range is [1,200], default is 200 Mbps.
+         *                               The range is [0,200], default is 200 Mbps.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthIn(java.lang.Number internetMaxBandwidthIn) {
@@ -396,7 +396,7 @@ public interface InstanceCloneProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link InstanceCloneProps#getInternetMaxBandwidthIn}
          * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second).
-         *                               The range is [1,200], default is 200 Mbps.
+         *                               The range is [0,200], default is 200 Mbps.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * A ROS template type:  `ALIYUN::Lindorm::MultiZoneInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.862Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:51.255Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.RosMultiZoneInstance")
 public class RosMultiZoneInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -589,6 +589,42 @@ public class RosMultiZoneInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStreamNum() {
+        return software.amazon.jsii.Kernel.get(this, "streamNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStreamNum(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "streamNum", value);
+    }
+
+    /**
+     */
+    public void setStreamNum(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "streamNum", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStreamSpec() {
+        return software.amazon.jsii.Kernel.get(this, "streamSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStreamSpec(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "streamSpec", value);
+    }
+
+    /**
+     */
+    public void setStreamSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "streamSpec", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTsdbNum() {
         return software.amazon.jsii.Kernel.get(this, "tsdbNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -1122,6 +1158,40 @@ public class RosMultiZoneInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder standbyZoneId(final com.aliyun.ros.cdk.core.IResolvable standbyZoneId) {
             this.props.standbyZoneId(standbyZoneId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param streamNum This parameter is required.
+         */
+        public Builder streamNum(final java.lang.Number streamNum) {
+            this.props.streamNum(streamNum);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param streamNum This parameter is required.
+         */
+        public Builder streamNum(final com.aliyun.ros.cdk.core.IResolvable streamNum) {
+            this.props.streamNum(streamNum);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param streamSpec This parameter is required.
+         */
+        public Builder streamSpec(final java.lang.String streamSpec) {
+            this.props.streamSpec(streamSpec);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param streamSpec This parameter is required.
+         */
+        public Builder streamSpec(final com.aliyun.ros.cdk.core.IResolvable streamSpec) {
+            this.props.streamSpec(streamSpec);
             return this;
         }
 

@@ -126,6 +126,11 @@ export interface RosKeyProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property dkmsInstanceId: The ID of the dedicated KMS instance.
+     */
+    readonly dkmsInstanceId?: string | ros.IResolvable;
+
+    /**
      * @Property enable: Specifies whether the key is enabled. Defaults to true.
      */
     readonly enable?: boolean | ros.IResolvable;
@@ -141,7 +146,10 @@ export interface RosKeyProps {
     readonly keySpec?: string | ros.IResolvable;
 
     /**
-     * @Property keyUsage: The intended use of the CMK. Default value: ENCRYPT/DECRYPT.
+     * @Property keyUsage: The usage of the CMK. Valid values:
+     * ENCRYPT/DECRYPT: encrypts or decrypts data.
+     * SIGN/VERIFY: generates or verifies a digital signature.
+     * If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
      */
     readonly keyUsage?: string | ros.IResolvable;
 
@@ -183,7 +191,6 @@ function RosKeyPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('rotationInterval', ros.validateString)(properties.rotationInterval));
-    errors.collect(ros.propertyValidator('enableAutomaticRotation', ros.validateBoolean)(properties.enableAutomaticRotation));
     if(properties.pendingWindowInDays && (typeof properties.pendingWindowInDays) !== 'object') {
         errors.collect(ros.propertyValidator('pendingWindowInDays', ros.validateRange)({
             data: properties.pendingWindowInDays,
@@ -192,9 +199,11 @@ function RosKeyPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('pendingWindowInDays', ros.validateNumber)(properties.pendingWindowInDays));
+    errors.collect(ros.propertyValidator('enableAutomaticRotation', ros.validateBoolean)(properties.enableAutomaticRotation));
     errors.collect(ros.propertyValidator('keySpec', ros.validateString)(properties.keySpec));
     errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
     errors.collect(ros.propertyValidator('keyUsage', ros.validateString)(properties.keyUsage));
+    errors.collect(ros.propertyValidator('dkmsInstanceId', ros.validateString)(properties.dkmsInstanceId));
     return errors.wrap('supplied properties not correct for "RosKeyProps"');
 }
 
@@ -213,6 +222,7 @@ function rosKeyPropsToRosTemplate(properties: any, enableResourcePropertyConstra
     }
     return {
       Description: ros.stringToRosTemplate(properties.description),
+      DKMSInstanceId: ros.stringToRosTemplate(properties.dkmsInstanceId),
       Enable: ros.booleanToRosTemplate(properties.enable),
       EnableAutomaticRotation: ros.booleanToRosTemplate(properties.enableAutomaticRotation),
       KeySpec: ros.stringToRosTemplate(properties.keySpec),
@@ -251,6 +261,11 @@ export class RosKey extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property dkmsInstanceId: The ID of the dedicated KMS instance.
+     */
+    public dkmsInstanceId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property enable: Specifies whether the key is enabled. Defaults to true.
      */
     public enable: boolean | ros.IResolvable | undefined;
@@ -266,7 +281,10 @@ export class RosKey extends ros.RosResource {
     public keySpec: string | ros.IResolvable | undefined;
 
     /**
-     * @Property keyUsage: The intended use of the CMK. Default value: ENCRYPT/DECRYPT.
+     * @Property keyUsage: The usage of the CMK. Valid values:
+     * ENCRYPT/DECRYPT: encrypts or decrypts data.
+     * SIGN/VERIFY: generates or verifies a digital signature.
+     * If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
      */
     public keyUsage: string | ros.IResolvable | undefined;
 
@@ -300,6 +318,7 @@ export class RosKey extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.description = props.description;
+        this.dkmsInstanceId = props.dkmsInstanceId;
         this.enable = props.enable;
         this.enableAutomaticRotation = props.enableAutomaticRotation;
         this.keySpec = props.keySpec;
@@ -313,6 +332,7 @@ export class RosKey extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             description: this.description,
+            dkmsInstanceId: this.dkmsInstanceId,
             enable: this.enable,
             enableAutomaticRotation: this.enableAutomaticRotation,
             keySpec: this.keySpec,
@@ -355,12 +375,29 @@ export interface RosSecretProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property dkmsInstanceId: The ID of the dedicated KMS instance.
+     */
+    readonly dkmsInstanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property enableAutomaticRotation: Specifies whether to enable automatic rotation. Valid values:
+     * true: specifies to enable automatic rotation.
+     * false: specifies to disable automatic rotation. This is the default value.
+     */
+    readonly enableAutomaticRotation?: boolean | ros.IResolvable;
+
+    /**
      * @Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
      * If you do not specify this parameter, Secrets Manager automatically creates an encryption
      * key to encrypt the secret.
      * Note The KMS CMK must be a symmetric key.
      */
     readonly encryptionKeyId?: string | ros.IResolvable;
+
+    /**
+     * @Property extendedConfig: The extended configuration of the secret. This parameter specifies the properties of the secret of the specific type.
+     */
+    readonly extendedConfig?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
      * @Property forceDeleteWithoutRecovery: Specifies whether to forcibly delete the secret. If this parameter is set to true, the secret cannot be recovered. Valid values:
@@ -375,11 +412,27 @@ export interface RosSecretProps {
     readonly recoveryWindowInDays?: number | ros.IResolvable;
 
     /**
+     * @Property rotationInterval: The interval for automatic rotation. Valid values: 6 hours to 8,760 hours (365 days).
+     * The value is in the integer[unit] format.
+     * The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+     */
+    readonly rotationInterval?: string | ros.IResolvable;
+
+    /**
      * @Property secretDataType: The type of the secret value. Valid values:
      * text (default value)
      * binary
      */
     readonly secretDataType?: string | ros.IResolvable;
+
+    /**
+     * @Property secretType: The type of the secret. Valid values:
+     * Generic: specifies a generic secret.
+     * Rds: specifies a managed ApsaraDB RDS secret.
+     * RAMCredentials: specifies a managed RAM secret.
+     * ECS: specifies a managed ECS secret.
+     */
+    readonly secretType?: string | ros.IResolvable;
 
     /**
      * @Property versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
@@ -399,9 +452,9 @@ function RosSecretPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('versionId', ros.requiredValidator)(properties.versionId));
     errors.collect(ros.propertyValidator('versionId', ros.validateString)(properties.versionId));
-    errors.collect(ros.propertyValidator('secretName', ros.requiredValidator)(properties.secretName));
-    errors.collect(ros.propertyValidator('secretName', ros.validateString)(properties.secretName));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('rotationInterval', ros.validateString)(properties.rotationInterval));
+    errors.collect(ros.propertyValidator('secretType', ros.validateString)(properties.secretType));
     if(properties.secretDataType && (typeof properties.secretDataType) !== 'object') {
         errors.collect(ros.propertyValidator('secretDataType', ros.validateAllowedValues)({
           data: properties.secretDataType,
@@ -409,8 +462,7 @@ function RosSecretPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('secretDataType', ros.validateString)(properties.secretDataType));
-    errors.collect(ros.propertyValidator('secretData', ros.requiredValidator)(properties.secretData));
-    errors.collect(ros.propertyValidator('secretData', ros.validateString)(properties.secretData));
+    errors.collect(ros.propertyValidator('dkmsInstanceId', ros.validateString)(properties.dkmsInstanceId));
     if(properties.versionStages && (Array.isArray(properties.versionStages) || (typeof properties.versionStages) === 'string')) {
         errors.collect(ros.propertyValidator('versionStages', ros.validateLength)({
             data: properties.versionStages.length,
@@ -419,6 +471,12 @@ function RosSecretPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('versionStages', ros.listValidator(ros.validateString))(properties.versionStages));
+    errors.collect(ros.propertyValidator('secretName', ros.requiredValidator)(properties.secretName));
+    errors.collect(ros.propertyValidator('secretName', ros.validateString)(properties.secretName));
+    errors.collect(ros.propertyValidator('enableAutomaticRotation', ros.validateBoolean)(properties.enableAutomaticRotation));
+    errors.collect(ros.propertyValidator('extendedConfig', ros.hashValidator(ros.validateAny))(properties.extendedConfig));
+    errors.collect(ros.propertyValidator('secretData', ros.requiredValidator)(properties.secretData));
+    errors.collect(ros.propertyValidator('secretData', ros.validateString)(properties.secretData));
     errors.collect(ros.propertyValidator('encryptionKeyId', ros.validateString)(properties.encryptionKeyId));
     errors.collect(ros.propertyValidator('recoveryWindowInDays', ros.validateNumber)(properties.recoveryWindowInDays));
     errors.collect(ros.propertyValidator('forceDeleteWithoutRecovery', ros.validateBoolean)(properties.forceDeleteWithoutRecovery));
@@ -443,10 +501,15 @@ function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyCons
       SecretName: ros.stringToRosTemplate(properties.secretName),
       VersionId: ros.stringToRosTemplate(properties.versionId),
       Description: ros.stringToRosTemplate(properties.description),
+      DKMSInstanceId: ros.stringToRosTemplate(properties.dkmsInstanceId),
+      EnableAutomaticRotation: ros.booleanToRosTemplate(properties.enableAutomaticRotation),
       EncryptionKeyId: ros.stringToRosTemplate(properties.encryptionKeyId),
+      ExtendedConfig: ros.hashMapper(ros.objectToRosTemplate)(properties.extendedConfig),
       ForceDeleteWithoutRecovery: ros.booleanToRosTemplate(properties.forceDeleteWithoutRecovery),
       RecoveryWindowInDays: ros.numberToRosTemplate(properties.recoveryWindowInDays),
+      RotationInterval: ros.stringToRosTemplate(properties.rotationInterval),
       SecretDataType: ros.stringToRosTemplate(properties.secretDataType),
+      SecretType: ros.stringToRosTemplate(properties.secretType),
       VersionStages: ros.listMapper(ros.stringToRosTemplate)(properties.versionStages),
     };
 }
@@ -501,12 +564,29 @@ export class RosSecret extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property dkmsInstanceId: The ID of the dedicated KMS instance.
+     */
+    public dkmsInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableAutomaticRotation: Specifies whether to enable automatic rotation. Valid values:
+     * true: specifies to enable automatic rotation.
+     * false: specifies to disable automatic rotation. This is the default value.
+     */
+    public enableAutomaticRotation: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
      * If you do not specify this parameter, Secrets Manager automatically creates an encryption
      * key to encrypt the secret.
      * Note The KMS CMK must be a symmetric key.
      */
     public encryptionKeyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property extendedConfig: The extended configuration of the secret. This parameter specifies the properties of the secret of the specific type.
+     */
+    public extendedConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
      * @Property forceDeleteWithoutRecovery: Specifies whether to forcibly delete the secret. If this parameter is set to true, the secret cannot be recovered. Valid values:
@@ -521,11 +601,27 @@ export class RosSecret extends ros.RosResource {
     public recoveryWindowInDays: number | ros.IResolvable | undefined;
 
     /**
+     * @Property rotationInterval: The interval for automatic rotation. Valid values: 6 hours to 8,760 hours (365 days).
+     * The value is in the integer[unit] format.
+     * The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+     */
+    public rotationInterval: string | ros.IResolvable | undefined;
+
+    /**
      * @Property secretDataType: The type of the secret value. Valid values:
      * text (default value)
      * binary
      */
     public secretDataType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property secretType: The type of the secret. Valid values:
+     * Generic: specifies a generic secret.
+     * Rds: specifies a managed ApsaraDB RDS secret.
+     * RAMCredentials: specifies a managed RAM secret.
+     * ECS: specifies a managed ECS secret.
+     */
+    public secretType: string | ros.IResolvable | undefined;
 
     /**
      * @Property versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
@@ -549,10 +645,15 @@ export class RosSecret extends ros.RosResource {
         this.secretName = props.secretName;
         this.versionId = props.versionId;
         this.description = props.description;
+        this.dkmsInstanceId = props.dkmsInstanceId;
+        this.enableAutomaticRotation = props.enableAutomaticRotation;
         this.encryptionKeyId = props.encryptionKeyId;
+        this.extendedConfig = props.extendedConfig;
         this.forceDeleteWithoutRecovery = props.forceDeleteWithoutRecovery;
         this.recoveryWindowInDays = props.recoveryWindowInDays;
+        this.rotationInterval = props.rotationInterval;
         this.secretDataType = props.secretDataType;
+        this.secretType = props.secretType;
         this.versionStages = props.versionStages;
     }
 
@@ -563,10 +664,15 @@ export class RosSecret extends ros.RosResource {
             secretName: this.secretName,
             versionId: this.versionId,
             description: this.description,
+            dkmsInstanceId: this.dkmsInstanceId,
+            enableAutomaticRotation: this.enableAutomaticRotation,
             encryptionKeyId: this.encryptionKeyId,
+            extendedConfig: this.extendedConfig,
             forceDeleteWithoutRecovery: this.forceDeleteWithoutRecovery,
             recoveryWindowInDays: this.recoveryWindowInDays,
+            rotationInterval: this.rotationInterval,
             secretDataType: this.secretDataType,
+            secretType: this.secretType,
             versionStages: this.versionStages,
         };
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * Properties for defining a `ALIYUN::Lindorm::MultiZoneInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.865Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:51.258Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.RosMultiZoneInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosMultiZoneInstanceProps.Jsii$Proxy.class)
 public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -172,6 +172,18 @@ public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStreamNum() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStreamSpec() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTsdbNum() {
         return null;
     }
@@ -220,6 +232,8 @@ public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSeri
         java.lang.Object solrSpec;
         java.lang.Object standbyVSwitchId;
         java.lang.Object standbyZoneId;
+        java.lang.Object streamNum;
+        java.lang.Object streamSpec;
         java.lang.Object tsdbNum;
         java.lang.Object tsdbSpec;
 
@@ -784,6 +798,46 @@ public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosMultiZoneInstanceProps#getStreamNum}
+         * @param streamNum the value to be set.
+         * @return {@code this}
+         */
+        public Builder streamNum(java.lang.Number streamNum) {
+            this.streamNum = streamNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMultiZoneInstanceProps#getStreamNum}
+         * @param streamNum the value to be set.
+         * @return {@code this}
+         */
+        public Builder streamNum(com.aliyun.ros.cdk.core.IResolvable streamNum) {
+            this.streamNum = streamNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMultiZoneInstanceProps#getStreamSpec}
+         * @param streamSpec the value to be set.
+         * @return {@code this}
+         */
+        public Builder streamSpec(java.lang.String streamSpec) {
+            this.streamSpec = streamSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMultiZoneInstanceProps#getStreamSpec}
+         * @param streamSpec the value to be set.
+         * @return {@code this}
+         */
+        public Builder streamSpec(com.aliyun.ros.cdk.core.IResolvable streamSpec) {
+            this.streamSpec = streamSpec;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosMultiZoneInstanceProps#getTsdbNum}
          * @param tsdbNum the value to be set.
          * @return {@code this}
@@ -867,6 +921,8 @@ public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSeri
         private final java.lang.Object solrSpec;
         private final java.lang.Object standbyVSwitchId;
         private final java.lang.Object standbyZoneId;
+        private final java.lang.Object streamNum;
+        private final java.lang.Object streamSpec;
         private final java.lang.Object tsdbNum;
         private final java.lang.Object tsdbSpec;
 
@@ -904,6 +960,8 @@ public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSeri
             this.solrSpec = software.amazon.jsii.Kernel.get(this, "solrSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.standbyVSwitchId = software.amazon.jsii.Kernel.get(this, "standbyVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.standbyZoneId = software.amazon.jsii.Kernel.get(this, "standbyZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.streamNum = software.amazon.jsii.Kernel.get(this, "streamNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.streamSpec = software.amazon.jsii.Kernel.get(this, "streamSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tsdbNum = software.amazon.jsii.Kernel.get(this, "tsdbNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tsdbSpec = software.amazon.jsii.Kernel.get(this, "tsdbSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -941,6 +999,8 @@ public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSeri
             this.solrSpec = builder.solrSpec;
             this.standbyVSwitchId = builder.standbyVSwitchId;
             this.standbyZoneId = builder.standbyZoneId;
+            this.streamNum = builder.streamNum;
+            this.streamSpec = builder.streamSpec;
             this.tsdbNum = builder.tsdbNum;
             this.tsdbSpec = builder.tsdbSpec;
         }
@@ -1086,6 +1146,16 @@ public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
+        public final java.lang.Object getStreamNum() {
+            return this.streamNum;
+        }
+
+        @Override
+        public final java.lang.Object getStreamSpec() {
+            return this.streamSpec;
+        }
+
+        @Override
         public final java.lang.Object getTsdbNum() {
             return this.tsdbNum;
         }
@@ -1179,6 +1249,12 @@ public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSeri
             if (this.getStandbyZoneId() != null) {
                 data.set("standbyZoneId", om.valueToTree(this.getStandbyZoneId()));
             }
+            if (this.getStreamNum() != null) {
+                data.set("streamNum", om.valueToTree(this.getStreamNum()));
+            }
+            if (this.getStreamSpec() != null) {
+                data.set("streamSpec", om.valueToTree(this.getStreamSpec()));
+            }
             if (this.getTsdbNum() != null) {
                 data.set("tsdbNum", om.valueToTree(this.getTsdbNum()));
             }
@@ -1231,6 +1307,8 @@ public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSeri
             if (this.solrSpec != null ? !this.solrSpec.equals(that.solrSpec) : that.solrSpec != null) return false;
             if (this.standbyVSwitchId != null ? !this.standbyVSwitchId.equals(that.standbyVSwitchId) : that.standbyVSwitchId != null) return false;
             if (this.standbyZoneId != null ? !this.standbyZoneId.equals(that.standbyZoneId) : that.standbyZoneId != null) return false;
+            if (this.streamNum != null ? !this.streamNum.equals(that.streamNum) : that.streamNum != null) return false;
+            if (this.streamSpec != null ? !this.streamSpec.equals(that.streamSpec) : that.streamSpec != null) return false;
             if (this.tsdbNum != null ? !this.tsdbNum.equals(that.tsdbNum) : that.tsdbNum != null) return false;
             return this.tsdbSpec != null ? this.tsdbSpec.equals(that.tsdbSpec) : that.tsdbSpec == null;
         }
@@ -1265,6 +1343,8 @@ public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSeri
             result = 31 * result + (this.solrSpec != null ? this.solrSpec.hashCode() : 0);
             result = 31 * result + (this.standbyVSwitchId != null ? this.standbyVSwitchId.hashCode() : 0);
             result = 31 * result + (this.standbyZoneId != null ? this.standbyZoneId.hashCode() : 0);
+            result = 31 * result + (this.streamNum != null ? this.streamNum.hashCode() : 0);
+            result = 31 * result + (this.streamSpec != null ? this.streamSpec.hashCode() : 0);
             result = 31 * result + (this.tsdbNum != null ? this.tsdbNum.hashCode() : 0);
             result = 31 * result + (this.tsdbSpec != null ? this.tsdbSpec.hashCode() : 0);
             return result;

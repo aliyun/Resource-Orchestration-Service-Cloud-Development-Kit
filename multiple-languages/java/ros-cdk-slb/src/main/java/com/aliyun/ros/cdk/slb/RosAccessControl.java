@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::AccessControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.721Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:52.130Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosAccessControl")
 public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -81,36 +81,36 @@ public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getAclEntrys() {
-        return software.amazon.jsii.Kernel.get(this, "aclEntrys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAclEntries() {
+        return software.amazon.jsii.Kernel.get(this, "aclEntries", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setAclEntrys(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "aclEntrys", value);
+    public void setAclEntries(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "aclEntries", value);
     }
 
     /**
      */
-    public void setAclEntrys(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+    public void setAclEntries(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
             for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
                 final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
                 if (
                      !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
-                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.slb.RosAccessControl.AclEntrysProperty)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.slb.RosAccessControl.AclEntriesProperty)
                     && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
                 ) {
                     throw new IllegalArgumentException(
                         new java.lang.StringBuilder("Expected ")
                             .append("value").append(".get(").append(__idx_ac66f0).append(")")
-                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.slb.RosAccessControl.AclEntrysProperty; received ")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.slb.RosAccessControl.AclEntriesProperty; received ")
                             .append(__val_ac66f0.getClass()).toString());
                 }
             }
         }
-        software.amazon.jsii.Kernel.set(this, "aclEntrys", value);
+        software.amazon.jsii.Kernel.set(this, "aclEntries", value);
     }
 
     /**
@@ -162,10 +162,10 @@ public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
-    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosAccessControl.AclEntrysProperty")
-    @software.amazon.jsii.Jsii.Proxy(AclEntrysProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosAccessControl.AclEntriesProperty")
+    @software.amazon.jsii.Jsii.Proxy(AclEntriesProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-    public static interface AclEntrysProperty extends software.amazon.jsii.JsiiSerializable {
+    public static interface AclEntriesProperty extends software.amazon.jsii.JsiiSerializable {
 
         /**
          */
@@ -180,22 +180,22 @@ public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @return a {@link Builder} of {@link AclEntrysProperty}
+         * @return a {@link Builder} of {@link AclEntriesProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         static Builder builder() {
             return new Builder();
         }
         /**
-         * A builder for {@link AclEntrysProperty}
+         * A builder for {@link AclEntriesProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        public static final class Builder implements software.amazon.jsii.Builder<AclEntrysProperty> {
+        public static final class Builder implements software.amazon.jsii.Builder<AclEntriesProperty> {
             java.lang.Object entry;
             java.lang.Object comment;
 
             /**
-             * Sets the value of {@link AclEntrysProperty#getEntry}
+             * Sets the value of {@link AclEntriesProperty#getEntry}
              * @param entry the value to be set. This parameter is required.
              * @return {@code this}
              */
@@ -206,7 +206,7 @@ public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link AclEntrysProperty#getEntry}
+             * Sets the value of {@link AclEntriesProperty#getEntry}
              * @param entry the value to be set. This parameter is required.
              * @return {@code this}
              */
@@ -217,7 +217,7 @@ public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link AclEntrysProperty#getComment}
+             * Sets the value of {@link AclEntriesProperty#getComment}
              * @param comment the value to be set.
              * @return {@code this}
              */
@@ -228,7 +228,7 @@ public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
-             * Sets the value of {@link AclEntrysProperty#getComment}
+             * Sets the value of {@link AclEntriesProperty#getComment}
              * @param comment the value to be set.
              * @return {@code this}
              */
@@ -240,22 +240,22 @@ public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Builds the configured instance.
-             * @return a new instance of {@link AclEntrysProperty}
+             * @return a new instance of {@link AclEntriesProperty}
              * @throws NullPointerException if any required attribute was not provided
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             @Override
-            public AclEntrysProperty build() {
+            public AclEntriesProperty build() {
                 return new Jsii$Proxy(this);
             }
         }
 
         /**
-         * An implementation for {@link AclEntrysProperty}
+         * An implementation for {@link AclEntriesProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
-        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AclEntrysProperty {
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AclEntriesProperty {
             private final java.lang.Object entry;
             private final java.lang.Object comment;
 
@@ -300,7 +300,7 @@ public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
-                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-slb.RosAccessControl.AclEntrysProperty"));
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-slb.RosAccessControl.AclEntriesProperty"));
                 struct.set("data", data);
 
                 final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -314,7 +314,7 @@ public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
                 if (this == o) return true;
                 if (o == null || getClass() != o.getClass()) return false;
 
-                AclEntrysProperty.Jsii$Proxy that = (AclEntrysProperty.Jsii$Proxy) o;
+                AclEntriesProperty.Jsii$Proxy that = (AclEntriesProperty.Jsii$Proxy) o;
 
                 if (!entry.equals(that.entry)) return false;
                 return this.comment != null ? this.comment.equals(that.comment) : that.comment == null;
@@ -542,18 +542,18 @@ public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param aclEntrys This parameter is required.
+         * @param aclEntries This parameter is required.
          */
-        public Builder aclEntrys(final com.aliyun.ros.cdk.core.IResolvable aclEntrys) {
-            this.props.aclEntrys(aclEntrys);
+        public Builder aclEntries(final com.aliyun.ros.cdk.core.IResolvable aclEntries) {
+            this.props.aclEntries(aclEntries);
             return this;
         }
         /**
          * @return {@code this}
-         * @param aclEntrys This parameter is required.
+         * @param aclEntries This parameter is required.
          */
-        public Builder aclEntrys(final java.util.List<? extends java.lang.Object> aclEntrys) {
-            this.props.aclEntrys(aclEntrys);
+        public Builder aclEntries(final java.util.List<? extends java.lang.Object> aclEntries) {
+            this.props.aclEntries(aclEntries);
             return this;
         }
 

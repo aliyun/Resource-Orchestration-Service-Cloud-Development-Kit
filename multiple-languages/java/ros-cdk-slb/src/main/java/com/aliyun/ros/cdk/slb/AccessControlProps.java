@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::AccessControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.677Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:52.090Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.AccessControlProps")
 @software.amazon.jsii.Jsii.Proxy(AccessControlProps.Jsii$Proxy.class)
 public interface AccessControlProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,11 +14,11 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
     @org.jetbrains.annotations.NotNull java.lang.Object getAclName();
 
     /**
-     * Property aclEntrys: A list of acl entrys.
+     * Property aclEntries: A list of acl entries.
      * <p>
      * Each entry can be IP addresses or CIDR blocks. Max length: 50.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getAclEntrys() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclEntries() {
         return null;
     }
 
@@ -58,7 +58,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
      */
     public static final class Builder implements software.amazon.jsii.Builder<AccessControlProps> {
         java.lang.Object aclName;
-        java.lang.Object aclEntrys;
+        java.lang.Object aclEntries;
         java.lang.Object addressIpVersion;
         java.lang.Object resourceGroupId;
         java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags;
@@ -84,24 +84,24 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
-         * Sets the value of {@link AccessControlProps#getAclEntrys}
-         * @param aclEntrys Property aclEntrys: A list of acl entrys.
-         *                  Each entry can be IP addresses or CIDR blocks. Max length: 50.
+         * Sets the value of {@link AccessControlProps#getAclEntries}
+         * @param aclEntries Property aclEntries: A list of acl entries.
+         *                   Each entry can be IP addresses or CIDR blocks. Max length: 50.
          * @return {@code this}
          */
-        public Builder aclEntrys(com.aliyun.ros.cdk.core.IResolvable aclEntrys) {
-            this.aclEntrys = aclEntrys;
+        public Builder aclEntries(com.aliyun.ros.cdk.core.IResolvable aclEntries) {
+            this.aclEntries = aclEntries;
             return this;
         }
 
         /**
-         * Sets the value of {@link AccessControlProps#getAclEntrys}
-         * @param aclEntrys Property aclEntrys: A list of acl entrys.
-         *                  Each entry can be IP addresses or CIDR blocks. Max length: 50.
+         * Sets the value of {@link AccessControlProps#getAclEntries}
+         * @param aclEntries Property aclEntries: A list of acl entries.
+         *                   Each entry can be IP addresses or CIDR blocks. Max length: 50.
          * @return {@code this}
          */
-        public Builder aclEntrys(java.util.List<? extends java.lang.Object> aclEntrys) {
-            this.aclEntrys = aclEntrys;
+        public Builder aclEntries(java.util.List<? extends java.lang.Object> aclEntries) {
+            this.aclEntries = aclEntries;
             return this;
         }
 
@@ -176,7 +176,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AccessControlProps {
         private final java.lang.Object aclName;
-        private final java.lang.Object aclEntrys;
+        private final java.lang.Object aclEntries;
         private final java.lang.Object addressIpVersion;
         private final java.lang.Object resourceGroupId;
         private final java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags;
@@ -188,7 +188,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.aclName = software.amazon.jsii.Kernel.get(this, "aclName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.aclEntrys = software.amazon.jsii.Kernel.get(this, "aclEntrys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aclEntries = software.amazon.jsii.Kernel.get(this, "aclEntries", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty.class)));
@@ -201,7 +201,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.aclName = java.util.Objects.requireNonNull(builder.aclName, "aclName is required");
-            this.aclEntrys = builder.aclEntrys;
+            this.aclEntries = builder.aclEntries;
             this.addressIpVersion = builder.addressIpVersion;
             this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty>)builder.tags;
@@ -213,8 +213,8 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.Object getAclEntrys() {
-            return this.aclEntrys;
+        public final java.lang.Object getAclEntries() {
+            return this.aclEntries;
         }
 
         @Override
@@ -239,8 +239,8 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("aclName", om.valueToTree(this.getAclName()));
-            if (this.getAclEntrys() != null) {
-                data.set("aclEntrys", om.valueToTree(this.getAclEntrys()));
+            if (this.getAclEntries() != null) {
+                data.set("aclEntries", om.valueToTree(this.getAclEntries()));
             }
             if (this.getAddressIpVersion() != null) {
                 data.set("addressIpVersion", om.valueToTree(this.getAddressIpVersion()));
@@ -270,7 +270,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
             AccessControlProps.Jsii$Proxy that = (AccessControlProps.Jsii$Proxy) o;
 
             if (!aclName.equals(that.aclName)) return false;
-            if (this.aclEntrys != null ? !this.aclEntrys.equals(that.aclEntrys) : that.aclEntrys != null) return false;
+            if (this.aclEntries != null ? !this.aclEntries.equals(that.aclEntries) : that.aclEntries != null) return false;
             if (this.addressIpVersion != null ? !this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
@@ -279,7 +279,7 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final int hashCode() {
             int result = this.aclName.hashCode();
-            result = 31 * result + (this.aclEntrys != null ? this.aclEntrys.hashCode() : 0);
+            result = 31 * result + (this.aclEntries != null ? this.aclEntries.hashCode() : 0);
             result = 31 * result + (this.addressIpVersion != null ? this.addressIpVersion.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

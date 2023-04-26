@@ -31,12 +31,29 @@ export interface SecretProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property dkmsInstanceId: The ID of the dedicated KMS instance.
+     */
+    readonly dkmsInstanceId?: string | ros.IResolvable;
+
+    /**
+     * Property enableAutomaticRotation: Specifies whether to enable automatic rotation. Valid values:
+     * true: specifies to enable automatic rotation.
+     * false: specifies to disable automatic rotation. This is the default value.
+     */
+    readonly enableAutomaticRotation?: boolean | ros.IResolvable;
+
+    /**
      * Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
      * If you do not specify this parameter, Secrets Manager automatically creates an encryption
      * key to encrypt the secret.
      * Note The KMS CMK must be a symmetric key.
      */
     readonly encryptionKeyId?: string | ros.IResolvable;
+
+    /**
+     * Property extendedConfig: The extended configuration of the secret. This parameter specifies the properties of the secret of the specific type.
+     */
+    readonly extendedConfig?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
      * Property forceDeleteWithoutRecovery: Specifies whether to forcibly delete the secret. If this parameter is set to true, the secret cannot be recovered. Valid values:
@@ -51,11 +68,27 @@ export interface SecretProps {
     readonly recoveryWindowInDays?: number | ros.IResolvable;
 
     /**
+     * Property rotationInterval: The interval for automatic rotation. Valid values: 6 hours to 8,760 hours (365 days).
+     * The value is in the integer[unit] format.
+     * The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+     */
+    readonly rotationInterval?: string | ros.IResolvable;
+
+    /**
      * Property secretDataType: The type of the secret value. Valid values:
      * text (default value)
      * binary
      */
     readonly secretDataType?: string | ros.IResolvable;
+
+    /**
+     * Property secretType: The type of the secret. Valid values:
+     * Generic: specifies a generic secret.
+     * Rds: specifies a managed ApsaraDB RDS secret.
+     * RAMCredentials: specifies a managed RAM secret.
+     * ECS: specifies a managed ECS secret.
+     */
+    readonly secretType?: string | ros.IResolvable;
 
     /**
      * Property versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
@@ -95,11 +128,16 @@ export class Secret extends ros.Resource {
 
         const rosSecret = new RosSecret(this, id,  {
             versionId: props.versionId,
-            secretName: props.secretName,
             description: props.description,
+            rotationInterval: props.rotationInterval,
+            secretType: props.secretType,
             secretDataType: props.secretDataType,
-            secretData: props.secretData,
+            dkmsInstanceId: props.dkmsInstanceId,
             versionStages: props.versionStages,
+            secretName: props.secretName,
+            enableAutomaticRotation: props.enableAutomaticRotation,
+            extendedConfig: props.extendedConfig,
+            secretData: props.secretData,
             encryptionKeyId: props.encryptionKeyId,
             recoveryWindowInDays: props.recoveryWindowInDays === undefined || props.recoveryWindowInDays === null ? 30 : props.recoveryWindowInDays,
             forceDeleteWithoutRecovery: props.forceDeleteWithoutRecovery === undefined || props.forceDeleteWithoutRecovery === null ? false : props.forceDeleteWithoutRecovery,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:52.139Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -267,6 +267,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getGzip() {
+        return software.amazon.jsii.Kernel.get(this, "gzip", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setGzip(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "gzip", value);
+    }
+
+    /**
+     */
+    public void setGzip(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "gzip", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheck() {
         return software.amazon.jsii.Kernel.get(this, "healthCheck", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -459,6 +477,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setStartListener(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "startListener", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTlsCipherPolicy() {
+        return software.amazon.jsii.Kernel.get(this, "tlsCipherPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTlsCipherPolicy(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "tlsCipherPolicy", value);
+    }
+
+    /**
+     */
+    public void setTlsCipherPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tlsCipherPolicy", value);
     }
 
     /**
@@ -2148,6 +2184,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param gzip This parameter is required.
+         */
+        public Builder gzip(final java.lang.String gzip) {
+            this.props.gzip(gzip);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param gzip This parameter is required.
+         */
+        public Builder gzip(final com.aliyun.ros.cdk.core.IResolvable gzip) {
+            this.props.gzip(gzip);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param healthCheck This parameter is required.
          */
         public Builder healthCheck(final com.aliyun.ros.cdk.core.IResolvable healthCheck) {
@@ -2313,6 +2366,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder startListener(final com.aliyun.ros.cdk.core.IResolvable startListener) {
             this.props.startListener(startListener);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tlsCipherPolicy This parameter is required.
+         */
+        public Builder tlsCipherPolicy(final java.lang.String tlsCipherPolicy) {
+            this.props.tlsCipherPolicy(tlsCipherPolicy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tlsCipherPolicy This parameter is required.
+         */
+        public Builder tlsCipherPolicy(final com.aliyun.ros.cdk.core.IResolvable tlsCipherPolicy) {
+            this.props.tlsCipherPolicy(tlsCipherPolicy);
             return this;
         }
 

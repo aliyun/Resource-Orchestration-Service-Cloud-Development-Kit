@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * A ROS resource type:  `ALIYUN::EHPC::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.312Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:50.659Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -113,20 +113,20 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99.
+         * Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99.
          * <p>
          * @return {@code this}
-         * @param ecsOrderComputeCount Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99. This parameter is required.
+         * @param ecsOrderComputeCount Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99. This parameter is required.
          */
         public Builder ecsOrderComputeCount(final java.lang.Number ecsOrderComputeCount) {
             this.props.ecsOrderComputeCount(ecsOrderComputeCount);
             return this;
         }
         /**
-         * Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99.
+         * Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99.
          * <p>
          * @return {@code this}
-         * @param ecsOrderComputeCount Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99. This parameter is required.
+         * @param ecsOrderComputeCount Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99. This parameter is required.
          */
         public Builder ecsOrderComputeCount(final com.aliyun.ros.cdk.core.IResolvable ecsOrderComputeCount) {
             this.props.ecsOrderComputeCount(ecsOrderComputeCount);

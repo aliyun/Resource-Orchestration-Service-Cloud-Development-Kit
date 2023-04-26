@@ -1,0 +1,8 @@
+@alicloud/ros-cdk-directmail.Domain=com.aliyun.ros.cdk.directmail.Domain
+@alicloud/ros-cdk-directmail.DomainProps=com.aliyun.ros.cdk.directmail.DomainProps
+@alicloud/ros-cdk-directmail.Ipfilter=com.aliyun.ros.cdk.directmail.Ipfilter
+@alicloud/ros-cdk-directmail.IpfilterProps=com.aliyun.ros.cdk.directmail.IpfilterProps
+@alicloud/ros-cdk-directmail.RosDomain=com.aliyun.ros.cdk.directmail.RosDomain
+@alicloud/ros-cdk-directmail.RosDomainProps=com.aliyun.ros.cdk.directmail.RosDomainProps
+@alicloud/ros-cdk-directmail.RosIpfilter=com.aliyun.ros.cdk.directmail.RosIpfilter
+@alicloud/ros-cdk-directmail.RosIpfilterProps=com.aliyun.ros.cdk.directmail.RosIpfilterProps

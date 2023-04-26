@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.imm;
 /**
  * A ROS resource type:  `ALIYUN::IMM::Project`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.756Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:51.150Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.imm.$Module.class, fqn = "@alicloud/ros-cdk-imm.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource {
 

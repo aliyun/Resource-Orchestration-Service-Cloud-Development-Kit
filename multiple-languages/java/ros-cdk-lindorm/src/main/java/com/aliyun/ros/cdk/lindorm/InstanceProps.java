@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * Properties for defining a `ALIYUN::Lindorm::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.836Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:51.238Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -187,6 +187,32 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property streamNum: The number of LindormStream nodes in the instance.
+     * <p>
+     * Valid values: integers from 0 to 90.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStreamNum() {
+        return null;
+    }
+
+    /**
+     * Property streamSpec: The specification of LindormStream nodes in the instance.
+     * <p>
+     * Valid values:
+     * lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+     * lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+     * lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+     * lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+     * lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+     * lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStreamSpec() {
+        return null;
+    }
+
+    /**
      * Property tsdbNum: The number of the LindormTSDB nodes in the instance.
      * <p>
      * The valid values of this parameter depend on the value of the PayType parameter.
@@ -251,6 +277,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object securityIpList;
         java.lang.Object solrNum;
         java.lang.Object solrSpec;
+        java.lang.Object streamNum;
+        java.lang.Object streamSpec;
         java.lang.Object tsdbNum;
         java.lang.Object tsdbSpec;
         java.lang.Object vSwitchId;
@@ -701,6 +729,66 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getStreamNum}
+         * @param streamNum Property streamNum: The number of LindormStream nodes in the instance.
+         *                  Valid values: integers from 0 to 90.
+         * @return {@code this}
+         */
+        public Builder streamNum(java.lang.Number streamNum) {
+            this.streamNum = streamNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getStreamNum}
+         * @param streamNum Property streamNum: The number of LindormStream nodes in the instance.
+         *                  Valid values: integers from 0 to 90.
+         * @return {@code this}
+         */
+        public Builder streamNum(com.aliyun.ros.cdk.core.IResolvable streamNum) {
+            this.streamNum = streamNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getStreamSpec}
+         * @param streamSpec Property streamSpec: The specification of LindormStream nodes in the instance.
+         *                   Valid values:
+         *                   lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+         *                   lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+         *                   lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+         *                   lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+         *                   lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+         *                   lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+         *                   lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+         *                   lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+         * @return {@code this}
+         */
+        public Builder streamSpec(java.lang.String streamSpec) {
+            this.streamSpec = streamSpec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getStreamSpec}
+         * @param streamSpec Property streamSpec: The specification of LindormStream nodes in the instance.
+         *                   Valid values:
+         *                   lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+         *                   lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+         *                   lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+         *                   lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+         *                   lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+         *                   lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+         *                   lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+         *                   lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+         * @return {@code this}
+         */
+        public Builder streamSpec(com.aliyun.ros.cdk.core.IResolvable streamSpec) {
+            this.streamSpec = streamSpec;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getTsdbNum}
          * @param tsdbNum Property tsdbNum: The number of the LindormTSDB nodes in the instance.
          *                The valid values of this parameter depend on the value of the PayType parameter.
@@ -829,6 +917,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object securityIpList;
         private final java.lang.Object solrNum;
         private final java.lang.Object solrSpec;
+        private final java.lang.Object streamNum;
+        private final java.lang.Object streamSpec;
         private final java.lang.Object tsdbNum;
         private final java.lang.Object tsdbSpec;
         private final java.lang.Object vSwitchId;
@@ -857,6 +947,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.solrNum = software.amazon.jsii.Kernel.get(this, "solrNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.solrSpec = software.amazon.jsii.Kernel.get(this, "solrSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.streamNum = software.amazon.jsii.Kernel.get(this, "streamNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.streamSpec = software.amazon.jsii.Kernel.get(this, "streamSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tsdbNum = software.amazon.jsii.Kernel.get(this, "tsdbNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tsdbSpec = software.amazon.jsii.Kernel.get(this, "tsdbSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -885,6 +977,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.securityIpList = builder.securityIpList;
             this.solrNum = builder.solrNum;
             this.solrSpec = builder.solrSpec;
+            this.streamNum = builder.streamNum;
+            this.streamSpec = builder.streamSpec;
             this.tsdbNum = builder.tsdbNum;
             this.tsdbSpec = builder.tsdbSpec;
             this.vSwitchId = builder.vSwitchId;
@@ -977,6 +1071,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getStreamNum() {
+            return this.streamNum;
+        }
+
+        @Override
+        public final java.lang.Object getStreamSpec() {
+            return this.streamSpec;
+        }
+
+        @Override
         public final java.lang.Object getTsdbNum() {
             return this.tsdbNum;
         }
@@ -1047,6 +1151,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getSolrSpec() != null) {
                 data.set("solrSpec", om.valueToTree(this.getSolrSpec()));
             }
+            if (this.getStreamNum() != null) {
+                data.set("streamNum", om.valueToTree(this.getStreamNum()));
+            }
+            if (this.getStreamSpec() != null) {
+                data.set("streamSpec", om.valueToTree(this.getStreamSpec()));
+            }
             if (this.getTsdbNum() != null) {
                 data.set("tsdbNum", om.valueToTree(this.getTsdbNum()));
             }
@@ -1094,6 +1204,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
             if (this.solrNum != null ? !this.solrNum.equals(that.solrNum) : that.solrNum != null) return false;
             if (this.solrSpec != null ? !this.solrSpec.equals(that.solrSpec) : that.solrSpec != null) return false;
+            if (this.streamNum != null ? !this.streamNum.equals(that.streamNum) : that.streamNum != null) return false;
+            if (this.streamSpec != null ? !this.streamSpec.equals(that.streamSpec) : that.streamSpec != null) return false;
             if (this.tsdbNum != null ? !this.tsdbNum.equals(that.tsdbNum) : that.tsdbNum != null) return false;
             if (this.tsdbSpec != null ? !this.tsdbSpec.equals(that.tsdbSpec) : that.tsdbSpec != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
@@ -1119,6 +1231,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
             result = 31 * result + (this.solrNum != null ? this.solrNum.hashCode() : 0);
             result = 31 * result + (this.solrSpec != null ? this.solrSpec.hashCode() : 0);
+            result = 31 * result + (this.streamNum != null ? this.streamNum.hashCode() : 0);
+            result = 31 * result + (this.streamSpec != null ? this.streamSpec.hashCode() : 0);
             result = 31 * result + (this.tsdbNum != null ? this.tsdbNum.hashCode() : 0);
             result = 31 * result + (this.tsdbSpec != null ? this.tsdbSpec.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

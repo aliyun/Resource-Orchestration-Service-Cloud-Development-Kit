@@ -8,7 +8,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
     [JsiiInterface(nativeType: typeof(IClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.ClusterProps")]
     public interface IClusterProps
     {
-        /// <summary>Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99.</summary>
+        /// <summary>Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99.</summary>
         [JsiiProperty(name: "ecsOrderComputeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object EcsOrderComputeCount
         {
@@ -649,7 +649,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             {
             }
 
-            /// <summary>Property ecsOrderComputeCount: Computing node number, which ranges from: 1-99.</summary>
+            /// <summary>Property ecsOrderComputeCount: Computing node number, which ranges from: 0-99.</summary>
             [JsiiProperty(name: "ecsOrderComputeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object EcsOrderComputeCount
             {

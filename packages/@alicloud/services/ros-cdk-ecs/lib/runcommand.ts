@@ -134,6 +134,11 @@ export class RunCommand extends ros.Resource {
     public readonly attrInvokeInstances: ros.IResolvable;
 
     /**
+     * Attribute InvokeResults: The results of invoke command.
+     */
+    public readonly attrInvokeResults: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::ECS::RunCommand`.
      *
      * Param scope - scope in which this resource is defined
@@ -163,5 +168,6 @@ export class RunCommand extends ros.Resource {
         this.attrCommandId = rosRunCommand.attrCommandId;
         this.attrInvokeId = rosRunCommand.attrInvokeId;
         this.attrInvokeInstances = rosRunCommand.attrInvokeInstances;
+        this.attrInvokeResults = rosRunCommand.attrInvokeResults;
     }
 }

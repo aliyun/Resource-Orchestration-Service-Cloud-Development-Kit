@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.766Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:52.185Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RuleProps")
 @software.amazon.jsii.Jsii.Proxy(RuleProps.Jsii$Proxy.class)
 public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,6 +27,13 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getRuleList();
 
     /**
+     * Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getListenerProtocol() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RuleProps}
      */
     static Builder builder() {
@@ -39,6 +46,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object listenerPort;
         java.lang.Object loadBalancerId;
         java.lang.Object ruleList;
+        java.lang.Object listenerProtocol;
 
         /**
          * Sets the value of {@link RuleProps#getListenerPort}
@@ -105,6 +113,26 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RuleProps#getListenerProtocol}
+         * @param listenerProtocol Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+         * @return {@code this}
+         */
+        public Builder listenerProtocol(java.lang.String listenerProtocol) {
+            this.listenerProtocol = listenerProtocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RuleProps#getListenerProtocol}
+         * @param listenerProtocol Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+         * @return {@code this}
+         */
+        public Builder listenerProtocol(com.aliyun.ros.cdk.core.IResolvable listenerProtocol) {
+            this.listenerProtocol = listenerProtocol;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RuleProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -123,6 +151,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object listenerPort;
         private final java.lang.Object loadBalancerId;
         private final java.lang.Object ruleList;
+        private final java.lang.Object listenerProtocol;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -133,6 +162,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
             this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ruleList = software.amazon.jsii.Kernel.get(this, "ruleList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.listenerProtocol = software.amazon.jsii.Kernel.get(this, "listenerProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -143,6 +173,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
             this.listenerPort = java.util.Objects.requireNonNull(builder.listenerPort, "listenerPort is required");
             this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
             this.ruleList = java.util.Objects.requireNonNull(builder.ruleList, "ruleList is required");
+            this.listenerProtocol = builder.listenerProtocol;
         }
 
         @Override
@@ -161,6 +192,11 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getListenerProtocol() {
+            return this.listenerProtocol;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -169,6 +205,9 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
             data.set("listenerPort", om.valueToTree(this.getListenerPort()));
             data.set("loadBalancerId", om.valueToTree(this.getLoadBalancerId()));
             data.set("ruleList", om.valueToTree(this.getRuleList()));
+            if (this.getListenerProtocol() != null) {
+                data.set("listenerProtocol", om.valueToTree(this.getListenerProtocol()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-slb.RuleProps"));
@@ -189,7 +228,8 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!listenerPort.equals(that.listenerPort)) return false;
             if (!loadBalancerId.equals(that.loadBalancerId)) return false;
-            return this.ruleList.equals(that.ruleList);
+            if (!ruleList.equals(that.ruleList)) return false;
+            return this.listenerProtocol != null ? this.listenerProtocol.equals(that.listenerProtocol) : that.listenerProtocol == null;
         }
 
         @Override
@@ -197,6 +237,7 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.listenerPort.hashCode();
             result = 31 * result + (this.loadBalancerId.hashCode());
             result = 31 * result + (this.ruleList.hashCode());
+            result = 31 * result + (this.listenerProtocol != null ? this.listenerProtocol.hashCode() : 0);
             return result;
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Properties for defining a `ALIYUN::ALB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:09.818Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:49.215Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,6 +28,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      * Different editions have different limits and billing methods. Valid values:
      * Basic: Basic Edition
      * Standard: Standard Edition
+     * StandardWithWaf: Standard Edition with WAF
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerEdition();
 
@@ -197,6 +198,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          *                            Different editions have different limits and billing methods. Valid values:
          *                            Basic: Basic Edition
          *                            Standard: Standard Edition
+         *                            StandardWithWaf: Standard Edition with WAF
          * @return {@code this}
          */
         public Builder loadBalancerEdition(java.lang.String loadBalancerEdition) {
@@ -210,6 +212,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          *                            Different editions have different limits and billing methods. Valid values:
          *                            Basic: Basic Edition
          *                            Standard: Standard Edition
+         *                            StandardWithWaf: Standard Edition with WAF
          * @return {@code this}
          */
         public Builder loadBalancerEdition(com.aliyun.ros.cdk.core.IResolvable loadBalancerEdition) {

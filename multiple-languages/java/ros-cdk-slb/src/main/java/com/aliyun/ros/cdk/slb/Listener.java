@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.685Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:52.114Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -376,6 +376,35 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property gzip: Specifies whether to enable Gzip compression to compress specific types of files.
+         * <p>
+         * Valid values:
+         * on (default): yes
+         * off: no
+         * <p>
+         * @return {@code this}
+         * @param gzip Property gzip: Specifies whether to enable Gzip compression to compress specific types of files. This parameter is required.
+         */
+        public Builder gzip(final java.lang.String gzip) {
+            this.props.gzip(gzip);
+            return this;
+        }
+        /**
+         * Property gzip: Specifies whether to enable Gzip compression to compress specific types of files.
+         * <p>
+         * Valid values:
+         * on (default): yes
+         * off: no
+         * <p>
+         * @return {@code this}
+         * @param gzip Property gzip: Specifies whether to enable Gzip compression to compress specific types of files. This parameter is required.
+         */
+        public Builder gzip(final com.aliyun.ros.cdk.core.IResolvable gzip) {
+            this.props.gzip(gzip);
+            return this;
+        }
+
+        /**
          * Property healthCheck: The properties of health checking setting.
          * <p>
          * @return {@code this}
@@ -614,6 +643,31 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder startListener(final com.aliyun.ros.cdk.core.IResolvable startListener) {
             this.props.startListener(startListener);
+            return this;
+        }
+
+        /**
+         * Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy.
+         * <p>
+         * Each security policy contains TLS protocol versions and cipher suites available for HTTPS. It takes effect when Protocol=https.
+         * <p>
+         * @return {@code this}
+         * @param tlsCipherPolicy Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy. This parameter is required.
+         */
+        public Builder tlsCipherPolicy(final java.lang.String tlsCipherPolicy) {
+            this.props.tlsCipherPolicy(tlsCipherPolicy);
+            return this;
+        }
+        /**
+         * Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy.
+         * <p>
+         * Each security policy contains TLS protocol versions and cipher suites available for HTTPS. It takes effect when Protocol=https.
+         * <p>
+         * @return {@code this}
+         * @param tlsCipherPolicy Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy. This parameter is required.
+         */
+        public Builder tlsCipherPolicy(final com.aliyun.ros.cdk.core.IResolvable tlsCipherPolicy) {
+            this.props.tlsCipherPolicy(tlsCipherPolicy);
             return this;
         }
 

@@ -8,13 +8,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
     [JsiiInterface(nativeType: typeof(ICertificateProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.CertificateProps")]
     public interface ICertificateProps
     {
-        /// <summary>Property certificate: The content of the certificate public key.</summary>
-        [JsiiProperty(name: "certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object Certificate
-        {
-            get;
-        }
-
         /// <summary>Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.</summary>
         [JsiiProperty(name: "aliCloudCertificateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -30,6 +23,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         [JsiiProperty(name: "aliCloudCertificateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AliCloudCertificateName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property certificate: The content of the certificate public key.</summary>
+        [JsiiProperty(name: "certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Certificate
         {
             get
             {
@@ -103,13 +107,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             {
             }
 
-            /// <summary>Property certificate: The content of the certificate public key.</summary>
-            [JsiiProperty(name: "certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Certificate
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "aliCloudCertificateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -122,6 +119,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             [JsiiOptional]
             [JsiiProperty(name: "aliCloudCertificateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AliCloudCertificateName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property certificate: The content of the certificate public key.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Certificate
             {
                 get => GetInstanceProperty<object?>();
             }

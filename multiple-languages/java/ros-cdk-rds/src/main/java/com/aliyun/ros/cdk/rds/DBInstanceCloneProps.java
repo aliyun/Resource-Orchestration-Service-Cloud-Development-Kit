@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::DBInstanceClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.280Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:51.694Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceCloneProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceCloneProps.Jsii$Proxy.class)
 public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -62,10 +62,12 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
      * Property category: The edition of the instance.
      * <p>
      * Valid values:
-     * Basic: specifies to use the Basic Edition.
-     * HighAvailability: specifies to use the High-availability Edition.
-     * AlwaysOn: specifies to use the Cluster Edition.
-     * Finance: specifies to use the Enterprise Edition.
+     * Basic: RDS Basic Edition
+     * HighAvailability: RDS High-availability Edition
+     * cluster: RDS Cluster Edition
+     * AlwaysOn: RDS Cluster Edition for SQL Server
+     * Finance: RDS Enterprise Edition
+     * serverless_basic: RDS Serverless Basic Edition
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
         return null;
@@ -574,10 +576,12 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
          * Sets the value of {@link DBInstanceCloneProps#getCategory}
          * @param category Property category: The edition of the instance.
          *                 Valid values:
-         *                 Basic: specifies to use the Basic Edition.
-         *                 HighAvailability: specifies to use the High-availability Edition.
-         *                 AlwaysOn: specifies to use the Cluster Edition.
-         *                 Finance: specifies to use the Enterprise Edition.
+         *                 Basic: RDS Basic Edition
+         *                 HighAvailability: RDS High-availability Edition
+         *                 cluster: RDS Cluster Edition
+         *                 AlwaysOn: RDS Cluster Edition for SQL Server
+         *                 Finance: RDS Enterprise Edition
+         *                 serverless_basic: RDS Serverless Basic Edition
          * @return {@code this}
          */
         public Builder category(java.lang.String category) {
@@ -589,10 +593,12 @@ public interface DBInstanceCloneProps extends software.amazon.jsii.JsiiSerializa
          * Sets the value of {@link DBInstanceCloneProps#getCategory}
          * @param category Property category: The edition of the instance.
          *                 Valid values:
-         *                 Basic: specifies to use the Basic Edition.
-         *                 HighAvailability: specifies to use the High-availability Edition.
-         *                 AlwaysOn: specifies to use the Cluster Edition.
-         *                 Finance: specifies to use the Enterprise Edition.
+         *                 Basic: RDS Basic Edition
+         *                 HighAvailability: RDS High-availability Edition
+         *                 cluster: RDS Cluster Edition
+         *                 AlwaysOn: RDS Cluster Edition for SQL Server
+         *                 Finance: RDS Enterprise Edition
+         *                 serverless_basic: RDS Serverless Basic Edition
          * @return {@code this}
          */
         public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {

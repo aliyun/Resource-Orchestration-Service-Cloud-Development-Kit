@@ -16,7 +16,7 @@
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 		
     
-		<PackageVersion>1.0.12</PackageVersion>
+		<PackageVersion>1.0.13</PackageVersion>
 		
     
 		<!-- Additional Metadata -->
@@ -60,6 +60,9 @@
     
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		
+    
+		<RollForward>Major</RollForward>
+		
   
 		<AssemblyName>AlibabaCloud.SDK.ROS.CDK.Dfs</AssemblyName>
 		<RootNamespace>AlibabaCloud.SDK.ROS.CDK.Dfs</RootNamespace>
@@ -70,7 +73,7 @@
 	<ItemGroup>
 		
     
-		<EmbeddedResource Include="alicloud-ros-cdk-dfs-1.0.12.tgz"/>
+		<EmbeddedResource Include="alicloud-ros-cdk-dfs-1.0.13.tgz"/>
 		
   
 	</ItemGroup>
@@ -79,7 +82,7 @@
 	<ItemGroup>
 		
     
-		<PackageReference Include="Amazon.JSII.Runtime" Version="[1.74.0,2.0.0)"/>
+		<PackageReference Include="Amazon.JSII.Runtime" Version="[1.80.0,2.0.0)"/>
 		
     
 		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Core" Version="[1.0.6,2.0.0)"/>

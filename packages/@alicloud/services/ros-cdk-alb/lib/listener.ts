@@ -76,6 +76,11 @@ export interface ListenerProps {
     readonly listenerDescription?: string | ros.IResolvable;
 
     /**
+     * Property listenerStatus: The status of the listener.
+     */
+    readonly listenerStatus?: string | ros.IResolvable;
+
+    /**
      * Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
      */
     readonly quicConfig?: RosListener.QuicConfigProperty | ros.IResolvable;
@@ -141,6 +146,7 @@ export class Listener extends ros.Resource {
             quicConfig: props.quicConfig,
             gzipEnabled: props.gzipEnabled,
             securityPolicyId: props.securityPolicyId,
+            listenerStatus: props.listenerStatus,
             listenerDescription: props.listenerDescription,
             xForwardedForConfig: props.xForwardedForConfig,
             caCertificates: props.caCertificates,

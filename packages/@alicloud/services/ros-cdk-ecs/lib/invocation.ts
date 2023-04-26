@@ -9,14 +9,19 @@ export { RosInvocation as InvocationProperty };
 export interface InvocationProps {
 
     /**
-     * Property commandId: The id of command.
-     */
-    readonly commandId: string | ros.IResolvable;
-
-    /**
      * Property instanceIds: The instance id list. Instances status must be running.
      */
     readonly instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property commandId: The id of command.
+     */
+    readonly commandId?: string | ros.IResolvable;
+
+    /**
+     * Property commandName: The name of command. Only system commands whose provide is AlibabaCloud are supported
+     */
+    readonly commandName?: string | ros.IResolvable;
 
     /**
      * Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
@@ -66,6 +71,11 @@ export class Invocation extends ros.Resource {
     public readonly attrInvokeInstances: ros.IResolvable;
 
     /**
+     * Attribute InvokeResults: The results of invoke command.
+     */
+    public readonly attrInvokeResults: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::ECS::Invocation`.
      *
      * Param scope - scope in which this resource is defined
@@ -79,6 +89,7 @@ export class Invocation extends ros.Resource {
             parameters: props.parameters,
             timed: props.timed,
             frequency: props.frequency,
+            commandName: props.commandName,
             commandId: props.commandId,
             sync: props.sync === undefined || props.sync === null ? false : props.sync,
             instanceIds: props.instanceIds,
@@ -86,5 +97,6 @@ export class Invocation extends ros.Resource {
         this.resource = rosInvocation;
         this.attrInvokeId = rosInvocation.attrInvokeId;
         this.attrInvokeInstances = rosInvocation.attrInvokeInstances;
+        this.attrInvokeResults = rosInvocation.attrInvokeResults;
     }
 }

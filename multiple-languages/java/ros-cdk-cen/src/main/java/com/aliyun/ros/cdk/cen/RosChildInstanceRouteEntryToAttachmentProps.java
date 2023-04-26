@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:10.195Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:49.580Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosChildInstanceRouteEntryToAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosChildInstanceRouteEntryToAttachmentProps.Jsii$Proxy.class)
 public interface RosChildInstanceRouteEntryToAttachmentProps extends software.amazon.jsii.JsiiSerializable {

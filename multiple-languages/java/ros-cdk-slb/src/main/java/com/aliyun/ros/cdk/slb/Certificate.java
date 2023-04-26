@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::Certificate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.682Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:52.110Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.Certificate")
 public class Certificate extends com.aliyun.ros.cdk.core.Resource {
 
@@ -24,12 +24,12 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
-     * @param props This parameter is required.
+     * @param props
      * @param enableResourcePropertyConstraint
      */
-    public Certificate(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.CertificateProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
+    public Certificate(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.slb.CertificateProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required"), enableResourcePropertyConstraint });
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), props, enableResourcePropertyConstraint });
     }
 
     /**
@@ -41,11 +41,26 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
-     * @param props This parameter is required.
+     * @param props
      */
-    public Certificate(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.CertificateProps props) {
+    public Certificate(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.slb.CertificateProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), props });
+    }
+
+    /**
+     * Create a new `ALIYUN::SLB::Certificate`.
+     * <p>
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     */
+    public Certificate(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
+        super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required") });
     }
 
     /**
@@ -87,34 +102,12 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
         private final com.aliyun.ros.cdk.core.Construct scope;
         private final java.lang.String id;
         private final java.lang.Boolean enableResourcePropertyConstraint;
-        private final com.aliyun.ros.cdk.slb.CertificateProps.Builder props;
+        private com.aliyun.ros.cdk.slb.CertificateProps.Builder props;
 
         private Builder(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
             this.scope = scope;
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-            this.props = new com.aliyun.ros.cdk.slb.CertificateProps.Builder();
-        }
-
-        /**
-         * Property certificate: The content of the certificate public key.
-         * <p>
-         * @return {@code this}
-         * @param certificate Property certificate: The content of the certificate public key. This parameter is required.
-         */
-        public Builder certificate(final java.lang.String certificate) {
-            this.props.certificate(certificate);
-            return this;
-        }
-        /**
-         * Property certificate: The content of the certificate public key.
-         * <p>
-         * @return {@code this}
-         * @param certificate Property certificate: The content of the certificate public key. This parameter is required.
-         */
-        public Builder certificate(final com.aliyun.ros.cdk.core.IResolvable certificate) {
-            this.props.certificate(certificate);
-            return this;
         }
 
         /**
@@ -124,7 +117,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param aliCloudCertificateId Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate. This parameter is required.
          */
         public Builder aliCloudCertificateId(final java.lang.String aliCloudCertificateId) {
-            this.props.aliCloudCertificateId(aliCloudCertificateId);
+            this.props().aliCloudCertificateId(aliCloudCertificateId);
             return this;
         }
         /**
@@ -134,7 +127,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param aliCloudCertificateId Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate. This parameter is required.
          */
         public Builder aliCloudCertificateId(final com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateId) {
-            this.props.aliCloudCertificateId(aliCloudCertificateId);
+            this.props().aliCloudCertificateId(aliCloudCertificateId);
             return this;
         }
 
@@ -145,7 +138,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param aliCloudCertificateName Property aliCloudCertificateName: The name of the Alibaba Cloud certificate. This parameter is required.
          */
         public Builder aliCloudCertificateName(final java.lang.String aliCloudCertificateName) {
-            this.props.aliCloudCertificateName(aliCloudCertificateName);
+            this.props().aliCloudCertificateName(aliCloudCertificateName);
             return this;
         }
         /**
@@ -155,7 +148,28 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param aliCloudCertificateName Property aliCloudCertificateName: The name of the Alibaba Cloud certificate. This parameter is required.
          */
         public Builder aliCloudCertificateName(final com.aliyun.ros.cdk.core.IResolvable aliCloudCertificateName) {
-            this.props.aliCloudCertificateName(aliCloudCertificateName);
+            this.props().aliCloudCertificateName(aliCloudCertificateName);
+            return this;
+        }
+
+        /**
+         * Property certificate: The content of the certificate public key.
+         * <p>
+         * @return {@code this}
+         * @param certificate Property certificate: The content of the certificate public key. This parameter is required.
+         */
+        public Builder certificate(final java.lang.String certificate) {
+            this.props().certificate(certificate);
+            return this;
+        }
+        /**
+         * Property certificate: The content of the certificate public key.
+         * <p>
+         * @return {@code this}
+         * @param certificate Property certificate: The content of the certificate public key. This parameter is required.
+         */
+        public Builder certificate(final com.aliyun.ros.cdk.core.IResolvable certificate) {
+            this.props().certificate(certificate);
             return this;
         }
 
@@ -166,7 +180,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param certificateName Property certificateName: The name of the certificate. This parameter is required.
          */
         public Builder certificateName(final java.lang.String certificateName) {
-            this.props.certificateName(certificateName);
+            this.props().certificateName(certificateName);
             return this;
         }
         /**
@@ -176,7 +190,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param certificateName Property certificateName: The name of the certificate. This parameter is required.
          */
         public Builder certificateName(final com.aliyun.ros.cdk.core.IResolvable certificateName) {
-            this.props.certificateName(certificateName);
+            this.props().certificateName(certificateName);
             return this;
         }
 
@@ -187,7 +201,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param certificateType Property certificateType: The type of the certificate. This parameter is required.
          */
         public Builder certificateType(final java.lang.String certificateType) {
-            this.props.certificateType(certificateType);
+            this.props().certificateType(certificateType);
             return this;
         }
         /**
@@ -197,7 +211,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param certificateType Property certificateType: The type of the certificate. This parameter is required.
          */
         public Builder certificateType(final com.aliyun.ros.cdk.core.IResolvable certificateType) {
-            this.props.certificateType(certificateType);
+            this.props().certificateType(certificateType);
             return this;
         }
 
@@ -208,7 +222,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param privateKey Property privateKey: The private key. This parameter is required.
          */
         public Builder privateKey(final java.lang.String privateKey) {
-            this.props.privateKey(privateKey);
+            this.props().privateKey(privateKey);
             return this;
         }
         /**
@@ -218,7 +232,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param privateKey Property privateKey: The private key. This parameter is required.
          */
         public Builder privateKey(final com.aliyun.ros.cdk.core.IResolvable privateKey) {
-            this.props.privateKey(privateKey);
+            this.props().privateKey(privateKey);
             return this;
         }
 
@@ -229,7 +243,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
-            this.props.resourceGroupId(resourceGroupId);
+            this.props().resourceGroupId(resourceGroupId);
             return this;
         }
         /**
@@ -239,7 +253,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
-            this.props.resourceGroupId(resourceGroupId);
+            this.props().resourceGroupId(resourceGroupId);
             return this;
         }
 
@@ -252,7 +266,7 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
          * @param tags Property tags: Tags to attach to instance. This parameter is required.
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.slb.RosCertificate.TagsProperty> tags) {
-            this.props.tags(tags);
+            this.props().tags(tags);
             return this;
         }
 
@@ -264,9 +278,16 @@ public class Certificate extends com.aliyun.ros.cdk.core.Resource {
             return new com.aliyun.ros.cdk.slb.Certificate(
                 this.scope,
                 this.id,
-                this.props.build(),
+                this.props != null ? this.props.build() : null,
                 this.enableResourcePropertyConstraint
             );
+        }
+
+        private com.aliyun.ros.cdk.slb.CertificateProps.Builder props() {
+            if (this.props == null) {
+                this.props = new com.aliyun.ros.cdk.slb.CertificateProps.Builder();
+            }
+            return this.props;
         }
     }
 }

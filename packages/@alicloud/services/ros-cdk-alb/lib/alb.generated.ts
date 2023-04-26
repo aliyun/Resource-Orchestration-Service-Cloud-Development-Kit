@@ -338,6 +338,167 @@ export class RosAclAssociation extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::ALB::AdditionalCertificateAssociation`
+ */
+export interface RosAdditionalCertificateAssociationProps {
+
+    /**
+     * @Property certificates: The list of the additional certificates.
+     */
+    readonly certificates: Array<RosAdditionalCertificateAssociation.CertificatesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerId: The ID of the listener.
+     */
+    readonly listenerId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAdditionalCertificateAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAdditionalCertificateAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAdditionalCertificateAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('certificates', ros.requiredValidator)(properties.certificates));
+    if(properties.certificates && (Array.isArray(properties.certificates) || (typeof properties.certificates) === 'string')) {
+        errors.collect(ros.propertyValidator('certificates', ros.validateLength)({
+            data: properties.certificates.length,
+            min: 1,
+            max: 25,
+          }));
+    }
+    errors.collect(ros.propertyValidator('certificates', ros.listValidator(RosAdditionalCertificateAssociation_CertificatesPropertyValidator))(properties.certificates));
+    errors.collect(ros.propertyValidator('listenerId', ros.requiredValidator)(properties.listenerId));
+    errors.collect(ros.propertyValidator('listenerId', ros.validateString)(properties.listenerId));
+    return errors.wrap('supplied properties not correct for "RosAdditionalCertificateAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::AdditionalCertificateAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAdditionalCertificateAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::AdditionalCertificateAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosAdditionalCertificateAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAdditionalCertificateAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Certificates: ros.listMapper(rosAdditionalCertificateAssociationCertificatesPropertyToRosTemplate)(properties.certificates),
+      ListenerId: ros.stringToRosTemplate(properties.listenerId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ALB::AdditionalCertificateAssociation`
+ */
+export class RosAdditionalCertificateAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ALB::AdditionalCertificateAssociation";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ListenerId: The ID of the listener.
+     */
+    public readonly attrListenerId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property certificates: The list of the additional certificates.
+     */
+    public certificates: Array<RosAdditionalCertificateAssociation.CertificatesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerId: The ID of the listener.
+     */
+    public listenerId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::ALB::AdditionalCertificateAssociation`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAdditionalCertificateAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAdditionalCertificateAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrListenerId = this.getAtt('ListenerId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.certificates = props.certificates;
+        this.listenerId = props.listenerId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            certificates: this.certificates,
+            listenerId: this.listenerId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAdditionalCertificateAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAdditionalCertificateAssociation {
+    /**
+     * @stability external
+     */
+    export interface CertificatesProperty {
+        /**
+         * @Property certificateId: The ID of additional certificate.
+         */
+        readonly certificateId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CertificatesProperty`
+ *
+ * @param properties - the TypeScript properties of a `CertificatesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAdditionalCertificateAssociation_CertificatesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('certificateId', ros.requiredValidator)(properties.certificateId));
+    errors.collect(ros.propertyValidator('certificateId', ros.validateString)(properties.certificateId));
+    return errors.wrap('supplied properties not correct for "CertificatesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::AdditionalCertificateAssociation.Certificates` resource
+ *
+ * @param properties - the TypeScript properties of a `CertificatesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::AdditionalCertificateAssociation.Certificates` resource.
+ */
+// @ts-ignore TS6133
+function rosAdditionalCertificateAssociationCertificatesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAdditionalCertificateAssociation_CertificatesPropertyValidator(properties).assertSuccess();
+    return {
+      CertificateId: ros.stringToRosTemplate(properties.certificateId),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::ALB::BackendServerAttachment`
  */
 export interface RosBackendServerAttachmentProps {
@@ -973,6 +1134,11 @@ export interface RosListenerProps {
     readonly listenerDescription?: string | ros.IResolvable;
 
     /**
+     * @Property listenerStatus: The status of the listener.
+     */
+    readonly listenerStatus?: string | ros.IResolvable;
+
+    /**
      * @Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
      */
     readonly quicConfig?: RosListener.QuicConfigProperty | ros.IResolvable;
@@ -1053,6 +1219,13 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('quicConfig', RosListener_QuicConfigPropertyValidator)(properties.quicConfig));
     errors.collect(ros.propertyValidator('gzipEnabled', ros.validateBoolean)(properties.gzipEnabled));
     errors.collect(ros.propertyValidator('securityPolicyId', ros.validateString)(properties.securityPolicyId));
+    if(properties.listenerStatus && (typeof properties.listenerStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('listenerStatus', ros.validateAllowedValues)({
+          data: properties.listenerStatus,
+          allowedValues: ["Running","Stopped"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('listenerStatus', ros.validateString)(properties.listenerStatus));
     if(properties.listenerDescription && (Array.isArray(properties.listenerDescription) || (typeof properties.listenerDescription) === 'string')) {
         errors.collect(ros.propertyValidator('listenerDescription', ros.validateLength)({
             data: properties.listenerDescription.length,
@@ -1091,6 +1264,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       Http2Enabled: ros.booleanToRosTemplate(properties.http2Enabled),
       IdleTimeout: ros.numberToRosTemplate(properties.idleTimeout),
       ListenerDescription: ros.stringToRosTemplate(properties.listenerDescription),
+      ListenerStatus: ros.stringToRosTemplate(properties.listenerStatus),
       QuicConfig: rosListenerQuicConfigPropertyToRosTemplate(properties.quicConfig),
       RequestTimeout: ros.numberToRosTemplate(properties.requestTimeout),
       SecurityPolicyId: ros.stringToRosTemplate(properties.securityPolicyId),
@@ -1188,6 +1362,11 @@ export class RosListener extends ros.RosResource {
     public listenerDescription: string | ros.IResolvable | undefined;
 
     /**
+     * @Property listenerStatus: The status of the listener.
+     */
+    public listenerStatus: string | ros.IResolvable | undefined;
+
+    /**
      * @Property quicConfig: Select a QUIC listener and associate it with the ALB instance.
      */
     public quicConfig: RosListener.QuicConfigProperty | ros.IResolvable | undefined;
@@ -1237,6 +1416,7 @@ export class RosListener extends ros.RosResource {
         this.http2Enabled = props.http2Enabled;
         this.idleTimeout = props.idleTimeout;
         this.listenerDescription = props.listenerDescription;
+        this.listenerStatus = props.listenerStatus;
         this.quicConfig = props.quicConfig;
         this.requestTimeout = props.requestTimeout;
         this.securityPolicyId = props.securityPolicyId;
@@ -1257,6 +1437,7 @@ export class RosListener extends ros.RosResource {
             http2Enabled: this.http2Enabled,
             idleTimeout: this.idleTimeout,
             listenerDescription: this.listenerDescription,
+            listenerStatus: this.listenerStatus,
             quicConfig: this.quicConfig,
             requestTimeout: this.requestTimeout,
             securityPolicyId: this.securityPolicyId,
@@ -1747,6 +1928,7 @@ export interface RosLoadBalancerProps {
      * @Property loadBalancerEdition: The edition of the ALB instance. Different editions have different limits and billing methods. Valid values:
      * Basic: Basic Edition
      * Standard: Standard Edition
+     * StandardWithWaf: Standard Edition with WAF
      */
     readonly loadBalancerEdition: string | ros.IResolvable;
 
@@ -1832,7 +2014,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.loadBalancerEdition && (typeof properties.loadBalancerEdition) !== 'object') {
         errors.collect(ros.propertyValidator('loadBalancerEdition', ros.validateAllowedValues)({
           data: properties.loadBalancerEdition,
-          allowedValues: ["Basic","Standard"],
+          allowedValues: ["Basic","Standard","StandardWithWaf"],
         }));
     }
     errors.collect(ros.propertyValidator('loadBalancerEdition', ros.validateString)(properties.loadBalancerEdition));
@@ -1976,6 +2158,7 @@ export class RosLoadBalancer extends ros.RosResource {
      * @Property loadBalancerEdition: The edition of the ALB instance. Different editions have different limits and billing methods. Valid values:
      * Basic: Basic Edition
      * Standard: Standard Edition
+     * StandardWithWaf: Standard Edition with WAF
      */
     public loadBalancerEdition: string | ros.IResolvable;
 

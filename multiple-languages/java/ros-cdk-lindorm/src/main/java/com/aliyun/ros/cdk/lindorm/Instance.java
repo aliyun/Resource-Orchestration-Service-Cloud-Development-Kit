@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * A ROS resource type:  `ALIYUN::Lindorm::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.833Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:51.234Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -580,6 +580,72 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder solrSpec(final com.aliyun.ros.cdk.core.IResolvable solrSpec) {
             this.props.solrSpec(solrSpec);
+            return this;
+        }
+
+        /**
+         * Property streamNum: The number of LindormStream nodes in the instance.
+         * <p>
+         * Valid values: integers from 0 to 90.
+         * <p>
+         * @return {@code this}
+         * @param streamNum Property streamNum: The number of LindormStream nodes in the instance. This parameter is required.
+         */
+        public Builder streamNum(final java.lang.Number streamNum) {
+            this.props.streamNum(streamNum);
+            return this;
+        }
+        /**
+         * Property streamNum: The number of LindormStream nodes in the instance.
+         * <p>
+         * Valid values: integers from 0 to 90.
+         * <p>
+         * @return {@code this}
+         * @param streamNum Property streamNum: The number of LindormStream nodes in the instance. This parameter is required.
+         */
+        public Builder streamNum(final com.aliyun.ros.cdk.core.IResolvable streamNum) {
+            this.props.streamNum(streamNum);
+            return this;
+        }
+
+        /**
+         * Property streamSpec: The specification of LindormStream nodes in the instance.
+         * <p>
+         * Valid values:
+         * lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+         * lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+         * lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+         * lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+         * lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+         * lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+         * lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+         * lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+         * <p>
+         * @return {@code this}
+         * @param streamSpec Property streamSpec: The specification of LindormStream nodes in the instance. This parameter is required.
+         */
+        public Builder streamSpec(final java.lang.String streamSpec) {
+            this.props.streamSpec(streamSpec);
+            return this;
+        }
+        /**
+         * Property streamSpec: The specification of LindormStream nodes in the instance.
+         * <p>
+         * Valid values:
+         * lindorm.g.xlarge: Each node has 4 dedicated CPU cores and 16 GB of dedicated memory.
+         * lindorm.g.2xlarge: Each node has 8 dedicated CPU cores and 32 GB of dedicated memory.
+         * lindorm.g.4xlarge: Each node has 16 dedicated CPU cores and 64 GB of dedicated memory.
+         * lindorm.g.8xlarge: Each node has 32 dedicated CPU cores and 128 GB of dedicated memory.
+         * lindorm.c.xlarge: Each node has 4 dedicated CPU cores and 8 GB of dedicated memory.
+         * lindorm.c.2xlarge: Each node has 8 dedicated CPU cores and 16 GB of dedicated memory.
+         * lindorm.c.4xlarge: Each node has 16 dedicated CPU cores and 32 GB of dedicated memory.
+         * lindorm.c.8xlarge: Each node has 32 dedicated CPU cores and 64 GB of dedicated memory.
+         * <p>
+         * @return {@code this}
+         * @param streamSpec Property streamSpec: The specification of LindormStream nodes in the instance. This parameter is required.
+         */
+        public Builder streamSpec(final com.aliyun.ros.cdk.core.IResolvable streamSpec) {
+            this.props.streamSpec(streamSpec);
             return this;
         }
 

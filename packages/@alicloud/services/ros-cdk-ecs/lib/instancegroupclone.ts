@@ -90,7 +90,7 @@ export interface InstanceGroupCloneProps {
     readonly instanceName?: string | ros.IResolvable;
 
     /**
-     * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [1,200], default is 200 Mbps.
+     * Property internetMaxBandwidthIn: Max internet out band width setting, unit in Mbps(Mega bit per second). The range is [0,200], default is 200 Mbps.
      */
     readonly internetMaxBandwidthIn?: number | ros.IResolvable;
 
@@ -214,9 +214,35 @@ export interface InstanceGroupCloneProps {
     readonly systemDiskDiskName?: string | ros.IResolvable;
 
     /**
+     * Property systemDiskEncryptAlgorithm: The algorithm to use to encrypt the system disk. Valid values:
+     * - ase-256
+     * - sm4-128
+     * Default value: ase-256.
+     */
+    readonly systemDiskEncryptAlgorithm?: string | ros.IResolvable;
+
+    /**
+     * Property systemDiskEncrypted: Specifies whether to encrypt the system disk. Valid values:
+     * - true: encrypts the system disk.
+     * - false: does not encrypt the system disk.
+     * Default value: false.
+     */
+    readonly systemDiskEncrypted?: string | ros.IResolvable;
+
+    /**
+     * Property systemDiskKmsKeyId: The ID of the KMS key to use for the system disk.
+     */
+    readonly systemDiskKmsKeyId?: string | ros.IResolvable;
+
+    /**
      * Property systemDiskProvisionedIops: Provisioning IOPS.
      */
     readonly systemDiskProvisionedIops?: number | ros.IResolvable;
+
+    /**
+     * Property systemDiskStorageClusterId: The ID of the dedicated block storage cluster. If you want to use disks in a dedicated block storage cluster as system disks when you create instances, you must specify this parameter.
+     */
+    readonly systemDiskStorageClusterId?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -313,8 +339,10 @@ export class InstanceGroupClone extends ros.Resource {
             autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
             ipv6Addresses: props.ipv6Addresses,
             sourceInstanceId: props.sourceInstanceId,
+            systemDiskEncrypted: props.systemDiskEncrypted,
             maxAmount: props.maxAmount,
             systemDiskAutoSnapshotPolicyId: props.systemDiskAutoSnapshotPolicyId,
+            systemDiskEncryptAlgorithm: props.systemDiskEncryptAlgorithm,
             ramRoleName: props.ramRoleName,
             ipv6AddressCount: props.ipv6AddressCount,
             imageId: props.imageId,
@@ -324,12 +352,14 @@ export class InstanceGroupClone extends ros.Resource {
             spotStrategy: props.spotStrategy,
             passwordInherit: props.passwordInherit,
             password: props.password,
+            systemDiskStorageClusterId: props.systemDiskStorageClusterId,
             autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             backendServerWeight: props.backendServerWeight === undefined || props.backendServerWeight === null ? 100 : props.backendServerWeight,
             keyPairName: props.keyPairName,
             launchTemplateName: props.launchTemplateName,
             updatePolicy: props.updatePolicy === undefined || props.updatePolicy === null ? 'ForNewInstances' : props.updatePolicy,
             zoneId: props.zoneId,
+            systemDiskKmsKeyId: props.systemDiskKmsKeyId,
             hpcClusterId: props.hpcClusterId,
             securityGroupId: props.securityGroupId,
             period: props.period === undefined || props.period === null ? 1 : props.period,

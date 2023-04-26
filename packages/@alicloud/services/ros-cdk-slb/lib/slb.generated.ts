@@ -13,9 +13,9 @@ export interface RosAccessControlProps {
     readonly aclName: string | ros.IResolvable;
 
     /**
-     * @Property aclEntrys: A list of acl entrys. Each entry can be IP addresses or CIDR blocks. Max length: 50.
+     * @Property aclEntries: A list of acl entries. Each entry can be IP addresses or CIDR blocks. Max length: 50.
      */
-    readonly aclEntrys?: Array<RosAccessControl.AclEntrysProperty | ros.IResolvable> | ros.IResolvable;
+    readonly aclEntries?: Array<RosAccessControl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
@@ -43,14 +43,14 @@ export interface RosAccessControlProps {
 function RosAccessControlPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.aclEntrys && (Array.isArray(properties.aclEntrys) || (typeof properties.aclEntrys) === 'string')) {
-        errors.collect(ros.propertyValidator('aclEntrys', ros.validateLength)({
-            data: properties.aclEntrys.length,
+    if(properties.aclEntries && (Array.isArray(properties.aclEntries) || (typeof properties.aclEntries) === 'string')) {
+        errors.collect(ros.propertyValidator('aclEntries', ros.validateLength)({
+            data: properties.aclEntries.length,
             min: undefined,
             max: 50,
           }));
     }
-    errors.collect(ros.propertyValidator('aclEntrys', ros.listValidator(RosAccessControl_AclEntrysPropertyValidator))(properties.aclEntrys));
+    errors.collect(ros.propertyValidator('aclEntries', ros.listValidator(RosAccessControl_AclEntriesPropertyValidator))(properties.aclEntries));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
         errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
@@ -87,7 +87,7 @@ function rosAccessControlPropsToRosTemplate(properties: any, enableResourcePrope
     }
     return {
       AclName: ros.stringToRosTemplate(properties.aclName),
-      AclEntrys: ros.listMapper(rosAccessControlAclEntrysPropertyToRosTemplate)(properties.aclEntrys),
+      AclEntries: ros.listMapper(rosAccessControlAclEntriesPropertyToRosTemplate)(properties.aclEntries),
       AddressIPVersion: ros.stringToRosTemplate(properties.addressIpVersion),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.listMapper(rosAccessControlTagsPropertyToRosTemplate)(properties.tags),
@@ -122,9 +122,9 @@ export class RosAccessControl extends ros.RosResource {
     public aclName: string | ros.IResolvable;
 
     /**
-     * @Property aclEntrys: A list of acl entrys. Each entry can be IP addresses or CIDR blocks. Max length: 50.
+     * @Property aclEntries: A list of acl entries. Each entry can be IP addresses or CIDR blocks. Max length: 50.
      */
-    public aclEntrys: Array<RosAccessControl.AclEntrysProperty | ros.IResolvable> | ros.IResolvable | undefined;
+    public aclEntries: Array<RosAccessControl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
@@ -154,7 +154,7 @@ export class RosAccessControl extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aclName = props.aclName;
-        this.aclEntrys = props.aclEntrys;
+        this.aclEntries = props.aclEntries;
         this.addressIpVersion = props.addressIpVersion;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
@@ -164,7 +164,7 @@ export class RosAccessControl extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             aclName: this.aclName,
-            aclEntrys: this.aclEntrys,
+            aclEntries: this.aclEntries,
             addressIpVersion: this.addressIpVersion,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,
@@ -179,47 +179,47 @@ export namespace RosAccessControl {
     /**
      * @stability external
      */
-    export interface AclEntrysProperty {
-        /**
-         * @Property entry: IP addresses or CIDR blocks. For example: "10.0.0.1" or "192.168.0.0/16"
-         */
-        readonly entry: string | ros.IResolvable;
+    export interface AclEntriesProperty {
         /**
          * @Property comment: Description of the entry.
          */
         readonly comment?: string | ros.IResolvable;
+        /**
+         * @Property entry: IP addresses or CIDR blocks. For example: "10.0.0.1" or "192.168.0.0/16"
+         */
+        readonly entry: string | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `AclEntrysProperty`
+ * Determine whether the given properties match those of a `AclEntriesProperty`
  *
- * @param properties - the TypeScript properties of a `AclEntrysProperty`
+ * @param properties - the TypeScript properties of a `AclEntriesProperty`
  *
  * @returns the result of the validation.
  */
-function RosAccessControl_AclEntrysPropertyValidator(properties: any): ros.ValidationResult {
+function RosAccessControl_AclEntriesPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('comment', ros.validateString)(properties.comment));
     errors.collect(ros.propertyValidator('entry', ros.requiredValidator)(properties.entry));
     errors.collect(ros.propertyValidator('entry', ros.validateString)(properties.entry));
-    errors.collect(ros.propertyValidator('comment', ros.validateString)(properties.comment));
-    return errors.wrap('supplied properties not correct for "AclEntrysProperty"');
+    return errors.wrap('supplied properties not correct for "AclEntriesProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::AccessControl.AclEntrys` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::AccessControl.AclEntries` resource
  *
- * @param properties - the TypeScript properties of a `AclEntrysProperty`
+ * @param properties - the TypeScript properties of a `AclEntriesProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::AccessControl.AclEntrys` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::AccessControl.AclEntries` resource.
  */
 // @ts-ignore TS6133
-function rosAccessControlAclEntrysPropertyToRosTemplate(properties: any): any {
+function rosAccessControlAclEntriesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosAccessControl_AclEntrysPropertyValidator(properties).assertSuccess();
+    RosAccessControl_AclEntriesPropertyValidator(properties).assertSuccess();
     return {
-      entry: ros.stringToRosTemplate(properties.entry),
-      comment: ros.stringToRosTemplate(properties.comment),
+      Comment: ros.stringToRosTemplate(properties.comment),
+      Entry: ros.stringToRosTemplate(properties.entry),
     };
 }
 
@@ -691,11 +691,6 @@ function rosBackendServerToVServerGroupAdditionBackendServersPropertyToRosTempla
 export interface RosCertificateProps {
 
     /**
-     * @Property certificate: The content of the certificate public key.
-     */
-    readonly certificate: string | ros.IResolvable;
-
-    /**
      * @Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
      */
     readonly aliCloudCertificateId?: string | ros.IResolvable;
@@ -704,6 +699,11 @@ export interface RosCertificateProps {
      * @Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
      */
     readonly aliCloudCertificateName?: string | ros.IResolvable;
+
+    /**
+     * @Property certificate: The content of the certificate public key.
+     */
+    readonly certificate?: string | ros.IResolvable;
 
     /**
      * @Property certificateName: The name of the certificate.
@@ -760,7 +760,6 @@ function RosCertificatePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCertificate_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('certificate', ros.requiredValidator)(properties.certificate));
     errors.collect(ros.propertyValidator('certificate', ros.validateString)(properties.certificate));
     errors.collect(ros.propertyValidator('aliCloudCertificateId', ros.validateString)(properties.aliCloudCertificateId));
     return errors.wrap('supplied properties not correct for "RosCertificateProps"');
@@ -780,9 +779,9 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
         RosCertificatePropsValidator(properties).assertSuccess();
     }
     return {
-      Certificate: ros.stringToRosTemplate(properties.certificate),
       AliCloudCertificateId: ros.stringToRosTemplate(properties.aliCloudCertificateId),
       AliCloudCertificateName: ros.stringToRosTemplate(properties.aliCloudCertificateName),
+      Certificate: ros.stringToRosTemplate(properties.certificate),
       CertificateName: ros.stringToRosTemplate(properties.certificateName),
       CertificateType: ros.stringToRosTemplate(properties.certificateType),
       PrivateKey: ros.stringToRosTemplate(properties.privateKey),
@@ -819,11 +818,6 @@ export class RosCertificate extends ros.RosResource {
 
 
     /**
-     * @Property certificate: The content of the certificate public key.
-     */
-    public certificate: string | ros.IResolvable;
-
-    /**
      * @Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
      */
     public aliCloudCertificateId: string | ros.IResolvable | undefined;
@@ -832,6 +826,11 @@ export class RosCertificate extends ros.RosResource {
      * @Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
      */
     public aliCloudCertificateName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property certificate: The content of the certificate public key.
+     */
+    public certificate: string | ros.IResolvable | undefined;
 
     /**
      * @Property certificateName: The name of the certificate.
@@ -871,9 +870,9 @@ export class RosCertificate extends ros.RosResource {
         this.attrFingerprint = this.getAtt('Fingerprint');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.certificate = props.certificate;
         this.aliCloudCertificateId = props.aliCloudCertificateId;
         this.aliCloudCertificateName = props.aliCloudCertificateName;
+        this.certificate = props.certificate;
         this.certificateName = props.certificateName;
         this.certificateType = props.certificateType;
         this.privateKey = props.privateKey;
@@ -884,9 +883,9 @@ export class RosCertificate extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            certificate: this.certificate,
             aliCloudCertificateId: this.aliCloudCertificateId,
             aliCloudCertificateName: this.aliCloudCertificateName,
+            certificate: this.certificate,
             certificateName: this.certificateName,
             certificateType: this.certificateType,
             privateKey: this.privateKey,
@@ -1178,6 +1177,13 @@ export interface RosListenerProps {
     readonly enableHttp2?: string | ros.IResolvable;
 
     /**
+     * @Property gzip: Specifies whether to enable Gzip compression to compress specific types of files. Valid values:
+     * on (default): yes
+     * off: no
+     */
+    readonly gzip?: string | ros.IResolvable;
+
+    /**
      * @Property healthCheck: The properties of health checking setting.
      */
     readonly healthCheck?: RosListener.HealthCheckProperty | ros.IResolvable;
@@ -1234,6 +1240,11 @@ export interface RosListenerProps {
     readonly startListener?: boolean | ros.IResolvable;
 
     /**
+     * @Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy. Each security policy contains TLS protocol versions and cipher suites available for HTTPS. It takes effect when Protocol=https.
+     */
+    readonly tlsCipherPolicy?: string | ros.IResolvable;
+
+    /**
      * @Property vServerGroupId: The id of the VServerGroup which use in listener.
      */
     readonly vServerGroupId?: string | ros.IResolvable;
@@ -1275,6 +1286,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('tlsCipherPolicy', ros.validateString)(properties.tlsCipherPolicy));
     errors.collect(ros.propertyValidator('caCertificateId', ros.validateString)(properties.caCertificateId));
     if(properties.scheduler && (typeof properties.scheduler) !== 'object') {
         errors.collect(ros.propertyValidator('scheduler', ros.validateAllowedValues)({
@@ -1328,6 +1340,13 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    if(properties.gzip && (typeof properties.gzip) !== 'object') {
+        errors.collect(ros.propertyValidator('gzip', ros.validateAllowedValues)({
+          data: properties.gzip,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('gzip', ros.validateString)(properties.gzip));
     errors.collect(ros.propertyValidator('serverCertificateId', ros.validateString)(properties.serverCertificateId));
     errors.collect(ros.propertyValidator('masterSlaveServerGroupId', ros.validateString)(properties.masterSlaveServerGroupId));
     errors.collect(ros.propertyValidator('startListener', ros.validateBoolean)(properties.startListener));
@@ -1376,6 +1395,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       CACertificateId: ros.stringToRosTemplate(properties.caCertificateId),
       Description: ros.stringToRosTemplate(properties.description),
       EnableHttp2: ros.stringToRosTemplate(properties.enableHttp2),
+      Gzip: ros.stringToRosTemplate(properties.gzip),
       HealthCheck: rosListenerHealthCheckPropertyToRosTemplate(properties.healthCheck),
       HttpConfig: rosListenerHttpConfigPropertyToRosTemplate(properties.httpConfig),
       IdleTimeout: ros.numberToRosTemplate(properties.idleTimeout),
@@ -1386,6 +1406,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       Scheduler: ros.stringToRosTemplate(properties.scheduler),
       ServerCertificateId: ros.stringToRosTemplate(properties.serverCertificateId),
       StartListener: ros.booleanToRosTemplate(properties.startListener),
+      TLSCipherPolicy: ros.stringToRosTemplate(properties.tlsCipherPolicy),
       VServerGroupId: ros.stringToRosTemplate(properties.vServerGroupId),
     };
 }
@@ -1485,6 +1506,13 @@ export class RosListener extends ros.RosResource {
     public enableHttp2: string | ros.IResolvable | undefined;
 
     /**
+     * @Property gzip: Specifies whether to enable Gzip compression to compress specific types of files. Valid values:
+     * on (default): yes
+     * off: no
+     */
+    public gzip: string | ros.IResolvable | undefined;
+
+    /**
      * @Property healthCheck: The properties of health checking setting.
      */
     public healthCheck: RosListener.HealthCheckProperty | ros.IResolvable | undefined;
@@ -1541,6 +1569,11 @@ export class RosListener extends ros.RosResource {
     public startListener: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy. Each security policy contains TLS protocol versions and cipher suites available for HTTPS. It takes effect when Protocol=https.
+     */
+    public tlsCipherPolicy: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vServerGroupId: The id of the VServerGroup which use in listener.
      */
     public vServerGroupId: string | ros.IResolvable | undefined;
@@ -1569,6 +1602,7 @@ export class RosListener extends ros.RosResource {
         this.caCertificateId = props.caCertificateId;
         this.description = props.description;
         this.enableHttp2 = props.enableHttp2;
+        this.gzip = props.gzip;
         this.healthCheck = props.healthCheck;
         this.httpConfig = props.httpConfig;
         this.idleTimeout = props.idleTimeout;
@@ -1579,6 +1613,7 @@ export class RosListener extends ros.RosResource {
         this.scheduler = props.scheduler;
         this.serverCertificateId = props.serverCertificateId;
         this.startListener = props.startListener;
+        this.tlsCipherPolicy = props.tlsCipherPolicy;
         this.vServerGroupId = props.vServerGroupId;
     }
 
@@ -1596,6 +1631,7 @@ export class RosListener extends ros.RosResource {
             caCertificateId: this.caCertificateId,
             description: this.description,
             enableHttp2: this.enableHttp2,
+            gzip: this.gzip,
             healthCheck: this.healthCheck,
             httpConfig: this.httpConfig,
             idleTimeout: this.idleTimeout,
@@ -1606,6 +1642,7 @@ export class RosListener extends ros.RosResource {
             scheduler: this.scheduler,
             serverCertificateId: this.serverCertificateId,
             startListener: this.startListener,
+            tlsCipherPolicy: this.tlsCipherPolicy,
             vServerGroupId: this.vServerGroupId,
         };
     }
@@ -3275,6 +3312,11 @@ export interface RosRuleProps {
      * @Property ruleList: The forwarding rules to add.
      */
     readonly ruleList: Array<RosRule.RuleListProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+     */
+    readonly listenerProtocol?: string | ros.IResolvable;
 }
 
 /**
@@ -3307,6 +3349,7 @@ function RosRulePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('ruleList', ros.listValidator(RosRule_RuleListPropertyValidator))(properties.ruleList));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.requiredValidator)(properties.loadBalancerId));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('listenerProtocol', ros.validateString)(properties.listenerProtocol));
     return errors.wrap('supplied properties not correct for "RosRuleProps"');
 }
 
@@ -3327,6 +3370,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
       ListenerPort: ros.numberToRosTemplate(properties.listenerPort),
       LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
       RuleList: ros.listMapper(rosRuleRuleListPropertyToRosTemplate)(properties.ruleList),
+      ListenerProtocol: ros.stringToRosTemplate(properties.listenerProtocol),
     };
 }
 
@@ -3369,6 +3413,11 @@ export class RosRule extends ros.RosResource {
     public ruleList: Array<RosRule.RuleListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+     */
+    public listenerProtocol: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::SLB::Rule`.
      *
      * @param scope - scope in which this resource is defined
@@ -3383,6 +3432,7 @@ export class RosRule extends ros.RosResource {
         this.listenerPort = props.listenerPort;
         this.loadBalancerId = props.loadBalancerId;
         this.ruleList = props.ruleList;
+        this.listenerProtocol = props.listenerProtocol;
     }
 
 
@@ -3391,6 +3441,7 @@ export class RosRule extends ros.RosResource {
             listenerPort: this.listenerPort,
             loadBalancerId: this.loadBalancerId,
             ruleList: this.ruleList,
+            listenerProtocol: this.listenerProtocol,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -3402,11 +3453,178 @@ export namespace RosRule {
     /**
      * @stability external
      */
+    export interface AdvancedSettingsProperty {
+        /**
+         * @Property cookieTimeout: The timeout period of a cookie. Unit: seconds.
+         */
+        readonly cookieTimeout?: number | ros.IResolvable;
+        /**
+         * @Property cookie: The cookie that is configured on the server.
+     * The cookie must be 1 to 200 characters in length and can contain only ASCII characters and digits. It cannot contain commas (,), semicolons (;), or space characters. It cannot start with a dollar sign ($).
+         */
+        readonly cookie?: string | ros.IResolvable;
+        /**
+         * @Property healthCheckInterval: The interval between two consecutive health checks. Unit: seconds. Valid values: 1 to 50.
+         */
+        readonly healthCheckInterval?: number | ros.IResolvable;
+        /**
+         * @Property unhealthyThreshold: The number of times that a healthy backend server must consecutively fail health checks before it is declared unhealthy. In this case, the health status is changed from success to fail.
+         */
+        readonly unhealthyThreshold?: number | ros.IResolvable;
+        /**
+         * @Property healthCheckUri: The URI that is used for health checks.
+         */
+        readonly healthCheckUri?: string | ros.IResolvable;
+        /**
+         * @Property scheduler: The scheduling algorithm. Valid values:
+     * wrr: Backend servers with higher weights receive more requests than those with lower weights.
+     * rr: Requests are distributed to backend servers in sequence.
+         */
+        readonly scheduler?: string | ros.IResolvable;
+        /**
+         * @Property healthCheck: Specifies whether to enable the health check feature. Valid values:
+     * on: yes
+     * off: no
+         */
+        readonly healthCheck?: string | ros.IResolvable;
+        /**
+         * @Property healthCheckTimeout: The timeout period of a health check response. If a backend server, such as an Elastic Compute Service (ECS) instance, does not return a health check response within the specified timeout period, the server fails the health check. Unit: seconds. Valid values: 1 to 300.
+         */
+        readonly healthCheckTimeout?: number | ros.IResolvable;
+        /**
+         * @Property stickySession: Specifies whether to enable session persistence. Valid values:
+     * on: yes
+     * off: no
+         */
+        readonly stickySession?: string | ros.IResolvable;
+        /**
+         * @Property healthCheckConnectPort: The port that is used for health checks. Valid values: 1 to 65535.
+         */
+        readonly healthCheckConnectPort?: number | ros.IResolvable;
+        /**
+         * @Property healthyThreshold: The number of times that an unhealthy backend server must consecutively pass health checks before it is declared healthy. In this case, the health status is changed from fail to success.
+         */
+        readonly healthyThreshold?: number | ros.IResolvable;
+        /**
+         * @Property listenerSync: Specifies whether to use the scheduling algorithm, session persistence, and health check configurations of the listener. Valid values:
+     * on: uses the configurations of the listener.
+     * off: does not use the configurations of the listener. You can customize the health check and session persistence configurations for the forwarding rule.
+         */
+        readonly listenerSync?: string | ros.IResolvable;
+        /**
+         * @Property healthCheckDomain: The domain name that is used for health checks. Valid values:
+     * $_ip: the private IP address of a backend server. If you do not set this parameter or set the parameter to $_ip, the SLB instance uses the private IP address of each backend server for health checks.
+     * domain: The domain name must be 1 to 80 characters in length, and can contain letters, digits, periods (.), and hyphens (-).
+         */
+        readonly healthCheckDomain?: string | ros.IResolvable;
+        /**
+         * @Property stickySessionType: The method that is used to handle a cookie. Valid values:
+     * insert: inserts a cookie.
+     * server: rewrites a cookie.
+         */
+        readonly stickySessionType?: string | ros.IResolvable;
+        /**
+         * @Property healthCheckHttpCode: The HTTP status code for a successful health check. Multiple HTTP status codes are separated by commas (,).
+     * Valid values: http_2xx, http_3xx, http_4xx, and http_5xx.
+         */
+        readonly healthCheckHttpCode?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AdvancedSettingsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AdvancedSettingsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRule_AdvancedSettingsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('cookieTimeout', ros.validateNumber)(properties.cookieTimeout));
+    errors.collect(ros.propertyValidator('cookie', ros.validateString)(properties.cookie));
+    errors.collect(ros.propertyValidator('healthCheckInterval', ros.validateNumber)(properties.healthCheckInterval));
+    errors.collect(ros.propertyValidator('unhealthyThreshold', ros.validateNumber)(properties.unhealthyThreshold));
+    errors.collect(ros.propertyValidator('healthCheckUri', ros.validateString)(properties.healthCheckUri));
+    if(properties.scheduler && (typeof properties.scheduler) !== 'object') {
+        errors.collect(ros.propertyValidator('scheduler', ros.validateAllowedValues)({
+          data: properties.scheduler,
+          allowedValues: ["wrr","rr"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('scheduler', ros.validateString)(properties.scheduler));
+    if(properties.healthCheck && (typeof properties.healthCheck) !== 'object') {
+        errors.collect(ros.propertyValidator('healthCheck', ros.validateAllowedValues)({
+          data: properties.healthCheck,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('healthCheck', ros.validateString)(properties.healthCheck));
+    errors.collect(ros.propertyValidator('healthCheckTimeout', ros.validateNumber)(properties.healthCheckTimeout));
+    if(properties.stickySession && (typeof properties.stickySession) !== 'object') {
+        errors.collect(ros.propertyValidator('stickySession', ros.validateAllowedValues)({
+          data: properties.stickySession,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('stickySession', ros.validateString)(properties.stickySession));
+    errors.collect(ros.propertyValidator('healthCheckConnectPort', ros.validateNumber)(properties.healthCheckConnectPort));
+    errors.collect(ros.propertyValidator('healthyThreshold', ros.validateNumber)(properties.healthyThreshold));
+    if(properties.listenerSync && (typeof properties.listenerSync) !== 'object') {
+        errors.collect(ros.propertyValidator('listenerSync', ros.validateAllowedValues)({
+          data: properties.listenerSync,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('listenerSync', ros.validateString)(properties.listenerSync));
+    errors.collect(ros.propertyValidator('healthCheckDomain', ros.validateString)(properties.healthCheckDomain));
+    errors.collect(ros.propertyValidator('stickySessionType', ros.validateString)(properties.stickySessionType));
+    errors.collect(ros.propertyValidator('healthCheckHttpCode', ros.validateString)(properties.healthCheckHttpCode));
+    return errors.wrap('supplied properties not correct for "AdvancedSettingsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::Rule.AdvancedSettings` resource
+ *
+ * @param properties - the TypeScript properties of a `AdvancedSettingsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::Rule.AdvancedSettings` resource.
+ */
+// @ts-ignore TS6133
+function rosRuleAdvancedSettingsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRule_AdvancedSettingsPropertyValidator(properties).assertSuccess();
+    return {
+      CookieTimeout: ros.numberToRosTemplate(properties.cookieTimeout),
+      Cookie: ros.stringToRosTemplate(properties.cookie),
+      HealthCheckInterval: ros.numberToRosTemplate(properties.healthCheckInterval),
+      UnhealthyThreshold: ros.numberToRosTemplate(properties.unhealthyThreshold),
+      HealthCheckURI: ros.stringToRosTemplate(properties.healthCheckUri),
+      Scheduler: ros.stringToRosTemplate(properties.scheduler),
+      HealthCheck: ros.stringToRosTemplate(properties.healthCheck),
+      HealthCheckTimeout: ros.numberToRosTemplate(properties.healthCheckTimeout),
+      StickySession: ros.stringToRosTemplate(properties.stickySession),
+      HealthCheckConnectPort: ros.numberToRosTemplate(properties.healthCheckConnectPort),
+      HealthyThreshold: ros.numberToRosTemplate(properties.healthyThreshold),
+      ListenerSync: ros.stringToRosTemplate(properties.listenerSync),
+      HealthCheckDomain: ros.stringToRosTemplate(properties.healthCheckDomain),
+      StickySessionType: ros.stringToRosTemplate(properties.stickySessionType),
+      HealthCheckHttpCode: ros.stringToRosTemplate(properties.healthCheckHttpCode),
+    };
+}
+
+export namespace RosRule {
+    /**
+     * @stability external
+     */
     export interface RuleListProperty {
         /**
          * @Property vServerGroupId: The ID of the VServer group associated with the forwarding rule.
          */
         readonly vServerGroupId: string | ros.IResolvable;
+        /**
+         * @Property advancedSettings: The advanced settings of the rule.
+         */
+        readonly advancedSettings?: RosRule.AdvancedSettingsProperty | ros.IResolvable;
         /**
          * @Property domain: The domain name.
          */
@@ -3433,6 +3651,7 @@ function RosRule_RuleListPropertyValidator(properties: any): ros.ValidationResul
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('vServerGroupId', ros.requiredValidator)(properties.vServerGroupId));
     errors.collect(ros.propertyValidator('vServerGroupId', ros.validateString)(properties.vServerGroupId));
+    errors.collect(ros.propertyValidator('advancedSettings', RosRule_AdvancedSettingsPropertyValidator)(properties.advancedSettings));
     errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
     errors.collect(ros.propertyValidator('url', ros.validateString)(properties.url));
     errors.collect(ros.propertyValidator('ruleName', ros.requiredValidator)(properties.ruleName));
@@ -3453,6 +3672,7 @@ function rosRuleRuleListPropertyToRosTemplate(properties: any): any {
     RosRule_RuleListPropertyValidator(properties).assertSuccess();
     return {
       VServerGroupId: ros.stringToRosTemplate(properties.vServerGroupId),
+      AdvancedSettings: rosRuleAdvancedSettingsPropertyToRosTemplate(properties.advancedSettings),
       Domain: ros.stringToRosTemplate(properties.domain),
       Url: ros.stringToRosTemplate(properties.url),
       RuleName: ros.stringToRosTemplate(properties.ruleName),

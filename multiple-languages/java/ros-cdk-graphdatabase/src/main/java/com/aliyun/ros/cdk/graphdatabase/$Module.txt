@@ -1,0 +1,11 @@
+@alicloud/ros-cdk-graphdatabase.Account=com.aliyun.ros.cdk.graphdatabase.Account
+@alicloud/ros-cdk-graphdatabase.AccountProps=com.aliyun.ros.cdk.graphdatabase.AccountProps
+@alicloud/ros-cdk-graphdatabase.DbInstance=com.aliyun.ros.cdk.graphdatabase.DbInstance
+@alicloud/ros-cdk-graphdatabase.DbInstanceProps=com.aliyun.ros.cdk.graphdatabase.DbInstanceProps
+@alicloud/ros-cdk-graphdatabase.RosAccount=com.aliyun.ros.cdk.graphdatabase.RosAccount
+@alicloud/ros-cdk-graphdatabase.RosAccountProps=com.aliyun.ros.cdk.graphdatabase.RosAccountProps
+@alicloud/ros-cdk-graphdatabase.RosDbInstance=com.aliyun.ros.cdk.graphdatabase.RosDbInstance
+@alicloud/ros-cdk-graphdatabase.RosDbInstance.DBInstanceIPArrayProperty=com.aliyun.ros.cdk.graphdatabase.RosDbInstance$DBInstanceIPArrayProperty
+@alicloud/ros-cdk-graphdatabase.RosDbInstance.EcsSecurityGroupRelationsProperty=com.aliyun.ros.cdk.graphdatabase.RosDbInstance$EcsSecurityGroupRelationsProperty
+@alicloud/ros-cdk-graphdatabase.RosDbInstance.TagsProperty=com.aliyun.ros.cdk.graphdatabase.RosDbInstance$TagsProperty
+@alicloud/ros-cdk-graphdatabase.RosDbInstanceProps=com.aliyun.ros.cdk.graphdatabase.RosDbInstanceProps

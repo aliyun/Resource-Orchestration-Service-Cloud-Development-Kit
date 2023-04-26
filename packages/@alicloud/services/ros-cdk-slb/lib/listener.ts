@@ -76,6 +76,13 @@ export interface ListenerProps {
     readonly enableHttp2?: string | ros.IResolvable;
 
     /**
+     * Property gzip: Specifies whether to enable Gzip compression to compress specific types of files. Valid values:
+     * on (default): yes
+     * off: no
+     */
+    readonly gzip?: string | ros.IResolvable;
+
+    /**
      * Property healthCheck: The properties of health checking setting.
      */
     readonly healthCheck?: RosListener.HealthCheckProperty | ros.IResolvable;
@@ -132,6 +139,11 @@ export interface ListenerProps {
     readonly startListener?: boolean | ros.IResolvable;
 
     /**
+     * Property tlsCipherPolicy: The Transport Layer Security (TLS) security policy. Each security policy contains TLS protocol versions and cipher suites available for HTTPS. It takes effect when Protocol=https.
+     */
+    readonly tlsCipherPolicy?: string | ros.IResolvable;
+
+    /**
      * Property vServerGroupId: The id of the VServerGroup which use in listener.
      */
     readonly vServerGroupId?: string | ros.IResolvable;
@@ -172,6 +184,7 @@ export class Listener extends ros.Resource {
             vServerGroupId: props.vServerGroupId,
             listenerPort: props.listenerPort,
             description: props.description,
+            tlsCipherPolicy: props.tlsCipherPolicy,
             caCertificateId: props.caCertificateId,
             scheduler: props.scheduler === undefined || props.scheduler === null ? 'wrr' : props.scheduler,
             aclId: props.aclId,
@@ -183,6 +196,7 @@ export class Listener extends ros.Resource {
             portRange: props.portRange,
             aclStatus: props.aclStatus === undefined || props.aclStatus === null ? 'off' : props.aclStatus,
             bandwidth: props.bandwidth,
+            gzip: props.gzip,
             serverCertificateId: props.serverCertificateId,
             masterSlaveServerGroupId: props.masterSlaveServerGroupId,
             startListener: props.startListener === undefined || props.startListener === null ? true : props.startListener,

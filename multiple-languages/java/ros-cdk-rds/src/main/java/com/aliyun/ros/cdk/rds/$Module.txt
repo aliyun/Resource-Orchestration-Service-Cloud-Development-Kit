@@ -4,6 +4,8 @@
 @alicloud/ros-cdk-rds.AccountPrivilege=com.aliyun.ros.cdk.rds.AccountPrivilege
 @alicloud/ros-cdk-rds.AccountPrivilegeProps=com.aliyun.ros.cdk.rds.AccountPrivilegeProps
 @alicloud/ros-cdk-rds.AccountProps=com.aliyun.ros.cdk.rds.AccountProps
+@alicloud/ros-cdk-rds.Connection=com.aliyun.ros.cdk.rds.Connection
+@alicloud/ros-cdk-rds.ConnectionProps=com.aliyun.ros.cdk.rds.ConnectionProps
 @alicloud/ros-cdk-rds.DBInstance=com.aliyun.ros.cdk.rds.DBInstance
 @alicloud/ros-cdk-rds.DBInstanceClone=com.aliyun.ros.cdk.rds.DBInstanceClone
 @alicloud/ros-cdk-rds.DBInstanceCloneProps=com.aliyun.ros.cdk.rds.DBInstanceCloneProps
@@ -26,6 +28,8 @@
 @alicloud/ros-cdk-rds.RosAccountPrivilege=com.aliyun.ros.cdk.rds.RosAccountPrivilege
 @alicloud/ros-cdk-rds.RosAccountPrivilegeProps=com.aliyun.ros.cdk.rds.RosAccountPrivilegeProps
 @alicloud/ros-cdk-rds.RosAccountProps=com.aliyun.ros.cdk.rds.RosAccountProps
+@alicloud/ros-cdk-rds.RosConnection=com.aliyun.ros.cdk.rds.RosConnection
+@alicloud/ros-cdk-rds.RosConnectionProps=com.aliyun.ros.cdk.rds.RosConnectionProps
 @alicloud/ros-cdk-rds.RosDBInstance=com.aliyun.ros.cdk.rds.RosDBInstance
 @alicloud/ros-cdk-rds.RosDBInstance.DBMappingsProperty=com.aliyun.ros.cdk.rds.RosDBInstance$DBMappingsProperty
 @alicloud/ros-cdk-rds.RosDBInstance.ServerlessConfigProperty=com.aliyun.ros.cdk.rds.RosDBInstance$ServerlessConfigProperty

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::PrepayDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:12.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:51.728Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstance")
 public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -562,10 +562,12 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
          * Property category: The edition of the instance.
          * <p>
          * Valid values:
-         * Basic: specifies to use the Basic Edition.
-         * HighAvailability: specifies to use the High-availability Edition.
-         * AlwaysOn: specifies to use the Cluster Edition.
-         * Finance: specifies to use the Enterprise Edition.
+         * Basic: RDS Basic Edition
+         * HighAvailability: RDS High-availability Edition
+         * cluster: RDS Cluster Edition
+         * AlwaysOn: RDS Cluster Edition for SQL Server
+         * Finance: RDS Enterprise Edition
+         * serverless_basic: RDS Serverless Basic Edition
          * <p>
          * @return {@code this}
          * @param category Property category: The edition of the instance. This parameter is required.
@@ -578,10 +580,12 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
          * Property category: The edition of the instance.
          * <p>
          * Valid values:
-         * Basic: specifies to use the Basic Edition.
-         * HighAvailability: specifies to use the High-availability Edition.
-         * AlwaysOn: specifies to use the Cluster Edition.
-         * Finance: specifies to use the Enterprise Edition.
+         * Basic: RDS Basic Edition
+         * HighAvailability: RDS High-availability Edition
+         * cluster: RDS Cluster Edition
+         * AlwaysOn: RDS Cluster Edition for SQL Server
+         * Finance: RDS Enterprise Edition
+         * serverless_basic: RDS Serverless Basic Edition
          * <p>
          * @return {@code this}
          * @param category Property category: The edition of the instance. This parameter is required.

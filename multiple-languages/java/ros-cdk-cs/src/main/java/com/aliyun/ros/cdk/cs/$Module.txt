@@ -71,9 +71,3 @@
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.TaintsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$TaintsProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.WorkerDataDisksProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$WorkerDataDisksProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps=com.aliyun.ros.cdk.cs.RosManagedKubernetesClusterProps
-@alicloud/ros-cdk-cs.RosServerlessKubernetesCluster=com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster
-@alicloud/ros-cdk-cs.RosServerlessKubernetesCluster.AddonsProperty=com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster$AddonsProperty
-@alicloud/ros-cdk-cs.RosServerlessKubernetesCluster.TagsProperty=com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster$TagsProperty
-@alicloud/ros-cdk-cs.RosServerlessKubernetesClusterProps=com.aliyun.ros.cdk.cs.RosServerlessKubernetesClusterProps
-@alicloud/ros-cdk-cs.ServerlessKubernetesCluster=com.aliyun.ros.cdk.cs.ServerlessKubernetesCluster
-@alicloud/ros-cdk-cs.ServerlessKubernetesClusterProps=com.aliyun.ros.cdk.cs.ServerlessKubernetesClusterProps

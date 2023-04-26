@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::InstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.74.0 (build 6d08790)", date = "2023-02-14T06:40:11.068Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T01:43:50.426Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroupClone")
 public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -837,6 +837,60 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskEncryptAlgorithm() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskEncryptAlgorithm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskEncryptAlgorithm(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskEncryptAlgorithm", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskEncryptAlgorithm(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskEncryptAlgorithm", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskEncrypted() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskEncrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskEncrypted(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskEncrypted", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskEncrypted(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskEncrypted", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskKmsKeyId() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskKmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskKmsKeyId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskKmsKeyId", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskKmsKeyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskKmsKeyId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskProvisionedIops() {
         return software.amazon.jsii.Kernel.get(this, "systemDiskProvisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -851,6 +905,24 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSystemDiskProvisionedIops(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "systemDiskProvisionedIops", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskStorageClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskStorageClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSystemDiskStorageClusterId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskStorageClusterId", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskStorageClusterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskStorageClusterId", value);
     }
 
     /**
@@ -2634,6 +2706,57 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param systemDiskEncryptAlgorithm This parameter is required.
+         */
+        public Builder systemDiskEncryptAlgorithm(final java.lang.String systemDiskEncryptAlgorithm) {
+            this.props.systemDiskEncryptAlgorithm(systemDiskEncryptAlgorithm);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskEncryptAlgorithm This parameter is required.
+         */
+        public Builder systemDiskEncryptAlgorithm(final com.aliyun.ros.cdk.core.IResolvable systemDiskEncryptAlgorithm) {
+            this.props.systemDiskEncryptAlgorithm(systemDiskEncryptAlgorithm);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param systemDiskEncrypted This parameter is required.
+         */
+        public Builder systemDiskEncrypted(final java.lang.String systemDiskEncrypted) {
+            this.props.systemDiskEncrypted(systemDiskEncrypted);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskEncrypted This parameter is required.
+         */
+        public Builder systemDiskEncrypted(final com.aliyun.ros.cdk.core.IResolvable systemDiskEncrypted) {
+            this.props.systemDiskEncrypted(systemDiskEncrypted);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param systemDiskKmsKeyId This parameter is required.
+         */
+        public Builder systemDiskKmsKeyId(final java.lang.String systemDiskKmsKeyId) {
+            this.props.systemDiskKmsKeyId(systemDiskKmsKeyId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskKmsKeyId This parameter is required.
+         */
+        public Builder systemDiskKmsKeyId(final com.aliyun.ros.cdk.core.IResolvable systemDiskKmsKeyId) {
+            this.props.systemDiskKmsKeyId(systemDiskKmsKeyId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param systemDiskProvisionedIops This parameter is required.
          */
         public Builder systemDiskProvisionedIops(final java.lang.Number systemDiskProvisionedIops) {
@@ -2646,6 +2769,23 @@ public class RosInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder systemDiskProvisionedIops(final com.aliyun.ros.cdk.core.IResolvable systemDiskProvisionedIops) {
             this.props.systemDiskProvisionedIops(systemDiskProvisionedIops);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param systemDiskStorageClusterId This parameter is required.
+         */
+        public Builder systemDiskStorageClusterId(final java.lang.String systemDiskStorageClusterId) {
+            this.props.systemDiskStorageClusterId(systemDiskStorageClusterId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskStorageClusterId This parameter is required.
+         */
+        public Builder systemDiskStorageClusterId(final com.aliyun.ros.cdk.core.IResolvable systemDiskStorageClusterId) {
+            this.props.systemDiskStorageClusterId(systemDiskStorageClusterId);
             return this;
         }
 
