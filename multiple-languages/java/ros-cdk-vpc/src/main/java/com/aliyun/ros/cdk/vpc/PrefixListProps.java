@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * Properties for defining a `ALIYUN::VPC::PrefixList`.
+ * Properties for defining a <code>ALIYUN::VPC::PrefixList</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.388Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.932Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.PrefixListProps")
 @software.amazon.jsii.Jsii.Proxy(PrefixListProps.Jsii$Proxy.class)
 public interface PrefixListProps extends software.amazon.jsii.JsiiSerializable {

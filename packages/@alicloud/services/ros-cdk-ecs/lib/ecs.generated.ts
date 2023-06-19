@@ -10295,6 +10295,154 @@ function rosPrefixListEntriesPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `ALIYUN::ECS::RamRoleAttachment`
+ */
+export interface RosRamRoleAttachmentProps {
+
+    /**
+     * @Property instanceIds: The instance id that needs to be granted the ram role.
+     */
+    readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ramRoleName: The ram role name.
+     */
+    readonly ramRoleName: string | ros.IResolvable;
+
+    /**
+     * @Property policy: When granting the instance RAM role to one or more ECS instances, you can specify an additional permission policy to further limit the permissions of the RAM role.
+     * The length is 1~1024 characters.
+     */
+    readonly policy?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRamRoleAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRamRoleAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRamRoleAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.policy && (Array.isArray(properties.policy) || (typeof properties.policy) === 'string')) {
+        errors.collect(ros.propertyValidator('policy', ros.validateLength)({
+            data: properties.policy.length,
+            min: 1,
+            max: 1024,
+          }));
+    }
+    errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
+    errors.collect(ros.propertyValidator('ramRoleName', ros.requiredValidator)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('instanceIds', ros.requiredValidator)(properties.instanceIds));
+    if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
+            data: properties.instanceIds.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
+    return errors.wrap('supplied properties not correct for "RosRamRoleAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::RamRoleAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRamRoleAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::RamRoleAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosRamRoleAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRamRoleAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
+      Policy: ros.stringToRosTemplate(properties.policy),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ECS::RamRoleAttachment`
+ */
+export class RosRamRoleAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::RamRoleAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute InstanceIds: The list of ecs instance id
+     */
+    public readonly attrInstanceIds: ros.IResolvable;
+
+    /**
+     * @Attribute RamRoleName: The ram role name.
+     */
+    public readonly attrRamRoleName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceIds: The instance id that needs to be granted the ram role.
+     */
+    public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ramRoleName: The ram role name.
+     */
+    public ramRoleName: string | ros.IResolvable;
+
+    /**
+     * @Property policy: When granting the instance RAM role to one or more ECS instances, you can specify an additional permission policy to further limit the permissions of the RAM role.
+     * The length is 1~1024 characters.
+     */
+    public policy: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ECS::RamRoleAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRamRoleAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRamRoleAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceIds = this.getAtt('InstanceIds');
+        this.attrRamRoleName = this.getAtt('RamRoleName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceIds = props.instanceIds;
+        this.ramRoleName = props.ramRoleName;
+        this.policy = props.policy;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceIds: this.instanceIds,
+            ramRoleName: this.ramRoleName,
+            policy: this.policy,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRamRoleAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::ECS::Route`
  */
 export interface RosRouteProps {
@@ -10568,6 +10716,11 @@ export interface RosRunCommandProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * @Property runAgainOn: The stage of executing the command again.
+     */
+    readonly runAgainOn?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property sync: Whether to invoke synchronously.
      */
     readonly sync?: boolean | ros.IResolvable;
@@ -10617,6 +10770,14 @@ function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('frequency', ros.validateString)(properties.frequency));
+    if(properties.runAgainOn && (Array.isArray(properties.runAgainOn) || (typeof properties.runAgainOn) === 'string')) {
+        errors.collect(ros.propertyValidator('runAgainOn', ros.validateLength)({
+            data: properties.runAgainOn.length,
+            min: 1,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('runAgainOn', ros.listValidator(ros.validateString))(properties.runAgainOn));
     errors.collect(ros.propertyValidator('enableParameter', ros.validateBoolean)(properties.enableParameter));
     errors.collect(ros.propertyValidator('sync', ros.validateBoolean)(properties.sync));
     errors.collect(ros.propertyValidator('instanceIds', ros.requiredValidator)(properties.instanceIds));
@@ -10656,6 +10817,7 @@ function rosRunCommandPropsToRosTemplate(properties: any, enableResourceProperty
       KeepCommand: ros.booleanToRosTemplate(properties.keepCommand),
       Name: ros.stringToRosTemplate(properties.name),
       Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      RunAgainOn: ros.listMapper(ros.stringToRosTemplate)(properties.runAgainOn),
       Sync: ros.booleanToRosTemplate(properties.sync),
       Timed: ros.booleanToRosTemplate(properties.timed),
       Timeout: ros.numberToRosTemplate(properties.timeout),
@@ -10773,6 +10935,11 @@ export class RosRunCommand extends ros.RosResource {
     public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
+     * @Property runAgainOn: The stage of executing the command again.
+     */
+    public runAgainOn: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property sync: Whether to invoke synchronously.
      */
     public sync: boolean | ros.IResolvable | undefined;
@@ -10824,6 +10991,7 @@ export class RosRunCommand extends ros.RosResource {
         this.keepCommand = props.keepCommand;
         this.name = props.name;
         this.parameters = props.parameters;
+        this.runAgainOn = props.runAgainOn;
         this.sync = props.sync;
         this.timed = props.timed;
         this.timeout = props.timeout;
@@ -10843,6 +11011,7 @@ export class RosRunCommand extends ros.RosResource {
             keepCommand: this.keepCommand,
             name: this.name,
             parameters: this.parameters,
+            runAgainOn: this.runAgainOn,
             sync: this.sync,
             timed: this.timed,
             timeout: this.timeout,

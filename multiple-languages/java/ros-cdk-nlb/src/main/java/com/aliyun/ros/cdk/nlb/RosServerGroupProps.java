@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nlb;
 
 /**
- * Properties for defining a `ALIYUN::NLB::ServerGroup`.
+ * Properties for defining a <code>ALIYUN::NLB::ServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.373Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.704Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosServerGroupProps.Jsii$Proxy.class)
 public interface RosServerGroupProps extends software.amazon.jsii.JsiiSerializable {

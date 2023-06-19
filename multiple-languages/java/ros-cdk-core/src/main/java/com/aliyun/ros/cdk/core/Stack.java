@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A root construct which represents a single ROS stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.923Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.936Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stack")
 public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.ITaggable {
 
@@ -68,7 +68,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
     }
 
     /**
-     * Looks up the first stack scope in which `construct` is defined.
+     * Looks up the first stack scope in which <code>construct</code> is defined.
      * <p>
      * Fails if there is no stack up the tree.
      * <p>
@@ -172,7 +172,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
      * (deprecated) Deprecated.
      * <p>
      * @return reference itself without any change
-     * @deprecated cross reference handling has been moved to `App.prepare()`.
+     * @deprecated cross reference handling has been moved to <code>App.prepare()</code>.
      * @param _sourceStack This parameter is required.
      * @param reference This parameter is required.
      */
@@ -255,7 +255,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
     }
 
     /**
-     * Indicates if this is a nested stack, in which case `parentStack` will include a reference to it's parent.
+     * Indicates if this is a nested stack, in which case <code>parentStack</code> will include a reference to it's parent.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getNested() {
         return software.amazon.jsii.Kernel.get(this, "nested", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
@@ -325,7 +325,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
     }
 
     /**
-     * (experimental) If this is a nested stack, this represents its `ALIYUN::ROS::Stack` resource.
+     * (experimental) If this is a nested stack, this represents its <code>ALIYUN::ROS::Stack</code> resource.
      * <p>
      * <code>undefined</code> for top-level (non-nested) stacks.
      */
@@ -337,7 +337,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
     /**
      * (deprecated) Returns the parent of a nested stack.
      * <p>
-     * @deprecated use `nestedStackParent`
+     * @deprecated use <code>nestedStackParent</code>
      */
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
     @Deprecated
@@ -460,7 +460,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.core.Stack}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.core.Stack}.
          */
         @Override
         public com.aliyun.ros.cdk.core.Stack build() {

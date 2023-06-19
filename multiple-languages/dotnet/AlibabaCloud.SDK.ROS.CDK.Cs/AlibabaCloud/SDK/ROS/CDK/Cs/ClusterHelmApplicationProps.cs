@@ -134,6 +134,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        private object? _credential;
+
+        /// <summary>Property credential: The credential of ACR repo.</summary>
+        /// <remarks>
+        /// Only take effects when ChartUrl is the address of ACR repo.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "credential", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosClusterHelmApplication.CredentialProperty\"}]}}", isOptional: true)]
+        public object? Credential
+        {
+            get => _credential;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Cs.RosClusterHelmApplication.ICredentialProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosClusterHelmApplication.ICredentialProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _credential = value;
+            }
+        }
+
         private object? _namespace;
 
         /// <summary>Property namespace: Namespace to use with helm.</summary>

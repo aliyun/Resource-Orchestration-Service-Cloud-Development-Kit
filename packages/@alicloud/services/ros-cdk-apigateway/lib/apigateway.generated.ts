@@ -43,6 +43,13 @@ export interface RosApiProps {
     readonly visibility: string | ros.IResolvable;
 
     /**
+     * @Property allowSignatureMethod: If the AuthType is APP authentication, you need to pass this value to specify the signature algorithm. If you do not specify this parameter, the default value HmacSHA256 is used. Valid values:
+     * HmacSHA256
+     * HmacSHA1,HmacSHA256
+     */
+    readonly allowSignatureMethod?: string | ros.IResolvable;
+
+    /**
      * @Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT:
      * DEFAULT: Default (set by group).
      * DISABLE: Not allowed
@@ -103,6 +110,16 @@ export interface RosApiProps {
     readonly requestParameters?: Array<RosApi.RequestParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property resultBodyModel: The return result of the API.
+     */
+    readonly resultBodyModel?: string | ros.IResolvable;
+
+    /**
+     * @Property resultDescriptions: The return description of the API.
+     */
+    readonly resultDescriptions?: string | ros.IResolvable;
+
+    /**
      * @Property serviceParameters: The service parameters.
      */
     readonly serviceParameters?: Array<RosApi.ServiceParametersProperty | ros.IResolvable> | ros.IResolvable;
@@ -121,6 +138,15 @@ export interface RosApiProps {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosApi.TagsProperty[];
+
+    /**
+     * @Property webSocketApiType: The type of the two-way communication API.
+     * COMMON: common API
+     * REGISTER: registered API
+     * UNREGISTER: unregistered API
+     * NOTIFY: downstream notification API
+     */
+    readonly webSocketApiType?: string | ros.IResolvable;
 }
 
 /**
@@ -133,15 +159,59 @@ export interface RosApiProps {
 function RosApiPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('forceNonceCheck', ros.validateBoolean)(properties.forceNonceCheck));
+    if(properties.allowSignatureMethod && (typeof properties.allowSignatureMethod) !== 'object') {
+        errors.collect(ros.propertyValidator('allowSignatureMethod', ros.validateAllowedValues)({
+          data: properties.allowSignatureMethod,
+          allowedValues: ["HmacSHA256","HmacSHA1,HmacSHA256"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('allowSignatureMethod', ros.validateString)(properties.allowSignatureMethod));
+    errors.collect(ros.propertyValidator('errorCodeSamples', ros.listValidator(RosApi_ErrorCodeSamplesPropertyValidator))(properties.errorCodeSamples));
+    errors.collect(ros.propertyValidator('requestParameters', ros.listValidator(RosApi_RequestParametersPropertyValidator))(properties.requestParameters));
+    errors.collect(ros.propertyValidator('serviceParametersMap', ros.listValidator(RosApi_ServiceParametersMapPropertyValidator))(properties.serviceParametersMap));
+    if(properties.appCodeAuthType && (typeof properties.appCodeAuthType) !== 'object') {
+        errors.collect(ros.propertyValidator('appCodeAuthType', ros.validateAllowedValues)({
+          data: properties.appCodeAuthType,
+          allowedValues: ["DEFAULT","DISABLE","HEADER","HEADER_QUERY"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('appCodeAuthType', ros.validateString)(properties.appCodeAuthType));
+    errors.collect(ros.propertyValidator('resultBodyModel', ros.validateString)(properties.resultBodyModel));
+    errors.collect(ros.propertyValidator('serviceConfig', ros.requiredValidator)(properties.serviceConfig));
+    errors.collect(ros.propertyValidator('serviceConfig', RosApi_ServiceConfigPropertyValidator)(properties.serviceConfig));
+    if(properties.webSocketApiType && (typeof properties.webSocketApiType) !== 'object') {
+        errors.collect(ros.propertyValidator('webSocketApiType', ros.validateAllowedValues)({
+          data: properties.webSocketApiType,
+          allowedValues: ["COMMON","REGISTER","UNREGISTER","NOTIFY"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('webSocketApiType', ros.validateString)(properties.webSocketApiType));
+    errors.collect(ros.propertyValidator('resultDescriptions', ros.validateString)(properties.resultDescriptions));
+    errors.collect(ros.propertyValidator('openIdConnectConfig', RosApi_OpenIdConnectConfigPropertyValidator)(properties.openIdConnectConfig));
+    if(properties.authType && (typeof properties.authType) !== 'object') {
+        errors.collect(ros.propertyValidator('authType', ros.validateAllowedValues)({
+          data: properties.authType,
+          allowedValues: ["APP","ANONYMOUS","APPOPENID"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosApi_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('requestConfig', ros.requiredValidator)(properties.requestConfig));
     errors.collect(ros.propertyValidator('requestConfig', RosApi_RequestConfigPropertyValidator)(properties.requestConfig));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('resultSample', ros.requiredValidator)(properties.resultSample));
     errors.collect(ros.propertyValidator('resultSample', ros.validateString)(properties.resultSample));
     errors.collect(ros.propertyValidator('disableInternet', ros.validateBoolean)(properties.disableInternet));
     errors.collect(ros.propertyValidator('apiName', ros.requiredValidator)(properties.apiName));
     errors.collect(ros.propertyValidator('apiName', ros.validateString)(properties.apiName));
-    errors.collect(ros.propertyValidator('forceNonceCheck', ros.validateBoolean)(properties.forceNonceCheck));
     errors.collect(ros.propertyValidator('resultType', ros.requiredValidator)(properties.resultType));
     if(properties.resultType && (typeof properties.resultType) !== 'object') {
         errors.collect(ros.propertyValidator('resultType', ros.validateAllowedValues)({
@@ -151,23 +221,10 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('resultType', ros.validateString)(properties.resultType));
     errors.collect(ros.propertyValidator('failResultSample', ros.validateString)(properties.failResultSample));
-    errors.collect(ros.propertyValidator('errorCodeSamples', ros.listValidator(RosApi_ErrorCodeSamplesPropertyValidator))(properties.errorCodeSamples));
-    errors.collect(ros.propertyValidator('requestParameters', ros.listValidator(RosApi_RequestParametersPropertyValidator))(properties.requestParameters));
     errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
     errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
-    errors.collect(ros.propertyValidator('serviceParametersMap', ros.listValidator(RosApi_ServiceParametersMapPropertyValidator))(properties.serviceParametersMap));
-    if(properties.appCodeAuthType && (typeof properties.appCodeAuthType) !== 'object') {
-        errors.collect(ros.propertyValidator('appCodeAuthType', ros.validateAllowedValues)({
-          data: properties.appCodeAuthType,
-          allowedValues: ["DEFAULT","DISABLE","HEADER","HEADER_QUERY"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('appCodeAuthType', ros.validateString)(properties.appCodeAuthType));
-    errors.collect(ros.propertyValidator('serviceConfig', ros.requiredValidator)(properties.serviceConfig));
-    errors.collect(ros.propertyValidator('serviceConfig', RosApi_ServiceConfigPropertyValidator)(properties.serviceConfig));
     errors.collect(ros.propertyValidator('constParameters', ros.listValidator(RosApi_ConstParametersPropertyValidator))(properties.constParameters));
     errors.collect(ros.propertyValidator('systemParameters', ros.listValidator(RosApi_SystemParametersPropertyValidator))(properties.systemParameters));
-    errors.collect(ros.propertyValidator('openIdConnectConfig', RosApi_OpenIdConnectConfigPropertyValidator)(properties.openIdConnectConfig));
     errors.collect(ros.propertyValidator('visibility', ros.requiredValidator)(properties.visibility));
     if(properties.visibility && (typeof properties.visibility) !== 'object') {
         errors.collect(ros.propertyValidator('visibility', ros.validateAllowedValues)({
@@ -176,22 +233,7 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('visibility', ros.validateString)(properties.visibility));
-    if(properties.authType && (typeof properties.authType) !== 'object') {
-        errors.collect(ros.propertyValidator('authType', ros.validateAllowedValues)({
-          data: properties.authType,
-          allowedValues: ["APP","ANONYMOUS","APPOPENID"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
     errors.collect(ros.propertyValidator('serviceParameters', ros.listValidator(RosApi_ServiceParametersPropertyValidator))(properties.serviceParameters));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosApi_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosApiProps"');
 }
 
@@ -216,6 +258,7 @@ function rosApiPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       ResultType: ros.stringToRosTemplate(properties.resultType),
       ServiceConfig: rosApiServiceConfigPropertyToRosTemplate(properties.serviceConfig),
       Visibility: ros.stringToRosTemplate(properties.visibility),
+      AllowSignatureMethod: ros.stringToRosTemplate(properties.allowSignatureMethod),
       AppCodeAuthType: ros.stringToRosTemplate(properties.appCodeAuthType),
       AuthType: ros.stringToRosTemplate(properties.authType),
       ConstParameters: ros.listMapper(rosApiConstParametersPropertyToRosTemplate)(properties.constParameters),
@@ -226,10 +269,13 @@ function rosApiPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       ForceNonceCheck: ros.booleanToRosTemplate(properties.forceNonceCheck),
       OpenIdConnectConfig: rosApiOpenIdConnectConfigPropertyToRosTemplate(properties.openIdConnectConfig),
       RequestParameters: ros.listMapper(rosApiRequestParametersPropertyToRosTemplate)(properties.requestParameters),
+      ResultBodyModel: ros.stringToRosTemplate(properties.resultBodyModel),
+      ResultDescriptions: ros.stringToRosTemplate(properties.resultDescriptions),
       ServiceParameters: ros.listMapper(rosApiServiceParametersPropertyToRosTemplate)(properties.serviceParameters),
       ServiceParametersMap: ros.listMapper(rosApiServiceParametersMapPropertyToRosTemplate)(properties.serviceParametersMap),
       SystemParameters: ros.listMapper(rosApiSystemParametersPropertyToRosTemplate)(properties.systemParameters),
       Tags: ros.listMapper(rosApiTagsPropertyToRosTemplate)(properties.tags),
+      WebSocketApiType: ros.stringToRosTemplate(properties.webSocketApiType),
     };
 }
 
@@ -289,6 +335,13 @@ export class RosApi extends ros.RosResource {
      * @Property visibility: Whether to make the API public. "PUBLIC" or "PRIVATE".
      */
     public visibility: string | ros.IResolvable;
+
+    /**
+     * @Property allowSignatureMethod: If the AuthType is APP authentication, you need to pass this value to specify the signature algorithm. If you do not specify this parameter, the default value HmacSHA256 is used. Valid values:
+     * HmacSHA256
+     * HmacSHA1,HmacSHA256
+     */
+    public allowSignatureMethod: string | ros.IResolvable | undefined;
 
     /**
      * @Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT:
@@ -351,6 +404,16 @@ export class RosApi extends ros.RosResource {
     public requestParameters: Array<RosApi.RequestParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property resultBodyModel: The return result of the API.
+     */
+    public resultBodyModel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resultDescriptions: The return description of the API.
+     */
+    public resultDescriptions: string | ros.IResolvable | undefined;
+
+    /**
      * @Property serviceParameters: The service parameters.
      */
     public serviceParameters: Array<RosApi.ServiceParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
@@ -371,6 +434,15 @@ export class RosApi extends ros.RosResource {
     public tags: RosApi.TagsProperty[] | undefined;
 
     /**
+     * @Property webSocketApiType: The type of the two-way communication API.
+     * COMMON: common API
+     * REGISTER: registered API
+     * UNREGISTER: unregistered API
+     * NOTIFY: downstream notification API
+     */
+    public webSocketApiType: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::ApiGateway::Api`.
      *
      * @param scope - scope in which this resource is defined
@@ -389,6 +461,7 @@ export class RosApi extends ros.RosResource {
         this.resultType = props.resultType;
         this.serviceConfig = props.serviceConfig;
         this.visibility = props.visibility;
+        this.allowSignatureMethod = props.allowSignatureMethod;
         this.appCodeAuthType = props.appCodeAuthType;
         this.authType = props.authType;
         this.constParameters = props.constParameters;
@@ -399,10 +472,13 @@ export class RosApi extends ros.RosResource {
         this.forceNonceCheck = props.forceNonceCheck;
         this.openIdConnectConfig = props.openIdConnectConfig;
         this.requestParameters = props.requestParameters;
+        this.resultBodyModel = props.resultBodyModel;
+        this.resultDescriptions = props.resultDescriptions;
         this.serviceParameters = props.serviceParameters;
         this.serviceParametersMap = props.serviceParametersMap;
         this.systemParameters = props.systemParameters;
         this.tags = props.tags;
+        this.webSocketApiType = props.webSocketApiType;
     }
 
 
@@ -415,6 +491,7 @@ export class RosApi extends ros.RosResource {
             resultType: this.resultType,
             serviceConfig: this.serviceConfig,
             visibility: this.visibility,
+            allowSignatureMethod: this.allowSignatureMethod,
             appCodeAuthType: this.appCodeAuthType,
             authType: this.authType,
             constParameters: this.constParameters,
@@ -425,10 +502,13 @@ export class RosApi extends ros.RosResource {
             forceNonceCheck: this.forceNonceCheck,
             openIdConnectConfig: this.openIdConnectConfig,
             requestParameters: this.requestParameters,
+            resultBodyModel: this.resultBodyModel,
+            resultDescriptions: this.resultDescriptions,
             serviceParameters: this.serviceParameters,
             serviceParametersMap: this.serviceParametersMap,
             systemParameters: this.systemParameters,
             tags: this.tags,
+            webSocketApiType: this.webSocketApiType,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

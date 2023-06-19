@@ -44,6 +44,13 @@ export interface ApiProps {
     readonly visibility: string | ros.IResolvable;
 
     /**
+     * Property allowSignatureMethod: If the AuthType is APP authentication, you need to pass this value to specify the signature algorithm. If you do not specify this parameter, the default value HmacSHA256 is used. Valid values:
+     * HmacSHA256
+     * HmacSHA1,HmacSHA256
+     */
+    readonly allowSignatureMethod?: string | ros.IResolvable;
+
+    /**
      * Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT:
      * DEFAULT: Default (set by group).
      * DISABLE: Not allowed
@@ -104,6 +111,16 @@ export interface ApiProps {
     readonly requestParameters?: Array<RosApi.RequestParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property resultBodyModel: The return result of the API.
+     */
+    readonly resultBodyModel?: string | ros.IResolvable;
+
+    /**
+     * Property resultDescriptions: The return description of the API.
+     */
+    readonly resultDescriptions?: string | ros.IResolvable;
+
+    /**
      * Property serviceParameters: The service parameters.
      */
     readonly serviceParameters?: Array<RosApi.ServiceParametersProperty | ros.IResolvable> | ros.IResolvable;
@@ -122,6 +139,15 @@ export interface ApiProps {
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosApi.TagsProperty[];
+
+    /**
+     * Property webSocketApiType: The type of the two-way communication API.
+     * COMMON: common API
+     * REGISTER: registered API
+     * UNREGISTER: unregistered API
+     * NOTIFY: downstream notification API
+     */
+    readonly webSocketApiType?: string | ros.IResolvable;
 }
 
 /**
@@ -150,27 +176,31 @@ export class Api extends ros.Resource {
         super(scope, id);
 
         const rosApi = new RosApi(this, id,  {
-            requestConfig: props.requestConfig,
             description: props.description,
+            forceNonceCheck: props.forceNonceCheck,
+            allowSignatureMethod: props.allowSignatureMethod,
+            errorCodeSamples: props.errorCodeSamples,
+            requestParameters: props.requestParameters,
+            serviceParametersMap: props.serviceParametersMap,
+            appCodeAuthType: props.appCodeAuthType,
+            resultBodyModel: props.resultBodyModel,
+            serviceConfig: props.serviceConfig,
+            webSocketApiType: props.webSocketApiType,
+            resultDescriptions: props.resultDescriptions,
+            openIdConnectConfig: props.openIdConnectConfig,
+            authType: props.authType,
+            tags: props.tags,
+            requestConfig: props.requestConfig,
             resultSample: props.resultSample,
             disableInternet: props.disableInternet,
             apiName: props.apiName,
-            forceNonceCheck: props.forceNonceCheck,
             resultType: props.resultType === undefined || props.resultType === null ? 'JSON' : props.resultType,
             failResultSample: props.failResultSample,
-            errorCodeSamples: props.errorCodeSamples,
-            requestParameters: props.requestParameters,
             groupId: props.groupId,
-            serviceParametersMap: props.serviceParametersMap,
-            appCodeAuthType: props.appCodeAuthType,
-            serviceConfig: props.serviceConfig,
             constParameters: props.constParameters,
             systemParameters: props.systemParameters,
-            openIdConnectConfig: props.openIdConnectConfig,
             visibility: props.visibility,
-            authType: props.authType,
             serviceParameters: props.serviceParameters,
-            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApi;
         this.attrApiId = rosApi.attrApiId;

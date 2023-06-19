@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.actiontrail;
 
 /**
- * A ROS resource type:  `ALIYUN::ACTIONTRAIL::TrailLogging`.
+ * A ROS resource type:  <code>ALIYUN::ACTIONTRAIL::TrailLogging</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.955Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.974Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailLogging")
 public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ACTIONTRAIL::TrailLogging`.
+     * Create a new <code>ALIYUN::ACTIONTRAIL::TrailLogging</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ACTIONTRAIL::TrailLogging`.
+     * Create a new <code>ALIYUN::ACTIONTRAIL::TrailLogging</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -160,7 +160,7 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.actiontrail.TrailLogging}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.actiontrail.TrailLogging}.
          */
         @Override
         public com.aliyun.ros.cdk.actiontrail.TrailLogging build() {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * Properties for defining a `ALIYUN::FC::Service`.
+ * Properties for defining a <code>ALIYUN::FC::Service</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.904Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.170Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.ServiceProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceProps.Jsii$Proxy.class)
 public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -51,6 +51,13 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
      * Function Compute uses a specified NAS configured on the service.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNasConfig() {
+        return null;
+    }
+
+    /**
+     * Property ossMountConfig: The OSS mount configurations.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOssMountConfig() {
         return null;
     }
 
@@ -115,6 +122,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object internetAccess;
         java.lang.Object logConfig;
         java.lang.Object nasConfig;
+        java.lang.Object ossMountConfig;
         java.lang.Object role;
         java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags;
         java.lang.Object tracingConfig;
@@ -248,6 +256,26 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ServiceProps#getOssMountConfig}
+         * @param ossMountConfig Property ossMountConfig: The OSS mount configurations.
+         * @return {@code this}
+         */
+        public Builder ossMountConfig(com.aliyun.ros.cdk.core.IResolvable ossMountConfig) {
+            this.ossMountConfig = ossMountConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServiceProps#getOssMountConfig}
+         * @param ossMountConfig Property ossMountConfig: The OSS mount configurations.
+         * @return {@code this}
+         */
+        public Builder ossMountConfig(com.aliyun.ros.cdk.fc.RosService.OssMountConfigProperty ossMountConfig) {
+            this.ossMountConfig = ossMountConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServiceProps#getRole}
          * @param role Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store.
          *             The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
@@ -369,6 +397,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object internetAccess;
         private final java.lang.Object logConfig;
         private final java.lang.Object nasConfig;
+        private final java.lang.Object ossMountConfig;
         private final java.lang.Object role;
         private final java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags;
         private final java.lang.Object tracingConfig;
@@ -387,6 +416,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             this.internetAccess = software.amazon.jsii.Kernel.get(this, "internetAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logConfig = software.amazon.jsii.Kernel.get(this, "logConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nasConfig = software.amazon.jsii.Kernel.get(this, "nasConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ossMountConfig = software.amazon.jsii.Kernel.get(this, "ossMountConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.fc.RosService.TagsProperty.class)));
             this.tracingConfig = software.amazon.jsii.Kernel.get(this, "tracingConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -406,6 +436,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             this.internetAccess = builder.internetAccess;
             this.logConfig = builder.logConfig;
             this.nasConfig = builder.nasConfig;
+            this.ossMountConfig = builder.ossMountConfig;
             this.role = builder.role;
             this.tags = (java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty>)builder.tags;
             this.tracingConfig = builder.tracingConfig;
@@ -441,6 +472,11 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getNasConfig() {
             return this.nasConfig;
+        }
+
+        @Override
+        public final java.lang.Object getOssMountConfig() {
+            return this.ossMountConfig;
         }
 
         @Override
@@ -490,6 +526,9 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getNasConfig() != null) {
                 data.set("nasConfig", om.valueToTree(this.getNasConfig()));
             }
+            if (this.getOssMountConfig() != null) {
+                data.set("ossMountConfig", om.valueToTree(this.getOssMountConfig()));
+            }
             if (this.getRole() != null) {
                 data.set("role", om.valueToTree(this.getRole()));
             }
@@ -529,6 +568,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.internetAccess != null ? !this.internetAccess.equals(that.internetAccess) : that.internetAccess != null) return false;
             if (this.logConfig != null ? !this.logConfig.equals(that.logConfig) : that.logConfig != null) return false;
             if (this.nasConfig != null ? !this.nasConfig.equals(that.nasConfig) : that.nasConfig != null) return false;
+            if (this.ossMountConfig != null ? !this.ossMountConfig.equals(that.ossMountConfig) : that.ossMountConfig != null) return false;
             if (this.role != null ? !this.role.equals(that.role) : that.role != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tracingConfig != null ? !this.tracingConfig.equals(that.tracingConfig) : that.tracingConfig != null) return false;
@@ -544,6 +584,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.internetAccess != null ? this.internetAccess.hashCode() : 0);
             result = 31 * result + (this.logConfig != null ? this.logConfig.hashCode() : 0);
             result = 31 * result + (this.nasConfig != null ? this.nasConfig.hashCode() : 0);
+            result = 31 * result + (this.ossMountConfig != null ? this.ossMountConfig.hashCode() : 0);
             result = 31 * result + (this.role != null ? this.role.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tracingConfig != null ? this.tracingConfig.hashCode() : 0);

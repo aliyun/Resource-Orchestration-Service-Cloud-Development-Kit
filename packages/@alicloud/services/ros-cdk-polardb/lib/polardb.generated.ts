@@ -2005,6 +2005,22 @@ export interface RosDBInstanceProps {
     readonly accountPrivilege?: string | ros.IResolvable;
 
     /**
+     * @Property collate: A locale setting that specifies the collation for newly created databases.
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required; 
+     * when the cluster is PolarDB MySQL, this parameter is not supported.
+     */
+    readonly collate?: string | ros.IResolvable;
+
+    /**
+     * @Property ctype: A locale setting that specifies the character classification of the database.
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.
+     * It is consistent with the incoming information of Collate.
+     * When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+     *  when the cluster is PolarDB MySQL, this parameter is optional.
+     */
+    readonly ctype?: string | ros.IResolvable;
+
+    /**
      * @Property dbDescription: The description of the database. Valid values:
      * It cannot start with http:// or https://.
      * It must be 2 to 256 characters in length.
@@ -2041,6 +2057,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbDescription', ros.validateString)(properties.dbDescription));
     errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
     errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('collate', ros.validateString)(properties.collate));
     errors.collect(ros.propertyValidator('dbName', ros.requiredValidator)(properties.dbName));
     if(properties.dbName && (typeof properties.dbName) !== 'object') {
         errors.collect(ros.propertyValidator('dbName', ros.validateAllowedPattern)({
@@ -2049,6 +2066,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
+    errors.collect(ros.propertyValidator('ctype', ros.validateString)(properties.ctype));
     errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     return errors.wrap('supplied properties not correct for "RosDBInstanceProps"');
 }
@@ -2072,6 +2090,8 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       DBName: ros.stringToRosTemplate(properties.dbName),
       AccountName: ros.stringToRosTemplate(properties.accountName),
       AccountPrivilege: ros.stringToRosTemplate(properties.accountPrivilege),
+      Collate: ros.stringToRosTemplate(properties.collate),
+      Ctype: ros.stringToRosTemplate(properties.ctype),
       DBDescription: ros.stringToRosTemplate(properties.dbDescription),
     };
 }
@@ -2127,6 +2147,22 @@ export class RosDBInstance extends ros.RosResource {
     public accountPrivilege: string | ros.IResolvable | undefined;
 
     /**
+     * @Property collate: A locale setting that specifies the collation for newly created databases.
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required; 
+     * when the cluster is PolarDB MySQL, this parameter is not supported.
+     */
+    public collate: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ctype: A locale setting that specifies the character classification of the database.
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.
+     * It is consistent with the incoming information of Collate.
+     * When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+     *  when the cluster is PolarDB MySQL, this parameter is optional.
+     */
+    public ctype: string | ros.IResolvable | undefined;
+
+    /**
      * @Property dbDescription: The description of the database. Valid values:
      * It cannot start with http:// or https://.
      * It must be 2 to 256 characters in length.
@@ -2149,6 +2185,8 @@ export class RosDBInstance extends ros.RosResource {
         this.dbName = props.dbName;
         this.accountName = props.accountName;
         this.accountPrivilege = props.accountPrivilege;
+        this.collate = props.collate;
+        this.ctype = props.ctype;
         this.dbDescription = props.dbDescription;
     }
 
@@ -2160,6 +2198,8 @@ export class RosDBInstance extends ros.RosResource {
             dbName: this.dbName,
             accountName: this.accountName,
             accountPrivilege: this.accountPrivilege,
+            collate: this.collate,
+            ctype: this.ctype,
             dbDescription: this.dbDescription,
         };
     }

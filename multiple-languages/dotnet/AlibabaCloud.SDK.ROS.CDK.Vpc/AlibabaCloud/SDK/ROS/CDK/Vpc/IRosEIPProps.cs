@@ -209,6 +209,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: zone: Availability zone of the elastic public network IP.
+        /// </remarks>
+        [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Zone
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::VPC::EIP`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IRosEIPProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosEIPProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosEIPProps
@@ -371,6 +384,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public AlibabaCloud.SDK.ROS.CDK.Vpc.RosEIP.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Vpc.RosEIP.ITagsProperty[]?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: zone: Availability zone of the elastic public network IP.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Zone
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

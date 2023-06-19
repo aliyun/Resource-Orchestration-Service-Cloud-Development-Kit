@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * Properties for defining a `ALIYUN::RAM::Group`.
+ * Properties for defining a <code>ALIYUN::RAM::Group</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.573Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.991Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.GroupProps")
 @software.amazon.jsii.Jsii.Proxy(GroupProps.Jsii$Proxy.class)
 public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,6 +26,13 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
      * Default value is false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return null;
+    }
+
+    /**
+     * Property ignoreExisting: Whether to ignore existing group False: ROS will perform a uniqueness check.If a group with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a group with the same name, the group creation process will be ignored. If the group is not created by ROS, it will be ignored during update and delete stage.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreExisting() {
         return null;
     }
 
@@ -56,6 +63,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object groupName;
         java.lang.Object comments;
         java.lang.Object deletionForce;
+        java.lang.Object ignoreExisting;
         java.lang.Object policies;
         java.lang.Object policyAttachments;
 
@@ -122,6 +130,26 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link GroupProps#getIgnoreExisting}
+         * @param ignoreExisting Property ignoreExisting: Whether to ignore existing group False: ROS will perform a uniqueness check.If a group with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a group with the same name, the group creation process will be ignored. If the group is not created by ROS, it will be ignored during update and delete stage.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(java.lang.Boolean ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupProps#getIgnoreExisting}
+         * @param ignoreExisting Property ignoreExisting: Whether to ignore existing group False: ROS will perform a uniqueness check.If a group with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a group with the same name, the group creation process will be ignored. If the group is not created by ROS, it will be ignored during update and delete stage.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GroupProps#getPolicies}
          * @param policies Property policies: Describes what actions are allowed on what resources.
          * @return {@code this}
@@ -180,6 +208,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object groupName;
         private final java.lang.Object comments;
         private final java.lang.Object deletionForce;
+        private final java.lang.Object ignoreExisting;
         private final java.lang.Object policies;
         private final java.lang.Object policyAttachments;
 
@@ -192,6 +221,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
             this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.comments = software.amazon.jsii.Kernel.get(this, "comments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ignoreExisting = software.amazon.jsii.Kernel.get(this, "ignoreExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policies = software.amazon.jsii.Kernel.get(this, "policies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyAttachments = software.amazon.jsii.Kernel.get(this, "policyAttachments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -204,6 +234,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
             this.groupName = java.util.Objects.requireNonNull(builder.groupName, "groupName is required");
             this.comments = builder.comments;
             this.deletionForce = builder.deletionForce;
+            this.ignoreExisting = builder.ignoreExisting;
             this.policies = builder.policies;
             this.policyAttachments = builder.policyAttachments;
         }
@@ -221,6 +252,11 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDeletionForce() {
             return this.deletionForce;
+        }
+
+        @Override
+        public final java.lang.Object getIgnoreExisting() {
+            return this.ignoreExisting;
         }
 
         @Override
@@ -245,6 +281,9 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getDeletionForce() != null) {
                 data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
+            }
+            if (this.getIgnoreExisting() != null) {
+                data.set("ignoreExisting", om.valueToTree(this.getIgnoreExisting()));
             }
             if (this.getPolicies() != null) {
                 data.set("policies", om.valueToTree(this.getPolicies()));
@@ -273,6 +312,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
             if (!groupName.equals(that.groupName)) return false;
             if (this.comments != null ? !this.comments.equals(that.comments) : that.comments != null) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
+            if (this.ignoreExisting != null ? !this.ignoreExisting.equals(that.ignoreExisting) : that.ignoreExisting != null) return false;
             if (this.policies != null ? !this.policies.equals(that.policies) : that.policies != null) return false;
             return this.policyAttachments != null ? this.policyAttachments.equals(that.policyAttachments) : that.policyAttachments == null;
         }
@@ -282,6 +322,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.groupName.hashCode();
             result = 31 * result + (this.comments != null ? this.comments.hashCode() : 0);
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
+            result = 31 * result + (this.ignoreExisting != null ? this.ignoreExisting.hashCode() : 0);
             result = 31 * result + (this.policies != null ? this.policies.hashCode() : 0);
             result = 31 * result + (this.policyAttachments != null ? this.policyAttachments.hashCode() : 0);
             return result;

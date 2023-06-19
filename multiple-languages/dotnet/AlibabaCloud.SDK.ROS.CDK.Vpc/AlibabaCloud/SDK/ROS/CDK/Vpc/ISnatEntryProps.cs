@@ -25,6 +25,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
+        /// <summary>Property eipAffinity: Specifies whether to enable EIP affinity.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// 0: no
+        /// 1: yes
+        /// If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
+        /// </remarks>
+        [JsiiProperty(name: "eipAffinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EipAffinity
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.</summary>
         [JsiiProperty(name: "snatEntryName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -84,6 +101,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public object SnatTableId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property eipAffinity: Specifies whether to enable EIP affinity.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// 0: no
+            /// 1: yes
+            /// If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "eipAffinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EipAffinity
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.</summary>

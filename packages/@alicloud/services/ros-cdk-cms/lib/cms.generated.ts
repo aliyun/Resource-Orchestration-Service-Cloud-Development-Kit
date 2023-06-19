@@ -3232,6 +3232,188 @@ export class RosMonitoringAgentProcess extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::CMS::Namespace`
+ */
+export interface RosNamespaceProps {
+
+    /**
+     * @Property namespace: The name of the namespace.
+     * The name can contain lowercase letters, digits, and hyphens (-).
+     */
+    readonly namespace: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the namespace.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property specification: The data retention period of the namespace. Valid values:
+     * - cms.s1.large: Data storage duration is 15 days.
+     * - cms.s1.xlarge: Data storage duration is 32 days.
+     * - cms.s1.2xlarge: Data storage duration 63 days.
+     * - cms.s1.3xlarge: Data storage duration 93 days.
+     * - cms.s1.6xlarge: Data storage duration 185 days.
+     * - cms.s1.12xlarge: Data storage duration 376 days.
+     */
+    readonly specification?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNamespaceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNamespaceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNamespacePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.specification && (typeof properties.specification) !== 'object') {
+        errors.collect(ros.propertyValidator('specification', ros.validateAllowedValues)({
+          data: properties.specification,
+          allowedValues: ["cms.s1.large","cms.s1.xlarge","cms.s1.2xlarge","cms.s1.3xlarge","cms.s1.6xlarge","cms.s1.12xlarge"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('specification', ros.validateString)(properties.specification));
+    errors.collect(ros.propertyValidator('namespace', ros.requiredValidator)(properties.namespace));
+    if(properties.namespace && (typeof properties.namespace) !== 'object') {
+        errors.collect(ros.propertyValidator('namespace', ros.validateAllowedPattern)({
+          data: properties.namespace,
+          reg: /^[-a-z0-9]+$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    return errors.wrap('supplied properties not correct for "RosNamespaceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::Namespace` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNamespaceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::Namespace` resource.
+ */
+// @ts-ignore TS6133
+function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNamespacePropsValidator(properties).assertSuccess();
+    }
+    return {
+      Namespace: ros.stringToRosTemplate(properties.namespace),
+      Description: ros.stringToRosTemplate(properties.description),
+      Specification: ros.stringToRosTemplate(properties.specification),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CMS::Namespace`
+ */
+export class RosNamespace extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS::Namespace";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute CreateTime: The timestamp that was generated when the namespace was created.
+Unit: milliseconds.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the namespace.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute ModifyTime: The timestamp that was generated when the namespace was last modified.
+     */
+    public readonly attrModifyTime: ros.IResolvable;
+
+    /**
+     * @Attribute Namespace: The namespace for the Alibaba Cloud service.
+     */
+    public readonly attrNamespace: ros.IResolvable;
+
+    /**
+     * @Attribute Specification: The data retention period of the namespace. Valid values:
+- cms.s1.large: Data storage duration is 15 days.
+- cms.s1.xlarge: Data storage duration is 32 days.
+- cms.s1.2xlarge: Data storage duration 63 days.
+- cms.s1.3xlarge: Data storage duration 93 days.
+- cms.s1.6xlarge: Data storage duration 185 days.
+- cms.s1.12xlarge: Data storage duration 376 days.
+     */
+    public readonly attrSpecification: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property namespace: The name of the namespace.
+     * The name can contain lowercase letters, digits, and hyphens (-).
+     */
+    public namespace: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the namespace.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property specification: The data retention period of the namespace. Valid values:
+     * - cms.s1.large: Data storage duration is 15 days.
+     * - cms.s1.xlarge: Data storage duration is 32 days.
+     * - cms.s1.2xlarge: Data storage duration 63 days.
+     * - cms.s1.3xlarge: Data storage duration 93 days.
+     * - cms.s1.6xlarge: Data storage duration 185 days.
+     * - cms.s1.12xlarge: Data storage duration 376 days.
+     */
+    public specification: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CMS::Namespace`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNamespaceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNamespace.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDescription = this.getAtt('Description');
+        this.attrModifyTime = this.getAtt('ModifyTime');
+        this.attrNamespace = this.getAtt('Namespace');
+        this.attrSpecification = this.getAtt('Specification');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.namespace = props.namespace;
+        this.description = props.description;
+        this.specification = props.specification;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            namespace: this.namespace,
+            description: this.description,
+            specification: this.specification,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNamespacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::CMS::ResourceMetricRule`
  */
 export interface RosResourceMetricRuleProps {

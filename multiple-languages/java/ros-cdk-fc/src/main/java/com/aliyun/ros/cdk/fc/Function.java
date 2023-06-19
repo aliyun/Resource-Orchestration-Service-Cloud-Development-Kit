@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * A ROS resource type:  `ALIYUN::FC::Function`.
+ * A ROS resource type:  <code>ALIYUN::FC::Function</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.853Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.116Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Function")
 public class Function extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::FC::Function`.
+     * Create a new <code>ALIYUN::FC::Function</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::FC::Function`.
+     * Create a new <code>ALIYUN::FC::Function</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -162,7 +162,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property runtime: The function runtime environment.
          * <p>
-         * Supporting nodejs6, nodejs8, nodejs10, nodejs12, python2.7, python3, java8, custom, custom-container and so on
+         * Supporting nodejs16、nodejs14、nodejs12、nodejs10、nodejs8、nodejs6、nodejs4.4、python3.10、python3.9、python3、python2.7、java11、java8、go1、php7.2、dotnetcore3.1、dotnetcore2.1、custom.debian10、custom和custom-container and so on
          * <p>
          * @return {@code this}
          * @param runtime Property runtime: The function runtime environment. This parameter is required.
@@ -174,7 +174,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property runtime: The function runtime environment.
          * <p>
-         * Supporting nodejs6, nodejs8, nodejs10, nodejs12, python2.7, python3, java8, custom, custom-container and so on
+         * Supporting nodejs16、nodejs14、nodejs12、nodejs10、nodejs8、nodejs6、nodejs4.4、python3.10、python3.9、python3、python2.7、java11、java8、go1、php7.2、dotnetcore3.1、dotnetcore2.1、custom.debian10、custom和custom-container and so on
          * <p>
          * @return {@code this}
          * @param runtime Property runtime: The function runtime environment. This parameter is required.
@@ -273,6 +273,31 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property cpu: The number of vCPUs of the function.
+         * <p>
+         * The value must be a multiple of 0.05.
+         * <p>
+         * @return {@code this}
+         * @param cpu Property cpu: The number of vCPUs of the function. This parameter is required.
+         */
+        public Builder cpu(final java.lang.Number cpu) {
+            this.props.cpu(cpu);
+            return this;
+        }
+        /**
+         * Property cpu: The number of vCPUs of the function.
+         * <p>
+         * The value must be a multiple of 0.05.
+         * <p>
+         * @return {@code this}
+         * @param cpu Property cpu: The number of vCPUs of the function. This parameter is required.
+         */
+        public Builder cpu(final com.aliyun.ros.cdk.core.IResolvable cpu) {
+            this.props.cpu(cpu);
+            return this;
+        }
+
+        /**
          * Property customContainerConfig: Custom container runtime related configuration.
          * <p>
          * After configuration, the function can be replaced with a custom container to execute the function
@@ -298,6 +323,69 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property customDns: The custom DNS configurations of the function.
+         * <p>
+         * @return {@code this}
+         * @param customDns Property customDns: The custom DNS configurations of the function. This parameter is required.
+         */
+        public Builder customDns(final com.aliyun.ros.cdk.core.IResolvable customDns) {
+            this.props.customDns(customDns);
+            return this;
+        }
+        /**
+         * Property customDns: The custom DNS configurations of the function.
+         * <p>
+         * @return {@code this}
+         * @param customDns Property customDns: The custom DNS configurations of the function. This parameter is required.
+         */
+        public Builder customDns(final com.aliyun.ros.cdk.fc.RosFunction.CustomDNSProperty customDns) {
+            this.props.customDns(customDns);
+            return this;
+        }
+
+        /**
+         * Property customHealthCheckConfig: The health check configurations for the custom runtime and custom container.
+         * <p>
+         * @return {@code this}
+         * @param customHealthCheckConfig Property customHealthCheckConfig: The health check configurations for the custom runtime and custom container. This parameter is required.
+         */
+        public Builder customHealthCheckConfig(final com.aliyun.ros.cdk.core.IResolvable customHealthCheckConfig) {
+            this.props.customHealthCheckConfig(customHealthCheckConfig);
+            return this;
+        }
+        /**
+         * Property customHealthCheckConfig: The health check configurations for the custom runtime and custom container.
+         * <p>
+         * @return {@code this}
+         * @param customHealthCheckConfig Property customHealthCheckConfig: The health check configurations for the custom runtime and custom container. This parameter is required.
+         */
+        public Builder customHealthCheckConfig(final com.aliyun.ros.cdk.fc.RosFunction.CustomHealthCheckConfigProperty customHealthCheckConfig) {
+            this.props.customHealthCheckConfig(customHealthCheckConfig);
+            return this;
+        }
+
+        /**
+         * Property customRuntimeConfig: Custom runtime related configuration.
+         * <p>
+         * @return {@code this}
+         * @param customRuntimeConfig Property customRuntimeConfig: Custom runtime related configuration. This parameter is required.
+         */
+        public Builder customRuntimeConfig(final com.aliyun.ros.cdk.core.IResolvable customRuntimeConfig) {
+            this.props.customRuntimeConfig(customRuntimeConfig);
+            return this;
+        }
+        /**
+         * Property customRuntimeConfig: Custom runtime related configuration.
+         * <p>
+         * @return {@code this}
+         * @param customRuntimeConfig Property customRuntimeConfig: Custom runtime related configuration. This parameter is required.
+         */
+        public Builder customRuntimeConfig(final com.aliyun.ros.cdk.fc.RosFunction.CustomRuntimeConfigProperty customRuntimeConfig) {
+            this.props.customRuntimeConfig(customRuntimeConfig);
+            return this;
+        }
+
+        /**
          * Property description: Function description.
          * <p>
          * @return {@code this}
@@ -319,6 +407,31 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property diskSize: The disk size of the function.
+         * <p>
+         * Unit: MB. Valid values: 512 and 10240.
+         * <p>
+         * @return {@code this}
+         * @param diskSize Property diskSize: The disk size of the function. This parameter is required.
+         */
+        public Builder diskSize(final java.lang.Number diskSize) {
+            this.props.diskSize(diskSize);
+            return this;
+        }
+        /**
+         * Property diskSize: The disk size of the function.
+         * <p>
+         * Unit: MB. Valid values: 512 and 10240.
+         * <p>
+         * @return {@code this}
+         * @param diskSize Property diskSize: The disk size of the function. This parameter is required.
+         */
+        public Builder diskSize(final com.aliyun.ros.cdk.core.IResolvable diskSize) {
+            this.props.diskSize(diskSize);
+            return this;
+        }
+
+        /**
          * Property environmentVariables: The environment variable set for the function, you can get the value of the environment variable in the function.
          * <p>
          * @return {@code this}
@@ -336,6 +449,31 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder environmentVariables(final java.util.Map<java.lang.String, ? extends java.lang.Object> environmentVariables) {
             this.props.environmentVariables(environmentVariables);
+            return this;
+        }
+
+        /**
+         * Property gpuMemorySize: The GPU memory capacity for the function.
+         * <p>
+         * Unit: MB. The value must be a multiple of 1,024.
+         * <p>
+         * @return {@code this}
+         * @param gpuMemorySize Property gpuMemorySize: The GPU memory capacity for the function. This parameter is required.
+         */
+        public Builder gpuMemorySize(final java.lang.Number gpuMemorySize) {
+            this.props.gpuMemorySize(gpuMemorySize);
+            return this;
+        }
+        /**
+         * Property gpuMemorySize: The GPU memory capacity for the function.
+         * <p>
+         * Unit: MB. The value must be a multiple of 1,024.
+         * <p>
+         * @return {@code this}
+         * @param gpuMemorySize Property gpuMemorySize: The GPU memory capacity for the function. This parameter is required.
+         */
+        public Builder gpuMemorySize(final com.aliyun.ros.cdk.core.IResolvable gpuMemorySize) {
+            this.props.gpuMemorySize(gpuMemorySize);
             return this;
         }
 
@@ -403,6 +541,52 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder instanceConcurrency(final com.aliyun.ros.cdk.core.IResolvable instanceConcurrency) {
             this.props.instanceConcurrency(instanceConcurrency);
+            return this;
+        }
+
+        /**
+         * Property instanceLifecycleConfig: The configuration of the instance lifecycle function.
+         * <p>
+         * @return {@code this}
+         * @param instanceLifecycleConfig Property instanceLifecycleConfig: The configuration of the instance lifecycle function. This parameter is required.
+         */
+        public Builder instanceLifecycleConfig(final com.aliyun.ros.cdk.core.IResolvable instanceLifecycleConfig) {
+            this.props.instanceLifecycleConfig(instanceLifecycleConfig);
+            return this;
+        }
+        /**
+         * Property instanceLifecycleConfig: The configuration of the instance lifecycle function.
+         * <p>
+         * @return {@code this}
+         * @param instanceLifecycleConfig Property instanceLifecycleConfig: The configuration of the instance lifecycle function. This parameter is required.
+         */
+        public Builder instanceLifecycleConfig(final com.aliyun.ros.cdk.fc.RosFunction.InstanceLifecycleConfigProperty instanceLifecycleConfig) {
+            this.props.instanceLifecycleConfig(instanceLifecycleConfig);
+            return this;
+        }
+
+        /**
+         * Property instanceSoftConcurrency: The soft concurrency of the instance.
+         * <p>
+         * You can use this parameter to implement graceful scale-up of instances. If the number of concurrent requests on an instance is greater than the value of soft concurrency, an instance scale-up is triggered. For example, if your instance requires a long time to start, you can specify a suitable soft concurrency to start the instance in advance.The value must be less than or equal to that of the instanceConcurrency parameter.
+         * <p>
+         * @return {@code this}
+         * @param instanceSoftConcurrency Property instanceSoftConcurrency: The soft concurrency of the instance. This parameter is required.
+         */
+        public Builder instanceSoftConcurrency(final java.lang.Number instanceSoftConcurrency) {
+            this.props.instanceSoftConcurrency(instanceSoftConcurrency);
+            return this;
+        }
+        /**
+         * Property instanceSoftConcurrency: The soft concurrency of the instance.
+         * <p>
+         * You can use this parameter to implement graceful scale-up of instances. If the number of concurrent requests on an instance is greater than the value of soft concurrency, an instance scale-up is triggered. For example, if your instance requires a long time to start, you can specify a suitable soft concurrency to start the instance in advance.The value must be less than or equal to that of the instanceConcurrency parameter.
+         * <p>
+         * @return {@code this}
+         * @param instanceSoftConcurrency Property instanceSoftConcurrency: The soft concurrency of the instance. This parameter is required.
+         */
+        public Builder instanceSoftConcurrency(final com.aliyun.ros.cdk.core.IResolvable instanceSoftConcurrency) {
+            this.props.instanceSoftConcurrency(instanceSoftConcurrency);
             return this;
         }
 
@@ -482,7 +666,7 @@ public class Function extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.fc.Function}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.fc.Function}.
          */
         @Override
         public com.aliyun.ros.cdk.fc.Function build() {

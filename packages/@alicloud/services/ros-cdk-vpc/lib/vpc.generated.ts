@@ -1794,6 +1794,11 @@ export interface RosEIPProps {
      * @Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosEIP.TagsProperty[];
+
+    /**
+     * @Property zone: Availability zone of the elastic public network IP.
+     */
+    readonly zone?: string | ros.IResolvable;
 }
 
 /**
@@ -1808,6 +1813,7 @@ function RosEIPPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('zone', ros.validateString)(properties.zone));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
@@ -1891,6 +1897,7 @@ function rosEIPPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityProtectionTypes: ros.listMapper(ros.stringToRosTemplate)(properties.securityProtectionTypes),
       Tags: ros.listMapper(rosEIPTagsPropertyToRosTemplate)(properties.tags),
+      Zone: ros.stringToRosTemplate(properties.zone),
     };
 }
 
@@ -2013,6 +2020,11 @@ export class RosEIP extends ros.RosResource {
     public tags: RosEIP.TagsProperty[] | undefined;
 
     /**
+     * @Property zone: Availability zone of the elastic public network IP.
+     */
+    public zone: string | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::VPC::EIP`.
      *
      * @param scope - scope in which this resource is defined
@@ -2042,6 +2054,7 @@ export class RosEIP extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.securityProtectionTypes = props.securityProtectionTypes;
         this.tags = props.tags;
+        this.zone = props.zone;
     }
 
 
@@ -2062,6 +2075,7 @@ export class RosEIP extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             securityProtectionTypes: this.securityProtectionTypes,
             tags: this.tags,
+            zone: this.zone,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -4344,6 +4358,11 @@ export interface RosNatGatewayProps {
     readonly eipBindMode?: string | ros.IResolvable;
 
     /**
+     * @Property icmpReplyEnabled: Specifies whether to enable the ICMP non-retrieval feature. Default: True
+     */
+    readonly icmpReplyEnabled?: boolean | ros.IResolvable;
+
+    /**
      * @Property instanceChargeType: The billing method. The default value is PostPaid (which means pay-as-you-go).
      */
     readonly instanceChargeType?: string | ros.IResolvable;
@@ -4376,6 +4395,11 @@ export interface RosNatGatewayProps {
      * @Property pricingCycle: Price cycle of the resource. This property has no default value.
      */
     readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * @Property securityProtectionEnabled: Specifies whether to enable the firewall feature. Default: False
+     */
+    readonly securityProtectionEnabled?: boolean | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to natgateway. Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
@@ -4412,6 +4436,7 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('eipBindMode', ros.validateString)(properties.eipBindMode));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityProtectionEnabled', ros.validateBoolean)(properties.securityProtectionEnabled));
     if(properties.duration && (typeof properties.duration) !== 'object') {
         errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
           data: properties.duration,
@@ -4445,6 +4470,7 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('icmpReplyEnabled', ros.validateBoolean)(properties.icmpReplyEnabled));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -4478,12 +4504,14 @@ function rosNatGatewayPropsToRosTemplate(properties: any, enableResourceProperty
       Description: ros.stringToRosTemplate(properties.description),
       Duration: ros.numberToRosTemplate(properties.duration),
       EipBindMode: ros.stringToRosTemplate(properties.eipBindMode),
+      IcmpReplyEnabled: ros.booleanToRosTemplate(properties.icmpReplyEnabled),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
       NatGatewayName: ros.stringToRosTemplate(properties.natGatewayName),
       NatType: ros.stringToRosTemplate(properties.natType),
       NetworkType: ros.stringToRosTemplate(properties.networkType),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+      SecurityProtectionEnabled: ros.booleanToRosTemplate(properties.securityProtectionEnabled),
       Tags: ros.listMapper(rosNatGatewayTagsPropertyToRosTemplate)(properties.tags),
     };
 }
@@ -4568,6 +4596,11 @@ export class RosNatGateway extends ros.RosResource {
     public eipBindMode: string | ros.IResolvable | undefined;
 
     /**
+     * @Property icmpReplyEnabled: Specifies whether to enable the ICMP non-retrieval feature. Default: True
+     */
+    public icmpReplyEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property instanceChargeType: The billing method. The default value is PostPaid (which means pay-as-you-go).
      */
     public instanceChargeType: string | ros.IResolvable | undefined;
@@ -4602,6 +4635,11 @@ export class RosNatGateway extends ros.RosResource {
     public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
+     * @Property securityProtectionEnabled: Specifies whether to enable the firewall feature. Default: False
+     */
+    public securityProtectionEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to natgateway. Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosNatGateway.TagsProperty[] | undefined;
@@ -4628,12 +4666,14 @@ export class RosNatGateway extends ros.RosResource {
         this.description = props.description;
         this.duration = props.duration;
         this.eipBindMode = props.eipBindMode;
+        this.icmpReplyEnabled = props.icmpReplyEnabled;
         this.instanceChargeType = props.instanceChargeType;
         this.internetChargeType = props.internetChargeType;
         this.natGatewayName = props.natGatewayName;
         this.natType = props.natType;
         this.networkType = props.networkType;
         this.pricingCycle = props.pricingCycle;
+        this.securityProtectionEnabled = props.securityProtectionEnabled;
         this.tags = props.tags;
     }
 
@@ -4648,12 +4688,14 @@ export class RosNatGateway extends ros.RosResource {
             description: this.description,
             duration: this.duration,
             eipBindMode: this.eipBindMode,
+            icmpReplyEnabled: this.icmpReplyEnabled,
             instanceChargeType: this.instanceChargeType,
             internetChargeType: this.internetChargeType,
             natGatewayName: this.natGatewayName,
             natType: this.natType,
             networkType: this.networkType,
             pricingCycle: this.pricingCycle,
+            securityProtectionEnabled: this.securityProtectionEnabled,
             tags: this.tags,
         };
     }
@@ -6854,6 +6896,14 @@ export interface RosSnatEntryProps {
     readonly snatTableId: string | ros.IResolvable;
 
     /**
+     * @Property eipAffinity: Specifies whether to enable EIP affinity. Valid values:
+     * 0: no
+     * 1: yes
+     * If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
+     */
+    readonly eipAffinity?: number | ros.IResolvable;
+
+    /**
      * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
      */
     readonly snatEntryName?: string | ros.IResolvable;
@@ -6879,6 +6929,13 @@ export interface RosSnatEntryProps {
 function RosSnatEntryPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.eipAffinity && (typeof properties.eipAffinity) !== 'object') {
+        errors.collect(ros.propertyValidator('eipAffinity', ros.validateAllowedValues)({
+          data: properties.eipAffinity,
+          allowedValues: [0,1],
+        }));
+    }
+    errors.collect(ros.propertyValidator('eipAffinity', ros.validateNumber)(properties.eipAffinity));
     errors.collect(ros.propertyValidator('snatEntryName', ros.validateString)(properties.snatEntryName));
     errors.collect(ros.propertyValidator('sourceVSwitchIds', ros.listValidator(ros.validateAny))(properties.sourceVSwitchIds));
     errors.collect(ros.propertyValidator('sourceCidr', ros.validateString)(properties.sourceCidr));
@@ -6905,6 +6962,7 @@ function rosSnatEntryPropsToRosTemplate(properties: any, enableResourcePropertyC
     return {
       SnatIp: ros.stringToRosTemplate(properties.snatIp),
       SnatTableId: ros.stringToRosTemplate(properties.snatTableId),
+      EipAffinity: ros.numberToRosTemplate(properties.eipAffinity),
       SnatEntryName: ros.stringToRosTemplate(properties.snatEntryName),
       SourceCIDR: ros.stringToRosTemplate(properties.sourceCidr),
       SourceVSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.sourceVSwitchIds),
@@ -6944,6 +7002,14 @@ export class RosSnatEntry extends ros.RosResource {
     public snatTableId: string | ros.IResolvable;
 
     /**
+     * @Property eipAffinity: Specifies whether to enable EIP affinity. Valid values:
+     * 0: no
+     * 1: yes
+     * If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
+     */
+    public eipAffinity: number | ros.IResolvable | undefined;
+
+    /**
      * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
      */
     public snatEntryName: string | ros.IResolvable | undefined;
@@ -6972,6 +7038,7 @@ export class RosSnatEntry extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.snatIp = props.snatIp;
         this.snatTableId = props.snatTableId;
+        this.eipAffinity = props.eipAffinity;
         this.snatEntryName = props.snatEntryName;
         this.sourceCidr = props.sourceCidr;
         this.sourceVSwitchIds = props.sourceVSwitchIds;
@@ -6982,6 +7049,7 @@ export class RosSnatEntry extends ros.RosResource {
         return {
             snatIp: this.snatIp,
             snatTableId: this.snatTableId,
+            eipAffinity: this.eipAffinity,
             snatEntryName: this.snatEntryName,
             sourceCidr: this.sourceCidr,
             sourceVSwitchIds: this.sourceVSwitchIds,

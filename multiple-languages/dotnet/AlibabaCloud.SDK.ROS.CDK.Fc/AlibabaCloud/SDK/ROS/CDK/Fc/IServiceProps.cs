@@ -79,6 +79,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
         }
 
+        /// <summary>Property ossMountConfig: The OSS mount configurations.</summary>
+        [JsiiProperty(name: "ossMountConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.OssMountConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? OssMountConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store.</summary>
         /// <remarks>
         /// The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
@@ -209,6 +220,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             [JsiiOptional]
             [JsiiProperty(name: "nasConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.NasConfigProperty\"}]}}", isOptional: true)]
             public object? NasConfig
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ossMountConfig: The OSS mount configurations.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ossMountConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.OssMountConfigProperty\"}]}}", isOptional: true)]
+            public object? OssMountConfig
             {
                 get => GetInstanceProperty<object?>();
             }

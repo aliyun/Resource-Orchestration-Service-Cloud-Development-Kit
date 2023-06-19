@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * The intrinsic function ``Fn::FindInMap`` returns the value corresponding to keys in a two-level map that is declared in the Mappings section.
+ * The intrinsic function <code>Fn::FindInMap</code> returns the value corresponding to keys in a two-level map that is declared in the Mappings section.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.888Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnFindInMap")
 public class FnFindInMap extends com.aliyun.ros.cdk.core.Intrinsic {
 
@@ -16,7 +16,7 @@ public class FnFindInMap extends com.aliyun.ros.cdk.core.Intrinsic {
     }
 
     /**
-     * Creates an ``Fn::FindInMap`` function.
+     * Creates an <code>Fn::FindInMap</code> function.
      * <p>
      * param mapName The logical name of a mapping declared in the Mappings section that contains the keys and values.
      * param topLevelKey The top-level key name. Its value is a list of key-value pairs.

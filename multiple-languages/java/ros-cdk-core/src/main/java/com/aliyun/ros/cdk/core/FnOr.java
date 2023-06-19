@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * <code>Fn::Or</code> acts as an OR operator. The minimum number
  * of conditions that you can include is 2, and the maximum is 10.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.884Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.891Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnOr")
 public class FnOr extends com.aliyun.ros.cdk.core.Intrinsic implements com.aliyun.ros.cdk.core.IRosConditionExpression {
 
@@ -19,7 +19,7 @@ public class FnOr extends com.aliyun.ros.cdk.core.Intrinsic implements com.aliyu
     }
 
     /**
-     * Creates an ``Fn::Or`` condition function.
+     * Creates an <code>Fn::Or</code> condition function.
      * <p>
      * @param condition A condition that evaluates to true or false. This parameter is required.
      */

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * The ``Fn::GetAtt`` intrinsic function returns the value of an attribute from a resource in the template.
+ * The <code>Fn::GetAtt</code> intrinsic function returns the value of an attribute from a resource in the template.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.889Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnGetAtt")
 public class FnGetAtt extends com.aliyun.ros.cdk.core.Intrinsic {
 
@@ -16,7 +16,7 @@ public class FnGetAtt extends com.aliyun.ros.cdk.core.Intrinsic {
     }
 
     /**
-     * Creates a ``Fn::GetAtt`` function.
+     * Creates a <code>Fn::GetAtt</code> function.
      * <p>
      * @param logicalNameOfResource The logical name (also called logical ID) of the resource that contains the attribute that you want. This parameter is required.
      * @param attributeName The name of the resource-specific attribute whose value you want. This parameter is required.

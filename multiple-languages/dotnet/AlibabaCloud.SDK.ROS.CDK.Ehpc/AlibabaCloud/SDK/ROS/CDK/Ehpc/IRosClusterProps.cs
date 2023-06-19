@@ -424,6 +424,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
+        /// When the value of DeployMode is Standard, the value range: scheduler, account, login, compute.
+        /// When the value of DeployMode is Simple, the value range: manager, login, compute.
+        /// When the value of DeployMode is Tiny, the value range: manager, compute.
+        /// </remarks>
+        [JsiiProperty(name: "ramNodeTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RamNodeTypes
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: ramRoleName: The name of the Resource Access Management (RAM) role.
+        /// You can call the ListRoles operation provided by RAM to query the created RAM roles.
+        /// </remarks>
+        [JsiiProperty(name: "ramRoleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RamRoleName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
         /// </remarks>
         [JsiiProperty(name: "remoteDirectory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -623,6 +653,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         [JsiiProperty(name: "volumeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? VolumeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs.
+        /// </remarks>
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? VpcId
         {
             get
             {
@@ -1005,6 +1048,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
+            /// When the value of DeployMode is Standard, the value range: scheduler, account, login, compute.
+            /// When the value of DeployMode is Simple, the value range: manager, login, compute.
+            /// When the value of DeployMode is Tiny, the value range: manager, compute.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ramNodeTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? RamNodeTypes
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ramRoleName: The name of the Resource Access Management (RAM) role.
+            /// You can call the ListRoles operation provided by RAM to query the created RAM roles.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ramRoleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RamRoleName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
             /// </remarks>
             [JsiiOptional]
@@ -1165,6 +1232,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             [JsiiOptional]
             [JsiiProperty(name: "volumeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? VolumeType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcId
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.graphdatabase;
 
 /**
- * A ROS resource type:  `ALIYUN::GraphDatabase::DbInstance`.
+ * A ROS resource type:  <code>ALIYUN::GraphDatabase::DbInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.025Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.319Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.graphdatabase.$Module.class, fqn = "@alicloud/ros-cdk-graphdatabase.DbInstance")
 public class DbInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class DbInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::GraphDatabase::DbInstance`.
+     * Create a new <code>ALIYUN::GraphDatabase::DbInstance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class DbInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::GraphDatabase::DbInstance`.
+     * Create a new <code>ALIYUN::GraphDatabase::DbInstance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -750,7 +750,7 @@ public class DbInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.graphdatabase.DbInstance}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.graphdatabase.DbInstance}.
          */
         @Override
         public com.aliyun.ros.cdk.graphdatabase.DbInstance build() {

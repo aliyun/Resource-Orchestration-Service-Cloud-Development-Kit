@@ -204,6 +204,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
         }
 
+        private object? _ossMountConfig;
+
+        /// <summary>Property ossMountConfig: The OSS mount configurations.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "ossMountConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.OssMountConfigProperty\"}]}}", isOptional: true)]
+        public object? OssMountConfig
+        {
+            get => _ossMountConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ossMountConfig = value;
+            }
+        }
+
         private object? _role;
 
         /// <summary>Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store.</summary>

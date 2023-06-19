@@ -1,15 +1,15 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * Properties for defining a `ALIYUN::ROS::WaitConditionHandle`.
+ * Properties for defining a <code>ALIYUN::ROS::WaitConditionHandle</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.953Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.478Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.WaitConditionHandleProps")
 @software.amazon.jsii.Jsii.Proxy(WaitConditionHandleProps.Jsii$Proxy.class)
 public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
+     * Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count &gt;= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
      * <p>
      * If Count takes effect, signals with id &gt; Count will be deleted before update.
      * The default value is -1, which means no effect.
@@ -47,7 +47,7 @@ public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link WaitConditionHandleProps#getCount}
-         * @param count Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
+         * @param count Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count &gt;= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
          *              If Count takes effect, signals with id &gt; Count will be deleted before update.
          *              The default value is -1, which means no effect.
          *              It is recommended to quote the same value with WaitCondition.Count.
@@ -60,7 +60,7 @@ public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link WaitConditionHandleProps#getCount}
-         * @param count Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
+         * @param count Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count &gt;= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
          *              If Count takes effect, signals with id &gt; Count will be deleted before update.
          *              The default value is -1, which means no effect.
          *              It is recommended to quote the same value with WaitCondition.Count.

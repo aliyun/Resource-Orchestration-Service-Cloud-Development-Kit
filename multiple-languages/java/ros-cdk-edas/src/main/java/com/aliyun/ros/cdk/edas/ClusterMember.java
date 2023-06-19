@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.edas;
 
 /**
- * A ROS resource type:  `ALIYUN::EDAS::ClusterMember`.
+ * A ROS resource type:  <code>ALIYUN::EDAS::ClusterMember</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.502Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.711Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.ClusterMember")
 public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::EDAS::ClusterMember`.
+     * Create a new <code>ALIYUN::EDAS::ClusterMember</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::EDAS::ClusterMember`.
+     * Create a new <code>ALIYUN::EDAS::ClusterMember</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -60,6 +60,13 @@ public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterMemberIds() {
         return software.amazon.jsii.Kernel.get(this, "attrClusterMemberIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute EcuIds: ECU IDs corresponding to the ECS instance IDs.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEcuIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrEcuIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -167,7 +174,7 @@ public class ClusterMember extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.edas.ClusterMember}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.edas.ClusterMember}.
          */
         @Override
         public com.aliyun.ros.cdk.edas.ClusterMember build() {

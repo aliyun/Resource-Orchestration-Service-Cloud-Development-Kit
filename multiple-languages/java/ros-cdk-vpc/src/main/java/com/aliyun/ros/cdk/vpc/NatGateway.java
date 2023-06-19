@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::NatGateway`.
+ * A ROS resource type:  <code>ALIYUN::VPC::NatGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.358Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.905Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NatGateway")
 public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::NatGateway`.
+     * Create a new <code>ALIYUN::VPC::NatGateway</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::NatGateway`.
+     * Create a new <code>ALIYUN::VPC::NatGateway</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -308,6 +308,31 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property icmpReplyEnabled: Specifies whether to enable the ICMP non-retrieval feature.
+         * <p>
+         * Default: True
+         * <p>
+         * @return {@code this}
+         * @param icmpReplyEnabled Property icmpReplyEnabled: Specifies whether to enable the ICMP non-retrieval feature. This parameter is required.
+         */
+        public Builder icmpReplyEnabled(final java.lang.Boolean icmpReplyEnabled) {
+            this.props.icmpReplyEnabled(icmpReplyEnabled);
+            return this;
+        }
+        /**
+         * Property icmpReplyEnabled: Specifies whether to enable the ICMP non-retrieval feature.
+         * <p>
+         * Default: True
+         * <p>
+         * @return {@code this}
+         * @param icmpReplyEnabled Property icmpReplyEnabled: Specifies whether to enable the ICMP non-retrieval feature. This parameter is required.
+         */
+        public Builder icmpReplyEnabled(final com.aliyun.ros.cdk.core.IResolvable icmpReplyEnabled) {
+            this.props.icmpReplyEnabled(icmpReplyEnabled);
+            return this;
+        }
+
+        /**
          * Property instanceChargeType: The billing method.
          * <p>
          * The default value is PostPaid (which means pay-as-you-go).
@@ -466,6 +491,31 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property securityProtectionEnabled: Specifies whether to enable the firewall feature.
+         * <p>
+         * Default: False
+         * <p>
+         * @return {@code this}
+         * @param securityProtectionEnabled Property securityProtectionEnabled: Specifies whether to enable the firewall feature. This parameter is required.
+         */
+        public Builder securityProtectionEnabled(final java.lang.Boolean securityProtectionEnabled) {
+            this.props.securityProtectionEnabled(securityProtectionEnabled);
+            return this;
+        }
+        /**
+         * Property securityProtectionEnabled: Specifies whether to enable the firewall feature.
+         * <p>
+         * Default: False
+         * <p>
+         * @return {@code this}
+         * @param securityProtectionEnabled Property securityProtectionEnabled: Specifies whether to enable the firewall feature. This parameter is required.
+         */
+        public Builder securityProtectionEnabled(final com.aliyun.ros.cdk.core.IResolvable securityProtectionEnabled) {
+            this.props.securityProtectionEnabled(securityProtectionEnabled);
+            return this;
+        }
+
+        /**
          * Property tags: Tags to attach to natgateway.
          * <p>
          * Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
@@ -479,7 +529,7 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.vpc.NatGateway}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.vpc.NatGateway}.
          */
         @Override
         public com.aliyun.ros.cdk.vpc.NatGateway build() {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * Properties for defining a `ALIYUN::DTS::MigrationJob`.
+ * Properties for defining a <code>ALIYUN::DTS::MigrationJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.977Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.134Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.MigrationJobProps")
 @software.amazon.jsii.Jsii.Proxy(MigrationJobProps.Jsii$Proxy.class)
 public interface MigrationJobProps extends software.amazon.jsii.JsiiSerializable {

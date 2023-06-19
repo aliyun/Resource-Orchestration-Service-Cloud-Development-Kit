@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
+ * A ROS resource type:  <code>ALIYUN::VPC::PeeringRouterInterfaceConnection</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.371Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.929Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.PeeringRouterInterfaceConnection")
 public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Re
     }
 
     /**
-     * Create a new `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
+     * Create a new <code>ALIYUN::VPC::PeeringRouterInterfaceConnection</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Re
     }
 
     /**
-     * Create a new `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
+     * Create a new <code>ALIYUN::VPC::PeeringRouterInterfaceConnection</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -139,7 +139,7 @@ public class PeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.Re
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.vpc.PeeringRouterInterfaceConnection}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.vpc.PeeringRouterInterfaceConnection}.
          */
         @Override
         public com.aliyun.ros.cdk.vpc.PeeringRouterInterfaceConnection build() {

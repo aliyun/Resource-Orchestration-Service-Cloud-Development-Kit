@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * own, more specific types returned from the .ref attribute. Also, some
  * resources aren't referenceable at all (such as BucketPolicies or GatewayAttachments).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.921Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.933Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosRefElement")
 public abstract class RosRefElement extends com.aliyun.ros.cdk.core.RosElement {
 
@@ -36,7 +36,7 @@ public abstract class RosRefElement extends com.aliyun.ros.cdk.core.RosElement {
     }
 
     /**
-     * Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
+     * Return a string that will be resolved to a RosTemplate <code>{ Ref }</code> for this element.
      * <p>
      * If, by any chance, the intrinsic reference of a resource is not a string, you could
      * coerce it to an IResolvable through <code>Lazy.any({ produce: resource.ref })</code>.

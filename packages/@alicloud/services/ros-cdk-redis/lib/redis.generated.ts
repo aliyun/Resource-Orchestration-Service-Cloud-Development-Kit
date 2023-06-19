@@ -414,7 +414,7 @@ export interface RosInstanceProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
-     * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
+     * @Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     readonly engineVersion?: string | ros.IResolvable;
 
@@ -490,6 +490,11 @@ export interface RosInstanceProps {
     readonly tags?: RosInstance.TagsProperty[];
 
     /**
+     * @Property tairConfig: Tair config. This parameter is available only if the InstanceClass parameter is start with tair.
+     */
+    readonly tairConfig?: RosInstance.TairConfigProperty | ros.IResolvable;
+
+    /**
      * @Property vpcId: The VPC id to create ecs instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -523,12 +528,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('connections', RosInstance_ConnectionsPropertyValidator)(properties.connections));
-    if(properties.engineVersion && (typeof properties.engineVersion) !== 'object') {
-        errors.collect(ros.propertyValidator('engineVersion', ros.validateAllowedValues)({
-          data: properties.engineVersion,
-          allowedValues: ["2.8","4.0","5.0"],
-        }));
-    }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
@@ -571,6 +570,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
+    errors.collect(ros.propertyValidator('tairConfig', RosInstance_TairConfigPropertyValidator)(properties.tairConfig));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
@@ -631,6 +631,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      TairConfig: rosInstanceTairConfigPropertyToRosTemplate(properties.tairConfig),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VpcPasswordFree: ros.booleanToRosTemplate(properties.vpcPasswordFree),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -839,7 +840,7 @@ export class RosInstance extends ros.RosResource {
     public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
+     * @Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     public engineVersion: string | ros.IResolvable | undefined;
 
@@ -913,6 +914,11 @@ export class RosInstance extends ros.RosResource {
      * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosInstance.TagsProperty[] | undefined;
+
+    /**
+     * @Property tairConfig: Tair config. This parameter is available only if the InstanceClass parameter is start with tair.
+     */
+    public tairConfig: RosInstance.TairConfigProperty | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: The VPC id to create ecs instance.
@@ -997,6 +1003,7 @@ export class RosInstance extends ros.RosResource {
         this.securityGroupId = props.securityGroupId;
         this.sslEnabled = props.sslEnabled;
         this.tags = props.tags;
+        this.tairConfig = props.tairConfig;
         this.vpcId = props.vpcId;
         this.vpcPasswordFree = props.vpcPasswordFree;
         this.vSwitchId = props.vSwitchId;
@@ -1025,6 +1032,7 @@ export class RosInstance extends ros.RosResource {
             securityGroupId: this.securityGroupId,
             sslEnabled: this.sslEnabled,
             tags: this.tags,
+            tairConfig: this.tairConfig,
             vpcId: this.vpcId,
             vpcPasswordFree: this.vpcPasswordFree,
             vSwitchId: this.vSwitchId,
@@ -1465,6 +1473,71 @@ export namespace RosInstance {
     /**
      * @stability external
      */
+    export interface TairConfigProperty {
+        /**
+         * @Property storageType: The storage type of the instance. Set the value to essd_pl1.This parameter is available only if the InstanceClass parameter is start with tair.essdEnumeration Value:
+     * essd_pl0
+     * essd_pl1
+     * essd_pl
+     * essd_pl3
+     *
+         */
+        readonly storageType?: string | ros.IResolvable;
+        /**
+         * @Property storage: The storage space of cloud disks. Valid values vary based on the instance specifications. 
+     * For more information, see ESSD-based instances.
+     * This parameter is available and required only if the InstanceClass parameter is start with tair.essd
+         */
+        readonly storage?: number | ros.IResolvable;
+        /**
+         * @Property shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+     * 1: You can create an instance in the standard architecture that contains only a single data node. 
+     * For more information about the standard architecture, see Cluster master-replica instances.
+     * 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes. 
+     * For more information about the cluster architecture, see Cluster master-replica instances.
+     * This parameter is available and required only if the InstanceClass parameter is start with tair.rdb or tair.scm
+         */
+        readonly shardCount?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TairConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `TairConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_TairConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('storageType', ros.validateString)(properties.storageType));
+    errors.collect(ros.propertyValidator('storage', ros.validateNumber)(properties.storage));
+    errors.collect(ros.propertyValidator('shardCount', ros.validateNumber)(properties.shardCount));
+    return errors.wrap('supplied properties not correct for "TairConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.TairConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `TairConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.TairConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceTairConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_TairConfigPropertyValidator(properties).assertSuccess();
+    return {
+      StorageType: ros.stringToRosTemplate(properties.storageType),
+      Storage: ros.numberToRosTemplate(properties.storage),
+      ShardCount: ros.numberToRosTemplate(properties.shardCount),
+    };
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
     export interface VpcPrivateConnectionProperty {
         /**
          * @Property connectionPort: The service port number of the ApsaraDB for Redis instance. Valid values: 1024 to 65535.
@@ -1563,7 +1636,7 @@ export interface RosPrepayInstanceProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
-     * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
+     * @Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     readonly engineVersion?: string | ros.IResolvable;
 
@@ -1639,6 +1712,11 @@ export interface RosPrepayInstanceProps {
     readonly tags?: RosPrepayInstance.TagsProperty[];
 
     /**
+     * @Property tairConfig: Tair config. This parameter is available only if the InstanceClass parameter is start with tair.
+     */
+    readonly tairConfig?: RosPrepayInstance.TairConfigProperty | ros.IResolvable;
+
+    /**
      * @Property vpcId: The VPC id to create ecs instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -1672,12 +1750,6 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('connections', RosPrepayInstance_ConnectionsPropertyValidator)(properties.connections));
-    if(properties.engineVersion && (typeof properties.engineVersion) !== 'object') {
-        errors.collect(ros.propertyValidator('engineVersion', ros.validateAllowedValues)({
-          data: properties.engineVersion,
-          allowedValues: ["2.8","4.0","5.0"],
-        }));
-    }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
@@ -1721,6 +1793,7 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('tairConfig', RosPrepayInstance_TairConfigPropertyValidator)(properties.tairConfig));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1774,6 +1847,7 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
       Tags: ros.listMapper(rosPrepayInstanceTagsPropertyToRosTemplate)(properties.tags),
+      TairConfig: rosPrepayInstanceTairConfigPropertyToRosTemplate(properties.tairConfig),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VpcPasswordFree: ros.booleanToRosTemplate(properties.vpcPasswordFree),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -1985,7 +2059,7 @@ export class RosPrepayInstance extends ros.RosResource {
     public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
+     * @Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     public engineVersion: string | ros.IResolvable | undefined;
 
@@ -2059,6 +2133,11 @@ export class RosPrepayInstance extends ros.RosResource {
      * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosPrepayInstance.TagsProperty[] | undefined;
+
+    /**
+     * @Property tairConfig: Tair config. This parameter is available only if the InstanceClass parameter is start with tair.
+     */
+    public tairConfig: RosPrepayInstance.TairConfigProperty | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: The VPC id to create ecs instance.
@@ -2143,6 +2222,7 @@ export class RosPrepayInstance extends ros.RosResource {
         this.securityGroupId = props.securityGroupId;
         this.sslEnabled = props.sslEnabled;
         this.tags = props.tags;
+        this.tairConfig = props.tairConfig;
         this.vpcId = props.vpcId;
         this.vpcPasswordFree = props.vpcPasswordFree;
         this.vSwitchId = props.vSwitchId;
@@ -2171,6 +2251,7 @@ export class RosPrepayInstance extends ros.RosResource {
             securityGroupId: this.securityGroupId,
             sslEnabled: this.sslEnabled,
             tags: this.tags,
+            tairConfig: this.tairConfig,
             vpcId: this.vpcId,
             vpcPasswordFree: this.vpcPasswordFree,
             vSwitchId: this.vSwitchId,
@@ -2604,6 +2685,71 @@ function rosPrepayInstanceTagsPropertyToRosTemplate(properties: any): any {
     return {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosPrepayInstance {
+    /**
+     * @stability external
+     */
+    export interface TairConfigProperty {
+        /**
+         * @Property storageType: The storage type of the instance. Set the value to essd_pl1.This parameter is available only if the InstanceClass parameter is start with tair.essdEnumeration Value:
+     * essd_pl0
+     * essd_pl1
+     * essd_pl
+     * essd_pl3
+     *
+         */
+        readonly storageType?: string | ros.IResolvable;
+        /**
+         * @Property storage: The storage space of cloud disks. Valid values vary based on the instance specifications. 
+     * For more information, see ESSD-based instances.
+     * This parameter is available and required only if the InstanceClass parameter is start with tair.essd
+         */
+        readonly storage?: number | ros.IResolvable;
+        /**
+         * @Property shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+     * 1: You can create an instance in the standard architecture that contains only a single data node. 
+     * For more information about the standard architecture, see Cluster master-replica instances.
+     * 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes. 
+     * For more information about the cluster architecture, see Cluster master-replica instances.
+     * This parameter is available and required only if the InstanceClass parameter is start with tair.rdb or tair.scm
+         */
+        readonly shardCount?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TairConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `TairConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrepayInstance_TairConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('storageType', ros.validateString)(properties.storageType));
+    errors.collect(ros.propertyValidator('storage', ros.validateNumber)(properties.storage));
+    errors.collect(ros.propertyValidator('shardCount', ros.validateNumber)(properties.shardCount));
+    return errors.wrap('supplied properties not correct for "TairConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.TairConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `TairConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.TairConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosPrepayInstanceTairConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPrepayInstance_TairConfigPropertyValidator(properties).assertSuccess();
+    return {
+      StorageType: ros.stringToRosTemplate(properties.storageType),
+      Storage: ros.numberToRosTemplate(properties.storage),
+      ShardCount: ros.numberToRosTemplate(properties.shardCount),
     };
 }
 

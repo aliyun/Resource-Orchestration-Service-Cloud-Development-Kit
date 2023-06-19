@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * A ROS resource type:  `ALIYUN::ESS::ScalingRule`.
+ * A ROS resource type:  <code>ALIYUN::ESS::ScalingRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.825Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.075Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingRule")
 public class ScalingRule extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ESS::ScalingRule`.
+     * Create a new <code>ALIYUN::ESS::ScalingRule</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ESS::ScalingRule`.
+     * Create a new <code>ALIYUN::ESS::ScalingRule</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -678,7 +678,7 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ess.ScalingRule}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ess.ScalingRule}.
          */
         @Override
         public com.aliyun.ros.cdk.ess.ScalingRule build() {

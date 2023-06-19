@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.acm;
 
 /**
- * A ROS resource type:  `ALIYUN::ACM::Configuration`.
+ * A ROS resource type:  <code>ALIYUN::ACM::Configuration</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.937Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.953Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.Configuration")
 public class Configuration extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Configuration extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ACM::Configuration`.
+     * Create a new <code>ALIYUN::ACM::Configuration</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Configuration extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ACM::Configuration`.
+     * Create a new <code>ALIYUN::ACM::Configuration</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -270,7 +270,7 @@ public class Configuration extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.acm.Configuration}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.acm.Configuration}.
          */
         @Override
         public com.aliyun.ros.cdk.acm.Configuration build() {

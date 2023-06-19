@@ -22,6 +22,7 @@ export * from './networkinterface';
 export * from './networkinterfaceattachment';
 export * from './networkinterfacepermission';
 export * from './prefixlist';
+export * from './ramroleattachment';
 export * from './route';
 export * from './runcommand';
 export * from './snatentry';

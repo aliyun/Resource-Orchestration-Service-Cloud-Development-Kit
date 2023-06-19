@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-eais.Instance=com.aliyun.ros.cdk.eais.Instance
+@alicloud/ros-cdk-eais.InstanceProps=com.aliyun.ros.cdk.eais.InstanceProps
+@alicloud/ros-cdk-eais.RosInstance=com.aliyun.ros.cdk.eais.RosInstance
+@alicloud/ros-cdk-eais.RosInstance.EnvironmentVarProperty=com.aliyun.ros.cdk.eais.RosInstance$EnvironmentVarProperty
+@alicloud/ros-cdk-eais.RosInstanceProps=com.aliyun.ros.cdk.eais.RosInstanceProps

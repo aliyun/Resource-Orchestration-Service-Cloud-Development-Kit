@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * Properties for defining a `ALIYUN::SLS::Project`.
+ * Properties for defining a <code>ALIYUN::SLS::Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.216Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.747Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.ProjectProps")
 @software.amazon.jsii.Jsii.Proxy(ProjectProps.Jsii$Proxy.class)
 public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,7 +18,7 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
-     * Property description: Project description: <>'"\ is not supported, up to 64 characters.
+     * Property description: Project description: &lt;&gt;'"\ is not supported, up to 64 characters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -75,7 +75,7 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ProjectProps#getDescription}
-         * @param description Property description: Project description: <>'"\ is not supported, up to 64 characters.
+         * @param description Property description: Project description: &lt;&gt;'"\ is not supported, up to 64 characters.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -85,7 +85,7 @@ public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ProjectProps#getDescription}
-         * @param description Property description: Project description: <>'"\ is not supported, up to 64 characters.
+         * @param description Property description: Project description: &lt;&gt;'"\ is not supported, up to 64 characters.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {

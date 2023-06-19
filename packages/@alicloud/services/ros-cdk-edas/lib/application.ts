@@ -32,6 +32,11 @@ export interface ApplicationProps {
     readonly componentIds?: string | ros.IResolvable;
 
     /**
+     * Property deployment: Deploy application information to ECS clusters
+     */
+    readonly deployment?: RosApplication.DeploymentProperty | ros.IResolvable;
+
+    /**
      * Property description: Descriptive information
      */
     readonly description?: string | ros.IResolvable;
@@ -103,6 +108,7 @@ export class Application extends ros.Resource {
             healthCheckUrl: props.healthCheckUrl,
             clusterId: props.clusterId,
             packageType: props.packageType === undefined || props.packageType === null ? 'war' : props.packageType,
+            deployment: props.deployment,
             buildPackId: props.buildPackId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApplication;

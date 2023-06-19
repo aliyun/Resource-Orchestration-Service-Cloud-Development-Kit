@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * Properties for defining a `ALIYUN::VPC::NatGateway`.
+ * Properties for defining a <code>ALIYUN::VPC::NatGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.428Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.994Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosNatGatewayProps.Jsii$Proxy.class)
 public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,6 +54,12 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIcmpReplyEnabled() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
@@ -90,6 +96,12 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityProtectionEnabled() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> getTags() {
         return null;
     }
@@ -112,12 +124,14 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object description;
         java.lang.Object duration;
         java.lang.Object eipBindMode;
+        java.lang.Object icmpReplyEnabled;
         java.lang.Object instanceChargeType;
         java.lang.Object internetChargeType;
         java.lang.Object natGatewayName;
         java.lang.Object natType;
         java.lang.Object networkType;
         java.lang.Object pricingCycle;
+        java.lang.Object securityProtectionEnabled;
         java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
         /**
@@ -281,6 +295,26 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosNatGatewayProps#getIcmpReplyEnabled}
+         * @param icmpReplyEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder icmpReplyEnabled(java.lang.Boolean icmpReplyEnabled) {
+            this.icmpReplyEnabled = icmpReplyEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNatGatewayProps#getIcmpReplyEnabled}
+         * @param icmpReplyEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder icmpReplyEnabled(com.aliyun.ros.cdk.core.IResolvable icmpReplyEnabled) {
+            this.icmpReplyEnabled = icmpReplyEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosNatGatewayProps#getInstanceChargeType}
          * @param instanceChargeType the value to be set.
          * @return {@code this}
@@ -401,6 +435,26 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosNatGatewayProps#getSecurityProtectionEnabled}
+         * @param securityProtectionEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityProtectionEnabled(java.lang.Boolean securityProtectionEnabled) {
+            this.securityProtectionEnabled = securityProtectionEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNatGatewayProps#getSecurityProtectionEnabled}
+         * @param securityProtectionEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityProtectionEnabled(com.aliyun.ros.cdk.core.IResolvable securityProtectionEnabled) {
+            this.securityProtectionEnabled = securityProtectionEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosNatGatewayProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -435,12 +489,14 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object description;
         private final java.lang.Object duration;
         private final java.lang.Object eipBindMode;
+        private final java.lang.Object icmpReplyEnabled;
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object internetChargeType;
         private final java.lang.Object natGatewayName;
         private final java.lang.Object natType;
         private final java.lang.Object networkType;
         private final java.lang.Object pricingCycle;
+        private final java.lang.Object securityProtectionEnabled;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags;
 
         /**
@@ -457,12 +513,14 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.eipBindMode = software.amazon.jsii.Kernel.get(this, "eipBindMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.icmpReplyEnabled = software.amazon.jsii.Kernel.get(this, "icmpReplyEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natGatewayName = software.amazon.jsii.Kernel.get(this, "natGatewayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natType = software.amazon.jsii.Kernel.get(this, "natType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityProtectionEnabled = software.amazon.jsii.Kernel.get(this, "securityProtectionEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty.class)));
         }
 
@@ -480,12 +538,14 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             this.description = builder.description;
             this.duration = builder.duration;
             this.eipBindMode = builder.eipBindMode;
+            this.icmpReplyEnabled = builder.icmpReplyEnabled;
             this.instanceChargeType = builder.instanceChargeType;
             this.internetChargeType = builder.internetChargeType;
             this.natGatewayName = builder.natGatewayName;
             this.natType = builder.natType;
             this.networkType = builder.networkType;
             this.pricingCycle = builder.pricingCycle;
+            this.securityProtectionEnabled = builder.securityProtectionEnabled;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty>)builder.tags;
         }
 
@@ -530,6 +590,11 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getIcmpReplyEnabled() {
+            return this.icmpReplyEnabled;
+        }
+
+        @Override
         public final java.lang.Object getInstanceChargeType() {
             return this.instanceChargeType;
         }
@@ -557,6 +622,11 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityProtectionEnabled() {
+            return this.securityProtectionEnabled;
         }
 
         @Override
@@ -590,6 +660,9 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getEipBindMode() != null) {
                 data.set("eipBindMode", om.valueToTree(this.getEipBindMode()));
             }
+            if (this.getIcmpReplyEnabled() != null) {
+                data.set("icmpReplyEnabled", om.valueToTree(this.getIcmpReplyEnabled()));
+            }
             if (this.getInstanceChargeType() != null) {
                 data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
             }
@@ -607,6 +680,9 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
+            }
+            if (this.getSecurityProtectionEnabled() != null) {
+                data.set("securityProtectionEnabled", om.valueToTree(this.getSecurityProtectionEnabled()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -637,12 +713,14 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
             if (this.eipBindMode != null ? !this.eipBindMode.equals(that.eipBindMode) : that.eipBindMode != null) return false;
+            if (this.icmpReplyEnabled != null ? !this.icmpReplyEnabled.equals(that.icmpReplyEnabled) : that.icmpReplyEnabled != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
             if (this.natGatewayName != null ? !this.natGatewayName.equals(that.natGatewayName) : that.natGatewayName != null) return false;
             if (this.natType != null ? !this.natType.equals(that.natType) : that.natType != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
+            if (this.securityProtectionEnabled != null ? !this.securityProtectionEnabled.equals(that.securityProtectionEnabled) : that.securityProtectionEnabled != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
@@ -656,12 +734,14 @@ public interface RosNatGatewayProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
             result = 31 * result + (this.eipBindMode != null ? this.eipBindMode.hashCode() : 0);
+            result = 31 * result + (this.icmpReplyEnabled != null ? this.icmpReplyEnabled.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
             result = 31 * result + (this.natGatewayName != null ? this.natGatewayName.hashCode() : 0);
             result = 31 * result + (this.natType != null ? this.natType.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
+            result = 31 * result + (this.securityProtectionEnabled != null ? this.securityProtectionEnabled.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }

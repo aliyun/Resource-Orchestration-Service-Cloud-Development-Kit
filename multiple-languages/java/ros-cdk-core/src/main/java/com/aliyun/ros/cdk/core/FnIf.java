@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Returns one value if the specified condition evaluates to true and another value if the specified condition evaluates to false.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.889Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnIf")
 public class FnIf extends com.aliyun.ros.cdk.core.Intrinsic implements com.aliyun.ros.cdk.core.IRosConditionExpression {
 
@@ -16,7 +16,7 @@ public class FnIf extends com.aliyun.ros.cdk.core.Intrinsic implements com.aliyu
     }
 
     /**
-     * Creates an ``Fn::If`` condition function.
+     * Creates an <code>Fn::If</code> condition function.
      * <p>
      * @param condition A reference to a condition in the Conditions section. This parameter is required.
      * @param valueIfTrue A value to be returned if the specified condition evaluates to true. This parameter is required.

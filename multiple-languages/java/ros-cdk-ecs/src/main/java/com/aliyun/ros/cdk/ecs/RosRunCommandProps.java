@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a `ALIYUN::ECS::RunCommand`.
+ * Properties for defining a <code>ALIYUN::ECS::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.416Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.599Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRunCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RosRunCommandProps.Jsii$Proxy.class)
 public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializable {
@@ -64,6 +64,12 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRunAgainOn() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSync() {
         return null;
     }
@@ -106,6 +112,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object keepCommand;
         java.lang.Object name;
         java.lang.Object parameters;
+        java.lang.Object runAgainOn;
         java.lang.Object sync;
         java.lang.Object timed;
         java.lang.Object timeout;
@@ -312,6 +319,26 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRunCommandProps#getRunAgainOn}
+         * @param runAgainOn the value to be set.
+         * @return {@code this}
+         */
+        public Builder runAgainOn(com.aliyun.ros.cdk.core.IResolvable runAgainOn) {
+            this.runAgainOn = runAgainOn;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRunCommandProps#getRunAgainOn}
+         * @param runAgainOn the value to be set.
+         * @return {@code this}
+         */
+        public Builder runAgainOn(java.util.List<? extends java.lang.Object> runAgainOn) {
+            this.runAgainOn = runAgainOn;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRunCommandProps#getSync}
          * @param sync the value to be set.
          * @return {@code this}
@@ -417,6 +444,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object keepCommand;
         private final java.lang.Object name;
         private final java.lang.Object parameters;
+        private final java.lang.Object runAgainOn;
         private final java.lang.Object sync;
         private final java.lang.Object timed;
         private final java.lang.Object timeout;
@@ -438,6 +466,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             this.keepCommand = software.amazon.jsii.Kernel.get(this, "keepCommand", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.runAgainOn = software.amazon.jsii.Kernel.get(this, "runAgainOn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sync = software.amazon.jsii.Kernel.get(this, "sync", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timed = software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -459,6 +488,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             this.keepCommand = builder.keepCommand;
             this.name = builder.name;
             this.parameters = builder.parameters;
+            this.runAgainOn = builder.runAgainOn;
             this.sync = builder.sync;
             this.timed = builder.timed;
             this.timeout = builder.timeout;
@@ -516,6 +546,11 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getRunAgainOn() {
+            return this.runAgainOn;
+        }
+
+        @Override
         public final java.lang.Object getSync() {
             return this.sync;
         }
@@ -565,6 +600,9 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getParameters() != null) {
                 data.set("parameters", om.valueToTree(this.getParameters()));
             }
+            if (this.getRunAgainOn() != null) {
+                data.set("runAgainOn", om.valueToTree(this.getRunAgainOn()));
+            }
             if (this.getSync() != null) {
                 data.set("sync", om.valueToTree(this.getSync()));
             }
@@ -605,6 +643,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             if (this.keepCommand != null ? !this.keepCommand.equals(that.keepCommand) : that.keepCommand != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
+            if (this.runAgainOn != null ? !this.runAgainOn.equals(that.runAgainOn) : that.runAgainOn != null) return false;
             if (this.sync != null ? !this.sync.equals(that.sync) : that.sync != null) return false;
             if (this.timed != null ? !this.timed.equals(that.timed) : that.timed != null) return false;
             if (this.timeout != null ? !this.timeout.equals(that.timeout) : that.timeout != null) return false;
@@ -623,6 +662,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.keepCommand != null ? this.keepCommand.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
+            result = 31 * result + (this.runAgainOn != null ? this.runAgainOn.hashCode() : 0);
             result = 31 * result + (this.sync != null ? this.sync.hashCode() : 0);
             result = 31 * result + (this.timed != null ? this.timed.hashCode() : 0);
             result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);

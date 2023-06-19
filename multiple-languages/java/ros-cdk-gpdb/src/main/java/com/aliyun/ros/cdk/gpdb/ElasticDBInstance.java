@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * A ROS resource type:  `ALIYUN::GPDB::ElasticDBInstance`.
+ * A ROS resource type:  <code>ALIYUN::GPDB::ElasticDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.988Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.280Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.ElasticDBInstance")
 public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::GPDB::ElasticDBInstance`.
+     * Create a new <code>ALIYUN::GPDB::ElasticDBInstance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::GPDB::ElasticDBInstance`.
+     * Create a new <code>ALIYUN::GPDB::ElasticDBInstance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -113,6 +113,8 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property engineVersion: The version of the database engine.
          * <p>
+         * For example: 6.0、7.0
+         * <p>
          * @return {@code this}
          * @param engineVersion Property engineVersion: The version of the database engine. This parameter is required.
          */
@@ -122,6 +124,8 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property engineVersion: The version of the database engine.
+         * <p>
+         * For example: 6.0、7.0
          * <p>
          * @return {@code this}
          * @param engineVersion Property engineVersion: The version of the database engine. This parameter is required.
@@ -159,7 +163,8 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property segNodeNum: The number of segment nodes.
          * <p>
-         * Minimum is 4, max is 512, step is 4.
+         * For the high availability version, the value ranges from 4 to 512.
+         * The basic version ranges from 2 to 512.
          * <p>
          * @return {@code this}
          * @param segNodeNum Property segNodeNum: The number of segment nodes. This parameter is required.
@@ -171,7 +176,8 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property segNodeNum: The number of segment nodes.
          * <p>
-         * Minimum is 4, max is 512, step is 4.
+         * For the high availability version, the value ranges from 4 to 512.
+         * The basic version ranges from 2 to 512.
          * <p>
          * @return {@code this}
          * @param segNodeNum Property segNodeNum: The number of segment nodes. This parameter is required.
@@ -282,6 +288,8 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
          * <p>
+         * This parameter must be passed in to create a storage reservation mode instance.
+         * <p>
          * @return {@code this}
          * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability. This parameter is required.
          */
@@ -291,6 +299,8 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+         * <p>
+         * This parameter must be passed in to create a storage reservation mode instance.
          * <p>
          * @return {@code this}
          * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability. This parameter is required.
@@ -322,6 +332,31 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder dbInstanceDescription(final com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
             this.props.dbInstanceDescription(dbInstanceDescription);
+            return this;
+        }
+
+        /**
+         * Property dbInstanceMode: The db instance mode.
+         * <p>
+         * Valid values: StorageElastic, Serverless, Classic.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceMode Property dbInstanceMode: The db instance mode. This parameter is required.
+         */
+        public Builder dbInstanceMode(final java.lang.String dbInstanceMode) {
+            this.props.dbInstanceMode(dbInstanceMode);
+            return this;
+        }
+        /**
+         * Property dbInstanceMode: The db instance mode.
+         * <p>
+         * Valid values: StorageElastic, Serverless, Classic.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceMode Property dbInstanceMode: The db instance mode. This parameter is required.
+         */
+        public Builder dbInstanceMode(final com.aliyun.ros.cdk.core.IResolvable dbInstanceMode) {
+            this.props.dbInstanceMode(dbInstanceMode);
             return this;
         }
 
@@ -486,6 +521,27 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property privateIpAddress: Private IP address.
+         * <p>
+         * @return {@code this}
+         * @param privateIpAddress Property privateIpAddress: Private IP address. This parameter is required.
+         */
+        public Builder privateIpAddress(final java.lang.String privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+        /**
+         * Property privateIpAddress: Private IP address.
+         * <p>
+         * @return {@code this}
+         * @param privateIpAddress Property privateIpAddress: Private IP address. This parameter is required.
+         */
+        public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+
+        /**
          * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
          * <p>
          * Default value:
@@ -555,7 +611,7 @@ public class ElasticDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.gpdb.ElasticDBInstance}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.gpdb.ElasticDBInstance}.
          */
         @Override
         public com.aliyun.ros.cdk.gpdb.ElasticDBInstance build() {

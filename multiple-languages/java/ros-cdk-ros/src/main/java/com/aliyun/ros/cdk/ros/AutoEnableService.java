@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * A ROS resource type:  `ALIYUN::ROS::AutoEnableService`.
+ * A ROS resource type:  <code>ALIYUN::ROS::AutoEnableService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.897Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.419Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableService")
 public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROS::AutoEnableService`.
+     * Create a new <code>ALIYUN::ROS::AutoEnableService</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROS::AutoEnableService`.
+     * Create a new <code>ALIYUN::ROS::AutoEnableService</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -176,7 +176,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ros.AutoEnableService}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ros.AutoEnableService}.
          */
         @Override
         public com.aliyun.ros.cdk.ros.AutoEnableService build() {

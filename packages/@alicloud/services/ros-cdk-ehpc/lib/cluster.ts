@@ -192,6 +192,20 @@ export interface ClusterProps {
     readonly postInstallScript?: Array<RosCluster.PostInstallScriptProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
+     * When the value of DeployMode is Standard, the value range: scheduler, account, login, compute.
+     * When the value of DeployMode is Simple, the value range: manager, login, compute.
+     * When the value of DeployMode is Tiny, the value range: manager, compute.
+     */
+    readonly ramNodeTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property ramRoleName: The name of the Resource Access Management (RAM) role.
+     * You can call the ListRoles operation provided by RAM to query the created RAM roles.
+     */
+    readonly ramRoleName?: string | ros.IResolvable;
+
+    /**
      * Property remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
      */
     readonly remoteDirectory?: string | ros.IResolvable;
@@ -287,6 +301,11 @@ export interface ClusterProps {
     readonly volumeType?: string | ros.IResolvable;
 
     /**
+     * Property vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs.
+     */
+    readonly vpcId?: string | ros.IResolvable;
+
+    /**
      * Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP). Default value: false
      */
     readonly withoutElasticIp?: boolean | ros.IResolvable;
@@ -347,6 +366,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
             remoteVisEnable: props.remoteVisEnable,
             name: props.name,
             volumeId: props.volumeId,
+            ramRoleName: props.ramRoleName,
             deployMode: props.deployMode,
             postInstallScript: props.postInstallScript,
             imageId: props.imageId,
@@ -361,6 +381,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
             volumeMountpoint: props.volumeMountpoint,
             ecsOrderManagerCount: props.ecsOrderManagerCount,
             ecsOrderComputeInstanceType: props.ecsOrderComputeInstanceType,
+            vpcId: props.vpcId,
             application: props.application,
             periodUnit: props.periodUnit,
             imageOwnerAlias: props.imageOwnerAlias,
@@ -371,6 +392,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
             additionalVolumes: props.additionalVolumes,
             autoRenew: props.autoRenew,
             computeSpotPriceLimit: props.computeSpotPriceLimit,
+            ramNodeTypes: props.ramNodeTypes,
             clientVersion: props.clientVersion,
             volumeType: props.volumeType,
             inputFileUrl: props.inputFileUrl,

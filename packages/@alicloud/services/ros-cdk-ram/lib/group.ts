@@ -24,6 +24,14 @@ export interface GroupProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
+     * Property ignoreExisting: Whether to ignore existing group
+     * False: ROS will perform a uniqueness check.If a group with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a group with the same name, the group creation process will be ignored.
+     * If the group is not created by ROS, it will be ignored during update and delete stage.
+     */
+    readonly ignoreExisting?: boolean | ros.IResolvable;
+
+    /**
      * Property policies: Describes what actions are allowed on what resources.
      */
     readonly policies?: Array<RosGroup.PoliciesProperty | ros.IResolvable> | ros.IResolvable;
@@ -61,9 +69,10 @@ export class Group extends ros.Resource {
 
         const rosGroup = new RosGroup(this, id,  {
             groupName: props.groupName,
-            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
-            policies: props.policies,
+            ignoreExisting: props.ignoreExisting === undefined || props.ignoreExisting === null ? false : props.ignoreExisting,
             policyAttachments: props.policyAttachments,
+            policies: props.policies,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             comments: props.comments,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosGroup;

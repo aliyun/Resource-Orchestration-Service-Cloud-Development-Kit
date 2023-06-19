@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.tsdb;
 
 /**
- * Properties for defining a `ALIYUN::TSDB::InfluxDBUser`.
+ * Properties for defining a <code>ALIYUN::TSDB::InfluxDBUser</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.283Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.835Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.InfluxDBUserProps")
 @software.amazon.jsii.Jsii.Proxy(InfluxDBUserProps.Jsii$Proxy.class)
 public interface InfluxDBUserProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface InfluxDBUserProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
-     * Property password: The password must be 8 to 32 characters in length and contain letters, digits, and special characters.!@#$%^&*()_+-=.
+     * Property password: The password must be 8 to 32 characters in length and contain letters, digits, and special characters.!&#64;#$%^&amp;*()_+-=.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPassword();
 
@@ -81,7 +81,7 @@ public interface InfluxDBUserProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link InfluxDBUserProps#getPassword}
-         * @param password Property password: The password must be 8 to 32 characters in length and contain letters, digits, and special characters.!@#$%^&*()_+-=. This parameter is required.
+         * @param password Property password: The password must be 8 to 32 characters in length and contain letters, digits, and special characters.!&#64;#$%^&amp;*()_+-=. This parameter is required.
          * @return {@code this}
          */
         public Builder password(java.lang.String password) {
@@ -91,7 +91,7 @@ public interface InfluxDBUserProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link InfluxDBUserProps#getPassword}
-         * @param password Property password: The password must be 8 to 32 characters in length and contain letters, digits, and special characters.!@#$%^&*()_+-=. This parameter is required.
+         * @param password Property password: The password must be 8 to 32 characters in length and contain letters, digits, and special characters.!&#64;#$%^&amp;*()_+-=. This parameter is required.
          * @return {@code this}
          */
         public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {

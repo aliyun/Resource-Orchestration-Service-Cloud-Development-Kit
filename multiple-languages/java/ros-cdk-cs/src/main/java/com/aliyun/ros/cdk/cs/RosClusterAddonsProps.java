@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * Properties for defining a `ALIYUN::CS::ClusterAddons`.
+ * Properties for defining a <code>ALIYUN::CS::ClusterAddons</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.775Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.915Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterAddonsProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterAddonsProps.Jsii$Proxy.class)
 public interface RosClusterAddonsProps extends software.amazon.jsii.JsiiSerializable {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * Properties for defining a `ALIYUN::RAM::Role`.
+ * Properties for defining a <code>ALIYUN::RAM::Role</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.613Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.035Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRoleProps")
 @software.amazon.jsii.Jsii.Proxy(RosRoleProps.Jsii$Proxy.class)
 public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,12 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreExisting() {
         return null;
     }
 
@@ -60,6 +66,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object roleName;
         java.lang.Object deletionForce;
         java.lang.Object description;
+        java.lang.Object ignoreExisting;
         java.lang.Object maxSessionDuration;
         java.lang.Object policies;
         java.lang.Object policyAttachments;
@@ -145,6 +152,26 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosRoleProps#getIgnoreExisting}
+         * @param ignoreExisting the value to be set.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(java.lang.Boolean ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRoleProps#getIgnoreExisting}
+         * @param ignoreExisting the value to be set.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRoleProps#getMaxSessionDuration}
          * @param maxSessionDuration the value to be set.
          * @return {@code this}
@@ -224,6 +251,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object roleName;
         private final java.lang.Object deletionForce;
         private final java.lang.Object description;
+        private final java.lang.Object ignoreExisting;
         private final java.lang.Object maxSessionDuration;
         private final java.lang.Object policies;
         private final java.lang.Object policyAttachments;
@@ -238,6 +266,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
             this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ignoreExisting = software.amazon.jsii.Kernel.get(this, "ignoreExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maxSessionDuration = software.amazon.jsii.Kernel.get(this, "maxSessionDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policies = software.amazon.jsii.Kernel.get(this, "policies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyAttachments = software.amazon.jsii.Kernel.get(this, "policyAttachments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -252,6 +281,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
             this.roleName = java.util.Objects.requireNonNull(builder.roleName, "roleName is required");
             this.deletionForce = builder.deletionForce;
             this.description = builder.description;
+            this.ignoreExisting = builder.ignoreExisting;
             this.maxSessionDuration = builder.maxSessionDuration;
             this.policies = builder.policies;
             this.policyAttachments = builder.policyAttachments;
@@ -275,6 +305,11 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getIgnoreExisting() {
+            return this.ignoreExisting;
         }
 
         @Override
@@ -305,6 +340,9 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getIgnoreExisting() != null) {
+                data.set("ignoreExisting", om.valueToTree(this.getIgnoreExisting()));
             }
             if (this.getMaxSessionDuration() != null) {
                 data.set("maxSessionDuration", om.valueToTree(this.getMaxSessionDuration()));
@@ -337,6 +375,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
             if (!roleName.equals(that.roleName)) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.ignoreExisting != null ? !this.ignoreExisting.equals(that.ignoreExisting) : that.ignoreExisting != null) return false;
             if (this.maxSessionDuration != null ? !this.maxSessionDuration.equals(that.maxSessionDuration) : that.maxSessionDuration != null) return false;
             if (this.policies != null ? !this.policies.equals(that.policies) : that.policies != null) return false;
             return this.policyAttachments != null ? this.policyAttachments.equals(that.policyAttachments) : that.policyAttachments == null;
@@ -348,6 +387,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.roleName.hashCode());
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.ignoreExisting != null ? this.ignoreExisting.hashCode() : 0);
             result = 31 * result + (this.maxSessionDuration != null ? this.maxSessionDuration.hashCode() : 0);
             result = 31 * result + (this.policies != null ? this.policies.hashCode() : 0);
             result = 31 * result + (this.policyAttachments != null ? this.policyAttachments.hashCode() : 0);

@@ -952,7 +952,7 @@ function RosResourceCleaner_ExcludedResourcesPropertyValidator(properties: any):
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DirectMail:Domain","DirectMail:Ipfilter","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","EMR:Cluster","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ:Instance","ROS:Template","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
+          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DirectMail:Domain","DirectMail:Ipfilter","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","EMR:Cluster","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpoint","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ:Instance","ROS:Template","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
@@ -1168,7 +1168,7 @@ function RosResourceCleaner_ResourcesPropertyValidator(properties: any): ros.Val
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DirectMail:Domain","DirectMail:Ipfilter","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","EMR:Cluster","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ:Instance","ROS:Template","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
+          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DirectMail:Domain","DirectMail:Ipfilter","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","EMR:Cluster","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpoint","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ:Instance","ROS:Template","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
@@ -1456,6 +1456,11 @@ export interface RosStackProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property tags: The tags of nested stack. If it is specified, it will be passed to all tag-supported resources in the nested stack.
+     */
+    readonly tags?: RosStack.TagsProperty[];
+
+    /**
      * @Property templateBody: Structure containing the template body.
      * It is just to facilitate the passing of template. It is raw content.Functions in TemplateBody will not be resolved in parent stack.
      * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
@@ -1513,6 +1518,7 @@ function RosStackPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
     errors.collect(ros.propertyValidator('templateBody', ros.hashValidator(ros.validateAny))(properties.templateBody));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosStack_TagsPropertyValidator))(properties.tags));
     if(properties.templateId && (typeof properties.templateId) !== 'object') {
         errors.collect(ros.propertyValidator('templateId', ros.validateAllowedPattern)({
           data: properties.templateId,
@@ -1539,6 +1545,7 @@ function rosStackPropsToRosTemplate(properties: any, enableResourcePropertyConst
     return {
       Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosStackTagsPropertyToRosTemplate)(properties.tags),
       TemplateBody: ros.hashMapper(ros.objectToRosTemplate)(properties.templateBody),
       TemplateId: ros.stringToRosTemplate(properties.templateId),
       TemplateURL: ros.stringToRosTemplate(properties.templateUrl),
@@ -1573,6 +1580,11 @@ export class RosStack extends ros.RosResource {
      * @Property resourceGroupId: Resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: The tags of nested stack. If it is specified, it will be passed to all tag-supported resources in the nested stack.
+     */
+    public tags: RosStack.TagsProperty[] | undefined;
 
     /**
      * @Property templateBody: Structure containing the template body.
@@ -1615,6 +1627,7 @@ export class RosStack extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.parameters = props.parameters;
         this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
         this.templateBody = props.templateBody;
         this.templateId = props.templateId;
         this.templateUrl = props.templateUrl;
@@ -1627,6 +1640,7 @@ export class RosStack extends ros.RosResource {
         return {
             parameters: this.parameters,
             resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
             templateBody: this.templateBody,
             templateId: this.templateId,
             templateUrl: this.templateUrl,
@@ -1637,6 +1651,54 @@ export class RosStack extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosStackPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosStack {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: Tag value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: Tag key.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosStack_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROS::Stack.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROS::Stack.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosStackTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosStack_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**

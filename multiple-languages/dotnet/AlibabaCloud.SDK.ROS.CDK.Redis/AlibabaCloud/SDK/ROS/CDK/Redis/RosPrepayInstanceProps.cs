@@ -202,7 +202,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         private object? _engineVersion;
 
         /// <remarks>
-        /// <strong>Property</strong>: engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
+        /// <strong>Property</strong>: engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -663,6 +663,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         {
             get;
             set;
+        }
+
+        private object? _tairConfig;
+
+        /// <remarks>
+        /// <strong>Property</strong>: tairConfig: Tair config. This parameter is available only if the InstanceClass parameter is start with tair.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tairConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.TairConfigProperty\"}]}}", isOptional: true)]
+        public object? TairConfig
+        {
+            get => _tairConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.ITairConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.ITairConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _tairConfig = value;
+            }
         }
 
         private object? _vpcId;

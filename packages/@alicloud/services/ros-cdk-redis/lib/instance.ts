@@ -37,7 +37,7 @@ export interface InstanceProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
-     * Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
+     * Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     readonly engineVersion?: string | ros.IResolvable;
 
@@ -111,6 +111,11 @@ export interface InstanceProps {
      * Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosInstance.TagsProperty[];
+
+    /**
+     * Property tairConfig: Tair config. This parameter is available only if the InstanceClass parameter is start with tair.
+     */
+    readonly tairConfig?: RosInstance.TairConfigProperty | ros.IResolvable;
 
     /**
      * Property vpcId: The VPC id to create ecs instance.
@@ -329,6 +334,7 @@ export class Instance extends ros.Resource {
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             vpcId: props.vpcId,
             sslEnabled: props.sslEnabled,
+            tairConfig: props.tairConfig,
             chargeType: props.chargeType,
             tags: props.tags,
             backupPolicy: props.backupPolicy,

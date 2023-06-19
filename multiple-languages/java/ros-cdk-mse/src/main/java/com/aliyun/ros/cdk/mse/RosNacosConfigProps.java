@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * Properties for defining a `ALIYUN::MSE::NacosConfig`.
+ * Properties for defining a <code>ALIYUN::MSE::NacosConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.321Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.651Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosNacosConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosNacosConfigProps.Jsii$Proxy.class)
 public interface RosNacosConfigProps extends software.amazon.jsii.JsiiSerializable {

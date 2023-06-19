@@ -29,6 +29,14 @@ export interface RoleProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property ignoreExisting: Whether to ignore existing role
+     * False: ROS will perform a uniqueness check.If a role with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a role with the same name, the role creation process will be ignored.
+     * If the role is not created by ROS, it will be ignored during update and delete stage.
+     */
+    readonly ignoreExisting?: boolean | ros.IResolvable;
+
+    /**
      * Property maxSessionDuration: The maximum session duration of the RAM role.
      * Valid values: 3600 to 43200. Unit: seconds. Default value: 3600.
      * The default value is used if the parameter is not specified.
@@ -82,12 +90,13 @@ export class Role extends ros.Resource {
         super(scope, id);
 
         const rosRole = new RosRole(this, id,  {
+            ignoreExisting: props.ignoreExisting === undefined || props.ignoreExisting === null ? false : props.ignoreExisting,
             maxSessionDuration: props.maxSessionDuration,
             roleName: props.roleName,
-            policyAttachments: props.policyAttachments,
+            description: props.description,
             policies: props.policies,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
-            description: props.description,
+            policyAttachments: props.policyAttachments,
             assumeRolePolicyDocument: props.assumeRolePolicyDocument,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRole;

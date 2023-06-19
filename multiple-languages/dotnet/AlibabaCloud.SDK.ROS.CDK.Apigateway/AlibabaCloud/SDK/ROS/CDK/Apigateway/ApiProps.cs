@@ -226,6 +226,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
+        private object? _allowSignatureMethod;
+
+        /// <summary>Property allowSignatureMethod: If the AuthType is APP authentication, you need to pass this value to specify the signature algorithm.</summary>
+        /// <remarks>
+        /// If you do not specify this parameter, the default value HmacSHA256 is used. Valid values:
+        /// HmacSHA256
+        /// HmacSHA1,HmacSHA256
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "allowSignatureMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AllowSignatureMethod
+        {
+            get => _allowSignatureMethod;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _allowSignatureMethod = value;
+            }
+        }
+
         private object? _appCodeAuthType;
 
         /// <summary>Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT: DEFAULT: Default (set by group).</summary>
@@ -603,6 +639,68 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
+        private object? _resultBodyModel;
+
+        /// <summary>Property resultBodyModel: The return result of the API.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resultBodyModel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResultBodyModel
+        {
+            get => _resultBodyModel;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _resultBodyModel = value;
+            }
+        }
+
+        private object? _resultDescriptions;
+
+        /// <summary>Property resultDescriptions: The return description of the API.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resultDescriptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResultDescriptions
+        {
+            get => _resultDescriptions;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _resultDescriptions = value;
+            }
+        }
+
         private object? _serviceParameters;
 
         /// <summary>Property serviceParameters: The service parameters.</summary>
@@ -757,6 +855,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         {
             get;
             set;
+        }
+
+        private object? _webSocketApiType;
+
+        /// <summary>Property webSocketApiType: The type of the two-way communication API.</summary>
+        /// <remarks>
+        /// COMMON: common API
+        /// REGISTER: registered API
+        /// UNREGISTER: unregistered API
+        /// NOTIFY: downstream notification API
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "webSocketApiType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? WebSocketApiType
+        {
+            get => _webSocketApiType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _webSocketApiType = value;
+            }
         }
     }
 }

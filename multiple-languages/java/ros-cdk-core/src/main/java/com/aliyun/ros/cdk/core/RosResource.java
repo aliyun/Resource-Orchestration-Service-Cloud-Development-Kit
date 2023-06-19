@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents a ROS resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.921Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.933Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosResource")
 public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
 
@@ -58,7 +58,7 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
     }
 
     /**
-     * Syntactic sugar for `addOverride(path, undefined)`.
+     * Syntactic sugar for <code>addOverride(path, undefined)</code>.
      * <p>
      * @param path The path of the value to delete. This parameter is required.
      */
@@ -124,8 +124,8 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
      * }
      * </pre></blockquote>
      * <p>
-     * @param path - The path of the property, you can use dot notation to override values in complex types. This parameter is required.
-     * @param value - The value. This parameter is required.
+     * @param path <ul><li>The path of the property, you can use dot notation to override values in complex types.</li></ul> This parameter is required.
+     * @param value <ul><li>The value.</li></ul> This parameter is required.
      */
     public void addOverride(final @org.jetbrains.annotations.NotNull java.lang.String path, final @org.jetbrains.annotations.NotNull java.lang.Object value) {
         software.amazon.jsii.Kernel.call(this, "addOverride", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(path, "path is required"), value });
@@ -264,10 +264,10 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
         }
 
         /**
-         * ROS template resource type (e.g. `ALIYUN::ECS::Instance`).
+         * ROS template resource type (e.g. <code>ALIYUN::ECS::Instance</code>).
          * <p>
          * @return {@code this}
-         * @param type ROS template resource type (e.g. `ALIYUN::ECS::Instance`). This parameter is required.
+         * @param type ROS template resource type (e.g. <code>ALIYUN::ECS::Instance</code>). This parameter is required.
          */
         public Builder type(final java.lang.String type) {
             this.props.type(type);
@@ -288,7 +288,7 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.core.RosResource}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.core.RosResource}.
          */
         @Override
         public com.aliyun.ros.cdk.core.RosResource build() {

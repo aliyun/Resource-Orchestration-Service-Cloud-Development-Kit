@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * Properties for defining a `ALIYUN::FC::Function`.
+ * Properties for defining a <code>ALIYUN::FC::Function</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.880Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.152Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunctionProps")
 @software.amazon.jsii.Jsii.Proxy(RosFunctionProps.Jsii$Proxy.class)
 public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,7 +44,31 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCpu() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCustomContainerConfig() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCustomDns() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCustomHealthCheckConfig() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCustomRuntimeConfig() {
         return null;
     }
 
@@ -56,7 +80,19 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDiskSize() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnvironmentVariables() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGpuMemorySize() {
         return null;
     }
 
@@ -75,6 +111,18 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceConcurrency() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceLifecycleConfig() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceSoftConcurrency() {
         return null;
     }
 
@@ -113,12 +161,20 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object asyncConfiguration;
         java.lang.Object caPort;
         java.lang.Object code;
+        java.lang.Object cpu;
         java.lang.Object customContainerConfig;
+        java.lang.Object customDns;
+        java.lang.Object customHealthCheckConfig;
+        java.lang.Object customRuntimeConfig;
         java.lang.Object description;
+        java.lang.Object diskSize;
         java.lang.Object environmentVariables;
+        java.lang.Object gpuMemorySize;
         java.lang.Object initializationTimeout;
         java.lang.Object initializer;
         java.lang.Object instanceConcurrency;
+        java.lang.Object instanceLifecycleConfig;
+        java.lang.Object instanceSoftConcurrency;
         java.lang.Object instanceType;
         java.lang.Object memorySize;
         java.lang.Object timeout;
@@ -264,6 +320,26 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosFunctionProps#getCpu}
+         * @param cpu the value to be set.
+         * @return {@code this}
+         */
+        public Builder cpu(java.lang.Number cpu) {
+            this.cpu = cpu;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getCpu}
+         * @param cpu the value to be set.
+         * @return {@code this}
+         */
+        public Builder cpu(com.aliyun.ros.cdk.core.IResolvable cpu) {
+            this.cpu = cpu;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionProps#getCustomContainerConfig}
          * @param customContainerConfig the value to be set.
          * @return {@code this}
@@ -280,6 +356,66 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder customContainerConfig(com.aliyun.ros.cdk.fc.RosFunction.CustomContainerConfigProperty customContainerConfig) {
             this.customContainerConfig = customContainerConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getCustomDns}
+         * @param customDns the value to be set.
+         * @return {@code this}
+         */
+        public Builder customDns(com.aliyun.ros.cdk.core.IResolvable customDns) {
+            this.customDns = customDns;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getCustomDns}
+         * @param customDns the value to be set.
+         * @return {@code this}
+         */
+        public Builder customDns(com.aliyun.ros.cdk.fc.RosFunction.CustomDNSProperty customDns) {
+            this.customDns = customDns;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getCustomHealthCheckConfig}
+         * @param customHealthCheckConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder customHealthCheckConfig(com.aliyun.ros.cdk.core.IResolvable customHealthCheckConfig) {
+            this.customHealthCheckConfig = customHealthCheckConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getCustomHealthCheckConfig}
+         * @param customHealthCheckConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder customHealthCheckConfig(com.aliyun.ros.cdk.fc.RosFunction.CustomHealthCheckConfigProperty customHealthCheckConfig) {
+            this.customHealthCheckConfig = customHealthCheckConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getCustomRuntimeConfig}
+         * @param customRuntimeConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder customRuntimeConfig(com.aliyun.ros.cdk.core.IResolvable customRuntimeConfig) {
+            this.customRuntimeConfig = customRuntimeConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getCustomRuntimeConfig}
+         * @param customRuntimeConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder customRuntimeConfig(com.aliyun.ros.cdk.fc.RosFunction.CustomRuntimeConfigProperty customRuntimeConfig) {
+            this.customRuntimeConfig = customRuntimeConfig;
             return this;
         }
 
@@ -304,6 +440,26 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosFunctionProps#getDiskSize}
+         * @param diskSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder diskSize(java.lang.Number diskSize) {
+            this.diskSize = diskSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getDiskSize}
+         * @param diskSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder diskSize(com.aliyun.ros.cdk.core.IResolvable diskSize) {
+            this.diskSize = diskSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionProps#getEnvironmentVariables}
          * @param environmentVariables the value to be set.
          * @return {@code this}
@@ -320,6 +476,26 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder environmentVariables(java.util.Map<java.lang.String, ? extends java.lang.Object> environmentVariables) {
             this.environmentVariables = environmentVariables;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getGpuMemorySize}
+         * @param gpuMemorySize the value to be set.
+         * @return {@code this}
+         */
+        public Builder gpuMemorySize(java.lang.Number gpuMemorySize) {
+            this.gpuMemorySize = gpuMemorySize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getGpuMemorySize}
+         * @param gpuMemorySize the value to be set.
+         * @return {@code this}
+         */
+        public Builder gpuMemorySize(com.aliyun.ros.cdk.core.IResolvable gpuMemorySize) {
+            this.gpuMemorySize = gpuMemorySize;
             return this;
         }
 
@@ -380,6 +556,46 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder instanceConcurrency(com.aliyun.ros.cdk.core.IResolvable instanceConcurrency) {
             this.instanceConcurrency = instanceConcurrency;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getInstanceLifecycleConfig}
+         * @param instanceLifecycleConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceLifecycleConfig(com.aliyun.ros.cdk.core.IResolvable instanceLifecycleConfig) {
+            this.instanceLifecycleConfig = instanceLifecycleConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getInstanceLifecycleConfig}
+         * @param instanceLifecycleConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceLifecycleConfig(com.aliyun.ros.cdk.fc.RosFunction.InstanceLifecycleConfigProperty instanceLifecycleConfig) {
+            this.instanceLifecycleConfig = instanceLifecycleConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getInstanceSoftConcurrency}
+         * @param instanceSoftConcurrency the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceSoftConcurrency(java.lang.Number instanceSoftConcurrency) {
+            this.instanceSoftConcurrency = instanceSoftConcurrency;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionProps#getInstanceSoftConcurrency}
+         * @param instanceSoftConcurrency the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceSoftConcurrency(com.aliyun.ros.cdk.core.IResolvable instanceSoftConcurrency) {
+            this.instanceSoftConcurrency = instanceSoftConcurrency;
             return this;
         }
 
@@ -466,12 +682,20 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object asyncConfiguration;
         private final java.lang.Object caPort;
         private final java.lang.Object code;
+        private final java.lang.Object cpu;
         private final java.lang.Object customContainerConfig;
+        private final java.lang.Object customDns;
+        private final java.lang.Object customHealthCheckConfig;
+        private final java.lang.Object customRuntimeConfig;
         private final java.lang.Object description;
+        private final java.lang.Object diskSize;
         private final java.lang.Object environmentVariables;
+        private final java.lang.Object gpuMemorySize;
         private final java.lang.Object initializationTimeout;
         private final java.lang.Object initializer;
         private final java.lang.Object instanceConcurrency;
+        private final java.lang.Object instanceLifecycleConfig;
+        private final java.lang.Object instanceSoftConcurrency;
         private final java.lang.Object instanceType;
         private final java.lang.Object memorySize;
         private final java.lang.Object timeout;
@@ -489,12 +713,20 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             this.asyncConfiguration = software.amazon.jsii.Kernel.get(this, "asyncConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.caPort = software.amazon.jsii.Kernel.get(this, "caPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.code = software.amazon.jsii.Kernel.get(this, "code", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cpu = software.amazon.jsii.Kernel.get(this, "cpu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.customContainerConfig = software.amazon.jsii.Kernel.get(this, "customContainerConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.customDns = software.amazon.jsii.Kernel.get(this, "customDns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.customHealthCheckConfig = software.amazon.jsii.Kernel.get(this, "customHealthCheckConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.customRuntimeConfig = software.amazon.jsii.Kernel.get(this, "customRuntimeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.diskSize = software.amazon.jsii.Kernel.get(this, "diskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.environmentVariables = software.amazon.jsii.Kernel.get(this, "environmentVariables", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.gpuMemorySize = software.amazon.jsii.Kernel.get(this, "gpuMemorySize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.initializationTimeout = software.amazon.jsii.Kernel.get(this, "initializationTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.initializer = software.amazon.jsii.Kernel.get(this, "initializer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceConcurrency = software.amazon.jsii.Kernel.get(this, "instanceConcurrency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceLifecycleConfig = software.amazon.jsii.Kernel.get(this, "instanceLifecycleConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceSoftConcurrency = software.amazon.jsii.Kernel.get(this, "instanceSoftConcurrency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.memorySize = software.amazon.jsii.Kernel.get(this, "memorySize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -512,12 +744,20 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             this.asyncConfiguration = builder.asyncConfiguration;
             this.caPort = builder.caPort;
             this.code = builder.code;
+            this.cpu = builder.cpu;
             this.customContainerConfig = builder.customContainerConfig;
+            this.customDns = builder.customDns;
+            this.customHealthCheckConfig = builder.customHealthCheckConfig;
+            this.customRuntimeConfig = builder.customRuntimeConfig;
             this.description = builder.description;
+            this.diskSize = builder.diskSize;
             this.environmentVariables = builder.environmentVariables;
+            this.gpuMemorySize = builder.gpuMemorySize;
             this.initializationTimeout = builder.initializationTimeout;
             this.initializer = builder.initializer;
             this.instanceConcurrency = builder.instanceConcurrency;
+            this.instanceLifecycleConfig = builder.instanceLifecycleConfig;
+            this.instanceSoftConcurrency = builder.instanceSoftConcurrency;
             this.instanceType = builder.instanceType;
             this.memorySize = builder.memorySize;
             this.timeout = builder.timeout;
@@ -559,8 +799,28 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getCpu() {
+            return this.cpu;
+        }
+
+        @Override
         public final java.lang.Object getCustomContainerConfig() {
             return this.customContainerConfig;
+        }
+
+        @Override
+        public final java.lang.Object getCustomDns() {
+            return this.customDns;
+        }
+
+        @Override
+        public final java.lang.Object getCustomHealthCheckConfig() {
+            return this.customHealthCheckConfig;
+        }
+
+        @Override
+        public final java.lang.Object getCustomRuntimeConfig() {
+            return this.customRuntimeConfig;
         }
 
         @Override
@@ -569,8 +829,18 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getDiskSize() {
+            return this.diskSize;
+        }
+
+        @Override
         public final java.lang.Object getEnvironmentVariables() {
             return this.environmentVariables;
+        }
+
+        @Override
+        public final java.lang.Object getGpuMemorySize() {
+            return this.gpuMemorySize;
         }
 
         @Override
@@ -586,6 +856,16 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getInstanceConcurrency() {
             return this.instanceConcurrency;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceLifecycleConfig() {
+            return this.instanceLifecycleConfig;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceSoftConcurrency() {
+            return this.instanceSoftConcurrency;
         }
 
         @Override
@@ -622,14 +902,32 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getCode() != null) {
                 data.set("code", om.valueToTree(this.getCode()));
             }
+            if (this.getCpu() != null) {
+                data.set("cpu", om.valueToTree(this.getCpu()));
+            }
             if (this.getCustomContainerConfig() != null) {
                 data.set("customContainerConfig", om.valueToTree(this.getCustomContainerConfig()));
+            }
+            if (this.getCustomDns() != null) {
+                data.set("customDns", om.valueToTree(this.getCustomDns()));
+            }
+            if (this.getCustomHealthCheckConfig() != null) {
+                data.set("customHealthCheckConfig", om.valueToTree(this.getCustomHealthCheckConfig()));
+            }
+            if (this.getCustomRuntimeConfig() != null) {
+                data.set("customRuntimeConfig", om.valueToTree(this.getCustomRuntimeConfig()));
             }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getDiskSize() != null) {
+                data.set("diskSize", om.valueToTree(this.getDiskSize()));
+            }
             if (this.getEnvironmentVariables() != null) {
                 data.set("environmentVariables", om.valueToTree(this.getEnvironmentVariables()));
+            }
+            if (this.getGpuMemorySize() != null) {
+                data.set("gpuMemorySize", om.valueToTree(this.getGpuMemorySize()));
             }
             if (this.getInitializationTimeout() != null) {
                 data.set("initializationTimeout", om.valueToTree(this.getInitializationTimeout()));
@@ -639,6 +937,12 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getInstanceConcurrency() != null) {
                 data.set("instanceConcurrency", om.valueToTree(this.getInstanceConcurrency()));
+            }
+            if (this.getInstanceLifecycleConfig() != null) {
+                data.set("instanceLifecycleConfig", om.valueToTree(this.getInstanceLifecycleConfig()));
+            }
+            if (this.getInstanceSoftConcurrency() != null) {
+                data.set("instanceSoftConcurrency", om.valueToTree(this.getInstanceSoftConcurrency()));
             }
             if (this.getInstanceType() != null) {
                 data.set("instanceType", om.valueToTree(this.getInstanceType()));
@@ -674,12 +978,20 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             if (this.asyncConfiguration != null ? !this.asyncConfiguration.equals(that.asyncConfiguration) : that.asyncConfiguration != null) return false;
             if (this.caPort != null ? !this.caPort.equals(that.caPort) : that.caPort != null) return false;
             if (this.code != null ? !this.code.equals(that.code) : that.code != null) return false;
+            if (this.cpu != null ? !this.cpu.equals(that.cpu) : that.cpu != null) return false;
             if (this.customContainerConfig != null ? !this.customContainerConfig.equals(that.customContainerConfig) : that.customContainerConfig != null) return false;
+            if (this.customDns != null ? !this.customDns.equals(that.customDns) : that.customDns != null) return false;
+            if (this.customHealthCheckConfig != null ? !this.customHealthCheckConfig.equals(that.customHealthCheckConfig) : that.customHealthCheckConfig != null) return false;
+            if (this.customRuntimeConfig != null ? !this.customRuntimeConfig.equals(that.customRuntimeConfig) : that.customRuntimeConfig != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.diskSize != null ? !this.diskSize.equals(that.diskSize) : that.diskSize != null) return false;
             if (this.environmentVariables != null ? !this.environmentVariables.equals(that.environmentVariables) : that.environmentVariables != null) return false;
+            if (this.gpuMemorySize != null ? !this.gpuMemorySize.equals(that.gpuMemorySize) : that.gpuMemorySize != null) return false;
             if (this.initializationTimeout != null ? !this.initializationTimeout.equals(that.initializationTimeout) : that.initializationTimeout != null) return false;
             if (this.initializer != null ? !this.initializer.equals(that.initializer) : that.initializer != null) return false;
             if (this.instanceConcurrency != null ? !this.instanceConcurrency.equals(that.instanceConcurrency) : that.instanceConcurrency != null) return false;
+            if (this.instanceLifecycleConfig != null ? !this.instanceLifecycleConfig.equals(that.instanceLifecycleConfig) : that.instanceLifecycleConfig != null) return false;
+            if (this.instanceSoftConcurrency != null ? !this.instanceSoftConcurrency.equals(that.instanceSoftConcurrency) : that.instanceSoftConcurrency != null) return false;
             if (this.instanceType != null ? !this.instanceType.equals(that.instanceType) : that.instanceType != null) return false;
             if (this.memorySize != null ? !this.memorySize.equals(that.memorySize) : that.memorySize != null) return false;
             return this.timeout != null ? this.timeout.equals(that.timeout) : that.timeout == null;
@@ -694,12 +1006,20 @@ public interface RosFunctionProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.asyncConfiguration != null ? this.asyncConfiguration.hashCode() : 0);
             result = 31 * result + (this.caPort != null ? this.caPort.hashCode() : 0);
             result = 31 * result + (this.code != null ? this.code.hashCode() : 0);
+            result = 31 * result + (this.cpu != null ? this.cpu.hashCode() : 0);
             result = 31 * result + (this.customContainerConfig != null ? this.customContainerConfig.hashCode() : 0);
+            result = 31 * result + (this.customDns != null ? this.customDns.hashCode() : 0);
+            result = 31 * result + (this.customHealthCheckConfig != null ? this.customHealthCheckConfig.hashCode() : 0);
+            result = 31 * result + (this.customRuntimeConfig != null ? this.customRuntimeConfig.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.diskSize != null ? this.diskSize.hashCode() : 0);
             result = 31 * result + (this.environmentVariables != null ? this.environmentVariables.hashCode() : 0);
+            result = 31 * result + (this.gpuMemorySize != null ? this.gpuMemorySize.hashCode() : 0);
             result = 31 * result + (this.initializationTimeout != null ? this.initializationTimeout.hashCode() : 0);
             result = 31 * result + (this.initializer != null ? this.initializer.hashCode() : 0);
             result = 31 * result + (this.instanceConcurrency != null ? this.instanceConcurrency.hashCode() : 0);
+            result = 31 * result + (this.instanceLifecycleConfig != null ? this.instanceLifecycleConfig.hashCode() : 0);
+            result = 31 * result + (this.instanceSoftConcurrency != null ? this.instanceSoftConcurrency.hashCode() : 0);
             result = 31 * result + (this.instanceType != null ? this.instanceType.hashCode() : 0);
             result = 31 * result + (this.memorySize != null ? this.memorySize.hashCode() : 0);
             result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);

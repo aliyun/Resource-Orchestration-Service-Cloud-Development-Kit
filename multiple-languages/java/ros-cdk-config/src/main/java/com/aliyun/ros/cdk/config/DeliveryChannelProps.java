@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.config;
 
 /**
- * Properties for defining a `ALIYUN::Config::DeliveryChannel`.
+ * Properties for defining a <code>ALIYUN::Config::DeliveryChannel</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.634Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.747Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.DeliveryChannelProps")
 @software.amazon.jsii.Jsii.Proxy(DeliveryChannelProps.Jsii$Proxy.class)
 public interface DeliveryChannelProps extends software.amazon.jsii.JsiiSerializable {

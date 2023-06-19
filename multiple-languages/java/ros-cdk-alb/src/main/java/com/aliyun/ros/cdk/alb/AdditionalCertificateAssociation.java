@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * A ROS resource type:  `ALIYUN::ALB::AdditionalCertificateAssociation`.
+ * A ROS resource type:  <code>ALIYUN::ALB::AdditionalCertificateAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.000Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.021Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.AdditionalCertificateAssociation")
 public class AdditionalCertificateAssociation extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class AdditionalCertificateAssociation extends com.aliyun.ros.cdk.core.Re
     }
 
     /**
-     * Create a new `ALIYUN::ALB::AdditionalCertificateAssociation`.
+     * Create a new <code>ALIYUN::ALB::AdditionalCertificateAssociation</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class AdditionalCertificateAssociation extends com.aliyun.ros.cdk.core.Re
     }
 
     /**
-     * Create a new `ALIYUN::ALB::AdditionalCertificateAssociation`.
+     * Create a new <code>ALIYUN::ALB::AdditionalCertificateAssociation</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -132,7 +132,7 @@ public class AdditionalCertificateAssociation extends com.aliyun.ros.cdk.core.Re
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.alb.AdditionalCertificateAssociation}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.alb.AdditionalCertificateAssociation}.
          */
         @Override
         public com.aliyun.ros.cdk.alb.AdditionalCertificateAssociation build() {

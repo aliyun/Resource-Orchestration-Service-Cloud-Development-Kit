@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * A ROS template type:  `ALIYUN::VPC::SnatEntry`.
+ * A ROS template type:  <code>ALIYUN::VPC::SnatEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.462Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:12.016Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosSnatEntry")
 public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::SnatEntry`.
+     * Create a new <code>ALIYUN::VPC::SnatEntry</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosSnatEntry(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.RosSnatEntryProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -99,6 +99,24 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEipAffinity() {
+        return software.amazon.jsii.Kernel.get(this, "eipAffinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEipAffinity(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "eipAffinity", value);
+    }
+
+    /**
+     */
+    public void setEipAffinity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "eipAffinity", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSnatEntryName() {
         return software.amazon.jsii.Kernel.get(this, "snatEntryName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -162,8 +180,8 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.RosSnatEntry> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -213,6 +231,23 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder snatTableId(final com.aliyun.ros.cdk.core.IResolvable snatTableId) {
             this.props.snatTableId(snatTableId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param eipAffinity This parameter is required.
+         */
+        public Builder eipAffinity(final java.lang.Number eipAffinity) {
+            this.props.eipAffinity(eipAffinity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param eipAffinity This parameter is required.
+         */
+        public Builder eipAffinity(final com.aliyun.ros.cdk.core.IResolvable eipAffinity) {
+            this.props.eipAffinity(eipAffinity);
             return this;
         }
 
@@ -268,7 +303,7 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.vpc.RosSnatEntry}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.vpc.RosSnatEntry}.
          */
         @Override
         public com.aliyun.ros.cdk.vpc.RosSnatEntry build() {

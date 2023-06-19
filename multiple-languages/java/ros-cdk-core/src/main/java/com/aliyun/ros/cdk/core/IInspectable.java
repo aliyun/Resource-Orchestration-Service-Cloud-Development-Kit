@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Interface for examining a construct and exposing metadata.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.896Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IInspectable")
 @software.amazon.jsii.Jsii.Proxy(IInspectable.Jsii$Proxy.class)
 public interface IInspectable extends software.amazon.jsii.JsiiSerializable {
@@ -11,7 +11,7 @@ public interface IInspectable extends software.amazon.jsii.JsiiSerializable {
     /**
      * Examines construct.
      * <p>
-     * @param inspector - tree inspector to collect and process attributes. This parameter is required.
+     * @param inspector <ul><li>tree inspector to collect and process attributes.</li></ul> This parameter is required.
      */
     void inspect(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.TreeInspector inspector);
 
@@ -27,7 +27,7 @@ public interface IInspectable extends software.amazon.jsii.JsiiSerializable {
         /**
          * Examines construct.
          * <p>
-         * @param inspector - tree inspector to collect and process attributes. This parameter is required.
+         * @param inspector <ul><li>tree inspector to collect and process attributes.</li></ul> This parameter is required.
          */
         @Override
         public final void inspect(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.TreeInspector inspector) {
@@ -44,7 +44,7 @@ public interface IInspectable extends software.amazon.jsii.JsiiSerializable {
         /**
          * Examines construct.
          * <p>
-         * @param inspector - tree inspector to collect and process attributes. This parameter is required.
+         * @param inspector <ul><li>tree inspector to collect and process attributes.</li></ul> This parameter is required.
          */
         @Override
         default void inspect(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.TreeInspector inspector) {

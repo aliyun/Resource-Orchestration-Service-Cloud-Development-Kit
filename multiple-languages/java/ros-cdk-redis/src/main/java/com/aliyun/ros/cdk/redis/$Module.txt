@@ -18,6 +18,7 @@
 @alicloud/ros-cdk-redis.RosInstance.InstanceMaintainTimeProperty=com.aliyun.ros.cdk.redis.RosInstance$InstanceMaintainTimeProperty
 @alicloud/ros-cdk-redis.RosInstance.PublicConnectionProperty=com.aliyun.ros.cdk.redis.RosInstance$PublicConnectionProperty
 @alicloud/ros-cdk-redis.RosInstance.TagsProperty=com.aliyun.ros.cdk.redis.RosInstance$TagsProperty
+@alicloud/ros-cdk-redis.RosInstance.TairConfigProperty=com.aliyun.ros.cdk.redis.RosInstance$TairConfigProperty
 @alicloud/ros-cdk-redis.RosInstance.VpcPrivateConnectionProperty=com.aliyun.ros.cdk.redis.RosInstance$VpcPrivateConnectionProperty
 @alicloud/ros-cdk-redis.RosInstanceProps=com.aliyun.ros.cdk.redis.RosInstanceProps
 @alicloud/ros-cdk-redis.RosPrepayInstance=com.aliyun.ros.cdk.redis.RosPrepayInstance
@@ -28,6 +29,7 @@
 @alicloud/ros-cdk-redis.RosPrepayInstance.InstanceMaintainTimeProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$InstanceMaintainTimeProperty
 @alicloud/ros-cdk-redis.RosPrepayInstance.PublicConnectionProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$PublicConnectionProperty
 @alicloud/ros-cdk-redis.RosPrepayInstance.TagsProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$TagsProperty
+@alicloud/ros-cdk-redis.RosPrepayInstance.TairConfigProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$TairConfigProperty
 @alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$VpcPrivateConnectionProperty
 @alicloud/ros-cdk-redis.RosPrepayInstanceProps=com.aliyun.ros.cdk.redis.RosPrepayInstanceProps
 @alicloud/ros-cdk-redis.RosWhitelist=com.aliyun.ros.cdk.redis.RosWhitelist

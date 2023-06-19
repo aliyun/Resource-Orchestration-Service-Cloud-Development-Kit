@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * Properties for defining a `ALIYUN::RAM::ManagedPolicy`.
+ * Properties for defining a <code>ALIYUN::RAM::ManagedPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.574Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.993Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.ManagedPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedPolicyProps.Jsii$Proxy.class)
 public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -24,6 +24,13 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
      * Property groups: The names of groups to attach to this policy.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGroups() {
+        return null;
+    }
+
+    /**
+     * Property ignoreExisting: Whether to ignore existing policy False: ROS will perform a uniqueness check.If a policy with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a policy with the same name, the policy creation process will be ignored. If the policy is not created by ROS, it will be ignored during update and delete stage.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreExisting() {
         return null;
     }
 
@@ -70,6 +77,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object policyName;
         java.lang.Object description;
         java.lang.Object groups;
+        java.lang.Object ignoreExisting;
         java.lang.Object policyDocument;
         java.lang.Object policyDocumentUnchecked;
         java.lang.Object roles;
@@ -132,6 +140,26 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder groups(com.aliyun.ros.cdk.core.IResolvable groups) {
             this.groups = groups;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedPolicyProps#getIgnoreExisting}
+         * @param ignoreExisting Property ignoreExisting: Whether to ignore existing policy False: ROS will perform a uniqueness check.If a policy with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a policy with the same name, the policy creation process will be ignored. If the policy is not created by ROS, it will be ignored during update and delete stage.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(java.lang.Boolean ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedPolicyProps#getIgnoreExisting}
+         * @param ignoreExisting Property ignoreExisting: Whether to ignore existing policy False: ROS will perform a uniqueness check.If a policy with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a policy with the same name, the policy creation process will be ignored. If the policy is not created by ROS, it will be ignored during update and delete stage.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
             return this;
         }
 
@@ -236,6 +264,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object policyName;
         private final java.lang.Object description;
         private final java.lang.Object groups;
+        private final java.lang.Object ignoreExisting;
         private final java.lang.Object policyDocument;
         private final java.lang.Object policyDocumentUnchecked;
         private final java.lang.Object roles;
@@ -250,6 +279,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
             this.policyName = software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groups = software.amazon.jsii.Kernel.get(this, "groups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ignoreExisting = software.amazon.jsii.Kernel.get(this, "ignoreExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyDocument = software.amazon.jsii.Kernel.get(this, "policyDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyDocumentUnchecked = software.amazon.jsii.Kernel.get(this, "policyDocumentUnchecked", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.roles = software.amazon.jsii.Kernel.get(this, "roles", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -264,6 +294,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
             this.policyName = java.util.Objects.requireNonNull(builder.policyName, "policyName is required");
             this.description = builder.description;
             this.groups = builder.groups;
+            this.ignoreExisting = builder.ignoreExisting;
             this.policyDocument = builder.policyDocument;
             this.policyDocumentUnchecked = builder.policyDocumentUnchecked;
             this.roles = builder.roles;
@@ -283,6 +314,11 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getGroups() {
             return this.groups;
+        }
+
+        @Override
+        public final java.lang.Object getIgnoreExisting() {
+            return this.ignoreExisting;
         }
 
         @Override
@@ -318,6 +354,9 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getGroups() != null) {
                 data.set("groups", om.valueToTree(this.getGroups()));
             }
+            if (this.getIgnoreExisting() != null) {
+                data.set("ignoreExisting", om.valueToTree(this.getIgnoreExisting()));
+            }
             if (this.getPolicyDocument() != null) {
                 data.set("policyDocument", om.valueToTree(this.getPolicyDocument()));
             }
@@ -351,6 +390,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
             if (!policyName.equals(that.policyName)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.groups != null ? !this.groups.equals(that.groups) : that.groups != null) return false;
+            if (this.ignoreExisting != null ? !this.ignoreExisting.equals(that.ignoreExisting) : that.ignoreExisting != null) return false;
             if (this.policyDocument != null ? !this.policyDocument.equals(that.policyDocument) : that.policyDocument != null) return false;
             if (this.policyDocumentUnchecked != null ? !this.policyDocumentUnchecked.equals(that.policyDocumentUnchecked) : that.policyDocumentUnchecked != null) return false;
             if (this.roles != null ? !this.roles.equals(that.roles) : that.roles != null) return false;
@@ -362,6 +402,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
             int result = this.policyName.hashCode();
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.groups != null ? this.groups.hashCode() : 0);
+            result = 31 * result + (this.ignoreExisting != null ? this.ignoreExisting.hashCode() : 0);
             result = 31 * result + (this.policyDocument != null ? this.policyDocument.hashCode() : 0);
             result = 31 * result + (this.policyDocumentUnchecked != null ? this.policyDocumentUnchecked.hashCode() : 0);
             result = 31 * result + (this.roles != null ? this.roles.hashCode() : 0);

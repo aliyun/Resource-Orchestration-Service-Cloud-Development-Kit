@@ -112,6 +112,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property icmpReplyEnabled: Specifies whether to enable the ICMP non-retrieval feature.</summary>
+        /// <remarks>
+        /// Default: True
+        /// </remarks>
+        [JsiiProperty(name: "icmpReplyEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IcmpReplyEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property instanceChargeType: The billing method.</summary>
         /// <remarks>
         /// The default value is PostPaid (which means pay-as-you-go).
@@ -192,6 +206,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PricingCycle
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property securityProtectionEnabled: Specifies whether to enable the firewall feature.</summary>
+        /// <remarks>
+        /// Default: False
+        /// </remarks>
+        [JsiiProperty(name: "securityProtectionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecurityProtectionEnabled
         {
             get
             {
@@ -307,6 +335,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property icmpReplyEnabled: Specifies whether to enable the ICMP non-retrieval feature.</summary>
+            /// <remarks>
+            /// Default: True
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "icmpReplyEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IcmpReplyEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property instanceChargeType: The billing method.</summary>
             /// <remarks>
             /// The default value is PostPaid (which means pay-as-you-go).
@@ -372,6 +411,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PricingCycle
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property securityProtectionEnabled: Specifies whether to enable the firewall feature.</summary>
+            /// <remarks>
+            /// Default: False
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "securityProtectionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityProtectionEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

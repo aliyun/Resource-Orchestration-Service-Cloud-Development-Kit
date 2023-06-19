@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pvtz;
 
 /**
- * A ROS resource type:  `ALIYUN::PVTZ::ZoneRecord`.
+ * A ROS resource type:  <code>ALIYUN::PVTZ::ZoneRecord</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.560Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.980Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneRecord")
 public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::PVTZ::ZoneRecord`.
+     * Create a new <code>ALIYUN::PVTZ::ZoneRecord</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::PVTZ::ZoneRecord`.
+     * Create a new <code>ALIYUN::PVTZ::ZoneRecord</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -104,20 +104,20 @@ public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty.
+         * Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty.
          * <p>
          * @return {@code this}
-         * @param rr Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty. This parameter is required.
+         * @param rr Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty. This parameter is required.
          */
         public Builder rr(final java.lang.String rr) {
             this.props.rr(rr);
             return this;
         }
         /**
-         * Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty.
+         * Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty.
          * <p>
          * @return {@code this}
-         * @param rr Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty. This parameter is required.
+         * @param rr Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty. This parameter is required.
          */
         public Builder rr(final com.aliyun.ros.cdk.core.IResolvable rr) {
             this.props.rr(rr);
@@ -255,7 +255,7 @@ public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.pvtz.ZoneRecord}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.pvtz.ZoneRecord}.
          */
         @Override
         public com.aliyun.ros.cdk.pvtz.ZoneRecord build() {

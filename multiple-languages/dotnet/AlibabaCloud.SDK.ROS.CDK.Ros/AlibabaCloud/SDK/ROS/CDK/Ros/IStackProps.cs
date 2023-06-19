@@ -30,6 +30,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             }
         }
 
+        /// <summary>Property tags: The tags of nested stack.</summary>
+        /// <remarks>
+        /// If it is specified, it will be passed to all tag-supported resources in the nested stack.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ros.RosStack.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Ros.RosStack.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property templateBody: Structure containing the template body.</summary>
         /// <remarks>
         /// It is just to facilitate the passing of template. It is raw content.Functions in TemplateBody will not be resolved in parent stack.
@@ -118,6 +132,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: The tags of nested stack.</summary>
+            /// <remarks>
+            /// If it is specified, it will be passed to all tag-supported resources in the nested stack.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ros.RosStack.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Ros.RosStack.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ros.RosStack.ITagsProperty[]?>();
             }
 
             /// <summary>Property templateBody: Structure containing the template body.</summary>

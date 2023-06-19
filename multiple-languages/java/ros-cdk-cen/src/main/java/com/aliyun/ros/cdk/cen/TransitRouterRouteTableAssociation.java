@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::TransitRouterRouteTableAssociation`.
+ * A ROS resource type:  <code>ALIYUN::CEN::TransitRouterRouteTableAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.441Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.519Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterRouteTableAssociation")
 public class TransitRouterRouteTableAssociation extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class TransitRouterRouteTableAssociation extends com.aliyun.ros.cdk.core.
     }
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterRouteTableAssociation`.
+     * Create a new <code>ALIYUN::CEN::TransitRouterRouteTableAssociation</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class TransitRouterRouteTableAssociation extends com.aliyun.ros.cdk.core.
     }
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterRouteTableAssociation`.
+     * Create a new <code>ALIYUN::CEN::TransitRouterRouteTableAssociation</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -153,7 +153,7 @@ public class TransitRouterRouteTableAssociation extends com.aliyun.ros.cdk.core.
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.cen.TransitRouterRouteTableAssociation}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.cen.TransitRouterRouteTableAssociation}.
          */
         @Override
         public com.aliyun.ros.cdk.cen.TransitRouterRouteTableAssociation build() {

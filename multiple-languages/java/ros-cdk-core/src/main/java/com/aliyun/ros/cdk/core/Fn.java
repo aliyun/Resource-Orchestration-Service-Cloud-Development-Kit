@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * https://help.aliyun.com/document_detail/28852.html
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.876Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.882Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Fn")
 public class Fn extends software.amazon.jsii.JsiiObject {
 
@@ -64,7 +64,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The intrinsic function ``Fn::Base64`` returns the Base64 representation of the input string.
+     * The intrinsic function <code>Fn::Base64</code> returns the Base64 representation of the input string.
      * <p>
      * @return a token represented as a string
      * @param data The string value you want to convert to Base64. This parameter is required.
@@ -153,7 +153,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
      * <code>Fn::Not</code> acts as a NOT operator.
      * <p>
      * @return an FnCondition token
-     * @param condition A condition such as ``Fn::Equals`` that evaluates to true or false. This parameter is required.
+     * @param condition A condition such as <code>Fn::Equals</code> that evaluates to true or false. This parameter is required.
      */
     public static @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IRosConditionExpression conditionNot(final @org.jetbrains.annotations.NotNull java.lang.Object condition) {
         if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
@@ -204,7 +204,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The intrinsic function ``Fn::FindInMap`` returns the value corresponding to keys in a two-level map that is declared in the Mappings section.
+     * The intrinsic function <code>Fn::FindInMap</code> returns the value corresponding to keys in a two-level map that is declared in the Mappings section.
      * <p>
      * @return a token represented as a string
      * @param mapName This parameter is required.
@@ -216,7 +216,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The ``Fn::GetAtt`` intrinsic function returns the value of an attribute from a resource in the template.
+     * The <code>Fn::GetAtt</code> intrinsic function returns the value of an attribute from a resource in the template.
      * <p>
      * @return an IResolvable object
      * @param logicalNameOfResource The logical name (also called logical ID) of the resource that contains the attribute that you want. This parameter is required.
@@ -227,7 +227,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The intrinsic function ``Fn::GetAZs`` returns an array that lists Availability Zones for a specified region.
+     * The intrinsic function <code>Fn::GetAZs</code> returns an array that lists Availability Zones for a specified region.
      * <p>
      * Because customers have access to
      * different Availability Zones, the intrinsic function <code>Fn::GetAZs</code> enables
@@ -247,7 +247,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The intrinsic function ``Fn::GetStackOutput`` returns the value of an output exported by another stack.
+     * The intrinsic function <code>Fn::GetStackOutput</code> returns the value of an output exported by another stack.
      * <p>
      * @return a token represented as a string
      * @param stackID This parameter is required.
@@ -259,7 +259,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The intrinsic function ``Fn::GetStackOutput`` returns the value of an output exported by another stack.
+     * The intrinsic function <code>Fn::GetStackOutput</code> returns the value of an output exported by another stack.
      * <p>
      * @return a token represented as a string
      * @param stackID This parameter is required.
@@ -270,7 +270,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The intrinsic function ``Fn::Join`` appends a set of values into a single value, separated by the specified delimiter.
+     * The intrinsic function <code>Fn::Join</code> appends a set of values into a single value, separated by the specified delimiter.
      * <p>
      * If a delimiter is the empty
      * string, the set of values are concatenated with no delimiter.
@@ -330,7 +330,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The ``Ref`` intrinsic function returns the value of the specified parameter or resource.
+     * The <code>Ref</code> intrinsic function returns the value of the specified parameter or resource.
      * <p>
      * Note that it doesn't validate the logicalName, it mainly serves paremeter/resource reference defined in a <code>RosInclude</code> template.
      * <p>
@@ -345,7 +345,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The intrinsic function ``Fn::Select`` returns a single object from a list of objects by index.
+     * The intrinsic function <code>Fn::Select</code> returns a single object from a list of objects by index.
      * <p>
      * @return a token represented as a string
      * @param index The index of the object to retrieve. This parameter is required.
@@ -372,7 +372,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * To split a string into a list of string values so that you can select an element from the resulting string list, use the ``Fn::Split`` intrinsic function.
+     * To split a string into a list of string values so that you can select an element from the resulting string list, use the <code>Fn::Split</code> intrinsic function.
      * <p>
      * Specify the location of splits
      * with a delimiter, such as , (a comma). After you split a string, use the <code>Fn::Select</code> function
@@ -391,7 +391,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The intrinsic function ``Fn::Sub`` substitutes variables in an input string with values that you specify.
+     * The intrinsic function <code>Fn::Sub</code> substitutes variables in an input string with values that you specify.
      * <p>
      * In your templates, you can use this function
      * to construct commands or outputs that include values that aren't available
@@ -406,7 +406,7 @@ public class Fn extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The intrinsic function ``Fn::Sub`` substitutes variables in an input string with values that you specify.
+     * The intrinsic function <code>Fn::Sub</code> substitutes variables in an input string with values that you specify.
      * <p>
      * In your templates, you can use this function
      * to construct commands or outputs that include values that aren't available

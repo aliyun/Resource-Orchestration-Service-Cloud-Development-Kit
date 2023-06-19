@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * The intrinsic function ``Fn::Base64`` returns the Base64 representation of the input string.
+ * The intrinsic function <code>Fn::Base64</code> returns the Base64 representation of the input string.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.881Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.888Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnBase64Encode")
 public class FnBase64Encode extends com.aliyun.ros.cdk.core.Intrinsic {
 
@@ -16,7 +16,7 @@ public class FnBase64Encode extends com.aliyun.ros.cdk.core.Intrinsic {
     }
 
     /**
-     * Creates an ``Fn::Base64`` function.
+     * Creates an <code>Fn::Base64</code> function.
      * <p>
      * @param data The string value you want to convert to Base64. This parameter is required.
      */

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.edas;
 
 /**
- * A ROS resource type:  `ALIYUN::EDAS::Application`.
+ * A ROS resource type:  <code>ALIYUN::EDAS::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.497Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.706Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.Application")
 public class Application extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::EDAS::Application`.
+     * Create a new <code>ALIYUN::EDAS::Application</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::EDAS::Application`.
+     * Create a new <code>ALIYUN::EDAS::Application</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -193,6 +193,27 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property deployment: Deploy application information to ECS clusters.
+         * <p>
+         * @return {@code this}
+         * @param deployment Property deployment: Deploy application information to ECS clusters. This parameter is required.
+         */
+        public Builder deployment(final com.aliyun.ros.cdk.core.IResolvable deployment) {
+            this.props.deployment(deployment);
+            return this;
+        }
+        /**
+         * Property deployment: Deploy application information to ECS clusters.
+         * <p>
+         * @return {@code this}
+         * @param deployment Property deployment: Deploy application information to ECS clusters. This parameter is required.
+         */
+        public Builder deployment(final com.aliyun.ros.cdk.edas.RosApplication.DeploymentProperty deployment) {
+            this.props.deployment(deployment);
+            return this;
+        }
+
+        /**
          * Property description: Descriptive information.
          * <p>
          * @return {@code this}
@@ -319,7 +340,7 @@ public class Application extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.edas.Application}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.edas.Application}.
          */
         @Override
         public com.aliyun.ros.cdk.edas.Application build() {

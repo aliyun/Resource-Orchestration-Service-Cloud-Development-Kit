@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.privatelink;
 
 /**
- * A ROS resource type:  `ALIYUN::PrivateLink::VpcEndpoint`.
+ * A ROS resource type:  <code>ALIYUN::PrivateLink::VpcEndpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.520Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.939Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpoint")
 public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::PrivateLink::VpcEndpoint`.
+     * Create a new <code>ALIYUN::PrivateLink::VpcEndpoint</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::PrivateLink::VpcEndpoint`.
+     * Create a new <code>ALIYUN::PrivateLink::VpcEndpoint</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -337,6 +337,19 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty> tags) {
+            this.props.tags(tags);
+            return this;
+        }
+
+        /**
          * Property zone:.
          * <p>
          * @return {@code this}
@@ -383,7 +396,7 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.privatelink.VpcEndpoint}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.privatelink.VpcEndpoint}.
          */
         @Override
         public com.aliyun.ros.cdk.privatelink.VpcEndpoint build() {

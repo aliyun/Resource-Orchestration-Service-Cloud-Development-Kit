@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * A ROS resource type:  `ALIYUN::ROS::CustomResource`.
+ * A ROS resource type:  <code>ALIYUN::ROS::CustomResource</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.900Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.421Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.CustomResource")
 public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROS::CustomResource`.
+     * Create a new <code>ALIYUN::ROS::CustomResource</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROS::CustomResource`.
+     * Create a new <code>ALIYUN::ROS::CustomResource</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -186,20 +186,20 @@ public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property httpConfig: Config for HTTP&HTTPS service provider.
+         * Property httpConfig: Config for HTTP&amp;HTTPS service provider.
          * <p>
          * @return {@code this}
-         * @param httpConfig Property httpConfig: Config for HTTP&HTTPS service provider. This parameter is required.
+         * @param httpConfig Property httpConfig: Config for HTTP&amp;HTTPS service provider. This parameter is required.
          */
         public Builder httpConfig(final com.aliyun.ros.cdk.core.IResolvable httpConfig) {
             this.props.httpConfig(httpConfig);
             return this;
         }
         /**
-         * Property httpConfig: Config for HTTP&HTTPS service provider.
+         * Property httpConfig: Config for HTTP&amp;HTTPS service provider.
          * <p>
          * @return {@code this}
-         * @param httpConfig Property httpConfig: Config for HTTP&HTTPS service provider. This parameter is required.
+         * @param httpConfig Property httpConfig: Config for HTTP&amp;HTTPS service provider. This parameter is required.
          */
         public Builder httpConfig(final com.aliyun.ros.cdk.ros.RosCustomResource.HttpConfigProperty httpConfig) {
             this.props.httpConfig(httpConfig);
@@ -228,7 +228,7 @@ public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ros.CustomResource}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ros.CustomResource}.
          */
         @Override
         public com.aliyun.ros.cdk.ros.CustomResource build() {

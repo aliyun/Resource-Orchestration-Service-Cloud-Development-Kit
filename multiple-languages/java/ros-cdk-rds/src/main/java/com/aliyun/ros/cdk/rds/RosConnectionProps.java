@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rds;
 
 /**
- * Properties for defining a `ALIYUN::RDS::Connection`.
+ * Properties for defining a <code>ALIYUN::RDS::Connection</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.724Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.197Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(RosConnectionProps.Jsii$Proxy.class)
 public interface RosConnectionProps extends software.amazon.jsii.JsiiSerializable {

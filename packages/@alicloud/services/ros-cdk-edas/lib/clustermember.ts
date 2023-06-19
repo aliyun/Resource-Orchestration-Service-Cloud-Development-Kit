@@ -45,6 +45,11 @@ export class ClusterMember extends ros.Resource {
     public readonly attrClusterMemberIds: ros.IResolvable;
 
     /**
+     * Attribute EcuIds: ECU IDs corresponding to the ECS instance IDs.
+     */
+    public readonly attrEcuIds: ros.IResolvable;
+
+    /**
      * Attribute InstanceIds: ECS instance IDs.
      */
     public readonly attrInstanceIds: ros.IResolvable;
@@ -67,6 +72,7 @@ export class ClusterMember extends ros.Resource {
         this.resource = rosClusterMember;
         this.attrClusterId = rosClusterMember.attrClusterId;
         this.attrClusterMemberIds = rosClusterMember.attrClusterMemberIds;
+        this.attrEcuIds = rosClusterMember.attrEcuIds;
         this.attrInstanceIds = rosClusterMember.attrInstanceIds;
     }
 }

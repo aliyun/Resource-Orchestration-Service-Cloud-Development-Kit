@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cdn;
 
 /**
- * A ROS resource type:  `ALIYUN::CDN::DomainConfig`.
+ * A ROS resource type:  <code>ALIYUN::CDN::DomainConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.394Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DomainConfig")
 public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::CDN::DomainConfig`.
+     * Create a new <code>ALIYUN::CDN::DomainConfig</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::CDN::DomainConfig`.
+     * Create a new <code>ALIYUN::CDN::DomainConfig</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -125,7 +125,7 @@ public class DomainConfig extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.cdn.DomainConfig}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.cdn.DomainConfig}.
          */
         @Override
         public com.aliyun.ros.cdk.cdn.DomainConfig build() {

@@ -54,6 +54,11 @@ export interface VpcEndpointProps {
     readonly serviceName?: string | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosVpcEndpoint.TagsProperty[];
+
+    /**
      * Property zone:
      */
     readonly zone?: Array<RosVpcEndpoint.ZoneProperty | ros.IResolvable> | ros.IResolvable;
@@ -134,6 +139,7 @@ export class VpcEndpoint extends ros.Resource {
             endpointType: props.endpointType,
             zonePrivateIpAddressCount: props.zonePrivateIpAddressCount,
             endpointDescription: props.endpointDescription,
+            tags: props.tags,
             serviceId: props.serviceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpcEndpoint;

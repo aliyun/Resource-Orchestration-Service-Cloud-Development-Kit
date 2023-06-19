@@ -1,0 +1,12 @@
+@alicloud/ros-cdk-pai.Dataset=com.aliyun.ros.cdk.pai.Dataset
+@alicloud/ros-cdk-pai.DatasetProps=com.aliyun.ros.cdk.pai.DatasetProps
+@alicloud/ros-cdk-pai.RosDataset=com.aliyun.ros.cdk.pai.RosDataset
+@alicloud/ros-cdk-pai.RosDatasetProps=com.aliyun.ros.cdk.pai.RosDatasetProps
+@alicloud/ros-cdk-pai.RosService=com.aliyun.ros.cdk.pai.RosService
+@alicloud/ros-cdk-pai.RosServiceProps=com.aliyun.ros.cdk.pai.RosServiceProps
+@alicloud/ros-cdk-pai.RosWorkspace=com.aliyun.ros.cdk.pai.RosWorkspace
+@alicloud/ros-cdk-pai.RosWorkspaceProps=com.aliyun.ros.cdk.pai.RosWorkspaceProps
+@alicloud/ros-cdk-pai.Service=com.aliyun.ros.cdk.pai.Service
+@alicloud/ros-cdk-pai.ServiceProps=com.aliyun.ros.cdk.pai.ServiceProps
+@alicloud/ros-cdk-pai.Workspace=com.aliyun.ros.cdk.pai.Workspace
+@alicloud/ros-cdk-pai.WorkspaceProps=com.aliyun.ros.cdk.pai.WorkspaceProps

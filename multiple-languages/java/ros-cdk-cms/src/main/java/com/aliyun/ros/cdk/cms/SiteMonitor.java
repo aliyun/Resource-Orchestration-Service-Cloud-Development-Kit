@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::SiteMonitor`.
+ * A ROS resource type:  <code>ALIYUN::CMS::SiteMonitor</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.611Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.720Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.SiteMonitor")
 public class SiteMonitor extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class SiteMonitor extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::CMS::SiteMonitor`.
+     * Create a new <code>ALIYUN::CMS::SiteMonitor</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class SiteMonitor extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::CMS::SiteMonitor`.
+     * Create a new <code>ALIYUN::CMS::SiteMonitor</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -275,7 +275,7 @@ public class SiteMonitor extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.cms.SiteMonitor}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.cms.SiteMonitor}.
          */
         @Override
         public com.aliyun.ros.cdk.cms.SiteMonitor build() {

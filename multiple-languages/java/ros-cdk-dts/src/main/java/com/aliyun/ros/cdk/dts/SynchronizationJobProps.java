@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * Properties for defining a `ALIYUN::DTS::SynchronizationJob`.
+ * Properties for defining a <code>ALIYUN::DTS::SynchronizationJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.026Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.168Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SynchronizationJobProps")
 @software.amazon.jsii.Jsii.Proxy(SynchronizationJobProps.Jsii$Proxy.class)
 public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerializable {
@@ -90,7 +90,7 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional.
+     * Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-&gt; MySQL synchronization, this parameter can receive the value bidirectional.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTopology() {
         return null;
@@ -367,7 +367,7 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getTopology}
-         * @param topology Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional.
+         * @param topology Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-&gt; MySQL synchronization, this parameter can receive the value bidirectional.
          * @return {@code this}
          */
         public Builder topology(java.lang.String topology) {
@@ -377,7 +377,7 @@ public interface SynchronizationJobProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link SynchronizationJobProps#getTopology}
-         * @param topology Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional.
+         * @param topology Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-&gt; MySQL synchronization, this parameter can receive the value bidirectional.
          * @return {@code this}
          */
         public Builder topology(com.aliyun.ros.cdk.core.IResolvable topology) {

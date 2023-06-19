@@ -137,7 +137,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         /// <remarks>
         /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
         /// in the specified VPC to the server group.
-        /// Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+        /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+        /// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
         /// </remarks>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object VpcId
@@ -167,10 +168,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: protocol: The server protocol. Valid values:
-        /// HTTP: allows you to associate HTTPS, HTTP, or QUIC listeners with backend servers. This
-        /// is the default value.
-        /// HTTPS: allows you to associate HTTPS listeners with backend servers.
+        /// <strong>Property</strong>: protocol: The backend protocol. Valid values:
+        /// HTTP (default): The server group can be associated with HTTPS, HTTP, and QUIC listeners.
+        /// HTTPS: The server group can be associated with HTTPS listeners.
+        /// gRPC: The server group can be associated with HTTPS and QUIC listeners.
+        /// Note: If the ServerGroupType parameter is set to Fc, you can set Protocol only to HTTP.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -233,13 +235,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: scheduler: The scheduling algorithm. Valid values:
-        /// Wrr: Backend servers that have higher weights receive more requests than those that have
-        /// lower weights. This is the default value.
-        /// Wlc: Requests are distributed based on the weight and load of each backend server. The
-        /// load refers to the number of connections to a backend server. If multiple backend
-        /// servers have the same weight, requests are routed to the backend server with the least
-        /// connections.
-        /// Sch: specifies consistent hashing that is based on source IP addresses.
+        /// Wrr (default): The weighted round-robin algorithm is used. Backend servers that have higher weights receive more requests than those that have lower weights.
+        /// Wlc: The weighted least connections algorithm is used. Requests are distributed based on the weights and the number of connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections is expected to receive more requests.
+        /// Sch: The consistent hashing algorithm is used. Requests from the same source IP address are distributed to the same backend server.
+        /// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "scheduler", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -271,11 +270,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: serverGroupType: The type of the server group. Valid values:
-        /// Instance: a server group that consists of servers. You can add Elastic Compute Service (ECS)
-        /// instances, elastic network interfaces (ENIs), and elastic container instances to this
-        /// type of server group. This is the default value.
-        /// Ip: a server group that consists of IP addresses. You can add IP addresses to this type
-        /// of server group.
+        /// Instance (default): allows you add servers by specifying Ecs, Ens, or Eci.
+        /// Ip: allows you to add servers by specifying IP addresses.
+        /// Fc: allows you to add servers by specifying functions of Function Compute.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "serverGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -338,7 +335,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: stickySessionConfig: The configuration of session persistence.
-        /// Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+        /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "stickySessionConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.StickySessionConfigProperty\"}]}}", isOptional: true)]
@@ -385,6 +382,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: healthCheckEnabled: Specifies whether to enable the health check feature. Valid values:
             /// true: enables the feature.
             /// false: disables the feature.
+            /// Note: If the ServerGroupType parameter is set to Instance or Ip, the health check feature is enabled by default. If the ServerGroupType parameter is set to Fc, the health check feature is disabled by default.
             /// </remarks>
             [JsiiProperty(name: "healthCheckEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object HealthCheckEnabled
@@ -393,10 +391,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: healthCheckCodes: The HTTP status code that indicates a successful health check. Multiple HTTP status
-            /// codes can be specified as a list.
-            /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
-            /// Valid values: http_2xx, http_3xx, http_4xx, and http_5xx. Default value: http_2xx.
+            /// <strong>Property</strong>: healthCheckCodes: The HTTP status codes that are used to determine whether the backend server passes the health check.
+            /// If HealthCheckProtocol is set to HTTP, HealthCheckCodes can be set to http_2xx (default), http_3xx, http_4xx, and http_5xx. Separate multiple HTTP status codes with a comma (,).
+            /// If HealthCheckProtocol is set to gRPC, HealthCheckCodes can be set to 0 to 99. Default value: 0. Value ranges are supported. You can enter at most 20 value ranges. Separate multiple value ranges with commas (,).)
+            /// Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP or gRPC.
             /// </remarks>
             [JsiiProperty(name: "healthCheckCodes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -433,7 +431,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// The rightmost field can contain only letters, and cannot contain digits or hyphens
             /// (-).
             /// Other fields cannot start or end with a hyphen (-).
-            /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+            /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+            /// Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP.
             /// </remarks>
             [JsiiProperty(name: "healthCheckHost", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -447,7 +446,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <remarks>
             /// <strong>Property</strong>: healthCheckHttpVersion: The version of the HTTP protocol. Valid values: HTTP1.0 and HTTP1.1. Default value: HTTP1.1.
-            /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+            /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
             /// </remarks>
             [JsiiProperty(name: "healthCheckHttpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -475,7 +474,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: healthCheckMethod: The HTTP method that is used for health checks. Valid values: GET and HEAD. Default value: HEAD.
+            /// <strong>Property</strong>: healthCheckMethod: The HTTP method that is used for health checks. Valid values:
+            /// GET: If the length of a response exceeds 8 KB, the response is truncated. However, the health check result is not affected.
+            /// POST: By default, gRPC health checks use the POST method.
+            /// HEAD: By default, HTTP health checks use the HEAD method.
+            /// Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP or gRPC.
             /// </remarks>
             [JsiiProperty(name: "healthCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -490,7 +493,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <remarks>
             /// <strong></strong>: $ ^ : ' , +.
             /// The URL must start with a forward slash (/).
-            /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+            /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
             ///
             /// <strong>Property</strong>: healthCheckPath: The URL that is used for health checks.
             /// The URL must be 1 to 80 characters in length, and can contain letters, digits, and
@@ -582,6 +585,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <strong>Property</strong>: healthCheckEnabled: Specifies whether to enable the health check feature. Valid values:
                 /// true: enables the feature.
                 /// false: disables the feature.
+                /// Note: If the ServerGroupType parameter is set to Instance or Ip, the health check feature is enabled by default. If the ServerGroupType parameter is set to Fc, the health check feature is disabled by default.
                 /// </remarks>
                 [JsiiProperty(name: "healthCheckEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object HealthCheckEnabled
@@ -590,10 +594,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: healthCheckCodes: The HTTP status code that indicates a successful health check. Multiple HTTP status
-                /// codes can be specified as a list.
-                /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
-                /// Valid values: http_2xx, http_3xx, http_4xx, and http_5xx. Default value: http_2xx.
+                /// <strong>Property</strong>: healthCheckCodes: The HTTP status codes that are used to determine whether the backend server passes the health check.
+                /// If HealthCheckProtocol is set to HTTP, HealthCheckCodes can be set to http_2xx (default), http_3xx, http_4xx, and http_5xx. Separate multiple HTTP status codes with a comma (,).
+                /// If HealthCheckProtocol is set to gRPC, HealthCheckCodes can be set to 0 to 99. Default value: 0. Value ranges are supported. You can enter at most 20 value ranges. Separate multiple value ranges with commas (,).)
+                /// Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP or gRPC.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "healthCheckCodes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -624,7 +628,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// The rightmost field can contain only letters, and cannot contain digits or hyphens
                 /// (-).
                 /// Other fields cannot start or end with a hyphen (-).
-                /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+                /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+                /// Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "healthCheckHost", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -635,7 +640,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
                 /// <remarks>
                 /// <strong>Property</strong>: healthCheckHttpVersion: The version of the HTTP protocol. Valid values: HTTP1.0 and HTTP1.1. Default value: HTTP1.1.
-                /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+                /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "healthCheckHttpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -657,7 +662,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: healthCheckMethod: The HTTP method that is used for health checks. Valid values: GET and HEAD. Default value: HEAD.
+                /// <strong>Property</strong>: healthCheckMethod: The HTTP method that is used for health checks. Valid values:
+                /// GET: If the length of a response exceeds 8 KB, the response is truncated. However, the health check result is not affected.
+                /// POST: By default, gRPC health checks use the POST method.
+                /// HEAD: By default, HTTP health checks use the HEAD method.
+                /// Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP or gRPC.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "healthCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -669,7 +678,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <remarks>
                 /// <strong></strong>: $ ^ : ' , +.
                 /// The URL must start with a forward slash (/).
-                /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+                /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
                 ///
                 /// <strong>Property</strong>: healthCheckPath: The URL that is used for health checks.
                 /// The URL must be 1 to 80 characters in length, and can contain letters, digits, and
@@ -747,6 +756,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: healthCheckEnabled: Specifies whether to enable the health check feature. Valid values:
             /// true: enables the feature.
             /// false: disables the feature.
+            /// Note: If the ServerGroupType parameter is set to Instance or Ip, the health check feature is enabled by default. If the ServerGroupType parameter is set to Fc, the health check feature is disabled by default.
             /// </remarks>
             [JsiiProperty(name: "healthCheckEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object HealthCheckEnabled
@@ -778,10 +788,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             private object? _healthCheckCodes;
 
             /// <remarks>
-            /// <strong>Property</strong>: healthCheckCodes: The HTTP status code that indicates a successful health check. Multiple HTTP status
-            /// codes can be specified as a list.
-            /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
-            /// Valid values: http_2xx, http_3xx, http_4xx, and http_5xx. Default value: http_2xx.
+            /// <strong>Property</strong>: healthCheckCodes: The HTTP status codes that are used to determine whether the backend server passes the health check.
+            /// If HealthCheckProtocol is set to HTTP, HealthCheckCodes can be set to http_2xx (default), http_3xx, http_4xx, and http_5xx. Separate multiple HTTP status codes with a comma (,).
+            /// If HealthCheckProtocol is set to gRPC, HealthCheckCodes can be set to 0 to 99. Default value: 0. Value ranges are supported. You can enter at most 20 value ranges. Separate multiple value ranges with commas (,).)
+            /// Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP or gRPC.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "healthCheckCodes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -895,7 +905,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// The rightmost field can contain only letters, and cannot contain digits or hyphens
             /// (-).
             /// Other fields cannot start or end with a hyphen (-).
-            /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+            /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+            /// Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "healthCheckHost", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -929,7 +940,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <remarks>
             /// <strong>Property</strong>: healthCheckHttpVersion: The version of the HTTP protocol. Valid values: HTTP1.0 and HTTP1.1. Default value: HTTP1.1.
-            /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+            /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "healthCheckHttpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1017,7 +1028,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             private object? _healthCheckMethod;
 
             /// <remarks>
-            /// <strong>Property</strong>: healthCheckMethod: The HTTP method that is used for health checks. Valid values: GET and HEAD. Default value: HEAD.
+            /// <strong>Property</strong>: healthCheckMethod: The HTTP method that is used for health checks. Valid values:
+            /// GET: If the length of a response exceeds 8 KB, the response is truncated. However, the health check result is not affected.
+            /// POST: By default, gRPC health checks use the POST method.
+            /// HEAD: By default, HTTP health checks use the HEAD method.
+            /// Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP or gRPC.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "healthCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1052,7 +1067,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <remarks>
             /// <strong></strong>: $ ^ : ' , +.
             /// The URL must start with a forward slash (/).
-            /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+            /// Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
             ///
             /// <strong>Property</strong>: healthCheckPath: The URL that is used for health checks.
             /// The URL must be 1 to 80 characters in length, and can contain letters, digits, and
@@ -1299,7 +1314,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// The cookie must be 1 to 200 characters in length, and can contain ASCII characters
             /// and digits. It cannot contain commas (,), semicolons (;), or spaces. It cannot start
             /// with a dollar sign ($).
-            /// Note This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Server.
+            /// Note: This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Server.
             /// </remarks>
             [JsiiProperty(name: "cookie", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1315,7 +1330,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: cookieTimeout: The timeout period of the cookie. Unit: seconds.
             /// Valid values: 1 to 86400.
             /// Default value: 1000.
-            /// Note This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Insert.
+            /// Note: This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Insert.
             /// </remarks>
             [JsiiProperty(name: "cookieTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1329,7 +1344,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <remarks>
             /// <strong>Property</strong>: stickySessionEnabled: Specifies whether to enable session persistence. Valid values: true and false.
-            /// Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+            /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
             /// </remarks>
             [JsiiProperty(name: "stickySessionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1352,7 +1367,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// When ALB detects a user-defined cookie, it uses the user-defined cookie to rewrite
             /// the original cookie. The next request from the client will contain the user-defined
             /// cookie, and the listener will distribute this request to the recorded backend server.
-            /// Note This parameter is required if the StickySessionEnabled parameter is set to true.
+            /// Note: This parameter is required if the StickySessionEnabled parameter is set to true.
             /// </remarks>
             [JsiiProperty(name: "stickySessionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1376,7 +1391,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// The cookie must be 1 to 200 characters in length, and can contain ASCII characters
                 /// and digits. It cannot contain commas (,), semicolons (;), or spaces. It cannot start
                 /// with a dollar sign ($).
-                /// Note This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Server.
+                /// Note: This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Server.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "cookie", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1389,7 +1404,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// <strong>Property</strong>: cookieTimeout: The timeout period of the cookie. Unit: seconds.
                 /// Valid values: 1 to 86400.
                 /// Default value: 1000.
-                /// Note This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Insert.
+                /// Note: This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Insert.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "cookieTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1400,7 +1415,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
                 /// <remarks>
                 /// <strong>Property</strong>: stickySessionEnabled: Specifies whether to enable session persistence. Valid values: true and false.
-                /// Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+                /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "stickySessionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1420,7 +1435,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 /// When ALB detects a user-defined cookie, it uses the user-defined cookie to rewrite
                 /// the original cookie. The next request from the client will contain the user-defined
                 /// cookie, and the listener will distribute this request to the recorded backend server.
-                /// Note This parameter is required if the StickySessionEnabled parameter is set to true.
+                /// Note: This parameter is required if the StickySessionEnabled parameter is set to true.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "stickySessionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1440,7 +1455,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// The cookie must be 1 to 200 characters in length, and can contain ASCII characters
             /// and digits. It cannot contain commas (,), semicolons (;), or spaces. It cannot start
             /// with a dollar sign ($).
-            /// Note This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Server.
+            /// Note: This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Server.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "cookie", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1476,7 +1491,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// <strong>Property</strong>: cookieTimeout: The timeout period of the cookie. Unit: seconds.
             /// Valid values: 1 to 86400.
             /// Default value: 1000.
-            /// Note This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Insert.
+            /// Note: This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Insert.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "cookieTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1530,7 +1545,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <remarks>
             /// <strong>Property</strong>: stickySessionEnabled: Specifies whether to enable session persistence. Valid values: true and false.
-            /// Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+            /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "stickySessionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1573,7 +1588,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             /// When ALB detects a user-defined cookie, it uses the user-defined cookie to rewrite
             /// the original cookie. The next request from the client will contain the user-defined
             /// cookie, and the listener will distribute this request to the recorded backend server.
-            /// Note This parameter is required if the StickySessionEnabled parameter is set to true.
+            /// Note: This parameter is required if the StickySessionEnabled parameter is set to true.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "stickySessionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

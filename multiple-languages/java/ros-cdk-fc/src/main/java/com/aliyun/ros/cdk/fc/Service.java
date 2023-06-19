@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * A ROS resource type:  `ALIYUN::FC::Service`.
+ * A ROS resource type:  <code>ALIYUN::FC::Service</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.902Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.167Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Service")
 public class Service extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::FC::Service`.
+     * Create a new <code>ALIYUN::FC::Service</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::FC::Service`.
+     * Create a new <code>ALIYUN::FC::Service</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -277,6 +277,27 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ossMountConfig: The OSS mount configurations.
+         * <p>
+         * @return {@code this}
+         * @param ossMountConfig Property ossMountConfig: The OSS mount configurations. This parameter is required.
+         */
+        public Builder ossMountConfig(final com.aliyun.ros.cdk.core.IResolvable ossMountConfig) {
+            this.props.ossMountConfig(ossMountConfig);
+            return this;
+        }
+        /**
+         * Property ossMountConfig: The OSS mount configurations.
+         * <p>
+         * @return {@code this}
+         * @param ossMountConfig Property ossMountConfig: The OSS mount configurations. This parameter is required.
+         */
+        public Builder ossMountConfig(final com.aliyun.ros.cdk.fc.RosService.OssMountConfigProperty ossMountConfig) {
+            this.props.ossMountConfig(ossMountConfig);
+            return this;
+        }
+
+        /**
          * Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store.
          * <p>
          * The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
@@ -390,7 +411,7 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.fc.Service}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.fc.Service}.
          */
         @Override
         public com.aliyun.ros.cdk.fc.Service build() {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * Properties for defining a `ALIYUN::VPC::SnatEntry`.
+ * Properties for defining a <code>ALIYUN::VPC::SnatEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.492Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:12.073Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SnatEntryProps")
 @software.amazon.jsii.Jsii.Proxy(SnatEntryProps.Jsii$Proxy.class)
 public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,18 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
      * Property snatTableId: The ID of the SNAT table.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSnatTableId();
+
+    /**
+     * Property eipAffinity: Specifies whether to enable EIP affinity.
+     * <p>
+     * Valid values:
+     * 0: no
+     * 1: yes
+     * If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEipAffinity() {
+        return null;
+    }
 
     /**
      * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
@@ -55,6 +67,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<SnatEntryProps> {
         java.lang.Object snatIp;
         java.lang.Object snatTableId;
+        java.lang.Object eipAffinity;
         java.lang.Object snatEntryName;
         java.lang.Object sourceCidr;
         java.lang.Object sourceVSwitchIds;
@@ -98,6 +111,34 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder snatTableId(com.aliyun.ros.cdk.core.IResolvable snatTableId) {
             this.snatTableId = snatTableId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SnatEntryProps#getEipAffinity}
+         * @param eipAffinity Property eipAffinity: Specifies whether to enable EIP affinity.
+         *                    Valid values:
+         *                    0: no
+         *                    1: yes
+         *                    If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
+         * @return {@code this}
+         */
+        public Builder eipAffinity(java.lang.Number eipAffinity) {
+            this.eipAffinity = eipAffinity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SnatEntryProps#getEipAffinity}
+         * @param eipAffinity Property eipAffinity: Specifies whether to enable EIP affinity.
+         *                    Valid values:
+         *                    0: no
+         *                    1: yes
+         *                    If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
+         * @return {@code this}
+         */
+        public Builder eipAffinity(com.aliyun.ros.cdk.core.IResolvable eipAffinity) {
+            this.eipAffinity = eipAffinity;
             return this;
         }
 
@@ -181,6 +222,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SnatEntryProps {
         private final java.lang.Object snatIp;
         private final java.lang.Object snatTableId;
+        private final java.lang.Object eipAffinity;
         private final java.lang.Object snatEntryName;
         private final java.lang.Object sourceCidr;
         private final java.lang.Object sourceVSwitchIds;
@@ -193,6 +235,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.snatIp = software.amazon.jsii.Kernel.get(this, "snatIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatTableId = software.amazon.jsii.Kernel.get(this, "snatTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.eipAffinity = software.amazon.jsii.Kernel.get(this, "eipAffinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snatEntryName = software.amazon.jsii.Kernel.get(this, "snatEntryName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceCidr = software.amazon.jsii.Kernel.get(this, "sourceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceVSwitchIds = software.amazon.jsii.Kernel.get(this, "sourceVSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -205,6 +248,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.snatIp = java.util.Objects.requireNonNull(builder.snatIp, "snatIp is required");
             this.snatTableId = java.util.Objects.requireNonNull(builder.snatTableId, "snatTableId is required");
+            this.eipAffinity = builder.eipAffinity;
             this.snatEntryName = builder.snatEntryName;
             this.sourceCidr = builder.sourceCidr;
             this.sourceVSwitchIds = builder.sourceVSwitchIds;
@@ -218,6 +262,11 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getSnatTableId() {
             return this.snatTableId;
+        }
+
+        @Override
+        public final java.lang.Object getEipAffinity() {
+            return this.eipAffinity;
         }
 
         @Override
@@ -243,6 +292,9 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
 
             data.set("snatIp", om.valueToTree(this.getSnatIp()));
             data.set("snatTableId", om.valueToTree(this.getSnatTableId()));
+            if (this.getEipAffinity() != null) {
+                data.set("eipAffinity", om.valueToTree(this.getEipAffinity()));
+            }
             if (this.getSnatEntryName() != null) {
                 data.set("snatEntryName", om.valueToTree(this.getSnatEntryName()));
             }
@@ -272,6 +324,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!snatIp.equals(that.snatIp)) return false;
             if (!snatTableId.equals(that.snatTableId)) return false;
+            if (this.eipAffinity != null ? !this.eipAffinity.equals(that.eipAffinity) : that.eipAffinity != null) return false;
             if (this.snatEntryName != null ? !this.snatEntryName.equals(that.snatEntryName) : that.snatEntryName != null) return false;
             if (this.sourceCidr != null ? !this.sourceCidr.equals(that.sourceCidr) : that.sourceCidr != null) return false;
             return this.sourceVSwitchIds != null ? this.sourceVSwitchIds.equals(that.sourceVSwitchIds) : that.sourceVSwitchIds == null;
@@ -281,6 +334,7 @@ public interface SnatEntryProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.snatIp.hashCode();
             result = 31 * result + (this.snatTableId.hashCode());
+            result = 31 * result + (this.eipAffinity != null ? this.eipAffinity.hashCode() : 0);
             result = 31 * result + (this.snatEntryName != null ? this.snatEntryName.hashCode() : 0);
             result = 31 * result + (this.sourceCidr != null ? this.sourceCidr.hashCode() : 0);
             result = 31 * result + (this.sourceVSwitchIds != null ? this.sourceVSwitchIds.hashCode() : 0);

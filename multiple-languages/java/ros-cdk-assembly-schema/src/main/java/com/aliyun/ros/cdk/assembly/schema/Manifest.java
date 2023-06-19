@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Protocol utility class.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.837Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.834Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.Manifest")
 public class Manifest extends software.amazon.jsii.JsiiObject {
 
@@ -18,7 +18,7 @@ public class Manifest extends software.amazon.jsii.JsiiObject {
     /**
      * (deprecated) Deprecated.
      * <p>
-     * @deprecated use `loadAssemblyManifest()`
+     * @deprecated use <code>loadAssemblyManifest()</code>
      * @param filePath This parameter is required.
      */
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
@@ -30,7 +30,7 @@ public class Manifest extends software.amazon.jsii.JsiiObject {
     /**
      * Load and validates the cloud assembly manifest from file.
      * <p>
-     * @param filePath - path to the manifest file. This parameter is required.
+     * @param filePath <ul><li>path to the manifest file.</li></ul> This parameter is required.
      */
     public static @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.assembly.schema.AssemblyManifest loadAssemblyManifest(final @org.jetbrains.annotations.NotNull java.lang.String filePath) {
         return software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.assembly.schema.Manifest.class, "loadAssemblyManifest", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.assembly.schema.AssemblyManifest.class), new Object[] { java.util.Objects.requireNonNull(filePath, "filePath is required") });
@@ -39,7 +39,7 @@ public class Manifest extends software.amazon.jsii.JsiiObject {
     /**
      * (deprecated) Deprecated.
      * <p>
-     * @deprecated use `saveAssemblyManifest()`
+     * @deprecated use <code>saveAssemblyManifest()</code>
      * @param manifest This parameter is required.
      * @param filePath This parameter is required.
      */
@@ -52,8 +52,8 @@ public class Manifest extends software.amazon.jsii.JsiiObject {
     /**
      * Validates and saves the cloud assembly manifest to file.
      * <p>
-     * @param manifest - manifest. This parameter is required.
-     * @param filePath - output file path. This parameter is required.
+     * @param manifest <ul><li>manifest.</li></ul> This parameter is required.
+     * @param filePath <ul><li>output file path.</li></ul> This parameter is required.
      */
     public static void saveAssemblyManifest(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.assembly.schema.AssemblyManifest manifest, final @org.jetbrains.annotations.NotNull java.lang.String filePath) {
         software.amazon.jsii.JsiiObject.jsiiStaticCall(com.aliyun.ros.cdk.assembly.schema.Manifest.class, "saveAssemblyManifest", software.amazon.jsii.NativeType.VOID, new Object[] { java.util.Objects.requireNonNull(manifest, "manifest is required"), java.util.Objects.requireNonNull(filePath, "filePath is required") });

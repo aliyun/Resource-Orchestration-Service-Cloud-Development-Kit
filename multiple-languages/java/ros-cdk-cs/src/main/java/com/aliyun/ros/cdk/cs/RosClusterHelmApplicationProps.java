@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * Properties for defining a `ALIYUN::CS::ClusterHelmApplication`.
+ * Properties for defining a <code>ALIYUN::CS::ClusterHelmApplication</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.778Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.919Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterHelmApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterHelmApplicationProps.Jsii$Proxy.class)
 public interface RosClusterHelmApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,6 +28,12 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCredential() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNamespace() {
         return null;
     }
@@ -46,6 +52,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         java.lang.Object clusterId;
         java.lang.Object name;
         java.lang.Object chartValues;
+        java.lang.Object credential;
         java.lang.Object namespace;
 
         /**
@@ -129,6 +136,26 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link RosClusterHelmApplicationProps#getCredential}
+         * @param credential the value to be set.
+         * @return {@code this}
+         */
+        public Builder credential(com.aliyun.ros.cdk.core.IResolvable credential) {
+            this.credential = credential;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterHelmApplicationProps#getCredential}
+         * @param credential the value to be set.
+         * @return {@code this}
+         */
+        public Builder credential(com.aliyun.ros.cdk.cs.RosClusterHelmApplication.CredentialProperty credential) {
+            this.credential = credential;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterHelmApplicationProps#getNamespace}
          * @param namespace the value to be set.
          * @return {@code this}
@@ -168,6 +195,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         private final java.lang.Object clusterId;
         private final java.lang.Object name;
         private final java.lang.Object chartValues;
+        private final java.lang.Object credential;
         private final java.lang.Object namespace;
 
         /**
@@ -180,6 +208,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.chartValues = software.amazon.jsii.Kernel.get(this, "chartValues", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.credential = software.amazon.jsii.Kernel.get(this, "credential", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -192,6 +221,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
             this.chartValues = builder.chartValues;
+            this.credential = builder.credential;
             this.namespace = builder.namespace;
         }
 
@@ -216,6 +246,11 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         }
 
         @Override
+        public final java.lang.Object getCredential() {
+            return this.credential;
+        }
+
+        @Override
         public final java.lang.Object getNamespace() {
             return this.namespace;
         }
@@ -231,6 +266,9 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             data.set("name", om.valueToTree(this.getName()));
             if (this.getChartValues() != null) {
                 data.set("chartValues", om.valueToTree(this.getChartValues()));
+            }
+            if (this.getCredential() != null) {
+                data.set("credential", om.valueToTree(this.getCredential()));
             }
             if (this.getNamespace() != null) {
                 data.set("namespace", om.valueToTree(this.getNamespace()));
@@ -257,6 +295,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             if (!clusterId.equals(that.clusterId)) return false;
             if (!name.equals(that.name)) return false;
             if (this.chartValues != null ? !this.chartValues.equals(that.chartValues) : that.chartValues != null) return false;
+            if (this.credential != null ? !this.credential.equals(that.credential) : that.credential != null) return false;
             return this.namespace != null ? this.namespace.equals(that.namespace) : that.namespace == null;
         }
 
@@ -266,6 +305,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             result = 31 * result + (this.clusterId.hashCode());
             result = 31 * result + (this.name.hashCode());
             result = 31 * result + (this.chartValues != null ? this.chartValues.hashCode() : 0);
+            result = 31 * result + (this.credential != null ? this.credential.hashCode() : 0);
             result = 31 * result + (this.namespace != null ? this.namespace.hashCode() : 0);
             return result;
         }

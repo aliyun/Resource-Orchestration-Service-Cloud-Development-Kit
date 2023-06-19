@@ -81,7 +81,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         /// <remarks>
         /// You can add only servers that are deployed
         /// in the specified VPC to the server group.
-        /// Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+        /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+        /// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
         /// </remarks>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object VpcId
@@ -112,12 +113,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _protocol;
 
-        /// <summary>Property protocol: The server protocol.</summary>
+        /// <summary>Property protocol: The backend protocol.</summary>
         /// <remarks>
         /// Valid values:
-        /// HTTP: allows you to associate HTTPS, HTTP, or QUIC listeners with backend servers. This
-        /// is the default value.
-        /// HTTPS: allows you to associate HTTPS listeners with backend servers.
+        /// HTTP (default): The server group can be associated with HTTPS, HTTP, and QUIC listeners.
+        /// HTTPS: The server group can be associated with HTTPS listeners.
+        /// gRPC: The server group can be associated with HTTPS and QUIC listeners.
+        /// Note: If the ServerGroupType parameter is set to Fc, you can set Protocol only to HTTP.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -183,13 +185,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         /// <summary>Property scheduler: The scheduling algorithm.</summary>
         /// <remarks>
         /// Valid values:
-        /// Wrr: Backend servers that have higher weights receive more requests than those that have
-        /// lower weights. This is the default value.
-        /// Wlc: Requests are distributed based on the weight and load of each backend server. The
-        /// load refers to the number of connections to a backend server. If multiple backend
-        /// servers have the same weight, requests are routed to the backend server with the least
-        /// connections.
-        /// Sch: specifies consistent hashing that is based on source IP addresses.
+        /// Wrr (default): The weighted round-robin algorithm is used. Backend servers that have higher weights receive more requests than those that have lower weights.
+        /// Wlc: The weighted least connections algorithm is used. Requests are distributed based on the weights and the number of connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections is expected to receive more requests.
+        /// Sch: The consistent hashing algorithm is used. Requests from the same source IP address are distributed to the same backend server.
+        /// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "scheduler", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -224,11 +223,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         /// <summary>Property serverGroupType: The type of the server group.</summary>
         /// <remarks>
         /// Valid values:
-        /// Instance: a server group that consists of servers. You can add Elastic Compute Service (ECS)
-        /// instances, elastic network interfaces (ENIs), and elastic container instances to this
-        /// type of server group. This is the default value.
-        /// Ip: a server group that consists of IP addresses. You can add IP addresses to this type
-        /// of server group.
+        /// Instance (default): allows you add servers by specifying Ecs, Ens, or Eci.
+        /// Ip: allows you to add servers by specifying IP addresses.
+        /// Fc: allows you to add servers by specifying functions of Function Compute.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "serverGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -296,7 +293,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <summary>Property stickySessionConfig: The configuration of session persistence.</summary>
         /// <remarks>
-        /// Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+        /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "stickySessionConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosServerGroup.StickySessionConfigProperty\"}]}}", isOptional: true)]

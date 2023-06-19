@@ -24,6 +24,14 @@ export interface ManagedPolicyProps {
     readonly groups?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property ignoreExisting: Whether to ignore existing policy
+     * False: ROS will perform a uniqueness check.If a policy with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a policy with the same name, the policy creation process will be ignored.
+     * If the policy is not created by ROS, it will be ignored during update and delete stage.
+     */
+    readonly ignoreExisting?: boolean | ros.IResolvable;
+
+    /**
      * Property policyDocument: A policy document that describes what actions are allowed on which resources.
      */
     readonly policyDocument?: RosManagedPolicy.PolicyDocumentProperty | ros.IResolvable;
@@ -70,6 +78,7 @@ export class ManagedPolicy extends ros.Resource {
         super(scope, id);
 
         const rosManagedPolicy = new RosManagedPolicy(this, id,  {
+            ignoreExisting: props.ignoreExisting === undefined || props.ignoreExisting === null ? false : props.ignoreExisting,
             description: props.description,
             groups: props.groups,
             policyName: props.policyName,

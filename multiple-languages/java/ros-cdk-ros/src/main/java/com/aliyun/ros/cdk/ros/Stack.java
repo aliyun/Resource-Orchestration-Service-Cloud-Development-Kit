@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * A ROS resource type:  `ALIYUN::ROS::Stack`.
+ * A ROS resource type:  <code>ALIYUN::ROS::Stack</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.945Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.468Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.Stack")
 public class Stack extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROS::Stack`.
+     * Create a new <code>ALIYUN::ROS::Stack</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROS::Stack`.
+     * Create a new <code>ALIYUN::ROS::Stack</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -49,7 +49,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROS::Stack`.
+     * Create a new <code>ALIYUN::ROS::Stack</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -135,6 +135,19 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property tags: The tags of nested stack.
+         * <p>
+         * If it is specified, it will be passed to all tag-supported resources in the nested stack.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: The tags of nested stack. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ros.RosStack.TagsProperty> tags) {
+            this.props().tags(tags);
             return this;
         }
 
@@ -260,7 +273,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ros.Stack}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ros.Stack}.
          */
         @Override
         public com.aliyun.ros.cdk.ros.Stack build() {

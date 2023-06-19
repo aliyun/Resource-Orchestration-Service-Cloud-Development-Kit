@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::Ipv4Gateway`.
+ * A ROS resource type:  <code>ALIYUN::VPC::Ipv4Gateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.354Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.899Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.Ipv4Gateway")
 public class Ipv4Gateway extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Ipv4Gateway extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::Ipv4Gateway`.
+     * Create a new <code>ALIYUN::VPC::Ipv4Gateway</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Ipv4Gateway extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::Ipv4Gateway`.
+     * Create a new <code>ALIYUN::VPC::Ipv4Gateway</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -188,7 +188,7 @@ public class Ipv4Gateway extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.vpc.Ipv4Gateway}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.vpc.Ipv4Gateway}.
          */
         @Override
         public com.aliyun.ros.cdk.vpc.Ipv4Gateway build() {

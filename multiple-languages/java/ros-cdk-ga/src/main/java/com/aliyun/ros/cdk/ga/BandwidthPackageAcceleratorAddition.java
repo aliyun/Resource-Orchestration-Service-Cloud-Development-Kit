@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * A ROS resource type:  `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
+ * A ROS resource type:  <code>ALIYUN::GA::BandwidthPackageAcceleratorAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.956Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.224Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BandwidthPackageAcceleratorAddition")
 public class BandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class BandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.core
     }
 
     /**
-     * Create a new `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
+     * Create a new <code>ALIYUN::GA::BandwidthPackageAcceleratorAddition</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class BandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.core
     }
 
     /**
-     * Create a new `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
+     * Create a new <code>ALIYUN::GA::BandwidthPackageAcceleratorAddition</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -139,7 +139,7 @@ public class BandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.core
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ga.BandwidthPackageAcceleratorAddition}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ga.BandwidthPackageAcceleratorAddition}.
          */
         @Override
         public com.aliyun.ros.cdk.ga.BandwidthPackageAcceleratorAddition build() {

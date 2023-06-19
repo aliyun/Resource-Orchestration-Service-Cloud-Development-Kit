@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * A ROS resource type:  `ALIYUN::DTS::SynchronizationJob`.
+ * A ROS resource type:  <code>ALIYUN::DTS::SynchronizationJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.024Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.157Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SynchronizationJob")
 public class SynchronizationJob extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class SynchronizationJob extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::DTS::SynchronizationJob`.
+     * Create a new <code>ALIYUN::DTS::SynchronizationJob</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class SynchronizationJob extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::DTS::SynchronizationJob`.
+     * Create a new <code>ALIYUN::DTS::SynchronizationJob</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -349,20 +349,20 @@ public class SynchronizationJob extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional.
+         * Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-&gt; MySQL synchronization, this parameter can receive the value bidirectional.
          * <p>
          * @return {@code this}
-         * @param topology Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional. This parameter is required.
+         * @param topology Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-&gt; MySQL synchronization, this parameter can receive the value bidirectional. This parameter is required.
          */
         public Builder topology(final java.lang.String topology) {
             this.props.topology(topology);
             return this;
         }
         /**
-         * Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional.
+         * Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-&gt; MySQL synchronization, this parameter can receive the value bidirectional.
          * <p>
          * @return {@code this}
-         * @param topology Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional. This parameter is required.
+         * @param topology Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-&gt; MySQL synchronization, this parameter can receive the value bidirectional. This parameter is required.
          */
         public Builder topology(final com.aliyun.ros.cdk.core.IResolvable topology) {
             this.props.topology(topology);
@@ -391,7 +391,7 @@ public class SynchronizationJob extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.dts.SynchronizationJob}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.dts.SynchronizationJob}.
          */
         @Override
         public com.aliyun.ros.cdk.dts.SynchronizationJob build() {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rds;
 
 /**
- * A ROS resource type:  `ALIYUN::RDS::PrepayDBInstance`.
+ * A ROS resource type:  <code>ALIYUN::RDS::PrepayDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.689Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.152Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstance")
 public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::RDS::PrepayDBInstance`.
+     * Create a new <code>ALIYUN::RDS::PrepayDBInstance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::RDS::PrepayDBInstance`.
+     * Create a new <code>ALIYUN::RDS::PrepayDBInstance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -1763,7 +1763,7 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.rds.PrepayDBInstance}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.rds.PrepayDBInstance}.
          */
         @Override
         public com.aliyun.ros.cdk.rds.PrepayDBInstance build() {

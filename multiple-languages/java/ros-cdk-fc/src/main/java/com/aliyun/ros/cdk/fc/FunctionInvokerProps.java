@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * Properties for defining a `ALIYUN::FC::FunctionInvoker`.
+ * Properties for defining a <code>ALIYUN::FC::FunctionInvoker</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.856Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.122Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.FunctionInvokerProps")
 @software.amazon.jsii.Jsii.Proxy(FunctionInvokerProps.Jsii$Proxy.class)
 public interface FunctionInvokerProps extends software.amazon.jsii.JsiiSerializable {

@@ -88,6 +88,11 @@ export interface EIPProps {
      * Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosEIP.TagsProperty[];
+
+    /**
+     * Property zone: Availability zone of the elastic public network IP.
+     */
+    readonly zone?: string | ros.IResolvable;
 }
 
 /**
@@ -133,6 +138,7 @@ export class Eip extends ros.Resource {
         const rosEIP = new RosEIP(this, id,  {
             description: props.description,
             resourceGroupId: props.resourceGroupId,
+            zone: props.zone,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'Postpaid' : props.instanceChargeType,
             pricingCycle: props.pricingCycle === undefined || props.pricingCycle === null ? 'Month' : props.pricingCycle,
             isp: props.isp,

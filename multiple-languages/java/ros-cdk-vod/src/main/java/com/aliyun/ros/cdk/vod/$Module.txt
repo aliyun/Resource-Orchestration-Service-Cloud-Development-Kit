@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-vod.EditingProject=com.aliyun.ros.cdk.vod.EditingProject
+@alicloud/ros-cdk-vod.EditingProjectProps=com.aliyun.ros.cdk.vod.EditingProjectProps
+@alicloud/ros-cdk-vod.RosEditingProject=com.aliyun.ros.cdk.vod.RosEditingProject
+@alicloud/ros-cdk-vod.RosEditingProjectProps=com.aliyun.ros.cdk.vod.RosEditingProjectProps

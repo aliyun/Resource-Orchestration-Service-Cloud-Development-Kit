@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ehpc;
 
 /**
- * Properties for defining a `ALIYUN::EHPC::Cluster`.
+ * Properties for defining a <code>ALIYUN::EHPC::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.616Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.843Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.ClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterProps.Jsii$Proxy.class)
 public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -272,6 +272,26 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
+     * <p>
+     * When the value of DeployMode is Standard, the value range: scheduler, account, login, compute.
+     * When the value of DeployMode is Simple, the value range: manager, login, compute.
+     * When the value of DeployMode is Tiny, the value range: manager, compute.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRamNodeTypes() {
+        return null;
+    }
+
+    /**
+     * Property ramRoleName: The name of the Resource Access Management (RAM) role.
+     * <p>
+     * You can call the ListRoles operation provided by RAM to query the created RAM roles.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
+        return null;
+    }
+
+    /**
      * Property remoteDirectory: Mount shared storage remote directory.
      * <p>
      * The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
@@ -418,6 +438,13 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return null;
+    }
+
+    /**
      * Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP).
      * <p>
      * Default value: false
@@ -476,6 +503,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object period;
         java.lang.Object periodUnit;
         java.lang.Object postInstallScript;
+        java.lang.Object ramNodeTypes;
+        java.lang.Object ramRoleName;
         java.lang.Object remoteDirectory;
         java.lang.Object remoteVisEnable;
         java.lang.Object resourceGroupId;
@@ -490,6 +519,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object volumeMountpoint;
         java.lang.Object volumeProtocol;
         java.lang.Object volumeType;
+        java.lang.Object vpcId;
         java.lang.Object withoutElasticIp;
         java.lang.Object zoneId;
 
@@ -1220,6 +1250,54 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ClusterProps#getRamNodeTypes}
+         * @param ramNodeTypes Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
+         *                     When the value of DeployMode is Standard, the value range: scheduler, account, login, compute.
+         *                     When the value of DeployMode is Simple, the value range: manager, login, compute.
+         *                     When the value of DeployMode is Tiny, the value range: manager, compute.
+         * @return {@code this}
+         */
+        public Builder ramNodeTypes(com.aliyun.ros.cdk.core.IResolvable ramNodeTypes) {
+            this.ramNodeTypes = ramNodeTypes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getRamNodeTypes}
+         * @param ramNodeTypes Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
+         *                     When the value of DeployMode is Standard, the value range: scheduler, account, login, compute.
+         *                     When the value of DeployMode is Simple, the value range: manager, login, compute.
+         *                     When the value of DeployMode is Tiny, the value range: manager, compute.
+         * @return {@code this}
+         */
+        public Builder ramNodeTypes(java.util.List<? extends java.lang.Object> ramNodeTypes) {
+            this.ramNodeTypes = ramNodeTypes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getRamRoleName}
+         * @param ramRoleName Property ramRoleName: The name of the Resource Access Management (RAM) role.
+         *                    You can call the ListRoles operation provided by RAM to query the created RAM roles.
+         * @return {@code this}
+         */
+        public Builder ramRoleName(java.lang.String ramRoleName) {
+            this.ramRoleName = ramRoleName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getRamRoleName}
+         * @param ramRoleName Property ramRoleName: The name of the Resource Access Management (RAM) role.
+         *                    You can call the ListRoles operation provided by RAM to query the created RAM roles.
+         * @return {@code this}
+         */
+        public Builder ramRoleName(com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
+            this.ramRoleName = ramRoleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ClusterProps#getRemoteDirectory}
          * @param remoteDirectory Property remoteDirectory: Mount shared storage remote directory.
          *                        The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
@@ -1572,6 +1650,26 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ClusterProps#getVpcId}
+         * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs.
+         * @return {@code this}
+         */
+        public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ClusterProps#getVpcId}
+         * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ClusterProps#getWithoutElasticIp}
          * @param withoutElasticIp Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP).
          *                         Default value: false
@@ -1662,6 +1760,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
         private final java.lang.Object postInstallScript;
+        private final java.lang.Object ramNodeTypes;
+        private final java.lang.Object ramRoleName;
         private final java.lang.Object remoteDirectory;
         private final java.lang.Object remoteVisEnable;
         private final java.lang.Object resourceGroupId;
@@ -1676,6 +1776,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object volumeMountpoint;
         private final java.lang.Object volumeProtocol;
         private final java.lang.Object volumeType;
+        private final java.lang.Object vpcId;
         private final java.lang.Object withoutElasticIp;
         private final java.lang.Object zoneId;
 
@@ -1718,6 +1819,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.postInstallScript = software.amazon.jsii.Kernel.get(this, "postInstallScript", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ramNodeTypes = software.amazon.jsii.Kernel.get(this, "ramNodeTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remoteDirectory = software.amazon.jsii.Kernel.get(this, "remoteDirectory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remoteVisEnable = software.amazon.jsii.Kernel.get(this, "remoteVisEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1732,6 +1835,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.volumeMountpoint = software.amazon.jsii.Kernel.get(this, "volumeMountpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.volumeProtocol = software.amazon.jsii.Kernel.get(this, "volumeProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.volumeType = software.amazon.jsii.Kernel.get(this, "volumeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.withoutElasticIp = software.amazon.jsii.Kernel.get(this, "withoutElasticIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -1774,6 +1878,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
             this.postInstallScript = builder.postInstallScript;
+            this.ramNodeTypes = builder.ramNodeTypes;
+            this.ramRoleName = builder.ramRoleName;
             this.remoteDirectory = builder.remoteDirectory;
             this.remoteVisEnable = builder.remoteVisEnable;
             this.resourceGroupId = builder.resourceGroupId;
@@ -1788,6 +1894,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.volumeMountpoint = builder.volumeMountpoint;
             this.volumeProtocol = builder.volumeProtocol;
             this.volumeType = builder.volumeType;
+            this.vpcId = builder.vpcId;
             this.withoutElasticIp = builder.withoutElasticIp;
             this.zoneId = builder.zoneId;
         }
@@ -1958,6 +2065,16 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRamNodeTypes() {
+            return this.ramNodeTypes;
+        }
+
+        @Override
+        public final java.lang.Object getRamRoleName() {
+            return this.ramRoleName;
+        }
+
+        @Override
         public final java.lang.Object getRemoteDirectory() {
             return this.remoteDirectory;
         }
@@ -2025,6 +2142,11 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getVolumeType() {
             return this.volumeType;
+        }
+
+        @Override
+        public final java.lang.Object getVpcId() {
+            return this.vpcId;
         }
 
         @Override
@@ -2126,6 +2248,12 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPostInstallScript() != null) {
                 data.set("postInstallScript", om.valueToTree(this.getPostInstallScript()));
             }
+            if (this.getRamNodeTypes() != null) {
+                data.set("ramNodeTypes", om.valueToTree(this.getRamNodeTypes()));
+            }
+            if (this.getRamRoleName() != null) {
+                data.set("ramRoleName", om.valueToTree(this.getRamRoleName()));
+            }
             if (this.getRemoteDirectory() != null) {
                 data.set("remoteDirectory", om.valueToTree(this.getRemoteDirectory()));
             }
@@ -2167,6 +2295,9 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getVolumeType() != null) {
                 data.set("volumeType", om.valueToTree(this.getVolumeType()));
+            }
+            if (this.getVpcId() != null) {
+                data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
             if (this.getWithoutElasticIp() != null) {
                 data.set("withoutElasticIp", om.valueToTree(this.getWithoutElasticIp()));
@@ -2225,6 +2356,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.postInstallScript != null ? !this.postInstallScript.equals(that.postInstallScript) : that.postInstallScript != null) return false;
+            if (this.ramNodeTypes != null ? !this.ramNodeTypes.equals(that.ramNodeTypes) : that.ramNodeTypes != null) return false;
+            if (this.ramRoleName != null ? !this.ramRoleName.equals(that.ramRoleName) : that.ramRoleName != null) return false;
             if (this.remoteDirectory != null ? !this.remoteDirectory.equals(that.remoteDirectory) : that.remoteDirectory != null) return false;
             if (this.remoteVisEnable != null ? !this.remoteVisEnable.equals(that.remoteVisEnable) : that.remoteVisEnable != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -2239,6 +2372,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.volumeMountpoint != null ? !this.volumeMountpoint.equals(that.volumeMountpoint) : that.volumeMountpoint != null) return false;
             if (this.volumeProtocol != null ? !this.volumeProtocol.equals(that.volumeProtocol) : that.volumeProtocol != null) return false;
             if (this.volumeType != null ? !this.volumeType.equals(that.volumeType) : that.volumeType != null) return false;
+            if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.withoutElasticIp != null ? !this.withoutElasticIp.equals(that.withoutElasticIp) : that.withoutElasticIp != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
@@ -2278,6 +2412,8 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.postInstallScript != null ? this.postInstallScript.hashCode() : 0);
+            result = 31 * result + (this.ramNodeTypes != null ? this.ramNodeTypes.hashCode() : 0);
+            result = 31 * result + (this.ramRoleName != null ? this.ramRoleName.hashCode() : 0);
             result = 31 * result + (this.remoteDirectory != null ? this.remoteDirectory.hashCode() : 0);
             result = 31 * result + (this.remoteVisEnable != null ? this.remoteVisEnable.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
@@ -2292,6 +2428,7 @@ public interface ClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.volumeMountpoint != null ? this.volumeMountpoint.hashCode() : 0);
             result = 31 * result + (this.volumeProtocol != null ? this.volumeProtocol.hashCode() : 0);
             result = 31 * result + (this.volumeType != null ? this.volumeType.hashCode() : 0);
+            result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.withoutElasticIp != null ? this.withoutElasticIp.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;

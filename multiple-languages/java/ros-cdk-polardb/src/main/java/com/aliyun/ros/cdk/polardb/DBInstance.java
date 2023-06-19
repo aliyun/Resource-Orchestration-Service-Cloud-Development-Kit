@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardb;
 
 /**
- * A ROS resource type:  `ALIYUN::POLARDB::DBInstance`.
+ * A ROS resource type:  <code>ALIYUN::POLARDB::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.475Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.873Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBInstance`.
+     * Create a new <code>ALIYUN::POLARDB::DBInstance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBInstance`.
+     * Create a new <code>ALIYUN::POLARDB::DBInstance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -216,6 +216,64 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property collate: A locale setting that specifies the collation for newly created databases.
+         * <p>
+         * The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+         * when the cluster is PolarDB MySQL, this parameter is not supported.
+         * <p>
+         * @return {@code this}
+         * @param collate Property collate: A locale setting that specifies the collation for newly created databases. This parameter is required.
+         */
+        public Builder collate(final java.lang.String collate) {
+            this.props.collate(collate);
+            return this;
+        }
+        /**
+         * Property collate: A locale setting that specifies the collation for newly created databases.
+         * <p>
+         * The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+         * when the cluster is PolarDB MySQL, this parameter is not supported.
+         * <p>
+         * @return {@code this}
+         * @param collate Property collate: A locale setting that specifies the collation for newly created databases. This parameter is required.
+         */
+        public Builder collate(final com.aliyun.ros.cdk.core.IResolvable collate) {
+            this.props.collate(collate);
+            return this;
+        }
+
+        /**
+         * Property ctype: A locale setting that specifies the character classification of the database.
+         * <p>
+         * The locale must be compatible with the character set set by the CharacterSetName parameter.
+         * It is consistent with the incoming information of Collate.
+         * When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+         * when the cluster is PolarDB MySQL, this parameter is optional.
+         * <p>
+         * @return {@code this}
+         * @param ctype Property ctype: A locale setting that specifies the character classification of the database. This parameter is required.
+         */
+        public Builder ctype(final java.lang.String ctype) {
+            this.props.ctype(ctype);
+            return this;
+        }
+        /**
+         * Property ctype: A locale setting that specifies the character classification of the database.
+         * <p>
+         * The locale must be compatible with the character set set by the CharacterSetName parameter.
+         * It is consistent with the incoming information of Collate.
+         * When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+         * when the cluster is PolarDB MySQL, this parameter is optional.
+         * <p>
+         * @return {@code this}
+         * @param ctype Property ctype: A locale setting that specifies the character classification of the database. This parameter is required.
+         */
+        public Builder ctype(final com.aliyun.ros.cdk.core.IResolvable ctype) {
+            this.props.ctype(ctype);
+            return this;
+        }
+
+        /**
          * Property dbDescription: The description of the database.
          * <p>
          * Valid values:
@@ -245,7 +303,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.polardb.DBInstance}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.polardb.DBInstance}.
          */
         @Override
         public com.aliyun.ros.cdk.polardb.DBInstance build() {

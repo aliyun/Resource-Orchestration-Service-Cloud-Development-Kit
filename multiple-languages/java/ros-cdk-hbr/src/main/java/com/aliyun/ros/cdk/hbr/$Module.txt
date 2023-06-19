@@ -22,3 +22,8 @@
 @alicloud/ros-cdk-hbr.RosDbVaultProps=com.aliyun.ros.cdk.hbr.RosDbVaultProps
 @alicloud/ros-cdk-hbr.RosRestoreJob=com.aliyun.ros.cdk.hbr.RosRestoreJob
 @alicloud/ros-cdk-hbr.RosRestoreJobProps=com.aliyun.ros.cdk.hbr.RosRestoreJobProps
+@alicloud/ros-cdk-hbr.RosVault=com.aliyun.ros.cdk.hbr.RosVault
+@alicloud/ros-cdk-hbr.RosVault.TagsProperty=com.aliyun.ros.cdk.hbr.RosVault$TagsProperty
+@alicloud/ros-cdk-hbr.RosVaultProps=com.aliyun.ros.cdk.hbr.RosVaultProps
+@alicloud/ros-cdk-hbr.Vault=com.aliyun.ros.cdk.hbr.Vault
+@alicloud/ros-cdk-hbr.VaultProps=com.aliyun.ros.cdk.hbr.VaultProps

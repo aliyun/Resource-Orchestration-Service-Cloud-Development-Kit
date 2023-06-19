@@ -72,6 +72,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: allowSignatureMethod: If the AuthType is APP authentication, you need to pass this value to specify the signature algorithm. If you do not specify this parameter, the default value HmacSHA256 is used. Valid values:
+        /// HmacSHA256
+        /// HmacSHA1,HmacSHA256
+        /// </remarks>
+        [JsiiProperty(name: "allowSignatureMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AllowSignatureMethod
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT:
         /// DEFAULT: Default (set by group).
         /// DISABLE: Not allowed
@@ -211,6 +226,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: resultBodyModel: The return result of the API.
+        /// </remarks>
+        [JsiiProperty(name: "resultBodyModel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResultBodyModel
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: resultDescriptions: The return description of the API.
+        /// </remarks>
+        [JsiiProperty(name: "resultDescriptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResultDescriptions
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: serviceParameters: The service parameters.
         /// </remarks>
         [JsiiProperty(name: "serviceParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.ServiceParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -255,6 +296,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         AlibabaCloud.SDK.ROS.CDK.Apigateway.RosApi.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: webSocketApiType: The type of the two-way communication API.
+        /// COMMON: common API
+        /// REGISTER: registered API
+        /// UNREGISTER: unregistered API
+        /// NOTIFY: downstream notification API
+        /// </remarks>
+        [JsiiProperty(name: "webSocketApiType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? WebSocketApiType
         {
             get
             {
@@ -331,6 +389,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             public object Visibility
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: allowSignatureMethod: If the AuthType is APP authentication, you need to pass this value to specify the signature algorithm. If you do not specify this parameter, the default value HmacSHA256 is used. Valid values:
+            /// HmacSHA256
+            /// HmacSHA1,HmacSHA256
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "allowSignatureMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AllowSignatureMethod
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -443,6 +513,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: resultBodyModel: The return result of the API.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "resultBodyModel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResultBodyModel
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: resultDescriptions: The return description of the API.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "resultDescriptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResultDescriptions
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: serviceParameters: The service parameters.
             /// </remarks>
             [JsiiOptional]
@@ -480,6 +570,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             public AlibabaCloud.SDK.ROS.CDK.Apigateway.RosApi.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Apigateway.RosApi.ITagsProperty[]?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: webSocketApiType: The type of the two-way communication API.
+            /// COMMON: common API
+            /// REGISTER: registered API
+            /// UNREGISTER: unregistered API
+            /// NOTIFY: downstream notification API
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "webSocketApiType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? WebSocketApiType
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

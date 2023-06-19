@@ -43,6 +43,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        /// <summary>Property credential: The credential of ACR repo.</summary>
+        /// <remarks>
+        /// Only take effects when ChartUrl is the address of ACR repo.
+        /// </remarks>
+        [JsiiProperty(name: "credential", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosClusterHelmApplication.CredentialProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Credential
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property namespace: Namespace to use with helm.</summary>
         /// <remarks>
         /// Default is default
@@ -93,6 +107,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "chartValues", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? ChartValues
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property credential: The credential of ACR repo.</summary>
+            /// <remarks>
+            /// Only take effects when ChartUrl is the address of ACR repo.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "credential", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosClusterHelmApplication.CredentialProperty\"}]}}", isOptional: true)]
+            public object? Credential
             {
                 get => GetInstanceProperty<object?>();
             }

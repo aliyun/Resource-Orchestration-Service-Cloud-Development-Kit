@@ -532,7 +532,7 @@ export interface RosFunctionProps {
     readonly handler: string | ros.IResolvable;
 
     /**
-     * @Property runtime: The function runtime environment. Supporting nodejs6, nodejs8, nodejs10, nodejs12, python2.7, python3, java8, custom, custom-container and so on
+     * @Property runtime: The function runtime environment. Supporting nodejs16、nodejs14、nodejs12、nodejs10、nodejs8、nodejs6、nodejs4.4、python3.10、python3.9、python3、python2.7、java11、java8、go1、php7.2、dotnetcore3.1、dotnetcore2.1、custom.debian10、custom和custom-container and so on
      */
     readonly runtime: string | ros.IResolvable;
 
@@ -557,9 +557,29 @@ export interface RosFunctionProps {
     readonly code?: RosFunction.CodeProperty | ros.IResolvable;
 
     /**
+     * @Property cpu: The number of vCPUs of the function. The value must be a multiple of 0.05.
+     */
+    readonly cpu?: number | ros.IResolvable;
+
+    /**
      * @Property customContainerConfig: Custom container runtime related configuration. After configuration, the function can be replaced with a custom container to execute the function
      */
     readonly customContainerConfig?: RosFunction.CustomContainerConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property customDns: The custom DNS configurations of the function.
+     */
+    readonly customDns?: RosFunction.CustomDNSProperty | ros.IResolvable;
+
+    /**
+     * @Property customHealthCheckConfig: The health check configurations for the custom runtime and custom container.
+     */
+    readonly customHealthCheckConfig?: RosFunction.CustomHealthCheckConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property customRuntimeConfig: Custom runtime related configuration.
+     */
+    readonly customRuntimeConfig?: RosFunction.CustomRuntimeConfigProperty | ros.IResolvable;
 
     /**
      * @Property description: Function description
@@ -567,9 +587,19 @@ export interface RosFunctionProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property diskSize: The disk size of the function. Unit: MB. Valid values: 512 and 10240.
+     */
+    readonly diskSize?: number | ros.IResolvable;
+
+    /**
      * @Property environmentVariables: The environment variable set for the function, you can get the value of the environment variable in the function.
      */
     readonly environmentVariables?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property gpuMemorySize: The GPU memory capacity for the function. Unit: MB. The value must be a multiple of 1,024.
+     */
+    readonly gpuMemorySize?: number | ros.IResolvable;
 
     /**
      * @Property initializationTimeout: the max execution time of the initializer, in second
@@ -585,6 +615,16 @@ export interface RosFunctionProps {
      * @Property instanceConcurrency: Function instance concurrency. Value can be between 1 to 100.
      */
     readonly instanceConcurrency?: number | ros.IResolvable;
+
+    /**
+     * @Property instanceLifecycleConfig: The configuration of the instance lifecycle function.
+     */
+    readonly instanceLifecycleConfig?: RosFunction.InstanceLifecycleConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property instanceSoftConcurrency: The soft concurrency of the instance. You can use this parameter to implement graceful scale-up of instances. If the number of concurrent requests on an instance is greater than the value of soft concurrency, an instance scale-up is triggered. For example, if your instance requires a long time to start, you can specify a suitable soft concurrency to start the instance in advance.The value must be less than or equal to that of the instanceConcurrency parameter.
+     */
+    readonly instanceSoftConcurrency?: number | ros.IResolvable;
 
     /**
      * @Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
@@ -629,8 +669,11 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('instanceLifecycleConfig', RosFunction_InstanceLifecycleConfigPropertyValidator)(properties.instanceLifecycleConfig));
     errors.collect(ros.propertyValidator('handler', ros.requiredValidator)(properties.handler));
     errors.collect(ros.propertyValidator('handler', ros.validateString)(properties.handler));
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('customHealthCheckConfig', RosFunction_CustomHealthCheckConfigPropertyValidator)(properties.customHealthCheckConfig));
     errors.collect(ros.propertyValidator('customContainerConfig', RosFunction_CustomContainerConfigPropertyValidator)(properties.customContainerConfig));
     errors.collect(ros.propertyValidator('code', RosFunction_CodePropertyValidator)(properties.code));
     errors.collect(ros.propertyValidator('asyncConfiguration', RosFunction_AsyncConfigurationPropertyValidator)(properties.asyncConfiguration));
@@ -640,7 +683,7 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('runtime', ros.requiredValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('runtime', ros.validateString)(properties.runtime));
     errors.collect(ros.propertyValidator('environmentVariables', ros.hashValidator(ros.validateAny))(properties.environmentVariables));
-    errors.collect(ros.propertyValidator('initializer', ros.validateString)(properties.initializer));
+    errors.collect(ros.propertyValidator('customRuntimeConfig', RosFunction_CustomRuntimeConfigPropertyValidator)(properties.customRuntimeConfig));
     errors.collect(ros.propertyValidator('initializationTimeout', ros.validateNumber)(properties.initializationTimeout));
     errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
     if(properties.serviceName && (Array.isArray(properties.serviceName) || (typeof properties.serviceName) === 'string')) {
@@ -651,6 +694,16 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    errors.collect(ros.propertyValidator('initializer', ros.validateString)(properties.initializer));
+    errors.collect(ros.propertyValidator('gpuMemorySize', ros.validateNumber)(properties.gpuMemorySize));
+    if(properties.diskSize && (typeof properties.diskSize) !== 'object') {
+        errors.collect(ros.propertyValidator('diskSize', ros.validateAllowedValues)({
+          data: properties.diskSize,
+          allowedValues: [512,10240],
+        }));
+    }
+    errors.collect(ros.propertyValidator('diskSize', ros.validateNumber)(properties.diskSize));
+    errors.collect(ros.propertyValidator('customDns', RosFunction_CustomDNSPropertyValidator)(properties.customDns));
     if(properties.instanceConcurrency && (typeof properties.instanceConcurrency) !== 'object') {
         errors.collect(ros.propertyValidator('instanceConcurrency', ros.validateRange)({
             data: properties.instanceConcurrency,
@@ -662,10 +715,18 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
           data: properties.instanceType,
-          allowedValues: ["e1","c1"],
+          allowedValues: ["e1","c1","fc.gpu.tesla.1","fc.gpu.ampere.1","g1"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.instanceSoftConcurrency && (typeof properties.instanceSoftConcurrency) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceSoftConcurrency', ros.validateRange)({
+            data: properties.instanceSoftConcurrency,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceSoftConcurrency', ros.validateNumber)(properties.instanceSoftConcurrency));
     return errors.wrap('supplied properties not correct for "RosFunctionProps"');
 }
 
@@ -690,12 +751,20 @@ function rosFunctionPropsToRosTemplate(properties: any, enableResourcePropertyCo
       AsyncConfiguration: rosFunctionAsyncConfigurationPropertyToRosTemplate(properties.asyncConfiguration),
       CAPort: ros.numberToRosTemplate(properties.caPort),
       Code: rosFunctionCodePropertyToRosTemplate(properties.code),
+      Cpu: ros.numberToRosTemplate(properties.cpu),
       CustomContainerConfig: rosFunctionCustomContainerConfigPropertyToRosTemplate(properties.customContainerConfig),
+      CustomDNS: rosFunctionCustomDNSPropertyToRosTemplate(properties.customDns),
+      CustomHealthCheckConfig: rosFunctionCustomHealthCheckConfigPropertyToRosTemplate(properties.customHealthCheckConfig),
+      CustomRuntimeConfig: rosFunctionCustomRuntimeConfigPropertyToRosTemplate(properties.customRuntimeConfig),
       Description: ros.stringToRosTemplate(properties.description),
+      DiskSize: ros.numberToRosTemplate(properties.diskSize),
       EnvironmentVariables: ros.hashMapper(ros.objectToRosTemplate)(properties.environmentVariables),
+      GpuMemorySize: ros.numberToRosTemplate(properties.gpuMemorySize),
       InitializationTimeout: ros.numberToRosTemplate(properties.initializationTimeout),
       Initializer: ros.stringToRosTemplate(properties.initializer),
       InstanceConcurrency: ros.numberToRosTemplate(properties.instanceConcurrency),
+      InstanceLifecycleConfig: rosFunctionInstanceLifecycleConfigPropertyToRosTemplate(properties.instanceLifecycleConfig),
+      InstanceSoftConcurrency: ros.numberToRosTemplate(properties.instanceSoftConcurrency),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
       MemorySize: ros.numberToRosTemplate(properties.memorySize),
       Timeout: ros.numberToRosTemplate(properties.timeout),
@@ -755,7 +824,7 @@ export class RosFunction extends ros.RosResource {
     public handler: string | ros.IResolvable;
 
     /**
-     * @Property runtime: The function runtime environment. Supporting nodejs6, nodejs8, nodejs10, nodejs12, python2.7, python3, java8, custom, custom-container and so on
+     * @Property runtime: The function runtime environment. Supporting nodejs16、nodejs14、nodejs12、nodejs10、nodejs8、nodejs6、nodejs4.4、python3.10、python3.9、python3、python2.7、java11、java8、go1、php7.2、dotnetcore3.1、dotnetcore2.1、custom.debian10、custom和custom-container and so on
      */
     public runtime: string | ros.IResolvable;
 
@@ -780,9 +849,29 @@ export class RosFunction extends ros.RosResource {
     public code: RosFunction.CodeProperty | ros.IResolvable | undefined;
 
     /**
+     * @Property cpu: The number of vCPUs of the function. The value must be a multiple of 0.05.
+     */
+    public cpu: number | ros.IResolvable | undefined;
+
+    /**
      * @Property customContainerConfig: Custom container runtime related configuration. After configuration, the function can be replaced with a custom container to execute the function
      */
     public customContainerConfig: RosFunction.CustomContainerConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property customDns: The custom DNS configurations of the function.
+     */
+    public customDns: RosFunction.CustomDNSProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property customHealthCheckConfig: The health check configurations for the custom runtime and custom container.
+     */
+    public customHealthCheckConfig: RosFunction.CustomHealthCheckConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property customRuntimeConfig: Custom runtime related configuration.
+     */
+    public customRuntimeConfig: RosFunction.CustomRuntimeConfigProperty | ros.IResolvable | undefined;
 
     /**
      * @Property description: Function description
@@ -790,9 +879,19 @@ export class RosFunction extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property diskSize: The disk size of the function. Unit: MB. Valid values: 512 and 10240.
+     */
+    public diskSize: number | ros.IResolvable | undefined;
+
+    /**
      * @Property environmentVariables: The environment variable set for the function, you can get the value of the environment variable in the function.
      */
     public environmentVariables: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property gpuMemorySize: The GPU memory capacity for the function. Unit: MB. The value must be a multiple of 1,024.
+     */
+    public gpuMemorySize: number | ros.IResolvable | undefined;
 
     /**
      * @Property initializationTimeout: the max execution time of the initializer, in second
@@ -808,6 +907,16 @@ export class RosFunction extends ros.RosResource {
      * @Property instanceConcurrency: Function instance concurrency. Value can be between 1 to 100.
      */
     public instanceConcurrency: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceLifecycleConfig: The configuration of the instance lifecycle function.
+     */
+    public instanceLifecycleConfig: RosFunction.InstanceLifecycleConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceSoftConcurrency: The soft concurrency of the instance. You can use this parameter to implement graceful scale-up of instances. If the number of concurrent requests on an instance is greater than the value of soft concurrency, an instance scale-up is triggered. For example, if your instance requires a long time to start, you can specify a suitable soft concurrency to start the instance in advance.The value must be less than or equal to that of the instanceConcurrency parameter.
+     */
+    public instanceSoftConcurrency: number | ros.IResolvable | undefined;
 
     /**
      * @Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
@@ -847,12 +956,20 @@ export class RosFunction extends ros.RosResource {
         this.asyncConfiguration = props.asyncConfiguration;
         this.caPort = props.caPort;
         this.code = props.code;
+        this.cpu = props.cpu;
         this.customContainerConfig = props.customContainerConfig;
+        this.customDns = props.customDns;
+        this.customHealthCheckConfig = props.customHealthCheckConfig;
+        this.customRuntimeConfig = props.customRuntimeConfig;
         this.description = props.description;
+        this.diskSize = props.diskSize;
         this.environmentVariables = props.environmentVariables;
+        this.gpuMemorySize = props.gpuMemorySize;
         this.initializationTimeout = props.initializationTimeout;
         this.initializer = props.initializer;
         this.instanceConcurrency = props.instanceConcurrency;
+        this.instanceLifecycleConfig = props.instanceLifecycleConfig;
+        this.instanceSoftConcurrency = props.instanceSoftConcurrency;
         this.instanceType = props.instanceType;
         this.memorySize = props.memorySize;
         this.timeout = props.timeout;
@@ -868,12 +985,20 @@ export class RosFunction extends ros.RosResource {
             asyncConfiguration: this.asyncConfiguration,
             caPort: this.caPort,
             code: this.code,
+            cpu: this.cpu,
             customContainerConfig: this.customContainerConfig,
+            customDns: this.customDns,
+            customHealthCheckConfig: this.customHealthCheckConfig,
+            customRuntimeConfig: this.customRuntimeConfig,
             description: this.description,
+            diskSize: this.diskSize,
             environmentVariables: this.environmentVariables,
+            gpuMemorySize: this.gpuMemorySize,
             initializationTimeout: this.initializationTimeout,
             initializer: this.initializer,
             instanceConcurrency: this.instanceConcurrency,
+            instanceLifecycleConfig: this.instanceLifecycleConfig,
+            instanceSoftConcurrency: this.instanceSoftConcurrency,
             instanceType: this.instanceType,
             memorySize: this.memorySize,
             timeout: this.timeout,
@@ -1052,6 +1177,13 @@ export namespace RosFunction {
          */
         readonly accelerationType?: string | ros.IResolvable;
         /**
+         * @Property webServerMode: Specifies whether the web server mode is used for image running.
+     * A value of true indicates that a web server is implemented in your container image to listen on ports and process requests.
+     * A value of false indicates that the container must actively exit the process after it runs, and the exit code is 0.
+     * Default value: true.
+         */
+        readonly webServerMode?: boolean | ros.IResolvable;
+        /**
          * @Property image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com/fc-demo/helloworld:v1beta1
          */
         readonly image: string | ros.IResolvable;
@@ -1071,6 +1203,7 @@ function RosFunction_CustomContainerConfigPropertyValidator(properties: any): ro
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
     errors.collect(ros.propertyValidator('accelerationType', ros.validateString)(properties.accelerationType));
+    errors.collect(ros.propertyValidator('webServerMode', ros.validateBoolean)(properties.webServerMode));
     errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
     errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
     return errors.wrap('supplied properties not correct for "CustomContainerConfigProperty"');
@@ -1092,7 +1225,223 @@ function rosFunctionCustomContainerConfigPropertyToRosTemplate(properties: any):
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       Command: ros.stringToRosTemplate(properties.command),
       AccelerationType: ros.stringToRosTemplate(properties.accelerationType),
+      WebServerMode: ros.booleanToRosTemplate(properties.webServerMode),
       Image: ros.stringToRosTemplate(properties.image),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
+    export interface CustomDNSProperty {
+        /**
+         * @Property searches: The value of the DNS search domain.
+         */
+        readonly searches?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property dnsOptions: undefined
+         */
+        readonly dnsOptions?: Array<RosFunction.DnsOptionsProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property nameServers: The IP address of the DNS server.
+         */
+        readonly nameServers?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CustomDNSProperty`
+ *
+ * @param properties - the TypeScript properties of a `CustomDNSProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_CustomDNSPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('searches', ros.listValidator(ros.validateString))(properties.searches));
+    errors.collect(ros.propertyValidator('dnsOptions', ros.listValidator(RosFunction_DnsOptionsPropertyValidator))(properties.dnsOptions));
+    errors.collect(ros.propertyValidator('nameServers', ros.listValidator(ros.validateString))(properties.nameServers));
+    return errors.wrap('supplied properties not correct for "CustomDNSProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.CustomDNS` resource
+ *
+ * @param properties - the TypeScript properties of a `CustomDNSProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.CustomDNS` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionCustomDNSPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_CustomDNSPropertyValidator(properties).assertSuccess();
+    return {
+      Searches: ros.listMapper(ros.stringToRosTemplate)(properties.searches),
+      DnsOptions: ros.listMapper(rosFunctionDnsOptionsPropertyToRosTemplate)(properties.dnsOptions),
+      NameServers: ros.listMapper(ros.stringToRosTemplate)(properties.nameServers),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
+    export interface CustomHealthCheckConfigProperty {
+        /**
+         * @Property timeoutSeconds: The timeout period of health checks. Valid values: 1 to 3. Default value: 1.
+         */
+        readonly timeoutSeconds?: number | ros.IResolvable;
+        /**
+         * @Property initialDelaySeconds: The delay between the container startup and the health check. Valid values: 0 to 120. Default value: 0.
+         */
+        readonly initialDelaySeconds?: number | ros.IResolvable;
+        /**
+         * @Property httpGetUrl: The health check URL of the custom container. The content can be up to 2,048 characters in length.
+         */
+        readonly httpGetUrl?: string | ros.IResolvable;
+        /**
+         * @Property periodSeconds: The health check period. Value range: 1 to 120. Default value: 3.
+         */
+        readonly periodSeconds?: number | ros.IResolvable;
+        /**
+         * @Property failureThreshold: The threshold for health check failures. When this value is reached, the system considers the check failed. Value range: 1 to 120. Default value: 3.
+         */
+        readonly failureThreshold?: number | ros.IResolvable;
+        /**
+         * @Property successThreshold: The threshold for health check successes. When this value is reached, the system considers the check succeeded. Value range: 1 to 120. Default value: 1.
+         */
+        readonly successThreshold?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CustomHealthCheckConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `CustomHealthCheckConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_CustomHealthCheckConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.timeoutSeconds && (typeof properties.timeoutSeconds) !== 'object') {
+        errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateRange)({
+            data: properties.timeoutSeconds,
+            min: 1,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateNumber)(properties.timeoutSeconds));
+    if(properties.initialDelaySeconds && (typeof properties.initialDelaySeconds) !== 'object') {
+        errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateRange)({
+            data: properties.initialDelaySeconds,
+            min: 0,
+            max: 120,
+          }));
+    }
+    errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateNumber)(properties.initialDelaySeconds));
+    if(properties.httpGetUrl && (Array.isArray(properties.httpGetUrl) || (typeof properties.httpGetUrl) === 'string')) {
+        errors.collect(ros.propertyValidator('httpGetUrl', ros.validateLength)({
+            data: properties.httpGetUrl.length,
+            min: undefined,
+            max: 2048,
+          }));
+    }
+    errors.collect(ros.propertyValidator('httpGetUrl', ros.validateString)(properties.httpGetUrl));
+    if(properties.periodSeconds && (typeof properties.periodSeconds) !== 'object') {
+        errors.collect(ros.propertyValidator('periodSeconds', ros.validateRange)({
+            data: properties.periodSeconds,
+            min: 1,
+            max: 120,
+          }));
+    }
+    errors.collect(ros.propertyValidator('periodSeconds', ros.validateNumber)(properties.periodSeconds));
+    if(properties.failureThreshold && (typeof properties.failureThreshold) !== 'object') {
+        errors.collect(ros.propertyValidator('failureThreshold', ros.validateRange)({
+            data: properties.failureThreshold,
+            min: 1,
+            max: 120,
+          }));
+    }
+    errors.collect(ros.propertyValidator('failureThreshold', ros.validateNumber)(properties.failureThreshold));
+    if(properties.successThreshold && (typeof properties.successThreshold) !== 'object') {
+        errors.collect(ros.propertyValidator('successThreshold', ros.validateRange)({
+            data: properties.successThreshold,
+            min: 1,
+            max: 120,
+          }));
+    }
+    errors.collect(ros.propertyValidator('successThreshold', ros.validateNumber)(properties.successThreshold));
+    return errors.wrap('supplied properties not correct for "CustomHealthCheckConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.CustomHealthCheckConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `CustomHealthCheckConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.CustomHealthCheckConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionCustomHealthCheckConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_CustomHealthCheckConfigPropertyValidator(properties).assertSuccess();
+    return {
+      TimeoutSeconds: ros.numberToRosTemplate(properties.timeoutSeconds),
+      InitialDelaySeconds: ros.numberToRosTemplate(properties.initialDelaySeconds),
+      HttpGetUrl: ros.stringToRosTemplate(properties.httpGetUrl),
+      PeriodSeconds: ros.numberToRosTemplate(properties.periodSeconds),
+      FailureThreshold: ros.numberToRosTemplate(properties.failureThreshold),
+      SuccessThreshold: ros.numberToRosTemplate(properties.successThreshold),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
+    export interface CustomRuntimeConfigProperty {
+        /**
+         * @Property args: The startup parameters.
+         */
+        readonly args: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property command: The startup command.
+         */
+        readonly command: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CustomRuntimeConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `CustomRuntimeConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_CustomRuntimeConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('args', ros.requiredValidator)(properties.args));
+    errors.collect(ros.propertyValidator('args', ros.listValidator(ros.validateString))(properties.args));
+    errors.collect(ros.propertyValidator('command', ros.requiredValidator)(properties.command));
+    errors.collect(ros.propertyValidator('command', ros.listValidator(ros.validateString))(properties.command));
+    return errors.wrap('supplied properties not correct for "CustomRuntimeConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.CustomRuntimeConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `CustomRuntimeConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.CustomRuntimeConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionCustomRuntimeConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_CustomRuntimeConfigPropertyValidator(properties).assertSuccess();
+    return {
+      Args: ros.listMapper(ros.stringToRosTemplate)(properties.args),
+      Command: ros.listMapper(ros.stringToRosTemplate)(properties.command),
     };
 }
 
@@ -1140,6 +1489,195 @@ function rosFunctionDestinationPropertyToRosTemplate(properties: any): any {
     return {
       OnSuccess: ros.stringToRosTemplate(properties.onSuccess),
       OnFailure: ros.stringToRosTemplate(properties.onFailure),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
+    export interface DnsOptionsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property name: undefined
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DnsOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `DnsOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_DnsOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "DnsOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.DnsOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `DnsOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.DnsOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionDnsOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_DnsOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
+    export interface InstanceLifecycleConfigProperty {
+        /**
+         * @Property preStop: The configuration of lifecycle callbacks.
+         */
+        readonly preStop?: RosFunction.PreStopProperty | ros.IResolvable;
+        /**
+         * @Property preFreeze: The configuration of lifecycle callbacks.
+         */
+        readonly preFreeze?: RosFunction.PreFreezeProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `InstanceLifecycleConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `InstanceLifecycleConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_InstanceLifecycleConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('preStop', RosFunction_PreStopPropertyValidator)(properties.preStop));
+    errors.collect(ros.propertyValidator('preFreeze', RosFunction_PreFreezePropertyValidator)(properties.preFreeze));
+    return errors.wrap('supplied properties not correct for "InstanceLifecycleConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.InstanceLifecycleConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `InstanceLifecycleConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.InstanceLifecycleConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionInstanceLifecycleConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_InstanceLifecycleConfigPropertyValidator(properties).assertSuccess();
+    return {
+      PreStop: rosFunctionPreStopPropertyToRosTemplate(properties.preStop),
+      PreFreeze: rosFunctionPreFreezePropertyToRosTemplate(properties.preFreeze),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
+    export interface PreFreezeProperty {
+        /**
+         * @Property timeout: The timeout period for the execution. Unit: seconds.
+         */
+        readonly timeout?: number | ros.IResolvable;
+        /**
+         * @Property handler: The handler of the function.
+         */
+        readonly handler?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PreFreezeProperty`
+ *
+ * @param properties - the TypeScript properties of a `PreFreezeProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_PreFreezePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('handler', ros.validateString)(properties.handler));
+    return errors.wrap('supplied properties not correct for "PreFreezeProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.PreFreeze` resource
+ *
+ * @param properties - the TypeScript properties of a `PreFreezeProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.PreFreeze` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionPreFreezePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_PreFreezePropertyValidator(properties).assertSuccess();
+    return {
+      Timeout: ros.numberToRosTemplate(properties.timeout),
+      Handler: ros.stringToRosTemplate(properties.handler),
+    };
+}
+
+export namespace RosFunction {
+    /**
+     * @stability external
+     */
+    export interface PreStopProperty {
+        /**
+         * @Property timeout: The timeout period for the execution. Unit: seconds.
+         */
+        readonly timeout?: number | ros.IResolvable;
+        /**
+         * @Property handler: The handler of the function.
+         */
+        readonly handler?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PreStopProperty`
+ *
+ * @param properties - the TypeScript properties of a `PreStopProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosFunction_PreStopPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('handler', ros.validateString)(properties.handler));
+    return errors.wrap('supplied properties not correct for "PreStopProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.PreStop` resource
+ *
+ * @param properties - the TypeScript properties of a `PreStopProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Function.PreStop` resource.
+ */
+// @ts-ignore TS6133
+function rosFunctionPreStopPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosFunction_PreStopPropertyValidator(properties).assertSuccess();
+    return {
+      Timeout: ros.numberToRosTemplate(properties.timeout),
+      Handler: ros.stringToRosTemplate(properties.handler),
     };
 }
 
@@ -1805,6 +2343,11 @@ export interface RosServiceProps {
     readonly nasConfig?: RosService.NasConfigProperty | ros.IResolvable;
 
     /**
+     * @Property ossMountConfig: The OSS mount configurations.
+     */
+    readonly ossMountConfig?: RosService.OssMountConfigProperty | ros.IResolvable;
+
+    /**
      * @Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store. The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
      */
     readonly role?: string | ros.IResolvable;
@@ -1856,6 +2399,7 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    errors.collect(ros.propertyValidator('ossMountConfig', RosService_OssMountConfigPropertyValidator)(properties.ossMountConfig));
     if(properties.vpcBindings && (Array.isArray(properties.vpcBindings) || (typeof properties.vpcBindings) === 'string')) {
         errors.collect(ros.propertyValidator('vpcBindings', ros.validateLength)({
             data: properties.vpcBindings.length,
@@ -1897,6 +2441,7 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
       InternetAccess: ros.booleanToRosTemplate(properties.internetAccess),
       LogConfig: rosServiceLogConfigPropertyToRosTemplate(properties.logConfig),
       NasConfig: rosServiceNasConfigPropertyToRosTemplate(properties.nasConfig),
+      OssMountConfig: rosServiceOssMountConfigPropertyToRosTemplate(properties.ossMountConfig),
       Role: ros.stringToRosTemplate(properties.role),
       Tags: ros.listMapper(rosServiceTagsPropertyToRosTemplate)(properties.tags),
       TracingConfig: rosServiceTracingConfigPropertyToRosTemplate(properties.tracingConfig),
@@ -1993,6 +2538,11 @@ export class RosService extends ros.RosResource {
     public nasConfig: RosService.NasConfigProperty | ros.IResolvable | undefined;
 
     /**
+     * @Property ossMountConfig: The OSS mount configurations.
+     */
+    public ossMountConfig: RosService.OssMountConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store. The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
      */
     public role: string | ros.IResolvable | undefined;
@@ -2043,6 +2593,7 @@ export class RosService extends ros.RosResource {
         this.internetAccess = props.internetAccess;
         this.logConfig = props.logConfig;
         this.nasConfig = props.nasConfig;
+        this.ossMountConfig = props.ossMountConfig;
         this.role = props.role;
         this.tags = props.tags;
         this.tracingConfig = props.tracingConfig;
@@ -2059,6 +2610,7 @@ export class RosService extends ros.RosResource {
             internetAccess: this.internetAccess,
             logConfig: this.logConfig,
             nasConfig: this.nasConfig,
+            ossMountConfig: this.ossMountConfig,
             role: this.role,
             tags: this.tags,
             tracingConfig: this.tracingConfig,
@@ -2213,6 +2765,13 @@ function RosService_NasConfigPropertyValidator(properties: any): ros.ValidationR
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('mountPoints', ros.requiredValidator)(properties.mountPoints));
+    if(properties.mountPoints && (Array.isArray(properties.mountPoints) || (typeof properties.mountPoints) === 'string')) {
+        errors.collect(ros.propertyValidator('mountPoints', ros.validateLength)({
+            data: properties.mountPoints.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
     errors.collect(ros.propertyValidator('mountPoints', ros.listValidator(RosService_MountPointsPropertyValidator))(properties.mountPoints));
     errors.collect(ros.propertyValidator('userId', ros.requiredValidator)(properties.userId));
     if(properties.userId && (typeof properties.userId) !== 'object') {
@@ -2250,6 +2809,125 @@ function rosServiceNasConfigPropertyToRosTemplate(properties: any): any {
       MountPoints: ros.listMapper(rosServiceMountPointsPropertyToRosTemplate)(properties.mountPoints),
       UserId: ros.numberToRosTemplate(properties.userId),
       GroupId: ros.numberToRosTemplate(properties.groupId),
+    };
+}
+
+export namespace RosService {
+    /**
+     * @stability external
+     */
+    export interface OssMountConfigProperty {
+        /**
+         * @Property mountPoints: The OSS mount point configurations.
+         */
+        readonly mountPoints: Array<RosService.OssMountConfigMountPointsProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OssMountConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `OssMountConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosService_OssMountConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('mountPoints', ros.requiredValidator)(properties.mountPoints));
+    if(properties.mountPoints && (Array.isArray(properties.mountPoints) || (typeof properties.mountPoints) === 'string')) {
+        errors.collect(ros.propertyValidator('mountPoints', ros.validateLength)({
+            data: properties.mountPoints.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('mountPoints', ros.listValidator(RosService_OssMountConfigMountPointsPropertyValidator))(properties.mountPoints));
+    return errors.wrap('supplied properties not correct for "OssMountConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Service.OssMountConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `OssMountConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Service.OssMountConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceOssMountConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosService_OssMountConfigPropertyValidator(properties).assertSuccess();
+    return {
+      MountPoints: ros.listMapper(rosServiceOssMountConfigMountPointsPropertyToRosTemplate)(properties.mountPoints),
+    };
+}
+
+export namespace RosService {
+    /**
+     * @stability external
+     */
+    export interface OssMountConfigMountPointsProperty {
+        /**
+         * @Property readOnly: Whether the oss bucket is read-only
+         */
+        readonly readOnly: boolean | ros.IResolvable;
+        /**
+         * @Property bucketName: mount OSS bucket name.
+         */
+        readonly bucketName: string | ros.IResolvable;
+        /**
+         * @Property bucketPath: Path of the mounted OSS Bucket.
+         */
+        readonly bucketPath: string | ros.IResolvable;
+        /**
+         * @Property endPoint: OSS access address,
+         */
+        readonly endPoint: string | ros.IResolvable;
+        /**
+         * @Property mountDir: A local mount point.
+         */
+        readonly mountDir: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OssMountConfigMountPointsProperty`
+ *
+ * @param properties - the TypeScript properties of a `OssMountConfigMountPointsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosService_OssMountConfigMountPointsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('readOnly', ros.requiredValidator)(properties.readOnly));
+    errors.collect(ros.propertyValidator('readOnly', ros.validateBoolean)(properties.readOnly));
+    errors.collect(ros.propertyValidator('bucketName', ros.requiredValidator)(properties.bucketName));
+    errors.collect(ros.propertyValidator('bucketName', ros.validateString)(properties.bucketName));
+    errors.collect(ros.propertyValidator('bucketPath', ros.requiredValidator)(properties.bucketPath));
+    errors.collect(ros.propertyValidator('bucketPath', ros.validateString)(properties.bucketPath));
+    errors.collect(ros.propertyValidator('endPoint', ros.requiredValidator)(properties.endPoint));
+    errors.collect(ros.propertyValidator('endPoint', ros.validateString)(properties.endPoint));
+    errors.collect(ros.propertyValidator('mountDir', ros.requiredValidator)(properties.mountDir));
+    errors.collect(ros.propertyValidator('mountDir', ros.validateString)(properties.mountDir));
+    return errors.wrap('supplied properties not correct for "OssMountConfigMountPointsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Service.OssMountConfigMountPoints` resource
+ *
+ * @param properties - the TypeScript properties of a `OssMountConfigMountPointsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Service.OssMountConfigMountPoints` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceOssMountConfigMountPointsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosService_OssMountConfigMountPointsPropertyValidator(properties).assertSuccess();
+    return {
+      ReadOnly: ros.booleanToRosTemplate(properties.readOnly),
+      BucketName: ros.stringToRosTemplate(properties.bucketName),
+      BucketPath: ros.stringToRosTemplate(properties.bucketPath),
+      EndPoint: ros.stringToRosTemplate(properties.endPoint),
+      MountDir: ros.stringToRosTemplate(properties.mountDir),
     };
 }
 
@@ -2547,6 +3225,16 @@ export class RosTrigger extends ros.RosResource {
      */
     public readonly attrTriggerName: ros.IResolvable;
 
+    /**
+     * @Attribute UrlInternet: The public domain address. You can access HTTP triggers over the Internet by using HTTP or HTTPS.
+     */
+    public readonly attrUrlInternet: ros.IResolvable;
+
+    /**
+     * @Attribute UrlIntranet: The private endpoint. In a VPC, you can access HTTP triggers by using HTTP or HTTPS.
+     */
+    public readonly attrUrlIntranet: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -2608,6 +3296,8 @@ export class RosTrigger extends ros.RosResource {
         this.attrServiceName = this.getAtt('ServiceName');
         this.attrTriggerId = this.getAtt('TriggerId');
         this.attrTriggerName = this.getAtt('TriggerName');
+        this.attrUrlInternet = this.getAtt('UrlInternet');
+        this.attrUrlIntranet = this.getAtt('UrlIntranet');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.functionName = props.functionName;

@@ -18,6 +18,7 @@
 @alicloud/ros-cdk-ros.RosSleep=com.aliyun.ros.cdk.ros.RosSleep
 @alicloud/ros-cdk-ros.RosSleepProps=com.aliyun.ros.cdk.ros.RosSleepProps
 @alicloud/ros-cdk-ros.RosStack=com.aliyun.ros.cdk.ros.RosStack
+@alicloud/ros-cdk-ros.RosStack.TagsProperty=com.aliyun.ros.cdk.ros.RosStack$TagsProperty
 @alicloud/ros-cdk-ros.RosStackGroup=com.aliyun.ros.cdk.ros.RosStackGroup
 @alicloud/ros-cdk-ros.RosStackGroup.AutoDeploymentProperty=com.aliyun.ros.cdk.ros.RosStackGroup$AutoDeploymentProperty
 @alicloud/ros-cdk-ros.RosStackGroupProps=com.aliyun.ros.cdk.ros.RosStackGroupProps

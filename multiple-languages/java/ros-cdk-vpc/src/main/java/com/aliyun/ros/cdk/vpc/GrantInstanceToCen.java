@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::GrantInstanceToCen`.
+ * A ROS resource type:  <code>ALIYUN::VPC::GrantInstanceToCen</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.349Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.895Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.GrantInstanceToCen")
 public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::GrantInstanceToCen`.
+     * Create a new <code>ALIYUN::VPC::GrantInstanceToCen</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::GrantInstanceToCen`.
+     * Create a new <code>ALIYUN::VPC::GrantInstanceToCen</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -191,7 +191,7 @@ public class GrantInstanceToCen extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.vpc.GrantInstanceToCen}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.vpc.GrantInstanceToCen}.
          */
         @Override
         public com.aliyun.ros.cdk.vpc.GrantInstanceToCen build() {
