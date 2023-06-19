@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.redis;
 
 /**
- * Properties for defining a `ALIYUN::REDIS::Instance`.
+ * Properties for defining a <code>ALIYUN::REDIS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.786Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.273Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -53,7 +53,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property engineVersion: Engine version.
      * <p>
-     * Supported values: 2.8, 4.0 and 5.0.
+     * Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEngineVersion() {
         return null;
@@ -169,6 +169,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property tairConfig: Tair config.
+     * <p>
+     * This parameter is available only if the InstanceClass parameter is start with tair.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTairConfig() {
+        return null;
+    }
+
+    /**
      * Property vpcId: The VPC id to create ecs instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
@@ -232,6 +241,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object securityGroupId;
         java.lang.Object sslEnabled;
         java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty> tags;
+        java.lang.Object tairConfig;
         java.lang.Object vpcId;
         java.lang.Object vpcPasswordFree;
         java.lang.Object vSwitchId;
@@ -350,7 +360,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InstanceProps#getEngineVersion}
          * @param engineVersion Property engineVersion: Engine version.
-         *                      Supported values: 2.8, 4.0 and 5.0.
+         *                      Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
@@ -361,7 +371,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InstanceProps#getEngineVersion}
          * @param engineVersion Property engineVersion: Engine version.
-         *                      Supported values: 2.8, 4.0 and 5.0.
+         *                      Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
          * @return {@code this}
          */
         public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {
@@ -644,6 +654,28 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getTairConfig}
+         * @param tairConfig Property tairConfig: Tair config.
+         *                   This parameter is available only if the InstanceClass parameter is start with tair.
+         * @return {@code this}
+         */
+        public Builder tairConfig(com.aliyun.ros.cdk.core.IResolvable tairConfig) {
+            this.tairConfig = tairConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getTairConfig}
+         * @param tairConfig Property tairConfig: Tair config.
+         *                   This parameter is available only if the InstanceClass parameter is start with tair.
+         * @return {@code this}
+         */
+        public Builder tairConfig(com.aliyun.ros.cdk.redis.RosInstance.TairConfigProperty tairConfig) {
+            this.tairConfig = tairConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getVpcId}
          * @param vpcId Property vpcId: The VPC id to create ecs instance.
          * @return {@code this}
@@ -770,6 +802,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object securityGroupId;
         private final java.lang.Object sslEnabled;
         private final java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty> tags;
+        private final java.lang.Object tairConfig;
         private final java.lang.Object vpcId;
         private final java.lang.Object vpcPasswordFree;
         private final java.lang.Object vSwitchId;
@@ -800,6 +833,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sslEnabled = software.amazon.jsii.Kernel.get(this, "sslEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.redis.RosInstance.TagsProperty.class)));
+            this.tairConfig = software.amazon.jsii.Kernel.get(this, "tairConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcPasswordFree = software.amazon.jsii.Kernel.get(this, "vpcPasswordFree", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -831,6 +865,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.securityGroupId = builder.securityGroupId;
             this.sslEnabled = builder.sslEnabled;
             this.tags = (java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty>)builder.tags;
+            this.tairConfig = builder.tairConfig;
             this.vpcId = builder.vpcId;
             this.vpcPasswordFree = builder.vpcPasswordFree;
             this.vSwitchId = builder.vSwitchId;
@@ -933,6 +968,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getTairConfig() {
+            return this.tairConfig;
+        }
+
+        @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
@@ -1015,6 +1055,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getTairConfig() != null) {
+                data.set("tairConfig", om.valueToTree(this.getTairConfig()));
+            }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
@@ -1064,6 +1107,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.sslEnabled != null ? !this.sslEnabled.equals(that.sslEnabled) : that.sslEnabled != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.tairConfig != null ? !this.tairConfig.equals(that.tairConfig) : that.tairConfig != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vpcPasswordFree != null ? !this.vpcPasswordFree.equals(that.vpcPasswordFree) : that.vpcPasswordFree != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
@@ -1091,6 +1135,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.sslEnabled != null ? this.sslEnabled.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.tairConfig != null ? this.tairConfig.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vpcPasswordFree != null ? this.vpcPasswordFree.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

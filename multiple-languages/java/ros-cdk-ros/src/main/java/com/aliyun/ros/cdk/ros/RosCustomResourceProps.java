@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * Properties for defining a `ALIYUN::ROS::CustomResource`.
+ * Properties for defining a <code>ALIYUN::ROS::CustomResource</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.917Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.434Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosCustomResourceProps")
 @software.amazon.jsii.Jsii.Proxy(RosCustomResourceProps.Jsii$Proxy.class)
 public interface RosCustomResourceProps extends software.amazon.jsii.JsiiSerializable {

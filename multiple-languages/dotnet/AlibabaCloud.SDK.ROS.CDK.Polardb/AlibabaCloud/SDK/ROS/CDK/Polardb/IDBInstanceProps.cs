@@ -68,6 +68,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
+        /// <summary>Property collate: A locale setting that specifies the collation for newly created databases.</summary>
+        /// <remarks>
+        /// The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+        /// when the cluster is PolarDB MySQL, this parameter is not supported.
+        /// </remarks>
+        [JsiiProperty(name: "collate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Collate
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property ctype: A locale setting that specifies the character classification of the database.</summary>
+        /// <remarks>
+        /// The locale must be compatible with the character set set by the CharacterSetName parameter.
+        /// It is consistent with the incoming information of Collate.
+        /// When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+        /// when the cluster is PolarDB MySQL, this parameter is optional.
+        /// </remarks>
+        [JsiiProperty(name: "ctype", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ctype
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property dbDescription: The description of the database.</summary>
         /// <remarks>
         /// Valid values:
@@ -142,6 +174,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             [JsiiOptional]
             [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AccountPrivilege
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property collate: A locale setting that specifies the collation for newly created databases.</summary>
+            /// <remarks>
+            /// The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+            /// when the cluster is PolarDB MySQL, this parameter is not supported.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "collate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Collate
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ctype: A locale setting that specifies the character classification of the database.</summary>
+            /// <remarks>
+            /// The locale must be compatible with the character set set by the CharacterSetName parameter.
+            /// It is consistent with the incoming information of Collate.
+            /// When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+            /// when the cluster is PolarDB MySQL, this parameter is optional.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ctype", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ctype
             {
                 get => GetInstanceProperty<object?>();
             }

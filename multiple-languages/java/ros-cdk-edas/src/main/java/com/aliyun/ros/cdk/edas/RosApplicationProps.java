@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.edas;
 
 /**
- * Properties for defining a `ALIYUN::EDAS::Application`.
+ * Properties for defining a <code>ALIYUN::EDAS::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.539Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.753Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationProps.Jsii$Proxy.class)
 public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,12 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getComponentIds() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeployment() {
         return null;
     }
 
@@ -78,6 +84,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object clusterId;
         java.lang.Object buildPackId;
         java.lang.Object componentIds;
+        java.lang.Object deployment;
         java.lang.Object description;
         java.lang.Object ecuInfo;
         java.lang.Object healthCheckUrl;
@@ -162,6 +169,26 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder componentIds(com.aliyun.ros.cdk.core.IResolvable componentIds) {
             this.componentIds = componentIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getDeployment}
+         * @param deployment the value to be set.
+         * @return {@code this}
+         */
+        public Builder deployment(com.aliyun.ros.cdk.core.IResolvable deployment) {
+            this.deployment = deployment;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getDeployment}
+         * @param deployment the value to be set.
+         * @return {@code this}
+         */
+        public Builder deployment(com.aliyun.ros.cdk.edas.RosApplication.DeploymentProperty deployment) {
+            this.deployment = deployment;
             return this;
         }
 
@@ -305,6 +332,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object clusterId;
         private final java.lang.Object buildPackId;
         private final java.lang.Object componentIds;
+        private final java.lang.Object deployment;
         private final java.lang.Object description;
         private final java.lang.Object ecuInfo;
         private final java.lang.Object healthCheckUrl;
@@ -322,6 +350,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.buildPackId = software.amazon.jsii.Kernel.get(this, "buildPackId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.componentIds = software.amazon.jsii.Kernel.get(this, "componentIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deployment = software.amazon.jsii.Kernel.get(this, "deployment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ecuInfo = software.amazon.jsii.Kernel.get(this, "ecuInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckUrl = software.amazon.jsii.Kernel.get(this, "healthCheckUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -339,6 +368,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
             this.buildPackId = builder.buildPackId;
             this.componentIds = builder.componentIds;
+            this.deployment = builder.deployment;
             this.description = builder.description;
             this.ecuInfo = builder.ecuInfo;
             this.healthCheckUrl = builder.healthCheckUrl;
@@ -365,6 +395,11 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getComponentIds() {
             return this.componentIds;
+        }
+
+        @Override
+        public final java.lang.Object getDeployment() {
+            return this.deployment;
         }
 
         @Override
@@ -411,6 +446,9 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.getComponentIds() != null) {
                 data.set("componentIds", om.valueToTree(this.getComponentIds()));
             }
+            if (this.getDeployment() != null) {
+                data.set("deployment", om.valueToTree(this.getDeployment()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -451,6 +489,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (!clusterId.equals(that.clusterId)) return false;
             if (this.buildPackId != null ? !this.buildPackId.equals(that.buildPackId) : that.buildPackId != null) return false;
             if (this.componentIds != null ? !this.componentIds.equals(that.componentIds) : that.componentIds != null) return false;
+            if (this.deployment != null ? !this.deployment.equals(that.deployment) : that.deployment != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.ecuInfo != null ? !this.ecuInfo.equals(that.ecuInfo) : that.ecuInfo != null) return false;
             if (this.healthCheckUrl != null ? !this.healthCheckUrl.equals(that.healthCheckUrl) : that.healthCheckUrl != null) return false;
@@ -465,6 +504,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.clusterId.hashCode());
             result = 31 * result + (this.buildPackId != null ? this.buildPackId.hashCode() : 0);
             result = 31 * result + (this.componentIds != null ? this.componentIds.hashCode() : 0);
+            result = 31 * result + (this.deployment != null ? this.deployment.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.ecuInfo != null ? this.ecuInfo.hashCode() : 0);
             result = 31 * result + (this.healthCheckUrl != null ? this.healthCheckUrl.hashCode() : 0);

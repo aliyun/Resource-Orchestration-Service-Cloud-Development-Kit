@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::InstanceGroup`.
+ * A ROS resource type:  <code>ALIYUN::ECS::InstanceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.372Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ECS::InstanceGroup`.
+     * Create a new <code>ALIYUN::ECS::InstanceGroup</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ECS::InstanceGroup`.
+     * Create a new <code>ALIYUN::ECS::InstanceGroup</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -1630,7 +1630,7 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ecs.InstanceGroup}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ecs.InstanceGroup}.
          */
         @Override
         public com.aliyun.ros.cdk.ecs.InstanceGroup build() {

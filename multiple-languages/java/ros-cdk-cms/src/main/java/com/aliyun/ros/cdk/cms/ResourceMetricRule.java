@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::ResourceMetricRule`.
+ * A ROS resource type:  <code>ALIYUN::CMS::ResourceMetricRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.547Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.650Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ResourceMetricRule")
 public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::CMS::ResourceMetricRule`.
+     * Create a new <code>ALIYUN::CMS::ResourceMetricRule</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::CMS::ResourceMetricRule`.
+     * Create a new <code>ALIYUN::CMS::ResourceMetricRule</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -582,7 +582,7 @@ public class ResourceMetricRule extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.cms.ResourceMetricRule}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.cms.ResourceMetricRule}.
          */
         @Override
         public com.aliyun.ros.cdk.cms.ResourceMetricRule build() {

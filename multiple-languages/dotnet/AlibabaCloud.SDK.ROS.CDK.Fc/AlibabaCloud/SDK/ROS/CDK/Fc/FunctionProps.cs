@@ -74,7 +74,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property runtime: The function runtime environment.</summary>
         /// <remarks>
-        /// Supporting nodejs6, nodejs8, nodejs10, nodejs12, python2.7, python3, java8, custom, custom-container and so on
+        /// Supporting nodejs16、nodejs14、nodejs12、nodejs10、nodejs8、nodejs6、nodejs4.4、python3.10、python3.9、python3、python2.7、java11、java8、go1、php7.2、dotnetcore3.1、dotnetcore2.1、custom.debian10、custom和custom-container and so on
         /// </remarks>
         [JsiiProperty(name: "runtime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Runtime
@@ -249,6 +249,60 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
         }
 
+        private object? _cpu;
+
+        /// <summary>Property cpu: The number of vCPUs of the function.</summary>
+        /// <remarks>
+        /// The value must be a multiple of 0.05.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Cpu
+        {
+            get => _cpu;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _cpu = value;
+            }
+        }
+
         private object? _customContainerConfig;
 
         /// <summary>Property customContainerConfig: Custom container runtime related configuration.</summary>
@@ -283,6 +337,99 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
         }
 
+        private object? _customDns;
+
+        /// <summary>Property customDns: The custom DNS configurations of the function.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "customDns", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunction.CustomDNSProperty\"}]}}", isOptional: true)]
+        public object? CustomDns
+        {
+            get => _customDns;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Fc.RosFunction.ICustomDNSProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosFunction.ICustomDNSProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _customDns = value;
+            }
+        }
+
+        private object? _customHealthCheckConfig;
+
+        /// <summary>Property customHealthCheckConfig: The health check configurations for the custom runtime and custom container.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "customHealthCheckConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunction.CustomHealthCheckConfigProperty\"}]}}", isOptional: true)]
+        public object? CustomHealthCheckConfig
+        {
+            get => _customHealthCheckConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Fc.RosFunction.ICustomHealthCheckConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosFunction.ICustomHealthCheckConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _customHealthCheckConfig = value;
+            }
+        }
+
+        private object? _customRuntimeConfig;
+
+        /// <summary>Property customRuntimeConfig: Custom runtime related configuration.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "customRuntimeConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunction.CustomRuntimeConfigProperty\"}]}}", isOptional: true)]
+        public object? CustomRuntimeConfig
+        {
+            get => _customRuntimeConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Fc.RosFunction.ICustomRuntimeConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosFunction.ICustomRuntimeConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _customRuntimeConfig = value;
+            }
+        }
+
         private object? _description;
 
         /// <summary>Property description: Function description.</summary>
@@ -314,6 +461,60 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
         }
 
+        private object? _diskSize;
+
+        /// <summary>Property diskSize: The disk size of the function.</summary>
+        /// <remarks>
+        /// Unit: MB. Valid values: 512 and 10240.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DiskSize
+        {
+            get => _diskSize;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _diskSize = value;
+            }
+        }
+
         private object? _environmentVariables;
 
         /// <summary>Property environmentVariables: The environment variable set for the function, you can get the value of the environment variable in the function.</summary>
@@ -342,6 +543,60 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                     }
                 }
                 _environmentVariables = value;
+            }
+        }
+
+        private object? _gpuMemorySize;
+
+        /// <summary>Property gpuMemorySize: The GPU memory capacity for the function.</summary>
+        /// <remarks>
+        /// Unit: MB. The value must be a multiple of 1,024.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "gpuMemorySize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? GpuMemorySize
+        {
+            get => _gpuMemorySize;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _gpuMemorySize = value;
             }
         }
 
@@ -478,6 +733,91 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                     }
                 }
                 _instanceConcurrency = value;
+            }
+        }
+
+        private object? _instanceLifecycleConfig;
+
+        /// <summary>Property instanceLifecycleConfig: The configuration of the instance lifecycle function.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceLifecycleConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosFunction.InstanceLifecycleConfigProperty\"}]}}", isOptional: true)]
+        public object? InstanceLifecycleConfig
+        {
+            get => _instanceLifecycleConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Fc.RosFunction.IInstanceLifecycleConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosFunction.IInstanceLifecycleConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _instanceLifecycleConfig = value;
+            }
+        }
+
+        private object? _instanceSoftConcurrency;
+
+        /// <summary>Property instanceSoftConcurrency: The soft concurrency of the instance.</summary>
+        /// <remarks>
+        /// You can use this parameter to implement graceful scale-up of instances. If the number of concurrent requests on an instance is greater than the value of soft concurrency, an instance scale-up is triggered. For example, if your instance requires a long time to start, you can specify a suitable soft concurrency to start the instance in advance.The value must be less than or equal to that of the instanceConcurrency parameter.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceSoftConcurrency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? InstanceSoftConcurrency
+        {
+            get => _instanceSoftConcurrency;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _instanceSoftConcurrency = value;
             }
         }
 

@@ -1,12 +1,12 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.923Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.935Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosResourceProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourceProps.Jsii$Proxy.class)
 public interface RosResourceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * ROS template resource type (e.g. `ALIYUN::ECS::Instance`).
+     * ROS template resource type (e.g. <code>ALIYUN::ECS::Instance</code>).
      */
     @org.jetbrains.annotations.NotNull java.lang.String getType();
 
@@ -34,7 +34,7 @@ public interface RosResourceProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RosResourceProps#getType}
-         * @param type ROS template resource type (e.g. `ALIYUN::ECS::Instance`). This parameter is required.
+         * @param type ROS template resource type (e.g. <code>ALIYUN::ECS::Instance</code>). This parameter is required.
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {

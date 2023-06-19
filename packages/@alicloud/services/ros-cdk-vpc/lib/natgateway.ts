@@ -56,6 +56,11 @@ export interface NatGatewayProps {
     readonly eipBindMode?: string | ros.IResolvable;
 
     /**
+     * Property icmpReplyEnabled: Specifies whether to enable the ICMP non-retrieval feature. Default: True
+     */
+    readonly icmpReplyEnabled?: boolean | ros.IResolvable;
+
+    /**
      * Property instanceChargeType: The billing method. The default value is PostPaid (which means pay-as-you-go).
      */
     readonly instanceChargeType?: string | ros.IResolvable;
@@ -88,6 +93,11 @@ export interface NatGatewayProps {
      * Property pricingCycle: Price cycle of the resource. This property has no default value.
      */
     readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * Property securityProtectionEnabled: Specifies whether to enable the firewall feature. Default: False
+     */
+    readonly securityProtectionEnabled?: boolean | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to natgateway. Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
@@ -137,6 +147,7 @@ export class NatGateway extends ros.Resource {
             pricingCycle: props.pricingCycle,
             eipBindMode: props.eipBindMode,
             vSwitchId: props.vSwitchId,
+            securityProtectionEnabled: props.securityProtectionEnabled,
             duration: props.duration === undefined || props.duration === null ? 1 : props.duration,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
@@ -145,6 +156,7 @@ export class NatGateway extends ros.Resource {
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             vpcId: props.vpcId,
             networkType: props.networkType,
+            icmpReplyEnabled: props.icmpReplyEnabled,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNatGateway;

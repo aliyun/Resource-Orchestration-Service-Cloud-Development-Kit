@@ -1305,3 +1305,483 @@ export class RosRestoreJob extends ros.RosResource {
         return rosRestoreJobPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `ALIYUN::HBR::Vault`
+ */
+export interface RosVaultProps {
+
+    /**
+     * @Property vaultName: The name of the backup vault. The name must be 1 to 64 characters in length.
+     */
+    readonly vaultName: string | ros.IResolvable;
+
+    /**
+     * @Property vaultType: The type of the backup vault. Valid values:
+     * - **STANDARD**: standard backup vault.
+     * - **OTS_BACKUP**: backup vault for Tablestore.
+     */
+    readonly vaultType: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the backup vault. The description must be 0 to 255 characters in length.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property encryptType: The method that is used to encrypt the source data. This parameter is valid only if you set the VaultType parameter to STANDARD or OTS_BACKUP. 
+     * Valid values:- **HBR_PRIVATE**: The source data is encrypted by using the built-in encryption method of Hybrid Backup Recovery (HBR).
+     * - **KMS**: The source data is encrypted by using Key Management Service (KMS).
+     */
+    readonly encryptType?: string | ros.IResolvable;
+
+    /**
+     * @Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key. This parameter is required only if you set the EncryptType parameter to KMS.
+     */
+    readonly kmsKeyId?: string | ros.IResolvable;
+
+    /**
+     * @Property redundancyType: The data redundancy type of the backup vault. Valid values:
+     * - **LRS**: Locally redundant storage (LRS) is enabled for the backup vault. HBR stores the copies of each object on multiple devices of different facilities in the same zone. This way, HBR ensures data durability and availability even if hardware failures occur.
+     * - **ZRS**: Zone-redundant storage (ZRS) is enabled for the backup vault. HBR uses the multi-zone mechanism to distribute data across three zones within the same region. If a zone fails, the data that is stored in the other two zones is still accessible.
+     */
+    readonly redundancyType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of The resource attribute field representing the resource tag..
+     */
+    readonly tags?: RosVault.TagsProperty[];
+
+    /**
+     * @Property vaultStorageClass: The storage type of the backup vault. The value is only **STANDARD**, which indicates STANDARD storage.
+     */
+    readonly vaultStorageClass?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVaultProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVaultProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVaultPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vaultType', ros.requiredValidator)(properties.vaultType));
+    if(properties.vaultType && (typeof properties.vaultType) !== 'object') {
+        errors.collect(ros.propertyValidator('vaultType', ros.validateAllowedValues)({
+          data: properties.vaultType,
+          allowedValues: ["STANDARD","OTS_BACKUP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('vaultType', ros.validateString)(properties.vaultType));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: undefined,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.encryptType && (typeof properties.encryptType) !== 'object') {
+        errors.collect(ros.propertyValidator('encryptType', ros.validateAllowedValues)({
+          data: properties.encryptType,
+          allowedValues: ["HBR_PRIVATE","KMS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('encryptType', ros.validateString)(properties.encryptType));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
+    errors.collect(ros.propertyValidator('vaultName', ros.requiredValidator)(properties.vaultName));
+    if(properties.vaultName && (Array.isArray(properties.vaultName) || (typeof properties.vaultName) === 'string')) {
+        errors.collect(ros.propertyValidator('vaultName', ros.validateLength)({
+            data: properties.vaultName.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vaultName', ros.validateString)(properties.vaultName));
+    if(properties.redundancyType && (typeof properties.redundancyType) !== 'object') {
+        errors.collect(ros.propertyValidator('redundancyType', ros.validateAllowedValues)({
+          data: properties.redundancyType,
+          allowedValues: ["LRS","ZRS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('redundancyType', ros.validateString)(properties.redundancyType));
+    errors.collect(ros.propertyValidator('vaultStorageClass', ros.validateString)(properties.vaultStorageClass));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVault_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosVaultProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::Vault` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVaultProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::Vault` resource.
+ */
+// @ts-ignore TS6133
+function rosVaultPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVaultPropsValidator(properties).assertSuccess();
+    }
+    return {
+      VaultName: ros.stringToRosTemplate(properties.vaultName),
+      VaultType: ros.stringToRosTemplate(properties.vaultType),
+      Description: ros.stringToRosTemplate(properties.description),
+      EncryptType: ros.stringToRosTemplate(properties.encryptType),
+      KmsKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
+      RedundancyType: ros.stringToRosTemplate(properties.redundancyType),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosVaultTagsPropertyToRosTemplate)(properties.tags),
+      VaultStorageClass: ros.stringToRosTemplate(properties.vaultStorageClass),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::HBR::Vault`
+ */
+export class RosVault extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::Vault";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute BackupPlanStatistics: The statistics of backup plans that use the backup vault.
+     */
+    public readonly attrBackupPlanStatistics: ros.IResolvable;
+
+    /**
+     * @Attribute BytesDone: The amount of data that is backed up. Unit: bytes.
+     */
+    public readonly attrBytesDone: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The time when the backup vault was created. This value is a UNIX timestamp. Unit: seconds.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute Dedup: Indicates whether the deduplication feature is enabled.
+     */
+    public readonly attrDedup: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the backup vault.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute IndexAvailable: Indicates whether indexes are available. Indexes are available when they are not being updated.
+     */
+    public readonly attrIndexAvailable: ros.IResolvable;
+
+    /**
+     * @Attribute IndexLevel: The index level.
+- **OFF**: No indexes are created.
+- **META**: Metadata indexes are created.
+- **ALL**: Full-text indexes are created.
+     */
+    public readonly attrIndexLevel: ros.IResolvable;
+
+    /**
+     * @Attribute IndexUpdateTime: The time when the index was updated.
+     */
+    public readonly attrIndexUpdateTime: ros.IResolvable;
+
+    /**
+     * @Attribute LatestReplicationTime: The time when the last remote backup was synchronized. This value is a UNIX timestamp. Unit: seconds.
+     */
+    public readonly attrLatestReplicationTime: ros.IResolvable;
+
+    /**
+     * @Attribute PaymentType: PaymentType.
+     */
+    public readonly attrPaymentType: ros.IResolvable;
+
+    /**
+     * @Attribute RedundancyType: The data redundancy type of the backup vault. Valid values:
+- **LRS**: Locally redundant storage (LRS) is enabled for the backup vault. HBR stores the copies of each object on multiple devices of different facilities in the same zone. This way, HBR ensures data durability and availability even if hardware failures occur.
+- **ZRS**: Zone-redundant storage (ZRS) is enabled for the backup vault. HBR uses the multi-zone mechanism to distribute data across three zones within the same region. If a zone fails, the data that is stored in the other two zones is still accessible.
+     */
+    public readonly attrRedundancyType: ros.IResolvable;
+
+    /**
+     * @Attribute Replication: Indicates whether the backup vault is a remote backup vault. Valid values:
+- **true**: The backup vault is a remote backup vault.
+- **false**: The backup vault is an on-premises backup vault.
+     */
+    public readonly attrReplication: ros.IResolvable;
+
+    /**
+     * @Attribute ReplicationProgress: The progress of data synchronization from the backup vault to the mirror vault.
+     */
+    public readonly attrReplicationProgress: ros.IResolvable;
+
+    /**
+     * @Attribute ReplicationSourceRegionId: The ID of the region where the remote backup vault resides.
+     */
+    public readonly attrReplicationSourceRegionId: ros.IResolvable;
+
+    /**
+     * @Attribute ReplicationSourceVaultId: The ID of the source vault that corresponds to the remote backup vault.
+     */
+    public readonly attrReplicationSourceVaultId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute Retention: The retention period of the backup vault. Unit: days.
+     */
+    public readonly attrRetention: ros.IResolvable;
+
+    /**
+     * @Attribute SearchEnabled: Indicates whether the backup search feature is enabled.
+     */
+    public readonly attrSearchEnabled: ros.IResolvable;
+
+    /**
+     * @Attribute SourceTypes: The information about the data source.
+     */
+    public readonly attrSourceTypes: ros.IResolvable;
+
+    /**
+     * @Attribute StorageSize: The usage of the backup vault. Unit: bytes.
+     */
+    public readonly attrStorageSize: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tags of the backup vault.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute TrialInfo: The free trial information.
+     */
+    public readonly attrTrialInfo: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedTime: The time when the backup vault was updated. This value is a UNIX timestamp. Unit: seconds.
+     */
+    public readonly attrUpdatedTime: ros.IResolvable;
+
+    /**
+     * @Attribute VaultId: The ID of the backup vault.
+     */
+    public readonly attrVaultId: ros.IResolvable;
+
+    /**
+     * @Attribute VaultName: The name of the backup vault.
+     */
+    public readonly attrVaultName: ros.IResolvable;
+
+    /**
+     * @Attribute VaultStatusMessage: The status message that is returned when the backup vault is in the ERROR state. This parameter is available only for remote backup vaults. Valid values:
+- **UNKNOWN_ERROR*: An unknown error occurs.
+- **SOURCE_VAULT_ALREADY_HAS_REPLICATION**: A mirror vault is configured for the source vault.
+     */
+    public readonly attrVaultStatusMessage: ros.IResolvable;
+
+    /**
+     * @Attribute VaultStorageClass: The storage type of the backup vault. Valid value: **STANDARD**, which indicates standard storage.
+     */
+    public readonly attrVaultStorageClass: ros.IResolvable;
+
+    /**
+     * @Attribute VaultType: The type of the backup vault. Valid value: **STANDARD**, which indicates a standard backup vault.
+     */
+    public readonly attrVaultType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vaultName: The name of the backup vault. The name must be 1 to 64 characters in length.
+     */
+    public vaultName: string | ros.IResolvable;
+
+    /**
+     * @Property vaultType: The type of the backup vault. Valid values:
+     * - **STANDARD**: standard backup vault.
+     * - **OTS_BACKUP**: backup vault for Tablestore.
+     */
+    public vaultType: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the backup vault. The description must be 0 to 255 characters in length.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property encryptType: The method that is used to encrypt the source data. This parameter is valid only if you set the VaultType parameter to STANDARD or OTS_BACKUP. 
+     * Valid values:- **HBR_PRIVATE**: The source data is encrypted by using the built-in encryption method of Hybrid Backup Recovery (HBR).
+     * - **KMS**: The source data is encrypted by using Key Management Service (KMS).
+     */
+    public encryptType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key. This parameter is required only if you set the EncryptType parameter to KMS.
+     */
+    public kmsKeyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property redundancyType: The data redundancy type of the backup vault. Valid values:
+     * - **LRS**: Locally redundant storage (LRS) is enabled for the backup vault. HBR stores the copies of each object on multiple devices of different facilities in the same zone. This way, HBR ensures data durability and availability even if hardware failures occur.
+     * - **ZRS**: Zone-redundant storage (ZRS) is enabled for the backup vault. HBR uses the multi-zone mechanism to distribute data across three zones within the same region. If a zone fails, the data that is stored in the other two zones is still accessible.
+     */
+    public redundancyType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of The resource attribute field representing the resource tag..
+     */
+    public tags: RosVault.TagsProperty[] | undefined;
+
+    /**
+     * @Property vaultStorageClass: The storage type of the backup vault. The value is only **STANDARD**, which indicates STANDARD storage.
+     */
+    public vaultStorageClass: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::HBR::Vault`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVaultProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVault.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBackupPlanStatistics = this.getAtt('BackupPlanStatistics');
+        this.attrBytesDone = this.getAtt('BytesDone');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDedup = this.getAtt('Dedup');
+        this.attrDescription = this.getAtt('Description');
+        this.attrIndexAvailable = this.getAtt('IndexAvailable');
+        this.attrIndexLevel = this.getAtt('IndexLevel');
+        this.attrIndexUpdateTime = this.getAtt('IndexUpdateTime');
+        this.attrLatestReplicationTime = this.getAtt('LatestReplicationTime');
+        this.attrPaymentType = this.getAtt('PaymentType');
+        this.attrRedundancyType = this.getAtt('RedundancyType');
+        this.attrReplication = this.getAtt('Replication');
+        this.attrReplicationProgress = this.getAtt('ReplicationProgress');
+        this.attrReplicationSourceRegionId = this.getAtt('ReplicationSourceRegionId');
+        this.attrReplicationSourceVaultId = this.getAtt('ReplicationSourceVaultId');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrRetention = this.getAtt('Retention');
+        this.attrSearchEnabled = this.getAtt('SearchEnabled');
+        this.attrSourceTypes = this.getAtt('SourceTypes');
+        this.attrStorageSize = this.getAtt('StorageSize');
+        this.attrTags = this.getAtt('Tags');
+        this.attrTrialInfo = this.getAtt('TrialInfo');
+        this.attrUpdatedTime = this.getAtt('UpdatedTime');
+        this.attrVaultId = this.getAtt('VaultId');
+        this.attrVaultName = this.getAtt('VaultName');
+        this.attrVaultStatusMessage = this.getAtt('VaultStatusMessage');
+        this.attrVaultStorageClass = this.getAtt('VaultStorageClass');
+        this.attrVaultType = this.getAtt('VaultType');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vaultName = props.vaultName;
+        this.vaultType = props.vaultType;
+        this.description = props.description;
+        this.encryptType = props.encryptType;
+        this.kmsKeyId = props.kmsKeyId;
+        this.redundancyType = props.redundancyType;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+        this.vaultStorageClass = props.vaultStorageClass;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vaultName: this.vaultName,
+            vaultType: this.vaultType,
+            description: this.description,
+            encryptType: this.encryptType,
+            kmsKeyId: this.kmsKeyId,
+            redundancyType: this.redundancyType,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+            vaultStorageClass: this.vaultStorageClass,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVaultPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosVault {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVault_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::HBR::Vault.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::HBR::Vault.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosVaultTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVault_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}

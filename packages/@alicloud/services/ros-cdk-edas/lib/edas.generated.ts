@@ -31,6 +31,11 @@ export interface RosApplicationProps {
     readonly componentIds?: string | ros.IResolvable;
 
     /**
+     * @Property deployment: Deploy application information to ECS clusters
+     */
+    readonly deployment?: RosApplication.DeploymentProperty | ros.IResolvable;
+
+    /**
      * @Property description: Descriptive information
      */
     readonly description?: string | ros.IResolvable;
@@ -96,6 +101,7 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('packageType', ros.validateString)(properties.packageType));
+    errors.collect(ros.propertyValidator('deployment', RosApplication_DeploymentPropertyValidator)(properties.deployment));
     errors.collect(ros.propertyValidator('buildPackId', ros.validateNumber)(properties.buildPackId));
     return errors.wrap('supplied properties not correct for "RosApplicationProps"');
 }
@@ -118,6 +124,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
       ClusterId: ros.stringToRosTemplate(properties.clusterId),
       BuildPackId: ros.numberToRosTemplate(properties.buildPackId),
       ComponentIds: ros.stringToRosTemplate(properties.componentIds),
+      Deployment: rosApplicationDeploymentPropertyToRosTemplate(properties.deployment),
       Description: ros.stringToRosTemplate(properties.description),
       EcuInfo: ros.stringToRosTemplate(properties.ecuInfo),
       HealthCheckURL: ros.stringToRosTemplate(properties.healthCheckUrl),
@@ -178,6 +185,11 @@ export class RosApplication extends ros.RosResource {
     public componentIds: string | ros.IResolvable | undefined;
 
     /**
+     * @Property deployment: Deploy application information to ECS clusters
+     */
+    public deployment: RosApplication.DeploymentProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property description: Descriptive information
      */
     public description: string | ros.IResolvable | undefined;
@@ -225,6 +237,7 @@ export class RosApplication extends ros.RosResource {
         this.clusterId = props.clusterId;
         this.buildPackId = props.buildPackId;
         this.componentIds = props.componentIds;
+        this.deployment = props.deployment;
         this.description = props.description;
         this.ecuInfo = props.ecuInfo;
         this.healthCheckUrl = props.healthCheckUrl;
@@ -240,6 +253,7 @@ export class RosApplication extends ros.RosResource {
             clusterId: this.clusterId,
             buildPackId: this.buildPackId,
             componentIds: this.componentIds,
+            deployment: this.deployment,
             description: this.description,
             ecuInfo: this.ecuInfo,
             healthCheckUrl: this.healthCheckUrl,
@@ -251,6 +265,136 @@ export class RosApplication extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosApplicationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosApplication {
+    /**
+     * @stability external
+     */
+    export interface DeploymentProperty {
+        /**
+         * @Property releaseType: Batch mode.
+     * 0 is automatic.
+     * 1 means manual confirmation is required between batches.
+         */
+        readonly releaseType?: number | ros.IResolvable;
+        /**
+         * @Property desc: Application deployment description information
+         */
+        readonly desc?: string | ros.IResolvable;
+        /**
+         * @Property gray: Whether Canary Release.
+     * True: Canary Release.
+     * When implementing a gray release, the GroupId that will be used for the gray release must be specified.
+     * Gray release is a batch release.
+     * After the gray release is complete, normal release can be done, and the Batch controls the grouping.
+     * False: Non-Canary Release (single or grouped release).
+         */
+        readonly gray?: boolean | ros.IResolvable;
+        /**
+         * @Property appEnv: Deployment environment variables, the format must conform to
+     * {"name":"x","value":"y"},{"name":"x2","value":"y2"}, 
+     * and the key is fixed as name and value.
+         */
+        readonly appEnv?: string | ros.IResolvable;
+        /**
+         * @Property batch: Each group of batches.When the GroupId of the specified application group is a specific application group ID,
+     * it means to deploy to the specified application group.
+     *  At this time, the minimum number of batches that can be specified is 1,
+     *  and the maximum number of batches is the maximum number of
+     *  ECS instances in the normal state under the application group. 
+     * The actual number of batches results range: [1, specified number of batches].
+     * When the GroupId of the specified application group is all, 
+     * it means to deploy to all application groups. 
+     * At this time, the minimum number of batches that can be specified is 1,
+     * and the maximum number of batches is the number of
+     * ECS instances under the group with the largest number of ECSs in the normal state.
+         */
+        readonly batch?: number | ros.IResolvable;
+        /**
+         * @Property warUrl: The URL address of the application deployment package (WAR or JAR).
+     * It is recommended to use the application deployment package path stored in OSS.
+         */
+        readonly warUrl: string | ros.IResolvable;
+        /**
+         * @Property trafficControlStrategy: Gray release policy content
+         */
+        readonly trafficControlStrategy?: string | ros.IResolvable;
+        /**
+         * @Property batchWaitTime: Batch waiting time, unit: minute.
+     * The default is 0, which means no waiting.
+     * The maximum is 5.
+     * When the actual number of batches is large, a reasonable value needs to be set,
+     * otherwise the change duration of this application deployment will be longer.
+         */
+        readonly batchWaitTime?: number | ros.IResolvable;
+        /**
+         * @Property packageVersion: Deployed application deployment package version,
+     * up to 64 characters, it is recommended to use timestamp
+         */
+        readonly packageVersion: string | ros.IResolvable;
+        /**
+         * @Property groupId: Deployment group ID.
+     * If you want to deploy to all groups, set the parameter to all.
+         */
+        readonly groupId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DeploymentProperty`
+ *
+ * @param properties - the TypeScript properties of a `DeploymentProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplication_DeploymentPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('releaseType', ros.validateNumber)(properties.releaseType));
+    errors.collect(ros.propertyValidator('desc', ros.validateString)(properties.desc));
+    errors.collect(ros.propertyValidator('gray', ros.validateBoolean)(properties.gray));
+    errors.collect(ros.propertyValidator('appEnv', ros.validateString)(properties.appEnv));
+    errors.collect(ros.propertyValidator('batch', ros.validateNumber)(properties.batch));
+    errors.collect(ros.propertyValidator('warUrl', ros.requiredValidator)(properties.warUrl));
+    errors.collect(ros.propertyValidator('warUrl', ros.validateString)(properties.warUrl));
+    errors.collect(ros.propertyValidator('trafficControlStrategy', ros.validateString)(properties.trafficControlStrategy));
+    errors.collect(ros.propertyValidator('batchWaitTime', ros.validateNumber)(properties.batchWaitTime));
+    errors.collect(ros.propertyValidator('packageVersion', ros.requiredValidator)(properties.packageVersion));
+    if(properties.packageVersion && (Array.isArray(properties.packageVersion) || (typeof properties.packageVersion) === 'string')) {
+        errors.collect(ros.propertyValidator('packageVersion', ros.validateLength)({
+            data: properties.packageVersion.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('packageVersion', ros.validateString)(properties.packageVersion));
+    errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
+    return errors.wrap('supplied properties not correct for "DeploymentProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EDAS::Application.Deployment` resource
+ *
+ * @param properties - the TypeScript properties of a `DeploymentProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EDAS::Application.Deployment` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationDeploymentPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplication_DeploymentPropertyValidator(properties).assertSuccess();
+    return {
+      ReleaseType: ros.numberToRosTemplate(properties.releaseType),
+      Desc: ros.stringToRosTemplate(properties.desc),
+      Gray: ros.booleanToRosTemplate(properties.gray),
+      AppEnv: ros.stringToRosTemplate(properties.appEnv),
+      Batch: ros.numberToRosTemplate(properties.batch),
+      WarUrl: ros.stringToRosTemplate(properties.warUrl),
+      TrafficControlStrategy: ros.stringToRosTemplate(properties.trafficControlStrategy),
+      BatchWaitTime: ros.numberToRosTemplate(properties.batchWaitTime),
+      PackageVersion: ros.stringToRosTemplate(properties.packageVersion),
+      GroupId: ros.stringToRosTemplate(properties.groupId),
+    };
 }
 
 /**
@@ -552,6 +696,11 @@ export class RosClusterMember extends ros.RosResource {
     public readonly attrClusterMemberIds: ros.IResolvable;
 
     /**
+     * @Attribute EcuIds: ECU IDs corresponding to the ECS instance IDs.
+     */
+    public readonly attrEcuIds: ros.IResolvable;
+
+    /**
      * @Attribute InstanceIds: ECS instance IDs.
      */
     public readonly attrInstanceIds: ros.IResolvable;
@@ -585,6 +734,7 @@ export class RosClusterMember extends ros.RosResource {
         super(scope, id, { type: RosClusterMember.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrClusterId = this.getAtt('ClusterId');
         this.attrClusterMemberIds = this.getAtt('ClusterMemberIds');
+        this.attrEcuIds = this.getAtt('EcuIds');
         this.attrInstanceIds = this.getAtt('InstanceIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.config;
 
 /**
- * A ROS resource type:  `ALIYUN::Config::DeliveryChannel`.
+ * A ROS resource type:  <code>ALIYUN::Config::DeliveryChannel</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.632Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.745Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.DeliveryChannel")
 public class DeliveryChannel extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class DeliveryChannel extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::Config::DeliveryChannel`.
+     * Create a new <code>ALIYUN::Config::DeliveryChannel</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class DeliveryChannel extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::Config::DeliveryChannel`.
+     * Create a new <code>ALIYUN::Config::DeliveryChannel</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -276,7 +276,7 @@ public class DeliveryChannel extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.config.DeliveryChannel}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.config.DeliveryChannel}.
          */
         @Override
         public com.aliyun.ros.cdk.config.DeliveryChannel build() {

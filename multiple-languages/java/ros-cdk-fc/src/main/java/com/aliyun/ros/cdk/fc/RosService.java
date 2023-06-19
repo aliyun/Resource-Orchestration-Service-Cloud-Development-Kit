@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * A ROS template type:  `ALIYUN::FC::Service`.
+ * A ROS template type:  <code>ALIYUN::FC::Service</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.885Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.158Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosService")
 public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new `ALIYUN::FC::Service`.
+     * Create a new <code>ALIYUN::FC::Service</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosService(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc.RosServiceProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -209,6 +209,24 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNasConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.fc.RosService.NasConfigProperty value) {
         software.amazon.jsii.Kernel.set(this, "nasConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOssMountConfig() {
+        return software.amazon.jsii.Kernel.get(this, "ossMountConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOssMountConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ossMountConfig", value);
+    }
+
+    /**
+     */
+    public void setOssMountConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.fc.RosService.OssMountConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "ossMountConfig", value);
     }
 
     /**
@@ -937,6 +955,412 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosService.OssMountConfigMountPointsProperty")
+    @software.amazon.jsii.Jsii.Proxy(OssMountConfigMountPointsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface OssMountConfigMountPointsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getBucketName();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getBucketPath();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getEndPoint();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getMountDir();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getReadOnly();
+
+        /**
+         * @return a {@link Builder} of {@link OssMountConfigMountPointsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link OssMountConfigMountPointsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<OssMountConfigMountPointsProperty> {
+            java.lang.Object bucketName;
+            java.lang.Object bucketPath;
+            java.lang.Object endPoint;
+            java.lang.Object mountDir;
+            java.lang.Object readOnly;
+
+            /**
+             * Sets the value of {@link OssMountConfigMountPointsProperty#getBucketName}
+             * @param bucketName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder bucketName(java.lang.String bucketName) {
+                this.bucketName = bucketName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OssMountConfigMountPointsProperty#getBucketName}
+             * @param bucketName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder bucketName(com.aliyun.ros.cdk.core.IResolvable bucketName) {
+                this.bucketName = bucketName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OssMountConfigMountPointsProperty#getBucketPath}
+             * @param bucketPath the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder bucketPath(java.lang.String bucketPath) {
+                this.bucketPath = bucketPath;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OssMountConfigMountPointsProperty#getBucketPath}
+             * @param bucketPath the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder bucketPath(com.aliyun.ros.cdk.core.IResolvable bucketPath) {
+                this.bucketPath = bucketPath;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OssMountConfigMountPointsProperty#getEndPoint}
+             * @param endPoint the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder endPoint(java.lang.String endPoint) {
+                this.endPoint = endPoint;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OssMountConfigMountPointsProperty#getEndPoint}
+             * @param endPoint the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder endPoint(com.aliyun.ros.cdk.core.IResolvable endPoint) {
+                this.endPoint = endPoint;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OssMountConfigMountPointsProperty#getMountDir}
+             * @param mountDir the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mountDir(java.lang.String mountDir) {
+                this.mountDir = mountDir;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OssMountConfigMountPointsProperty#getMountDir}
+             * @param mountDir the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mountDir(com.aliyun.ros.cdk.core.IResolvable mountDir) {
+                this.mountDir = mountDir;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OssMountConfigMountPointsProperty#getReadOnly}
+             * @param readOnly the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder readOnly(java.lang.Boolean readOnly) {
+                this.readOnly = readOnly;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OssMountConfigMountPointsProperty#getReadOnly}
+             * @param readOnly the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder readOnly(com.aliyun.ros.cdk.core.IResolvable readOnly) {
+                this.readOnly = readOnly;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link OssMountConfigMountPointsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public OssMountConfigMountPointsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link OssMountConfigMountPointsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements OssMountConfigMountPointsProperty {
+            private final java.lang.Object bucketName;
+            private final java.lang.Object bucketPath;
+            private final java.lang.Object endPoint;
+            private final java.lang.Object mountDir;
+            private final java.lang.Object readOnly;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.bucketName = software.amazon.jsii.Kernel.get(this, "bucketName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.bucketPath = software.amazon.jsii.Kernel.get(this, "bucketPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.endPoint = software.amazon.jsii.Kernel.get(this, "endPoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.mountDir = software.amazon.jsii.Kernel.get(this, "mountDir", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.readOnly = software.amazon.jsii.Kernel.get(this, "readOnly", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.bucketName = java.util.Objects.requireNonNull(builder.bucketName, "bucketName is required");
+                this.bucketPath = java.util.Objects.requireNonNull(builder.bucketPath, "bucketPath is required");
+                this.endPoint = java.util.Objects.requireNonNull(builder.endPoint, "endPoint is required");
+                this.mountDir = java.util.Objects.requireNonNull(builder.mountDir, "mountDir is required");
+                this.readOnly = java.util.Objects.requireNonNull(builder.readOnly, "readOnly is required");
+            }
+
+            @Override
+            public final java.lang.Object getBucketName() {
+                return this.bucketName;
+            }
+
+            @Override
+            public final java.lang.Object getBucketPath() {
+                return this.bucketPath;
+            }
+
+            @Override
+            public final java.lang.Object getEndPoint() {
+                return this.endPoint;
+            }
+
+            @Override
+            public final java.lang.Object getMountDir() {
+                return this.mountDir;
+            }
+
+            @Override
+            public final java.lang.Object getReadOnly() {
+                return this.readOnly;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("bucketName", om.valueToTree(this.getBucketName()));
+                data.set("bucketPath", om.valueToTree(this.getBucketPath()));
+                data.set("endPoint", om.valueToTree(this.getEndPoint()));
+                data.set("mountDir", om.valueToTree(this.getMountDir()));
+                data.set("readOnly", om.valueToTree(this.getReadOnly()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosService.OssMountConfigMountPointsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                OssMountConfigMountPointsProperty.Jsii$Proxy that = (OssMountConfigMountPointsProperty.Jsii$Proxy) o;
+
+                if (!bucketName.equals(that.bucketName)) return false;
+                if (!bucketPath.equals(that.bucketPath)) return false;
+                if (!endPoint.equals(that.endPoint)) return false;
+                if (!mountDir.equals(that.mountDir)) return false;
+                return this.readOnly.equals(that.readOnly);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.bucketName.hashCode();
+                result = 31 * result + (this.bucketPath.hashCode());
+                result = 31 * result + (this.endPoint.hashCode());
+                result = 31 * result + (this.mountDir.hashCode());
+                result = 31 * result + (this.readOnly.hashCode());
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosService.OssMountConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(OssMountConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface OssMountConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getMountPoints();
+
+        /**
+         * @return a {@link Builder} of {@link OssMountConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link OssMountConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<OssMountConfigProperty> {
+            java.lang.Object mountPoints;
+
+            /**
+             * Sets the value of {@link OssMountConfigProperty#getMountPoints}
+             * @param mountPoints the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mountPoints(com.aliyun.ros.cdk.core.IResolvable mountPoints) {
+                this.mountPoints = mountPoints;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link OssMountConfigProperty#getMountPoints}
+             * @param mountPoints the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mountPoints(java.util.List<? extends java.lang.Object> mountPoints) {
+                this.mountPoints = mountPoints;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link OssMountConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public OssMountConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link OssMountConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements OssMountConfigProperty {
+            private final java.lang.Object mountPoints;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.mountPoints = software.amazon.jsii.Kernel.get(this, "mountPoints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.mountPoints = java.util.Objects.requireNonNull(builder.mountPoints, "mountPoints is required");
+            }
+
+            @Override
+            public final java.lang.Object getMountPoints() {
+                return this.mountPoints;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("mountPoints", om.valueToTree(this.getMountPoints()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosService.OssMountConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                OssMountConfigProperty.Jsii$Proxy that = (OssMountConfigProperty.Jsii$Proxy) o;
+
+                return this.mountPoints.equals(that.mountPoints);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.mountPoints.hashCode();
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosService.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1485,8 +1909,8 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.fc.RosService> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -1609,6 +2033,23 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param ossMountConfig This parameter is required.
+         */
+        public Builder ossMountConfig(final com.aliyun.ros.cdk.core.IResolvable ossMountConfig) {
+            this.props.ossMountConfig(ossMountConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ossMountConfig This parameter is required.
+         */
+        public Builder ossMountConfig(final com.aliyun.ros.cdk.fc.RosService.OssMountConfigProperty ossMountConfig) {
+            this.props.ossMountConfig(ossMountConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param role This parameter is required.
          */
         public Builder role(final java.lang.String role) {
@@ -1685,7 +2126,7 @@ public class RosService extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.fc.RosService}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.fc.RosService}.
          */
         @Override
         public com.aliyun.ros.cdk.fc.RosService build() {

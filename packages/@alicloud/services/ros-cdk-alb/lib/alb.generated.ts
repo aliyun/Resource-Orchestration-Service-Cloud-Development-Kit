@@ -4296,15 +4296,17 @@ export interface RosServerGroupProps {
     /**
      * @Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
      * in the specified VPC to the server group.
-     * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
      */
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * @Property protocol: The server protocol. Valid values:
-     * HTTP: allows you to associate HTTPS, HTTP, or QUIC listeners with backend servers. This
-     * is the default value.
-     * HTTPS: allows you to associate HTTPS listeners with backend servers.
+     * @Property protocol: The backend protocol. Valid values:
+     * HTTP (default): The server group can be associated with HTTPS, HTTP, and QUIC listeners.
+     * HTTPS: The server group can be associated with HTTPS listeners.
+     * gRPC: The server group can be associated with HTTPS and QUIC listeners.
+     * Note: If the ServerGroupType parameter is set to Fc, you can set Protocol only to HTTP.
      */
     readonly protocol?: string | ros.IResolvable;
 
@@ -4315,23 +4317,18 @@ export interface RosServerGroupProps {
 
     /**
      * @Property scheduler: The scheduling algorithm. Valid values:
-     * Wrr: Backend servers that have higher weights receive more requests than those that have
-     * lower weights. This is the default value.
-     * Wlc: Requests are distributed based on the weight and load of each backend server. The
-     * load refers to the number of connections to a backend server. If multiple backend
-     * servers have the same weight, requests are routed to the backend server with the least
-     * connections.
-     * Sch: specifies consistent hashing that is based on source IP addresses.
+     * Wrr (default): The weighted round-robin algorithm is used. Backend servers that have higher weights receive more requests than those that have lower weights.
+     * Wlc: The weighted least connections algorithm is used. Requests are distributed based on the weights and the number of connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections is expected to receive more requests.
+     * Sch: The consistent hashing algorithm is used. Requests from the same source IP address are distributed to the same backend server.
+     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
      */
     readonly scheduler?: string | ros.IResolvable;
 
     /**
      * @Property serverGroupType: The type of the server group. Valid values:
-     * Instance: a server group that consists of servers. You can add Elastic Compute Service (ECS)
-     * instances, elastic network interfaces (ENIs), and elastic container instances to this
-     * type of server group. This is the default value.
-     * Ip: a server group that consists of IP addresses. You can add IP addresses to this type
-     * of server group.
+     * Instance (default): allows you add servers by specifying Ecs, Ens, or Eci.
+     * Ip: allows you to add servers by specifying IP addresses.
+     * Fc: allows you to add servers by specifying functions of Function Compute.
      */
     readonly serverGroupType?: string | ros.IResolvable;
 
@@ -4342,7 +4339,7 @@ export interface RosServerGroupProps {
 
     /**
      * @Property stickySessionConfig: The configuration of session persistence.
-     * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
      */
     readonly stickySessionConfig?: RosServerGroup.StickySessionConfigProperty | ros.IResolvable;
 
@@ -4379,14 +4376,14 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.protocol && (typeof properties.protocol) !== 'object') {
         errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
           data: properties.protocol,
-          allowedValues: ["HTTPS","HTTP"],
+          allowedValues: ["HTTPS","HTTP","gRPC"],
         }));
     }
     errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
     if(properties.serverGroupType && (typeof properties.serverGroupType) !== 'object') {
         errors.collect(ros.propertyValidator('serverGroupType', ros.validateAllowedValues)({
           data: properties.serverGroupType,
-          allowedValues: ["Ip","Instance"],
+          allowedValues: ["Ip","Instance","Fc"],
         }));
     }
     errors.collect(ros.propertyValidator('serverGroupType', ros.validateString)(properties.serverGroupType));
@@ -4467,15 +4464,17 @@ export class RosServerGroup extends ros.RosResource {
     /**
      * @Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
      * in the specified VPC to the server group.
-     * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
      */
     public vpcId: string | ros.IResolvable;
 
     /**
-     * @Property protocol: The server protocol. Valid values:
-     * HTTP: allows you to associate HTTPS, HTTP, or QUIC listeners with backend servers. This
-     * is the default value.
-     * HTTPS: allows you to associate HTTPS listeners with backend servers.
+     * @Property protocol: The backend protocol. Valid values:
+     * HTTP (default): The server group can be associated with HTTPS, HTTP, and QUIC listeners.
+     * HTTPS: The server group can be associated with HTTPS listeners.
+     * gRPC: The server group can be associated with HTTPS and QUIC listeners.
+     * Note: If the ServerGroupType parameter is set to Fc, you can set Protocol only to HTTP.
      */
     public protocol: string | ros.IResolvable | undefined;
 
@@ -4486,23 +4485,18 @@ export class RosServerGroup extends ros.RosResource {
 
     /**
      * @Property scheduler: The scheduling algorithm. Valid values:
-     * Wrr: Backend servers that have higher weights receive more requests than those that have
-     * lower weights. This is the default value.
-     * Wlc: Requests are distributed based on the weight and load of each backend server. The
-     * load refers to the number of connections to a backend server. If multiple backend
-     * servers have the same weight, requests are routed to the backend server with the least
-     * connections.
-     * Sch: specifies consistent hashing that is based on source IP addresses.
+     * Wrr (default): The weighted round-robin algorithm is used. Backend servers that have higher weights receive more requests than those that have lower weights.
+     * Wlc: The weighted least connections algorithm is used. Requests are distributed based on the weights and the number of connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections is expected to receive more requests.
+     * Sch: The consistent hashing algorithm is used. Requests from the same source IP address are distributed to the same backend server.
+     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
      */
     public scheduler: string | ros.IResolvable | undefined;
 
     /**
      * @Property serverGroupType: The type of the server group. Valid values:
-     * Instance: a server group that consists of servers. You can add Elastic Compute Service (ECS)
-     * instances, elastic network interfaces (ENIs), and elastic container instances to this
-     * type of server group. This is the default value.
-     * Ip: a server group that consists of IP addresses. You can add IP addresses to this type
-     * of server group.
+     * Instance (default): allows you add servers by specifying Ecs, Ens, or Eci.
+     * Ip: allows you to add servers by specifying IP addresses.
+     * Fc: allows you to add servers by specifying functions of Function Compute.
      */
     public serverGroupType: string | ros.IResolvable | undefined;
 
@@ -4513,7 +4507,7 @@ export class RosServerGroup extends ros.RosResource {
 
     /**
      * @Property stickySessionConfig: The configuration of session persistence.
-     * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
      */
     public stickySessionConfig: RosServerGroup.StickySessionConfigProperty | ros.IResolvable | undefined;
 
@@ -4584,10 +4578,10 @@ export namespace RosServerGroup {
          */
         readonly healthCheckConnectPort?: number | ros.IResolvable;
         /**
-         * @Property healthCheckCodes: The HTTP status code that indicates a successful health check. Multiple HTTP status
-     * codes can be specified as a list.
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
-     * Valid values: http_2xx, http_3xx, http_4xx, and http_5xx. Default value: http_2xx.
+         * @Property healthCheckCodes: The HTTP status codes that are used to determine whether the backend server passes the health check.
+     * If HealthCheckProtocol is set to HTTP, HealthCheckCodes can be set to http_2xx (default), http_3xx, http_4xx, and http_5xx. Separate multiple HTTP status codes with a comma (,).
+     * If HealthCheckProtocol is set to gRPC, HealthCheckCodes can be set to 0 to 99. Default value: 0. Value ranges are supported. You can enter at most 20 value ranges. Separate multiple value ranges with commas (,).)
+     * Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP or gRPC.
          */
         readonly healthCheckCodes?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
@@ -4598,7 +4592,11 @@ export namespace RosServerGroup {
          */
         readonly unhealthyThreshold?: number | ros.IResolvable;
         /**
-         * @Property healthCheckMethod: The HTTP method that is used for health checks. Valid values: GET and HEAD. Default value: HEAD.
+         * @Property healthCheckMethod: The HTTP method that is used for health checks. Valid values:
+     * GET: If the length of a response exceeds 8 KB, the response is truncated. However, the health check result is not affected.
+     * POST: By default, gRPC health checks use the POST method.
+     * HEAD: By default, HTTP health checks use the HEAD method.
+     * Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP or gRPC.
          */
         readonly healthCheckMethod?: string | ros.IResolvable;
         /**
@@ -4609,7 +4607,7 @@ export namespace RosServerGroup {
      * It can also contain the following extended characters:
      * _ ; ~ ! ( )* [ ] @ $ ^ : ' , +.
      * The URL must start with a forward slash (/).
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
          */
         readonly healthCheckPath?: string | ros.IResolvable;
         /**
@@ -4622,7 +4620,8 @@ export namespace RosServerGroup {
      * The rightmost field can contain only letters, and cannot contain digits or hyphens
      * (-).
      * Other fields cannot start or end with a hyphen (-).
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * Note: This parameter takes effect only when the HealthCheckProtocol parameter is set to HTTP.
          */
         readonly healthCheckHost?: string | ros.IResolvable;
         /**
@@ -4638,13 +4637,14 @@ export namespace RosServerGroup {
         readonly healthCheckProtocol?: string | ros.IResolvable;
         /**
          * @Property healthCheckHttpVersion: The version of the HTTP protocol. Valid values: HTTP1.0 and HTTP1.1. Default value: HTTP1.1.
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * Note: This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
          */
         readonly healthCheckHttpVersion?: string | ros.IResolvable;
         /**
          * @Property healthCheckEnabled: Specifies whether to enable the health check feature. Valid values:
      * true: enables the feature.
      * false: disables the feature.
+     * Note: If the ServerGroupType parameter is set to Instance or Ip, the health check feature is enabled by default. If the ServerGroupType parameter is set to Fc, the health check feature is disabled by default.
          */
         readonly healthCheckEnabled: boolean | ros.IResolvable;
         /**
@@ -4678,7 +4678,7 @@ function RosServerGroup_HealthCheckConfigPropertyValidator(properties: any): ros
     if(properties.healthCheckProtocol && (typeof properties.healthCheckProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckProtocol', ros.validateAllowedValues)({
           data: properties.healthCheckProtocol,
-          allowedValues: ["HTTP","HTTPS"],
+          allowedValues: ["HTTP","HTTPS","gRPC"],
         }));
     }
     errors.collect(ros.propertyValidator('healthCheckProtocol', ros.validateString)(properties.healthCheckProtocol));
@@ -4732,14 +4732,14 @@ export namespace RosServerGroup {
      * The cookie must be 1 to 200 characters in length, and can contain ASCII characters
      * and digits. It cannot contain commas (,), semicolons (;), or spaces. It cannot start
      * with a dollar sign ($).
-     * Note This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Server.
+     * Note: This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Server.
          */
         readonly cookie?: string | ros.IResolvable;
         /**
          * @Property cookieTimeout: The timeout period of the cookie. Unit: seconds.
      * Valid values: 1 to 86400.
      * Default value: 1000.
-     * Note This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Insert.
+     * Note: This parameter is required if the StickySessionEnabled parameter is set to true and the StickySessionType parameter is set to Insert.
          */
         readonly cookieTimeout?: number | ros.IResolvable;
         /**
@@ -4753,12 +4753,12 @@ export namespace RosServerGroup {
      * When ALB detects a user-defined cookie, it uses the user-defined cookie to rewrite
      * the original cookie. The next request from the client will contain the user-defined
      * cookie, and the listener will distribute this request to the recorded backend server.
-     * Note This parameter is required if the StickySessionEnabled parameter is set to true.
+     * Note: This parameter is required if the StickySessionEnabled parameter is set to true.
          */
         readonly stickySessionType?: string | ros.IResolvable;
         /**
          * @Property stickySessionEnabled: Specifies whether to enable session persistence. Valid values: true and false.
-     * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
          */
         readonly stickySessionEnabled?: boolean | ros.IResolvable;
     }

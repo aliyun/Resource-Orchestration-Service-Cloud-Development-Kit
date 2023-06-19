@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * A ROS template type:  `ALIYUN::RAM::Role`.
+ * A ROS template type:  <code>ALIYUN::RAM::Role</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.588Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.027Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRole")
 public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new `ALIYUN::RAM::Role`.
+     * Create a new <code>ALIYUN::RAM::Role</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosRole(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.RosRoleProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -143,6 +143,24 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreExisting() {
+        return software.amazon.jsii.Kernel.get(this, "ignoreExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIgnoreExisting(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "ignoreExisting", value);
+    }
+
+    /**
+     */
+    public void setIgnoreExisting(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ignoreExisting", value);
     }
 
     /**
@@ -1392,6 +1410,13 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreExisting() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link PoliciesProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1406,6 +1431,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object policyDocument;
             java.lang.Object policyName;
             java.lang.Object description;
+            java.lang.Object ignoreExisting;
 
             /**
              * Sets the value of {@link PoliciesProperty#getPolicyDocument}
@@ -1474,6 +1500,28 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link PoliciesProperty#getIgnoreExisting}
+             * @param ignoreExisting the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ignoreExisting(java.lang.Boolean ignoreExisting) {
+                this.ignoreExisting = ignoreExisting;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PoliciesProperty#getIgnoreExisting}
+             * @param ignoreExisting the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ignoreExisting(com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+                this.ignoreExisting = ignoreExisting;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link PoliciesProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1494,6 +1542,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object policyDocument;
             private final java.lang.Object policyName;
             private final java.lang.Object description;
+            private final java.lang.Object ignoreExisting;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1504,6 +1553,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
                 this.policyDocument = software.amazon.jsii.Kernel.get(this, "policyDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.policyName = software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ignoreExisting = software.amazon.jsii.Kernel.get(this, "ignoreExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1514,6 +1564,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
                 this.policyDocument = java.util.Objects.requireNonNull(builder.policyDocument, "policyDocument is required");
                 this.policyName = java.util.Objects.requireNonNull(builder.policyName, "policyName is required");
                 this.description = builder.description;
+                this.ignoreExisting = builder.ignoreExisting;
             }
 
             @Override
@@ -1532,6 +1583,11 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getIgnoreExisting() {
+                return this.ignoreExisting;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -1541,6 +1597,9 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("policyName", om.valueToTree(this.getPolicyName()));
                 if (this.getDescription() != null) {
                     data.set("description", om.valueToTree(this.getDescription()));
+                }
+                if (this.getIgnoreExisting() != null) {
+                    data.set("ignoreExisting", om.valueToTree(this.getIgnoreExisting()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -1562,7 +1621,8 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (!policyDocument.equals(that.policyDocument)) return false;
                 if (!policyName.equals(that.policyName)) return false;
-                return this.description != null ? this.description.equals(that.description) : that.description == null;
+                if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+                return this.ignoreExisting != null ? this.ignoreExisting.equals(that.ignoreExisting) : that.ignoreExisting == null;
             }
 
             @Override
@@ -1570,6 +1630,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.policyDocument.hashCode();
                 result = 31 * result + (this.policyName.hashCode());
                 result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+                result = 31 * result + (this.ignoreExisting != null ? this.ignoreExisting.hashCode() : 0);
                 return result;
             }
         }
@@ -2648,8 +2709,8 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ram.RosRole> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -2738,6 +2799,23 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param ignoreExisting This parameter is required.
+         */
+        public Builder ignoreExisting(final java.lang.Boolean ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ignoreExisting This parameter is required.
+         */
+        public Builder ignoreExisting(final com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param maxSessionDuration This parameter is required.
          */
         public Builder maxSessionDuration(final java.lang.Number maxSessionDuration) {
@@ -2788,7 +2866,7 @@ public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ram.RosRole}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ram.RosRole}.
          */
         @Override
         public com.aliyun.ros.cdk.ram.RosRole build() {

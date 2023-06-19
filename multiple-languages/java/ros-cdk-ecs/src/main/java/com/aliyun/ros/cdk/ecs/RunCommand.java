@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::RunCommand`.
+ * A ROS resource type:  <code>ALIYUN::ECS::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.444Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.652Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RunCommand")
 public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ECS::RunCommand`.
+     * Create a new <code>ALIYUN::ECS::RunCommand</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ECS::RunCommand`.
+     * Create a new <code>ALIYUN::ECS::RunCommand</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -171,7 +171,7 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property type: The language type of the O&M script.
+         * Property type: The language type of the O&amp;M script.
          * <p>
          * Valid values:
          * RunBatScript: batch scripts for Windows instances
@@ -179,14 +179,14 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
          * RunShellScript: shell scripts for Linux instances
          * <p>
          * @return {@code this}
-         * @param type Property type: The language type of the O&M script. This parameter is required.
+         * @param type Property type: The language type of the O&amp;M script. This parameter is required.
          */
         public Builder type(final java.lang.String type) {
             this.props.type(type);
             return this;
         }
         /**
-         * Property type: The language type of the O&M script.
+         * Property type: The language type of the O&amp;M script.
          * <p>
          * Valid values:
          * RunBatScript: batch scripts for Windows instances
@@ -194,7 +194,7 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
          * RunShellScript: shell scripts for Linux instances
          * <p>
          * @return {@code this}
-         * @param type Property type: The language type of the O&M script. This parameter is required.
+         * @param type Property type: The language type of the O&amp;M script. This parameter is required.
          */
         public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
             this.props.type(type);
@@ -401,6 +401,27 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property runAgainOn: The stage of executing the command again.
+         * <p>
+         * @return {@code this}
+         * @param runAgainOn Property runAgainOn: The stage of executing the command again. This parameter is required.
+         */
+        public Builder runAgainOn(final com.aliyun.ros.cdk.core.IResolvable runAgainOn) {
+            this.props.runAgainOn(runAgainOn);
+            return this;
+        }
+        /**
+         * Property runAgainOn: The stage of executing the command again.
+         * <p>
+         * @return {@code this}
+         * @param runAgainOn Property runAgainOn: The stage of executing the command again. This parameter is required.
+         */
+        public Builder runAgainOn(final java.util.List<? extends java.lang.Object> runAgainOn) {
+            this.props.runAgainOn(runAgainOn);
+            return this;
+        }
+
+        /**
          * Property sync: Whether to invoke synchronously.
          * <p>
          * @return {@code this}
@@ -509,7 +530,7 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ecs.RunCommand}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ecs.RunCommand}.
          */
         @Override
         public com.aliyun.ros.cdk.ecs.RunCommand build() {

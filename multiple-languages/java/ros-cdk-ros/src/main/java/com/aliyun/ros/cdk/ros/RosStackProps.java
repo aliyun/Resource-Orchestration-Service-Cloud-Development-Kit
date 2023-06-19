@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * Properties for defining a `ALIYUN::ROS::Stack`.
+ * Properties for defining a <code>ALIYUN::ROS::Stack</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.940Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.450Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosStackProps")
 @software.amazon.jsii.Jsii.Proxy(RosStackProps.Jsii$Proxy.class)
 public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,12 @@ public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ros.RosStack.TagsProperty> getTags() {
         return null;
     }
 
@@ -62,6 +68,7 @@ public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<RosStackProps> {
         java.lang.Object parameters;
         java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.ros.RosStack.TagsProperty> tags;
         java.lang.Object templateBody;
         java.lang.Object templateId;
         java.lang.Object templateUrl;
@@ -105,6 +112,17 @@ public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosStackProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ros.RosStack.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ros.RosStack.TagsProperty>)tags;
             return this;
         }
 
@@ -226,6 +244,7 @@ public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosStackProps {
         private final java.lang.Object parameters;
         private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.ros.RosStack.TagsProperty> tags;
         private final java.lang.Object templateBody;
         private final java.lang.Object templateId;
         private final java.lang.Object templateUrl;
@@ -240,6 +259,7 @@ public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ros.RosStack.TagsProperty.class)));
             this.templateBody = software.amazon.jsii.Kernel.get(this, "templateBody", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.templateId = software.amazon.jsii.Kernel.get(this, "templateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.templateUrl = software.amazon.jsii.Kernel.get(this, "templateUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -250,10 +270,12 @@ public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.parameters = builder.parameters;
             this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ros.RosStack.TagsProperty>)builder.tags;
             this.templateBody = builder.templateBody;
             this.templateId = builder.templateId;
             this.templateUrl = builder.templateUrl;
@@ -269,6 +291,11 @@ public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.ros.RosStack.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -308,6 +335,9 @@ public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getTemplateBody() != null) {
                 data.set("templateBody", om.valueToTree(this.getTemplateBody()));
             }
@@ -343,6 +373,7 @@ public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
 
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.templateBody != null ? !this.templateBody.equals(that.templateBody) : that.templateBody != null) return false;
             if (this.templateId != null ? !this.templateId.equals(that.templateId) : that.templateId != null) return false;
             if (this.templateUrl != null ? !this.templateUrl.equals(that.templateUrl) : that.templateUrl != null) return false;
@@ -354,6 +385,7 @@ public interface RosStackProps extends software.amazon.jsii.JsiiSerializable {
         public final int hashCode() {
             int result = this.parameters != null ? this.parameters.hashCode() : 0;
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.templateBody != null ? this.templateBody.hashCode() : 0);
             result = 31 * result + (this.templateId != null ? this.templateId.hashCode() : 0);
             result = 31 * result + (this.templateUrl != null ? this.templateUrl.hashCode() : 0);

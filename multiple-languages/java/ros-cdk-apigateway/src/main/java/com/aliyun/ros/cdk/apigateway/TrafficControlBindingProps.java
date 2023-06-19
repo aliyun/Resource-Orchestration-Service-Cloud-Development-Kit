@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::TrafficControlBinding`.
+ * Properties for defining a <code>ALIYUN::ApiGateway::TrafficControlBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.214Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.275Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.TrafficControlBindingProps")
 @software.amazon.jsii.Jsii.Proxy(TrafficControlBindingProps.Jsii$Proxy.class)
 public interface TrafficControlBindingProps extends software.amazon.jsii.JsiiSerializable {

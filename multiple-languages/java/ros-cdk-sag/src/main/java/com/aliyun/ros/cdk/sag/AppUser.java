@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * A ROS resource type:  `ALIYUN::SAG::AppUser`.
+ * A ROS resource type:  <code>ALIYUN::SAG::AppUser</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.011Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.532Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.AppUser")
 public class AppUser extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::SAG::AppUser`.
+     * Create a new <code>ALIYUN::SAG::AppUser</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::SAG::AppUser`.
+     * Create a new <code>ALIYUN::SAG::AppUser</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -56,7 +56,7 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute UserName: <heat.engine.properties.Schema object at 0x7f48f028a290>.
+     * Attribute UserName: &lt;heat.engine.properties.Schema object at 0x7f1f5cc827d0&gt;.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUserName() {
         return software.amazon.jsii.Kernel.get(this, "attrUserName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -280,7 +280,7 @@ public class AppUser extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.sag.AppUser}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.sag.AppUser}.
          */
         @Override
         public com.aliyun.ros.cdk.sag.AppUser build() {

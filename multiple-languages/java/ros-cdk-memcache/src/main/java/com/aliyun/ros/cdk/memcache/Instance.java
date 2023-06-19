@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.memcache;
 
 /**
- * A ROS resource type:  `ALIYUN::Memcache::Instance`.
+ * A ROS resource type:  <code>ALIYUN::Memcache::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.220Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.534Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::Memcache::Instance`.
+     * Create a new <code>ALIYUN::Memcache::Instance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::Memcache::Instance`.
+     * Create a new <code>ALIYUN::Memcache::Instance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -49,7 +49,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::Memcache::Instance`.
+     * Create a new <code>ALIYUN::Memcache::Instance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -667,7 +667,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.memcache.Instance}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.memcache.Instance}.
          */
         @Override
         public com.aliyun.ros.cdk.memcache.Instance build() {

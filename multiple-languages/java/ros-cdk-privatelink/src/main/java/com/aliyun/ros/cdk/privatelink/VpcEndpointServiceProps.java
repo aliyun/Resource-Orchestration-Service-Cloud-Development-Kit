@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.privatelink;
 
 /**
- * Properties for defining a `ALIYUN::PrivateLink::VpcEndpointService`.
+ * Properties for defining a <code>ALIYUN::PrivateLink::VpcEndpointService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.543Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.945Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointServiceProps.Jsii$Proxy.class)
 public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -61,6 +61,15 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * Property user: Account IDs to the whitelist of an endpoint service.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUser() {
@@ -93,6 +102,7 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object resource;
         java.lang.Object serviceDescription;
         java.lang.Object serviceResourceType;
+        java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty> tags;
         java.lang.Object user;
         java.lang.Object zoneAffinityEnabled;
 
@@ -231,6 +241,18 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link VpcEndpointServiceProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpcEndpointServiceProps#getUser}
          * @param user Property user: Account IDs to the whitelist of an endpoint service.
          * @return {@code this}
@@ -296,6 +318,7 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object resource;
         private final java.lang.Object serviceDescription;
         private final java.lang.Object serviceResourceType;
+        private final java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty> tags;
         private final java.lang.Object user;
         private final java.lang.Object zoneAffinityEnabled;
 
@@ -311,6 +334,7 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
             this.resource = software.amazon.jsii.Kernel.get(this, "resource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceDescription = software.amazon.jsii.Kernel.get(this, "serviceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceResourceType = software.amazon.jsii.Kernel.get(this, "serviceResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty.class)));
             this.user = software.amazon.jsii.Kernel.get(this, "user", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneAffinityEnabled = software.amazon.jsii.Kernel.get(this, "zoneAffinityEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -318,6 +342,7 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.autoAcceptEnabled = builder.autoAcceptEnabled;
@@ -326,6 +351,7 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
             this.resource = builder.resource;
             this.serviceDescription = builder.serviceDescription;
             this.serviceResourceType = builder.serviceResourceType;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty>)builder.tags;
             this.user = builder.user;
             this.zoneAffinityEnabled = builder.zoneAffinityEnabled;
         }
@@ -358,6 +384,11 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final java.lang.Object getServiceResourceType() {
             return this.serviceResourceType;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpointService.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -394,6 +425,9 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
             if (this.getServiceResourceType() != null) {
                 data.set("serviceResourceType", om.valueToTree(this.getServiceResourceType()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getUser() != null) {
                 data.set("user", om.valueToTree(this.getUser()));
             }
@@ -424,6 +458,7 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
             if (this.resource != null ? !this.resource.equals(that.resource) : that.resource != null) return false;
             if (this.serviceDescription != null ? !this.serviceDescription.equals(that.serviceDescription) : that.serviceDescription != null) return false;
             if (this.serviceResourceType != null ? !this.serviceResourceType.equals(that.serviceResourceType) : that.serviceResourceType != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.user != null ? !this.user.equals(that.user) : that.user != null) return false;
             return this.zoneAffinityEnabled != null ? this.zoneAffinityEnabled.equals(that.zoneAffinityEnabled) : that.zoneAffinityEnabled == null;
         }
@@ -436,6 +471,7 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.resource != null ? this.resource.hashCode() : 0);
             result = 31 * result + (this.serviceDescription != null ? this.serviceDescription.hashCode() : 0);
             result = 31 * result + (this.serviceResourceType != null ? this.serviceResourceType.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.user != null ? this.user.hashCode() : 0);
             result = 31 * result + (this.zoneAffinityEnabled != null ? this.zoneAffinityEnabled.hashCode() : 0);
             return result;

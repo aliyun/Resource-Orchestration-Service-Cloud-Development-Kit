@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * Properties for defining a `ALIYUN::CMS::MonitoringAgentProcess`.
+ * Properties for defining a <code>ALIYUN::CMS::MonitoringAgentProcess</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.598Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.704Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMonitoringAgentProcessProps")
 @software.amazon.jsii.Jsii.Proxy(RosMonitoringAgentProcessProps.Jsii$Proxy.class)
 public interface RosMonitoringAgentProcessProps extends software.amazon.jsii.JsiiSerializable {

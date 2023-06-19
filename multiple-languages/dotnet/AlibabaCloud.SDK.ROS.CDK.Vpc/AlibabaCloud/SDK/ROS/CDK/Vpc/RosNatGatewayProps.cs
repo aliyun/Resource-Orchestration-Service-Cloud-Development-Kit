@@ -299,6 +299,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        private object? _icmpReplyEnabled;
+
+        /// <remarks>
+        /// <strong>Property</strong>: icmpReplyEnabled: Specifies whether to enable the ICMP non-retrieval feature. Default: True
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "icmpReplyEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? IcmpReplyEnabled
+        {
+            get => _icmpReplyEnabled;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _icmpReplyEnabled = value;
+            }
+        }
+
         private object? _instanceChargeType;
 
         /// <remarks>
@@ -498,6 +531,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                     }
                 }
                 _pricingCycle = value;
+            }
+        }
+
+        private object? _securityProtectionEnabled;
+
+        /// <remarks>
+        /// <strong>Property</strong>: securityProtectionEnabled: Specifies whether to enable the firewall feature. Default: False
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "securityProtectionEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SecurityProtectionEnabled
+        {
+            get => _securityProtectionEnabled;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _securityProtectionEnabled = value;
             }
         }
 

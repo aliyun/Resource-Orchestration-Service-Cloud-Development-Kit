@@ -39,6 +39,11 @@ export interface ServiceProps {
     readonly nasConfig?: RosService.NasConfigProperty | ros.IResolvable;
 
     /**
+     * Property ossMountConfig: The OSS mount configurations.
+     */
+    readonly ossMountConfig?: RosService.OssMountConfigProperty | ros.IResolvable;
+
+    /**
      * Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store. The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
      */
     readonly role?: string | ros.IResolvable;
@@ -133,6 +138,7 @@ export class Service extends ros.Resource {
             tracingConfig: props.tracingConfig,
             vpcConfig: props.vpcConfig,
             serviceName: props.serviceName,
+            ossMountConfig: props.ossMountConfig,
             vpcBindings: props.vpcBindings,
             tags: props.tags,
             nasConfig: props.nasConfig,

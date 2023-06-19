@@ -19,7 +19,7 @@ export interface FunctionProps {
     readonly handler: string | ros.IResolvable;
 
     /**
-     * Property runtime: The function runtime environment. Supporting nodejs6, nodejs8, nodejs10, nodejs12, python2.7, python3, java8, custom, custom-container and so on
+     * Property runtime: The function runtime environment. Supporting nodejs16、nodejs14、nodejs12、nodejs10、nodejs8、nodejs6、nodejs4.4、python3.10、python3.9、python3、python2.7、java11、java8、go1、php7.2、dotnetcore3.1、dotnetcore2.1、custom.debian10、custom和custom-container and so on
      */
     readonly runtime: string | ros.IResolvable;
 
@@ -44,9 +44,29 @@ export interface FunctionProps {
     readonly code?: RosFunction.CodeProperty | ros.IResolvable;
 
     /**
+     * Property cpu: The number of vCPUs of the function. The value must be a multiple of 0.05.
+     */
+    readonly cpu?: number | ros.IResolvable;
+
+    /**
      * Property customContainerConfig: Custom container runtime related configuration. After configuration, the function can be replaced with a custom container to execute the function
      */
     readonly customContainerConfig?: RosFunction.CustomContainerConfigProperty | ros.IResolvable;
+
+    /**
+     * Property customDns: The custom DNS configurations of the function.
+     */
+    readonly customDns?: RosFunction.CustomDNSProperty | ros.IResolvable;
+
+    /**
+     * Property customHealthCheckConfig: The health check configurations for the custom runtime and custom container.
+     */
+    readonly customHealthCheckConfig?: RosFunction.CustomHealthCheckConfigProperty | ros.IResolvable;
+
+    /**
+     * Property customRuntimeConfig: Custom runtime related configuration.
+     */
+    readonly customRuntimeConfig?: RosFunction.CustomRuntimeConfigProperty | ros.IResolvable;
 
     /**
      * Property description: Function description
@@ -54,9 +74,19 @@ export interface FunctionProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property diskSize: The disk size of the function. Unit: MB. Valid values: 512 and 10240.
+     */
+    readonly diskSize?: number | ros.IResolvable;
+
+    /**
      * Property environmentVariables: The environment variable set for the function, you can get the value of the environment variable in the function.
      */
     readonly environmentVariables?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * Property gpuMemorySize: The GPU memory capacity for the function. Unit: MB. The value must be a multiple of 1,024.
+     */
+    readonly gpuMemorySize?: number | ros.IResolvable;
 
     /**
      * Property initializationTimeout: the max execution time of the initializer, in second
@@ -72,6 +102,16 @@ export interface FunctionProps {
      * Property instanceConcurrency: Function instance concurrency. Value can be between 1 to 100.
      */
     readonly instanceConcurrency?: number | ros.IResolvable;
+
+    /**
+     * Property instanceLifecycleConfig: The configuration of the instance lifecycle function.
+     */
+    readonly instanceLifecycleConfig?: RosFunction.InstanceLifecycleConfigProperty | ros.IResolvable;
+
+    /**
+     * Property instanceSoftConcurrency: The soft concurrency of the instance. You can use this parameter to implement graceful scale-up of instances. If the number of concurrent requests on an instance is greater than the value of soft concurrency, an instance scale-up is triggered. For example, if your instance requires a long time to start, you can specify a suitable soft concurrency to start the instance in advance.The value must be less than or equal to that of the instanceConcurrency parameter.
+     */
+    readonly instanceSoftConcurrency?: number | ros.IResolvable;
 
     /**
      * Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
@@ -138,7 +178,10 @@ export class Function extends ros.Resource {
             memorySize: props.memorySize === undefined || props.memorySize === null ? 128 : props.memorySize,
             description: props.description,
             timeout: props.timeout === undefined || props.timeout === null ? 3 : props.timeout,
+            instanceLifecycleConfig: props.instanceLifecycleConfig,
             handler: props.handler,
+            cpu: props.cpu,
+            customHealthCheckConfig: props.customHealthCheckConfig,
             customContainerConfig: props.customContainerConfig,
             code: props.code,
             asyncConfiguration: props.asyncConfiguration,
@@ -146,11 +189,16 @@ export class Function extends ros.Resource {
             functionName: props.functionName,
             runtime: props.runtime,
             environmentVariables: props.environmentVariables,
-            initializer: props.initializer,
+            customRuntimeConfig: props.customRuntimeConfig,
             initializationTimeout: props.initializationTimeout,
             serviceName: props.serviceName,
+            initializer: props.initializer,
+            gpuMemorySize: props.gpuMemorySize,
+            diskSize: props.diskSize,
+            customDns: props.customDns,
             instanceConcurrency: props.instanceConcurrency,
             instanceType: props.instanceType,
+            instanceSoftConcurrency: props.instanceSoftConcurrency,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFunction;
         this.attrArn = rosFunction.attrArn;

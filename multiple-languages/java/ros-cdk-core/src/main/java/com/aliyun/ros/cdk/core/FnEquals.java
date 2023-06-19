@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * Returns true if the two values are equal or false
  * if they aren't.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.888Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnEquals")
 public class FnEquals extends com.aliyun.ros.cdk.core.Intrinsic implements com.aliyun.ros.cdk.core.IRosConditionExpression {
 
@@ -19,7 +19,7 @@ public class FnEquals extends com.aliyun.ros.cdk.core.Intrinsic implements com.a
     }
 
     /**
-     * Creates an ``Fn::Equals`` condition function.
+     * Creates an <code>Fn::Equals</code> condition function.
      * <p>
      * @param lhs A value of any type that you want to compare. This parameter is required.
      * @param rhs A value of any type that you want to compare. This parameter is required.

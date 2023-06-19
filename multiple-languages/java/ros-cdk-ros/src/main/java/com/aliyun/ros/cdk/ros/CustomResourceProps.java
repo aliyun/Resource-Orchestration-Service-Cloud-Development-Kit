@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * Properties for defining a `ALIYUN::ROS::CustomResource`.
+ * Properties for defining a <code>ALIYUN::ROS::CustomResource</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.903Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.422Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.CustomResourceProps")
 @software.amazon.jsii.Jsii.Proxy(CustomResourceProps.Jsii$Proxy.class)
 public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,7 +46,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
     @org.jetbrains.annotations.NotNull java.lang.Object getTimeout();
 
     /**
-     * Property httpConfig: Config for HTTP&HTTPS service provider.
+     * Property httpConfig: Config for HTTP&amp;HTTPS service provider.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHttpConfig() {
         return null;
@@ -166,7 +166,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link CustomResourceProps#getHttpConfig}
-         * @param httpConfig Property httpConfig: Config for HTTP&HTTPS service provider.
+         * @param httpConfig Property httpConfig: Config for HTTP&amp;HTTPS service provider.
          * @return {@code this}
          */
         public Builder httpConfig(com.aliyun.ros.cdk.core.IResolvable httpConfig) {
@@ -176,7 +176,7 @@ public interface CustomResourceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link CustomResourceProps#getHttpConfig}
-         * @param httpConfig Property httpConfig: Config for HTTP&HTTPS service provider.
+         * @param httpConfig Property httpConfig: Config for HTTP&amp;HTTPS service provider.
          * @return {@code this}
          */
         public Builder httpConfig(com.aliyun.ros.cdk.ros.RosCustomResource.HttpConfigProperty httpConfig) {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * Properties for defining a `ALIYUN::ROS::Sleep`.
+ * Properties for defining a <code>ALIYUN::ROS::Sleep</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.944Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.467Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.SleepProps")
 @software.amazon.jsii.Jsii.Proxy(SleepProps.Jsii$Proxy.class)
 public interface SleepProps extends software.amazon.jsii.JsiiSerializable {

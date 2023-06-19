@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * A ROS resource type:  `ALIYUN::ApiGateway::PluginAttachment`.
+ * A ROS resource type:  <code>ALIYUN::ApiGateway::PluginAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.155Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.212Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.PluginAttachment")
 public class PluginAttachment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class PluginAttachment extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ApiGateway::PluginAttachment`.
+     * Create a new <code>ALIYUN::ApiGateway::PluginAttachment</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class PluginAttachment extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ApiGateway::PluginAttachment`.
+     * Create a new <code>ALIYUN::ApiGateway::PluginAttachment</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -170,7 +170,7 @@ public class PluginAttachment extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.apigateway.PluginAttachment}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.apigateway.PluginAttachment}.
          */
         @Override
         public com.aliyun.ros.cdk.apigateway.PluginAttachment build() {

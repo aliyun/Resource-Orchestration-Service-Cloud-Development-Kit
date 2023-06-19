@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * copies of your application which should be be deployed to different
  * environments.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.927Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.940Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stage")
 public class Stage extends com.aliyun.ros.cdk.core.Construct {
 
@@ -152,7 +152,7 @@ public class Stage extends com.aliyun.ros.cdk.core.Construct {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.core.Stage}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.core.Stage}.
          */
         @Override
         public com.aliyun.ros.cdk.core.Stage build() {

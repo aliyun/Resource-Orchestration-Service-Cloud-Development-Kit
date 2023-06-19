@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * Properties for defining a `ALIYUN::OOS::Execution`.
+ * Properties for defining a <code>ALIYUN::OOS::Execution</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.385Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.734Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosExecutionProps")
 @software.amazon.jsii.Jsii.Proxy(RosExecutionProps.Jsii$Proxy.class)
 public interface RosExecutionProps extends software.amazon.jsii.JsiiSerializable {

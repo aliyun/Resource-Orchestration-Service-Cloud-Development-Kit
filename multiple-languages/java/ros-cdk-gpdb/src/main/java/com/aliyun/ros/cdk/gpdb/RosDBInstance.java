@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * A ROS template type:  `ALIYUN::GPDB::DBInstance`.
+ * A ROS template type:  <code>ALIYUN::GPDB::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.995Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.293Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosDBInstance")
 public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new `ALIYUN::GPDB::DBInstance`.
+     * Create a new <code>ALIYUN::GPDB::DBInstance</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosDBInstance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.gpdb.RosDBInstanceProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -69,42 +69,6 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
     @Override
     protected @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> getRosProperties() {
         return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.get(this, "rosProperties", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceClass() {
-        return software.amazon.jsii.Kernel.get(this, "dbInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setDbInstanceClass(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "dbInstanceClass", java.util.Objects.requireNonNull(value, "dbInstanceClass is required"));
-    }
-
-    /**
-     */
-    public void setDbInstanceClass(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "dbInstanceClass", java.util.Objects.requireNonNull(value, "dbInstanceClass is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceGroupCount() {
-        return software.amazon.jsii.Kernel.get(this, "dbInstanceGroupCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setDbInstanceGroupCount(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "dbInstanceGroupCount", java.util.Objects.requireNonNull(value, "dbInstanceGroupCount is required"));
-    }
-
-    /**
-     */
-    public void setDbInstanceGroupCount(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "dbInstanceGroupCount", java.util.Objects.requireNonNull(value, "dbInstanceGroupCount is required"));
     }
 
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -171,6 +135,60 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCreateSampleData() {
+        return software.amazon.jsii.Kernel.get(this, "createSampleData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCreateSampleData(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "createSampleData", value);
+    }
+
+    /**
+     */
+    public void setCreateSampleData(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "createSampleData", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceCategory() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDbInstanceCategory(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceCategory", value);
+    }
+
+    /**
+     */
+    public void setDbInstanceCategory(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceCategory", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceClass() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDbInstanceClass(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceClass", value);
+    }
+
+    /**
+     */
+    public void setDbInstanceClass(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceClass", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceDescription() {
         return software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -185,6 +203,132 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDbInstanceDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbInstanceDescription", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceGroupCount() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceGroupCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDbInstanceGroupCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceGroupCount", value);
+    }
+
+    /**
+     */
+    public void setDbInstanceGroupCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceGroupCount", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceMode() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDbInstanceMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceMode", value);
+    }
+
+    /**
+     */
+    public void setDbInstanceMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionKey() {
+        return software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEncryptionKey(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "encryptionKey", value);
+    }
+
+    /**
+     */
+    public void setEncryptionKey(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "encryptionKey", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionType() {
+        return software.amazon.jsii.Kernel.get(this, "encryptionType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEncryptionType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "encryptionType", value);
+    }
+
+    /**
+     */
+    public void setEncryptionType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "encryptionType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIdleTime() {
+        return software.amazon.jsii.Kernel.get(this, "idleTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIdleTime(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "idleTime", value);
+    }
+
+    /**
+     */
+    public void setIdleTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "idleTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceSpec() {
+        return software.amazon.jsii.Kernel.get(this, "instanceSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceSpec(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceSpec", value);
+    }
+
+    /**
+     */
+    public void setInstanceSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceSpec", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMasterNodeNum() {
+        return software.amazon.jsii.Kernel.get(this, "masterNodeNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMasterNodeNum(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "masterNodeNum", value);
+    }
+
+    /**
+     */
+    public void setMasterNodeNum(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "masterNodeNum", value);
     }
 
     /**
@@ -243,6 +387,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
+        return software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPrivateIpAddress(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "privateIpAddress", value);
+    }
+
+    /**
+     */
+    public void setPrivateIpAddress(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "privateIpAddress", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpList() {
         return software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -261,6 +423,114 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSegDiskPerformanceLevel() {
+        return software.amazon.jsii.Kernel.get(this, "segDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSegDiskPerformanceLevel(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "segDiskPerformanceLevel", value);
+    }
+
+    /**
+     */
+    public void setSegDiskPerformanceLevel(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "segDiskPerformanceLevel", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSegNodeNum() {
+        return software.amazon.jsii.Kernel.get(this, "segNodeNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSegNodeNum(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "segNodeNum", value);
+    }
+
+    /**
+     */
+    public void setSegNodeNum(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "segNodeNum", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSegStorageType() {
+        return software.amazon.jsii.Kernel.get(this, "segStorageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSegStorageType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "segStorageType", value);
+    }
+
+    /**
+     */
+    public void setSegStorageType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "segStorageType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getServerlessMode() {
+        return software.amazon.jsii.Kernel.get(this, "serverlessMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setServerlessMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "serverlessMode", value);
+    }
+
+    /**
+     */
+    public void setServerlessMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "serverlessMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getServerlessResource() {
+        return software.amazon.jsii.Kernel.get(this, "serverlessResource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setServerlessResource(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "serverlessResource", value);
+    }
+
+    /**
+     */
+    public void setServerlessResource(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "serverlessResource", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageSize() {
+        return software.amazon.jsii.Kernel.get(this, "storageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageSize(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "storageSize", value);
+    }
+
+    /**
+     */
+    public void setStorageSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageSize", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> getTags() {
         return java.util.Optional.ofNullable((java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty>)(software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
     }
@@ -269,6 +539,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVectorConfigurationStatus() {
+        return software.amazon.jsii.Kernel.get(this, "vectorConfigurationStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVectorConfigurationStatus(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vectorConfigurationStatus", value);
+    }
+
+    /**
+     */
+    public void setVectorConfigurationStatus(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vectorConfigurationStatus", value);
     }
 
     /**
@@ -463,8 +751,8 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.gpdb.RosDBInstance> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -481,40 +769,6 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
             this.props = new com.aliyun.ros.cdk.gpdb.RosDBInstanceProps.Builder();
-        }
-
-        /**
-         * @return {@code this}
-         * @param dbInstanceClass This parameter is required.
-         */
-        public Builder dbInstanceClass(final java.lang.String dbInstanceClass) {
-            this.props.dbInstanceClass(dbInstanceClass);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param dbInstanceClass This parameter is required.
-         */
-        public Builder dbInstanceClass(final com.aliyun.ros.cdk.core.IResolvable dbInstanceClass) {
-            this.props.dbInstanceClass(dbInstanceClass);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param dbInstanceGroupCount This parameter is required.
-         */
-        public Builder dbInstanceGroupCount(final java.lang.Number dbInstanceGroupCount) {
-            this.props.dbInstanceGroupCount(dbInstanceGroupCount);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param dbInstanceGroupCount This parameter is required.
-         */
-        public Builder dbInstanceGroupCount(final com.aliyun.ros.cdk.core.IResolvable dbInstanceGroupCount) {
-            this.props.dbInstanceGroupCount(dbInstanceGroupCount);
-            return this;
         }
 
         /**
@@ -570,6 +824,57 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param createSampleData This parameter is required.
+         */
+        public Builder createSampleData(final java.lang.Boolean createSampleData) {
+            this.props.createSampleData(createSampleData);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param createSampleData This parameter is required.
+         */
+        public Builder createSampleData(final com.aliyun.ros.cdk.core.IResolvable createSampleData) {
+            this.props.createSampleData(createSampleData);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param dbInstanceCategory This parameter is required.
+         */
+        public Builder dbInstanceCategory(final java.lang.String dbInstanceCategory) {
+            this.props.dbInstanceCategory(dbInstanceCategory);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbInstanceCategory This parameter is required.
+         */
+        public Builder dbInstanceCategory(final com.aliyun.ros.cdk.core.IResolvable dbInstanceCategory) {
+            this.props.dbInstanceCategory(dbInstanceCategory);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param dbInstanceClass This parameter is required.
+         */
+        public Builder dbInstanceClass(final java.lang.String dbInstanceClass) {
+            this.props.dbInstanceClass(dbInstanceClass);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbInstanceClass This parameter is required.
+         */
+        public Builder dbInstanceClass(final com.aliyun.ros.cdk.core.IResolvable dbInstanceClass) {
+            this.props.dbInstanceClass(dbInstanceClass);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param dbInstanceDescription This parameter is required.
          */
         public Builder dbInstanceDescription(final java.lang.String dbInstanceDescription) {
@@ -582,6 +887,125 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder dbInstanceDescription(final com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
             this.props.dbInstanceDescription(dbInstanceDescription);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param dbInstanceGroupCount This parameter is required.
+         */
+        public Builder dbInstanceGroupCount(final java.lang.Number dbInstanceGroupCount) {
+            this.props.dbInstanceGroupCount(dbInstanceGroupCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbInstanceGroupCount This parameter is required.
+         */
+        public Builder dbInstanceGroupCount(final com.aliyun.ros.cdk.core.IResolvable dbInstanceGroupCount) {
+            this.props.dbInstanceGroupCount(dbInstanceGroupCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param dbInstanceMode This parameter is required.
+         */
+        public Builder dbInstanceMode(final java.lang.String dbInstanceMode) {
+            this.props.dbInstanceMode(dbInstanceMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbInstanceMode This parameter is required.
+         */
+        public Builder dbInstanceMode(final com.aliyun.ros.cdk.core.IResolvable dbInstanceMode) {
+            this.props.dbInstanceMode(dbInstanceMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param encryptionKey This parameter is required.
+         */
+        public Builder encryptionKey(final java.lang.String encryptionKey) {
+            this.props.encryptionKey(encryptionKey);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param encryptionKey This parameter is required.
+         */
+        public Builder encryptionKey(final com.aliyun.ros.cdk.core.IResolvable encryptionKey) {
+            this.props.encryptionKey(encryptionKey);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param encryptionType This parameter is required.
+         */
+        public Builder encryptionType(final java.lang.String encryptionType) {
+            this.props.encryptionType(encryptionType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param encryptionType This parameter is required.
+         */
+        public Builder encryptionType(final com.aliyun.ros.cdk.core.IResolvable encryptionType) {
+            this.props.encryptionType(encryptionType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param idleTime This parameter is required.
+         */
+        public Builder idleTime(final java.lang.Number idleTime) {
+            this.props.idleTime(idleTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param idleTime This parameter is required.
+         */
+        public Builder idleTime(final com.aliyun.ros.cdk.core.IResolvable idleTime) {
+            this.props.idleTime(idleTime);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param instanceSpec This parameter is required.
+         */
+        public Builder instanceSpec(final java.lang.String instanceSpec) {
+            this.props.instanceSpec(instanceSpec);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceSpec This parameter is required.
+         */
+        public Builder instanceSpec(final com.aliyun.ros.cdk.core.IResolvable instanceSpec) {
+            this.props.instanceSpec(instanceSpec);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param masterNodeNum This parameter is required.
+         */
+        public Builder masterNodeNum(final java.lang.Number masterNodeNum) {
+            this.props.masterNodeNum(masterNodeNum);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param masterNodeNum This parameter is required.
+         */
+        public Builder masterNodeNum(final com.aliyun.ros.cdk.core.IResolvable masterNodeNum) {
+            this.props.masterNodeNum(masterNodeNum);
             return this;
         }
 
@@ -638,6 +1062,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param privateIpAddress This parameter is required.
+         */
+        public Builder privateIpAddress(final java.lang.String privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param privateIpAddress This parameter is required.
+         */
+        public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param securityIpList This parameter is required.
          */
         public Builder securityIpList(final java.lang.String securityIpList) {
@@ -655,10 +1096,129 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param segDiskPerformanceLevel This parameter is required.
+         */
+        public Builder segDiskPerformanceLevel(final java.lang.String segDiskPerformanceLevel) {
+            this.props.segDiskPerformanceLevel(segDiskPerformanceLevel);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param segDiskPerformanceLevel This parameter is required.
+         */
+        public Builder segDiskPerformanceLevel(final com.aliyun.ros.cdk.core.IResolvable segDiskPerformanceLevel) {
+            this.props.segDiskPerformanceLevel(segDiskPerformanceLevel);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param segNodeNum This parameter is required.
+         */
+        public Builder segNodeNum(final java.lang.Number segNodeNum) {
+            this.props.segNodeNum(segNodeNum);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param segNodeNum This parameter is required.
+         */
+        public Builder segNodeNum(final com.aliyun.ros.cdk.core.IResolvable segNodeNum) {
+            this.props.segNodeNum(segNodeNum);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param segStorageType This parameter is required.
+         */
+        public Builder segStorageType(final java.lang.String segStorageType) {
+            this.props.segStorageType(segStorageType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param segStorageType This parameter is required.
+         */
+        public Builder segStorageType(final com.aliyun.ros.cdk.core.IResolvable segStorageType) {
+            this.props.segStorageType(segStorageType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param serverlessMode This parameter is required.
+         */
+        public Builder serverlessMode(final java.lang.String serverlessMode) {
+            this.props.serverlessMode(serverlessMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serverlessMode This parameter is required.
+         */
+        public Builder serverlessMode(final com.aliyun.ros.cdk.core.IResolvable serverlessMode) {
+            this.props.serverlessMode(serverlessMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param serverlessResource This parameter is required.
+         */
+        public Builder serverlessResource(final java.lang.Number serverlessResource) {
+            this.props.serverlessResource(serverlessResource);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serverlessResource This parameter is required.
+         */
+        public Builder serverlessResource(final com.aliyun.ros.cdk.core.IResolvable serverlessResource) {
+            this.props.serverlessResource(serverlessResource);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageSize This parameter is required.
+         */
+        public Builder storageSize(final java.lang.Number storageSize) {
+            this.props.storageSize(storageSize);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageSize This parameter is required.
+         */
+        public Builder storageSize(final com.aliyun.ros.cdk.core.IResolvable storageSize) {
+            this.props.storageSize(storageSize);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param tags This parameter is required.
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param vectorConfigurationStatus This parameter is required.
+         */
+        public Builder vectorConfigurationStatus(final java.lang.String vectorConfigurationStatus) {
+            this.props.vectorConfigurationStatus(vectorConfigurationStatus);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vectorConfigurationStatus This parameter is required.
+         */
+        public Builder vectorConfigurationStatus(final com.aliyun.ros.cdk.core.IResolvable vectorConfigurationStatus) {
+            this.props.vectorConfigurationStatus(vectorConfigurationStatus);
             return this;
         }
 
@@ -680,7 +1240,7 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.gpdb.RosDBInstance}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.gpdb.RosDBInstance}.
          */
         @Override
         public com.aliyun.ros.cdk.gpdb.RosDBInstance build() {

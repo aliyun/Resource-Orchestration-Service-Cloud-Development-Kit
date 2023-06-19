@@ -386,6 +386,14 @@ export interface RosGroupProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
+     * @Property ignoreExisting: Whether to ignore existing group
+     * False: ROS will perform a uniqueness check.If a group with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a group with the same name, the group creation process will be ignored.
+     * If the group is not created by ROS, it will be ignored during update and delete stage.
+     */
+    readonly ignoreExisting?: boolean | ros.IResolvable;
+
+    /**
      * @Property policies: Describes what actions are allowed on what resources.
      */
     readonly policies?: Array<RosGroup.PoliciesProperty | ros.IResolvable> | ros.IResolvable;
@@ -408,9 +416,10 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
-    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
-    errors.collect(ros.propertyValidator('policies', ros.listValidator(RosGroup_PoliciesPropertyValidator))(properties.policies));
+    errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
     errors.collect(ros.propertyValidator('policyAttachments', RosGroup_PolicyAttachmentsPropertyValidator)(properties.policyAttachments));
+    errors.collect(ros.propertyValidator('policies', ros.listValidator(RosGroup_PoliciesPropertyValidator))(properties.policies));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     if(properties.comments && (Array.isArray(properties.comments) || (typeof properties.comments) === 'string')) {
         errors.collect(ros.propertyValidator('comments', ros.validateLength)({
             data: properties.comments.length,
@@ -439,6 +448,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
       GroupName: ros.stringToRosTemplate(properties.groupName),
       Comments: ros.stringToRosTemplate(properties.comments),
       DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
+      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
       Policies: ros.listMapper(rosGroupPoliciesPropertyToRosTemplate)(properties.policies),
       PolicyAttachments: rosGroupPolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
     };
@@ -482,6 +492,14 @@ export class RosGroup extends ros.RosResource {
     public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property ignoreExisting: Whether to ignore existing group
+     * False: ROS will perform a uniqueness check.If a group with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a group with the same name, the group creation process will be ignored.
+     * If the group is not created by ROS, it will be ignored during update and delete stage.
+     */
+    public ignoreExisting: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property policies: Describes what actions are allowed on what resources.
      */
     public policies: Array<RosGroup.PoliciesProperty | ros.IResolvable> | ros.IResolvable | undefined;
@@ -506,6 +524,7 @@ export class RosGroup extends ros.RosResource {
         this.groupName = props.groupName;
         this.comments = props.comments;
         this.deletionForce = props.deletionForce;
+        this.ignoreExisting = props.ignoreExisting;
         this.policies = props.policies;
         this.policyAttachments = props.policyAttachments;
     }
@@ -516,6 +535,7 @@ export class RosGroup extends ros.RosResource {
             groupName: this.groupName,
             comments: this.comments,
             deletionForce: this.deletionForce,
+            ignoreExisting: this.ignoreExisting,
             policies: this.policies,
             policyAttachments: this.policyAttachments,
         };
@@ -530,6 +550,13 @@ export namespace RosGroup {
      * @stability external
      */
     export interface PoliciesProperty {
+        /**
+         * @Property ignoreExisting: Whether to ignore existing policy
+     * False: ROS will perform a uniqueness check.If a policy with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a policy with the same name, the policy creation process will be ignored.
+     * If the policy is not created by ROS, it will be ignored during update and delete stage.
+         */
+        readonly ignoreExisting?: boolean | ros.IResolvable;
         /**
          * @Property description: Specifies the authorization policy description, containing up to 1024 characters.
          */
@@ -554,6 +581,7 @@ export namespace RosGroup {
 function RosGroup_PoliciesPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -581,6 +609,7 @@ function rosGroupPoliciesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosGroup_PoliciesPropertyValidator(properties).assertSuccess();
     return {
+      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
       Description: ros.stringToRosTemplate(properties.description),
       PolicyName: ros.stringToRosTemplate(properties.policyName),
       PolicyDocument: rosGroupPolicyDocumentPropertyToRosTemplate(properties.policyDocument),
@@ -777,6 +806,14 @@ export interface RosManagedPolicyProps {
     readonly groups?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property ignoreExisting: Whether to ignore existing policy
+     * False: ROS will perform a uniqueness check.If a policy with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a policy with the same name, the policy creation process will be ignored.
+     * If the policy is not created by ROS, it will be ignored during update and delete stage.
+     */
+    readonly ignoreExisting?: boolean | ros.IResolvable;
+
+    /**
      * @Property policyDocument: A policy document that describes what actions are allowed on which resources.
      */
     readonly policyDocument?: RosManagedPolicy.PolicyDocumentProperty | ros.IResolvable;
@@ -807,6 +844,7 @@ export interface RosManagedPolicyProps {
 function RosManagedPolicyPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -842,6 +880,7 @@ function rosManagedPolicyPropsToRosTemplate(properties: any, enableResourcePrope
       PolicyName: ros.stringToRosTemplate(properties.policyName),
       Description: ros.stringToRosTemplate(properties.description),
       Groups: ros.listMapper(ros.objectToRosTemplate)(properties.groups),
+      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
       PolicyDocument: rosManagedPolicyPolicyDocumentPropertyToRosTemplate(properties.policyDocument),
       PolicyDocumentUnchecked: ros.hashMapper(ros.objectToRosTemplate)(properties.policyDocumentUnchecked),
       Roles: ros.listMapper(ros.objectToRosTemplate)(properties.roles),
@@ -887,6 +926,14 @@ export class RosManagedPolicy extends ros.RosResource {
     public groups: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property ignoreExisting: Whether to ignore existing policy
+     * False: ROS will perform a uniqueness check.If a policy with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a policy with the same name, the policy creation process will be ignored.
+     * If the policy is not created by ROS, it will be ignored during update and delete stage.
+     */
+    public ignoreExisting: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property policyDocument: A policy document that describes what actions are allowed on which resources.
      */
     public policyDocument: RosManagedPolicy.PolicyDocumentProperty | ros.IResolvable | undefined;
@@ -921,6 +968,7 @@ export class RosManagedPolicy extends ros.RosResource {
         this.policyName = props.policyName;
         this.description = props.description;
         this.groups = props.groups;
+        this.ignoreExisting = props.ignoreExisting;
         this.policyDocument = props.policyDocument;
         this.policyDocumentUnchecked = props.policyDocumentUnchecked;
         this.roles = props.roles;
@@ -933,6 +981,7 @@ export class RosManagedPolicy extends ros.RosResource {
             policyName: this.policyName,
             description: this.description,
             groups: this.groups,
+            ignoreExisting: this.ignoreExisting,
             policyDocument: this.policyDocument,
             policyDocumentUnchecked: this.policyDocumentUnchecked,
             roles: this.roles,
@@ -1196,6 +1245,14 @@ export interface RosRoleProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property ignoreExisting: Whether to ignore existing role
+     * False: ROS will perform a uniqueness check.If a role with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a role with the same name, the role creation process will be ignored.
+     * If the role is not created by ROS, it will be ignored during update and delete stage.
+     */
+    readonly ignoreExisting?: boolean | ros.IResolvable;
+
+    /**
      * @Property maxSessionDuration: The maximum session duration of the RAM role.
      * Valid values: 3600 to 43200. Unit: seconds. Default value: 3600.
      * The default value is used if the parameter is not specified.
@@ -1223,6 +1280,7 @@ export interface RosRoleProps {
 function RosRolePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
     if(properties.maxSessionDuration && (typeof properties.maxSessionDuration) !== 'object') {
         errors.collect(ros.propertyValidator('maxSessionDuration', ros.validateRange)({
             data: properties.maxSessionDuration,
@@ -1233,9 +1291,6 @@ function RosRolePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('maxSessionDuration', ros.validateNumber)(properties.maxSessionDuration));
     errors.collect(ros.propertyValidator('roleName', ros.requiredValidator)(properties.roleName));
     errors.collect(ros.propertyValidator('roleName', ros.validateString)(properties.roleName));
-    errors.collect(ros.propertyValidator('policyAttachments', RosRole_PolicyAttachmentsPropertyValidator)(properties.policyAttachments));
-    errors.collect(ros.propertyValidator('policies', ros.listValidator(RosRole_PoliciesPropertyValidator))(properties.policies));
-    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -1244,6 +1299,9 @@ function RosRolePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('policies', ros.listValidator(RosRole_PoliciesPropertyValidator))(properties.policies));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('policyAttachments', RosRole_PolicyAttachmentsPropertyValidator)(properties.policyAttachments));
     errors.collect(ros.propertyValidator('assumeRolePolicyDocument', ros.requiredValidator)(properties.assumeRolePolicyDocument));
     errors.collect(ros.propertyValidator('assumeRolePolicyDocument', RosRole_AssumeRolePolicyDocumentPropertyValidator)(properties.assumeRolePolicyDocument));
     return errors.wrap('supplied properties not correct for "RosRoleProps"');
@@ -1267,6 +1325,7 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
       RoleName: ros.stringToRosTemplate(properties.roleName),
       DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       Description: ros.stringToRosTemplate(properties.description),
+      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
       MaxSessionDuration: ros.numberToRosTemplate(properties.maxSessionDuration),
       Policies: ros.listMapper(rosRolePoliciesPropertyToRosTemplate)(properties.policies),
       PolicyAttachments: rosRolePolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
@@ -1326,6 +1385,14 @@ export class RosRole extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property ignoreExisting: Whether to ignore existing role
+     * False: ROS will perform a uniqueness check.If a role with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a role with the same name, the role creation process will be ignored.
+     * If the role is not created by ROS, it will be ignored during update and delete stage.
+     */
+    public ignoreExisting: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property maxSessionDuration: The maximum session duration of the RAM role.
      * Valid values: 3600 to 43200. Unit: seconds. Default value: 3600.
      * The default value is used if the parameter is not specified.
@@ -1360,6 +1427,7 @@ export class RosRole extends ros.RosResource {
         this.roleName = props.roleName;
         this.deletionForce = props.deletionForce;
         this.description = props.description;
+        this.ignoreExisting = props.ignoreExisting;
         this.maxSessionDuration = props.maxSessionDuration;
         this.policies = props.policies;
         this.policyAttachments = props.policyAttachments;
@@ -1372,6 +1440,7 @@ export class RosRole extends ros.RosResource {
             roleName: this.roleName,
             deletionForce: this.deletionForce,
             description: this.description,
+            ignoreExisting: this.ignoreExisting,
             maxSessionDuration: this.maxSessionDuration,
             policies: this.policies,
             policyAttachments: this.policyAttachments,
@@ -1598,6 +1667,13 @@ export namespace RosRole {
      */
     export interface PoliciesProperty {
         /**
+         * @Property ignoreExisting: Whether to ignore existing policy
+     * False: ROS will perform a uniqueness check.If a policy with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a policy with the same name, the policy creation process will be ignored.
+     * If the policy is not created by ROS, it will be ignored during update and delete stage.
+         */
+        readonly ignoreExisting?: boolean | ros.IResolvable;
+        /**
          * @Property description: Specifies the authorization policy description, containing up to 1024 characters.
          */
         readonly description?: string | ros.IResolvable;
@@ -1621,6 +1697,7 @@ export namespace RosRole {
 function RosRole_PoliciesPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -1648,6 +1725,7 @@ function rosRolePoliciesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_PoliciesPropertyValidator(properties).assertSuccess();
     return {
+      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
       Description: ros.stringToRosTemplate(properties.description),
       PolicyName: ros.stringToRosTemplate(properties.policyName),
       PolicyDocument: rosRolePolicyDocumentPropertyToRosTemplate(properties.policyDocument),
@@ -2688,6 +2766,13 @@ export namespace RosUser {
      */
     export interface PoliciesProperty {
         /**
+         * @Property ignoreExisting: Whether to ignore existing policy
+     * False: ROS will perform a uniqueness check.If a policy with the same name exists, an error will be reported when creating it.
+     * True: ROS will not check the uniqueness.If there is a policy with the same name, the policy creation process will be ignored.
+     * If the policy is not created by ROS, it will be ignored during update and delete stage.
+         */
+        readonly ignoreExisting?: boolean | ros.IResolvable;
+        /**
          * @Property description: Specifies the authorization policy description, containing up to 1024 characters.
          */
         readonly description?: string | ros.IResolvable;
@@ -2711,6 +2796,7 @@ export namespace RosUser {
 function RosUser_PoliciesPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -2738,6 +2824,7 @@ function rosUserPoliciesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosUser_PoliciesPropertyValidator(properties).assertSuccess();
     return {
+      IgnoreExisting: ros.booleanToRosTemplate(properties.ignoreExisting),
       Description: ros.stringToRosTemplate(properties.description),
       PolicyName: ros.stringToRosTemplate(properties.policyName),
       PolicyDocument: rosUserPolicyDocumentPropertyToRosTemplate(properties.policyDocument),

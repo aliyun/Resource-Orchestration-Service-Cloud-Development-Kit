@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * Properties for defining a `ALIYUN::RAM::ManagedPolicy`.
+ * Properties for defining a <code>ALIYUN::RAM::ManagedPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.586Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.024Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosManagedPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedPolicyProps.Jsii$Proxy.class)
 public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,12 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGroups() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIgnoreExisting() {
         return null;
     }
 
@@ -61,6 +67,7 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object policyName;
         java.lang.Object description;
         java.lang.Object groups;
+        java.lang.Object ignoreExisting;
         java.lang.Object policyDocument;
         java.lang.Object policyDocumentUnchecked;
         java.lang.Object roles;
@@ -123,6 +130,26 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
          */
         public Builder groups(com.aliyun.ros.cdk.core.IResolvable groups) {
             this.groups = groups;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedPolicyProps#getIgnoreExisting}
+         * @param ignoreExisting the value to be set.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(java.lang.Boolean ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedPolicyProps#getIgnoreExisting}
+         * @param ignoreExisting the value to be set.
+         * @return {@code this}
+         */
+        public Builder ignoreExisting(com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.ignoreExisting = ignoreExisting;
             return this;
         }
 
@@ -225,6 +252,7 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object policyName;
         private final java.lang.Object description;
         private final java.lang.Object groups;
+        private final java.lang.Object ignoreExisting;
         private final java.lang.Object policyDocument;
         private final java.lang.Object policyDocumentUnchecked;
         private final java.lang.Object roles;
@@ -239,6 +267,7 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
             this.policyName = software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groups = software.amazon.jsii.Kernel.get(this, "groups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ignoreExisting = software.amazon.jsii.Kernel.get(this, "ignoreExisting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyDocument = software.amazon.jsii.Kernel.get(this, "policyDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyDocumentUnchecked = software.amazon.jsii.Kernel.get(this, "policyDocumentUnchecked", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.roles = software.amazon.jsii.Kernel.get(this, "roles", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -253,6 +282,7 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
             this.policyName = java.util.Objects.requireNonNull(builder.policyName, "policyName is required");
             this.description = builder.description;
             this.groups = builder.groups;
+            this.ignoreExisting = builder.ignoreExisting;
             this.policyDocument = builder.policyDocument;
             this.policyDocumentUnchecked = builder.policyDocumentUnchecked;
             this.roles = builder.roles;
@@ -272,6 +302,11 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getGroups() {
             return this.groups;
+        }
+
+        @Override
+        public final java.lang.Object getIgnoreExisting() {
+            return this.ignoreExisting;
         }
 
         @Override
@@ -307,6 +342,9 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
             if (this.getGroups() != null) {
                 data.set("groups", om.valueToTree(this.getGroups()));
             }
+            if (this.getIgnoreExisting() != null) {
+                data.set("ignoreExisting", om.valueToTree(this.getIgnoreExisting()));
+            }
             if (this.getPolicyDocument() != null) {
                 data.set("policyDocument", om.valueToTree(this.getPolicyDocument()));
             }
@@ -340,6 +378,7 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
             if (!policyName.equals(that.policyName)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.groups != null ? !this.groups.equals(that.groups) : that.groups != null) return false;
+            if (this.ignoreExisting != null ? !this.ignoreExisting.equals(that.ignoreExisting) : that.ignoreExisting != null) return false;
             if (this.policyDocument != null ? !this.policyDocument.equals(that.policyDocument) : that.policyDocument != null) return false;
             if (this.policyDocumentUnchecked != null ? !this.policyDocumentUnchecked.equals(that.policyDocumentUnchecked) : that.policyDocumentUnchecked != null) return false;
             if (this.roles != null ? !this.roles.equals(that.roles) : that.roles != null) return false;
@@ -351,6 +390,7 @@ public interface RosManagedPolicyProps extends software.amazon.jsii.JsiiSerializ
             int result = this.policyName.hashCode();
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.groups != null ? this.groups.hashCode() : 0);
+            result = 31 * result + (this.ignoreExisting != null ? this.ignoreExisting.hashCode() : 0);
             result = 31 * result + (this.policyDocument != null ? this.policyDocument.hashCode() : 0);
             result = 31 * result + (this.policyDocumentUnchecked != null ? this.policyDocumentUnchecked.hashCode() : 0);
             result = 31 * result + (this.roles != null ? this.roles.hashCode() : 0);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents the construct node in the scope tree.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.867Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.871Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ConstructNode")
 public class ConstructNode extends software.amazon.jsii.JsiiObject {
 
@@ -25,9 +25,9 @@ public class ConstructNode extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * (deprecated) Invokes "prepare" on all constructs (depth-first, post-order) in the tree under `node`.
+     * (deprecated) Invokes "prepare" on all constructs (depth-first, post-order) in the tree under <code>node</code>.
      * <p>
-     * @deprecated Use `app.synth()` instead
+     * @deprecated Use <code>app.synth()</code> instead
      * @param node The root node. This parameter is required.
      */
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
@@ -39,7 +39,7 @@ public class ConstructNode extends software.amazon.jsii.JsiiObject {
     /**
      * (deprecated) Synthesizes a CloudAssembly from a construct tree.
      * <p>
-     * @deprecated Use `app.synth()` or `stage.synth()` instead
+     * @deprecated Use <code>app.synth()</code> or <code>stage.synth()</code> instead
      * @param node The root of the construct tree. This parameter is required.
      * @param options Synthesis options.
      */
@@ -52,7 +52,7 @@ public class ConstructNode extends software.amazon.jsii.JsiiObject {
     /**
      * (deprecated) Synthesizes a CloudAssembly from a construct tree.
      * <p>
-     * @deprecated Use `app.synth()` or `stage.synth()` instead
+     * @deprecated Use <code>app.synth()</code> or <code>stage.synth()</code> instead
      * @param node The root of the construct tree. This parameter is required.
      */
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)
@@ -203,7 +203,7 @@ public class ConstructNode extends software.amazon.jsii.JsiiObject {
      * <p>
      * Context is usually initialized at the root, but can be overridden at any point in the tree.
      * <p>
-     * @return The context value or `undefined` if there is no context value for thie key.
+     * @return The context value or <code>undefined</code> if there is no context value for thie key.
      * @param key The context key. This parameter is required.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Object tryGetContext(final @org.jetbrains.annotations.NotNull java.lang.String key) {
@@ -311,7 +311,7 @@ public class ConstructNode extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Returns the child construct that has the id `Default` or `Resource"`.
+     * Returns the child construct that has the id <code>Default</code> or <code>Resource"</code>.
      * <p>
      * This is usually the construct that provides the bulk of the underlying functionality.
      * Useful for modifications of the underlying construct that are not available at the higher levels.
@@ -331,7 +331,7 @@ public class ConstructNode extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Returns the child construct that has the id `Default` or `Resource"`.
+     * Returns the child construct that has the id <code>Default</code> or <code>Resource"</code>.
      * <p>
      * This is usually the construct that provides the bulk of the underlying functionality.
      * Useful for modifications of the underlying construct that are not available at the higher levels.

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * Properties for defining a `ALIYUN::OOS::Parameter`.
+ * Properties for defining a <code>ALIYUN::OOS::Parameter</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.387Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.740Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosParameterProps")
 @software.amazon.jsii.Jsii.Proxy(RosParameterProps.Jsii$Proxy.class)
 public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable {

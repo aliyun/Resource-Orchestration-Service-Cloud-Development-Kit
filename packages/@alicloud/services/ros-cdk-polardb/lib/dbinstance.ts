@@ -42,6 +42,22 @@ export interface DBInstanceProps {
     readonly accountPrivilege?: string | ros.IResolvable;
 
     /**
+     * Property collate: A locale setting that specifies the collation for newly created databases.
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required; 
+     * when the cluster is PolarDB MySQL, this parameter is not supported.
+     */
+    readonly collate?: string | ros.IResolvable;
+
+    /**
+     * Property ctype: A locale setting that specifies the character classification of the database.
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.
+     * It is consistent with the incoming information of Collate.
+     * When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+     *  when the cluster is PolarDB MySQL, this parameter is optional.
+     */
+    readonly ctype?: string | ros.IResolvable;
+
+    /**
      * Property dbDescription: The description of the database. Valid values:
      * It cannot start with http:// or https://.
      * It must be 2 to 256 characters in length.
@@ -74,7 +90,9 @@ export class DBInstance extends ros.Resource {
             accountPrivilege: props.accountPrivilege === undefined || props.accountPrivilege === null ? 'ReadWrite' : props.accountPrivilege,
             dbDescription: props.dbDescription,
             dbClusterId: props.dbClusterId,
+            collate: props.collate,
             dbName: props.dbName,
+            ctype: props.ctype,
             accountName: props.accountName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBInstance;

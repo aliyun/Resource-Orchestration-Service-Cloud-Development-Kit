@@ -29,6 +29,11 @@ export interface ClusterHelmApplicationProps {
     readonly chartValues?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * Property credential: The credential of ACR repo. Only take effects when ChartUrl is the address of ACR repo.
+     */
+    readonly credential?: RosClusterHelmApplication.CredentialProperty | ros.IResolvable;
+
+    /**
      * Property namespace: Namespace to use with helm. Default is default
      */
     readonly namespace?: string | ros.IResolvable;
@@ -60,6 +65,7 @@ export class ClusterHelmApplication extends ros.Resource {
         super(scope, id);
 
         const rosClusterHelmApplication = new RosClusterHelmApplication(this, id,  {
+            credential: props.credential,
             chartValues: props.chartValues,
             clusterId: props.clusterId,
             chartUrl: props.chartUrl,

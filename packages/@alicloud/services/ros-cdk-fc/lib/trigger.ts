@@ -85,6 +85,16 @@ export class Trigger extends ros.Resource {
     public readonly attrTriggerName: ros.IResolvable;
 
     /**
+     * Attribute UrlInternet: The public domain address. You can access HTTP triggers over the Internet by using HTTP or HTTPS.
+     */
+    public readonly attrUrlInternet: ros.IResolvable;
+
+    /**
+     * Attribute UrlIntranet: The private endpoint. In a VPC, you can access HTTP triggers by using HTTP or HTTPS.
+     */
+    public readonly attrUrlIntranet: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::FC::Trigger`.
      *
      * Param scope - scope in which this resource is defined
@@ -109,5 +119,7 @@ export class Trigger extends ros.Resource {
         this.attrServiceName = rosTrigger.attrServiceName;
         this.attrTriggerId = rosTrigger.attrTriggerId;
         this.attrTriggerName = rosTrigger.attrTriggerName;
+        this.attrUrlInternet = rosTrigger.attrUrlInternet;
+        this.attrUrlIntranet = rosTrigger.attrUrlIntranet;
     }
 }

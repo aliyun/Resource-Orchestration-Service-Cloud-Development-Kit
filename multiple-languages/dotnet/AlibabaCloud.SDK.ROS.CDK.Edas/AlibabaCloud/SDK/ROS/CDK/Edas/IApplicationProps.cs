@@ -52,6 +52,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             }
         }
 
+        /// <summary>Property deployment: Deploy application information to ECS clusters.</summary>
+        [JsiiProperty(name: "deployment", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosApplication.DeploymentProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Deployment
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property description: Descriptive information.</summary>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -160,6 +171,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             [JsiiOptional]
             [JsiiProperty(name: "componentIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ComponentIds
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deployment: Deploy application information to ECS clusters.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "deployment", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosApplication.DeploymentProperty\"}]}}", isOptional: true)]
+            public object? Deployment
             {
                 get => GetInstanceProperty<object?>();
             }

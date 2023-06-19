@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.arms;
 
 /**
- * A ROS resource type:  `ALIYUN::ARMS::AlertContactGroup`.
+ * A ROS resource type:  <code>ALIYUN::ARMS::AlertContactGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.220Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.282Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.AlertContactGroup")
 public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ARMS::AlertContactGroup`.
+     * Create a new <code>ALIYUN::ARMS::AlertContactGroup</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ARMS::AlertContactGroup`.
+     * Create a new <code>ALIYUN::ARMS::AlertContactGroup</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -178,7 +178,7 @@ public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.arms.AlertContactGroup}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.arms.AlertContactGroup}.
          */
         @Override
         public com.aliyun.ros.cdk.arms.AlertContactGroup build() {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS template type:  `ALIYUN::ECS::RunCommand`.
+ * A ROS template type:  <code>ALIYUN::ECS::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.414Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.597Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRunCommand")
 public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new `ALIYUN::ECS::RunCommand`.
+     * Create a new <code>ALIYUN::ECS::RunCommand</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosRunCommand(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.RosRunCommandProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -289,6 +289,40 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRunAgainOn() {
+        return software.amazon.jsii.Kernel.get(this, "runAgainOn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRunAgainOn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "runAgainOn", value);
+    }
+
+    /**
+     */
+    public void setRunAgainOn(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "runAgainOn", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSync() {
         return software.amazon.jsii.Kernel.get(this, "sync", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -365,8 +399,8 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.RosRunCommand> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -557,6 +591,23 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param runAgainOn This parameter is required.
+         */
+        public Builder runAgainOn(final com.aliyun.ros.cdk.core.IResolvable runAgainOn) {
+            this.props.runAgainOn(runAgainOn);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param runAgainOn This parameter is required.
+         */
+        public Builder runAgainOn(final java.util.List<? extends java.lang.Object> runAgainOn) {
+            this.props.runAgainOn(runAgainOn);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param sync This parameter is required.
          */
         public Builder sync(final java.lang.Boolean sync) {
@@ -624,7 +675,7 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ecs.RosRunCommand}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ecs.RosRunCommand}.
          */
         @Override
         public com.aliyun.ros.cdk.ecs.RosRunCommand build() {

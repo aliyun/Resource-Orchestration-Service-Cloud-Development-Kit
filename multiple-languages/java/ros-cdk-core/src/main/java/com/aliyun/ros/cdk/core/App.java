@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * 'app.synth()' which will emit a "ros template" from this app into the
  * directory specified by 'outdir'.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.862Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.863Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.App")
 public class App extends com.aliyun.ros.cdk.core.Stage {
 
@@ -157,7 +157,7 @@ public class App extends com.aliyun.ros.cdk.core.Stage {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.core.App}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.core.App}.
          */
         @Override
         public com.aliyun.ros.cdk.core.App build() {

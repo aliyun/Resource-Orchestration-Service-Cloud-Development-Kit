@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         JSON,
         [JsiiEnumMember(name: "BOOLEAN")]
         BOOLEAN,
-        [JsiiEnumMember(name: "COMMAD_ELIMITED_LIST")]
-        COMMAD_ELIMITED_LIST,
+        [JsiiEnumMember(name: "COMMA_DELIMITED_LIST")]
+        COMMA_DELIMITED_LIST,
         [JsiiEnumMember(name: "OOS_PARAMETER")]
         OOS_PARAMETER,
         [JsiiEnumMember(name: "OOS_SECRET_PARAMETER")]

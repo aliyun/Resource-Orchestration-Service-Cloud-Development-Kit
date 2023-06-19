@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.edas;
 
 /**
- * A ROS resource type:  `ALIYUN::EDAS::Cluster`.
+ * A ROS resource type:  <code>ALIYUN::EDAS::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.500Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.710Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::EDAS::Cluster`.
+     * Create a new <code>ALIYUN::EDAS::Cluster</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::EDAS::Cluster`.
+     * Create a new <code>ALIYUN::EDAS::Cluster</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -274,7 +274,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.edas.Cluster}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.edas.Cluster}.
          */
         @Override
         public com.aliyun.ros.cdk.edas.Cluster build() {

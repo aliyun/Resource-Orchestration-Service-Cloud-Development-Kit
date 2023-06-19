@@ -9,7 +9,7 @@ export { RosElasticDBInstance as ElasticDBInstanceProperty };
 export interface ElasticDBInstanceProps {
 
     /**
-     * Property engineVersion: The version of the database engine.
+     * Property engineVersion: The version of the database engine. For example: 6.0、7.0
      */
     readonly engineVersion: string | ros.IResolvable;
 
@@ -19,7 +19,9 @@ export interface ElasticDBInstanceProps {
     readonly instanceSpec: string | ros.IResolvable;
 
     /**
-     * Property segNodeNum: The number of segment nodes. Minimum is 4, max is 512, step is 4.
+     * Property segNodeNum: The number of segment nodes.
+     * For the high availability version, the value ranges from 4 to 512.
+     * The basic version ranges from 2 to 512.
      */
     readonly segNodeNum: number | ros.IResolvable;
 
@@ -45,7 +47,8 @@ export interface ElasticDBInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
-     * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability
+     * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+     * This parameter must be passed in to create a storage reservation mode instance.
      */
     readonly dbInstanceCategory?: string | ros.IResolvable;
 
@@ -53,6 +56,11 @@ export interface ElasticDBInstanceProps {
      * Property dbInstanceDescription: The description of the instance. The description cannot exceed 256 characters in length.
      */
     readonly dbInstanceDescription?: string | ros.IResolvable;
+
+    /**
+     * Property dbInstanceMode: The db instance mode. Valid values: StorageElastic, Serverless, Classic.
+     */
+    readonly dbInstanceMode?: string | ros.IResolvable;
 
     /**
      * Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. Otherwise, leave this parameter empty.
@@ -88,6 +96,11 @@ export interface ElasticDBInstanceProps {
      * Property periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * Property privateIpAddress: Private IP address.
+     */
+    readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
      * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
@@ -153,6 +166,7 @@ export class ElasticDBInstance extends ros.Resource {
             encryptionType: props.encryptionType,
             instanceSpec: props.instanceSpec,
             engineVersion: props.engineVersion,
+            privateIpAddress: props.privateIpAddress,
             zoneId: props.zoneId,
             vpcId: props.vpcId,
             vSwitchId: props.vSwitchId,
@@ -164,6 +178,7 @@ export class ElasticDBInstance extends ros.Resource {
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             dbInstanceCategory: props.dbInstanceCategory,
             securityIpList: props.securityIpList,
+            dbInstanceMode: props.dbInstanceMode,
             dbInstanceDescription: props.dbInstanceDescription,
             tags: props.tags,
             periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,

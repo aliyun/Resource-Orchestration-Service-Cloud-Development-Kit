@@ -40,7 +40,7 @@ export interface PrepayInstanceProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
-     * Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
+     * Property engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
      */
     readonly engineVersion?: string | ros.IResolvable;
 
@@ -114,6 +114,11 @@ export interface PrepayInstanceProps {
      * Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosPrepayInstance.TagsProperty[];
+
+    /**
+     * Property tairConfig: Tair config. This parameter is available only if the InstanceClass parameter is start with tair.
+     */
+    readonly tairConfig?: RosPrepayInstance.TairConfigProperty | ros.IResolvable;
 
     /**
      * Property vpcId: The VPC id to create ecs instance.
@@ -333,6 +338,7 @@ export class PrepayInstance extends ros.Resource {
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             sslEnabled: props.sslEnabled,
             vpcId: props.vpcId,
+            tairConfig: props.tairConfig,
             tags: props.tags,
             periodUnit: props.periodUnit,
             backupPolicy: props.backupPolicy,

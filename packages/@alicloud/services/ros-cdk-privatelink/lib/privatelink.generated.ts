@@ -53,6 +53,11 @@ export interface RosVpcEndpointProps {
     readonly serviceName?: string | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosVpcEndpoint.TagsProperty[];
+
+    /**
      * @Property zone:
      */
     readonly zone?: Array<RosVpcEndpoint.ZoneProperty | ros.IResolvable> | ros.IResolvable;
@@ -112,6 +117,14 @@ function RosVpcEndpointPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('endpointDescription', ros.validateString)(properties.endpointDescription));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVpcEndpoint_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('serviceId', ros.validateString)(properties.serviceId));
     return errors.wrap('supplied properties not correct for "RosVpcEndpointProps"');
 }
@@ -138,6 +151,7 @@ function rosVpcEndpointPropsToRosTemplate(properties: any, enableResourcePropert
       ProtectedEnabled: ros.booleanToRosTemplate(properties.protectedEnabled),
       ServiceId: ros.stringToRosTemplate(properties.serviceId),
       ServiceName: ros.stringToRosTemplate(properties.serviceName),
+      Tags: ros.listMapper(rosVpcEndpointTagsPropertyToRosTemplate)(properties.tags),
       Zone: ros.listMapper(rosVpcEndpointZonePropertyToRosTemplate)(properties.zone),
       ZonePrivateIpAddressCount: ros.numberToRosTemplate(properties.zonePrivateIpAddressCount),
     };
@@ -246,6 +260,11 @@ export class RosVpcEndpoint extends ros.RosResource {
     public serviceName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosVpcEndpoint.TagsProperty[] | undefined;
+
+    /**
      * @Property zone:
      */
     public zone: Array<RosVpcEndpoint.ZoneProperty | ros.IResolvable> | ros.IResolvable | undefined;
@@ -282,6 +301,7 @@ export class RosVpcEndpoint extends ros.RosResource {
         this.protectedEnabled = props.protectedEnabled;
         this.serviceId = props.serviceId;
         this.serviceName = props.serviceName;
+        this.tags = props.tags;
         this.zone = props.zone;
         this.zonePrivateIpAddressCount = props.zonePrivateIpAddressCount;
     }
@@ -297,6 +317,7 @@ export class RosVpcEndpoint extends ros.RosResource {
             protectedEnabled: this.protectedEnabled,
             serviceId: this.serviceId,
             serviceName: this.serviceName,
+            tags: this.tags,
             zone: this.zone,
             zonePrivateIpAddressCount: this.zonePrivateIpAddressCount,
         };
@@ -304,6 +325,54 @@ export class RosVpcEndpoint extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosVpcEndpointPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosVpcEndpoint {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcEndpoint_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PrivateLink::VpcEndpoint.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PrivateLink::VpcEndpoint.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcEndpointTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpcEndpoint_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 export namespace RosVpcEndpoint {
@@ -399,6 +468,11 @@ export interface RosVpcEndpointServiceProps {
     readonly serviceResourceType?: string | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosVpcEndpointService.TagsProperty[];
+
+    /**
      * @Property user: Account IDs to the whitelist of an endpoint service.
      */
     readonly user?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -462,6 +536,14 @@ function RosVpcEndpointServicePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('connectBandwidth', ros.validateNumber)(properties.connectBandwidth));
     errors.collect(ros.propertyValidator('serviceResourceType', ros.validateString)(properties.serviceResourceType));
     errors.collect(ros.propertyValidator('zoneAffinityEnabled', ros.validateBoolean)(properties.zoneAffinityEnabled));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVpcEndpointService_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('autoAcceptEnabled', ros.validateBoolean)(properties.autoAcceptEnabled));
     return errors.wrap('supplied properties not correct for "RosVpcEndpointServiceProps"');
 }
@@ -486,6 +568,7 @@ function rosVpcEndpointServicePropsToRosTemplate(properties: any, enableResource
       Resource: ros.listMapper(rosVpcEndpointServiceResourcePropertyToRosTemplate)(properties.resource),
       ServiceDescription: ros.stringToRosTemplate(properties.serviceDescription),
       ServiceResourceType: ros.stringToRosTemplate(properties.serviceResourceType),
+      Tags: ros.listMapper(rosVpcEndpointServiceTagsPropertyToRosTemplate)(properties.tags),
       User: ros.listMapper(ros.stringToRosTemplate)(properties.user),
       ZoneAffinityEnabled: ros.booleanToRosTemplate(properties.zoneAffinityEnabled),
     };
@@ -573,6 +656,11 @@ export class RosVpcEndpointService extends ros.RosResource {
     public serviceResourceType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosVpcEndpointService.TagsProperty[] | undefined;
+
+    /**
      * @Property user: Account IDs to the whitelist of an endpoint service.
      */
     public user: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
@@ -607,6 +695,7 @@ export class RosVpcEndpointService extends ros.RosResource {
         this.resource = props.resource;
         this.serviceDescription = props.serviceDescription;
         this.serviceResourceType = props.serviceResourceType;
+        this.tags = props.tags;
         this.user = props.user;
         this.zoneAffinityEnabled = props.zoneAffinityEnabled;
     }
@@ -620,6 +709,7 @@ export class RosVpcEndpointService extends ros.RosResource {
             resource: this.resource,
             serviceDescription: this.serviceDescription,
             serviceResourceType: this.serviceResourceType,
+            tags: this.tags,
             user: this.user,
             zoneAffinityEnabled: this.zoneAffinityEnabled,
         };
@@ -682,6 +772,54 @@ function rosVpcEndpointServiceResourcePropertyToRosTemplate(properties: any): an
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
       ResourceId: ros.stringToRosTemplate(properties.resourceId),
       ResourceType: ros.stringToRosTemplate(properties.resourceType),
+    };
+}
+
+export namespace RosVpcEndpointService {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpcEndpointService_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PrivateLink::VpcEndpointService.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PrivateLink::VpcEndpointService.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosVpcEndpointServiceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpcEndpointService_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
     };
 }
 

@@ -19,6 +19,11 @@ export interface StackProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * Property tags: The tags of nested stack. If it is specified, it will be passed to all tag-supported resources in the nested stack.
+     */
+    readonly tags?: RosStack.TagsProperty[];
+
+    /**
      * Property templateBody: Structure containing the template body.
      * It is just to facilitate the passing of template. It is raw content.Functions in TemplateBody will not be resolved in parent stack.
      * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
@@ -74,6 +79,7 @@ export class Stack extends ros.Resource {
             timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             templateVersion: props.templateVersion,
             templateBody: props.templateBody,
+            tags: props.tags,
             templateId: props.templateId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosStack;

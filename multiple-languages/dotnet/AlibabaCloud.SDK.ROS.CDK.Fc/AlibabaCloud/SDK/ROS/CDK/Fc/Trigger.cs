@@ -65,5 +65,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
+
+        /// <summary>Attribute UrlInternet: The public domain address.</summary>
+        /// <remarks>
+        /// You can access HTTP triggers over the Internet by using HTTP or HTTPS.
+        /// </remarks>
+        [JsiiProperty(name: "attrUrlInternet", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUrlInternet
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute UrlIntranet: The private endpoint.</summary>
+        /// <remarks>
+        /// In a VPC, you can access HTTP triggers by using HTTP or HTTPS.
+        /// </remarks>
+        [JsiiProperty(name: "attrUrlIntranet", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUrlIntranet
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
     }
 }

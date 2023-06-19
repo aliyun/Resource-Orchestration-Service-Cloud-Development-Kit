@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardbx;
 
 /**
- * Properties for defining a `ALIYUN::PolarDBX::Database`.
+ * Properties for defining a <code>ALIYUN::PolarDBX::Database</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.506Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.921Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardbx.$Module.class, fqn = "@alicloud/ros-cdk-polardbx.DatabaseProps")
 @software.amazon.jsii.Jsii.Proxy(DatabaseProps.Jsii$Proxy.class)
 public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getAccounts();
 
     /**
-     * Property characterSetName: Character set, which supports the following character sets: - **utf8 * * - **gbk** - **latin1 * * - **utf8mb4 * *.
+     * Property characterSetName: Character set, which supports the following character sets: - **utf8 * * - <strong>gbk</strong> - **latin1 * * - **utf8mb4 * *.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCharacterSetName();
 
@@ -88,7 +88,7 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DatabaseProps#getCharacterSetName}
-         * @param characterSetName Property characterSetName: Character set, which supports the following character sets: - **utf8 * * - **gbk** - **latin1 * * - **utf8mb4 * *. This parameter is required.
+         * @param characterSetName Property characterSetName: Character set, which supports the following character sets: - **utf8 * * - <strong>gbk</strong> - **latin1 * * - **utf8mb4 * *. This parameter is required.
          * @return {@code this}
          */
         public Builder characterSetName(java.lang.String characterSetName) {
@@ -98,7 +98,7 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DatabaseProps#getCharacterSetName}
-         * @param characterSetName Property characterSetName: Character set, which supports the following character sets: - **utf8 * * - **gbk** - **latin1 * * - **utf8mb4 * *. This parameter is required.
+         * @param characterSetName Property characterSetName: Character set, which supports the following character sets: - **utf8 * * - <strong>gbk</strong> - **latin1 * * - **utf8mb4 * *. This parameter is required.
          * @return {@code this}
          */
         public Builder characterSetName(com.aliyun.ros.cdk.core.IResolvable characterSetName) {

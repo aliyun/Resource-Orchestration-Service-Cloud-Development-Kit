@@ -977,6 +977,20 @@ export interface RosClusterProps {
     readonly postInstallScript?: Array<RosCluster.PostInstallScriptProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
+     * When the value of DeployMode is Standard, the value range: scheduler, account, login, compute.
+     * When the value of DeployMode is Simple, the value range: manager, login, compute.
+     * When the value of DeployMode is Tiny, the value range: manager, compute.
+     */
+    readonly ramNodeTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ramRoleName: The name of the Resource Access Management (RAM) role.
+     * You can call the ListRoles operation provided by RAM to query the created RAM roles.
+     */
+    readonly ramRoleName?: string | ros.IResolvable;
+
+    /**
      * @Property remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
      */
     readonly remoteDirectory?: string | ros.IResolvable;
@@ -1072,6 +1086,11 @@ export interface RosClusterProps {
     readonly volumeType?: string | ros.IResolvable;
 
     /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs.
+     */
+    readonly vpcId?: string | ros.IResolvable;
+
+    /**
      * @Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP). Default value: false
      */
     readonly withoutElasticIp?: boolean | ros.IResolvable;
@@ -1101,6 +1120,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('volumeId', ros.validateString)(properties.volumeId));
+    errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
     errors.collect(ros.propertyValidator('deployMode', ros.validateString)(properties.deployMode));
     if(properties.postInstallScript && (Array.isArray(properties.postInstallScript) || (typeof properties.postInstallScript) === 'string')) {
         errors.collect(ros.propertyValidator('postInstallScript', ros.validateLength)({
@@ -1132,6 +1152,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('ecsOrderManagerCount', ros.validateNumber)(properties.ecsOrderManagerCount));
     errors.collect(ros.propertyValidator('ecsOrderComputeInstanceType', ros.requiredValidator)(properties.ecsOrderComputeInstanceType));
     errors.collect(ros.propertyValidator('ecsOrderComputeInstanceType', ros.validateString)(properties.ecsOrderComputeInstanceType));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.application && (Array.isArray(properties.application) || (typeof properties.application) === 'string')) {
         errors.collect(ros.propertyValidator('application', ros.validateLength)({
             data: properties.application.length,
@@ -1183,6 +1204,14 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('additionalVolumes', ros.listValidator(RosCluster_AdditionalVolumesPropertyValidator))(properties.additionalVolumes));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('computeSpotPriceLimit', ros.validateString)(properties.computeSpotPriceLimit));
+    if(properties.ramNodeTypes && (Array.isArray(properties.ramNodeTypes) || (typeof properties.ramNodeTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('ramNodeTypes', ros.validateLength)({
+            data: properties.ramNodeTypes.length,
+            min: undefined,
+            max: 4,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ramNodeTypes', ros.listValidator(ros.validateString))(properties.ramNodeTypes));
     errors.collect(ros.propertyValidator('clientVersion', ros.validateString)(properties.clientVersion));
     errors.collect(ros.propertyValidator('volumeType', ros.validateString)(properties.volumeType));
     errors.collect(ros.propertyValidator('inputFileUrl', ros.validateString)(properties.inputFileUrl));
@@ -1272,6 +1301,8 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       PostInstallScript: ros.listMapper(rosClusterPostInstallScriptPropertyToRosTemplate)(properties.postInstallScript),
+      RamNodeTypes: ros.listMapper(ros.stringToRosTemplate)(properties.ramNodeTypes),
+      RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
       RemoteDirectory: ros.stringToRosTemplate(properties.remoteDirectory),
       RemoteVisEnable: ros.booleanToRosTemplate(properties.remoteVisEnable),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
@@ -1286,6 +1317,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       VolumeMountpoint: ros.stringToRosTemplate(properties.volumeMountpoint),
       VolumeProtocol: ros.stringToRosTemplate(properties.volumeProtocol),
       VolumeType: ros.stringToRosTemplate(properties.volumeType),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
       WithoutElasticIp: ros.booleanToRosTemplate(properties.withoutElasticIp),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
     };
@@ -1513,6 +1545,20 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
     public postInstallScript: Array<RosCluster.PostInstallScriptProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
+     * When the value of DeployMode is Standard, the value range: scheduler, account, login, compute.
+     * When the value of DeployMode is Simple, the value range: manager, login, compute.
+     * When the value of DeployMode is Tiny, the value range: manager, compute.
+     */
+    public ramNodeTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ramRoleName: The name of the Resource Access Management (RAM) role.
+     * You can call the ListRoles operation provided by RAM to query the created RAM roles.
+     */
+    public ramRoleName: string | ros.IResolvable | undefined;
+
+    /**
      * @Property remoteDirectory: Mount shared storage remote directory. The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
      */
     public remoteDirectory: string | ros.IResolvable | undefined;
@@ -1608,6 +1654,11 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
     public volumeType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs.
+     */
+    public vpcId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP). Default value: false
      */
     public withoutElasticIp: boolean | ros.IResolvable | undefined;
@@ -1665,6 +1716,8 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
         this.period = props.period;
         this.periodUnit = props.periodUnit;
         this.postInstallScript = props.postInstallScript;
+        this.ramNodeTypes = props.ramNodeTypes;
+        this.ramRoleName = props.ramRoleName;
         this.remoteDirectory = props.remoteDirectory;
         this.remoteVisEnable = props.remoteVisEnable;
         this.resourceGroupId = props.resourceGroupId;
@@ -1679,6 +1732,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
         this.volumeMountpoint = props.volumeMountpoint;
         this.volumeProtocol = props.volumeProtocol;
         this.volumeType = props.volumeType;
+        this.vpcId = props.vpcId;
         this.withoutElasticIp = props.withoutElasticIp;
         this.zoneId = props.zoneId;
     }
@@ -1719,6 +1773,8 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
             period: this.period,
             periodUnit: this.periodUnit,
             postInstallScript: this.postInstallScript,
+            ramNodeTypes: this.ramNodeTypes,
+            ramRoleName: this.ramRoleName,
             remoteDirectory: this.remoteDirectory,
             remoteVisEnable: this.remoteVisEnable,
             resourceGroupId: this.resourceGroupId,
@@ -1733,6 +1789,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
             volumeMountpoint: this.volumeMountpoint,
             volumeProtocol: this.volumeProtocol,
             volumeType: this.volumeType,
+            vpcId: this.vpcId,
             withoutElasticIp: this.withoutElasticIp,
             zoneId: this.zoneId,
         };

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::CenRouteMap`.
+ * A ROS resource type:  <code>ALIYUN::CEN::CenRouteMap</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.357Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.428Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenRouteMap")
 public class CenRouteMap extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class CenRouteMap extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::CEN::CenRouteMap`.
+     * Create a new <code>ALIYUN::CEN::CenRouteMap</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class CenRouteMap extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::CEN::CenRouteMap`.
+     * Create a new <code>ALIYUN::CEN::CenRouteMap</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -843,7 +843,7 @@ public class CenRouteMap extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.cen.CenRouteMap}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.cen.CenRouteMap}.
          */
         @Override
         public com.aliyun.ros.cdk.cen.CenRouteMap build() {

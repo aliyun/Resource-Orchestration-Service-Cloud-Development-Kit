@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::SnatEntry`.
+ * A ROS resource type:  <code>ALIYUN::VPC::SnatEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.490Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:12.071Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SnatEntry")
 public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::SnatEntry`.
+     * Create a new <code>ALIYUN::VPC::SnatEntry</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::SnatEntry`.
+     * Create a new <code>ALIYUN::VPC::SnatEntry</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -136,6 +136,37 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property eipAffinity: Specifies whether to enable EIP affinity.
+         * <p>
+         * Valid values:
+         * 0: no
+         * 1: yes
+         * If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
+         * <p>
+         * @return {@code this}
+         * @param eipAffinity Property eipAffinity: Specifies whether to enable EIP affinity. This parameter is required.
+         */
+        public Builder eipAffinity(final java.lang.Number eipAffinity) {
+            this.props.eipAffinity(eipAffinity);
+            return this;
+        }
+        /**
+         * Property eipAffinity: Specifies whether to enable EIP affinity.
+         * <p>
+         * Valid values:
+         * 0: no
+         * 1: yes
+         * If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
+         * <p>
+         * @return {@code this}
+         * @param eipAffinity Property eipAffinity: Specifies whether to enable EIP affinity. This parameter is required.
+         */
+        public Builder eipAffinity(final com.aliyun.ros.cdk.core.IResolvable eipAffinity) {
+            this.props.eipAffinity(eipAffinity);
+            return this;
+        }
+
+        /**
          * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
          * <p>
          * @return {@code this}
@@ -203,7 +234,7 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.vpc.SnatEntry}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.vpc.SnatEntry}.
          */
         @Override
         public com.aliyun.ros.cdk.vpc.SnatEntry build() {

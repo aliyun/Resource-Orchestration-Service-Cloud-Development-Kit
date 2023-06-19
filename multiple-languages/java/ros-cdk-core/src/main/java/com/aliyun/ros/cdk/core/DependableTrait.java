@@ -20,7 +20,7 @@ package com.aliyun.ros.cdk.core;
  * });
  * </pre></blockquote>
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.874Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.879Z")
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DependableTrait")
 public abstract class DependableTrait extends software.amazon.jsii.JsiiObject {
@@ -49,7 +49,7 @@ public abstract class DependableTrait extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * (experimental) Register `instance` to have the given DependableTrait.
+     * (experimental) Register <code>instance</code> to have the given DependableTrait.
      * <p>
      * Should be called in the class constructor.
      * <p>

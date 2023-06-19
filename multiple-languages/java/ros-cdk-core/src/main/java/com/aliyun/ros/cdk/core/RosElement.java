@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * An element of a stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.913Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.924Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosElement")
 public abstract class RosElement extends com.aliyun.ros.cdk.core.Construct {
 
@@ -29,7 +29,7 @@ public abstract class RosElement extends com.aliyun.ros.cdk.core.Construct {
     }
 
     /**
-     * Returns `true` if a construct is a stack element (i.e. part of the synthesized template).
+     * Returns <code>true</code> if a construct is a stack element (i.e. part of the synthesized template).
      * <p>
      * Uses duck-typing instead of <code>instanceof</code> to allow stack elements from different
      * versions of this library to be included in the same stack.

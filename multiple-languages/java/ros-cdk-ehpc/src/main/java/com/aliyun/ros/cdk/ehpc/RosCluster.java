@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ehpc;
 
 /**
- * A ROS template type:  `ALIYUN::EHPC::Cluster`.
+ * A ROS template type:  <code>ALIYUN::EHPC::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.641Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.858Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new `ALIYUN::EHPC::Cluster`.
+     * Create a new <code>ALIYUN::EHPC::Cluster</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosCluster(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ehpc.RosClusterProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -723,6 +723,58 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRamNodeTypes() {
+        return software.amazon.jsii.Kernel.get(this, "ramNodeTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRamNodeTypes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ramNodeTypes", value);
+    }
+
+    /**
+     */
+    public void setRamNodeTypes(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "ramNodeTypes", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
+        return software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRamRoleName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ramRoleName", value);
+    }
+
+    /**
+     */
+    public void setRamRoleName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ramRoleName", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRemoteDirectory() {
         return software.amazon.jsii.Kernel.get(this, "remoteDirectory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -971,6 +1023,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setVolumeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "volumeType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVpcId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vpcId", value);
+    }
+
+    /**
+     */
+    public void setVpcId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vpcId", value);
     }
 
     /**
@@ -1730,8 +1800,8 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ehpc.RosCluster> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -2313,6 +2383,40 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param ramNodeTypes This parameter is required.
+         */
+        public Builder ramNodeTypes(final com.aliyun.ros.cdk.core.IResolvable ramNodeTypes) {
+            this.props.ramNodeTypes(ramNodeTypes);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ramNodeTypes This parameter is required.
+         */
+        public Builder ramNodeTypes(final java.util.List<? extends java.lang.Object> ramNodeTypes) {
+            this.props.ramNodeTypes(ramNodeTypes);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ramRoleName This parameter is required.
+         */
+        public Builder ramRoleName(final java.lang.String ramRoleName) {
+            this.props.ramRoleName(ramRoleName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ramRoleName This parameter is required.
+         */
+        public Builder ramRoleName(final com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
+            this.props.ramRoleName(ramRoleName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param remoteDirectory This parameter is required.
          */
         public Builder remoteDirectory(final java.lang.String remoteDirectory) {
@@ -2551,6 +2655,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param vpcId This parameter is required.
+         */
+        public Builder vpcId(final java.lang.String vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vpcId This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param withoutElasticIp This parameter is required.
          */
         public Builder withoutElasticIp(final java.lang.Boolean withoutElasticIp) {
@@ -2584,7 +2705,7 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ehpc.RosCluster}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ehpc.RosCluster}.
          */
         @Override
         public com.aliyun.ros.cdk.ehpc.RosCluster build() {

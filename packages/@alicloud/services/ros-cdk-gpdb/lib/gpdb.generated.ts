@@ -175,17 +175,7 @@ export class RosAccount extends ros.RosResource {
 export interface RosDBInstanceProps {
 
     /**
-     * @Property dbInstanceClass: The instance type.
-     */
-    readonly dbInstanceClass: string | ros.IResolvable;
-
-    /**
-     * @Property dbInstanceGroupCount: The number of compute nodes in the instance.
-     */
-    readonly dbInstanceGroupCount: number | ros.IResolvable;
-
-    /**
-     * @Property engineVersion: The version of the database engine.
+     * @Property engineVersion: The version of the database engine. For example: 6.0、7.0
      */
     readonly engineVersion: string | ros.IResolvable;
 
@@ -201,9 +191,70 @@ export interface RosDBInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * @Property createSampleData: Whether to load the sample data set after the instance is created. The value can be:
+     * true: load the sample dataset.
+     * false: not to load the sample dataset
+     */
+    readonly createSampleData?: boolean | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+     * This parameter must be passed in to create a storage reservation mode instance.
+     */
+    readonly dbInstanceCategory?: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceClass: The instance type.
+     */
+    readonly dbInstanceClass?: string | ros.IResolvable;
+
+    /**
      * @Property dbInstanceDescription: The description of the instance. The description cannot exceed 256 characters in length.
      */
     readonly dbInstanceDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceGroupCount: The number of compute nodes in the instance.
+     * The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+     */
+    readonly dbInstanceGroupCount?: number | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceMode: The db instance mode. Valid values: StorageElastic, Serverless, Classic.
+     */
+    readonly dbInstanceMode?: string | ros.IResolvable;
+
+    /**
+     * @Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. Otherwise, leave this parameter empty.
+     */
+    readonly encryptionKey?: string | ros.IResolvable;
+
+    /**
+     * @Property encryptionType: The type of the encryption. Default value: NULL. Valid values:
+     * NULL: Encryption is disabled.
+     * CloudDisk: Encryption is enabled on disks and the encryption key is specified by using the EncryptionKey parameter.
+     * Note: Disk encryption cannot be disabled after it is enabled.
+     */
+    readonly encryptionType?: string | ros.IResolvable;
+
+    /**
+     * @Property idleTime: Idle release wait time. That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+     */
+    readonly idleTime?: number | ros.IResolvable;
+
+    /**
+     * @Property instanceSpec: The specification of segment nodes.
+     * - When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.
+     * - When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.
+     * - When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
+     * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
+     */
+    readonly instanceSpec?: string | ros.IResolvable;
+
+    /**
+     * @Property masterNodeNum: The number of master nodes. Minimum is 1, max is 2.
+     */
+    readonly masterNodeNum?: number | ros.IResolvable;
 
     /**
      * @Property payType: The billing method of the instance. Default value: Postpaid. Valid values:
@@ -223,15 +274,64 @@ export interface RosDBInstanceProps {
     readonly periodUnit?: string | ros.IResolvable;
 
     /**
+     * @Property privateIpAddress: Private IP address.
+     */
+    readonly privateIpAddress?: string | ros.IResolvable;
+
+    /**
      * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
      * 127.0.0.1.
      */
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
+     * @Property segDiskPerformanceLevel: Seg disk performance level. The value can be:
+     * pl0、pl1 and pl2
+     */
+    readonly segDiskPerformanceLevel?: string | ros.IResolvable;
+
+    /**
+     * @Property segNodeNum: Calculate the number of nodes. The value can be:
+     * - When DBInstanceMode is StorageElastic and DBInstanceCategory is HighAvailability, the value ranges from 4 to 512. The value must be a multiple of 4.
+     * - When DBInstanceMode is StorageElastic and DBInstanceCategory is Basic, the value ranges from 2 to 512. The value must be a multiple of 2.
+     * - When DBInstanceMode is Serverless, The value ranges from 2 to 512. The value must be a multiple of 2.
+     */
+    readonly segNodeNum?: number | ros.IResolvable;
+
+    /**
+     * @Property segStorageType: The disk type of segment nodes. For example: cloud_essd, cloud_efficiency.
+     * This parameter must be passed in to create a storage elastic mode instance.
+     * Storage Elastic Mode Basic Edition instances only support ESSD cloud disks.
+     */
+    readonly segStorageType?: string | ros.IResolvable;
+
+    /**
+     * @Property serverlessMode: Mode of the Serverless instance. The value can be:
+     * Manual: manual scheduling is the default value.
+     * Auto: indicates automatic scheduling.
+     */
+    readonly serverlessMode?: string | ros.IResolvable;
+
+    /**
+     * @Property serverlessResource: Computing resource threshold. The value ranges from 8 to 32. The step length is 8.
+     * The unit is ACU. The default value is 32.
+     */
+    readonly serverlessResource?: number | ros.IResolvable;
+
+    /**
+     * @Property storageSize: The storage capacity of per segment node. Unit: GB. Minimum is 50, max is 4000, step is 50.
+     */
+    readonly storageSize?: number | ros.IResolvable;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosDBInstance.TagsProperty[];
+
+    /**
+     * @Property vectorConfigurationStatus: the status of vector configuration. The value can be:Y: Turn on vector engine optimization.N: Turn off vector engine optimization (default value).
+     */
+    readonly vectorConfigurationStatus?: string | ros.IResolvable;
 
     /**
      * @Property vpcId: The VPC ID of the instance. If you set the InstanceNetworkType parameter to VPC, you
@@ -251,14 +351,101 @@ export interface RosDBInstanceProps {
 function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.masterNodeNum && (typeof properties.masterNodeNum) !== 'object') {
+        errors.collect(ros.propertyValidator('masterNodeNum', ros.validateRange)({
+            data: properties.masterNodeNum,
+            min: 1,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('masterNodeNum', ros.validateNumber)(properties.masterNodeNum));
+    errors.collect(ros.propertyValidator('instanceSpec', ros.validateString)(properties.instanceSpec));
+    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
+    if(properties.idleTime && (typeof properties.idleTime) !== 'object') {
+        errors.collect(ros.propertyValidator('idleTime', ros.validateRange)({
+            data: properties.idleTime,
+            min: 60,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('idleTime', ros.validateNumber)(properties.idleTime));
+    if(properties.segNodeNum && (typeof properties.segNodeNum) !== 'object') {
+        errors.collect(ros.propertyValidator('segNodeNum', ros.validateRange)({
+            data: properties.segNodeNum,
+            min: 2,
+            max: 512,
+          }));
+    }
+    errors.collect(ros.propertyValidator('segNodeNum', ros.validateNumber)(properties.segNodeNum));
+    errors.collect(ros.propertyValidator('segStorageType', ros.validateString)(properties.segStorageType));
+    errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
+    if(properties.dbInstanceGroupCount && (typeof properties.dbInstanceGroupCount) !== 'object') {
+        errors.collect(ros.propertyValidator('dbInstanceGroupCount', ros.validateRange)({
+            data: properties.dbInstanceGroupCount,
+            min: 1,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dbInstanceGroupCount', ros.validateNumber)(properties.dbInstanceGroupCount));
+    if(properties.dbInstanceCategory && (typeof properties.dbInstanceCategory) !== 'object') {
+        errors.collect(ros.propertyValidator('dbInstanceCategory', ros.validateAllowedValues)({
+          data: properties.dbInstanceCategory,
+          allowedValues: ["Basic","HighAvailability"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbInstanceCategory', ros.validateString)(properties.dbInstanceCategory));
+    if(properties.vectorConfigurationStatus && (typeof properties.vectorConfigurationStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('vectorConfigurationStatus', ros.validateAllowedValues)({
+          data: properties.vectorConfigurationStatus,
+          allowedValues: ["Y","true","True","N","false","False"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('vectorConfigurationStatus', ros.validateString)(properties.vectorConfigurationStatus));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    if(properties.serverlessResource && (typeof properties.serverlessResource) !== 'object') {
+        errors.collect(ros.propertyValidator('serverlessResource', ros.validateAllowedValues)({
+          data: properties.serverlessResource,
+          allowedValues: [8,16,24,32],
+        }));
+    }
+    errors.collect(ros.propertyValidator('serverlessResource', ros.validateNumber)(properties.serverlessResource));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDBInstance_TagsPropertyValidator))(properties.tags));
+    if(properties.dbInstanceDescription && (Array.isArray(properties.dbInstanceDescription) || (typeof properties.dbInstanceDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateLength)({
+            data: properties.dbInstanceDescription.length,
+            min: undefined,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    if(properties.encryptionType && (typeof properties.encryptionType) !== 'object') {
+        errors.collect(ros.propertyValidator('encryptionType', ros.validateAllowedValues)({
+          data: properties.encryptionType,
+          allowedValues: ["NULL","CloudDisk"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('encryptionType', ros.validateString)(properties.encryptionType));
+    if(properties.serverlessMode && (typeof properties.serverlessMode) !== 'object') {
+        errors.collect(ros.propertyValidator('serverlessMode', ros.validateAllowedValues)({
+          data: properties.serverlessMode,
+          allowedValues: ["Manual","Auto"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('serverlessMode', ros.validateString)(properties.serverlessMode));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
+    errors.collect(ros.propertyValidator('createSampleData', ros.validateBoolean)(properties.createSampleData));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
-    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
@@ -269,6 +456,14 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.storageSize && (typeof properties.storageSize) !== 'object') {
+        errors.collect(ros.propertyValidator('storageSize', ros.validateRange)({
+            data: properties.storageSize,
+            min: 50,
+            max: 4000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('storageSize', ros.validateNumber)(properties.storageSize));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
@@ -276,31 +471,20 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
-    if(properties.dbInstanceDescription && (Array.isArray(properties.dbInstanceDescription) || (typeof properties.dbInstanceDescription) === 'string')) {
-        errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateLength)({
-            data: properties.dbInstanceDescription.length,
-            min: undefined,
-            max: 256,
-          }));
+    if(properties.dbInstanceMode && (typeof properties.dbInstanceMode) !== 'object') {
+        errors.collect(ros.propertyValidator('dbInstanceMode', ros.validateAllowedValues)({
+          data: properties.dbInstanceMode,
+          allowedValues: ["StorageElastic","Serverless","Classic"],
+        }));
     }
-    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
+    errors.collect(ros.propertyValidator('dbInstanceMode', ros.validateString)(properties.dbInstanceMode));
+    if(properties.segDiskPerformanceLevel && (typeof properties.segDiskPerformanceLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('segDiskPerformanceLevel', ros.validateAllowedValues)({
+          data: properties.segDiskPerformanceLevel,
+          allowedValues: ["pl0","pl1","pl2"],
+        }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDBInstance_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('dbInstanceGroupCount', ros.requiredValidator)(properties.dbInstanceGroupCount));
-    if(properties.dbInstanceGroupCount && (typeof properties.dbInstanceGroupCount) !== 'object') {
-        errors.collect(ros.propertyValidator('dbInstanceGroupCount', ros.validateRange)({
-            data: properties.dbInstanceGroupCount,
-            min: 1,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('dbInstanceGroupCount', ros.validateNumber)(properties.dbInstanceGroupCount));
+    errors.collect(ros.propertyValidator('segDiskPerformanceLevel', ros.validateString)(properties.segDiskPerformanceLevel));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -325,17 +509,33 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
         RosDBInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      DBInstanceClass: ros.stringToRosTemplate(properties.dbInstanceClass),
-      DBInstanceGroupCount: ros.numberToRosTemplate(properties.dbInstanceGroupCount),
       EngineVersion: ros.stringToRosTemplate(properties.engineVersion),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      CreateSampleData: ros.booleanToRosTemplate(properties.createSampleData),
+      DBInstanceCategory: ros.stringToRosTemplate(properties.dbInstanceCategory),
+      DBInstanceClass: ros.stringToRosTemplate(properties.dbInstanceClass),
       DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
+      DBInstanceGroupCount: ros.numberToRosTemplate(properties.dbInstanceGroupCount),
+      DBInstanceMode: ros.stringToRosTemplate(properties.dbInstanceMode),
+      EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
+      EncryptionType: ros.stringToRosTemplate(properties.encryptionType),
+      IdleTime: ros.numberToRosTemplate(properties.idleTime),
+      InstanceSpec: ros.stringToRosTemplate(properties.instanceSpec),
+      MasterNodeNum: ros.numberToRosTemplate(properties.masterNodeNum),
       PayType: ros.stringToRosTemplate(properties.payType),
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
+      SegDiskPerformanceLevel: ros.stringToRosTemplate(properties.segDiskPerformanceLevel),
+      SegNodeNum: ros.numberToRosTemplate(properties.segNodeNum),
+      SegStorageType: ros.stringToRosTemplate(properties.segStorageType),
+      ServerlessMode: ros.stringToRosTemplate(properties.serverlessMode),
+      ServerlessResource: ros.numberToRosTemplate(properties.serverlessResource),
+      StorageSize: ros.numberToRosTemplate(properties.storageSize),
       Tags: ros.listMapper(rosDBInstanceTagsPropertyToRosTemplate)(properties.tags),
+      VectorConfigurationStatus: ros.stringToRosTemplate(properties.vectorConfigurationStatus),
       VPCId: ros.stringToRosTemplate(properties.vpcId),
     };
 }
@@ -378,17 +578,7 @@ export class RosDBInstance extends ros.RosResource {
 
 
     /**
-     * @Property dbInstanceClass: The instance type.
-     */
-    public dbInstanceClass: string | ros.IResolvable;
-
-    /**
-     * @Property dbInstanceGroupCount: The number of compute nodes in the instance.
-     */
-    public dbInstanceGroupCount: number | ros.IResolvable;
-
-    /**
-     * @Property engineVersion: The version of the database engine.
+     * @Property engineVersion: The version of the database engine. For example: 6.0、7.0
      */
     public engineVersion: string | ros.IResolvable;
 
@@ -404,9 +594,70 @@ export class RosDBInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
+     * @Property createSampleData: Whether to load the sample data set after the instance is created. The value can be:
+     * true: load the sample dataset.
+     * false: not to load the sample dataset
+     */
+    public createSampleData: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+     * This parameter must be passed in to create a storage reservation mode instance.
+     */
+    public dbInstanceCategory: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbInstanceClass: The instance type.
+     */
+    public dbInstanceClass: string | ros.IResolvable | undefined;
+
+    /**
      * @Property dbInstanceDescription: The description of the instance. The description cannot exceed 256 characters in length.
      */
     public dbInstanceDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbInstanceGroupCount: The number of compute nodes in the instance.
+     * The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+     */
+    public dbInstanceGroupCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbInstanceMode: The db instance mode. Valid values: StorageElastic, Serverless, Classic.
+     */
+    public dbInstanceMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. Otherwise, leave this parameter empty.
+     */
+    public encryptionKey: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property encryptionType: The type of the encryption. Default value: NULL. Valid values:
+     * NULL: Encryption is disabled.
+     * CloudDisk: Encryption is enabled on disks and the encryption key is specified by using the EncryptionKey parameter.
+     * Note: Disk encryption cannot be disabled after it is enabled.
+     */
+    public encryptionType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property idleTime: Idle release wait time. That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+     */
+    public idleTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceSpec: The specification of segment nodes.
+     * - When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.
+     * - When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.
+     * - When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
+     * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
+     */
+    public instanceSpec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property masterNodeNum: The number of master nodes. Minimum is 1, max is 2.
+     */
+    public masterNodeNum: number | ros.IResolvable | undefined;
 
     /**
      * @Property payType: The billing method of the instance. Default value: Postpaid. Valid values:
@@ -426,15 +677,64 @@ export class RosDBInstance extends ros.RosResource {
     public periodUnit: string | ros.IResolvable | undefined;
 
     /**
+     * @Property privateIpAddress: Private IP address.
+     */
+    public privateIpAddress: string | ros.IResolvable | undefined;
+
+    /**
      * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
      * 127.0.0.1.
      */
     public securityIpList: string | ros.IResolvable | undefined;
 
     /**
+     * @Property segDiskPerformanceLevel: Seg disk performance level. The value can be:
+     * pl0、pl1 and pl2
+     */
+    public segDiskPerformanceLevel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property segNodeNum: Calculate the number of nodes. The value can be:
+     * - When DBInstanceMode is StorageElastic and DBInstanceCategory is HighAvailability, the value ranges from 4 to 512. The value must be a multiple of 4.
+     * - When DBInstanceMode is StorageElastic and DBInstanceCategory is Basic, the value ranges from 2 to 512. The value must be a multiple of 2.
+     * - When DBInstanceMode is Serverless, The value ranges from 2 to 512. The value must be a multiple of 2.
+     */
+    public segNodeNum: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property segStorageType: The disk type of segment nodes. For example: cloud_essd, cloud_efficiency.
+     * This parameter must be passed in to create a storage elastic mode instance.
+     * Storage Elastic Mode Basic Edition instances only support ESSD cloud disks.
+     */
+    public segStorageType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serverlessMode: Mode of the Serverless instance. The value can be:
+     * Manual: manual scheduling is the default value.
+     * Auto: indicates automatic scheduling.
+     */
+    public serverlessMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serverlessResource: Computing resource threshold. The value ranges from 8 to 32. The step length is 8.
+     * The unit is ACU. The default value is 32.
+     */
+    public serverlessResource: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageSize: The storage capacity of per segment node. Unit: GB. Minimum is 50, max is 4000, step is 50.
+     */
+    public storageSize: number | ros.IResolvable | undefined;
+
+    /**
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosDBInstance.TagsProperty[] | undefined;
+
+    /**
+     * @Property vectorConfigurationStatus: the status of vector configuration. The value can be:Y: Turn on vector engine optimization.N: Turn off vector engine optimization (default value).
+     */
+    public vectorConfigurationStatus: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: The VPC ID of the instance. If you set the InstanceNetworkType parameter to VPC, you
@@ -458,34 +758,66 @@ export class RosDBInstance extends ros.RosResource {
         this.attrPort = this.getAtt('Port');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.dbInstanceClass = props.dbInstanceClass;
-        this.dbInstanceGroupCount = props.dbInstanceGroupCount;
         this.engineVersion = props.engineVersion;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
+        this.createSampleData = props.createSampleData;
+        this.dbInstanceCategory = props.dbInstanceCategory;
+        this.dbInstanceClass = props.dbInstanceClass;
         this.dbInstanceDescription = props.dbInstanceDescription;
+        this.dbInstanceGroupCount = props.dbInstanceGroupCount;
+        this.dbInstanceMode = props.dbInstanceMode;
+        this.encryptionKey = props.encryptionKey;
+        this.encryptionType = props.encryptionType;
+        this.idleTime = props.idleTime;
+        this.instanceSpec = props.instanceSpec;
+        this.masterNodeNum = props.masterNodeNum;
         this.payType = props.payType;
         this.period = props.period;
         this.periodUnit = props.periodUnit;
+        this.privateIpAddress = props.privateIpAddress;
         this.securityIpList = props.securityIpList;
+        this.segDiskPerformanceLevel = props.segDiskPerformanceLevel;
+        this.segNodeNum = props.segNodeNum;
+        this.segStorageType = props.segStorageType;
+        this.serverlessMode = props.serverlessMode;
+        this.serverlessResource = props.serverlessResource;
+        this.storageSize = props.storageSize;
         this.tags = props.tags;
+        this.vectorConfigurationStatus = props.vectorConfigurationStatus;
         this.vpcId = props.vpcId;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            dbInstanceClass: this.dbInstanceClass,
-            dbInstanceGroupCount: this.dbInstanceGroupCount,
             engineVersion: this.engineVersion,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
+            createSampleData: this.createSampleData,
+            dbInstanceCategory: this.dbInstanceCategory,
+            dbInstanceClass: this.dbInstanceClass,
             dbInstanceDescription: this.dbInstanceDescription,
+            dbInstanceGroupCount: this.dbInstanceGroupCount,
+            dbInstanceMode: this.dbInstanceMode,
+            encryptionKey: this.encryptionKey,
+            encryptionType: this.encryptionType,
+            idleTime: this.idleTime,
+            instanceSpec: this.instanceSpec,
+            masterNodeNum: this.masterNodeNum,
             payType: this.payType,
             period: this.period,
             periodUnit: this.periodUnit,
+            privateIpAddress: this.privateIpAddress,
             securityIpList: this.securityIpList,
+            segDiskPerformanceLevel: this.segDiskPerformanceLevel,
+            segNodeNum: this.segNodeNum,
+            segStorageType: this.segStorageType,
+            serverlessMode: this.serverlessMode,
+            serverlessResource: this.serverlessResource,
+            storageSize: this.storageSize,
             tags: this.tags,
+            vectorConfigurationStatus: this.vectorConfigurationStatus,
             vpcId: this.vpcId,
         };
     }
@@ -548,7 +880,7 @@ function rosDBInstanceTagsPropertyToRosTemplate(properties: any): any {
 export interface RosElasticDBInstanceProps {
 
     /**
-     * @Property engineVersion: The version of the database engine.
+     * @Property engineVersion: The version of the database engine. For example: 6.0、7.0
      */
     readonly engineVersion: string | ros.IResolvable;
 
@@ -558,7 +890,9 @@ export interface RosElasticDBInstanceProps {
     readonly instanceSpec: string | ros.IResolvable;
 
     /**
-     * @Property segNodeNum: The number of segment nodes. Minimum is 4, max is 512, step is 4.
+     * @Property segNodeNum: The number of segment nodes.
+     * For the high availability version, the value ranges from 4 to 512.
+     * The basic version ranges from 2 to 512.
      */
     readonly segNodeNum: number | ros.IResolvable;
 
@@ -584,7 +918,8 @@ export interface RosElasticDBInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability
+     * @Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+     * This parameter must be passed in to create a storage reservation mode instance.
      */
     readonly dbInstanceCategory?: string | ros.IResolvable;
 
@@ -592,6 +927,11 @@ export interface RosElasticDBInstanceProps {
      * @Property dbInstanceDescription: The description of the instance. The description cannot exceed 256 characters in length.
      */
     readonly dbInstanceDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceMode: The db instance mode. Valid values: StorageElastic, Serverless, Classic.
+     */
+    readonly dbInstanceMode?: string | ros.IResolvable;
 
     /**
      * @Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. Otherwise, leave this parameter empty.
@@ -627,6 +967,11 @@ export interface RosElasticDBInstanceProps {
      * @Property periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * @Property privateIpAddress: Private IP address.
+     */
+    readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
      * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
@@ -665,11 +1010,18 @@ function RosElasticDBInstancePropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('masterNodeNum', ros.validateNumber)(properties.masterNodeNum));
+    if(properties.encryptionType && (typeof properties.encryptionType) !== 'object') {
+        errors.collect(ros.propertyValidator('encryptionType', ros.validateAllowedValues)({
+          data: properties.encryptionType,
+          allowedValues: ["NULL","CloudDisk"],
+        }));
+    }
     errors.collect(ros.propertyValidator('encryptionType', ros.validateString)(properties.encryptionType));
     errors.collect(ros.propertyValidator('instanceSpec', ros.requiredValidator)(properties.instanceSpec));
     errors.collect(ros.propertyValidator('instanceSpec', ros.validateString)(properties.instanceSpec));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
+    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
@@ -679,7 +1031,7 @@ function RosElasticDBInstancePropsValidator(properties: any): ros.ValidationResu
     if(properties.segNodeNum && (typeof properties.segNodeNum) !== 'object') {
         errors.collect(ros.propertyValidator('segNodeNum', ros.validateRange)({
             data: properties.segNodeNum,
-            min: 4,
+            min: 2,
             max: 512,
           }));
     }
@@ -711,8 +1063,21 @@ function RosElasticDBInstancePropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    if(properties.dbInstanceCategory && (typeof properties.dbInstanceCategory) !== 'object') {
+        errors.collect(ros.propertyValidator('dbInstanceCategory', ros.validateAllowedValues)({
+          data: properties.dbInstanceCategory,
+          allowedValues: ["Basic","HighAvailability"],
+        }));
+    }
     errors.collect(ros.propertyValidator('dbInstanceCategory', ros.validateString)(properties.dbInstanceCategory));
     errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    if(properties.dbInstanceMode && (typeof properties.dbInstanceMode) !== 'object') {
+        errors.collect(ros.propertyValidator('dbInstanceMode', ros.validateAllowedValues)({
+          data: properties.dbInstanceMode,
+          allowedValues: ["StorageElastic","Serverless","Classic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbInstanceMode', ros.validateString)(properties.dbInstanceMode));
     if(properties.dbInstanceDescription && (Array.isArray(properties.dbInstanceDescription) || (typeof properties.dbInstanceDescription) === 'string')) {
         errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateLength)({
             data: properties.dbInstanceDescription.length,
@@ -762,12 +1127,14 @@ function rosElasticDBInstancePropsToRosTemplate(properties: any, enableResourceP
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
       DBInstanceCategory: ros.stringToRosTemplate(properties.dbInstanceCategory),
       DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
+      DBInstanceMode: ros.stringToRosTemplate(properties.dbInstanceMode),
       EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
       EncryptionType: ros.stringToRosTemplate(properties.encryptionType),
       MasterNodeNum: ros.numberToRosTemplate(properties.masterNodeNum),
       PayType: ros.stringToRosTemplate(properties.payType),
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
+      PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
       Tags: ros.listMapper(rosElasticDBInstanceTagsPropertyToRosTemplate)(properties.tags),
       VPCId: ros.stringToRosTemplate(properties.vpcId),
@@ -812,7 +1179,7 @@ export class RosElasticDBInstance extends ros.RosResource {
 
 
     /**
-     * @Property engineVersion: The version of the database engine.
+     * @Property engineVersion: The version of the database engine. For example: 6.0、7.0
      */
     public engineVersion: string | ros.IResolvable;
 
@@ -822,7 +1189,9 @@ export class RosElasticDBInstance extends ros.RosResource {
     public instanceSpec: string | ros.IResolvable;
 
     /**
-     * @Property segNodeNum: The number of segment nodes. Minimum is 4, max is 512, step is 4.
+     * @Property segNodeNum: The number of segment nodes.
+     * For the high availability version, the value ranges from 4 to 512.
+     * The basic version ranges from 2 to 512.
      */
     public segNodeNum: number | ros.IResolvable;
 
@@ -848,7 +1217,8 @@ export class RosElasticDBInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability
+     * @Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+     * This parameter must be passed in to create a storage reservation mode instance.
      */
     public dbInstanceCategory: string | ros.IResolvable | undefined;
 
@@ -856,6 +1226,11 @@ export class RosElasticDBInstance extends ros.RosResource {
      * @Property dbInstanceDescription: The description of the instance. The description cannot exceed 256 characters in length.
      */
     public dbInstanceDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbInstanceMode: The db instance mode. Valid values: StorageElastic, Serverless, Classic.
+     */
+    public dbInstanceMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. Otherwise, leave this parameter empty.
@@ -891,6 +1266,11 @@ export class RosElasticDBInstance extends ros.RosResource {
      * @Property periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
      */
     public periodUnit: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property privateIpAddress: Private IP address.
+     */
+    public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
@@ -934,12 +1314,14 @@ export class RosElasticDBInstance extends ros.RosResource {
         this.zoneId = props.zoneId;
         this.dbInstanceCategory = props.dbInstanceCategory;
         this.dbInstanceDescription = props.dbInstanceDescription;
+        this.dbInstanceMode = props.dbInstanceMode;
         this.encryptionKey = props.encryptionKey;
         this.encryptionType = props.encryptionType;
         this.masterNodeNum = props.masterNodeNum;
         this.payType = props.payType;
         this.period = props.period;
         this.periodUnit = props.periodUnit;
+        this.privateIpAddress = props.privateIpAddress;
         this.securityIpList = props.securityIpList;
         this.tags = props.tags;
         this.vpcId = props.vpcId;
@@ -957,12 +1339,14 @@ export class RosElasticDBInstance extends ros.RosResource {
             zoneId: this.zoneId,
             dbInstanceCategory: this.dbInstanceCategory,
             dbInstanceDescription: this.dbInstanceDescription,
+            dbInstanceMode: this.dbInstanceMode,
             encryptionKey: this.encryptionKey,
             encryptionType: this.encryptionType,
             masterNodeNum: this.masterNodeNum,
             payType: this.payType,
             period: this.period,
             periodUnit: this.periodUnit,
+            privateIpAddress: this.privateIpAddress,
             securityIpList: this.securityIpList,
             tags: this.tags,
             vpcId: this.vpcId,

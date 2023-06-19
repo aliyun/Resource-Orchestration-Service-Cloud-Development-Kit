@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * A ROS resource type:  `ALIYUN::RAM::Group`.
+ * A ROS resource type:  <code>ALIYUN::RAM::Group</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.572Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.989Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.Group")
 public class Group extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::RAM::Group`.
+     * Create a new <code>ALIYUN::RAM::Group</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::RAM::Group`.
+     * Create a new <code>ALIYUN::RAM::Group</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -157,6 +157,27 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ignoreExisting: Whether to ignore existing group False: ROS will perform a uniqueness check.If a group with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a group with the same name, the group creation process will be ignored. If the group is not created by ROS, it will be ignored during update and delete stage.
+         * <p>
+         * @return {@code this}
+         * @param ignoreExisting Property ignoreExisting: Whether to ignore existing group False: ROS will perform a uniqueness check.If a group with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a group with the same name, the group creation process will be ignored. If the group is not created by ROS, it will be ignored during update and delete stage. This parameter is required.
+         */
+        public Builder ignoreExisting(final java.lang.Boolean ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
+            return this;
+        }
+        /**
+         * Property ignoreExisting: Whether to ignore existing group False: ROS will perform a uniqueness check.If a group with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a group with the same name, the group creation process will be ignored. If the group is not created by ROS, it will be ignored during update and delete stage.
+         * <p>
+         * @return {@code this}
+         * @param ignoreExisting Property ignoreExisting: Whether to ignore existing group False: ROS will perform a uniqueness check.If a group with the same name exists, an error will be reported when creating it. True: ROS will not check the uniqueness.If there is a group with the same name, the group creation process will be ignored. If the group is not created by ROS, it will be ignored during update and delete stage. This parameter is required.
+         */
+        public Builder ignoreExisting(final com.aliyun.ros.cdk.core.IResolvable ignoreExisting) {
+            this.props.ignoreExisting(ignoreExisting);
+            return this;
+        }
+
+        /**
          * Property policies: Describes what actions are allowed on what resources.
          * <p>
          * @return {@code this}
@@ -199,7 +220,7 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ram.Group}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ram.Group}.
          */
         @Override
         public com.aliyun.ros.cdk.ram.Group build() {

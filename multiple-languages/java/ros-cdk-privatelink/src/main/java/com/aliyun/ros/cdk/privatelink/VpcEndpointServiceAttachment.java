@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.privatelink;
 
 /**
- * A ROS resource type:  `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
+ * A ROS resource type:  <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.542Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.944Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceAttachment")
 public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resour
     }
 
     /**
-     * Create a new `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
+     * Create a new <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resour
     }
 
     /**
-     * Create a new `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
+     * Create a new <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -167,7 +167,7 @@ public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.privatelink.VpcEndpointServiceAttachment}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.privatelink.VpcEndpointServiceAttachment}.
          */
         @Override
         public com.aliyun.ros.cdk.privatelink.VpcEndpointServiceAttachment build() {

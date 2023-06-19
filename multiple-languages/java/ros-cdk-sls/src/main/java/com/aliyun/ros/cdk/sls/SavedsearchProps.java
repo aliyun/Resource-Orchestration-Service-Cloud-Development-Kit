@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * Properties for defining a `ALIYUN::SLS::Savedsearch`.
+ * Properties for defining a <code>ALIYUN::SLS::Savedsearch</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.277Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.806Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.SavedsearchProps")
 @software.amazon.jsii.Jsii.Proxy(SavedsearchProps.Jsii$Proxy.class)
 public interface SavedsearchProps extends software.amazon.jsii.JsiiSerializable {

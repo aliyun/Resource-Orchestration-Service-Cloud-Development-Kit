@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * A ROS resource type:  `ALIYUN::SLS::Audit`.
+ * A ROS resource type:  <code>ALIYUN::SLS::Audit</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.174Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.713Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.Audit")
 public class Audit extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Audit extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::SLS::Audit`.
+     * Create a new <code>ALIYUN::SLS::Audit</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Audit extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::SLS::Audit`.
+     * Create a new <code>ALIYUN::SLS::Audit</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -153,7 +153,7 @@ public class Audit extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.sls.Audit}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.sls.Audit}.
          */
         @Override
         public com.aliyun.ros.cdk.sls.Audit build() {

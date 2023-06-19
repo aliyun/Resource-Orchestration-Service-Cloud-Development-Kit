@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * Properties for defining a `ALIYUN::ALB::SecurityPolicy`.
+ * Properties for defining a <code>ALIYUN::ALB::SecurityPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.073Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.097Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosSecurityPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecurityPolicyProps.Jsii$Proxy.class)
 public interface RosSecurityPolicyProps extends software.amazon.jsii.JsiiSerializable {

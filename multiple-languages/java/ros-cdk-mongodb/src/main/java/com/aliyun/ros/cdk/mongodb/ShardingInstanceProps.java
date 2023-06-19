@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mongodb;
 
 /**
- * Properties for defining a `ALIYUN::MONGODB::ShardingInstance`.
+ * Properties for defining a <code>ALIYUN::MONGODB::ShardingInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.282Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.611Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ShardingInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ShardingInstanceProps.Jsii$Proxy.class)
 public interface ShardingInstanceProps extends software.amazon.jsii.JsiiSerializable {

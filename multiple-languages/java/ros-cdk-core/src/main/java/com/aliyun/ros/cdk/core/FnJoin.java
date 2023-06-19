@@ -1,12 +1,12 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * The intrinsic function ``Fn::Join`` appends a set of values into a single value, separated by the specified delimiter.
+ * The intrinsic function <code>Fn::Join</code> appends a set of values into a single value, separated by the specified delimiter.
  * <p>
  * If a delimiter is the empty string, the set of values are concatenated
  * with no delimiter.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.883Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.890Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnJoin")
 public class FnJoin extends software.amazon.jsii.JsiiObject implements com.aliyun.ros.cdk.core.IResolvable {
 
@@ -19,7 +19,7 @@ public class FnJoin extends software.amazon.jsii.JsiiObject implements com.aliyu
     }
 
     /**
-     * Creates an ``Fn::Join`` function.
+     * Creates an <code>Fn::Join</code> function.
      * <p>
      * @param delimiter The value you want to occur between fragments. This parameter is required.
      * @param listOfValues The list of values you want combined. This parameter is required.

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * A ROS resource type:  `ALIYUN::AMQP::Binding`.
+ * A ROS resource type:  <code>ALIYUN::AMQP::Binding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.090Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.130Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.Binding")
 public class Binding extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Binding extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::AMQP::Binding`.
+     * Create a new <code>ALIYUN::AMQP::Binding</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Binding extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::AMQP::Binding`.
+     * Create a new <code>ALIYUN::AMQP::Binding</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -242,7 +242,7 @@ public class Binding extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.amqp.Binding}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.amqp.Binding}.
          */
         @Override
         public com.aliyun.ros.cdk.amqp.Binding build() {

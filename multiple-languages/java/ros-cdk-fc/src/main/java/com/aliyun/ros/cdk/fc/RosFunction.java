@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * A ROS template type:  `ALIYUN::FC::Function`.
+ * A ROS template type:  <code>ALIYUN::FC::Function</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.875Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.135Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction")
 public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new `ALIYUN::FC::Function`.
+     * Create a new <code>ALIYUN::FC::Function</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosFunction(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc.RosFunctionProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -213,6 +213,24 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCpu() {
+        return software.amazon.jsii.Kernel.get(this, "cpu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCpu(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "cpu", value);
+    }
+
+    /**
+     */
+    public void setCpu(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cpu", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getCustomContainerConfig() {
         return software.amazon.jsii.Kernel.get(this, "customContainerConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -231,6 +249,60 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCustomDns() {
+        return software.amazon.jsii.Kernel.get(this, "customDns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCustomDns(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "customDns", value);
+    }
+
+    /**
+     */
+    public void setCustomDns(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.fc.RosFunction.CustomDNSProperty value) {
+        software.amazon.jsii.Kernel.set(this, "customDns", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCustomHealthCheckConfig() {
+        return software.amazon.jsii.Kernel.get(this, "customHealthCheckConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCustomHealthCheckConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "customHealthCheckConfig", value);
+    }
+
+    /**
+     */
+    public void setCustomHealthCheckConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.fc.RosFunction.CustomHealthCheckConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "customHealthCheckConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCustomRuntimeConfig() {
+        return software.amazon.jsii.Kernel.get(this, "customRuntimeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCustomRuntimeConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "customRuntimeConfig", value);
+    }
+
+    /**
+     */
+    public void setCustomRuntimeConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.fc.RosFunction.CustomRuntimeConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "customRuntimeConfig", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -245,6 +317,24 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDiskSize() {
+        return software.amazon.jsii.Kernel.get(this, "diskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDiskSize(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "diskSize", value);
+    }
+
+    /**
+     */
+    public void setDiskSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "diskSize", value);
     }
 
     /**
@@ -275,6 +365,24 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "environmentVariables", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getGpuMemorySize() {
+        return software.amazon.jsii.Kernel.get(this, "gpuMemorySize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setGpuMemorySize(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "gpuMemorySize", value);
+    }
+
+    /**
+     */
+    public void setGpuMemorySize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "gpuMemorySize", value);
     }
 
     /**
@@ -329,6 +437,42 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInstanceConcurrency(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceConcurrency", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceLifecycleConfig() {
+        return software.amazon.jsii.Kernel.get(this, "instanceLifecycleConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceLifecycleConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceLifecycleConfig", value);
+    }
+
+    /**
+     */
+    public void setInstanceLifecycleConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.fc.RosFunction.InstanceLifecycleConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "instanceLifecycleConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceSoftConcurrency() {
+        return software.amazon.jsii.Kernel.get(this, "instanceSoftConcurrency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceSoftConcurrency(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "instanceSoftConcurrency", value);
+    }
+
+    /**
+     */
+    public void setInstanceSoftConcurrency(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceSoftConcurrency", value);
     }
 
     /**
@@ -941,6 +1085,13 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getWebServerMode() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link CustomContainerConfigProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -957,6 +1108,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object args;
             java.lang.Object command;
             java.lang.Object instanceId;
+            java.lang.Object webServerMode;
 
             /**
              * Sets the value of {@link CustomContainerConfigProperty#getImage}
@@ -1069,6 +1221,28 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CustomContainerConfigProperty#getWebServerMode}
+             * @param webServerMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder webServerMode(java.lang.Boolean webServerMode) {
+                this.webServerMode = webServerMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomContainerConfigProperty#getWebServerMode}
+             * @param webServerMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder webServerMode(com.aliyun.ros.cdk.core.IResolvable webServerMode) {
+                this.webServerMode = webServerMode;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link CustomContainerConfigProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1091,6 +1265,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object args;
             private final java.lang.Object command;
             private final java.lang.Object instanceId;
+            private final java.lang.Object webServerMode;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1103,6 +1278,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 this.args = software.amazon.jsii.Kernel.get(this, "args", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.command = software.amazon.jsii.Kernel.get(this, "command", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.webServerMode = software.amazon.jsii.Kernel.get(this, "webServerMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1115,6 +1291,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 this.args = builder.args;
                 this.command = builder.command;
                 this.instanceId = builder.instanceId;
+                this.webServerMode = builder.webServerMode;
             }
 
             @Override
@@ -1143,6 +1320,11 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getWebServerMode() {
+                return this.webServerMode;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -1160,6 +1342,9 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 }
                 if (this.getInstanceId() != null) {
                     data.set("instanceId", om.valueToTree(this.getInstanceId()));
+                }
+                if (this.getWebServerMode() != null) {
+                    data.set("webServerMode", om.valueToTree(this.getWebServerMode()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -1183,7 +1368,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 if (this.accelerationType != null ? !this.accelerationType.equals(that.accelerationType) : that.accelerationType != null) return false;
                 if (this.args != null ? !this.args.equals(that.args) : that.args != null) return false;
                 if (this.command != null ? !this.command.equals(that.command) : that.command != null) return false;
-                return this.instanceId != null ? this.instanceId.equals(that.instanceId) : that.instanceId == null;
+                if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
+                return this.webServerMode != null ? this.webServerMode.equals(that.webServerMode) : that.webServerMode == null;
             }
 
             @Override
@@ -1193,6 +1379,730 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.args != null ? this.args.hashCode() : 0);
                 result = 31 * result + (this.command != null ? this.command.hashCode() : 0);
                 result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
+                result = 31 * result + (this.webServerMode != null ? this.webServerMode.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction.CustomDNSProperty")
+    @software.amazon.jsii.Jsii.Proxy(CustomDNSProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface CustomDNSProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDnsOptions() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNameServers() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSearches() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link CustomDNSProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link CustomDNSProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<CustomDNSProperty> {
+            java.lang.Object dnsOptions;
+            java.lang.Object nameServers;
+            java.lang.Object searches;
+
+            /**
+             * Sets the value of {@link CustomDNSProperty#getDnsOptions}
+             * @param dnsOptions the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsOptions(com.aliyun.ros.cdk.core.IResolvable dnsOptions) {
+                this.dnsOptions = dnsOptions;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomDNSProperty#getDnsOptions}
+             * @param dnsOptions the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dnsOptions(java.util.List<? extends java.lang.Object> dnsOptions) {
+                this.dnsOptions = dnsOptions;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomDNSProperty#getNameServers}
+             * @param nameServers the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nameServers(com.aliyun.ros.cdk.core.IResolvable nameServers) {
+                this.nameServers = nameServers;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomDNSProperty#getNameServers}
+             * @param nameServers the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nameServers(java.util.List<? extends java.lang.Object> nameServers) {
+                this.nameServers = nameServers;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomDNSProperty#getSearches}
+             * @param searches the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder searches(com.aliyun.ros.cdk.core.IResolvable searches) {
+                this.searches = searches;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomDNSProperty#getSearches}
+             * @param searches the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder searches(java.util.List<? extends java.lang.Object> searches) {
+                this.searches = searches;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link CustomDNSProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public CustomDNSProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link CustomDNSProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CustomDNSProperty {
+            private final java.lang.Object dnsOptions;
+            private final java.lang.Object nameServers;
+            private final java.lang.Object searches;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.dnsOptions = software.amazon.jsii.Kernel.get(this, "dnsOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.nameServers = software.amazon.jsii.Kernel.get(this, "nameServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.searches = software.amazon.jsii.Kernel.get(this, "searches", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.dnsOptions = builder.dnsOptions;
+                this.nameServers = builder.nameServers;
+                this.searches = builder.searches;
+            }
+
+            @Override
+            public final java.lang.Object getDnsOptions() {
+                return this.dnsOptions;
+            }
+
+            @Override
+            public final java.lang.Object getNameServers() {
+                return this.nameServers;
+            }
+
+            @Override
+            public final java.lang.Object getSearches() {
+                return this.searches;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getDnsOptions() != null) {
+                    data.set("dnsOptions", om.valueToTree(this.getDnsOptions()));
+                }
+                if (this.getNameServers() != null) {
+                    data.set("nameServers", om.valueToTree(this.getNameServers()));
+                }
+                if (this.getSearches() != null) {
+                    data.set("searches", om.valueToTree(this.getSearches()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosFunction.CustomDNSProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                CustomDNSProperty.Jsii$Proxy that = (CustomDNSProperty.Jsii$Proxy) o;
+
+                if (this.dnsOptions != null ? !this.dnsOptions.equals(that.dnsOptions) : that.dnsOptions != null) return false;
+                if (this.nameServers != null ? !this.nameServers.equals(that.nameServers) : that.nameServers != null) return false;
+                return this.searches != null ? this.searches.equals(that.searches) : that.searches == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.dnsOptions != null ? this.dnsOptions.hashCode() : 0;
+                result = 31 * result + (this.nameServers != null ? this.nameServers.hashCode() : 0);
+                result = 31 * result + (this.searches != null ? this.searches.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction.CustomHealthCheckConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(CustomHealthCheckConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface CustomHealthCheckConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFailureThreshold() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHttpGetUrl() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInitialDelaySeconds() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodSeconds() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSuccessThreshold() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTimeoutSeconds() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link CustomHealthCheckConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link CustomHealthCheckConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<CustomHealthCheckConfigProperty> {
+            java.lang.Object failureThreshold;
+            java.lang.Object httpGetUrl;
+            java.lang.Object initialDelaySeconds;
+            java.lang.Object periodSeconds;
+            java.lang.Object successThreshold;
+            java.lang.Object timeoutSeconds;
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getFailureThreshold}
+             * @param failureThreshold the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder failureThreshold(java.lang.Number failureThreshold) {
+                this.failureThreshold = failureThreshold;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getFailureThreshold}
+             * @param failureThreshold the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder failureThreshold(com.aliyun.ros.cdk.core.IResolvable failureThreshold) {
+                this.failureThreshold = failureThreshold;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getHttpGetUrl}
+             * @param httpGetUrl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder httpGetUrl(java.lang.String httpGetUrl) {
+                this.httpGetUrl = httpGetUrl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getHttpGetUrl}
+             * @param httpGetUrl the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder httpGetUrl(com.aliyun.ros.cdk.core.IResolvable httpGetUrl) {
+                this.httpGetUrl = httpGetUrl;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getInitialDelaySeconds}
+             * @param initialDelaySeconds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder initialDelaySeconds(java.lang.Number initialDelaySeconds) {
+                this.initialDelaySeconds = initialDelaySeconds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getInitialDelaySeconds}
+             * @param initialDelaySeconds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder initialDelaySeconds(com.aliyun.ros.cdk.core.IResolvable initialDelaySeconds) {
+                this.initialDelaySeconds = initialDelaySeconds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getPeriodSeconds}
+             * @param periodSeconds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder periodSeconds(java.lang.Number periodSeconds) {
+                this.periodSeconds = periodSeconds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getPeriodSeconds}
+             * @param periodSeconds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder periodSeconds(com.aliyun.ros.cdk.core.IResolvable periodSeconds) {
+                this.periodSeconds = periodSeconds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getSuccessThreshold}
+             * @param successThreshold the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder successThreshold(java.lang.Number successThreshold) {
+                this.successThreshold = successThreshold;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getSuccessThreshold}
+             * @param successThreshold the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder successThreshold(com.aliyun.ros.cdk.core.IResolvable successThreshold) {
+                this.successThreshold = successThreshold;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getTimeoutSeconds}
+             * @param timeoutSeconds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder timeoutSeconds(java.lang.Number timeoutSeconds) {
+                this.timeoutSeconds = timeoutSeconds;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomHealthCheckConfigProperty#getTimeoutSeconds}
+             * @param timeoutSeconds the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder timeoutSeconds(com.aliyun.ros.cdk.core.IResolvable timeoutSeconds) {
+                this.timeoutSeconds = timeoutSeconds;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link CustomHealthCheckConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public CustomHealthCheckConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link CustomHealthCheckConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CustomHealthCheckConfigProperty {
+            private final java.lang.Object failureThreshold;
+            private final java.lang.Object httpGetUrl;
+            private final java.lang.Object initialDelaySeconds;
+            private final java.lang.Object periodSeconds;
+            private final java.lang.Object successThreshold;
+            private final java.lang.Object timeoutSeconds;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.failureThreshold = software.amazon.jsii.Kernel.get(this, "failureThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.httpGetUrl = software.amazon.jsii.Kernel.get(this, "httpGetUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.initialDelaySeconds = software.amazon.jsii.Kernel.get(this, "initialDelaySeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.periodSeconds = software.amazon.jsii.Kernel.get(this, "periodSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.successThreshold = software.amazon.jsii.Kernel.get(this, "successThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.timeoutSeconds = software.amazon.jsii.Kernel.get(this, "timeoutSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.failureThreshold = builder.failureThreshold;
+                this.httpGetUrl = builder.httpGetUrl;
+                this.initialDelaySeconds = builder.initialDelaySeconds;
+                this.periodSeconds = builder.periodSeconds;
+                this.successThreshold = builder.successThreshold;
+                this.timeoutSeconds = builder.timeoutSeconds;
+            }
+
+            @Override
+            public final java.lang.Object getFailureThreshold() {
+                return this.failureThreshold;
+            }
+
+            @Override
+            public final java.lang.Object getHttpGetUrl() {
+                return this.httpGetUrl;
+            }
+
+            @Override
+            public final java.lang.Object getInitialDelaySeconds() {
+                return this.initialDelaySeconds;
+            }
+
+            @Override
+            public final java.lang.Object getPeriodSeconds() {
+                return this.periodSeconds;
+            }
+
+            @Override
+            public final java.lang.Object getSuccessThreshold() {
+                return this.successThreshold;
+            }
+
+            @Override
+            public final java.lang.Object getTimeoutSeconds() {
+                return this.timeoutSeconds;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getFailureThreshold() != null) {
+                    data.set("failureThreshold", om.valueToTree(this.getFailureThreshold()));
+                }
+                if (this.getHttpGetUrl() != null) {
+                    data.set("httpGetUrl", om.valueToTree(this.getHttpGetUrl()));
+                }
+                if (this.getInitialDelaySeconds() != null) {
+                    data.set("initialDelaySeconds", om.valueToTree(this.getInitialDelaySeconds()));
+                }
+                if (this.getPeriodSeconds() != null) {
+                    data.set("periodSeconds", om.valueToTree(this.getPeriodSeconds()));
+                }
+                if (this.getSuccessThreshold() != null) {
+                    data.set("successThreshold", om.valueToTree(this.getSuccessThreshold()));
+                }
+                if (this.getTimeoutSeconds() != null) {
+                    data.set("timeoutSeconds", om.valueToTree(this.getTimeoutSeconds()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosFunction.CustomHealthCheckConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                CustomHealthCheckConfigProperty.Jsii$Proxy that = (CustomHealthCheckConfigProperty.Jsii$Proxy) o;
+
+                if (this.failureThreshold != null ? !this.failureThreshold.equals(that.failureThreshold) : that.failureThreshold != null) return false;
+                if (this.httpGetUrl != null ? !this.httpGetUrl.equals(that.httpGetUrl) : that.httpGetUrl != null) return false;
+                if (this.initialDelaySeconds != null ? !this.initialDelaySeconds.equals(that.initialDelaySeconds) : that.initialDelaySeconds != null) return false;
+                if (this.periodSeconds != null ? !this.periodSeconds.equals(that.periodSeconds) : that.periodSeconds != null) return false;
+                if (this.successThreshold != null ? !this.successThreshold.equals(that.successThreshold) : that.successThreshold != null) return false;
+                return this.timeoutSeconds != null ? this.timeoutSeconds.equals(that.timeoutSeconds) : that.timeoutSeconds == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.failureThreshold != null ? this.failureThreshold.hashCode() : 0;
+                result = 31 * result + (this.httpGetUrl != null ? this.httpGetUrl.hashCode() : 0);
+                result = 31 * result + (this.initialDelaySeconds != null ? this.initialDelaySeconds.hashCode() : 0);
+                result = 31 * result + (this.periodSeconds != null ? this.periodSeconds.hashCode() : 0);
+                result = 31 * result + (this.successThreshold != null ? this.successThreshold.hashCode() : 0);
+                result = 31 * result + (this.timeoutSeconds != null ? this.timeoutSeconds.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction.CustomRuntimeConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(CustomRuntimeConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface CustomRuntimeConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getArgs();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getCommand();
+
+        /**
+         * @return a {@link Builder} of {@link CustomRuntimeConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link CustomRuntimeConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<CustomRuntimeConfigProperty> {
+            java.lang.Object args;
+            java.lang.Object command;
+
+            /**
+             * Sets the value of {@link CustomRuntimeConfigProperty#getArgs}
+             * @param args the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder args(com.aliyun.ros.cdk.core.IResolvable args) {
+                this.args = args;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomRuntimeConfigProperty#getArgs}
+             * @param args the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder args(java.util.List<? extends java.lang.Object> args) {
+                this.args = args;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomRuntimeConfigProperty#getCommand}
+             * @param command the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder command(com.aliyun.ros.cdk.core.IResolvable command) {
+                this.command = command;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CustomRuntimeConfigProperty#getCommand}
+             * @param command the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder command(java.util.List<? extends java.lang.Object> command) {
+                this.command = command;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link CustomRuntimeConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public CustomRuntimeConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link CustomRuntimeConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CustomRuntimeConfigProperty {
+            private final java.lang.Object args;
+            private final java.lang.Object command;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.args = software.amazon.jsii.Kernel.get(this, "args", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.command = software.amazon.jsii.Kernel.get(this, "command", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.args = java.util.Objects.requireNonNull(builder.args, "args is required");
+                this.command = java.util.Objects.requireNonNull(builder.command, "command is required");
+            }
+
+            @Override
+            public final java.lang.Object getArgs() {
+                return this.args;
+            }
+
+            @Override
+            public final java.lang.Object getCommand() {
+                return this.command;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("args", om.valueToTree(this.getArgs()));
+                data.set("command", om.valueToTree(this.getCommand()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosFunction.CustomRuntimeConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                CustomRuntimeConfigProperty.Jsii$Proxy that = (CustomRuntimeConfigProperty.Jsii$Proxy) o;
+
+                if (!args.equals(that.args)) return false;
+                return this.command.equals(that.command);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.args.hashCode();
+                result = 31 * result + (this.command.hashCode());
                 return result;
             }
         }
@@ -1369,6 +2279,690 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
     }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction.DnsOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(DnsOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DnsOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getName();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link DnsOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DnsOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DnsOptionsProperty> {
+            java.lang.Object name;
+            java.lang.Object value;
+
+            /**
+             * Sets the value of {@link DnsOptionsProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(java.lang.String name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DnsOptionsProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DnsOptionsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DnsOptionsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DnsOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DnsOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DnsOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DnsOptionsProperty {
+            private final java.lang.Object name;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+                this.value = builder.value;
+            }
+
+            @Override
+            public final java.lang.Object getName() {
+                return this.name;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("name", om.valueToTree(this.getName()));
+                if (this.getValue() != null) {
+                    data.set("value", om.valueToTree(this.getValue()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosFunction.DnsOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DnsOptionsProperty.Jsii$Proxy that = (DnsOptionsProperty.Jsii$Proxy) o;
+
+                if (!name.equals(that.name)) return false;
+                return this.value != null ? this.value.equals(that.value) : that.value == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.name.hashCode();
+                result = 31 * result + (this.value != null ? this.value.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction.InstanceLifecycleConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(InstanceLifecycleConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface InstanceLifecycleConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPreFreeze() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPreStop() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link InstanceLifecycleConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link InstanceLifecycleConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<InstanceLifecycleConfigProperty> {
+            java.lang.Object preFreeze;
+            java.lang.Object preStop;
+
+            /**
+             * Sets the value of {@link InstanceLifecycleConfigProperty#getPreFreeze}
+             * @param preFreeze the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder preFreeze(com.aliyun.ros.cdk.core.IResolvable preFreeze) {
+                this.preFreeze = preFreeze;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstanceLifecycleConfigProperty#getPreFreeze}
+             * @param preFreeze the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder preFreeze(com.aliyun.ros.cdk.fc.RosFunction.PreFreezeProperty preFreeze) {
+                this.preFreeze = preFreeze;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstanceLifecycleConfigProperty#getPreStop}
+             * @param preStop the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder preStop(com.aliyun.ros.cdk.core.IResolvable preStop) {
+                this.preStop = preStop;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link InstanceLifecycleConfigProperty#getPreStop}
+             * @param preStop the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder preStop(com.aliyun.ros.cdk.fc.RosFunction.PreStopProperty preStop) {
+                this.preStop = preStop;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link InstanceLifecycleConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public InstanceLifecycleConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link InstanceLifecycleConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstanceLifecycleConfigProperty {
+            private final java.lang.Object preFreeze;
+            private final java.lang.Object preStop;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.preFreeze = software.amazon.jsii.Kernel.get(this, "preFreeze", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.preStop = software.amazon.jsii.Kernel.get(this, "preStop", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.preFreeze = builder.preFreeze;
+                this.preStop = builder.preStop;
+            }
+
+            @Override
+            public final java.lang.Object getPreFreeze() {
+                return this.preFreeze;
+            }
+
+            @Override
+            public final java.lang.Object getPreStop() {
+                return this.preStop;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getPreFreeze() != null) {
+                    data.set("preFreeze", om.valueToTree(this.getPreFreeze()));
+                }
+                if (this.getPreStop() != null) {
+                    data.set("preStop", om.valueToTree(this.getPreStop()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosFunction.InstanceLifecycleConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                InstanceLifecycleConfigProperty.Jsii$Proxy that = (InstanceLifecycleConfigProperty.Jsii$Proxy) o;
+
+                if (this.preFreeze != null ? !this.preFreeze.equals(that.preFreeze) : that.preFreeze != null) return false;
+                return this.preStop != null ? this.preStop.equals(that.preStop) : that.preStop == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.preFreeze != null ? this.preFreeze.hashCode() : 0;
+                result = 31 * result + (this.preStop != null ? this.preStop.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction.PreFreezeProperty")
+    @software.amazon.jsii.Jsii.Proxy(PreFreezeProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PreFreezeProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHandler() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link PreFreezeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PreFreezeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PreFreezeProperty> {
+            java.lang.Object handler;
+            java.lang.Object timeout;
+
+            /**
+             * Sets the value of {@link PreFreezeProperty#getHandler}
+             * @param handler the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder handler(java.lang.String handler) {
+                this.handler = handler;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PreFreezeProperty#getHandler}
+             * @param handler the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder handler(com.aliyun.ros.cdk.core.IResolvable handler) {
+                this.handler = handler;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PreFreezeProperty#getTimeout}
+             * @param timeout the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder timeout(java.lang.Number timeout) {
+                this.timeout = timeout;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PreFreezeProperty#getTimeout}
+             * @param timeout the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+                this.timeout = timeout;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PreFreezeProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PreFreezeProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link PreFreezeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PreFreezeProperty {
+            private final java.lang.Object handler;
+            private final java.lang.Object timeout;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.handler = software.amazon.jsii.Kernel.get(this, "handler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.handler = builder.handler;
+                this.timeout = builder.timeout;
+            }
+
+            @Override
+            public final java.lang.Object getHandler() {
+                return this.handler;
+            }
+
+            @Override
+            public final java.lang.Object getTimeout() {
+                return this.timeout;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getHandler() != null) {
+                    data.set("handler", om.valueToTree(this.getHandler()));
+                }
+                if (this.getTimeout() != null) {
+                    data.set("timeout", om.valueToTree(this.getTimeout()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosFunction.PreFreezeProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PreFreezeProperty.Jsii$Proxy that = (PreFreezeProperty.Jsii$Proxy) o;
+
+                if (this.handler != null ? !this.handler.equals(that.handler) : that.handler != null) return false;
+                return this.timeout != null ? this.timeout.equals(that.timeout) : that.timeout == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.handler != null ? this.handler.hashCode() : 0;
+                result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction.PreStopProperty")
+    @software.amazon.jsii.Jsii.Proxy(PreStopProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PreStopProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHandler() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link PreStopProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PreStopProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PreStopProperty> {
+            java.lang.Object handler;
+            java.lang.Object timeout;
+
+            /**
+             * Sets the value of {@link PreStopProperty#getHandler}
+             * @param handler the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder handler(java.lang.String handler) {
+                this.handler = handler;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PreStopProperty#getHandler}
+             * @param handler the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder handler(com.aliyun.ros.cdk.core.IResolvable handler) {
+                this.handler = handler;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PreStopProperty#getTimeout}
+             * @param timeout the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder timeout(java.lang.Number timeout) {
+                this.timeout = timeout;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PreStopProperty#getTimeout}
+             * @param timeout the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+                this.timeout = timeout;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PreStopProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PreStopProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link PreStopProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PreStopProperty {
+            private final java.lang.Object handler;
+            private final java.lang.Object timeout;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.handler = software.amazon.jsii.Kernel.get(this, "handler", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.handler = builder.handler;
+                this.timeout = builder.timeout;
+            }
+
+            @Override
+            public final java.lang.Object getHandler() {
+                return this.handler;
+            }
+
+            @Override
+            public final java.lang.Object getTimeout() {
+                return this.timeout;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getHandler() != null) {
+                    data.set("handler", om.valueToTree(this.getHandler()));
+                }
+                if (this.getTimeout() != null) {
+                    data.set("timeout", om.valueToTree(this.getTimeout()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosFunction.PreStopProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PreStopProperty.Jsii$Proxy that = (PreStopProperty.Jsii$Proxy) o;
+
+                if (this.handler != null ? !this.handler.equals(that.handler) : that.handler != null) return false;
+                return this.timeout != null ? this.timeout.equals(that.timeout) : that.timeout == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.handler != null ? this.handler.hashCode() : 0;
+                result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
+                return result;
+            }
+        }
+    }
 
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.fc.RosFunction}.
@@ -1376,8 +2970,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.fc.RosFunction> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -1517,6 +3111,23 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param cpu This parameter is required.
+         */
+        public Builder cpu(final java.lang.Number cpu) {
+            this.props.cpu(cpu);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cpu This parameter is required.
+         */
+        public Builder cpu(final com.aliyun.ros.cdk.core.IResolvable cpu) {
+            this.props.cpu(cpu);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param customContainerConfig This parameter is required.
          */
         public Builder customContainerConfig(final com.aliyun.ros.cdk.core.IResolvable customContainerConfig) {
@@ -1529,6 +3140,57 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder customContainerConfig(final com.aliyun.ros.cdk.fc.RosFunction.CustomContainerConfigProperty customContainerConfig) {
             this.props.customContainerConfig(customContainerConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param customDns This parameter is required.
+         */
+        public Builder customDns(final com.aliyun.ros.cdk.core.IResolvable customDns) {
+            this.props.customDns(customDns);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param customDns This parameter is required.
+         */
+        public Builder customDns(final com.aliyun.ros.cdk.fc.RosFunction.CustomDNSProperty customDns) {
+            this.props.customDns(customDns);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param customHealthCheckConfig This parameter is required.
+         */
+        public Builder customHealthCheckConfig(final com.aliyun.ros.cdk.core.IResolvable customHealthCheckConfig) {
+            this.props.customHealthCheckConfig(customHealthCheckConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param customHealthCheckConfig This parameter is required.
+         */
+        public Builder customHealthCheckConfig(final com.aliyun.ros.cdk.fc.RosFunction.CustomHealthCheckConfigProperty customHealthCheckConfig) {
+            this.props.customHealthCheckConfig(customHealthCheckConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param customRuntimeConfig This parameter is required.
+         */
+        public Builder customRuntimeConfig(final com.aliyun.ros.cdk.core.IResolvable customRuntimeConfig) {
+            this.props.customRuntimeConfig(customRuntimeConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param customRuntimeConfig This parameter is required.
+         */
+        public Builder customRuntimeConfig(final com.aliyun.ros.cdk.fc.RosFunction.CustomRuntimeConfigProperty customRuntimeConfig) {
+            this.props.customRuntimeConfig(customRuntimeConfig);
             return this;
         }
 
@@ -1551,6 +3213,23 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param diskSize This parameter is required.
+         */
+        public Builder diskSize(final java.lang.Number diskSize) {
+            this.props.diskSize(diskSize);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param diskSize This parameter is required.
+         */
+        public Builder diskSize(final com.aliyun.ros.cdk.core.IResolvable diskSize) {
+            this.props.diskSize(diskSize);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param environmentVariables This parameter is required.
          */
         public Builder environmentVariables(final com.aliyun.ros.cdk.core.IResolvable environmentVariables) {
@@ -1563,6 +3242,23 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder environmentVariables(final java.util.Map<java.lang.String, ? extends java.lang.Object> environmentVariables) {
             this.props.environmentVariables(environmentVariables);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param gpuMemorySize This parameter is required.
+         */
+        public Builder gpuMemorySize(final java.lang.Number gpuMemorySize) {
+            this.props.gpuMemorySize(gpuMemorySize);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param gpuMemorySize This parameter is required.
+         */
+        public Builder gpuMemorySize(final com.aliyun.ros.cdk.core.IResolvable gpuMemorySize) {
+            this.props.gpuMemorySize(gpuMemorySize);
             return this;
         }
 
@@ -1619,6 +3315,40 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param instanceLifecycleConfig This parameter is required.
+         */
+        public Builder instanceLifecycleConfig(final com.aliyun.ros.cdk.core.IResolvable instanceLifecycleConfig) {
+            this.props.instanceLifecycleConfig(instanceLifecycleConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceLifecycleConfig This parameter is required.
+         */
+        public Builder instanceLifecycleConfig(final com.aliyun.ros.cdk.fc.RosFunction.InstanceLifecycleConfigProperty instanceLifecycleConfig) {
+            this.props.instanceLifecycleConfig(instanceLifecycleConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param instanceSoftConcurrency This parameter is required.
+         */
+        public Builder instanceSoftConcurrency(final java.lang.Number instanceSoftConcurrency) {
+            this.props.instanceSoftConcurrency(instanceSoftConcurrency);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceSoftConcurrency This parameter is required.
+         */
+        public Builder instanceSoftConcurrency(final com.aliyun.ros.cdk.core.IResolvable instanceSoftConcurrency) {
+            this.props.instanceSoftConcurrency(instanceSoftConcurrency);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param instanceType This parameter is required.
          */
         public Builder instanceType(final java.lang.String instanceType) {
@@ -1669,7 +3399,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.fc.RosFunction}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.fc.RosFunction}.
          */
         @Override
         public com.aliyun.ros.cdk.fc.RosFunction build() {

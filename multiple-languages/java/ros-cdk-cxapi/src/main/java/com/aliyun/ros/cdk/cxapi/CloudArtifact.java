@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cxapi;
 /**
  * Represents an artifact within a cloud assembly.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.849Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.847Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.CloudArtifact")
 public class CloudArtifact extends software.amazon.jsii.JsiiObject {
 
@@ -21,9 +21,9 @@ public class CloudArtifact extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Returns a subclass of `CloudArtifact` based on the artifact type defined in the artifact manifest.
+     * Returns a subclass of <code>CloudArtifact</code> based on the artifact type defined in the artifact manifest.
      * <p>
-     * @return the `CloudArtifact` that matches the artifact type or `undefined` if it's an artifact type that is unrecognized by this module.
+     * @return the <code>CloudArtifact</code> that matches the artifact type or <code>undefined</code> if it's an artifact type that is unrecognized by this module.
      * @param assembly The cloud assembly from which to load the artifact. This parameter is required.
      * @param id The artifact ID. This parameter is required.
      * @param artifact The artifact manifest. This parameter is required.

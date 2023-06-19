@@ -3,6 +3,277 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::ECD::Bundle`
+ */
+export interface RosBundleProps {
+
+    /**
+     * @Property desktopType: Desktop specifications.You can call Describundles to query the desktop bundle and get the currently supported desktop specification from the returned desktopType.
+     * Explain that ordinary mirrors cannot choose the GPU specifications, and the GPU type mirror can only choose the GPU specification.
+     */
+    readonly desktopType: string | ros.IResolvable;
+
+    /**
+     * @Property imageId: The ID of the image.
+     */
+    readonly imageId: string | ros.IResolvable;
+
+    /**
+     * @Property rootDiskSizeGib: The root disk size gib.
+     */
+    readonly rootDiskSizeGib: number | ros.IResolvable;
+
+    /**
+     * @Property userDiskSizeGib: The size of the data disk. Currently, only one data disk can be set. Unit: GiB.
+     * - The size of the data disk that supports the setting corresponds to the specification.
+     * - The data disk size (user_disk_size_gib) set in the template must be greater than the data disk size (data_disk_size) in the mirror.
+     */
+    readonly userDiskSizeGib: Array<number | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property bundleName: The name of the bundle.
+     */
+    readonly bundleName?: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the bundle.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property language: The language. Valid values:
+     * zh-CN: Simplified Chinese
+     * zh-HK: Traditional Chinese (Hong Kong)
+     * en-US: English
+     * ja-JP: Japanese
+     */
+    readonly language?: string | ros.IResolvable;
+
+    /**
+     * @Property rootDiskPerformanceLevel: The root disk performance level. Valid values:
+     * PL0
+     * PL1
+     * PL2
+     * PL3
+     *
+     */
+    readonly rootDiskPerformanceLevel?: string | ros.IResolvable;
+
+    /**
+     * @Property userDiskPerformanceLevel: The user disk performance level.Valid values:
+     * PL0
+     * PL1
+     * PL2
+     * PL3
+     *
+     */
+    readonly userDiskPerformanceLevel?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBundleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBundleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBundlePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('rootDiskSizeGib', ros.requiredValidator)(properties.rootDiskSizeGib));
+    errors.collect(ros.propertyValidator('rootDiskSizeGib', ros.validateNumber)(properties.rootDiskSizeGib));
+    if(properties.language && (typeof properties.language) !== 'object') {
+        errors.collect(ros.propertyValidator('language', ros.validateAllowedValues)({
+          data: properties.language,
+          allowedValues: ["zh-CN","zh-HK","en-US","ja-JP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('language', ros.validateString)(properties.language));
+    if(properties.rootDiskPerformanceLevel && (typeof properties.rootDiskPerformanceLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('rootDiskPerformanceLevel', ros.validateAllowedValues)({
+          data: properties.rootDiskPerformanceLevel,
+          allowedValues: ["PL0","PL1","PL2","PL3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('rootDiskPerformanceLevel', ros.validateString)(properties.rootDiskPerformanceLevel));
+    errors.collect(ros.propertyValidator('desktopType', ros.requiredValidator)(properties.desktopType));
+    errors.collect(ros.propertyValidator('desktopType', ros.validateString)(properties.desktopType));
+    errors.collect(ros.propertyValidator('bundleName', ros.validateString)(properties.bundleName));
+    errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.userDiskPerformanceLevel && (typeof properties.userDiskPerformanceLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('userDiskPerformanceLevel', ros.validateAllowedValues)({
+          data: properties.userDiskPerformanceLevel,
+          allowedValues: ["PL0","PL1","PL2","PL3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('userDiskPerformanceLevel', ros.validateString)(properties.userDiskPerformanceLevel));
+    errors.collect(ros.propertyValidator('userDiskSizeGib', ros.requiredValidator)(properties.userDiskSizeGib));
+    if(properties.userDiskSizeGib && (Array.isArray(properties.userDiskSizeGib) || (typeof properties.userDiskSizeGib) === 'string')) {
+        errors.collect(ros.propertyValidator('userDiskSizeGib', ros.validateLength)({
+            data: properties.userDiskSizeGib.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('userDiskSizeGib', ros.listValidator(ros.validateNumber))(properties.userDiskSizeGib));
+    return errors.wrap('supplied properties not correct for "RosBundleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECD::Bundle` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBundleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECD::Bundle` resource.
+ */
+// @ts-ignore TS6133
+function rosBundlePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBundlePropsValidator(properties).assertSuccess();
+    }
+    return {
+      DesktopType: ros.stringToRosTemplate(properties.desktopType),
+      ImageId: ros.stringToRosTemplate(properties.imageId),
+      RootDiskSizeGib: ros.numberToRosTemplate(properties.rootDiskSizeGib),
+      UserDiskSizeGib: ros.listMapper(ros.numberToRosTemplate)(properties.userDiskSizeGib),
+      BundleName: ros.stringToRosTemplate(properties.bundleName),
+      Description: ros.stringToRosTemplate(properties.description),
+      Language: ros.stringToRosTemplate(properties.language),
+      RootDiskPerformanceLevel: ros.stringToRosTemplate(properties.rootDiskPerformanceLevel),
+      UserDiskPerformanceLevel: ros.stringToRosTemplate(properties.userDiskPerformanceLevel),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ECD::Bundle`
+ */
+export class RosBundle extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECD::Bundle";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute BundleId: Desktop bundle ID.
+     */
+    public readonly attrBundleId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property desktopType: Desktop specifications.You can call Describundles to query the desktop bundle and get the currently supported desktop specification from the returned desktopType.
+     * Explain that ordinary mirrors cannot choose the GPU specifications, and the GPU type mirror can only choose the GPU specification.
+     */
+    public desktopType: string | ros.IResolvable;
+
+    /**
+     * @Property imageId: The ID of the image.
+     */
+    public imageId: string | ros.IResolvable;
+
+    /**
+     * @Property rootDiskSizeGib: The root disk size gib.
+     */
+    public rootDiskSizeGib: number | ros.IResolvable;
+
+    /**
+     * @Property userDiskSizeGib: The size of the data disk. Currently, only one data disk can be set. Unit: GiB.
+     * - The size of the data disk that supports the setting corresponds to the specification.
+     * - The data disk size (user_disk_size_gib) set in the template must be greater than the data disk size (data_disk_size) in the mirror.
+     */
+    public userDiskSizeGib: Array<number | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property bundleName: The name of the bundle.
+     */
+    public bundleName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the bundle.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property language: The language. Valid values:
+     * zh-CN: Simplified Chinese
+     * zh-HK: Traditional Chinese (Hong Kong)
+     * en-US: English
+     * ja-JP: Japanese
+     */
+    public language: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rootDiskPerformanceLevel: The root disk performance level. Valid values:
+     * PL0
+     * PL1
+     * PL2
+     * PL3
+     *
+     */
+    public rootDiskPerformanceLevel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property userDiskPerformanceLevel: The user disk performance level.Valid values:
+     * PL0
+     * PL1
+     * PL2
+     * PL3
+     *
+     */
+    public userDiskPerformanceLevel: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ECD::Bundle`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBundleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBundle.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBundleId = this.getAtt('BundleId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.desktopType = props.desktopType;
+        this.imageId = props.imageId;
+        this.rootDiskSizeGib = props.rootDiskSizeGib;
+        this.userDiskSizeGib = props.userDiskSizeGib;
+        this.bundleName = props.bundleName;
+        this.description = props.description;
+        this.language = props.language;
+        this.rootDiskPerformanceLevel = props.rootDiskPerformanceLevel;
+        this.userDiskPerformanceLevel = props.userDiskPerformanceLevel;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            desktopType: this.desktopType,
+            imageId: this.imageId,
+            rootDiskSizeGib: this.rootDiskSizeGib,
+            userDiskSizeGib: this.userDiskSizeGib,
+            bundleName: this.bundleName,
+            description: this.description,
+            language: this.language,
+            rootDiskPerformanceLevel: this.rootDiskPerformanceLevel,
+            userDiskPerformanceLevel: this.userDiskPerformanceLevel,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBundlePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::ECD::Desktops`
  */
 export interface RosDesktopsProps {
@@ -598,4 +869,292 @@ function rosDesktopsTagsPropertyToRosTemplate(properties: any): any {
       Value: ros.stringToRosTemplate(properties.value),
       Key: ros.stringToRosTemplate(properties.key),
     };
+}
+
+/**
+ * Properties for defining a `ALIYUN::ECD::SimpleOfficeSite`
+ */
+export interface RosSimpleOfficeSiteProps {
+
+    /**
+     * @Property bandwidth: The maximum public bandwidth. Value range: 10 to 200. Unit: Mbit/s. This parameter is available if you set EnableInternetAccess to true.
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
+     * NoteIf you want to connect to your cloud desktops over a VPC, you can attach the network of the workspace to the CEN instance. The CEN instance is connected to the on-premises network over VPN Gateway or Express Connect.
+     */
+    readonly cenId?: string | ros.IResolvable;
+
+    /**
+     * @Property cenOwnerId: The ID of the Alibaba Cloud account to which the Cloud Enterprise Network (CEN) instance belongs.
+     * If you do not specify the CenId parameter, or the CEN instance that is specified by the CenId parameter belongs to the current Alibaba Cloud account, skip this parameter.
+     * If you specify the CenId parameter and the CEN instance that you specify for the CenId parameter belongs to another Alibaba Cloud account, enter the ID of the Alibaba Cloud account.
+     */
+    readonly cenOwnerId?: number | ros.IResolvable;
+
+    /**
+     * @Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0/12, 172.16.0.0/12, 192.168.0.0/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0/12 or 172.16.0.0/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0/16, the mask is 1624 bits in length.
+     */
+    readonly cidrBlock?: string | ros.IResolvable;
+
+    /**
+     * @Property cloudBoxOfficeSite: Specifies whether the workspace is a CloudBox-based workspace.
+     * Enumeration Value:
+     * true
+     * false
+     */
+    readonly cloudBoxOfficeSite?: boolean | ros.IResolvable;
+
+    /**
+     * @Property desktopAccessType: The method that is used to connect the client to cloud desktops.
+     * NoteVPC connections are established by using Alibaba Cloud PrivateLink. You can use PrivateLink for free. When you set this parameter to VPC or Any, PrivateLink is automatically activated.
+     */
+    readonly desktopAccessType?: string | ros.IResolvable;
+
+    /**
+     * @Property enableAdminAccess: Specifies whether to grant the permissions of the local administrator to the regular user of the cloud desktop.
+     * Enumeration Value:
+     * true
+     * false
+     */
+    readonly enableAdminAccess?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableInternetAccess: Specifies whether to enable Internet access. By default, Internet access is not enabled.
+     * Enumeration Value:
+     * true
+     * false
+     */
+    readonly enableInternetAccess?: boolean | ros.IResolvable;
+
+    /**
+     * @Property needVerifyZeroDevice: Specifies whether to enable trusted device verification.
+     * Enumeration Value:
+     * true
+     * false
+     */
+    readonly needVerifyZeroDevice?: boolean | ros.IResolvable;
+
+    /**
+     * @Property officeSiteName: The name of the workspace. The name must be 2 to 255 characters in length. It must start with a letter and cannot start with http:// or https://. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     */
+    readonly officeSiteName?: string | ros.IResolvable;
+
+    /**
+     * @Property verifyCode: The verification code. If the CEN instance that you specify for the CenId parameter belongs to another Alibaba Cloud account, you must call the SendVerifyCode operation to obtain the verification code.
+     */
+    readonly verifyCode?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The IDs of the vSwitches in the VPC. This parameter is required when you create a CloudBox-based workspace.
+     */
+    readonly vSwitchId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSimpleOfficeSiteProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSimpleOfficeSiteProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSimpleOfficeSitePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('verifyCode', ros.validateString)(properties.verifyCode));
+    errors.collect(ros.propertyValidator('needVerifyZeroDevice', ros.validateBoolean)(properties.needVerifyZeroDevice));
+    errors.collect(ros.propertyValidator('cenOwnerId', ros.validateNumber)(properties.cenOwnerId));
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('enableAdminAccess', ros.validateBoolean)(properties.enableAdminAccess));
+    errors.collect(ros.propertyValidator('cloudBoxOfficeSite', ros.validateBoolean)(properties.cloudBoxOfficeSite));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('officeSiteName', ros.validateString)(properties.officeSiteName));
+    if(properties.desktopAccessType && (typeof properties.desktopAccessType) !== 'object') {
+        errors.collect(ros.propertyValidator('desktopAccessType', ros.validateAllowedValues)({
+          data: properties.desktopAccessType,
+          allowedValues: ["VPC","Internet","Any"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('desktopAccessType', ros.validateString)(properties.desktopAccessType));
+    errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
+    errors.collect(ros.propertyValidator('enableInternetAccess', ros.validateBoolean)(properties.enableInternetAccess));
+    return errors.wrap('supplied properties not correct for "RosSimpleOfficeSiteProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECD::SimpleOfficeSite` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSimpleOfficeSiteProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECD::SimpleOfficeSite` resource.
+ */
+// @ts-ignore TS6133
+function rosSimpleOfficeSitePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSimpleOfficeSitePropsValidator(properties).assertSuccess();
+    }
+    return {
+      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
+      CenId: ros.stringToRosTemplate(properties.cenId),
+      CenOwnerId: ros.numberToRosTemplate(properties.cenOwnerId),
+      CidrBlock: ros.stringToRosTemplate(properties.cidrBlock),
+      CloudBoxOfficeSite: ros.booleanToRosTemplate(properties.cloudBoxOfficeSite),
+      DesktopAccessType: ros.stringToRosTemplate(properties.desktopAccessType),
+      EnableAdminAccess: ros.booleanToRosTemplate(properties.enableAdminAccess),
+      EnableInternetAccess: ros.booleanToRosTemplate(properties.enableInternetAccess),
+      NeedVerifyZeroDevice: ros.booleanToRosTemplate(properties.needVerifyZeroDevice),
+      OfficeSiteName: ros.stringToRosTemplate(properties.officeSiteName),
+      VerifyCode: ros.stringToRosTemplate(properties.verifyCode),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ECD::SimpleOfficeSite`
+ */
+export class RosSimpleOfficeSite extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECD::SimpleOfficeSite";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute OfficeSiteId: The ID of the workspace.
+     */
+    public readonly attrOfficeSiteId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bandwidth: The maximum public bandwidth. Value range: 10 to 200. Unit: Mbit/s. This parameter is available if you set EnableInternetAccess to true.
+     */
+    public bandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
+     * NoteIf you want to connect to your cloud desktops over a VPC, you can attach the network of the workspace to the CEN instance. The CEN instance is connected to the on-premises network over VPN Gateway or Express Connect.
+     */
+    public cenId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property cenOwnerId: The ID of the Alibaba Cloud account to which the Cloud Enterprise Network (CEN) instance belongs.
+     * If you do not specify the CenId parameter, or the CEN instance that is specified by the CenId parameter belongs to the current Alibaba Cloud account, skip this parameter.
+     * If you specify the CenId parameter and the CEN instance that you specify for the CenId parameter belongs to another Alibaba Cloud account, enter the ID of the Alibaba Cloud account.
+     */
+    public cenOwnerId: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0/12, 172.16.0.0/12, 192.168.0.0/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0/12 or 172.16.0.0/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0/16, the mask is 1624 bits in length.
+     */
+    public cidrBlock: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property cloudBoxOfficeSite: Specifies whether the workspace is a CloudBox-based workspace.
+     * Enumeration Value:
+     * true
+     * false
+     */
+    public cloudBoxOfficeSite: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property desktopAccessType: The method that is used to connect the client to cloud desktops.
+     * NoteVPC connections are established by using Alibaba Cloud PrivateLink. You can use PrivateLink for free. When you set this parameter to VPC or Any, PrivateLink is automatically activated.
+     */
+    public desktopAccessType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableAdminAccess: Specifies whether to grant the permissions of the local administrator to the regular user of the cloud desktop.
+     * Enumeration Value:
+     * true
+     * false
+     */
+    public enableAdminAccess: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableInternetAccess: Specifies whether to enable Internet access. By default, Internet access is not enabled.
+     * Enumeration Value:
+     * true
+     * false
+     */
+    public enableInternetAccess: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property needVerifyZeroDevice: Specifies whether to enable trusted device verification.
+     * Enumeration Value:
+     * true
+     * false
+     */
+    public needVerifyZeroDevice: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property officeSiteName: The name of the workspace. The name must be 2 to 255 characters in length. It must start with a letter and cannot start with http:// or https://. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     */
+    public officeSiteName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property verifyCode: The verification code. If the CEN instance that you specify for the CenId parameter belongs to another Alibaba Cloud account, you must call the SendVerifyCode operation to obtain the verification code.
+     */
+    public verifyCode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchId: The IDs of the vSwitches in the VPC. This parameter is required when you create a CloudBox-based workspace.
+     */
+    public vSwitchId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ECD::SimpleOfficeSite`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSimpleOfficeSiteProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSimpleOfficeSite.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrOfficeSiteId = this.getAtt('OfficeSiteId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bandwidth = props.bandwidth;
+        this.cenId = props.cenId;
+        this.cenOwnerId = props.cenOwnerId;
+        this.cidrBlock = props.cidrBlock;
+        this.cloudBoxOfficeSite = props.cloudBoxOfficeSite;
+        this.desktopAccessType = props.desktopAccessType;
+        this.enableAdminAccess = props.enableAdminAccess;
+        this.enableInternetAccess = props.enableInternetAccess;
+        this.needVerifyZeroDevice = props.needVerifyZeroDevice;
+        this.officeSiteName = props.officeSiteName;
+        this.verifyCode = props.verifyCode;
+        this.vSwitchId = props.vSwitchId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bandwidth: this.bandwidth,
+            cenId: this.cenId,
+            cenOwnerId: this.cenOwnerId,
+            cidrBlock: this.cidrBlock,
+            cloudBoxOfficeSite: this.cloudBoxOfficeSite,
+            desktopAccessType: this.desktopAccessType,
+            enableAdminAccess: this.enableAdminAccess,
+            enableInternetAccess: this.enableInternetAccess,
+            needVerifyZeroDevice: this.needVerifyZeroDevice,
+            officeSiteName: this.officeSiteName,
+            verifyCode: this.verifyCode,
+            vSwitchId: this.vSwitchId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSimpleOfficeSitePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

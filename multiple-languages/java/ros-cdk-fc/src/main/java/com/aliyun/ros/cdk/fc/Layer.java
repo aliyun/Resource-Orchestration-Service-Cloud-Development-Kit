@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * A ROS resource type:  `ALIYUN::FC::Layer`.
+ * A ROS resource type:  <code>ALIYUN::FC::Layer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.859Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.126Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Layer")
 public class Layer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Layer extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::FC::Layer`.
+     * Create a new <code>ALIYUN::FC::Layer</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Layer extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::FC::Layer`.
+     * Create a new <code>ALIYUN::FC::Layer</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -192,7 +192,7 @@ public class Layer extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.fc.Layer}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.fc.Layer}.
          */
         @Override
         public com.aliyun.ros.cdk.fc.Layer build() {

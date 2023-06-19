@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rocketmq5;
 
 /**
- * A ROS resource type:  `ALIYUN::ROCKETMQ5::ConsumerGroup`.
+ * A ROS resource type:  <code>ALIYUN::ROCKETMQ5::ConsumerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.880Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.384Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.ConsumerGroup")
 public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ5::ConsumerGroup`.
+     * Create a new <code>ALIYUN::ROCKETMQ5::ConsumerGroup</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ5::ConsumerGroup`.
+     * Create a new <code>ALIYUN::ROCKETMQ5::ConsumerGroup</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -219,7 +219,7 @@ public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.rocketmq5.ConsumerGroup}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.rocketmq5.ConsumerGroup}.
          */
         @Override
         public com.aliyun.ros.cdk.rocketmq5.ConsumerGroup build() {

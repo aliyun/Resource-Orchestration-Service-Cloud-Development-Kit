@@ -1,13 +1,13 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * To split a string into a list of string values so that you can select an element from the resulting string list, use the ``Fn::Split`` intrinsic function.
+ * To split a string into a list of string values so that you can select an element from the resulting string list, use the <code>Fn::Split</code> intrinsic function.
  * <p>
  * Specify the location of splits
  * with a delimiter, such as , (a comma). After you split a string, use the <code>Fn::Select</code> function
  * to pick a specific element.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.885Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.892Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnSplit")
 public class FnSplit extends com.aliyun.ros.cdk.core.Intrinsic {
 
@@ -20,7 +20,7 @@ public class FnSplit extends com.aliyun.ros.cdk.core.Intrinsic {
     }
 
     /**
-     * Create an ``Fn::Split`` function.
+     * Create an <code>Fn::Split</code> function.
      * <p>
      * param delimiter A string value that determines where the source string is divided.
      * param source The string value that you want to split.

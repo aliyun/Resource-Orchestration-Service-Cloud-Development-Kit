@@ -165,6 +165,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: ignoreExisting: Whether to ignore existing policy
+        /// False: ROS will perform a uniqueness check.If a policy with the same name exists, an error will be reported when creating it.
+        /// True: ROS will not check the uniqueness.If there is a policy with the same name, the policy creation process will be ignored.
+        /// If the policy is not created by ROS, it will be ignored during update and delete stage.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ignoreExisting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? IgnoreExisting
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: policyDocument: A policy document that describes what actions are allowed on which resources.
         /// </remarks>
         [JsiiOptional]

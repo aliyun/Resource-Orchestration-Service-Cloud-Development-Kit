@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * Properties for defining a `ALIYUN::SLS::Alert`.
+ * Properties for defining a <code>ALIYUN::SLS::Alert</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.172Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.712Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.AlertProps")
 @software.amazon.jsii.Jsii.Proxy(AlertProps.Jsii$Proxy.class)
 public interface AlertProps extends software.amazon.jsii.JsiiSerializable {

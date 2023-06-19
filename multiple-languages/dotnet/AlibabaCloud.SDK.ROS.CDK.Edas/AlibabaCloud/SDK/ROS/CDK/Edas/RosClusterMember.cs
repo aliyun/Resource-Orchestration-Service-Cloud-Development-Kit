@@ -69,6 +69,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: EcuIds: ECU IDs corresponding to the ECS instance IDs.
+        /// </remarks>
+        [JsiiProperty(name: "attrEcuIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEcuIds
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: InstanceIds: ECS instance IDs.
         /// </remarks>
         [JsiiProperty(name: "attrInstanceIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

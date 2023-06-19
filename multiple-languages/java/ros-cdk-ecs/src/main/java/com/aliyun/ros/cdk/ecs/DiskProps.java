@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a `ALIYUN::ECS::Disk`.
+ * Properties for defining a <code>ALIYUN::ECS::Disk</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.163Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.344Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DiskProps")
 @software.amazon.jsii.Jsii.Proxy(DiskProps.Jsii$Proxy.class)
 public interface DiskProps extends software.amazon.jsii.JsiiSerializable {

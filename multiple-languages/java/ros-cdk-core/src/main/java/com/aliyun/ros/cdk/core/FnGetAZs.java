@@ -1,14 +1,14 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * The intrinsic function ``Fn::GetAZs`` returns an array that lists Availability Zones for a specified region.
+ * The intrinsic function <code>Fn::GetAZs</code> returns an array that lists Availability Zones for a specified region.
  * <p>
  * Because customers have access to different Availability Zones, the intrinsic
  * function <code>Fn::GetAZs</code> enables template authors to write templates that adapt to the calling
  * user's access. That way you don't have to hard-code a full list of Availability Zones for a
  * specified region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.882Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.889Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnGetAZs")
 public class FnGetAZs extends com.aliyun.ros.cdk.core.Intrinsic {
 
@@ -21,7 +21,7 @@ public class FnGetAZs extends com.aliyun.ros.cdk.core.Intrinsic {
     }
 
     /**
-     * Creates an ``Fn::GetAZs`` function.
+     * Creates an <code>Fn::GetAZs</code> function.
      * <p>
      * @param region The name of the region for which you want to get the Availability Zones. This parameter is required.
      */

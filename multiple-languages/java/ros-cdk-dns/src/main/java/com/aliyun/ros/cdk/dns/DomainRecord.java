@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dns;
 
 /**
- * A ROS resource type:  `ALIYUN::DNS::DomainRecord`.
+ * A ROS resource type:  <code>ALIYUN::DNS::DomainRecord</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.954Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.093Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.DomainRecord")
 public class DomainRecord extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class DomainRecord extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::DNS::DomainRecord`.
+     * Create a new <code>ALIYUN::DNS::DomainRecord</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class DomainRecord extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::DNS::DomainRecord`.
+     * Create a new <code>ALIYUN::DNS::DomainRecord</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -111,20 +111,20 @@ public class DomainRecord extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty.
+         * Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty.
          * <p>
          * @return {@code this}
-         * @param rr Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty. This parameter is required.
+         * @param rr Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty. This parameter is required.
          */
         public Builder rr(final java.lang.String rr) {
             this.props.rr(rr);
             return this;
         }
         /**
-         * Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty.
+         * Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty.
          * <p>
          * @return {@code this}
-         * @param rr Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty. This parameter is required.
+         * @param rr Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty. This parameter is required.
          */
         public Builder rr(final com.aliyun.ros.cdk.core.IResolvable rr) {
             this.props.rr(rr);
@@ -245,7 +245,7 @@ public class DomainRecord extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.dns.DomainRecord}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.dns.DomainRecord}.
          */
         @Override
         public com.aliyun.ros.cdk.dns.DomainRecord build() {

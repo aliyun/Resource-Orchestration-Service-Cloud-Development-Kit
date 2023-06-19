@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * Properties for defining a `ALIYUN::VPC::RouterInterface`.
+ * Properties for defining a <code>ALIYUN::VPC::RouterInterface</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.444Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:12.014Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosRouterInterfaceProps")
 @software.amazon.jsii.Jsii.Proxy(RosRouterInterfaceProps.Jsii$Proxy.class)
 public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerializable {

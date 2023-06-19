@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * A ROS resource type:  `ALIYUN::ALB::ServerGroup`.
+ * A ROS resource type:  <code>ALIYUN::ALB::ServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.083Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.122Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ServerGroup")
 public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ALB::ServerGroup`.
+     * Create a new <code>ALIYUN::ALB::ServerGroup</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ALB::ServerGroup`.
+     * Create a new <code>ALIYUN::ALB::ServerGroup</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -144,7 +144,8 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * You can add only servers that are deployed
          * in the specified VPC to the server group.
-         * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+         * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+         * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
          * <p>
          * @return {@code this}
          * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.
@@ -158,7 +159,8 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * You can add only servers that are deployed
          * in the specified VPC to the server group.
-         * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+         * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+         * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
          * <p>
          * @return {@code this}
          * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC). This parameter is required.
@@ -169,30 +171,32 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property protocol: The server protocol.
+         * Property protocol: The backend protocol.
          * <p>
          * Valid values:
-         * HTTP: allows you to associate HTTPS, HTTP, or QUIC listeners with backend servers. This
-         * is the default value.
-         * HTTPS: allows you to associate HTTPS listeners with backend servers.
+         * HTTP (default): The server group can be associated with HTTPS, HTTP, and QUIC listeners.
+         * HTTPS: The server group can be associated with HTTPS listeners.
+         * gRPC: The server group can be associated with HTTPS and QUIC listeners.
+         * Note: If the ServerGroupType parameter is set to Fc, you can set Protocol only to HTTP.
          * <p>
          * @return {@code this}
-         * @param protocol Property protocol: The server protocol. This parameter is required.
+         * @param protocol Property protocol: The backend protocol. This parameter is required.
          */
         public Builder protocol(final java.lang.String protocol) {
             this.props.protocol(protocol);
             return this;
         }
         /**
-         * Property protocol: The server protocol.
+         * Property protocol: The backend protocol.
          * <p>
          * Valid values:
-         * HTTP: allows you to associate HTTPS, HTTP, or QUIC listeners with backend servers. This
-         * is the default value.
-         * HTTPS: allows you to associate HTTPS listeners with backend servers.
+         * HTTP (default): The server group can be associated with HTTPS, HTTP, and QUIC listeners.
+         * HTTPS: The server group can be associated with HTTPS listeners.
+         * gRPC: The server group can be associated with HTTPS and QUIC listeners.
+         * Note: If the ServerGroupType parameter is set to Fc, you can set Protocol only to HTTP.
          * <p>
          * @return {@code this}
-         * @param protocol Property protocol: The server protocol. This parameter is required.
+         * @param protocol Property protocol: The backend protocol. This parameter is required.
          */
         public Builder protocol(final com.aliyun.ros.cdk.core.IResolvable protocol) {
             this.props.protocol(protocol);
@@ -224,13 +228,10 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property scheduler: The scheduling algorithm.
          * <p>
          * Valid values:
-         * Wrr: Backend servers that have higher weights receive more requests than those that have
-         * lower weights. This is the default value.
-         * Wlc: Requests are distributed based on the weight and load of each backend server. The
-         * load refers to the number of connections to a backend server. If multiple backend
-         * servers have the same weight, requests are routed to the backend server with the least
-         * connections.
-         * Sch: specifies consistent hashing that is based on source IP addresses.
+         * Wrr (default): The weighted round-robin algorithm is used. Backend servers that have higher weights receive more requests than those that have lower weights.
+         * Wlc: The weighted least connections algorithm is used. Requests are distributed based on the weights and the number of connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections is expected to receive more requests.
+         * Sch: The consistent hashing algorithm is used. Requests from the same source IP address are distributed to the same backend server.
+         * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
          * <p>
          * @return {@code this}
          * @param scheduler Property scheduler: The scheduling algorithm. This parameter is required.
@@ -243,13 +244,10 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property scheduler: The scheduling algorithm.
          * <p>
          * Valid values:
-         * Wrr: Backend servers that have higher weights receive more requests than those that have
-         * lower weights. This is the default value.
-         * Wlc: Requests are distributed based on the weight and load of each backend server. The
-         * load refers to the number of connections to a backend server. If multiple backend
-         * servers have the same weight, requests are routed to the backend server with the least
-         * connections.
-         * Sch: specifies consistent hashing that is based on source IP addresses.
+         * Wrr (default): The weighted round-robin algorithm is used. Backend servers that have higher weights receive more requests than those that have lower weights.
+         * Wlc: The weighted least connections algorithm is used. Requests are distributed based on the weights and the number of connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections is expected to receive more requests.
+         * Sch: The consistent hashing algorithm is used. Requests from the same source IP address are distributed to the same backend server.
+         * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
          * <p>
          * @return {@code this}
          * @param scheduler Property scheduler: The scheduling algorithm. This parameter is required.
@@ -263,11 +261,9 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property serverGroupType: The type of the server group.
          * <p>
          * Valid values:
-         * Instance: a server group that consists of servers. You can add Elastic Compute Service (ECS)
-         * instances, elastic network interfaces (ENIs), and elastic container instances to this
-         * type of server group. This is the default value.
-         * Ip: a server group that consists of IP addresses. You can add IP addresses to this type
-         * of server group.
+         * Instance (default): allows you add servers by specifying Ecs, Ens, or Eci.
+         * Ip: allows you to add servers by specifying IP addresses.
+         * Fc: allows you to add servers by specifying functions of Function Compute.
          * <p>
          * @return {@code this}
          * @param serverGroupType Property serverGroupType: The type of the server group. This parameter is required.
@@ -280,11 +276,9 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property serverGroupType: The type of the server group.
          * <p>
          * Valid values:
-         * Instance: a server group that consists of servers. You can add Elastic Compute Service (ECS)
-         * instances, elastic network interfaces (ENIs), and elastic container instances to this
-         * type of server group. This is the default value.
-         * Ip: a server group that consists of IP addresses. You can add IP addresses to this type
-         * of server group.
+         * Instance (default): allows you add servers by specifying Ecs, Ens, or Eci.
+         * Ip: allows you to add servers by specifying IP addresses.
+         * Fc: allows you to add servers by specifying functions of Function Compute.
          * <p>
          * @return {@code this}
          * @param serverGroupType Property serverGroupType: The type of the server group. This parameter is required.
@@ -322,7 +316,7 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property stickySessionConfig: The configuration of session persistence.
          * <p>
-         * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+         * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
          * <p>
          * @return {@code this}
          * @param stickySessionConfig Property stickySessionConfig: The configuration of session persistence. This parameter is required.
@@ -334,7 +328,7 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property stickySessionConfig: The configuration of session persistence.
          * <p>
-         * Note This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
+         * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
          * <p>
          * @return {@code this}
          * @param stickySessionConfig Property stickySessionConfig: The configuration of session persistence. This parameter is required.
@@ -358,7 +352,7 @@ public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.alb.ServerGroup}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.alb.ServerGroup}.
          */
         @Override
         public com.aliyun.ros.cdk.alb.ServerGroup build() {

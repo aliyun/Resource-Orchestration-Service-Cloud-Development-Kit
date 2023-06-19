@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a `ALIYUN::ECS::LaunchTemplate`.
+ * Properties for defining a <code>ALIYUN::ECS::LaunchTemplate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.402Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.575Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosLaunchTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(RosLaunchTemplateProps.Jsii$Proxy.class)
 public interface RosLaunchTemplateProps extends software.amazon.jsii.JsiiSerializable {

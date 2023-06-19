@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * Properties for defining a `ALIYUN::VPC::EIP`.
+ * Properties for defining a <code>ALIYUN::VPC::EIP</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.414Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.955Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPProps")
 @software.amazon.jsii.Jsii.Proxy(RosEIPProps.Jsii$Proxy.class)
 public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
@@ -99,6 +99,12 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZone() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosEIPProps}
      */
     static Builder builder() {
@@ -123,6 +129,7 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object resourceGroupId;
         java.lang.Object securityProtectionTypes;
         java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags;
+        java.lang.Object zone;
 
         /**
          * Sets the value of {@link RosEIPProps#getAutoPay}
@@ -416,6 +423,26 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosEIPProps#getZone}
+         * @param zone the value to be set.
+         * @return {@code this}
+         */
+        public Builder zone(java.lang.String zone) {
+            this.zone = zone;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getZone}
+         * @param zone the value to be set.
+         * @return {@code this}
+         */
+        public Builder zone(com.aliyun.ros.cdk.core.IResolvable zone) {
+            this.zone = zone;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosEIPProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -446,6 +473,7 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityProtectionTypes;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags;
+        private final java.lang.Object zone;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -468,6 +496,7 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityProtectionTypes = software.amazon.jsii.Kernel.get(this, "securityProtectionTypes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty.class)));
+            this.zone = software.amazon.jsii.Kernel.get(this, "zone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -491,6 +520,7 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             this.resourceGroupId = builder.resourceGroupId;
             this.securityProtectionTypes = builder.securityProtectionTypes;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty>)builder.tags;
+            this.zone = builder.zone;
         }
 
         @Override
@@ -569,6 +599,11 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getZone() {
+            return this.zone;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -619,6 +654,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getZone() != null) {
+                data.set("zone", om.valueToTree(this.getZone()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-vpc.RosEIPProps"));
@@ -651,7 +689,8 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             if (this.publicIpAddressPoolId != null ? !this.publicIpAddressPoolId.equals(that.publicIpAddressPoolId) : that.publicIpAddressPoolId != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.securityProtectionTypes != null ? !this.securityProtectionTypes.equals(that.securityProtectionTypes) : that.securityProtectionTypes != null) return false;
-            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            return this.zone != null ? this.zone.equals(that.zone) : that.zone == null;
         }
 
         @Override
@@ -671,6 +710,7 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.securityProtectionTypes != null ? this.securityProtectionTypes.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.zone != null ? this.zone.hashCode() : 0);
             return result;
         }
     }

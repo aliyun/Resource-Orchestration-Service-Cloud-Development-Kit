@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * A ROS resource type:  `ALIYUN::ROS::WaitConditionHandle`.
+ * A ROS resource type:  <code>ALIYUN::ROS::WaitConditionHandle</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.952Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.477Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.WaitConditionHandle")
 public class WaitConditionHandle extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class WaitConditionHandle extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROS::WaitConditionHandle`.
+     * Create a new <code>ALIYUN::ROS::WaitConditionHandle</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class WaitConditionHandle extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROS::WaitConditionHandle`.
+     * Create a new <code>ALIYUN::ROS::WaitConditionHandle</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -49,7 +49,7 @@ public class WaitConditionHandle extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ROS::WaitConditionHandle`.
+     * Create a new <code>ALIYUN::ROS::WaitConditionHandle</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -138,28 +138,28 @@ public class WaitConditionHandle extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
+         * Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count &gt;= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
          * <p>
          * If Count takes effect, signals with id &gt; Count will be deleted before update.
          * The default value is -1, which means no effect.
          * It is recommended to quote the same value with WaitCondition.Count.
          * <p>
          * @return {@code this}
-         * @param count Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on. This parameter is required.
+         * @param count Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count &gt;= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on. This parameter is required.
          */
         public Builder count(final java.lang.Number count) {
             this.props().count(count);
             return this;
         }
         /**
-         * Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
+         * Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count &gt;= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
          * <p>
          * If Count takes effect, signals with id &gt; Count will be deleted before update.
          * The default value is -1, which means no effect.
          * It is recommended to quote the same value with WaitCondition.Count.
          * <p>
          * @return {@code this}
-         * @param count Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on. This parameter is required.
+         * @param count Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count &gt;= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on. This parameter is required.
          */
         public Builder count(final com.aliyun.ros.cdk.core.IResolvable count) {
             this.props().count(count);
@@ -200,7 +200,7 @@ public class WaitConditionHandle extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ros.WaitConditionHandle}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ros.WaitConditionHandle}.
          */
         @Override
         public com.aliyun.ros.cdk.ros.WaitConditionHandle build() {

@@ -1,12 +1,12 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * The intrinsic function ``Ref`` returns the value of the specified parameter or resource.
+ * The intrinsic function <code>Ref</code> returns the value of the specified parameter or resource.
  * <p>
  * When you specify a parameter's logical name, it returns the value of the parameter.
  * When you specify a resource's logical name, it returns a value that you can typically use to refer to that resource, such as a physical ID.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.884Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.892Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnRef")
 public class FnRef extends com.aliyun.ros.cdk.core.Intrinsic {
 
@@ -19,7 +19,7 @@ public class FnRef extends com.aliyun.ros.cdk.core.Intrinsic {
     }
 
     /**
-     * Creates an ``Ref`` function.
+     * Creates an <code>Ref</code> function.
      * <p>
      * @param logicalName The logical name of a parameter/resource for which you want to retrieve its value. This parameter is required.
      */

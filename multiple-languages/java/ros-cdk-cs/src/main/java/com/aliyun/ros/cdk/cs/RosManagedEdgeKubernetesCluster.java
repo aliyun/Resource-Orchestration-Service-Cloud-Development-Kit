@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * A ROS template type:  `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
+ * A ROS template type:  <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.813Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.963Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster")
 public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Ros
     }
 
     /**
-     * Create a new `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
+     * Create a new <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosManagedEdgeKubernetesCluster(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesClusterProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -1357,8 +1357,8 @@ public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Ros
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -1965,7 +1965,7 @@ public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Ros
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster}.
          */
         @Override
         public com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesCluster build() {

@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-threatdetection.AntiBruteForceRule=com.aliyun.ros.cdk.threatdetection.AntiBruteForceRule
+@alicloud/ros-cdk-threatdetection.AntiBruteForceRuleProps=com.aliyun.ros.cdk.threatdetection.AntiBruteForceRuleProps
+@alicloud/ros-cdk-threatdetection.RosAntiBruteForceRule=com.aliyun.ros.cdk.threatdetection.RosAntiBruteForceRule
+@alicloud/ros-cdk-threatdetection.RosAntiBruteForceRuleProps=com.aliyun.ros.cdk.threatdetection.RosAntiBruteForceRuleProps

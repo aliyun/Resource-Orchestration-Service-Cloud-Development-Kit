@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * Properties for defining a `ALIYUN::AMQP::Binding`.
+ * Properties for defining a <code>ALIYUN::AMQP::Binding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.091Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.132Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.BindingProps")
 @software.amazon.jsii.Jsii.Proxy(BindingProps.Jsii$Proxy.class)
 public interface BindingProps extends software.amazon.jsii.JsiiSerializable {

@@ -13,6 +13,7 @@
 @alicloud/ros-cdk-edas.K8sSlbBinding=com.aliyun.ros.cdk.edas.K8sSlbBinding
 @alicloud/ros-cdk-edas.K8sSlbBindingProps=com.aliyun.ros.cdk.edas.K8sSlbBindingProps
 @alicloud/ros-cdk-edas.RosApplication=com.aliyun.ros.cdk.edas.RosApplication
+@alicloud/ros-cdk-edas.RosApplication.DeploymentProperty=com.aliyun.ros.cdk.edas.RosApplication$DeploymentProperty
 @alicloud/ros-cdk-edas.RosApplicationProps=com.aliyun.ros.cdk.edas.RosApplicationProps
 @alicloud/ros-cdk-edas.RosCluster=com.aliyun.ros.cdk.edas.RosCluster
 @alicloud/ros-cdk-edas.RosClusterMember=com.aliyun.ros.cdk.edas.RosClusterMember

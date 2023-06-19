@@ -80,7 +80,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 
         /// <summary>Property engineVersion: Engine version.</summary>
         /// <remarks>
-        /// Supported values: 2.8, 4.0 and 5.0.
+        /// Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
         /// </remarks>
         [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -259,6 +259,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
+        /// <summary>Property tairConfig: Tair config.</summary>
+        /// <remarks>
+        /// This parameter is available only if the InstanceClass parameter is start with tair.
+        /// </remarks>
+        [JsiiProperty(name: "tairConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.TairConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TairConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property vpcId: The VPC id to create ecs instance.</summary>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -376,7 +390,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 
             /// <summary>Property engineVersion: Engine version.</summary>
             /// <remarks>
-            /// Supported values: 2.8, 4.0 and 5.0.
+            /// Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -511,6 +525,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             public AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Redis.RosPrepayInstance.ITagsProperty[]?>();
+            }
+
+            /// <summary>Property tairConfig: Tair config.</summary>
+            /// <remarks>
+            /// This parameter is available only if the InstanceClass parameter is start with tair.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tairConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.TairConfigProperty\"}]}}", isOptional: true)]
+            public object? TairConfig
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vpcId: The VPC id to create ecs instance.</summary>

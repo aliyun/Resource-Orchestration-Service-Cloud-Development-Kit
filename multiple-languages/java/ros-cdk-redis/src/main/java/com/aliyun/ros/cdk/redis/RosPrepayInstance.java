@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.redis;
 
 /**
- * A ROS template type:  `ALIYUN::REDIS::PrepayInstance`.
+ * A ROS template type:  <code>ALIYUN::REDIS::PrepayInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.821Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.314Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosPrepayInstance")
 public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new `ALIYUN::REDIS::PrepayInstance`.
+     * Create a new <code>ALIYUN::REDIS::PrepayInstance</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosPrepayInstance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.redis.RosPrepayInstanceProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -575,6 +575,24 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTairConfig() {
+        return software.amazon.jsii.Kernel.get(this, "tairConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTairConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tairConfig", value);
+    }
+
+    /**
+     */
+    public void setTairConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.redis.RosPrepayInstance.TairConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "tairConfig", value);
     }
 
     /**
@@ -1947,6 +1965,221 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosPrepayInstance.TairConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(TairConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface TairConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getShardCount() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStorage() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStorageType() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link TairConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link TairConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<TairConfigProperty> {
+            java.lang.Object shardCount;
+            java.lang.Object storage;
+            java.lang.Object storageType;
+
+            /**
+             * Sets the value of {@link TairConfigProperty#getShardCount}
+             * @param shardCount the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder shardCount(java.lang.Number shardCount) {
+                this.shardCount = shardCount;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TairConfigProperty#getShardCount}
+             * @param shardCount the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder shardCount(com.aliyun.ros.cdk.core.IResolvable shardCount) {
+                this.shardCount = shardCount;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TairConfigProperty#getStorage}
+             * @param storage the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storage(java.lang.Number storage) {
+                this.storage = storage;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TairConfigProperty#getStorage}
+             * @param storage the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storage(com.aliyun.ros.cdk.core.IResolvable storage) {
+                this.storage = storage;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TairConfigProperty#getStorageType}
+             * @param storageType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storageType(java.lang.String storageType) {
+                this.storageType = storageType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TairConfigProperty#getStorageType}
+             * @param storageType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storageType(com.aliyun.ros.cdk.core.IResolvable storageType) {
+                this.storageType = storageType;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link TairConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public TairConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link TairConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TairConfigProperty {
+            private final java.lang.Object shardCount;
+            private final java.lang.Object storage;
+            private final java.lang.Object storageType;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.shardCount = software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.storage = software.amazon.jsii.Kernel.get(this, "storage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.storageType = software.amazon.jsii.Kernel.get(this, "storageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.shardCount = builder.shardCount;
+                this.storage = builder.storage;
+                this.storageType = builder.storageType;
+            }
+
+            @Override
+            public final java.lang.Object getShardCount() {
+                return this.shardCount;
+            }
+
+            @Override
+            public final java.lang.Object getStorage() {
+                return this.storage;
+            }
+
+            @Override
+            public final java.lang.Object getStorageType() {
+                return this.storageType;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getShardCount() != null) {
+                    data.set("shardCount", om.valueToTree(this.getShardCount()));
+                }
+                if (this.getStorage() != null) {
+                    data.set("storage", om.valueToTree(this.getStorage()));
+                }
+                if (this.getStorageType() != null) {
+                    data.set("storageType", om.valueToTree(this.getStorageType()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosPrepayInstance.TairConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                TairConfigProperty.Jsii$Proxy that = (TairConfigProperty.Jsii$Proxy) o;
+
+                if (this.shardCount != null ? !this.shardCount.equals(that.shardCount) : that.shardCount != null) return false;
+                if (this.storage != null ? !this.storage.equals(that.storage) : that.storage != null) return false;
+                return this.storageType != null ? this.storageType.equals(that.storageType) : that.storageType == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.shardCount != null ? this.shardCount.hashCode() : 0;
+                result = 31 * result + (this.storage != null ? this.storage.hashCode() : 0);
+                result = 31 * result + (this.storageType != null ? this.storageType.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty")
     @software.amazon.jsii.Jsii.Proxy(VpcPrivateConnectionProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2116,8 +2349,8 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.redis.RosPrepayInstance> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -2453,6 +2686,23 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param tairConfig This parameter is required.
+         */
+        public Builder tairConfig(final com.aliyun.ros.cdk.core.IResolvable tairConfig) {
+            this.props.tairConfig(tairConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tairConfig This parameter is required.
+         */
+        public Builder tairConfig(final com.aliyun.ros.cdk.redis.RosPrepayInstance.TairConfigProperty tairConfig) {
+            this.props.tairConfig(tairConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param vpcId This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
@@ -2520,7 +2770,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.redis.RosPrepayInstance}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.redis.RosPrepayInstance}.
          */
         @Override
         public com.aliyun.ros.cdk.redis.RosPrepayInstance build() {

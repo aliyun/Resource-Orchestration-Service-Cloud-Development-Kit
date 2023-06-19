@@ -1,12 +1,12 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * The intrinsic function ``Fn::Sub`` substitutes variables in an input string with values that you specify.
+ * The intrinsic function <code>Fn::Sub</code> substitutes variables in an input string with values that you specify.
  * <p>
  * In your templates, you can use this function to construct commands or outputs
  * that include values that aren't available until you create or update a stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.885Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.893Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnSub")
 public class FnSub extends com.aliyun.ros.cdk.core.Intrinsic {
 
@@ -19,7 +19,7 @@ public class FnSub extends com.aliyun.ros.cdk.core.Intrinsic {
     }
 
     /**
-     * Creates an ``Fn::Sub`` function.
+     * Creates an <code>Fn::Sub</code> function.
      * <p>
      * param body A string with variables that Ros Template substitutes with their
      * associated values at runtime. Write variables as ${MyVarName}. Variables

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc;
 
 /**
- * Properties for defining a `ALIYUN::FC::Layer`.
+ * Properties for defining a <code>ALIYUN::FC::Layer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.883Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.156Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosLayerProps")
 @software.amazon.jsii.Jsii.Proxy(RosLayerProps.Jsii$Proxy.class)
 public interface RosLayerProps extends software.amazon.jsii.JsiiSerializable {

@@ -321,6 +321,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: ossMountConfig: The OSS mount configurations.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ossMountConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.OssMountConfigProperty\"}]}}", isOptional: true)]
+        public virtual object? OssMountConfig
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store. The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
         /// </remarks>
         [JsiiOptional]
@@ -1058,6 +1089,355 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
                         }
                     }
                     _userId = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IOssMountConfigMountPointsProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosService.OssMountConfigMountPointsProperty")]
+        public interface IOssMountConfigMountPointsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: bucketName: mount OSS bucket name.
+            /// </remarks>
+            [JsiiProperty(name: "bucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object BucketName
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: bucketPath: Path of the mounted OSS Bucket.
+            /// </remarks>
+            [JsiiProperty(name: "bucketPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object BucketPath
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: endPoint: OSS access address,
+            /// </remarks>
+            [JsiiProperty(name: "endPoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object EndPoint
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: mountDir: A local mount point.
+            /// </remarks>
+            [JsiiProperty(name: "mountDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object MountDir
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: readOnly: Whether the oss bucket is read-only
+            /// </remarks>
+            [JsiiProperty(name: "readOnly", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ReadOnly
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IOssMountConfigMountPointsProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosService.OssMountConfigMountPointsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigMountPointsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: bucketName: mount OSS bucket name.
+                /// </remarks>
+                [JsiiProperty(name: "bucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object BucketName
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: bucketPath: Path of the mounted OSS Bucket.
+                /// </remarks>
+                [JsiiProperty(name: "bucketPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object BucketPath
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: endPoint: OSS access address,
+                /// </remarks>
+                [JsiiProperty(name: "endPoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object EndPoint
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: mountDir: A local mount point.
+                /// </remarks>
+                [JsiiProperty(name: "mountDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object MountDir
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: readOnly: Whether the oss bucket is read-only
+                /// </remarks>
+                [JsiiProperty(name: "readOnly", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ReadOnly
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.RosService.OssMountConfigMountPointsProperty")]
+        public class OssMountConfigMountPointsProperty : AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigMountPointsProperty
+        {
+            private object _bucketName;
+
+            /// <remarks>
+            /// <strong>Property</strong>: bucketName: mount OSS bucket name.
+            /// </remarks>
+            [JsiiProperty(name: "bucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object BucketName
+            {
+                get => _bucketName;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _bucketName = value;
+                }
+            }
+
+            private object _bucketPath;
+
+            /// <remarks>
+            /// <strong>Property</strong>: bucketPath: Path of the mounted OSS Bucket.
+            /// </remarks>
+            [JsiiProperty(name: "bucketPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object BucketPath
+            {
+                get => _bucketPath;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _bucketPath = value;
+                }
+            }
+
+            private object _endPoint;
+
+            /// <remarks>
+            /// <strong>Property</strong>: endPoint: OSS access address,
+            /// </remarks>
+            [JsiiProperty(name: "endPoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object EndPoint
+            {
+                get => _endPoint;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _endPoint = value;
+                }
+            }
+
+            private object _mountDir;
+
+            /// <remarks>
+            /// <strong>Property</strong>: mountDir: A local mount point.
+            /// </remarks>
+            [JsiiProperty(name: "mountDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object MountDir
+            {
+                get => _mountDir;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _mountDir = value;
+                }
+            }
+
+            private object _readOnly;
+
+            /// <remarks>
+            /// <strong>Property</strong>: readOnly: Whether the oss bucket is read-only
+            /// </remarks>
+            [JsiiProperty(name: "readOnly", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ReadOnly
+            {
+                get => _readOnly;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _readOnly = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IOssMountConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosService.OssMountConfigProperty")]
+        public interface IOssMountConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: mountPoints: The OSS mount point configurations.
+            /// </remarks>
+            [JsiiProperty(name: "mountPoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.OssMountConfigMountPointsProperty\"}]}},\"kind\":\"array\"}}]}}")]
+            object MountPoints
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IOssMountConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-fc.RosService.OssMountConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: mountPoints: The OSS mount point configurations.
+                /// </remarks>
+                [JsiiProperty(name: "mountPoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.OssMountConfigMountPointsProperty\"}]}},\"kind\":\"array\"}}]}}")]
+                public object MountPoints
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.RosService.OssMountConfigProperty")]
+        public class OssMountConfigProperty : AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigProperty
+        {
+            private object _mountPoints;
+
+            /// <remarks>
+            /// <strong>Property</strong>: mountPoints: The OSS mount point configurations.
+            /// </remarks>
+            [JsiiProperty(name: "mountPoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.OssMountConfigMountPointsProperty\"}]}},\"kind\":\"array\"}}]}}")]
+            public object MountPoints
+            {
+                get => _mountPoints;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigMountPointsProperty cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigMountPointsProperty).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Fc.RosService.IOssMountConfigMountPointsProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _mountPoints = value;
                 }
             }
         }

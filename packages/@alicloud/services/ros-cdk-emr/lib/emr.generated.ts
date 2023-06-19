@@ -1275,12 +1275,6 @@ function RosCluster2PropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('applicationConfigs', ros.listValidator(RosCluster2_ApplicationConfigsPropertyValidator))(properties.applicationConfigs));
     errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
-    if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
-        errors.collect(ros.propertyValidator('clusterType', ros.validateAllowedValues)({
-          data: properties.clusterType,
-          allowedValues: ["DATAFLOW","DATALAKE","DATASERVING","HADOOP","OLAP"],
-        }));
-    }
     errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
     errors.collect(ros.propertyValidator('nodeGroups', ros.requiredValidator)(properties.nodeGroups));
     if(properties.nodeGroups && (Array.isArray(properties.nodeGroups) || (typeof properties.nodeGroups) === 'string')) {

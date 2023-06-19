@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * A ROS resource type:  `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
+ * A ROS resource type:  <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.724Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.867Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster")
 public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
     }
 
     /**
-     * Create a new `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
+     * Create a new <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
     }
 
     /**
-     * Create a new `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
+     * Create a new <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -1050,7 +1050,7 @@ public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.cs.ManagedEdgeKubernetesCluster}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.cs.ManagedEdgeKubernetesCluster}.
          */
         @Override
         public com.aliyun.ros.cdk.cs.ManagedEdgeKubernetesCluster build() {

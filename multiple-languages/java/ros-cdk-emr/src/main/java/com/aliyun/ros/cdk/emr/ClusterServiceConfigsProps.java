@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.emr;
 
 /**
- * Properties for defining a `ALIYUN::EMR::ClusterServiceConfigs`.
+ * Properties for defining a <code>ALIYUN::EMR::ClusterServiceConfigs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.678Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.916Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.ClusterServiceConfigsProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterServiceConfigsProps.Jsii$Proxy.class)
 public interface ClusterServiceConfigsProps extends software.amazon.jsii.JsiiSerializable {

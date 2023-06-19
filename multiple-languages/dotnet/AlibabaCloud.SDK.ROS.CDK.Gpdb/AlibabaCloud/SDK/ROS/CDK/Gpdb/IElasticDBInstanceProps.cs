@@ -9,6 +9,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
     public interface IElasticDBInstanceProps
     {
         /// <summary>Property engineVersion: The version of the database engine.</summary>
+        /// <remarks>
+        /// For example: 6.0、7.0
+        /// </remarks>
         [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object EngineVersion
         {
@@ -27,7 +30,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 
         /// <summary>Property segNodeNum: The number of segment nodes.</summary>
         /// <remarks>
-        /// Minimum is 4, max is 512, step is 4.
+        /// For the high availability version, the value ranges from 4 to 512.
+        /// The basic version ranges from 2 to 512.
         /// </remarks>
         [JsiiProperty(name: "segNodeNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SegNodeNum
@@ -74,6 +78,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <summary>Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.</summary>
+        /// <remarks>
+        /// This parameter must be passed in to create a storage reservation mode instance.
+        /// </remarks>
         [JsiiProperty(name: "dbInstanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DbInstanceCategory
@@ -91,6 +98,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DbInstanceDescription
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property dbInstanceMode: The db instance mode.</summary>
+        /// <remarks>
+        /// Valid values: StorageElastic, Serverless, Classic.
+        /// </remarks>
+        [JsiiProperty(name: "dbInstanceMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DbInstanceMode
         {
             get
             {
@@ -187,6 +208,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        /// <summary>Property privateIpAddress: Private IP address.</summary>
+        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PrivateIpAddress
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.</summary>
         /// <remarks>
         /// Default value:
@@ -241,6 +273,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <summary>Property engineVersion: The version of the database engine.</summary>
+            /// <remarks>
+            /// For example: 6.0、7.0
+            /// </remarks>
             [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object EngineVersion
             {
@@ -259,7 +294,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 
             /// <summary>Property segNodeNum: The number of segment nodes.</summary>
             /// <remarks>
-            /// Minimum is 4, max is 512, step is 4.
+            /// For the high availability version, the value ranges from 4 to 512.
+            /// The basic version ranges from 2 to 512.
             /// </remarks>
             [JsiiProperty(name: "segNodeNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SegNodeNum
@@ -306,6 +342,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <summary>Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.</summary>
+            /// <remarks>
+            /// This parameter must be passed in to create a storage reservation mode instance.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbInstanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbInstanceCategory
@@ -320,6 +359,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             [JsiiOptional]
             [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DbInstanceDescription
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property dbInstanceMode: The db instance mode.</summary>
+            /// <remarks>
+            /// Valid values: StorageElastic, Serverless, Classic.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dbInstanceMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbInstanceMode
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -391,6 +441,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             [JsiiOptional]
             [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PeriodUnit
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property privateIpAddress: Private IP address.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrivateIpAddress
             {
                 get => GetInstanceProperty<object?>();
             }

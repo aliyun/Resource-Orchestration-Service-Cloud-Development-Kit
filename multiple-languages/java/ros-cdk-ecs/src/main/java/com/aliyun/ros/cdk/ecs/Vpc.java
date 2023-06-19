@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::VPC`.
+ * A ROS resource type:  <code>ALIYUN::ECS::VPC</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.494Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.701Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Vpc")
 public class Vpc extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Vpc extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ECS::VPC`.
+     * Create a new <code>ALIYUN::ECS::VPC</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Vpc extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ECS::VPC`.
+     * Create a new <code>ALIYUN::ECS::VPC</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -49,7 +49,7 @@ public class Vpc extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ECS::VPC`.
+     * Create a new <code>ALIYUN::ECS::VPC</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -352,7 +352,7 @@ public class Vpc extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ecs.Vpc}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ecs.Vpc}.
          */
         @Override
         public com.aliyun.ros.cdk.ecs.Vpc build() {

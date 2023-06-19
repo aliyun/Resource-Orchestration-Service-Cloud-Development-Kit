@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.privatelink;
 
 /**
- * Properties for defining a `ALIYUN::PrivateLink::VpcEndpoint`.
+ * Properties for defining a <code>ALIYUN::PrivateLink::VpcEndpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.539Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.941Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointProps.Jsii$Proxy.class)
 public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable {
@@ -76,6 +76,15 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * Property zone:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZone() {
@@ -109,6 +118,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object protectedEnabled;
         java.lang.Object serviceId;
         java.lang.Object serviceName;
+        java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty> tags;
         java.lang.Object zone;
         java.lang.Object zonePrivateIpAddressCount;
 
@@ -291,6 +301,18 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link VpcEndpointProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpcEndpointProps#getZone}
          * @param zone Property zone:.
          * @return {@code this}
@@ -356,6 +378,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object protectedEnabled;
         private final java.lang.Object serviceId;
         private final java.lang.Object serviceName;
+        private final java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty> tags;
         private final java.lang.Object zone;
         private final java.lang.Object zonePrivateIpAddressCount;
 
@@ -373,6 +396,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             this.protectedEnabled = software.amazon.jsii.Kernel.get(this, "protectedEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceId = software.amazon.jsii.Kernel.get(this, "serviceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty.class)));
             this.zone = software.amazon.jsii.Kernel.get(this, "zone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zonePrivateIpAddressCount = software.amazon.jsii.Kernel.get(this, "zonePrivateIpAddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -380,6 +404,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
@@ -390,6 +415,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             this.protectedEnabled = builder.protectedEnabled;
             this.serviceId = builder.serviceId;
             this.serviceName = builder.serviceName;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty>)builder.tags;
             this.zone = builder.zone;
             this.zonePrivateIpAddressCount = builder.zonePrivateIpAddressCount;
         }
@@ -435,6 +461,11 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.privatelink.RosVpcEndpoint.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         public final java.lang.Object getZone() {
             return this.zone;
         }
@@ -470,6 +501,9 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getServiceName() != null) {
                 data.set("serviceName", om.valueToTree(this.getServiceName()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getZone() != null) {
                 data.set("zone", om.valueToTree(this.getZone()));
             }
@@ -502,6 +536,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             if (this.protectedEnabled != null ? !this.protectedEnabled.equals(that.protectedEnabled) : that.protectedEnabled != null) return false;
             if (this.serviceId != null ? !this.serviceId.equals(that.serviceId) : that.serviceId != null) return false;
             if (this.serviceName != null ? !this.serviceName.equals(that.serviceName) : that.serviceName != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.zone != null ? !this.zone.equals(that.zone) : that.zone != null) return false;
             return this.zonePrivateIpAddressCount != null ? this.zonePrivateIpAddressCount.equals(that.zonePrivateIpAddressCount) : that.zonePrivateIpAddressCount == null;
         }
@@ -516,6 +551,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.protectedEnabled != null ? this.protectedEnabled.hashCode() : 0);
             result = 31 * result + (this.serviceId != null ? this.serviceId.hashCode() : 0);
             result = 31 * result + (this.serviceName != null ? this.serviceName.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.zone != null ? this.zone.hashCode() : 0);
             result = 31 * result + (this.zonePrivateIpAddressCount != null ? this.zonePrivateIpAddressCount.hashCode() : 0);
             return result;

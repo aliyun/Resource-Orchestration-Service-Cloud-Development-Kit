@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Less oft-needed functions to manipulate Tokens.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.931Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.946Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Tokenization")
 public class Tokenization extends software.amazon.jsii.JsiiObject {
 

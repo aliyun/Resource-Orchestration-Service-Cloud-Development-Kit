@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * A ROS resource type:  `ALIYUN::GPDB::Account`.
+ * A ROS resource type:  <code>ALIYUN::GPDB::Account</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.983Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.268Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::GPDB::Account`.
+     * Create a new <code>ALIYUN::GPDB::Account</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::GPDB::Account`.
+     * Create a new <code>ALIYUN::GPDB::Account</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -207,7 +207,7 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.gpdb.Account}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.gpdb.Account}.
          */
         @Override
         public com.aliyun.ros.cdk.gpdb.Account build() {

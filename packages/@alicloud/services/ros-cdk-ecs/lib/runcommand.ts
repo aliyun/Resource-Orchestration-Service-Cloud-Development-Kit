@@ -81,6 +81,11 @@ export interface RunCommandProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * Property runAgainOn: The stage of executing the command again.
+     */
+    readonly runAgainOn?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property sync: Whether to invoke synchronously.
      */
     readonly sync?: boolean | ros.IResolvable;
@@ -159,6 +164,7 @@ export class RunCommand extends ros.Resource {
             commandContent: props.commandContent,
             type: props.type,
             frequency: props.frequency,
+            runAgainOn: props.runAgainOn,
             enableParameter: props.enableParameter,
             sync: props.sync === undefined || props.sync === null ? false : props.sync,
             instanceIds: props.instanceIds,

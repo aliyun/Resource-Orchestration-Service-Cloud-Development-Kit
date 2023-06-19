@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * A ROS resource type:  `ALIYUN::GA::Accelerator`.
+ * A ROS resource type:  <code>ALIYUN::GA::Accelerator</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.934Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.220Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.Accelerator")
 public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::GA::Accelerator`.
+     * Create a new <code>ALIYUN::GA::Accelerator</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::GA::Accelerator`.
+     * Create a new <code>ALIYUN::GA::Accelerator</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -272,7 +272,7 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ga.Accelerator}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ga.Accelerator}.
          */
         @Override
         public com.aliyun.ros.cdk.ga.Accelerator build() {

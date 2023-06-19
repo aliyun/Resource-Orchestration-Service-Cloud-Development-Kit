@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardb;
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBInstance`.
+ * Properties for defining a <code>ALIYUN::POLARDB::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.495Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.905Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceProps.Jsii$Proxy.class)
 public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,6 +34,18 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCollate() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCtype() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbDescription() {
         return null;
     }
@@ -53,6 +65,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object dbName;
         java.lang.Object accountName;
         java.lang.Object accountPrivilege;
+        java.lang.Object collate;
+        java.lang.Object ctype;
         java.lang.Object dbDescription;
 
         /**
@@ -156,6 +170,46 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceProps#getCollate}
+         * @param collate the value to be set.
+         * @return {@code this}
+         */
+        public Builder collate(java.lang.String collate) {
+            this.collate = collate;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getCollate}
+         * @param collate the value to be set.
+         * @return {@code this}
+         */
+        public Builder collate(com.aliyun.ros.cdk.core.IResolvable collate) {
+            this.collate = collate;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getCtype}
+         * @param ctype the value to be set.
+         * @return {@code this}
+         */
+        public Builder ctype(java.lang.String ctype) {
+            this.ctype = ctype;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getCtype}
+         * @param ctype the value to be set.
+         * @return {@code this}
+         */
+        public Builder ctype(com.aliyun.ros.cdk.core.IResolvable ctype) {
+            this.ctype = ctype;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceProps#getDbDescription}
          * @param dbDescription the value to be set.
          * @return {@code this}
@@ -196,6 +250,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object dbName;
         private final java.lang.Object accountName;
         private final java.lang.Object accountPrivilege;
+        private final java.lang.Object collate;
+        private final java.lang.Object ctype;
         private final java.lang.Object dbDescription;
 
         /**
@@ -209,6 +265,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accountPrivilege = software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.collate = software.amazon.jsii.Kernel.get(this, "collate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ctype = software.amazon.jsii.Kernel.get(this, "ctype", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbDescription = software.amazon.jsii.Kernel.get(this, "dbDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -222,6 +280,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.dbName = java.util.Objects.requireNonNull(builder.dbName, "dbName is required");
             this.accountName = builder.accountName;
             this.accountPrivilege = builder.accountPrivilege;
+            this.collate = builder.collate;
+            this.ctype = builder.ctype;
             this.dbDescription = builder.dbDescription;
         }
 
@@ -251,6 +311,16 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getCollate() {
+            return this.collate;
+        }
+
+        @Override
+        public final java.lang.Object getCtype() {
+            return this.ctype;
+        }
+
+        @Override
         public final java.lang.Object getDbDescription() {
             return this.dbDescription;
         }
@@ -269,6 +339,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getAccountPrivilege() != null) {
                 data.set("accountPrivilege", om.valueToTree(this.getAccountPrivilege()));
+            }
+            if (this.getCollate() != null) {
+                data.set("collate", om.valueToTree(this.getCollate()));
+            }
+            if (this.getCtype() != null) {
+                data.set("ctype", om.valueToTree(this.getCtype()));
             }
             if (this.getDbDescription() != null) {
                 data.set("dbDescription", om.valueToTree(this.getDbDescription()));
@@ -296,6 +372,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (!dbName.equals(that.dbName)) return false;
             if (this.accountName != null ? !this.accountName.equals(that.accountName) : that.accountName != null) return false;
             if (this.accountPrivilege != null ? !this.accountPrivilege.equals(that.accountPrivilege) : that.accountPrivilege != null) return false;
+            if (this.collate != null ? !this.collate.equals(that.collate) : that.collate != null) return false;
+            if (this.ctype != null ? !this.ctype.equals(that.ctype) : that.ctype != null) return false;
             return this.dbDescription != null ? this.dbDescription.equals(that.dbDescription) : that.dbDescription == null;
         }
 
@@ -306,6 +384,8 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.dbName.hashCode());
             result = 31 * result + (this.accountName != null ? this.accountName.hashCode() : 0);
             result = 31 * result + (this.accountPrivilege != null ? this.accountPrivilege.hashCode() : 0);
+            result = 31 * result + (this.collate != null ? this.collate.hashCode() : 0);
+            result = 31 * result + (this.ctype != null ? this.ctype.hashCode() : 0);
             result = 31 * result + (this.dbDescription != null ? this.dbDescription.hashCode() : 0);
             return result;
         }

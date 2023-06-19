@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb;
 
 /**
- * A ROS template type:  `ALIYUN::SLB::MasterSlaveServerGroup`.
+ * A ROS template type:  <code>ALIYUN::SLB::MasterSlaveServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.698Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosMasterSlaveServerGroup")
 public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
     }
 
     /**
-     * Create a new `ALIYUN::SLB::MasterSlaveServerGroup`.
+     * Create a new <code>ALIYUN::SLB::MasterSlaveServerGroup</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosMasterSlaveServerGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.RosMasterSlaveServerGroupProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -383,8 +383,8 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.slb.RosMasterSlaveServerGroup> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -455,7 +455,7 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.slb.RosMasterSlaveServerGroup}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.slb.RosMasterSlaveServerGroup}.
          */
         @Override
         public com.aliyun.ros.cdk.slb.RosMasterSlaveServerGroup build() {

@@ -46,6 +46,8 @@
 @alicloud/ros-cdk-ecs.NetworkInterfaceProps=com.aliyun.ros.cdk.ecs.NetworkInterfaceProps
 @alicloud/ros-cdk-ecs.PrefixList=com.aliyun.ros.cdk.ecs.PrefixList
 @alicloud/ros-cdk-ecs.PrefixListProps=com.aliyun.ros.cdk.ecs.PrefixListProps
+@alicloud/ros-cdk-ecs.RamRoleAttachment=com.aliyun.ros.cdk.ecs.RamRoleAttachment
+@alicloud/ros-cdk-ecs.RamRoleAttachmentProps=com.aliyun.ros.cdk.ecs.RamRoleAttachmentProps
 @alicloud/ros-cdk-ecs.RosAssignIpv6Addresses=com.aliyun.ros.cdk.ecs.RosAssignIpv6Addresses
 @alicloud/ros-cdk-ecs.RosAssignIpv6AddressesProps=com.aliyun.ros.cdk.ecs.RosAssignIpv6AddressesProps
 @alicloud/ros-cdk-ecs.RosAssignPrivateIpAddresses=com.aliyun.ros.cdk.ecs.RosAssignPrivateIpAddresses
@@ -120,6 +122,8 @@
 @alicloud/ros-cdk-ecs.RosPrefixList=com.aliyun.ros.cdk.ecs.RosPrefixList
 @alicloud/ros-cdk-ecs.RosPrefixList.EntriesProperty=com.aliyun.ros.cdk.ecs.RosPrefixList$EntriesProperty
 @alicloud/ros-cdk-ecs.RosPrefixListProps=com.aliyun.ros.cdk.ecs.RosPrefixListProps
+@alicloud/ros-cdk-ecs.RosRamRoleAttachment=com.aliyun.ros.cdk.ecs.RosRamRoleAttachment
+@alicloud/ros-cdk-ecs.RosRamRoleAttachmentProps=com.aliyun.ros.cdk.ecs.RosRamRoleAttachmentProps
 @alicloud/ros-cdk-ecs.RosRoute=com.aliyun.ros.cdk.ecs.RosRoute
 @alicloud/ros-cdk-ecs.RosRoute.NextHopListProperty=com.aliyun.ros.cdk.ecs.RosRoute$NextHopListProperty
 @alicloud/ros-cdk-ecs.RosRouteProps=com.aliyun.ros.cdk.ecs.RosRouteProps

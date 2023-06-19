@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * Properties for defining a `ALIYUN::AMQP::VirtualHost`.
+ * Properties for defining a <code>ALIYUN::AMQP::VirtualHost</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.131Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.163Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.RosVirtualHostProps")
 @software.amazon.jsii.Jsii.Proxy(RosVirtualHostProps.Jsii$Proxy.class)
 public interface RosVirtualHostProps extends software.amazon.jsii.JsiiSerializable {

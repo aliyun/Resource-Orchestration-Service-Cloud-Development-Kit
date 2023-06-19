@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * This class can be used when a set of constructs which are disjoint in the
  * construct tree needs to be combined to be used as a single dependable.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.866Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.869Z")
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ConcreteDependable")
 public class ConcreteDependable extends software.amazon.jsii.JsiiObject implements com.aliyun.ros.cdk.core.IDependable {

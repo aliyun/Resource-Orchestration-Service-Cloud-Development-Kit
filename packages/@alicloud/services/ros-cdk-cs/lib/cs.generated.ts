@@ -3,6 +3,541 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::CS::ASKCluster`
+ */
+export interface RosASKClusterProps {
+
+    /**
+     * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property addons: The add-ons to be installed for the cluster.
+     */
+    readonly addons?: Array<RosASKCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property clusterSpec: The managed cluster spec. Value:
+     * ack.pro.small: Professional hosting cluster, namely: "ACK Pro version cluster".
+     * ack.standard: Standard hosting cluster.
+     * Default value: ack.pro.small.
+     */
+    readonly clusterSpec?: string | ros.IResolvable;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
+     * After deletion protection is enabled, the cluster cannot be deleted 
+     * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+     * false: disables deletion protection for the cluster.
+     * Default value: false.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
+     * @Property endpointPublicAccess: Whether to enable the public network API Server:
+     * true: which means that the public network API Server is open.
+     * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default value: true.
+     */
+    readonly endpointPublicAccess?: boolean | ros.IResolvable;
+
+    /**
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
+     */
+    readonly kubernetesVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property privateZone: Whether to enable PrivateZone for service discovery.
+     */
+    readonly privateZone?: boolean | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     */
+    readonly serviceCidr?: string | ros.IResolvable;
+
+    /**
+     * @Property serviceDiscoveryTypes: Intra-cluster service discovery type,
+     * used to specify the service discovery method in the ASK cluster.
+     * CoreDNS: To use Kubernetes native standard service discovery component CoreDNS,
+     * a set of containers needs to be deployed in the cluster for DNS resolution.
+     * By default, two ECI instances with a size of 0.25 Core and 512 MiB are used.
+     * PrivateZone: To use Alibaba Cloud PrivateZone products to provide service discovery capabilities,
+     * the PrivateZone service needs to be enabled.
+     * Default value: off
+     */
+    readonly serviceDiscoveryTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property snatEntry: Whether to configure SNAT for the network.
+     * When a VPC can access the public network environment, set it to false.
+     * When an existing VPC cannot access the public network environment:
+     * When set to True, SNAT is configured and the public network environment can be accessed at this time.
+     * If set to false, it means that SNAT is not configured and the public network environment cannot be accessed at this time.
+     * Default to true.
+     */
+    readonly snatEntry?: boolean | ros.IResolvable;
+
+    /**
+     * @Property tags: Tag the cluster.
+     */
+    readonly tags?: RosASKCluster.TagsProperty[];
+
+    /**
+     * @Property timeZone: The time zone used by the cluster..
+     */
+    readonly timeZone?: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: VPC ID.
+     */
+    readonly vpcId?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchIds: The IDs of VSwitches. If you leave this property empty, the system automatically creates a VSwitch.
+     * Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
+     */
+    readonly vSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The zone ID.
+     */
+    readonly zoneId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosASKClusterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosASKClusterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosASKClusterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
+    errors.collect(ros.propertyValidator('endpointPublicAccess', ros.validateBoolean)(properties.endpointPublicAccess));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 1,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('addons', ros.listValidator(RosASKCluster_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('timeZone', ros.validateString)(properties.timeZone));
+    if(properties.serviceDiscoveryTypes && (Array.isArray(properties.serviceDiscoveryTypes) || (typeof properties.serviceDiscoveryTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('serviceDiscoveryTypes', ros.validateLength)({
+            data: properties.serviceDiscoveryTypes.length,
+            min: 1,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('serviceDiscoveryTypes', ros.listValidator(ros.validateString))(properties.serviceDiscoveryTypes));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
+    errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosASKCluster_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('privateZone', ros.validateBoolean)(properties.privateZone));
+    return errors.wrap('supplied properties not correct for "RosASKClusterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ASKCluster` resource
+ *
+ * @param properties - the TypeScript properties of a `RosASKClusterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ASKCluster` resource.
+ */
+// @ts-ignore TS6133
+function rosASKClusterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosASKClusterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Name: ros.stringToRosTemplate(properties.name),
+      Addons: ros.listMapper(rosASKClusterAddonsPropertyToRosTemplate)(properties.addons),
+      ClusterSpec: ros.stringToRosTemplate(properties.clusterSpec),
+      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
+      EndpointPublicAccess: ros.booleanToRosTemplate(properties.endpointPublicAccess),
+      KubernetesVersion: ros.stringToRosTemplate(properties.kubernetesVersion),
+      PrivateZone: ros.booleanToRosTemplate(properties.privateZone),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
+      ServiceDiscoveryTypes: ros.listMapper(ros.stringToRosTemplate)(properties.serviceDiscoveryTypes),
+      SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
+      Tags: ros.listMapper(rosASKClusterTagsPropertyToRosTemplate)(properties.tags),
+      TimeZone: ros.stringToRosTemplate(properties.timeZone),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CS::ASKCluster`
+ */
+export class RosASKCluster extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ASKCluster";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute APIServerSLBId: The id of API server SLB
+     */
+    public readonly attrApiServerSlbId: ros.IResolvable;
+
+    /**
+     * @Attribute ClusterId: Cluster instance ID.
+     */
+    public readonly attrClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute DefaultUserKubeConfig: Default user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrDefaultUserKubeConfig: ros.IResolvable;
+
+    /**
+     * @Attribute Nodes: The list of cluster nodes.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateUserKubConfig: Private user kubernetes config which is used for configuring cluster credentials.
+     */
+    public readonly attrPrivateUserKubConfig: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingConfigurationId: Scaling configuration id
+     */
+    public readonly attrScalingConfigurationId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingGroupId: Scaling group id
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ScalingRuleId: Scaling rule id
+     */
+    public readonly attrScalingRuleId: ros.IResolvable;
+
+    /**
+     * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
+     */
+    public readonly attrTaskId: ros.IResolvable;
+
+    /**
+     * @Attribute WorkerRamRoleName: Worker ram role name.
+     */
+    public readonly attrWorkerRamRoleName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property addons: The add-ons to be installed for the cluster.
+     */
+    public addons: Array<RosASKCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterSpec: The managed cluster spec. Value:
+     * ack.pro.small: Professional hosting cluster, namely: "ACK Pro version cluster".
+     * ack.standard: Standard hosting cluster.
+     * Default value: ack.pro.small.
+     */
+    public clusterSpec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable deletion protection for the cluster. 
+     * After deletion protection is enabled, the cluster cannot be deleted 
+     * in the ACK console or by calling API operations. Valid values:true: enables deletion protection for the cluster.
+     * false: disables deletion protection for the cluster.
+     * Default value: false.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property endpointPublicAccess: Whether to enable the public network API Server:
+     * true: which means that the public network API Server is open.
+     * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.Default value: true.
+     */
+    public endpointPublicAccess: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
+     */
+    public kubernetesVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property privateZone: Whether to enable PrivateZone for service discovery.
+     */
+    public privateZone: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
+     */
+    public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     */
+    public serviceCidr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serviceDiscoveryTypes: Intra-cluster service discovery type,
+     * used to specify the service discovery method in the ASK cluster.
+     * CoreDNS: To use Kubernetes native standard service discovery component CoreDNS,
+     * a set of containers needs to be deployed in the cluster for DNS resolution.
+     * By default, two ECI instances with a size of 0.25 Core and 512 MiB are used.
+     * PrivateZone: To use Alibaba Cloud PrivateZone products to provide service discovery capabilities,
+     * the PrivateZone service needs to be enabled.
+     * Default value: off
+     */
+    public serviceDiscoveryTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property snatEntry: Whether to configure SNAT for the network.
+     * When a VPC can access the public network environment, set it to false.
+     * When an existing VPC cannot access the public network environment:
+     * When set to True, SNAT is configured and the public network environment can be accessed at this time.
+     * If set to false, it means that SNAT is not configured and the public network environment cannot be accessed at this time.
+     * Default to true.
+     */
+    public snatEntry: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tag the cluster.
+     */
+    public tags: RosASKCluster.TagsProperty[] | undefined;
+
+    /**
+     * @Property timeZone: The time zone used by the cluster..
+     */
+    public timeZone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpcId: VPC ID.
+     */
+    public vpcId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchIds: The IDs of VSwitches. If you leave this property empty, the system automatically creates a VSwitch.
+     * Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
+     */
+    public vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneId: The zone ID.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CS::ASKCluster`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosASKClusterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosASKCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApiServerSlbId = this.getAtt('APIServerSLBId');
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrDefaultUserKubeConfig = this.getAtt('DefaultUserKubeConfig');
+        this.attrNodes = this.getAtt('Nodes');
+        this.attrPrivateUserKubConfig = this.getAtt('PrivateUserKubConfig');
+        this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
+        this.attrScalingRuleId = this.getAtt('ScalingRuleId');
+        this.attrTaskId = this.getAtt('TaskId');
+        this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.name = props.name;
+        this.addons = props.addons;
+        this.clusterSpec = props.clusterSpec;
+        this.deletionProtection = props.deletionProtection;
+        this.endpointPublicAccess = props.endpointPublicAccess;
+        this.kubernetesVersion = props.kubernetesVersion;
+        this.privateZone = props.privateZone;
+        this.resourceGroupId = props.resourceGroupId;
+        this.securityGroupId = props.securityGroupId;
+        this.serviceCidr = props.serviceCidr;
+        this.serviceDiscoveryTypes = props.serviceDiscoveryTypes;
+        this.snatEntry = props.snatEntry;
+        this.tags = props.tags;
+        this.timeZone = props.timeZone;
+        this.vpcId = props.vpcId;
+        this.vSwitchIds = props.vSwitchIds;
+        this.zoneId = props.zoneId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            name: this.name,
+            addons: this.addons,
+            clusterSpec: this.clusterSpec,
+            deletionProtection: this.deletionProtection,
+            endpointPublicAccess: this.endpointPublicAccess,
+            kubernetesVersion: this.kubernetesVersion,
+            privateZone: this.privateZone,
+            resourceGroupId: this.resourceGroupId,
+            securityGroupId: this.securityGroupId,
+            serviceCidr: this.serviceCidr,
+            serviceDiscoveryTypes: this.serviceDiscoveryTypes,
+            snatEntry: this.snatEntry,
+            tags: this.tags,
+            timeZone: this.timeZone,
+            vpcId: this.vpcId,
+            vSwitchIds: this.vSwitchIds,
+            zoneId: this.zoneId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosASKClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosASKCluster {
+    /**
+     * @stability external
+     */
+    export interface AddonsProperty {
+        /**
+         * @Property config: When the value is empty, no configuration is required.
+         */
+        readonly config?: string | ros.IResolvable;
+        /**
+         * @Property disabled: Specifies whether to disable default installation.
+         */
+        readonly disabled?: boolean | ros.IResolvable;
+        /**
+         * @Property name: The name of the add-on.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AddonsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AddonsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosASKCluster_AddonsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "AddonsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ASKCluster.Addons` resource
+ *
+ * @param properties - the TypeScript properties of a `AddonsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ASKCluster.Addons` resource.
+ */
+// @ts-ignore TS6133
+function rosASKClusterAddonsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosASKCluster_AddonsPropertyValidator(properties).assertSuccess();
+    return {
+      Config: ros.stringToRosTemplate(properties.config),
+      Disabled: ros.booleanToRosTemplate(properties.disabled),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosASKCluster {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: Tag value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: Tag key.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosASKCluster_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ASKCluster.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ASKCluster.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosASKClusterTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosASKCluster_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::CS::AnyCluster`
  */
 export interface RosAnyClusterProps {
@@ -523,6 +1058,11 @@ export interface RosClusterHelmApplicationProps {
     readonly chartValues?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * @Property credential: The credential of ACR repo. Only take effects when ChartUrl is the address of ACR repo.
+     */
+    readonly credential?: RosClusterHelmApplication.CredentialProperty | ros.IResolvable;
+
+    /**
      * @Property namespace: Namespace to use with helm. Default is default
      */
     readonly namespace?: string | ros.IResolvable;
@@ -538,6 +1078,7 @@ export interface RosClusterHelmApplicationProps {
 function RosClusterHelmApplicationPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('credential', RosClusterHelmApplication_CredentialPropertyValidator)(properties.credential));
     errors.collect(ros.propertyValidator('chartValues', ros.hashValidator(ros.validateAny))(properties.chartValues));
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
     errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
@@ -573,6 +1114,7 @@ function rosClusterHelmApplicationPropsToRosTemplate(properties: any, enableReso
       ClusterId: ros.stringToRosTemplate(properties.clusterId),
       Name: ros.stringToRosTemplate(properties.name),
       ChartValues: ros.hashMapper(ros.objectToRosTemplate)(properties.chartValues),
+      Credential: rosClusterHelmApplicationCredentialPropertyToRosTemplate(properties.credential),
       Namespace: ros.stringToRosTemplate(properties.namespace),
     };
 }
@@ -620,6 +1162,11 @@ export class RosClusterHelmApplication extends ros.RosResource {
     public chartValues: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
+     * @Property credential: The credential of ACR repo. Only take effects when ChartUrl is the address of ACR repo.
+     */
+    public credential: RosClusterHelmApplication.CredentialProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property namespace: Namespace to use with helm. Default is default
      */
     public namespace: string | ros.IResolvable | undefined;
@@ -640,6 +1187,7 @@ export class RosClusterHelmApplication extends ros.RosResource {
         this.clusterId = props.clusterId;
         this.name = props.name;
         this.chartValues = props.chartValues;
+        this.credential = props.credential;
         this.namespace = props.namespace;
     }
 
@@ -650,12 +1198,62 @@ export class RosClusterHelmApplication extends ros.RosResource {
             clusterId: this.clusterId,
             name: this.name,
             chartValues: this.chartValues,
+            credential: this.credential,
             namespace: this.namespace,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosClusterHelmApplicationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosClusterHelmApplication {
+    /**
+     * @stability external
+     */
+    export interface CredentialProperty {
+        /**
+         * @Property userName: The username of repo.
+         */
+        readonly userName: string | ros.IResolvable;
+        /**
+         * @Property password: The password of repo.
+         */
+        readonly password: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CredentialProperty`
+ *
+ * @param properties - the TypeScript properties of a `CredentialProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosClusterHelmApplication_CredentialPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('userName', ros.requiredValidator)(properties.userName));
+    errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "CredentialProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterHelmApplication.Credential` resource
+ *
+ * @param properties - the TypeScript properties of a `CredentialProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ClusterHelmApplication.Credential` resource.
+ */
+// @ts-ignore TS6133
+function rosClusterHelmApplicationCredentialPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosClusterHelmApplication_CredentialPropertyValidator(properties).assertSuccess();
+    return {
+      UserName: ros.stringToRosTemplate(properties.userName),
+      Password: ros.stringToRosTemplate(properties.password),
+    };
 }
 
 /**

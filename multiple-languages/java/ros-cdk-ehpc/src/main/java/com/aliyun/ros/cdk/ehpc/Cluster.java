@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ehpc;
 
 /**
- * A ROS resource type:  `ALIYUN::EHPC::Cluster`.
+ * A ROS resource type:  <code>ALIYUN::EHPC::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.611Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.821Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::EHPC::Cluster`.
+     * Create a new <code>ALIYUN::EHPC::Cluster</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::EHPC::Cluster`.
+     * Create a new <code>ALIYUN::EHPC::Cluster</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -902,6 +902,60 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
+         * <p>
+         * When the value of DeployMode is Standard, the value range: scheduler, account, login, compute.
+         * When the value of DeployMode is Simple, the value range: manager, login, compute.
+         * When the value of DeployMode is Tiny, the value range: manager, compute.
+         * <p>
+         * @return {@code this}
+         * @param ramNodeTypes Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound. This parameter is required.
+         */
+        public Builder ramNodeTypes(final com.aliyun.ros.cdk.core.IResolvable ramNodeTypes) {
+            this.props.ramNodeTypes(ramNodeTypes);
+            return this;
+        }
+        /**
+         * Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
+         * <p>
+         * When the value of DeployMode is Standard, the value range: scheduler, account, login, compute.
+         * When the value of DeployMode is Simple, the value range: manager, login, compute.
+         * When the value of DeployMode is Tiny, the value range: manager, compute.
+         * <p>
+         * @return {@code this}
+         * @param ramNodeTypes Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound. This parameter is required.
+         */
+        public Builder ramNodeTypes(final java.util.List<? extends java.lang.Object> ramNodeTypes) {
+            this.props.ramNodeTypes(ramNodeTypes);
+            return this;
+        }
+
+        /**
+         * Property ramRoleName: The name of the Resource Access Management (RAM) role.
+         * <p>
+         * You can call the ListRoles operation provided by RAM to query the created RAM roles.
+         * <p>
+         * @return {@code this}
+         * @param ramRoleName Property ramRoleName: The name of the Resource Access Management (RAM) role. This parameter is required.
+         */
+        public Builder ramRoleName(final java.lang.String ramRoleName) {
+            this.props.ramRoleName(ramRoleName);
+            return this;
+        }
+        /**
+         * Property ramRoleName: The name of the Resource Access Management (RAM) role.
+         * <p>
+         * You can call the ListRoles operation provided by RAM to query the created RAM roles.
+         * <p>
+         * @return {@code this}
+         * @param ramRoleName Property ramRoleName: The name of the Resource Access Management (RAM) role. This parameter is required.
+         */
+        public Builder ramRoleName(final com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
+            this.props.ramRoleName(ramRoleName);
+            return this;
+        }
+
+        /**
          * Property remoteDirectory: Mount shared storage remote directory.
          * <p>
          * The final path to the mount point and mount the remote directory composition: NasMountpoint: / RemoteDirectory
@@ -1292,6 +1346,27 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs.
+         * <p>
+         * @return {@code this}
+         * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs. This parameter is required.
+         */
+        public Builder vpcId(final java.lang.String vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
+        /**
+         * Property vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs.
+         * <p>
+         * @return {@code this}
+         * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC) to which the E-HPC cluster belongs. This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
+
+        /**
          * Property withoutElasticIp: Specifies whether the logon node uses an elastic IP address (EIP).
          * <p>
          * Default value: false
@@ -1338,7 +1413,7 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.ehpc.Cluster}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.ehpc.Cluster}.
          */
         @Override
         public com.aliyun.ros.cdk.ehpc.Cluster build() {

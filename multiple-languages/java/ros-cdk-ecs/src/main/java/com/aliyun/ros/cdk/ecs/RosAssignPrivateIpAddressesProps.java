@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a `ALIYUN::ECS::AssignPrivateIpAddresses`.
+ * Properties for defining a <code>ALIYUN::ECS::AssignPrivateIpAddresses</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.283Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.464Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAssignPrivateIpAddressesProps")
 @software.amazon.jsii.Jsii.Proxy(RosAssignPrivateIpAddressesProps.Jsii$Proxy.class)
 public interface RosAssignPrivateIpAddressesProps extends software.amazon.jsii.JsiiSerializable {

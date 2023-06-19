@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * A ROS resource type:  `ALIYUN::ALB::Acl`.
+ * A ROS resource type:  <code>ALIYUN::ALB::Acl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.997Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.018Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.Acl")
 public class Acl extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Acl extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ALB::Acl`.
+     * Create a new <code>ALIYUN::ALB::Acl</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Acl extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ALB::Acl`.
+     * Create a new <code>ALIYUN::ALB::Acl</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -49,7 +49,7 @@ public class Acl extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ALB::Acl`.
+     * Create a new <code>ALIYUN::ALB::Acl</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -173,7 +173,7 @@ public class Acl extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.alb.Acl}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.alb.Acl}.
          */
         @Override
         public com.aliyun.ros.cdk.alb.Acl build() {

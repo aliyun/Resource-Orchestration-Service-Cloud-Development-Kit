@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb;
 
 /**
- * A ROS resource type:  `ALIYUN::SLB::VServerGroup`.
+ * A ROS resource type:  <code>ALIYUN::SLB::VServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.169Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.708Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.VServerGroup")
 public class VServerGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class VServerGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::SLB::VServerGroup`.
+     * Create a new <code>ALIYUN::SLB::VServerGroup</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class VServerGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::SLB::VServerGroup`.
+     * Create a new <code>ALIYUN::SLB::VServerGroup</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -160,7 +160,7 @@ public class VServerGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.slb.VServerGroup}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.slb.VServerGroup}.
          */
         @Override
         public com.aliyun.ros.cdk.slb.VServerGroup build() {

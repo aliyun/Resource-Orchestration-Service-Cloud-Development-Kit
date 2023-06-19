@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * Properties for defining a `ALIYUN::VPC::Ipv4Gateway`.
+ * Properties for defining a <code>ALIYUN::VPC::Ipv4Gateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.354Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.900Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.Ipv4GatewayProps")
 @software.amazon.jsii.Jsii.Proxy(Ipv4GatewayProps.Jsii$Proxy.class)
 public interface Ipv4GatewayProps extends software.amazon.jsii.JsiiSerializable {

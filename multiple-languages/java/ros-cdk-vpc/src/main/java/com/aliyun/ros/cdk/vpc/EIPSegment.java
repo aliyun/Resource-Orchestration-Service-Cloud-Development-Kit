@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::EIPSegment`.
+ * A ROS resource type:  <code>ALIYUN::VPC::EIPSegment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.342Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.887Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.EIPSegment")
 public class EIPSegment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class EIPSegment extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::EIPSegment`.
+     * Create a new <code>ALIYUN::VPC::EIPSegment</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class EIPSegment extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::EIPSegment`.
+     * Create a new <code>ALIYUN::VPC::EIPSegment</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -252,7 +252,7 @@ public class EIPSegment extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.vpc.EIPSegment}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.vpc.EIPSegment}.
          */
         @Override
         public com.aliyun.ros.cdk.vpc.EIPSegment build() {

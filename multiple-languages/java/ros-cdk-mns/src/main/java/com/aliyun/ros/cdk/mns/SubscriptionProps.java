@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mns;
 
 /**
- * Properties for defining a `ALIYUN::MNS::Subscription`.
+ * Properties for defining a <code>ALIYUN::MNS::Subscription</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.258Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.572Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.SubscriptionProps")
 @software.amazon.jsii.Jsii.Proxy(SubscriptionProps.Jsii$Proxy.class)
 public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable {

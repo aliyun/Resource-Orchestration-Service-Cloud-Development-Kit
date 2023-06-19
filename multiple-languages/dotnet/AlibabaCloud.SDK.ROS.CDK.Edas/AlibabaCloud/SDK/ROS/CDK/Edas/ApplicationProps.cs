@@ -160,6 +160,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             }
         }
 
+        private object? _deployment;
+
+        /// <summary>Property deployment: Deploy application information to ECS clusters.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "deployment", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-edas.RosApplication.DeploymentProperty\"}]}}", isOptional: true)]
+        public object? Deployment
+        {
+            get => _deployment;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Edas.RosApplication.IDeploymentProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Edas.RosApplication.IDeploymentProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _deployment = value;
+            }
+        }
+
         private object? _description;
 
         /// <summary>Property description: Descriptive information.</summary>

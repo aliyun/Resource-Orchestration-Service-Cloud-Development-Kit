@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cr;
 
 /**
- * Properties for defining a `ALIYUN::CR::Repository`.
+ * Properties for defining a <code>ALIYUN::CR::Repository</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.677Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.802Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosRepositoryProps")
 @software.amazon.jsii.Jsii.Proxy(RosRepositoryProps.Jsii$Proxy.class)
 public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializable {

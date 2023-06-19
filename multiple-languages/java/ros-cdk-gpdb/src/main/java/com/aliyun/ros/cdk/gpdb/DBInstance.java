@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * A ROS resource type:  `ALIYUN::GPDB::DBInstance`.
+ * A ROS resource type:  <code>ALIYUN::GPDB::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:19.984Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.270Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::GPDB::DBInstance`.
+     * Create a new <code>ALIYUN::GPDB::DBInstance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::GPDB::DBInstance`.
+     * Create a new <code>ALIYUN::GPDB::DBInstance</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -111,49 +111,9 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property dbInstanceClass: The instance type.
-         * <p>
-         * @return {@code this}
-         * @param dbInstanceClass Property dbInstanceClass: The instance type. This parameter is required.
-         */
-        public Builder dbInstanceClass(final java.lang.String dbInstanceClass) {
-            this.props.dbInstanceClass(dbInstanceClass);
-            return this;
-        }
-        /**
-         * Property dbInstanceClass: The instance type.
-         * <p>
-         * @return {@code this}
-         * @param dbInstanceClass Property dbInstanceClass: The instance type. This parameter is required.
-         */
-        public Builder dbInstanceClass(final com.aliyun.ros.cdk.core.IResolvable dbInstanceClass) {
-            this.props.dbInstanceClass(dbInstanceClass);
-            return this;
-        }
-
-        /**
-         * Property dbInstanceGroupCount: The number of compute nodes in the instance.
-         * <p>
-         * @return {@code this}
-         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute nodes in the instance. This parameter is required.
-         */
-        public Builder dbInstanceGroupCount(final java.lang.Number dbInstanceGroupCount) {
-            this.props.dbInstanceGroupCount(dbInstanceGroupCount);
-            return this;
-        }
-        /**
-         * Property dbInstanceGroupCount: The number of compute nodes in the instance.
-         * <p>
-         * @return {@code this}
-         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute nodes in the instance. This parameter is required.
-         */
-        public Builder dbInstanceGroupCount(final com.aliyun.ros.cdk.core.IResolvable dbInstanceGroupCount) {
-            this.props.dbInstanceGroupCount(dbInstanceGroupCount);
-            return this;
-        }
-
-        /**
          * Property engineVersion: The version of the database engine.
+         * <p>
+         * For example: 6.0、7.0
          * <p>
          * @return {@code this}
          * @param engineVersion Property engineVersion: The version of the database engine. This parameter is required.
@@ -164,6 +124,8 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property engineVersion: The version of the database engine.
+         * <p>
+         * For example: 6.0、7.0
          * <p>
          * @return {@code this}
          * @param engineVersion Property engineVersion: The version of the database engine. This parameter is required.
@@ -222,6 +184,81 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property createSampleData: Whether to load the sample data set after the instance is created.
+         * <p>
+         * The value can be:
+         * true: load the sample dataset.
+         * false: not to load the sample dataset
+         * <p>
+         * @return {@code this}
+         * @param createSampleData Property createSampleData: Whether to load the sample data set after the instance is created. This parameter is required.
+         */
+        public Builder createSampleData(final java.lang.Boolean createSampleData) {
+            this.props.createSampleData(createSampleData);
+            return this;
+        }
+        /**
+         * Property createSampleData: Whether to load the sample data set after the instance is created.
+         * <p>
+         * The value can be:
+         * true: load the sample dataset.
+         * false: not to load the sample dataset
+         * <p>
+         * @return {@code this}
+         * @param createSampleData Property createSampleData: Whether to load the sample data set after the instance is created. This parameter is required.
+         */
+        public Builder createSampleData(final com.aliyun.ros.cdk.core.IResolvable createSampleData) {
+            this.props.createSampleData(createSampleData);
+            return this;
+        }
+
+        /**
+         * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+         * <p>
+         * This parameter must be passed in to create a storage reservation mode instance.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability. This parameter is required.
+         */
+        public Builder dbInstanceCategory(final java.lang.String dbInstanceCategory) {
+            this.props.dbInstanceCategory(dbInstanceCategory);
+            return this;
+        }
+        /**
+         * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+         * <p>
+         * This parameter must be passed in to create a storage reservation mode instance.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability. This parameter is required.
+         */
+        public Builder dbInstanceCategory(final com.aliyun.ros.cdk.core.IResolvable dbInstanceCategory) {
+            this.props.dbInstanceCategory(dbInstanceCategory);
+            return this;
+        }
+
+        /**
+         * Property dbInstanceClass: The instance type.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceClass Property dbInstanceClass: The instance type. This parameter is required.
+         */
+        public Builder dbInstanceClass(final java.lang.String dbInstanceClass) {
+            this.props.dbInstanceClass(dbInstanceClass);
+            return this;
+        }
+        /**
+         * Property dbInstanceClass: The instance type.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceClass Property dbInstanceClass: The instance type. This parameter is required.
+         */
+        public Builder dbInstanceClass(final com.aliyun.ros.cdk.core.IResolvable dbInstanceClass) {
+            this.props.dbInstanceClass(dbInstanceClass);
+            return this;
+        }
+
+        /**
          * Property dbInstanceDescription: The description of the instance.
          * <p>
          * The description cannot exceed 256 characters in length.
@@ -243,6 +280,197 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder dbInstanceDescription(final com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
             this.props.dbInstanceDescription(dbInstanceDescription);
+            return this;
+        }
+
+        /**
+         * Property dbInstanceGroupCount: The number of compute nodes in the instance.
+         * <p>
+         * The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute nodes in the instance. This parameter is required.
+         */
+        public Builder dbInstanceGroupCount(final java.lang.Number dbInstanceGroupCount) {
+            this.props.dbInstanceGroupCount(dbInstanceGroupCount);
+            return this;
+        }
+        /**
+         * Property dbInstanceGroupCount: The number of compute nodes in the instance.
+         * <p>
+         * The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute nodes in the instance. This parameter is required.
+         */
+        public Builder dbInstanceGroupCount(final com.aliyun.ros.cdk.core.IResolvable dbInstanceGroupCount) {
+            this.props.dbInstanceGroupCount(dbInstanceGroupCount);
+            return this;
+        }
+
+        /**
+         * Property dbInstanceMode: The db instance mode.
+         * <p>
+         * Valid values: StorageElastic, Serverless, Classic.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceMode Property dbInstanceMode: The db instance mode. This parameter is required.
+         */
+        public Builder dbInstanceMode(final java.lang.String dbInstanceMode) {
+            this.props.dbInstanceMode(dbInstanceMode);
+            return this;
+        }
+        /**
+         * Property dbInstanceMode: The db instance mode.
+         * <p>
+         * Valid values: StorageElastic, Serverless, Classic.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceMode Property dbInstanceMode: The db instance mode. This parameter is required.
+         */
+        public Builder dbInstanceMode(final com.aliyun.ros.cdk.core.IResolvable dbInstanceMode) {
+            this.props.dbInstanceMode(dbInstanceMode);
+            return this;
+        }
+
+        /**
+         * Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter.
+         * <p>
+         * Otherwise, leave this parameter empty.
+         * <p>
+         * @return {@code this}
+         * @param encryptionKey Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. This parameter is required.
+         */
+        public Builder encryptionKey(final java.lang.String encryptionKey) {
+            this.props.encryptionKey(encryptionKey);
+            return this;
+        }
+        /**
+         * Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter.
+         * <p>
+         * Otherwise, leave this parameter empty.
+         * <p>
+         * @return {@code this}
+         * @param encryptionKey Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter. This parameter is required.
+         */
+        public Builder encryptionKey(final com.aliyun.ros.cdk.core.IResolvable encryptionKey) {
+            this.props.encryptionKey(encryptionKey);
+            return this;
+        }
+
+        /**
+         * Property encryptionType: The type of the encryption.
+         * <p>
+         * Default value: NULL. Valid values:
+         * NULL: Encryption is disabled.
+         * CloudDisk: Encryption is enabled on disks and the encryption key is specified by using the EncryptionKey parameter.
+         * Note: Disk encryption cannot be disabled after it is enabled.
+         * <p>
+         * @return {@code this}
+         * @param encryptionType Property encryptionType: The type of the encryption. This parameter is required.
+         */
+        public Builder encryptionType(final java.lang.String encryptionType) {
+            this.props.encryptionType(encryptionType);
+            return this;
+        }
+        /**
+         * Property encryptionType: The type of the encryption.
+         * <p>
+         * Default value: NULL. Valid values:
+         * NULL: Encryption is disabled.
+         * CloudDisk: Encryption is enabled on disks and the encryption key is specified by using the EncryptionKey parameter.
+         * Note: Disk encryption cannot be disabled after it is enabled.
+         * <p>
+         * @return {@code this}
+         * @param encryptionType Property encryptionType: The type of the encryption. This parameter is required.
+         */
+        public Builder encryptionType(final com.aliyun.ros.cdk.core.IResolvable encryptionType) {
+            this.props.encryptionType(encryptionType);
+            return this;
+        }
+
+        /**
+         * Property idleTime: Idle release wait time.
+         * <p>
+         * That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+         * <p>
+         * @return {@code this}
+         * @param idleTime Property idleTime: Idle release wait time. This parameter is required.
+         */
+        public Builder idleTime(final java.lang.Number idleTime) {
+            this.props.idleTime(idleTime);
+            return this;
+        }
+        /**
+         * Property idleTime: Idle release wait time.
+         * <p>
+         * That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+         * <p>
+         * @return {@code this}
+         * @param idleTime Property idleTime: Idle release wait time. This parameter is required.
+         */
+        public Builder idleTime(final com.aliyun.ros.cdk.core.IResolvable idleTime) {
+            this.props.idleTime(idleTime);
+            return this;
+        }
+
+        /**
+         * Property instanceSpec: The specification of segment nodes.
+         * <p>
+         * <ul>
+         * <li>When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.</li>
+         * <li>When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.</li>
+         * <li>When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
+         * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param instanceSpec Property instanceSpec: The specification of segment nodes. This parameter is required.
+         */
+        public Builder instanceSpec(final java.lang.String instanceSpec) {
+            this.props.instanceSpec(instanceSpec);
+            return this;
+        }
+        /**
+         * Property instanceSpec: The specification of segment nodes.
+         * <p>
+         * <ul>
+         * <li>When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.</li>
+         * <li>When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.</li>
+         * <li>When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
+         * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param instanceSpec Property instanceSpec: The specification of segment nodes. This parameter is required.
+         */
+        public Builder instanceSpec(final com.aliyun.ros.cdk.core.IResolvable instanceSpec) {
+            this.props.instanceSpec(instanceSpec);
+            return this;
+        }
+
+        /**
+         * Property masterNodeNum: The number of master nodes.
+         * <p>
+         * Minimum is 1, max is 2.
+         * <p>
+         * @return {@code this}
+         * @param masterNodeNum Property masterNodeNum: The number of master nodes. This parameter is required.
+         */
+        public Builder masterNodeNum(final java.lang.Number masterNodeNum) {
+            this.props.masterNodeNum(masterNodeNum);
+            return this;
+        }
+        /**
+         * Property masterNodeNum: The number of master nodes.
+         * <p>
+         * Minimum is 1, max is 2.
+         * <p>
+         * @return {@code this}
+         * @param masterNodeNum Property masterNodeNum: The number of master nodes. This parameter is required.
+         */
+        public Builder masterNodeNum(final com.aliyun.ros.cdk.core.IResolvable masterNodeNum) {
+            this.props.masterNodeNum(masterNodeNum);
             return this;
         }
 
@@ -326,6 +554,27 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property privateIpAddress: Private IP address.
+         * <p>
+         * @return {@code this}
+         * @param privateIpAddress Property privateIpAddress: Private IP address. This parameter is required.
+         */
+        public Builder privateIpAddress(final java.lang.String privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+        /**
+         * Property privateIpAddress: Private IP address.
+         * <p>
+         * @return {@code this}
+         * @param privateIpAddress Property privateIpAddress: Private IP address. This parameter is required.
+         */
+        public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
+
+        /**
          * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
          * <p>
          * Default value:
@@ -353,6 +602,180 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property segDiskPerformanceLevel: Seg disk performance level.
+         * <p>
+         * The value can be:
+         * pl0、pl1 and pl2
+         * <p>
+         * @return {@code this}
+         * @param segDiskPerformanceLevel Property segDiskPerformanceLevel: Seg disk performance level. This parameter is required.
+         */
+        public Builder segDiskPerformanceLevel(final java.lang.String segDiskPerformanceLevel) {
+            this.props.segDiskPerformanceLevel(segDiskPerformanceLevel);
+            return this;
+        }
+        /**
+         * Property segDiskPerformanceLevel: Seg disk performance level.
+         * <p>
+         * The value can be:
+         * pl0、pl1 and pl2
+         * <p>
+         * @return {@code this}
+         * @param segDiskPerformanceLevel Property segDiskPerformanceLevel: Seg disk performance level. This parameter is required.
+         */
+        public Builder segDiskPerformanceLevel(final com.aliyun.ros.cdk.core.IResolvable segDiskPerformanceLevel) {
+            this.props.segDiskPerformanceLevel(segDiskPerformanceLevel);
+            return this;
+        }
+
+        /**
+         * Property segNodeNum: Calculate the number of nodes.
+         * <p>
+         * The value can be:
+         * <p>
+         * <ul>
+         * <li>When DBInstanceMode is StorageElastic and DBInstanceCategory is HighAvailability, the value ranges from 4 to 512. The value must be a multiple of 4.</li>
+         * <li>When DBInstanceMode is StorageElastic and DBInstanceCategory is Basic, the value ranges from 2 to 512. The value must be a multiple of 2.</li>
+         * <li>When DBInstanceMode is Serverless, The value ranges from 2 to 512. The value must be a multiple of 2.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param segNodeNum Property segNodeNum: Calculate the number of nodes. This parameter is required.
+         */
+        public Builder segNodeNum(final java.lang.Number segNodeNum) {
+            this.props.segNodeNum(segNodeNum);
+            return this;
+        }
+        /**
+         * Property segNodeNum: Calculate the number of nodes.
+         * <p>
+         * The value can be:
+         * <p>
+         * <ul>
+         * <li>When DBInstanceMode is StorageElastic and DBInstanceCategory is HighAvailability, the value ranges from 4 to 512. The value must be a multiple of 4.</li>
+         * <li>When DBInstanceMode is StorageElastic and DBInstanceCategory is Basic, the value ranges from 2 to 512. The value must be a multiple of 2.</li>
+         * <li>When DBInstanceMode is Serverless, The value ranges from 2 to 512. The value must be a multiple of 2.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param segNodeNum Property segNodeNum: Calculate the number of nodes. This parameter is required.
+         */
+        public Builder segNodeNum(final com.aliyun.ros.cdk.core.IResolvable segNodeNum) {
+            this.props.segNodeNum(segNodeNum);
+            return this;
+        }
+
+        /**
+         * Property segStorageType: The disk type of segment nodes.
+         * <p>
+         * For example: cloud_essd, cloud_efficiency.
+         * This parameter must be passed in to create a storage elastic mode instance.
+         * Storage Elastic Mode Basic Edition instances only support ESSD cloud disks.
+         * <p>
+         * @return {@code this}
+         * @param segStorageType Property segStorageType: The disk type of segment nodes. This parameter is required.
+         */
+        public Builder segStorageType(final java.lang.String segStorageType) {
+            this.props.segStorageType(segStorageType);
+            return this;
+        }
+        /**
+         * Property segStorageType: The disk type of segment nodes.
+         * <p>
+         * For example: cloud_essd, cloud_efficiency.
+         * This parameter must be passed in to create a storage elastic mode instance.
+         * Storage Elastic Mode Basic Edition instances only support ESSD cloud disks.
+         * <p>
+         * @return {@code this}
+         * @param segStorageType Property segStorageType: The disk type of segment nodes. This parameter is required.
+         */
+        public Builder segStorageType(final com.aliyun.ros.cdk.core.IResolvable segStorageType) {
+            this.props.segStorageType(segStorageType);
+            return this;
+        }
+
+        /**
+         * Property serverlessMode: Mode of the Serverless instance.
+         * <p>
+         * The value can be:
+         * Manual: manual scheduling is the default value.
+         * Auto: indicates automatic scheduling.
+         * <p>
+         * @return {@code this}
+         * @param serverlessMode Property serverlessMode: Mode of the Serverless instance. This parameter is required.
+         */
+        public Builder serverlessMode(final java.lang.String serverlessMode) {
+            this.props.serverlessMode(serverlessMode);
+            return this;
+        }
+        /**
+         * Property serverlessMode: Mode of the Serverless instance.
+         * <p>
+         * The value can be:
+         * Manual: manual scheduling is the default value.
+         * Auto: indicates automatic scheduling.
+         * <p>
+         * @return {@code this}
+         * @param serverlessMode Property serverlessMode: Mode of the Serverless instance. This parameter is required.
+         */
+        public Builder serverlessMode(final com.aliyun.ros.cdk.core.IResolvable serverlessMode) {
+            this.props.serverlessMode(serverlessMode);
+            return this;
+        }
+
+        /**
+         * Property serverlessResource: Computing resource threshold.
+         * <p>
+         * The value ranges from 8 to 32. The step length is 8.
+         * The unit is ACU. The default value is 32.
+         * <p>
+         * @return {@code this}
+         * @param serverlessResource Property serverlessResource: Computing resource threshold. This parameter is required.
+         */
+        public Builder serverlessResource(final java.lang.Number serverlessResource) {
+            this.props.serverlessResource(serverlessResource);
+            return this;
+        }
+        /**
+         * Property serverlessResource: Computing resource threshold.
+         * <p>
+         * The value ranges from 8 to 32. The step length is 8.
+         * The unit is ACU. The default value is 32.
+         * <p>
+         * @return {@code this}
+         * @param serverlessResource Property serverlessResource: Computing resource threshold. This parameter is required.
+         */
+        public Builder serverlessResource(final com.aliyun.ros.cdk.core.IResolvable serverlessResource) {
+            this.props.serverlessResource(serverlessResource);
+            return this;
+        }
+
+        /**
+         * Property storageSize: The storage capacity of per segment node.
+         * <p>
+         * Unit: GB. Minimum is 50, max is 4000, step is 50.
+         * <p>
+         * @return {@code this}
+         * @param storageSize Property storageSize: The storage capacity of per segment node. This parameter is required.
+         */
+        public Builder storageSize(final java.lang.Number storageSize) {
+            this.props.storageSize(storageSize);
+            return this;
+        }
+        /**
+         * Property storageSize: The storage capacity of per segment node.
+         * <p>
+         * Unit: GB. Minimum is 50, max is 4000, step is 50.
+         * <p>
+         * @return {@code this}
+         * @param storageSize Property storageSize: The storage capacity of per segment node. This parameter is required.
+         */
+        public Builder storageSize(final com.aliyun.ros.cdk.core.IResolvable storageSize) {
+            this.props.storageSize(storageSize);
+            return this;
+        }
+
+        /**
          * Property tags: Tags to attach to instance.
          * <p>
          * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -362,6 +785,31 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.gpdb.RosDBInstance.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property vectorConfigurationStatus: the status of vector configuration.
+         * <p>
+         * The value can be:Y: Turn on vector engine optimization.N: Turn off vector engine optimization (default value).
+         * <p>
+         * @return {@code this}
+         * @param vectorConfigurationStatus Property vectorConfigurationStatus: the status of vector configuration. This parameter is required.
+         */
+        public Builder vectorConfigurationStatus(final java.lang.String vectorConfigurationStatus) {
+            this.props.vectorConfigurationStatus(vectorConfigurationStatus);
+            return this;
+        }
+        /**
+         * Property vectorConfigurationStatus: the status of vector configuration.
+         * <p>
+         * The value can be:Y: Turn on vector engine optimization.N: Turn off vector engine optimization (default value).
+         * <p>
+         * @return {@code this}
+         * @param vectorConfigurationStatus Property vectorConfigurationStatus: the status of vector configuration. This parameter is required.
+         */
+        public Builder vectorConfigurationStatus(final com.aliyun.ros.cdk.core.IResolvable vectorConfigurationStatus) {
+            this.props.vectorConfigurationStatus(vectorConfigurationStatus);
             return this;
         }
 
@@ -395,7 +843,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.gpdb.DBInstance}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.gpdb.DBInstance}.
          */
         @Override
         public com.aliyun.ros.cdk.gpdb.DBInstance build() {

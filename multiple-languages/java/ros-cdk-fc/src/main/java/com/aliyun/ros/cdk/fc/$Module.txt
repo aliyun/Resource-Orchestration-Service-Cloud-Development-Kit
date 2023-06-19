@@ -21,7 +21,14 @@
 @alicloud/ros-cdk-fc.RosFunction.AsyncConfigurationProperty=com.aliyun.ros.cdk.fc.RosFunction$AsyncConfigurationProperty
 @alicloud/ros-cdk-fc.RosFunction.CodeProperty=com.aliyun.ros.cdk.fc.RosFunction$CodeProperty
 @alicloud/ros-cdk-fc.RosFunction.CustomContainerConfigProperty=com.aliyun.ros.cdk.fc.RosFunction$CustomContainerConfigProperty
+@alicloud/ros-cdk-fc.RosFunction.CustomDNSProperty=com.aliyun.ros.cdk.fc.RosFunction$CustomDNSProperty
+@alicloud/ros-cdk-fc.RosFunction.CustomHealthCheckConfigProperty=com.aliyun.ros.cdk.fc.RosFunction$CustomHealthCheckConfigProperty
+@alicloud/ros-cdk-fc.RosFunction.CustomRuntimeConfigProperty=com.aliyun.ros.cdk.fc.RosFunction$CustomRuntimeConfigProperty
 @alicloud/ros-cdk-fc.RosFunction.DestinationProperty=com.aliyun.ros.cdk.fc.RosFunction$DestinationProperty
+@alicloud/ros-cdk-fc.RosFunction.DnsOptionsProperty=com.aliyun.ros.cdk.fc.RosFunction$DnsOptionsProperty
+@alicloud/ros-cdk-fc.RosFunction.InstanceLifecycleConfigProperty=com.aliyun.ros.cdk.fc.RosFunction$InstanceLifecycleConfigProperty
+@alicloud/ros-cdk-fc.RosFunction.PreFreezeProperty=com.aliyun.ros.cdk.fc.RosFunction$PreFreezeProperty
+@alicloud/ros-cdk-fc.RosFunction.PreStopProperty=com.aliyun.ros.cdk.fc.RosFunction$PreStopProperty
 @alicloud/ros-cdk-fc.RosFunctionInvoker=com.aliyun.ros.cdk.fc.RosFunctionInvoker
 @alicloud/ros-cdk-fc.RosFunctionInvokerProps=com.aliyun.ros.cdk.fc.RosFunctionInvokerProps
 @alicloud/ros-cdk-fc.RosFunctionProps=com.aliyun.ros.cdk.fc.RosFunctionProps
@@ -34,6 +41,8 @@
 @alicloud/ros-cdk-fc.RosService.LogConfigProperty=com.aliyun.ros.cdk.fc.RosService$LogConfigProperty
 @alicloud/ros-cdk-fc.RosService.MountPointsProperty=com.aliyun.ros.cdk.fc.RosService$MountPointsProperty
 @alicloud/ros-cdk-fc.RosService.NasConfigProperty=com.aliyun.ros.cdk.fc.RosService$NasConfigProperty
+@alicloud/ros-cdk-fc.RosService.OssMountConfigMountPointsProperty=com.aliyun.ros.cdk.fc.RosService$OssMountConfigMountPointsProperty
+@alicloud/ros-cdk-fc.RosService.OssMountConfigProperty=com.aliyun.ros.cdk.fc.RosService$OssMountConfigProperty
 @alicloud/ros-cdk-fc.RosService.TagsProperty=com.aliyun.ros.cdk.fc.RosService$TagsProperty
 @alicloud/ros-cdk-fc.RosService.TracingConfigProperty=com.aliyun.ros.cdk.fc.RosService$TracingConfigProperty
 @alicloud/ros-cdk-fc.RosService.VpcConfigProperty=com.aliyun.ros.cdk.fc.RosService$VpcConfigProperty

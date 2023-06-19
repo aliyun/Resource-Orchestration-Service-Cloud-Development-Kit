@@ -43,6 +43,11 @@ export interface VpcEndpointServiceProps {
     readonly serviceResourceType?: string | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosVpcEndpointService.TagsProperty[];
+
+    /**
      * Property user: Account IDs to the whitelist of an endpoint service.
      */
     readonly user?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -113,6 +118,7 @@ export class VpcEndpointService extends ros.Resource {
             connectBandwidth: props.connectBandwidth,
             serviceResourceType: props.serviceResourceType,
             zoneAffinityEnabled: props.zoneAffinityEnabled,
+            tags: props.tags,
             autoAcceptEnabled: props.autoAcceptEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpcEndpointService;

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pvtz;
 
 /**
- * Properties for defining a `ALIYUN::PVTZ::ZoneVpcBinder`.
+ * Properties for defining a <code>ALIYUN::PVTZ::ZoneVpcBinder</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.554Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.972Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosZoneVpcBinderProps")
 @software.amazon.jsii.Jsii.Proxy(RosZoneVpcBinderProps.Jsii$Proxy.class)
 public interface RosZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializable {

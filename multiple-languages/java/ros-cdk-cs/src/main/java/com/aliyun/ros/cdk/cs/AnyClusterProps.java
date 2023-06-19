@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * Properties for defining a `ALIYUN::CS::AnyCluster`.
+ * Properties for defining a <code>ALIYUN::CS::AnyCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.683Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.822Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.AnyClusterProps")
 @software.amazon.jsii.Jsii.Proxy(AnyClusterProps.Jsii$Proxy.class)
 public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,7 +30,7 @@ public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @param clusterConfig Property clusterConfig: Cluster config. This parameter is required.
          * @return {@code this}
          */
-        public Builder clusterConfig(java.util.Map<java.lang.String, ? extends java.lang.Object> clusterConfig) {
+        public Builder clusterConfig(com.aliyun.ros.cdk.core.IResolvable clusterConfig) {
             this.clusterConfig = clusterConfig;
             return this;
         }
@@ -40,7 +40,7 @@ public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @param clusterConfig Property clusterConfig: Cluster config. This parameter is required.
          * @return {@code this}
          */
-        public Builder clusterConfig(com.aliyun.ros.cdk.core.IResolvable clusterConfig) {
+        public Builder clusterConfig(java.util.Map<java.lang.String, ? extends java.lang.Object> clusterConfig) {
             this.clusterConfig = clusterConfig;
             return this;
         }

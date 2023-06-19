@@ -19,6 +19,14 @@ export interface SnatEntryProps {
     readonly snatTableId: string | ros.IResolvable;
 
     /**
+     * Property eipAffinity: Specifies whether to enable EIP affinity. Valid values:
+     * 0: no
+     * 1: yes
+     * If EIP affinity is enabled and the SNAT entry is associated with multiple EIPs, a client uses the same EIP to access the Internet. Otherwise, the client uses an EIP selected from the associated EIPs to access the Internet.
+     */
+    readonly eipAffinity?: number | ros.IResolvable;
+
+    /**
      * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
      */
     readonly snatEntryName?: string | ros.IResolvable;
@@ -60,6 +68,7 @@ export class SnatEntry extends ros.Resource {
         super(scope, id);
 
         const rosSnatEntry = new RosSnatEntry(this, id,  {
+            eipAffinity: props.eipAffinity,
             snatEntryName: props.snatEntryName,
             sourceVSwitchIds: props.sourceVSwitchIds,
             sourceCidr: props.sourceCidr,

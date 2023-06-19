@@ -521,7 +521,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
+        /// <strong>Property</strong>: engineVersion: Engine version. Supported values: 2.8, 4.0, 5.0, 6.0 and 7.0
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -958,6 +958,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Redis.RosInstance.ITagsProperty[]?>();
             set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tairConfig: Tair config. This parameter is available only if the InstanceClass parameter is start with tair.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tairConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosInstance.TairConfigProperty\"}]}}", isOptional: true)]
+        public virtual object? TairConfig
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Redis.RosInstance.ITairConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Redis.RosInstance.ITairConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -2222,6 +2253,261 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
                         }
                     }
                     _value = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITairConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosInstance.TairConfigProperty")]
+        public interface ITairConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+            /// 1: You can create an instance in the standard architecture that contains only a single data node.
+            /// For more information about the standard architecture, see Cluster master-replica instances.
+            /// 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+            /// For more information about the cluster architecture, see Cluster master-replica instances.
+            /// This parameter is available and required only if the InstanceClass parameter is start with tair.rdb or tair.scm
+            /// </remarks>
+            [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ShardCount
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storage: The storage space of cloud disks. Valid values vary based on the instance specifications.
+            /// For more information, see ESSD-based instances.
+            /// This parameter is available and required only if the InstanceClass parameter is start with tair.essd
+            /// </remarks>
+            [JsiiProperty(name: "storage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Storage
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageType: The storage type of the instance. Set the value to essd_pl1.This parameter is available only if the InstanceClass parameter is start with tair.essdEnumeration Value:
+            /// essd_pl0
+            /// essd_pl1
+            /// essd_pl
+            /// essd_pl3
+            /// </remarks>
+            [JsiiProperty(name: "storageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? StorageType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITairConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosInstance.TairConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.RosInstance.ITairConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+                /// 1: You can create an instance in the standard architecture that contains only a single data node.
+                /// For more information about the standard architecture, see Cluster master-replica instances.
+                /// 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+                /// For more information about the cluster architecture, see Cluster master-replica instances.
+                /// This parameter is available and required only if the InstanceClass parameter is start with tair.rdb or tair.scm
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ShardCount
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: storage: The storage space of cloud disks. Valid values vary based on the instance specifications.
+                /// For more information, see ESSD-based instances.
+                /// This parameter is available and required only if the InstanceClass parameter is start with tair.essd
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "storage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Storage
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: storageType: The storage type of the instance. Set the value to essd_pl1.This parameter is available only if the InstanceClass parameter is start with tair.essdEnumeration Value:
+                /// essd_pl0
+                /// essd_pl1
+                /// essd_pl
+                /// essd_pl3
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "storageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? StorageType
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.RosInstance.TairConfigProperty")]
+        public class TairConfigProperty : AlibabaCloud.SDK.ROS.CDK.Redis.RosInstance.ITairConfigProperty
+        {
+            private object? _shardCount;
+
+            /// <remarks>
+            /// <strong>Property</strong>: shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+            /// 1: You can create an instance in the standard architecture that contains only a single data node.
+            /// For more information about the standard architecture, see Cluster master-replica instances.
+            /// 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+            /// For more information about the cluster architecture, see Cluster master-replica instances.
+            /// This parameter is available and required only if the InstanceClass parameter is start with tair.rdb or tair.scm
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ShardCount
+            {
+                get => _shardCount;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _shardCount = value;
+                }
+            }
+
+            private object? _storage;
+
+            /// <remarks>
+            /// <strong>Property</strong>: storage: The storage space of cloud disks. Valid values vary based on the instance specifications.
+            /// For more information, see ESSD-based instances.
+            /// This parameter is available and required only if the InstanceClass parameter is start with tair.essd
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Storage
+            {
+                get => _storage;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _storage = value;
+                }
+            }
+
+            private object? _storageType;
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageType: The storage type of the instance. Set the value to essd_pl1.This parameter is available only if the InstanceClass parameter is start with tair.essdEnumeration Value:
+            /// essd_pl0
+            /// essd_pl1
+            /// essd_pl
+            /// essd_pl3
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageType
+            {
+                get => _storageType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _storageType = value;
                 }
             }
         }

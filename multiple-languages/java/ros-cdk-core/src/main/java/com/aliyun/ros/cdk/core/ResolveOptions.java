@@ -8,7 +8,7 @@ package com.aliyun.ros.cdk.core;
  * a number of things that would otherwise be arguments to resolve() in a
  * readable way.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:17.910Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.920Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ResolveOptions")
 @software.amazon.jsii.Jsii.Proxy(ResolveOptions.Jsii$Proxy.class)
 public interface ResolveOptions extends software.amazon.jsii.JsiiSerializable {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::Api`.
+ * A ROS template type:  <code>ALIYUN::ApiGateway::Api</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.157Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.215Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosApi")
 public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Api`.
+     * Create a new <code>ALIYUN::ApiGateway::Api</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosApi(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.RosApiProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -185,6 +185,24 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setVisibility(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "visibility", java.util.Objects.requireNonNull(value, "visibility is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAllowSignatureMethod() {
+        return software.amazon.jsii.Kernel.get(this, "allowSignatureMethod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAllowSignatureMethod(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "allowSignatureMethod", value);
+    }
+
+    /**
+     */
+    public void setAllowSignatureMethod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "allowSignatureMethod", value);
     }
 
     /**
@@ -417,6 +435,42 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResultBodyModel() {
+        return software.amazon.jsii.Kernel.get(this, "resultBodyModel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResultBodyModel(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resultBodyModel", value);
+    }
+
+    /**
+     */
+    public void setResultBodyModel(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resultBodyModel", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResultDescriptions() {
+        return software.amazon.jsii.Kernel.get(this, "resultDescriptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResultDescriptions(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resultDescriptions", value);
+    }
+
+    /**
+     */
+    public void setResultDescriptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resultDescriptions", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getServiceParameters() {
         return software.amazon.jsii.Kernel.get(this, "serviceParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -527,6 +581,24 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.apigateway.RosApi.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getWebSocketApiType() {
+        return software.amazon.jsii.Kernel.get(this, "webSocketApiType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setWebSocketApiType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "webSocketApiType", value);
+    }
+
+    /**
+     */
+    public void setWebSocketApiType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "webSocketApiType", value);
     }
     /**
      */
@@ -4809,8 +4881,8 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.apigateway.RosApi> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -4945,6 +5017,23 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder visibility(final com.aliyun.ros.cdk.core.IResolvable visibility) {
             this.props.visibility(visibility);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param allowSignatureMethod This parameter is required.
+         */
+        public Builder allowSignatureMethod(final java.lang.String allowSignatureMethod) {
+            this.props.allowSignatureMethod(allowSignatureMethod);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param allowSignatureMethod This parameter is required.
+         */
+        public Builder allowSignatureMethod(final com.aliyun.ros.cdk.core.IResolvable allowSignatureMethod) {
+            this.props.allowSignatureMethod(allowSignatureMethod);
             return this;
         }
 
@@ -5120,6 +5209,40 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param resultBodyModel This parameter is required.
+         */
+        public Builder resultBodyModel(final java.lang.String resultBodyModel) {
+            this.props.resultBodyModel(resultBodyModel);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resultBodyModel This parameter is required.
+         */
+        public Builder resultBodyModel(final com.aliyun.ros.cdk.core.IResolvable resultBodyModel) {
+            this.props.resultBodyModel(resultBodyModel);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resultDescriptions This parameter is required.
+         */
+        public Builder resultDescriptions(final java.lang.String resultDescriptions) {
+            this.props.resultDescriptions(resultDescriptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resultDescriptions This parameter is required.
+         */
+        public Builder resultDescriptions(final com.aliyun.ros.cdk.core.IResolvable resultDescriptions) {
+            this.props.resultDescriptions(resultDescriptions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param serviceParameters This parameter is required.
          */
         public Builder serviceParameters(final com.aliyun.ros.cdk.core.IResolvable serviceParameters) {
@@ -5179,7 +5302,24 @@ public class RosApi extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.apigateway.RosApi}.
+         * @return {@code this}
+         * @param webSocketApiType This parameter is required.
+         */
+        public Builder webSocketApiType(final java.lang.String webSocketApiType) {
+            this.props.webSocketApiType(webSocketApiType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param webSocketApiType This parameter is required.
+         */
+        public Builder webSocketApiType(final com.aliyun.ros.cdk.core.IResolvable webSocketApiType) {
+            this.props.webSocketApiType(webSocketApiType);
+            return this;
+        }
+
+        /**
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.apigateway.RosApi}.
          */
         @Override
         public com.aliyun.ros.cdk.apigateway.RosApi build() {

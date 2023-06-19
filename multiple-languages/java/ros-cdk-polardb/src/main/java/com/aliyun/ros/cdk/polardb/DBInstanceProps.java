@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.polardb;
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBInstance`.
+ * Properties for defining a <code>ALIYUN::POLARDB::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:20.476Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.874Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -52,6 +52,28 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property collate: A locale setting that specifies the collation for newly created databases.
+     * <p>
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+     * when the cluster is PolarDB MySQL, this parameter is not supported.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCollate() {
+        return null;
+    }
+
+    /**
+     * Property ctype: A locale setting that specifies the character classification of the database.
+     * <p>
+     * The locale must be compatible with the character set set by the CharacterSetName parameter.
+     * It is consistent with the incoming information of Collate.
+     * When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+     * when the cluster is PolarDB MySQL, this parameter is optional.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCtype() {
+        return null;
+    }
+
+    /**
      * Property dbDescription: The description of the database.
      * <p>
      * Valid values:
@@ -77,6 +99,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object dbName;
         java.lang.Object accountName;
         java.lang.Object accountPrivilege;
+        java.lang.Object collate;
+        java.lang.Object ctype;
         java.lang.Object dbDescription;
 
         /**
@@ -202,6 +226,58 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getCollate}
+         * @param collate Property collate: A locale setting that specifies the collation for newly created databases.
+         *                The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+         *                when the cluster is PolarDB MySQL, this parameter is not supported.
+         * @return {@code this}
+         */
+        public Builder collate(java.lang.String collate) {
+            this.collate = collate;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getCollate}
+         * @param collate Property collate: A locale setting that specifies the collation for newly created databases.
+         *                The locale must be compatible with the character set set by the CharacterSetName parameter.When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+         *                when the cluster is PolarDB MySQL, this parameter is not supported.
+         * @return {@code this}
+         */
+        public Builder collate(com.aliyun.ros.cdk.core.IResolvable collate) {
+            this.collate = collate;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getCtype}
+         * @param ctype Property ctype: A locale setting that specifies the character classification of the database.
+         *              The locale must be compatible with the character set set by the CharacterSetName parameter.
+         *              It is consistent with the incoming information of Collate.
+         *              When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+         *              when the cluster is PolarDB MySQL, this parameter is optional.
+         * @return {@code this}
+         */
+        public Builder ctype(java.lang.String ctype) {
+            this.ctype = ctype;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getCtype}
+         * @param ctype Property ctype: A locale setting that specifies the character classification of the database.
+         *              The locale must be compatible with the character set set by the CharacterSetName parameter.
+         *              It is consistent with the incoming information of Collate.
+         *              When the cluster is PolarDB PostgreSQL (compatible with Oracle) or PolarDB PostgreSQL, this parameter is required;
+         *              when the cluster is PolarDB MySQL, this parameter is optional.
+         * @return {@code this}
+         */
+        public Builder ctype(com.aliyun.ros.cdk.core.IResolvable ctype) {
+            this.ctype = ctype;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getDbDescription}
          * @param dbDescription Property dbDescription: The description of the database.
          *                      Valid values:
@@ -248,6 +324,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object dbName;
         private final java.lang.Object accountName;
         private final java.lang.Object accountPrivilege;
+        private final java.lang.Object collate;
+        private final java.lang.Object ctype;
         private final java.lang.Object dbDescription;
 
         /**
@@ -261,6 +339,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accountPrivilege = software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.collate = software.amazon.jsii.Kernel.get(this, "collate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ctype = software.amazon.jsii.Kernel.get(this, "ctype", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbDescription = software.amazon.jsii.Kernel.get(this, "dbDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -274,6 +354,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.dbName = java.util.Objects.requireNonNull(builder.dbName, "dbName is required");
             this.accountName = builder.accountName;
             this.accountPrivilege = builder.accountPrivilege;
+            this.collate = builder.collate;
+            this.ctype = builder.ctype;
             this.dbDescription = builder.dbDescription;
         }
 
@@ -303,6 +385,16 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getCollate() {
+            return this.collate;
+        }
+
+        @Override
+        public final java.lang.Object getCtype() {
+            return this.ctype;
+        }
+
+        @Override
         public final java.lang.Object getDbDescription() {
             return this.dbDescription;
         }
@@ -321,6 +413,12 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getAccountPrivilege() != null) {
                 data.set("accountPrivilege", om.valueToTree(this.getAccountPrivilege()));
+            }
+            if (this.getCollate() != null) {
+                data.set("collate", om.valueToTree(this.getCollate()));
+            }
+            if (this.getCtype() != null) {
+                data.set("ctype", om.valueToTree(this.getCtype()));
             }
             if (this.getDbDescription() != null) {
                 data.set("dbDescription", om.valueToTree(this.getDbDescription()));
@@ -348,6 +446,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (!dbName.equals(that.dbName)) return false;
             if (this.accountName != null ? !this.accountName.equals(that.accountName) : that.accountName != null) return false;
             if (this.accountPrivilege != null ? !this.accountPrivilege.equals(that.accountPrivilege) : that.accountPrivilege != null) return false;
+            if (this.collate != null ? !this.collate.equals(that.collate) : that.collate != null) return false;
+            if (this.ctype != null ? !this.ctype.equals(that.ctype) : that.ctype != null) return false;
             return this.dbDescription != null ? this.dbDescription.equals(that.dbDescription) : that.dbDescription == null;
         }
 
@@ -358,6 +458,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.dbName.hashCode());
             result = 31 * result + (this.accountName != null ? this.accountName.hashCode() : 0);
             result = 31 * result + (this.accountPrivilege != null ? this.accountPrivilege.hashCode() : 0);
+            result = 31 * result + (this.collate != null ? this.collate.hashCode() : 0);
+            result = 31 * result + (this.ctype != null ? this.ctype.hashCode() : 0);
             result = 31 * result + (this.dbDescription != null ? this.dbDescription.hashCode() : 0);
             return result;
         }

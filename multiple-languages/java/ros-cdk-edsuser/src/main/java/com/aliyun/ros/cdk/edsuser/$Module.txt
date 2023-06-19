@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-edsuser.RosUser=com.aliyun.ros.cdk.edsuser.RosUser
+@alicloud/ros-cdk-edsuser.RosUserProps=com.aliyun.ros.cdk.edsuser.RosUserProps
+@alicloud/ros-cdk-edsuser.User=com.aliyun.ros.cdk.edsuser.User
+@alicloud/ros-cdk-edsuser.UserProps=com.aliyun.ros.cdk.edsuser.UserProps

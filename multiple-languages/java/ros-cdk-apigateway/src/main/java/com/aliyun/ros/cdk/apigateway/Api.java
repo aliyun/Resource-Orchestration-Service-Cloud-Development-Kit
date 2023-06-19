@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * A ROS resource type:  `ALIYUN::ApiGateway::Api`.
+ * A ROS resource type:  <code>ALIYUN::ApiGateway::Api</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:18.134Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Api")
 public class Api extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,7 +16,7 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Api`.
+     * Create a new <code>ALIYUN::ApiGateway::Api</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -33,7 +33,7 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Api`.
+     * Create a new <code>ALIYUN::ApiGateway::Api</code>.
      * <p>
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
@@ -241,6 +241,35 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder visibility(final com.aliyun.ros.cdk.core.IResolvable visibility) {
             this.props.visibility(visibility);
+            return this;
+        }
+
+        /**
+         * Property allowSignatureMethod: If the AuthType is APP authentication, you need to pass this value to specify the signature algorithm.
+         * <p>
+         * If you do not specify this parameter, the default value HmacSHA256 is used. Valid values:
+         * HmacSHA256
+         * HmacSHA1,HmacSHA256
+         * <p>
+         * @return {@code this}
+         * @param allowSignatureMethod Property allowSignatureMethod: If the AuthType is APP authentication, you need to pass this value to specify the signature algorithm. This parameter is required.
+         */
+        public Builder allowSignatureMethod(final java.lang.String allowSignatureMethod) {
+            this.props.allowSignatureMethod(allowSignatureMethod);
+            return this;
+        }
+        /**
+         * Property allowSignatureMethod: If the AuthType is APP authentication, you need to pass this value to specify the signature algorithm.
+         * <p>
+         * If you do not specify this parameter, the default value HmacSHA256 is used. Valid values:
+         * HmacSHA256
+         * HmacSHA1,HmacSHA256
+         * <p>
+         * @return {@code this}
+         * @param allowSignatureMethod Property allowSignatureMethod: If the AuthType is APP authentication, you need to pass this value to specify the signature algorithm. This parameter is required.
+         */
+        public Builder allowSignatureMethod(final com.aliyun.ros.cdk.core.IResolvable allowSignatureMethod) {
+            this.props.allowSignatureMethod(allowSignatureMethod);
             return this;
         }
 
@@ -479,6 +508,48 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property resultBodyModel: The return result of the API.
+         * <p>
+         * @return {@code this}
+         * @param resultBodyModel Property resultBodyModel: The return result of the API. This parameter is required.
+         */
+        public Builder resultBodyModel(final java.lang.String resultBodyModel) {
+            this.props.resultBodyModel(resultBodyModel);
+            return this;
+        }
+        /**
+         * Property resultBodyModel: The return result of the API.
+         * <p>
+         * @return {@code this}
+         * @param resultBodyModel Property resultBodyModel: The return result of the API. This parameter is required.
+         */
+        public Builder resultBodyModel(final com.aliyun.ros.cdk.core.IResolvable resultBodyModel) {
+            this.props.resultBodyModel(resultBodyModel);
+            return this;
+        }
+
+        /**
+         * Property resultDescriptions: The return description of the API.
+         * <p>
+         * @return {@code this}
+         * @param resultDescriptions Property resultDescriptions: The return description of the API. This parameter is required.
+         */
+        public Builder resultDescriptions(final java.lang.String resultDescriptions) {
+            this.props.resultDescriptions(resultDescriptions);
+            return this;
+        }
+        /**
+         * Property resultDescriptions: The return description of the API.
+         * <p>
+         * @return {@code this}
+         * @param resultDescriptions Property resultDescriptions: The return description of the API. This parameter is required.
+         */
+        public Builder resultDescriptions(final com.aliyun.ros.cdk.core.IResolvable resultDescriptions) {
+            this.props.resultDescriptions(resultDescriptions);
+            return this;
+        }
+
+        /**
          * Property serviceParameters: The service parameters.
          * <p>
          * @return {@code this}
@@ -555,7 +626,38 @@ public class Api extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.apigateway.Api}.
+         * Property webSocketApiType: The type of the two-way communication API.
+         * <p>
+         * COMMON: common API
+         * REGISTER: registered API
+         * UNREGISTER: unregistered API
+         * NOTIFY: downstream notification API
+         * <p>
+         * @return {@code this}
+         * @param webSocketApiType Property webSocketApiType: The type of the two-way communication API. This parameter is required.
+         */
+        public Builder webSocketApiType(final java.lang.String webSocketApiType) {
+            this.props.webSocketApiType(webSocketApiType);
+            return this;
+        }
+        /**
+         * Property webSocketApiType: The type of the two-way communication API.
+         * <p>
+         * COMMON: common API
+         * REGISTER: registered API
+         * UNREGISTER: unregistered API
+         * NOTIFY: downstream notification API
+         * <p>
+         * @return {@code this}
+         * @param webSocketApiType Property webSocketApiType: The type of the two-way communication API. This parameter is required.
+         */
+        public Builder webSocketApiType(final com.aliyun.ros.cdk.core.IResolvable webSocketApiType) {
+            this.props.webSocketApiType(webSocketApiType);
+            return this;
+        }
+
+        /**
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.apigateway.Api}.
          */
         @Override
         public com.aliyun.ros.cdk.apigateway.Api build() {

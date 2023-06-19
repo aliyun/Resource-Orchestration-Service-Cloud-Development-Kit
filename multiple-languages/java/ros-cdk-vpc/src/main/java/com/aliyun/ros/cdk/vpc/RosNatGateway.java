@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * A ROS template type:  `ALIYUN::VPC::NatGateway`.
+ * A ROS template type:  <code>ALIYUN::VPC::NatGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.80.0 (build bce6a1d)", date = "2023-04-26T03:02:21.426Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.977Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGateway")
 public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,11 +20,11 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new `ALIYUN::VPC::NatGateway`.
+     * Create a new <code>ALIYUN::VPC::NatGateway</code>.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+     * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
+     * @param props <ul><li>resource properties.</li></ul> This parameter is required.
      * @param enableResourcePropertyConstraint This parameter is required.
      */
     public RosNatGateway(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.RosNatGatewayProps props, final @org.jetbrains.annotations.NotNull java.lang.Boolean enableResourcePropertyConstraint) {
@@ -219,6 +219,24 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIcmpReplyEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "icmpReplyEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIcmpReplyEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "icmpReplyEnabled", value);
+    }
+
+    /**
+     */
+    public void setIcmpReplyEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "icmpReplyEnabled", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -323,6 +341,24 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPricingCycle(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "pricingCycle", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityProtectionEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "securityProtectionEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityProtectionEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "securityProtectionEnabled", value);
+    }
+
+    /**
+     */
+    public void setSecurityProtectionEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityProtectionEnabled", value);
     }
 
     /**
@@ -511,8 +547,8 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.RosNatGateway> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
+         * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
          * @param enableResourcePropertyConstraint This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -669,6 +705,23 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param icmpReplyEnabled This parameter is required.
+         */
+        public Builder icmpReplyEnabled(final java.lang.Boolean icmpReplyEnabled) {
+            this.props.icmpReplyEnabled(icmpReplyEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param icmpReplyEnabled This parameter is required.
+         */
+        public Builder icmpReplyEnabled(final com.aliyun.ros.cdk.core.IResolvable icmpReplyEnabled) {
+            this.props.icmpReplyEnabled(icmpReplyEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param instanceChargeType This parameter is required.
          */
         public Builder instanceChargeType(final java.lang.String instanceChargeType) {
@@ -771,6 +824,23 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param securityProtectionEnabled This parameter is required.
+         */
+        public Builder securityProtectionEnabled(final java.lang.Boolean securityProtectionEnabled) {
+            this.props.securityProtectionEnabled(securityProtectionEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityProtectionEnabled This parameter is required.
+         */
+        public Builder securityProtectionEnabled(final com.aliyun.ros.cdk.core.IResolvable securityProtectionEnabled) {
+            this.props.securityProtectionEnabled(securityProtectionEnabled);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param tags This parameter is required.
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> tags) {
@@ -779,7 +849,7 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
-         * @returns a newly built instance of {@link com.aliyun.ros.cdk.vpc.RosNatGateway}.
+         * @return a newly built instance of {@link com.aliyun.ros.cdk.vpc.RosNatGateway}.
          */
         @Override
         public com.aliyun.ros.cdk.vpc.RosNatGateway build() {
