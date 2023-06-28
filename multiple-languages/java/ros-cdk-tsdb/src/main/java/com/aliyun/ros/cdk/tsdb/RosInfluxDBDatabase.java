@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * A ROS template type:  <code>ALIYUN::TSDB::InfluxDBDatabase</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.839Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.694Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.RosInfluxDBDatabase")
 public class RosInfluxDBDatabase extends com.aliyun.ros.cdk.core.RosResource {
 

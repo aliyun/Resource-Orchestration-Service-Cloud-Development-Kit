@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a <code>ALIYUN::WAF::WafSwitch</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:12.150Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:31.032Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.WafSwitchProps")
 @software.amazon.jsii.Jsii.Proxy(WafSwitchProps.Jsii$Proxy.class)
 public interface WafSwitchProps extends software.amazon.jsii.JsiiSerializable {

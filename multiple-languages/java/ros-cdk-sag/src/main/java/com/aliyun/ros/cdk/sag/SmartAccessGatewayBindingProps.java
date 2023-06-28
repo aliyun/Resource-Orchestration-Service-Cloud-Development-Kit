@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a <code>ALIYUN::SAG::SmartAccessGatewayBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.603Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.438Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.SmartAccessGatewayBindingProps")
 @software.amazon.jsii.Jsii.Proxy(SmartAccessGatewayBindingProps.Jsii$Proxy.class)
 public interface SmartAccessGatewayBindingProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bastionhost;
 /**
  * A ROS template type:  <code>ALIYUN::BastionHost::Host</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.334Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.868Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.RosHost")
 public class RosHost extends com.aliyun.ros.cdk.core.RosResource {
 

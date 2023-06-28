@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adb;
 /**
  * A ROS template type:  <code>ALIYUN::ADB::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.006Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.525Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 

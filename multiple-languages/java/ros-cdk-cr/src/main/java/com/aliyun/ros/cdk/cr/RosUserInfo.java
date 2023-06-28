@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * A ROS template type:  <code>ALIYUN::CR::UserInfo</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.803Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.457Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosUserInfo")
 public class RosUserInfo extends com.aliyun.ros.cdk.core.RosResource {
 

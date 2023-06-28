@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  <code>ALIYUN::GA::BandwidthPackageAcceleratorAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.240Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.040Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosBandwidthPackageAcceleratorAddition")
 public class RosBandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a <code>ALIYUN::OTS::Table</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.793Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.609Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.TableProps")
 @software.amazon.jsii.Jsii.Proxy(TableProps.Jsii$Proxy.class)
 public interface TableProps extends software.amazon.jsii.JsiiSerializable {

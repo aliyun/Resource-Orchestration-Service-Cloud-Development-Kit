@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ebs;
 /**
  * A ROS template type:  <code>ALIYUN::EBS::DiskReplicaGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.191Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.889Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.RosDiskReplicaGroup")
 public class RosDiskReplicaGroup extends com.aliyun.ros.cdk.core.RosResource {
 

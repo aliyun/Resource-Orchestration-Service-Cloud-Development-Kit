@@ -29,6 +29,12 @@ export interface AuthorizationProps {
     readonly stageName: string | ros.IResolvable;
 
     /**
+     * Property authValidTime: The time (UTC) when the authorization expires. If this parameter is empty, the authorization does not expire.
+     * Pattern: YYYY-MM-DDThh:mm:ssZ
+     */
+    readonly authValidTime?: string | ros.IResolvable;
+
+    /**
      * Property description: Description of the authorization, less than 180 characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -56,6 +62,7 @@ export class Authorization extends ros.Resource {
 
         const rosAuthorization = new RosAuthorization(this, id,  {
             description: props.description,
+            authValidTime: props.authValidTime,
             stageName: props.stageName,
             apiIds: props.apiIds,
             appIds: props.appIds,

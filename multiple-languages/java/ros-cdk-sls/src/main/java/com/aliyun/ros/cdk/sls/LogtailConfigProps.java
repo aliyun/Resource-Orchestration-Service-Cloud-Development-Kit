@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a <code>ALIYUN::SLS::LogtailConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.739Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.589Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.LogtailConfigProps")
 @software.amazon.jsii.Jsii.Proxy(LogtailConfigProps.Jsii$Proxy.class)
 public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializable {

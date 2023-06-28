@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a <code>ALIYUN::ApiGateway::TrafficControl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.265Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.805Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosTrafficControlProps")
 @software.amazon.jsii.Jsii.Proxy(RosTrafficControlProps.Jsii$Proxy.class)
 public interface RosTrafficControlProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  <code>ALIYUN::RDS::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.072Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.908Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 

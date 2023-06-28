@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a <code>ALIYUN::RAM::SAMLProvider</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.037Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.880Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosSAMLProviderProps")
 @software.amazon.jsii.Jsii.Proxy(RosSAMLProviderProps.Jsii$Proxy.class)
 public interface RosSAMLProviderProps extends software.amazon.jsii.JsiiSerializable {

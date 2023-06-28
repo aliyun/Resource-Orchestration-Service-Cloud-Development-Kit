@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a <code>ALIYUN::VPC::Ipv6Gateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.975Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.845Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosIpv6GatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosIpv6GatewayProps.Jsii$Proxy.class)
 public interface RosIpv6GatewayProps extends software.amazon.jsii.JsiiSerializable {

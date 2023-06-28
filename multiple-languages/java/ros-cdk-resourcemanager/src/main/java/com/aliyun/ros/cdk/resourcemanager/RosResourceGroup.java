@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * A ROS template type:  <code>ALIYUN::ResourceManager::ResourceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.367Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.199Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosResourceGroup")
 public class RosResourceGroup extends com.aliyun.ros.cdk.core.RosResource {
 

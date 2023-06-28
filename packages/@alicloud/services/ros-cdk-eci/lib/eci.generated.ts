@@ -2161,9 +2161,28 @@ export interface RosImageCacheProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
+     * @Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     */
+    readonly acrRegistryInfo?: Array<RosImageCache.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property autoMatchImageCache: Specifies whether to enable reuse of image cache layers. If you enable this feature, and the image cache that you want to createand an existing image cache contain duplicate image layers, the system reuses the duplicate image layers to create the new image cache.
+     *  This accelerates the creation of the image cache. 
+     * Valid values: true: enables reuse of image cache layers.
+     * false: disables reuse of image cache layers.
+     * Default value: false.
+     */
+    readonly autoMatchImageCache?: boolean | ros.IResolvable;
+
+    /**
      * @Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
      */
     readonly eipInstanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property imageCacheSize: The size of the image cache. Unit: GiB. Default value: 20.
+     */
+    readonly imageCacheSize?: number | ros.IResolvable;
 
     /**
      * @Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
@@ -2174,6 +2193,18 @@ export interface RosImageCacheProps {
      * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property retentionDays: The retention period of the image cache. Unit: days. When the retention period ends, the image cache expires and is deleted.
+     *  By default, image caches never expire.
+     * Note: The image caches that fail to be created are only retained for one day.
+     */
+    readonly retentionDays?: number | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The zone ID of the image cache.
+     */
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -2186,11 +2217,14 @@ export interface RosImageCacheProps {
 function RosImageCachePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('imageCacheSize', ros.validateNumber)(properties.imageCacheSize));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('autoMatchImageCache', ros.validateBoolean)(properties.autoMatchImageCache));
     errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('imageCacheName', ros.requiredValidator)(properties.imageCacheName));
+    errors.collect(ros.propertyValidator('imageCacheName', ros.validateString)(properties.imageCacheName));
     if(properties.imageRegistryCredential && (Array.isArray(properties.imageRegistryCredential) || (typeof properties.imageRegistryCredential) === 'string')) {
         errors.collect(ros.propertyValidator('imageRegistryCredential', ros.validateLength)({
             data: properties.imageRegistryCredential.length,
@@ -2199,8 +2233,10 @@ function RosImageCachePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('imageRegistryCredential', ros.listValidator(ros.validateString))(properties.imageRegistryCredential));
-    errors.collect(ros.propertyValidator('imageCacheName', ros.requiredValidator)(properties.imageCacheName));
-    errors.collect(ros.propertyValidator('imageCacheName', ros.validateString)(properties.imageCacheName));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('acrRegistryInfo', ros.listValidator(RosImageCache_AcrRegistryInfoPropertyValidator))(properties.acrRegistryInfo));
+    errors.collect(ros.propertyValidator('retentionDays', ros.validateNumber)(properties.retentionDays));
     errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
     if(properties.image && (Array.isArray(properties.image) || (typeof properties.image) === 'string')) {
         errors.collect(ros.propertyValidator('image', ros.validateLength)({
@@ -2232,9 +2268,14 @@ function rosImageCachePropsToRosTemplate(properties: any, enableResourceProperty
       ImageCacheName: ros.stringToRosTemplate(properties.imageCacheName),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      AcrRegistryInfo: ros.listMapper(rosImageCacheAcrRegistryInfoPropertyToRosTemplate)(properties.acrRegistryInfo),
+      AutoMatchImageCache: ros.booleanToRosTemplate(properties.autoMatchImageCache),
       EipInstanceId: ros.stringToRosTemplate(properties.eipInstanceId),
+      ImageCacheSize: ros.numberToRosTemplate(properties.imageCacheSize),
       ImageRegistryCredential: ros.listMapper(ros.stringToRosTemplate)(properties.imageRegistryCredential),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      RetentionDays: ros.numberToRosTemplate(properties.retentionDays),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
@@ -2281,9 +2322,28 @@ export class RosImageCache extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable;
 
     /**
+     * @Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     */
+    public acrRegistryInfo: Array<RosImageCache.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoMatchImageCache: Specifies whether to enable reuse of image cache layers. If you enable this feature, and the image cache that you want to createand an existing image cache contain duplicate image layers, the system reuses the duplicate image layers to create the new image cache.
+     *  This accelerates the creation of the image cache. 
+     * Valid values: true: enables reuse of image cache layers.
+     * false: disables reuse of image cache layers.
+     * Default value: false.
+     */
+    public autoMatchImageCache: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
      */
     public eipInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageCacheSize: The size of the image cache. Unit: GiB. Default value: 20.
+     */
+    public imageCacheSize: number | ros.IResolvable | undefined;
 
     /**
      * @Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
@@ -2294,6 +2354,18 @@ export class RosImageCache extends ros.RosResource {
      * @Property resourceGroupId: Resource group id.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property retentionDays: The retention period of the image cache. Unit: days. When the retention period ends, the image cache expires and is deleted.
+     *  By default, image caches never expire.
+     * Note: The image caches that fail to be created are only retained for one day.
+     */
+    public retentionDays: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneId: The zone ID of the image cache.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ECI::ImageCache`.
@@ -2311,9 +2383,14 @@ export class RosImageCache extends ros.RosResource {
         this.imageCacheName = props.imageCacheName;
         this.securityGroupId = props.securityGroupId;
         this.vSwitchId = props.vSwitchId;
+        this.acrRegistryInfo = props.acrRegistryInfo;
+        this.autoMatchImageCache = props.autoMatchImageCache;
         this.eipInstanceId = props.eipInstanceId;
+        this.imageCacheSize = props.imageCacheSize;
         this.imageRegistryCredential = props.imageRegistryCredential;
         this.resourceGroupId = props.resourceGroupId;
+        this.retentionDays = props.retentionDays;
+        this.zoneId = props.zoneId;
     }
 
 
@@ -2323,12 +2400,77 @@ export class RosImageCache extends ros.RosResource {
             imageCacheName: this.imageCacheName,
             securityGroupId: this.securityGroupId,
             vSwitchId: this.vSwitchId,
+            acrRegistryInfo: this.acrRegistryInfo,
+            autoMatchImageCache: this.autoMatchImageCache,
             eipInstanceId: this.eipInstanceId,
+            imageCacheSize: this.imageCacheSize,
             imageRegistryCredential: this.imageRegistryCredential,
             resourceGroupId: this.resourceGroupId,
+            retentionDays: this.retentionDays,
+            zoneId: this.zoneId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosImageCachePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosImageCache {
+    /**
+     * @stability external
+     */
+    export interface AcrRegistryInfoProperty {
+        /**
+         * @Property instanceName: instance name
+         */
+        readonly instanceName?: string | ros.IResolvable;
+        /**
+         * @Property instanceId: Instance id
+         */
+        readonly instanceId: string | ros.IResolvable;
+        /**
+         * @Property regionId: The region to which it belongs. Optional, the default is the local region
+         */
+        readonly regionId?: string | ros.IResolvable;
+        /**
+         * @Property domain: domain
+         */
+        readonly domain?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AcrRegistryInfoProperty`
+ *
+ * @param properties - the TypeScript properties of a `AcrRegistryInfoProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosImageCache_AcrRegistryInfoPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
+    errors.collect(ros.propertyValidator('domain', ros.listValidator(ros.validateString))(properties.domain));
+    return errors.wrap('supplied properties not correct for "AcrRegistryInfoProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECI::ImageCache.AcrRegistryInfo` resource
+ *
+ * @param properties - the TypeScript properties of a `AcrRegistryInfoProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECI::ImageCache.AcrRegistryInfo` resource.
+ */
+// @ts-ignore TS6133
+function rosImageCacheAcrRegistryInfoPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosImageCache_AcrRegistryInfoPropertyValidator(properties).assertSuccess();
+    return {
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      RegionId: ros.stringToRosTemplate(properties.regionId),
+      Domain: ros.listMapper(ros.stringToRosTemplate)(properties.domain),
+    };
 }

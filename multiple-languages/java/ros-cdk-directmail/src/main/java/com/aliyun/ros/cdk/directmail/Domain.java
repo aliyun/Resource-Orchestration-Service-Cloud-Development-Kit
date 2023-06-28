@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.directmail;
 /**
  * A ROS resource type:  <code>ALIYUN::DirectMail::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.062Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.745Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource {
 

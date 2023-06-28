@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * A ROS resource type:  <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.944Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.779Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceAttachment")
 public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resource {
 

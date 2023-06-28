@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * Properties for defining a <code>ALIYUN::AMQP::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.139Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.672Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,8 +36,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Property storageSize: The storage size.
      * <p>
      * It is valid when instance_type is vip.
-     * If instance type is professional or enterprise, the valid value is 200.
-     * If instance type is vip, the valid value is [700, 2800] with the step size 100
+     * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getStorageSize();
 
@@ -115,11 +114,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property tracingStorageTime: It is valid when support_tracing == tracing_true.
+     * Property tracingStorageTime: The retention period of message traces was set.
      * <p>
-     * The retention period of message traces was set. Valid values: 3, 7, 15.
+     * Valid values: 3, 7, 15.
      * If instance_type=vip, the valid values is 15.
      * If instance_type!=vip, the valid values is 3, 7, 15.
+     * If support_tracing == tracing_false, the valid values is 0.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTracingStorageTime() {
         return null;
@@ -225,8 +225,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link InstanceProps#getStorageSize}
          * @param storageSize Property storageSize: The storage size. This parameter is required.
          *                    It is valid when instance_type is vip.
-         *                    If instance type is professional or enterprise, the valid value is 200.
-         *                    If instance type is vip, the valid value is [700, 2800] with the step size 100
+         *                    If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
          * @return {@code this}
          */
         public Builder storageSize(java.lang.Number storageSize) {
@@ -238,8 +237,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link InstanceProps#getStorageSize}
          * @param storageSize Property storageSize: The storage size. This parameter is required.
          *                    It is valid when instance_type is vip.
-         *                    If instance type is professional or enterprise, the valid value is 200.
-         *                    If instance type is vip, the valid value is [700, 2800] with the step size 100
+         *                    If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
          * @return {@code this}
          */
         public Builder storageSize(com.aliyun.ros.cdk.core.IResolvable storageSize) {
@@ -431,10 +429,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getTracingStorageTime}
-         * @param tracingStorageTime Property tracingStorageTime: It is valid when support_tracing == tracing_true.
-         *                           The retention period of message traces was set. Valid values: 3, 7, 15.
+         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces was set.
+         *                           Valid values: 3, 7, 15.
          *                           If instance_type=vip, the valid values is 15.
          *                           If instance_type!=vip, the valid values is 3, 7, 15.
+         *                           If support_tracing == tracing_false, the valid values is 0.
          * @return {@code this}
          */
         public Builder tracingStorageTime(java.lang.Number tracingStorageTime) {
@@ -444,10 +443,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getTracingStorageTime}
-         * @param tracingStorageTime Property tracingStorageTime: It is valid when support_tracing == tracing_true.
-         *                           The retention period of message traces was set. Valid values: 3, 7, 15.
+         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces was set.
+         *                           Valid values: 3, 7, 15.
          *                           If instance_type=vip, the valid values is 15.
          *                           If instance_type!=vip, the valid values is 3, 7, 15.
+         *                           If support_tracing == tracing_false, the valid values is 0.
          * @return {@code this}
          */
         public Builder tracingStorageTime(com.aliyun.ros.cdk.core.IResolvable tracingStorageTime) {

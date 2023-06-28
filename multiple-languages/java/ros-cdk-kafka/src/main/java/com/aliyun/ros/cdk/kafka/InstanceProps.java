@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * Properties for defining a <code>ALIYUN::KAFKA::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.441Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.242Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {

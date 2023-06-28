@@ -6013,7 +6013,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('eniMappings', ros.validateLength)({
             data: properties.eniMappings.length,
             min: undefined,
-            max: 1,
+            max: 2,
           }));
     }
     errors.collect(ros.propertyValidator('eniMappings', ros.listValidator(RosInstanceGroup_EniMappingsPropertyValidator))(properties.eniMappings));
@@ -6774,13 +6774,29 @@ export namespace RosInstanceGroup {
      */
     export interface EniMappingsProperty {
         /**
+         * @Property networkInterfaceTrafficMode: The communication mode of the ENI. Valid values:
+     * Standard: uses the TCP communication mode.
+     * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+         */
+        readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
+        /**
          * @Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
          */
         readonly description?: string | ros.IResolvable;
         /**
+         * @Property queueNumber: The number of queues that are supported by the ENI. Valid values: 1 to 2048.
+     * When you attach the ENI to an instance, make sure that the value of this parameter is less than the maximum number of queues per ENI that is allowed for the instance type. To view the maximum number of queues per ENI allowed for an instance type, you can call DescribeInstanceTypes and then check the return value of MaximumQueueNumberPerEni.
+     * By default, this parameter is empty. If you do not specify this parameter, the default number of queues per ENI for the instance type of an instance is used when you attach the ENI to the instance. To learn about the default number of queues per ENI for an instance type, you can call DescribeInstanceTypes and then check the return value of SecondaryEniQueueNumber.
+         */
+        readonly queueNumber?: number | ros.IResolvable;
+        /**
+         * @Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+         */
+        readonly ipv6AddressCount?: number | ros.IResolvable;
+        /**
          * @Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
          */
-        readonly securityGroupId: string | ros.IResolvable;
+        readonly securityGroupId?: string | ros.IResolvable;
         /**
          * @Property vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
          */
@@ -6793,6 +6809,19 @@ export namespace RosInstanceGroup {
          * @Property primaryIpAddress: The primary private IP address of the ENI.  The specified IP address must have the same Host ID as the VSwitch. If no IP addresses are specified, a random network ID is assigned for the ENI.
          */
         readonly primaryIpAddress?: string | ros.IResolvable;
+        /**
+         * @Property ipv6Addresses: The IPv6 address N to assign to the ENI.
+         */
+        readonly ipv6Addresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property instanceType: The type of ENI. Default value: Secondary.
+         */
+        readonly instanceType?: string | ros.IResolvable;
+        /**
+         * @Property securityGroupIds: The IDs of security groups to which to assign ENI
+     * Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
+         */
+        readonly securityGroupIds?: Array<any | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -6805,13 +6834,44 @@ export namespace RosInstanceGroup {
 function RosInstanceGroup_EniMappingsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.networkInterfaceTrafficMode && (typeof properties.networkInterfaceTrafficMode) !== 'object') {
+        errors.collect(ros.propertyValidator('networkInterfaceTrafficMode', ros.validateAllowedValues)({
+          data: properties.networkInterfaceTrafficMode,
+          allowedValues: ["Standard","HighPerformance"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('networkInterfaceTrafficMode', ros.validateString)(properties.networkInterfaceTrafficMode));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    if(properties.queueNumber && (typeof properties.queueNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('queueNumber', ros.validateRange)({
+            data: properties.queueNumber,
+            min: 1,
+            max: 2048,
+          }));
+    }
+    errors.collect(ros.propertyValidator('queueNumber', ros.validateNumber)(properties.queueNumber));
+    errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('networkInterfaceName', ros.validateString)(properties.networkInterfaceName));
     errors.collect(ros.propertyValidator('primaryIpAddress', ros.validateString)(properties.primaryIpAddress));
+    if(properties.ipv6Addresses && (Array.isArray(properties.ipv6Addresses) || (typeof properties.ipv6Addresses) === 'string')) {
+        errors.collect(ros.propertyValidator('ipv6Addresses', ros.validateLength)({
+            data: properties.ipv6Addresses.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6Addresses', ros.listValidator(ros.validateString))(properties.ipv6Addresses));
+    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
+          data: properties.instanceType,
+          allowedValues: ["Primary","Secondary"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateAny))(properties.securityGroupIds));
     return errors.wrap('supplied properties not correct for "EniMappingsProperty"');
 }
 
@@ -6827,11 +6887,17 @@ function rosInstanceGroupEniMappingsPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroup_EniMappingsPropertyValidator(properties).assertSuccess();
     return {
+      NetworkInterfaceTrafficMode: ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
       Description: ros.stringToRosTemplate(properties.description),
+      QueueNumber: ros.numberToRosTemplate(properties.queueNumber),
+      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       NetworkInterfaceName: ros.stringToRosTemplate(properties.networkInterfaceName),
       PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
+      Ipv6Addresses: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      SecurityGroupIds: ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
     };
 }
 
@@ -7295,7 +7361,7 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
         errors.collect(ros.propertyValidator('eniMappings', ros.validateLength)({
             data: properties.eniMappings.length,
             min: undefined,
-            max: 1,
+            max: 2,
           }));
     }
     errors.collect(ros.propertyValidator('eniMappings', ros.listValidator(RosInstanceGroupClone_EniMappingsPropertyValidator))(properties.eniMappings));
@@ -7451,6 +7517,11 @@ export class RosInstanceGroupClone extends ros.RosResource {
      * @Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable;
+
+    /**
+     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
 
     /**
      * @Attribute ZoneIds: Zone id of created instances.
@@ -7733,6 +7804,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
+        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -7963,13 +8035,29 @@ export namespace RosInstanceGroupClone {
      */
     export interface EniMappingsProperty {
         /**
+         * @Property networkInterfaceTrafficMode: The communication mode of the ENI. Valid values:
+     * Standard: uses the TCP communication mode.
+     * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+         */
+        readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
+        /**
          * @Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
          */
         readonly description?: string | ros.IResolvable;
         /**
+         * @Property queueNumber: The number of queues that are supported by the ENI. Valid values: 1 to 2048.
+     * When you attach the ENI to an instance, make sure that the value of this parameter is less than the maximum number of queues per ENI that is allowed for the instance type. To view the maximum number of queues per ENI allowed for an instance type, you can call DescribeInstanceTypes and then check the return value of MaximumQueueNumberPerEni.
+     * By default, this parameter is empty. If you do not specify this parameter, the default number of queues per ENI for the instance type of an instance is used when you attach the ENI to the instance. To learn about the default number of queues per ENI for an instance type, you can call DescribeInstanceTypes and then check the return value of SecondaryEniQueueNumber.
+         */
+        readonly queueNumber?: number | ros.IResolvable;
+        /**
+         * @Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+         */
+        readonly ipv6AddressCount?: number | ros.IResolvable;
+        /**
          * @Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
          */
-        readonly securityGroupId: string | ros.IResolvable;
+        readonly securityGroupId?: string | ros.IResolvable;
         /**
          * @Property vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
          */
@@ -7982,6 +8070,19 @@ export namespace RosInstanceGroupClone {
          * @Property primaryIpAddress: The primary private IP address of the ENI.  The specified IP address must have the same Host ID as the VSwitch. If no IP addresses are specified, a random network ID is assigned for the ENI.
          */
         readonly primaryIpAddress?: string | ros.IResolvable;
+        /**
+         * @Property ipv6Addresses: The IPv6 address N to assign to the ENI.
+         */
+        readonly ipv6Addresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property instanceType: The type of ENI. Default value: Secondary.
+         */
+        readonly instanceType?: string | ros.IResolvable;
+        /**
+         * @Property securityGroupIds: The IDs of security groups to which to assign ENI
+     * Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
+         */
+        readonly securityGroupIds?: Array<any | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -7994,13 +8095,44 @@ export namespace RosInstanceGroupClone {
 function RosInstanceGroupClone_EniMappingsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.networkInterfaceTrafficMode && (typeof properties.networkInterfaceTrafficMode) !== 'object') {
+        errors.collect(ros.propertyValidator('networkInterfaceTrafficMode', ros.validateAllowedValues)({
+          data: properties.networkInterfaceTrafficMode,
+          allowedValues: ["Standard","HighPerformance"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('networkInterfaceTrafficMode', ros.validateString)(properties.networkInterfaceTrafficMode));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    if(properties.queueNumber && (typeof properties.queueNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('queueNumber', ros.validateRange)({
+            data: properties.queueNumber,
+            min: 1,
+            max: 2048,
+          }));
+    }
+    errors.collect(ros.propertyValidator('queueNumber', ros.validateNumber)(properties.queueNumber));
+    errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('networkInterfaceName', ros.validateString)(properties.networkInterfaceName));
     errors.collect(ros.propertyValidator('primaryIpAddress', ros.validateString)(properties.primaryIpAddress));
+    if(properties.ipv6Addresses && (Array.isArray(properties.ipv6Addresses) || (typeof properties.ipv6Addresses) === 'string')) {
+        errors.collect(ros.propertyValidator('ipv6Addresses', ros.validateLength)({
+            data: properties.ipv6Addresses.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6Addresses', ros.listValidator(ros.validateString))(properties.ipv6Addresses));
+    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
+          data: properties.instanceType,
+          allowedValues: ["Primary","Secondary"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateAny))(properties.securityGroupIds));
     return errors.wrap('supplied properties not correct for "EniMappingsProperty"');
 }
 
@@ -8016,11 +8148,17 @@ function rosInstanceGroupCloneEniMappingsPropertyToRosTemplate(properties: any):
     if (!ros.canInspect(properties)) { return properties; }
     RosInstanceGroupClone_EniMappingsPropertyValidator(properties).assertSuccess();
     return {
+      NetworkInterfaceTrafficMode: ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
       Description: ros.stringToRosTemplate(properties.description),
+      QueueNumber: ros.numberToRosTemplate(properties.queueNumber),
+      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       NetworkInterfaceName: ros.stringToRosTemplate(properties.networkInterfaceName),
       PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
+      Ipv6Addresses: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      SecurityGroupIds: ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
     };
 }
 
@@ -9506,9 +9644,26 @@ export interface RosNetworkInterfaceProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+     */
+    readonly ipv6AddressCount?: number | ros.IResolvable;
+
+    /**
+     * @Property ipv6Addresses: The IPv6 address N to assign to the ENI.
+     */
+    readonly ipv6Addresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property networkInterfaceName: Name of your ENI. It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
      */
     readonly networkInterfaceName?: string | ros.IResolvable;
+
+    /**
+     * @Property networkInterfaceTrafficMode: The communication mode of the ENI. Valid values:
+     * Standard: uses the TCP communication mode.
+     * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+     */
+    readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
 
     /**
      * @Property primaryIpAddress: The primary private IP address of the ENI.  The specified IP address must have the same Host ID as the VSwitch. If no IP addresses are specified, a random network ID is assigned for the ENI.
@@ -9519,6 +9674,13 @@ export interface RosNetworkInterfaceProps {
      * @Property privateIpAddresses: Specifies secondary private IP addresses of the ENI. This IP address must be an available IP address in the CIDR block of the VSwitch to which the ENI belongs.
      */
     readonly privateIpAddresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property queueNumber: The number of queues that are supported by the ENI. Valid values: 1 to 2048.
+     * When you attach the ENI to an instance, make sure that the value of this parameter is less than the maximum number of queues per ENI that is allowed for the instance type. To view the maximum number of queues per ENI allowed for an instance type, you can call DescribeInstanceTypes and then check the return value of MaximumQueueNumberPerEni.
+     * By default, this parameter is empty. If you do not specify this parameter, the default number of queues per ENI for the instance type of an instance is used when you attach the ENI to the instance. To learn about the default number of queues per ENI for an instance type, you can call DescribeInstanceTypes and then check the return value of SecondaryEniQueueNumber.
+     */
+    readonly queueNumber?: number | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
@@ -9556,6 +9718,13 @@ export interface RosNetworkInterfaceProps {
 function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.networkInterfaceTrafficMode && (typeof properties.networkInterfaceTrafficMode) !== 'object') {
+        errors.collect(ros.propertyValidator('networkInterfaceTrafficMode', ros.validateAllowedValues)({
+          data: properties.networkInterfaceTrafficMode,
+          allowedValues: ["Standard","HighPerformance"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('networkInterfaceTrafficMode', ros.validateString)(properties.networkInterfaceTrafficMode));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     if(properties.privateIpAddresses && (Array.isArray(properties.privateIpAddresses) || (typeof properties.privateIpAddresses) === 'string')) {
         errors.collect(ros.propertyValidator('privateIpAddresses', ros.validateLength)({
@@ -9572,6 +9741,14 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('networkInterfaceName', ros.validateString)(properties.networkInterfaceName));
     errors.collect(ros.propertyValidator('primaryIpAddress', ros.validateString)(properties.primaryIpAddress));
+    if(properties.ipv6Addresses && (Array.isArray(properties.ipv6Addresses) || (typeof properties.ipv6Addresses) === 'string')) {
+        errors.collect(ros.propertyValidator('ipv6Addresses', ros.validateLength)({
+            data: properties.ipv6Addresses.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6Addresses', ros.listValidator(ros.validateString))(properties.ipv6Addresses));
     if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
         errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
             data: properties.securityGroupIds.length,
@@ -9580,6 +9757,15 @@ function RosNetworkInterfacePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
+    if(properties.queueNumber && (typeof properties.queueNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('queueNumber', ros.validateRange)({
+            data: properties.queueNumber,
+            min: 1,
+            max: 2048,
+          }));
+    }
+    errors.collect(ros.propertyValidator('queueNumber', ros.validateNumber)(properties.queueNumber));
+    errors.collect(ros.propertyValidator('ipv6AddressCount', ros.validateNumber)(properties.ipv6AddressCount));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -9607,9 +9793,13 @@ function rosNetworkInterfacePropsToRosTemplate(properties: any, enableResourcePr
     return {
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       Description: ros.stringToRosTemplate(properties.description),
+      Ipv6AddressCount: ros.numberToRosTemplate(properties.ipv6AddressCount),
+      Ipv6Addresses: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
       NetworkInterfaceName: ros.stringToRosTemplate(properties.networkInterfaceName),
+      NetworkInterfaceTrafficMode: ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
       PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
       PrivateIpAddresses: ros.listMapper(ros.stringToRosTemplate)(properties.privateIpAddresses),
+      QueueNumber: ros.numberToRosTemplate(properties.queueNumber),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecondaryPrivateIpAddressCount: ros.numberToRosTemplate(properties.secondaryPrivateIpAddressCount),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
@@ -9666,9 +9856,26 @@ export class RosNetworkInterface extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+     */
+    public ipv6AddressCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6Addresses: The IPv6 address N to assign to the ENI.
+     */
+    public ipv6Addresses: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property networkInterfaceName: Name of your ENI. It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
      */
     public networkInterfaceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property networkInterfaceTrafficMode: The communication mode of the ENI. Valid values:
+     * Standard: uses the TCP communication mode.
+     * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+     */
+    public networkInterfaceTrafficMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property primaryIpAddress: The primary private IP address of the ENI.  The specified IP address must have the same Host ID as the VSwitch. If no IP addresses are specified, a random network ID is assigned for the ENI.
@@ -9679,6 +9886,13 @@ export class RosNetworkInterface extends ros.RosResource {
      * @Property privateIpAddresses: Specifies secondary private IP addresses of the ENI. This IP address must be an available IP address in the CIDR block of the VSwitch to which the ENI belongs.
      */
     public privateIpAddresses: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property queueNumber: The number of queues that are supported by the ENI. Valid values: 1 to 2048.
+     * When you attach the ENI to an instance, make sure that the value of this parameter is less than the maximum number of queues per ENI that is allowed for the instance type. To view the maximum number of queues per ENI allowed for an instance type, you can call DescribeInstanceTypes and then check the return value of MaximumQueueNumberPerEni.
+     * By default, this parameter is empty. If you do not specify this parameter, the default number of queues per ENI for the instance type of an instance is used when you attach the ENI to the instance. To learn about the default number of queues per ENI for an instance type, you can call DescribeInstanceTypes and then check the return value of SecondaryEniQueueNumber.
+     */
+    public queueNumber: number | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
@@ -9722,9 +9936,13 @@ export class RosNetworkInterface extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vSwitchId = props.vSwitchId;
         this.description = props.description;
+        this.ipv6AddressCount = props.ipv6AddressCount;
+        this.ipv6Addresses = props.ipv6Addresses;
         this.networkInterfaceName = props.networkInterfaceName;
+        this.networkInterfaceTrafficMode = props.networkInterfaceTrafficMode;
         this.primaryIpAddress = props.primaryIpAddress;
         this.privateIpAddresses = props.privateIpAddresses;
+        this.queueNumber = props.queueNumber;
         this.resourceGroupId = props.resourceGroupId;
         this.secondaryPrivateIpAddressCount = props.secondaryPrivateIpAddressCount;
         this.securityGroupId = props.securityGroupId;
@@ -9737,9 +9955,13 @@ export class RosNetworkInterface extends ros.RosResource {
         return {
             vSwitchId: this.vSwitchId,
             description: this.description,
+            ipv6AddressCount: this.ipv6AddressCount,
+            ipv6Addresses: this.ipv6Addresses,
             networkInterfaceName: this.networkInterfaceName,
+            networkInterfaceTrafficMode: this.networkInterfaceTrafficMode,
             primaryIpAddress: this.primaryIpAddress,
             privateIpAddresses: this.privateIpAddresses,
+            queueNumber: this.queueNumber,
             resourceGroupId: this.resourceGroupId,
             secondaryPrivateIpAddressCount: this.secondaryPrivateIpAddressCount,
             securityGroupId: this.securityGroupId,

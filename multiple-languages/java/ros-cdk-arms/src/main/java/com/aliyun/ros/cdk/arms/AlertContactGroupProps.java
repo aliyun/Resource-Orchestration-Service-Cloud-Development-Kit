@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Properties for defining a <code>ALIYUN::ARMS::AlertContactGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.283Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.834Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.AlertContactGroupProps")
 @software.amazon.jsii.Jsii.Proxy(AlertContactGroupProps.Jsii$Proxy.class)
 public interface AlertContactGroupProps extends software.amazon.jsii.JsiiSerializable {

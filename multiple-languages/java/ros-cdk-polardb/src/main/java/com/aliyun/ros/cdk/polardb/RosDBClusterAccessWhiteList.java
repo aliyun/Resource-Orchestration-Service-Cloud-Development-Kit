@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  <code>ALIYUN::POLARDB::DBClusterAccessWhiteList</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.717Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterAccessWhiteList")
 public class RosDBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS template type:  <code>ALIYUN::RAM::UserToGroupAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.047Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.887Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosUserToGroupAddition")
 public class RosUserToGroupAddition extends com.aliyun.ros.cdk.core.RosResource {
 

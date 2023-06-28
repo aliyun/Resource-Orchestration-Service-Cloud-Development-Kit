@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * A ROS resource type:  <code>ALIYUN::ARMS::ManagedPrometheus</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.284Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.836Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.ManagedPrometheus")
 public class ManagedPrometheus extends com.aliyun.ros.cdk.core.Resource {
 

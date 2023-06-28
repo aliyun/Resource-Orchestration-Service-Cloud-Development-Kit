@@ -161,11 +161,143 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Ipv6AddressCount
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: ipv6Addresses: The IPv6 address N to assign to the ENI.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipv6Addresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? Ipv6Addresses
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case string cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: networkInterfaceName: Name of your ENI. It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "networkInterfaceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public virtual object? NetworkInterfaceName
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: networkInterfaceTrafficMode: The communication mode of the ENI. Valid values:
+        /// Standard: uses the TCP communication mode.
+        /// HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "networkInterfaceTrafficMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? NetworkInterfaceTrafficMode
         {
             get => GetInstanceProperty<object?>();
             set
@@ -264,6 +396,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                             break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: queueNumber: The number of queues that are supported by the ENI. Valid values: 1 to 2048.
+        /// When you attach the ENI to an instance, make sure that the value of this parameter is less than the maximum number of queues per ENI that is allowed for the instance type. To view the maximum number of queues per ENI allowed for an instance type, you can call DescribeInstanceTypes and then check the return value of MaximumQueueNumberPerEni.
+        /// By default, this parameter is empty. If you do not specify this parameter, the default number of queues per ENI for the instance type of an instance is used when you attach the ENI to the instance. To learn about the default number of queues per ENI for an instance type, you can call DescribeInstanceTypes and then check the return value of SecondaryEniQueueNumber.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "queueNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? QueueNumber
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);

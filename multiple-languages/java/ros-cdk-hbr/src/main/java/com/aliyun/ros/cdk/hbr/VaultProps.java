@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Properties for defining a <code>ALIYUN::HBR::Vault</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.384Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.182Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.VaultProps")
 @software.amazon.jsii.Jsii.Proxy(VaultProps.Jsii$Proxy.class)
 public interface VaultProps extends software.amazon.jsii.JsiiSerializable {

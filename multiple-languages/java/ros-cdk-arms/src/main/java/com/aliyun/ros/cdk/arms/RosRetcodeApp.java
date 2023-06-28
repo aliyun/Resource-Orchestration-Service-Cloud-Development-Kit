@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * A ROS template type:  <code>ALIYUN::ARMS::RetcodeApp</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.311Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.846Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosRetcodeApp")
 public class RosRetcodeApp extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * A ROS resource type:  <code>ALIYUN::ECI::ContainerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.943Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ContainerGroup")
 public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource {
 

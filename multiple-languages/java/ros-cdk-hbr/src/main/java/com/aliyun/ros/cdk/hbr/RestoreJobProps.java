@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Properties for defining a <code>ALIYUN::HBR::RestoreJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.349Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.148Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RestoreJobProps")
 @software.amazon.jsii.Jsii.Proxy(RestoreJobProps.Jsii$Proxy.class)
 public interface RestoreJobProps extends software.amazon.jsii.JsiiSerializable {

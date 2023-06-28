@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS resource type:  <code>ALIYUN::SLS::Savedsearch</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.806Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.654Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.Savedsearch")
 public class Savedsearch extends com.aliyun.ros.cdk.core.Resource {
 

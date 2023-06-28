@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS template type:  <code>ALIYUN::RAM::SecurityPreference</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.881Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosSecurityPreference")
 public class RosSecurityPreference extends com.aliyun.ros.cdk.core.RosResource {
 

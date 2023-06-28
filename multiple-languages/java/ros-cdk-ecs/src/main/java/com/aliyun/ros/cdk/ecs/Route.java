@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  <code>ALIYUN::ECS::Route</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.649Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.427Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Route")
 public class Route extends com.aliyun.ros.cdk.core.Resource {
 

@@ -1,0 +1,7 @@
+@alicloud/ros-cdk-computenest.RosServiceInstance=com.aliyun.ros.cdk.computenest.RosServiceInstance
+@alicloud/ros-cdk-computenest.RosServiceInstance.CommodityProperty=com.aliyun.ros.cdk.computenest.RosServiceInstance$CommodityProperty
+@alicloud/ros-cdk-computenest.RosServiceInstance.ServiceProperty=com.aliyun.ros.cdk.computenest.RosServiceInstance$ServiceProperty
+@alicloud/ros-cdk-computenest.RosServiceInstance.TagsProperty=com.aliyun.ros.cdk.computenest.RosServiceInstance$TagsProperty
+@alicloud/ros-cdk-computenest.RosServiceInstanceProps=com.aliyun.ros.cdk.computenest.RosServiceInstanceProps
+@alicloud/ros-cdk-computenest.ServiceInstance=com.aliyun.ros.cdk.computenest.ServiceInstance
+@alicloud/ros-cdk-computenest.ServiceInstanceProps=com.aliyun.ros.cdk.computenest.ServiceInstanceProps

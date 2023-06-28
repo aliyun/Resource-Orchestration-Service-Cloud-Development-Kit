@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS template type:  <code>ALIYUN::ROS::StackGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.443Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.282Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosStackGroup")
 public class RosStackGroup extends com.aliyun.ros.cdk.core.RosResource {
 

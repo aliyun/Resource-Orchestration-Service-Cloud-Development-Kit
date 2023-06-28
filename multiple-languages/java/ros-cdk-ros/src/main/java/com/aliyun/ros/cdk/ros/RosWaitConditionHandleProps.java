@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a <code>ALIYUN::ROS::WaitConditionHandle</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.452Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosWaitConditionHandleProps")
 @software.amazon.jsii.Jsii.Proxy(RosWaitConditionHandleProps.Jsii$Proxy.class)
 public interface RosWaitConditionHandleProps extends software.amazon.jsii.JsiiSerializable {

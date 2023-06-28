@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.asm;
 /**
  * A ROS resource type:  <code>ALIYUN::ASM::ServiceMesh</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.320Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.854Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.asm.$Module.class, fqn = "@alicloud/ros-cdk-asm.ServiceMesh")
 public class ServiceMesh extends com.aliyun.ros.cdk.core.Resource {
 

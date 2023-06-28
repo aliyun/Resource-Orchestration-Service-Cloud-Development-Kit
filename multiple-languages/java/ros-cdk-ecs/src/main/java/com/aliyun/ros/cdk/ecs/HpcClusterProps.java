@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a <code>ALIYUN::ECS::HpcCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.350Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.HpcClusterProps")
 @software.amazon.jsii.Jsii.Proxy(HpcClusterProps.Jsii$Proxy.class)
 public interface HpcClusterProps extends software.amazon.jsii.JsiiSerializable {

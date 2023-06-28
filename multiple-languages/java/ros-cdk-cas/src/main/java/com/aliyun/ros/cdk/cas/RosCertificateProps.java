@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cas;
 /**
  * Properties for defining a <code>ALIYUN::CAS::Certificate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.375Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.917Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.RosCertificateProps")
 @software.amazon.jsii.Jsii.Proxy(RosCertificateProps.Jsii$Proxy.class)
 public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Protocol utility class.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.834Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.339Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.Manifest")
 public class Manifest extends software.amazon.jsii.JsiiObject {
 

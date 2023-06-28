@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  <code>ALIYUN::FC::Trigger</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.164Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.960Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosTrigger")
 public class RosTrigger extends com.aliyun.ros.cdk.core.RosResource {
 

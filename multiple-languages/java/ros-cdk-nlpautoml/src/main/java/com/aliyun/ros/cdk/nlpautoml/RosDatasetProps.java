@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlpautoml;
 /**
  * Properties for defining a <code>ALIYUN::NLPAUTOML::Dataset</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.717Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.537Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlpautoml.$Module.class, fqn = "@alicloud/ros-cdk-nlpautoml.RosDatasetProps")
 @software.amazon.jsii.Jsii.Proxy(RosDatasetProps.Jsii$Proxy.class)
 public interface RosDatasetProps extends software.amazon.jsii.JsiiSerializable {

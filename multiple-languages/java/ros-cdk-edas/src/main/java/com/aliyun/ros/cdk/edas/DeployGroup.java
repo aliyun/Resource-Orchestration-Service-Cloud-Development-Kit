@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * A ROS resource type:  <code>ALIYUN::EDAS::DeployGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.714Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.500Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.DeployGroup")
 public class DeployGroup extends com.aliyun.ros.cdk.core.Resource {
 

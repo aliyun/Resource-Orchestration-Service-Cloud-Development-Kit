@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a <code>ALIYUN::ECS::RamRoleAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.588Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.354Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRamRoleAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosRamRoleAttachmentProps.Jsii$Proxy.class)
 public interface RosRamRoleAttachmentProps extends software.amazon.jsii.JsiiSerializable {

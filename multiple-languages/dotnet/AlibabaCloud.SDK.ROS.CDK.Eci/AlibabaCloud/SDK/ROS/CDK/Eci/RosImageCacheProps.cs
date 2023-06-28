@@ -155,6 +155,93 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
         }
 
+        private object? _acrRegistryInfo;
+
+        /// <remarks>
+        /// <strong>Property</strong>: acrRegistryInfo: Enterprise Edition access credential configuration information.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "acrRegistryInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosImageCache.AcrRegistryInfoProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? AcrRegistryInfo
+        {
+            get => _acrRegistryInfo;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Eci.RosImageCache.IAcrRegistryInfoProperty cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Eci.RosImageCache.IAcrRegistryInfoProperty).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Eci.RosImageCache.IAcrRegistryInfoProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _acrRegistryInfo = value;
+            }
+        }
+
+        private object? _autoMatchImageCache;
+
+        /// <remarks>
+        /// <strong>Property</strong>: autoMatchImageCache: Specifies whether to enable reuse of image cache layers. If you enable this feature, and the image cache that you want to createand an existing image cache contain duplicate image layers, the system reuses the duplicate image layers to create the new image cache.
+        /// This accelerates the creation of the image cache.
+        /// Valid values: true: enables reuse of image cache layers.
+        /// false: disables reuse of image cache layers.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoMatchImageCache", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AutoMatchImageCache
+        {
+            get => _autoMatchImageCache;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _autoMatchImageCache = value;
+            }
+        }
+
         private object? _eipInstanceId;
 
         /// <remarks>
@@ -185,6 +272,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                     }
                 }
                 _eipInstanceId = value;
+            }
+        }
+
+        private object? _imageCacheSize;
+
+        /// <remarks>
+        /// <strong>Property</strong>: imageCacheSize: The size of the image cache. Unit: GiB. Default value: 20.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "imageCacheSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ImageCacheSize
+        {
+            get => _imageCacheSize;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _imageCacheSize = value;
             }
         }
 
@@ -268,6 +408,94 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                     }
                 }
                 _resourceGroupId = value;
+            }
+        }
+
+        private object? _retentionDays;
+
+        /// <remarks>
+        /// <strong>Property</strong>: retentionDays: The retention period of the image cache. Unit: days. When the retention period ends, the image cache expires and is deleted.
+        /// By default, image caches never expire.
+        /// Note: The image caches that fail to be created are only retained for one day.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "retentionDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RetentionDays
+        {
+            get => _retentionDays;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _retentionDays = value;
+            }
+        }
+
+        private object? _zoneId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneId: The zone ID of the image cache.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ZoneId
+        {
+            get => _zoneId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _zoneId = value;
             }
         }
     }

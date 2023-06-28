@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * A ROS resource type:  <code>ALIYUN::WAF::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:12.123Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:31.003Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

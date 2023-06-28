@@ -40,6 +40,109 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
+        private object? _appCode;
+
+        /// <summary>Property appCode: The app code of the APP.</summary>
+        /// <remarks>
+        /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),and AppCode is globally unique.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "appCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AppCode
+        {
+            get => _appCode;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _appCode = value;
+            }
+        }
+
+        private object? _appKey;
+
+        /// <summary>Property appKey: The key of the APP.</summary>
+        /// <remarks>
+        /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),
+        /// and AppKey is globally unique.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "appKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AppKey
+        {
+            get => _appKey;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _appKey = value;
+            }
+        }
+
+        private object? _appSecret;
+
+        /// <summary>Property appSecret: The secret of the APP.</summary>
+        /// <remarks>
+        /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-).
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "appSecret", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AppSecret
+        {
+            get => _appSecret;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _appSecret = value;
+            }
+        }
+
         private object? _description;
 
         /// <summary>Property description: Description of the App, less than 180 characters.</summary>

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * A ROS resource type:  <code>ALIYUN::HBR::RestoreJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.347Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.146Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RestoreJob")
 public class RestoreJob extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * A ROS template type:  <code>ALIYUN::EDAS::K8sSlbBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.799Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.588Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosK8sSlbBinding")
 public class RosK8sSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
 

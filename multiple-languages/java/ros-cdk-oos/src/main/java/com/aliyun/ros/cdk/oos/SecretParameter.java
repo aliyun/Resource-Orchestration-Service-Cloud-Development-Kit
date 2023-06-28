@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * A ROS resource type:  <code>ALIYUN::OOS::SecretParameter</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.757Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.564Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.SecretParameter")
 public class SecretParameter extends com.aliyun.ros.cdk.core.Resource {
 

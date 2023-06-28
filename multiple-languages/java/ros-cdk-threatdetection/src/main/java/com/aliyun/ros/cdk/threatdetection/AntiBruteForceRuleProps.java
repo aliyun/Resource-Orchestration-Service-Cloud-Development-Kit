@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.threatdetection;
 /**
  * Properties for defining a <code>ALIYUN::ThreatDetection::AntiBruteForceRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.811Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.660Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.AntiBruteForceRuleProps")
 @software.amazon.jsii.Jsii.Proxy(AntiBruteForceRuleProps.Jsii$Proxy.class)
 public interface AntiBruteForceRuleProps extends software.amazon.jsii.JsiiSerializable {

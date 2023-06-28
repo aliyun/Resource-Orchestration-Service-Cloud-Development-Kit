@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bss;
 /**
  * A ROS resource type:  <code>ALIYUN::BSS::ResourcePackage</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.344Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.894Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.ResourcePackage")
 public class ResourcePackage extends com.aliyun.ros.cdk.core.Resource {
 

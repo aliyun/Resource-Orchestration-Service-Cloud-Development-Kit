@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a <code>ALIYUN::VPC::VpnRouteEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:12.061Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.912Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpnRouteEntryProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpnRouteEntryProps.Jsii$Proxy.class)
 public interface RosVpnRouteEntryProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * A ROS template type:  <code>ALIYUN::Memcache::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.553Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.350Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

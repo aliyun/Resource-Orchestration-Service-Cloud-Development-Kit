@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a <code>ALIYUN::ApiGateway::App</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.777Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosAppProps")
 @software.amazon.jsii.Jsii.Proxy(RosAppProps.Jsii$Proxy.class)
 public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,6 +11,24 @@ public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAppName();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAppCode() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAppKey() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAppSecret() {
+        return null;
+    }
 
     /**
      */
@@ -35,6 +53,9 @@ public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAppProps> {
         java.lang.Object appName;
+        java.lang.Object appCode;
+        java.lang.Object appKey;
+        java.lang.Object appSecret;
         java.lang.Object description;
         java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> tags;
 
@@ -55,6 +76,66 @@ public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder appName(com.aliyun.ros.cdk.core.IResolvable appName) {
             this.appName = appName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAppProps#getAppCode}
+         * @param appCode the value to be set.
+         * @return {@code this}
+         */
+        public Builder appCode(java.lang.String appCode) {
+            this.appCode = appCode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAppProps#getAppCode}
+         * @param appCode the value to be set.
+         * @return {@code this}
+         */
+        public Builder appCode(com.aliyun.ros.cdk.core.IResolvable appCode) {
+            this.appCode = appCode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAppProps#getAppKey}
+         * @param appKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder appKey(java.lang.String appKey) {
+            this.appKey = appKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAppProps#getAppKey}
+         * @param appKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder appKey(com.aliyun.ros.cdk.core.IResolvable appKey) {
+            this.appKey = appKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAppProps#getAppSecret}
+         * @param appSecret the value to be set.
+         * @return {@code this}
+         */
+        public Builder appSecret(java.lang.String appSecret) {
+            this.appSecret = appSecret;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAppProps#getAppSecret}
+         * @param appSecret the value to be set.
+         * @return {@code this}
+         */
+        public Builder appSecret(com.aliyun.ros.cdk.core.IResolvable appSecret) {
+            this.appSecret = appSecret;
             return this;
         }
 
@@ -106,6 +187,9 @@ public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAppProps {
         private final java.lang.Object appName;
+        private final java.lang.Object appCode;
+        private final java.lang.Object appKey;
+        private final java.lang.Object appSecret;
         private final java.lang.Object description;
         private final java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty> tags;
 
@@ -116,6 +200,9 @@ public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.appName = software.amazon.jsii.Kernel.get(this, "appName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.appCode = software.amazon.jsii.Kernel.get(this, "appCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.appKey = software.amazon.jsii.Kernel.get(this, "appKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.appSecret = software.amazon.jsii.Kernel.get(this, "appSecret", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty.class)));
         }
@@ -127,6 +214,9 @@ public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.appName = java.util.Objects.requireNonNull(builder.appName, "appName is required");
+            this.appCode = builder.appCode;
+            this.appKey = builder.appKey;
+            this.appSecret = builder.appSecret;
             this.description = builder.description;
             this.tags = (java.util.List<com.aliyun.ros.cdk.apigateway.RosApp.TagsProperty>)builder.tags;
         }
@@ -134,6 +224,21 @@ public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getAppName() {
             return this.appName;
+        }
+
+        @Override
+        public final java.lang.Object getAppCode() {
+            return this.appCode;
+        }
+
+        @Override
+        public final java.lang.Object getAppKey() {
+            return this.appKey;
+        }
+
+        @Override
+        public final java.lang.Object getAppSecret() {
+            return this.appSecret;
         }
 
         @Override
@@ -153,6 +258,15 @@ public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("appName", om.valueToTree(this.getAppName()));
+            if (this.getAppCode() != null) {
+                data.set("appCode", om.valueToTree(this.getAppCode()));
+            }
+            if (this.getAppKey() != null) {
+                data.set("appKey", om.valueToTree(this.getAppKey()));
+            }
+            if (this.getAppSecret() != null) {
+                data.set("appSecret", om.valueToTree(this.getAppSecret()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -178,6 +292,9 @@ public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
             RosAppProps.Jsii$Proxy that = (RosAppProps.Jsii$Proxy) o;
 
             if (!appName.equals(that.appName)) return false;
+            if (this.appCode != null ? !this.appCode.equals(that.appCode) : that.appCode != null) return false;
+            if (this.appKey != null ? !this.appKey.equals(that.appKey) : that.appKey != null) return false;
+            if (this.appSecret != null ? !this.appSecret.equals(that.appSecret) : that.appSecret != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
@@ -185,6 +302,9 @@ public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.appName.hashCode();
+            result = 31 * result + (this.appCode != null ? this.appCode.hashCode() : 0);
+            result = 31 * result + (this.appKey != null ? this.appKey.hashCode() : 0);
+            result = 31 * result + (this.appSecret != null ? this.appSecret.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;

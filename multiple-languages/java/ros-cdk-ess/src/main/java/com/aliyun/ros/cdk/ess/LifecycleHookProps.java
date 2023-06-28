@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a <code>ALIYUN::ESS::LifecycleHook</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.002Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.784Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.LifecycleHookProps")
 @software.amazon.jsii.Jsii.Proxy(LifecycleHookProps.Jsii$Proxy.class)
 public interface LifecycleHookProps extends software.amazon.jsii.JsiiSerializable {

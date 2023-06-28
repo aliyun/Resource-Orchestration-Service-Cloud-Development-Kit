@@ -18,12 +18,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceCidrIp: Address or address segment
+        /// <strong>Property</strong>: fileSystemType: The type of file system. Values:
+        /// standard: the general NAS
+        /// extreme: the extreme NAS
         /// </remarks>
-        [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object SourceCidrIp
+        [JsiiProperty(name: "fileSystemType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? FileSystemType
         {
-            get;
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: ipv6SourceCidrIp: Source IPv6 CIDR address segment. IP addresses in CIDR format and IPv6 format are supported.
+        /// Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+        /// Only VPC private network is supported.
+        /// IPv4 and IPv6 are mutually exclusive, and the types cannot be converted.
+        /// </remarks>
+        [JsiiProperty(name: "ipv6SourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ipv6SourceCidrIp
+        {
+            get
+            {
+                return null;
+            }
         }
 
         /// <remarks>
@@ -45,6 +67,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         [JsiiProperty(name: "rwAccessType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? RwAccessType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: sourceCidrIp: Address or address segment
+        /// </remarks>
+        [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SourceCidrIp
         {
             get
             {
@@ -83,12 +118,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: sourceCidrIp: Address or address segment
+            /// <strong>Property</strong>: fileSystemType: The type of file system. Values:
+            /// standard: the general NAS
+            /// extreme: the extreme NAS
             /// </remarks>
-            [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object SourceCidrIp
+            [JsiiOptional]
+            [JsiiProperty(name: "fileSystemType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FileSystemType
             {
-                get => GetInstanceProperty<object>()!;
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: ipv6SourceCidrIp: Source IPv6 CIDR address segment. IP addresses in CIDR format and IPv6 format are supported.
+            /// Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+            /// Only VPC private network is supported.
+            /// IPv4 and IPv6 are mutually exclusive, and the types cannot be converted.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipv6SourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv6SourceCidrIp
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -107,6 +158,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             [JsiiOptional]
             [JsiiProperty(name: "rwAccessType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RwAccessType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: sourceCidrIp: Address or address segment
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SourceCidrIp
             {
                 get => GetInstanceProperty<object?>();
             }

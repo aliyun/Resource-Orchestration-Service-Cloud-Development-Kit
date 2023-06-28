@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * Properties for defining a <code>ALIYUN::EHPC::AutoScaleConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.818Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.606Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.AutoScaleConfigProps")
 @software.amazon.jsii.Jsii.Proxy(AutoScaleConfigProps.Jsii$Proxy.class)
 public interface AutoScaleConfigProps extends software.amazon.jsii.JsiiSerializable {

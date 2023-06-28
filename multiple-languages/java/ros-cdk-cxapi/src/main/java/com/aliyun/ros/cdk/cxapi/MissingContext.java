@@ -8,7 +8,7 @@ package com.aliyun.ros.cdk.cxapi;
  * @see <a href="core.Stack.reportMissingContext">core.Stack.reportMissingContext</a>
  * @deprecated moved to package 'ros-assembly-schema'
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.855Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.361Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.MissingContext")
 @software.amazon.jsii.Jsii.Proxy(MissingContext.Jsii$Proxy.class)
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)

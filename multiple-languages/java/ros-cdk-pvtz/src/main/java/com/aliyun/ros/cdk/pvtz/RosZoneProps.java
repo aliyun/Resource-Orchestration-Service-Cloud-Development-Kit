@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Properties for defining a <code>ALIYUN::PVTZ::Zone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.968Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.806Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosZoneProps")
 @software.amazon.jsii.Jsii.Proxy(RosZoneProps.Jsii$Proxy.class)
 public interface RosZoneProps extends software.amazon.jsii.JsiiSerializable {

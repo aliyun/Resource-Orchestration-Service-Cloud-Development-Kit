@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS resource type:  <code>ALIYUN::SLS::Alert</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.711Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.556Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.Alert")
 public class Alert extends com.aliyun.ros.cdk.core.Resource {
 

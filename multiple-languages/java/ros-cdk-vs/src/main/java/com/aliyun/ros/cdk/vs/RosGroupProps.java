@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vs;
 /**
  * Properties for defining a <code>ALIYUN::VS::Group</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:12.112Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.991Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vs.$Module.class, fqn = "@alicloud/ros-cdk-vs.RosGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosGroupProps.Jsii$Proxy.class)
 public interface RosGroupProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  <code>ALIYUN::VPC::EIPSegment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.962Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.829Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPSegment")
 public class RosEIPSegment extends com.aliyun.ros.cdk.core.RosResource {
 

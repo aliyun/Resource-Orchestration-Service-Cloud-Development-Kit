@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * A ROS template type:  <code>ALIYUN::AMQP::VirtualHost</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.711Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.RosVirtualHost")
 public class RosVirtualHost extends com.aliyun.ros.cdk.core.RosResource {
 

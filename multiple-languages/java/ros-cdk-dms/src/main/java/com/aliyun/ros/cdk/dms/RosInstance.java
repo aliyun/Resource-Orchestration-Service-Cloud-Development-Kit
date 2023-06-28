@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * A ROS template type:  <code>ALIYUN::DMS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.080Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.777Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

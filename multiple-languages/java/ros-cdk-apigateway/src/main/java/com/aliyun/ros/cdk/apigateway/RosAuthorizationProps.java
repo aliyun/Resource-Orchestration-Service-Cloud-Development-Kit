@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a <code>ALIYUN::ApiGateway::Authorization</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.241Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.779Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosAuthorizationProps")
 @software.amazon.jsii.Jsii.Proxy(RosAuthorizationProps.Jsii$Proxy.class)
 public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,6 +26,12 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAuthValidTime() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
@@ -44,6 +50,7 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object appIds;
         java.lang.Object groupId;
         java.lang.Object stageName;
+        java.lang.Object authValidTime;
         java.lang.Object description;
 
         /**
@@ -127,6 +134,26 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosAuthorizationProps#getAuthValidTime}
+         * @param authValidTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder authValidTime(java.lang.String authValidTime) {
+            this.authValidTime = authValidTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAuthorizationProps#getAuthValidTime}
+         * @param authValidTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder authValidTime(com.aliyun.ros.cdk.core.IResolvable authValidTime) {
+            this.authValidTime = authValidTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAuthorizationProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
@@ -166,6 +193,7 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object appIds;
         private final java.lang.Object groupId;
         private final java.lang.Object stageName;
+        private final java.lang.Object authValidTime;
         private final java.lang.Object description;
 
         /**
@@ -178,6 +206,7 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
             this.appIds = software.amazon.jsii.Kernel.get(this, "appIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.authValidTime = software.amazon.jsii.Kernel.get(this, "authValidTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -190,6 +219,7 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
             this.appIds = java.util.Objects.requireNonNull(builder.appIds, "appIds is required");
             this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
             this.stageName = java.util.Objects.requireNonNull(builder.stageName, "stageName is required");
+            this.authValidTime = builder.authValidTime;
             this.description = builder.description;
         }
 
@@ -214,6 +244,11 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getAuthValidTime() {
+            return this.authValidTime;
+        }
+
+        @Override
         public final java.lang.Object getDescription() {
             return this.description;
         }
@@ -228,6 +263,9 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
             data.set("appIds", om.valueToTree(this.getAppIds()));
             data.set("groupId", om.valueToTree(this.getGroupId()));
             data.set("stageName", om.valueToTree(this.getStageName()));
+            if (this.getAuthValidTime() != null) {
+                data.set("authValidTime", om.valueToTree(this.getAuthValidTime()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -253,6 +291,7 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
             if (!appIds.equals(that.appIds)) return false;
             if (!groupId.equals(that.groupId)) return false;
             if (!stageName.equals(that.stageName)) return false;
+            if (this.authValidTime != null ? !this.authValidTime.equals(that.authValidTime) : that.authValidTime != null) return false;
             return this.description != null ? this.description.equals(that.description) : that.description == null;
         }
 
@@ -262,6 +301,7 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.appIds.hashCode());
             result = 31 * result + (this.groupId.hashCode());
             result = 31 * result + (this.stageName.hashCode());
+            result = 31 * result + (this.authValidTime != null ? this.authValidTime.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             return result;
         }

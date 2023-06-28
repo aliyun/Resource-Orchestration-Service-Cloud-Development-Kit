@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlpautoml;
 /**
  * A ROS resource type:  <code>ALIYUN::NLPAUTOML::Model</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.712Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.532Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlpautoml.$Module.class, fqn = "@alicloud/ros-cdk-nlpautoml.Model")
 public class Model extends com.aliyun.ros.cdk.core.Resource {
 

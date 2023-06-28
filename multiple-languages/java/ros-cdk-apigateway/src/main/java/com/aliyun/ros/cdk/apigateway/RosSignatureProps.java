@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a <code>ALIYUN::ApiGateway::Signature</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.259Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.799Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosSignatureProps")
 @software.amazon.jsii.Jsii.Proxy(RosSignatureProps.Jsii$Proxy.class)
 public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable {

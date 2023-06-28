@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  <code>ALIYUN::VPC::Ipv4Gateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.972Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.842Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosIpv4Gateway")
 public class RosIpv4Gateway extends com.aliyun.ros.cdk.core.RosResource {
 

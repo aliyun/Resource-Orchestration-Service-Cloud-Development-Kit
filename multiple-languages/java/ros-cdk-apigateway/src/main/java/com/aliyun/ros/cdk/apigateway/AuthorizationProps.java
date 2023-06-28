@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a <code>ALIYUN::ApiGateway::Authorization</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.196Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.730Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.AuthorizationProps")
 @software.amazon.jsii.Jsii.Proxy(AuthorizationProps.Jsii$Proxy.class)
 public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,16 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
     @org.jetbrains.annotations.NotNull java.lang.Object getStageName();
 
     /**
+     * Property authValidTime: The time (UTC) when the authorization expires.
+     * <p>
+     * If this parameter is empty, the authorization does not expire.
+     * Pattern: YYYY-MM-DDThh:mm:ssZ
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAuthValidTime() {
+        return null;
+    }
+
+    /**
      * Property description: Description of the authorization, less than 180 characters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
@@ -49,6 +59,7 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object appIds;
         java.lang.Object groupId;
         java.lang.Object stageName;
+        java.lang.Object authValidTime;
         java.lang.Object description;
 
         /**
@@ -132,6 +143,30 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link AuthorizationProps#getAuthValidTime}
+         * @param authValidTime Property authValidTime: The time (UTC) when the authorization expires.
+         *                      If this parameter is empty, the authorization does not expire.
+         *                      Pattern: YYYY-MM-DDThh:mm:ssZ
+         * @return {@code this}
+         */
+        public Builder authValidTime(java.lang.String authValidTime) {
+            this.authValidTime = authValidTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AuthorizationProps#getAuthValidTime}
+         * @param authValidTime Property authValidTime: The time (UTC) when the authorization expires.
+         *                      If this parameter is empty, the authorization does not expire.
+         *                      Pattern: YYYY-MM-DDThh:mm:ssZ
+         * @return {@code this}
+         */
+        public Builder authValidTime(com.aliyun.ros.cdk.core.IResolvable authValidTime) {
+            this.authValidTime = authValidTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AuthorizationProps#getDescription}
          * @param description Property description: Description of the authorization, less than 180 characters.
          * @return {@code this}
@@ -171,6 +206,7 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object appIds;
         private final java.lang.Object groupId;
         private final java.lang.Object stageName;
+        private final java.lang.Object authValidTime;
         private final java.lang.Object description;
 
         /**
@@ -183,6 +219,7 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
             this.appIds = software.amazon.jsii.Kernel.get(this, "appIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.authValidTime = software.amazon.jsii.Kernel.get(this, "authValidTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -195,6 +232,7 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
             this.appIds = java.util.Objects.requireNonNull(builder.appIds, "appIds is required");
             this.groupId = java.util.Objects.requireNonNull(builder.groupId, "groupId is required");
             this.stageName = java.util.Objects.requireNonNull(builder.stageName, "stageName is required");
+            this.authValidTime = builder.authValidTime;
             this.description = builder.description;
         }
 
@@ -219,6 +257,11 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getAuthValidTime() {
+            return this.authValidTime;
+        }
+
+        @Override
         public final java.lang.Object getDescription() {
             return this.description;
         }
@@ -233,6 +276,9 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
             data.set("appIds", om.valueToTree(this.getAppIds()));
             data.set("groupId", om.valueToTree(this.getGroupId()));
             data.set("stageName", om.valueToTree(this.getStageName()));
+            if (this.getAuthValidTime() != null) {
+                data.set("authValidTime", om.valueToTree(this.getAuthValidTime()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -258,6 +304,7 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
             if (!appIds.equals(that.appIds)) return false;
             if (!groupId.equals(that.groupId)) return false;
             if (!stageName.equals(that.stageName)) return false;
+            if (this.authValidTime != null ? !this.authValidTime.equals(that.authValidTime) : that.authValidTime != null) return false;
             return this.description != null ? this.description.equals(that.description) : that.description == null;
         }
 
@@ -267,6 +314,7 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.appIds.hashCode());
             result = 31 * result + (this.groupId.hashCode());
             result = 31 * result + (this.stageName.hashCode());
+            result = 31 * result + (this.authValidTime != null ? this.authValidTime.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             return result;
         }

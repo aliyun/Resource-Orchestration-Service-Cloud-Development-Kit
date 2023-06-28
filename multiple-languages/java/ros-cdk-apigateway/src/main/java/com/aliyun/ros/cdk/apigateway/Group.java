@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  <code>ALIYUN::ApiGateway::Group</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.200Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.735Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Group")
 public class Group extends com.aliyun.ros.cdk.core.Resource {
 
@@ -121,6 +121,27 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder groupName(final com.aliyun.ros.cdk.core.IResolvable groupName) {
             this.props.groupName(groupName);
+            return this;
+        }
+
+        /**
+         * Property basePath: The base path of API.
+         * <p>
+         * @return {@code this}
+         * @param basePath Property basePath: The base path of API. This parameter is required.
+         */
+        public Builder basePath(final java.lang.String basePath) {
+            this.props.basePath(basePath);
+            return this;
+        }
+        /**
+         * Property basePath: The base path of API.
+         * <p>
+         * @return {@code this}
+         * @param basePath Property basePath: The base path of API. This parameter is required.
+         */
+        public Builder basePath(final com.aliyun.ros.cdk.core.IResolvable basePath) {
+            this.props.basePath(basePath);
             return this;
         }
 

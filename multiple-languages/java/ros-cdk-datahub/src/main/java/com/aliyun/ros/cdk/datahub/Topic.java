@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datahub;
 /**
  * A ROS resource type:  <code>ALIYUN::DATAHUB::Topic</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.015Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.684Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datahub.$Module.class, fqn = "@alicloud/ros-cdk-datahub.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource {
 

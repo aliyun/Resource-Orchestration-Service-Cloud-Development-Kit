@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * Properties for defining a <code>ALIYUN::ECD::Desktops</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.216Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.906Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.DesktopsProps")
 @software.amazon.jsii.Jsii.Proxy(DesktopsProps.Jsii$Proxy.class)
 public interface DesktopsProps extends software.amazon.jsii.JsiiSerializable {

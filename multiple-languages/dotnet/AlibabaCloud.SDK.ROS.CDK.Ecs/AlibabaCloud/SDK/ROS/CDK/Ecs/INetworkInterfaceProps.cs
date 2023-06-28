@@ -32,6 +32,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.</summary>
+        [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ipv6AddressCount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property ipv6Addresses: The IPv6 address N to assign to the ENI.</summary>
+        [JsiiProperty(name: "ipv6Addresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ipv6Addresses
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property networkInterfaceName: Name of your ENI.</summary>
         /// <remarks>
         /// It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
@@ -39,6 +61,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "networkInterfaceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? NetworkInterfaceName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property networkInterfaceTrafficMode: The communication mode of the ENI.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// Standard: uses the TCP communication mode.
+        /// HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+        /// </remarks>
+        [JsiiProperty(name: "networkInterfaceTrafficMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NetworkInterfaceTrafficMode
         {
             get
             {
@@ -67,6 +105,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "privateIpAddresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PrivateIpAddresses
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property queueNumber: The number of queues that are supported by the ENI.</summary>
+        /// <remarks>
+        /// Valid values: 1 to 2048.
+        /// When you attach the ENI to an instance, make sure that the value of this parameter is less than the maximum number of queues per ENI that is allowed for the instance type. To view the maximum number of queues per ENI allowed for an instance type, you can call DescribeInstanceTypes and then check the return value of MaximumQueueNumberPerEni.
+        /// By default, this parameter is empty. If you do not specify this parameter, the default number of queues per ENI for the instance type of an instance is used when you attach the ENI to the instance. To learn about the default number of queues per ENI for an instance type, you can call DescribeInstanceTypes and then check the return value of SecondaryEniQueueNumber.
+        /// </remarks>
+        [JsiiProperty(name: "queueNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? QueueNumber
         {
             get
             {
@@ -167,6 +221,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv6AddressCount
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ipv6Addresses: The IPv6 address N to assign to the ENI.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipv6Addresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Ipv6Addresses
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property networkInterfaceName: Name of your ENI.</summary>
             /// <remarks>
             /// It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
@@ -174,6 +244,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "networkInterfaceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NetworkInterfaceName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property networkInterfaceTrafficMode: The communication mode of the ENI.</summary>
+            /// <remarks>
+            /// Valid values:
+            /// Standard: uses the TCP communication mode.
+            /// HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "networkInterfaceTrafficMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NetworkInterfaceTrafficMode
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -196,6 +279,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "privateIpAddresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? PrivateIpAddresses
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property queueNumber: The number of queues that are supported by the ENI.</summary>
+            /// <remarks>
+            /// Valid values: 1 to 2048.
+            /// When you attach the ENI to an instance, make sure that the value of this parameter is less than the maximum number of queues per ENI that is allowed for the instance type. To view the maximum number of queues per ENI allowed for an instance type, you can call DescribeInstanceTypes and then check the return value of MaximumQueueNumberPerEni.
+            /// By default, this parameter is empty. If you do not specify this parameter, the default number of queues per ENI for the instance type of an instance is used when you attach the ENI to the instance. To learn about the default number of queues per ENI for an instance type, you can call DescribeInstanceTypes and then check the return value of SecondaryEniQueueNumber.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "queueNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? QueueNumber
             {
                 get => GetInstanceProperty<object?>();
             }

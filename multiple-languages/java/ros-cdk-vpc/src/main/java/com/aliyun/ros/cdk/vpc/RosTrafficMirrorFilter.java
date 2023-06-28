@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  <code>ALIYUN::VPC::TrafficMirrorFilter</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:12.022Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.894Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosTrafficMirrorFilter")
 public class RosTrafficMirrorFilter extends com.aliyun.ros.cdk.core.RosResource {
 

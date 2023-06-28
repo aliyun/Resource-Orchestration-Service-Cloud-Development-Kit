@@ -51,6 +51,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Apigateway.RosApp))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: AppCode: The code of the APP.
+        /// </remarks>
+        [JsiiProperty(name: "attrAppCode", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppCode
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: AppId: The id of the created APP
         /// </remarks>
         [JsiiProperty(name: "attrAppId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
@@ -127,6 +136,103 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         {
             get => GetInstanceProperty<bool>()!;
             set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: appCode: The app code of the APP.
+        /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),and AppCode is globally unique.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "appCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AppCode
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: appKey: The key of the APP.
+        /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),
+        /// and AppKey is globally unique.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "appKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AppKey
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: appSecret: The secret of the APP.
+        /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-).
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "appSecret", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AppSecret
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>

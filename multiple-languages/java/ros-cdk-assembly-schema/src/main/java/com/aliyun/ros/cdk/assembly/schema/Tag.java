@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Metadata Entry spec for stack tag.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.840Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.345Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.Tag")
 @software.amazon.jsii.Jsii.Proxy(Tag.Jsii$Proxy.class)
 public interface Tag extends software.amazon.jsii.JsiiSerializable {

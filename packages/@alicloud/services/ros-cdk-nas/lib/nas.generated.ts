@@ -173,9 +173,19 @@ export interface RosAccessRuleProps {
     readonly accessGroupName: string | ros.IResolvable;
 
     /**
-     * @Property sourceCidrIp: Address or address segment
+     * @Property fileSystemType: The type of file system. Values:
+     * standard: the general NAS
+     * extreme: the extreme NAS
      */
-    readonly sourceCidrIp: string | ros.IResolvable;
+    readonly fileSystemType?: string | ros.IResolvable;
+
+    /**
+     * @Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. IP addresses in CIDR format and IPv6 format are supported.
+     * Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+     * Only VPC private network is supported.
+     * IPv4 and IPv6 are mutually exclusive, and the types cannot be converted.
+     */
+    readonly ipv6SourceCidrIp?: string | ros.IResolvable;
 
     /**
      * @Property priority: Priority level. Range: 1-100. Default value: 1
@@ -186,6 +196,11 @@ export interface RosAccessRuleProps {
      * @Property rwAccessType: Read-write permission type: RDWR (default), RDONLY
      */
     readonly rwAccessType?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceCidrIp: Address or address segment
+     */
+    readonly sourceCidrIp?: string | ros.IResolvable;
 
     /**
      * @Property userAccessType: User permission type: no_squash (default), root_squash, all_squash
@@ -218,10 +233,17 @@ function RosAccessRulePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    if(properties.fileSystemType && (typeof properties.fileSystemType) !== 'object') {
+        errors.collect(ros.propertyValidator('fileSystemType', ros.validateAllowedValues)({
+          data: properties.fileSystemType,
+          allowedValues: ["standard","extreme"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('fileSystemType', ros.validateString)(properties.fileSystemType));
+    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
     errors.collect(ros.propertyValidator('accessGroupName', ros.requiredValidator)(properties.accessGroupName));
     errors.collect(ros.propertyValidator('accessGroupName', ros.validateString)(properties.accessGroupName));
-    errors.collect(ros.propertyValidator('sourceCidrIp', ros.requiredValidator)(properties.sourceCidrIp));
-    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
+    errors.collect(ros.propertyValidator('ipv6SourceCidrIp', ros.validateString)(properties.ipv6SourceCidrIp));
     if(properties.rwAccessType && (typeof properties.rwAccessType) !== 'object') {
         errors.collect(ros.propertyValidator('rwAccessType', ros.validateAllowedValues)({
           data: properties.rwAccessType,
@@ -247,9 +269,11 @@ function rosAccessRulePropsToRosTemplate(properties: any, enableResourceProperty
     }
     return {
       AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
-      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
+      FileSystemType: ros.stringToRosTemplate(properties.fileSystemType),
+      Ipv6SourceCidrIp: ros.stringToRosTemplate(properties.ipv6SourceCidrIp),
       Priority: ros.numberToRosTemplate(properties.priority),
       RWAccessType: ros.stringToRosTemplate(properties.rwAccessType),
+      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
       UserAccessType: ros.stringToRosTemplate(properties.userAccessType),
     };
 }
@@ -282,9 +306,19 @@ export class RosAccessRule extends ros.RosResource {
     public accessGroupName: string | ros.IResolvable;
 
     /**
-     * @Property sourceCidrIp: Address or address segment
+     * @Property fileSystemType: The type of file system. Values:
+     * standard: the general NAS
+     * extreme: the extreme NAS
      */
-    public sourceCidrIp: string | ros.IResolvable;
+    public fileSystemType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. IP addresses in CIDR format and IPv6 format are supported.
+     * Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+     * Only VPC private network is supported.
+     * IPv4 and IPv6 are mutually exclusive, and the types cannot be converted.
+     */
+    public ipv6SourceCidrIp: string | ros.IResolvable | undefined;
 
     /**
      * @Property priority: Priority level. Range: 1-100. Default value: 1
@@ -295,6 +329,11 @@ export class RosAccessRule extends ros.RosResource {
      * @Property rwAccessType: Read-write permission type: RDWR (default), RDONLY
      */
     public rwAccessType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceCidrIp: Address or address segment
+     */
+    public sourceCidrIp: string | ros.IResolvable | undefined;
 
     /**
      * @Property userAccessType: User permission type: no_squash (default), root_squash, all_squash
@@ -314,9 +353,11 @@ export class RosAccessRule extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.accessGroupName = props.accessGroupName;
-        this.sourceCidrIp = props.sourceCidrIp;
+        this.fileSystemType = props.fileSystemType;
+        this.ipv6SourceCidrIp = props.ipv6SourceCidrIp;
         this.priority = props.priority;
         this.rwAccessType = props.rwAccessType;
+        this.sourceCidrIp = props.sourceCidrIp;
         this.userAccessType = props.userAccessType;
     }
 
@@ -324,9 +365,11 @@ export class RosAccessRule extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             accessGroupName: this.accessGroupName,
-            sourceCidrIp: this.sourceCidrIp,
+            fileSystemType: this.fileSystemType,
+            ipv6SourceCidrIp: this.ipv6SourceCidrIp,
             priority: this.priority,
             rwAccessType: this.rwAccessType,
+            sourceCidrIp: this.sourceCidrIp,
             userAccessType: this.userAccessType,
         };
     }
@@ -749,6 +792,19 @@ export interface RosMountTargetProps {
     readonly networkType: string | ros.IResolvable;
 
     /**
+     * @Property enableIpv6: Whether to create an IPv6 mount point.Value:
+     * true: create
+     * false (default): do not create
+     * Note Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+     */
+    readonly enableIpv6?: boolean | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: Security group Id
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property status: Status, including Active and Inactive
      */
     readonly status?: string | ros.IResolvable;
@@ -790,11 +846,13 @@ function RosMountTargetPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('accessGroupName', ros.requiredValidator)(properties.accessGroupName));
     errors.collect(ros.propertyValidator('accessGroupName', ros.validateString)(properties.accessGroupName));
     errors.collect(ros.propertyValidator('fileSystemId', ros.requiredValidator)(properties.fileSystemId));
     errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('enableIpv6', ros.validateBoolean)(properties.enableIpv6));
     return errors.wrap('supplied properties not correct for "RosMountTargetProps"');
 }
 
@@ -815,6 +873,8 @@ function rosMountTargetPropsToRosTemplate(properties: any, enableResourcePropert
       AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
       FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
       NetworkType: ros.stringToRosTemplate(properties.networkType),
+      EnableIpv6: ros.booleanToRosTemplate(properties.enableIpv6),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       Status: ros.stringToRosTemplate(properties.status),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -859,6 +919,19 @@ export class RosMountTarget extends ros.RosResource {
     public networkType: string | ros.IResolvable;
 
     /**
+     * @Property enableIpv6: Whether to create an IPv6 mount point.Value:
+     * true: create
+     * false (default): do not create
+     * Note Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+     */
+    public enableIpv6: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupId: Security group Id
+     */
+    public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property status: Status, including Active and Inactive
      */
     public status: string | ros.IResolvable | undefined;
@@ -888,6 +961,8 @@ export class RosMountTarget extends ros.RosResource {
         this.accessGroupName = props.accessGroupName;
         this.fileSystemId = props.fileSystemId;
         this.networkType = props.networkType;
+        this.enableIpv6 = props.enableIpv6;
+        this.securityGroupId = props.securityGroupId;
         this.status = props.status;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
@@ -899,6 +974,8 @@ export class RosMountTarget extends ros.RosResource {
             accessGroupName: this.accessGroupName,
             fileSystemId: this.fileSystemId,
             networkType: this.networkType,
+            enableIpv6: this.enableIpv6,
+            securityGroupId: this.securityGroupId,
             status: this.status,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,

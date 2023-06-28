@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * A ROS template type:  <code>ALIYUN::ECD::SimpleOfficeSite</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.229Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.919Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.RosSimpleOfficeSite")
 public class RosSimpleOfficeSite extends com.aliyun.ros.cdk.core.RosResource {
 

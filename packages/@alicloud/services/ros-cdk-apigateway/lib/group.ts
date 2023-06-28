@@ -14,6 +14,11 @@ export interface GroupProps {
     readonly groupName: string | ros.IResolvable;
 
     /**
+     * Property basePath: The base path of API.
+     */
+    readonly basePath?: string | ros.IResolvable;
+
+    /**
      * Property description: Description of the Group, less than 180 characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -86,6 +91,7 @@ export class Group extends ros.Resource {
             description: props.description,
             instanceId: props.instanceId,
             vpcIntranetEnable: props.vpcIntranetEnable,
+            basePath: props.basePath,
             tags: props.tags,
             passthroughHeaders: props.passthroughHeaders,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

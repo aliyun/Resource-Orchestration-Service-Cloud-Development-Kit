@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a <code>ALIYUN::SLB::BackendServerAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.670Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.505Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosBackendServerAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackendServerAttachmentProps.Jsii$Proxy.class)
 public interface RosBackendServerAttachmentProps extends software.amazon.jsii.JsiiSerializable {

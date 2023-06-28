@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS resource type:  <code>ALIYUN::POLARDB::AccountPrivilege</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.840Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.664Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.AccountPrivilege")
 public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
 

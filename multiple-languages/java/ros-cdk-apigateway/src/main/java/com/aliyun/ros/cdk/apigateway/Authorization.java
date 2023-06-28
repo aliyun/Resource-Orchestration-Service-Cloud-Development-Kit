@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  <code>ALIYUN::ApiGateway::Authorization</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.195Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.729Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Authorization")
 public class Authorization extends com.aliyun.ros.cdk.core.Resource {
 
@@ -163,6 +163,33 @@ public class Authorization extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder stageName(final com.aliyun.ros.cdk.core.IResolvable stageName) {
             this.props.stageName(stageName);
+            return this;
+        }
+
+        /**
+         * Property authValidTime: The time (UTC) when the authorization expires.
+         * <p>
+         * If this parameter is empty, the authorization does not expire.
+         * Pattern: YYYY-MM-DDThh:mm:ssZ
+         * <p>
+         * @return {@code this}
+         * @param authValidTime Property authValidTime: The time (UTC) when the authorization expires. This parameter is required.
+         */
+        public Builder authValidTime(final java.lang.String authValidTime) {
+            this.props.authValidTime(authValidTime);
+            return this;
+        }
+        /**
+         * Property authValidTime: The time (UTC) when the authorization expires.
+         * <p>
+         * If this parameter is empty, the authorization does not expire.
+         * Pattern: YYYY-MM-DDThh:mm:ssZ
+         * <p>
+         * @return {@code this}
+         * @param authValidTime Property authValidTime: The time (UTC) when the authorization expires. This parameter is required.
+         */
+        public Builder authValidTime(final com.aliyun.ros.cdk.core.IResolvable authValidTime) {
+            this.props.authValidTime(authValidTime);
             return this;
         }
 

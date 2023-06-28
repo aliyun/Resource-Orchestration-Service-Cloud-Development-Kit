@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a <code>ALIYUN::RAM::AttachPolicyToUser</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.002Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.847Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosAttachPolicyToUserProps")
 @software.amazon.jsii.Jsii.Proxy(RosAttachPolicyToUserProps.Jsii$Proxy.class)
 public interface RosAttachPolicyToUserProps extends software.amazon.jsii.JsiiSerializable {

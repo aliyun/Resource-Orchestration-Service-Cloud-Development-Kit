@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  <code>ALIYUN::ECS::NetworkInterface</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.579Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.340Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosNetworkInterface")
 public class RosNetworkInterface extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -117,6 +117,58 @@ public class RosNetworkInterface extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6AddressCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6AddressCount", value);
+    }
+
+    /**
+     */
+    public void setIpv6AddressCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6AddressCount", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6Addresses() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6Addresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6Addresses(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6Addresses", value);
+    }
+
+    /**
+     */
+    public void setIpv6Addresses(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "ipv6Addresses", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceName() {
         return software.amazon.jsii.Kernel.get(this, "networkInterfaceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -131,6 +183,24 @@ public class RosNetworkInterface extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNetworkInterfaceName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "networkInterfaceName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceTrafficMode() {
+        return software.amazon.jsii.Kernel.get(this, "networkInterfaceTrafficMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNetworkInterfaceTrafficMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "networkInterfaceTrafficMode", value);
+    }
+
+    /**
+     */
+    public void setNetworkInterfaceTrafficMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "networkInterfaceTrafficMode", value);
     }
 
     /**
@@ -183,6 +253,24 @@ public class RosNetworkInterface extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "privateIpAddresses", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getQueueNumber() {
+        return software.amazon.jsii.Kernel.get(this, "queueNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setQueueNumber(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "queueNumber", value);
+    }
+
+    /**
+     */
+    public void setQueueNumber(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "queueNumber", value);
     }
 
     /**
@@ -515,6 +603,40 @@ public class RosNetworkInterface extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param ipv6AddressCount This parameter is required.
+         */
+        public Builder ipv6AddressCount(final java.lang.Number ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6AddressCount This parameter is required.
+         */
+        public Builder ipv6AddressCount(final com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv6Addresses This parameter is required.
+         */
+        public Builder ipv6Addresses(final com.aliyun.ros.cdk.core.IResolvable ipv6Addresses) {
+            this.props.ipv6Addresses(ipv6Addresses);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6Addresses This parameter is required.
+         */
+        public Builder ipv6Addresses(final java.util.List<? extends java.lang.Object> ipv6Addresses) {
+            this.props.ipv6Addresses(ipv6Addresses);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param networkInterfaceName This parameter is required.
          */
         public Builder networkInterfaceName(final java.lang.String networkInterfaceName) {
@@ -527,6 +649,23 @@ public class RosNetworkInterface extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder networkInterfaceName(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceName) {
             this.props.networkInterfaceName(networkInterfaceName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param networkInterfaceTrafficMode This parameter is required.
+         */
+        public Builder networkInterfaceTrafficMode(final java.lang.String networkInterfaceTrafficMode) {
+            this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param networkInterfaceTrafficMode This parameter is required.
+         */
+        public Builder networkInterfaceTrafficMode(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceTrafficMode) {
+            this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
             return this;
         }
 
@@ -561,6 +700,23 @@ public class RosNetworkInterface extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder privateIpAddresses(final java.util.List<? extends java.lang.Object> privateIpAddresses) {
             this.props.privateIpAddresses(privateIpAddresses);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param queueNumber This parameter is required.
+         */
+        public Builder queueNumber(final java.lang.Number queueNumber) {
+            this.props.queueNumber(queueNumber);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param queueNumber This parameter is required.
+         */
+        public Builder queueNumber(final com.aliyun.ros.cdk.core.IResolvable queueNumber) {
+            this.props.queueNumber(queueNumber);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dfs;
 /**
  * A ROS resource type:  <code>ALIYUN::DFS::AccessGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.033Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.725Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.AccessGroup")
 public class AccessGroup extends com.aliyun.ros.cdk.core.Resource {
 

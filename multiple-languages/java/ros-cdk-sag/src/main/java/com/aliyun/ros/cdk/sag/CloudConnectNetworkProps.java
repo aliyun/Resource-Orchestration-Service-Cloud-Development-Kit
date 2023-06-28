@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a <code>ALIYUN::SAG::CloudConnectNetwork</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.536Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.379Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.CloudConnectNetworkProps")
 @software.amazon.jsii.Jsii.Proxy(CloudConnectNetworkProps.Jsii$Proxy.class)
 public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSerializable {

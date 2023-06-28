@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Properties for defining a <code>ALIYUN::HBR::DbPlan</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.342Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.141Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.DbPlanProps")
 @software.amazon.jsii.Jsii.Proxy(DbPlanProps.Jsii$Proxy.class)
 public interface DbPlanProps extends software.amazon.jsii.JsiiSerializable {

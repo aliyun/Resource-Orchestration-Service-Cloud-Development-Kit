@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS resource type:  <code>ALIYUN::CMS::SiteMonitor</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.720Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.353Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.SiteMonitor")
 public class SiteMonitor extends com.aliyun.ros.cdk.core.Resource {
 

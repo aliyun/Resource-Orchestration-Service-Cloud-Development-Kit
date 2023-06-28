@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * Properties for defining a <code>ALIYUN::TSDB::HiTSDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.838Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.693Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.RosHiTSDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosHiTSDBInstanceProps.Jsii$Proxy.class)
 public interface RosHiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializable {

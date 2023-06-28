@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Properties for defining a <code>ALIYUN::ALB::SecurityPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.121Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.652Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.SecurityPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityPolicyProps.Jsii$Proxy.class)
 public interface SecurityPolicyProps extends software.amazon.jsii.JsiiSerializable {

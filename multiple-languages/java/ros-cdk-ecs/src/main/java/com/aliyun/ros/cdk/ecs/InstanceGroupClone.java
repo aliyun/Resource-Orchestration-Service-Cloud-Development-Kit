@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  <code>ALIYUN::ECS::InstanceGroupClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.383Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.090Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupClone")
 public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -110,6 +110,13 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicIps() {
         return software.amazon.jsii.Kernel.get(this, "attrPublicIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute RelatedOrderIds: The related order id list of created ecs instances.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRelatedOrderIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrRelatedOrderIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dfs;
 /**
  * A ROS resource type:  <code>ALIYUN::DFS::FileSystem</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.037Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.729Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.FileSystem")
 public class FileSystem extends com.aliyun.ros.cdk.core.Resource {
 

@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * If a delimiter is the empty string, the set of values are concatenated
  * with no delimiter.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.890Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.393Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.FnJoin")
 public class FnJoin extends software.amazon.jsii.JsiiObject implements com.aliyun.ros.cdk.core.IResolvable {
 

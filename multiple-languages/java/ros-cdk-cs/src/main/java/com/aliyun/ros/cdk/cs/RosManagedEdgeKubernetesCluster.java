@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS template type:  <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.963Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.627Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedEdgeKubernetesCluster")
 public class RosManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.RosResource {
 

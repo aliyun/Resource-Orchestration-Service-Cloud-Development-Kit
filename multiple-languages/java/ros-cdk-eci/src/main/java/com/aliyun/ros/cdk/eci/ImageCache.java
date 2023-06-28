@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * A ROS resource type:  <code>ALIYUN::ECI::ImageCache</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.247Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.952Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ImageCache")
 public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
 
@@ -174,6 +174,60 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+         * <p>
+         * @return {@code this}
+         * @param acrRegistryInfo Property acrRegistryInfo: Enterprise Edition access credential configuration information. This parameter is required.
+         */
+        public Builder acrRegistryInfo(final com.aliyun.ros.cdk.core.IResolvable acrRegistryInfo) {
+            this.props.acrRegistryInfo(acrRegistryInfo);
+            return this;
+        }
+        /**
+         * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+         * <p>
+         * @return {@code this}
+         * @param acrRegistryInfo Property acrRegistryInfo: Enterprise Edition access credential configuration information. This parameter is required.
+         */
+        public Builder acrRegistryInfo(final java.util.List<? extends java.lang.Object> acrRegistryInfo) {
+            this.props.acrRegistryInfo(acrRegistryInfo);
+            return this;
+        }
+
+        /**
+         * Property autoMatchImageCache: Specifies whether to enable reuse of image cache layers.
+         * <p>
+         * If you enable this feature, and the image cache that you want to createand an existing image cache contain duplicate image layers, the system reuses the duplicate image layers to create the new image cache.
+         * This accelerates the creation of the image cache.
+         * Valid values: true: enables reuse of image cache layers.
+         * false: disables reuse of image cache layers.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param autoMatchImageCache Property autoMatchImageCache: Specifies whether to enable reuse of image cache layers. This parameter is required.
+         */
+        public Builder autoMatchImageCache(final java.lang.Boolean autoMatchImageCache) {
+            this.props.autoMatchImageCache(autoMatchImageCache);
+            return this;
+        }
+        /**
+         * Property autoMatchImageCache: Specifies whether to enable reuse of image cache layers.
+         * <p>
+         * If you enable this feature, and the image cache that you want to createand an existing image cache contain duplicate image layers, the system reuses the duplicate image layers to create the new image cache.
+         * This accelerates the creation of the image cache.
+         * Valid values: true: enables reuse of image cache layers.
+         * false: disables reuse of image cache layers.
+         * Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param autoMatchImageCache Property autoMatchImageCache: Specifies whether to enable reuse of image cache layers. This parameter is required.
+         */
+        public Builder autoMatchImageCache(final com.aliyun.ros.cdk.core.IResolvable autoMatchImageCache) {
+            this.props.autoMatchImageCache(autoMatchImageCache);
+            return this;
+        }
+
+        /**
          * Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
          * <p>
          * @return {@code this}
@@ -191,6 +245,31 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder eipInstanceId(final com.aliyun.ros.cdk.core.IResolvable eipInstanceId) {
             this.props.eipInstanceId(eipInstanceId);
+            return this;
+        }
+
+        /**
+         * Property imageCacheSize: The size of the image cache.
+         * <p>
+         * Unit: GiB. Default value: 20.
+         * <p>
+         * @return {@code this}
+         * @param imageCacheSize Property imageCacheSize: The size of the image cache. This parameter is required.
+         */
+        public Builder imageCacheSize(final java.lang.Number imageCacheSize) {
+            this.props.imageCacheSize(imageCacheSize);
+            return this;
+        }
+        /**
+         * Property imageCacheSize: The size of the image cache.
+         * <p>
+         * Unit: GiB. Default value: 20.
+         * <p>
+         * @return {@code this}
+         * @param imageCacheSize Property imageCacheSize: The size of the image cache. This parameter is required.
+         */
+        public Builder imageCacheSize(final com.aliyun.ros.cdk.core.IResolvable imageCacheSize) {
+            this.props.imageCacheSize(imageCacheSize);
             return this;
         }
 
@@ -237,6 +316,56 @@ public class ImageCache extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property retentionDays: The retention period of the image cache.
+         * <p>
+         * Unit: days. When the retention period ends, the image cache expires and is deleted.
+         * By default, image caches never expire.
+         * Note: The image caches that fail to be created are only retained for one day.
+         * <p>
+         * @return {@code this}
+         * @param retentionDays Property retentionDays: The retention period of the image cache. This parameter is required.
+         */
+        public Builder retentionDays(final java.lang.Number retentionDays) {
+            this.props.retentionDays(retentionDays);
+            return this;
+        }
+        /**
+         * Property retentionDays: The retention period of the image cache.
+         * <p>
+         * Unit: days. When the retention period ends, the image cache expires and is deleted.
+         * By default, image caches never expire.
+         * Note: The image caches that fail to be created are only retained for one day.
+         * <p>
+         * @return {@code this}
+         * @param retentionDays Property retentionDays: The retention period of the image cache. This parameter is required.
+         */
+        public Builder retentionDays(final com.aliyun.ros.cdk.core.IResolvable retentionDays) {
+            this.props.retentionDays(retentionDays);
+            return this;
+        }
+
+        /**
+         * Property zoneId: The zone ID of the image cache.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: The zone ID of the image cache. This parameter is required.
+         */
+        public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * Property zoneId: The zone ID of the image cache.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: The zone ID of the image cache. This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
             return this;
         }
 

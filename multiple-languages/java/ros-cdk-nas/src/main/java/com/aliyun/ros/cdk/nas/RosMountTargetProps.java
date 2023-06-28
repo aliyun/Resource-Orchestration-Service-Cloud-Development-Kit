@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a <code>ALIYUN::NAS::MountTarget</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.672Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.489Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosMountTargetProps")
 @software.amazon.jsii.Jsii.Proxy(RosMountTargetProps.Jsii$Proxy.class)
 public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,18 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getNetworkType();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableIpv6() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return null;
+    }
 
     /**
      */
@@ -51,6 +63,8 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object accessGroupName;
         java.lang.Object fileSystemId;
         java.lang.Object networkType;
+        java.lang.Object enableIpv6;
+        java.lang.Object securityGroupId;
         java.lang.Object status;
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
@@ -112,6 +126,46 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
             this.networkType = networkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMountTargetProps#getEnableIpv6}
+         * @param enableIpv6 the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableIpv6(java.lang.Boolean enableIpv6) {
+            this.enableIpv6 = enableIpv6;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMountTargetProps#getEnableIpv6}
+         * @param enableIpv6 the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableIpv6(com.aliyun.ros.cdk.core.IResolvable enableIpv6) {
+            this.enableIpv6 = enableIpv6;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMountTargetProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(java.lang.String securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMountTargetProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
             return this;
         }
 
@@ -194,6 +248,8 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object accessGroupName;
         private final java.lang.Object fileSystemId;
         private final java.lang.Object networkType;
+        private final java.lang.Object enableIpv6;
+        private final java.lang.Object securityGroupId;
         private final java.lang.Object status;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
@@ -207,6 +263,8 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
             this.accessGroupName = software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.fileSystemId = software.amazon.jsii.Kernel.get(this, "fileSystemId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableIpv6 = software.amazon.jsii.Kernel.get(this, "enableIpv6", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -220,6 +278,8 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
             this.accessGroupName = java.util.Objects.requireNonNull(builder.accessGroupName, "accessGroupName is required");
             this.fileSystemId = java.util.Objects.requireNonNull(builder.fileSystemId, "fileSystemId is required");
             this.networkType = java.util.Objects.requireNonNull(builder.networkType, "networkType is required");
+            this.enableIpv6 = builder.enableIpv6;
+            this.securityGroupId = builder.securityGroupId;
             this.status = builder.status;
             this.vpcId = builder.vpcId;
             this.vSwitchId = builder.vSwitchId;
@@ -238,6 +298,16 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getNetworkType() {
             return this.networkType;
+        }
+
+        @Override
+        public final java.lang.Object getEnableIpv6() {
+            return this.enableIpv6;
+        }
+
+        @Override
+        public final java.lang.Object getSecurityGroupId() {
+            return this.securityGroupId;
         }
 
         @Override
@@ -264,6 +334,12 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
             data.set("accessGroupName", om.valueToTree(this.getAccessGroupName()));
             data.set("fileSystemId", om.valueToTree(this.getFileSystemId()));
             data.set("networkType", om.valueToTree(this.getNetworkType()));
+            if (this.getEnableIpv6() != null) {
+                data.set("enableIpv6", om.valueToTree(this.getEnableIpv6()));
+            }
+            if (this.getSecurityGroupId() != null) {
+                data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
+            }
             if (this.getStatus() != null) {
                 data.set("status", om.valueToTree(this.getStatus()));
             }
@@ -294,6 +370,8 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
             if (!accessGroupName.equals(that.accessGroupName)) return false;
             if (!fileSystemId.equals(that.fileSystemId)) return false;
             if (!networkType.equals(that.networkType)) return false;
+            if (this.enableIpv6 != null ? !this.enableIpv6.equals(that.enableIpv6) : that.enableIpv6 != null) return false;
+            if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.status != null ? !this.status.equals(that.status) : that.status != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             return this.vSwitchId != null ? this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId == null;
@@ -304,6 +382,8 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
             int result = this.accessGroupName.hashCode();
             result = 31 * result + (this.fileSystemId.hashCode());
             result = 31 * result + (this.networkType.hashCode());
+            result = 31 * result + (this.enableIpv6 != null ? this.enableIpv6.hashCode() : 0);
+            result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.status != null ? this.status.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

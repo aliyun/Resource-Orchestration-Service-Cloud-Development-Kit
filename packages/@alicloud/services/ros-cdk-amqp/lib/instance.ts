@@ -30,8 +30,7 @@ export interface InstanceProps {
 
     /**
      * Property storageSize: The storage size. It is valid when instance_type is vip.
-     * If instance type is professional or enterprise, the valid value is 200.
-     * If instance type is vip, the valid value is [700, 2800] with the step size 100
+     * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
      */
     readonly storageSize: number | ros.IResolvable;
 
@@ -82,10 +81,10 @@ export interface InstanceProps {
     readonly supportTracing?: string | ros.IResolvable;
 
     /**
-     * Property tracingStorageTime: It is valid when support_tracing == tracing_true.
-     * The retention period of message traces was set. Valid values: 3, 7, 15.
+     * Property tracingStorageTime: The retention period of message traces was set. Valid values: 3, 7, 15.
      * If instance_type=vip, the valid values is 15.
      * If instance_type!=vip, the valid values is 3, 7, 15.
+     * If support_tracing == tracing_false, the valid values is 0.
      */
     readonly tracingStorageTime?: number | ros.IResolvable;
 }

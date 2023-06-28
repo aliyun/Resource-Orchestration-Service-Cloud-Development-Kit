@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a <code>ALIYUN::ROS::ResourceCleaner</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.439Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.277Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosResourceCleanerProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourceCleanerProps.Jsii$Proxy.class)
 public interface RosResourceCleanerProps extends software.amazon.jsii.JsiiSerializable {

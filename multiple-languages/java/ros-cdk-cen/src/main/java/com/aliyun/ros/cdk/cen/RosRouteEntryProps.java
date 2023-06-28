@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a <code>ALIYUN::CEN::RouteEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.489Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.068Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosRouteEntryProps")
 @software.amazon.jsii.Jsii.Proxy(RosRouteEntryProps.Jsii$Proxy.class)
 public interface RosRouteEntryProps extends software.amazon.jsii.JsiiSerializable {

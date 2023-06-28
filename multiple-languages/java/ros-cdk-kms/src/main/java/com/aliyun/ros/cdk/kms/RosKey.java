@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * A ROS template type:  <code>ALIYUN::KMS::Key</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.474Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.275Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosKey")
 public class RosKey extends com.aliyun.ros.cdk.core.RosResource {
 

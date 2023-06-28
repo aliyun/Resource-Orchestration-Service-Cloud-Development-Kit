@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  <code>ALIYUN::ApiGateway::SignatureBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.270Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.808Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.SignatureBinding")
 public class SignatureBinding extends com.aliyun.ros.cdk.core.Resource {
 

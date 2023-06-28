@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  <code>ALIYUN::POLARDB::ParameterGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.908Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.743Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosParameterGroup")
 public class RosParameterGroup extends com.aliyun.ros.cdk.core.RosResource {
 

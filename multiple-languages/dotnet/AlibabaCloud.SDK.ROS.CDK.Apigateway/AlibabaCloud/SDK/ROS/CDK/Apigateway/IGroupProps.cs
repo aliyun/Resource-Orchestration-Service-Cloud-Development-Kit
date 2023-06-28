@@ -15,6 +15,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
+        /// <summary>Property basePath: The base path of API.</summary>
+        [JsiiProperty(name: "basePath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BasePath
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property description: Description of the Group, less than 180 characters.</summary>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -110,6 +121,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             public object GroupName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property basePath: The base path of API.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "basePath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BasePath
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property description: Description of the Group, less than 180 characters.</summary>
