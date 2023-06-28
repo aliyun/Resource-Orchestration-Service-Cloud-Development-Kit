@@ -1599,6 +1599,25 @@ export interface RosAppProps {
     readonly appName: string | ros.IResolvable;
 
     /**
+     * @Property appCode: The app code of the APP.
+     * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),and AppCode is globally unique.
+     */
+    readonly appCode?: string | ros.IResolvable;
+
+    /**
+     * @Property appKey: The key of the APP. 
+     * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),
+     * and AppKey is globally unique.
+     */
+    readonly appKey?: string | ros.IResolvable;
+
+    /**
+     * @Property appSecret: The secret of the APP. 
+     * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-).
+     */
+    readonly appSecret?: string | ros.IResolvable;
+
+    /**
      * @Property description: Description of the App, less than 180 characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -1619,7 +1638,28 @@ export interface RosAppProps {
 function RosAppPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.appCode && (typeof properties.appCode) !== 'object') {
+        errors.collect(ros.propertyValidator('appCode', ros.validateAllowedPattern)({
+          data: properties.appCode,
+          reg: /^[-_a-zA-Z0-9]{8,128}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('appCode', ros.validateString)(properties.appCode));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.appKey && (typeof properties.appKey) !== 'object') {
+        errors.collect(ros.propertyValidator('appKey', ros.validateAllowedPattern)({
+          data: properties.appKey,
+          reg: /^[-_a-zA-Z0-9]{8,128}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('appKey', ros.validateString)(properties.appKey));
+    if(properties.appSecret && (typeof properties.appSecret) !== 'object') {
+        errors.collect(ros.propertyValidator('appSecret', ros.validateAllowedPattern)({
+          data: properties.appSecret,
+          reg: /^[-_a-zA-Z0-9]{8,128}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('appSecret', ros.validateString)(properties.appSecret));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1648,6 +1688,9 @@ function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstra
     }
     return {
       AppName: ros.stringToRosTemplate(properties.appName),
+      AppCode: ros.stringToRosTemplate(properties.appCode),
+      AppKey: ros.stringToRosTemplate(properties.appKey),
+      AppSecret: ros.stringToRosTemplate(properties.appSecret),
       Description: ros.stringToRosTemplate(properties.description),
       Tags: ros.listMapper(rosAppTagsPropertyToRosTemplate)(properties.tags),
     };
@@ -1666,6 +1709,11 @@ export class RosApp extends ros.RosResource {
      * A factory method that creates a new instance of this class from an object
      * containing the properties of this ROS resource.
      */
+
+    /**
+     * @Attribute AppCode: The code of the APP.
+     */
+    public readonly attrAppCode: ros.IResolvable;
 
     /**
      * @Attribute AppId: The id of the created APP
@@ -1696,6 +1744,25 @@ export class RosApp extends ros.RosResource {
     public appName: string | ros.IResolvable;
 
     /**
+     * @Property appCode: The app code of the APP.
+     * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),and AppCode is globally unique.
+     */
+    public appCode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property appKey: The key of the APP. 
+     * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),
+     * and AppKey is globally unique.
+     */
+    public appKey: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property appSecret: The secret of the APP. 
+     * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-).
+     */
+    public appSecret: string | ros.IResolvable | undefined;
+
+    /**
      * @Property description: Description of the App, less than 180 characters.
      */
     public description: string | ros.IResolvable | undefined;
@@ -1714,6 +1781,7 @@ export class RosApp extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAppProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosApp.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAppCode = this.getAtt('AppCode');
         this.attrAppId = this.getAtt('AppId');
         this.attrAppKey = this.getAtt('AppKey');
         this.attrAppSecret = this.getAtt('AppSecret');
@@ -1721,6 +1789,9 @@ export class RosApp extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.appName = props.appName;
+        this.appCode = props.appCode;
+        this.appKey = props.appKey;
+        this.appSecret = props.appSecret;
         this.description = props.description;
         this.tags = props.tags;
     }
@@ -1729,6 +1800,9 @@ export class RosApp extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             appName: this.appName,
+            appCode: this.appCode,
+            appKey: this.appKey,
+            appSecret: this.appSecret,
             description: this.description,
             tags: this.tags,
         };
@@ -1812,6 +1886,12 @@ export interface RosAuthorizationProps {
     readonly stageName: string | ros.IResolvable;
 
     /**
+     * @Property authValidTime: The time (UTC) when the authorization expires. If this parameter is empty, the authorization does not expire.
+     * Pattern: YYYY-MM-DDThh:mm:ssZ
+     */
+    readonly authValidTime?: string | ros.IResolvable;
+
+    /**
      * @Property description: Description of the authorization, less than 180 characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -1828,6 +1908,13 @@ function RosAuthorizationPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.authValidTime && (typeof properties.authValidTime) !== 'object') {
+        errors.collect(ros.propertyValidator('authValidTime', ros.validateAllowedPattern)({
+          data: properties.authValidTime,
+          reg: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('authValidTime', ros.validateString)(properties.authValidTime));
     errors.collect(ros.propertyValidator('stageName', ros.requiredValidator)(properties.stageName));
     if(properties.stageName && (typeof properties.stageName) !== 'object') {
         errors.collect(ros.propertyValidator('stageName', ros.validateAllowedValues)({
@@ -1877,6 +1964,7 @@ function rosAuthorizationPropsToRosTemplate(properties: any, enableResourcePrope
       AppIds: ros.listMapper(ros.objectToRosTemplate)(properties.appIds),
       GroupId: ros.stringToRosTemplate(properties.groupId),
       StageName: ros.stringToRosTemplate(properties.stageName),
+      AuthValidTime: ros.stringToRosTemplate(properties.authValidTime),
       Description: ros.stringToRosTemplate(properties.description),
     };
 }
@@ -1919,6 +2007,12 @@ export class RosAuthorization extends ros.RosResource {
     public stageName: string | ros.IResolvable;
 
     /**
+     * @Property authValidTime: The time (UTC) when the authorization expires. If this parameter is empty, the authorization does not expire.
+     * Pattern: YYYY-MM-DDThh:mm:ssZ
+     */
+    public authValidTime: string | ros.IResolvable | undefined;
+
+    /**
      * @Property description: Description of the authorization, less than 180 characters.
      */
     public description: string | ros.IResolvable | undefined;
@@ -1938,6 +2032,7 @@ export class RosAuthorization extends ros.RosResource {
         this.appIds = props.appIds;
         this.groupId = props.groupId;
         this.stageName = props.stageName;
+        this.authValidTime = props.authValidTime;
         this.description = props.description;
     }
 
@@ -1948,6 +2043,7 @@ export class RosAuthorization extends ros.RosResource {
             appIds: this.appIds,
             groupId: this.groupId,
             stageName: this.stageName,
+            authValidTime: this.authValidTime,
             description: this.description,
         };
     }
@@ -2276,6 +2372,11 @@ export interface RosGroupProps {
     readonly groupName: string | ros.IResolvable;
 
     /**
+     * @Property basePath: The base path of API.
+     */
+    readonly basePath?: string | ros.IResolvable;
+
+    /**
      * @Property description: Description of the Group, less than 180 characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -2323,6 +2424,7 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('vpcIntranetEnable', ros.validateBoolean)(properties.vpcIntranetEnable));
+    errors.collect(ros.propertyValidator('basePath', ros.validateString)(properties.basePath));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -2350,6 +2452,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
     }
     return {
       GroupName: ros.stringToRosTemplate(properties.groupName),
+      BasePath: ros.stringToRosTemplate(properties.basePath),
       Description: ros.stringToRosTemplate(properties.description),
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       InternetEnable: ros.booleanToRosTemplate(properties.internetEnable),
@@ -2397,6 +2500,11 @@ export class RosGroup extends ros.RosResource {
     public groupName: string | ros.IResolvable;
 
     /**
+     * @Property basePath: The base path of API.
+     */
+    public basePath: string | ros.IResolvable | undefined;
+
+    /**
      * @Property description: Description of the Group, less than 180 characters.
      */
     public description: string | ros.IResolvable | undefined;
@@ -2442,6 +2550,7 @@ export class RosGroup extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupName = props.groupName;
+        this.basePath = props.basePath;
         this.description = props.description;
         this.instanceId = props.instanceId;
         this.internetEnable = props.internetEnable;
@@ -2454,6 +2563,7 @@ export class RosGroup extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             groupName: this.groupName,
+            basePath: this.basePath,
             description: this.description,
             instanceId: this.instanceId,
             internetEnable: this.internetEnable,

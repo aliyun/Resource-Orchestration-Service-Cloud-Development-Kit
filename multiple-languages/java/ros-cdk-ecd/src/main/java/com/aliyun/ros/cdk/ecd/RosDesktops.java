@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * A ROS template type:  <code>ALIYUN::ECD::Desktops</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.224Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.914Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.RosDesktops")
 public class RosDesktops extends com.aliyun.ros.cdk.core.RosResource {
 

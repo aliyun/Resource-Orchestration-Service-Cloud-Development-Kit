@@ -36,6 +36,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
+        /// <summary>Property authValidTime: The time (UTC) when the authorization expires.</summary>
+        /// <remarks>
+        /// If this parameter is empty, the authorization does not expire.
+        /// Pattern: YYYY-MM-DDThh:mm:ssZ
+        /// </remarks>
+        [JsiiProperty(name: "authValidTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AuthValidTime
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property description: Description of the authorization, less than 180 characters.</summary>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -81,6 +96,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             public object StageName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property authValidTime: The time (UTC) when the authorization expires.</summary>
+            /// <remarks>
+            /// If this parameter is empty, the authorization does not expire.
+            /// Pattern: YYYY-MM-DDThh:mm:ssZ
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "authValidTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AuthValidTime
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property description: Description of the authorization, less than 180 characters.</summary>

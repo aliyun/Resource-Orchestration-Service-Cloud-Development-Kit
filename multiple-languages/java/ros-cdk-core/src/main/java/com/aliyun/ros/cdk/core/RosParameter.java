@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * Parameters enable you to input custom values to your template each time you create or
  * update a stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.928Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.441Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosParameter")
 public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
@@ -108,30 +108,67 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
         static {
             ALB_ACL_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ALB_ACL_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ALB_INSTANCE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ALB_INSTANCE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ALB_LOAD_BALANCER_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ALB_LOAD_BALANCER_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ALERT = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ALERT", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ARRAY_ITEMS = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ARRAY_ITEMS", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ARRAY_TABLE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ARRAY_TABLE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            BOOLEAN = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "BOOLEAN", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CAS_CERTIFICATE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CAS_CERTIFICATE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             CAS_CERTIFICATE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CAS_CERTIFICATE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CASCADER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CASCADER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             CHARGE_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CHARGE_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CMS_ALARM_RULE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CMS_ALARM_RULE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CMS_ALARM_SILENCE_TIME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CMS_ALARM_SILENCE_TIME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CMS_ALARM_TRIGGER_RESOURCES = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CMS_ALARM_TRIGGER_RESOURCES", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CMS_EVENT_FILTER_RULE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CMS_EVENT_FILTER_RULE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CMS_EVENT_LEVEL = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CMS_EVENT_LEVEL", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CMS_EVENT_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CMS_EVENT_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CMS_PRODUCT_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CMS_PRODUCT_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             CODE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CODE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             COMMA_DELIMITED_LIST = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "COMMA_DELIMITED_LIST", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            COMPUTER_NEST_SERVICE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "COMPUTER_NEST_SERVICE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            COMPUTER_NEST_SERVICE_INSTANCE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "COMPUTER_NEST_SERVICE_INSTANCE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            COMPUTER_NEST_SUPPLIER_SERVICE_VERSION = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "COMPUTER_NEST_SUPPLIER_SERVICE_VERSION", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             CRON = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CRON", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CS_CLUSTER_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CS_CLUSTER_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            CS_CLUSTER_NODE_POOL = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "CS_CLUSTER_NODE_POOL", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            DATE_PICKER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "DATE_PICKER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             DATE_TIME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "DATE_TIME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_AUTO_SNAPSHOT_POLICY_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_AUTO_SNAPSHOT_POLICY_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_COMMAND_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_COMMAND_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_DATA_DISK_CATEGORY = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_DATA_DISK_CATEGORY", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_DISK_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_DISK_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_IMAGE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_IMAGE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_INSTANCE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_INSTANCE_ATTRIBUTE_SELECTOR = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_ATTRIBUTE_SELECTOR", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_INSTANCE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_INSTANCE_IMAGE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_IMAGE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_INSTANCE_MAX_BANDWIDTH_IN = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_MAX_BANDWIDTH_IN", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_INSTANCE_PASSWORD = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_PASSWORD", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_INSTANCE_PROPERTY_EDITOR = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_PROPERTY_EDITOR", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_INSTANCE_RENEW_PERIOD = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_RENEW_PERIOD", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_INSTANCE_STOP_MODE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_STOP_MODE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_INSTANCE_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_INSTANCE_TYPE_AVAILABLE_INSTANCE_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_TYPE_AVAILABLE_INSTANCE_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_INSTANCE_ZONE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_ZONE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_KEY_PAIR_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_KEY_PAIR_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_LAUNCH_TEMPLATE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_LAUNCH_TEMPLATE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_LAUNCH_TEMPLATE_VERSION = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_LAUNCH_TEMPLATE_VERSION", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_MANAGED_INSTANCE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_MANAGED_INSTANCE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_RAM_ROLE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_RAM_ROLE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_REGION_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_REGION_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_RESOURCE_GROUP_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_RESOURCE_GROUP_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_SECURITY_GROUP_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_SECURITY_GROUP_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_SNAPSHOT_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_SNAPSHOT_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_SYSTEM_DISK_CATEGORY = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_SYSTEM_DISK_CATEGORY", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_TAG = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_TAG", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_TARGET_REGION_IDS = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_TARGET_REGION_IDS", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_VPC_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_VPC_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_VSWITCH = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_VSWITCH", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_VSWITCH_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_VSWITCH_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ECS_ZONE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_ZONE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            EDITABLE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "EDITABLE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            EDITABLE_POPOVER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "EDITABLE_POPOVER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             EHPC_CLUSTER_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "EHPC_CLUSTER_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             EHPC_FILE_SYSTEM_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "EHPC_FILE_SYSTEM_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             EHPC_FILE_SYSTEM_MOUNT_TARGET_DOMAIN = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "EHPC_FILE_SYSTEM_MOUNT_TARGET_DOMAIN", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
@@ -139,14 +176,38 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
             ESS_AUTO_SCALING_GROUP_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ESS_AUTO_SCALING_GROUP_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ESS_SCALING_CONFIGURATION_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ESS_SCALING_CONFIGURATION_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             FILE_CONTENT = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "FILE_CONTENT", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            FORM_GRID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "FORM_GRID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            FORM_GROUP_COLLAPSE_PAN = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "FORM_GROUP_COLLAPSE_PAN", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            FORM_ITEM = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "FORM_ITEM", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            FORM_ITEM_GROUP = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "FORM_ITEM_GROUP", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            FORM_LAYOUT = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "FORM_LAYOUT", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             GMT_ZONE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "GMT_ZONE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             INFLUX_DB_INSTANCE_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "INFLUX_DB_INSTANCE_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            INPUT = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "INPUT", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            INTEGER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "INTEGER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             JSON = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "JSON", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            LIST = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "LIST", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             LIST_PARAMETER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "LIST_PARAMETER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             LIST_PARAMETERS = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "LIST_PARAMETERS", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            MONGODB_INSTANCE_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "MONGODB_INSTANCE_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            NEST_SERVICE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "NEST_SERVICE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            NEST_SERVICE_VERSION = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "NEST_SERVICE_VERSION", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            NLB_INSTANCE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "NLB_INSTANCE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            NLB_LOAD_BALANCER_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "NLB_LOAD_BALANCER_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            NLB_ZONE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "NLB_ZONE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            NUMBER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "NUMBER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            NUMBER_PICKER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "NUMBER_PICKER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             OOS_COMMAND_CONTENT = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMMAND_CONTENT", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            OOS_COMPONENT_BANDWIDTH_UPGRADE_DURATION_HOUR = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMPONENT_BANDWIDTH_UPGRADE_DURATION_HOUR", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             OOS_COMPONENT_CLEAN_UP_INFO = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMPONENT_CLEAN_UP_INFO", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            OOS_COMPONENT_ON_OFF_TIME_LINE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMPONENT_ON_OFF_TIME_LINE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            OOS_COMPONENT_ON_OFF_TIMES = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMPONENT_ON_OFF_TIMES", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            OOS_COMPONENT_OPERATION_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMPONENT_OPERATION_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            OOS_COMPONENT_PRIVATE_TEMPLATE_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMPONENT_PRIVATE_TEMPLATE_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            OOS_COMPONENT_SECTION_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMPONENT_SECTION_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            OOS_COMPONENT_TARGET_IMAGE_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMPONENT_TARGET_IMAGE_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             OOS_COMPONENT_TIMER_TRIGGER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMPONENT_TIMER_TRIGGER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            OOS_COMPONENT_TRANSIT_INSTANCE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_COMPONENT_TRANSIT_INSTANCE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             OOS_FILE_URL = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_FILE_URL", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             OOS_PACKAGE_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_PACKAGE_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             OOS_PACKAGE_VERSION = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_PACKAGE_VERSION", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
@@ -156,31 +217,57 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
             OOS_TEMPLATE_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_TEMPLATE_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             OOS_TEMPLATE_VERSION = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OOS_TEMPLATE_VERSION", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             OSS_BUCKET_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OSS_BUCKET_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            OSS_BUCKET_OBJECT = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OSS_BUCKET_OBJECT", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             OSS_OBJECT_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "OSS_OBJECT_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            PARSE_TEXT = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "PARSE_TEXT", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             PASSWORD = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "PASSWORD", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            PAY_PERIOD = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "PAY_PERIOD", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            PAY_PERIOD_UNIT = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "PAY_PERIOD_UNIT", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            POLARDB_DB_CLUSTER_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "POLARDB_DB_CLUSTER_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            RADIO = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RADIO", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             RAM_ROLE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RAM_ROLE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             RAM_USER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RAM_USER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             RATE_CONTROL = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RATE_CONTROL", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             RDS_ENGINE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RDS_ENGINE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             RDS_ENGINE_VERSION = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RDS_ENGINE_VERSION", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            RDS_INSTANCE_ACCOUNT_PASSWORD = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RDS_INSTANCE_ACCOUNT_PASSWORD", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             RDS_INSTANCE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RDS_INSTANCE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             RDS_INSTANCE_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RDS_INSTANCE_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            READ_ONLY = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "READ_ONLY", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            READ_ONLY_ITEM = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "READ_ONLY_ITEM", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            REDIS_INSTANCE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "REDIS_INSTANCE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             REDIS_INSTANCE_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "REDIS_INSTANCE_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            REGION_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "REGION_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             RESOURCE_MANAGER_ACCOUNT = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RESOURCE_MANAGER_ACCOUNT", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             RESOURCE_MANAGER_FOLDER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RESOURCE_MANAGER_FOLDER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ROS_TYPE_META_LIST = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ROS_TYPE_META_LIST", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            SELECT = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "SELECT", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            SERVICE_CATA_LOG_LAUNCH_OPTION_PORTFOLIO_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "SERVICE_CATA_LOG_LAUNCH_OPTION_PORTFOLIO_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            SERVICE_CATA_LOG_LAUNCH_PRODUCT_VERSION_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "SERVICE_CATA_LOG_LAUNCH_PRODUCT_VERSION_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             SLB_ACL_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "SLB_ACL_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             SLB_CERTIFICATE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "SLB_CERTIFICATE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             SLB_INSTANCE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "SLB_INSTANCE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             SLB_INSTANCE_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "SLB_INSTANCE_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            SLB_LOAD_BALANCER_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "SLB_LOAD_BALANCER_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            STRING = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "STRING", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            SWITCH = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "SWITCH", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             TAGS = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "TAGS", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             TARGETS = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "TARGETS", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            TEMPLATE_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "TEMPLATE_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            TEMPLATE_PARAMETER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "TEMPLATE_PARAMETER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             TEXT_AREA = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "TEXT_AREA", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            TIME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "TIME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            TIME_TRIGGER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "TIME_TRIGGER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             TIME_TRIGGER_WEEKLY = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "TIME_TRIGGER_WEEKLY", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             TIME_ZONE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "TIME_ZONE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            USER_ACCOUNT_IDS = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "USER_ACCOUNT_IDS", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             VPC_CIDR_BLOCK = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "VPC_CIDR_BLOCK", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             VPC_NAT_GATEWAY_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "VPC_NAT_GATEWAY_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             VPC_ROUTER_ROUTE_TABLE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "VPC_ROUTER_ROUTE_TABLE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            VPC_VSWITCH_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "VPC_VSWITCH_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            VPC_ZONE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "VPC_ZONE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             VSWITCH_CIDR_BLOCK = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "VSWITCH_CIDR_BLOCK", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ZONE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ZONE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
         }
 
         public AssociationProperty() {
@@ -192,15 +279,55 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
         public final static java.lang.String ALB_INSTANCE_ID;
 
+        public final static java.lang.String ALB_LOAD_BALANCER_ID;
+
+        public final static java.lang.String ALERT;
+
+        public final static java.lang.String ARRAY_ITEMS;
+
+        public final static java.lang.String ARRAY_TABLE;
+
+        public final static java.lang.String BOOLEAN;
+
+        public final static java.lang.String CAS_CERTIFICATE;
+
         public final static java.lang.String CAS_CERTIFICATE_ID;
 
+        public final static java.lang.String CASCADER;
+
         public final static java.lang.String CHARGE_TYPE;
+
+        public final static java.lang.String CMS_ALARM_RULE;
+
+        public final static java.lang.String CMS_ALARM_SILENCE_TIME;
+
+        public final static java.lang.String CMS_ALARM_TRIGGER_RESOURCES;
+
+        public final static java.lang.String CMS_EVENT_FILTER_RULE;
+
+        public final static java.lang.String CMS_EVENT_LEVEL;
+
+        public final static java.lang.String CMS_EVENT_NAME;
+
+        public final static java.lang.String CMS_PRODUCT_TYPE;
 
         public final static java.lang.String CODE;
 
         public final static java.lang.String COMMA_DELIMITED_LIST;
 
+        public final static java.lang.String COMPUTER_NEST_SERVICE_ID;
+
+        public final static java.lang.String COMPUTER_NEST_SERVICE_INSTANCE_ID;
+
+        public final static java.lang.String COMPUTER_NEST_SUPPLIER_SERVICE_VERSION;
+
         public final static java.lang.String CRON;
+
+        public final static java.lang.String CS_CLUSTER_ID;
+
+        public final static java.lang.String CS_CLUSTER_NODE_POOL;
+
+        public final static java.lang.String DATE_PICKER;
 
         public final static java.lang.String DATE_TIME;
 
@@ -214,11 +341,29 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
         public final static java.lang.String ECS_IMAGE_ID;
 
+        public final static java.lang.String ECS_INSTANCE;
+
+        public final static java.lang.String ECS_INSTANCE_ATTRIBUTE_SELECTOR;
+
         public final static java.lang.String ECS_INSTANCE_ID;
+
+        public final static java.lang.String ECS_INSTANCE_IMAGE_ID;
+
+        public final static java.lang.String ECS_INSTANCE_MAX_BANDWIDTH_IN;
 
         public final static java.lang.String ECS_INSTANCE_PASSWORD;
 
+        public final static java.lang.String ECS_INSTANCE_PROPERTY_EDITOR;
+
+        public final static java.lang.String ECS_INSTANCE_RENEW_PERIOD;
+
+        public final static java.lang.String ECS_INSTANCE_STOP_MODE;
+
         public final static java.lang.String ECS_INSTANCE_TYPE;
+
+        public final static java.lang.String ECS_INSTANCE_TYPE_AVAILABLE_INSTANCE_TYPE;
+
+        public final static java.lang.String ECS_INSTANCE_ZONE_ID;
 
         public final static java.lang.String ECS_KEY_PAIR_NAME;
 
@@ -226,19 +371,35 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
         public final static java.lang.String ECS_LAUNCH_TEMPLATE_VERSION;
 
+        public final static java.lang.String ECS_MANAGED_INSTANCE_ID;
+
+        public final static java.lang.String ECS_RAM_ROLE;
+
         public final static java.lang.String ECS_REGION_ID;
 
         public final static java.lang.String ECS_RESOURCE_GROUP_ID;
 
         public final static java.lang.String ECS_SECURITY_GROUP_ID;
 
+        public final static java.lang.String ECS_SNAPSHOT_ID;
+
         public final static java.lang.String ECS_SYSTEM_DISK_CATEGORY;
 
+        public final static java.lang.String ECS_TAG;
+
+        public final static java.lang.String ECS_TARGET_REGION_IDS;
+
         public final static java.lang.String ECS_VPC_ID;
+
+        public final static java.lang.String ECS_VSWITCH;
 
         public final static java.lang.String ECS_VSWITCH_ID;
 
         public final static java.lang.String ECS_ZONE_ID;
+
+        public final static java.lang.String EDITABLE;
+
+        public final static java.lang.String EDITABLE_POPOVER;
 
         public final static java.lang.String EHPC_CLUSTER_ID;
 
@@ -254,21 +415,69 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
         public final static java.lang.String FILE_CONTENT;
 
+        public final static java.lang.String FORM_GRID;
+
+        public final static java.lang.String FORM_GROUP_COLLAPSE_PAN;
+
+        public final static java.lang.String FORM_ITEM;
+
+        public final static java.lang.String FORM_ITEM_GROUP;
+
+        public final static java.lang.String FORM_LAYOUT;
+
         public final static java.lang.String GMT_ZONE;
 
         public final static java.lang.String INFLUX_DB_INSTANCE_TYPE;
 
+        public final static java.lang.String INPUT;
+
+        public final static java.lang.String INTEGER;
+
         public final static java.lang.String JSON;
+
+        public final static java.lang.String LIST;
 
         public final static java.lang.String LIST_PARAMETER;
 
         public final static java.lang.String LIST_PARAMETERS;
 
+        public final static java.lang.String MONGODB_INSTANCE_TYPE;
+
+        public final static java.lang.String NEST_SERVICE_ID;
+
+        public final static java.lang.String NEST_SERVICE_VERSION;
+
+        public final static java.lang.String NLB_INSTANCE_ID;
+
+        public final static java.lang.String NLB_LOAD_BALANCER_ID;
+
+        public final static java.lang.String NLB_ZONE_ID;
+
+        public final static java.lang.String NUMBER;
+
+        public final static java.lang.String NUMBER_PICKER;
+
         public final static java.lang.String OOS_COMMAND_CONTENT;
+
+        public final static java.lang.String OOS_COMPONENT_BANDWIDTH_UPGRADE_DURATION_HOUR;
 
         public final static java.lang.String OOS_COMPONENT_CLEAN_UP_INFO;
 
+        public final static java.lang.String OOS_COMPONENT_ON_OFF_TIME_LINE;
+
+        public final static java.lang.String OOS_COMPONENT_ON_OFF_TIMES;
+
+        public final static java.lang.String OOS_COMPONENT_OPERATION_TYPE;
+
+        public final static java.lang.String OOS_COMPONENT_PRIVATE_TEMPLATE_NAME;
+
+        public final static java.lang.String OOS_COMPONENT_SECTION_TYPE;
+
+        public final static java.lang.String OOS_COMPONENT_TARGET_IMAGE_NAME;
+
         public final static java.lang.String OOS_COMPONENT_TIMER_TRIGGER;
+
+        public final static java.lang.String OOS_COMPONENT_TRANSIT_INSTANCE;
 
         public final static java.lang.String OOS_FILE_URL;
 
@@ -288,9 +497,21 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
         public final static java.lang.String OSS_BUCKET_NAME;
 
+        public final static java.lang.String OSS_BUCKET_OBJECT;
+
         public final static java.lang.String OSS_OBJECT_NAME;
 
+        public final static java.lang.String PARSE_TEXT;
+
         public final static java.lang.String PASSWORD;
+
+        public final static java.lang.String PAY_PERIOD;
+
+        public final static java.lang.String PAY_PERIOD_UNIT;
+
+        public final static java.lang.String POLARDB_DB_CLUSTER_ID;
+
+        public final static java.lang.String RADIO;
 
         public final static java.lang.String RAM_ROLE;
 
@@ -302,15 +523,33 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
         public final static java.lang.String RDS_ENGINE_VERSION;
 
+        public final static java.lang.String RDS_INSTANCE_ACCOUNT_PASSWORD;
+
         public final static java.lang.String RDS_INSTANCE_ID;
 
         public final static java.lang.String RDS_INSTANCE_TYPE;
 
+        public final static java.lang.String READ_ONLY;
+
+        public final static java.lang.String READ_ONLY_ITEM;
+
+        public final static java.lang.String REDIS_INSTANCE_ID;
+
         public final static java.lang.String REDIS_INSTANCE_TYPE;
+
+        public final static java.lang.String REGION_ID;
 
         public final static java.lang.String RESOURCE_MANAGER_ACCOUNT;
 
         public final static java.lang.String RESOURCE_MANAGER_FOLDER;
+
+        public final static java.lang.String ROS_TYPE_META_LIST;
+
+        public final static java.lang.String SELECT;
+
+        public final static java.lang.String SERVICE_CATA_LOG_LAUNCH_OPTION_PORTFOLIO_ID;
+
+        public final static java.lang.String SERVICE_CATA_LOG_LAUNCH_PRODUCT_VERSION_ID;
 
         public final static java.lang.String SLB_ACL_ID;
 
@@ -320,15 +559,31 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
         public final static java.lang.String SLB_INSTANCE_TYPE;
 
+        public final static java.lang.String SLB_LOAD_BALANCER_ID;
+
+        public final static java.lang.String STRING;
+
+        public final static java.lang.String SWITCH;
+
         public final static java.lang.String TAGS;
 
         public final static java.lang.String TARGETS;
 
+        public final static java.lang.String TEMPLATE_NAME;
+
+        public final static java.lang.String TEMPLATE_PARAMETER;
+
         public final static java.lang.String TEXT_AREA;
+
+        public final static java.lang.String TIME;
+
+        public final static java.lang.String TIME_TRIGGER;
 
         public final static java.lang.String TIME_TRIGGER_WEEKLY;
 
         public final static java.lang.String TIME_ZONE;
+
+        public final static java.lang.String USER_ACCOUNT_IDS;
 
         public final static java.lang.String VPC_CIDR_BLOCK;
 
@@ -336,7 +591,13 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
         public final static java.lang.String VPC_ROUTER_ROUTE_TABLE_ID;
 
+        public final static java.lang.String VPC_VSWITCH_ID;
+
+        public final static java.lang.String VPC_ZONE_ID;
+
         public final static java.lang.String VSWITCH_CIDR_BLOCK;
+
+        public final static java.lang.String ZONE_ID;
     }
 
     /**

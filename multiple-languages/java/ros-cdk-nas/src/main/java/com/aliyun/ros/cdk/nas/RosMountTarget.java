@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * A ROS template type:  <code>ALIYUN::NAS::MountTarget</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.671Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.488Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosMountTarget")
 public class RosMountTarget extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -113,6 +113,42 @@ public class RosMountTarget extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNetworkType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "networkType", java.util.Objects.requireNonNull(value, "networkType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableIpv6() {
+        return software.amazon.jsii.Kernel.get(this, "enableIpv6", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableIpv6(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableIpv6", value);
+    }
+
+    /**
+     */
+    public void setEnableIpv6(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableIpv6", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
     }
 
     /**
@@ -243,6 +279,40 @@ public class RosMountTarget extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
             this.props.networkType(networkType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param enableIpv6 This parameter is required.
+         */
+        public Builder enableIpv6(final java.lang.Boolean enableIpv6) {
+            this.props.enableIpv6(enableIpv6);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableIpv6 This parameter is required.
+         */
+        public Builder enableIpv6(final com.aliyun.ros.cdk.core.IResolvable enableIpv6) {
+            this.props.enableIpv6(enableIpv6);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final java.lang.String securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
             return this;
         }
 

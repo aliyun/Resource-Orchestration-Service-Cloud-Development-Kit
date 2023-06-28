@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * Properties for defining a <code>ALIYUN::DNS::DomainRecord</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.099Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.796Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosDomainRecordProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainRecordProps.Jsii$Proxy.class)
 public interface RosDomainRecordProps extends software.amazon.jsii.JsiiSerializable {

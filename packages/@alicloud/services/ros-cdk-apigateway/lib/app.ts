@@ -14,6 +14,25 @@ export interface AppProps {
     readonly appName: string | ros.IResolvable;
 
     /**
+     * Property appCode: The app code of the APP.
+     * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),and AppCode is globally unique.
+     */
+    readonly appCode?: string | ros.IResolvable;
+
+    /**
+     * Property appKey: The key of the APP. 
+     * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),
+     * and AppKey is globally unique.
+     */
+    readonly appKey?: string | ros.IResolvable;
+
+    /**
+     * Property appSecret: The secret of the APP. 
+     * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-).
+     */
+    readonly appSecret?: string | ros.IResolvable;
+
+    /**
      * Property description: Description of the App, less than 180 characters.
      */
     readonly description?: string | ros.IResolvable;
@@ -33,6 +52,11 @@ export class App extends ros.Resource {
      * A factory method that creates a new instance of this class from an object
      * containing the properties of this ROS resource, which will be assigned to ROS resource.
      */
+
+    /**
+     * Attribute AppCode: The code of the APP.
+     */
+    public readonly attrAppCode: ros.IResolvable;
 
     /**
      * Attribute AppId: The id of the created APP
@@ -65,11 +89,15 @@ export class App extends ros.Resource {
         super(scope, id);
 
         const rosApp = new RosApp(this, id,  {
+            appCode: props.appCode,
             description: props.description,
+            appKey: props.appKey,
+            appSecret: props.appSecret,
             tags: props.tags,
             appName: props.appName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApp;
+        this.attrAppCode = rosApp.attrAppCode;
         this.attrAppId = rosApp.attrAppId;
         this.attrAppKey = rosApp.attrAppKey;
         this.attrAppSecret = rosApp.attrAppSecret;

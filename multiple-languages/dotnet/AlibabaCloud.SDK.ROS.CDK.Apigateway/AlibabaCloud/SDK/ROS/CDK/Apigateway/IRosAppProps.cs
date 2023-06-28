@@ -18,6 +18,49 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: appCode: The app code of the APP.
+        /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),and AppCode is globally unique.
+        /// </remarks>
+        [JsiiProperty(name: "appCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AppCode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: appKey: The key of the APP.
+        /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),
+        /// and AppKey is globally unique.
+        /// </remarks>
+        [JsiiProperty(name: "appKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AppKey
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: appSecret: The secret of the APP.
+        /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-).
+        /// </remarks>
+        [JsiiProperty(name: "appSecret", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AppSecret
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: description: Description of the App, less than 180 characters.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -58,6 +101,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             public object AppName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appCode: The app code of the APP.
+            /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),and AppCode is globally unique.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "appCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AppCode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appKey: The key of the APP.
+            /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),
+            /// and AppKey is globally unique.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "appKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AppKey
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: appSecret: The secret of the APP.
+            /// The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-).
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "appSecret", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AppSecret
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

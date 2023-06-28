@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * A ROS resource type:  <code>ALIYUN::NAS::AccessRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.656Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.472Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.AccessRule")
 public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
 
@@ -111,23 +111,62 @@ public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property sourceCidrIp: Address or address segment.
+         * Property fileSystemType: The type of file system.
+         * <p>
+         * Values:
+         * standard: the general NAS
+         * extreme: the extreme NAS
          * <p>
          * @return {@code this}
-         * @param sourceCidrIp Property sourceCidrIp: Address or address segment. This parameter is required.
+         * @param fileSystemType Property fileSystemType: The type of file system. This parameter is required.
          */
-        public Builder sourceCidrIp(final java.lang.String sourceCidrIp) {
-            this.props.sourceCidrIp(sourceCidrIp);
+        public Builder fileSystemType(final java.lang.String fileSystemType) {
+            this.props.fileSystemType(fileSystemType);
             return this;
         }
         /**
-         * Property sourceCidrIp: Address or address segment.
+         * Property fileSystemType: The type of file system.
+         * <p>
+         * Values:
+         * standard: the general NAS
+         * extreme: the extreme NAS
          * <p>
          * @return {@code this}
-         * @param sourceCidrIp Property sourceCidrIp: Address or address segment. This parameter is required.
+         * @param fileSystemType Property fileSystemType: The type of file system. This parameter is required.
          */
-        public Builder sourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
-            this.props.sourceCidrIp(sourceCidrIp);
+        public Builder fileSystemType(final com.aliyun.ros.cdk.core.IResolvable fileSystemType) {
+            this.props.fileSystemType(fileSystemType);
+            return this;
+        }
+
+        /**
+         * Property ipv6SourceCidrIp: Source IPv6 CIDR address segment.
+         * <p>
+         * IP addresses in CIDR format and IPv6 format are supported.
+         * Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+         * Only VPC private network is supported.
+         * IPv4 and IPv6 are mutually exclusive, and the types cannot be converted.
+         * <p>
+         * @return {@code this}
+         * @param ipv6SourceCidrIp Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. This parameter is required.
+         */
+        public Builder ipv6SourceCidrIp(final java.lang.String ipv6SourceCidrIp) {
+            this.props.ipv6SourceCidrIp(ipv6SourceCidrIp);
+            return this;
+        }
+        /**
+         * Property ipv6SourceCidrIp: Source IPv6 CIDR address segment.
+         * <p>
+         * IP addresses in CIDR format and IPv6 format are supported.
+         * Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+         * Only VPC private network is supported.
+         * IPv4 and IPv6 are mutually exclusive, and the types cannot be converted.
+         * <p>
+         * @return {@code this}
+         * @param ipv6SourceCidrIp Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. This parameter is required.
+         */
+        public Builder ipv6SourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable ipv6SourceCidrIp) {
+            this.props.ipv6SourceCidrIp(ipv6SourceCidrIp);
             return this;
         }
 
@@ -174,6 +213,27 @@ public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder rwAccessType(final com.aliyun.ros.cdk.core.IResolvable rwAccessType) {
             this.props.rwAccessType(rwAccessType);
+            return this;
+        }
+
+        /**
+         * Property sourceCidrIp: Address or address segment.
+         * <p>
+         * @return {@code this}
+         * @param sourceCidrIp Property sourceCidrIp: Address or address segment. This parameter is required.
+         */
+        public Builder sourceCidrIp(final java.lang.String sourceCidrIp) {
+            this.props.sourceCidrIp(sourceCidrIp);
+            return this;
+        }
+        /**
+         * Property sourceCidrIp: Address or address segment.
+         * <p>
+         * @return {@code this}
+         * @param sourceCidrIp Property sourceCidrIp: Address or address segment. This parameter is required.
+         */
+        public Builder sourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
+            this.props.sourceCidrIp(sourceCidrIp);
             return this;
         }
 

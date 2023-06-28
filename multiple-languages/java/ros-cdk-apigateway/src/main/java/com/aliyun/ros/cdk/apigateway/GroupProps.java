@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a <code>ALIYUN::ApiGateway::Group</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.202Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.737Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.GroupProps")
 @software.amazon.jsii.Jsii.Proxy(GroupProps.Jsii$Proxy.class)
 public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -12,6 +12,13 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
      * Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
+
+    /**
+     * Property basePath: The base path of API.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBasePath() {
+        return null;
+    }
 
     /**
      * Property description: Description of the Group, less than 180 characters.
@@ -77,6 +84,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<GroupProps> {
         java.lang.Object groupName;
+        java.lang.Object basePath;
         java.lang.Object description;
         java.lang.Object instanceId;
         java.lang.Object internetEnable;
@@ -101,6 +109,26 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
             this.groupName = groupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupProps#getBasePath}
+         * @param basePath Property basePath: The base path of API.
+         * @return {@code this}
+         */
+        public Builder basePath(java.lang.String basePath) {
+            this.basePath = basePath;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GroupProps#getBasePath}
+         * @param basePath Property basePath: The base path of API.
+         * @return {@code this}
+         */
+        public Builder basePath(com.aliyun.ros.cdk.core.IResolvable basePath) {
+            this.basePath = basePath;
             return this;
         }
 
@@ -243,6 +271,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements GroupProps {
         private final java.lang.Object groupName;
+        private final java.lang.Object basePath;
         private final java.lang.Object description;
         private final java.lang.Object instanceId;
         private final java.lang.Object internetEnable;
@@ -257,6 +286,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.basePath = software.amazon.jsii.Kernel.get(this, "basePath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetEnable = software.amazon.jsii.Kernel.get(this, "internetEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -272,6 +302,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupName = java.util.Objects.requireNonNull(builder.groupName, "groupName is required");
+            this.basePath = builder.basePath;
             this.description = builder.description;
             this.instanceId = builder.instanceId;
             this.internetEnable = builder.internetEnable;
@@ -283,6 +314,11 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getGroupName() {
             return this.groupName;
+        }
+
+        @Override
+        public final java.lang.Object getBasePath() {
+            return this.basePath;
         }
 
         @Override
@@ -322,6 +358,9 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("groupName", om.valueToTree(this.getGroupName()));
+            if (this.getBasePath() != null) {
+                data.set("basePath", om.valueToTree(this.getBasePath()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -359,6 +398,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
             GroupProps.Jsii$Proxy that = (GroupProps.Jsii$Proxy) o;
 
             if (!groupName.equals(that.groupName)) return false;
+            if (this.basePath != null ? !this.basePath.equals(that.basePath) : that.basePath != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.internetEnable != null ? !this.internetEnable.equals(that.internetEnable) : that.internetEnable != null) return false;
@@ -370,6 +410,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.groupName.hashCode();
+            result = 31 * result + (this.basePath != null ? this.basePath.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.internetEnable != null ? this.internetEnable.hashCode() : 0);

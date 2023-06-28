@@ -154,8 +154,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 
         /// <remarks>
         /// <strong>Property</strong>: storageSize: The storage size. It is valid when instance_type is vip.
-        /// If instance type is professional or enterprise, the valid value is 200.
-        /// If instance type is vip, the valid value is [700, 2800] with the step size 100
+        /// If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
         /// </remarks>
         [JsiiProperty(name: "storageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object StorageSize
@@ -536,10 +535,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
         private object? _tracingStorageTime;
 
         /// <remarks>
-        /// <strong>Property</strong>: tracingStorageTime: It is valid when support_tracing == tracing_true.
-        /// The retention period of message traces was set. Valid values: 3, 7, 15.
+        /// <strong>Property</strong>: tracingStorageTime: The retention period of message traces was set. Valid values: 3, 7, 15.
         /// If instance_type=vip, the valid values is 15.
         /// If instance_type!=vip, the valid values is 3, 7, 15.
+        /// If support_tracing == tracing_false, the valid values is 0.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "tracingStorageTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

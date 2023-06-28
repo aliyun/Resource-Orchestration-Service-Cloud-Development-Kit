@@ -435,8 +435,7 @@ export interface RosInstanceProps {
 
     /**
      * @Property storageSize: The storage size. It is valid when instance_type is vip.
-     * If instance type is professional or enterprise, the valid value is 200.
-     * If instance type is vip, the valid value is [700, 2800] with the step size 100
+     * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
      */
     readonly storageSize: number | ros.IResolvable;
 
@@ -487,10 +486,10 @@ export interface RosInstanceProps {
     readonly supportTracing?: string | ros.IResolvable;
 
     /**
-     * @Property tracingStorageTime: It is valid when support_tracing == tracing_true.
-     * The retention period of message traces was set. Valid values: 3, 7, 15.
+     * @Property tracingStorageTime: The retention period of message traces was set. Valid values: 3, 7, 15.
      * If instance_type=vip, the valid values is 15.
      * If instance_type!=vip, the valid values is 3, 7, 15.
+     * If support_tracing == tracing_false, the valid values is 0.
      */
     readonly tracingStorageTime?: number | ros.IResolvable;
 }
@@ -539,7 +538,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.storageSize && (typeof properties.storageSize) !== 'object') {
         errors.collect(ros.propertyValidator('storageSize', ros.validateRange)({
             data: properties.storageSize,
-            min: 200,
+            min: 0,
             max: 2800,
           }));
     }
@@ -563,7 +562,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.tracingStorageTime && (typeof properties.tracingStorageTime) !== 'object') {
         errors.collect(ros.propertyValidator('tracingStorageTime', ros.validateAllowedValues)({
           data: properties.tracingStorageTime,
-          allowedValues: [3,7,15],
+          allowedValues: [0,3,7,15],
         }));
     }
     errors.collect(ros.propertyValidator('tracingStorageTime', ros.validateNumber)(properties.tracingStorageTime));
@@ -675,8 +674,7 @@ export class RosInstance extends ros.RosResource {
 
     /**
      * @Property storageSize: The storage size. It is valid when instance_type is vip.
-     * If instance type is professional or enterprise, the valid value is 200.
-     * If instance type is vip, the valid value is [700, 2800] with the step size 100
+     * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
      */
     public storageSize: number | ros.IResolvable;
 
@@ -727,10 +725,10 @@ export class RosInstance extends ros.RosResource {
     public supportTracing: string | ros.IResolvable | undefined;
 
     /**
-     * @Property tracingStorageTime: It is valid when support_tracing == tracing_true.
-     * The retention period of message traces was set. Valid values: 3, 7, 15.
+     * @Property tracingStorageTime: The retention period of message traces was set. Valid values: 3, 7, 15.
      * If instance_type=vip, the valid values is 15.
      * If instance_type!=vip, the valid values is 3, 7, 15.
+     * If support_tracing == tracing_false, the valid values is 0.
      */
     public tracingStorageTime: number | ros.IResolvable | undefined;
 

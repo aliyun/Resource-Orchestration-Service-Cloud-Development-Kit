@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  <code>ALIYUN::ECS::NetworkInterface</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.451Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.161Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterface")
 public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
 
@@ -161,6 +161,48 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+         * <p>
+         * @return {@code this}
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI. This parameter is required.
+         */
+        public Builder ipv6AddressCount(final java.lang.Number ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
+            return this;
+        }
+        /**
+         * Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+         * <p>
+         * @return {@code this}
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI. This parameter is required.
+         */
+        public Builder ipv6AddressCount(final com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
+            this.props.ipv6AddressCount(ipv6AddressCount);
+            return this;
+        }
+
+        /**
+         * Property ipv6Addresses: The IPv6 address N to assign to the ENI.
+         * <p>
+         * @return {@code this}
+         * @param ipv6Addresses Property ipv6Addresses: The IPv6 address N to assign to the ENI. This parameter is required.
+         */
+        public Builder ipv6Addresses(final com.aliyun.ros.cdk.core.IResolvable ipv6Addresses) {
+            this.props.ipv6Addresses(ipv6Addresses);
+            return this;
+        }
+        /**
+         * Property ipv6Addresses: The IPv6 address N to assign to the ENI.
+         * <p>
+         * @return {@code this}
+         * @param ipv6Addresses Property ipv6Addresses: The IPv6 address N to assign to the ENI. This parameter is required.
+         */
+        public Builder ipv6Addresses(final java.util.List<? extends java.lang.Object> ipv6Addresses) {
+            this.props.ipv6Addresses(ipv6Addresses);
+            return this;
+        }
+
+        /**
          * Property networkInterfaceName: Name of your ENI.
          * <p>
          * It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
@@ -182,6 +224,35 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder networkInterfaceName(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceName) {
             this.props.networkInterfaceName(networkInterfaceName);
+            return this;
+        }
+
+        /**
+         * Property networkInterfaceTrafficMode: The communication mode of the ENI.
+         * <p>
+         * Valid values:
+         * Standard: uses the TCP communication mode.
+         * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: The communication mode of the ENI. This parameter is required.
+         */
+        public Builder networkInterfaceTrafficMode(final java.lang.String networkInterfaceTrafficMode) {
+            this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
+            return this;
+        }
+        /**
+         * Property networkInterfaceTrafficMode: The communication mode of the ENI.
+         * <p>
+         * Valid values:
+         * Standard: uses the TCP communication mode.
+         * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: The communication mode of the ENI. This parameter is required.
+         */
+        public Builder networkInterfaceTrafficMode(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceTrafficMode) {
+            this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
             return this;
         }
 
@@ -232,6 +303,35 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder privateIpAddresses(final java.util.List<? extends java.lang.Object> privateIpAddresses) {
             this.props.privateIpAddresses(privateIpAddresses);
+            return this;
+        }
+
+        /**
+         * Property queueNumber: The number of queues that are supported by the ENI.
+         * <p>
+         * Valid values: 1 to 2048.
+         * When you attach the ENI to an instance, make sure that the value of this parameter is less than the maximum number of queues per ENI that is allowed for the instance type. To view the maximum number of queues per ENI allowed for an instance type, you can call DescribeInstanceTypes and then check the return value of MaximumQueueNumberPerEni.
+         * By default, this parameter is empty. If you do not specify this parameter, the default number of queues per ENI for the instance type of an instance is used when you attach the ENI to the instance. To learn about the default number of queues per ENI for an instance type, you can call DescribeInstanceTypes and then check the return value of SecondaryEniQueueNumber.
+         * <p>
+         * @return {@code this}
+         * @param queueNumber Property queueNumber: The number of queues that are supported by the ENI. This parameter is required.
+         */
+        public Builder queueNumber(final java.lang.Number queueNumber) {
+            this.props.queueNumber(queueNumber);
+            return this;
+        }
+        /**
+         * Property queueNumber: The number of queues that are supported by the ENI.
+         * <p>
+         * Valid values: 1 to 2048.
+         * When you attach the ENI to an instance, make sure that the value of this parameter is less than the maximum number of queues per ENI that is allowed for the instance type. To view the maximum number of queues per ENI allowed for an instance type, you can call DescribeInstanceTypes and then check the return value of MaximumQueueNumberPerEni.
+         * By default, this parameter is empty. If you do not specify this parameter, the default number of queues per ENI for the instance type of an instance is used when you attach the ENI to the instance. To learn about the default number of queues per ENI for an instance type, you can call DescribeInstanceTypes and then check the return value of SecondaryEniQueueNumber.
+         * <p>
+         * @return {@code this}
+         * @param queueNumber Property queueNumber: The number of queues that are supported by the ENI. This parameter is required.
+         */
+        public Builder queueNumber(final com.aliyun.ros.cdk.core.IResolvable queueNumber) {
+            this.props.queueNumber(queueNumber);
             return this;
         }
 

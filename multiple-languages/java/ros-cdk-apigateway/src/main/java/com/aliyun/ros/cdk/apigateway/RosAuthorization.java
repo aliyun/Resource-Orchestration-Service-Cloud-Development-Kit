@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS template type:  <code>ALIYUN::ApiGateway::Authorization</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.240Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.778Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosAuthorization")
 public class RosAuthorization extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -145,6 +145,24 @@ public class RosAuthorization extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAuthValidTime() {
+        return software.amazon.jsii.Kernel.get(this, "authValidTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAuthValidTime(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "authValidTime", value);
+    }
+
+    /**
+     */
+    public void setAuthValidTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "authValidTime", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -252,6 +270,23 @@ public class RosAuthorization extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder stageName(final com.aliyun.ros.cdk.core.IResolvable stageName) {
             this.props.stageName(stageName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param authValidTime This parameter is required.
+         */
+        public Builder authValidTime(final java.lang.String authValidTime) {
+            this.props.authValidTime(authValidTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param authValidTime This parameter is required.
+         */
+        public Builder authValidTime(final com.aliyun.ros.cdk.core.IResolvable authValidTime) {
+            this.props.authValidTime(authValidTime);
             return this;
         }
 

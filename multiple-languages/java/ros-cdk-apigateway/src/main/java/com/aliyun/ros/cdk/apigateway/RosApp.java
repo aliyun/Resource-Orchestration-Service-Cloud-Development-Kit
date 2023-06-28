@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS template type:  <code>ALIYUN::ApiGateway::App</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.238Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.775Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosApp")
 public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -41,6 +41,12 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
      * The resource type name for this resource class.
      */
     public final static java.lang.String ROS_RESOURCE_TYPE_NAME;
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAppCode() {
+        return software.amazon.jsii.Kernel.get(this, "attrAppCode", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
 
     /**
      */
@@ -95,6 +101,60 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
 
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAppCode() {
+        return software.amazon.jsii.Kernel.get(this, "appCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAppCode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "appCode", value);
+    }
+
+    /**
+     */
+    public void setAppCode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "appCode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAppKey() {
+        return software.amazon.jsii.Kernel.get(this, "appKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAppKey(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "appKey", value);
+    }
+
+    /**
+     */
+    public void setAppKey(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "appKey", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAppSecret() {
+        return software.amazon.jsii.Kernel.get(this, "appSecret", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAppSecret(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "appSecret", value);
+    }
+
+    /**
+     */
+    public void setAppSecret(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "appSecret", value);
     }
 
     /**
@@ -335,6 +395,57 @@ public class RosApp extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder appName(final com.aliyun.ros.cdk.core.IResolvable appName) {
             this.props.appName(appName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param appCode This parameter is required.
+         */
+        public Builder appCode(final java.lang.String appCode) {
+            this.props.appCode(appCode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param appCode This parameter is required.
+         */
+        public Builder appCode(final com.aliyun.ros.cdk.core.IResolvable appCode) {
+            this.props.appCode(appCode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param appKey This parameter is required.
+         */
+        public Builder appKey(final java.lang.String appKey) {
+            this.props.appKey(appKey);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param appKey This parameter is required.
+         */
+        public Builder appKey(final com.aliyun.ros.cdk.core.IResolvable appKey) {
+            this.props.appKey(appKey);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param appSecret This parameter is required.
+         */
+        public Builder appSecret(final java.lang.String appSecret) {
+            this.props.appSecret(appSecret);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param appSecret This parameter is required.
+         */
+        public Builder appSecret(final com.aliyun.ros.cdk.core.IResolvable appSecret) {
+            this.props.appSecret(appSecret);
             return this;
         }
 

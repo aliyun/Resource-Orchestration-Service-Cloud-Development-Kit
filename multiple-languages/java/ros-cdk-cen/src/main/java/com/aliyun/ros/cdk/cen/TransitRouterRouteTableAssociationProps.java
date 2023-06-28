@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a <code>ALIYUN::CEN::TransitRouterRouteTableAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.520Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.106Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterRouteTableAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(TransitRouterRouteTableAssociationProps.Jsii$Proxy.class)
 public interface TransitRouterRouteTableAssociationProps extends software.amazon.jsii.JsiiSerializable {

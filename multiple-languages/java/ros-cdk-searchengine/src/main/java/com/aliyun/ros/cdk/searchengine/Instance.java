@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.searchengine;
 /**
  * A ROS resource type:  <code>ALIYUN::SearchEngine::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.609Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.443Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.searchengine.$Module.class, fqn = "@alicloud/ros-cdk-searchengine.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  <code>ALIYUN::ApiGateway::App</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.192Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.726Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.App")
 public class App extends com.aliyun.ros.cdk.core.Resource {
 
@@ -46,6 +46,13 @@ public class App extends com.aliyun.ros.cdk.core.Resource {
     public App(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.AppProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute AppCode: The code of the APP.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAppCode() {
+        return software.amazon.jsii.Kernel.get(this, "attrAppCode", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -128,6 +135,83 @@ public class App extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder appName(final com.aliyun.ros.cdk.core.IResolvable appName) {
             this.props.appName(appName);
+            return this;
+        }
+
+        /**
+         * Property appCode: The app code of the APP.
+         * <p>
+         * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),and AppCode is globally unique.
+         * <p>
+         * @return {@code this}
+         * @param appCode Property appCode: The app code of the APP. This parameter is required.
+         */
+        public Builder appCode(final java.lang.String appCode) {
+            this.props.appCode(appCode);
+            return this;
+        }
+        /**
+         * Property appCode: The app code of the APP.
+         * <p>
+         * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),and AppCode is globally unique.
+         * <p>
+         * @return {@code this}
+         * @param appCode Property appCode: The app code of the APP. This parameter is required.
+         */
+        public Builder appCode(final com.aliyun.ros.cdk.core.IResolvable appCode) {
+            this.props.appCode(appCode);
+            return this;
+        }
+
+        /**
+         * Property appKey: The key of the APP.
+         * <p>
+         * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),
+         * and AppKey is globally unique.
+         * <p>
+         * @return {@code this}
+         * @param appKey Property appKey: The key of the APP. This parameter is required.
+         */
+        public Builder appKey(final java.lang.String appKey) {
+            this.props.appKey(appKey);
+            return this;
+        }
+        /**
+         * Property appKey: The key of the APP.
+         * <p>
+         * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-),
+         * and AppKey is globally unique.
+         * <p>
+         * @return {@code this}
+         * @param appKey Property appKey: The key of the APP. This parameter is required.
+         */
+        public Builder appKey(final com.aliyun.ros.cdk.core.IResolvable appKey) {
+            this.props.appKey(appKey);
+            return this;
+        }
+
+        /**
+         * Property appSecret: The secret of the APP.
+         * <p>
+         * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-).
+         * <p>
+         * @return {@code this}
+         * @param appSecret Property appSecret: The secret of the APP. This parameter is required.
+         */
+        public Builder appSecret(final java.lang.String appSecret) {
+            this.props.appSecret(appSecret);
+            return this;
+        }
+        /**
+         * Property appSecret: The secret of the APP.
+         * <p>
+         * The length is 8~128 English characters, which can contain numbers, underscores (_) and dashes (-).
+         * <p>
+         * @return {@code this}
+         * @param appSecret Property appSecret: The secret of the APP. This parameter is required.
+         */
+        public Builder appSecret(final com.aliyun.ros.cdk.core.IResolvable appSecret) {
+            this.props.appSecret(appSecret);
             return this;
         }
 

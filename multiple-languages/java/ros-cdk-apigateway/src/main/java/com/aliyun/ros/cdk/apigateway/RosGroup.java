@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS template type:  <code>ALIYUN::ApiGateway::Group</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.245Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.783Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosGroup")
 public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -89,6 +89,24 @@ public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setGroupName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "groupName", java.util.Objects.requireNonNull(value, "groupName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBasePath() {
+        return software.amazon.jsii.Kernel.get(this, "basePath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBasePath(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "basePath", value);
+    }
+
+    /**
+     */
+    public void setBasePath(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "basePath", value);
     }
 
     /**
@@ -401,6 +419,23 @@ public class RosGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder groupName(final com.aliyun.ros.cdk.core.IResolvable groupName) {
             this.props.groupName(groupName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param basePath This parameter is required.
+         */
+        public Builder basePath(final java.lang.String basePath) {
+            this.props.basePath(basePath);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param basePath This parameter is required.
+         */
+        public Builder basePath(final com.aliyun.ros.cdk.core.IResolvable basePath) {
+            this.props.basePath(basePath);
             return this;
         }
 

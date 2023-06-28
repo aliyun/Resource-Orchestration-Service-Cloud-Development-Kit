@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a <code>ALIYUN::CEN::CenVbrHealthCheck</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.471Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.064Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenVbrHealthCheckProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenVbrHealthCheckProps.Jsii$Proxy.class)
 public interface RosCenVbrHealthCheckProps extends software.amazon.jsii.JsiiSerializable {

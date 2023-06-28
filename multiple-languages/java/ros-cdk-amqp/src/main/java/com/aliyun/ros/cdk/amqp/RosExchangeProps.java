@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * Properties for defining a <code>ALIYUN::AMQP::Exchange</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.153Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.700Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.RosExchangeProps")
 @software.amazon.jsii.Jsii.Proxy(RosExchangeProps.Jsii$Proxy.class)
 public interface RosExchangeProps extends software.amazon.jsii.JsiiSerializable {

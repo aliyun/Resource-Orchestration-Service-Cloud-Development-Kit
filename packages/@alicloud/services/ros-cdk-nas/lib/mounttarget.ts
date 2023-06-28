@@ -24,6 +24,19 @@ export interface MountTargetProps {
     readonly networkType: string | ros.IResolvable;
 
     /**
+     * Property enableIpv6: Whether to create an IPv6 mount point.Value:
+     * true: create
+     * false (default): do not create
+     * Note Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+     */
+    readonly enableIpv6?: boolean | ros.IResolvable;
+
+    /**
+     * Property securityGroupId: Security group Id
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
      * Property status: Status, including Active and Inactive
      */
     readonly status?: string | ros.IResolvable;
@@ -68,9 +81,11 @@ export class MountTarget extends ros.Resource {
             status: props.status,
             vpcId: props.vpcId,
             networkType: props.networkType,
+            securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
             accessGroupName: props.accessGroupName === undefined || props.accessGroupName === null ? 'DEFAULT_VPC_GROUP_NAME' : props.accessGroupName,
             fileSystemId: props.fileSystemId,
+            enableIpv6: props.enableIpv6,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosMountTarget;
         this.attrMountTargetDomain = rosMountTarget.attrMountTargetDomain;

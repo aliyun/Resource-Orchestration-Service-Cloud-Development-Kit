@@ -14,9 +14,19 @@ export interface AccessRuleProps {
     readonly accessGroupName: string | ros.IResolvable;
 
     /**
-     * Property sourceCidrIp: Address or address segment
+     * Property fileSystemType: The type of file system. Values:
+     * standard: the general NAS
+     * extreme: the extreme NAS
      */
-    readonly sourceCidrIp: string | ros.IResolvable;
+    readonly fileSystemType?: string | ros.IResolvable;
+
+    /**
+     * Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. IP addresses in CIDR format and IPv6 format are supported.
+     * Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+     * Only VPC private network is supported.
+     * IPv4 and IPv6 are mutually exclusive, and the types cannot be converted.
+     */
+    readonly ipv6SourceCidrIp?: string | ros.IResolvable;
 
     /**
      * Property priority: Priority level. Range: 1-100. Default value: 1
@@ -27,6 +37,11 @@ export interface AccessRuleProps {
      * Property rwAccessType: Read-write permission type: RDWR (default), RDONLY
      */
     readonly rwAccessType?: string | ros.IResolvable;
+
+    /**
+     * Property sourceCidrIp: Address or address segment
+     */
+    readonly sourceCidrIp?: string | ros.IResolvable;
 
     /**
      * Property userAccessType: User permission type: no_squash (default), root_squash, all_squash
@@ -62,8 +77,10 @@ export class AccessRule extends ros.Resource {
         const rosAccessRule = new RosAccessRule(this, id,  {
             userAccessType: props.userAccessType === undefined || props.userAccessType === null ? 'no_squash' : props.userAccessType,
             priority: props.priority === undefined || props.priority === null ? 1 : props.priority,
-            accessGroupName: props.accessGroupName,
+            fileSystemType: props.fileSystemType === undefined || props.fileSystemType === null ? 'standard' : props.fileSystemType,
             sourceCidrIp: props.sourceCidrIp,
+            accessGroupName: props.accessGroupName,
+            ipv6SourceCidrIp: props.ipv6SourceCidrIp,
             rwAccessType: props.rwAccessType === undefined || props.rwAccessType === null ? 'RDWR' : props.rwAccessType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccessRule;

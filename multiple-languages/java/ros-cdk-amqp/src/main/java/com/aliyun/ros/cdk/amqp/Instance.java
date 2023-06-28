@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * A ROS resource type:  <code>ALIYUN::AMQP::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.136Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.669Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -174,8 +174,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * Property storageSize: The storage size.
          * <p>
          * It is valid when instance_type is vip.
-         * If instance type is professional or enterprise, the valid value is 200.
-         * If instance type is vip, the valid value is [700, 2800] with the step size 100
+         * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
          * <p>
          * @return {@code this}
          * @param storageSize Property storageSize: The storage size. This parameter is required.
@@ -188,8 +187,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          * Property storageSize: The storage size.
          * <p>
          * It is valid when instance_type is vip.
-         * If instance type is professional or enterprise, the valid value is 200.
-         * If instance type is vip, the valid value is [700, 2800] with the step size 100
+         * If instance type is professional or enterprise, the valid value is 0.If instance type is vip, the valid value is [700, 2800] with the step size 100
          * <p>
          * @return {@code this}
          * @param storageSize Property storageSize: The storage size. This parameter is required.
@@ -402,28 +400,30 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property tracingStorageTime: It is valid when support_tracing == tracing_true.
+         * Property tracingStorageTime: The retention period of message traces was set.
          * <p>
-         * The retention period of message traces was set. Valid values: 3, 7, 15.
+         * Valid values: 3, 7, 15.
          * If instance_type=vip, the valid values is 15.
          * If instance_type!=vip, the valid values is 3, 7, 15.
+         * If support_tracing == tracing_false, the valid values is 0.
          * <p>
          * @return {@code this}
-         * @param tracingStorageTime Property tracingStorageTime: It is valid when support_tracing == tracing_true. This parameter is required.
+         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces was set. This parameter is required.
          */
         public Builder tracingStorageTime(final java.lang.Number tracingStorageTime) {
             this.props.tracingStorageTime(tracingStorageTime);
             return this;
         }
         /**
-         * Property tracingStorageTime: It is valid when support_tracing == tracing_true.
+         * Property tracingStorageTime: The retention period of message traces was set.
          * <p>
-         * The retention period of message traces was set. Valid values: 3, 7, 15.
+         * Valid values: 3, 7, 15.
          * If instance_type=vip, the valid values is 15.
          * If instance_type!=vip, the valid values is 3, 7, 15.
+         * If support_tracing == tracing_false, the valid values is 0.
          * <p>
          * @return {@code this}
-         * @param tracingStorageTime Property tracingStorageTime: It is valid when support_tracing == tracing_true. This parameter is required.
+         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces was set. This parameter is required.
          */
         public Builder tracingStorageTime(final com.aliyun.ros.cdk.core.IResolvable tracingStorageTime) {
             this.props.tracingStorageTime(tracingStorageTime);

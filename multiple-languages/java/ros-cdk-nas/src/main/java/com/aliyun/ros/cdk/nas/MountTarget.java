@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * A ROS resource type:  <code>ALIYUN::NAS::MountTarget</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.663Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.479Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.MountTarget")
 public class MountTarget extends com.aliyun.ros.cdk.core.Resource {
 
@@ -153,6 +153,48 @@ public class MountTarget extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
             this.props.networkType(networkType);
+            return this;
+        }
+
+        /**
+         * Property enableIpv6: Whether to create an IPv6 mount point.Value: true: create false (default): do not create Note Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+         * <p>
+         * @return {@code this}
+         * @param enableIpv6 Property enableIpv6: Whether to create an IPv6 mount point.Value: true: create false (default): do not create Note Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function. This parameter is required.
+         */
+        public Builder enableIpv6(final java.lang.Boolean enableIpv6) {
+            this.props.enableIpv6(enableIpv6);
+            return this;
+        }
+        /**
+         * Property enableIpv6: Whether to create an IPv6 mount point.Value: true: create false (default): do not create Note Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.
+         * <p>
+         * @return {@code this}
+         * @param enableIpv6 Property enableIpv6: Whether to create an IPv6 mount point.Value: true: create false (default): do not create Note Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function. This parameter is required.
+         */
+        public Builder enableIpv6(final com.aliyun.ros.cdk.core.IResolvable enableIpv6) {
+            this.props.enableIpv6(enableIpv6);
+            return this;
+        }
+
+        /**
+         * Property securityGroupId: Security group Id.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupId Property securityGroupId: Security group Id. This parameter is required.
+         */
+        public Builder securityGroupId(final java.lang.String securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+        /**
+         * Property securityGroupId: Security group Id.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupId Property securityGroupId: Security group Id. This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
             return this;
         }
 

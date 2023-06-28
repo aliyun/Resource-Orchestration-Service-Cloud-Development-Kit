@@ -29,9 +29,28 @@ export interface ImageCacheProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
+     * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     */
+    readonly acrRegistryInfo?: Array<RosImageCache.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property autoMatchImageCache: Specifies whether to enable reuse of image cache layers. If you enable this feature, and the image cache that you want to createand an existing image cache contain duplicate image layers, the system reuses the duplicate image layers to create the new image cache.
+     *  This accelerates the creation of the image cache. 
+     * Valid values: true: enables reuse of image cache layers.
+     * false: disables reuse of image cache layers.
+     * Default value: false.
+     */
+    readonly autoMatchImageCache?: boolean | ros.IResolvable;
+
+    /**
      * Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
      */
     readonly eipInstanceId?: string | ros.IResolvable;
+
+    /**
+     * Property imageCacheSize: The size of the image cache. Unit: GiB. Default value: 20.
+     */
+    readonly imageCacheSize?: number | ros.IResolvable;
 
     /**
      * Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
@@ -42,6 +61,18 @@ export interface ImageCacheProps {
      * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property retentionDays: The retention period of the image cache. Unit: days. When the retention period ends, the image cache expires and is deleted.
+     *  By default, image caches never expire.
+     * Note: The image caches that fail to be created are only retained for one day.
+     */
+    readonly retentionDays?: number | ros.IResolvable;
+
+    /**
+     * Property zoneId: The zone ID of the image cache.
+     */
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -70,11 +101,16 @@ export class ImageCache extends ros.Resource {
         super(scope, id);
 
         const rosImageCache = new RosImageCache(this, id,  {
+            imageCacheSize: props.imageCacheSize,
+            zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
+            autoMatchImageCache: props.autoMatchImageCache,
             securityGroupId: props.securityGroupId,
-            vSwitchId: props.vSwitchId,
-            imageRegistryCredential: props.imageRegistryCredential,
             imageCacheName: props.imageCacheName,
+            imageRegistryCredential: props.imageRegistryCredential,
+            vSwitchId: props.vSwitchId,
+            acrRegistryInfo: props.acrRegistryInfo,
+            retentionDays: props.retentionDays,
             image: props.image,
             eipInstanceId: props.eipInstanceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

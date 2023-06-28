@@ -1,0 +1,6 @@
+@alicloud/ros-cdk-dcdn.Domain=com.aliyun.ros.cdk.dcdn.Domain
+@alicloud/ros-cdk-dcdn.DomainProps=com.aliyun.ros.cdk.dcdn.DomainProps
+@alicloud/ros-cdk-dcdn.RosDomain=com.aliyun.ros.cdk.dcdn.RosDomain
+@alicloud/ros-cdk-dcdn.RosDomain.SourcesProperty=com.aliyun.ros.cdk.dcdn.RosDomain$SourcesProperty
+@alicloud/ros-cdk-dcdn.RosDomain.TagsProperty=com.aliyun.ros.cdk.dcdn.RosDomain$TagsProperty
+@alicloud/ros-cdk-dcdn.RosDomainProps=com.aliyun.ros.cdk.dcdn.RosDomainProps

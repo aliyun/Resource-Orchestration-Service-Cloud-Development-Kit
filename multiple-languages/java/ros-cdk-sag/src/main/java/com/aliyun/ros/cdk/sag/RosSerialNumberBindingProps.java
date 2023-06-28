@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a <code>ALIYUN::SAG::SerialNumberBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.588Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.426Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosSerialNumberBindingProps")
 @software.amazon.jsii.Jsii.Proxy(RosSerialNumberBindingProps.Jsii$Proxy.class)
 public interface RosSerialNumberBindingProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * Properties for defining a <code>ALIYUN::REDIS::Whitelist</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.326Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.146Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosWhitelistProps")
 @software.amazon.jsii.Jsii.Proxy(RosWhitelistProps.Jsii$Proxy.class)
 public interface RosWhitelistProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * Properties for defining a <code>ALIYUN::TSDB::InfluxDBDatabase</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:11.839Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.695Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.RosInfluxDBDatabaseProps")
 @software.amazon.jsii.Jsii.Proxy(RosInfluxDBDatabaseProps.Jsii$Proxy.class)
 public interface RosInfluxDBDatabaseProps extends software.amazon.jsii.JsiiSerializable {

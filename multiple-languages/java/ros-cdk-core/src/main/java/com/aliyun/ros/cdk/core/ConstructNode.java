@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents the construct node in the scope tree.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:07.871Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.375Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ConstructNode")
 public class ConstructNode extends software.amazon.jsii.JsiiObject {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * A ROS template type:  <code>ALIYUN::NAS::AccessRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.666Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.483Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosAccessRule")
 public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -81,20 +81,38 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getSourceCidrIp() {
-        return software.amazon.jsii.Kernel.get(this, "sourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getFileSystemType() {
+        return software.amazon.jsii.Kernel.get(this, "fileSystemType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setSourceCidrIp(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "sourceCidrIp", java.util.Objects.requireNonNull(value, "sourceCidrIp is required"));
+    public void setFileSystemType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "fileSystemType", value);
     }
 
     /**
      */
-    public void setSourceCidrIp(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "sourceCidrIp", java.util.Objects.requireNonNull(value, "sourceCidrIp is required"));
+    public void setFileSystemType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "fileSystemType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6SourceCidrIp() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6SourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6SourceCidrIp(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6SourceCidrIp", value);
+    }
+
+    /**
+     */
+    public void setIpv6SourceCidrIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6SourceCidrIp", value);
     }
 
     /**
@@ -131,6 +149,24 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setRwAccessType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "rwAccessType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSourceCidrIp() {
+        return software.amazon.jsii.Kernel.get(this, "sourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSourceCidrIp(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "sourceCidrIp", value);
+    }
+
+    /**
+     */
+    public void setSourceCidrIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sourceCidrIp", value);
     }
 
     /**
@@ -196,18 +232,35 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param sourceCidrIp This parameter is required.
+         * @param fileSystemType This parameter is required.
          */
-        public Builder sourceCidrIp(final java.lang.String sourceCidrIp) {
-            this.props.sourceCidrIp(sourceCidrIp);
+        public Builder fileSystemType(final java.lang.String fileSystemType) {
+            this.props.fileSystemType(fileSystemType);
             return this;
         }
         /**
          * @return {@code this}
-         * @param sourceCidrIp This parameter is required.
+         * @param fileSystemType This parameter is required.
          */
-        public Builder sourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
-            this.props.sourceCidrIp(sourceCidrIp);
+        public Builder fileSystemType(final com.aliyun.ros.cdk.core.IResolvable fileSystemType) {
+            this.props.fileSystemType(fileSystemType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv6SourceCidrIp This parameter is required.
+         */
+        public Builder ipv6SourceCidrIp(final java.lang.String ipv6SourceCidrIp) {
+            this.props.ipv6SourceCidrIp(ipv6SourceCidrIp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6SourceCidrIp This parameter is required.
+         */
+        public Builder ipv6SourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable ipv6SourceCidrIp) {
+            this.props.ipv6SourceCidrIp(ipv6SourceCidrIp);
             return this;
         }
 
@@ -242,6 +295,23 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder rwAccessType(final com.aliyun.ros.cdk.core.IResolvable rwAccessType) {
             this.props.rwAccessType(rwAccessType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param sourceCidrIp This parameter is required.
+         */
+        public Builder sourceCidrIp(final java.lang.String sourceCidrIp) {
+            this.props.sourceCidrIp(sourceCidrIp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sourceCidrIp This parameter is required.
+         */
+        public Builder sourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
+            this.props.sourceCidrIp(sourceCidrIp);
             return this;
         }
 

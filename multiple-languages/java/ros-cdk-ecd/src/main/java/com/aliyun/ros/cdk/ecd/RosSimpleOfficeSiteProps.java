@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * Properties for defining a <code>ALIYUN::ECD::SimpleOfficeSite</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.230Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.936Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.RosSimpleOfficeSiteProps")
 @software.amazon.jsii.Jsii.Proxy(RosSimpleOfficeSiteProps.Jsii$Proxy.class)
 public interface RosSimpleOfficeSiteProps extends software.amazon.jsii.JsiiSerializable {

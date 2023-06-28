@@ -26,4 +26,5 @@
 @alicloud/ros-cdk-eci.RosContainerGroup.VolumeProperty=com.aliyun.ros.cdk.eci.RosContainerGroup$VolumeProperty
 @alicloud/ros-cdk-eci.RosContainerGroupProps=com.aliyun.ros.cdk.eci.RosContainerGroupProps
 @alicloud/ros-cdk-eci.RosImageCache=com.aliyun.ros.cdk.eci.RosImageCache
+@alicloud/ros-cdk-eci.RosImageCache.AcrRegistryInfoProperty=com.aliyun.ros.cdk.eci.RosImageCache$AcrRegistryInfoProperty
 @alicloud/ros-cdk-eci.RosImageCacheProps=com.aliyun.ros.cdk.eci.RosImageCacheProps

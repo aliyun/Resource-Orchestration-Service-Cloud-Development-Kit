@@ -144,6 +144,48 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "ALB_LOAD_BALANCER_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ALB_LOAD_BALANCER_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ALERT", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ALERT
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ARRAY_ITEMS", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ARRAY_ITEMS
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ARRAY_TABLE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ARRAY_TABLE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "BOOLEAN", typeJson: "{\"primitive\":\"string\"}")]
+            public static string BOOLEAN
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "CAS_CERTIFICATE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CAS_CERTIFICATE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "CAS_CERTIFICATE_ID", typeJson: "{\"primitive\":\"string\"}")]
             public static string CAS_CERTIFICATE_ID
             {
@@ -151,8 +193,64 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "CASCADER", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CASCADER
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "CHARGE_TYPE", typeJson: "{\"primitive\":\"string\"}")]
             public static string CHARGE_TYPE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "CMS_ALARM_RULE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CMS_ALARM_RULE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "CMS_ALARM_SILENCE_TIME", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CMS_ALARM_SILENCE_TIME
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "CMS_ALARM_TRIGGER_RESOURCES", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CMS_ALARM_TRIGGER_RESOURCES
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "CMS_EVENT_FILTER_RULE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CMS_EVENT_FILTER_RULE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "CMS_EVENT_LEVEL", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CMS_EVENT_LEVEL
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "CMS_EVENT_NAME", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CMS_EVENT_NAME
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "CMS_PRODUCT_TYPE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CMS_PRODUCT_TYPE
             {
                 get;
             }
@@ -172,8 +270,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "COMPUTER_NEST_SERVICE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string COMPUTER_NEST_SERVICE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "COMPUTER_NEST_SERVICE_INSTANCE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string COMPUTER_NEST_SERVICE_INSTANCE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "COMPUTER_NEST_SUPPLIER_SERVICE_VERSION", typeJson: "{\"primitive\":\"string\"}")]
+            public static string COMPUTER_NEST_SUPPLIER_SERVICE_VERSION
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "CRON", typeJson: "{\"primitive\":\"string\"}")]
             public static string CRON
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "CS_CLUSTER_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CS_CLUSTER_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "CS_CLUSTER_NODE_POOL", typeJson: "{\"primitive\":\"string\"}")]
+            public static string CS_CLUSTER_NODE_POOL
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "DATE_PICKER", typeJson: "{\"primitive\":\"string\"}")]
+            public static string DATE_PICKER
             {
                 get;
             }
@@ -221,8 +361,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "ECS_INSTANCE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_INSTANCE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ECS_INSTANCE_ATTRIBUTE_SELECTOR", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_INSTANCE_ATTRIBUTE_SELECTOR
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "ECS_INSTANCE_ID", typeJson: "{\"primitive\":\"string\"}")]
             public static string ECS_INSTANCE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ECS_INSTANCE_IMAGE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_INSTANCE_IMAGE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ECS_INSTANCE_MAX_BANDWIDTH_IN", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_INSTANCE_MAX_BANDWIDTH_IN
             {
                 get;
             }
@@ -235,8 +403,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "ECS_INSTANCE_PROPERTY_EDITOR", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_INSTANCE_PROPERTY_EDITOR
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ECS_INSTANCE_RENEW_PERIOD", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_INSTANCE_RENEW_PERIOD
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ECS_INSTANCE_STOP_MODE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_INSTANCE_STOP_MODE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "ECS_INSTANCE_TYPE", typeJson: "{\"primitive\":\"string\"}")]
             public static string ECS_INSTANCE_TYPE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ECS_INSTANCE_TYPE_AVAILABLE_INSTANCE_TYPE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_INSTANCE_TYPE_AVAILABLE_INSTANCE_TYPE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ECS_INSTANCE_ZONE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_INSTANCE_ZONE_ID
             {
                 get;
             }
@@ -263,6 +466,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "ECS_MANAGED_INSTANCE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_MANAGED_INSTANCE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ECS_RAM_ROLE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_RAM_ROLE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "ECS_REGION_ID", typeJson: "{\"primitive\":\"string\"}")]
             public static string ECS_REGION_ID
             {
@@ -284,6 +501,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "ECS_SNAPSHOT_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_SNAPSHOT_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "ECS_SYSTEM_DISK_CATEGORY", typeJson: "{\"primitive\":\"string\"}")]
             public static string ECS_SYSTEM_DISK_CATEGORY
             {
@@ -291,8 +515,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "ECS_TAG", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_TAG
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ECS_TARGET_REGION_IDS", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_TARGET_REGION_IDS
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "ECS_VPC_ID", typeJson: "{\"primitive\":\"string\"}")]
             public static string ECS_VPC_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ECS_VSWITCH", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ECS_VSWITCH
             {
                 get;
             }
@@ -307,6 +552,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
 
             [JsiiProperty(name: "ECS_ZONE_ID", typeJson: "{\"primitive\":\"string\"}")]
             public static string ECS_ZONE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "EDITABLE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string EDITABLE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "EDITABLE_POPOVER", typeJson: "{\"primitive\":\"string\"}")]
+            public static string EDITABLE_POPOVER
             {
                 get;
             }
@@ -361,6 +620,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "FORM_GRID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string FORM_GRID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "FORM_GROUP_COLLAPSE_PAN", typeJson: "{\"primitive\":\"string\"}")]
+            public static string FORM_GROUP_COLLAPSE_PAN
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "FORM_ITEM", typeJson: "{\"primitive\":\"string\"}")]
+            public static string FORM_ITEM
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "FORM_ITEM_GROUP", typeJson: "{\"primitive\":\"string\"}")]
+            public static string FORM_ITEM_GROUP
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "FORM_LAYOUT", typeJson: "{\"primitive\":\"string\"}")]
+            public static string FORM_LAYOUT
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "GMT_ZONE", typeJson: "{\"primitive\":\"string\"}")]
             public static string GMT_ZONE
             {
@@ -375,8 +669,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "INPUT", typeJson: "{\"primitive\":\"string\"}")]
+            public static string INPUT
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "INTEGER", typeJson: "{\"primitive\":\"string\"}")]
+            public static string INTEGER
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "JSON", typeJson: "{\"primitive\":\"string\"}")]
             public static string JSON
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "LIST", typeJson: "{\"primitive\":\"string\"}")]
+            public static string LIST
             {
                 get;
             }
@@ -396,8 +711,71 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "MONGODB_INSTANCE_TYPE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string MONGODB_INSTANCE_TYPE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "NEST_SERVICE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string NEST_SERVICE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "NEST_SERVICE_VERSION", typeJson: "{\"primitive\":\"string\"}")]
+            public static string NEST_SERVICE_VERSION
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "NLB_INSTANCE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string NLB_INSTANCE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "NLB_LOAD_BALANCER_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string NLB_LOAD_BALANCER_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "NLB_ZONE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string NLB_ZONE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "NUMBER", typeJson: "{\"primitive\":\"string\"}")]
+            public static string NUMBER
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "NUMBER_PICKER", typeJson: "{\"primitive\":\"string\"}")]
+            public static string NUMBER_PICKER
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "OOS_COMMAND_CONTENT", typeJson: "{\"primitive\":\"string\"}")]
             public static string OOS_COMMAND_CONTENT
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "OOS_COMPONENT_BANDWIDTH_UPGRADE_DURATION_HOUR", typeJson: "{\"primitive\":\"string\"}")]
+            public static string OOS_COMPONENT_BANDWIDTH_UPGRADE_DURATION_HOUR
             {
                 get;
             }
@@ -410,8 +788,57 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "OOS_COMPONENT_ON_OFF_TIME_LINE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string OOS_COMPONENT_ON_OFF_TIME_LINE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "OOS_COMPONENT_ON_OFF_TIMES", typeJson: "{\"primitive\":\"string\"}")]
+            public static string OOS_COMPONENT_ON_OFF_TIMES
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "OOS_COMPONENT_OPERATION_TYPE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string OOS_COMPONENT_OPERATION_TYPE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "OOS_COMPONENT_PRIVATE_TEMPLATE_NAME", typeJson: "{\"primitive\":\"string\"}")]
+            public static string OOS_COMPONENT_PRIVATE_TEMPLATE_NAME
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "OOS_COMPONENT_SECTION_TYPE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string OOS_COMPONENT_SECTION_TYPE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "OOS_COMPONENT_TARGET_IMAGE_NAME", typeJson: "{\"primitive\":\"string\"}")]
+            public static string OOS_COMPONENT_TARGET_IMAGE_NAME
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "OOS_COMPONENT_TIMER_TRIGGER", typeJson: "{\"primitive\":\"string\"}")]
             public static string OOS_COMPONENT_TIMER_TRIGGER
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "OOS_COMPONENT_TRANSIT_INSTANCE", typeJson: "{\"primitive\":\"string\"}")]
+            public static string OOS_COMPONENT_TRANSIT_INSTANCE
             {
                 get;
             }
@@ -480,6 +907,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "OSS_BUCKET_OBJECT", typeJson: "{\"primitive\":\"string\"}")]
+            public static string OSS_BUCKET_OBJECT
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "OSS_OBJECT_NAME", typeJson: "{\"primitive\":\"string\"}")]
             public static string OSS_OBJECT_NAME
             {
@@ -487,8 +921,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "PARSE_TEXT", typeJson: "{\"primitive\":\"string\"}")]
+            public static string PARSE_TEXT
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "PASSWORD", typeJson: "{\"primitive\":\"string\"}")]
             public static string PASSWORD
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "PAY_PERIOD", typeJson: "{\"primitive\":\"string\"}")]
+            public static string PAY_PERIOD
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "PAY_PERIOD_UNIT", typeJson: "{\"primitive\":\"string\"}")]
+            public static string PAY_PERIOD_UNIT
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "POLARDB_DB_CLUSTER_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string POLARDB_DB_CLUSTER_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "RADIO", typeJson: "{\"primitive\":\"string\"}")]
+            public static string RADIO
             {
                 get;
             }
@@ -529,6 +998,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "RDS_INSTANCE_ACCOUNT_PASSWORD", typeJson: "{\"primitive\":\"string\"}")]
+            public static string RDS_INSTANCE_ACCOUNT_PASSWORD
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "RDS_INSTANCE_ID", typeJson: "{\"primitive\":\"string\"}")]
             public static string RDS_INSTANCE_ID
             {
@@ -543,8 +1019,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "READ_ONLY", typeJson: "{\"primitive\":\"string\"}")]
+            public static string READ_ONLY
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "READ_ONLY_ITEM", typeJson: "{\"primitive\":\"string\"}")]
+            public static string READ_ONLY_ITEM
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "REDIS_INSTANCE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string REDIS_INSTANCE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "REDIS_INSTANCE_TYPE", typeJson: "{\"primitive\":\"string\"}")]
             public static string REDIS_INSTANCE_TYPE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "REGION_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string REGION_ID
             {
                 get;
             }
@@ -559,6 +1063,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
 
             [JsiiProperty(name: "RESOURCE_MANAGER_FOLDER", typeJson: "{\"primitive\":\"string\"}")]
             public static string RESOURCE_MANAGER_FOLDER
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ROS_TYPE_META_LIST", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ROS_TYPE_META_LIST
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "SELECT", typeJson: "{\"primitive\":\"string\"}")]
+            public static string SELECT
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "SERVICE_CATA_LOG_LAUNCH_OPTION_PORTFOLIO_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string SERVICE_CATA_LOG_LAUNCH_OPTION_PORTFOLIO_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "SERVICE_CATA_LOG_LAUNCH_PRODUCT_VERSION_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string SERVICE_CATA_LOG_LAUNCH_PRODUCT_VERSION_ID
             {
                 get;
             }
@@ -592,6 +1124,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "SLB_LOAD_BALANCER_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string SLB_LOAD_BALANCER_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "STRING", typeJson: "{\"primitive\":\"string\"}")]
+            public static string STRING
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "SWITCH", typeJson: "{\"primitive\":\"string\"}")]
+            public static string SWITCH
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "TAGS", typeJson: "{\"primitive\":\"string\"}")]
             public static string TAGS
             {
@@ -606,8 +1159,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "TEMPLATE_NAME", typeJson: "{\"primitive\":\"string\"}")]
+            public static string TEMPLATE_NAME
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "TEMPLATE_PARAMETER", typeJson: "{\"primitive\":\"string\"}")]
+            public static string TEMPLATE_PARAMETER
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "TEXT_AREA", typeJson: "{\"primitive\":\"string\"}")]
             public static string TEXT_AREA
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "TIME", typeJson: "{\"primitive\":\"string\"}")]
+            public static string TIME
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "TIME_TRIGGER", typeJson: "{\"primitive\":\"string\"}")]
+            public static string TIME_TRIGGER
             {
                 get;
             }
@@ -622,6 +1203,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
 
             [JsiiProperty(name: "TIME_ZONE", typeJson: "{\"primitive\":\"string\"}")]
             public static string TIME_ZONE
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "USER_ACCOUNT_IDS", typeJson: "{\"primitive\":\"string\"}")]
+            public static string USER_ACCOUNT_IDS
             {
                 get;
             }
@@ -648,8 +1236,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
             = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
 
+            [JsiiProperty(name: "VPC_VSWITCH_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string VPC_VSWITCH_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "VPC_ZONE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string VPC_ZONE_ID
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
             [JsiiProperty(name: "VSWITCH_CIDR_BLOCK", typeJson: "{\"primitive\":\"string\"}")]
             public static string VSWITCH_CIDR_BLOCK
+            {
+                get;
+            }
+            = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosParameter.AssociationProperty))!;
+
+            [JsiiProperty(name: "ZONE_ID", typeJson: "{\"primitive\":\"string\"}")]
+            public static string ZONE_ID
             {
                 get;
             }

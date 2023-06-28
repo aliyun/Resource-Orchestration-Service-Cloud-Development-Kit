@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.brainindustrial;
 /**
  * Properties for defining a <code>ALIYUN::BrainIndustrial::PidProject</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:08.343Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.892Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.brainindustrial.$Module.class, fqn = "@alicloud/ros-cdk-brainindustrial.RosPidProjectProps")
 @software.amazon.jsii.Jsii.Proxy(RosPidProjectProps.Jsii$Proxy.class)
 public interface RosPidProjectProps extends software.amazon.jsii.JsiiSerializable {

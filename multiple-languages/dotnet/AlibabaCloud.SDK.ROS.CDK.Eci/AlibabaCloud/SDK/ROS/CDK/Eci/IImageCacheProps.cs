@@ -36,10 +36,53 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             get;
         }
 
+        /// <summary>Property acrRegistryInfo: Enterprise Edition access credential configuration information.</summary>
+        [JsiiProperty(name: "acrRegistryInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosImageCache.AcrRegistryInfoProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AcrRegistryInfo
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property autoMatchImageCache: Specifies whether to enable reuse of image cache layers.</summary>
+        /// <remarks>
+        /// If you enable this feature, and the image cache that you want to createand an existing image cache contain duplicate image layers, the system reuses the duplicate image layers to create the new image cache.
+        /// This accelerates the creation of the image cache.
+        /// Valid values: true: enables reuse of image cache layers.
+        /// false: disables reuse of image cache layers.
+        /// Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "autoMatchImageCache", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoMatchImageCache
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.</summary>
         [JsiiProperty(name: "eipInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EipInstanceId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property imageCacheSize: The size of the image cache.</summary>
+        /// <remarks>
+        /// Unit: GiB. Default value: 20.
+        /// </remarks>
+        [JsiiProperty(name: "imageCacheSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ImageCacheSize
         {
             get
             {
@@ -65,6 +108,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property retentionDays: The retention period of the image cache.</summary>
+        /// <remarks>
+        /// Unit: days. When the retention period ends, the image cache expires and is deleted.
+        /// By default, image caches never expire.
+        /// Note: The image caches that fail to be created are only retained for one day.
+        /// </remarks>
+        [JsiiProperty(name: "retentionDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RetentionDays
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property zoneId: The zone ID of the image cache.</summary>
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZoneId
         {
             get
             {
@@ -108,10 +178,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property acrRegistryInfo: Enterprise Edition access credential configuration information.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "acrRegistryInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosImageCache.AcrRegistryInfoProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? AcrRegistryInfo
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property autoMatchImageCache: Specifies whether to enable reuse of image cache layers.</summary>
+            /// <remarks>
+            /// If you enable this feature, and the image cache that you want to createand an existing image cache contain duplicate image layers, the system reuses the duplicate image layers to create the new image cache.
+            /// This accelerates the creation of the image cache.
+            /// Valid values: true: enables reuse of image cache layers.
+            /// false: disables reuse of image cache layers.
+            /// Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoMatchImageCache", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoMatchImageCache
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "eipInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EipInstanceId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property imageCacheSize: The size of the image cache.</summary>
+            /// <remarks>
+            /// Unit: GiB. Default value: 20.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "imageCacheSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ImageCacheSize
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -131,6 +235,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property retentionDays: The retention period of the image cache.</summary>
+            /// <remarks>
+            /// Unit: days. When the retention period ends, the image cache expires and is deleted.
+            /// By default, image caches never expire.
+            /// Note: The image caches that fail to be created are only retained for one day.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "retentionDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RetentionDays
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property zoneId: The zone ID of the image cache.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneId
             {
                 get => GetInstanceProperty<object?>();
             }

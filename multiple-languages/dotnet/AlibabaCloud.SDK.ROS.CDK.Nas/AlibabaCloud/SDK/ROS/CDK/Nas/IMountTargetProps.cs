@@ -32,6 +32,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             get;
         }
 
+        /// <summary>Property enableIpv6: Whether to create an IPv6 mount point.Value: true: create false (default): do not create Note Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.</summary>
+        [JsiiProperty(name: "enableIpv6", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableIpv6
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property securityGroupId: Security group Id.</summary>
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecurityGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property status: Status, including Active and Inactive.</summary>
         [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -95,6 +117,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             public object NetworkType
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property enableIpv6: Whether to create an IPv6 mount point.Value: true: create false (default): do not create Note Currently, only the ultra-fast NAS in mainland China supports the IPv6 function, and the file system needs to enable the IPv6 function.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableIpv6", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableIpv6
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property securityGroupId: Security group Id.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityGroupId
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property status: Status, including Active and Inactive.</summary>

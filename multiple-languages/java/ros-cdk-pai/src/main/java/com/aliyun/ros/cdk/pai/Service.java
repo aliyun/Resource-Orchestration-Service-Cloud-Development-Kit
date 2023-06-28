@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai;
 /**
  * A ROS resource type:  <code>ALIYUN::PAI::Service</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:10.823Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.646Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.Service")
 public class Service extends com.aliyun.ros.cdk.core.Resource {
 

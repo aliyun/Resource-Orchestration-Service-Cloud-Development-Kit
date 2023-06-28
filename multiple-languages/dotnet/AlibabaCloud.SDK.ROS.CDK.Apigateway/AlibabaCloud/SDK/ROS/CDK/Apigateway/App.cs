@@ -38,6 +38,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         {
         }
 
+        /// <summary>Attribute AppCode: The code of the APP.</summary>
+        [JsiiProperty(name: "attrAppCode", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppCode
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute AppId: The id of the created APP.</summary>
         [JsiiProperty(name: "attrAppId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppId

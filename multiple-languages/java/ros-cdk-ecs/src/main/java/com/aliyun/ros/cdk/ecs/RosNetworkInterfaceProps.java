@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a <code>ALIYUN::ECS::NetworkInterface</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-19T08:52:09.584Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.348Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosNetworkInterfaceProps")
 @software.amazon.jsii.Jsii.Proxy(RosNetworkInterfaceProps.Jsii$Proxy.class)
 public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSerializable {
@@ -20,7 +20,25 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6Addresses() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceTrafficMode() {
         return null;
     }
 
@@ -33,6 +51,12 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddresses() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getQueueNumber() {
         return null;
     }
 
@@ -78,9 +102,13 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
     public static final class Builder implements software.amazon.jsii.Builder<RosNetworkInterfaceProps> {
         java.lang.Object vSwitchId;
         java.lang.Object description;
+        java.lang.Object ipv6AddressCount;
+        java.lang.Object ipv6Addresses;
         java.lang.Object networkInterfaceName;
+        java.lang.Object networkInterfaceTrafficMode;
         java.lang.Object primaryIpAddress;
         java.lang.Object privateIpAddresses;
+        java.lang.Object queueNumber;
         java.lang.Object resourceGroupId;
         java.lang.Object secondaryPrivateIpAddressCount;
         java.lang.Object securityGroupId;
@@ -128,6 +156,46 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link RosNetworkInterfaceProps#getIpv6AddressCount}
+         * @param ipv6AddressCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressCount(java.lang.Number ipv6AddressCount) {
+            this.ipv6AddressCount = ipv6AddressCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNetworkInterfaceProps#getIpv6AddressCount}
+         * @param ipv6AddressCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressCount(com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
+            this.ipv6AddressCount = ipv6AddressCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNetworkInterfaceProps#getIpv6Addresses}
+         * @param ipv6Addresses the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6Addresses(com.aliyun.ros.cdk.core.IResolvable ipv6Addresses) {
+            this.ipv6Addresses = ipv6Addresses;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNetworkInterfaceProps#getIpv6Addresses}
+         * @param ipv6Addresses the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6Addresses(java.util.List<? extends java.lang.Object> ipv6Addresses) {
+            this.ipv6Addresses = ipv6Addresses;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosNetworkInterfaceProps#getNetworkInterfaceName}
          * @param networkInterfaceName the value to be set.
          * @return {@code this}
@@ -144,6 +212,26 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
          */
         public Builder networkInterfaceName(com.aliyun.ros.cdk.core.IResolvable networkInterfaceName) {
             this.networkInterfaceName = networkInterfaceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNetworkInterfaceProps#getNetworkInterfaceTrafficMode}
+         * @param networkInterfaceTrafficMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder networkInterfaceTrafficMode(java.lang.String networkInterfaceTrafficMode) {
+            this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNetworkInterfaceProps#getNetworkInterfaceTrafficMode}
+         * @param networkInterfaceTrafficMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder networkInterfaceTrafficMode(com.aliyun.ros.cdk.core.IResolvable networkInterfaceTrafficMode) {
+            this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
             return this;
         }
 
@@ -184,6 +272,26 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
          */
         public Builder privateIpAddresses(java.util.List<? extends java.lang.Object> privateIpAddresses) {
             this.privateIpAddresses = privateIpAddresses;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNetworkInterfaceProps#getQueueNumber}
+         * @param queueNumber the value to be set.
+         * @return {@code this}
+         */
+        public Builder queueNumber(java.lang.Number queueNumber) {
+            this.queueNumber = queueNumber;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNetworkInterfaceProps#getQueueNumber}
+         * @param queueNumber the value to be set.
+         * @return {@code this}
+         */
+        public Builder queueNumber(com.aliyun.ros.cdk.core.IResolvable queueNumber) {
+            this.queueNumber = queueNumber;
             return this;
         }
 
@@ -296,9 +404,13 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosNetworkInterfaceProps {
         private final java.lang.Object vSwitchId;
         private final java.lang.Object description;
+        private final java.lang.Object ipv6AddressCount;
+        private final java.lang.Object ipv6Addresses;
         private final java.lang.Object networkInterfaceName;
+        private final java.lang.Object networkInterfaceTrafficMode;
         private final java.lang.Object primaryIpAddress;
         private final java.lang.Object privateIpAddresses;
+        private final java.lang.Object queueNumber;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object secondaryPrivateIpAddressCount;
         private final java.lang.Object securityGroupId;
@@ -313,9 +425,13 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
             super(objRef);
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6Addresses = software.amazon.jsii.Kernel.get(this, "ipv6Addresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkInterfaceName = software.amazon.jsii.Kernel.get(this, "networkInterfaceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkInterfaceTrafficMode = software.amazon.jsii.Kernel.get(this, "networkInterfaceTrafficMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.primaryIpAddress = software.amazon.jsii.Kernel.get(this, "primaryIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddresses = software.amazon.jsii.Kernel.get(this, "privateIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.queueNumber = software.amazon.jsii.Kernel.get(this, "queueNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secondaryPrivateIpAddressCount = software.amazon.jsii.Kernel.get(this, "secondaryPrivateIpAddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -331,9 +447,13 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.description = builder.description;
+            this.ipv6AddressCount = builder.ipv6AddressCount;
+            this.ipv6Addresses = builder.ipv6Addresses;
             this.networkInterfaceName = builder.networkInterfaceName;
+            this.networkInterfaceTrafficMode = builder.networkInterfaceTrafficMode;
             this.primaryIpAddress = builder.primaryIpAddress;
             this.privateIpAddresses = builder.privateIpAddresses;
+            this.queueNumber = builder.queueNumber;
             this.resourceGroupId = builder.resourceGroupId;
             this.secondaryPrivateIpAddressCount = builder.secondaryPrivateIpAddressCount;
             this.securityGroupId = builder.securityGroupId;
@@ -352,8 +472,23 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
+        public final java.lang.Object getIpv6AddressCount() {
+            return this.ipv6AddressCount;
+        }
+
+        @Override
+        public final java.lang.Object getIpv6Addresses() {
+            return this.ipv6Addresses;
+        }
+
+        @Override
         public final java.lang.Object getNetworkInterfaceName() {
             return this.networkInterfaceName;
+        }
+
+        @Override
+        public final java.lang.Object getNetworkInterfaceTrafficMode() {
+            return this.networkInterfaceTrafficMode;
         }
 
         @Override
@@ -364,6 +499,11 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
         @Override
         public final java.lang.Object getPrivateIpAddresses() {
             return this.privateIpAddresses;
+        }
+
+        @Override
+        public final java.lang.Object getQueueNumber() {
+            return this.queueNumber;
         }
 
         @Override
@@ -401,14 +541,26 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getIpv6AddressCount() != null) {
+                data.set("ipv6AddressCount", om.valueToTree(this.getIpv6AddressCount()));
+            }
+            if (this.getIpv6Addresses() != null) {
+                data.set("ipv6Addresses", om.valueToTree(this.getIpv6Addresses()));
+            }
             if (this.getNetworkInterfaceName() != null) {
                 data.set("networkInterfaceName", om.valueToTree(this.getNetworkInterfaceName()));
+            }
+            if (this.getNetworkInterfaceTrafficMode() != null) {
+                data.set("networkInterfaceTrafficMode", om.valueToTree(this.getNetworkInterfaceTrafficMode()));
             }
             if (this.getPrimaryIpAddress() != null) {
                 data.set("primaryIpAddress", om.valueToTree(this.getPrimaryIpAddress()));
             }
             if (this.getPrivateIpAddresses() != null) {
                 data.set("privateIpAddresses", om.valueToTree(this.getPrivateIpAddresses()));
+            }
+            if (this.getQueueNumber() != null) {
+                data.set("queueNumber", om.valueToTree(this.getQueueNumber()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
@@ -445,9 +597,13 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
 
             if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.ipv6AddressCount != null ? !this.ipv6AddressCount.equals(that.ipv6AddressCount) : that.ipv6AddressCount != null) return false;
+            if (this.ipv6Addresses != null ? !this.ipv6Addresses.equals(that.ipv6Addresses) : that.ipv6Addresses != null) return false;
             if (this.networkInterfaceName != null ? !this.networkInterfaceName.equals(that.networkInterfaceName) : that.networkInterfaceName != null) return false;
+            if (this.networkInterfaceTrafficMode != null ? !this.networkInterfaceTrafficMode.equals(that.networkInterfaceTrafficMode) : that.networkInterfaceTrafficMode != null) return false;
             if (this.primaryIpAddress != null ? !this.primaryIpAddress.equals(that.primaryIpAddress) : that.primaryIpAddress != null) return false;
             if (this.privateIpAddresses != null ? !this.privateIpAddresses.equals(that.privateIpAddresses) : that.privateIpAddresses != null) return false;
+            if (this.queueNumber != null ? !this.queueNumber.equals(that.queueNumber) : that.queueNumber != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.secondaryPrivateIpAddressCount != null ? !this.secondaryPrivateIpAddressCount.equals(that.secondaryPrivateIpAddressCount) : that.secondaryPrivateIpAddressCount != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
@@ -459,9 +615,13 @@ public interface RosNetworkInterfaceProps extends software.amazon.jsii.JsiiSeria
         public final int hashCode() {
             int result = this.vSwitchId.hashCode();
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.ipv6AddressCount != null ? this.ipv6AddressCount.hashCode() : 0);
+            result = 31 * result + (this.ipv6Addresses != null ? this.ipv6Addresses.hashCode() : 0);
             result = 31 * result + (this.networkInterfaceName != null ? this.networkInterfaceName.hashCode() : 0);
+            result = 31 * result + (this.networkInterfaceTrafficMode != null ? this.networkInterfaceTrafficMode.hashCode() : 0);
             result = 31 * result + (this.primaryIpAddress != null ? this.primaryIpAddress.hashCode() : 0);
             result = 31 * result + (this.privateIpAddresses != null ? this.privateIpAddresses.hashCode() : 0);
+            result = 31 * result + (this.queueNumber != null ? this.queueNumber.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.secondaryPrivateIpAddressCount != null ? this.secondaryPrivateIpAddressCount.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
