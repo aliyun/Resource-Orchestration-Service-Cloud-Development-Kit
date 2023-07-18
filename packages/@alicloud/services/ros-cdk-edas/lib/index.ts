@@ -9,3 +9,5 @@ export * from './userdefineregion';
 
 // ALIYUN::EDAS Resources:
 export * from './edas.generated';
+import * as datasource from './datasource';
+export { datasource };

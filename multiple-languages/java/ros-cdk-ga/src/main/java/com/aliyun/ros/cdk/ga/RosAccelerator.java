@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  <code>ALIYUN::GA::Accelerator</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.036Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.257Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosAccelerator")
 public class RosAccelerator extends com.aliyun.ros.cdk.core.RosResource {
 

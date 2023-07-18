@@ -13,6 +13,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         private object _clusterType;
 
         /// <summary>Property clusterType: The type of the cluster.</summary>
+        /// <remarks>
+        /// Currently, only ask, ecs and one clusters are supported. Default is ecs.
+        /// </remarks>
         [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ClusterType
         {
@@ -130,9 +133,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             }
         }
 
+        private object? _clusterId;
+
+        /// <summary>Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ClusterId
+        {
+            get => _clusterId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _clusterId = value;
+            }
+        }
+
         private object? _clusterName;
 
         /// <summary>Property clusterName: The name of the cluster.</summary>
+        /// <remarks>
+        /// Required when the ClusterType is ecs.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ClusterName

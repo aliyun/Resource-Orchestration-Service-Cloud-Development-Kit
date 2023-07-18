@@ -9,7 +9,7 @@ export { RosManagedPrometheus as ManagedPrometheusProperty };
 export interface ManagedPrometheusProps {
 
     /**
-     * Property clusterType: The type of the cluster.
+     * Property clusterType: The type of the cluster. Currently, only ask, ecs and one clusters are supported. Default is ecs.
      */
     readonly clusterType: string | ros.IResolvable;
 
@@ -29,7 +29,12 @@ export interface ManagedPrometheusProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * Property clusterName: The name of the cluster.
+     * Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.
+     */
+    readonly clusterId?: string | ros.IResolvable;
+
+    /**
+     * Property clusterName: The name of the cluster. Required when the ClusterType is ecs.
      */
     readonly clusterName?: string | ros.IResolvable;
 
@@ -71,6 +76,7 @@ export class ManagedPrometheus extends ros.Resource {
 
         const rosManagedPrometheus = new RosManagedPrometheus(this, id,  {
             vpcId: props.vpcId,
+            clusterId: props.clusterId,
             securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
             clusterName: props.clusterName,

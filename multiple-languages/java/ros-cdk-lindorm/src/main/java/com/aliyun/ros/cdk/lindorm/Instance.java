@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * A ROS resource type:  <code>ALIYUN::Lindorm::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.288Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.492Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

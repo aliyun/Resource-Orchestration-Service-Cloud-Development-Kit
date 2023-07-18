@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * A ROS resource type:  <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.779Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.053Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceAttachment")
 public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -127,6 +127,14 @@ public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resour
         /**
          * Property resourceType: The resource type.
          * <p>
+         * Allowed values:
+         * <p>
+         * <ul>
+         * <li>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</li>
+         * <li>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</li>
+         * <li>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</li>
+         * </ul>
+         * <p>
          * @return {@code this}
          * @param resourceType Property resourceType: The resource type. This parameter is required.
          */
@@ -136,6 +144,14 @@ public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resour
         }
         /**
          * Property resourceType: The resource type.
+         * <p>
+         * Allowed values:
+         * <p>
+         * <ul>
+         * <li>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</li>
+         * <li>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</li>
+         * <li>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param resourceType Property resourceType: The resource type. This parameter is required.

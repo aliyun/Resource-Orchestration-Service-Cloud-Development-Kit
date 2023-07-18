@@ -45,7 +45,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         private object _resourceType;
 
         /// <remarks>
-        /// <strong>Property</strong>: resourceType: The resource type.
+        /// <strong>Property</strong>: resourceType: The resource type. Allowed values:
+        /// - slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.
+        /// - alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.
+        /// - nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.
         /// </remarks>
         [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ResourceType

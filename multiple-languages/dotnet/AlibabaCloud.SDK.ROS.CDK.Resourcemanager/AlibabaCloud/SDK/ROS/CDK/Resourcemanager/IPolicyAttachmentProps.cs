@@ -40,10 +40,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         }
 
         /// <summary>Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.</summary>
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
         {
-            get;
+            get
+            {
+                return null;
+            }
         }
 
         /// <summary>Properties for defining a `ALIYUN::ResourceManager::PolicyAttachment`.</summary>
@@ -86,10 +90,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             }
 
             /// <summary>Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.</summary>
-            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ResourceGroupId
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
-                get => GetInstanceProperty<object>()!;
+                get => GetInstanceProperty<object?>();
             }
         }
     }

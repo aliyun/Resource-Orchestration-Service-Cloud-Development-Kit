@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.graphdatabase;
 /**
  * A ROS template type:  <code>ALIYUN::GraphDatabase::DbInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.129Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.338Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.graphdatabase.$Module.class, fqn = "@alicloud/ros-cdk-graphdatabase.RosDbInstance")
 public class RosDbInstance extends com.aliyun.ros.cdk.core.RosResource {
 

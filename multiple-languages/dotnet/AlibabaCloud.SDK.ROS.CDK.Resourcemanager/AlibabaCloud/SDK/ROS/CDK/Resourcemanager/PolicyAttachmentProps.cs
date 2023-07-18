@@ -133,11 +133,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             }
         }
 
-        private object _resourceGroupId;
+        private object? _resourceGroupId;
 
         /// <summary>Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.</summary>
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public object ResourceGroupId
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
         {
             get => _resourceGroupId;
             set
@@ -154,7 +155,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
                             // Not enough information to type-check...
                             break;
                         case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }

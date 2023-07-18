@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * A ROS template type:  <code>ALIYUN::OSS::Bucket</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.583Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.821Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucket")
 public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -213,6 +213,24 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRedundancyType() {
+        return software.amazon.jsii.Kernel.get(this, "redundancyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRedundancyType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "redundancyType", value);
+    }
+
+    /**
+     */
+    public void setRedundancyType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "redundancyType", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRefererConfiguration() {
         return software.amazon.jsii.Kernel.get(this, "refererConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -275,6 +293,24 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVersioningConfiguration() {
+        return software.amazon.jsii.Kernel.get(this, "versioningConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVersioningConfiguration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "versioningConfiguration", value);
+    }
+
+    /**
+     */
+    public void setVersioningConfiguration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.oss.RosBucket.VersioningConfigurationProperty value) {
+        software.amazon.jsii.Kernel.set(this, "versioningConfiguration", value);
     }
 
     /**
@@ -2004,6 +2040,131 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty")
+    @software.amazon.jsii.Jsii.Proxy(VersioningConfigurationProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface VersioningConfigurationProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getStatus();
+
+        /**
+         * @return a {@link Builder} of {@link VersioningConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link VersioningConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<VersioningConfigurationProperty> {
+            java.lang.Object status;
+
+            /**
+             * Sets the value of {@link VersioningConfigurationProperty#getStatus}
+             * @param status the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder status(java.lang.String status) {
+                this.status = status;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VersioningConfigurationProperty#getStatus}
+             * @param status the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder status(com.aliyun.ros.cdk.core.IResolvable status) {
+                this.status = status;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link VersioningConfigurationProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public VersioningConfigurationProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link VersioningConfigurationProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VersioningConfigurationProperty {
+            private final java.lang.Object status;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.status = java.util.Objects.requireNonNull(builder.status, "status is required");
+            }
+
+            @Override
+            public final java.lang.Object getStatus() {
+                return this.status;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("status", om.valueToTree(this.getStatus()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                VersioningConfigurationProperty.Jsii$Proxy that = (VersioningConfigurationProperty.Jsii$Proxy) o;
+
+                return this.status.equals(that.status);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.status.hashCode();
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationProperty")
     @software.amazon.jsii.Jsii.Proxy(WebsiteConfigurationProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2322,6 +2483,23 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param redundancyType This parameter is required.
+         */
+        public Builder redundancyType(final java.lang.String redundancyType) {
+            this.props.redundancyType(redundancyType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param redundancyType This parameter is required.
+         */
+        public Builder redundancyType(final com.aliyun.ros.cdk.core.IResolvable redundancyType) {
+            this.props.redundancyType(redundancyType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param refererConfiguration This parameter is required.
          */
         public Builder refererConfiguration(final com.aliyun.ros.cdk.core.IResolvable refererConfiguration) {
@@ -2377,6 +2555,23 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param versioningConfiguration This parameter is required.
+         */
+        public Builder versioningConfiguration(final com.aliyun.ros.cdk.core.IResolvable versioningConfiguration) {
+            this.props.versioningConfiguration(versioningConfiguration);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param versioningConfiguration This parameter is required.
+         */
+        public Builder versioningConfiguration(final com.aliyun.ros.cdk.oss.RosBucket.VersioningConfigurationProperty versioningConfiguration) {
+            this.props.versioningConfiguration(versioningConfiguration);
             return this;
         }
 

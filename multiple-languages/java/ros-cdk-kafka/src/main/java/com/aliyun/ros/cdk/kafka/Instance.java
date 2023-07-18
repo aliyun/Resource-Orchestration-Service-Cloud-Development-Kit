@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * A ROS resource type:  <code>ALIYUN::KAFKA::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.240Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.445Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -218,37 +218,6 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance.
-         * <p>
-         * The default value of this parameter varies with different peak traffic values.
-         * Additional fees are charged if the default values are exceeded.
-         * Different specifications have different default values, and extra fees are charged.
-         * For more information, see Billing.
-         * <p>
-         * @return {@code this}
-         * @param topicQuota Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance. This parameter is required.
-         */
-        public Builder topicQuota(final java.lang.Number topicQuota) {
-            this.props.topicQuota(topicQuota);
-            return this;
-        }
-        /**
-         * Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance.
-         * <p>
-         * The default value of this parameter varies with different peak traffic values.
-         * Additional fees are charged if the default values are exceeded.
-         * Different specifications have different default values, and extra fees are charged.
-         * For more information, see Billing.
-         * <p>
-         * @return {@code this}
-         * @param topicQuota Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance. This parameter is required.
-         */
-        public Builder topicQuota(final com.aliyun.ros.cdk.core.IResolvable topicQuota) {
-            this.props.topicQuota(topicQuota);
-            return this;
-        }
-
-        /**
          * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.
          * <p>
          * Default is false
@@ -393,6 +362,35 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property partitionNum: Number of partitions(recommended).
+         * <p>
+         * The number of partitions to be configured for the Message Queue for Apache Kafka instance.
+         * PartitionNum and TopicQuota must be selected.
+         * It is recommended that you only fill in the number of partitions.
+         * <p>
+         * @return {@code this}
+         * @param partitionNum Property partitionNum: Number of partitions(recommended). This parameter is required.
+         */
+        public Builder partitionNum(final java.lang.Number partitionNum) {
+            this.props.partitionNum(partitionNum);
+            return this;
+        }
+        /**
+         * Property partitionNum: Number of partitions(recommended).
+         * <p>
+         * The number of partitions to be configured for the Message Queue for Apache Kafka instance.
+         * PartitionNum and TopicQuota must be selected.
+         * It is recommended that you only fill in the number of partitions.
+         * <p>
+         * @return {@code this}
+         * @param partitionNum Property partitionNum: Number of partitions(recommended). This parameter is required.
+         */
+        public Builder partitionNum(final com.aliyun.ros.cdk.core.IResolvable partitionNum) {
+            this.props.partitionNum(partitionNum);
+            return this;
+        }
+
+        /**
          * Property payType: Pay by hour or month.
          * <p>
          * @return {@code this}
@@ -452,6 +450,43 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.kafka.RosInstance.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property topicQuota: Number of topics (not recommended).
+         * <p>
+         * The number of topics to be configured for the Message Queue for Apache Kafka instance.
+         * PartitionNum and TopicQuota must be selected.
+         * It is recommended that you only fill in the number of partitions.
+         * The default value of this parameter varies with different peak traffic values.
+         * Additional fees are charged if the default values are exceeded.
+         * Different specifications have different default values, and extra fees are charged.
+         * For more information, see Billing.
+         * <p>
+         * @return {@code this}
+         * @param topicQuota Property topicQuota: Number of topics (not recommended). This parameter is required.
+         */
+        public Builder topicQuota(final java.lang.Number topicQuota) {
+            this.props.topicQuota(topicQuota);
+            return this;
+        }
+        /**
+         * Property topicQuota: Number of topics (not recommended).
+         * <p>
+         * The number of topics to be configured for the Message Queue for Apache Kafka instance.
+         * PartitionNum and TopicQuota must be selected.
+         * It is recommended that you only fill in the number of partitions.
+         * The default value of this parameter varies with different peak traffic values.
+         * Additional fees are charged if the default values are exceeded.
+         * Different specifications have different default values, and extra fees are charged.
+         * For more information, see Billing.
+         * <p>
+         * @return {@code this}
+         * @param topicQuota Property topicQuota: Number of topics (not recommended). This parameter is required.
+         */
+        public Builder topicQuota(final com.aliyun.ros.cdk.core.IResolvable topicQuota) {
+            this.props.topicQuota(topicQuota);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a <code>ALIYUN::SLB::LoadBalancer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.493Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.714Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,19 +18,27 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property addressType: Loader balancer address type.
+     * Property addressType: The network type of the CLB instance.
      * <p>
-     * Support 'internet' and 'intranet' only, default is 'internet'.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><strong>internet</strong> (default): After an internet-facing CLB instance is created, the system assigns a public IP address to the CLB instance. Then, the CLB instance can forward requests over the Internet.</li>
+     * <li><strong>intranet</strong>: After an internal-facing CLB instance is created, the system assigns a private IP address to the CLB instance. Then, the CLB instance can forward requests only over the internal networks.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAddressType() {
         return null;
     }
 
     /**
-     * Property autoPay: Optional.
+     * Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.
      * <p>
-     * Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-     * Valid values: true | false. Default true.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><strong>true</strong>: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- <strong>false</strong> (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.<strong>Note</strong> This parameter is supported only by subscription instances created on the Alibaba Cloud China site.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -39,7 +47,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     /**
      * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
      * <p>
-     * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+     * Valid values:- <strong>true</strong>: Automatic renewal is enabled.- <strong>false</strong> (default): Automatic renewal is not enabled. You must renew the instance manually.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
@@ -85,16 +93,27 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     /**
      * Property instanceChargeType: Instance billing method.
      * <p>
-     * Value:PayBySpec: Pay by spec.
-     * PayByCLCU: billed by usage.
-     * Default: PayBySpec
+     * Valid value:
+     * <p>
+     * <ul>
+     * <li><strong>PayBySpec</strong> (default): Pay by spec.</li>
+     * <li><strong>PayByCLCU</strong>: billed by usage.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
-     * Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
+     * Property internetChargeType: The metering method of the Internet-facing CLB instance.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><strong>paybytraffic</strong> (default): If you set the value to paybytraffic, you do not need to specify Bandwidth. Even if you specify Bandwidth, the value does not take effect.</li>
+     * <li><strong>paybybandwidth</strong>: pay-by-bandwidth.
+     * <strong>Note</strong> If you set PayType to PayOnDemand and set InstanceChargeType to PayByCLCU, you must set InternetChargeType to paybytraffic.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
@@ -110,9 +129,20 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property loadBalancerSpec: The specification of the Server Load Balancer instance.
+     * Property loadBalancerSpec: The specification of the CLB instance.
      * <p>
-     * Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large|slb.s3.xlarge|slb.s3.xxlarge. Default value: slb.s1.small. The supported performance specification in each region is different, two specifications are supported in the US East 1 region. If the region does not support the performance-guaranteed instances, the value will not take effect.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><strong>slb.s1.small</strong></li>
+     * <li><strong>slb.s2.small</strong></li>
+     * <li><strong>slb.s2.medium</strong></li>
+     * <li><strong>slb.s3.small</strong></li>
+     * <li><strong>slb.s3.medium</strong></li>
+     * <li><strong>slb.s3.large</strong>
+     * <strong>Note</strong> If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
+     * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerSpec() {
         return null;
@@ -260,8 +290,13 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAddressType}
-         * @param addressType Property addressType: Loader balancer address type.
-         *                    Support 'internet' and 'intranet' only, default is 'internet'.
+         * @param addressType Property addressType: The network type of the CLB instance.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li><strong>internet</strong> (default): After an internet-facing CLB instance is created, the system assigns a public IP address to the CLB instance. Then, the CLB instance can forward requests over the Internet.</li>
+         *                    <li><strong>intranet</strong>: After an internal-facing CLB instance is created, the system assigns a private IP address to the CLB instance. Then, the CLB instance can forward requests only over the internal networks.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder addressType(java.lang.String addressType) {
@@ -271,8 +306,13 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAddressType}
-         * @param addressType Property addressType: Loader balancer address type.
-         *                    Support 'internet' and 'intranet' only, default is 'internet'.
+         * @param addressType Property addressType: The network type of the CLB instance.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li><strong>internet</strong> (default): After an internet-facing CLB instance is created, the system assigns a public IP address to the CLB instance. Then, the CLB instance can forward requests over the Internet.</li>
+         *                    <li><strong>intranet</strong>: After an internal-facing CLB instance is created, the system assigns a private IP address to the CLB instance. Then, the CLB instance can forward requests only over the internal networks.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder addressType(com.aliyun.ros.cdk.core.IResolvable addressType) {
@@ -282,9 +322,12 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAutoPay}
-         * @param autoPay Property autoPay: Optional.
-         *                Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-         *                Valid values: true | false. Default true.
+         * @param autoPay Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li><strong>true</strong>: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- <strong>false</strong> (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.<strong>Note</strong> This parameter is supported only by subscription instances created on the Alibaba Cloud China site.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -294,9 +337,12 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAutoPay}
-         * @param autoPay Property autoPay: Optional.
-         *                Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-         *                Valid values: true | false. Default true.
+         * @param autoPay Property autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li><strong>true</strong>: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- <strong>false</strong> (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.<strong>Note</strong> This parameter is supported only by subscription instances created on the Alibaba Cloud China site.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -307,7 +353,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link LoadBalancerProps#getAutoRenew}
          * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-         *                  Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         *                  Valid values:- <strong>true</strong>: Automatic renewal is enabled.- <strong>false</strong> (default): Automatic renewal is not enabled. You must renew the instance manually.
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.Boolean autoRenew) {
@@ -318,7 +364,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link LoadBalancerProps#getAutoRenew}
          * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-         *                  Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         *                  Valid values:- <strong>true</strong>: Automatic renewal is enabled.- <strong>false</strong> (default): Automatic renewal is not enabled. You must renew the instance manually.
          * @return {@code this}
          */
         public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
@@ -421,9 +467,12 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link LoadBalancerProps#getInstanceChargeType}
          * @param instanceChargeType Property instanceChargeType: Instance billing method.
-         *                           Value:PayBySpec: Pay by spec.
-         *                           PayByCLCU: billed by usage.
-         *                           Default: PayBySpec
+         *                           Valid value:
+         *                           <p>
+         *                           <ul>
+         *                           <li><strong>PayBySpec</strong> (default): Pay by spec.</li>
+         *                           <li><strong>PayByCLCU</strong>: billed by usage.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
@@ -434,9 +483,12 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link LoadBalancerProps#getInstanceChargeType}
          * @param instanceChargeType Property instanceChargeType: Instance billing method.
-         *                           Value:PayBySpec: Pay by spec.
-         *                           PayByCLCU: billed by usage.
-         *                           Default: PayBySpec
+         *                           Valid value:
+         *                           <p>
+         *                           <ul>
+         *                           <li><strong>PayBySpec</strong> (default): Pay by spec.</li>
+         *                           <li><strong>PayByCLCU</strong>: billed by usage.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
@@ -446,7 +498,14 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getInternetChargeType}
-         * @param internetChargeType Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
+         * @param internetChargeType Property internetChargeType: The metering method of the Internet-facing CLB instance.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><strong>paybytraffic</strong> (default): If you set the value to paybytraffic, you do not need to specify Bandwidth. Even if you specify Bandwidth, the value does not take effect.</li>
+         *                           <li><strong>paybybandwidth</strong>: pay-by-bandwidth.
+         *                           <strong>Note</strong> If you set PayType to PayOnDemand and set InstanceChargeType to PayByCLCU, you must set InternetChargeType to paybytraffic.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -456,7 +515,14 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getInternetChargeType}
-         * @param internetChargeType Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
+         * @param internetChargeType Property internetChargeType: The metering method of the Internet-facing CLB instance.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><strong>paybytraffic</strong> (default): If you set the value to paybytraffic, you do not need to specify Bandwidth. Even if you specify Bandwidth, the value does not take effect.</li>
+         *                           <li><strong>paybybandwidth</strong>: pay-by-bandwidth.
+         *                           <strong>Note</strong> If you set PayType to PayOnDemand and set InstanceChargeType to PayByCLCU, you must set InternetChargeType to paybytraffic.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
@@ -488,8 +554,19 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getLoadBalancerSpec}
-         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the Server Load Balancer instance.
-         *                         Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large|slb.s3.xlarge|slb.s3.xxlarge. Default value: slb.s1.small. The supported performance specification in each region is different, two specifications are supported in the US East 1 region. If the region does not support the performance-guaranteed instances, the value will not take effect.
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the CLB instance.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li><strong>slb.s1.small</strong></li>
+         *                         <li><strong>slb.s2.small</strong></li>
+         *                         <li><strong>slb.s2.medium</strong></li>
+         *                         <li><strong>slb.s3.small</strong></li>
+         *                         <li><strong>slb.s3.medium</strong></li>
+         *                         <li><strong>slb.s3.large</strong>
+         *                         <strong>Note</strong> If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
+         *                         If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder loadBalancerSpec(java.lang.String loadBalancerSpec) {
@@ -499,8 +576,19 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getLoadBalancerSpec}
-         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the Server Load Balancer instance.
-         *                         Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large|slb.s3.xlarge|slb.s3.xxlarge. Default value: slb.s1.small. The supported performance specification in each region is different, two specifications are supported in the US East 1 region. If the region does not support the performance-guaranteed instances, the value will not take effect.
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the CLB instance.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li><strong>slb.s1.small</strong></li>
+         *                         <li><strong>slb.s2.small</strong></li>
+         *                         <li><strong>slb.s2.medium</strong></li>
+         *                         <li><strong>slb.s3.small</strong></li>
+         *                         <li><strong>slb.s3.medium</strong></li>
+         *                         <li><strong>slb.s3.large</strong>
+         *                         <strong>Note</strong> If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
+         *                         If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder loadBalancerSpec(com.aliyun.ros.cdk.core.IResolvable loadBalancerSpec) {

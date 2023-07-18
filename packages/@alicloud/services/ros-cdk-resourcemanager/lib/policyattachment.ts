@@ -31,7 +31,7 @@ export interface PolicyAttachmentProps {
     /**
      * Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
      */
-    readonly resourceGroupId: string | ros.IResolvable;
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**

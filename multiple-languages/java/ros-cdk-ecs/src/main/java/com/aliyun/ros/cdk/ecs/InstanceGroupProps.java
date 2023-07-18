@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a <code>ALIYUN::ECS::InstanceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.108Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:01.240Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupProps.Jsii$Proxy.class)
 public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +29,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
      * If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAllocatePublicIp() {
+        return null;
+    }
+
+    /**
+     * Property autoPay: Whether to pay automatically.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
     }
 
@@ -550,6 +557,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object instanceType;
         java.lang.Object maxAmount;
         java.lang.Object allocatePublicIp;
+        java.lang.Object autoPay;
         java.lang.Object autoReleaseTime;
         java.lang.Object autoRenew;
         java.lang.Object autoRenewPeriod;
@@ -686,6 +694,26 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder allocatePublicIp(com.aliyun.ros.cdk.core.IResolvable allocatePublicIp) {
             this.allocatePublicIp = allocatePublicIp;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getAutoPay}
+         * @param autoPay Property autoPay: Whether to pay automatically.
+         * @return {@code this}
+         */
+        public Builder autoPay(java.lang.Boolean autoPay) {
+            this.autoPay = autoPay;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceGroupProps#getAutoPay}
+         * @param autoPay Property autoPay: Whether to pay automatically.
+         * @return {@code this}
+         */
+        public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
+            this.autoPay = autoPay;
             return this;
         }
 
@@ -1967,6 +1995,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object instanceType;
         private final java.lang.Object maxAmount;
         private final java.lang.Object allocatePublicIp;
+        private final java.lang.Object autoPay;
         private final java.lang.Object autoReleaseTime;
         private final java.lang.Object autoRenew;
         private final java.lang.Object autoRenewPeriod;
@@ -2034,6 +2063,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maxAmount = software.amazon.jsii.Kernel.get(this, "maxAmount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.allocatePublicIp = software.amazon.jsii.Kernel.get(this, "allocatePublicIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoReleaseTime = software.amazon.jsii.Kernel.get(this, "autoReleaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2102,6 +2132,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.instanceType = java.util.Objects.requireNonNull(builder.instanceType, "instanceType is required");
             this.maxAmount = java.util.Objects.requireNonNull(builder.maxAmount, "maxAmount is required");
             this.allocatePublicIp = builder.allocatePublicIp;
+            this.autoPay = builder.autoPay;
             this.autoReleaseTime = builder.autoReleaseTime;
             this.autoRenew = builder.autoRenew;
             this.autoRenewPeriod = builder.autoRenewPeriod;
@@ -2178,6 +2209,11 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getAllocatePublicIp() {
             return this.allocatePublicIp;
+        }
+
+        @Override
+        public final java.lang.Object getAutoPay() {
+            return this.autoPay;
         }
 
         @Override
@@ -2472,6 +2508,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getAllocatePublicIp() != null) {
                 data.set("allocatePublicIp", om.valueToTree(this.getAllocatePublicIp()));
             }
+            if (this.getAutoPay() != null) {
+                data.set("autoPay", om.valueToTree(this.getAutoPay()));
+            }
             if (this.getAutoReleaseTime() != null) {
                 data.set("autoReleaseTime", om.valueToTree(this.getAutoReleaseTime()));
             }
@@ -2662,6 +2701,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             if (!instanceType.equals(that.instanceType)) return false;
             if (!maxAmount.equals(that.maxAmount)) return false;
             if (this.allocatePublicIp != null ? !this.allocatePublicIp.equals(that.allocatePublicIp) : that.allocatePublicIp != null) return false;
+            if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
             if (this.autoReleaseTime != null ? !this.autoReleaseTime.equals(that.autoReleaseTime) : that.autoReleaseTime != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
@@ -2726,6 +2766,7 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.instanceType.hashCode());
             result = 31 * result + (this.maxAmount.hashCode());
             result = 31 * result + (this.allocatePublicIp != null ? this.allocatePublicIp.hashCode() : 0);
+            result = 31 * result + (this.autoPay != null ? this.autoPay.hashCode() : 0);
             result = 31 * result + (this.autoReleaseTime != null ? this.autoReleaseTime.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);

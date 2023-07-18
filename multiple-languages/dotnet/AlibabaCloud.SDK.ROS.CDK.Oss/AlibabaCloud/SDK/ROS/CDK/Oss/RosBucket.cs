@@ -307,6 +307,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: redundancyType: Specifies the data disaster recovery type of the storage space. The value range is as follows:
+        /// LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+        /// ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "redundancyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RedundancyType
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: refererConfiguration: undefined
         /// </remarks>
         [JsiiOptional]
@@ -408,6 +441,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         {
             get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>?>();
             set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: versioningConfiguration: A state of versioning
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "versioningConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty\"}]}}", isOptional: true)]
+        public virtual object? VersioningConfiguration
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.IVersioningConfigurationProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.IVersioningConfigurationProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
 
         /// <remarks>
@@ -1945,6 +2009,72 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
                         }
                     }
                     _kmsMasterKeyId = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IVersioningConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty")]
+        public interface IVersioningConfigurationProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: status: Specifies the versioning state of a bucket. Valid values: Enabled and Suspended.
+            /// </remarks>
+            [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Status
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IVersioningConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.IVersioningConfigurationProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: status: Specifies the versioning state of a bucket. Valid values: Enabled and Suspended.
+                /// </remarks>
+                [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Status
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty")]
+        public class VersioningConfigurationProperty : AlibabaCloud.SDK.ROS.CDK.Oss.RosBucket.IVersioningConfigurationProperty
+        {
+            private object _status;
+
+            /// <remarks>
+            /// <strong>Property</strong>: status: Specifies the versioning state of a bucket. Valid values: Enabled and Suspended.
+            /// </remarks>
+            [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Status
+            {
+                get => _status;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _status = value;
                 }
             }
         }

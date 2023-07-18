@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS resource type:  <code>ALIYUN::EMR::Cluster2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.700Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:01.910Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.Cluster2")
 public class Cluster2 extends com.aliyun.ros.cdk.core.Resource {
 
@@ -46,6 +46,13 @@ public class Cluster2 extends com.aliyun.ros.cdk.core.Resource {
     public Cluster2(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.emr.Cluster2Props props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute ApplicationLinks: ApplicationLinks of cluster.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrApplicationLinks() {
+        return software.amazon.jsii.Kernel.get(this, "attrApplicationLinks", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**

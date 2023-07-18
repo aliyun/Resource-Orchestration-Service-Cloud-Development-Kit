@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * A ROS resource type:  <code>ALIYUN::OSS::Bucket</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.579Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.801Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.Bucket")
 public class Bucket extends com.aliyun.ros.cdk.core.Resource {
 
@@ -255,6 +255,35 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property redundancyType: Specifies the data disaster recovery type of the storage space.
+         * <p>
+         * The value range is as follows:
+         * LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+         * ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+         * <p>
+         * @return {@code this}
+         * @param redundancyType Property redundancyType: Specifies the data disaster recovery type of the storage space. This parameter is required.
+         */
+        public Builder redundancyType(final java.lang.String redundancyType) {
+            this.props.redundancyType(redundancyType);
+            return this;
+        }
+        /**
+         * Property redundancyType: Specifies the data disaster recovery type of the storage space.
+         * <p>
+         * The value range is as follows:
+         * LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+         * ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+         * <p>
+         * @return {@code this}
+         * @param redundancyType Property redundancyType: Specifies the data disaster recovery type of the storage space. This parameter is required.
+         */
+        public Builder redundancyType(final com.aliyun.ros.cdk.core.IResolvable redundancyType) {
+            this.props.redundancyType(redundancyType);
+            return this;
+        }
+
+        /**
          * Property refererConfiguration: undefined.
          * <p>
          * @return {@code this}
@@ -329,6 +358,27 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property versioningConfiguration: A state of versioning.
+         * <p>
+         * @return {@code this}
+         * @param versioningConfiguration Property versioningConfiguration: A state of versioning. This parameter is required.
+         */
+        public Builder versioningConfiguration(final com.aliyun.ros.cdk.core.IResolvable versioningConfiguration) {
+            this.props.versioningConfiguration(versioningConfiguration);
+            return this;
+        }
+        /**
+         * Property versioningConfiguration: A state of versioning.
+         * <p>
+         * @return {@code this}
+         * @param versioningConfiguration Property versioningConfiguration: A state of versioning. This parameter is required.
+         */
+        public Builder versioningConfiguration(final com.aliyun.ros.cdk.oss.RosBucket.VersioningConfigurationProperty versioningConfiguration) {
+            this.props.versioningConfiguration(versioningConfiguration);
             return this;
         }
 

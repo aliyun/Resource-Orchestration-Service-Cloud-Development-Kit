@@ -96,6 +96,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: redundancyType: Specifies the data disaster recovery type of the storage space. The value range is as follows:
+        /// LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+        /// ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+        /// </remarks>
+        [JsiiProperty(name: "redundancyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RedundancyType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: refererConfiguration: undefined
         /// </remarks>
         [JsiiProperty(name: "refererConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.RefererConfigurationProperty\"}]}}", isOptional: true)]
@@ -140,6 +155,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         System.Collections.Generic.IDictionary<string, object>? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: versioningConfiguration: A state of versioning
+        /// </remarks>
+        [JsiiProperty(name: "versioningConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? VersioningConfiguration
         {
             get
             {
@@ -238,6 +266,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: redundancyType: Specifies the data disaster recovery type of the storage space. The value range is as follows:
+            /// LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+            /// ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "redundancyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RedundancyType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: refererConfiguration: undefined
             /// </remarks>
             [JsiiOptional]
@@ -275,6 +315,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             public System.Collections.Generic.IDictionary<string, object>? Tags
             {
                 get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: versioningConfiguration: A state of versioning
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "versioningConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty\"}]}}", isOptional: true)]
+            public object? VersioningConfiguration
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

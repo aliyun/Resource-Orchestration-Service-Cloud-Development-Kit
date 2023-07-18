@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * A ROS template type:  <code>ALIYUN::ARMS::ManagedPrometheus</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.843Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:27:59.879Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosManagedPrometheus")
 public class RosManagedPrometheus extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -141,6 +141,24 @@ public class RosManagedPrometheus extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setClusterId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "clusterId", value);
+    }
+
+    /**
+     */
+    public void setClusterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "clusterId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getClusterName() {
         return software.amazon.jsii.Kernel.get(this, "clusterName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -266,6 +284,23 @@ public class RosManagedPrometheus extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param clusterId This parameter is required.
+         */
+        public Builder clusterId(final java.lang.String clusterId) {
+            this.props.clusterId(clusterId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param clusterId This parameter is required.
+         */
+        public Builder clusterId(final com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.props.clusterId(clusterId);
             return this;
         }
 

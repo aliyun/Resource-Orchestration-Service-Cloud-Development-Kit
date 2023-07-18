@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Initialization props for a stage.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.456Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:27:59.457Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.StageProps")
 @software.amazon.jsii.Jsii.Proxy(StageProps.Jsii$Proxy.class)
 public interface StageProps extends software.amazon.jsii.JsiiSerializable {

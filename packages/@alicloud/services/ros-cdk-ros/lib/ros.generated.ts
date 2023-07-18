@@ -2383,7 +2383,7 @@ function RosWaitConditionPropsValidator(properties: any): ros.ValidationResult {
     if(properties.showProgressEvent && (typeof properties.showProgressEvent) !== 'object') {
         errors.collect(ros.propertyValidator('showProgressEvent', ros.validateAllowedValues)({
           data: properties.showProgressEvent,
-          allowedValues: ["EnabledIfCreateStack","Disabled"],
+          allowedValues: ["EnabledIfCreateStack","Disabled","Enabled"],
         }));
     }
     errors.collect(ros.propertyValidator('showProgressEvent', ros.validateString)(properties.showProgressEvent));

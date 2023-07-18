@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dcdn;
 /**
  * Properties for defining a <code>ALIYUN::DCDN::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:27.720Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:00.748Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dcdn.$Module.class, fqn = "@alicloud/ros-cdk-dcdn.DomainProps")
 @software.amazon.jsii.Jsii.Proxy(DomainProps.Jsii$Proxy.class)
 public interface DomainProps extends software.amazon.jsii.JsiiSerializable {

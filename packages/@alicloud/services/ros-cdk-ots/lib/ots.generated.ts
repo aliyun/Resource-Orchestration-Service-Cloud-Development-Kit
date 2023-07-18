@@ -13,7 +13,10 @@ export interface RosInstanceProps {
     readonly instanceName: string | ros.IResolvable;
 
     /**
-     * @Property clusterType: Cluster type, the default is SSD.
+     * @Property clusterType: Cluster type, the default is SSD. 
+     * This parameter specifies the specification of the ots instance.
+     *  When the value is SSD, the ots instance is a high-performance instance.
+     *  When the value is Hybid, the ots instance is a capacity instance
      */
     readonly clusterType?: string | ros.IResolvable;
 
@@ -149,7 +152,10 @@ export class RosInstance extends ros.RosResource {
     public instanceName: string | ros.IResolvable;
 
     /**
-     * @Property clusterType: Cluster type, the default is SSD.
+     * @Property clusterType: Cluster type, the default is SSD. 
+     * This parameter specifies the specification of the ots instance.
+     *  When the value is SSD, the ots instance is a high-performance instance.
+     *  When the value is Hybid, the ots instance is a capacity instance
      */
     public clusterType: string | ros.IResolvable | undefined;
 

@@ -28,15 +28,6 @@ export interface InstanceProps {
     readonly diskType: string | ros.IResolvable;
 
     /**
-     * Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance. 
-     * The default value of this parameter varies with different peak traffic values. 
-     * Additional fees are charged if the default values are exceeded.
-     *  Different specifications have different default values, and extra fees are charged. 
-     * For more information, see Billing.
-     */
-    readonly topicQuota: number | ros.IResolvable;
-
-    /**
      * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. Default is false
      */
     readonly deletionForce?: boolean | ros.IResolvable;
@@ -73,6 +64,15 @@ export interface InstanceProps {
     readonly openConnector?: boolean | ros.IResolvable;
 
     /**
+     * Property partitionNum: Number of partitions(recommended).
+     * The number of partitions to be configured for the Message Queue for Apache Kafka instance. 
+     * PartitionNum and TopicQuota must be selected. 
+     * It is recommended that you only fill in the number of partitions.
+     *
+     */
+    readonly partitionNum?: number | ros.IResolvable;
+
+    /**
      * Property payType: Pay by hour or month.
      */
     readonly payType?: string | ros.IResolvable;
@@ -88,6 +88,18 @@ export interface InstanceProps {
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosInstance.TagsProperty[];
+
+    /**
+     * Property topicQuota: Number of topics (not recommended).
+     * The number of topics to be configured for the Message Queue for Apache Kafka instance. 
+     * PartitionNum and TopicQuota must be selected. 
+     * It is recommended that you only fill in the number of partitions.
+     * The default value of this parameter varies with different peak traffic values. 
+     * Additional fees are charged if the default values are exceeded.
+     *  Different specifications have different default values, and extra fees are charged. 
+     * For more information, see Billing.
+     */
+    readonly topicQuota?: number | ros.IResolvable;
 }
 
 /**
@@ -156,6 +168,7 @@ export class Instance extends ros.Resource {
             specType: props.specType,
             ioMax: props.ioMax,
             payType: props.payType === undefined || props.payType === null ? 'Hour' : props.payType,
+            partitionNum: props.partitionNum,
             diskType: props.diskType,
             deployOption: props.deployOption,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,

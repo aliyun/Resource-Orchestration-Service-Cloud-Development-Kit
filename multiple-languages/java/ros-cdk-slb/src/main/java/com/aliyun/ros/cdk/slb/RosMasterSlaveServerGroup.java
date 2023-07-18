@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  <code>ALIYUN::SLB::MasterSlaveServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.544Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.760Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosMasterSlaveServerGroup")
 public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 

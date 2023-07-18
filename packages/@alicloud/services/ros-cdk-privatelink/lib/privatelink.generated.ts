@@ -834,7 +834,10 @@ export interface RosVpcEndpointServiceAttachmentProps {
     readonly resourceId: string | ros.IResolvable;
 
     /**
-     * @Property resourceType: The resource type.
+     * @Property resourceType: The resource type. Allowed values:
+     * - slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.
+     * - alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.
+     * - nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.
      */
     readonly resourceType: string | ros.IResolvable;
 
@@ -857,6 +860,12 @@ function RosVpcEndpointServiceAttachmentPropsValidator(properties: any): ros.Val
     errors.collect(ros.propertyValidator('resourceId', ros.requiredValidator)(properties.resourceId));
     errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
     errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
+    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
+          data: properties.resourceType,
+          allowedValues: ["slb","alb","nlb"],
+        }));
+    }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
     errors.collect(ros.propertyValidator('serviceId', ros.requiredValidator)(properties.serviceId));
     errors.collect(ros.propertyValidator('serviceId', ros.validateString)(properties.serviceId));
@@ -921,7 +930,10 @@ export class RosVpcEndpointServiceAttachment extends ros.RosResource {
     public resourceId: string | ros.IResolvable;
 
     /**
-     * @Property resourceType: The resource type.
+     * @Property resourceType: The resource type. Allowed values:
+     * - slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.
+     * - alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.
+     * - nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.
      */
     public resourceType: string | ros.IResolvable;
 

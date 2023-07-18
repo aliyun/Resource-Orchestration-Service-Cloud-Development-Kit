@@ -17,3 +17,5 @@ export * from './vpcaccessconfig';
 
 // ALIYUN::ApiGateway Resources:
 export * from './apigateway.generated';
+import * as datasource from './datasource';
+export { datasource };

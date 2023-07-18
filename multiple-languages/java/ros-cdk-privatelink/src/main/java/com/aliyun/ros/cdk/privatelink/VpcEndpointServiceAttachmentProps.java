@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * Properties for defining a <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.780Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointServiceAttachmentProps.Jsii$Proxy.class)
 public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,6 +15,14 @@ public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.
 
     /**
      * Property resourceType: The resource type.
+     * <p>
+     * Allowed values:
+     * <p>
+     * <ul>
+     * <li>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</li>
+     * <li>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</li>
+     * <li>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getResourceType();
 
@@ -60,6 +68,13 @@ public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.
         /**
          * Sets the value of {@link VpcEndpointServiceAttachmentProps#getResourceType}
          * @param resourceType Property resourceType: The resource type. This parameter is required.
+         *                     Allowed values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</li>
+         *                     <li>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</li>
+         *                     <li>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder resourceType(java.lang.String resourceType) {
@@ -70,6 +85,13 @@ public interface VpcEndpointServiceAttachmentProps extends software.amazon.jsii.
         /**
          * Sets the value of {@link VpcEndpointServiceAttachmentProps#getResourceType}
          * @param resourceType Property resourceType: The resource type. This parameter is required.
+         *                     Allowed values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</li>
+         *                     <li>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</li>
+         *                     <li>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder resourceType(com.aliyun.ros.cdk.core.IResolvable resourceType) {

@@ -316,11 +316,6 @@ export class InstanceGroupClone extends ros.Resource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
-
-    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -392,7 +387,6 @@ export class InstanceGroupClone extends ros.Resource {
         this.attrOrderId = rosInstanceGroupClone.attrOrderId;
         this.attrPrivateIps = rosInstanceGroupClone.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroupClone.attrPublicIps;
-        this.attrRelatedOrderIds = rosInstanceGroupClone.attrRelatedOrderIds;
         this.attrZoneIds = rosInstanceGroupClone.attrZoneIds;
     }
 }

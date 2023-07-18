@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * A ROS template type:  <code>ALIYUN::PVTZ::UserVpcAuthorization</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.801Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.060Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.RosUserVpcAuthorization")
 public class RosUserVpcAuthorization extends com.aliyun.ros.cdk.core.RosResource {
 

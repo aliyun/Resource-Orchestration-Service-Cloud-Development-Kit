@@ -270,60 +270,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance.
-        /// The default value of this parameter varies with different peak traffic values.
-        /// Additional fees are charged if the default values are exceeded.
-        /// Different specifications have different default values, and extra fees are charged.
-        /// For more information, see Billing.
-        /// </remarks>
-        [JsiiProperty(name: "topicQuota", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object TopicQuota
-        {
-            get => GetInstanceProperty<object>()!;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case double cast_cd4240:
-                            break;
-                        case byte cast_cd4240:
-                            break;
-                        case decimal cast_cd4240:
-                            break;
-                        case float cast_cd4240:
-                            break;
-                        case int cast_cd4240:
-                            break;
-                        case long cast_cd4240:
-                            break;
-                        case sbyte cast_cd4240:
-                            break;
-                        case short cast_cd4240:
-                            break;
-                        case uint cast_cd4240:
-                            break;
-                        case ulong cast_cd4240:
-                            break;
-                        case ushort cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                SetInstanceProperty(value);
-            }
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. Default is false
         /// </remarks>
         [JsiiOptional]
@@ -555,6 +501,60 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: partitionNum: Number of partitions(recommended).
+        /// The number of partitions to be configured for the Message Queue for Apache Kafka instance.
+        /// PartitionNum and TopicQuota must be selected.
+        /// It is recommended that you only fill in the number of partitions.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? PartitionNum
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: payType: Pay by hour or month.
         /// </remarks>
         [JsiiOptional]
@@ -627,6 +627,64 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Kafka.RosInstance.ITagsProperty[]?>();
             set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: topicQuota: Number of topics (not recommended).
+        /// The number of topics to be configured for the Message Queue for Apache Kafka instance.
+        /// PartitionNum and TopicQuota must be selected.
+        /// It is recommended that you only fill in the number of partitions.
+        /// The default value of this parameter varies with different peak traffic values.
+        /// Additional fees are charged if the default values are exceeded.
+        /// Different specifications have different default values, and extra fees are charged.
+        /// For more information, see Billing.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "topicQuota", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? TopicQuota
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
         }
         [JsiiInterface(nativeType: typeof(IDeployOptionProperty), fullyQualifiedName: "@alicloud/ros-cdk-kafka.RosInstance.DeployOptionProperty")]
         public interface IDeployOptionProperty

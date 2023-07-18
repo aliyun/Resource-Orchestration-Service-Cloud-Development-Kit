@@ -51,10 +51,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Amqp.RosInstance))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: ClassicEndpoint: The classic endpoint of the instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrClassicEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClassicEndpoint
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: InstanceId: The ID of the instance.
         /// </remarks>
         [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: PrivateEndpoint: The private endpoint of the instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrPrivateEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrivateEndpoint
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a <code>ALIYUN::OTS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.591Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.830Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,6 +15,10 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property clusterType: Cluster type, the default is SSD.
+     * <p>
+     * This parameter specifies the specification of the ots instance.
+     * When the value is SSD, the ots instance is a high-performance instance.
+     * When the value is Hybid, the ots instance is a capacity instance
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getClusterType() {
         return null;
@@ -82,6 +86,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InstanceProps#getClusterType}
          * @param clusterType Property clusterType: Cluster type, the default is SSD.
+         *                    This parameter specifies the specification of the ots instance.
+         *                    When the value is SSD, the ots instance is a high-performance instance.
+         *                    When the value is Hybid, the ots instance is a capacity instance
          * @return {@code this}
          */
         public Builder clusterType(java.lang.String clusterType) {
@@ -92,6 +99,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link InstanceProps#getClusterType}
          * @param clusterType Property clusterType: Cluster type, the default is SSD.
+         *                    This parameter specifies the specification of the ots instance.
+         *                    When the value is SSD, the ots instance is a high-performance instance.
+         *                    When the value is Hybid, the ots instance is a capacity instance
          * @return {@code this}
          */
         public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {

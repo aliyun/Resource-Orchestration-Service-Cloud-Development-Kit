@@ -5474,6 +5474,11 @@ export interface RosInstanceGroupProps {
     readonly allocatePublicIp?: boolean | ros.IResolvable;
 
     /**
+     * @Property autoPay: Whether to pay automatically.
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
      * @Property autoReleaseTime: Auto release time for created instance, Follow ISO8601 standard using UTC time. format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
      */
     readonly autoReleaseTime?: string | ros.IResolvable;
@@ -6002,6 +6007,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
@@ -6039,6 +6045,7 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
       MaxAmount: ros.numberToRosTemplate(properties.maxAmount),
       AllocatePublicIP: ros.booleanToRosTemplate(properties.allocatePublicIp),
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
       AutoReleaseTime: ros.stringToRosTemplate(properties.autoReleaseTime),
       AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
       AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
@@ -6179,6 +6186,11 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip. If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
      */
     public allocatePublicIp: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoPay: Whether to pay automatically.
+     */
+    public autoPay: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property autoReleaseTime: Auto release time for created instance, Follow ISO8601 standard using UTC time. format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
@@ -6523,6 +6535,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.instanceType = props.instanceType;
         this.maxAmount = props.maxAmount;
         this.allocatePublicIp = props.allocatePublicIp;
+        this.autoPay = props.autoPay;
         this.autoReleaseTime = props.autoReleaseTime;
         this.autoRenew = props.autoRenew;
         this.autoRenewPeriod = props.autoRenewPeriod;
@@ -6588,6 +6601,7 @@ export class RosInstanceGroup extends ros.RosResource {
             instanceType: this.instanceType,
             maxAmount: this.maxAmount,
             allocatePublicIp: this.allocatePublicIp,
+            autoPay: this.autoPay,
             autoReleaseTime: this.autoReleaseTime,
             autoRenew: this.autoRenew,
             autoRenewPeriod: this.autoRenewPeriod,
@@ -7519,11 +7533,6 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
-     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
-
-    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -7804,7 +7813,6 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
-        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;

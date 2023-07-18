@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * Properties for defining a <code>ALIYUN::OSS::Bucket</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.581Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.803Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.BucketProps")
 @software.amazon.jsii.Jsii.Proxy(BucketProps.Jsii$Proxy.class)
 public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
@@ -58,6 +58,17 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property redundancyType: Specifies the data disaster recovery type of the storage space.
+     * <p>
+     * The value range is as follows:
+     * LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+     * ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRedundancyType() {
+        return null;
+    }
+
+    /**
      * Property refererConfiguration: undefined.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRefererConfiguration() {
@@ -88,6 +99,13 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property versioningConfiguration: A state of versioning.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVersioningConfiguration() {
+        return null;
+    }
+
+    /**
      * Property websiteConfiguration: The properties of website config.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWebsiteConfiguration() {
@@ -111,10 +129,12 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object lifecycleConfiguration;
         java.lang.Object loggingConfiguration;
         java.lang.Object policy;
+        java.lang.Object redundancyType;
         java.lang.Object refererConfiguration;
         java.lang.Object serverSideEncryptionConfiguration;
         java.lang.Object storageClass;
         java.util.Map<java.lang.String, java.lang.Object> tags;
+        java.lang.Object versioningConfiguration;
         java.lang.Object websiteConfiguration;
 
         /**
@@ -260,6 +280,32 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link BucketProps#getRedundancyType}
+         * @param redundancyType Property redundancyType: Specifies the data disaster recovery type of the storage space.
+         *                       The value range is as follows:
+         *                       LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+         *                       ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+         * @return {@code this}
+         */
+        public Builder redundancyType(java.lang.String redundancyType) {
+            this.redundancyType = redundancyType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link BucketProps#getRedundancyType}
+         * @param redundancyType Property redundancyType: Specifies the data disaster recovery type of the storage space.
+         *                       The value range is as follows:
+         *                       LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+         *                       ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+         * @return {@code this}
+         */
+        public Builder redundancyType(com.aliyun.ros.cdk.core.IResolvable redundancyType) {
+            this.redundancyType = redundancyType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BucketProps#getRefererConfiguration}
          * @param refererConfiguration Property refererConfiguration: undefined.
          * @return {@code this}
@@ -333,6 +379,26 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link BucketProps#getVersioningConfiguration}
+         * @param versioningConfiguration Property versioningConfiguration: A state of versioning.
+         * @return {@code this}
+         */
+        public Builder versioningConfiguration(com.aliyun.ros.cdk.core.IResolvable versioningConfiguration) {
+            this.versioningConfiguration = versioningConfiguration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link BucketProps#getVersioningConfiguration}
+         * @param versioningConfiguration Property versioningConfiguration: A state of versioning.
+         * @return {@code this}
+         */
+        public Builder versioningConfiguration(com.aliyun.ros.cdk.oss.RosBucket.VersioningConfigurationProperty versioningConfiguration) {
+            this.versioningConfiguration = versioningConfiguration;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BucketProps#getWebsiteConfiguration}
          * @param websiteConfiguration Property websiteConfiguration: The properties of website config.
          * @return {@code this}
@@ -375,10 +441,12 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object lifecycleConfiguration;
         private final java.lang.Object loggingConfiguration;
         private final java.lang.Object policy;
+        private final java.lang.Object redundancyType;
         private final java.lang.Object refererConfiguration;
         private final java.lang.Object serverSideEncryptionConfiguration;
         private final java.lang.Object storageClass;
         private final java.util.Map<java.lang.String, java.lang.Object> tags;
+        private final java.lang.Object versioningConfiguration;
         private final java.lang.Object websiteConfiguration;
 
         /**
@@ -394,10 +462,12 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             this.lifecycleConfiguration = software.amazon.jsii.Kernel.get(this, "lifecycleConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loggingConfiguration = software.amazon.jsii.Kernel.get(this, "loggingConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.redundancyType = software.amazon.jsii.Kernel.get(this, "redundancyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.refererConfiguration = software.amazon.jsii.Kernel.get(this, "refererConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverSideEncryptionConfiguration = software.amazon.jsii.Kernel.get(this, "serverSideEncryptionConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageClass = software.amazon.jsii.Kernel.get(this, "storageClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
+            this.versioningConfiguration = software.amazon.jsii.Kernel.get(this, "versioningConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.websiteConfiguration = software.amazon.jsii.Kernel.get(this, "websiteConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -414,10 +484,12 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             this.lifecycleConfiguration = builder.lifecycleConfiguration;
             this.loggingConfiguration = builder.loggingConfiguration;
             this.policy = builder.policy;
+            this.redundancyType = builder.redundancyType;
             this.refererConfiguration = builder.refererConfiguration;
             this.serverSideEncryptionConfiguration = builder.serverSideEncryptionConfiguration;
             this.storageClass = builder.storageClass;
             this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
+            this.versioningConfiguration = builder.versioningConfiguration;
             this.websiteConfiguration = builder.websiteConfiguration;
         }
 
@@ -457,6 +529,11 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getRedundancyType() {
+            return this.redundancyType;
+        }
+
+        @Override
         public final java.lang.Object getRefererConfiguration() {
             return this.refererConfiguration;
         }
@@ -474,6 +551,11 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.util.Map<java.lang.String, java.lang.Object> getTags() {
             return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getVersioningConfiguration() {
+            return this.versioningConfiguration;
         }
 
         @Override
@@ -506,6 +588,9 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPolicy() != null) {
                 data.set("policy", om.valueToTree(this.getPolicy()));
             }
+            if (this.getRedundancyType() != null) {
+                data.set("redundancyType", om.valueToTree(this.getRedundancyType()));
+            }
             if (this.getRefererConfiguration() != null) {
                 data.set("refererConfiguration", om.valueToTree(this.getRefererConfiguration()));
             }
@@ -517,6 +602,9 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
+            }
+            if (this.getVersioningConfiguration() != null) {
+                data.set("versioningConfiguration", om.valueToTree(this.getVersioningConfiguration()));
             }
             if (this.getWebsiteConfiguration() != null) {
                 data.set("websiteConfiguration", om.valueToTree(this.getWebsiteConfiguration()));
@@ -546,10 +634,12 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             if (this.lifecycleConfiguration != null ? !this.lifecycleConfiguration.equals(that.lifecycleConfiguration) : that.lifecycleConfiguration != null) return false;
             if (this.loggingConfiguration != null ? !this.loggingConfiguration.equals(that.loggingConfiguration) : that.loggingConfiguration != null) return false;
             if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
+            if (this.redundancyType != null ? !this.redundancyType.equals(that.redundancyType) : that.redundancyType != null) return false;
             if (this.refererConfiguration != null ? !this.refererConfiguration.equals(that.refererConfiguration) : that.refererConfiguration != null) return false;
             if (this.serverSideEncryptionConfiguration != null ? !this.serverSideEncryptionConfiguration.equals(that.serverSideEncryptionConfiguration) : that.serverSideEncryptionConfiguration != null) return false;
             if (this.storageClass != null ? !this.storageClass.equals(that.storageClass) : that.storageClass != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.versioningConfiguration != null ? !this.versioningConfiguration.equals(that.versioningConfiguration) : that.versioningConfiguration != null) return false;
             return this.websiteConfiguration != null ? this.websiteConfiguration.equals(that.websiteConfiguration) : that.websiteConfiguration == null;
         }
 
@@ -562,10 +652,12 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.lifecycleConfiguration != null ? this.lifecycleConfiguration.hashCode() : 0);
             result = 31 * result + (this.loggingConfiguration != null ? this.loggingConfiguration.hashCode() : 0);
             result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);
+            result = 31 * result + (this.redundancyType != null ? this.redundancyType.hashCode() : 0);
             result = 31 * result + (this.refererConfiguration != null ? this.refererConfiguration.hashCode() : 0);
             result = 31 * result + (this.serverSideEncryptionConfiguration != null ? this.serverSideEncryptionConfiguration.hashCode() : 0);
             result = 31 * result + (this.storageClass != null ? this.storageClass.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.versioningConfiguration != null ? this.versioningConfiguration.hashCode() : 0);
             result = 31 * result + (this.websiteConfiguration != null ? this.websiteConfiguration.hashCode() : 0);
             return result;
         }

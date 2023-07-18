@@ -106,13 +106,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute RelatedOrderIds: The related order id list of created ecs instances.</summary>
-        [JsiiProperty(name: "attrRelatedOrderIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRelatedOrderIds
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
-        }
-
         /// <summary>Attribute ZoneIds: Zone id of created instances.</summary>
         [JsiiProperty(name: "attrZoneIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneIds

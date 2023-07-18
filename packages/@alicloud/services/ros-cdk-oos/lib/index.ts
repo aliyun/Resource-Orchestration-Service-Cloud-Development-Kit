@@ -6,3 +6,5 @@ export * from './template';
 
 // ALIYUN::OOS Resources:
 export * from './oos.generated';
+import * as datasource from './datasource';
+export { datasource };

@@ -1,0 +1,8 @@
+export * from './instance';
+export * from './instanceendpointaclpolicy';
+export * from './namespace';
+export * from './repository';
+export * from './userinfo';
+export * from './cr.generated';
+import * as datasource from './datasource';
+export { datasource };

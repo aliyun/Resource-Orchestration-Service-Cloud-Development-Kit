@@ -39,19 +39,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             get;
         }
 
-        /// <summary>Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance.</summary>
-        /// <remarks>
-        /// The default value of this parameter varies with different peak traffic values.
-        /// Additional fees are charged if the default values are exceeded.
-        /// Different specifications have different default values, and extra fees are charged.
-        /// For more information, see Billing.
-        /// </remarks>
-        [JsiiProperty(name: "topicQuota", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object TopicQuota
-        {
-            get;
-        }
-
         /// <summary>Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.</summary>
         /// <remarks>
         /// Default is false
@@ -131,6 +118,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             }
         }
 
+        /// <summary>Property partitionNum: Number of partitions(recommended).</summary>
+        /// <remarks>
+        /// The number of partitions to be configured for the Message Queue for Apache Kafka instance.
+        /// PartitionNum and TopicQuota must be selected.
+        /// It is recommended that you only fill in the number of partitions.
+        /// </remarks>
+        [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PartitionNum
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property payType: Pay by hour or month.</summary>
         [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -165,6 +168,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         AlibabaCloud.SDK.ROS.CDK.Kafka.RosInstance.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property topicQuota: Number of topics (not recommended).</summary>
+        /// <remarks>
+        /// The number of topics to be configured for the Message Queue for Apache Kafka instance.
+        /// PartitionNum and TopicQuota must be selected.
+        /// It is recommended that you only fill in the number of partitions.
+        /// The default value of this parameter varies with different peak traffic values.
+        /// Additional fees are charged if the default values are exceeded.
+        /// Different specifications have different default values, and extra fees are charged.
+        /// For more information, see Billing.
+        /// </remarks>
+        [JsiiProperty(name: "topicQuota", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TopicQuota
         {
             get
             {
@@ -207,19 +230,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             /// </remarks>
             [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DiskType
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance.</summary>
-            /// <remarks>
-            /// The default value of this parameter varies with different peak traffic values.
-            /// Additional fees are charged if the default values are exceeded.
-            /// Different specifications have different default values, and extra fees are charged.
-            /// For more information, see Billing.
-            /// </remarks>
-            [JsiiProperty(name: "topicQuota", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object TopicQuota
             {
                 get => GetInstanceProperty<object>()!;
             }
@@ -285,6 +295,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property partitionNum: Number of partitions(recommended).</summary>
+            /// <remarks>
+            /// The number of partitions to be configured for the Message Queue for Apache Kafka instance.
+            /// PartitionNum and TopicQuota must be selected.
+            /// It is recommended that you only fill in the number of partitions.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PartitionNum
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property payType: Pay by hour or month.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -315,6 +338,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             public AlibabaCloud.SDK.ROS.CDK.Kafka.RosInstance.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Kafka.RosInstance.ITagsProperty[]?>();
+            }
+
+            /// <summary>Property topicQuota: Number of topics (not recommended).</summary>
+            /// <remarks>
+            /// The number of topics to be configured for the Message Queue for Apache Kafka instance.
+            /// PartitionNum and TopicQuota must be selected.
+            /// It is recommended that you only fill in the number of partitions.
+            /// The default value of this parameter varies with different peak traffic values.
+            /// Additional fees are charged if the default values are exceeded.
+            /// Different specifications have different default values, and extra fees are charged.
+            /// For more information, see Billing.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "topicQuota", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TopicQuota
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

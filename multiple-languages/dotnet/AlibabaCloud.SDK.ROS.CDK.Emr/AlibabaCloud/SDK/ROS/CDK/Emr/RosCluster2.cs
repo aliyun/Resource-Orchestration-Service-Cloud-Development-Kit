@@ -51,6 +51,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Emr.RosCluster2))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: ApplicationLinks: ApplicationLinks of cluster.
+        /// </remarks>
+        [JsiiProperty(name: "attrApplicationLinks", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrApplicationLinks
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: ClusterId: Cluster ID.
         /// </remarks>
         [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

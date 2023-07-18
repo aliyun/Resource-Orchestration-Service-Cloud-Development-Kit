@@ -43,6 +43,13 @@ export interface RosBucketProps {
     readonly policy?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * @Property redundancyType: Specifies the data disaster recovery type of the storage space. The value range is as follows:
+     * LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+     * ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+     */
+    readonly redundancyType?: string | ros.IResolvable;
+
+    /**
      * @Property refererConfiguration: undefined
      */
     readonly refererConfiguration?: RosBucket.RefererConfigurationProperty | ros.IResolvable;
@@ -63,6 +70,11 @@ export interface RosBucketProps {
     readonly tags?: { [key: string]: (any) };
 
     /**
+     * @Property versioningConfiguration: A state of versioning
+     */
+    readonly versioningConfiguration?: RosBucket.VersioningConfigurationProperty | ros.IResolvable;
+
+    /**
      * @Property websiteConfiguration: The properties of website config.
      */
     readonly websiteConfiguration?: RosBucket.WebsiteConfigurationProperty | ros.IResolvable;
@@ -79,22 +91,24 @@ function RosBucketPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('policy', ros.hashValidator(ros.validateAny))(properties.policy));
-    errors.collect(ros.propertyValidator('corsConfiguration', RosBucket_CORSConfigurationPropertyValidator)(properties.corsConfiguration));
-    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
-    errors.collect(ros.propertyValidator('bucketName', ros.requiredValidator)(properties.bucketName));
-    errors.collect(ros.propertyValidator('bucketName', ros.validateString)(properties.bucketName));
     if(properties.storageClass && (typeof properties.storageClass) !== 'object') {
         errors.collect(ros.propertyValidator('storageClass', ros.validateAllowedValues)({
           data: properties.storageClass,
-          allowedValues: ["Standard","IA","Archive"],
+          allowedValues: ["Standard","IA","Archive","ColdArchive"],
         }));
     }
     errors.collect(ros.propertyValidator('storageClass', ros.validateString)(properties.storageClass));
-    errors.collect(ros.propertyValidator('loggingConfiguration', RosBucket_LoggingConfigurationPropertyValidator)(properties.loggingConfiguration));
+    if(properties.redundancyType && (typeof properties.redundancyType) !== 'object') {
+        errors.collect(ros.propertyValidator('redundancyType', ros.validateAllowedValues)({
+          data: properties.redundancyType,
+          allowedValues: ["LRS","ZRS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('redundancyType', ros.validateString)(properties.redundancyType));
     errors.collect(ros.propertyValidator('websiteConfiguration', RosBucket_WebsiteConfigurationPropertyValidator)(properties.websiteConfiguration));
-    errors.collect(ros.propertyValidator('refererConfiguration', RosBucket_RefererConfigurationPropertyValidator)(properties.refererConfiguration));
     errors.collect(ros.propertyValidator('lifecycleConfiguration', RosBucket_LifecycleConfigurationPropertyValidator)(properties.lifecycleConfiguration));
     errors.collect(ros.propertyValidator('serverSideEncryptionConfiguration', RosBucket_ServerSideEncryptionConfigurationPropertyValidator)(properties.serverSideEncryptionConfiguration));
+    errors.collect(ros.propertyValidator('versioningConfiguration', RosBucket_VersioningConfigurationPropertyValidator)(properties.versioningConfiguration));
     if(properties.accessControl && (typeof properties.accessControl) !== 'object') {
         errors.collect(ros.propertyValidator('accessControl', ros.validateAllowedValues)({
           data: properties.accessControl,
@@ -102,6 +116,12 @@ function RosBucketPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('accessControl', ros.validateString)(properties.accessControl));
+    errors.collect(ros.propertyValidator('corsConfiguration', RosBucket_CORSConfigurationPropertyValidator)(properties.corsConfiguration));
+    errors.collect(ros.propertyValidator('bucketName', ros.requiredValidator)(properties.bucketName));
+    errors.collect(ros.propertyValidator('bucketName', ros.validateString)(properties.bucketName));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('loggingConfiguration', RosBucket_LoggingConfigurationPropertyValidator)(properties.loggingConfiguration));
+    errors.collect(ros.propertyValidator('refererConfiguration', RosBucket_RefererConfigurationPropertyValidator)(properties.refererConfiguration));
     errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosBucketProps"');
 }
@@ -127,10 +147,12 @@ function rosBucketPropsToRosTemplate(properties: any, enableResourcePropertyCons
       LifecycleConfiguration: rosBucketLifecycleConfigurationPropertyToRosTemplate(properties.lifecycleConfiguration),
       LoggingConfiguration: rosBucketLoggingConfigurationPropertyToRosTemplate(properties.loggingConfiguration),
       Policy: ros.hashMapper(ros.objectToRosTemplate)(properties.policy),
+      RedundancyType: ros.stringToRosTemplate(properties.redundancyType),
       RefererConfiguration: rosBucketRefererConfigurationPropertyToRosTemplate(properties.refererConfiguration),
       ServerSideEncryptionConfiguration: rosBucketServerSideEncryptionConfigurationPropertyToRosTemplate(properties.serverSideEncryptionConfiguration),
       StorageClass: ros.stringToRosTemplate(properties.storageClass),
       Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      VersioningConfiguration: rosBucketVersioningConfigurationPropertyToRosTemplate(properties.versioningConfiguration),
       WebsiteConfiguration: rosBucketWebsiteConfigurationPropertyToRosTemplate(properties.websiteConfiguration),
     };
 }
@@ -203,6 +225,13 @@ export class RosBucket extends ros.RosResource {
     public policy: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
+     * @Property redundancyType: Specifies the data disaster recovery type of the storage space. The value range is as follows:
+     * LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+     * ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+     */
+    public redundancyType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property refererConfiguration: undefined
      */
     public refererConfiguration: RosBucket.RefererConfigurationProperty | ros.IResolvable | undefined;
@@ -221,6 +250,11 @@ export class RosBucket extends ros.RosResource {
      * @Property tags: Bucket tags in k-v pairs format.
      */
     public tags: { [key: string]: (any) } | undefined;
+
+    /**
+     * @Property versioningConfiguration: A state of versioning
+     */
+    public versioningConfiguration: RosBucket.VersioningConfigurationProperty | ros.IResolvable | undefined;
 
     /**
      * @Property websiteConfiguration: The properties of website config.
@@ -248,10 +282,12 @@ export class RosBucket extends ros.RosResource {
         this.lifecycleConfiguration = props.lifecycleConfiguration;
         this.loggingConfiguration = props.loggingConfiguration;
         this.policy = props.policy;
+        this.redundancyType = props.redundancyType;
         this.refererConfiguration = props.refererConfiguration;
         this.serverSideEncryptionConfiguration = props.serverSideEncryptionConfiguration;
         this.storageClass = props.storageClass;
         this.tags = props.tags;
+        this.versioningConfiguration = props.versioningConfiguration;
         this.websiteConfiguration = props.websiteConfiguration;
     }
 
@@ -265,10 +301,12 @@ export class RosBucket extends ros.RosResource {
             lifecycleConfiguration: this.lifecycleConfiguration,
             loggingConfiguration: this.loggingConfiguration,
             policy: this.policy,
+            redundancyType: this.redundancyType,
             refererConfiguration: this.refererConfiguration,
             serverSideEncryptionConfiguration: this.serverSideEncryptionConfiguration,
             storageClass: this.storageClass,
             tags: this.tags,
+            versioningConfiguration: this.versioningConfiguration,
             websiteConfiguration: this.websiteConfiguration,
         };
     }
@@ -736,6 +774,54 @@ function rosBucketServerSideEncryptionConfigurationPropertyToRosTemplate(propert
     return {
       SSEAlgorithm: ros.stringToRosTemplate(properties.sseAlgorithm),
       KMSMasterKeyID: ros.stringToRosTemplate(properties.kmsMasterKeyId),
+    };
+}
+
+export namespace RosBucket {
+    /**
+     * @stability external
+     */
+    export interface VersioningConfigurationProperty {
+        /**
+         * @Property status: Specifies the versioning state of a bucket. Valid values: Enabled and Suspended.
+         */
+        readonly status: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `VersioningConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `VersioningConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucket_VersioningConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('status', ros.requiredValidator)(properties.status));
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["Enabled","Suspended"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    return errors.wrap('supplied properties not correct for "VersioningConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::Bucket.VersioningConfiguration` resource
+ *
+ * @param properties - the TypeScript properties of a `VersioningConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::Bucket.VersioningConfiguration` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketVersioningConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucket_VersioningConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      Status: ros.stringToRosTemplate(properties.status),
     };
 }
 

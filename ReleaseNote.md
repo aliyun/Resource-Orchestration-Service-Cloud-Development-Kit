@@ -1,4 +1,29 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
+
+## [ros-cdk-cli 1.0.41] (2023-07-18)
+
+### Features
+
+-  CDK supports DataSource resource.
+
+## [ros-cdk-cli 1.0.39~1.0.40] (2023-06-28)
+
+### Features
+
+-  Parameters support aosscationproperty enumerated types.
+
+## [ros-cdk-cli 1.0.37~1.0.38] (2023-02-13)
+
+### Features
+
+-  Update ROS resource sdk packages.
+
+## [ros-cdk-cli 1.0.36] (2022-11-30)
+
+### Bug Fixes
+
+-  Fix security issues, TemplateBody is encoded and escaped.
+
 ## [ros-cdk-cli 1.0.35] (2022-11-22)
 
 ### Features

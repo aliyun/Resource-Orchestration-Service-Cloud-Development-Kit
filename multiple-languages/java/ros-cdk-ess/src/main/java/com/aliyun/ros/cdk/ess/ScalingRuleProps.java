@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a <code>ALIYUN::ESS::ScalingRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.876Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.092Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingRuleProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingRuleProps.Jsii$Proxy.class)
 public interface ScalingRuleProps extends software.amazon.jsii.JsiiSerializable {

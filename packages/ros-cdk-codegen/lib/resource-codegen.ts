@@ -61,9 +61,17 @@ export default class ResourceCodeGenerator {
     const rosName = SpecName.parse(resourceName);
     const rosReourceName = genspec.CodeName.forRosResource(rosName, this.affix);
     const resourceCodeName = genspec.CodeName.forResource(rosName, this.affix);
-    this.code.line(
-      `import { ${RESOURCE_CLASS_PREFIX}${rosName.resourceName} } from './${resourceCodeName.packageName}.generated';`,
-    );
+    if (resourceCodeName.packageName === 'eip') {
+      // 处理DATASOURCE::EIP::Addresses 这个原属于VPC的特殊资源
+      this.code.line(
+          `import { ${RESOURCE_CLASS_PREFIX}${rosName.resourceName} } from './vpc.generated';`,
+      );
+    } else
+    {
+      this.code.line(
+          `import { ${RESOURCE_CLASS_PREFIX}${rosName.resourceName} } from './${resourceCodeName.packageName}.generated';`,
+      );
+    }
     this.code.line('// Generated from the AliCloud ROS Resource Specification');
     this.code.line(`export { ${RESOURCE_CLASS_PREFIX}${rosName.resourceName} as ${rosName.resourceName}Property };`);
     this.code.line();

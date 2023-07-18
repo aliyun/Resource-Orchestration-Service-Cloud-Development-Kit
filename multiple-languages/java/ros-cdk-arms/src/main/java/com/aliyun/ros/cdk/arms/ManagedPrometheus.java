@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * A ROS resource type:  <code>ALIYUN::ARMS::ManagedPrometheus</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.836Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:27:59.870Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.ManagedPrometheus")
 public class ManagedPrometheus extends com.aliyun.ros.cdk.core.Resource {
 
@@ -99,6 +99,8 @@ public class ManagedPrometheus extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property clusterType: The type of the cluster.
          * <p>
+         * Currently, only ask, ecs and one clusters are supported. Default is ecs.
+         * <p>
          * @return {@code this}
          * @param clusterType Property clusterType: The type of the cluster. This parameter is required.
          */
@@ -108,6 +110,8 @@ public class ManagedPrometheus extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property clusterType: The type of the cluster.
+         * <p>
+         * Currently, only ask, ecs and one clusters are supported. Default is ecs.
          * <p>
          * @return {@code this}
          * @param clusterType Property clusterType: The type of the cluster. This parameter is required.
@@ -181,7 +185,30 @@ public class ManagedPrometheus extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.
+         * <p>
+         * @return {@code this}
+         * @param clusterId Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes. This parameter is required.
+         */
+        public Builder clusterId(final java.lang.String clusterId) {
+            this.props.clusterId(clusterId);
+            return this;
+        }
+        /**
+         * Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.
+         * <p>
+         * @return {@code this}
+         * @param clusterId Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes. This parameter is required.
+         */
+        public Builder clusterId(final com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.props.clusterId(clusterId);
+            return this;
+        }
+
+        /**
          * Property clusterName: The name of the cluster.
+         * <p>
+         * Required when the ClusterType is ecs.
          * <p>
          * @return {@code this}
          * @param clusterName Property clusterName: The name of the cluster. This parameter is required.
@@ -192,6 +219,8 @@ public class ManagedPrometheus extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property clusterName: The name of the cluster.
+         * <p>
+         * Required when the ClusterType is ecs.
          * <p>
          * @return {@code this}
          * @param clusterName Property clusterName: The name of the cluster. This parameter is required.

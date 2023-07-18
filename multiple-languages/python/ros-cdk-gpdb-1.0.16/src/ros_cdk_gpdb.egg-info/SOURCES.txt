@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+NOTICE
+README.md
+pyproject.toml
+setup.py
+src/ros_cdk_gpdb/__init__.py
+src/ros_cdk_gpdb/py.typed
+src/ros_cdk_gpdb.egg-info/PKG-INFO
+src/ros_cdk_gpdb.egg-info/SOURCES.txt
+src/ros_cdk_gpdb.egg-info/dependency_links.txt
+src/ros_cdk_gpdb.egg-info/requires.txt
+src/ros_cdk_gpdb.egg-info/top_level.txt
+src/ros_cdk_gpdb/_jsii/__init__.py
+src/ros_cdk_gpdb/_jsii/ros-cdk-gpdb@1.0.16.jsii.tgz

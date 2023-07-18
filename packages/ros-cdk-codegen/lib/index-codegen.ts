@@ -21,13 +21,17 @@ export default class IndexCodeGenerator {
     this.code.openFile(this.outputFile);
   }
 
-  public async emitCode() {
+  public async emitCode(hasDataSource: boolean) {
     for (let fileName of this.fileNames) {
       this.code.line(`export * from './${fileName}';`);
     }
     this.code.line();
     this.code.line(`// ${this.typeName} Resources:`);
     this.code.line(`export * from './${this.moduleName}.generated';`);
+    if (hasDataSource) {
+      this.code.line(`import * as datasource from './datasource';`);
+      this.code.line(`export { datasource };`);
+    }
   }
 
   /**
