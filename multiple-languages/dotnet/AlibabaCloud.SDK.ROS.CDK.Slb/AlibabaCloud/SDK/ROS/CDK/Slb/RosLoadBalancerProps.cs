@@ -44,7 +44,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         private object? _addressType;
 
         /// <remarks>
-        /// <strong>Property</strong>: addressType: Loader balancer address type. Support 'internet' and 'intranet' only, default is 'internet'.
+        /// <strong>Property</strong>: addressType: The network type of the CLB instance. Valid values:
+        /// - **internet** (default): After an internet-facing CLB instance is created, the system assigns a public IP address to the CLB instance. Then, the CLB instance can forward requests over the Internet.
+        /// - **intranet**: After an internal-facing CLB instance is created, the system assigns a private IP address to the CLB instance. Then, the CLB instance can forward requests only over the internal networks.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "addressType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -77,8 +79,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         private object? _autoPay;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoPay: Optional. Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
-        /// Valid values: true | false. Default true.
+        /// <strong>Property</strong>: autoPay: Specifies whether to automatically pay for the subscription Internet-facing CLB instance. Valid values:
+        /// - **true**: automatically pays for the CLB instance. After you call this operation, the system automatically completes the payment and creates the CLB instance.- **false** (default): After you call the operation, the order is created but the payment is not completed. You can view the pending order in the console. The CLB instance will not be created until you complete the payment.**Note** This parameter is supported only by subscription instances created on the Alibaba Cloud China site.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -111,7 +113,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         private object? _autoRenew;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+        /// <strong>Property</strong>: autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:- **true**: Automatic renewal is enabled.- **false** (default): Automatic renewal is not enabled. You must renew the instance manually.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -341,9 +343,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         private object? _instanceChargeType;
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
-        /// PayByCLCU: billed by usage.
-        /// Default: PayBySpec
+        /// <strong>Property</strong>: instanceChargeType: Instance billing method. Valid value:
+        /// - **PayBySpec** (default): Pay by spec.
+        /// - **PayByCLCU**: billed by usage.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -376,7 +378,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         private object? _internetChargeType;
 
         /// <remarks>
-        /// <strong>Property</strong>: internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
+        /// <strong>Property</strong>: internetChargeType: The metering method of the Internet-facing CLB instance. Valid values:
+        /// - **paybytraffic** (default): If you set the value to paybytraffic, you do not need to specify Bandwidth. Even if you specify Bandwidth, the value does not take effect.
+        /// - **paybybandwidth**: pay-by-bandwidth.
+        /// **Note** If you set PayType to PayOnDemand and set InstanceChargeType to PayByCLCU, you must set InternetChargeType to paybytraffic.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -442,7 +447,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         private object? _loadBalancerSpec;
 
         /// <remarks>
-        /// <strong>Property</strong>: loadBalancerSpec: The specification of the Server Load Balancer instance. Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large|slb.s3.xlarge|slb.s3.xxlarge. Default value: slb.s1.small. The supported performance specification in each region is different, two specifications are supported in the US East 1 region. If the region does not support the performance-guaranteed instances, the value will not take effect.
+        /// <strong>Property</strong>: loadBalancerSpec: The specification of the CLB instance. Valid values:
+        /// - **slb.s1.small**
+        /// - **slb.s2.small**
+        /// - **slb.s2.medium**
+        /// - **slb.s3.small**
+        /// - **slb.s3.medium**
+        /// - **slb.s3.large**
+        /// **Note** If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
+        /// If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "loadBalancerSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

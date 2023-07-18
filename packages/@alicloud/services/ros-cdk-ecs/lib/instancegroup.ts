@@ -29,6 +29,11 @@ export interface InstanceGroupProps {
     readonly allocatePublicIp?: boolean | ros.IResolvable;
 
     /**
+     * Property autoPay: Whether to pay automatically.
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
      * Property autoReleaseTime: Auto release time for created instance, Follow ISO8601 standard using UTC time. format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
      */
     readonly autoReleaseTime?: string | ros.IResolvable;
@@ -471,6 +476,7 @@ export class InstanceGroup extends ros.Resource {
             zoneId: props.zoneId,
             hpcClusterId: props.hpcClusterId,
             securityGroupId: props.securityGroupId,
+            autoPay: props.autoPay,
             systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
             eniMappings: props.eniMappings,
             systemDiskBurstingEnabled: props.systemDiskBurstingEnabled,

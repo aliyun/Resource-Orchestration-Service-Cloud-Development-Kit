@@ -1262,3 +1262,299 @@ export class RosNacosService extends ros.RosResource {
         return rosNacosServicePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `ALIYUN::MSE::ServiceSource`
+ */
+export interface RosServiceSourceProps {
+
+    /**
+     * @Property gatewayUniqueId: The unique ID of the gateway.
+     */
+    readonly gatewayUniqueId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name.
+     * If Source=K8S, this parameter specifies the name of the ACK cluster.
+     * If Source=MSE, this parameter specifies the ID of the Nacos instance.
+     * If Source=MSE_ZK, this parameter specifies the ID of the ZooKeeper instance.
+     * If Source=EDAS, this parameter specifies the ID of the EDAS namespace.
+     * If Source=SAE, this parameter specifies the ID of the SAE namespace.
+     */
+    readonly name: string | ros.IResolvable;
+
+    /**
+     * @Property source: The service source. Valid values:
+     * K8S: ACK cluster
+     * MSE: MSE Nacos instance
+     */
+    readonly source: string | ros.IResolvable;
+
+    /**
+     * @Property address: Registration Address. If not specified, it will be automatically generated based on the selected instance.
+     */
+    readonly address?: string | ros.IResolvable;
+
+    /**
+     * @Property groupList: The list of service groups. This is required when Source=EDAS.
+     */
+    readonly groupList?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ingressOptions: The Ingress configuration.
+     */
+    readonly ingressOptions?: RosServiceSource.IngressOptionsProperty | ros.IResolvable;
+
+    /**
+     * @Property pathList: An array of service root paths.
+     */
+    readonly pathList?: Array<any | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosServiceSourceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosServiceSourceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosServiceSourcePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('gatewayUniqueId', ros.requiredValidator)(properties.gatewayUniqueId));
+    errors.collect(ros.propertyValidator('gatewayUniqueId', ros.validateString)(properties.gatewayUniqueId));
+    errors.collect(ros.propertyValidator('ingressOptions', RosServiceSource_IngressOptionsPropertyValidator)(properties.ingressOptions));
+    if(properties.groupList && (Array.isArray(properties.groupList) || (typeof properties.groupList) === 'string')) {
+        errors.collect(ros.propertyValidator('groupList', ros.validateLength)({
+            data: properties.groupList.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('groupList', ros.listValidator(ros.validateAny))(properties.groupList));
+    errors.collect(ros.propertyValidator('address', ros.validateString)(properties.address));
+    if(properties.pathList && (Array.isArray(properties.pathList) || (typeof properties.pathList) === 'string')) {
+        errors.collect(ros.propertyValidator('pathList', ros.validateLength)({
+            data: properties.pathList.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('pathList', ros.listValidator(ros.validateAny))(properties.pathList));
+    errors.collect(ros.propertyValidator('source', ros.requiredValidator)(properties.source));
+    if(properties.source && (typeof properties.source) !== 'object') {
+        errors.collect(ros.propertyValidator('source', ros.validateAllowedValues)({
+          data: properties.source,
+          allowedValues: ["K8S","MSE","MSE_ZK","EDAS","SAE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('source', ros.validateString)(properties.source));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosServiceSourceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::ServiceSource` resource
+ *
+ * @param properties - the TypeScript properties of a `RosServiceSourceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::ServiceSource` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceSourcePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosServiceSourcePropsValidator(properties).assertSuccess();
+    }
+    return {
+      GatewayUniqueId: ros.stringToRosTemplate(properties.gatewayUniqueId),
+      Name: ros.stringToRosTemplate(properties.name),
+      Source: ros.stringToRosTemplate(properties.source),
+      Address: ros.stringToRosTemplate(properties.address),
+      GroupList: ros.listMapper(ros.objectToRosTemplate)(properties.groupList),
+      IngressOptions: rosServiceSourceIngressOptionsPropertyToRosTemplate(properties.ingressOptions),
+      PathList: ros.listMapper(ros.objectToRosTemplate)(properties.pathList),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::MSE::ServiceSource`
+ */
+export class RosServiceSource extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::ServiceSource";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Address: Registration Address. If not specified, it will be automatically generated based on the selected instance.
+     */
+    public readonly attrAddress: ros.IResolvable;
+
+    /**
+     * @Attribute GatewayUniqueId: The unique ID of the gateway.
+     */
+    public readonly attrGatewayUniqueId: ros.IResolvable;
+
+    /**
+     * @Attribute Id: The ID of service source.
+     */
+    public readonly attrId: ros.IResolvable;
+
+    /**
+     * @Attribute Name: The name.
+If Type is set to K8S, this parameter specifies the name of the ACK cluster.
+If Type is set to NACOS, this parameter specifies the ID of the Nacos instance.
+     */
+    public readonly attrName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property gatewayUniqueId: The unique ID of the gateway.
+     */
+    public gatewayUniqueId: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name.
+     * If Source=K8S, this parameter specifies the name of the ACK cluster.
+     * If Source=MSE, this parameter specifies the ID of the Nacos instance.
+     * If Source=MSE_ZK, this parameter specifies the ID of the ZooKeeper instance.
+     * If Source=EDAS, this parameter specifies the ID of the EDAS namespace.
+     * If Source=SAE, this parameter specifies the ID of the SAE namespace.
+     */
+    public name: string | ros.IResolvable;
+
+    /**
+     * @Property source: The service source. Valid values:
+     * K8S: ACK cluster
+     * MSE: MSE Nacos instance
+     */
+    public source: string | ros.IResolvable;
+
+    /**
+     * @Property address: Registration Address. If not specified, it will be automatically generated based on the selected instance.
+     */
+    public address: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property groupList: The list of service groups. This is required when Source=EDAS.
+     */
+    public groupList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ingressOptions: The Ingress configuration.
+     */
+    public ingressOptions: RosServiceSource.IngressOptionsProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property pathList: An array of service root paths.
+     */
+    public pathList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::MSE::ServiceSource`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosServiceSourceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosServiceSource.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAddress = this.getAtt('Address');
+        this.attrGatewayUniqueId = this.getAtt('GatewayUniqueId');
+        this.attrId = this.getAtt('Id');
+        this.attrName = this.getAtt('Name');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.gatewayUniqueId = props.gatewayUniqueId;
+        this.name = props.name;
+        this.source = props.source;
+        this.address = props.address;
+        this.groupList = props.groupList;
+        this.ingressOptions = props.ingressOptions;
+        this.pathList = props.pathList;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            gatewayUniqueId: this.gatewayUniqueId,
+            name: this.name,
+            source: this.source,
+            address: this.address,
+            groupList: this.groupList,
+            ingressOptions: this.ingressOptions,
+            pathList: this.pathList,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosServiceSourcePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosServiceSource {
+    /**
+     * @stability external
+     */
+    export interface IngressOptionsProperty {
+        /**
+         * @Property ingressClass: Specifies whether to monitor Ingress classes.
+         */
+        readonly ingressClass?: string | ros.IResolvable;
+        /**
+         * @Property enableStatus: Specifies whether to update the Ingress status.
+         */
+        readonly enableStatus?: string | ros.IResolvable;
+        /**
+         * @Property watchNamespace: The namespace whose resources you want to monitor.
+         */
+        readonly watchNamespace?: string | ros.IResolvable;
+        /**
+         * @Property enableIngress: Specifies whether to enable Ingress.
+         */
+        readonly enableIngress?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `IngressOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `IngressOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosServiceSource_IngressOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ingressClass', ros.validateString)(properties.ingressClass));
+    errors.collect(ros.propertyValidator('enableStatus', ros.validateString)(properties.enableStatus));
+    errors.collect(ros.propertyValidator('watchNamespace', ros.validateString)(properties.watchNamespace));
+    errors.collect(ros.propertyValidator('enableIngress', ros.validateString)(properties.enableIngress));
+    return errors.wrap('supplied properties not correct for "IngressOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::ServiceSource.IngressOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `IngressOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::ServiceSource.IngressOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceSourceIngressOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosServiceSource_IngressOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      IngressClass: ros.stringToRosTemplate(properties.ingressClass),
+      EnableStatus: ros.stringToRosTemplate(properties.enableStatus),
+      WatchNamespace: ros.stringToRosTemplate(properties.watchNamespace),
+      EnableIngress: ros.stringToRosTemplate(properties.enableIngress),
+    };
+}

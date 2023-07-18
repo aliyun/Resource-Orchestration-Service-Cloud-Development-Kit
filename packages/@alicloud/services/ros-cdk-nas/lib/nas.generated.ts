@@ -379,6 +379,343 @@ export class RosAccessRule extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::NAS::DataFlow`
+ */
+export interface RosDataFlowProps {
+
+    /**
+     * @Property fileSystemId: File system ID.
+     */
+    readonly fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property fsetId: Fileset ID.
+     */
+    readonly fsetId: string | ros.IResolvable;
+
+    /**
+     * @Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>.
+     * in:
+     * Storage Type: Currently only supports OSS.
+     * PATH: OSS's bucket name.Limit the following.
+     * Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
+     * The length is 8 ~ 128 English characters.
+     * Use UTF-8 encoding.
+     * Can't start with http: // and https: //.
+     * Explain that the OSS BUCKET must be the bucket that exists in the region.
+     */
+    readonly sourceStorage: string | ros.IResolvable;
+
+    /**
+     * @Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s.
+     * Value: 
+     * 600
+     * 1200
+     * 1500
+     * 
+     * Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+     */
+    readonly throughput: number | ros.IResolvable;
+
+    /**
+     * @Property autoRefreshInterval: The automatic update interval time, every time the interval, the CPFS checks whether there is a data update in the directory. If there is data update, start the automatic update task, unit: minute.
+     * Scope of value: 5 ~ 525600, default value: 10.
+     */
+    readonly autoRefreshInterval?: number | ros.IResolvable;
+
+    /**
+     * @Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
+     * None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
+     * Importchanged: The data update at the source automatically imports CPFS.
+     */
+    readonly autoRefreshPolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property autoRefreshs:
+     */
+    readonly autoRefreshs?: Array<RosDataFlow.AutoRefreshsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property description: Description of data flow.
+     * limit:
+     * The length is 2 to 128 English or Chinese characters.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceSecurityType: The type of safety protection types of the source storage. If the source storage must be protected through safety protection, please specify the type of safety protection type storage.Value:
+     * No (default value): It means that the source storage does not need to be accessed by safe protection.
+     * SSL: Protective access through SSL certificates.
+     */
+    readonly sourceSecurityType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDataFlowProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDataFlowProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDataFlowPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('fsetId', ros.requiredValidator)(properties.fsetId));
+    errors.collect(ros.propertyValidator('fsetId', ros.validateString)(properties.fsetId));
+    errors.collect(ros.propertyValidator('sourceStorage', ros.requiredValidator)(properties.sourceStorage));
+    errors.collect(ros.propertyValidator('sourceStorage', ros.validateString)(properties.sourceStorage));
+    if(properties.description && (typeof properties.description) !== 'object') {
+        errors.collect(ros.propertyValidator('description', ros.validateAllowedPattern)({
+          data: properties.description,
+          reg: /^(?!http:\/\/|https:\/\/)[a-zA-Z一-龥][0-9a-zA-Z:-_]{1,127}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.sourceSecurityType && (typeof properties.sourceSecurityType) !== 'object') {
+        errors.collect(ros.propertyValidator('sourceSecurityType', ros.validateAllowedValues)({
+          data: properties.sourceSecurityType,
+          allowedValues: ["SSL"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sourceSecurityType', ros.validateString)(properties.sourceSecurityType));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.requiredValidator)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('throughput', ros.requiredValidator)(properties.throughput));
+    if(properties.throughput && (typeof properties.throughput) !== 'object') {
+        errors.collect(ros.propertyValidator('throughput', ros.validateAllowedValues)({
+          data: properties.throughput,
+          allowedValues: [600,1200,1500],
+        }));
+    }
+    errors.collect(ros.propertyValidator('throughput', ros.validateNumber)(properties.throughput));
+    errors.collect(ros.propertyValidator('autoRefreshs', ros.listValidator(RosDataFlow_AutoRefreshsPropertyValidator))(properties.autoRefreshs));
+    errors.collect(ros.propertyValidator('autoRefreshPolicy', ros.validateString)(properties.autoRefreshPolicy));
+    if(properties.autoRefreshInterval && (typeof properties.autoRefreshInterval) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRefreshInterval', ros.validateRange)({
+            data: properties.autoRefreshInterval,
+            min: 5,
+            max: 525600,
+          }));
+    }
+    errors.collect(ros.propertyValidator('autoRefreshInterval', ros.validateNumber)(properties.autoRefreshInterval));
+    return errors.wrap('supplied properties not correct for "RosDataFlowProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NAS::DataFlow` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDataFlowProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NAS::DataFlow` resource.
+ */
+// @ts-ignore TS6133
+function rosDataFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDataFlowPropsValidator(properties).assertSuccess();
+    }
+    return {
+      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
+      FsetId: ros.stringToRosTemplate(properties.fsetId),
+      SourceStorage: ros.stringToRosTemplate(properties.sourceStorage),
+      Throughput: ros.numberToRosTemplate(properties.throughput),
+      AutoRefreshInterval: ros.numberToRosTemplate(properties.autoRefreshInterval),
+      AutoRefreshPolicy: ros.stringToRosTemplate(properties.autoRefreshPolicy),
+      AutoRefreshs: ros.listMapper(rosDataFlowAutoRefreshsPropertyToRosTemplate)(properties.autoRefreshs),
+      Description: ros.stringToRosTemplate(properties.description),
+      SourceSecurityType: ros.stringToRosTemplate(properties.sourceSecurityType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::NAS::DataFlow`
+ */
+export class RosDataFlow extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::DataFlow";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DataFlowId: Data flow ID.
+     */
+    public readonly attrDataFlowId: ros.IResolvable;
+
+    /**
+     * @Attribute FileSystemId: File system ID.
+     */
+    public readonly attrFileSystemId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property fileSystemId: File system ID.
+     */
+    public fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property fsetId: Fileset ID.
+     */
+    public fsetId: string | ros.IResolvable;
+
+    /**
+     * @Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>.
+     * in:
+     * Storage Type: Currently only supports OSS.
+     * PATH: OSS's bucket name.Limit the following.
+     * Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
+     * The length is 8 ~ 128 English characters.
+     * Use UTF-8 encoding.
+     * Can't start with http: // and https: //.
+     * Explain that the OSS BUCKET must be the bucket that exists in the region.
+     */
+    public sourceStorage: string | ros.IResolvable;
+
+    /**
+     * @Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s.
+     * Value: 
+     * 600
+     * 1200
+     * 1500
+     * 
+     * Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+     */
+    public throughput: number | ros.IResolvable;
+
+    /**
+     * @Property autoRefreshInterval: The automatic update interval time, every time the interval, the CPFS checks whether there is a data update in the directory. If there is data update, start the automatic update task, unit: minute.
+     * Scope of value: 5 ~ 525600, default value: 10.
+     */
+    public autoRefreshInterval: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
+     * None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
+     * Importchanged: The data update at the source automatically imports CPFS.
+     */
+    public autoRefreshPolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoRefreshs:
+     */
+    public autoRefreshs: Array<RosDataFlow.AutoRefreshsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: Description of data flow.
+     * limit:
+     * The length is 2 to 128 English or Chinese characters.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceSecurityType: The type of safety protection types of the source storage. If the source storage must be protected through safety protection, please specify the type of safety protection type storage.Value:
+     * No (default value): It means that the source storage does not need to be accessed by safe protection.
+     * SSL: Protective access through SSL certificates.
+     */
+    public sourceSecurityType: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::NAS::DataFlow`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDataFlowProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDataFlow.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDataFlowId = this.getAtt('DataFlowId');
+        this.attrFileSystemId = this.getAtt('FileSystemId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.fileSystemId = props.fileSystemId;
+        this.fsetId = props.fsetId;
+        this.sourceStorage = props.sourceStorage;
+        this.throughput = props.throughput;
+        this.autoRefreshInterval = props.autoRefreshInterval;
+        this.autoRefreshPolicy = props.autoRefreshPolicy;
+        this.autoRefreshs = props.autoRefreshs;
+        this.description = props.description;
+        this.sourceSecurityType = props.sourceSecurityType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            fileSystemId: this.fileSystemId,
+            fsetId: this.fsetId,
+            sourceStorage: this.sourceStorage,
+            throughput: this.throughput,
+            autoRefreshInterval: this.autoRefreshInterval,
+            autoRefreshPolicy: this.autoRefreshPolicy,
+            autoRefreshs: this.autoRefreshs,
+            description: this.description,
+            sourceSecurityType: this.sourceSecurityType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDataFlowPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosDataFlow {
+    /**
+     * @stability external
+     */
+    export interface AutoRefreshsProperty {
+        /**
+         * @Property refreshPath: Automatic update directory, data modification incident stored at the CPFS registration source end, check whether the source data in the directory is updated and automatically imported the updated data.
+     * The default is empty. Any data update stored at the source will not automatically import the CPFS. You need to import and update through manual tasks.
+     * limit:
+     * The length is 2 to 1024 characters.
+     * Use UTF-8 encoding.
+     * It must start with a positive oblique line (/).
+     * This directory must be existing directory on CPFS and must be located in the Fileset directory that flows in the data.
+         */
+        readonly refreshPath: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AutoRefreshsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AutoRefreshsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDataFlow_AutoRefreshsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('refreshPath', ros.requiredValidator)(properties.refreshPath));
+    errors.collect(ros.propertyValidator('refreshPath', ros.validateString)(properties.refreshPath));
+    return errors.wrap('supplied properties not correct for "AutoRefreshsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NAS::DataFlow.AutoRefreshs` resource
+ *
+ * @param properties - the TypeScript properties of a `AutoRefreshsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NAS::DataFlow.AutoRefreshs` resource.
+ */
+// @ts-ignore TS6133
+function rosDataFlowAutoRefreshsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDataFlow_AutoRefreshsPropertyValidator(properties).assertSuccess();
+    return {
+      RefreshPath: ros.stringToRosTemplate(properties.refreshPath),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::NAS::FileSystem`
  */
 export interface RosFileSystemProps {
@@ -772,6 +1109,156 @@ function rosFileSystemTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `ALIYUN::NAS::Fileset`
+ */
+export interface RosFilesetProps {
+
+    /**
+     * @Property fileSystemId: File system ID.
+     */
+    readonly fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property fileSystemPath: The absolute path of Fileset to be created.
+     * The parent catalog of specified the directory must be a directory in the file system.
+     * The length is 2 to 1024 characters.
+     * Specify the directory must start with positive (/).
+     */
+    readonly fileSystemPath: string | ros.IResolvable;
+
+    /**
+     * @Property description: Fileset description information.
+     * The length is 2 to 128 English or Chinese characters.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     */
+    readonly description?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosFilesetProps`
+ *
+ * @param properties - the TypeScript properties of a `RosFilesetProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosFilesetPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('fileSystemPath', ros.requiredValidator)(properties.fileSystemPath));
+    errors.collect(ros.propertyValidator('fileSystemPath', ros.validateString)(properties.fileSystemPath));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.requiredValidator)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
+    return errors.wrap('supplied properties not correct for "RosFilesetProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NAS::Fileset` resource
+ *
+ * @param properties - the TypeScript properties of a `RosFilesetProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NAS::Fileset` resource.
+ */
+// @ts-ignore TS6133
+function rosFilesetPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosFilesetPropsValidator(properties).assertSuccess();
+    }
+    return {
+      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
+      FileSystemPath: ros.stringToRosTemplate(properties.fileSystemPath),
+      Description: ros.stringToRosTemplate(properties.description),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::NAS::Fileset`
+ */
+export class RosFileset extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::Fileset";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute FileSystemId: File system ID.
+     */
+    public readonly attrFileSystemId: ros.IResolvable;
+
+    /**
+     * @Attribute FileSystemPath: File system path.
+     */
+    public readonly attrFileSystemPath: ros.IResolvable;
+
+    /**
+     * @Attribute FsetId: Fileset ID.
+     */
+    public readonly attrFsetId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property fileSystemId: File system ID.
+     */
+    public fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property fileSystemPath: The absolute path of Fileset to be created.
+     * The parent catalog of specified the directory must be a directory in the file system.
+     * The length is 2 to 1024 characters.
+     * Specify the directory must start with positive (/).
+     */
+    public fileSystemPath: string | ros.IResolvable;
+
+    /**
+     * @Property description: Fileset description information.
+     * The length is 2 to 128 English or Chinese characters.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::NAS::Fileset`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosFilesetProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosFileset.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrFileSystemId = this.getAtt('FileSystemId');
+        this.attrFileSystemPath = this.getAtt('FileSystemPath');
+        this.attrFsetId = this.getAtt('FsetId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.fileSystemId = props.fileSystemId;
+        this.fileSystemPath = props.fileSystemPath;
+        this.description = props.description;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            fileSystemId: this.fileSystemId,
+            fileSystemPath: this.fileSystemPath,
+            description: this.description,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosFilesetPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::NAS::MountTarget`
  */
 export interface RosMountTargetProps {
@@ -983,5 +1470,474 @@ export class RosMountTarget extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosMountTargetPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::NAS::ProtocolMountTarget`
+ */
+export interface RosProtocolMountTargetProps {
+
+    /**
+     * @Property fileSystemId: File system ID.
+     */
+    readonly fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property protocolServiceId: Agreement service ID.
+     */
+    readonly protocolServiceId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: Proper network ID exported by the protocol service.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: Switch ID exported by the protocol service.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property accessGroupName: The name of the permissions group.
+     * Default value: DEFAULT_VPC_GROUP_NAME
+     */
+    readonly accessGroupName?: string | ros.IResolvable;
+
+    /**
+     * @Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
+     * limit:
+     * The length is 2 to 128 English or Chinese characters.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property fsetId: Fileset ID needs to be exported.
+     * limit:
+     * The Fileset must exist.
+     * A Fileset allows only one export directory.
+     * Fileset and Path can only specify one.
+     */
+    readonly fsetId?: string | ros.IResolvable;
+
+    /**
+     * @Property path: The path of the CPFS directory that needs to be exported.
+     * limit:
+     * This directory must be existing directory on CPFS.
+     * The same directory allows only one export.
+     * Fileset and Path can only specify one.
+     * Format:
+     * The length is 1 to 1024 characters.
+     * Use UTF-8 encoding.
+     * It must start with the positive oblique line (/), and the root directory must be/.
+     */
+    readonly path?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosProtocolMountTargetProps`
+ *
+ * @param properties - the TypeScript properties of a `RosProtocolMountTargetProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosProtocolMountTargetPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('fsetId', ros.validateString)(properties.fsetId));
+    errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('accessGroupName', ros.validateString)(properties.accessGroupName));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.requiredValidator)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('protocolServiceId', ros.requiredValidator)(properties.protocolServiceId));
+    errors.collect(ros.propertyValidator('protocolServiceId', ros.validateString)(properties.protocolServiceId));
+    return errors.wrap('supplied properties not correct for "RosProtocolMountTargetProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NAS::ProtocolMountTarget` resource
+ *
+ * @param properties - the TypeScript properties of a `RosProtocolMountTargetProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NAS::ProtocolMountTarget` resource.
+ */
+// @ts-ignore TS6133
+function rosProtocolMountTargetPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosProtocolMountTargetPropsValidator(properties).assertSuccess();
+    }
+    return {
+      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
+      ProtocolServiceId: ros.stringToRosTemplate(properties.protocolServiceId),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      AccessGroupName: ros.stringToRosTemplate(properties.accessGroupName),
+      Description: ros.stringToRosTemplate(properties.description),
+      FsetId: ros.stringToRosTemplate(properties.fsetId),
+      Path: ros.stringToRosTemplate(properties.path),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::NAS::ProtocolMountTarget`
+ */
+export class RosProtocolMountTarget extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::ProtocolMountTarget";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ExportId: The protocol service exports directory ID.
+     */
+    public readonly attrExportId: ros.IResolvable;
+
+    /**
+     * @Attribute FileSystemId: File system ID.
+     */
+    public readonly attrFileSystemId: ros.IResolvable;
+
+    /**
+     * @Attribute ProtocolMountTargetDomain: The protocol mount target domain.
+     */
+    public readonly attrProtocolMountTargetDomain: ros.IResolvable;
+
+    /**
+     * @Attribute ProtocolServiceId: Protocol service ID.
+     */
+    public readonly attrProtocolServiceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property fileSystemId: File system ID.
+     */
+    public fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property protocolServiceId: Agreement service ID.
+     */
+    public protocolServiceId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: Proper network ID exported by the protocol service.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: Switch ID exported by the protocol service.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property accessGroupName: The name of the permissions group.
+     * Default value: DEFAULT_VPC_GROUP_NAME
+     */
+    public accessGroupName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
+     * limit:
+     * The length is 2 to 128 English or Chinese characters.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property fsetId: Fileset ID needs to be exported.
+     * limit:
+     * The Fileset must exist.
+     * A Fileset allows only one export directory.
+     * Fileset and Path can only specify one.
+     */
+    public fsetId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property path: The path of the CPFS directory that needs to be exported.
+     * limit:
+     * This directory must be existing directory on CPFS.
+     * The same directory allows only one export.
+     * Fileset and Path can only specify one.
+     * Format:
+     * The length is 1 to 1024 characters.
+     * Use UTF-8 encoding.
+     * It must start with the positive oblique line (/), and the root directory must be/.
+     */
+    public path: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::NAS::ProtocolMountTarget`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosProtocolMountTargetProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosProtocolMountTarget.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrExportId = this.getAtt('ExportId');
+        this.attrFileSystemId = this.getAtt('FileSystemId');
+        this.attrProtocolMountTargetDomain = this.getAtt('ProtocolMountTargetDomain');
+        this.attrProtocolServiceId = this.getAtt('ProtocolServiceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.fileSystemId = props.fileSystemId;
+        this.protocolServiceId = props.protocolServiceId;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.accessGroupName = props.accessGroupName;
+        this.description = props.description;
+        this.fsetId = props.fsetId;
+        this.path = props.path;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            fileSystemId: this.fileSystemId,
+            protocolServiceId: this.protocolServiceId,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            accessGroupName: this.accessGroupName,
+            description: this.description,
+            fsetId: this.fsetId,
+            path: this.path,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosProtocolMountTargetPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::NAS::ProtocolService`
+ */
+export interface RosProtocolServiceProps {
+
+    /**
+     * @Property fileSystemId: File system ID.
+     */
+    readonly fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property protocolSpec: The spec of protocol service. Default: General. Values: General
+     */
+    readonly protocolSpec: string | ros.IResolvable;
+
+    /**
+     * @Property protocolType: The protocol type of agreement service.
+     * Ranges:
+     * NFS: Agreement service supports NFS protocol access.
+     * The default value: NFS.
+     */
+    readonly protocolType: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The protocol service VPCID needs to be consistent with the file system VPC.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: Agreement service vswitchid.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property description: Description of protocol service.The console shows the "protocol service name".
+     * limit:
+     * The length is 2 to 128 English or Chinese characters.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property throughput: The bandwidth of the agreement service.
+     * Unit: MB/S.
+     */
+    readonly throughput?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosProtocolServiceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosProtocolServiceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosProtocolServicePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('protocolType', ros.requiredValidator)(properties.protocolType));
+    if(properties.protocolType && (typeof properties.protocolType) !== 'object') {
+        errors.collect(ros.propertyValidator('protocolType', ros.validateAllowedValues)({
+          data: properties.protocolType,
+          allowedValues: ["NFS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocolType', ros.validateString)(properties.protocolType));
+    errors.collect(ros.propertyValidator('protocolSpec', ros.requiredValidator)(properties.protocolSpec));
+    if(properties.protocolSpec && (typeof properties.protocolSpec) !== 'object') {
+        errors.collect(ros.propertyValidator('protocolSpec', ros.validateAllowedValues)({
+          data: properties.protocolSpec,
+          allowedValues: ["General"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocolSpec', ros.validateString)(properties.protocolSpec));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.requiredValidator)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('fileSystemId', ros.validateString)(properties.fileSystemId));
+    errors.collect(ros.propertyValidator('throughput', ros.validateNumber)(properties.throughput));
+    return errors.wrap('supplied properties not correct for "RosProtocolServiceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NAS::ProtocolService` resource
+ *
+ * @param properties - the TypeScript properties of a `RosProtocolServiceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NAS::ProtocolService` resource.
+ */
+// @ts-ignore TS6133
+function rosProtocolServicePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosProtocolServicePropsValidator(properties).assertSuccess();
+    }
+    return {
+      FileSystemId: ros.stringToRosTemplate(properties.fileSystemId),
+      ProtocolSpec: ros.stringToRosTemplate(properties.protocolSpec),
+      ProtocolType: ros.stringToRosTemplate(properties.protocolType),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      Description: ros.stringToRosTemplate(properties.description),
+      Throughput: ros.numberToRosTemplate(properties.throughput),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::NAS::ProtocolService`
+ */
+export class RosProtocolService extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NAS::ProtocolService";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute FileSystemId: File system ID.
+     */
+    public readonly attrFileSystemId: ros.IResolvable;
+
+    /**
+     * @Attribute ProtocolServiceId: Agreement cluster group ID.
+     */
+    public readonly attrProtocolServiceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property fileSystemId: File system ID.
+     */
+    public fileSystemId: string | ros.IResolvable;
+
+    /**
+     * @Property protocolSpec: The spec of protocol service. Default: General. Values: General
+     */
+    public protocolSpec: string | ros.IResolvable;
+
+    /**
+     * @Property protocolType: The protocol type of agreement service.
+     * Ranges:
+     * NFS: Agreement service supports NFS protocol access.
+     * The default value: NFS.
+     */
+    public protocolType: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The protocol service VPCID needs to be consistent with the file system VPC.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: Agreement service vswitchid.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property description: Description of protocol service.The console shows the "protocol service name".
+     * limit:
+     * The length is 2 to 128 English or Chinese characters.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property throughput: The bandwidth of the agreement service.
+     * Unit: MB/S.
+     */
+    public throughput: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::NAS::ProtocolService`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosProtocolServiceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosProtocolService.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrFileSystemId = this.getAtt('FileSystemId');
+        this.attrProtocolServiceId = this.getAtt('ProtocolServiceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.fileSystemId = props.fileSystemId;
+        this.protocolSpec = props.protocolSpec;
+        this.protocolType = props.protocolType;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.description = props.description;
+        this.throughput = props.throughput;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            fileSystemId: this.fileSystemId,
+            protocolSpec: this.protocolSpec,
+            protocolType: this.protocolType,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            description: this.description,
+            throughput: this.throughput,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosProtocolServicePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

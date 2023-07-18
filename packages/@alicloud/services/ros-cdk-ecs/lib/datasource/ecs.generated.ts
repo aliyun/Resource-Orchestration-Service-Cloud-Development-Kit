@@ -1,0 +1,5175 @@
+// Generated from the AliCloud ROS Resource Specification
+
+import * as ros from '@alicloud/ros-cdk-core';
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::AutoSnapshotPolicies`
+ */
+export interface RosAutoSnapshotPoliciesProps {
+
+    /**
+     * @Property autoSnapshotPolicyId: The ID of the automatic snapshot policy.
+     */
+    readonly autoSnapshotPolicyId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the automatic snapshot policy belongs.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of snapshotpolicy.
+     */
+    readonly tags?: RosAutoSnapshotPolicies.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAutoSnapshotPoliciesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAutoSnapshotPoliciesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoSnapshotPoliciesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosAutoSnapshotPolicies_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosAutoSnapshotPoliciesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::AutoSnapshotPolicies` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAutoSnapshotPoliciesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::AutoSnapshotPolicies` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoSnapshotPoliciesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAutoSnapshotPoliciesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosAutoSnapshotPoliciesTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::AutoSnapshotPolicies`
+ */
+export class RosAutoSnapshotPolicies extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::AutoSnapshotPolicies";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AutoSnapshotPolicies: The list of auto snapshot policies.
+     */
+    public readonly attrAutoSnapshotPolicies: ros.IResolvable;
+
+    /**
+     * @Attribute AutoSnapshotPolicyIds: The list of auto snapshot policy ids.
+     */
+    public readonly attrAutoSnapshotPolicyIds: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property autoSnapshotPolicyId: The ID of the automatic snapshot policy.
+     */
+    public autoSnapshotPolicyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the automatic snapshot policy belongs.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of snapshotpolicy.
+     */
+    public tags: RosAutoSnapshotPolicies.TagsProperty[] | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::AutoSnapshotPolicies`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAutoSnapshotPoliciesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAutoSnapshotPolicies.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAutoSnapshotPolicies = this.getAtt('AutoSnapshotPolicies');
+        this.attrAutoSnapshotPolicyIds = this.getAtt('AutoSnapshotPolicyIds');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.autoSnapshotPolicyId = props.autoSnapshotPolicyId;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            autoSnapshotPolicyId: this.autoSnapshotPolicyId,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAutoSnapshotPoliciesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAutoSnapshotPolicies {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAutoSnapshotPolicies_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::AutoSnapshotPolicies.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::AutoSnapshotPolicies.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosAutoSnapshotPoliciesTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAutoSnapshotPolicies_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::Commands`
+ */
+export interface RosCommandsProps {
+
+    /**
+     * @Property commandId: The ID of the command.
+     */
+    readonly commandId?: string | ros.IResolvable;
+
+    /**
+     * @Property commandName: The name of the command. Partial command names are not supported.
+     */
+    readonly commandName?: string | ros.IResolvable;
+
+    /**
+     * @Property description: Command description.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property type: The command type. Valid values:
+     * RunBatScript: batch command, applicable to Windows instances
+     * RunPowerShellScript: PowerShell command, applicable to Windows instances
+     * RunShellScript: shell command, applicable to Linux instances
+     */
+    readonly type?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCommandsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCommandsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCommandsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["RunBatScript","RunPowerShellScript","RunShellScript"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('commandId', ros.validateString)(properties.commandId));
+    errors.collect(ros.propertyValidator('commandName', ros.validateString)(properties.commandName));
+    return errors.wrap('supplied properties not correct for "RosCommandsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Commands` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCommandsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Commands` resource.
+ */
+// @ts-ignore TS6133
+function rosCommandsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCommandsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      CommandId: ros.stringToRosTemplate(properties.commandId),
+      CommandName: ros.stringToRosTemplate(properties.commandName),
+      Description: ros.stringToRosTemplate(properties.description),
+      Type: ros.stringToRosTemplate(properties.type),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::Commands`
+ */
+export class RosCommands extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Commands";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute CommandIds: The list of command IDs.
+     */
+    public readonly attrCommandIds: ros.IResolvable;
+
+    /**
+     * @Attribute Commands: The list of commands.
+     */
+    public readonly attrCommands: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property commandId: The ID of the command.
+     */
+    public commandId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property commandName: The name of the command. Partial command names are not supported.
+     */
+    public commandName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: Command description.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property type: The command type. Valid values:
+     * RunBatScript: batch command, applicable to Windows instances
+     * RunPowerShellScript: PowerShell command, applicable to Windows instances
+     * RunShellScript: shell command, applicable to Linux instances
+     */
+    public type: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::Commands`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCommandsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCommands.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCommandIds = this.getAtt('CommandIds');
+        this.attrCommands = this.getAtt('Commands');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.commandId = props.commandId;
+        this.commandName = props.commandName;
+        this.description = props.description;
+        this.type = props.type;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            commandId: this.commandId,
+            commandName: this.commandName,
+            description: this.description,
+            type: this.type,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCommandsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::DedicatedHostClusters`
+ */
+export interface RosDedicatedHostClustersProps {
+
+    /**
+     * @Property dedicatedHostClusterName: The name of the dedicated host cluster.
+     */
+    readonly dedicatedHostClusterName?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the dedicated host cluster belongs. 
+     * If this parameter is specified to query resources,
+     * up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The zone ID of the dedicated host cluster. 
+     * You can call the DescribeZones operation to query the most recent zone list.
+     */
+    readonly zoneId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDedicatedHostClustersProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDedicatedHostClustersProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDedicatedHostClustersPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dedicatedHostClusterName', ros.validateString)(properties.dedicatedHostClusterName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    return errors.wrap('supplied properties not correct for "RosDedicatedHostClustersProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DedicatedHostClusters` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDedicatedHostClustersProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DedicatedHostClusters` resource.
+ */
+// @ts-ignore TS6133
+function rosDedicatedHostClustersPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDedicatedHostClustersPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DedicatedHostClusterName: ros.stringToRosTemplate(properties.dedicatedHostClusterName),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::DedicatedHostClusters`
+ */
+export class RosDedicatedHostClusters extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::DedicatedHostClusters";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DedicatedHostClusterIds: The list of dedicated host cluster IDs.
+     */
+    public readonly attrDedicatedHostClusterIds: ros.IResolvable;
+
+    /**
+     * @Attribute DedicatedHostClusters: The list of dedicated host clusters.
+     */
+    public readonly attrDedicatedHostClusters: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dedicatedHostClusterName: The name of the dedicated host cluster.
+     */
+    public dedicatedHostClusterName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the dedicated host cluster belongs. 
+     * If this parameter is specified to query resources,
+     * up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneId: The zone ID of the dedicated host cluster. 
+     * You can call the DescribeZones operation to query the most recent zone list.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::DedicatedHostClusters`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDedicatedHostClustersProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDedicatedHostClusters.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDedicatedHostClusterIds = this.getAtt('DedicatedHostClusterIds');
+        this.attrDedicatedHostClusters = this.getAtt('DedicatedHostClusters');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dedicatedHostClusterName = props.dedicatedHostClusterName;
+        this.resourceGroupId = props.resourceGroupId;
+        this.zoneId = props.zoneId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dedicatedHostClusterName: this.dedicatedHostClusterName,
+            resourceGroupId: this.resourceGroupId,
+            zoneId: this.zoneId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDedicatedHostClustersPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::DedicatedHosts`
+ */
+export interface RosDedicatedHostsProps {
+
+    /**
+     * @Property dedicatedHostClusterId: The ID of the dedicated host cluster.
+     */
+    readonly dedicatedHostClusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property dedicatedHostIds: The IDs of the dedicated hosts. You can specify up to 100 dedicated host IDs.
+     */
+    readonly dedicatedHostIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property dedicatedHostName: The name of the dedicated host.
+     */
+    readonly dedicatedHostName?: string | ros.IResolvable;
+
+    /**
+     * @Property dedicatedHostType: The type of the dedicated host.
+     */
+    readonly dedicatedHostType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the dedicated host belongs.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property status: The service status of the dedicated host. Valid values:
+     * Available: The dedicated host is running normally.
+     * UnderAssessment: The dedicated host is at risk, which may cause issues to ECS instances on the dedicated host.
+     *  PermanentFailure: A permanent failure exists and the dedicated host is unavailable.
+     * Default value: Available.
+     */
+    readonly status?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of ddh.
+     */
+    readonly tags?: RosDedicatedHosts.TagsProperty[];
+
+    /**
+     * @Property zoneId: The zone ID of the dedicated host.
+     */
+    readonly zoneId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDedicatedHostsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDedicatedHostsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDedicatedHostsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('dedicatedHostName', ros.validateString)(properties.dedicatedHostName));
+    errors.collect(ros.propertyValidator('dedicatedHostType', ros.validateString)(properties.dedicatedHostType));
+    if(properties.dedicatedHostIds && (Array.isArray(properties.dedicatedHostIds) || (typeof properties.dedicatedHostIds) === 'string')) {
+        errors.collect(ros.propertyValidator('dedicatedHostIds', ros.validateLength)({
+            data: properties.dedicatedHostIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dedicatedHostIds', ros.listValidator(ros.validateString))(properties.dedicatedHostIds));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDedicatedHosts_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('dedicatedHostClusterId', ros.validateString)(properties.dedicatedHostClusterId));
+    return errors.wrap('supplied properties not correct for "RosDedicatedHostsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DedicatedHosts` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDedicatedHostsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DedicatedHosts` resource.
+ */
+// @ts-ignore TS6133
+function rosDedicatedHostsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDedicatedHostsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DedicatedHostClusterId: ros.stringToRosTemplate(properties.dedicatedHostClusterId),
+      DedicatedHostIds: ros.listMapper(ros.stringToRosTemplate)(properties.dedicatedHostIds),
+      DedicatedHostName: ros.stringToRosTemplate(properties.dedicatedHostName),
+      DedicatedHostType: ros.stringToRosTemplate(properties.dedicatedHostType),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Status: ros.stringToRosTemplate(properties.status),
+      Tags: ros.listMapper(rosDedicatedHostsTagsPropertyToRosTemplate)(properties.tags),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::DedicatedHosts`
+ */
+export class RosDedicatedHosts extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::DedicatedHosts";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DedicatedHostIds: The list of dedicated host ids.
+     */
+    public readonly attrDedicatedHostIds: ros.IResolvable;
+
+    /**
+     * @Attribute DedicatedHosts: The list of dedicated hosts.
+     */
+    public readonly attrDedicatedHosts: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dedicatedHostClusterId: The ID of the dedicated host cluster.
+     */
+    public dedicatedHostClusterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dedicatedHostIds: The IDs of the dedicated hosts. You can specify up to 100 dedicated host IDs.
+     */
+    public dedicatedHostIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property dedicatedHostName: The name of the dedicated host.
+     */
+    public dedicatedHostName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dedicatedHostType: The type of the dedicated host.
+     */
+    public dedicatedHostType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the dedicated host belongs.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: The service status of the dedicated host. Valid values:
+     * Available: The dedicated host is running normally.
+     * UnderAssessment: The dedicated host is at risk, which may cause issues to ECS instances on the dedicated host.
+     *  PermanentFailure: A permanent failure exists and the dedicated host is unavailable.
+     * Default value: Available.
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of ddh.
+     */
+    public tags: RosDedicatedHosts.TagsProperty[] | undefined;
+
+    /**
+     * @Property zoneId: The zone ID of the dedicated host.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::DedicatedHosts`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDedicatedHostsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDedicatedHosts.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDedicatedHostIds = this.getAtt('DedicatedHostIds');
+        this.attrDedicatedHosts = this.getAtt('DedicatedHosts');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dedicatedHostClusterId = props.dedicatedHostClusterId;
+        this.dedicatedHostIds = props.dedicatedHostIds;
+        this.dedicatedHostName = props.dedicatedHostName;
+        this.dedicatedHostType = props.dedicatedHostType;
+        this.resourceGroupId = props.resourceGroupId;
+        this.status = props.status;
+        this.tags = props.tags;
+        this.zoneId = props.zoneId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dedicatedHostClusterId: this.dedicatedHostClusterId,
+            dedicatedHostIds: this.dedicatedHostIds,
+            dedicatedHostName: this.dedicatedHostName,
+            dedicatedHostType: this.dedicatedHostType,
+            resourceGroupId: this.resourceGroupId,
+            status: this.status,
+            tags: this.tags,
+            zoneId: this.zoneId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDedicatedHostsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosDedicatedHosts {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDedicatedHosts_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DedicatedHosts.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DedicatedHosts.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosDedicatedHostsTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDedicatedHosts_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::DeploymentSets`
+ */
+export interface RosDeploymentSetsProps {
+
+    /**
+     * @Property deploymentSetIds: he IDs of deployment sets. The value can be a JSON array that consists of up to 100 deployment set IDs in the format of ["ds-xxxxxxxxx", "ds-yyyyyyyyy", … "ds-zzzzzzzzz"]. Separate multiple deployment set IDs with commas (,).
+     */
+    readonly deploymentSetIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property deploymentSetName: The name of the deployment set.
+     */
+    readonly deploymentSetName?: string | ros.IResolvable;
+
+    /**
+     * @Property domain: The deployment domain.
+     */
+    readonly domain?: string | ros.IResolvable;
+
+    /**
+     * @Property strategy: The deployment strategy. Valid values:
+     * Availability: high availability strategy.
+     *  AvailabilityGroup: high availability group strategy.
+     */
+    readonly strategy?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDeploymentSetsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDeploymentSetsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDeploymentSetsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.deploymentSetIds && (Array.isArray(properties.deploymentSetIds) || (typeof properties.deploymentSetIds) === 'string')) {
+        errors.collect(ros.propertyValidator('deploymentSetIds', ros.validateLength)({
+            data: properties.deploymentSetIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('deploymentSetIds', ros.listValidator(ros.validateAny))(properties.deploymentSetIds));
+    errors.collect(ros.propertyValidator('strategy', ros.validateString)(properties.strategy));
+    errors.collect(ros.propertyValidator('deploymentSetName', ros.validateString)(properties.deploymentSetName));
+    errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
+    return errors.wrap('supplied properties not correct for "RosDeploymentSetsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DeploymentSets` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDeploymentSetsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DeploymentSets` resource.
+ */
+// @ts-ignore TS6133
+function rosDeploymentSetsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDeploymentSetsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DeploymentSetIds: ros.listMapper(ros.objectToRosTemplate)(properties.deploymentSetIds),
+      DeploymentSetName: ros.stringToRosTemplate(properties.deploymentSetName),
+      Domain: ros.stringToRosTemplate(properties.domain),
+      Strategy: ros.stringToRosTemplate(properties.strategy),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::DeploymentSets`
+ */
+export class RosDeploymentSets extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::DeploymentSets";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DeploymentSetIds: the list of deployment set ids
+     */
+    public readonly attrDeploymentSetIds: ros.IResolvable;
+
+    /**
+     * @Attribute DeploymentSets: The list of deployment sets.
+     */
+    public readonly attrDeploymentSets: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property deploymentSetIds: he IDs of deployment sets. The value can be a JSON array that consists of up to 100 deployment set IDs in the format of ["ds-xxxxxxxxx", "ds-yyyyyyyyy", … "ds-zzzzzzzzz"]. Separate multiple deployment set IDs with commas (,).
+     */
+    public deploymentSetIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property deploymentSetName: The name of the deployment set.
+     */
+    public deploymentSetName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property domain: The deployment domain.
+     */
+    public domain: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property strategy: The deployment strategy. Valid values:
+     * Availability: high availability strategy.
+     *  AvailabilityGroup: high availability group strategy.
+     */
+    public strategy: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::DeploymentSets`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDeploymentSetsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDeploymentSets.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDeploymentSetIds = this.getAtt('DeploymentSetIds');
+        this.attrDeploymentSets = this.getAtt('DeploymentSets');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.deploymentSetIds = props.deploymentSetIds;
+        this.deploymentSetName = props.deploymentSetName;
+        this.domain = props.domain;
+        this.strategy = props.strategy;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            deploymentSetIds: this.deploymentSetIds,
+            deploymentSetName: this.deploymentSetName,
+            domain: this.domain,
+            strategy: this.strategy,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDeploymentSetsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::DiskCategories`
+ */
+export interface RosDiskCategoriesProps {
+
+    /**
+     * @Property type: The resource type to query.
+     * If you set Type to data,you can specify the InstanceType parameter to disk.
+     * If you set Type to system, you must specify the InstanceType parameter.
+     * Valid values:
+     * system: system disk
+     * data: data disk
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The ID of the zone for which to query resources.
+     */
+    readonly zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property dataDiskCategory: The category of the data disk. Valid values: 
+     * cloud: basic disk
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * ephemeral_ssd: local SSD
+     * cloud_essd: ESSD
+     */
+    readonly dataDiskCategory?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The instance type. For more information,see Instance families or call the DescribeInstanceTypes,operation to query the most recent instance type list.
+     * When the Type parameter is set to system or data,you must set the InstanceType parameter.
+     */
+    readonly instanceType?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskCategory: The category of the system disk. Valid values: 
+     * cloud: basic disk
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * ephemeral_ssd: local SSD
+     * cloud_essd: ESSD
+     */
+    readonly systemDiskCategory?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDiskCategoriesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDiskCategoriesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDiskCategoriesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["system","data"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('dataDiskCategory', ros.validateString)(properties.dataDiskCategory));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    return errors.wrap('supplied properties not correct for "RosDiskCategoriesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DiskCategories` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDiskCategoriesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::DiskCategories` resource.
+ */
+// @ts-ignore TS6133
+function rosDiskCategoriesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDiskCategoriesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Type: ros.stringToRosTemplate(properties.type),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      DataDiskCategory: ros.stringToRosTemplate(properties.dataDiskCategory),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::DiskCategories`
+ */
+export class RosDiskCategories extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::DiskCategories";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DiskCategories: The list of disk categories.
+     */
+    public readonly attrDiskCategories: ros.IResolvable;
+
+    /**
+     * @Attribute DiskCategoryIds: The list of disk category IDs.
+     */
+    public readonly attrDiskCategoryIds: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property type: The resource type to query.
+     * If you set Type to data,you can specify the InstanceType parameter to disk.
+     * If you set Type to system, you must specify the InstanceType parameter.
+     * Valid values:
+     * system: system disk
+     * data: data disk
+     */
+    public type: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The ID of the zone for which to query resources.
+     */
+    public zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property dataDiskCategory: The category of the data disk. Valid values: 
+     * cloud: basic disk
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * ephemeral_ssd: local SSD
+     * cloud_essd: ESSD
+     */
+    public dataDiskCategory: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceType: The instance type. For more information,see Instance families or call the DescribeInstanceTypes,operation to query the most recent instance type list.
+     * When the Type parameter is set to system or data,you must set the InstanceType parameter.
+     */
+    public instanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskCategory: The category of the system disk. Valid values: 
+     * cloud: basic disk
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * ephemeral_ssd: local SSD
+     * cloud_essd: ESSD
+     */
+    public systemDiskCategory: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::DiskCategories`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDiskCategoriesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDiskCategories.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDiskCategories = this.getAtt('DiskCategories');
+        this.attrDiskCategoryIds = this.getAtt('DiskCategoryIds');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.type = props.type;
+        this.zoneId = props.zoneId;
+        this.dataDiskCategory = props.dataDiskCategory;
+        this.instanceType = props.instanceType;
+        this.systemDiskCategory = props.systemDiskCategory;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            type: this.type,
+            zoneId: this.zoneId,
+            dataDiskCategory: this.dataDiskCategory,
+            instanceType: this.instanceType,
+            systemDiskCategory: this.systemDiskCategory,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDiskCategoriesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::Disks`
+ */
+export interface RosDisksProps {
+
+    /**
+     * @Property additionalAttributes: The value of attribute N. Set the value to IOPS, which indicates the maximum IOPS of the disk.
+     */
+    readonly additionalAttributes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property autoSnapshotPolicyId: The ID of the automatic snapshot policy that is applied to the cloud disk.
+     */
+    readonly autoSnapshotPolicyId?: string | ros.IResolvable;
+
+    /**
+     * @Property category: The category of the disk. Valid values:
+     * all: all disk categories
+     * cloud: basic disk
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * ephemeral: retired local disk
+     * ephemeral_ssd: local SSD
+     * cloud_essd: ESSD
+     * local_ssd_pro: I/O-intensive local disk
+     * local_hdd_pro: throughput-intensive local disk
+     */
+    readonly category?: string | ros.IResolvable;
+
+    /**
+     * @Property deleteAutoSnapshot: Specifies whether to delete the automatic snapshots of the cloud disk when the disk is released.
+     * Default value: false.
+     */
+    readonly deleteAutoSnapshot?: string | ros.IResolvable;
+
+    /**
+     * @Property deleteWithInstance: Specifies whether to release the cloud disk when its associated instance is released. Valid values:
+     * true: The cloud disk is released when its associated instance is released.
+     * false: The cloud disk is not released but is retained as a pay-as-you-go data disk when its associated instance is released.
+     * Default value: false.
+     */
+    readonly deleteWithInstance?: boolean | ros.IResolvable;
+
+    /**
+     * @Property diskChargeType: The billing method of the disk. Valid values:
+     * PrePaid: subscription
+     * PostPaid: pay-as-you-go
+     */
+    readonly diskChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property diskIds: The IDs of disks.
+     * The value is a JSON array that consists of up to 100 disk IDs.
+     * Separate the disk IDs with commas (,).
+     */
+    readonly diskIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property diskName: The name of the disk.
+     */
+    readonly diskName?: string | ros.IResolvable;
+
+    /**
+     * @Property diskType: The type of the disk. Valid values:
+     * all: system disk and data disk
+     * system: system disk
+     * data: data disk
+     * Default value: all.
+     */
+    readonly diskType?: string | ros.IResolvable;
+
+    /**
+     * @Property enableAutomatedSnapshotPolicy: Specifies whether an automatic snapshot policy is applied to the cloud disk.
+     * true: An automatic snapshot policy is applied to the cloud disk.
+     * false: No automatic snapshot policy is applied to the cloud disk.
+     * Default value: false.
+     */
+    readonly enableAutomatedSnapshotPolicy?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableAutoSnapshot: Specifies whether the automatic snapshot policy feature is enabled for the cloud disk.
+     * true: The automatic snapshot policy feature is enabled for the cloud disk.
+     * false: The automatic snapshot policy feature is disabled for the cloud disk.
+     * Note By default, the automatic snapshot policy feature is enabled for created cloud disks. You need only to apply an automatic snapshot policy to a cloud disk before you can use the automatic snapshot policy.
+     */
+    readonly enableAutoSnapshot?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableShared: Specifies whether the disk is a Shared Block Storage device.
+     */
+    readonly enableShared?: string | ros.IResolvable;
+
+    /**
+     * @Property encrypted: Specifies whether to query only encrypted cloud disks.
+     * Default value: false.
+     */
+    readonly encrypted?: boolean | ros.IResolvable;
+
+    /**
+     * @Property filters: Filter value when querying resources
+     */
+    readonly filters?: Array<RosDisks.FiltersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the instance to which the disk is attached.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property kmsKeyId: The ID of the Key Management Service (KMS) key used by the cloud disk.
+     */
+    readonly kmsKeyId?: string | ros.IResolvable;
+
+    /**
+     * @Property multiAttach: Specifies whether the multi-attach feature is enabled for the disk. Valid values:
+     * Disabled: The multi-attach feature is disabled.
+     * Enabled: The multi-attach feature is enabled.
+     * LegacyShared: Shared Block Storage devices are queried.
+     * The multi-attach feature is in invitational preview. To use this feature, submit a ticket.
+     */
+    readonly multiAttach?: string | ros.IResolvable;
+
+    /**
+     * @Property portable: Specifies whether the disk is removable. Valid values:
+     * true: The disk is removable.A removable disk can independently exist and can be attached to or detached from an instance within the same zone.
+     * false: The disk is not removable. A disk that is not removable cannot independently exist or be attached to or detached from an instance within the same zone.
+     * The Portable attribute of the following disks is false, and these disks share the same lifecycle with their associated instances:
+     * Local disks
+     * Local SSDs
+     * Subscription data disks
+     */
+    readonly portable?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the disk belongs. 
+     * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property snapshotId: The ID of the snapshot used to create the cloud disk.
+     */
+    readonly snapshotId?: string | ros.IResolvable;
+
+    /**
+     * @Property status: The state of the cloud disk. For more information, see Disk states. Valid values:
+     * In_use
+     * Available
+     * Attaching
+     * Detaching
+     * Creating
+     * ReIniting
+     * All
+     * Default value: All.
+     */
+    readonly status?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of disks.
+     */
+    readonly tags?: RosDisks.TagsProperty[];
+
+    /**
+     * @Property zoneId: The ID of the zone for which to query resources.
+     */
+    readonly zoneId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDisksProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDisksProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDisksPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["In_use","Available","Attaching","Detaching","Creating","ReIniting","All"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    if(properties.diskIds && (Array.isArray(properties.diskIds) || (typeof properties.diskIds) === 'string')) {
+        errors.collect(ros.propertyValidator('diskIds', ros.validateLength)({
+            data: properties.diskIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('diskIds', ros.listValidator(ros.validateString))(properties.diskIds));
+    errors.collect(ros.propertyValidator('enableShared', ros.validateString)(properties.enableShared));
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
+    errors.collect(ros.propertyValidator('deleteWithInstance', ros.validateBoolean)(properties.deleteWithInstance));
+    errors.collect(ros.propertyValidator('deleteAutoSnapshot', ros.validateString)(properties.deleteAutoSnapshot));
+    errors.collect(ros.propertyValidator('enableAutomatedSnapshotPolicy', ros.validateBoolean)(properties.enableAutomatedSnapshotPolicy));
+    errors.collect(ros.propertyValidator('diskChargeType', ros.validateString)(properties.diskChargeType));
+    errors.collect(ros.propertyValidator('enableAutoSnapshot', ros.validateBoolean)(properties.enableAutoSnapshot));
+    errors.collect(ros.propertyValidator('autoSnapshotPolicyId', ros.validateString)(properties.autoSnapshotPolicyId));
+    errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
+    errors.collect(ros.propertyValidator('multiAttach', ros.validateString)(properties.multiAttach));
+    if(properties.diskType && (typeof properties.diskType) !== 'object') {
+        errors.collect(ros.propertyValidator('diskType', ros.validateAllowedValues)({
+          data: properties.diskType,
+          allowedValues: ["all","system","data"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('diskType', ros.validateString)(properties.diskType));
+    errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
+    errors.collect(ros.propertyValidator('portable', ros.validateString)(properties.portable));
+    if(properties.filters && (Array.isArray(properties.filters) || (typeof properties.filters) === 'string')) {
+        errors.collect(ros.propertyValidator('filters', ros.validateLength)({
+            data: properties.filters.length,
+            min: undefined,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('filters', ros.listValidator(RosDisks_FiltersPropertyValidator))(properties.filters));
+    if(properties.additionalAttributes && (Array.isArray(properties.additionalAttributes) || (typeof properties.additionalAttributes) === 'string')) {
+        errors.collect(ros.propertyValidator('additionalAttributes', ros.validateLength)({
+            data: properties.additionalAttributes.length,
+            min: undefined,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('additionalAttributes', ros.listValidator(ros.validateString))(properties.additionalAttributes));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosDisks_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosDisksProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Disks` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDisksProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Disks` resource.
+ */
+// @ts-ignore TS6133
+function rosDisksPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDisksPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AdditionalAttributes: ros.listMapper(ros.stringToRosTemplate)(properties.additionalAttributes),
+      AutoSnapshotPolicyId: ros.stringToRosTemplate(properties.autoSnapshotPolicyId),
+      Category: ros.stringToRosTemplate(properties.category),
+      DeleteAutoSnapshot: ros.stringToRosTemplate(properties.deleteAutoSnapshot),
+      DeleteWithInstance: ros.booleanToRosTemplate(properties.deleteWithInstance),
+      DiskChargeType: ros.stringToRosTemplate(properties.diskChargeType),
+      DiskIds: ros.listMapper(ros.stringToRosTemplate)(properties.diskIds),
+      DiskName: ros.stringToRosTemplate(properties.diskName),
+      DiskType: ros.stringToRosTemplate(properties.diskType),
+      EnableAutomatedSnapshotPolicy: ros.booleanToRosTemplate(properties.enableAutomatedSnapshotPolicy),
+      EnableAutoSnapshot: ros.booleanToRosTemplate(properties.enableAutoSnapshot),
+      EnableShared: ros.stringToRosTemplate(properties.enableShared),
+      Encrypted: ros.booleanToRosTemplate(properties.encrypted),
+      Filters: ros.listMapper(rosDisksFiltersPropertyToRosTemplate)(properties.filters),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
+      MultiAttach: ros.stringToRosTemplate(properties.multiAttach),
+      Portable: ros.stringToRosTemplate(properties.portable),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
+      Status: ros.stringToRosTemplate(properties.status),
+      Tags: ros.listMapper(rosDisksTagsPropertyToRosTemplate)(properties.tags),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::Disks`
+ */
+export class RosDisks extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Disks";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DiskIds: The list of disk IDs.
+     */
+    public readonly attrDiskIds: ros.IResolvable;
+
+    /**
+     * @Attribute Disks: The list of disks.
+     */
+    public readonly attrDisks: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property additionalAttributes: The value of attribute N. Set the value to IOPS, which indicates the maximum IOPS of the disk.
+     */
+    public additionalAttributes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property autoSnapshotPolicyId: The ID of the automatic snapshot policy that is applied to the cloud disk.
+     */
+    public autoSnapshotPolicyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property category: The category of the disk. Valid values:
+     * all: all disk categories
+     * cloud: basic disk
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * ephemeral: retired local disk
+     * ephemeral_ssd: local SSD
+     * cloud_essd: ESSD
+     * local_ssd_pro: I/O-intensive local disk
+     * local_hdd_pro: throughput-intensive local disk
+     */
+    public category: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deleteAutoSnapshot: Specifies whether to delete the automatic snapshots of the cloud disk when the disk is released.
+     * Default value: false.
+     */
+    public deleteAutoSnapshot: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deleteWithInstance: Specifies whether to release the cloud disk when its associated instance is released. Valid values:
+     * true: The cloud disk is released when its associated instance is released.
+     * false: The cloud disk is not released but is retained as a pay-as-you-go data disk when its associated instance is released.
+     * Default value: false.
+     */
+    public deleteWithInstance: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property diskChargeType: The billing method of the disk. Valid values:
+     * PrePaid: subscription
+     * PostPaid: pay-as-you-go
+     */
+    public diskChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property diskIds: The IDs of disks.
+     * The value is a JSON array that consists of up to 100 disk IDs.
+     * Separate the disk IDs with commas (,).
+     */
+    public diskIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property diskName: The name of the disk.
+     */
+    public diskName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property diskType: The type of the disk. Valid values:
+     * all: system disk and data disk
+     * system: system disk
+     * data: data disk
+     * Default value: all.
+     */
+    public diskType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableAutomatedSnapshotPolicy: Specifies whether an automatic snapshot policy is applied to the cloud disk.
+     * true: An automatic snapshot policy is applied to the cloud disk.
+     * false: No automatic snapshot policy is applied to the cloud disk.
+     * Default value: false.
+     */
+    public enableAutomatedSnapshotPolicy: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableAutoSnapshot: Specifies whether the automatic snapshot policy feature is enabled for the cloud disk.
+     * true: The automatic snapshot policy feature is enabled for the cloud disk.
+     * false: The automatic snapshot policy feature is disabled for the cloud disk.
+     * Note By default, the automatic snapshot policy feature is enabled for created cloud disks. You need only to apply an automatic snapshot policy to a cloud disk before you can use the automatic snapshot policy.
+     */
+    public enableAutoSnapshot: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableShared: Specifies whether the disk is a Shared Block Storage device.
+     */
+    public enableShared: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property encrypted: Specifies whether to query only encrypted cloud disks.
+     * Default value: false.
+     */
+    public encrypted: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property filters: Filter value when querying resources
+     */
+    public filters: Array<RosDisks.FiltersProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The ID of the instance to which the disk is attached.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property kmsKeyId: The ID of the Key Management Service (KMS) key used by the cloud disk.
+     */
+    public kmsKeyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property multiAttach: Specifies whether the multi-attach feature is enabled for the disk. Valid values:
+     * Disabled: The multi-attach feature is disabled.
+     * Enabled: The multi-attach feature is enabled.
+     * LegacyShared: Shared Block Storage devices are queried.
+     * The multi-attach feature is in invitational preview. To use this feature, submit a ticket.
+     */
+    public multiAttach: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property portable: Specifies whether the disk is removable. Valid values:
+     * true: The disk is removable.A removable disk can independently exist and can be attached to or detached from an instance within the same zone.
+     * false: The disk is not removable. A disk that is not removable cannot independently exist or be attached to or detached from an instance within the same zone.
+     * The Portable attribute of the following disks is false, and these disks share the same lifecycle with their associated instances:
+     * Local disks
+     * Local SSDs
+     * Subscription data disks
+     */
+    public portable: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the disk belongs. 
+     * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property snapshotId: The ID of the snapshot used to create the cloud disk.
+     */
+    public snapshotId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: The state of the cloud disk. For more information, see Disk states. Valid values:
+     * In_use
+     * Available
+     * Attaching
+     * Detaching
+     * Creating
+     * ReIniting
+     * All
+     * Default value: All.
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of disks.
+     */
+    public tags: RosDisks.TagsProperty[] | undefined;
+
+    /**
+     * @Property zoneId: The ID of the zone for which to query resources.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::Disks`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDisksProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDisks.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDiskIds = this.getAtt('DiskIds');
+        this.attrDisks = this.getAtt('Disks');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.additionalAttributes = props.additionalAttributes;
+        this.autoSnapshotPolicyId = props.autoSnapshotPolicyId;
+        this.category = props.category;
+        this.deleteAutoSnapshot = props.deleteAutoSnapshot;
+        this.deleteWithInstance = props.deleteWithInstance;
+        this.diskChargeType = props.diskChargeType;
+        this.diskIds = props.diskIds;
+        this.diskName = props.diskName;
+        this.diskType = props.diskType;
+        this.enableAutomatedSnapshotPolicy = props.enableAutomatedSnapshotPolicy;
+        this.enableAutoSnapshot = props.enableAutoSnapshot;
+        this.enableShared = props.enableShared;
+        this.encrypted = props.encrypted;
+        this.filters = props.filters;
+        this.instanceId = props.instanceId;
+        this.kmsKeyId = props.kmsKeyId;
+        this.multiAttach = props.multiAttach;
+        this.portable = props.portable;
+        this.resourceGroupId = props.resourceGroupId;
+        this.snapshotId = props.snapshotId;
+        this.status = props.status;
+        this.tags = props.tags;
+        this.zoneId = props.zoneId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            additionalAttributes: this.additionalAttributes,
+            autoSnapshotPolicyId: this.autoSnapshotPolicyId,
+            category: this.category,
+            deleteAutoSnapshot: this.deleteAutoSnapshot,
+            deleteWithInstance: this.deleteWithInstance,
+            diskChargeType: this.diskChargeType,
+            diskIds: this.diskIds,
+            diskName: this.diskName,
+            diskType: this.diskType,
+            enableAutomatedSnapshotPolicy: this.enableAutomatedSnapshotPolicy,
+            enableAutoSnapshot: this.enableAutoSnapshot,
+            enableShared: this.enableShared,
+            encrypted: this.encrypted,
+            filters: this.filters,
+            instanceId: this.instanceId,
+            kmsKeyId: this.kmsKeyId,
+            multiAttach: this.multiAttach,
+            portable: this.portable,
+            resourceGroupId: this.resourceGroupId,
+            snapshotId: this.snapshotId,
+            status: this.status,
+            tags: this.tags,
+            zoneId: this.zoneId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDisksPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosDisks {
+    /**
+     * @stability external
+     */
+    export interface FiltersProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `FiltersProperty`
+ *
+ * @param properties - the TypeScript properties of a `FiltersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDisks_FiltersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "FiltersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Disks.Filters` resource
+ *
+ * @param properties - the TypeScript properties of a `FiltersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Disks.Filters` resource.
+ */
+// @ts-ignore TS6133
+function rosDisksFiltersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDisks_FiltersPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosDisks {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDisks_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Disks.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Disks.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosDisksTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDisks_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::HpcClusters`
+ */
+export interface RosHpcClustersProps {
+
+    /**
+     * @Property hpcClusterIds: The IDs of the HPC clusters. You can specify up to 100 HPC cluster IDs.
+     */
+    readonly hpcClusterIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosHpcClustersProps`
+ *
+ * @param properties - the TypeScript properties of a `RosHpcClustersProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosHpcClustersPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.hpcClusterIds && (Array.isArray(properties.hpcClusterIds) || (typeof properties.hpcClusterIds) === 'string')) {
+        errors.collect(ros.propertyValidator('hpcClusterIds', ros.validateLength)({
+            data: properties.hpcClusterIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('hpcClusterIds', ros.listValidator(ros.validateString))(properties.hpcClusterIds));
+    return errors.wrap('supplied properties not correct for "RosHpcClustersProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::HpcClusters` resource
+ *
+ * @param properties - the TypeScript properties of a `RosHpcClustersProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::HpcClusters` resource.
+ */
+// @ts-ignore TS6133
+function rosHpcClustersPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosHpcClustersPropsValidator(properties).assertSuccess();
+    }
+    return {
+      HpcClusterIds: ros.listMapper(ros.stringToRosTemplate)(properties.hpcClusterIds),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::HpcClusters`
+ */
+export class RosHpcClusters extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::HpcClusters";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute HpcClusterIds: the list of hpc cluster ids
+     */
+    public readonly attrHpcClusterIds: ros.IResolvable;
+
+    /**
+     * @Attribute HpcClusters: The list of hpc clusters.
+     */
+    public readonly attrHpcClusters: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property hpcClusterIds: The IDs of the HPC clusters. You can specify up to 100 HPC cluster IDs.
+     */
+    public hpcClusterIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::HpcClusters`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosHpcClustersProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosHpcClusters.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrHpcClusterIds = this.getAtt('HpcClusterIds');
+        this.attrHpcClusters = this.getAtt('HpcClusters');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.hpcClusterIds = props.hpcClusterIds;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            hpcClusterIds: this.hpcClusterIds,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosHpcClustersPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::Images`
+ */
+export interface RosImagesProps {
+
+    /**
+     * @Property actionType: The scenario in which the image is used. Default value: CreateEcs. Valid values:
+     * CreateEcs: instance creation
+     * ChangeOS: replacement of the system disk or operating system
+     */
+    readonly actionType?: string | ros.IResolvable;
+
+    /**
+     * @Property architecture: The image architecture. Valid values:
+     * i38
+     * x86_64
+     * arm64
+     */
+    readonly architecture?: string | ros.IResolvable;
+
+    /**
+     * @Property imageFamily: The name of the image family. You can set this parameter to query images of the specified image family.
+     * This parameter is empty by default.
+     */
+    readonly imageFamily?: string | ros.IResolvable;
+
+    /**
+     * @Property imageId: The ID of the image.
+     */
+    readonly imageId?: string | ros.IResolvable;
+
+    /**
+     * @Property imageName: The name of the image. Support for fuzzy queries using *.
+     */
+    readonly imageName?: string | ros.IResolvable;
+
+    /**
+     * @Property imageOwnerAlias: The source of the image. Valid values:
+     * system: public images provided by Alibaba Cloud.
+     * self: your custom images.
+     * others: shared images from other Alibaba Cloud accounts, or community images published by other Alibaba Cloud accounts. Take note of the following items:
+     * - To query community images, you must set IsPublic to true.
+     * To query shared images, you must set IsPublic to false or leave the IsPublic parameter empty.
+     * marketplace: Alibaba Cloud Marketplace images. If Alibaba Cloud Marketplace images are returned in the response, you can use the images without subscription. You must pay attention to the billing details of Alibaba Cloud Marketplace images.
+     * This parameter is empty by default, which indicates that the results that match system, self, and others are returned.
+     */
+    readonly imageOwnerAlias?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The instance type for which the image can be used.
+     */
+    readonly instanceType?: string | ros.IResolvable;
+
+    /**
+     * @Property isPublic: Specifies whether to query published community images. Valid values:
+     * true: queries published community images. When you set this parameter to true, you must set ImageOwnerAlias to others.
+     * false: queries other image types than community images. The specific image types to be queried are determined by the ImageOwnerAlias value.
+     * Default value: false.
+     */
+    readonly isPublic?: boolean | ros.IResolvable;
+
+    /**
+     * @Property isSupportCloudinit: Specifies whether the image supports cloud-init.
+     */
+    readonly isSupportCloudinit?: boolean | ros.IResolvable;
+
+    /**
+     * @Property isSupportIoOptimized: Specifies whether the image can be used on I/O optimized instances.
+     */
+    readonly isSupportIoOptimized?: boolean | ros.IResolvable;
+
+    /**
+     * @Property osType: The operating system type of the image. Valid values:
+     * windows
+     * linux
+     */
+    readonly osType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the custom image belongs. If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property snapshotId: The ID of the snapshot used to create the custom image.
+     */
+    readonly snapshotId?: string | ros.IResolvable;
+
+    /**
+     * @Property status: The state of the image. Default value: Available. Valid values:
+     * Creating: The image is being created.
+     * Waiting: The image is waiting to be processed.
+     * Available: The image is available.
+     * UnAvailable: The image is unavailable.
+     * CreateFailed: The image failed to be created.
+     * Deprecated: The image is discontinued.
+     * You can specify multiple values. Separate multiple values with commas (,).
+     */
+    readonly status?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of image.
+     */
+    readonly tags?: RosImages.TagsProperty[];
+
+    /**
+     * @Property usage: Specifies whether the image is running on an Elastic Compute Service (ECS) instance. Valid values:
+     * instance: The image is already in use and running on an ECS instance.
+     * none: The image is not in use.
+     */
+    readonly usage?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosImagesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosImagesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosImagesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    if(properties.imageOwnerAlias && (typeof properties.imageOwnerAlias) !== 'object') {
+        errors.collect(ros.propertyValidator('imageOwnerAlias', ros.validateAllowedValues)({
+          data: properties.imageOwnerAlias,
+          allowedValues: ["system","self","others","marketplace"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('imageOwnerAlias', ros.validateString)(properties.imageOwnerAlias));
+    if(properties.usage && (typeof properties.usage) !== 'object') {
+        errors.collect(ros.propertyValidator('usage', ros.validateAllowedValues)({
+          data: properties.usage,
+          allowedValues: ["instance","none"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('usage', ros.validateString)(properties.usage));
+    if(properties.actionType && (typeof properties.actionType) !== 'object') {
+        errors.collect(ros.propertyValidator('actionType', ros.validateAllowedValues)({
+          data: properties.actionType,
+          allowedValues: ["CreateEcs","ChangeOS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('actionType', ros.validateString)(properties.actionType));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.architecture && (typeof properties.architecture) !== 'object') {
+        errors.collect(ros.propertyValidator('architecture', ros.validateAllowedValues)({
+          data: properties.architecture,
+          allowedValues: ["i38","x86_64","arm64"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('architecture', ros.validateString)(properties.architecture));
+    errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
+    errors.collect(ros.propertyValidator('isSupportIoOptimized', ros.validateBoolean)(properties.isSupportIoOptimized));
+    errors.collect(ros.propertyValidator('isSupportCloudinit', ros.validateBoolean)(properties.isSupportCloudinit));
+    errors.collect(ros.propertyValidator('imageName', ros.validateString)(properties.imageName));
+    errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
+    errors.collect(ros.propertyValidator('isPublic', ros.validateBoolean)(properties.isPublic));
+    if(properties.osType && (typeof properties.osType) !== 'object') {
+        errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
+          data: properties.osType,
+          allowedValues: ["windows","linux"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosImages_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosImagesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Images` resource
+ *
+ * @param properties - the TypeScript properties of a `RosImagesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Images` resource.
+ */
+// @ts-ignore TS6133
+function rosImagesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosImagesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ActionType: ros.stringToRosTemplate(properties.actionType),
+      Architecture: ros.stringToRosTemplate(properties.architecture),
+      ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
+      ImageId: ros.stringToRosTemplate(properties.imageId),
+      ImageName: ros.stringToRosTemplate(properties.imageName),
+      ImageOwnerAlias: ros.stringToRosTemplate(properties.imageOwnerAlias),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      IsPublic: ros.booleanToRosTemplate(properties.isPublic),
+      IsSupportCloudinit: ros.booleanToRosTemplate(properties.isSupportCloudinit),
+      IsSupportIoOptimized: ros.booleanToRosTemplate(properties.isSupportIoOptimized),
+      OSType: ros.stringToRosTemplate(properties.osType),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
+      Status: ros.stringToRosTemplate(properties.status),
+      Tags: ros.listMapper(rosImagesTagsPropertyToRosTemplate)(properties.tags),
+      Usage: ros.stringToRosTemplate(properties.usage),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::Images`
+ */
+export class RosImages extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Images";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ImageIds: The list of image IDs.
+     */
+    public readonly attrImageIds: ros.IResolvable;
+
+    /**
+     * @Attribute Images: The list of images.
+     */
+    public readonly attrImages: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property actionType: The scenario in which the image is used. Default value: CreateEcs. Valid values:
+     * CreateEcs: instance creation
+     * ChangeOS: replacement of the system disk or operating system
+     */
+    public actionType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property architecture: The image architecture. Valid values:
+     * i38
+     * x86_64
+     * arm64
+     */
+    public architecture: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageFamily: The name of the image family. You can set this parameter to query images of the specified image family.
+     * This parameter is empty by default.
+     */
+    public imageFamily: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageId: The ID of the image.
+     */
+    public imageId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageName: The name of the image. Support for fuzzy queries using *.
+     */
+    public imageName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageOwnerAlias: The source of the image. Valid values:
+     * system: public images provided by Alibaba Cloud.
+     * self: your custom images.
+     * others: shared images from other Alibaba Cloud accounts, or community images published by other Alibaba Cloud accounts. Take note of the following items:
+     * - To query community images, you must set IsPublic to true.
+     * To query shared images, you must set IsPublic to false or leave the IsPublic parameter empty.
+     * marketplace: Alibaba Cloud Marketplace images. If Alibaba Cloud Marketplace images are returned in the response, you can use the images without subscription. You must pay attention to the billing details of Alibaba Cloud Marketplace images.
+     * This parameter is empty by default, which indicates that the results that match system, self, and others are returned.
+     */
+    public imageOwnerAlias: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceType: The instance type for which the image can be used.
+     */
+    public instanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property isPublic: Specifies whether to query published community images. Valid values:
+     * true: queries published community images. When you set this parameter to true, you must set ImageOwnerAlias to others.
+     * false: queries other image types than community images. The specific image types to be queried are determined by the ImageOwnerAlias value.
+     * Default value: false.
+     */
+    public isPublic: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property isSupportCloudinit: Specifies whether the image supports cloud-init.
+     */
+    public isSupportCloudinit: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property isSupportIoOptimized: Specifies whether the image can be used on I/O optimized instances.
+     */
+    public isSupportIoOptimized: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property osType: The operating system type of the image. Valid values:
+     * windows
+     * linux
+     */
+    public osType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the custom image belongs. If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property snapshotId: The ID of the snapshot used to create the custom image.
+     */
+    public snapshotId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: The state of the image. Default value: Available. Valid values:
+     * Creating: The image is being created.
+     * Waiting: The image is waiting to be processed.
+     * Available: The image is available.
+     * UnAvailable: The image is unavailable.
+     * CreateFailed: The image failed to be created.
+     * Deprecated: The image is discontinued.
+     * You can specify multiple values. Separate multiple values with commas (,).
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of image.
+     */
+    public tags: RosImages.TagsProperty[] | undefined;
+
+    /**
+     * @Property usage: Specifies whether the image is running on an Elastic Compute Service (ECS) instance. Valid values:
+     * instance: The image is already in use and running on an ECS instance.
+     * none: The image is not in use.
+     */
+    public usage: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::Images`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosImagesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosImages.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrImageIds = this.getAtt('ImageIds');
+        this.attrImages = this.getAtt('Images');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.actionType = props.actionType;
+        this.architecture = props.architecture;
+        this.imageFamily = props.imageFamily;
+        this.imageId = props.imageId;
+        this.imageName = props.imageName;
+        this.imageOwnerAlias = props.imageOwnerAlias;
+        this.instanceType = props.instanceType;
+        this.isPublic = props.isPublic;
+        this.isSupportCloudinit = props.isSupportCloudinit;
+        this.isSupportIoOptimized = props.isSupportIoOptimized;
+        this.osType = props.osType;
+        this.resourceGroupId = props.resourceGroupId;
+        this.snapshotId = props.snapshotId;
+        this.status = props.status;
+        this.tags = props.tags;
+        this.usage = props.usage;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            actionType: this.actionType,
+            architecture: this.architecture,
+            imageFamily: this.imageFamily,
+            imageId: this.imageId,
+            imageName: this.imageName,
+            imageOwnerAlias: this.imageOwnerAlias,
+            instanceType: this.instanceType,
+            isPublic: this.isPublic,
+            isSupportCloudinit: this.isSupportCloudinit,
+            isSupportIoOptimized: this.isSupportIoOptimized,
+            osType: this.osType,
+            resourceGroupId: this.resourceGroupId,
+            snapshotId: this.snapshotId,
+            status: this.status,
+            tags: this.tags,
+            usage: this.usage,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosImagesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosImages {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosImages_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Images.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Images.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosImagesTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosImages_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::Instances`
+ */
+export interface RosInstancesProps {
+
+    /**
+     * @Property additionalAttributes: The value of attribute N. Valid values of N: 1 to 20. Valid values:
+     * META_OPTIONS: instance metadata
+     * DDH_CLUSTER: dedicated host cluster
+     * NETWORK_PRIMARY_ENI_IP: secondary IP address associated with the primary ENI of the instance
+     */
+    readonly additionalAttributes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property eipAddresses: The elastic IP addresses (EIPs) of instances. This parameter is valid when InstanceNetworkType is set to vpc. The value can be a JSON array that consists of up to 100 IP addresses. Separate the IP addresses with commas (,).
+     */
+    readonly eipAddresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property filters: Filter value when querying resources
+     */
+    readonly filters?: Array<RosInstances.FiltersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property hpcClusterId: The ID of the High Performance Computing (HPC) cluster to which the instance belongs.
+     */
+    readonly hpcClusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property imageId: The ID of the image.
+     */
+    readonly imageId?: string | ros.IResolvable;
+
+    /**
+     * @Property innerIpAddresses: The internal IP addresses of instances located in the classic network. This parameter is valid when InstanceNetworkType is set to classic. The value can be a JSON array that consists of up to 100 IP addresses. Separate the IP addresses with commas (,).
+     */
+    readonly innerIpAddresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property instanceChargeType: The billing method of the instance. Valid values:
+     * PostPaid: pay-as-you-go
+     * PrePaid: subscription
+     *
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The IDs of instances. The value can be a JSON array that consists of up to 100 instance IDs. Separate the instance IDs with commas (,).
+     */
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceIds: The IDs of instances. The value can be a JSON array that consists of up to 100 instance IDs. Separate the instance IDs with commas (,).
+     */
+    readonly instanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The name of the instance. Fuzzy search with the asterisk (*) wildcard is supported.
+     */
+    readonly instanceName?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceNetworkType: The network type of the instance. Valid values:
+     * classic: classic network
+     * vpc: VPC
+     *
+     */
+    readonly instanceNetworkType?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The instance type of the instance.
+     */
+    readonly instanceType?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceTypeFamily: The instance family of the instance.
+     */
+    readonly instanceTypeFamily?: string | ros.IResolvable;
+
+    /**
+     * @Property internetChargeType: The billing method for network usage. Valid values:
+     * PayByBandwidth: pay-by-bandwidth
+     * PayByTraffic: pay-by-traffic
+     *
+     */
+    readonly internetChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property ioOptimized: Specifies whether the instance is I/O optimized.
+     */
+    readonly ioOptimized?: boolean | ros.IResolvable;
+
+    /**
+     * @Property ipv6Address: IPv6 address N of the elastic network interface (ENI). You can specify multiple IPv6 addresses. Valid values of N: 1 to 100.
+     */
+    readonly ipv6Address?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property keyPairName: The name of the SSH key pair bound to the instance.
+     */
+    readonly keyPairName?: string | ros.IResolvable;
+
+    /**
+     * @Property privateIpAddresses: The private IP addresses of instances located in VPCs. This parameter is valid when InstanceNetworkType is set to vpc. The value can be a JSON array that consists of up to 100 IP addresses. Separate the IP addresses with commas (,).
+     */
+    readonly privateIpAddresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property publicIpAddresses: The public IP addresses of instances. The value can be a JSON array that consists of up to 100 IP addresses. Separate the IP addresses with commas (,).
+     */
+    readonly publicIpAddresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property rdmaIpAddresses: The Remote Direct Memory Access (RDMA) IP addresses of HPC instances.
+     */
+    readonly rdmaIpAddresses?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the instance belongs. 
+     * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The ID of the security group to which the instance belongs.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property status: The state of the instance. Valid values:
+     * Pending
+     * Running
+     * Starting
+     * Stopping
+     * Stopped
+     *
+     */
+    readonly status?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of instance.
+     */
+    readonly tags?: RosInstances.TagsProperty[];
+
+    /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC).
+     */
+    readonly vpcId?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the vSwitch.
+     */
+    readonly vSwitchId?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The zone ID of the instance.
+     */
+    readonly zoneId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstancesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstancesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.innerIpAddresses && (Array.isArray(properties.innerIpAddresses) || (typeof properties.innerIpAddresses) === 'string')) {
+        errors.collect(ros.propertyValidator('innerIpAddresses', ros.validateLength)({
+            data: properties.innerIpAddresses.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('innerIpAddresses', ros.listValidator(ros.validateString))(properties.innerIpAddresses));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.privateIpAddresses && (Array.isArray(properties.privateIpAddresses) || (typeof properties.privateIpAddresses) === 'string')) {
+        errors.collect(ros.propertyValidator('privateIpAddresses', ros.validateLength)({
+            data: properties.privateIpAddresses.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('privateIpAddresses', ros.listValidator(ros.validateString))(properties.privateIpAddresses));
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('instanceTypeFamily', ros.validateString)(properties.instanceTypeFamily));
+    errors.collect(ros.propertyValidator('instanceNetworkType', ros.validateString)(properties.instanceNetworkType));
+    if(properties.filters && (Array.isArray(properties.filters) || (typeof properties.filters) === 'string')) {
+        errors.collect(ros.propertyValidator('filters', ros.validateLength)({
+            data: properties.filters.length,
+            min: undefined,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('filters', ros.listValidator(RosInstances_FiltersPropertyValidator))(properties.filters));
+    if(properties.additionalAttributes && (Array.isArray(properties.additionalAttributes) || (typeof properties.additionalAttributes) === 'string')) {
+        errors.collect(ros.propertyValidator('additionalAttributes', ros.validateLength)({
+            data: properties.additionalAttributes.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('additionalAttributes', ros.listValidator(ros.validateString))(properties.additionalAttributes));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.publicIpAddresses && (Array.isArray(properties.publicIpAddresses) || (typeof properties.publicIpAddresses) === 'string')) {
+        errors.collect(ros.propertyValidator('publicIpAddresses', ros.validateLength)({
+            data: properties.publicIpAddresses.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('publicIpAddresses', ros.listValidator(ros.validateString))(properties.publicIpAddresses));
+    errors.collect(ros.propertyValidator('rdmaIpAddresses', ros.validateString)(properties.rdmaIpAddresses));
+    if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
+            data: properties.instanceIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.ipv6Address && (Array.isArray(properties.ipv6Address) || (typeof properties.ipv6Address) === 'string')) {
+        errors.collect(ros.propertyValidator('ipv6Address', ros.validateLength)({
+            data: properties.ipv6Address.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6Address', ros.listValidator(ros.validateString))(properties.ipv6Address));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstances_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    errors.collect(ros.propertyValidator('ioOptimized', ros.validateBoolean)(properties.ioOptimized));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    if(properties.eipAddresses && (Array.isArray(properties.eipAddresses) || (typeof properties.eipAddresses) === 'string')) {
+        errors.collect(ros.propertyValidator('eipAddresses', ros.validateLength)({
+            data: properties.eipAddresses.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('eipAddresses', ros.listValidator(ros.validateString))(properties.eipAddresses));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    return errors.wrap('supplied properties not correct for "RosInstancesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Instances` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstancesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Instances` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AdditionalAttributes: ros.listMapper(ros.stringToRosTemplate)(properties.additionalAttributes),
+      EipAddresses: ros.listMapper(ros.stringToRosTemplate)(properties.eipAddresses),
+      Filters: ros.listMapper(rosInstancesFiltersPropertyToRosTemplate)(properties.filters),
+      HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
+      ImageId: ros.stringToRosTemplate(properties.imageId),
+      InnerIpAddresses: ros.listMapper(ros.stringToRosTemplate)(properties.innerIpAddresses),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      InstanceNetworkType: ros.stringToRosTemplate(properties.instanceNetworkType),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      InstanceTypeFamily: ros.stringToRosTemplate(properties.instanceTypeFamily),
+      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      IoOptimized: ros.booleanToRosTemplate(properties.ioOptimized),
+      Ipv6Address: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Address),
+      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
+      PrivateIpAddresses: ros.listMapper(ros.stringToRosTemplate)(properties.privateIpAddresses),
+      PublicIpAddresses: ros.listMapper(ros.stringToRosTemplate)(properties.publicIpAddresses),
+      RdmaIpAddresses: ros.stringToRosTemplate(properties.rdmaIpAddresses),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      Status: ros.stringToRosTemplate(properties.status),
+      Tags: ros.listMapper(rosInstancesTagsPropertyToRosTemplate)(properties.tags),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::Instances`
+ */
+export class RosInstances extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Instances";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute InstanceIds: The list of InstanceIds.
+     */
+    public readonly attrInstanceIds: ros.IResolvable;
+
+    /**
+     * @Attribute Instances: The list of Instances.
+     */
+    public readonly attrInstances: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property additionalAttributes: The value of attribute N. Valid values of N: 1 to 20. Valid values:
+     * META_OPTIONS: instance metadata
+     * DDH_CLUSTER: dedicated host cluster
+     * NETWORK_PRIMARY_ENI_IP: secondary IP address associated with the primary ENI of the instance
+     */
+    public additionalAttributes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property eipAddresses: The elastic IP addresses (EIPs) of instances. This parameter is valid when InstanceNetworkType is set to vpc. The value can be a JSON array that consists of up to 100 IP addresses. Separate the IP addresses with commas (,).
+     */
+    public eipAddresses: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property filters: Filter value when querying resources
+     */
+    public filters: Array<RosInstances.FiltersProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property hpcClusterId: The ID of the High Performance Computing (HPC) cluster to which the instance belongs.
+     */
+    public hpcClusterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageId: The ID of the image.
+     */
+    public imageId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property innerIpAddresses: The internal IP addresses of instances located in the classic network. This parameter is valid when InstanceNetworkType is set to classic. The value can be a JSON array that consists of up to 100 IP addresses. Separate the IP addresses with commas (,).
+     */
+    public innerIpAddresses: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceChargeType: The billing method of the instance. Valid values:
+     * PostPaid: pay-as-you-go
+     * PrePaid: subscription
+     *
+     */
+    public instanceChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The IDs of instances. The value can be a JSON array that consists of up to 100 instance IDs. Separate the instance IDs with commas (,).
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceIds: The IDs of instances. The value can be a JSON array that consists of up to 100 instance IDs. Separate the instance IDs with commas (,).
+     */
+    public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceName: The name of the instance. Fuzzy search with the asterisk (*) wildcard is supported.
+     */
+    public instanceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceNetworkType: The network type of the instance. Valid values:
+     * classic: classic network
+     * vpc: VPC
+     *
+     */
+    public instanceNetworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceType: The instance type of the instance.
+     */
+    public instanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceTypeFamily: The instance family of the instance.
+     */
+    public instanceTypeFamily: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property internetChargeType: The billing method for network usage. Valid values:
+     * PayByBandwidth: pay-by-bandwidth
+     * PayByTraffic: pay-by-traffic
+     *
+     */
+    public internetChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ioOptimized: Specifies whether the instance is I/O optimized.
+     */
+    public ioOptimized: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6Address: IPv6 address N of the elastic network interface (ENI). You can specify multiple IPv6 addresses. Valid values of N: 1 to 100.
+     */
+    public ipv6Address: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property keyPairName: The name of the SSH key pair bound to the instance.
+     */
+    public keyPairName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property privateIpAddresses: The private IP addresses of instances located in VPCs. This parameter is valid when InstanceNetworkType is set to vpc. The value can be a JSON array that consists of up to 100 IP addresses. Separate the IP addresses with commas (,).
+     */
+    public privateIpAddresses: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property publicIpAddresses: The public IP addresses of instances. The value can be a JSON array that consists of up to 100 IP addresses. Separate the IP addresses with commas (,).
+     */
+    public publicIpAddresses: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property rdmaIpAddresses: The Remote Direct Memory Access (RDMA) IP addresses of HPC instances.
+     */
+    public rdmaIpAddresses: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the instance belongs. 
+     * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupId: The ID of the security group to which the instance belongs.
+     */
+    public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: The state of the instance. Valid values:
+     * Pending
+     * Running
+     * Starting
+     * Stopping
+     * Stopped
+     *
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of instance.
+     */
+    public tags: RosInstances.TagsProperty[] | undefined;
+
+    /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC).
+     */
+    public vpcId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchId: The ID of the vSwitch.
+     */
+    public vSwitchId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneId: The zone ID of the instance.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::Instances`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstancesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstances.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceIds = this.getAtt('InstanceIds');
+        this.attrInstances = this.getAtt('Instances');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.additionalAttributes = props.additionalAttributes;
+        this.eipAddresses = props.eipAddresses;
+        this.filters = props.filters;
+        this.hpcClusterId = props.hpcClusterId;
+        this.imageId = props.imageId;
+        this.innerIpAddresses = props.innerIpAddresses;
+        this.instanceChargeType = props.instanceChargeType;
+        this.instanceId = props.instanceId;
+        this.instanceIds = props.instanceIds;
+        this.instanceName = props.instanceName;
+        this.instanceNetworkType = props.instanceNetworkType;
+        this.instanceType = props.instanceType;
+        this.instanceTypeFamily = props.instanceTypeFamily;
+        this.internetChargeType = props.internetChargeType;
+        this.ioOptimized = props.ioOptimized;
+        this.ipv6Address = props.ipv6Address;
+        this.keyPairName = props.keyPairName;
+        this.privateIpAddresses = props.privateIpAddresses;
+        this.publicIpAddresses = props.publicIpAddresses;
+        this.rdmaIpAddresses = props.rdmaIpAddresses;
+        this.resourceGroupId = props.resourceGroupId;
+        this.securityGroupId = props.securityGroupId;
+        this.status = props.status;
+        this.tags = props.tags;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.zoneId = props.zoneId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            additionalAttributes: this.additionalAttributes,
+            eipAddresses: this.eipAddresses,
+            filters: this.filters,
+            hpcClusterId: this.hpcClusterId,
+            imageId: this.imageId,
+            innerIpAddresses: this.innerIpAddresses,
+            instanceChargeType: this.instanceChargeType,
+            instanceId: this.instanceId,
+            instanceIds: this.instanceIds,
+            instanceName: this.instanceName,
+            instanceNetworkType: this.instanceNetworkType,
+            instanceType: this.instanceType,
+            instanceTypeFamily: this.instanceTypeFamily,
+            internetChargeType: this.internetChargeType,
+            ioOptimized: this.ioOptimized,
+            ipv6Address: this.ipv6Address,
+            keyPairName: this.keyPairName,
+            privateIpAddresses: this.privateIpAddresses,
+            publicIpAddresses: this.publicIpAddresses,
+            rdmaIpAddresses: this.rdmaIpAddresses,
+            resourceGroupId: this.resourceGroupId,
+            securityGroupId: this.securityGroupId,
+            status: this.status,
+            tags: this.tags,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            zoneId: this.zoneId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosInstances {
+    /**
+     * @stability external
+     */
+    export interface FiltersProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `FiltersProperty`
+ *
+ * @param properties - the TypeScript properties of a `FiltersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstances_FiltersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "FiltersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Instances.Filters` resource
+ *
+ * @param properties - the TypeScript properties of a `FiltersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Instances.Filters` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancesFiltersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstances_FiltersPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosInstances {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstances_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Instances.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Instances.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancesTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstances_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::KeyPairs`
+ */
+export interface RosKeyPairsProps {
+
+    /**
+     * @Property keyPairFingerPrint: The fingerprint of the key pair. The message-digest algorithm 5 (MD5) is used based on the public key fingerprint format defined in RFC 4716. For more information, see RFC 4716.
+     */
+    readonly keyPairFingerPrint?: string | ros.IResolvable;
+
+    /**
+     * @Property keyPairName: he name of the key pair. You can use the asterisk (*) symbol as a wildcard in regular expressions to query key pairs by performing a fuzzy search. Sample patterns:
+     * *SshKey: queries key pairs whose names end with SshKey, including the key pair named SshKey.
+     * SshKey*: queries key pairs whose names start with SshKey, including the key pair named SshKey.
+     * *SshKey*: queries key pairs whose names include SshKey, including the key pair named SshKey.
+     * SshKey: queries the key pair named SshKey.
+     */
+    readonly keyPairName?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the key pair belongs. If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of keypair.
+     */
+    readonly tags?: RosKeyPairs.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosKeyPairsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosKeyPairsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosKeyPairsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('keyPairFingerPrint', ros.validateString)(properties.keyPairFingerPrint));
+    errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKeyPairs_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosKeyPairsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::KeyPairs` resource
+ *
+ * @param properties - the TypeScript properties of a `RosKeyPairsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::KeyPairs` resource.
+ */
+// @ts-ignore TS6133
+function rosKeyPairsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosKeyPairsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      KeyPairFingerPrint: ros.stringToRosTemplate(properties.keyPairFingerPrint),
+      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosKeyPairsTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::KeyPairs`
+ */
+export class RosKeyPairs extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::KeyPairs";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute KeyPairNames: The list of key pair names.
+     */
+    public readonly attrKeyPairNames: ros.IResolvable;
+
+    /**
+     * @Attribute KeyPairs: The list of key pairs.
+     */
+    public readonly attrKeyPairs: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property keyPairFingerPrint: The fingerprint of the key pair. The message-digest algorithm 5 (MD5) is used based on the public key fingerprint format defined in RFC 4716. For more information, see RFC 4716.
+     */
+    public keyPairFingerPrint: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property keyPairName: he name of the key pair. You can use the asterisk (*) symbol as a wildcard in regular expressions to query key pairs by performing a fuzzy search. Sample patterns:
+     * *SshKey: queries key pairs whose names end with SshKey, including the key pair named SshKey.
+     * SshKey*: queries key pairs whose names start with SshKey, including the key pair named SshKey.
+     * *SshKey*: queries key pairs whose names include SshKey, including the key pair named SshKey.
+     * SshKey: queries the key pair named SshKey.
+     */
+    public keyPairName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the key pair belongs. If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of keypair.
+     */
+    public tags: RosKeyPairs.TagsProperty[] | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::KeyPairs`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosKeyPairsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosKeyPairs.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrKeyPairNames = this.getAtt('KeyPairNames');
+        this.attrKeyPairs = this.getAtt('KeyPairs');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.keyPairFingerPrint = props.keyPairFingerPrint;
+        this.keyPairName = props.keyPairName;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            keyPairFingerPrint: this.keyPairFingerPrint,
+            keyPairName: this.keyPairName,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosKeyPairsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosKeyPairs {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKeyPairs_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::KeyPairs.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::KeyPairs.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosKeyPairsTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKeyPairs_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::ManagedInstances`
+ */
+export interface RosManagedInstancesProps {
+
+    /**
+     * @Property activationId: The ID of the activation code
+     */
+    readonly activationId?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of managed instance. Valid values of N: 1 to 50.
+     */
+    readonly instanceId?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property instanceIp: The internal or public IP address of the managed instance
+     */
+    readonly instanceIp?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The name of the managed instance
+     */
+    readonly instanceName?: string | ros.IResolvable;
+
+    /**
+     * @Property osType: The operating system type of the managed instance.  Valid values:
+     * windows
+     * linux
+     */
+    readonly osType?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of managedinstance.
+     */
+    readonly tags?: RosManagedInstances.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosManagedInstancesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosManagedInstancesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedInstancesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    if(properties.instanceId && (Array.isArray(properties.instanceId) || (typeof properties.instanceId) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceId', ros.validateLength)({
+            data: properties.instanceId.length,
+            min: undefined,
+            max: 50,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceId', ros.listValidator(ros.validateString))(properties.instanceId));
+    if(properties.osType && (typeof properties.osType) !== 'object') {
+        errors.collect(ros.propertyValidator('osType', ros.validateAllowedValues)({
+          data: properties.osType,
+          allowedValues: ["windows","linux"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('osType', ros.validateString)(properties.osType));
+    errors.collect(ros.propertyValidator('activationId', ros.validateString)(properties.activationId));
+    errors.collect(ros.propertyValidator('instanceIp', ros.validateString)(properties.instanceIp));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedInstances_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosManagedInstancesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::ManagedInstances` resource
+ *
+ * @param properties - the TypeScript properties of a `RosManagedInstancesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::ManagedInstances` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedInstancesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosManagedInstancesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ActivationId: ros.stringToRosTemplate(properties.activationId),
+      InstanceId: ros.listMapper(ros.stringToRosTemplate)(properties.instanceId),
+      InstanceIp: ros.stringToRosTemplate(properties.instanceIp),
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      OsType: ros.stringToRosTemplate(properties.osType),
+      Tags: ros.listMapper(rosManagedInstancesTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::ManagedInstances`
+ */
+export class RosManagedInstances extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::ManagedInstances";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute InstanceIds: The list of managed instance ids.
+     */
+    public readonly attrInstanceIds: ros.IResolvable;
+
+    /**
+     * @Attribute Instances: The list of managed instances.
+     */
+    public readonly attrInstances: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property activationId: The ID of the activation code
+     */
+    public activationId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The ID of managed instance. Valid values of N: 1 to 50.
+     */
+    public instanceId: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceIp: The internal or public IP address of the managed instance
+     */
+    public instanceIp: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceName: The name of the managed instance
+     */
+    public instanceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property osType: The operating system type of the managed instance.  Valid values:
+     * windows
+     * linux
+     */
+    public osType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of managedinstance.
+     */
+    public tags: RosManagedInstances.TagsProperty[] | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::ManagedInstances`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosManagedInstancesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosManagedInstances.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceIds = this.getAtt('InstanceIds');
+        this.attrInstances = this.getAtt('Instances');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.activationId = props.activationId;
+        this.instanceId = props.instanceId;
+        this.instanceIp = props.instanceIp;
+        this.instanceName = props.instanceName;
+        this.osType = props.osType;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            activationId: this.activationId,
+            instanceId: this.instanceId,
+            instanceIp: this.instanceIp,
+            instanceName: this.instanceName,
+            osType: this.osType,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosManagedInstancesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosManagedInstances {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedInstances_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::ManagedInstances.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::ManagedInstances.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedInstancesTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedInstances_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::NetworkInterfaces`
+ */
+export interface RosNetworkInterfacesProps {
+
+    /**
+     * @Property instanceId: The ID of the instance to which the ENI is bound.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property ipv6Addresses: IPv6 address N of the ENI. You can specify multiple IPv6 addresses. Valid values of N: 1 to 100.
+     */
+    readonly ipv6Addresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property networkInterfaceIds: The ID of ENI N. Valid values of N: 1 to 100.
+     */
+    readonly networkInterfaceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property networkInterfaceName: The name of the ENI.
+     */
+    readonly networkInterfaceName?: string | ros.IResolvable;
+
+    /**
+     * @Property primaryIpAddress: The primary private IPv4 address of the ENI.
+     */
+    readonly primaryIpAddress?: string | ros.IResolvable;
+
+    /**
+     * @Property privateIpAddresses: Secondary private IPv4 address N of the ENI. Valid values of N: 1 to 100.
+     */
+    readonly privateIpAddresses?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the eni belongs. 
+     * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The ID of the security group to which the secondary ENI belongs.
+     * To query the details of secondary ENIs based on the ID of a security group, specify this parameter.
+     * To query the details of primary ENIs based on the ID of a security group, call the DescribeInstances operation and specify the SecurityGroupId parameter.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property serviceManaged: Specifies whether the user is an Alibaba Cloud service or a distributor.
+     */
+    readonly serviceManaged?: boolean | ros.IResolvable;
+
+    /**
+     * @Property status: The state of the ENI. Valid values:
+     * Creating: The ENI is being created.
+     * Available: The ENI is not bound to an instance.
+     * Attaching: The ENI is being bound to an instance.
+     * InUse: The ENI is bound to an instance.
+     * Detaching: The ENI is being unbound from an instance.
+     * Deleting: The ENI is being deleted.
+     * CreateFailed: The ENI cannot be created.
+     * This parameter is empty by default, which indicates that ENIs in all states are queried.
+     */
+    readonly status?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of eni.
+     */
+    readonly tags?: RosNetworkInterfaces.TagsProperty[];
+
+    /**
+     * @Property type: The type of the ENI. Valid values:
+     * Primary
+     * Secondary
+     * This parameter is empty by default, which indicates that both primary and secondary ENIs are queried.
+     */
+    readonly type?: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC) to which the ENI belongs.
+     */
+    readonly vpcId?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the vSwitch to which the ENI is connected.
+     */
+    readonly vSwitchId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNetworkInterfacesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkInterfacesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkInterfacesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    if(properties.privateIpAddresses && (Array.isArray(properties.privateIpAddresses) || (typeof properties.privateIpAddresses) === 'string')) {
+        errors.collect(ros.propertyValidator('privateIpAddresses', ros.validateLength)({
+            data: properties.privateIpAddresses.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('privateIpAddresses', ros.listValidator(ros.validateString))(properties.privateIpAddresses));
+    errors.collect(ros.propertyValidator('serviceManaged', ros.validateBoolean)(properties.serviceManaged));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('networkInterfaceName', ros.validateString)(properties.networkInterfaceName));
+    if(properties.networkInterfaceIds && (Array.isArray(properties.networkInterfaceIds) || (typeof properties.networkInterfaceIds) === 'string')) {
+        errors.collect(ros.propertyValidator('networkInterfaceIds', ros.validateLength)({
+            data: properties.networkInterfaceIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('networkInterfaceIds', ros.listValidator(ros.validateString))(properties.networkInterfaceIds));
+    errors.collect(ros.propertyValidator('primaryIpAddress', ros.validateString)(properties.primaryIpAddress));
+    if(properties.ipv6Addresses && (Array.isArray(properties.ipv6Addresses) || (typeof properties.ipv6Addresses) === 'string')) {
+        errors.collect(ros.propertyValidator('ipv6Addresses', ros.validateLength)({
+            data: properties.ipv6Addresses.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipv6Addresses', ros.listValidator(ros.validateString))(properties.ipv6Addresses));
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosNetworkInterfaces_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosNetworkInterfacesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::NetworkInterfaces` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkInterfacesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::NetworkInterfaces` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkInterfacesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNetworkInterfacesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      Ipv6Addresses: ros.listMapper(ros.stringToRosTemplate)(properties.ipv6Addresses),
+      NetworkInterfaceIds: ros.listMapper(ros.stringToRosTemplate)(properties.networkInterfaceIds),
+      NetworkInterfaceName: ros.stringToRosTemplate(properties.networkInterfaceName),
+      PrimaryIpAddress: ros.stringToRosTemplate(properties.primaryIpAddress),
+      PrivateIpAddresses: ros.listMapper(ros.stringToRosTemplate)(properties.privateIpAddresses),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      ServiceManaged: ros.booleanToRosTemplate(properties.serviceManaged),
+      Status: ros.stringToRosTemplate(properties.status),
+      Tags: ros.listMapper(rosNetworkInterfacesTagsPropertyToRosTemplate)(properties.tags),
+      Type: ros.stringToRosTemplate(properties.type),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::NetworkInterfaces`
+ */
+export class RosNetworkInterfaces extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::NetworkInterfaces";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute NetworkInterfaceIds: The list of NetworkInterfaceIds.
+     */
+    public readonly attrNetworkInterfaceIds: ros.IResolvable;
+
+    /**
+     * @Attribute NetworkInterfaces: The list of NetworkInterfaces.
+     */
+    public readonly attrNetworkInterfaces: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The ID of the instance to which the ENI is bound.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipv6Addresses: IPv6 address N of the ENI. You can specify multiple IPv6 addresses. Valid values of N: 1 to 100.
+     */
+    public ipv6Addresses: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property networkInterfaceIds: The ID of ENI N. Valid values of N: 1 to 100.
+     */
+    public networkInterfaceIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property networkInterfaceName: The name of the ENI.
+     */
+    public networkInterfaceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property primaryIpAddress: The primary private IPv4 address of the ENI.
+     */
+    public primaryIpAddress: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property privateIpAddresses: Secondary private IPv4 address N of the ENI. Valid values of N: 1 to 100.
+     */
+    public privateIpAddresses: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the eni belongs. 
+     * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupId: The ID of the security group to which the secondary ENI belongs.
+     * To query the details of secondary ENIs based on the ID of a security group, specify this parameter.
+     * To query the details of primary ENIs based on the ID of a security group, call the DescribeInstances operation and specify the SecurityGroupId parameter.
+     */
+    public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serviceManaged: Specifies whether the user is an Alibaba Cloud service or a distributor.
+     */
+    public serviceManaged: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: The state of the ENI. Valid values:
+     * Creating: The ENI is being created.
+     * Available: The ENI is not bound to an instance.
+     * Attaching: The ENI is being bound to an instance.
+     * InUse: The ENI is bound to an instance.
+     * Detaching: The ENI is being unbound from an instance.
+     * Deleting: The ENI is being deleted.
+     * CreateFailed: The ENI cannot be created.
+     * This parameter is empty by default, which indicates that ENIs in all states are queried.
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of eni.
+     */
+    public tags: RosNetworkInterfaces.TagsProperty[] | undefined;
+
+    /**
+     * @Property type: The type of the ENI. Valid values:
+     * Primary
+     * Secondary
+     * This parameter is empty by default, which indicates that both primary and secondary ENIs are queried.
+     */
+    public type: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC) to which the ENI belongs.
+     */
+    public vpcId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchId: The ID of the vSwitch to which the ENI is connected.
+     */
+    public vSwitchId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::NetworkInterfaces`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNetworkInterfacesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNetworkInterfaces.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNetworkInterfaceIds = this.getAtt('NetworkInterfaceIds');
+        this.attrNetworkInterfaces = this.getAtt('NetworkInterfaces');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.ipv6Addresses = props.ipv6Addresses;
+        this.networkInterfaceIds = props.networkInterfaceIds;
+        this.networkInterfaceName = props.networkInterfaceName;
+        this.primaryIpAddress = props.primaryIpAddress;
+        this.privateIpAddresses = props.privateIpAddresses;
+        this.resourceGroupId = props.resourceGroupId;
+        this.securityGroupId = props.securityGroupId;
+        this.serviceManaged = props.serviceManaged;
+        this.status = props.status;
+        this.tags = props.tags;
+        this.type = props.type;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            ipv6Addresses: this.ipv6Addresses,
+            networkInterfaceIds: this.networkInterfaceIds,
+            networkInterfaceName: this.networkInterfaceName,
+            primaryIpAddress: this.primaryIpAddress,
+            privateIpAddresses: this.privateIpAddresses,
+            resourceGroupId: this.resourceGroupId,
+            securityGroupId: this.securityGroupId,
+            serviceManaged: this.serviceManaged,
+            status: this.status,
+            tags: this.tags,
+            type: this.type,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNetworkInterfacesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosNetworkInterfaces {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkInterfaces_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::NetworkInterfaces.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::NetworkInterfaces.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkInterfacesTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosNetworkInterfaces_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::RecommendInstanceTypes`
+ */
+export interface RosRecommendInstanceTypesProps {
+
+    /**
+     * @Property cores: The number of vCPUs of the instance.
+     * Note If the Cores and Memory parameters are both specified, all instance types that offer the vCPUs and memory size specified by the parameters are matched.
+     */
+    readonly cores?: number | ros.IResolvable;
+
+    /**
+     * @Property instanceChargeType: The billing method of the instances of the instance type. Valid values:
+     * PrePaid: subscription
+     * PostPaid: pay-as-you-go
+     * Default value: PostPaid.
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceFamilyLevel: The level of the instance family. Valid values: EntryLevel, EnterpriseLevel, CreditEntryLevel.
+     */
+    readonly instanceFamilyLevel?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The specified instance type. For more information, see Instance families or call ECS DescribeInstanceTypes operation to query the most recent instance type list.
+     * Note If the InstanceType parameter is specified, none of the Cores and Memory parameters can be specified.
+     */
+    readonly instanceType?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceTypeFamilies: The list of instance family to be filtered out. You can also call ECS DescribeInstanceTypeFamilies operation to query the list of instance families.
+     */
+    readonly instanceTypeFamilies?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ioOptimized: Specifies whether to match I/O optimized instances. The IoOptimized parameter cannot be specified when the instance is not I/O optimized. Valid values:
+     * optimized: matches I/O optimized instances.
+     * none: matches non-I/O optimized instances.
+     * Default value: optimized.
+     * If you query alternative instance types for retired instance types, this parameter is set to none by default. 
+     * Default value: none.
+     */
+    readonly ioOptimized?: string | ros.IResolvable;
+
+    /**
+     * @Property maxPrice: The maximum hourly price for pay-as-you-go instances or preemptible instances.
+     * Note If this parameter is specified, the SpotStrategy parameter must be set to SpotWithPriceLimit.
+     */
+    readonly maxPrice?: number | ros.IResolvable;
+
+    /**
+     * @Property memory: The memory size of the instance. Unit: GiB.
+     * Note If the Cores and Memory parameters are both specified, all instance types that offer the vCPUs and memory size specified by the parameters are matched.
+     */
+    readonly memory?: number | ros.IResolvable;
+
+    /**
+     * @Property priorityStrategy: The policy for recommending instance types. Valid values:
+     * InventoryFirst: Instance types are recommended in descending order based on resource availability.
+     * PriceFirst: Instance types are recommended in ascending order based on hourly price per vCPU.
+     * NewProductFirst: The latest instance types are recommended first.
+     * Default value: InventoryFirst.
+     */
+    readonly priorityStrategy?: string | ros.IResolvable;
+
+    /**
+     * @Property scene: Specifies the scenario in which the instance type is recommended. Valid values:
+     * UPGRADE: instance type upgrade or downgrade
+     * CREATE: instance creation
+     * Default value: CREATE.
+     */
+    readonly scene?: string | ros.IResolvable;
+
+    /**
+     * @Property spotStrategy: The bidding policy of preemptible instances. Valid values:
+     * NoSpot: applies to regular pay-as-you-go instances.
+     * SpotWithPriceLimit: applies to preemptible instances that have user-defined maximum hourly prices.
+     * SpotAsPriceGo: applies to preemptible instances that are of the market price at the time of purchase.
+     * Note If the SpotStrategy parameter is specified, the InstanceChargeType parameter must be set to PostPaid.
+     * Default value: NoSpot.
+     */
+    readonly spotStrategy?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskCategory: The category of the system disk. Valid values:
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * cloud_essd: enhanced SSD (ESSD)
+     * cloud: basic disk
+     * For non-I/O optimized instances, the default value is cloud.
+     * For I/O optimized instances, the default value is cloud_efficiency.
+     */
+    readonly systemDiskCategory?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The zone ID of the alternative instance types. You can call ECS DescribeZones operation to query the most recent zone list.When you specify this parameter, we recommend that you set ZoneMatchMode to the default value Include. This value indicates that instance types in the zone specified by ZoneId are preferentially recommended, and instance types in other zones in the same region are also listed.
+     */
+    readonly zoneId?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneMatchMode: Specifies which alternative instance types are recommended. Valid values:
+     * Strict: recommends only alternative instance types in the zone specified by ZoneId.
+     * Include: recommends all instance types in all the zones in the same region as the specified instance type.
+     * When ZoneId is specified, the default value of this parameter is Strict. This value indicates that only alternative instance types in the zone specified by ZoneId are recommended.
+     */
+    readonly zoneMatchMode?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosRecommendInstanceTypesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosRecommendInstanceTypesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosRecommendInstanceTypesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.zoneMatchMode && (typeof properties.zoneMatchMode) !== 'object') {
+        errors.collect(ros.propertyValidator('zoneMatchMode', ros.validateAllowedValues)({
+          data: properties.zoneMatchMode,
+          allowedValues: ["Strict","Include"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('zoneMatchMode', ros.validateString)(properties.zoneMatchMode));
+    if(properties.ioOptimized && (typeof properties.ioOptimized) !== 'object') {
+        errors.collect(ros.propertyValidator('ioOptimized', ros.validateAllowedValues)({
+          data: properties.ioOptimized,
+          allowedValues: ["optimized","none"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PrePaid","PostPaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
+    if(properties.scene && (typeof properties.scene) !== 'object') {
+        errors.collect(ros.propertyValidator('scene', ros.validateAllowedValues)({
+          data: properties.scene,
+          allowedValues: ["UPGRADE","CREATE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('scene', ros.validateString)(properties.scene));
+    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    errors.collect(ros.propertyValidator('cores', ros.validateNumber)(properties.cores));
+    if(properties.priorityStrategy && (typeof properties.priorityStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('priorityStrategy', ros.validateAllowedValues)({
+          data: properties.priorityStrategy,
+          allowedValues: ["InventoryFirst","PriceFirst","NewProductFirst"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('priorityStrategy', ros.validateString)(properties.priorityStrategy));
+    if(properties.instanceFamilyLevel && (typeof properties.instanceFamilyLevel) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceFamilyLevel', ros.validateAllowedValues)({
+          data: properties.instanceFamilyLevel,
+          allowedValues: ["EntryLevel","EnterpriseLevel","CreditEntryLevel"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceFamilyLevel', ros.validateString)(properties.instanceFamilyLevel));
+    errors.collect(ros.propertyValidator('maxPrice', ros.validateNumber)(properties.maxPrice));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.instanceTypeFamilies && (Array.isArray(properties.instanceTypeFamilies) || (typeof properties.instanceTypeFamilies) === 'string')) {
+        errors.collect(ros.propertyValidator('instanceTypeFamilies', ros.validateLength)({
+            data: properties.instanceTypeFamilies.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceTypeFamilies', ros.listValidator(ros.validateString))(properties.instanceTypeFamilies));
+    if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
+          data: properties.spotStrategy,
+          allowedValues: ["NoSpot","SpotWithPriceLimit","SpotAsPriceGo"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
+    return errors.wrap('supplied properties not correct for "RosRecommendInstanceTypesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::RecommendInstanceTypes` resource
+ *
+ * @param properties - the TypeScript properties of a `RosRecommendInstanceTypesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::RecommendInstanceTypes` resource.
+ */
+// @ts-ignore TS6133
+function rosRecommendInstanceTypesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosRecommendInstanceTypesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Cores: ros.numberToRosTemplate(properties.cores),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      InstanceFamilyLevel: ros.stringToRosTemplate(properties.instanceFamilyLevel),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      InstanceTypeFamilies: ros.listMapper(ros.stringToRosTemplate)(properties.instanceTypeFamilies),
+      IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
+      MaxPrice: ros.numberToRosTemplate(properties.maxPrice),
+      Memory: ros.numberToRosTemplate(properties.memory),
+      PriorityStrategy: ros.stringToRosTemplate(properties.priorityStrategy),
+      Scene: ros.stringToRosTemplate(properties.scene),
+      SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
+      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      ZoneMatchMode: ros.stringToRosTemplate(properties.zoneMatchMode),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::RecommendInstanceTypes`
+ */
+export class RosRecommendInstanceTypes extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::RecommendInstanceTypes";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute InstanceTypeIds: The list of instance type ids. Note that instance type ids are not unique.
+     */
+    public readonly attrInstanceTypeIds: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceTypes: The list of instance types, including information such as cores and memory.
+     */
+    public readonly attrInstanceTypes: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cores: The number of vCPUs of the instance.
+     * Note If the Cores and Memory parameters are both specified, all instance types that offer the vCPUs and memory size specified by the parameters are matched.
+     */
+    public cores: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceChargeType: The billing method of the instances of the instance type. Valid values:
+     * PrePaid: subscription
+     * PostPaid: pay-as-you-go
+     * Default value: PostPaid.
+     */
+    public instanceChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceFamilyLevel: The level of the instance family. Valid values: EntryLevel, EnterpriseLevel, CreditEntryLevel.
+     */
+    public instanceFamilyLevel: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceType: The specified instance type. For more information, see Instance families or call ECS DescribeInstanceTypes operation to query the most recent instance type list.
+     * Note If the InstanceType parameter is specified, none of the Cores and Memory parameters can be specified.
+     */
+    public instanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceTypeFamilies: The list of instance family to be filtered out. You can also call ECS DescribeInstanceTypeFamilies operation to query the list of instance families.
+     */
+    public instanceTypeFamilies: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ioOptimized: Specifies whether to match I/O optimized instances. The IoOptimized parameter cannot be specified when the instance is not I/O optimized. Valid values:
+     * optimized: matches I/O optimized instances.
+     * none: matches non-I/O optimized instances.
+     * Default value: optimized.
+     * If you query alternative instance types for retired instance types, this parameter is set to none by default. 
+     * Default value: none.
+     */
+    public ioOptimized: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxPrice: The maximum hourly price for pay-as-you-go instances or preemptible instances.
+     * Note If this parameter is specified, the SpotStrategy parameter must be set to SpotWithPriceLimit.
+     */
+    public maxPrice: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property memory: The memory size of the instance. Unit: GiB.
+     * Note If the Cores and Memory parameters are both specified, all instance types that offer the vCPUs and memory size specified by the parameters are matched.
+     */
+    public memory: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property priorityStrategy: The policy for recommending instance types. Valid values:
+     * InventoryFirst: Instance types are recommended in descending order based on resource availability.
+     * PriceFirst: Instance types are recommended in ascending order based on hourly price per vCPU.
+     * NewProductFirst: The latest instance types are recommended first.
+     * Default value: InventoryFirst.
+     */
+    public priorityStrategy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property scene: Specifies the scenario in which the instance type is recommended. Valid values:
+     * UPGRADE: instance type upgrade or downgrade
+     * CREATE: instance creation
+     * Default value: CREATE.
+     */
+    public scene: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property spotStrategy: The bidding policy of preemptible instances. Valid values:
+     * NoSpot: applies to regular pay-as-you-go instances.
+     * SpotWithPriceLimit: applies to preemptible instances that have user-defined maximum hourly prices.
+     * SpotAsPriceGo: applies to preemptible instances that are of the market price at the time of purchase.
+     * Note If the SpotStrategy parameter is specified, the InstanceChargeType parameter must be set to PostPaid.
+     * Default value: NoSpot.
+     */
+    public spotStrategy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskCategory: The category of the system disk. Valid values:
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * cloud_essd: enhanced SSD (ESSD)
+     * cloud: basic disk
+     * For non-I/O optimized instances, the default value is cloud.
+     * For I/O optimized instances, the default value is cloud_efficiency.
+     */
+    public systemDiskCategory: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneId: The zone ID of the alternative instance types. You can call ECS DescribeZones operation to query the most recent zone list.When you specify this parameter, we recommend that you set ZoneMatchMode to the default value Include. This value indicates that instance types in the zone specified by ZoneId are preferentially recommended, and instance types in other zones in the same region are also listed.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneMatchMode: Specifies which alternative instance types are recommended. Valid values:
+     * Strict: recommends only alternative instance types in the zone specified by ZoneId.
+     * Include: recommends all instance types in all the zones in the same region as the specified instance type.
+     * When ZoneId is specified, the default value of this parameter is Strict. This value indicates that only alternative instance types in the zone specified by ZoneId are recommended.
+     */
+    public zoneMatchMode: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::RecommendInstanceTypes`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosRecommendInstanceTypesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosRecommendInstanceTypes.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceTypeIds = this.getAtt('InstanceTypeIds');
+        this.attrInstanceTypes = this.getAtt('InstanceTypes');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cores = props.cores;
+        this.instanceChargeType = props.instanceChargeType;
+        this.instanceFamilyLevel = props.instanceFamilyLevel;
+        this.instanceType = props.instanceType;
+        this.instanceTypeFamilies = props.instanceTypeFamilies;
+        this.ioOptimized = props.ioOptimized;
+        this.maxPrice = props.maxPrice;
+        this.memory = props.memory;
+        this.priorityStrategy = props.priorityStrategy;
+        this.scene = props.scene;
+        this.spotStrategy = props.spotStrategy;
+        this.systemDiskCategory = props.systemDiskCategory;
+        this.zoneId = props.zoneId;
+        this.zoneMatchMode = props.zoneMatchMode;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cores: this.cores,
+            instanceChargeType: this.instanceChargeType,
+            instanceFamilyLevel: this.instanceFamilyLevel,
+            instanceType: this.instanceType,
+            instanceTypeFamilies: this.instanceTypeFamilies,
+            ioOptimized: this.ioOptimized,
+            maxPrice: this.maxPrice,
+            memory: this.memory,
+            priorityStrategy: this.priorityStrategy,
+            scene: this.scene,
+            spotStrategy: this.spotStrategy,
+            systemDiskCategory: this.systemDiskCategory,
+            zoneId: this.zoneId,
+            zoneMatchMode: this.zoneMatchMode,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosRecommendInstanceTypesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::SecurityGroups`
+ */
+export interface RosSecurityGroupsProps {
+
+    /**
+     * @Property networkType: The network type of the security group. Valid values:
+     * vpc
+     * classic
+     */
+    readonly networkType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the instance belongs. 
+     * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The ID of the security group.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupIds: The IDs of security groups. The value is a JSON array that consists of up to 100 security group IDs. Separate multiple security group IDs with commas (,).
+     */
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property securityGroupName: The name of the security group.
+     */
+    readonly securityGroupName?: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupType: The type of the security group. Valid values:
+     * normal: basic security group
+     * enterprise: advanced security group
+     * Note If you do not specify this parameter, both basic and advanced security groups are queried.
+     */
+    readonly securityGroupType?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of securitygroup.
+     */
+    readonly tags?: RosSecurityGroups.TagsProperty[];
+
+    /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC) to which the security group belongs.
+     */
+    readonly vpcId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecurityGroupsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityGroupsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('securityGroupName', ros.validateString)(properties.securityGroupName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupType', ros.validateString)(properties.securityGroupType));
+    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
+            data: properties.securityGroupIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSecurityGroups_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosSecurityGroupsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::SecurityGroups` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::SecurityGroups` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityGroupsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecurityGroupsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      NetworkType: ros.stringToRosTemplate(properties.networkType),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
+      SecurityGroupName: ros.stringToRosTemplate(properties.securityGroupName),
+      SecurityGroupType: ros.stringToRosTemplate(properties.securityGroupType),
+      Tags: ros.listMapper(rosSecurityGroupsTagsPropertyToRosTemplate)(properties.tags),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::SecurityGroups`
+ */
+export class RosSecurityGroups extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::SecurityGroups";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute SecurityGroupIds: The list of security group ids.
+     */
+    public readonly attrSecurityGroupIds: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityGroups: The list of security groups.
+     */
+    public readonly attrSecurityGroups: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property networkType: The network type of the security group. Valid values:
+     * vpc
+     * classic
+     */
+    public networkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the instance belongs. 
+     * If this parameter is specified to query resources,up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupId: The ID of the security group.
+     */
+    public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupIds: The IDs of security groups. The value is a JSON array that consists of up to 100 security group IDs. Separate multiple security group IDs with commas (,).
+     */
+    public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupName: The name of the security group.
+     */
+    public securityGroupName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property securityGroupType: The type of the security group. Valid values:
+     * normal: basic security group
+     * enterprise: advanced security group
+     * Note If you do not specify this parameter, both basic and advanced security groups are queried.
+     */
+    public securityGroupType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of securitygroup.
+     */
+    public tags: RosSecurityGroups.TagsProperty[] | undefined;
+
+    /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC) to which the security group belongs.
+     */
+    public vpcId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::SecurityGroups`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecurityGroupsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecurityGroups.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrSecurityGroupIds = this.getAtt('SecurityGroupIds');
+        this.attrSecurityGroups = this.getAtt('SecurityGroups');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.networkType = props.networkType;
+        this.resourceGroupId = props.resourceGroupId;
+        this.securityGroupId = props.securityGroupId;
+        this.securityGroupIds = props.securityGroupIds;
+        this.securityGroupName = props.securityGroupName;
+        this.securityGroupType = props.securityGroupType;
+        this.tags = props.tags;
+        this.vpcId = props.vpcId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            networkType: this.networkType,
+            resourceGroupId: this.resourceGroupId,
+            securityGroupId: this.securityGroupId,
+            securityGroupIds: this.securityGroupIds,
+            securityGroupName: this.securityGroupName,
+            securityGroupType: this.securityGroupType,
+            tags: this.tags,
+            vpcId: this.vpcId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecurityGroupsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSecurityGroups {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityGroups_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::SecurityGroups.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::SecurityGroups.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityGroupsTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSecurityGroups_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::Snapshots`
+ */
+export interface RosSnapshotsProps {
+
+    /**
+     * @Property category: The category of the snapshot. Valid values:
+     * Standard: normal snapshot
+     * Flash: local snapshot
+     * The local snapshot feature is replaced by the instant access feature. When you specify this parameter, take note of the following items:
+     *  If you have used local snapshots before December 14, 2020, you can use this parameter.
+     *  If you have not used local snapshots before December 14, 2020, you cannot use this parameter.
+     *  Note This parameter will be removed in the future. We recommend that you use other parameters to ensure future compatibility.
+     */
+    readonly category?: string | ros.IResolvable;
+
+    /**
+     * @Property diskId: The ID of the disk.
+     */
+    readonly diskId?: string | ros.IResolvable;
+
+    /**
+     * @Property encrypted: Specifies whether the snapshot is encrypted. Default value: false.
+     */
+    readonly encrypted?: boolean | ros.IResolvable;
+
+    /**
+     * @Property filters: Filter value when querying resources
+     */
+    readonly filters?: Array<RosSnapshots.FiltersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property kmsKeyId: The ID of the Key Management Service (KMS) key used by the data disk.
+     */
+    readonly kmsKeyId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the snapshot belongs. If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property snapshotIds: The IDs of snapshots. The value can be a JSON array that consists of up to 100 snapshot IDs. Separate multiple snapshot IDs with commas (,).
+     */
+    readonly snapshotIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property snapshotLinkId: The ID of the snapshot chain.
+     */
+    readonly snapshotLinkId?: string | ros.IResolvable;
+
+    /**
+     * @Property snapshotName: The name of the snapshot.
+     */
+    readonly snapshotName?: string | ros.IResolvable;
+
+    /**
+     * @Property snapshotType: Specifies whether the snapshot has been used to create images or disks. Valid values:
+     * auto: automatic snapshot
+     * user: manual snapshot
+     * all: all snapshot types
+     */
+    readonly snapshotType?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceDiskType: The type of the source disk for which the snapshot was created. Valid values:
+     * System: system disk
+     * Data: data disk
+     * Note These values are case-insensitive.
+     */
+    readonly sourceDiskType?: string | ros.IResolvable;
+
+    /**
+     * @Property status: The status of the snapshot. Default value: all. Valid values:
+     * progressing: The snapshot is being created.
+     * accomplished: The snapshot is created.
+     * failed: The snapshot fails to be created.
+     * all: all snapshot statuses.
+     */
+    readonly status?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of snapshot.
+     */
+    readonly tags?: RosSnapshots.TagsProperty[];
+
+    /**
+     * @Property usage: The type of the snapshot. Default value: all. Valid values:
+     * image: The snapshot has been used to create custom images.
+     * disk: The snapshot has been used to create disks.
+     * image_disk: The snapshot has been used to create custom images and data disks.
+     * none: The snapshot has not been used to create custom images or disks.
+     */
+    readonly usage?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSnapshotsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSnapshotsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSnapshotsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["progressing","accomplished","failed","all"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    if(properties.usage && (typeof properties.usage) !== 'object') {
+        errors.collect(ros.propertyValidator('usage', ros.validateAllowedValues)({
+          data: properties.usage,
+          allowedValues: ["image","disk","image_disk","none"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('usage', ros.validateString)(properties.usage));
+    if(properties.category && (typeof properties.category) !== 'object') {
+        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
+          data: properties.category,
+          allowedValues: ["Standard","Flash"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
+    errors.collect(ros.propertyValidator('snapshotLinkId', ros.validateString)(properties.snapshotLinkId));
+    if(properties.snapshotIds && (Array.isArray(properties.snapshotIds) || (typeof properties.snapshotIds) === 'string')) {
+        errors.collect(ros.propertyValidator('snapshotIds', ros.validateLength)({
+            data: properties.snapshotIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('snapshotIds', ros.listValidator(ros.validateString))(properties.snapshotIds));
+    errors.collect(ros.propertyValidator('snapshotName', ros.validateString)(properties.snapshotName));
+    if(properties.filters && (Array.isArray(properties.filters) || (typeof properties.filters) === 'string')) {
+        errors.collect(ros.propertyValidator('filters', ros.validateLength)({
+            data: properties.filters.length,
+            min: undefined,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('filters', ros.listValidator(RosSnapshots_FiltersPropertyValidator))(properties.filters));
+    if(properties.snapshotType && (typeof properties.snapshotType) !== 'object') {
+        errors.collect(ros.propertyValidator('snapshotType', ros.validateAllowedValues)({
+          data: properties.snapshotType,
+          allowedValues: ["auto","user","all"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('snapshotType', ros.validateString)(properties.snapshotType));
+    if(properties.sourceDiskType && (typeof properties.sourceDiskType) !== 'object') {
+        errors.collect(ros.propertyValidator('sourceDiskType', ros.validateAllowedValues)({
+          data: properties.sourceDiskType,
+          allowedValues: ["System","Data"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sourceDiskType', ros.validateString)(properties.sourceDiskType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSnapshots_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('diskId', ros.validateString)(properties.diskId));
+    return errors.wrap('supplied properties not correct for "RosSnapshotsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Snapshots` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSnapshotsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Snapshots` resource.
+ */
+// @ts-ignore TS6133
+function rosSnapshotsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSnapshotsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Category: ros.stringToRosTemplate(properties.category),
+      DiskId: ros.stringToRosTemplate(properties.diskId),
+      Encrypted: ros.booleanToRosTemplate(properties.encrypted),
+      Filters: ros.listMapper(rosSnapshotsFiltersPropertyToRosTemplate)(properties.filters),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      KMSKeyId: ros.stringToRosTemplate(properties.kmsKeyId),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      SnapshotIds: ros.listMapper(ros.stringToRosTemplate)(properties.snapshotIds),
+      SnapshotLinkId: ros.stringToRosTemplate(properties.snapshotLinkId),
+      SnapshotName: ros.stringToRosTemplate(properties.snapshotName),
+      SnapshotType: ros.stringToRosTemplate(properties.snapshotType),
+      SourceDiskType: ros.stringToRosTemplate(properties.sourceDiskType),
+      Status: ros.stringToRosTemplate(properties.status),
+      Tags: ros.listMapper(rosSnapshotsTagsPropertyToRosTemplate)(properties.tags),
+      Usage: ros.stringToRosTemplate(properties.usage),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::Snapshots`
+ */
+export class RosSnapshots extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Snapshots";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute SnapshotIds: the list of snapshot ids.
+     */
+    public readonly attrSnapshotIds: ros.IResolvable;
+
+    /**
+     * @Attribute Snapshots: the list of snapshots.
+     */
+    public readonly attrSnapshots: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property category: The category of the snapshot. Valid values:
+     * Standard: normal snapshot
+     * Flash: local snapshot
+     * The local snapshot feature is replaced by the instant access feature. When you specify this parameter, take note of the following items:
+     *  If you have used local snapshots before December 14, 2020, you can use this parameter.
+     *  If you have not used local snapshots before December 14, 2020, you cannot use this parameter.
+     *  Note This parameter will be removed in the future. We recommend that you use other parameters to ensure future compatibility.
+     */
+    public category: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property diskId: The ID of the disk.
+     */
+    public diskId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property encrypted: Specifies whether the snapshot is encrypted. Default value: false.
+     */
+    public encrypted: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property filters: Filter value when querying resources
+     */
+    public filters: Array<RosSnapshots.FiltersProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property kmsKeyId: The ID of the Key Management Service (KMS) key used by the data disk.
+     */
+    public kmsKeyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the snapshot belongs. If this parameter is specified to query resources, up to 1,000 resources that belong to the specified resource group can be displayed in the response.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property snapshotIds: The IDs of snapshots. The value can be a JSON array that consists of up to 100 snapshot IDs. Separate multiple snapshot IDs with commas (,).
+     */
+    public snapshotIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property snapshotLinkId: The ID of the snapshot chain.
+     */
+    public snapshotLinkId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property snapshotName: The name of the snapshot.
+     */
+    public snapshotName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property snapshotType: Specifies whether the snapshot has been used to create images or disks. Valid values:
+     * auto: automatic snapshot
+     * user: manual snapshot
+     * all: all snapshot types
+     */
+    public snapshotType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceDiskType: The type of the source disk for which the snapshot was created. Valid values:
+     * System: system disk
+     * Data: data disk
+     * Note These values are case-insensitive.
+     */
+    public sourceDiskType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: The status of the snapshot. Default value: all. Valid values:
+     * progressing: The snapshot is being created.
+     * accomplished: The snapshot is created.
+     * failed: The snapshot fails to be created.
+     * all: all snapshot statuses.
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of snapshot.
+     */
+    public tags: RosSnapshots.TagsProperty[] | undefined;
+
+    /**
+     * @Property usage: The type of the snapshot. Default value: all. Valid values:
+     * image: The snapshot has been used to create custom images.
+     * disk: The snapshot has been used to create disks.
+     * image_disk: The snapshot has been used to create custom images and data disks.
+     * none: The snapshot has not been used to create custom images or disks.
+     */
+    public usage: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::Snapshots`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSnapshotsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSnapshots.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrSnapshotIds = this.getAtt('SnapshotIds');
+        this.attrSnapshots = this.getAtt('Snapshots');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.category = props.category;
+        this.diskId = props.diskId;
+        this.encrypted = props.encrypted;
+        this.filters = props.filters;
+        this.instanceId = props.instanceId;
+        this.kmsKeyId = props.kmsKeyId;
+        this.resourceGroupId = props.resourceGroupId;
+        this.snapshotIds = props.snapshotIds;
+        this.snapshotLinkId = props.snapshotLinkId;
+        this.snapshotName = props.snapshotName;
+        this.snapshotType = props.snapshotType;
+        this.sourceDiskType = props.sourceDiskType;
+        this.status = props.status;
+        this.tags = props.tags;
+        this.usage = props.usage;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            category: this.category,
+            diskId: this.diskId,
+            encrypted: this.encrypted,
+            filters: this.filters,
+            instanceId: this.instanceId,
+            kmsKeyId: this.kmsKeyId,
+            resourceGroupId: this.resourceGroupId,
+            snapshotIds: this.snapshotIds,
+            snapshotLinkId: this.snapshotLinkId,
+            snapshotName: this.snapshotName,
+            snapshotType: this.snapshotType,
+            sourceDiskType: this.sourceDiskType,
+            status: this.status,
+            tags: this.tags,
+            usage: this.usage,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSnapshotsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSnapshots {
+    /**
+     * @stability external
+     */
+    export interface FiltersProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `FiltersProperty`
+ *
+ * @param properties - the TypeScript properties of a `FiltersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSnapshots_FiltersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "FiltersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Snapshots.Filters` resource
+ *
+ * @param properties - the TypeScript properties of a `FiltersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Snapshots.Filters` resource.
+ */
+// @ts-ignore TS6133
+function rosSnapshotsFiltersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSnapshots_FiltersPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosSnapshots {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSnapshots_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Snapshots.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Snapshots.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosSnapshotsTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSnapshots_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `DATASOURCE::ECS::Zones`
+ */
+export interface RosZonesProps {
+
+    /**
+     * @Property dataDiskCategory: The category of the data disk. Valid values:
+     * cloud: basic disk
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * ephemeral_ssd: local SSD
+     * cloud_essd: enhanced SSD (ESSD)
+     */
+    readonly dataDiskCategory?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceChargeType: The billing method of the resource. For more information, see Billing overview. Valid values:
+     * PrePaid: subscription
+     * PostPaid: pay-as-you-go
+     * Default value: PostPaid.
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The instance type.
+     */
+    readonly instanceType?: string | ros.IResolvable;
+
+    /**
+     * @Property ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
+     * none: non-I/O optimized
+     * optimized: I/O optimized
+     * Default value: optimized.
+     */
+    readonly ioOptimized?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The type of the resource. Valid values:
+     * instance: ECS instance
+     * disk: cloud disk
+     * reservedinstance: reserved instance
+     * ddh: dedicated host
+     */
+    readonly resourceType?: string | ros.IResolvable;
+
+    /**
+     * @Property systemDiskCategory: The category of the system disk. Valid values:
+     * cloud: basic disk
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * ephemeral_ssd: local SSD
+     * cloud_essd: enhanced SSD (ESSD)
+     */
+    readonly systemDiskCategory?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosZonesProps`
+ *
+ * @param properties - the TypeScript properties of a `RosZonesProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosZonesPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('dataDiskCategory', ros.validateString)(properties.dataDiskCategory));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    return errors.wrap('supplied properties not correct for "RosZonesProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Zones` resource
+ *
+ * @param properties - the TypeScript properties of a `RosZonesProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Zones` resource.
+ */
+// @ts-ignore TS6133
+function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosZonesPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DataDiskCategory: ros.stringToRosTemplate(properties.dataDiskCategory),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      IoOptimized: ros.stringToRosTemplate(properties.ioOptimized),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+      SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::Zones`
+ */
+export class RosZones extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Zones";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ZoneIds: The list of zone IDs.
+     */
+    public readonly attrZoneIds: ros.IResolvable;
+
+    /**
+     * @Attribute Zones: The list of zones.
+     */
+    public readonly attrZones: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dataDiskCategory: The category of the data disk. Valid values:
+     * cloud: basic disk
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * ephemeral_ssd: local SSD
+     * cloud_essd: enhanced SSD (ESSD)
+     */
+    public dataDiskCategory: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceChargeType: The billing method of the resource. For more information, see Billing overview. Valid values:
+     * PrePaid: subscription
+     * PostPaid: pay-as-you-go
+     * Default value: PostPaid.
+     */
+    public instanceChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceType: The instance type.
+     */
+    public instanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
+     * none: non-I/O optimized
+     * optimized: I/O optimized
+     * Default value: optimized.
+     */
+    public ioOptimized: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceType: The type of the resource. Valid values:
+     * instance: ECS instance
+     * disk: cloud disk
+     * reservedinstance: reserved instance
+     * ddh: dedicated host
+     */
+    public resourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property systemDiskCategory: The category of the system disk. Valid values:
+     * cloud: basic disk
+     * cloud_efficiency: ultra disk
+     * cloud_ssd: standard SSD
+     * ephemeral_ssd: local SSD
+     * cloud_essd: enhanced SSD (ESSD)
+     */
+    public systemDiskCategory: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::Zones`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosZonesProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosZones.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrZoneIds = this.getAtt('ZoneIds');
+        this.attrZones = this.getAtt('Zones');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dataDiskCategory = props.dataDiskCategory;
+        this.instanceChargeType = props.instanceChargeType;
+        this.instanceType = props.instanceType;
+        this.ioOptimized = props.ioOptimized;
+        this.resourceType = props.resourceType;
+        this.systemDiskCategory = props.systemDiskCategory;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dataDiskCategory: this.dataDiskCategory,
+            instanceChargeType: this.instanceChargeType,
+            instanceType: this.instanceType,
+            ioOptimized: this.ioOptimized,
+            resourceType: this.resourceType,
+            systemDiskCategory: this.systemDiskCategory,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosZonesPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}

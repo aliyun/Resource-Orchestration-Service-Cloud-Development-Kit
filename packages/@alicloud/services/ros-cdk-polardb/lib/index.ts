@@ -11,3 +11,5 @@ export * from './parametergroup';
 
 // ALIYUN::POLARDB Resources:
 export * from './polardb.generated';
+import * as datasource from './datasource';
+export { datasource };

@@ -43,6 +43,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property autoPay: Whether to pay automatically.</summary>
+        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoPay
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property autoReleaseTime: Auto release time for created instance, Follow ISO8601 standard using UTC time.</summary>
         /// <remarks>
         /// format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
@@ -845,6 +856,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "allocatePublicIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AllocatePublicIp
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property autoPay: Whether to pay automatically.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoPay
             {
                 get => GetInstanceProperty<object?>();
             }

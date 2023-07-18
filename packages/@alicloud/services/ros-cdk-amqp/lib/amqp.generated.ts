@@ -645,9 +645,19 @@ export class RosInstance extends ros.RosResource {
      */
 
     /**
+     * @Attribute ClassicEndpoint: The classic endpoint of the instance.
+     */
+    public readonly attrClassicEndpoint: ros.IResolvable;
+
+    /**
      * @Attribute InstanceId: The ID of the instance.
      */
     public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateEndpoint: The private endpoint of the instance.
+     */
+    public readonly attrPrivateEndpoint: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -741,7 +751,9 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClassicEndpoint = this.getAtt('ClassicEndpoint');
         this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrPrivateEndpoint = this.getAtt('PrivateEndpoint');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceType = props.instanceType;

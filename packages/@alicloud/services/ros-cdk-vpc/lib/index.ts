@@ -41,3 +41,5 @@ export * from './vpnrouteentry';
 
 // ALIYUN::VPC Resources:
 export * from './vpc.generated';
+import * as datasource from './datasource';
+export { datasource };

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * A ROS template type:  <code>ALIYUN::KAFKA::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.450Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -159,24 +159,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getTopicQuota() {
-        return software.amazon.jsii.Kernel.get(this, "topicQuota", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setTopicQuota(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "topicQuota", java.util.Objects.requireNonNull(value, "topicQuota is required"));
-    }
-
-    /**
-     */
-    public void setTopicQuota(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "topicQuota", java.util.Objects.requireNonNull(value, "topicQuota is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
         return software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -285,6 +267,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPartitionNum() {
+        return software.amazon.jsii.Kernel.get(this, "partitionNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPartitionNum(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "partitionNum", value);
+    }
+
+    /**
+     */
+    public void setPartitionNum(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "partitionNum", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
         return software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -329,6 +329,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.kafka.RosInstance.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTopicQuota() {
+        return software.amazon.jsii.Kernel.get(this, "topicQuota", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTopicQuota(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "topicQuota", value);
+    }
+
+    /**
+     */
+    public void setTopicQuota(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "topicQuota", value);
     }
     /**
      */
@@ -1172,23 +1190,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param topicQuota This parameter is required.
-         */
-        public Builder topicQuota(final java.lang.Number topicQuota) {
-            this.props.topicQuota(topicQuota);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param topicQuota This parameter is required.
-         */
-        public Builder topicQuota(final com.aliyun.ros.cdk.core.IResolvable topicQuota) {
-            this.props.topicQuota(topicQuota);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param deletionForce This parameter is required.
          */
         public Builder deletionForce(final java.lang.Boolean deletionForce) {
@@ -1291,6 +1292,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param partitionNum This parameter is required.
+         */
+        public Builder partitionNum(final java.lang.Number partitionNum) {
+            this.props.partitionNum(partitionNum);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param partitionNum This parameter is required.
+         */
+        public Builder partitionNum(final com.aliyun.ros.cdk.core.IResolvable partitionNum) {
+            this.props.partitionNum(partitionNum);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param payType This parameter is required.
          */
         public Builder payType(final java.lang.String payType) {
@@ -1329,6 +1347,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.kafka.RosInstance.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param topicQuota This parameter is required.
+         */
+        public Builder topicQuota(final java.lang.Number topicQuota) {
+            this.props.topicQuota(topicQuota);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param topicQuota This parameter is required.
+         */
+        public Builder topicQuota(final com.aliyun.ros.cdk.core.IResolvable topicQuota) {
+            this.props.topicQuota(topicQuota);
             return this;
         }
 

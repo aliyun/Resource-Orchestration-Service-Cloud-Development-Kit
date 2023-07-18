@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * Properties for defining a <code>ALIYUN::KAFKA::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.447Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -30,16 +30,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * 1: SSD
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDiskType();
-
-    /**
-     * Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance.
-     * <p>
-     * The default value of this parameter varies with different peak traffic values.
-     * Additional fees are charged if the default values are exceeded.
-     * Different specifications have different default values, and extra fees are charged.
-     * For more information, see Billing.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getTopicQuota();
 
     /**
      * Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance.
@@ -93,6 +83,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property partitionNum: Number of partitions(recommended).
+     * <p>
+     * The number of partitions to be configured for the Message Queue for Apache Kafka instance.
+     * PartitionNum and TopicQuota must be selected.
+     * It is recommended that you only fill in the number of partitions.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPartitionNum() {
+        return null;
+    }
+
+    /**
      * Property payType: Pay by hour or month.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
@@ -120,6 +121,21 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property topicQuota: Number of topics (not recommended).
+     * <p>
+     * The number of topics to be configured for the Message Queue for Apache Kafka instance.
+     * PartitionNum and TopicQuota must be selected.
+     * It is recommended that you only fill in the number of partitions.
+     * The default value of this parameter varies with different peak traffic values.
+     * Additional fees are charged if the default values are exceeded.
+     * Different specifications have different default values, and extra fees are charged.
+     * For more information, see Billing.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTopicQuota() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link InstanceProps}
      */
     static Builder builder() {
@@ -132,16 +148,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object deployType;
         java.lang.Object diskSize;
         java.lang.Object diskType;
-        java.lang.Object topicQuota;
         java.lang.Object deletionForce;
         java.lang.Object deployOption;
         java.lang.Object eipMax;
         java.lang.Object ioMax;
         java.lang.Object ioMaxSpec;
         java.lang.Object openConnector;
+        java.lang.Object partitionNum;
         java.lang.Object payType;
         java.lang.Object specType;
         java.util.List<com.aliyun.ros.cdk.kafka.RosInstance.TagsProperty> tags;
+        java.lang.Object topicQuota;
 
         /**
          * Sets the value of {@link InstanceProps#getDeployType}
@@ -212,34 +229,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder diskType(com.aliyun.ros.cdk.core.IResolvable diskType) {
             this.diskType = diskType;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link InstanceProps#getTopicQuota}
-         * @param topicQuota Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance. This parameter is required.
-         *                   The default value of this parameter varies with different peak traffic values.
-         *                   Additional fees are charged if the default values are exceeded.
-         *                   Different specifications have different default values, and extra fees are charged.
-         *                   For more information, see Billing.
-         * @return {@code this}
-         */
-        public Builder topicQuota(java.lang.Number topicQuota) {
-            this.topicQuota = topicQuota;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link InstanceProps#getTopicQuota}
-         * @param topicQuota Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance. This parameter is required.
-         *                   The default value of this parameter varies with different peak traffic values.
-         *                   Additional fees are charged if the default values are exceeded.
-         *                   Different specifications have different default values, and extra fees are charged.
-         *                   For more information, see Billing.
-         * @return {@code this}
-         */
-        public Builder topicQuota(com.aliyun.ros.cdk.core.IResolvable topicQuota) {
-            this.topicQuota = topicQuota;
             return this;
         }
 
@@ -374,6 +363,32 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getPartitionNum}
+         * @param partitionNum Property partitionNum: Number of partitions(recommended).
+         *                     The number of partitions to be configured for the Message Queue for Apache Kafka instance.
+         *                     PartitionNum and TopicQuota must be selected.
+         *                     It is recommended that you only fill in the number of partitions.
+         * @return {@code this}
+         */
+        public Builder partitionNum(java.lang.Number partitionNum) {
+            this.partitionNum = partitionNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getPartitionNum}
+         * @param partitionNum Property partitionNum: Number of partitions(recommended).
+         *                     The number of partitions to be configured for the Message Queue for Apache Kafka instance.
+         *                     PartitionNum and TopicQuota must be selected.
+         *                     It is recommended that you only fill in the number of partitions.
+         * @return {@code this}
+         */
+        public Builder partitionNum(com.aliyun.ros.cdk.core.IResolvable partitionNum) {
+            this.partitionNum = partitionNum;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getPayType}
          * @param payType Property payType: Pay by hour or month.
          * @return {@code this}
@@ -432,6 +447,40 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getTopicQuota}
+         * @param topicQuota Property topicQuota: Number of topics (not recommended).
+         *                   The number of topics to be configured for the Message Queue for Apache Kafka instance.
+         *                   PartitionNum and TopicQuota must be selected.
+         *                   It is recommended that you only fill in the number of partitions.
+         *                   The default value of this parameter varies with different peak traffic values.
+         *                   Additional fees are charged if the default values are exceeded.
+         *                   Different specifications have different default values, and extra fees are charged.
+         *                   For more information, see Billing.
+         * @return {@code this}
+         */
+        public Builder topicQuota(java.lang.Number topicQuota) {
+            this.topicQuota = topicQuota;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getTopicQuota}
+         * @param topicQuota Property topicQuota: Number of topics (not recommended).
+         *                   The number of topics to be configured for the Message Queue for Apache Kafka instance.
+         *                   PartitionNum and TopicQuota must be selected.
+         *                   It is recommended that you only fill in the number of partitions.
+         *                   The default value of this parameter varies with different peak traffic values.
+         *                   Additional fees are charged if the default values are exceeded.
+         *                   Different specifications have different default values, and extra fees are charged.
+         *                   For more information, see Billing.
+         * @return {@code this}
+         */
+        public Builder topicQuota(com.aliyun.ros.cdk.core.IResolvable topicQuota) {
+            this.topicQuota = topicQuota;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link InstanceProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -450,16 +499,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object deployType;
         private final java.lang.Object diskSize;
         private final java.lang.Object diskType;
-        private final java.lang.Object topicQuota;
         private final java.lang.Object deletionForce;
         private final java.lang.Object deployOption;
         private final java.lang.Object eipMax;
         private final java.lang.Object ioMax;
         private final java.lang.Object ioMaxSpec;
         private final java.lang.Object openConnector;
+        private final java.lang.Object partitionNum;
         private final java.lang.Object payType;
         private final java.lang.Object specType;
         private final java.util.List<com.aliyun.ros.cdk.kafka.RosInstance.TagsProperty> tags;
+        private final java.lang.Object topicQuota;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -470,16 +520,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.deployType = software.amazon.jsii.Kernel.get(this, "deployType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskSize = software.amazon.jsii.Kernel.get(this, "diskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskType = software.amazon.jsii.Kernel.get(this, "diskType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.topicQuota = software.amazon.jsii.Kernel.get(this, "topicQuota", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deployOption = software.amazon.jsii.Kernel.get(this, "deployOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.eipMax = software.amazon.jsii.Kernel.get(this, "eipMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ioMax = software.amazon.jsii.Kernel.get(this, "ioMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ioMaxSpec = software.amazon.jsii.Kernel.get(this, "ioMaxSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.openConnector = software.amazon.jsii.Kernel.get(this, "openConnector", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.partitionNum = software.amazon.jsii.Kernel.get(this, "partitionNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.specType = software.amazon.jsii.Kernel.get(this, "specType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.kafka.RosInstance.TagsProperty.class)));
+            this.topicQuota = software.amazon.jsii.Kernel.get(this, "topicQuota", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -491,16 +542,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.deployType = java.util.Objects.requireNonNull(builder.deployType, "deployType is required");
             this.diskSize = java.util.Objects.requireNonNull(builder.diskSize, "diskSize is required");
             this.diskType = java.util.Objects.requireNonNull(builder.diskType, "diskType is required");
-            this.topicQuota = java.util.Objects.requireNonNull(builder.topicQuota, "topicQuota is required");
             this.deletionForce = builder.deletionForce;
             this.deployOption = builder.deployOption;
             this.eipMax = builder.eipMax;
             this.ioMax = builder.ioMax;
             this.ioMaxSpec = builder.ioMaxSpec;
             this.openConnector = builder.openConnector;
+            this.partitionNum = builder.partitionNum;
             this.payType = builder.payType;
             this.specType = builder.specType;
             this.tags = (java.util.List<com.aliyun.ros.cdk.kafka.RosInstance.TagsProperty>)builder.tags;
+            this.topicQuota = builder.topicQuota;
         }
 
         @Override
@@ -516,11 +568,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDiskType() {
             return this.diskType;
-        }
-
-        @Override
-        public final java.lang.Object getTopicQuota() {
-            return this.topicQuota;
         }
 
         @Override
@@ -554,6 +601,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getPartitionNum() {
+            return this.partitionNum;
+        }
+
+        @Override
         public final java.lang.Object getPayType() {
             return this.payType;
         }
@@ -569,6 +621,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getTopicQuota() {
+            return this.topicQuota;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -577,7 +634,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             data.set("deployType", om.valueToTree(this.getDeployType()));
             data.set("diskSize", om.valueToTree(this.getDiskSize()));
             data.set("diskType", om.valueToTree(this.getDiskType()));
-            data.set("topicQuota", om.valueToTree(this.getTopicQuota()));
             if (this.getDeletionForce() != null) {
                 data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
             }
@@ -596,6 +652,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getOpenConnector() != null) {
                 data.set("openConnector", om.valueToTree(this.getOpenConnector()));
             }
+            if (this.getPartitionNum() != null) {
+                data.set("partitionNum", om.valueToTree(this.getPartitionNum()));
+            }
             if (this.getPayType() != null) {
                 data.set("payType", om.valueToTree(this.getPayType()));
             }
@@ -604,6 +663,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
+            }
+            if (this.getTopicQuota() != null) {
+                data.set("topicQuota", om.valueToTree(this.getTopicQuota()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -626,16 +688,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (!deployType.equals(that.deployType)) return false;
             if (!diskSize.equals(that.diskSize)) return false;
             if (!diskType.equals(that.diskType)) return false;
-            if (!topicQuota.equals(that.topicQuota)) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.deployOption != null ? !this.deployOption.equals(that.deployOption) : that.deployOption != null) return false;
             if (this.eipMax != null ? !this.eipMax.equals(that.eipMax) : that.eipMax != null) return false;
             if (this.ioMax != null ? !this.ioMax.equals(that.ioMax) : that.ioMax != null) return false;
             if (this.ioMaxSpec != null ? !this.ioMaxSpec.equals(that.ioMaxSpec) : that.ioMaxSpec != null) return false;
             if (this.openConnector != null ? !this.openConnector.equals(that.openConnector) : that.openConnector != null) return false;
+            if (this.partitionNum != null ? !this.partitionNum.equals(that.partitionNum) : that.partitionNum != null) return false;
             if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
             if (this.specType != null ? !this.specType.equals(that.specType) : that.specType != null) return false;
-            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            return this.topicQuota != null ? this.topicQuota.equals(that.topicQuota) : that.topicQuota == null;
         }
 
         @Override
@@ -643,16 +706,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.deployType.hashCode();
             result = 31 * result + (this.diskSize.hashCode());
             result = 31 * result + (this.diskType.hashCode());
-            result = 31 * result + (this.topicQuota.hashCode());
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.deployOption != null ? this.deployOption.hashCode() : 0);
             result = 31 * result + (this.eipMax != null ? this.eipMax.hashCode() : 0);
             result = 31 * result + (this.ioMax != null ? this.ioMax.hashCode() : 0);
             result = 31 * result + (this.ioMaxSpec != null ? this.ioMaxSpec.hashCode() : 0);
             result = 31 * result + (this.openConnector != null ? this.openConnector.hashCode() : 0);
+            result = 31 * result + (this.partitionNum != null ? this.partitionNum.hashCode() : 0);
             result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);
             result = 31 * result + (this.specType != null ? this.specType.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.topicQuota != null ? this.topicQuota.hashCode() : 0);
             return result;
         }
     }

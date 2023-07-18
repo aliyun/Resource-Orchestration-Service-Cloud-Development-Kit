@@ -4,3 +4,5 @@ export * from './topic';
 
 // ALIYUN::MNS Resources:
 export * from './mns.generated';
+import * as datasource from './datasource';
+export { datasource };

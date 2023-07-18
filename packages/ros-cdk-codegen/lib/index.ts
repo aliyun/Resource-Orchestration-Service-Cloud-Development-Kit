@@ -8,9 +8,9 @@ import IndexCodeGenerator from './index-codegen';
 const rosResourceName = '.generated.ts';
 
 export default async function (
-  scopes: string | string[],
-  outPath: string,
-  options: CodeGeneratorOptions = {},
+    scopes: string | string[],
+    outPath: string,
+    options: CodeGeneratorOptions = {},
 ): Promise<void> {
   if (outPath !== '.' && !fs.existsSync(outPath)) {
     await fs.mkdirp(outPath);
@@ -18,46 +18,109 @@ export default async function (
   if (typeof scopes === 'string') {
     scopes = [scopes];
   }
-
+  // 优先处理ALIYUN开头的资源类型（需要创建资源类型对应的根目录）
   for (const scope of scopes) {
-    const spec = rosSpec.filteredSpecification((s) => s.startsWith(`${scope}::`));
+    if (scope.startsWith('ALIYUN')) {
+      const spec = rosSpec.filteredSpecification((s) => s.startsWith(`${scope}::`));
+      const originalResourceName = scope.split('::')[1]
+      const dataSourceResourceName = 'DATASOURCE::' + originalResourceName
+      let hasDataSource = false
+      if (scopes.indexOf(dataSourceResourceName) !== -1) {
+        hasDataSource = true
+      }
+      if (Object.keys(spec.ResourceTypes).length === 0) {
+        throw new Error(`No resource was found for scope ${scope}`);
+      }
+      // name: package/module name (the folder name)
+      const moduleName = `${packageName(scope)}`;
+      // rosResourceFileName: the xxx.generated.ts
+      const rosResourceFileName = `${moduleName}${rosResourceName}`;
+      const affix = computeAffix(scope, scopes);
+      const scopePath = `${outPath}/ros-cdk-${moduleName}/lib`;
+      // fs.mkdirp(scopePath);
+      const generator = new CodeGenerator(rosResourceFileName, spec, affix, options);
+      generator.emitCode(Object.keys(spec.ResourceTypes));
+      await generator.save(scopePath);
 
-    if (Object.keys(spec.ResourceTypes).length === 0) {
-      throw new Error(`No resource was found for scope ${scope}`);
+      // for every specification create resource class file
+      // e.g. vpc.ts
+      let fileNames: string[] = new Array();
+      for (const resourceName of Object.keys(spec.ResourceTypes).sort()) {
+        const resourceSpec = rosSpec.filteredSpecification((s) => s.startsWith(`${resourceName}`));
+        let fileName = resourceName.split('::')[2].toLowerCase();
+        fileName = fileName === 'index' ? 'index-resource' : fileName;
+        fileNames.push(fileName);
+        const resourceGenerator = new ResourceCodeGenerator(
+            `${fileName}.ts`,
+            resourceSpec,
+            '',
+            options as ResourceCodeGeneratorOptions,
+        );
+        resourceGenerator.emitCode(resourceName);
+        resourceGenerator.save(scopePath);
+      }
+
+      // create index.ts
+      const indexGenerator = new IndexCodeGenerator(moduleName, fileNames, scope);
+      indexGenerator.emitCode(hasDataSource);
+      indexGenerator.save(scopePath);
     }
-    // name: package/module name (the folder name)
-    const moduleName = `${packageName(scope)}`;
-    // rosResourceFileName: the xxx.generated.ts
-    const rosResourceFileName = `${moduleName}${rosResourceName}`;
-    const affix = computeAffix(scope, scopes);
-    const scopePath = `${outPath}/ros-cdk-${moduleName}/lib`;
-    // fs.mkdirp(scopePath);
-    const generator = new CodeGenerator(rosResourceFileName, spec, affix, options);
-    generator.emitCode();
-    await generator.save(scopePath);
+  }
+  // 处理DATASOURCE开头的资源类型
+  for (const scope of scopes) {
+    if (scope.startsWith('DATASOURCE')) {
+      // 处理DATASOURCE::EIP::Addresses 这个原属于VPC的特殊资源，不再创建资源根目录
+      if (scope === 'DATASOURCE::EIP') {
+        continue
+      }
+      const dataSourceSpec = rosSpec.filteredSpecification((s) => s.startsWith(`${scope}::`));
+      const cloudProductResourceName = scope.split('::')[1]
+      let dataSourceResourceTypes: string[] = new Array();
+      dataSourceResourceTypes = Object.keys(dataSourceSpec.ResourceTypes)
+      // 处理DATASOURCE::EIP::Addresses 这个原属于VPC的特殊资源，添加到VPC所属资源目录
+      if (cloudProductResourceName === 'VPC' && scopes.indexOf('DATASOURCE::EIP') !== -1)
+      {
+        const datasourceEipResourceSpec = rosSpec.filteredSpecification((s) => s.startsWith('DATASOURCE::EIP::'));
+        dataSourceResourceTypes = dataSourceResourceTypes.concat(Object.keys(datasourceEipResourceSpec.ResourceTypes))
+      }
 
-    // for every specification create resource class file
-    // e.g. vpc.ts
-    let fileNames: string[] = new Array();
-    for (const resourceName of Object.keys(spec.ResourceTypes).sort()) {
-      const resourceSpec = rosSpec.filteredSpecification((s) => s.startsWith(`${resourceName}`));
-      let fileName = resourceName.split('::')[2].toLowerCase();
-      fileName = fileName === 'index' ? 'index-resource' : fileName;
-      fileNames.push(fileName);
-      const resourceGenerator = new ResourceCodeGenerator(
-        `${fileName}.ts`,
-        resourceSpec,
-        '',
-        options as ResourceCodeGeneratorOptions,
-      );
-      resourceGenerator.emitCode(resourceName);
-      resourceGenerator.save(scopePath);
+      if (dataSourceResourceTypes.length === 0) {
+        throw new Error(`No resource was found for scope ${scope}`);
+      }
+      // name: package/module name (the folder name)
+      const moduleName = `${packageName(scope)}`;
+      // rosDataSourceResourceFileName: the xxx.generated.ts
+      const rosDataSourceResourceFileName = `${moduleName}${rosResourceName}`;
+      const affix = computeAffix(scope, scopes);
+      const scopePath = `${outPath}/ros-cdk-${moduleName}/lib/datasource`;
+      // fs.mkdirp(scopePath);
+      const generator = new CodeGenerator(rosDataSourceResourceFileName, dataSourceSpec, affix, options);
+      generator.emitCode(dataSourceResourceTypes);
+      await generator.save(scopePath);
+
+      // for every specification create datasource resource class file
+      // e.g. vpc.ts
+      let fileNames: string[] = new Array();
+      for (const resourceName of dataSourceResourceTypes.sort()) {
+        const resourceSpec = rosSpec.filteredSpecification((s) => s.startsWith(`${resourceName}`));
+        let fileName = resourceName.split('::')[2].toLowerCase();
+        fileName = fileName === 'index' ? 'index-resource' : fileName;
+        fileNames.push(fileName);
+        const resourceGenerator = new ResourceCodeGenerator(
+            `${fileName}.ts`,
+            resourceSpec,
+            '',
+            options as ResourceCodeGeneratorOptions,
+        );
+        resourceGenerator.emitCode(resourceName);
+        resourceGenerator.save(scopePath);
+      }
+
+      // create index.ts
+      const indexGenerator = new IndexCodeGenerator(moduleName, fileNames, scope);
+      indexGenerator.emitCode(false);
+      indexGenerator.save(scopePath);
     }
-
-    // create index.ts
-    const indexGenerator = new IndexCodeGenerator(moduleName, fileNames, scope);
-    indexGenerator.emitCode();
-    indexGenerator.save(scopePath);
   }
 }
 

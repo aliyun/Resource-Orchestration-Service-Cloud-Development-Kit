@@ -3,13 +3,15 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Properties for defining a <code>ALIYUN::ARMS::ManagedPrometheus</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:26.837Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:27:59.872Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.ManagedPrometheusProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedPrometheusProps.Jsii$Proxy.class)
 public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property clusterType: The type of the cluster.
+     * <p>
+     * Currently, only ask, ecs and one clusters are supported. Default is ecs.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterType();
 
@@ -29,7 +31,16 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
+     * Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getClusterId() {
+        return null;
+    }
+
+    /**
      * Property clusterName: The name of the cluster.
+     * <p>
+     * Required when the ClusterType is ecs.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getClusterName() {
         return null;
@@ -58,12 +69,14 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object securityGroupId;
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
+        java.lang.Object clusterId;
         java.lang.Object clusterName;
         java.lang.Object grafanaInstanceId;
 
         /**
          * Sets the value of {@link ManagedPrometheusProps#getClusterType}
          * @param clusterType Property clusterType: The type of the cluster. This parameter is required.
+         *                    Currently, only ask, ecs and one clusters are supported. Default is ecs.
          * @return {@code this}
          */
         public Builder clusterType(java.lang.String clusterType) {
@@ -74,6 +87,7 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Sets the value of {@link ManagedPrometheusProps#getClusterType}
          * @param clusterType Property clusterType: The type of the cluster. This parameter is required.
+         *                    Currently, only ask, ecs and one clusters are supported. Default is ecs.
          * @return {@code this}
          */
         public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {
@@ -142,8 +156,29 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link ManagedPrometheusProps#getClusterId}
+         * @param clusterId Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.
+         * @return {@code this}
+         */
+        public Builder clusterId(java.lang.String clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ManagedPrometheusProps#getClusterId}
+         * @param clusterId Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.
+         * @return {@code this}
+         */
+        public Builder clusterId(com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedPrometheusProps#getClusterName}
          * @param clusterName Property clusterName: The name of the cluster.
+         *                    Required when the ClusterType is ecs.
          * @return {@code this}
          */
         public Builder clusterName(java.lang.String clusterName) {
@@ -154,6 +189,7 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Sets the value of {@link ManagedPrometheusProps#getClusterName}
          * @param clusterName Property clusterName: The name of the cluster.
+         *                    Required when the ClusterType is ecs.
          * @return {@code this}
          */
         public Builder clusterName(com.aliyun.ros.cdk.core.IResolvable clusterName) {
@@ -203,6 +239,7 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object securityGroupId;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
+        private final java.lang.Object clusterId;
         private final java.lang.Object clusterName;
         private final java.lang.Object grafanaInstanceId;
 
@@ -216,6 +253,7 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterName = software.amazon.jsii.Kernel.get(this, "clusterName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.grafanaInstanceId = software.amazon.jsii.Kernel.get(this, "grafanaInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -229,6 +267,7 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
             this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
+            this.clusterId = builder.clusterId;
             this.clusterName = builder.clusterName;
             this.grafanaInstanceId = builder.grafanaInstanceId;
         }
@@ -254,6 +293,11 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getClusterId() {
+            return this.clusterId;
+        }
+
+        @Override
         public final java.lang.Object getClusterName() {
             return this.clusterName;
         }
@@ -273,6 +317,9 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
             data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
+            if (this.getClusterId() != null) {
+                data.set("clusterId", om.valueToTree(this.getClusterId()));
+            }
             if (this.getClusterName() != null) {
                 data.set("clusterName", om.valueToTree(this.getClusterName()));
             }
@@ -301,6 +348,7 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
             if (!securityGroupId.equals(that.securityGroupId)) return false;
             if (!vpcId.equals(that.vpcId)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
+            if (this.clusterId != null ? !this.clusterId.equals(that.clusterId) : that.clusterId != null) return false;
             if (this.clusterName != null ? !this.clusterName.equals(that.clusterName) : that.clusterName != null) return false;
             return this.grafanaInstanceId != null ? this.grafanaInstanceId.equals(that.grafanaInstanceId) : that.grafanaInstanceId == null;
         }
@@ -311,6 +359,7 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.securityGroupId.hashCode());
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.vSwitchId.hashCode());
+            result = 31 * result + (this.clusterId != null ? this.clusterId.hashCode() : 0);
             result = 31 * result + (this.clusterName != null ? this.clusterName.hashCode() : 0);
             result = 31 * result + (this.grafanaInstanceId != null ? this.grafanaInstanceId.hashCode() : 0);
             return result;

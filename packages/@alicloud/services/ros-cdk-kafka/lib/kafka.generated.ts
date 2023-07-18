@@ -27,15 +27,6 @@ export interface RosInstanceProps {
     readonly diskType: string | ros.IResolvable;
 
     /**
-     * @Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance. 
-     * The default value of this parameter varies with different peak traffic values. 
-     * Additional fees are charged if the default values are exceeded.
-     *  Different specifications have different default values, and extra fees are charged. 
-     * For more information, see Billing.
-     */
-    readonly topicQuota: number | ros.IResolvable;
-
-    /**
      * @Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. Default is false
      */
     readonly deletionForce?: boolean | ros.IResolvable;
@@ -72,6 +63,15 @@ export interface RosInstanceProps {
     readonly openConnector?: boolean | ros.IResolvable;
 
     /**
+     * @Property partitionNum: Number of partitions(recommended).
+     * The number of partitions to be configured for the Message Queue for Apache Kafka instance. 
+     * PartitionNum and TopicQuota must be selected. 
+     * It is recommended that you only fill in the number of partitions.
+     *
+     */
+    readonly partitionNum?: number | ros.IResolvable;
+
+    /**
      * @Property payType: Pay by hour or month.
      */
     readonly payType?: string | ros.IResolvable;
@@ -87,6 +87,18 @@ export interface RosInstanceProps {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosInstance.TagsProperty[];
+
+    /**
+     * @Property topicQuota: Number of topics (not recommended).
+     * The number of topics to be configured for the Message Queue for Apache Kafka instance. 
+     * PartitionNum and TopicQuota must be selected. 
+     * It is recommended that you only fill in the number of partitions.
+     * The default value of this parameter varies with different peak traffic values. 
+     * Additional fees are charged if the default values are exceeded.
+     *  Different specifications have different default values, and extra fees are charged. 
+     * For more information, see Billing.
+     */
+    readonly topicQuota?: number | ros.IResolvable;
 }
 
 /**
@@ -119,10 +131,11 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Hour","Month"],
+          allowedValues: ["Hour","Month","PrePaid","PostPaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('partitionNum', ros.validateNumber)(properties.partitionNum));
     errors.collect(ros.propertyValidator('diskType', ros.requiredValidator)(properties.diskType));
     if(properties.diskType && (typeof properties.diskType) !== 'object') {
         errors.collect(ros.propertyValidator('diskType', ros.validateAllowedValues)({
@@ -136,7 +149,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('ioMaxSpec', ros.validateString)(properties.ioMaxSpec));
     errors.collect(ros.propertyValidator('diskSize', ros.requiredValidator)(properties.diskSize));
     errors.collect(ros.propertyValidator('diskSize', ros.validateNumber)(properties.diskSize));
-    errors.collect(ros.propertyValidator('topicQuota', ros.requiredValidator)(properties.topicQuota));
     errors.collect(ros.propertyValidator('topicQuota', ros.validateNumber)(properties.topicQuota));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
@@ -167,16 +179,17 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       DeployType: ros.numberToRosTemplate(properties.deployType),
       DiskSize: ros.numberToRosTemplate(properties.diskSize),
       DiskType: ros.stringToRosTemplate(properties.diskType),
-      TopicQuota: ros.numberToRosTemplate(properties.topicQuota),
       DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
       DeployOption: rosInstanceDeployOptionPropertyToRosTemplate(properties.deployOption),
       EipMax: ros.numberToRosTemplate(properties.eipMax),
       IoMax: ros.numberToRosTemplate(properties.ioMax),
       IoMaxSpec: ros.stringToRosTemplate(properties.ioMaxSpec),
       OpenConnector: ros.booleanToRosTemplate(properties.openConnector),
+      PartitionNum: ros.numberToRosTemplate(properties.partitionNum),
       PayType: ros.stringToRosTemplate(properties.payType),
       SpecType: ros.stringToRosTemplate(properties.specType),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      TopicQuota: ros.numberToRosTemplate(properties.topicQuota),
     };
 }
 
@@ -257,15 +270,6 @@ export class RosInstance extends ros.RosResource {
     public diskType: string | ros.IResolvable;
 
     /**
-     * @Property topicQuota: The number of topics to be configured for the Message Queue for Apache Kafka instance. 
-     * The default value of this parameter varies with different peak traffic values. 
-     * Additional fees are charged if the default values are exceeded.
-     *  Different specifications have different default values, and extra fees are charged. 
-     * For more information, see Billing.
-     */
-    public topicQuota: number | ros.IResolvable;
-
-    /**
      * @Property deletionForce: Whether delete all topics, consumer groups of the kafka instance and then delete instance. Default is false
      */
     public deletionForce: boolean | ros.IResolvable | undefined;
@@ -302,6 +306,15 @@ export class RosInstance extends ros.RosResource {
     public openConnector: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property partitionNum: Number of partitions(recommended).
+     * The number of partitions to be configured for the Message Queue for Apache Kafka instance. 
+     * PartitionNum and TopicQuota must be selected. 
+     * It is recommended that you only fill in the number of partitions.
+     *
+     */
+    public partitionNum: number | ros.IResolvable | undefined;
+
+    /**
      * @Property payType: Pay by hour or month.
      */
     public payType: string | ros.IResolvable | undefined;
@@ -317,6 +330,18 @@ export class RosInstance extends ros.RosResource {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosInstance.TagsProperty[] | undefined;
+
+    /**
+     * @Property topicQuota: Number of topics (not recommended).
+     * The number of topics to be configured for the Message Queue for Apache Kafka instance. 
+     * PartitionNum and TopicQuota must be selected. 
+     * It is recommended that you only fill in the number of partitions.
+     * The default value of this parameter varies with different peak traffic values. 
+     * Additional fees are charged if the default values are exceeded.
+     *  Different specifications have different default values, and extra fees are charged. 
+     * For more information, see Billing.
+     */
+    public topicQuota: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::KAFKA::Instance`.
@@ -340,16 +365,17 @@ export class RosInstance extends ros.RosResource {
         this.deployType = props.deployType;
         this.diskSize = props.diskSize;
         this.diskType = props.diskType;
-        this.topicQuota = props.topicQuota;
         this.deletionForce = props.deletionForce;
         this.deployOption = props.deployOption;
         this.eipMax = props.eipMax;
         this.ioMax = props.ioMax;
         this.ioMaxSpec = props.ioMaxSpec;
         this.openConnector = props.openConnector;
+        this.partitionNum = props.partitionNum;
         this.payType = props.payType;
         this.specType = props.specType;
         this.tags = props.tags;
+        this.topicQuota = props.topicQuota;
     }
 
 
@@ -358,16 +384,17 @@ export class RosInstance extends ros.RosResource {
             deployType: this.deployType,
             diskSize: this.diskSize,
             diskType: this.diskType,
-            topicQuota: this.topicQuota,
             deletionForce: this.deletionForce,
             deployOption: this.deployOption,
             eipMax: this.eipMax,
             ioMax: this.ioMax,
             ioMaxSpec: this.ioMaxSpec,
             openConnector: this.openConnector,
+            partitionNum: this.partitionNum,
             payType: this.payType,
             specType: this.specType,
             tags: this.tags,
+            topicQuota: this.topicQuota,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

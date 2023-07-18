@@ -102,6 +102,11 @@ export class Cluster2 extends ros.Resource {
      */
 
     /**
+     * Attribute ApplicationLinks: ApplicationLinks of cluster.
+     */
+    public readonly attrApplicationLinks: ros.IResolvable;
+
+    /**
      * Attribute ClusterId: Cluster ID.
      */
     public readonly attrClusterId: ros.IResolvable;
@@ -133,6 +138,7 @@ export class Cluster2 extends ros.Resource {
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCluster2;
+        this.attrApplicationLinks = rosCluster2.attrApplicationLinks;
         this.attrClusterId = rosCluster2.attrClusterId;
     }
 }

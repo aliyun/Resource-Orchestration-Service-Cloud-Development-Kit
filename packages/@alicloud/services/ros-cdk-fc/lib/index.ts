@@ -10,3 +10,5 @@ export * from './version';
 
 // ALIYUN::FC Resources:
 export * from './fc.generated';
+import * as datasource from './datasource';
+export { datasource };

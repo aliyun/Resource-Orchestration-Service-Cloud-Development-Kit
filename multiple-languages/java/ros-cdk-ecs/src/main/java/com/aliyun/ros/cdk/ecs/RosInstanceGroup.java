@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  <code>ALIYUN::ECS::InstanceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:28.258Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:01.406Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroup")
 public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -179,6 +179,24 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAllocatePublicIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "allocatePublicIp", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
+        return software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAutoPay(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "autoPay", value);
+    }
+
+    /**
+     */
+    public void setAutoPay(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoPay", value);
     }
 
     /**
@@ -2653,6 +2671,23 @@ public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder allocatePublicIp(final com.aliyun.ros.cdk.core.IResolvable allocatePublicIp) {
             this.props.allocatePublicIp(allocatePublicIp);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param autoPay This parameter is required.
+         */
+        public Builder autoPay(final java.lang.Boolean autoPay) {
+            this.props.autoPay(autoPay);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoPay This parameter is required.
+         */
+        public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
+            this.props.autoPay(autoPay);
             return this;
         }
 

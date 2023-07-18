@@ -9,3 +9,5 @@ export * from './scheduledtask';
 
 // ALIYUN::ESS Resources:
 export * from './ess.generated';
+import * as datasource from './datasource';
+export { datasource };

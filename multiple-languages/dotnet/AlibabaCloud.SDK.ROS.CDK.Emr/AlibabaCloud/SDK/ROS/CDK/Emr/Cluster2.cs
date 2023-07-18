@@ -38,6 +38,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         {
         }
 
+        /// <summary>Attribute ApplicationLinks: ApplicationLinks of cluster.</summary>
+        [JsiiProperty(name: "attrApplicationLinks", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrApplicationLinks
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute ClusterId: Cluster ID.</summary>
         [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId

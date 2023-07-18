@@ -100,9 +100,19 @@ export class Instance extends ros.Resource {
      */
 
     /**
+     * Attribute ClassicEndpoint: The classic endpoint of the instance.
+     */
+    public readonly attrClassicEndpoint: ros.IResolvable;
+
+    /**
      * Attribute InstanceId: The ID of the instance.
      */
     public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * Attribute PrivateEndpoint: The private endpoint of the instance.
+     */
+    public readonly attrPrivateEndpoint: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::AMQP::Instance`.
@@ -130,6 +140,8 @@ export class Instance extends ros.Resource {
             periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
+        this.attrClassicEndpoint = rosInstance.attrClassicEndpoint;
         this.attrInstanceId = rosInstance.attrInstanceId;
+        this.attrPrivateEndpoint = rosInstance.attrPrivateEndpoint;
     }
 }

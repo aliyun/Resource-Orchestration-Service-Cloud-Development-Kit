@@ -1,4 +1,4 @@
-import { schema } from '@alicloud/ros-cdk-spec';
+import { schema, filteredSpecification } from '@alicloud/ros-cdk-spec';
 import { CodeMaker } from 'codemaker';
 import * as genspec from './genspec';
 import { itemTypeNames, PropertyAttributeName, scalarTypeNames, SpecName } from './spec-utils';
@@ -38,10 +38,10 @@ export default class CodeGenerator {
    * @param spec     resource specification
    */
   constructor(
-    moduleName: string,
-    private readonly spec: schema.Specification,
-    private readonly affix: string,
-    options: CodeGeneratorOptions = {},
+      moduleName: string,
+      private readonly spec: schema.Specification,
+      private readonly affix: string,
+      options: CodeGeneratorOptions = {},
   ) {
     this.outputFile = `${moduleName}`;
     this.code.openFile(this.outputFile);
@@ -52,10 +52,9 @@ export default class CodeGenerator {
     this.code.line(`import * as ${CORE} from '${coreImport}';`);
   }
 
-  public async emitCode() {
-    for (const name of Object.keys(this.spec.ResourceTypes).sort()) {
-      const resourceType = this.spec.ResourceTypes[name];
-
+  public async emitCode(resourceTypes: string[]) {
+    for (const name of resourceTypes.sort()) {
+      const resourceType = filteredSpecification(name).ResourceTypes[name]
       const rosName = SpecName.parse(name);
       const resourceName = genspec.CodeName.forRosResource(rosName, this.affix);
       this.code.line();
@@ -77,14 +76,14 @@ export default class CodeGenerator {
    */
   private emitPropertyTypes(resourceName: string, resourceClass: genspec.CodeName): void {
     const prefix = `${resourceName}.`;
-    for (const name of Object.keys(this.spec.PropertyTypes).sort()) {
+    for (const name of Object.keys(filteredSpecification(resourceName).PropertyTypes).sort()) {
       if (!name.startsWith(prefix)) {
         continue;
       }
 
       const rosTypeName = PropertyAttributeName.parse(name);
       const propTypeName = genspec.CodeName.forPropertyType(rosTypeName, resourceClass);
-      const type = this.spec.PropertyTypes[name];
+      const type = filteredSpecification(resourceName).PropertyTypes[name];
       if (schema.isRecordType(type)) {
         this.emitPropertyType(resourceClass, propTypeName, type);
       }
@@ -127,28 +126,28 @@ export default class CodeGenerator {
    * Return a mapping of { originalName -> newName }.
    */
   private emitPropsTypeProperties(
-    resource: genspec.CodeName,
-    propertiesSpec: { [name: string]: schema.Property },
-    container: Container,
+      resource: genspec.CodeName,
+      propertiesSpec: { [name: string]: schema.Property },
+      container: Container,
   ): Dictionary<string> {
     const propertyMap: Dictionary<string> = {};
     Object.keys(propertiesSpec)
-      .sort(propertyComparator)
-      .forEach((propName) => {
-        this.code.line();
-        const propSpec = propertiesSpec[propName];
-        const additionalDocs = resource.specName!.relativeName(propName).fqn;
+        .sort(propertyComparator)
+        .forEach((propName) => {
+          this.code.line();
+          const propSpec = propertiesSpec[propName];
+          const additionalDocs = resource.specName!.relativeName(propName).fqn;
 
-        propertyMap[propName] = this.emitProperty(
-          {
-            context: resource,
-            propName,
-            spec: propSpec,
-            additionalDocs: quoteCode(additionalDocs),
-          },
-          container,
-        );
-      });
+          propertyMap[propName] = this.emitProperty(
+              {
+                context: resource,
+                propName,
+                spec: propSpec,
+                additionalDocs: quoteCode(additionalDocs),
+              },
+              container,
+          );
+        });
 
     return propertyMap;
 
@@ -213,8 +212,8 @@ export default class CodeGenerator {
     if (spec.Attributes) {
       for (const attributeName of Object.keys(spec.Attributes).sort()) {
         if (
-          !(attributeName[0] >= 'a' && attributeName[0] <= 'z') &&
-          !(attributeName[0] >= 'A' && attributeName[0] <= 'Z')
+            !(attributeName[0] >= 'a' && attributeName[0] <= 'z') &&
+            !(attributeName[0] >= 'A' && attributeName[0] <= 'Z')
         )
           continue;
 
@@ -255,20 +254,20 @@ export default class CodeGenerator {
     this.code.line(' */');
     const propsArgument = propsType ? `, props: ${propsType.className}` : '';
     this.code.openBlock(
-      `constructor(scope: ${CONSTRUCT_CLASS}, id: string${propsArgument}, enableResourcePropertyConstraint: boolean)`,
+        `constructor(scope: ${CONSTRUCT_CLASS}, id: string${propsArgument}, enableResourcePropertyConstraint: boolean)`,
     );
     this.code.line(
-      `super(scope, id, { type: ${resourceName.className}.ROS_RESOURCE_TYPE_NAME${
-        propsType ? ', properties: props' : ''
-      } });`,
+        `super(scope, id, { type: ${resourceName.className}.ROS_RESOURCE_TYPE_NAME${
+            propsType ? ', properties: props' : ''
+        } });`,
     );
 
     // initialize all attribute properties
     for (const at of attributes) {
       let attributeName = at.propertyName.substring(4);
       if (
-        !(attributeName[0] >= 'a' && attributeName[0] <= 'z') &&
-        !(attributeName[0] >= 'A' && attributeName[0] <= 'Z')
+          !(attributeName[0] >= 'a' && attributeName[0] <= 'z') &&
+          !(attributeName[0] >= 'A' && attributeName[0] <= 'Z')
       )
         continue;
 
@@ -282,9 +281,9 @@ export default class CodeGenerator {
       for (const prop of Object.values(propMap)) {
         if (schema.isTagPropertyName(upcaseFirst(prop)) && schema.isTaggableResource(spec)) {
           this.code.line(
-            `this.tags = new ${TAG_MANAGER}(${tagType(
-              spec,
-            )}, ${rosResourceTypeName}, props.${prop}, { tagPropertyName: '${prop}' });`,
+              `this.tags = new ${TAG_MANAGER}(${tagType(
+                  spec,
+              )}, ${rosResourceTypeName}, props.${prop}, { tagPropertyName: '${prop}' });`,
           );
         } else {
           this.code.line(`this.${prop} = props.${prop};`);
@@ -350,29 +349,29 @@ export default class CodeGenerator {
    * Generated as a top-level function outside any namespace so we can hide it from library consumers.
    */
   private emitRosTemplateMapper(
-    resource: genspec.CodeName,
-    typeName: genspec.CodeName,
-    propSpecs: { [name: string]: schema.Property },
-    nameConversionTable: Dictionary<string>,
-    isResourceType: boolean = true,
+      resource: genspec.CodeName,
+      typeName: genspec.CodeName,
+      propSpecs: { [name: string]: schema.Property },
+      nameConversionTable: Dictionary<string>,
+      isResourceType: boolean = true,
   ) {
     const mapperName = genspec.rosMapperName(typeName);
 
     this.code.line('/**');
     this.code.line(
-      ` * Renders the AliCloud ROS Resource properties of an ${quoteCode(typeName.specName!.fqn)} resource`,
+        ` * Renders the AliCloud ROS Resource properties of an ${quoteCode(typeName.specName!.fqn)} resource`,
     );
     this.code.line(' *');
     this.code.line(` * @param properties - the TypeScript properties of a ${quoteCode(typeName.className)}`);
     this.code.line(' *');
     this.code.line(
-      ` * @returns the AliCloud ROS Resource properties of an ${quoteCode(typeName.specName!.fqn)} resource.`,
+        ` * @returns the AliCloud ROS Resource properties of an ${quoteCode(typeName.specName!.fqn)} resource.`,
     );
     this.code.line(' */');
     this.code.line('// @ts-ignore TS6133');
     if (isResourceType) {
       this.code.openBlock(
-        `function ${mapperName.functionName}(properties: any, enableResourcePropertyConstraint: boolean): any`,
+          `function ${mapperName.functionName}(properties: any, enableResourcePropertyConstraint: boolean): any`,
       );
     } else {
       this.code.openBlock(`function ${mapperName.functionName}(properties: any): any`);
@@ -437,12 +436,12 @@ export default class CodeGenerator {
           const scalarValidator = `${CORE}.unionValidator(${validatorNames})`;
           const listValidator = `${CORE}.listValidator(${CORE}.unionValidator(${itemValidatorNames}))`;
           const scalarMapper = `${CORE}.unionMapper([${validatorNames}], [${types
-            .map((type) => this.visitAtom(type))
-            .join(', ')}])`;
+              .map((type) => this.visitAtom(type))
+              .join(', ')}])`;
           // tslint:disable-next-line:max-line-length
           const listMapper = `${CORE}.listMapper(${CORE}.unionMapper([${itemValidatorNames}], [${itemTypes
-            .map((type) => this.visitAtom(type))
-            .join(', ')}]))`;
+              .map((type) => this.visitAtom(type))
+              .join(', ')}]))`;
 
           return `${CORE}.unionMapper([${scalarValidator}, ${listValidator}], [${scalarMapper}, ${listMapper}])`;
         },
@@ -460,10 +459,10 @@ export default class CodeGenerator {
    * Generated as a top-level function outside any namespace so we can hide it from library consumers.
    */
   private emitValidator(
-    resource: genspec.CodeName,
-    typeName: genspec.CodeName,
-    propSpecs: { [name: string]: schema.Property },
-    nameConversionTable: Dictionary<string>,
+      resource: genspec.CodeName,
+      typeName: genspec.CodeName,
+      propSpecs: { [name: string]: schema.Property },
+      nameConversionTable: Dictionary<string>,
   ) {
     const validatorName = genspec.validatorName(typeName);
 
@@ -484,7 +483,7 @@ export default class CodeGenerator {
       const propName = nameConversionTable[rosPropName];
       if (propSpec.Required) {
         this.code.line(
-          `errors.collect(${CORE}.propertyValidator('${propName}', ${CORE}.requiredValidator)(properties.${propName}));`,
+            `errors.collect(${CORE}.propertyValidator('${propName}', ${CORE}.requiredValidator)(properties.${propName}));`,
         );
       }
       // props constraint
@@ -507,28 +506,28 @@ export default class CodeGenerator {
         },
         visitUnionList(itemTypes: genspec.CodeName[]) {
           return `${CORE}.listValidator(${CORE}.unionValidator(${itemTypes
-            .map((type) => this.visitAtom(type))
-            .join(', ')}))`;
+              .map((type) => this.visitAtom(type))
+              .join(', ')}))`;
         },
         visitMap(itemType: genspec.CodeName) {
           return `${CORE}.hashValidator(${this.visitAtom(itemType)})`;
         },
         visitUnionMap(itemTypes: genspec.CodeName[]) {
           return `${CORE}.hashValidator(${CORE}.unionValidator(${itemTypes
-            .map((type) => this.visitAtom(type))
-            .join(', ')}))`;
+              .map((type) => this.visitAtom(type))
+              .join(', ')}))`;
         },
         visitListOrAtom(types: genspec.CodeName[], itemTypes: genspec.CodeName[]) {
           const scalarValidator = `${CORE}.unionValidator(${types.map((type) => this.visitAtom(type)).join(', ')})`;
           const listValidator = `${CORE}.listValidator(${CORE}.unionValidator(${itemTypes
-            .map((type) => this.visitAtom(type))
-            .join(', ')}))`;
+              .map((type) => this.visitAtom(type))
+              .join(', ')}))`;
 
           return `${CORE}.unionValidator(${scalarValidator}, ${listValidator})`;
         },
       });
       self.code.line(
-        `errors.collect(${CORE}.propertyValidator('${propName}', ${validatorExpression})(properties.${propName}));`,
+          `errors.collect(${CORE}.propertyValidator('${propName}', ${validatorExpression})(properties.${propName}));`,
       );
     });
 
@@ -543,8 +542,8 @@ export default class CodeGenerator {
       let constraintType = Object.keys(constraint)[0];
       if (constraintType === 'Range') {
         if (
-          (propSpec as schema.PrimitiveProperty).PrimitiveType === 'Integer' ||
-          (propSpec as schema.PrimitiveProperty).PrimitiveType === 'Number'
+            (propSpec as schema.PrimitiveProperty).PrimitiveType === 'Integer' ||
+            (propSpec as schema.PrimitiveProperty).PrimitiveType === 'Number'
         ) {
           this.code.openBlock(`if(properties.${propName} && (typeof properties.${propName}) !== 'object')`);
           this.code.line(`errors.collect(${CORE}.propertyValidator('${propName}', ${CORE}.validate${constraintType})({
@@ -557,7 +556,7 @@ export default class CodeGenerator {
       } else if (constraintType === 'Length') {
         if ((propSpec as schema.PrimitiveProperty).PrimitiveType === 'String' || propSpec.Type === 'List') {
           this.code.openBlock(
-            `if(properties.${propName} && (Array.isArray(properties.${propName}) || (typeof properties.${propName}) === 'string'))`,
+              `if(properties.${propName} && (Array.isArray(properties.${propName}) || (typeof properties.${propName}) === 'string'))`,
           );
           this.code.line(`errors.collect(${CORE}.propertyValidator('${propName}', ${CORE}.validate${constraintType})({
             data: properties.${propName}.length,
@@ -571,9 +570,9 @@ export default class CodeGenerator {
         if ((propSpec as schema.PrimitiveProperty).PrimitiveType === 'String') {
           allowedValuesCode = `["${Object.values(constraint)[0].join('","')}"],`;
         } else if (
-          (propSpec as schema.PrimitiveProperty).PrimitiveType === 'Integer' ||
-          (propSpec as schema.PrimitiveProperty).PrimitiveType === 'Number' ||
-          (propSpec as schema.PrimitiveProperty).PrimitiveType === 'Boolean'
+            (propSpec as schema.PrimitiveProperty).PrimitiveType === 'Integer' ||
+            (propSpec as schema.PrimitiveProperty).PrimitiveType === 'Number' ||
+            (propSpec as schema.PrimitiveProperty).PrimitiveType === 'Boolean'
         ) {
           allowedValuesCode = `[${Object.values(constraint)[0]}],`;
         } else continue;
@@ -598,13 +597,13 @@ export default class CodeGenerator {
     const javascriptPropertyName = genspec.rosTemplateToScriptName(props.propName);
 
     this.docLink(
-      undefined,
-      `@Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ')}`,
+        undefined,
+        `@Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ')}`,
     );
     const line =
-      props.propName === 'Tags' && (props.spec as schema.ComplexListProperty).ItemType === 'Tag'
-        ? `: ${CORE}.RosTag[];`
-        : `: ${this.findNativeType(props.context, props.spec, props.propName)};`;
+        props.propName === 'Tags' && (props.spec as schema.ComplexListProperty).ItemType === 'Tag'
+            ? `: ${CORE}.RosTag[];`
+            : `: ${this.findNativeType(props.context, props.spec, props.propName)};`;
     const question = props.spec.Required ? '' : '?';
     this.code.line(`readonly ${javascriptPropertyName}${question}${line}`);
 
@@ -614,8 +613,8 @@ export default class CodeGenerator {
   private emitClassProperty(props: EmitPropertyProps): string {
     const javascriptPropertyName = genspec.rosTemplateToScriptName(props.propName);
     this.docLink(
-      undefined,
-      `@Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ')}`,
+        undefined,
+        `@Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ')}`,
     );
     const question = props.spec.Required ? ';' : ' | undefined;';
     const line = `: ${`${this.findNativeType(props.context, props.spec, props.propName)}`}${question}`;
@@ -658,9 +657,9 @@ export default class CodeGenerator {
   }
 
   private emitPropertyType(
-    resourceContext: genspec.CodeName,
-    typeName: genspec.CodeName,
-    propTypeSpec: schema.RecordProperty,
+      resourceContext: genspec.CodeName,
+      typeName: genspec.CodeName,
+      propTypeSpec: schema.RecordProperty,
   ): void {
     this.code.line();
     this.beginNamespace(typeName);
@@ -826,8 +825,8 @@ function tagType(resource: schema.TaggableResource): string {
       return `${TAG_TYPE}.AUTOSCALING_GROUP`;
     }
     if (
-      schema.isTagPropertyJson(resource.Properties[name]) ||
-      schema.isTagPropertyStringMap(resource.Properties[name])
+        schema.isTagPropertyJson(resource.Properties[name]) ||
+        schema.isTagPropertyStringMap(resource.Properties[name])
     ) {
       return `${TAG_TYPE}.MAP`;
     }

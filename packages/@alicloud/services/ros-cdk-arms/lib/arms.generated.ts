@@ -341,7 +341,7 @@ export class RosAlertContactGroup extends ros.RosResource {
 export interface RosManagedPrometheusProps {
 
     /**
-     * @Property clusterType: The type of the cluster.
+     * @Property clusterType: The type of the cluster. Currently, only ask, ecs and one clusters are supported. Default is ecs.
      */
     readonly clusterType: string | ros.IResolvable;
 
@@ -361,7 +361,12 @@ export interface RosManagedPrometheusProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property clusterName: The name of the cluster.
+     * @Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.
+     */
+    readonly clusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property clusterName: The name of the cluster. Required when the ClusterType is ecs.
      */
     readonly clusterName?: string | ros.IResolvable;
 
@@ -383,6 +388,7 @@ function RosManagedPrometheusPropsValidator(properties: any): ros.ValidationResu
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
@@ -392,7 +398,7 @@ function RosManagedPrometheusPropsValidator(properties: any): ros.ValidationResu
     if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
         errors.collect(ros.propertyValidator('clusterType', ros.validateAllowedValues)({
           data: properties.clusterType,
-          allowedValues: ["ecs"],
+          allowedValues: ["ecs","ask","one"],
         }));
     }
     errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
@@ -418,6 +424,7 @@ function rosManagedPrometheusPropsToRosTemplate(properties: any, enableResourceP
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
       ClusterName: ros.stringToRosTemplate(properties.clusterName),
       GrafanaInstanceId: ros.stringToRosTemplate(properties.grafanaInstanceId),
     };
@@ -451,7 +458,7 @@ export class RosManagedPrometheus extends ros.RosResource {
 
 
     /**
-     * @Property clusterType: The type of the cluster.
+     * @Property clusterType: The type of the cluster. Currently, only ask, ecs and one clusters are supported. Default is ecs.
      */
     public clusterType: string | ros.IResolvable;
 
@@ -471,7 +478,12 @@ export class RosManagedPrometheus extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property clusterName: The name of the cluster.
+     * @Property clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.
+     */
+    public clusterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterName: The name of the cluster. Required when the ClusterType is ecs.
      */
     public clusterName: string | ros.IResolvable | undefined;
 
@@ -497,6 +509,7 @@ export class RosManagedPrometheus extends ros.RosResource {
         this.securityGroupId = props.securityGroupId;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
+        this.clusterId = props.clusterId;
         this.clusterName = props.clusterName;
         this.grafanaInstanceId = props.grafanaInstanceId;
     }
@@ -508,6 +521,7 @@ export class RosManagedPrometheus extends ros.RosResource {
             securityGroupId: this.securityGroupId,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
+            clusterId: this.clusterId,
             clusterName: this.clusterName,
             grafanaInstanceId: this.grafanaInstanceId,
         };

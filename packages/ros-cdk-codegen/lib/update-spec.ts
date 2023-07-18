@@ -45,7 +45,10 @@ function getPropertyTypeName(type: string, propertyName: string, path: Array<str
 
 export function specGenerator() {
     let spec: any = {};
-    let allTypes: Set<string> = new Set();
+    // ALIYUN开头的资源集合
+    let onlyResourceTypes: Set<string> = new Set();
+    // ALIYUN与DATASOURCE开头的资源集合
+    let fullResourceTypes: Set<string> = new Set();
     let codeMappingTypesArray = new Array();
     let resourceTypes: any = {};
     let propertyTypes: any = {};
@@ -55,8 +58,11 @@ export function specGenerator() {
     let specificationOriginFileContent = JSON.parse(specificationOriginFile);
     for (let [type] of Object.entries(specificationOriginFileContent['ResourceTypes'])) {
         let category: string[] = type.split('::');
-        allTypes.add(category[0] + '::' + category[1]);
         // e.g. ALIYUN::ECS::VPC
+        if (category[0].startsWith('ALIYUN')) {
+            onlyResourceTypes.add(category[0] + '::' + category[1]);
+        }
+        fullResourceTypes.add(category[0] + '::' + category[1]);
         let typeDetail = specificationOriginFileContent['ResourceTypes'][type];
 
         // handle properties
@@ -148,12 +154,13 @@ export function specGenerator() {
     for (let [rosCode] of Object.entries(codeMappingFileContent['CodeMapping'])) {
         codeMappingTypesArray.push('ALIYUN::' + rosCode)
     }
-    let allTypesArray = Array.from(allTypes)
-    let diffArr = getArrDifference(allTypesArray, codeMappingTypesArray)
+    let onlyTypesArray = Array.from(onlyResourceTypes)
+    let fullTypesArray = Array.from(fullResourceTypes)
+    let diffArr = getArrDifference(onlyTypesArray, codeMappingTypesArray)
     if(diffArr != null && diffArr != ""){
         throw new Error(`code_mapping file diff with types file "${diffArr}", please add information with code_mapping file.`);
     }
-    fs.writeFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/types.json'), JSON.stringify(allTypesArray, null, '\t'));
+    fs.writeFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/types.json'), JSON.stringify(fullTypesArray, null, '\t'));
     spec['PropertyTypes'] = propertyTypes;
     spec['ResourceTypes'] = resourceTypes;
 
@@ -164,16 +171,18 @@ export async function specOriginGenerator(endpoint: string, accessKeyId: string,
     let spec: any = {};
     let resourceTypes: any = {};
     let client = initClient(endpoint, accessKeyId, accessKeySecret)
-    let allResourceTypes = await client.listResourceTypes()
+    let allResourceTypes = await client.listResourceTypes({EntityType: 'All'})
     for (let type of allResourceTypes.ResourceTypes) {
-        // e.g. ALIYUN::ECS::VPC
-        let typeDetail = await client.getResourceType({ResourceType: type});
+        // e.g. ALIYUN::ECS::VPC & DATASOURCE::VPC::FlowLogs
+        if (type.startsWith('DATASOURCE') || type.startsWith('ALIYUN')) {
+            let typeDetail = await client.getResourceType({ResourceType: type});
 
-        resourceTypes[`${typeDetail.ResourceType}`] = {
-            Attributes: typeDetail.Attributes ? typeDetail.Attributes : {},
-            Properties: typeDetail.Properties ? typeDetail.Properties : {},
-        };
-        await sleep(600);
+            resourceTypes[`${typeDetail.ResourceType}`] = {
+                Attributes: typeDetail.Attributes ? typeDetail.Attributes : {},
+                Properties: typeDetail.Properties ? typeDetail.Properties : {},
+            };
+            await sleep(600);
+        }
     }
     spec['ResourceTypes'] = resourceTypes;
     fs.writeFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/specification_origin.json'), JSON.stringify(spec, null, '\t'));

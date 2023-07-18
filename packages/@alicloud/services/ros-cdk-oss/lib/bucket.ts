@@ -44,6 +44,13 @@ export interface BucketProps {
     readonly policy?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * Property redundancyType: Specifies the data disaster recovery type of the storage space. The value range is as follows:
+     * LRS (default): Local redundant LRS stores your data redundantly on different storage devices in the same availability zone, and can support data loss and normal access even when two storage devices are damaged concurrently.
+     * ZRS: Intra-city redundant ZRS adopts a data redundancy storage mechanism in multiple availability zones (AZ), and stores user data redundantly in multiple availability zones in the same region. When an availability zone is unavailable, normal access to data can still be guaranteed.
+     */
+    readonly redundancyType?: string | ros.IResolvable;
+
+    /**
      * Property refererConfiguration: undefined
      */
     readonly refererConfiguration?: RosBucket.RefererConfigurationProperty | ros.IResolvable;
@@ -62,6 +69,11 @@ export interface BucketProps {
      * Property tags: Bucket tags in k-v pairs format.
      */
     readonly tags?: { [key: string]: (any) };
+
+    /**
+     * Property versioningConfiguration: A state of versioning
+     */
+    readonly versioningConfiguration?: RosBucket.VersioningConfigurationProperty | ros.IResolvable;
 
     /**
      * Property websiteConfiguration: The properties of website config.
@@ -106,16 +118,18 @@ export class Bucket extends ros.Resource {
 
         const rosBucket = new RosBucket(this, id,  {
             policy: props.policy,
-            corsConfiguration: props.corsConfiguration,
-            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
-            bucketName: props.bucketName,
             storageClass: props.storageClass,
-            loggingConfiguration: props.loggingConfiguration,
+            redundancyType: props.redundancyType === undefined || props.redundancyType === null ? 'LRS' : props.redundancyType,
             websiteConfiguration: props.websiteConfiguration,
-            refererConfiguration: props.refererConfiguration,
             lifecycleConfiguration: props.lifecycleConfiguration,
             serverSideEncryptionConfiguration: props.serverSideEncryptionConfiguration,
+            versioningConfiguration: props.versioningConfiguration,
             accessControl: props.accessControl === undefined || props.accessControl === null ? 'private' : props.accessControl,
+            corsConfiguration: props.corsConfiguration,
+            bucketName: props.bucketName,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
+            loggingConfiguration: props.loggingConfiguration,
+            refererConfiguration: props.refererConfiguration,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBucket;

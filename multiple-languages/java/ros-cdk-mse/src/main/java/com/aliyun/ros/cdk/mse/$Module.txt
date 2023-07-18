@@ -14,3 +14,8 @@
 @alicloud/ros-cdk-mse.RosNacosConfigProps=com.aliyun.ros.cdk.mse.RosNacosConfigProps
 @alicloud/ros-cdk-mse.RosNacosService=com.aliyun.ros.cdk.mse.RosNacosService
 @alicloud/ros-cdk-mse.RosNacosServiceProps=com.aliyun.ros.cdk.mse.RosNacosServiceProps
+@alicloud/ros-cdk-mse.RosServiceSource=com.aliyun.ros.cdk.mse.RosServiceSource
+@alicloud/ros-cdk-mse.RosServiceSource.IngressOptionsProperty=com.aliyun.ros.cdk.mse.RosServiceSource$IngressOptionsProperty
+@alicloud/ros-cdk-mse.RosServiceSourceProps=com.aliyun.ros.cdk.mse.RosServiceSourceProps
+@alicloud/ros-cdk-mse.ServiceSource=com.aliyun.ros.cdk.mse.ServiceSource
+@alicloud/ros-cdk-mse.ServiceSourceProps=com.aliyun.ros.cdk.mse.ServiceSourceProps

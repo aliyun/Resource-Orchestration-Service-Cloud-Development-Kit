@@ -9,7 +9,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
     public interface IRosManagedPrometheusProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: clusterType: The type of the cluster.
+        /// <strong>Property</strong>: clusterType: The type of the cluster. Currently, only ask, ecs and one clusters are supported. Default is ecs.
         /// </remarks>
         [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ClusterType
@@ -45,7 +45,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterName: The name of the cluster.
+        /// <strong>Property</strong>: clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.
+        /// </remarks>
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ClusterId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: clusterName: The name of the cluster. Required when the ClusterType is ecs.
         /// </remarks>
         [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -79,7 +92,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: clusterType: The type of the cluster.
+            /// <strong>Property</strong>: clusterType: The type of the cluster. Currently, only ask, ecs and one clusters are supported. Default is ecs.
             /// </remarks>
             [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ClusterType
@@ -115,7 +128,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: clusterName: The name of the cluster.
+            /// <strong>Property</strong>: clusterId: The ID of the Kubernetes cluster of Alibaba Cloud Container Service for Kubernetes.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ClusterId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: clusterName: The name of the cluster. Required when the ClusterType is ecs.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

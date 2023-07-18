@@ -46,6 +46,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
 
         /// <remarks>
         /// <strong>Property</strong>: clusterType: Cluster type, the default is SSD.
+        /// This parameter specifies the specification of the ots instance.
+        /// When the value is SSD, the ots instance is a high-performance instance.
+        /// When the value is Hybid, the ots instance is a capacity instance
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

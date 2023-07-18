@@ -14,7 +14,10 @@ export interface VpcEndpointServiceAttachmentProps {
     readonly resourceId: string | ros.IResolvable;
 
     /**
-     * Property resourceType: The resource type.
+     * Property resourceType: The resource type. Allowed values:
+     * - slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.
+     * - alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.
+     * - nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.
      */
     readonly resourceType: string | ros.IResolvable;
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS resource type:  <code>ALIYUN::OTS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:29.590Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.829Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -134,6 +134,10 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property clusterType: Cluster type, the default is SSD.
          * <p>
+         * This parameter specifies the specification of the ots instance.
+         * When the value is SSD, the ots instance is a high-performance instance.
+         * When the value is Hybid, the ots instance is a capacity instance
+         * <p>
          * @return {@code this}
          * @param clusterType Property clusterType: Cluster type, the default is SSD. This parameter is required.
          */
@@ -143,6 +147,10 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property clusterType: Cluster type, the default is SSD.
+         * <p>
+         * This parameter specifies the specification of the ots instance.
+         * When the value is SSD, the ots instance is a high-performance instance.
+         * When the value is Hybid, the ots instance is a capacity instance
          * <p>
          * @return {@code this}
          * @param clusterType Property clusterType: Cluster type, the default is SSD. This parameter is required.

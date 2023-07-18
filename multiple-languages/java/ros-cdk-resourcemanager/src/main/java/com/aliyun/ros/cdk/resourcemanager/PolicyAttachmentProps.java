@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a <code>ALIYUN::ResourceManager::PolicyAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.84.0 (build 5404dcf)", date = "2023-06-28T08:22:30.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.418Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.PolicyAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(PolicyAttachmentProps.Jsii$Proxy.class)
 public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,7 +33,9 @@ public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializ
     /**
      * Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getResourceGroupId();
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
 
     /**
      * @return a {@link Builder} of {@link PolicyAttachmentProps}
@@ -135,7 +137,7 @@ public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link PolicyAttachmentProps#getResourceGroupId}
-         * @param resourceGroupId Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs. This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -145,7 +147,7 @@ public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link PolicyAttachmentProps#getResourceGroupId}
-         * @param resourceGroupId Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs. This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
          * @return {@code this}
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
@@ -197,7 +199,7 @@ public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializ
             this.policyType = java.util.Objects.requireNonNull(builder.policyType, "policyType is required");
             this.principalName = java.util.Objects.requireNonNull(builder.principalName, "principalName is required");
             this.principalType = java.util.Objects.requireNonNull(builder.principalType, "principalType is required");
-            this.resourceGroupId = java.util.Objects.requireNonNull(builder.resourceGroupId, "resourceGroupId is required");
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override
@@ -235,7 +237,9 @@ public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializ
             data.set("policyType", om.valueToTree(this.getPolicyType()));
             data.set("principalName", om.valueToTree(this.getPrincipalName()));
             data.set("principalType", om.valueToTree(this.getPrincipalType()));
-            data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-resourcemanager.PolicyAttachmentProps"));
@@ -258,7 +262,7 @@ public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializ
             if (!policyType.equals(that.policyType)) return false;
             if (!principalName.equals(that.principalName)) return false;
             if (!principalType.equals(that.principalType)) return false;
-            return this.resourceGroupId.equals(that.resourceGroupId);
+            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
         @Override
@@ -267,7 +271,7 @@ public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.policyType.hashCode());
             result = 31 * result + (this.principalName.hashCode());
             result = 31 * result + (this.principalType.hashCode());
-            result = 31 * result + (this.resourceGroupId.hashCode());
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }
     }

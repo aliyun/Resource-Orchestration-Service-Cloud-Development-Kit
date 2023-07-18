@@ -1371,6 +1371,11 @@ export class RosCluster2 extends ros.RosResource {
      */
 
     /**
+     * @Attribute ApplicationLinks: ApplicationLinks of cluster.
+     */
+    public readonly attrApplicationLinks: ros.IResolvable;
+
+    /**
      * @Attribute ClusterId: Cluster ID.
      */
     public readonly attrClusterId: ros.IResolvable;
@@ -1469,6 +1474,7 @@ export class RosCluster2 extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCluster2Props, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCluster2.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApplicationLinks = this.getAtt('ApplicationLinks');
         this.attrClusterId = this.getAtt('ClusterId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;

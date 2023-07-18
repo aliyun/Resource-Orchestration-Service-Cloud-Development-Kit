@@ -6,7 +6,7 @@ const ROS_CDK_SCOPE = '@alicloud/';
 const ROS_JAVA_PACKAGE = 'com.aliyun.';
 const ROS_DOTNAT_PACKAGE = 'AlibabaCloud.SDK.ROS.CDK.';
 export async function createPackages() {
-    
+
     // mkdir in the pkg root
     const outdir = __dirname + '/../generatedPackages';
     fs.mkdirpSync(outdir);
@@ -14,6 +14,10 @@ export async function createPackages() {
     const scopes = await tryReadPackageJson(allTypes());
     for(let index in scopes) {
         let service = scopes[index].split('::')[1].toLowerCase();
+        if (service == 'eip') {
+            // 由于DATASOURCE::EIP::Addresses这个原本属于VPC资源的存在
+            continue
+        }
         let scope = 'ros-cdk-' + service;
         let pkgPath = outdir + '/' + scope;
         let template_dir = __dirname + '/pkg-template';
@@ -38,7 +42,7 @@ export async function createPackages() {
 
         fs.writeFileSync(pkgPath + '/package.json', JSON.stringify(pkg, null, 2), 'utf-8');
 
-        
+
         // copy README.md and gitignore
         let readme = fs.readFileSync(template_dir + '/README.md');
         fs.writeFileSync(pkgPath + '/README.md', readme.toString().replace(

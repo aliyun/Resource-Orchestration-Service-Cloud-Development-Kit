@@ -10,3 +10,5 @@ export * from './managedkubernetescluster';
 
 // ALIYUN::CS Resources:
 export * from './cs.generated';
+import * as datasource from './datasource';
+export { datasource };

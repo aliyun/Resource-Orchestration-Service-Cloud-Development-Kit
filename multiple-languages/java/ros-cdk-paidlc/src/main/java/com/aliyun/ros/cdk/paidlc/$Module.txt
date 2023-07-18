@@ -1,0 +1,12 @@
+@alicloud/ros-cdk-paidlc.Job=com.aliyun.ros.cdk.paidlc.Job
+@alicloud/ros-cdk-paidlc.JobProps=com.aliyun.ros.cdk.paidlc.JobProps
+@alicloud/ros-cdk-paidlc.RosJob=com.aliyun.ros.cdk.paidlc.RosJob
+@alicloud/ros-cdk-paidlc.RosJob.CodeSourceProperty=com.aliyun.ros.cdk.paidlc.RosJob$CodeSourceProperty
+@alicloud/ros-cdk-paidlc.RosJob.DataSourcesProperty=com.aliyun.ros.cdk.paidlc.RosJob$DataSourcesProperty
+@alicloud/ros-cdk-paidlc.RosJob.JobSpecsProperty=com.aliyun.ros.cdk.paidlc.RosJob$JobSpecsProperty
+@alicloud/ros-cdk-paidlc.RosJob.UserVpcProperty=com.aliyun.ros.cdk.paidlc.RosJob$UserVpcProperty
+@alicloud/ros-cdk-paidlc.RosJobProps=com.aliyun.ros.cdk.paidlc.RosJobProps
+@alicloud/ros-cdk-paidlc.RosTensorboard=com.aliyun.ros.cdk.paidlc.RosTensorboard
+@alicloud/ros-cdk-paidlc.RosTensorboardProps=com.aliyun.ros.cdk.paidlc.RosTensorboardProps
+@alicloud/ros-cdk-paidlc.Tensorboard=com.aliyun.ros.cdk.paidlc.Tensorboard
+@alicloud/ros-cdk-paidlc.TensorboardProps=com.aliyun.ros.cdk.paidlc.TensorboardProps

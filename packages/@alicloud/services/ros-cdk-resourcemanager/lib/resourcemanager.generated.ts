@@ -789,7 +789,7 @@ export interface RosPolicyAttachmentProps {
     /**
      * @Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
      */
-    readonly resourceGroupId: string | ros.IResolvable;
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -804,7 +804,6 @@ function RosPolicyAttachmentPropsValidator(properties: any): ros.ValidationResul
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('policyType', ros.requiredValidator)(properties.policyType));
     errors.collect(ros.propertyValidator('policyType', ros.validateString)(properties.policyType));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.requiredValidator)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('policyName', ros.requiredValidator)(properties.policyName));
     errors.collect(ros.propertyValidator('policyName', ros.validateString)(properties.policyName));
@@ -912,7 +911,7 @@ export class RosPolicyAttachment extends ros.RosResource {
     /**
      * @Property resourceGroupId: The ID of the resource group or the ID of the Alibaba Cloud account to which the resource group belongs.
      */
-    public resourceGroupId: string | ros.IResolvable;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ResourceManager::PolicyAttachment`.

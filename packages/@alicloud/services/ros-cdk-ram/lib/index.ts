@@ -12,3 +12,5 @@ export * from './usertogroupaddition';
 
 // ALIYUN::RAM Resources:
 export * from './ram.generated';
+import * as datasource from './datasource';
+export { datasource };
