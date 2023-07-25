@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS resource type:  <code>ALIYUN::CMS::MonitoringAgentProcess</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:00.259Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:58.605Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitoringAgentProcess")
 public class MonitoringAgentProcess extends com.aliyun.ros.cdk.core.Resource {
 

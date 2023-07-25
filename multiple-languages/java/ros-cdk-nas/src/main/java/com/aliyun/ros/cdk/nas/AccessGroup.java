@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * A ROS resource type:  <code>ALIYUN::NAS::AccessGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.677Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.992Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.AccessGroup")
 public class AccessGroup extends com.aliyun.ros.cdk.core.Resource {
 

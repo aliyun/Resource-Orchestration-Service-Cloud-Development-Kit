@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Properties for defining a <code>ALIYUN::WAF::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:04.225Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:03.023Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosDomainProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainProps.Jsii$Proxy.class)
 public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {

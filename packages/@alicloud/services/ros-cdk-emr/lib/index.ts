@@ -5,5 +5,4 @@ export * from './flowproject';
 
 // ALIYUN::EMR Resources:
 export * from './emr.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

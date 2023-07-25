@@ -3333,6 +3333,362 @@ export class RosGrantInstanceToCen extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::VPC::HaVip`
+ */
+export interface RosHaVipProps {
+
+    /**
+     * @Property vSwitchId: The ID of the vSwitch to which the HAVIP belongs.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the HAVIP.
+     * The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property ipAddress: The IP address of the HAVIP. The specified IP address must be an idle IP address that falls within the CIDR block of the vSwitch. If this parameter is not set, an idle IP address from the CIDR block of the vSwitch is randomly assigned to the HAVIP.
+     */
+    readonly ipAddress?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the HAVIP.
+     * The name must be 1 to 128 characters in length, and cannot start with http:// or https://.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the HAVIP belongs.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosHaVip.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosHaVipProps`
+ *
+ * @param properties - the TypeScript properties of a `RosHaVipProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosHaVipPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('ipAddress', ros.validateString)(properties.ipAddress));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosHaVip_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosHaVipProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::HaVip` resource
+ *
+ * @param properties - the TypeScript properties of a `RosHaVipProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::HaVip` resource.
+ */
+// @ts-ignore TS6133
+function rosHaVipPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosHaVipPropsValidator(properties).assertSuccess();
+    }
+    return {
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      Description: ros.stringToRosTemplate(properties.description),
+      IpAddress: ros.stringToRosTemplate(properties.ipAddress),
+      Name: ros.stringToRosTemplate(properties.name),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosHaVipTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::HaVip`
+ */
+export class RosHaVip extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::HaVip";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute HaVipId: Assigned HaVip ID.
+     */
+    public readonly attrHaVipId: ros.IResolvable;
+
+    /**
+     * @Attribute IpAddress: The IP address of the HAVIP.
+     */
+    public readonly attrIpAddress: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vSwitchId: The ID of the vSwitch to which the HAVIP belongs.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the HAVIP.
+     * The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipAddress: The IP address of the HAVIP. The specified IP address must be an idle IP address that falls within the CIDR block of the vSwitch. If this parameter is not set, an idle IP address from the CIDR block of the vSwitch is randomly assigned to the HAVIP.
+     */
+    public ipAddress: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the HAVIP.
+     * The name must be 1 to 128 characters in length, and cannot start with http:// or https://.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the HAVIP belongs.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosHaVip.TagsProperty[] | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::HaVip`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosHaVipProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosHaVip.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrHaVipId = this.getAtt('HaVipId');
+        this.attrIpAddress = this.getAtt('IpAddress');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vSwitchId = props.vSwitchId;
+        this.description = props.description;
+        this.ipAddress = props.ipAddress;
+        this.name = props.name;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vSwitchId: this.vSwitchId,
+            description: this.description,
+            ipAddress: this.ipAddress,
+            name: this.name,
+            resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosHaVipPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosHaVip {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosHaVip_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::HaVip.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::HaVip.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosHaVipTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosHaVip_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::HaVipAssociation`
+ */
+export interface RosHaVipAssociationProps {
+
+    /**
+     * @Property haVipId: The ID of the HAVIP.
+     */
+    readonly haVipId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the ECS instance to be associated with the HAVIP.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The type of the instance to be associated with the HAVIP. Valid values:
+     * EcsInstance: an ECS instance
+     * NetworkInterface: an ENI. If you want to associate the HAVIP with an ENI, this parameter is required.
+     */
+    readonly instanceType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosHaVipAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosHaVipAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosHaVipAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('haVipId', ros.requiredValidator)(properties.haVipId));
+    errors.collect(ros.propertyValidator('haVipId', ros.validateString)(properties.haVipId));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    return errors.wrap('supplied properties not correct for "RosHaVipAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::HaVipAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosHaVipAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::HaVipAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosHaVipAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosHaVipAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      HaVipId: ros.stringToRosTemplate(properties.haVipId),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::HaVipAssociation`
+ */
+export class RosHaVipAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::HaVipAssociation";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property haVipId: The ID of the HAVIP.
+     */
+    public haVipId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the ECS instance to be associated with the HAVIP.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The type of the instance to be associated with the HAVIP. Valid values:
+     * EcsInstance: an ECS instance
+     * NetworkInterface: an ENI. If you want to associate the HAVIP with an ENI, this parameter is required.
+     */
+    public instanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::HaVipAssociation`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosHaVipAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosHaVipAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.haVipId = props.haVipId;
+        this.instanceId = props.instanceId;
+        this.instanceType = props.instanceType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            haVipId: this.haVipId,
+            instanceId: this.instanceId,
+            instanceType: this.instanceType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosHaVipAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::VPC::IpsecServer`
  */
 export interface RosIpsecServerProps {

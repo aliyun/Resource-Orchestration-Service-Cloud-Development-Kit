@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         private object _detail;
 
         /// <summary>Property detail:.</summary>
-        [JsiiProperty(name: "detail", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.DetailProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "detail", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.DetailProperty\"}]}}")]
         public object Detail
         {
             get => _detail;
@@ -23,17 +23,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 {
                     switch (value)
                     {
-                        case AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IDetailProperty cast_cd4240:
-                            break;
                         case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IDetailProperty cast_cd4240:
                             break;
                         case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
                             // Not enough information to type-check...
                             break;
                         case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IDetailProperty).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IDetailProperty).FullName}; received null", nameof(value));
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IDetailProperty).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IDetailProperty).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 _detail = value;

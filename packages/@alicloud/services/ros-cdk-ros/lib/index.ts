@@ -10,5 +10,4 @@ export * from './waitconditionhandle';
 
 // ALIYUN::ROS Resources:
 export * from './ros.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

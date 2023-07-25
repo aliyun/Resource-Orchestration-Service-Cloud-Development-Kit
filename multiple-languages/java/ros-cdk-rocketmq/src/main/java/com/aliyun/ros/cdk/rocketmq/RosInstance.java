@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * A ROS template type:  <code>ALIYUN::ROCKETMQ::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.442Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.006Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

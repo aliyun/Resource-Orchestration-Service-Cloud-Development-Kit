@@ -13,7 +13,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         private object _category;
 
         /// <remarks>
-        /// <strong>Property</strong>: category: Series, value: Basic: Basic version
+        /// <strong>Property</strong>: category: The edition of the cluster. Valid values:
+        /// Basic: Single-replica Edition
+        /// HighAvailability: Double-replica Edition
         /// </remarks>
         [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Category
@@ -77,7 +79,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         private object _dbClusterType;
 
         /// <remarks>
-        /// <strong>Property</strong>: dbClusterType: Cluster instance type, value:  Common: normal instance;  Readonly: read-only instance; Guard: disaster recovery instance
+        /// <strong>Property</strong>: dbClusterType: The specification of the cluster.
+        /// If the cluster is of the Single-replica Edition, the following values are valid:
+        /// S4: 4 cores, 16 GB.
+        /// S8: 8 cores, 32 GB.
+        /// S16: 16 cores, 64 GB.
+        /// S32: 32 cores, 128 GB.
+        /// S64: 64 cores, 256 GB.
+        /// S104: 104 cores, 384 GB.
+        /// If the cluster is of the Double-replica Edition, the following values are valid:
+        /// C4: 4 cores, 16 GB.
+        /// C8: 8 cores, 32 GB.
+        /// C16: 16 cores, 64 GB.
+        /// C32: 32 cores, 128 GB.
+        /// C64: 64 cores, 256 GB.
+        /// C104: 104 cores, 384 GB.
         /// </remarks>
         [JsiiProperty(name: "dbClusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DbClusterType
@@ -141,7 +157,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         private object _dbNodeCount;
 
         /// <remarks>
-        /// <strong>Property</strong>: dbNodeCount: Number of node groups
+        /// <strong>Property</strong>: dbNodeCount: The number of nodes.
+        /// If the cluster is of the Single-replica Edition, the value ranges from 1 to 48.
+        /// If the cluster is of the Double-replica Edition, the value ranges from 1 to 24.
         /// </remarks>
         [JsiiProperty(name: "dbNodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DbNodeCount
@@ -193,7 +211,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         private object _dbNodeStorage;
 
         /// <remarks>
-        /// <strong>Property</strong>: dbNodeStorage: DBNodeStorage
+        /// <strong>Property</strong>: dbNodeStorage: The storage capacity of a single node. Valid values: 100 to 32000. Unit: GB.
+        /// Note self value is a multiple of 100.
         /// </remarks>
         [JsiiProperty(name: "dbNodeStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DbNodeStorage
@@ -311,7 +330,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         private object? _dbClusterDescription;
 
         /// <remarks>
-        /// <strong>Property</strong>: dbClusterDescription: DBClusterDescription
+        /// <strong>Property</strong>: dbClusterDescription: The description of the cluster.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dbClusterDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

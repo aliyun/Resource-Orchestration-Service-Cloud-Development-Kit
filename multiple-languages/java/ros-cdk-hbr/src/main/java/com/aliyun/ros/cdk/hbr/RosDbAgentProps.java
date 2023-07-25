@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * Properties for defining a <code>ALIYUN::HBR::DbAgent</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.374Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.640Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosDbAgentProps")
 @software.amazon.jsii.Jsii.Proxy(RosDbAgentProps.Jsii$Proxy.class)
 public interface RosDbAgentProps extends software.amazon.jsii.JsiiSerializable {

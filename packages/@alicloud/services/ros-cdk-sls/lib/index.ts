@@ -13,5 +13,4 @@ export * from './savedsearch';
 
 // ALIYUN::SLS Resources:
 export * from './sls.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

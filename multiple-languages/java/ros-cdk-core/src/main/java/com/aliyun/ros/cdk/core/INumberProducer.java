@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Interface for lazy number producers.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:27:59.415Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:57.733Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.INumberProducer")
 @software.amazon.jsii.Jsii.Proxy(INumberProducer.Jsii$Proxy.class)
 public interface INumberProducer extends software.amazon.jsii.JsiiSerializable {

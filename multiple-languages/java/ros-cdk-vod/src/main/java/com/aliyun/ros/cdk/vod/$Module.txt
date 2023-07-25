@@ -2,3 +2,7 @@
 @alicloud/ros-cdk-vod.EditingProjectProps=com.aliyun.ros.cdk.vod.EditingProjectProps
 @alicloud/ros-cdk-vod.RosEditingProject=com.aliyun.ros.cdk.vod.RosEditingProject
 @alicloud/ros-cdk-vod.RosEditingProjectProps=com.aliyun.ros.cdk.vod.RosEditingProjectProps
+@alicloud/ros-cdk-vod.datasource.EditingProjects=com.aliyun.ros.cdk.vod.datasource.EditingProjects
+@alicloud/ros-cdk-vod.datasource.EditingProjectsProps=com.aliyun.ros.cdk.vod.datasource.EditingProjectsProps
+@alicloud/ros-cdk-vod.datasource.RosEditingProjects=com.aliyun.ros.cdk.vod.datasource.RosEditingProjects
+@alicloud/ros-cdk-vod.datasource.RosEditingProjectsProps=com.aliyun.ros.cdk.vod.datasource.RosEditingProjectsProps

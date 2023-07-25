@@ -13,3 +13,7 @@
 @alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$VersioningConfigurationProperty
 @alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$WebsiteConfigurationProperty
 @alicloud/ros-cdk-oss.RosBucketProps=com.aliyun.ros.cdk.oss.RosBucketProps
+@alicloud/ros-cdk-oss.datasource.Buckets=com.aliyun.ros.cdk.oss.datasource.Buckets
+@alicloud/ros-cdk-oss.datasource.BucketsProps=com.aliyun.ros.cdk.oss.datasource.BucketsProps
+@alicloud/ros-cdk-oss.datasource.RosBuckets=com.aliyun.ros.cdk.oss.datasource.RosBuckets
+@alicloud/ros-cdk-oss.datasource.RosBucketsProps=com.aliyun.ros.cdk.oss.datasource.RosBucketsProps

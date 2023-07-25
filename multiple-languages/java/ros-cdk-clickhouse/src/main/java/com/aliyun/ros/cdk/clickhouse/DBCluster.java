@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * A ROS resource type:  <code>ALIYUN::ClickHouse::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:00.149Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:58.491Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -63,7 +63,7 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute Category: Series, value: Basic: Basic version.
+     * Attribute Category: The edition of the cluster.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCategory() {
         return software.amazon.jsii.Kernel.get(this, "attrCategory", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -84,7 +84,7 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute DBClusterDescription: DBClusterDescription.
+     * Attribute DBClusterDescription: The description of the cluster.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbClusterDescription() {
         return software.amazon.jsii.Kernel.get(this, "attrDbClusterDescription", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -105,9 +105,7 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute DBClusterType: Cluster instance type, value:  Common: normal instance;
-     * <p>
-     * Readonly: read-only instance; Guard: disaster recovery instance
+     * Attribute DBClusterType: The specification of the cluster.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbClusterType() {
         return software.amazon.jsii.Kernel.get(this, "attrDbClusterType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -128,14 +126,14 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Attribute DBNodeCount: Number of node groups.
+     * Attribute DBNodeCount: The number of nodes.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbNodeCount() {
         return software.amazon.jsii.Kernel.get(this, "attrDbNodeCount", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
-     * Attribute DBNodeStorage: DBNodeStorage.
+     * Attribute DBNodeStorage: The storage capacity of a single node.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbNodeStorage() {
         return software.amazon.jsii.Kernel.get(this, "attrDbNodeStorage", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
@@ -304,20 +302,28 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property category: Series, value: Basic: Basic version.
+         * Property category: The edition of the cluster.
+         * <p>
+         * Valid values:
+         * Basic: Single-replica Edition
+         * HighAvailability: Double-replica Edition
          * <p>
          * @return {@code this}
-         * @param category Property category: Series, value: Basic: Basic version. This parameter is required.
+         * @param category Property category: The edition of the cluster. This parameter is required.
          */
         public Builder category(final java.lang.String category) {
             this.props.category(category);
             return this;
         }
         /**
-         * Property category: Series, value: Basic: Basic version.
+         * Property category: The edition of the cluster.
+         * <p>
+         * Valid values:
+         * Basic: Single-replica Edition
+         * HighAvailability: Double-replica Edition
          * <p>
          * @return {@code this}
-         * @param category Property category: Series, value: Basic: Basic version. This parameter is required.
+         * @param category Property category: The edition of the cluster. This parameter is required.
          */
         public Builder category(final com.aliyun.ros.cdk.core.IResolvable category) {
             this.props.category(category);
@@ -346,24 +352,50 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property dbClusterType: Cluster instance type, value:  Common: normal instance;
+         * Property dbClusterType: The specification of the cluster.
          * <p>
-         * Readonly: read-only instance; Guard: disaster recovery instance
+         * If the cluster is of the Single-replica Edition, the following values are valid:
+         * S4: 4 cores, 16 GB.
+         * S8: 8 cores, 32 GB.
+         * S16: 16 cores, 64 GB.
+         * S32: 32 cores, 128 GB.
+         * S64: 64 cores, 256 GB.
+         * S104: 104 cores, 384 GB.
+         * If the cluster is of the Double-replica Edition, the following values are valid:
+         * C4: 4 cores, 16 GB.
+         * C8: 8 cores, 32 GB.
+         * C16: 16 cores, 64 GB.
+         * C32: 32 cores, 128 GB.
+         * C64: 64 cores, 256 GB.
+         * C104: 104 cores, 384 GB.
          * <p>
          * @return {@code this}
-         * @param dbClusterType Property dbClusterType: Cluster instance type, value:  Common: normal instance;. This parameter is required.
+         * @param dbClusterType Property dbClusterType: The specification of the cluster. This parameter is required.
          */
         public Builder dbClusterType(final java.lang.String dbClusterType) {
             this.props.dbClusterType(dbClusterType);
             return this;
         }
         /**
-         * Property dbClusterType: Cluster instance type, value:  Common: normal instance;
+         * Property dbClusterType: The specification of the cluster.
          * <p>
-         * Readonly: read-only instance; Guard: disaster recovery instance
+         * If the cluster is of the Single-replica Edition, the following values are valid:
+         * S4: 4 cores, 16 GB.
+         * S8: 8 cores, 32 GB.
+         * S16: 16 cores, 64 GB.
+         * S32: 32 cores, 128 GB.
+         * S64: 64 cores, 256 GB.
+         * S104: 104 cores, 384 GB.
+         * If the cluster is of the Double-replica Edition, the following values are valid:
+         * C4: 4 cores, 16 GB.
+         * C8: 8 cores, 32 GB.
+         * C16: 16 cores, 64 GB.
+         * C32: 32 cores, 128 GB.
+         * C64: 64 cores, 256 GB.
+         * C104: 104 cores, 384 GB.
          * <p>
          * @return {@code this}
-         * @param dbClusterType Property dbClusterType: Cluster instance type, value:  Common: normal instance;. This parameter is required.
+         * @param dbClusterType Property dbClusterType: The specification of the cluster. This parameter is required.
          */
         public Builder dbClusterType(final com.aliyun.ros.cdk.core.IResolvable dbClusterType) {
             this.props.dbClusterType(dbClusterType);
@@ -392,20 +424,26 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property dbNodeCount: Number of node groups.
+         * Property dbNodeCount: The number of nodes.
+         * <p>
+         * If the cluster is of the Single-replica Edition, the value ranges from 1 to 48.
+         * If the cluster is of the Double-replica Edition, the value ranges from 1 to 24.
          * <p>
          * @return {@code this}
-         * @param dbNodeCount Property dbNodeCount: Number of node groups. This parameter is required.
+         * @param dbNodeCount Property dbNodeCount: The number of nodes. This parameter is required.
          */
         public Builder dbNodeCount(final java.lang.Number dbNodeCount) {
             this.props.dbNodeCount(dbNodeCount);
             return this;
         }
         /**
-         * Property dbNodeCount: Number of node groups.
+         * Property dbNodeCount: The number of nodes.
+         * <p>
+         * If the cluster is of the Single-replica Edition, the value ranges from 1 to 48.
+         * If the cluster is of the Double-replica Edition, the value ranges from 1 to 24.
          * <p>
          * @return {@code this}
-         * @param dbNodeCount Property dbNodeCount: Number of node groups. This parameter is required.
+         * @param dbNodeCount Property dbNodeCount: The number of nodes. This parameter is required.
          */
         public Builder dbNodeCount(final com.aliyun.ros.cdk.core.IResolvable dbNodeCount) {
             this.props.dbNodeCount(dbNodeCount);
@@ -413,20 +451,26 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property dbNodeStorage: DBNodeStorage.
+         * Property dbNodeStorage: The storage capacity of a single node.
+         * <p>
+         * Valid values: 100 to 32000. Unit: GB.
+         * Note self value is a multiple of 100.
          * <p>
          * @return {@code this}
-         * @param dbNodeStorage Property dbNodeStorage: DBNodeStorage. This parameter is required.
+         * @param dbNodeStorage Property dbNodeStorage: The storage capacity of a single node. This parameter is required.
          */
         public Builder dbNodeStorage(final java.lang.Number dbNodeStorage) {
             this.props.dbNodeStorage(dbNodeStorage);
             return this;
         }
         /**
-         * Property dbNodeStorage: DBNodeStorage.
+         * Property dbNodeStorage: The storage capacity of a single node.
+         * <p>
+         * Valid values: 100 to 32000. Unit: GB.
+         * Note self value is a multiple of 100.
          * <p>
          * @return {@code this}
-         * @param dbNodeStorage Property dbNodeStorage: DBNodeStorage. This parameter is required.
+         * @param dbNodeStorage Property dbNodeStorage: The storage capacity of a single node. This parameter is required.
          */
         public Builder dbNodeStorage(final com.aliyun.ros.cdk.core.IResolvable dbNodeStorage) {
             this.props.dbNodeStorage(dbNodeStorage);
@@ -488,20 +532,20 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property dbClusterDescription: DBClusterDescription.
+         * Property dbClusterDescription: The description of the cluster.
          * <p>
          * @return {@code this}
-         * @param dbClusterDescription Property dbClusterDescription: DBClusterDescription. This parameter is required.
+         * @param dbClusterDescription Property dbClusterDescription: The description of the cluster. This parameter is required.
          */
         public Builder dbClusterDescription(final java.lang.String dbClusterDescription) {
             this.props.dbClusterDescription(dbClusterDescription);
             return this;
         }
         /**
-         * Property dbClusterDescription: DBClusterDescription.
+         * Property dbClusterDescription: The description of the cluster.
          * <p>
          * @return {@code this}
-         * @param dbClusterDescription Property dbClusterDescription: DBClusterDescription. This parameter is required.
+         * @param dbClusterDescription Property dbClusterDescription: The description of the cluster. This parameter is required.
          */
         public Builder dbClusterDescription(final com.aliyun.ros.cdk.core.IResolvable dbClusterDescription) {
             this.props.dbClusterDescription(dbClusterDescription);

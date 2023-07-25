@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * A ROS resource type:  <code>ALIYUN::DTS::SynchronizationJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:00.900Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.216Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SynchronizationJob")
 public class SynchronizationJob extends com.aliyun.ros.cdk.core.Resource {
 

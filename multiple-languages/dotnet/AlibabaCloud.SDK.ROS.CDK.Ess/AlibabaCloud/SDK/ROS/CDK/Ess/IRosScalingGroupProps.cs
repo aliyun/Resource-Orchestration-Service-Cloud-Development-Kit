@@ -27,6 +27,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: allocationStrategy: The allocation policy of instances. Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+        /// - priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.
+        /// - lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+        /// Default value: priority.
+        /// </remarks>
+        [JsiiProperty(name: "allocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AllocationStrategy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+        /// - true
+        /// - false
+        /// Default value: false.
+        /// </remarks>
+        [JsiiProperty(name: "azBalance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AzBalance
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources. This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
         /// Default value: true.
         /// </remarks>
@@ -46,6 +78,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         [JsiiProperty(name: "containerGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ContainerGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function). This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+        /// </remarks>
+        [JsiiProperty(name: "customPolicyArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? CustomPolicyArn
         {
             get
             {
@@ -163,6 +208,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: launchTemplateOverrides: You can specify up to 10 overrides.
+        /// Note: This parameter takes effect only if you specify LaunchTemplateId.
+        /// </remarks>
+        [JsiiProperty(name: "launchTemplateOverrides", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingGroup.LaunchTemplateOverridesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LaunchTemplateOverrides
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: launchTemplateVersion: The version of the instance launch template. Valid values:
         /// A fixed template version numbe.
         /// Default: The default template version is always used.
@@ -192,10 +251,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group. Unit: seconds.
+        /// Valid values: 86400 to the value of Integer.maxValue.
+        /// Default value: null.
+        /// Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+        /// </remarks>
+        [JsiiProperty(name: "maxInstanceLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MaxInstanceLifetime
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: multiAzPolicy: ECS scaling strategy for multi availability zone. Allow value:
         /// 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
-        /// 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+        /// 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
+        /// 3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
         /// Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.
+        /// 4. COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.
         /// </remarks>
         [JsiiProperty(name: "multiAzPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -222,6 +299,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <remarks>
         /// <strong>Property</strong>: onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group. Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+        /// If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
         /// </remarks>
         [JsiiProperty(name: "onDemandBaseCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -235,6 +313,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <remarks>
         /// <strong>Property</strong>: onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group. This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+        /// If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
         /// </remarks>
         [JsiiProperty(name: "onDemandPercentageAboveBaseCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -262,10 +341,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// <strong>Property</strong>: removalPolicys: Policy for removing ECS instances from the scaling group.
         /// Optional values:
-        /// OldestInstance: removes the first ECS instance attached to the scaling group.
-        /// NewestInstance: removes the first ECS instance attached to the scaling group.
-        /// OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-        /// Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+        /// - OldestInstance: removes the first ECS instance attached to the scaling group.
+        /// - NewestInstance: removes the first ECS instance attached to the scaling group.
+        /// - OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
+        /// - CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+        /// You can enter up to three removal policies.
+        /// You cannot set any item of RemovalPolicys to the same value.
+        /// The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+        /// Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.
         /// </remarks>
         [JsiiProperty(name: "removalPolicys", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -308,7 +391,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: spotAllocationStrategy: The allocation policy of preemptible instances. You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+        /// - priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.
+        /// - lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+        /// Default value: priority.
+        /// </remarks>
+        [JsiiProperty(name: "spotAllocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SpotAllocationStrategy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: spotInstancePools: The number of instance types that are available. The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+        /// If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
         /// </remarks>
         [JsiiProperty(name: "spotInstancePools", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -415,6 +515,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: allocationStrategy: The allocation policy of instances. Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+            /// - priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.
+            /// - lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+            /// Default value: priority.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "allocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AllocationStrategy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+            /// - true
+            /// - false
+            /// Default value: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "azBalance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AzBalance
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources. This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
             /// Default value: true.
             /// </remarks>
@@ -431,6 +557,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             [JsiiOptional]
             [JsiiProperty(name: "containerGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ContainerGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function). This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "customPolicyArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CustomPolicyArn
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -521,6 +657,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: launchTemplateOverrides: You can specify up to 10 overrides.
+            /// Note: This parameter takes effect only if you specify LaunchTemplateId.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "launchTemplateOverrides", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingGroup.LaunchTemplateOverridesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? LaunchTemplateOverrides
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: launchTemplateVersion: The version of the instance launch template. Valid values:
             /// A fixed template version numbe.
             /// Default: The default template version is always used.
@@ -544,10 +691,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group. Unit: seconds.
+            /// Valid values: 86400 to the value of Integer.maxValue.
+            /// Default value: null.
+            /// Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "maxInstanceLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaxInstanceLifetime
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: multiAzPolicy: ECS scaling strategy for multi availability zone. Allow value:
             /// 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
-            /// 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+            /// 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
+            /// 3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
             /// Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.
+            /// 4. COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "multiAzPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -568,6 +730,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
             /// <remarks>
             /// <strong>Property</strong>: onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group. Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+            /// If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "onDemandBaseCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -578,6 +741,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
             /// <remarks>
             /// <strong>Property</strong>: onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group. This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+            /// If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "onDemandPercentageAboveBaseCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -599,10 +763,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// <remarks>
             /// <strong>Property</strong>: removalPolicys: Policy for removing ECS instances from the scaling group.
             /// Optional values:
-            /// OldestInstance: removes the first ECS instance attached to the scaling group.
-            /// NewestInstance: removes the first ECS instance attached to the scaling group.
-            /// OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-            /// Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+            /// - OldestInstance: removes the first ECS instance attached to the scaling group.
+            /// - NewestInstance: removes the first ECS instance attached to the scaling group.
+            /// - OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
+            /// - CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+            /// You can enter up to three removal policies.
+            /// You cannot set any item of RemovalPolicys to the same value.
+            /// The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+            /// Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "removalPolicys", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -636,7 +804,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: spotAllocationStrategy: The allocation policy of preemptible instances. You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+            /// - priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.
+            /// - lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+            /// Default value: priority.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "spotAllocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SpotAllocationStrategy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: spotInstancePools: The number of instance types that are available. The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+            /// If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "spotInstancePools", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -13,5 +13,4 @@ export * from './readonlydbinstance';
 
 // ALIYUN::RDS Resources:
 export * from './rds.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

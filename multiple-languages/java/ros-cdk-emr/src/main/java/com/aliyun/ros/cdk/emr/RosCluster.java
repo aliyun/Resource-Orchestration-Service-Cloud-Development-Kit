@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS template type:  <code>ALIYUN::EMR::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:01.923Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.157Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 

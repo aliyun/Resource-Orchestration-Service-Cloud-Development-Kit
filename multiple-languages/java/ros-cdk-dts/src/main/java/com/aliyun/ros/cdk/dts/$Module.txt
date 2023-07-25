@@ -34,3 +34,7 @@
 @alicloud/ros-cdk-dts.SubscriptionInstanceProps=com.aliyun.ros.cdk.dts.SubscriptionInstanceProps
 @alicloud/ros-cdk-dts.SynchronizationJob=com.aliyun.ros.cdk.dts.SynchronizationJob
 @alicloud/ros-cdk-dts.SynchronizationJobProps=com.aliyun.ros.cdk.dts.SynchronizationJobProps
+@alicloud/ros-cdk-dts.datasource.MigrationInstances=com.aliyun.ros.cdk.dts.datasource.MigrationInstances
+@alicloud/ros-cdk-dts.datasource.MigrationInstancesProps=com.aliyun.ros.cdk.dts.datasource.MigrationInstancesProps
+@alicloud/ros-cdk-dts.datasource.RosMigrationInstances=com.aliyun.ros.cdk.dts.datasource.RosMigrationInstances
+@alicloud/ros-cdk-dts.datasource.RosMigrationInstancesProps=com.aliyun.ros.cdk.dts.datasource.RosMigrationInstancesProps

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a <code>ALIYUN::CMS::Contact</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:00.225Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:58.573Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ContactProps")
 @software.amazon.jsii.Jsii.Proxy(ContactProps.Jsii$Proxy.class)
 public interface ContactProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,7 +42,7 @@ public interface ContactProps extends software.amazon.jsii.JsiiSerializable {
          * @param channels Property channels: undefined. This parameter is required.
          * @return {@code this}
          */
-        public Builder channels(com.aliyun.ros.cdk.cms.RosContact.ChannelsProperty channels) {
+        public Builder channels(com.aliyun.ros.cdk.core.IResolvable channels) {
             this.channels = channels;
             return this;
         }
@@ -52,7 +52,7 @@ public interface ContactProps extends software.amazon.jsii.JsiiSerializable {
          * @param channels Property channels: undefined. This parameter is required.
          * @return {@code this}
          */
-        public Builder channels(com.aliyun.ros.cdk.core.IResolvable channels) {
+        public Builder channels(com.aliyun.ros.cdk.cms.RosContact.ChannelsProperty channels) {
             this.channels = channels;
             return this;
         }

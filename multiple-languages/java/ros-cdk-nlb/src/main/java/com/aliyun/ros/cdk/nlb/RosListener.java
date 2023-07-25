@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * A ROS template type:  <code>ALIYUN::NLB::Listener</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.736Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.078Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  <code>ALIYUN::SLS::Alert</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.812Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.490Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlert")
 public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -61,13 +61,13 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setDetail(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.RosAlert.DetailProperty value) {
+    public void setDetail(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "detail", java.util.Objects.requireNonNull(value, "detail is required"));
     }
 
     /**
      */
-    public void setDetail(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setDetail(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.RosAlert.DetailProperty value) {
         software.amazon.jsii.Kernel.set(this, "detail", java.util.Objects.requireNonNull(value, "detail is required"));
     }
 
@@ -4093,7 +4093,7 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param detail This parameter is required.
          */
-        public Builder detail(final com.aliyun.ros.cdk.sls.RosAlert.DetailProperty detail) {
+        public Builder detail(final com.aliyun.ros.cdk.core.IResolvable detail) {
             this.props.detail(detail);
             return this;
         }
@@ -4101,7 +4101,7 @@ public class RosAlert extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param detail This parameter is required.
          */
-        public Builder detail(final com.aliyun.ros.cdk.core.IResolvable detail) {
+        public Builder detail(final com.aliyun.ros.cdk.sls.RosAlert.DetailProperty detail) {
             this.props.detail(detail);
             return this;
         }

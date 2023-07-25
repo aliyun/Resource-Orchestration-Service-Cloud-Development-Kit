@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS resource type:  <code>ALIYUN::ESS::ScalingGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.070Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.298Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroup")
 public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -147,6 +147,80 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property allocationStrategy: The allocation policy of instances.
+         * <p>
+         * Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         * <p>
+         * <ul>
+         * <li>priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.</li>
+         * <li>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+         * Default value: priority.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param allocationStrategy Property allocationStrategy: The allocation policy of instances. This parameter is required.
+         */
+        public Builder allocationStrategy(final java.lang.String allocationStrategy) {
+            this.props.allocationStrategy(allocationStrategy);
+            return this;
+        }
+        /**
+         * Property allocationStrategy: The allocation policy of instances.
+         * <p>
+         * Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         * <p>
+         * <ul>
+         * <li>priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.</li>
+         * <li>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+         * Default value: priority.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param allocationStrategy Property allocationStrategy: The allocation policy of instances. This parameter is required.
+         */
+        public Builder allocationStrategy(final com.aliyun.ros.cdk.core.IResolvable allocationStrategy) {
+            this.props.allocationStrategy(allocationStrategy);
+            return this;
+        }
+
+        /**
+         * Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones.
+         * <p>
+         * This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         * <p>
+         * <ul>
+         * <li>true</li>
+         * <li>false
+         * Default value: false.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param azBalance Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones. This parameter is required.
+         */
+        public Builder azBalance(final java.lang.Boolean azBalance) {
+            this.props.azBalance(azBalance);
+            return this;
+        }
+        /**
+         * Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones.
+         * <p>
+         * This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         * <p>
+         * <ul>
+         * <li>true</li>
+         * <li>false
+         * Default value: false.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param azBalance Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones. This parameter is required.
+         */
+        public Builder azBalance(final com.aliyun.ros.cdk.core.IResolvable azBalance) {
+            this.props.azBalance(azBalance);
+            return this;
+        }
+
+        /**
          * Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources.
          * <p>
          * This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
@@ -191,6 +265,31 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder containerGroupId(final com.aliyun.ros.cdk.core.IResolvable containerGroupId) {
             this.props.containerGroupId(containerGroupId);
+            return this;
+        }
+
+        /**
+         * Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function).
+         * <p>
+         * This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+         * <p>
+         * @return {@code this}
+         * @param customPolicyArn Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function). This parameter is required.
+         */
+        public Builder customPolicyArn(final java.lang.String customPolicyArn) {
+            this.props.customPolicyArn(customPolicyArn);
+            return this;
+        }
+        /**
+         * Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function).
+         * <p>
+         * This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+         * <p>
+         * @return {@code this}
+         * @param customPolicyArn Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function). This parameter is required.
+         */
+        public Builder customPolicyArn(final com.aliyun.ros.cdk.core.IResolvable customPolicyArn) {
+            this.props.customPolicyArn(customPolicyArn);
             return this;
         }
 
@@ -395,6 +494,31 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property launchTemplateOverrides: You can specify up to 10 overrides.
+         * <p>
+         * Note: This parameter takes effect only if you specify LaunchTemplateId.
+         * <p>
+         * @return {@code this}
+         * @param launchTemplateOverrides Property launchTemplateOverrides: You can specify up to 10 overrides. This parameter is required.
+         */
+        public Builder launchTemplateOverrides(final com.aliyun.ros.cdk.core.IResolvable launchTemplateOverrides) {
+            this.props.launchTemplateOverrides(launchTemplateOverrides);
+            return this;
+        }
+        /**
+         * Property launchTemplateOverrides: You can specify up to 10 overrides.
+         * <p>
+         * Note: This parameter takes effect only if you specify LaunchTemplateId.
+         * <p>
+         * @return {@code this}
+         * @param launchTemplateOverrides Property launchTemplateOverrides: You can specify up to 10 overrides. This parameter is required.
+         */
+        public Builder launchTemplateOverrides(final java.util.List<? extends java.lang.Object> launchTemplateOverrides) {
+            this.props.launchTemplateOverrides(launchTemplateOverrides);
+            return this;
+        }
+
+        /**
          * Property launchTemplateVersion: The version of the instance launch template.
          * <p>
          * Valid values:
@@ -451,14 +575,47 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group.
+         * <p>
+         * Unit: seconds.
+         * Valid values: 86400 to the value of Integer.maxValue.
+         * Default value: null.
+         * Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+         * <p>
+         * @return {@code this}
+         * @param maxInstanceLifetime Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group. This parameter is required.
+         */
+        public Builder maxInstanceLifetime(final java.lang.Number maxInstanceLifetime) {
+            this.props.maxInstanceLifetime(maxInstanceLifetime);
+            return this;
+        }
+        /**
+         * Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group.
+         * <p>
+         * Unit: seconds.
+         * Valid values: 86400 to the value of Integer.maxValue.
+         * Default value: null.
+         * Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+         * <p>
+         * @return {@code this}
+         * @param maxInstanceLifetime Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group. This parameter is required.
+         */
+        public Builder maxInstanceLifetime(final com.aliyun.ros.cdk.core.IResolvable maxInstanceLifetime) {
+            this.props.maxInstanceLifetime(maxInstanceLifetime);
+            return this;
+        }
+
+        /**
          * Property multiAzPolicy: ECS scaling strategy for multi availability zone.
          * <p>
          * Allow value:
          * <p>
          * <ol>
          * <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
-         * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+         * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
+         * <li>COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
          * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.</li>
+         * <li>COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.</li>
          * </ol>
          * <p>
          * @return {@code this}
@@ -475,8 +632,10 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * <p>
          * <ol>
          * <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
-         * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+         * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
+         * <li>COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
          * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.</li>
+         * <li>COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.</li>
          * </ol>
          * <p>
          * @return {@code this}
@@ -512,6 +671,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group.
          * <p>
          * Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+         * If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
          * <p>
          * @return {@code this}
          * @param onDemandBaseCapacity Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group. This parameter is required.
@@ -524,6 +684,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group.
          * <p>
          * Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+         * If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
          * <p>
          * @return {@code this}
          * @param onDemandBaseCapacity Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group. This parameter is required.
@@ -537,6 +698,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group.
          * <p>
          * This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+         * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
          * <p>
          * @return {@code this}
          * @param onDemandPercentageAboveBaseCapacity Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group. This parameter is required.
@@ -549,6 +711,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group.
          * <p>
          * This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+         * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
          * <p>
          * @return {@code this}
          * @param onDemandPercentageAboveBaseCapacity Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group. This parameter is required.
@@ -583,10 +746,17 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property removalPolicys: Policy for removing ECS instances from the scaling group.
          * <p>
          * Optional values:
-         * OldestInstance: removes the first ECS instance attached to the scaling group.
-         * NewestInstance: removes the first ECS instance attached to the scaling group.
-         * OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-         * Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+         * <p>
+         * <ul>
+         * <li>OldestInstance: removes the first ECS instance attached to the scaling group.</li>
+         * <li>NewestInstance: removes the first ECS instance attached to the scaling group.</li>
+         * <li>OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.</li>
+         * <li>CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+         * You can enter up to three removal policies.
+         * You cannot set any item of RemovalPolicys to the same value.
+         * The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+         * Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param removalPolicys Property removalPolicys: Policy for removing ECS instances from the scaling group. This parameter is required.
@@ -599,10 +769,17 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property removalPolicys: Policy for removing ECS instances from the scaling group.
          * <p>
          * Optional values:
-         * OldestInstance: removes the first ECS instance attached to the scaling group.
-         * NewestInstance: removes the first ECS instance attached to the scaling group.
-         * OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-         * Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+         * <p>
+         * <ul>
+         * <li>OldestInstance: removes the first ECS instance attached to the scaling group.</li>
+         * <li>NewestInstance: removes the first ECS instance attached to the scaling group.</li>
+         * <li>OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.</li>
+         * <li>CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+         * You can enter up to three removal policies.
+         * You cannot set any item of RemovalPolicys to the same value.
+         * The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+         * Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param removalPolicys Property removalPolicys: Policy for removing ECS instances from the scaling group. This parameter is required.
@@ -671,9 +848,47 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property spotAllocationStrategy: The allocation policy of preemptible instances.
+         * <p>
+         * You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         * <p>
+         * <ul>
+         * <li>priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.</li>
+         * <li>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+         * Default value: priority.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param spotAllocationStrategy Property spotAllocationStrategy: The allocation policy of preemptible instances. This parameter is required.
+         */
+        public Builder spotAllocationStrategy(final java.lang.String spotAllocationStrategy) {
+            this.props.spotAllocationStrategy(spotAllocationStrategy);
+            return this;
+        }
+        /**
+         * Property spotAllocationStrategy: The allocation policy of preemptible instances.
+         * <p>
+         * You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         * <p>
+         * <ul>
+         * <li>priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.</li>
+         * <li>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+         * Default value: priority.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param spotAllocationStrategy Property spotAllocationStrategy: The allocation policy of preemptible instances. This parameter is required.
+         */
+        public Builder spotAllocationStrategy(final com.aliyun.ros.cdk.core.IResolvable spotAllocationStrategy) {
+            this.props.spotAllocationStrategy(spotAllocationStrategy);
+            return this;
+        }
+
+        /**
          * Property spotInstancePools: The number of instance types that are available.
          * <p>
          * The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+         * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
          * <p>
          * @return {@code this}
          * @param spotInstancePools Property spotInstancePools: The number of instance types that are available. This parameter is required.
@@ -686,6 +901,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * Property spotInstancePools: The number of instance types that are available.
          * <p>
          * The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+         * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
          * <p>
          * @return {@code this}
          * @param spotInstancePools Property spotInstancePools: The number of instance types that are available. This parameter is required.

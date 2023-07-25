@@ -15,5 +15,4 @@ export * from './sitemonitor';
 
 // ALIYUN::CMS Resources:
 export * from './cms.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a <code>ALIYUN::NAS::AccessGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.706Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.033Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosAccessGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessGroupProps.Jsii$Proxy.class)
 public interface RosAccessGroupProps extends software.amazon.jsii.JsiiSerializable {

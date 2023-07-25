@@ -12,7 +12,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <summary>Property aclEntries: undefined.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "aclEntries", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-alb.RosAcl.AclEntriesProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [JsiiProperty(name: "aclEntries", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosAcl.AclEntriesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? AclEntries
         {
             get => _aclEntries;
@@ -29,17 +29,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                             {
                                 switch (cast_cd4240[__idx_f64a5c])
                                 {
-                                    case AlibabaCloud.SDK.ROS.CDK.Alb.RosAcl.IAclEntriesProperty cast_201718:
-                                        break;
                                     case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Alb.RosAcl.IAclEntriesProperty cast_201718:
                                         break;
                                     case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
                                         // Not enough information to type-check...
                                         break;
                                     case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosAcl.IAclEntriesProperty).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosAcl.IAclEntriesProperty).FullName}; received null", nameof(value));
                                     default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosAcl.IAclEntriesProperty).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosAcl.IAclEntriesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
                                 }
                             }
                             break;

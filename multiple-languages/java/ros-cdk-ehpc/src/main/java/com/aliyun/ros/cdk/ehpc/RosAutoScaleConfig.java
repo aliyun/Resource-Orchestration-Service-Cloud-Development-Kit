@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * A ROS template type:  <code>ALIYUN::EHPC::AutoScaleConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:01.855Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.089Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosAutoScaleConfig")
 public class RosAutoScaleConfig extends com.aliyun.ros.cdk.core.RosResource {
 

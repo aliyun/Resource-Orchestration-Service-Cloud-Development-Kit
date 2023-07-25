@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a <code>ALIYUN::CEN::CenRouteMap</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:00.031Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:58.338Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenRouteMapProps")
 @software.amazon.jsii.Jsii.Proxy(CenRouteMapProps.Jsii$Proxy.class)
 public interface CenRouteMapProps extends software.amazon.jsii.JsiiSerializable {

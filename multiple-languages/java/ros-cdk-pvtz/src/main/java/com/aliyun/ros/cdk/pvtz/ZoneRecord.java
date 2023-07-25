@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * A ROS resource type:  <code>ALIYUN::PVTZ::ZoneRecord</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.074Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.485Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneRecord")
 public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource {
 

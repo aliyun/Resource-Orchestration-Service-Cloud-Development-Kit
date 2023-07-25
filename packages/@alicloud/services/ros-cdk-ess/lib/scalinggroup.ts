@@ -19,6 +19,22 @@ export interface ScalingGroupProps {
     readonly minSize: number | ros.IResolvable;
 
     /**
+     * Property allocationStrategy: The allocation policy of instances. Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * - priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.
+     * - lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+     * Default value: priority.
+     */
+    readonly allocationStrategy?: string | ros.IResolvable;
+
+    /**
+     * Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * - true
+     * - false
+     * Default value: false.
+     */
+    readonly azBalance?: boolean | ros.IResolvable;
+
+    /**
      * Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources. This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
      * Default value: true.
      */
@@ -28,6 +44,11 @@ export interface ScalingGroupProps {
      * Property containerGroupId: The ID of the elastic container instance.
      */
     readonly containerGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function). This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+     */
+    readonly customPolicyArn?: string | ros.IResolvable;
 
     /**
      * Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
@@ -75,6 +96,12 @@ export interface ScalingGroupProps {
     readonly launchTemplateId?: string | ros.IResolvable;
 
     /**
+     * Property launchTemplateOverrides: You can specify up to 10 overrides.
+     * Note: This parameter takes effect only if you specify LaunchTemplateId.
+     */
+    readonly launchTemplateOverrides?: Array<RosScalingGroup.LaunchTemplateOverridesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property launchTemplateVersion: The version of the instance launch template. Valid values:
      * A fixed template version numbe.
      * Default: The default template version is always used.
@@ -88,10 +115,20 @@ export interface ScalingGroupProps {
     readonly loadBalancerIds?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group. Unit: seconds.
+     * Valid values: 86400 to the value of Integer.maxValue.
+     * Default value: null.
+     * Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+     */
+    readonly maxInstanceLifetime?: number | ros.IResolvable;
+
+    /**
      * Property multiAzPolicy: ECS scaling strategy for multi availability zone. Allow value:
      * 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
-     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
+     * 3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
      * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.
+     * 4. COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.
      */
     readonly multiAzPolicy?: string | ros.IResolvable;
 
@@ -102,11 +139,13 @@ export interface ScalingGroupProps {
 
     /**
      * Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group. Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+     * If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
      */
     readonly onDemandBaseCapacity?: number | ros.IResolvable;
 
     /**
      * Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group. This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+     * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
      */
     readonly onDemandPercentageAboveBaseCapacity?: number | ros.IResolvable;
 
@@ -118,10 +157,14 @@ export interface ScalingGroupProps {
     /**
      * Property removalPolicys: Policy for removing ECS instances from the scaling group.
      * Optional values:
-     * OldestInstance: removes the first ECS instance attached to the scaling group.
-     * NewestInstance: removes the first ECS instance attached to the scaling group.
-     * OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-     * Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+     * - OldestInstance: removes the first ECS instance attached to the scaling group.
+     * - NewestInstance: removes the first ECS instance attached to the scaling group.
+     * - OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
+     * - CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+     * You can enter up to three removal policies.
+     * You cannot set any item of RemovalPolicys to the same value.
+     * The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+     * Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.
      */
     readonly removalPolicys?: Array<any | ros.IResolvable> | ros.IResolvable;
 
@@ -140,7 +183,16 @@ export interface ScalingGroupProps {
     readonly scalingPolicy?: string | ros.IResolvable;
 
     /**
+     * Property spotAllocationStrategy: The allocation policy of preemptible instances. You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * - priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.
+     * - lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+     * Default value: priority.
+     */
+    readonly spotAllocationStrategy?: string | ros.IResolvable;
+
+    /**
      * Property spotInstancePools: The number of instance types that are available. The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+     * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
      */
     readonly spotInstancePools?: number | ros.IResolvable;
 
@@ -209,22 +261,27 @@ export class ScalingGroup extends ros.Resource {
             notificationConfigurations: props.notificationConfigurations,
             onDemandPercentageAboveBaseCapacity: props.onDemandPercentageAboveBaseCapacity,
             desiredCapacity: props.desiredCapacity,
+            allocationStrategy: props.allocationStrategy,
             onDemandBaseCapacity: props.onDemandBaseCapacity,
             standbyInstances: props.standbyInstances,
+            launchTemplateOverrides: props.launchTemplateOverrides,
             removalPolicys: props.removalPolicys,
+            spotAllocationStrategy: props.spotAllocationStrategy,
             tags: props.tags,
             scalingPolicy: props.scalingPolicy,
             vSwitchIds: props.vSwitchIds,
             instanceId: props.instanceId,
             vSwitchId: props.vSwitchId,
             loadBalancerIds: props.loadBalancerIds,
-            groupDeletionProtection: props.groupDeletionProtection === undefined || props.groupDeletionProtection === null ? false : props.groupDeletionProtection,
             spotInstancePools: props.spotInstancePools,
+            groupDeletionProtection: props.groupDeletionProtection === undefined || props.groupDeletionProtection === null ? false : props.groupDeletionProtection,
             launchTemplateId: props.launchTemplateId,
+            customPolicyArn: props.customPolicyArn,
             maxSize: props.maxSize,
             scalingGroupName: props.scalingGroupName,
             minSize: props.minSize,
             defaultCooldown: props.defaultCooldown,
+            azBalance: props.azBalance,
             groupType: props.groupType,
             launchTemplateVersion: props.launchTemplateVersion,
             multiAzPolicy: props.multiAzPolicy,
@@ -232,6 +289,7 @@ export class ScalingGroup extends ros.Resource {
             containerGroupId: props.containerGroupId,
             dbInstanceIds: props.dbInstanceIds,
             healthCheckType: props.healthCheckType,
+            maxInstanceLifetime: props.maxInstanceLifetime,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingGroup;
         this.attrScalingGroupId = rosScalingGroup.attrScalingGroupId;

@@ -4,5 +4,4 @@ export * from './secret';
 
 // ALIYUN::KMS Resources:
 export * from './kms.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

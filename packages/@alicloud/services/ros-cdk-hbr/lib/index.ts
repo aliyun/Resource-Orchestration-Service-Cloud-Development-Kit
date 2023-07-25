@@ -7,5 +7,4 @@ export * from './vault';
 
 // ALIYUN::HBR Resources:
 export * from './hbr.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

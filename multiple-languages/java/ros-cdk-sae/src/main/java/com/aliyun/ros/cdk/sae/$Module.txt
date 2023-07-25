@@ -11,3 +11,11 @@
 @alicloud/ros-cdk-sae.RosSlbBindingProps=com.aliyun.ros.cdk.sae.RosSlbBindingProps
 @alicloud/ros-cdk-sae.SlbBinding=com.aliyun.ros.cdk.sae.SlbBinding
 @alicloud/ros-cdk-sae.SlbBindingProps=com.aliyun.ros.cdk.sae.SlbBindingProps
+@alicloud/ros-cdk-sae.datasource.Applications=com.aliyun.ros.cdk.sae.datasource.Applications
+@alicloud/ros-cdk-sae.datasource.ApplicationsProps=com.aliyun.ros.cdk.sae.datasource.ApplicationsProps
+@alicloud/ros-cdk-sae.datasource.Namespaces=com.aliyun.ros.cdk.sae.datasource.Namespaces
+@alicloud/ros-cdk-sae.datasource.NamespacesProps=com.aliyun.ros.cdk.sae.datasource.NamespacesProps
+@alicloud/ros-cdk-sae.datasource.RosApplications=com.aliyun.ros.cdk.sae.datasource.RosApplications
+@alicloud/ros-cdk-sae.datasource.RosApplicationsProps=com.aliyun.ros.cdk.sae.datasource.RosApplicationsProps
+@alicloud/ros-cdk-sae.datasource.RosNamespaces=com.aliyun.ros.cdk.sae.datasource.RosNamespaces
+@alicloud/ros-cdk-sae.datasource.RosNamespacesProps=com.aliyun.ros.cdk.sae.datasource.RosNamespacesProps

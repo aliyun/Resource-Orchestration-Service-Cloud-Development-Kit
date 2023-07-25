@@ -6,5 +6,4 @@ export * from './whitelist';
 
 // ALIYUN::REDIS Resources:
 export * from './redis.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

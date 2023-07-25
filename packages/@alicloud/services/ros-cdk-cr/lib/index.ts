@@ -6,5 +6,4 @@ export * from './userinfo';
 
 // ALIYUN::CR Resources:
 export * from './cr.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

@@ -16,6 +16,7 @@
 @alicloud/ros-cdk-ess.RosScalingConfiguration.TagListProperty=com.aliyun.ros.cdk.ess.RosScalingConfiguration$TagListProperty
 @alicloud/ros-cdk-ess.RosScalingConfigurationProps=com.aliyun.ros.cdk.ess.RosScalingConfigurationProps
 @alicloud/ros-cdk-ess.RosScalingGroup=com.aliyun.ros.cdk.ess.RosScalingGroup
+@alicloud/ros-cdk-ess.RosScalingGroup.LaunchTemplateOverridesProperty=com.aliyun.ros.cdk.ess.RosScalingGroup$LaunchTemplateOverridesProperty
 @alicloud/ros-cdk-ess.RosScalingGroup.NotificationConfigurationsProperty=com.aliyun.ros.cdk.ess.RosScalingGroup$NotificationConfigurationsProperty
 @alicloud/ros-cdk-ess.RosScalingGroup.TagsProperty=com.aliyun.ros.cdk.ess.RosScalingGroup$TagsProperty
 @alicloud/ros-cdk-ess.RosScalingGroupEnable=com.aliyun.ros.cdk.ess.RosScalingGroupEnable
@@ -38,3 +39,11 @@
 @alicloud/ros-cdk-ess.ScalingRuleProps=com.aliyun.ros.cdk.ess.ScalingRuleProps
 @alicloud/ros-cdk-ess.ScheduledTask=com.aliyun.ros.cdk.ess.ScheduledTask
 @alicloud/ros-cdk-ess.ScheduledTaskProps=com.aliyun.ros.cdk.ess.ScheduledTaskProps
+@alicloud/ros-cdk-ess.datasource.RosScalingConfigurations=com.aliyun.ros.cdk.ess.datasource.RosScalingConfigurations
+@alicloud/ros-cdk-ess.datasource.RosScalingConfigurationsProps=com.aliyun.ros.cdk.ess.datasource.RosScalingConfigurationsProps
+@alicloud/ros-cdk-ess.datasource.RosScalingGroups=com.aliyun.ros.cdk.ess.datasource.RosScalingGroups
+@alicloud/ros-cdk-ess.datasource.RosScalingGroupsProps=com.aliyun.ros.cdk.ess.datasource.RosScalingGroupsProps
+@alicloud/ros-cdk-ess.datasource.ScalingConfigurations=com.aliyun.ros.cdk.ess.datasource.ScalingConfigurations
+@alicloud/ros-cdk-ess.datasource.ScalingConfigurationsProps=com.aliyun.ros.cdk.ess.datasource.ScalingConfigurationsProps
+@alicloud/ros-cdk-ess.datasource.ScalingGroups=com.aliyun.ros.cdk.ess.datasource.ScalingGroups
+@alicloud/ros-cdk-ess.datasource.ScalingGroupsProps=com.aliyun.ros.cdk.ess.datasource.ScalingGroupsProps

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * A ROS resource type:  <code>ALIYUN::KAFKA::Topic</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.456Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.738Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS template type:  <code>ALIYUN::ALB::Acl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:27:59.574Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:57.892Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosAcl")
 public class RosAcl extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -80,14 +80,14 @@ public class RosAcl extends com.aliyun.ros.cdk.core.RosResource {
             for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
                 final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
                 if (
-                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.alb.RosAcl.AclEntriesProperty)
-                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.alb.RosAcl.AclEntriesProperty)
                     && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
                 ) {
                     throw new IllegalArgumentException(
                         new java.lang.StringBuilder("Expected ")
                             .append("value").append(".get(").append(__idx_ac66f0).append(")")
-                            .append(" to be one of: com.aliyun.ros.cdk.alb.RosAcl.AclEntriesProperty, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.alb.RosAcl.AclEntriesProperty; received ")
                             .append(__val_ac66f0.getClass()).toString());
                 }
             }

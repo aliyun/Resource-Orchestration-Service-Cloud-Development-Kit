@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * Properties for defining a <code>ALIYUN::Lindorm::MultiZoneInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.533Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.814Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.RosMultiZoneInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosMultiZoneInstanceProps.Jsii$Proxy.class)
 public interface RosMultiZoneInstanceProps extends software.amazon.jsii.JsiiSerializable {

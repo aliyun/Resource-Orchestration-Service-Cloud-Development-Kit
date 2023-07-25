@@ -9,5 +9,4 @@ export * from './protocolservice';
 
 // ALIYUN::NAS Resources:
 export * from './nas.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

@@ -2,3 +2,7 @@
 @alicloud/ros-cdk-searchengine.InstanceProps=com.aliyun.ros.cdk.searchengine.InstanceProps
 @alicloud/ros-cdk-searchengine.RosInstance=com.aliyun.ros.cdk.searchengine.RosInstance
 @alicloud/ros-cdk-searchengine.RosInstanceProps=com.aliyun.ros.cdk.searchengine.RosInstanceProps
+@alicloud/ros-cdk-searchengine.datasource.Instances=com.aliyun.ros.cdk.searchengine.datasource.Instances
+@alicloud/ros-cdk-searchengine.datasource.InstancesProps=com.aliyun.ros.cdk.searchengine.datasource.InstancesProps
+@alicloud/ros-cdk-searchengine.datasource.RosInstances=com.aliyun.ros.cdk.searchengine.datasource.RosInstances
+@alicloud/ros-cdk-searchengine.datasource.RosInstancesProps=com.aliyun.ros.cdk.searchengine.datasource.RosInstancesProps

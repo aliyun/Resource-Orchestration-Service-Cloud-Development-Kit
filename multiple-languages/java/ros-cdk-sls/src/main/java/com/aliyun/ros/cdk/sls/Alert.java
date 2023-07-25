@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS resource type:  <code>ALIYUN::SLS::Alert</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.787Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.449Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.Alert")
 public class Alert extends com.aliyun.ros.cdk.core.Resource {
 
@@ -95,7 +95,7 @@ public class Alert extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param detail Property detail:. This parameter is required.
          */
-        public Builder detail(final com.aliyun.ros.cdk.sls.RosAlert.DetailProperty detail) {
+        public Builder detail(final com.aliyun.ros.cdk.core.IResolvable detail) {
             this.props.detail(detail);
             return this;
         }
@@ -105,7 +105,7 @@ public class Alert extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param detail Property detail:. This parameter is required.
          */
-        public Builder detail(final com.aliyun.ros.cdk.core.IResolvable detail) {
+        public Builder detail(final com.aliyun.ros.cdk.sls.RosAlert.DetailProperty detail) {
             this.props.detail(detail);
             return this;
         }

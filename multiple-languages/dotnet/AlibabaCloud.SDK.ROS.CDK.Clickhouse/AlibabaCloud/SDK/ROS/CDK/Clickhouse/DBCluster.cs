@@ -52,7 +52,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute Category: Series, value: Basic: Basic version.</summary>
+        /// <summary>Attribute Category: The edition of the cluster.</summary>
         [JsiiProperty(name: "attrCategory", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCategory
         {
@@ -73,7 +73,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute DBClusterDescription: DBClusterDescription.</summary>
+        /// <summary>Attribute DBClusterDescription: The description of the cluster.</summary>
         [JsiiProperty(name: "attrDbClusterDescription", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbClusterDescription
         {
@@ -94,10 +94,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute DBClusterType: Cluster instance type, value:  Common: normal instance;</summary>
-        /// <remarks>
-        /// Readonly: read-only instance; Guard: disaster recovery instance
-        /// </remarks>
+        /// <summary>Attribute DBClusterType: The specification of the cluster.</summary>
         [JsiiProperty(name: "attrDbClusterType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbClusterType
         {
@@ -118,14 +115,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute DBNodeCount: Number of node groups.</summary>
+        /// <summary>Attribute DBNodeCount: The number of nodes.</summary>
         [JsiiProperty(name: "attrDbNodeCount", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbNodeCount
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
-        /// <summary>Attribute DBNodeStorage: DBNodeStorage.</summary>
+        /// <summary>Attribute DBNodeStorage: The storage capacity of a single node.</summary>
         [JsiiProperty(name: "attrDbNodeStorage", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbNodeStorage
         {

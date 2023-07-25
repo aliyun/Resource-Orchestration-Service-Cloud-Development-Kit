@@ -1593,6 +1593,22 @@ export interface RosScalingGroupProps {
     readonly minSize: number | ros.IResolvable;
 
     /**
+     * @Property allocationStrategy: The allocation policy of instances. Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * - priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.
+     * - lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+     * Default value: priority.
+     */
+    readonly allocationStrategy?: string | ros.IResolvable;
+
+    /**
+     * @Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * - true
+     * - false
+     * Default value: false.
+     */
+    readonly azBalance?: boolean | ros.IResolvable;
+
+    /**
      * @Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources. This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
      * Default value: true.
      */
@@ -1602,6 +1618,11 @@ export interface RosScalingGroupProps {
      * @Property containerGroupId: The ID of the elastic container instance.
      */
     readonly containerGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function). This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+     */
+    readonly customPolicyArn?: string | ros.IResolvable;
 
     /**
      * @Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
@@ -1649,6 +1670,12 @@ export interface RosScalingGroupProps {
     readonly launchTemplateId?: string | ros.IResolvable;
 
     /**
+     * @Property launchTemplateOverrides: You can specify up to 10 overrides.
+     * Note: This parameter takes effect only if you specify LaunchTemplateId.
+     */
+    readonly launchTemplateOverrides?: Array<RosScalingGroup.LaunchTemplateOverridesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property launchTemplateVersion: The version of the instance launch template. Valid values:
      * A fixed template version numbe.
      * Default: The default template version is always used.
@@ -1662,10 +1689,20 @@ export interface RosScalingGroupProps {
     readonly loadBalancerIds?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group. Unit: seconds.
+     * Valid values: 86400 to the value of Integer.maxValue.
+     * Default value: null.
+     * Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+     */
+    readonly maxInstanceLifetime?: number | ros.IResolvable;
+
+    /**
      * @Property multiAzPolicy: ECS scaling strategy for multi availability zone. Allow value:
      * 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
-     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
+     * 3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
      * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.
+     * 4. COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.
      */
     readonly multiAzPolicy?: string | ros.IResolvable;
 
@@ -1676,11 +1713,13 @@ export interface RosScalingGroupProps {
 
     /**
      * @Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group. Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+     * If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
      */
     readonly onDemandBaseCapacity?: number | ros.IResolvable;
 
     /**
      * @Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group. This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+     * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
      */
     readonly onDemandPercentageAboveBaseCapacity?: number | ros.IResolvable;
 
@@ -1692,10 +1731,14 @@ export interface RosScalingGroupProps {
     /**
      * @Property removalPolicys: Policy for removing ECS instances from the scaling group.
      * Optional values:
-     * OldestInstance: removes the first ECS instance attached to the scaling group.
-     * NewestInstance: removes the first ECS instance attached to the scaling group.
-     * OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-     * Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+     * - OldestInstance: removes the first ECS instance attached to the scaling group.
+     * - NewestInstance: removes the first ECS instance attached to the scaling group.
+     * - OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
+     * - CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+     * You can enter up to three removal policies.
+     * You cannot set any item of RemovalPolicys to the same value.
+     * The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+     * Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.
      */
     readonly removalPolicys?: Array<any | ros.IResolvable> | ros.IResolvable;
 
@@ -1714,7 +1757,16 @@ export interface RosScalingGroupProps {
     readonly scalingPolicy?: string | ros.IResolvable;
 
     /**
+     * @Property spotAllocationStrategy: The allocation policy of preemptible instances. You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * - priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.
+     * - lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+     * Default value: priority.
+     */
+    readonly spotAllocationStrategy?: string | ros.IResolvable;
+
+    /**
      * @Property spotInstancePools: The number of instance types that are available. The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+     * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
      */
     readonly spotInstancePools?: number | ros.IResolvable;
 
@@ -1769,6 +1821,13 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('onDemandPercentageAboveBaseCapacity', ros.validateNumber)(properties.onDemandPercentageAboveBaseCapacity));
     errors.collect(ros.propertyValidator('desiredCapacity', ros.validateNumber)(properties.desiredCapacity));
+    if(properties.allocationStrategy && (typeof properties.allocationStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('allocationStrategy', ros.validateAllowedValues)({
+          data: properties.allocationStrategy,
+          allowedValues: ["priority","lowestPrice"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('allocationStrategy', ros.validateString)(properties.allocationStrategy));
     if(properties.onDemandBaseCapacity && (typeof properties.onDemandBaseCapacity) !== 'object') {
         errors.collect(ros.propertyValidator('onDemandBaseCapacity', ros.validateRange)({
             data: properties.onDemandBaseCapacity,
@@ -1785,14 +1844,29 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('standbyInstances', ros.listValidator(ros.validateAny))(properties.standbyInstances));
+    if(properties.launchTemplateOverrides && (Array.isArray(properties.launchTemplateOverrides) || (typeof properties.launchTemplateOverrides) === 'string')) {
+        errors.collect(ros.propertyValidator('launchTemplateOverrides', ros.validateLength)({
+            data: properties.launchTemplateOverrides.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('launchTemplateOverrides', ros.listValidator(RosScalingGroup_LaunchTemplateOverridesPropertyValidator))(properties.launchTemplateOverrides));
     if(properties.removalPolicys && (Array.isArray(properties.removalPolicys) || (typeof properties.removalPolicys) === 'string')) {
         errors.collect(ros.propertyValidator('removalPolicys', ros.validateLength)({
             data: properties.removalPolicys.length,
             min: undefined,
-            max: 2,
+            max: 3,
           }));
     }
     errors.collect(ros.propertyValidator('removalPolicys', ros.listValidator(ros.validateAny))(properties.removalPolicys));
+    if(properties.spotAllocationStrategy && (typeof properties.spotAllocationStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('spotAllocationStrategy', ros.validateAllowedValues)({
+          data: properties.spotAllocationStrategy,
+          allowedValues: ["priority","lowestPrice"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spotAllocationStrategy', ros.validateString)(properties.spotAllocationStrategy));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1826,7 +1900,6 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('loadBalancerIds', ros.listValidator(ros.validateAny))(properties.loadBalancerIds));
-    errors.collect(ros.propertyValidator('groupDeletionProtection', ros.validateBoolean)(properties.groupDeletionProtection));
     if(properties.spotInstancePools && (typeof properties.spotInstancePools) !== 'object') {
         errors.collect(ros.propertyValidator('spotInstancePools', ros.validateRange)({
             data: properties.spotInstancePools,
@@ -1835,7 +1908,9 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('spotInstancePools', ros.validateNumber)(properties.spotInstancePools));
+    errors.collect(ros.propertyValidator('groupDeletionProtection', ros.validateBoolean)(properties.groupDeletionProtection));
     errors.collect(ros.propertyValidator('launchTemplateId', ros.validateString)(properties.launchTemplateId));
+    errors.collect(ros.propertyValidator('customPolicyArn', ros.validateString)(properties.customPolicyArn));
     errors.collect(ros.propertyValidator('maxSize', ros.requiredValidator)(properties.maxSize));
     if(properties.maxSize && (typeof properties.maxSize) !== 'object') {
         errors.collect(ros.propertyValidator('maxSize', ros.validateRange)({
@@ -1869,6 +1944,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('defaultCooldown', ros.validateNumber)(properties.defaultCooldown));
+    errors.collect(ros.propertyValidator('azBalance', ros.validateBoolean)(properties.azBalance));
     if(properties.groupType && (typeof properties.groupType) !== 'object') {
         errors.collect(ros.propertyValidator('groupType', ros.validateAllowedValues)({
           data: properties.groupType,
@@ -1880,7 +1956,7 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.multiAzPolicy && (typeof properties.multiAzPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('multiAzPolicy', ros.validateAllowedValues)({
           data: properties.multiAzPolicy,
-          allowedValues: ["PRIORITY","BALANCE","COST_OPTIMIZED"],
+          allowedValues: ["PRIORITY","BALANCE","COST_OPTIMIZED","COMPOSABLE"],
         }));
     }
     errors.collect(ros.propertyValidator('multiAzPolicy', ros.validateString)(properties.multiAzPolicy));
@@ -1908,6 +1984,14 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('healthCheckType', ros.validateString)(properties.healthCheckType));
+    if(properties.maxInstanceLifetime && (typeof properties.maxInstanceLifetime) !== 'object') {
+        errors.collect(ros.propertyValidator('maxInstanceLifetime', ros.validateRange)({
+            data: properties.maxInstanceLifetime,
+            min: 86400,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('maxInstanceLifetime', ros.validateNumber)(properties.maxInstanceLifetime));
     return errors.wrap('supplied properties not correct for "RosScalingGroupProps"');
 }
 
@@ -1927,8 +2011,11 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
     return {
       MaxSize: ros.numberToRosTemplate(properties.maxSize),
       MinSize: ros.numberToRosTemplate(properties.minSize),
+      AllocationStrategy: ros.stringToRosTemplate(properties.allocationStrategy),
+      AzBalance: ros.booleanToRosTemplate(properties.azBalance),
       CompensateWithOnDemand: ros.booleanToRosTemplate(properties.compensateWithOnDemand),
       ContainerGroupId: ros.stringToRosTemplate(properties.containerGroupId),
+      CustomPolicyARN: ros.stringToRosTemplate(properties.customPolicyArn),
       DBInstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.dbInstanceIds),
       DefaultCooldown: ros.numberToRosTemplate(properties.defaultCooldown),
       DesiredCapacity: ros.numberToRosTemplate(properties.desiredCapacity),
@@ -1937,8 +2024,10 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
       HealthCheckType: ros.stringToRosTemplate(properties.healthCheckType),
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       LaunchTemplateId: ros.stringToRosTemplate(properties.launchTemplateId),
+      LaunchTemplateOverrides: ros.listMapper(rosScalingGroupLaunchTemplateOverridesPropertyToRosTemplate)(properties.launchTemplateOverrides),
       LaunchTemplateVersion: ros.stringToRosTemplate(properties.launchTemplateVersion),
       LoadBalancerIds: ros.listMapper(ros.objectToRosTemplate)(properties.loadBalancerIds),
+      MaxInstanceLifetime: ros.numberToRosTemplate(properties.maxInstanceLifetime),
       MultiAZPolicy: ros.stringToRosTemplate(properties.multiAzPolicy),
       NotificationConfigurations: ros.listMapper(rosScalingGroupNotificationConfigurationsPropertyToRosTemplate)(properties.notificationConfigurations),
       OnDemandBaseCapacity: ros.numberToRosTemplate(properties.onDemandBaseCapacity),
@@ -1947,6 +2036,7 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
       RemovalPolicys: ros.listMapper(ros.objectToRosTemplate)(properties.removalPolicys),
       ScalingGroupName: ros.stringToRosTemplate(properties.scalingGroupName),
       ScalingPolicy: ros.stringToRosTemplate(properties.scalingPolicy),
+      SpotAllocationStrategy: ros.stringToRosTemplate(properties.spotAllocationStrategy),
       SpotInstancePools: ros.numberToRosTemplate(properties.spotInstancePools),
       SpotInstanceRemedy: ros.booleanToRosTemplate(properties.spotInstanceRemedy),
       StandbyInstances: ros.listMapper(ros.objectToRosTemplate)(properties.standbyInstances),
@@ -1994,6 +2084,22 @@ export class RosScalingGroup extends ros.RosResource {
     public minSize: number | ros.IResolvable;
 
     /**
+     * @Property allocationStrategy: The allocation policy of instances. Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * - priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.
+     * - lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+     * Default value: priority.
+     */
+    public allocationStrategy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * - true
+     * - false
+     * Default value: false.
+     */
+    public azBalance: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources. This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
      * Default value: true.
      */
@@ -2003,6 +2109,11 @@ export class RosScalingGroup extends ros.RosResource {
      * @Property containerGroupId: The ID of the elastic container instance.
      */
     public containerGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function). This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+     */
+    public customPolicyArn: string | ros.IResolvable | undefined;
 
     /**
      * @Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
@@ -2050,6 +2161,12 @@ export class RosScalingGroup extends ros.RosResource {
     public launchTemplateId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property launchTemplateOverrides: You can specify up to 10 overrides.
+     * Note: This parameter takes effect only if you specify LaunchTemplateId.
+     */
+    public launchTemplateOverrides: Array<RosScalingGroup.LaunchTemplateOverridesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property launchTemplateVersion: The version of the instance launch template. Valid values:
      * A fixed template version numbe.
      * Default: The default template version is always used.
@@ -2063,10 +2180,20 @@ export class RosScalingGroup extends ros.RosResource {
     public loadBalancerIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group. Unit: seconds.
+     * Valid values: 86400 to the value of Integer.maxValue.
+     * Default value: null.
+     * Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+     */
+    public maxInstanceLifetime: number | ros.IResolvable | undefined;
+
+    /**
      * @Property multiAzPolicy: ECS scaling strategy for multi availability zone. Allow value:
      * 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
-     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
+     * 3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
      * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.
+     * 4. COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.
      */
     public multiAzPolicy: string | ros.IResolvable | undefined;
 
@@ -2077,11 +2204,13 @@ export class RosScalingGroup extends ros.RosResource {
 
     /**
      * @Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group. Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+     * If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
      */
     public onDemandBaseCapacity: number | ros.IResolvable | undefined;
 
     /**
      * @Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group. This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+     * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
      */
     public onDemandPercentageAboveBaseCapacity: number | ros.IResolvable | undefined;
 
@@ -2093,10 +2222,14 @@ export class RosScalingGroup extends ros.RosResource {
     /**
      * @Property removalPolicys: Policy for removing ECS instances from the scaling group.
      * Optional values:
-     * OldestInstance: removes the first ECS instance attached to the scaling group.
-     * NewestInstance: removes the first ECS instance attached to the scaling group.
-     * OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-     * Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+     * - OldestInstance: removes the first ECS instance attached to the scaling group.
+     * - NewestInstance: removes the first ECS instance attached to the scaling group.
+     * - OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
+     * - CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+     * You can enter up to three removal policies.
+     * You cannot set any item of RemovalPolicys to the same value.
+     * The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+     * Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.
      */
     public removalPolicys: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -2115,7 +2248,16 @@ export class RosScalingGroup extends ros.RosResource {
     public scalingPolicy: string | ros.IResolvable | undefined;
 
     /**
+     * @Property spotAllocationStrategy: The allocation policy of preemptible instances. You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * - priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.
+     * - lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+     * Default value: priority.
+     */
+    public spotAllocationStrategy: string | ros.IResolvable | undefined;
+
+    /**
      * @Property spotInstancePools: The number of instance types that are available. The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+     * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
      */
     public spotInstancePools: number | ros.IResolvable | undefined;
 
@@ -2162,8 +2304,11 @@ export class RosScalingGroup extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.maxSize = props.maxSize;
         this.minSize = props.minSize;
+        this.allocationStrategy = props.allocationStrategy;
+        this.azBalance = props.azBalance;
         this.compensateWithOnDemand = props.compensateWithOnDemand;
         this.containerGroupId = props.containerGroupId;
+        this.customPolicyArn = props.customPolicyArn;
         this.dbInstanceIds = props.dbInstanceIds;
         this.defaultCooldown = props.defaultCooldown;
         this.desiredCapacity = props.desiredCapacity;
@@ -2172,8 +2317,10 @@ export class RosScalingGroup extends ros.RosResource {
         this.healthCheckType = props.healthCheckType;
         this.instanceId = props.instanceId;
         this.launchTemplateId = props.launchTemplateId;
+        this.launchTemplateOverrides = props.launchTemplateOverrides;
         this.launchTemplateVersion = props.launchTemplateVersion;
         this.loadBalancerIds = props.loadBalancerIds;
+        this.maxInstanceLifetime = props.maxInstanceLifetime;
         this.multiAzPolicy = props.multiAzPolicy;
         this.notificationConfigurations = props.notificationConfigurations;
         this.onDemandBaseCapacity = props.onDemandBaseCapacity;
@@ -2182,6 +2329,7 @@ export class RosScalingGroup extends ros.RosResource {
         this.removalPolicys = props.removalPolicys;
         this.scalingGroupName = props.scalingGroupName;
         this.scalingPolicy = props.scalingPolicy;
+        this.spotAllocationStrategy = props.spotAllocationStrategy;
         this.spotInstancePools = props.spotInstancePools;
         this.spotInstanceRemedy = props.spotInstanceRemedy;
         this.standbyInstances = props.standbyInstances;
@@ -2195,8 +2343,11 @@ export class RosScalingGroup extends ros.RosResource {
         return {
             maxSize: this.maxSize,
             minSize: this.minSize,
+            allocationStrategy: this.allocationStrategy,
+            azBalance: this.azBalance,
             compensateWithOnDemand: this.compensateWithOnDemand,
             containerGroupId: this.containerGroupId,
+            customPolicyArn: this.customPolicyArn,
             dbInstanceIds: this.dbInstanceIds,
             defaultCooldown: this.defaultCooldown,
             desiredCapacity: this.desiredCapacity,
@@ -2205,8 +2356,10 @@ export class RosScalingGroup extends ros.RosResource {
             healthCheckType: this.healthCheckType,
             instanceId: this.instanceId,
             launchTemplateId: this.launchTemplateId,
+            launchTemplateOverrides: this.launchTemplateOverrides,
             launchTemplateVersion: this.launchTemplateVersion,
             loadBalancerIds: this.loadBalancerIds,
+            maxInstanceLifetime: this.maxInstanceLifetime,
             multiAzPolicy: this.multiAzPolicy,
             notificationConfigurations: this.notificationConfigurations,
             onDemandBaseCapacity: this.onDemandBaseCapacity,
@@ -2215,6 +2368,7 @@ export class RosScalingGroup extends ros.RosResource {
             removalPolicys: this.removalPolicys,
             scalingGroupName: this.scalingGroupName,
             scalingPolicy: this.scalingPolicy,
+            spotAllocationStrategy: this.spotAllocationStrategy,
             spotInstancePools: this.spotInstancePools,
             spotInstanceRemedy: this.spotInstanceRemedy,
             standbyInstances: this.standbyInstances,
@@ -2226,6 +2380,66 @@ export class RosScalingGroup extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosScalingGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosScalingGroup {
+    /**
+     * @stability external
+     */
+    export interface LaunchTemplateOverridesProperty {
+        /**
+         * @Property weightedCapacity: If you want to scale instances in the scaling group based on the weights of the specified instance types, you must specify WeightedCapacity after you specify InstanceType.
+         */
+        readonly weightedCapacity?: number | ros.IResolvable;
+        /**
+         * @Property spotPriceLimit: The maximum bid price of instance type that is specified by InstanceType.
+         */
+        readonly spotPriceLimit?: number | ros.IResolvable;
+        /**
+         * @Property instanceType: Specify this to override the instance type that is specified in the launch template.
+         */
+        readonly instanceType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LaunchTemplateOverridesProperty`
+ *
+ * @param properties - the TypeScript properties of a `LaunchTemplateOverridesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosScalingGroup_LaunchTemplateOverridesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.weightedCapacity && (typeof properties.weightedCapacity) !== 'object') {
+        errors.collect(ros.propertyValidator('weightedCapacity', ros.validateRange)({
+            data: properties.weightedCapacity,
+            min: 1,
+            max: 500,
+          }));
+    }
+    errors.collect(ros.propertyValidator('weightedCapacity', ros.validateNumber)(properties.weightedCapacity));
+    errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateNumber)(properties.spotPriceLimit));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    return errors.wrap('supplied properties not correct for "LaunchTemplateOverridesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingGroup.LaunchTemplateOverrides` resource
+ *
+ * @param properties - the TypeScript properties of a `LaunchTemplateOverridesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingGroup.LaunchTemplateOverrides` resource.
+ */
+// @ts-ignore TS6133
+function rosScalingGroupLaunchTemplateOverridesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosScalingGroup_LaunchTemplateOverridesPropertyValidator(properties).assertSuccess();
+    return {
+      WeightedCapacity: ros.numberToRosTemplate(properties.weightedCapacity),
+      SpotPriceLimit: ros.numberToRosTemplate(properties.spotPriceLimit),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+    };
 }
 
 export namespace RosScalingGroup {

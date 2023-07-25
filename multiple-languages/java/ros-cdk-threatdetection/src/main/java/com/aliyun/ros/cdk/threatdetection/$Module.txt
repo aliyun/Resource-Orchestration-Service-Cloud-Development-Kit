@@ -2,3 +2,7 @@
 @alicloud/ros-cdk-threatdetection.AntiBruteForceRuleProps=com.aliyun.ros.cdk.threatdetection.AntiBruteForceRuleProps
 @alicloud/ros-cdk-threatdetection.RosAntiBruteForceRule=com.aliyun.ros.cdk.threatdetection.RosAntiBruteForceRule
 @alicloud/ros-cdk-threatdetection.RosAntiBruteForceRuleProps=com.aliyun.ros.cdk.threatdetection.RosAntiBruteForceRuleProps
+@alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRules=com.aliyun.ros.cdk.threatdetection.datasource.AntiBruteForceRules
+@alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRulesProps=com.aliyun.ros.cdk.threatdetection.datasource.AntiBruteForceRulesProps
+@alicloud/ros-cdk-threatdetection.datasource.RosAntiBruteForceRules=com.aliyun.ros.cdk.threatdetection.datasource.RosAntiBruteForceRules
+@alicloud/ros-cdk-threatdetection.datasource.RosAntiBruteForceRulesProps=com.aliyun.ros.cdk.threatdetection.datasource.RosAntiBruteForceRulesProps

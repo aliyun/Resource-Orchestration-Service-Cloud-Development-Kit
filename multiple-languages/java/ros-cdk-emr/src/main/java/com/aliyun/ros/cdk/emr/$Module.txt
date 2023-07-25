@@ -32,3 +32,7 @@
 @alicloud/ros-cdk-emr.RosClusterServiceConfigsProps=com.aliyun.ros.cdk.emr.RosClusterServiceConfigsProps
 @alicloud/ros-cdk-emr.RosFlowProject=com.aliyun.ros.cdk.emr.RosFlowProject
 @alicloud/ros-cdk-emr.RosFlowProjectProps=com.aliyun.ros.cdk.emr.RosFlowProjectProps
+@alicloud/ros-cdk-emr.datasource.FlowProjects=com.aliyun.ros.cdk.emr.datasource.FlowProjects
+@alicloud/ros-cdk-emr.datasource.FlowProjectsProps=com.aliyun.ros.cdk.emr.datasource.FlowProjectsProps
+@alicloud/ros-cdk-emr.datasource.RosFlowProjects=com.aliyun.ros.cdk.emr.datasource.RosFlowProjects
+@alicloud/ros-cdk-emr.datasource.RosFlowProjectsProps=com.aliyun.ros.cdk.emr.datasource.RosFlowProjectsProps

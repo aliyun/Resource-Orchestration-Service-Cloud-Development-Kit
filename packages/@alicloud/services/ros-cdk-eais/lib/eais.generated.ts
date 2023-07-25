@@ -3,6 +3,130 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::EAIS::ClientInstanceAttachment`
+ */
+export interface RosClientInstanceAttachmentProps {
+
+    /**
+     * @Property clientInstanceId: The ID of the ECS or ECI instance bound to the EAIS instance.
+     */
+    readonly clientInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The EAIS instance ID.
+     */
+    readonly instanceId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosClientInstanceAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosClientInstanceAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosClientInstanceAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('clientInstanceId', ros.requiredValidator)(properties.clientInstanceId));
+    errors.collect(ros.propertyValidator('clientInstanceId', ros.validateString)(properties.clientInstanceId));
+    return errors.wrap('supplied properties not correct for "RosClientInstanceAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EAIS::ClientInstanceAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosClientInstanceAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EAIS::ClientInstanceAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosClientInstanceAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosClientInstanceAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ClientInstanceId: ros.stringToRosTemplate(properties.clientInstanceId),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::EAIS::ClientInstanceAttachment`
+ */
+export class RosClientInstanceAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EAIS::ClientInstanceAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ClientInstanceId: The ID of the ECS or ECI instance bound to the EAIS instance.
+     */
+    public readonly attrClientInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The EAIS instance ID.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: Switch ID.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clientInstanceId: The ID of the ECS or ECI instance bound to the EAIS instance.
+     */
+    public clientInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The EAIS instance ID.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::EAIS::ClientInstanceAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosClientInstanceAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosClientInstanceAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrClientInstanceId = this.getAtt('ClientInstanceId');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clientInstanceId = props.clientInstanceId;
+        this.instanceId = props.instanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clientInstanceId: this.clientInstanceId,
+            instanceId: this.instanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosClientInstanceAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::EAIS::Instance`
  */
 export interface RosInstanceProps {

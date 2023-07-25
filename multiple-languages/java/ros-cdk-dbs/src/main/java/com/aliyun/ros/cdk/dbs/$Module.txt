@@ -2,3 +2,7 @@
 @alicloud/ros-cdk-dbs.RestoreTaskProps=com.aliyun.ros.cdk.dbs.RestoreTaskProps
 @alicloud/ros-cdk-dbs.RosRestoreTask=com.aliyun.ros.cdk.dbs.RosRestoreTask
 @alicloud/ros-cdk-dbs.RosRestoreTaskProps=com.aliyun.ros.cdk.dbs.RosRestoreTaskProps
+@alicloud/ros-cdk-dbs.datasource.BackupPlans=com.aliyun.ros.cdk.dbs.datasource.BackupPlans
+@alicloud/ros-cdk-dbs.datasource.BackupPlansProps=com.aliyun.ros.cdk.dbs.datasource.BackupPlansProps
+@alicloud/ros-cdk-dbs.datasource.RosBackupPlans=com.aliyun.ros.cdk.dbs.datasource.RosBackupPlans
+@alicloud/ros-cdk-dbs.datasource.RosBackupPlansProps=com.aliyun.ros.cdk.dbs.datasource.RosBackupPlansProps

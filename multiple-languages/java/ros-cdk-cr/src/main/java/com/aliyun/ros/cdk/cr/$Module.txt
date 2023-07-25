@@ -20,3 +20,15 @@
 @alicloud/ros-cdk-cr.RosUserInfoProps=com.aliyun.ros.cdk.cr.RosUserInfoProps
 @alicloud/ros-cdk-cr.UserInfo=com.aliyun.ros.cdk.cr.UserInfo
 @alicloud/ros-cdk-cr.UserInfoProps=com.aliyun.ros.cdk.cr.UserInfoProps
+@alicloud/ros-cdk-cr.datasource.Instances=com.aliyun.ros.cdk.cr.datasource.Instances
+@alicloud/ros-cdk-cr.datasource.InstancesProps=com.aliyun.ros.cdk.cr.datasource.InstancesProps
+@alicloud/ros-cdk-cr.datasource.Namespaces=com.aliyun.ros.cdk.cr.datasource.Namespaces
+@alicloud/ros-cdk-cr.datasource.NamespacesProps=com.aliyun.ros.cdk.cr.datasource.NamespacesProps
+@alicloud/ros-cdk-cr.datasource.Repositories=com.aliyun.ros.cdk.cr.datasource.Repositories
+@alicloud/ros-cdk-cr.datasource.RepositoriesProps=com.aliyun.ros.cdk.cr.datasource.RepositoriesProps
+@alicloud/ros-cdk-cr.datasource.RosInstances=com.aliyun.ros.cdk.cr.datasource.RosInstances
+@alicloud/ros-cdk-cr.datasource.RosInstancesProps=com.aliyun.ros.cdk.cr.datasource.RosInstancesProps
+@alicloud/ros-cdk-cr.datasource.RosNamespaces=com.aliyun.ros.cdk.cr.datasource.RosNamespaces
+@alicloud/ros-cdk-cr.datasource.RosNamespacesProps=com.aliyun.ros.cdk.cr.datasource.RosNamespacesProps
+@alicloud/ros-cdk-cr.datasource.RosRepositories=com.aliyun.ros.cdk.cr.datasource.RosRepositories
+@alicloud/ros-cdk-cr.datasource.RosRepositoriesProps=com.aliyun.ros.cdk.cr.datasource.RosRepositoriesProps
