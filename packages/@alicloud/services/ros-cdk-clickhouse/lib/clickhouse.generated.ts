@@ -8,7 +8,9 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosDBClusterProps {
 
     /**
-     * @Property category: Series, value: Basic: Basic version
+     * @Property category: The edition of the cluster. Valid values:
+     * Basic: Single-replica Edition
+     * HighAvailability: Double-replica Edition
      */
     readonly category: string | ros.IResolvable;
 
@@ -18,7 +20,21 @@ export interface RosDBClusterProps {
     readonly dbClusterNetworkType: string | ros.IResolvable;
 
     /**
-     * @Property dbClusterType: Cluster instance type, value:  Common: normal instance;  Readonly: read-only instance; Guard: disaster recovery instance
+     * @Property dbClusterType: The specification of the cluster.
+     * If the cluster is of the Single-replica Edition, the following values are valid:
+     * S4: 4 cores, 16 GB.
+     * S8: 8 cores, 32 GB.
+     * S16: 16 cores, 64 GB.
+     * S32: 32 cores, 128 GB.
+     * S64: 64 cores, 256 GB.
+     * S104: 104 cores, 384 GB.
+     * If the cluster is of the Double-replica Edition, the following values are valid:
+     * C4: 4 cores, 16 GB.
+     * C8: 8 cores, 32 GB.
+     * C16: 16 cores, 64 GB.
+     * C32: 32 cores, 128 GB.
+     * C64: 64 cores, 256 GB.
+     * C104: 104 cores, 384 GB.
      */
     readonly dbClusterType: string | ros.IResolvable;
 
@@ -28,12 +44,15 @@ export interface RosDBClusterProps {
     readonly dbClusterVersion: string | ros.IResolvable;
 
     /**
-     * @Property dbNodeCount: Number of node groups
+     * @Property dbNodeCount: The number of nodes.
+     * If the cluster is of the Single-replica Edition, the value ranges from 1 to 48.
+     * If the cluster is of the Double-replica Edition, the value ranges from 1 to 24.
      */
     readonly dbNodeCount: number | ros.IResolvable;
 
     /**
-     * @Property dbNodeStorage: DBNodeStorage
+     * @Property dbNodeStorage: The storage capacity of a single node. Valid values: 100 to 32000. Unit: GB.
+     * Note self value is a multiple of 100.
      */
     readonly dbNodeStorage: number | ros.IResolvable;
 
@@ -50,7 +69,7 @@ export interface RosDBClusterProps {
     readonly paymentType: string | ros.IResolvable;
 
     /**
-     * @Property dbClusterDescription: DBClusterDescription
+     * @Property dbClusterDescription: The description of the cluster.
      */
     readonly dbClusterDescription?: string | ros.IResolvable;
 
@@ -111,6 +130,13 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.dbClusterDescription && (Array.isArray(properties.dbClusterDescription) || (typeof properties.dbClusterDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('dbClusterDescription', ros.validateLength)({
+            data: properties.dbClusterDescription.length,
+            min: 2,
+            max: 256,
+          }));
+    }
     errors.collect(ros.propertyValidator('dbClusterDescription', ros.validateString)(properties.dbClusterDescription));
     errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
     errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
@@ -199,7 +225,7 @@ export class RosDBCluster extends ros.RosResource {
     public readonly attrBid: ros.IResolvable;
 
     /**
-     * @Attribute Category: Series, value: Basic: Basic version
+     * @Attribute Category: The edition of the cluster.
      */
     public readonly attrCategory: ros.IResolvable;
 
@@ -214,7 +240,7 @@ export class RosDBCluster extends ros.RosResource {
     public readonly attrConnectionString: ros.IResolvable;
 
     /**
-     * @Attribute DBClusterDescription: DBClusterDescription
+     * @Attribute DBClusterDescription: The description of the cluster.
      */
     public readonly attrDbClusterDescription: ros.IResolvable;
 
@@ -229,7 +255,7 @@ export class RosDBCluster extends ros.RosResource {
     public readonly attrDbClusterNetworkType: ros.IResolvable;
 
     /**
-     * @Attribute DBClusterType: Cluster instance type, value:  Common: normal instance;  Readonly: read-only instance; Guard: disaster recovery instance
+     * @Attribute DBClusterType: The specification of the cluster.
      */
     public readonly attrDbClusterType: ros.IResolvable;
 
@@ -244,12 +270,12 @@ export class RosDBCluster extends ros.RosResource {
     public readonly attrDbNodeClass: ros.IResolvable;
 
     /**
-     * @Attribute DBNodeCount: Number of node groups
+     * @Attribute DBNodeCount: The number of nodes.
      */
     public readonly attrDbNodeCount: ros.IResolvable;
 
     /**
-     * @Attribute DBNodeStorage: DBNodeStorage
+     * @Attribute DBNodeStorage: The storage capacity of a single node.
      */
     public readonly attrDbNodeStorage: ros.IResolvable;
 
@@ -347,7 +373,9 @@ export class RosDBCluster extends ros.RosResource {
 
 
     /**
-     * @Property category: Series, value: Basic: Basic version
+     * @Property category: The edition of the cluster. Valid values:
+     * Basic: Single-replica Edition
+     * HighAvailability: Double-replica Edition
      */
     public category: string | ros.IResolvable;
 
@@ -357,7 +385,21 @@ export class RosDBCluster extends ros.RosResource {
     public dbClusterNetworkType: string | ros.IResolvable;
 
     /**
-     * @Property dbClusterType: Cluster instance type, value:  Common: normal instance;  Readonly: read-only instance; Guard: disaster recovery instance
+     * @Property dbClusterType: The specification of the cluster.
+     * If the cluster is of the Single-replica Edition, the following values are valid:
+     * S4: 4 cores, 16 GB.
+     * S8: 8 cores, 32 GB.
+     * S16: 16 cores, 64 GB.
+     * S32: 32 cores, 128 GB.
+     * S64: 64 cores, 256 GB.
+     * S104: 104 cores, 384 GB.
+     * If the cluster is of the Double-replica Edition, the following values are valid:
+     * C4: 4 cores, 16 GB.
+     * C8: 8 cores, 32 GB.
+     * C16: 16 cores, 64 GB.
+     * C32: 32 cores, 128 GB.
+     * C64: 64 cores, 256 GB.
+     * C104: 104 cores, 384 GB.
      */
     public dbClusterType: string | ros.IResolvable;
 
@@ -367,12 +409,15 @@ export class RosDBCluster extends ros.RosResource {
     public dbClusterVersion: string | ros.IResolvable;
 
     /**
-     * @Property dbNodeCount: Number of node groups
+     * @Property dbNodeCount: The number of nodes.
+     * If the cluster is of the Single-replica Edition, the value ranges from 1 to 48.
+     * If the cluster is of the Double-replica Edition, the value ranges from 1 to 24.
      */
     public dbNodeCount: number | ros.IResolvable;
 
     /**
-     * @Property dbNodeStorage: DBNodeStorage
+     * @Property dbNodeStorage: The storage capacity of a single node. Valid values: 100 to 32000. Unit: GB.
+     * Note self value is a multiple of 100.
      */
     public dbNodeStorage: number | ros.IResolvable;
 
@@ -389,7 +434,7 @@ export class RosDBCluster extends ros.RosResource {
     public paymentType: string | ros.IResolvable;
 
     /**
-     * @Property dbClusterDescription: DBClusterDescription
+     * @Property dbClusterDescription: The description of the cluster.
      */
     public dbClusterDescription: string | ros.IResolvable | undefined;
 

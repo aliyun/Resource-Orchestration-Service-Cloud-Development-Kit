@@ -12,5 +12,4 @@ export * from './vservergroup';
 
 // ALIYUN::SLB Resources:
 export * from './slb.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

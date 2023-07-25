@@ -858,7 +858,7 @@ export class RosAppUser extends ros.RosResource {
     public readonly attrSmartAgId: ros.IResolvable;
 
     /**
-     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7fa866ffab50>
+     * @Attribute UserName: <heat.engine.properties.Schema object at 0x7ff887c8ec10>
      */
     public readonly attrUserName: ros.IResolvable;
 

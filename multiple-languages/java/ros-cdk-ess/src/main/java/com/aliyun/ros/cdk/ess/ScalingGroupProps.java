@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a <code>ALIYUN::ESS::ScalingGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.080Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.307Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingGroupProps.Jsii$Proxy.class)
 public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,36 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getMinSize();
 
     /**
+     * Property allocationStrategy: The allocation policy of instances.
+     * <p>
+     * Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * <p>
+     * <ul>
+     * <li>priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.</li>
+     * <li>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+     * Default value: priority.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAllocationStrategy() {
+        return null;
+    }
+
+    /**
+     * Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones.
+     * <p>
+     * This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * <p>
+     * <ul>
+     * <li>true</li>
+     * <li>false
+     * Default value: false.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAzBalance() {
+        return null;
+    }
+
+    /**
      * Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources.
      * <p>
      * This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
@@ -36,6 +66,15 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
      * Property containerGroupId: The ID of the elastic container instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getContainerGroupId() {
+        return null;
+    }
+
+    /**
+     * Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function).
+     * <p>
+     * This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCustomPolicyArn() {
         return null;
     }
 
@@ -112,6 +151,15 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     * Property launchTemplateOverrides: You can specify up to 10 overrides.
+     * <p>
+     * Note: This parameter takes effect only if you specify LaunchTemplateId.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateOverrides() {
+        return null;
+    }
+
+    /**
      * Property launchTemplateVersion: The version of the instance launch template.
      * <p>
      * Valid values:
@@ -133,14 +181,28 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     * Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group.
+     * <p>
+     * Unit: seconds.
+     * Valid values: 86400 to the value of Integer.maxValue.
+     * Default value: null.
+     * Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaxInstanceLifetime() {
+        return null;
+    }
+
+    /**
      * Property multiAzPolicy: ECS scaling strategy for multi availability zone.
      * <p>
      * Allow value:
      * <p>
      * <ol>
      * <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
-     * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+     * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
+     * <li>COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
      * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.</li>
+     * <li>COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.</li>
      * </ol>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMultiAzPolicy() {
@@ -158,6 +220,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
      * Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group.
      * <p>
      * Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+     * If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOnDemandBaseCapacity() {
         return null;
@@ -167,6 +230,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
      * Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group.
      * <p>
      * This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+     * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOnDemandPercentageAboveBaseCapacity() {
         return null;
@@ -183,10 +247,17 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
      * Property removalPolicys: Policy for removing ECS instances from the scaling group.
      * <p>
      * Optional values:
-     * OldestInstance: removes the first ECS instance attached to the scaling group.
-     * NewestInstance: removes the first ECS instance attached to the scaling group.
-     * OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-     * Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+     * <p>
+     * <ul>
+     * <li>OldestInstance: removes the first ECS instance attached to the scaling group.</li>
+     * <li>NewestInstance: removes the first ECS instance attached to the scaling group.</li>
+     * <li>OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.</li>
+     * <li>CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+     * You can enter up to three removal policies.
+     * You cannot set any item of RemovalPolicys to the same value.
+     * The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+     * Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRemovalPolicys() {
         return null;
@@ -215,9 +286,25 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
+     * Property spotAllocationStrategy: The allocation policy of preemptible instances.
+     * <p>
+     * You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+     * <p>
+     * <ul>
+     * <li>priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.</li>
+     * <li>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+     * Default value: priority.</li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotAllocationStrategy() {
+        return null;
+    }
+
+    /**
      * Property spotInstancePools: The number of instance types that are available.
      * <p>
      * The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+     * If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSpotInstancePools() {
         return null;
@@ -274,8 +361,11 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
     public static final class Builder implements software.amazon.jsii.Builder<ScalingGroupProps> {
         java.lang.Object maxSize;
         java.lang.Object minSize;
+        java.lang.Object allocationStrategy;
+        java.lang.Object azBalance;
         java.lang.Object compensateWithOnDemand;
         java.lang.Object containerGroupId;
+        java.lang.Object customPolicyArn;
         java.lang.Object dbInstanceIds;
         java.lang.Object defaultCooldown;
         java.lang.Object desiredCapacity;
@@ -284,8 +374,10 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object healthCheckType;
         java.lang.Object instanceId;
         java.lang.Object launchTemplateId;
+        java.lang.Object launchTemplateOverrides;
         java.lang.Object launchTemplateVersion;
         java.lang.Object loadBalancerIds;
+        java.lang.Object maxInstanceLifetime;
         java.lang.Object multiAzPolicy;
         java.lang.Object notificationConfigurations;
         java.lang.Object onDemandBaseCapacity;
@@ -294,6 +386,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object removalPolicys;
         java.lang.Object scalingGroupName;
         java.lang.Object scalingPolicy;
+        java.lang.Object spotAllocationStrategy;
         java.lang.Object spotInstancePools;
         java.lang.Object spotInstanceRemedy;
         java.lang.Object standbyInstances;
@@ -346,6 +439,74 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getAllocationStrategy}
+         * @param allocationStrategy Property allocationStrategy: The allocation policy of instances.
+         *                           Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.</li>
+         *                           <li>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+         *                           Default value: priority.</li>
+         *                           </ul>
+         * @return {@code this}
+         */
+        public Builder allocationStrategy(java.lang.String allocationStrategy) {
+            this.allocationStrategy = allocationStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingGroupProps#getAllocationStrategy}
+         * @param allocationStrategy Property allocationStrategy: The allocation policy of instances.
+         *                           Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.</li>
+         *                           <li>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+         *                           Default value: priority.</li>
+         *                           </ul>
+         * @return {@code this}
+         */
+        public Builder allocationStrategy(com.aliyun.ros.cdk.core.IResolvable allocationStrategy) {
+            this.allocationStrategy = allocationStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingGroupProps#getAzBalance}
+         * @param azBalance Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones.
+         *                  This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true</li>
+         *                  <li>false
+         *                  Default value: false.</li>
+         *                  </ul>
+         * @return {@code this}
+         */
+        public Builder azBalance(java.lang.Boolean azBalance) {
+            this.azBalance = azBalance;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingGroupProps#getAzBalance}
+         * @param azBalance Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones.
+         *                  This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true</li>
+         *                  <li>false
+         *                  Default value: false.</li>
+         *                  </ul>
+         * @return {@code this}
+         */
+        public Builder azBalance(com.aliyun.ros.cdk.core.IResolvable azBalance) {
+            this.azBalance = azBalance;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getCompensateWithOnDemand}
          * @param compensateWithOnDemand Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources.
          *                               This parameter takes effect only when MultiAZPolicy is set to COST_OPTIMIZED.
@@ -386,6 +547,28 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder containerGroupId(com.aliyun.ros.cdk.core.IResolvable containerGroupId) {
             this.containerGroupId = containerGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingGroupProps#getCustomPolicyArn}
+         * @param customPolicyArn Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function).
+         *                        This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+         * @return {@code this}
+         */
+        public Builder customPolicyArn(java.lang.String customPolicyArn) {
+            this.customPolicyArn = customPolicyArn;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingGroupProps#getCustomPolicyArn}
+         * @param customPolicyArn Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function).
+         *                        This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+         * @return {@code this}
+         */
+        public Builder customPolicyArn(com.aliyun.ros.cdk.core.IResolvable customPolicyArn) {
+            this.customPolicyArn = customPolicyArn;
             return this;
         }
 
@@ -570,6 +753,28 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getLaunchTemplateOverrides}
+         * @param launchTemplateOverrides Property launchTemplateOverrides: You can specify up to 10 overrides.
+         *                                Note: This parameter takes effect only if you specify LaunchTemplateId.
+         * @return {@code this}
+         */
+        public Builder launchTemplateOverrides(com.aliyun.ros.cdk.core.IResolvable launchTemplateOverrides) {
+            this.launchTemplateOverrides = launchTemplateOverrides;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingGroupProps#getLaunchTemplateOverrides}
+         * @param launchTemplateOverrides Property launchTemplateOverrides: You can specify up to 10 overrides.
+         *                                Note: This parameter takes effect only if you specify LaunchTemplateId.
+         * @return {@code this}
+         */
+        public Builder launchTemplateOverrides(java.util.List<? extends java.lang.Object> launchTemplateOverrides) {
+            this.launchTemplateOverrides = launchTemplateOverrides;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getLaunchTemplateVersion}
          * @param launchTemplateVersion Property launchTemplateVersion: The version of the instance launch template.
          *                              Valid values:
@@ -620,14 +825,44 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getMaxInstanceLifetime}
+         * @param maxInstanceLifetime Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group.
+         *                            Unit: seconds.
+         *                            Valid values: 86400 to the value of Integer.maxValue.
+         *                            Default value: null.
+         *                            Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+         * @return {@code this}
+         */
+        public Builder maxInstanceLifetime(java.lang.Number maxInstanceLifetime) {
+            this.maxInstanceLifetime = maxInstanceLifetime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingGroupProps#getMaxInstanceLifetime}
+         * @param maxInstanceLifetime Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group.
+         *                            Unit: seconds.
+         *                            Valid values: 86400 to the value of Integer.maxValue.
+         *                            Default value: null.
+         *                            Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+         * @return {@code this}
+         */
+        public Builder maxInstanceLifetime(com.aliyun.ros.cdk.core.IResolvable maxInstanceLifetime) {
+            this.maxInstanceLifetime = maxInstanceLifetime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getMultiAzPolicy}
          * @param multiAzPolicy Property multiAzPolicy: ECS scaling strategy for multi availability zone.
          *                      Allow value:
          *                      <p>
          *                      <ol>
          *                      <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
-         *                      <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+         *                      <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
+         *                      <li>COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
          *                      Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.</li>
+         *                      <li>COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.</li>
          *                      </ol>
          * @return {@code this}
          */
@@ -643,8 +878,10 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          *                      <p>
          *                      <ol>
          *                      <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
-         *                      <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+         *                      <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
+         *                      <li>COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
          *                      Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.</li>
+         *                      <li>COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.</li>
          *                      </ol>
          * @return {@code this}
          */
@@ -677,6 +914,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link ScalingGroupProps#getOnDemandBaseCapacity}
          * @param onDemandBaseCapacity Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group.
          *                             Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+         *                             If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
          * @return {@code this}
          */
         public Builder onDemandBaseCapacity(java.lang.Number onDemandBaseCapacity) {
@@ -688,6 +926,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link ScalingGroupProps#getOnDemandBaseCapacity}
          * @param onDemandBaseCapacity Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group.
          *                             Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+         *                             If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
          * @return {@code this}
          */
         public Builder onDemandBaseCapacity(com.aliyun.ros.cdk.core.IResolvable onDemandBaseCapacity) {
@@ -699,6 +938,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link ScalingGroupProps#getOnDemandPercentageAboveBaseCapacity}
          * @param onDemandPercentageAboveBaseCapacity Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group.
          *                                            This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+         *                                            If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
          * @return {@code this}
          */
         public Builder onDemandPercentageAboveBaseCapacity(java.lang.Number onDemandPercentageAboveBaseCapacity) {
@@ -710,6 +950,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link ScalingGroupProps#getOnDemandPercentageAboveBaseCapacity}
          * @param onDemandPercentageAboveBaseCapacity Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group.
          *                                            This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+         *                                            If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
          * @return {@code this}
          */
         public Builder onDemandPercentageAboveBaseCapacity(com.aliyun.ros.cdk.core.IResolvable onDemandPercentageAboveBaseCapacity) {
@@ -741,10 +982,17 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link ScalingGroupProps#getRemovalPolicys}
          * @param removalPolicys Property removalPolicys: Policy for removing ECS instances from the scaling group.
          *                       Optional values:
-         *                       OldestInstance: removes the first ECS instance attached to the scaling group.
-         *                       NewestInstance: removes the first ECS instance attached to the scaling group.
-         *                       OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-         *                       Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+         *                       <p>
+         *                       <ul>
+         *                       <li>OldestInstance: removes the first ECS instance attached to the scaling group.</li>
+         *                       <li>NewestInstance: removes the first ECS instance attached to the scaling group.</li>
+         *                       <li>OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.</li>
+         *                       <li>CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+         *                       You can enter up to three removal policies.
+         *                       You cannot set any item of RemovalPolicys to the same value.
+         *                       The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+         *                       Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder removalPolicys(java.util.List<? extends java.lang.Object> removalPolicys) {
@@ -756,10 +1004,17 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link ScalingGroupProps#getRemovalPolicys}
          * @param removalPolicys Property removalPolicys: Policy for removing ECS instances from the scaling group.
          *                       Optional values:
-         *                       OldestInstance: removes the first ECS instance attached to the scaling group.
-         *                       NewestInstance: removes the first ECS instance attached to the scaling group.
-         *                       OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-         *                       Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+         *                       <p>
+         *                       <ul>
+         *                       <li>OldestInstance: removes the first ECS instance attached to the scaling group.</li>
+         *                       <li>NewestInstance: removes the first ECS instance attached to the scaling group.</li>
+         *                       <li>OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.</li>
+         *                       <li>CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+         *                       You can enter up to three removal policies.
+         *                       You cannot set any item of RemovalPolicys to the same value.
+         *                       The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+         *                       Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder removalPolicys(com.aliyun.ros.cdk.core.IResolvable removalPolicys) {
@@ -820,9 +1075,44 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getSpotAllocationStrategy}
+         * @param spotAllocationStrategy Property spotAllocationStrategy: The allocation policy of preemptible instances.
+         *                               You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         *                               <p>
+         *                               <ul>
+         *                               <li>priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.</li>
+         *                               <li>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+         *                               Default value: priority.</li>
+         *                               </ul>
+         * @return {@code this}
+         */
+        public Builder spotAllocationStrategy(java.lang.String spotAllocationStrategy) {
+            this.spotAllocationStrategy = spotAllocationStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ScalingGroupProps#getSpotAllocationStrategy}
+         * @param spotAllocationStrategy Property spotAllocationStrategy: The allocation policy of preemptible instances.
+         *                               You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+         *                               <p>
+         *                               <ul>
+         *                               <li>priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.</li>
+         *                               <li>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+         *                               Default value: priority.</li>
+         *                               </ul>
+         * @return {@code this}
+         */
+        public Builder spotAllocationStrategy(com.aliyun.ros.cdk.core.IResolvable spotAllocationStrategy) {
+            this.spotAllocationStrategy = spotAllocationStrategy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getSpotInstancePools}
          * @param spotInstancePools Property spotInstancePools: The number of instance types that are available.
          *                          The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+         *                          If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
          * @return {@code this}
          */
         public Builder spotInstancePools(java.lang.Number spotInstancePools) {
@@ -834,6 +1124,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          * Sets the value of {@link ScalingGroupProps#getSpotInstancePools}
          * @param spotInstancePools Property spotInstancePools: The number of instance types that are available.
          *                          The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+         *                          If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
          * @return {@code this}
          */
         public Builder spotInstancePools(com.aliyun.ros.cdk.core.IResolvable spotInstancePools) {
@@ -953,8 +1244,11 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScalingGroupProps {
         private final java.lang.Object maxSize;
         private final java.lang.Object minSize;
+        private final java.lang.Object allocationStrategy;
+        private final java.lang.Object azBalance;
         private final java.lang.Object compensateWithOnDemand;
         private final java.lang.Object containerGroupId;
+        private final java.lang.Object customPolicyArn;
         private final java.lang.Object dbInstanceIds;
         private final java.lang.Object defaultCooldown;
         private final java.lang.Object desiredCapacity;
@@ -963,8 +1257,10 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object healthCheckType;
         private final java.lang.Object instanceId;
         private final java.lang.Object launchTemplateId;
+        private final java.lang.Object launchTemplateOverrides;
         private final java.lang.Object launchTemplateVersion;
         private final java.lang.Object loadBalancerIds;
+        private final java.lang.Object maxInstanceLifetime;
         private final java.lang.Object multiAzPolicy;
         private final java.lang.Object notificationConfigurations;
         private final java.lang.Object onDemandBaseCapacity;
@@ -973,6 +1269,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object removalPolicys;
         private final java.lang.Object scalingGroupName;
         private final java.lang.Object scalingPolicy;
+        private final java.lang.Object spotAllocationStrategy;
         private final java.lang.Object spotInstancePools;
         private final java.lang.Object spotInstanceRemedy;
         private final java.lang.Object standbyInstances;
@@ -988,8 +1285,11 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             super(objRef);
             this.maxSize = software.amazon.jsii.Kernel.get(this, "maxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.minSize = software.amazon.jsii.Kernel.get(this, "minSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.allocationStrategy = software.amazon.jsii.Kernel.get(this, "allocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.azBalance = software.amazon.jsii.Kernel.get(this, "azBalance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.compensateWithOnDemand = software.amazon.jsii.Kernel.get(this, "compensateWithOnDemand", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerGroupId = software.amazon.jsii.Kernel.get(this, "containerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.customPolicyArn = software.amazon.jsii.Kernel.get(this, "customPolicyArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceIds = software.amazon.jsii.Kernel.get(this, "dbInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultCooldown = software.amazon.jsii.Kernel.get(this, "defaultCooldown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.desiredCapacity = software.amazon.jsii.Kernel.get(this, "desiredCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -998,8 +1298,10 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             this.healthCheckType = software.amazon.jsii.Kernel.get(this, "healthCheckType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchTemplateOverrides = software.amazon.jsii.Kernel.get(this, "launchTemplateOverrides", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerIds = software.amazon.jsii.Kernel.get(this, "loadBalancerIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxInstanceLifetime = software.amazon.jsii.Kernel.get(this, "maxInstanceLifetime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.multiAzPolicy = software.amazon.jsii.Kernel.get(this, "multiAzPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.notificationConfigurations = software.amazon.jsii.Kernel.get(this, "notificationConfigurations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.onDemandBaseCapacity = software.amazon.jsii.Kernel.get(this, "onDemandBaseCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1008,6 +1310,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             this.removalPolicys = software.amazon.jsii.Kernel.get(this, "removalPolicys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingGroupName = software.amazon.jsii.Kernel.get(this, "scalingGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scalingPolicy = software.amazon.jsii.Kernel.get(this, "scalingPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotAllocationStrategy = software.amazon.jsii.Kernel.get(this, "spotAllocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotInstancePools = software.amazon.jsii.Kernel.get(this, "spotInstancePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotInstanceRemedy = software.amazon.jsii.Kernel.get(this, "spotInstanceRemedy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.standbyInstances = software.amazon.jsii.Kernel.get(this, "standbyInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1024,8 +1327,11 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.maxSize = java.util.Objects.requireNonNull(builder.maxSize, "maxSize is required");
             this.minSize = java.util.Objects.requireNonNull(builder.minSize, "minSize is required");
+            this.allocationStrategy = builder.allocationStrategy;
+            this.azBalance = builder.azBalance;
             this.compensateWithOnDemand = builder.compensateWithOnDemand;
             this.containerGroupId = builder.containerGroupId;
+            this.customPolicyArn = builder.customPolicyArn;
             this.dbInstanceIds = builder.dbInstanceIds;
             this.defaultCooldown = builder.defaultCooldown;
             this.desiredCapacity = builder.desiredCapacity;
@@ -1034,8 +1340,10 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             this.healthCheckType = builder.healthCheckType;
             this.instanceId = builder.instanceId;
             this.launchTemplateId = builder.launchTemplateId;
+            this.launchTemplateOverrides = builder.launchTemplateOverrides;
             this.launchTemplateVersion = builder.launchTemplateVersion;
             this.loadBalancerIds = builder.loadBalancerIds;
+            this.maxInstanceLifetime = builder.maxInstanceLifetime;
             this.multiAzPolicy = builder.multiAzPolicy;
             this.notificationConfigurations = builder.notificationConfigurations;
             this.onDemandBaseCapacity = builder.onDemandBaseCapacity;
@@ -1044,6 +1352,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             this.removalPolicys = builder.removalPolicys;
             this.scalingGroupName = builder.scalingGroupName;
             this.scalingPolicy = builder.scalingPolicy;
+            this.spotAllocationStrategy = builder.spotAllocationStrategy;
             this.spotInstancePools = builder.spotInstancePools;
             this.spotInstanceRemedy = builder.spotInstanceRemedy;
             this.standbyInstances = builder.standbyInstances;
@@ -1063,6 +1372,16 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getAllocationStrategy() {
+            return this.allocationStrategy;
+        }
+
+        @Override
+        public final java.lang.Object getAzBalance() {
+            return this.azBalance;
+        }
+
+        @Override
         public final java.lang.Object getCompensateWithOnDemand() {
             return this.compensateWithOnDemand;
         }
@@ -1070,6 +1389,11 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getContainerGroupId() {
             return this.containerGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getCustomPolicyArn() {
+            return this.customPolicyArn;
         }
 
         @Override
@@ -1113,6 +1437,11 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getLaunchTemplateOverrides() {
+            return this.launchTemplateOverrides;
+        }
+
+        @Override
         public final java.lang.Object getLaunchTemplateVersion() {
             return this.launchTemplateVersion;
         }
@@ -1120,6 +1449,11 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getLoadBalancerIds() {
             return this.loadBalancerIds;
+        }
+
+        @Override
+        public final java.lang.Object getMaxInstanceLifetime() {
+            return this.maxInstanceLifetime;
         }
 
         @Override
@@ -1163,6 +1497,11 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getSpotAllocationStrategy() {
+            return this.spotAllocationStrategy;
+        }
+
+        @Override
         public final java.lang.Object getSpotInstancePools() {
             return this.spotInstancePools;
         }
@@ -1200,11 +1539,20 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
             data.set("maxSize", om.valueToTree(this.getMaxSize()));
             data.set("minSize", om.valueToTree(this.getMinSize()));
+            if (this.getAllocationStrategy() != null) {
+                data.set("allocationStrategy", om.valueToTree(this.getAllocationStrategy()));
+            }
+            if (this.getAzBalance() != null) {
+                data.set("azBalance", om.valueToTree(this.getAzBalance()));
+            }
             if (this.getCompensateWithOnDemand() != null) {
                 data.set("compensateWithOnDemand", om.valueToTree(this.getCompensateWithOnDemand()));
             }
             if (this.getContainerGroupId() != null) {
                 data.set("containerGroupId", om.valueToTree(this.getContainerGroupId()));
+            }
+            if (this.getCustomPolicyArn() != null) {
+                data.set("customPolicyArn", om.valueToTree(this.getCustomPolicyArn()));
             }
             if (this.getDbInstanceIds() != null) {
                 data.set("dbInstanceIds", om.valueToTree(this.getDbInstanceIds()));
@@ -1230,11 +1578,17 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             if (this.getLaunchTemplateId() != null) {
                 data.set("launchTemplateId", om.valueToTree(this.getLaunchTemplateId()));
             }
+            if (this.getLaunchTemplateOverrides() != null) {
+                data.set("launchTemplateOverrides", om.valueToTree(this.getLaunchTemplateOverrides()));
+            }
             if (this.getLaunchTemplateVersion() != null) {
                 data.set("launchTemplateVersion", om.valueToTree(this.getLaunchTemplateVersion()));
             }
             if (this.getLoadBalancerIds() != null) {
                 data.set("loadBalancerIds", om.valueToTree(this.getLoadBalancerIds()));
+            }
+            if (this.getMaxInstanceLifetime() != null) {
+                data.set("maxInstanceLifetime", om.valueToTree(this.getMaxInstanceLifetime()));
             }
             if (this.getMultiAzPolicy() != null) {
                 data.set("multiAzPolicy", om.valueToTree(this.getMultiAzPolicy()));
@@ -1259,6 +1613,9 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getScalingPolicy() != null) {
                 data.set("scalingPolicy", om.valueToTree(this.getScalingPolicy()));
+            }
+            if (this.getSpotAllocationStrategy() != null) {
+                data.set("spotAllocationStrategy", om.valueToTree(this.getSpotAllocationStrategy()));
             }
             if (this.getSpotInstancePools() != null) {
                 data.set("spotInstancePools", om.valueToTree(this.getSpotInstancePools()));
@@ -1298,8 +1655,11 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
             if (!maxSize.equals(that.maxSize)) return false;
             if (!minSize.equals(that.minSize)) return false;
+            if (this.allocationStrategy != null ? !this.allocationStrategy.equals(that.allocationStrategy) : that.allocationStrategy != null) return false;
+            if (this.azBalance != null ? !this.azBalance.equals(that.azBalance) : that.azBalance != null) return false;
             if (this.compensateWithOnDemand != null ? !this.compensateWithOnDemand.equals(that.compensateWithOnDemand) : that.compensateWithOnDemand != null) return false;
             if (this.containerGroupId != null ? !this.containerGroupId.equals(that.containerGroupId) : that.containerGroupId != null) return false;
+            if (this.customPolicyArn != null ? !this.customPolicyArn.equals(that.customPolicyArn) : that.customPolicyArn != null) return false;
             if (this.dbInstanceIds != null ? !this.dbInstanceIds.equals(that.dbInstanceIds) : that.dbInstanceIds != null) return false;
             if (this.defaultCooldown != null ? !this.defaultCooldown.equals(that.defaultCooldown) : that.defaultCooldown != null) return false;
             if (this.desiredCapacity != null ? !this.desiredCapacity.equals(that.desiredCapacity) : that.desiredCapacity != null) return false;
@@ -1308,8 +1668,10 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             if (this.healthCheckType != null ? !this.healthCheckType.equals(that.healthCheckType) : that.healthCheckType != null) return false;
             if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.launchTemplateId != null ? !this.launchTemplateId.equals(that.launchTemplateId) : that.launchTemplateId != null) return false;
+            if (this.launchTemplateOverrides != null ? !this.launchTemplateOverrides.equals(that.launchTemplateOverrides) : that.launchTemplateOverrides != null) return false;
             if (this.launchTemplateVersion != null ? !this.launchTemplateVersion.equals(that.launchTemplateVersion) : that.launchTemplateVersion != null) return false;
             if (this.loadBalancerIds != null ? !this.loadBalancerIds.equals(that.loadBalancerIds) : that.loadBalancerIds != null) return false;
+            if (this.maxInstanceLifetime != null ? !this.maxInstanceLifetime.equals(that.maxInstanceLifetime) : that.maxInstanceLifetime != null) return false;
             if (this.multiAzPolicy != null ? !this.multiAzPolicy.equals(that.multiAzPolicy) : that.multiAzPolicy != null) return false;
             if (this.notificationConfigurations != null ? !this.notificationConfigurations.equals(that.notificationConfigurations) : that.notificationConfigurations != null) return false;
             if (this.onDemandBaseCapacity != null ? !this.onDemandBaseCapacity.equals(that.onDemandBaseCapacity) : that.onDemandBaseCapacity != null) return false;
@@ -1318,6 +1680,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             if (this.removalPolicys != null ? !this.removalPolicys.equals(that.removalPolicys) : that.removalPolicys != null) return false;
             if (this.scalingGroupName != null ? !this.scalingGroupName.equals(that.scalingGroupName) : that.scalingGroupName != null) return false;
             if (this.scalingPolicy != null ? !this.scalingPolicy.equals(that.scalingPolicy) : that.scalingPolicy != null) return false;
+            if (this.spotAllocationStrategy != null ? !this.spotAllocationStrategy.equals(that.spotAllocationStrategy) : that.spotAllocationStrategy != null) return false;
             if (this.spotInstancePools != null ? !this.spotInstancePools.equals(that.spotInstancePools) : that.spotInstancePools != null) return false;
             if (this.spotInstanceRemedy != null ? !this.spotInstanceRemedy.equals(that.spotInstanceRemedy) : that.spotInstanceRemedy != null) return false;
             if (this.standbyInstances != null ? !this.standbyInstances.equals(that.standbyInstances) : that.standbyInstances != null) return false;
@@ -1330,8 +1693,11 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         public final int hashCode() {
             int result = this.maxSize.hashCode();
             result = 31 * result + (this.minSize.hashCode());
+            result = 31 * result + (this.allocationStrategy != null ? this.allocationStrategy.hashCode() : 0);
+            result = 31 * result + (this.azBalance != null ? this.azBalance.hashCode() : 0);
             result = 31 * result + (this.compensateWithOnDemand != null ? this.compensateWithOnDemand.hashCode() : 0);
             result = 31 * result + (this.containerGroupId != null ? this.containerGroupId.hashCode() : 0);
+            result = 31 * result + (this.customPolicyArn != null ? this.customPolicyArn.hashCode() : 0);
             result = 31 * result + (this.dbInstanceIds != null ? this.dbInstanceIds.hashCode() : 0);
             result = 31 * result + (this.defaultCooldown != null ? this.defaultCooldown.hashCode() : 0);
             result = 31 * result + (this.desiredCapacity != null ? this.desiredCapacity.hashCode() : 0);
@@ -1340,8 +1706,10 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.healthCheckType != null ? this.healthCheckType.hashCode() : 0);
             result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.launchTemplateId != null ? this.launchTemplateId.hashCode() : 0);
+            result = 31 * result + (this.launchTemplateOverrides != null ? this.launchTemplateOverrides.hashCode() : 0);
             result = 31 * result + (this.launchTemplateVersion != null ? this.launchTemplateVersion.hashCode() : 0);
             result = 31 * result + (this.loadBalancerIds != null ? this.loadBalancerIds.hashCode() : 0);
+            result = 31 * result + (this.maxInstanceLifetime != null ? this.maxInstanceLifetime.hashCode() : 0);
             result = 31 * result + (this.multiAzPolicy != null ? this.multiAzPolicy.hashCode() : 0);
             result = 31 * result + (this.notificationConfigurations != null ? this.notificationConfigurations.hashCode() : 0);
             result = 31 * result + (this.onDemandBaseCapacity != null ? this.onDemandBaseCapacity.hashCode() : 0);
@@ -1350,6 +1718,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.removalPolicys != null ? this.removalPolicys.hashCode() : 0);
             result = 31 * result + (this.scalingGroupName != null ? this.scalingGroupName.hashCode() : 0);
             result = 31 * result + (this.scalingPolicy != null ? this.scalingPolicy.hashCode() : 0);
+            result = 31 * result + (this.spotAllocationStrategy != null ? this.spotAllocationStrategy.hashCode() : 0);
             result = 31 * result + (this.spotInstancePools != null ? this.spotInstancePools.hashCode() : 0);
             result = 31 * result + (this.spotInstanceRemedy != null ? this.spotInstanceRemedy.hashCode() : 0);
             result = 31 * result + (this.standbyInstances != null ? this.standbyInstances.hashCode() : 0);

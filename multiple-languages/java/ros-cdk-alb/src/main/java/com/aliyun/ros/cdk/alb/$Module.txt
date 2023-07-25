@@ -79,3 +79,8 @@
 @alicloud/ros-cdk-alb.SecurityPolicyProps=com.aliyun.ros.cdk.alb.SecurityPolicyProps
 @alicloud/ros-cdk-alb.ServerGroup=com.aliyun.ros.cdk.alb.ServerGroup
 @alicloud/ros-cdk-alb.ServerGroupProps=com.aliyun.ros.cdk.alb.ServerGroupProps
+@alicloud/ros-cdk-alb.datasource.LoadBalancers=com.aliyun.ros.cdk.alb.datasource.LoadBalancers
+@alicloud/ros-cdk-alb.datasource.LoadBalancersProps=com.aliyun.ros.cdk.alb.datasource.LoadBalancersProps
+@alicloud/ros-cdk-alb.datasource.RosLoadBalancers=com.aliyun.ros.cdk.alb.datasource.RosLoadBalancers
+@alicloud/ros-cdk-alb.datasource.RosLoadBalancers.TagsProperty=com.aliyun.ros.cdk.alb.datasource.RosLoadBalancers$TagsProperty
+@alicloud/ros-cdk-alb.datasource.RosLoadBalancersProps=com.aliyun.ros.cdk.alb.datasource.RosLoadBalancersProps

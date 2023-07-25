@@ -14,6 +14,8 @@ export * from './eippro';
 export * from './eipsegment';
 export * from './flowlog';
 export * from './grantinstancetocen';
+export * from './havip';
+export * from './havipassociation';
 export * from './ipsecserver';
 export * from './ipv4gateway';
 export * from './ipv6gateway';
@@ -41,5 +43,4 @@ export * from './vpnrouteentry';
 
 // ALIYUN::VPC Resources:
 export * from './vpc.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

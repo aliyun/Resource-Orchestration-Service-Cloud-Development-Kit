@@ -11,3 +11,15 @@
 @alicloud/ros-cdk-dns.RosDomainProps=com.aliyun.ros.cdk.dns.RosDomainProps
 @alicloud/ros-cdk-dns.RosDomainRecord=com.aliyun.ros.cdk.dns.RosDomainRecord
 @alicloud/ros-cdk-dns.RosDomainRecordProps=com.aliyun.ros.cdk.dns.RosDomainRecordProps
+@alicloud/ros-cdk-dns.datasource.DomainGroups=com.aliyun.ros.cdk.dns.datasource.DomainGroups
+@alicloud/ros-cdk-dns.datasource.DomainGroupsProps=com.aliyun.ros.cdk.dns.datasource.DomainGroupsProps
+@alicloud/ros-cdk-dns.datasource.DomainRecords=com.aliyun.ros.cdk.dns.datasource.DomainRecords
+@alicloud/ros-cdk-dns.datasource.DomainRecordsProps=com.aliyun.ros.cdk.dns.datasource.DomainRecordsProps
+@alicloud/ros-cdk-dns.datasource.Domains=com.aliyun.ros.cdk.dns.datasource.Domains
+@alicloud/ros-cdk-dns.datasource.DomainsProps=com.aliyun.ros.cdk.dns.datasource.DomainsProps
+@alicloud/ros-cdk-dns.datasource.RosDomainGroups=com.aliyun.ros.cdk.dns.datasource.RosDomainGroups
+@alicloud/ros-cdk-dns.datasource.RosDomainGroupsProps=com.aliyun.ros.cdk.dns.datasource.RosDomainGroupsProps
+@alicloud/ros-cdk-dns.datasource.RosDomainRecords=com.aliyun.ros.cdk.dns.datasource.RosDomainRecords
+@alicloud/ros-cdk-dns.datasource.RosDomainRecordsProps=com.aliyun.ros.cdk.dns.datasource.RosDomainRecordsProps
+@alicloud/ros-cdk-dns.datasource.RosDomains=com.aliyun.ros.cdk.dns.datasource.RosDomains
+@alicloud/ros-cdk-dns.datasource.RosDomainsProps=com.aliyun.ros.cdk.dns.datasource.RosDomainsProps

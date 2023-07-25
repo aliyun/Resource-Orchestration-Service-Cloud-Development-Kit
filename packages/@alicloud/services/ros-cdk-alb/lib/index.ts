@@ -11,5 +11,4 @@ export * from './servergroup';
 
 // ALIYUN::ALB Resources:
 export * from './alb.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

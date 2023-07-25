@@ -860,12 +860,6 @@ function RosVpcEndpointServiceAttachmentPropsValidator(properties: any): ros.Val
     errors.collect(ros.propertyValidator('resourceId', ros.requiredValidator)(properties.resourceId));
     errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
     errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
-    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
-        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
-          data: properties.resourceType,
-          allowedValues: ["slb","alb","nlb"],
-        }));
-    }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
     errors.collect(ros.propertyValidator('serviceId', ros.requiredValidator)(properties.serviceId));
     errors.collect(ros.propertyValidator('serviceId', ros.validateString)(properties.serviceId));

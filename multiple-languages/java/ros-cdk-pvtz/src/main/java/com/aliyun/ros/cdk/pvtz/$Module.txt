@@ -21,3 +21,11 @@
 @alicloud/ros-cdk-pvtz.ZoneRecordProps=com.aliyun.ros.cdk.pvtz.ZoneRecordProps
 @alicloud/ros-cdk-pvtz.ZoneVpcBinder=com.aliyun.ros.cdk.pvtz.ZoneVpcBinder
 @alicloud/ros-cdk-pvtz.ZoneVpcBinderProps=com.aliyun.ros.cdk.pvtz.ZoneVpcBinderProps
+@alicloud/ros-cdk-pvtz.datasource.RosRules=com.aliyun.ros.cdk.pvtz.datasource.RosRules
+@alicloud/ros-cdk-pvtz.datasource.RosRulesProps=com.aliyun.ros.cdk.pvtz.datasource.RosRulesProps
+@alicloud/ros-cdk-pvtz.datasource.RosZones=com.aliyun.ros.cdk.pvtz.datasource.RosZones
+@alicloud/ros-cdk-pvtz.datasource.RosZonesProps=com.aliyun.ros.cdk.pvtz.datasource.RosZonesProps
+@alicloud/ros-cdk-pvtz.datasource.Rules=com.aliyun.ros.cdk.pvtz.datasource.Rules
+@alicloud/ros-cdk-pvtz.datasource.RulesProps=com.aliyun.ros.cdk.pvtz.datasource.RulesProps
+@alicloud/ros-cdk-pvtz.datasource.Zones=com.aliyun.ros.cdk.pvtz.datasource.Zones
+@alicloud/ros-cdk-pvtz.datasource.ZonesProps=com.aliyun.ros.cdk.pvtz.datasource.ZonesProps

@@ -19,5 +19,4 @@ export * from './transitroutervpcattachment';
 
 // ALIYUN::CEN Resources:
 export * from './cen.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

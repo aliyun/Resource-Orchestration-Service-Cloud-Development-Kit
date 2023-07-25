@@ -6,5 +6,4 @@ export * from './zonevpcbinder';
 
 // ALIYUN::PVTZ Resources:
 export * from './pvtz.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

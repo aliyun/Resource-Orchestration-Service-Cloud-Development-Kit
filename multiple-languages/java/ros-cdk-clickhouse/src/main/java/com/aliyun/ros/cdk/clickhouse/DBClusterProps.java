@@ -3,13 +3,17 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * Properties for defining a <code>ALIYUN::ClickHouse::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:00.153Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:58.495Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property category: Series, value: Basic: Basic version.
+     * Property category: The edition of the cluster.
+     * <p>
+     * Valid values:
+     * Basic: Single-replica Edition
+     * HighAvailability: Double-replica Edition
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCategory();
 
@@ -19,9 +23,22 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterNetworkType();
 
     /**
-     * Property dbClusterType: Cluster instance type, value:  Common: normal instance;
+     * Property dbClusterType: The specification of the cluster.
      * <p>
-     * Readonly: read-only instance; Guard: disaster recovery instance
+     * If the cluster is of the Single-replica Edition, the following values are valid:
+     * S4: 4 cores, 16 GB.
+     * S8: 8 cores, 32 GB.
+     * S16: 16 cores, 64 GB.
+     * S32: 32 cores, 128 GB.
+     * S64: 64 cores, 256 GB.
+     * S104: 104 cores, 384 GB.
+     * If the cluster is of the Double-replica Edition, the following values are valid:
+     * C4: 4 cores, 16 GB.
+     * C8: 8 cores, 32 GB.
+     * C16: 16 cores, 64 GB.
+     * C32: 32 cores, 128 GB.
+     * C64: 64 cores, 256 GB.
+     * C104: 104 cores, 384 GB.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterType();
 
@@ -31,12 +48,18 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterVersion();
 
     /**
-     * Property dbNodeCount: Number of node groups.
+     * Property dbNodeCount: The number of nodes.
+     * <p>
+     * If the cluster is of the Single-replica Edition, the value ranges from 1 to 48.
+     * If the cluster is of the Double-replica Edition, the value ranges from 1 to 24.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbNodeCount();
 
     /**
-     * Property dbNodeStorage: DBNodeStorage.
+     * Property dbNodeStorage: The storage capacity of a single node.
+     * <p>
+     * Valid values: 100 to 32000. Unit: GB.
+     * Note self value is a multiple of 100.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbNodeStorage();
 
@@ -57,7 +80,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getPaymentType();
 
     /**
-     * Property dbClusterDescription: DBClusterDescription.
+     * Property dbClusterDescription: The description of the cluster.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbClusterDescription() {
         return null;
@@ -145,7 +168,10 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getCategory}
-         * @param category Property category: Series, value: Basic: Basic version. This parameter is required.
+         * @param category Property category: The edition of the cluster. This parameter is required.
+         *                 Valid values:
+         *                 Basic: Single-replica Edition
+         *                 HighAvailability: Double-replica Edition
          * @return {@code this}
          */
         public Builder category(java.lang.String category) {
@@ -155,7 +181,10 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getCategory}
-         * @param category Property category: Series, value: Basic: Basic version. This parameter is required.
+         * @param category Property category: The edition of the cluster. This parameter is required.
+         *                 Valid values:
+         *                 Basic: Single-replica Edition
+         *                 HighAvailability: Double-replica Edition
          * @return {@code this}
          */
         public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
@@ -185,8 +214,21 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getDbClusterType}
-         * @param dbClusterType Property dbClusterType: Cluster instance type, value:  Common: normal instance;. This parameter is required.
-         *                      Readonly: read-only instance; Guard: disaster recovery instance
+         * @param dbClusterType Property dbClusterType: The specification of the cluster. This parameter is required.
+         *                      If the cluster is of the Single-replica Edition, the following values are valid:
+         *                      S4: 4 cores, 16 GB.
+         *                      S8: 8 cores, 32 GB.
+         *                      S16: 16 cores, 64 GB.
+         *                      S32: 32 cores, 128 GB.
+         *                      S64: 64 cores, 256 GB.
+         *                      S104: 104 cores, 384 GB.
+         *                      If the cluster is of the Double-replica Edition, the following values are valid:
+         *                      C4: 4 cores, 16 GB.
+         *                      C8: 8 cores, 32 GB.
+         *                      C16: 16 cores, 64 GB.
+         *                      C32: 32 cores, 128 GB.
+         *                      C64: 64 cores, 256 GB.
+         *                      C104: 104 cores, 384 GB.
          * @return {@code this}
          */
         public Builder dbClusterType(java.lang.String dbClusterType) {
@@ -196,8 +238,21 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getDbClusterType}
-         * @param dbClusterType Property dbClusterType: Cluster instance type, value:  Common: normal instance;. This parameter is required.
-         *                      Readonly: read-only instance; Guard: disaster recovery instance
+         * @param dbClusterType Property dbClusterType: The specification of the cluster. This parameter is required.
+         *                      If the cluster is of the Single-replica Edition, the following values are valid:
+         *                      S4: 4 cores, 16 GB.
+         *                      S8: 8 cores, 32 GB.
+         *                      S16: 16 cores, 64 GB.
+         *                      S32: 32 cores, 128 GB.
+         *                      S64: 64 cores, 256 GB.
+         *                      S104: 104 cores, 384 GB.
+         *                      If the cluster is of the Double-replica Edition, the following values are valid:
+         *                      C4: 4 cores, 16 GB.
+         *                      C8: 8 cores, 32 GB.
+         *                      C16: 16 cores, 64 GB.
+         *                      C32: 32 cores, 128 GB.
+         *                      C64: 64 cores, 256 GB.
+         *                      C104: 104 cores, 384 GB.
          * @return {@code this}
          */
         public Builder dbClusterType(com.aliyun.ros.cdk.core.IResolvable dbClusterType) {
@@ -227,7 +282,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getDbNodeCount}
-         * @param dbNodeCount Property dbNodeCount: Number of node groups. This parameter is required.
+         * @param dbNodeCount Property dbNodeCount: The number of nodes. This parameter is required.
+         *                    If the cluster is of the Single-replica Edition, the value ranges from 1 to 48.
+         *                    If the cluster is of the Double-replica Edition, the value ranges from 1 to 24.
          * @return {@code this}
          */
         public Builder dbNodeCount(java.lang.Number dbNodeCount) {
@@ -237,7 +294,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getDbNodeCount}
-         * @param dbNodeCount Property dbNodeCount: Number of node groups. This parameter is required.
+         * @param dbNodeCount Property dbNodeCount: The number of nodes. This parameter is required.
+         *                    If the cluster is of the Single-replica Edition, the value ranges from 1 to 48.
+         *                    If the cluster is of the Double-replica Edition, the value ranges from 1 to 24.
          * @return {@code this}
          */
         public Builder dbNodeCount(com.aliyun.ros.cdk.core.IResolvable dbNodeCount) {
@@ -247,7 +306,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getDbNodeStorage}
-         * @param dbNodeStorage Property dbNodeStorage: DBNodeStorage. This parameter is required.
+         * @param dbNodeStorage Property dbNodeStorage: The storage capacity of a single node. This parameter is required.
+         *                      Valid values: 100 to 32000. Unit: GB.
+         *                      Note self value is a multiple of 100.
          * @return {@code this}
          */
         public Builder dbNodeStorage(java.lang.Number dbNodeStorage) {
@@ -257,7 +318,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getDbNodeStorage}
-         * @param dbNodeStorage Property dbNodeStorage: DBNodeStorage. This parameter is required.
+         * @param dbNodeStorage Property dbNodeStorage: The storage capacity of a single node. This parameter is required.
+         *                      Valid values: 100 to 32000. Unit: GB.
+         *                      Note self value is a multiple of 100.
          * @return {@code this}
          */
         public Builder dbNodeStorage(com.aliyun.ros.cdk.core.IResolvable dbNodeStorage) {
@@ -315,7 +378,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getDbClusterDescription}
-         * @param dbClusterDescription Property dbClusterDescription: DBClusterDescription.
+         * @param dbClusterDescription Property dbClusterDescription: The description of the cluster.
          * @return {@code this}
          */
         public Builder dbClusterDescription(java.lang.String dbClusterDescription) {
@@ -325,7 +388,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getDbClusterDescription}
-         * @param dbClusterDescription Property dbClusterDescription: DBClusterDescription.
+         * @param dbClusterDescription Property dbClusterDescription: The description of the cluster.
          * @return {@code this}
          */
         public Builder dbClusterDescription(com.aliyun.ros.cdk.core.IResolvable dbClusterDescription) {

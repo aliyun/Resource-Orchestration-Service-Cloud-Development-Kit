@@ -3,3 +3,11 @@
 @alicloud/ros-cdk-cloudphone.RosInstanceGroup=com.aliyun.ros.cdk.cloudphone.RosInstanceGroup
 @alicloud/ros-cdk-cloudphone.RosInstanceGroup.TagProperty=com.aliyun.ros.cdk.cloudphone.RosInstanceGroup$TagProperty
 @alicloud/ros-cdk-cloudphone.RosInstanceGroupProps=com.aliyun.ros.cdk.cloudphone.RosInstanceGroupProps
+@alicloud/ros-cdk-cloudphone.datasource.Images=com.aliyun.ros.cdk.cloudphone.datasource.Images
+@alicloud/ros-cdk-cloudphone.datasource.ImagesProps=com.aliyun.ros.cdk.cloudphone.datasource.ImagesProps
+@alicloud/ros-cdk-cloudphone.datasource.KeyPairs=com.aliyun.ros.cdk.cloudphone.datasource.KeyPairs
+@alicloud/ros-cdk-cloudphone.datasource.KeyPairsProps=com.aliyun.ros.cdk.cloudphone.datasource.KeyPairsProps
+@alicloud/ros-cdk-cloudphone.datasource.RosImages=com.aliyun.ros.cdk.cloudphone.datasource.RosImages
+@alicloud/ros-cdk-cloudphone.datasource.RosImagesProps=com.aliyun.ros.cdk.cloudphone.datasource.RosImagesProps
+@alicloud/ros-cdk-cloudphone.datasource.RosKeyPairs=com.aliyun.ros.cdk.cloudphone.datasource.RosKeyPairs
+@alicloud/ros-cdk-cloudphone.datasource.RosKeyPairsProps=com.aliyun.ros.cdk.cloudphone.datasource.RosKeyPairsProps

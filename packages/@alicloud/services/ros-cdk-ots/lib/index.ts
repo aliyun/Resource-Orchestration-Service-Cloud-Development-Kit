@@ -5,5 +5,4 @@ export * from './vpcbinder';
 
 // ALIYUN::OTS Resources:
 export * from './ots.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

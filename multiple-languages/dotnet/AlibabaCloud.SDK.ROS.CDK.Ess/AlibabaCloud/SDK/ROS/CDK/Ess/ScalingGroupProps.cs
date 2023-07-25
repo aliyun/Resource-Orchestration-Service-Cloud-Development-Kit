@@ -116,6 +116,86 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
+        private object? _allocationStrategy;
+
+        /// <summary>Property allocationStrategy: The allocation policy of instances.</summary>
+        /// <remarks>
+        /// Auto Scaling selects instance types based on the allocation policy to create the required number of instances. The policy can be applied to pay-as-you-go instances and preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>priority: Auto Scaling selects instance types based on the specified order to create the required number of instances.</description>
+        /// <description>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of instances.
+        /// Default value: priority.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "allocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AllocationStrategy
+        {
+            get => _allocationStrategy;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _allocationStrategy = value;
+            }
+        }
+
+        private object? _azBalance;
+
+        /// <summary>Property azBalance: Specifies whether to evenly distribute instances in the scaling group across multiple zones.</summary>
+        /// <remarks>
+        /// This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true</description>
+        /// <description>false
+        /// Default value: false.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "azBalance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AzBalance
+        {
+            get => _azBalance;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _azBalance = value;
+            }
+        }
+
         private object? _compensateWithOnDemand;
 
         /// <summary>Property compensateWithOnDemand: Specifies whether to automatically create pay-as-you-go instances to meet the requirements on the number of instances when the expected capacity of preemptible instances cannot be fulfilled due to reasons such as high prices or insufficient resources.</summary>
@@ -179,6 +259,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                     }
                 }
                 _containerGroupId = value;
+            }
+        }
+
+        private object? _customPolicyArn;
+
+        /// <summary>Property customPolicyArn: The Alibaba Cloud Resource Name (ARN) of the custom scale-in policy (Function).</summary>
+        /// <remarks>
+        /// This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "customPolicyArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? CustomPolicyArn
+        {
+            get => _customPolicyArn;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _customPolicyArn = value;
             }
         }
 
@@ -492,6 +606,57 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
+        private object? _launchTemplateOverrides;
+
+        /// <summary>Property launchTemplateOverrides: You can specify up to 10 overrides.</summary>
+        /// <remarks>
+        /// Note: This parameter takes effect only if you specify LaunchTemplateId.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "launchTemplateOverrides", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingGroup.LaunchTemplateOverridesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? LaunchTemplateOverrides
+        {
+            get => _launchTemplateOverrides;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Ess.RosScalingGroup.ILaunchTemplateOverridesProperty cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ess.RosScalingGroup.ILaunchTemplateOverridesProperty).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ess.RosScalingGroup.ILaunchTemplateOverridesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _launchTemplateOverrides = value;
+            }
+        }
+
         private object? _launchTemplateVersion;
 
         /// <summary>Property launchTemplateVersion: The version of the instance launch template.</summary>
@@ -563,6 +728,63 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
+        private object? _maxInstanceLifetime;
+
+        /// <summary>Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group.</summary>
+        /// <remarks>
+        /// Unit: seconds.
+        /// Valid values: 86400 to the value of Integer.maxValue.
+        /// Default value: null.
+        /// Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "maxInstanceLifetime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? MaxInstanceLifetime
+        {
+            get => _maxInstanceLifetime;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _maxInstanceLifetime = value;
+            }
+        }
+
         private object? _multiAzPolicy;
 
         /// <summary>Property multiAzPolicy: ECS scaling strategy for multi availability zone.</summary>
@@ -571,8 +793,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         ///
         /// <list type="number">
         /// <description>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</description>
-        /// <description>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
+        /// <description>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</description>
+        /// <description>COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
         /// Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.</description>
+        /// <description>COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.</description>
         /// </list>
         /// </remarks>
         [JsiiOptional]
@@ -656,6 +880,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <summary>Property onDemandBaseCapacity: The minimum number of pay-as-you-go instances required in the scaling group.</summary>
         /// <remarks>
         /// Valid values: 0 to 1000. If the number of pay-as-you-go instances is less than the value of this parameter, Auto Scaling preferentially creates pay-as-you-go instances.
+        /// If you set MultiAZPolicy to COMPOSABLE Policy, the default value of this parameter is 0.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "onDemandBaseCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -710,6 +935,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <summary>Property onDemandPercentageAboveBaseCapacity: The percentage of pay-as-you-go instances that can be created when instances are added to the scaling group.</summary>
         /// <remarks>
         /// This parameter takes effect when the number of pay-as-you-go instances reaches the value for the OnDemandBaseCapacity parameter. Valid values: 0 to 100.
+        /// If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 100.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "onDemandPercentageAboveBaseCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -795,10 +1021,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <summary>Property removalPolicys: Policy for removing ECS instances from the scaling group.</summary>
         /// <remarks>
         /// Optional values:
-        /// OldestInstance: removes the first ECS instance attached to the scaling group.
-        /// NewestInstance: removes the first ECS instance attached to the scaling group.
-        /// OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
-        /// Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
+        ///
+        /// <list type="bullet">
+        /// <description>OldestInstance: removes the first ECS instance attached to the scaling group.</description>
+        /// <description>NewestInstance: removes the first ECS instance attached to the scaling group.</description>
+        /// <description>OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.</description>
+        /// <description>CustomPolicy: removes ECS instances based on the custom scale-in policy (Function).
+        /// You can enter up to three removal policies.
+        /// You cannot set any item of RemovalPolicys to the same value.
+        /// The scaling configuration source specified by the OldestScalingConfiguration setting can be a scaling configuration or a launch template. You can specify CustomPolicy only as the value of first item of RemovalPolicys. If you set first item of RemovalPolicys to CustomPolicy, you must also specify CustomPolicyARN.
+        /// Note: The removal of ECS instances from a scaling group is also affected by the value of MultiAZPolicy.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "removalPolicys", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -900,11 +1133,52 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
+        private object? _spotAllocationStrategy;
+
+        /// <summary>Property spotAllocationStrategy: The allocation policy of preemptible instances.</summary>
+        /// <remarks>
+        /// You can use this parameter to individually specify the allocation policy of preemptible instances. This parameter takes effect only if you set MultiAZPolicy to COMPOSABLE. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>priority: Auto Scaling selects instance types based on the specified order to create the required number of preemptible instances.</description>
+        /// <description>lowestPrice: Auto Scaling selects instance types that have the lowest unit price of vCPUs to create the required number of preemptible instances.
+        /// Default value: priority.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "spotAllocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SpotAllocationStrategy
+        {
+            get => _spotAllocationStrategy;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _spotAllocationStrategy = value;
+            }
+        }
+
         private object? _spotInstancePools;
 
         /// <summary>Property spotInstancePools: The number of instance types that are available.</summary>
         /// <remarks>
         /// The system creates preemptible instances of multiple instance types that are available at the lowest cost in the scaling group. Valid values: 1 to 10.
+        /// If you set MultiAZPolicy to COMPOSABLE, the default value of this parameter is 2.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "spotInstancePools", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

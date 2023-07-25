@@ -82,3 +82,15 @@
 @alicloud/ros-cdk-edas.RosUserDefineRegionProps=com.aliyun.ros.cdk.edas.RosUserDefineRegionProps
 @alicloud/ros-cdk-edas.UserDefineRegion=com.aliyun.ros.cdk.edas.UserDefineRegion
 @alicloud/ros-cdk-edas.UserDefineRegionProps=com.aliyun.ros.cdk.edas.UserDefineRegionProps
+@alicloud/ros-cdk-edas.datasource.Applications=com.aliyun.ros.cdk.edas.datasource.Applications
+@alicloud/ros-cdk-edas.datasource.ApplicationsProps=com.aliyun.ros.cdk.edas.datasource.ApplicationsProps
+@alicloud/ros-cdk-edas.datasource.Clusters=com.aliyun.ros.cdk.edas.datasource.Clusters
+@alicloud/ros-cdk-edas.datasource.ClustersProps=com.aliyun.ros.cdk.edas.datasource.ClustersProps
+@alicloud/ros-cdk-edas.datasource.RosApplications=com.aliyun.ros.cdk.edas.datasource.RosApplications
+@alicloud/ros-cdk-edas.datasource.RosApplicationsProps=com.aliyun.ros.cdk.edas.datasource.RosApplicationsProps
+@alicloud/ros-cdk-edas.datasource.RosClusters=com.aliyun.ros.cdk.edas.datasource.RosClusters
+@alicloud/ros-cdk-edas.datasource.RosClustersProps=com.aliyun.ros.cdk.edas.datasource.RosClustersProps
+@alicloud/ros-cdk-edas.datasource.RosUserDefineRegions=com.aliyun.ros.cdk.edas.datasource.RosUserDefineRegions
+@alicloud/ros-cdk-edas.datasource.RosUserDefineRegionsProps=com.aliyun.ros.cdk.edas.datasource.RosUserDefineRegionsProps
+@alicloud/ros-cdk-edas.datasource.UserDefineRegions=com.aliyun.ros.cdk.edas.datasource.UserDefineRegions
+@alicloud/ros-cdk-edas.datasource.UserDefineRegionsProps=com.aliyun.ros.cdk.edas.datasource.UserDefineRegionsProps

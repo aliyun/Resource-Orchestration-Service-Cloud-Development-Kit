@@ -6,5 +6,4 @@ export * from './servicesource';
 
 // ALIYUN::MSE Resources:
 export * from './mse.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

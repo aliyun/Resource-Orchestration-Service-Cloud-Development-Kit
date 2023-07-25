@@ -10,3 +10,15 @@
 @alicloud/ros-cdk-mns.SubscriptionProps=com.aliyun.ros.cdk.mns.SubscriptionProps
 @alicloud/ros-cdk-mns.Topic=com.aliyun.ros.cdk.mns.Topic
 @alicloud/ros-cdk-mns.TopicProps=com.aliyun.ros.cdk.mns.TopicProps
+@alicloud/ros-cdk-mns.datasource.Queues=com.aliyun.ros.cdk.mns.datasource.Queues
+@alicloud/ros-cdk-mns.datasource.QueuesProps=com.aliyun.ros.cdk.mns.datasource.QueuesProps
+@alicloud/ros-cdk-mns.datasource.RosQueues=com.aliyun.ros.cdk.mns.datasource.RosQueues
+@alicloud/ros-cdk-mns.datasource.RosQueuesProps=com.aliyun.ros.cdk.mns.datasource.RosQueuesProps
+@alicloud/ros-cdk-mns.datasource.RosSubscriptions=com.aliyun.ros.cdk.mns.datasource.RosSubscriptions
+@alicloud/ros-cdk-mns.datasource.RosSubscriptionsProps=com.aliyun.ros.cdk.mns.datasource.RosSubscriptionsProps
+@alicloud/ros-cdk-mns.datasource.RosTopics=com.aliyun.ros.cdk.mns.datasource.RosTopics
+@alicloud/ros-cdk-mns.datasource.RosTopicsProps=com.aliyun.ros.cdk.mns.datasource.RosTopicsProps
+@alicloud/ros-cdk-mns.datasource.Subscriptions=com.aliyun.ros.cdk.mns.datasource.Subscriptions
+@alicloud/ros-cdk-mns.datasource.SubscriptionsProps=com.aliyun.ros.cdk.mns.datasource.SubscriptionsProps
+@alicloud/ros-cdk-mns.datasource.Topics=com.aliyun.ros.cdk.mns.datasource.Topics
+@alicloud/ros-cdk-mns.datasource.TopicsProps=com.aliyun.ros.cdk.mns.datasource.TopicsProps

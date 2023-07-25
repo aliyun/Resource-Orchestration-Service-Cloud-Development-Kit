@@ -2,3 +2,7 @@
 @alicloud/ros-cdk-ens.InstanceProps=com.aliyun.ros.cdk.ens.InstanceProps
 @alicloud/ros-cdk-ens.RosInstance=com.aliyun.ros.cdk.ens.RosInstance
 @alicloud/ros-cdk-ens.RosInstanceProps=com.aliyun.ros.cdk.ens.RosInstanceProps
+@alicloud/ros-cdk-ens.datasource.Instances=com.aliyun.ros.cdk.ens.datasource.Instances
+@alicloud/ros-cdk-ens.datasource.InstancesProps=com.aliyun.ros.cdk.ens.datasource.InstancesProps
+@alicloud/ros-cdk-ens.datasource.RosInstances=com.aliyun.ros.cdk.ens.datasource.RosInstances
+@alicloud/ros-cdk-ens.datasource.RosInstancesProps=com.aliyun.ros.cdk.ens.datasource.RosInstancesProps

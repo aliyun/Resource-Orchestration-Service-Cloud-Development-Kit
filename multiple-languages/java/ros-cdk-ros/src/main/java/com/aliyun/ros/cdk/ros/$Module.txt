@@ -43,3 +43,7 @@
 @alicloud/ros-cdk-ros.WaitConditionHandle=com.aliyun.ros.cdk.ros.WaitConditionHandle
 @alicloud/ros-cdk-ros.WaitConditionHandleProps=com.aliyun.ros.cdk.ros.WaitConditionHandleProps
 @alicloud/ros-cdk-ros.WaitConditionProps=com.aliyun.ros.cdk.ros.WaitConditionProps
+@alicloud/ros-cdk-ros.datasource.RosStackGroups=com.aliyun.ros.cdk.ros.datasource.RosStackGroups
+@alicloud/ros-cdk-ros.datasource.RosStackGroupsProps=com.aliyun.ros.cdk.ros.datasource.RosStackGroupsProps
+@alicloud/ros-cdk-ros.datasource.StackGroups=com.aliyun.ros.cdk.ros.datasource.StackGroups
+@alicloud/ros-cdk-ros.datasource.StackGroupsProps=com.aliyun.ros.cdk.ros.datasource.StackGroupsProps

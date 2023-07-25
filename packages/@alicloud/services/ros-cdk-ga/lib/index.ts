@@ -7,5 +7,4 @@ export * from './listener';
 
 // ALIYUN::GA Resources:
 export * from './ga.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

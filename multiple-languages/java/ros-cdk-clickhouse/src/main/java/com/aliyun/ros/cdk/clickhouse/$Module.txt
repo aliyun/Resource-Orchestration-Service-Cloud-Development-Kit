@@ -2,3 +2,7 @@
 @alicloud/ros-cdk-clickhouse.DBClusterProps=com.aliyun.ros.cdk.clickhouse.DBClusterProps
 @alicloud/ros-cdk-clickhouse.RosDBCluster=com.aliyun.ros.cdk.clickhouse.RosDBCluster
 @alicloud/ros-cdk-clickhouse.RosDBClusterProps=com.aliyun.ros.cdk.clickhouse.RosDBClusterProps
+@alicloud/ros-cdk-clickhouse.datasource.DBClusters=com.aliyun.ros.cdk.clickhouse.datasource.DBClusters
+@alicloud/ros-cdk-clickhouse.datasource.DBClustersProps=com.aliyun.ros.cdk.clickhouse.datasource.DBClustersProps
+@alicloud/ros-cdk-clickhouse.datasource.RosDBClusters=com.aliyun.ros.cdk.clickhouse.datasource.RosDBClusters
+@alicloud/ros-cdk-clickhouse.datasource.RosDBClustersProps=com.aliyun.ros.cdk.clickhouse.datasource.RosDBClustersProps

@@ -38,5 +38,4 @@ export * from './vswitch';
 
 // ALIYUN::ECS Resources:
 export * from './ecs.generated';
-import * as datasource from './datasource';
-export { datasource };
+export * as datasource from './datasource';

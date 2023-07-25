@@ -60,7 +60,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Attribute</strong>: UserName: <heat.engine.properties.Schema object at 0x7fa866ffab50>
+        /// <strong>Attribute</strong>: UserName: <heat.engine.properties.Schema object at 0x7ff887c8ec10>
         /// </remarks>
         [JsiiProperty(name: "attrUserName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUserName

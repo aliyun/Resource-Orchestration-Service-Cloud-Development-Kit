@@ -29,3 +29,11 @@
 @alicloud/ros-cdk-ots.TableProps=com.aliyun.ros.cdk.ots.TableProps
 @alicloud/ros-cdk-ots.VpcBinder=com.aliyun.ros.cdk.ots.VpcBinder
 @alicloud/ros-cdk-ots.VpcBinderProps=com.aliyun.ros.cdk.ots.VpcBinderProps
+@alicloud/ros-cdk-ots.datasource.Instances=com.aliyun.ros.cdk.ots.datasource.Instances
+@alicloud/ros-cdk-ots.datasource.InstancesProps=com.aliyun.ros.cdk.ots.datasource.InstancesProps
+@alicloud/ros-cdk-ots.datasource.RosInstances=com.aliyun.ros.cdk.ots.datasource.RosInstances
+@alicloud/ros-cdk-ots.datasource.RosInstancesProps=com.aliyun.ros.cdk.ots.datasource.RosInstancesProps
+@alicloud/ros-cdk-ots.datasource.RosTables=com.aliyun.ros.cdk.ots.datasource.RosTables
+@alicloud/ros-cdk-ots.datasource.RosTablesProps=com.aliyun.ros.cdk.ots.datasource.RosTablesProps
+@alicloud/ros-cdk-ots.datasource.Tables=com.aliyun.ros.cdk.ots.datasource.Tables
+@alicloud/ros-cdk-ots.datasource.TablesProps=com.aliyun.ros.cdk.ots.datasource.TablesProps

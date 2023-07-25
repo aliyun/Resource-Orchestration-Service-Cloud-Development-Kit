@@ -8,3 +8,15 @@
 @alicloud/ros-cdk-drds.RosDrdsInstance=com.aliyun.ros.cdk.drds.RosDrdsInstance
 @alicloud/ros-cdk-drds.RosDrdsInstance.TagsProperty=com.aliyun.ros.cdk.drds.RosDrdsInstance$TagsProperty
 @alicloud/ros-cdk-drds.RosDrdsInstanceProps=com.aliyun.ros.cdk.drds.RosDrdsInstanceProps
+@alicloud/ros-cdk-drds.datasource.Accounts=com.aliyun.ros.cdk.drds.datasource.Accounts
+@alicloud/ros-cdk-drds.datasource.AccountsProps=com.aliyun.ros.cdk.drds.datasource.AccountsProps
+@alicloud/ros-cdk-drds.datasource.DrdsDBs=com.aliyun.ros.cdk.drds.datasource.DrdsDBs
+@alicloud/ros-cdk-drds.datasource.DrdsDBsProps=com.aliyun.ros.cdk.drds.datasource.DrdsDBsProps
+@alicloud/ros-cdk-drds.datasource.DrdsInstances=com.aliyun.ros.cdk.drds.datasource.DrdsInstances
+@alicloud/ros-cdk-drds.datasource.DrdsInstancesProps=com.aliyun.ros.cdk.drds.datasource.DrdsInstancesProps
+@alicloud/ros-cdk-drds.datasource.RosAccounts=com.aliyun.ros.cdk.drds.datasource.RosAccounts
+@alicloud/ros-cdk-drds.datasource.RosAccountsProps=com.aliyun.ros.cdk.drds.datasource.RosAccountsProps
+@alicloud/ros-cdk-drds.datasource.RosDrdsDBs=com.aliyun.ros.cdk.drds.datasource.RosDrdsDBs
+@alicloud/ros-cdk-drds.datasource.RosDrdsDBsProps=com.aliyun.ros.cdk.drds.datasource.RosDrdsDBsProps
+@alicloud/ros-cdk-drds.datasource.RosDrdsInstances=com.aliyun.ros.cdk.drds.datasource.RosDrdsInstances
+@alicloud/ros-cdk-drds.datasource.RosDrdsInstancesProps=com.aliyun.ros.cdk.drds.datasource.RosDrdsInstancesProps

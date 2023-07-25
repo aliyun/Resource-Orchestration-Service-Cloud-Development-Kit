@@ -20,3 +20,11 @@
 @alicloud/ros-cdk-oos.SecretParameterProps=com.aliyun.ros.cdk.oos.SecretParameterProps
 @alicloud/ros-cdk-oos.Template=com.aliyun.ros.cdk.oos.Template
 @alicloud/ros-cdk-oos.TemplateProps=com.aliyun.ros.cdk.oos.TemplateProps
+@alicloud/ros-cdk-oos.datasource.PatchBaselines=com.aliyun.ros.cdk.oos.datasource.PatchBaselines
+@alicloud/ros-cdk-oos.datasource.PatchBaselinesProps=com.aliyun.ros.cdk.oos.datasource.PatchBaselinesProps
+@alicloud/ros-cdk-oos.datasource.RosPatchBaselines=com.aliyun.ros.cdk.oos.datasource.RosPatchBaselines
+@alicloud/ros-cdk-oos.datasource.RosPatchBaselinesProps=com.aliyun.ros.cdk.oos.datasource.RosPatchBaselinesProps
+@alicloud/ros-cdk-oos.datasource.RosSecretParameters=com.aliyun.ros.cdk.oos.datasource.RosSecretParameters
+@alicloud/ros-cdk-oos.datasource.RosSecretParametersProps=com.aliyun.ros.cdk.oos.datasource.RosSecretParametersProps
+@alicloud/ros-cdk-oos.datasource.SecretParameters=com.aliyun.ros.cdk.oos.datasource.SecretParameters
+@alicloud/ros-cdk-oos.datasource.SecretParametersProps=com.aliyun.ros.cdk.oos.datasource.SecretParametersProps

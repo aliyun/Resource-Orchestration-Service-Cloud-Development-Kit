@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  <code>ALIYUN::ESS::ScalingGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:02.024Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.254Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroup")
 public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -105,6 +105,42 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAllocationStrategy() {
+        return software.amazon.jsii.Kernel.get(this, "allocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAllocationStrategy(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "allocationStrategy", value);
+    }
+
+    /**
+     */
+    public void setAllocationStrategy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "allocationStrategy", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAzBalance() {
+        return software.amazon.jsii.Kernel.get(this, "azBalance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAzBalance(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "azBalance", value);
+    }
+
+    /**
+     */
+    public void setAzBalance(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "azBalance", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getCompensateWithOnDemand() {
         return software.amazon.jsii.Kernel.get(this, "compensateWithOnDemand", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -137,6 +173,24 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setContainerGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "containerGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCustomPolicyArn() {
+        return software.amazon.jsii.Kernel.get(this, "customPolicyArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCustomPolicyArn(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "customPolicyArn", value);
+    }
+
+    /**
+     */
+    public void setCustomPolicyArn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "customPolicyArn", value);
     }
 
     /**
@@ -290,6 +344,40 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateOverrides() {
+        return software.amazon.jsii.Kernel.get(this, "launchTemplateOverrides", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLaunchTemplateOverrides(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "launchTemplateOverrides", value);
+    }
+
+    /**
+     */
+    public void setLaunchTemplateOverrides(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.ess.RosScalingGroup.LaunchTemplateOverridesProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.ess.RosScalingGroup.LaunchTemplateOverridesProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "launchTemplateOverrides", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateVersion() {
         return software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -327,6 +415,24 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setLoadBalancerIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "loadBalancerIds", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMaxInstanceLifetime() {
+        return software.amazon.jsii.Kernel.get(this, "maxInstanceLifetime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMaxInstanceLifetime(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "maxInstanceLifetime", value);
+    }
+
+    /**
+     */
+    public void setMaxInstanceLifetime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "maxInstanceLifetime", value);
     }
 
     /**
@@ -501,6 +607,24 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSpotAllocationStrategy() {
+        return software.amazon.jsii.Kernel.get(this, "spotAllocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSpotAllocationStrategy(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "spotAllocationStrategy", value);
+    }
+
+    /**
+     */
+    public void setSpotAllocationStrategy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "spotAllocationStrategy", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSpotInstancePools() {
         return software.amazon.jsii.Kernel.get(this, "spotInstancePools", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -609,6 +733,221 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setVSwitchIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vSwitchIds", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroup.LaunchTemplateOverridesProperty")
+    @software.amazon.jsii.Jsii.Proxy(LaunchTemplateOverridesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface LaunchTemplateOverridesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimit() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getWeightedCapacity() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link LaunchTemplateOverridesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link LaunchTemplateOverridesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<LaunchTemplateOverridesProperty> {
+            java.lang.Object instanceType;
+            java.lang.Object spotPriceLimit;
+            java.lang.Object weightedCapacity;
+
+            /**
+             * Sets the value of {@link LaunchTemplateOverridesProperty#getInstanceType}
+             * @param instanceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceType(java.lang.String instanceType) {
+                this.instanceType = instanceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateOverridesProperty#getInstanceType}
+             * @param instanceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
+                this.instanceType = instanceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateOverridesProperty#getSpotPriceLimit}
+             * @param spotPriceLimit the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder spotPriceLimit(java.lang.Number spotPriceLimit) {
+                this.spotPriceLimit = spotPriceLimit;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateOverridesProperty#getSpotPriceLimit}
+             * @param spotPriceLimit the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder spotPriceLimit(com.aliyun.ros.cdk.core.IResolvable spotPriceLimit) {
+                this.spotPriceLimit = spotPriceLimit;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateOverridesProperty#getWeightedCapacity}
+             * @param weightedCapacity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weightedCapacity(java.lang.Number weightedCapacity) {
+                this.weightedCapacity = weightedCapacity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LaunchTemplateOverridesProperty#getWeightedCapacity}
+             * @param weightedCapacity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weightedCapacity(com.aliyun.ros.cdk.core.IResolvable weightedCapacity) {
+                this.weightedCapacity = weightedCapacity;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link LaunchTemplateOverridesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public LaunchTemplateOverridesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link LaunchTemplateOverridesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LaunchTemplateOverridesProperty {
+            private final java.lang.Object instanceType;
+            private final java.lang.Object spotPriceLimit;
+            private final java.lang.Object weightedCapacity;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.weightedCapacity = software.amazon.jsii.Kernel.get(this, "weightedCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.instanceType = builder.instanceType;
+                this.spotPriceLimit = builder.spotPriceLimit;
+                this.weightedCapacity = builder.weightedCapacity;
+            }
+
+            @Override
+            public final java.lang.Object getInstanceType() {
+                return this.instanceType;
+            }
+
+            @Override
+            public final java.lang.Object getSpotPriceLimit() {
+                return this.spotPriceLimit;
+            }
+
+            @Override
+            public final java.lang.Object getWeightedCapacity() {
+                return this.weightedCapacity;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getInstanceType() != null) {
+                    data.set("instanceType", om.valueToTree(this.getInstanceType()));
+                }
+                if (this.getSpotPriceLimit() != null) {
+                    data.set("spotPriceLimit", om.valueToTree(this.getSpotPriceLimit()));
+                }
+                if (this.getWeightedCapacity() != null) {
+                    data.set("weightedCapacity", om.valueToTree(this.getWeightedCapacity()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ess.RosScalingGroup.LaunchTemplateOverridesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                LaunchTemplateOverridesProperty.Jsii$Proxy that = (LaunchTemplateOverridesProperty.Jsii$Proxy) o;
+
+                if (this.instanceType != null ? !this.instanceType.equals(that.instanceType) : that.instanceType != null) return false;
+                if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
+                return this.weightedCapacity != null ? this.weightedCapacity.equals(that.weightedCapacity) : that.weightedCapacity == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.instanceType != null ? this.instanceType.hashCode() : 0;
+                result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
+                result = 31 * result + (this.weightedCapacity != null ? this.weightedCapacity.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -1005,6 +1344,40 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param allocationStrategy This parameter is required.
+         */
+        public Builder allocationStrategy(final java.lang.String allocationStrategy) {
+            this.props.allocationStrategy(allocationStrategy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param allocationStrategy This parameter is required.
+         */
+        public Builder allocationStrategy(final com.aliyun.ros.cdk.core.IResolvable allocationStrategy) {
+            this.props.allocationStrategy(allocationStrategy);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param azBalance This parameter is required.
+         */
+        public Builder azBalance(final java.lang.Boolean azBalance) {
+            this.props.azBalance(azBalance);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param azBalance This parameter is required.
+         */
+        public Builder azBalance(final com.aliyun.ros.cdk.core.IResolvable azBalance) {
+            this.props.azBalance(azBalance);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param compensateWithOnDemand This parameter is required.
          */
         public Builder compensateWithOnDemand(final java.lang.Boolean compensateWithOnDemand) {
@@ -1034,6 +1407,23 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder containerGroupId(final com.aliyun.ros.cdk.core.IResolvable containerGroupId) {
             this.props.containerGroupId(containerGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param customPolicyArn This parameter is required.
+         */
+        public Builder customPolicyArn(final java.lang.String customPolicyArn) {
+            this.props.customPolicyArn(customPolicyArn);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param customPolicyArn This parameter is required.
+         */
+        public Builder customPolicyArn(final com.aliyun.ros.cdk.core.IResolvable customPolicyArn) {
+            this.props.customPolicyArn(customPolicyArn);
             return this;
         }
 
@@ -1175,6 +1565,23 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param launchTemplateOverrides This parameter is required.
+         */
+        public Builder launchTemplateOverrides(final com.aliyun.ros.cdk.core.IResolvable launchTemplateOverrides) {
+            this.props.launchTemplateOverrides(launchTemplateOverrides);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param launchTemplateOverrides This parameter is required.
+         */
+        public Builder launchTemplateOverrides(final java.util.List<? extends java.lang.Object> launchTemplateOverrides) {
+            this.props.launchTemplateOverrides(launchTemplateOverrides);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param launchTemplateVersion This parameter is required.
          */
         public Builder launchTemplateVersion(final java.lang.String launchTemplateVersion) {
@@ -1204,6 +1611,23 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder loadBalancerIds(final com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
             this.props.loadBalancerIds(loadBalancerIds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param maxInstanceLifetime This parameter is required.
+         */
+        public Builder maxInstanceLifetime(final java.lang.Number maxInstanceLifetime) {
+            this.props.maxInstanceLifetime(maxInstanceLifetime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param maxInstanceLifetime This parameter is required.
+         */
+        public Builder maxInstanceLifetime(final com.aliyun.ros.cdk.core.IResolvable maxInstanceLifetime) {
+            this.props.maxInstanceLifetime(maxInstanceLifetime);
             return this;
         }
 
@@ -1340,6 +1764,23 @@ public class RosScalingGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder scalingPolicy(final com.aliyun.ros.cdk.core.IResolvable scalingPolicy) {
             this.props.scalingPolicy(scalingPolicy);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param spotAllocationStrategy This parameter is required.
+         */
+        public Builder spotAllocationStrategy(final java.lang.String spotAllocationStrategy) {
+            this.props.spotAllocationStrategy(spotAllocationStrategy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param spotAllocationStrategy This parameter is required.
+         */
+        public Builder spotAllocationStrategy(final com.aliyun.ros.cdk.core.IResolvable spotAllocationStrategy) {
+            this.props.spotAllocationStrategy(spotAllocationStrategy);
             return this;
         }
 

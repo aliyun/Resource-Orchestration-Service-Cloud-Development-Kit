@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edsuser;
 /**
  * A ROS template type:  <code>ALIYUN::EdsUser::User</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:01.804Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.049Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edsuser.$Module.class, fqn = "@alicloud/ros-cdk-edsuser.RosUser")
 public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 

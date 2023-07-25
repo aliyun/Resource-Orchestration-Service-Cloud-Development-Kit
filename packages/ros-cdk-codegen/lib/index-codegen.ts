@@ -29,8 +29,7 @@ export default class IndexCodeGenerator {
     this.code.line(`// ${this.typeName} Resources:`);
     this.code.line(`export * from './${this.moduleName}.generated';`);
     if (hasDataSource) {
-      this.code.line(`import * as datasource from './datasource';`);
-      this.code.line(`export { datasource };`);
+      this.code.line(`export * as datasource from './datasource';`);
     }
   }
 

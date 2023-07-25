@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a <code>ALIYUN::SLS::Alert</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:03.833Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.511Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlertProps")
 @software.amazon.jsii.Jsii.Proxy(RosAlertProps.Jsii$Proxy.class)
 public interface RosAlertProps extends software.amazon.jsii.JsiiSerializable {
@@ -34,7 +34,7 @@ public interface RosAlertProps extends software.amazon.jsii.JsiiSerializable {
          * @param detail the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder detail(com.aliyun.ros.cdk.sls.RosAlert.DetailProperty detail) {
+        public Builder detail(com.aliyun.ros.cdk.core.IResolvable detail) {
             this.detail = detail;
             return this;
         }
@@ -44,7 +44,7 @@ public interface RosAlertProps extends software.amazon.jsii.JsiiSerializable {
          * @param detail the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder detail(com.aliyun.ros.cdk.core.IResolvable detail) {
+        public Builder detail(com.aliyun.ros.cdk.sls.RosAlert.DetailProperty detail) {
             this.detail = detail;
             return this;
         }

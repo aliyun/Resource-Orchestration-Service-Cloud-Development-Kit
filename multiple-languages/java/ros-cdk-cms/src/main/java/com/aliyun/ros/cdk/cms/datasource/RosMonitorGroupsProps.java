@@ -1,0 +1,245 @@
+package com.aliyun.ros.cdk.cms.datasource;
+
+/**
+ * Properties for defining a <code>DATASOURCE::CMS::MonitorGroups</code>.
+ */
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:58.682Z")
+@software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.RosMonitorGroupsProps")
+@software.amazon.jsii.Jsii.Proxy(RosMonitorGroupsProps.Jsii$Proxy.class)
+public interface RosMonitorGroupsProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDynamicTagRuleId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMonitorGroupName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
+        return null;
+    }
+
+    /**
+     * @return a {@link Builder} of {@link RosMonitorGroupsProps}
+     */
+    static Builder builder() {
+        return new Builder();
+    }
+    /**
+     * A builder for {@link RosMonitorGroupsProps}
+     */
+    public static final class Builder implements software.amazon.jsii.Builder<RosMonitorGroupsProps> {
+        java.lang.Object dynamicTagRuleId;
+        java.lang.Object groupId;
+        java.lang.Object monitorGroupName;
+        java.lang.Object type;
+
+        /**
+         * Sets the value of {@link RosMonitorGroupsProps#getDynamicTagRuleId}
+         * @param dynamicTagRuleId the value to be set.
+         * @return {@code this}
+         */
+        public Builder dynamicTagRuleId(java.lang.String dynamicTagRuleId) {
+            this.dynamicTagRuleId = dynamicTagRuleId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMonitorGroupsProps#getDynamicTagRuleId}
+         * @param dynamicTagRuleId the value to be set.
+         * @return {@code this}
+         */
+        public Builder dynamicTagRuleId(com.aliyun.ros.cdk.core.IResolvable dynamicTagRuleId) {
+            this.dynamicTagRuleId = dynamicTagRuleId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMonitorGroupsProps#getGroupId}
+         * @param groupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder groupId(java.lang.Number groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMonitorGroupsProps#getGroupId}
+         * @param groupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMonitorGroupsProps#getMonitorGroupName}
+         * @param monitorGroupName the value to be set.
+         * @return {@code this}
+         */
+        public Builder monitorGroupName(java.lang.String monitorGroupName) {
+            this.monitorGroupName = monitorGroupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMonitorGroupsProps#getMonitorGroupName}
+         * @param monitorGroupName the value to be set.
+         * @return {@code this}
+         */
+        public Builder monitorGroupName(com.aliyun.ros.cdk.core.IResolvable monitorGroupName) {
+            this.monitorGroupName = monitorGroupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMonitorGroupsProps#getType}
+         * @param type the value to be set.
+         * @return {@code this}
+         */
+        public Builder type(java.lang.String type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMonitorGroupsProps#getType}
+         * @param type the value to be set.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Builds the configured instance.
+         * @return a new instance of {@link RosMonitorGroupsProps}
+         * @throws NullPointerException if any required attribute was not provided
+         */
+        @Override
+        public RosMonitorGroupsProps build() {
+            return new Jsii$Proxy(this);
+        }
+    }
+
+    /**
+     * An implementation for {@link RosMonitorGroupsProps}
+     */
+    @software.amazon.jsii.Internal
+    final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosMonitorGroupsProps {
+        private final java.lang.Object dynamicTagRuleId;
+        private final java.lang.Object groupId;
+        private final java.lang.Object monitorGroupName;
+        private final java.lang.Object type;
+
+        /**
+         * Constructor that initializes the object based on values retrieved from the JsiiObject.
+         * @param objRef Reference to the JSII managed object.
+         */
+        protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+            super(objRef);
+            this.dynamicTagRuleId = software.amazon.jsii.Kernel.get(this, "dynamicTagRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.monitorGroupName = software.amazon.jsii.Kernel.get(this, "monitorGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+         */
+        protected Jsii$Proxy(final Builder builder) {
+            super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.dynamicTagRuleId = builder.dynamicTagRuleId;
+            this.groupId = builder.groupId;
+            this.monitorGroupName = builder.monitorGroupName;
+            this.type = builder.type;
+        }
+
+        @Override
+        public final java.lang.Object getDynamicTagRuleId() {
+            return this.dynamicTagRuleId;
+        }
+
+        @Override
+        public final java.lang.Object getGroupId() {
+            return this.groupId;
+        }
+
+        @Override
+        public final java.lang.Object getMonitorGroupName() {
+            return this.monitorGroupName;
+        }
+
+        @Override
+        public final java.lang.Object getType() {
+            return this.type;
+        }
+
+        @Override
+        @software.amazon.jsii.Internal
+        public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+            final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+            final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+            if (this.getDynamicTagRuleId() != null) {
+                data.set("dynamicTagRuleId", om.valueToTree(this.getDynamicTagRuleId()));
+            }
+            if (this.getGroupId() != null) {
+                data.set("groupId", om.valueToTree(this.getGroupId()));
+            }
+            if (this.getMonitorGroupName() != null) {
+                data.set("monitorGroupName", om.valueToTree(this.getMonitorGroupName()));
+            }
+            if (this.getType() != null) {
+                data.set("type", om.valueToTree(this.getType()));
+            }
+
+            final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+            struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cms.datasource.RosMonitorGroupsProps"));
+            struct.set("data", data);
+
+            final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+            obj.set("$jsii.struct", struct);
+
+            return obj;
+        }
+
+        @Override
+        public final boolean equals(final Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            RosMonitorGroupsProps.Jsii$Proxy that = (RosMonitorGroupsProps.Jsii$Proxy) o;
+
+            if (this.dynamicTagRuleId != null ? !this.dynamicTagRuleId.equals(that.dynamicTagRuleId) : that.dynamicTagRuleId != null) return false;
+            if (this.groupId != null ? !this.groupId.equals(that.groupId) : that.groupId != null) return false;
+            if (this.monitorGroupName != null ? !this.monitorGroupName.equals(that.monitorGroupName) : that.monitorGroupName != null) return false;
+            return this.type != null ? this.type.equals(that.type) : that.type == null;
+        }
+
+        @Override
+        public final int hashCode() {
+            int result = this.dynamicTagRuleId != null ? this.dynamicTagRuleId.hashCode() : 0;
+            result = 31 * result + (this.groupId != null ? this.groupId.hashCode() : 0);
+            result = 31 * result + (this.monitorGroupName != null ? this.monitorGroupName.hashCode() : 0);
+            result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
+            return result;
+        }
+    }
+}

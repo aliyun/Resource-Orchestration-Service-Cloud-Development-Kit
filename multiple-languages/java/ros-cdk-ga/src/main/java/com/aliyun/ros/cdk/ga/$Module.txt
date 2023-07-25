@@ -27,3 +27,7 @@
 @alicloud/ros-cdk-ga.RosListener.PortRangesProperty=com.aliyun.ros.cdk.ga.RosListener$PortRangesProperty
 @alicloud/ros-cdk-ga.RosListener.XForwardedForConfigProperty=com.aliyun.ros.cdk.ga.RosListener$XForwardedForConfigProperty
 @alicloud/ros-cdk-ga.RosListenerProps=com.aliyun.ros.cdk.ga.RosListenerProps
+@alicloud/ros-cdk-ga.datasource.Acls=com.aliyun.ros.cdk.ga.datasource.Acls
+@alicloud/ros-cdk-ga.datasource.AclsProps=com.aliyun.ros.cdk.ga.datasource.AclsProps
+@alicloud/ros-cdk-ga.datasource.RosAcls=com.aliyun.ros.cdk.ga.datasource.RosAcls
+@alicloud/ros-cdk-ga.datasource.RosAclsProps=com.aliyun.ros.cdk.ga.datasource.RosAclsProps

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  <code>ALIYUN::CMS::Contact</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-18T08:28:00.279Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:58.616Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosContact")
 public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -61,13 +61,13 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setChannels(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.RosContact.ChannelsProperty value) {
+    public void setChannels(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "channels", java.util.Objects.requireNonNull(value, "channels is required"));
     }
 
     /**
      */
-    public void setChannels(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setChannels(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.RosContact.ChannelsProperty value) {
         software.amazon.jsii.Kernel.set(this, "channels", java.util.Objects.requireNonNull(value, "channels is required"));
     }
 
@@ -403,7 +403,7 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param channels This parameter is required.
          */
-        public Builder channels(final com.aliyun.ros.cdk.cms.RosContact.ChannelsProperty channels) {
+        public Builder channels(final com.aliyun.ros.cdk.core.IResolvable channels) {
             this.props.channels(channels);
             return this;
         }
@@ -411,7 +411,7 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param channels This parameter is required.
          */
-        public Builder channels(final com.aliyun.ros.cdk.core.IResolvable channels) {
+        public Builder channels(final com.aliyun.ros.cdk.cms.RosContact.ChannelsProperty channels) {
             this.props.channels(channels);
             return this;
         }
