@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS template type:  <code>ALIYUN::REDIS::PrepayInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.906Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.271Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosPrepayInstance")
 public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -545,6 +545,24 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getShardCount() {
+        return software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setShardCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "shardCount", value);
+    }
+
+    /**
+     */
+    public void setShardCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "shardCount", value);
     }
 
     /**
@@ -2655,6 +2673,23 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param shardCount This parameter is required.
+         */
+        public Builder shardCount(final java.lang.Number shardCount) {
+            this.props.shardCount(shardCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param shardCount This parameter is required.
+         */
+        public Builder shardCount(final com.aliyun.ros.cdk.core.IResolvable shardCount) {
+            this.props.shardCount(shardCount);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardbx;
 /**
  * A ROS resource type:  <code>ALIYUN::PolarDBX::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.404Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.859Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardbx.$Module.class, fqn = "@alicloud/ros-cdk-polardbx.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -49,6 +49,13 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ConnectionString: Intranet connection string.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
      * Attribute DBInstanceName: The name of the instance that you create.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbInstanceName() {
@@ -60,6 +67,13 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOrderId() {
         return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute Port: Intranet connection port.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -382,6 +396,27 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder secondaryZone(final com.aliyun.ros.cdk.core.IResolvable secondaryZone) {
             this.props.secondaryZone(secondaryZone);
+            return this;
+        }
+
+        /**
+         * Property securityIpConfig: Instance whitelist configuration.
+         * <p>
+         * @return {@code this}
+         * @param securityIpConfig Property securityIpConfig: Instance whitelist configuration. This parameter is required.
+         */
+        public Builder securityIpConfig(final com.aliyun.ros.cdk.core.IResolvable securityIpConfig) {
+            this.props.securityIpConfig(securityIpConfig);
+            return this;
+        }
+        /**
+         * Property securityIpConfig: Instance whitelist configuration.
+         * <p>
+         * @return {@code this}
+         * @param securityIpConfig Property securityIpConfig: Instance whitelist configuration. This parameter is required.
+         */
+        public Builder securityIpConfig(final com.aliyun.ros.cdk.polardbx.RosDBInstance.SecurityIpConfigProperty securityIpConfig) {
+            this.props.securityIpConfig(securityIpConfig);
             return this;
         }
 

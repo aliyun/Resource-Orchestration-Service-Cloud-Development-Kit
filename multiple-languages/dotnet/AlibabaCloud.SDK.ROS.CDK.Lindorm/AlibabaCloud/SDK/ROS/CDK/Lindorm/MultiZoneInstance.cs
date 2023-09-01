@@ -38,6 +38,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
         {
         }
 
+        /// <summary>Attribute AuthInfos: The list of the Lindorm instance auth infos.</summary>
+        [JsiiProperty(name: "attrAuthInfos", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAuthInfos
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute InstanceId: The ID of the Lindorm instance that is created.</summary>
         [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId

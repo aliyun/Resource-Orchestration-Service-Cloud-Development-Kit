@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.lindorm;
 /**
  * A ROS resource type:  <code>ALIYUN::Lindorm::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.773Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.215Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -46,6 +46,13 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.lindorm.InstanceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute AuthInfos: The list of the Lindorm instance auth infos.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAuthInfos() {
+        return software.amazon.jsii.Kernel.get(this, "attrAuthInfos", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**

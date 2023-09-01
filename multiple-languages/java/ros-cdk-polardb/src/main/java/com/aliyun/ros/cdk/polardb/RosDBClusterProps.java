@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a <code>ALIYUN::POLARDB::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.364Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.815Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterProps.Jsii$Proxy.class)
 public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,6 +27,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAllowShutDown() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getArchitecture() {
         return null;
     }
 
@@ -80,6 +86,18 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbMinorVersion() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbNodeNum() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultTimeZone() {
         return null;
     }
@@ -87,6 +105,30 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGdnId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHotStandbyCluster() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoosePolarLogBin() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLooseXEngine() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLooseXEngineUseMemoryPct() {
         return null;
     }
 
@@ -104,6 +146,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getParameterGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
@@ -111,6 +159,18 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProxyClass() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProxyType() {
         return null;
     }
 
@@ -176,6 +236,48 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStandbyAz() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageAutoScale() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStoragePayType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageSpace() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageUpperBound() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStrictConsistency() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty> getTags() {
         return null;
     }
@@ -219,6 +321,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object dbVersion;
         java.lang.Object payType;
         java.lang.Object allowShutDown;
+        java.lang.Object architecture;
         java.lang.Object autoRenewPeriod;
         java.lang.Object backupRetentionPolicyOnClusterDeletion;
         java.lang.Object cloneDataPoint;
@@ -227,12 +330,21 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object creationOption;
         java.lang.Object dbClusterDescription;
         java.lang.Object dbClusterParameters;
+        java.lang.Object dbMinorVersion;
+        java.lang.Object dbNodeNum;
         java.lang.Object defaultTimeZone;
         java.lang.Object gdnId;
+        java.lang.Object hotStandbyCluster;
+        java.lang.Object loosePolarLogBin;
+        java.lang.Object looseXEngine;
+        java.lang.Object looseXEngineUseMemoryPct;
         java.lang.Object lowerCaseTableNames;
         java.lang.Object maintainTime;
+        java.lang.Object parameterGroupId;
         java.lang.Object period;
         java.lang.Object periodUnit;
+        java.lang.Object proxyClass;
+        java.lang.Object proxyType;
         java.lang.Object renewalStatus;
         java.lang.Object resourceGroupId;
         java.lang.Object scaleMax;
@@ -243,6 +355,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object securityIpList;
         java.lang.Object serverlessType;
         java.lang.Object sourceResourceId;
+        java.lang.Object standbyAz;
+        java.lang.Object storageAutoScale;
+        java.lang.Object storagePayType;
+        java.lang.Object storageSpace;
+        java.lang.Object storageType;
+        java.lang.Object storageUpperBound;
+        java.lang.Object strictConsistency;
         java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty> tags;
         java.lang.Object tdeStatus;
         java.lang.Object vpcId;
@@ -346,6 +465,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder allowShutDown(com.aliyun.ros.cdk.core.IResolvable allowShutDown) {
             this.allowShutDown = allowShutDown;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getArchitecture}
+         * @param architecture the value to be set.
+         * @return {@code this}
+         */
+        public Builder architecture(java.lang.String architecture) {
+            this.architecture = architecture;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getArchitecture}
+         * @param architecture the value to be set.
+         * @return {@code this}
+         */
+        public Builder architecture(com.aliyun.ros.cdk.core.IResolvable architecture) {
+            this.architecture = architecture;
             return this;
         }
 
@@ -510,6 +649,46 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getDbMinorVersion}
+         * @param dbMinorVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbMinorVersion(java.lang.String dbMinorVersion) {
+            this.dbMinorVersion = dbMinorVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getDbMinorVersion}
+         * @param dbMinorVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbMinorVersion(com.aliyun.ros.cdk.core.IResolvable dbMinorVersion) {
+            this.dbMinorVersion = dbMinorVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getDbNodeNum}
+         * @param dbNodeNum the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbNodeNum(java.lang.Number dbNodeNum) {
+            this.dbNodeNum = dbNodeNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getDbNodeNum}
+         * @param dbNodeNum the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbNodeNum(com.aliyun.ros.cdk.core.IResolvable dbNodeNum) {
+            this.dbNodeNum = dbNodeNum;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getDefaultTimeZone}
          * @param defaultTimeZone the value to be set.
          * @return {@code this}
@@ -546,6 +725,86 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder gdnId(com.aliyun.ros.cdk.core.IResolvable gdnId) {
             this.gdnId = gdnId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getHotStandbyCluster}
+         * @param hotStandbyCluster the value to be set.
+         * @return {@code this}
+         */
+        public Builder hotStandbyCluster(java.lang.String hotStandbyCluster) {
+            this.hotStandbyCluster = hotStandbyCluster;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getHotStandbyCluster}
+         * @param hotStandbyCluster the value to be set.
+         * @return {@code this}
+         */
+        public Builder hotStandbyCluster(com.aliyun.ros.cdk.core.IResolvable hotStandbyCluster) {
+            this.hotStandbyCluster = hotStandbyCluster;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getLoosePolarLogBin}
+         * @param loosePolarLogBin the value to be set.
+         * @return {@code this}
+         */
+        public Builder loosePolarLogBin(java.lang.String loosePolarLogBin) {
+            this.loosePolarLogBin = loosePolarLogBin;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getLoosePolarLogBin}
+         * @param loosePolarLogBin the value to be set.
+         * @return {@code this}
+         */
+        public Builder loosePolarLogBin(com.aliyun.ros.cdk.core.IResolvable loosePolarLogBin) {
+            this.loosePolarLogBin = loosePolarLogBin;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getLooseXEngine}
+         * @param looseXEngine the value to be set.
+         * @return {@code this}
+         */
+        public Builder looseXEngine(java.lang.String looseXEngine) {
+            this.looseXEngine = looseXEngine;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getLooseXEngine}
+         * @param looseXEngine the value to be set.
+         * @return {@code this}
+         */
+        public Builder looseXEngine(com.aliyun.ros.cdk.core.IResolvable looseXEngine) {
+            this.looseXEngine = looseXEngine;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getLooseXEngineUseMemoryPct}
+         * @param looseXEngineUseMemoryPct the value to be set.
+         * @return {@code this}
+         */
+        public Builder looseXEngineUseMemoryPct(java.lang.Number looseXEngineUseMemoryPct) {
+            this.looseXEngineUseMemoryPct = looseXEngineUseMemoryPct;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getLooseXEngineUseMemoryPct}
+         * @param looseXEngineUseMemoryPct the value to be set.
+         * @return {@code this}
+         */
+        public Builder looseXEngineUseMemoryPct(com.aliyun.ros.cdk.core.IResolvable looseXEngineUseMemoryPct) {
+            this.looseXEngineUseMemoryPct = looseXEngineUseMemoryPct;
             return this;
         }
 
@@ -590,6 +849,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getParameterGroupId}
+         * @param parameterGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder parameterGroupId(java.lang.String parameterGroupId) {
+            this.parameterGroupId = parameterGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getParameterGroupId}
+         * @param parameterGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder parameterGroupId(com.aliyun.ros.cdk.core.IResolvable parameterGroupId) {
+            this.parameterGroupId = parameterGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getPeriod}
          * @param period the value to be set.
          * @return {@code this}
@@ -626,6 +905,46 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.periodUnit = periodUnit;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getProxyClass}
+         * @param proxyClass the value to be set.
+         * @return {@code this}
+         */
+        public Builder proxyClass(java.lang.String proxyClass) {
+            this.proxyClass = proxyClass;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getProxyClass}
+         * @param proxyClass the value to be set.
+         * @return {@code this}
+         */
+        public Builder proxyClass(com.aliyun.ros.cdk.core.IResolvable proxyClass) {
+            this.proxyClass = proxyClass;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getProxyType}
+         * @param proxyType the value to be set.
+         * @return {@code this}
+         */
+        public Builder proxyType(java.lang.String proxyType) {
+            this.proxyType = proxyType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getProxyType}
+         * @param proxyType the value to be set.
+         * @return {@code this}
+         */
+        public Builder proxyType(com.aliyun.ros.cdk.core.IResolvable proxyType) {
+            this.proxyType = proxyType;
             return this;
         }
 
@@ -830,6 +1149,146 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getStandbyAz}
+         * @param standbyAz the value to be set.
+         * @return {@code this}
+         */
+        public Builder standbyAz(java.lang.String standbyAz) {
+            this.standbyAz = standbyAz;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStandbyAz}
+         * @param standbyAz the value to be set.
+         * @return {@code this}
+         */
+        public Builder standbyAz(com.aliyun.ros.cdk.core.IResolvable standbyAz) {
+            this.standbyAz = standbyAz;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStorageAutoScale}
+         * @param storageAutoScale the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageAutoScale(java.lang.String storageAutoScale) {
+            this.storageAutoScale = storageAutoScale;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStorageAutoScale}
+         * @param storageAutoScale the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageAutoScale(com.aliyun.ros.cdk.core.IResolvable storageAutoScale) {
+            this.storageAutoScale = storageAutoScale;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStoragePayType}
+         * @param storagePayType the value to be set.
+         * @return {@code this}
+         */
+        public Builder storagePayType(java.lang.String storagePayType) {
+            this.storagePayType = storagePayType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStoragePayType}
+         * @param storagePayType the value to be set.
+         * @return {@code this}
+         */
+        public Builder storagePayType(com.aliyun.ros.cdk.core.IResolvable storagePayType) {
+            this.storagePayType = storagePayType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStorageSpace}
+         * @param storageSpace the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageSpace(java.lang.Number storageSpace) {
+            this.storageSpace = storageSpace;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStorageSpace}
+         * @param storageSpace the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageSpace(com.aliyun.ros.cdk.core.IResolvable storageSpace) {
+            this.storageSpace = storageSpace;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStorageType}
+         * @param storageType the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageType(java.lang.String storageType) {
+            this.storageType = storageType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStorageType}
+         * @param storageType the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageType(com.aliyun.ros.cdk.core.IResolvable storageType) {
+            this.storageType = storageType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStorageUpperBound}
+         * @param storageUpperBound the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageUpperBound(java.lang.Number storageUpperBound) {
+            this.storageUpperBound = storageUpperBound;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStorageUpperBound}
+         * @param storageUpperBound the value to be set.
+         * @return {@code this}
+         */
+        public Builder storageUpperBound(com.aliyun.ros.cdk.core.IResolvable storageUpperBound) {
+            this.storageUpperBound = storageUpperBound;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStrictConsistency}
+         * @param strictConsistency the value to be set.
+         * @return {@code this}
+         */
+        public Builder strictConsistency(java.lang.String strictConsistency) {
+            this.strictConsistency = strictConsistency;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getStrictConsistency}
+         * @param strictConsistency the value to be set.
+         * @return {@code this}
+         */
+        public Builder strictConsistency(com.aliyun.ros.cdk.core.IResolvable strictConsistency) {
+            this.strictConsistency = strictConsistency;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
@@ -941,6 +1400,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object dbVersion;
         private final java.lang.Object payType;
         private final java.lang.Object allowShutDown;
+        private final java.lang.Object architecture;
         private final java.lang.Object autoRenewPeriod;
         private final java.lang.Object backupRetentionPolicyOnClusterDeletion;
         private final java.lang.Object cloneDataPoint;
@@ -949,12 +1409,21 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object creationOption;
         private final java.lang.Object dbClusterDescription;
         private final java.lang.Object dbClusterParameters;
+        private final java.lang.Object dbMinorVersion;
+        private final java.lang.Object dbNodeNum;
         private final java.lang.Object defaultTimeZone;
         private final java.lang.Object gdnId;
+        private final java.lang.Object hotStandbyCluster;
+        private final java.lang.Object loosePolarLogBin;
+        private final java.lang.Object looseXEngine;
+        private final java.lang.Object looseXEngineUseMemoryPct;
         private final java.lang.Object lowerCaseTableNames;
         private final java.lang.Object maintainTime;
+        private final java.lang.Object parameterGroupId;
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
+        private final java.lang.Object proxyClass;
+        private final java.lang.Object proxyType;
         private final java.lang.Object renewalStatus;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object scaleMax;
@@ -965,6 +1434,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object securityIpList;
         private final java.lang.Object serverlessType;
         private final java.lang.Object sourceResourceId;
+        private final java.lang.Object standbyAz;
+        private final java.lang.Object storageAutoScale;
+        private final java.lang.Object storagePayType;
+        private final java.lang.Object storageSpace;
+        private final java.lang.Object storageType;
+        private final java.lang.Object storageUpperBound;
+        private final java.lang.Object strictConsistency;
         private final java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty> tags;
         private final java.lang.Object tdeStatus;
         private final java.lang.Object vpcId;
@@ -982,6 +1458,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.dbVersion = software.amazon.jsii.Kernel.get(this, "dbVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.allowShutDown = software.amazon.jsii.Kernel.get(this, "allowShutDown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.architecture = software.amazon.jsii.Kernel.get(this, "architecture", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backupRetentionPolicyOnClusterDeletion = software.amazon.jsii.Kernel.get(this, "backupRetentionPolicyOnClusterDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloneDataPoint = software.amazon.jsii.Kernel.get(this, "cloneDataPoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -990,12 +1467,21 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.creationOption = software.amazon.jsii.Kernel.get(this, "creationOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbClusterDescription = software.amazon.jsii.Kernel.get(this, "dbClusterDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbClusterParameters = software.amazon.jsii.Kernel.get(this, "dbClusterParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbMinorVersion = software.amazon.jsii.Kernel.get(this, "dbMinorVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbNodeNum = software.amazon.jsii.Kernel.get(this, "dbNodeNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultTimeZone = software.amazon.jsii.Kernel.get(this, "defaultTimeZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.gdnId = software.amazon.jsii.Kernel.get(this, "gdnId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.hotStandbyCluster = software.amazon.jsii.Kernel.get(this, "hotStandbyCluster", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loosePolarLogBin = software.amazon.jsii.Kernel.get(this, "loosePolarLogBin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.looseXEngine = software.amazon.jsii.Kernel.get(this, "looseXEngine", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.looseXEngineUseMemoryPct = software.amazon.jsii.Kernel.get(this, "looseXEngineUseMemoryPct", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.lowerCaseTableNames = software.amazon.jsii.Kernel.get(this, "lowerCaseTableNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maintainTime = software.amazon.jsii.Kernel.get(this, "maintainTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.parameterGroupId = software.amazon.jsii.Kernel.get(this, "parameterGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.proxyClass = software.amazon.jsii.Kernel.get(this, "proxyClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.proxyType = software.amazon.jsii.Kernel.get(this, "proxyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.renewalStatus = software.amazon.jsii.Kernel.get(this, "renewalStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scaleMax = software.amazon.jsii.Kernel.get(this, "scaleMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1006,6 +1492,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverlessType = software.amazon.jsii.Kernel.get(this, "serverlessType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sourceResourceId = software.amazon.jsii.Kernel.get(this, "sourceResourceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.standbyAz = software.amazon.jsii.Kernel.get(this, "standbyAz", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storageAutoScale = software.amazon.jsii.Kernel.get(this, "storageAutoScale", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storagePayType = software.amazon.jsii.Kernel.get(this, "storagePayType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storageSpace = software.amazon.jsii.Kernel.get(this, "storageSpace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storageType = software.amazon.jsii.Kernel.get(this, "storageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storageUpperBound = software.amazon.jsii.Kernel.get(this, "storageUpperBound", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.strictConsistency = software.amazon.jsii.Kernel.get(this, "strictConsistency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty.class)));
             this.tdeStatus = software.amazon.jsii.Kernel.get(this, "tdeStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1024,6 +1517,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.dbVersion = java.util.Objects.requireNonNull(builder.dbVersion, "dbVersion is required");
             this.payType = java.util.Objects.requireNonNull(builder.payType, "payType is required");
             this.allowShutDown = builder.allowShutDown;
+            this.architecture = builder.architecture;
             this.autoRenewPeriod = builder.autoRenewPeriod;
             this.backupRetentionPolicyOnClusterDeletion = builder.backupRetentionPolicyOnClusterDeletion;
             this.cloneDataPoint = builder.cloneDataPoint;
@@ -1032,12 +1526,21 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.creationOption = builder.creationOption;
             this.dbClusterDescription = builder.dbClusterDescription;
             this.dbClusterParameters = builder.dbClusterParameters;
+            this.dbMinorVersion = builder.dbMinorVersion;
+            this.dbNodeNum = builder.dbNodeNum;
             this.defaultTimeZone = builder.defaultTimeZone;
             this.gdnId = builder.gdnId;
+            this.hotStandbyCluster = builder.hotStandbyCluster;
+            this.loosePolarLogBin = builder.loosePolarLogBin;
+            this.looseXEngine = builder.looseXEngine;
+            this.looseXEngineUseMemoryPct = builder.looseXEngineUseMemoryPct;
             this.lowerCaseTableNames = builder.lowerCaseTableNames;
             this.maintainTime = builder.maintainTime;
+            this.parameterGroupId = builder.parameterGroupId;
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
+            this.proxyClass = builder.proxyClass;
+            this.proxyType = builder.proxyType;
             this.renewalStatus = builder.renewalStatus;
             this.resourceGroupId = builder.resourceGroupId;
             this.scaleMax = builder.scaleMax;
@@ -1048,6 +1551,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.securityIpList = builder.securityIpList;
             this.serverlessType = builder.serverlessType;
             this.sourceResourceId = builder.sourceResourceId;
+            this.standbyAz = builder.standbyAz;
+            this.storageAutoScale = builder.storageAutoScale;
+            this.storagePayType = builder.storagePayType;
+            this.storageSpace = builder.storageSpace;
+            this.storageType = builder.storageType;
+            this.storageUpperBound = builder.storageUpperBound;
+            this.strictConsistency = builder.strictConsistency;
             this.tags = (java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty>)builder.tags;
             this.tdeStatus = builder.tdeStatus;
             this.vpcId = builder.vpcId;
@@ -1078,6 +1588,11 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getAllowShutDown() {
             return this.allowShutDown;
+        }
+
+        @Override
+        public final java.lang.Object getArchitecture() {
+            return this.architecture;
         }
 
         @Override
@@ -1121,6 +1636,16 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getDbMinorVersion() {
+            return this.dbMinorVersion;
+        }
+
+        @Override
+        public final java.lang.Object getDbNodeNum() {
+            return this.dbNodeNum;
+        }
+
+        @Override
         public final java.lang.Object getDefaultTimeZone() {
             return this.defaultTimeZone;
         }
@@ -1128,6 +1653,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getGdnId() {
             return this.gdnId;
+        }
+
+        @Override
+        public final java.lang.Object getHotStandbyCluster() {
+            return this.hotStandbyCluster;
+        }
+
+        @Override
+        public final java.lang.Object getLoosePolarLogBin() {
+            return this.loosePolarLogBin;
+        }
+
+        @Override
+        public final java.lang.Object getLooseXEngine() {
+            return this.looseXEngine;
+        }
+
+        @Override
+        public final java.lang.Object getLooseXEngineUseMemoryPct() {
+            return this.looseXEngineUseMemoryPct;
         }
 
         @Override
@@ -1141,6 +1686,11 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getParameterGroupId() {
+            return this.parameterGroupId;
+        }
+
+        @Override
         public final java.lang.Object getPeriod() {
             return this.period;
         }
@@ -1148,6 +1698,16 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         @Override
         public final java.lang.Object getPeriodUnit() {
             return this.periodUnit;
+        }
+
+        @Override
+        public final java.lang.Object getProxyClass() {
+            return this.proxyClass;
+        }
+
+        @Override
+        public final java.lang.Object getProxyType() {
+            return this.proxyType;
         }
 
         @Override
@@ -1201,6 +1761,41 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getStandbyAz() {
+            return this.standbyAz;
+        }
+
+        @Override
+        public final java.lang.Object getStorageAutoScale() {
+            return this.storageAutoScale;
+        }
+
+        @Override
+        public final java.lang.Object getStoragePayType() {
+            return this.storagePayType;
+        }
+
+        @Override
+        public final java.lang.Object getStorageSpace() {
+            return this.storageSpace;
+        }
+
+        @Override
+        public final java.lang.Object getStorageType() {
+            return this.storageType;
+        }
+
+        @Override
+        public final java.lang.Object getStorageUpperBound() {
+            return this.storageUpperBound;
+        }
+
+        @Override
+        public final java.lang.Object getStrictConsistency() {
+            return this.strictConsistency;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.polardb.RosDBCluster.TagsProperty> getTags() {
             return this.tags;
         }
@@ -1238,6 +1833,9 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getAllowShutDown() != null) {
                 data.set("allowShutDown", om.valueToTree(this.getAllowShutDown()));
             }
+            if (this.getArchitecture() != null) {
+                data.set("architecture", om.valueToTree(this.getArchitecture()));
+            }
             if (this.getAutoRenewPeriod() != null) {
                 data.set("autoRenewPeriod", om.valueToTree(this.getAutoRenewPeriod()));
             }
@@ -1262,11 +1860,29 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getDbClusterParameters() != null) {
                 data.set("dbClusterParameters", om.valueToTree(this.getDbClusterParameters()));
             }
+            if (this.getDbMinorVersion() != null) {
+                data.set("dbMinorVersion", om.valueToTree(this.getDbMinorVersion()));
+            }
+            if (this.getDbNodeNum() != null) {
+                data.set("dbNodeNum", om.valueToTree(this.getDbNodeNum()));
+            }
             if (this.getDefaultTimeZone() != null) {
                 data.set("defaultTimeZone", om.valueToTree(this.getDefaultTimeZone()));
             }
             if (this.getGdnId() != null) {
                 data.set("gdnId", om.valueToTree(this.getGdnId()));
+            }
+            if (this.getHotStandbyCluster() != null) {
+                data.set("hotStandbyCluster", om.valueToTree(this.getHotStandbyCluster()));
+            }
+            if (this.getLoosePolarLogBin() != null) {
+                data.set("loosePolarLogBin", om.valueToTree(this.getLoosePolarLogBin()));
+            }
+            if (this.getLooseXEngine() != null) {
+                data.set("looseXEngine", om.valueToTree(this.getLooseXEngine()));
+            }
+            if (this.getLooseXEngineUseMemoryPct() != null) {
+                data.set("looseXEngineUseMemoryPct", om.valueToTree(this.getLooseXEngineUseMemoryPct()));
             }
             if (this.getLowerCaseTableNames() != null) {
                 data.set("lowerCaseTableNames", om.valueToTree(this.getLowerCaseTableNames()));
@@ -1274,11 +1890,20 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getMaintainTime() != null) {
                 data.set("maintainTime", om.valueToTree(this.getMaintainTime()));
             }
+            if (this.getParameterGroupId() != null) {
+                data.set("parameterGroupId", om.valueToTree(this.getParameterGroupId()));
+            }
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
             if (this.getPeriodUnit() != null) {
                 data.set("periodUnit", om.valueToTree(this.getPeriodUnit()));
+            }
+            if (this.getProxyClass() != null) {
+                data.set("proxyClass", om.valueToTree(this.getProxyClass()));
+            }
+            if (this.getProxyType() != null) {
+                data.set("proxyType", om.valueToTree(this.getProxyType()));
             }
             if (this.getRenewalStatus() != null) {
                 data.set("renewalStatus", om.valueToTree(this.getRenewalStatus()));
@@ -1309,6 +1934,27 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getSourceResourceId() != null) {
                 data.set("sourceResourceId", om.valueToTree(this.getSourceResourceId()));
+            }
+            if (this.getStandbyAz() != null) {
+                data.set("standbyAz", om.valueToTree(this.getStandbyAz()));
+            }
+            if (this.getStorageAutoScale() != null) {
+                data.set("storageAutoScale", om.valueToTree(this.getStorageAutoScale()));
+            }
+            if (this.getStoragePayType() != null) {
+                data.set("storagePayType", om.valueToTree(this.getStoragePayType()));
+            }
+            if (this.getStorageSpace() != null) {
+                data.set("storageSpace", om.valueToTree(this.getStorageSpace()));
+            }
+            if (this.getStorageType() != null) {
+                data.set("storageType", om.valueToTree(this.getStorageType()));
+            }
+            if (this.getStorageUpperBound() != null) {
+                data.set("storageUpperBound", om.valueToTree(this.getStorageUpperBound()));
+            }
+            if (this.getStrictConsistency() != null) {
+                data.set("strictConsistency", om.valueToTree(this.getStrictConsistency()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -1348,6 +1994,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (!dbVersion.equals(that.dbVersion)) return false;
             if (!payType.equals(that.payType)) return false;
             if (this.allowShutDown != null ? !this.allowShutDown.equals(that.allowShutDown) : that.allowShutDown != null) return false;
+            if (this.architecture != null ? !this.architecture.equals(that.architecture) : that.architecture != null) return false;
             if (this.autoRenewPeriod != null ? !this.autoRenewPeriod.equals(that.autoRenewPeriod) : that.autoRenewPeriod != null) return false;
             if (this.backupRetentionPolicyOnClusterDeletion != null ? !this.backupRetentionPolicyOnClusterDeletion.equals(that.backupRetentionPolicyOnClusterDeletion) : that.backupRetentionPolicyOnClusterDeletion != null) return false;
             if (this.cloneDataPoint != null ? !this.cloneDataPoint.equals(that.cloneDataPoint) : that.cloneDataPoint != null) return false;
@@ -1356,12 +2003,21 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.creationOption != null ? !this.creationOption.equals(that.creationOption) : that.creationOption != null) return false;
             if (this.dbClusterDescription != null ? !this.dbClusterDescription.equals(that.dbClusterDescription) : that.dbClusterDescription != null) return false;
             if (this.dbClusterParameters != null ? !this.dbClusterParameters.equals(that.dbClusterParameters) : that.dbClusterParameters != null) return false;
+            if (this.dbMinorVersion != null ? !this.dbMinorVersion.equals(that.dbMinorVersion) : that.dbMinorVersion != null) return false;
+            if (this.dbNodeNum != null ? !this.dbNodeNum.equals(that.dbNodeNum) : that.dbNodeNum != null) return false;
             if (this.defaultTimeZone != null ? !this.defaultTimeZone.equals(that.defaultTimeZone) : that.defaultTimeZone != null) return false;
             if (this.gdnId != null ? !this.gdnId.equals(that.gdnId) : that.gdnId != null) return false;
+            if (this.hotStandbyCluster != null ? !this.hotStandbyCluster.equals(that.hotStandbyCluster) : that.hotStandbyCluster != null) return false;
+            if (this.loosePolarLogBin != null ? !this.loosePolarLogBin.equals(that.loosePolarLogBin) : that.loosePolarLogBin != null) return false;
+            if (this.looseXEngine != null ? !this.looseXEngine.equals(that.looseXEngine) : that.looseXEngine != null) return false;
+            if (this.looseXEngineUseMemoryPct != null ? !this.looseXEngineUseMemoryPct.equals(that.looseXEngineUseMemoryPct) : that.looseXEngineUseMemoryPct != null) return false;
             if (this.lowerCaseTableNames != null ? !this.lowerCaseTableNames.equals(that.lowerCaseTableNames) : that.lowerCaseTableNames != null) return false;
             if (this.maintainTime != null ? !this.maintainTime.equals(that.maintainTime) : that.maintainTime != null) return false;
+            if (this.parameterGroupId != null ? !this.parameterGroupId.equals(that.parameterGroupId) : that.parameterGroupId != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
+            if (this.proxyClass != null ? !this.proxyClass.equals(that.proxyClass) : that.proxyClass != null) return false;
+            if (this.proxyType != null ? !this.proxyType.equals(that.proxyType) : that.proxyType != null) return false;
             if (this.renewalStatus != null ? !this.renewalStatus.equals(that.renewalStatus) : that.renewalStatus != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.scaleMax != null ? !this.scaleMax.equals(that.scaleMax) : that.scaleMax != null) return false;
@@ -1372,6 +2028,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
             if (this.serverlessType != null ? !this.serverlessType.equals(that.serverlessType) : that.serverlessType != null) return false;
             if (this.sourceResourceId != null ? !this.sourceResourceId.equals(that.sourceResourceId) : that.sourceResourceId != null) return false;
+            if (this.standbyAz != null ? !this.standbyAz.equals(that.standbyAz) : that.standbyAz != null) return false;
+            if (this.storageAutoScale != null ? !this.storageAutoScale.equals(that.storageAutoScale) : that.storageAutoScale != null) return false;
+            if (this.storagePayType != null ? !this.storagePayType.equals(that.storagePayType) : that.storagePayType != null) return false;
+            if (this.storageSpace != null ? !this.storageSpace.equals(that.storageSpace) : that.storageSpace != null) return false;
+            if (this.storageType != null ? !this.storageType.equals(that.storageType) : that.storageType != null) return false;
+            if (this.storageUpperBound != null ? !this.storageUpperBound.equals(that.storageUpperBound) : that.storageUpperBound != null) return false;
+            if (this.strictConsistency != null ? !this.strictConsistency.equals(that.strictConsistency) : that.strictConsistency != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tdeStatus != null ? !this.tdeStatus.equals(that.tdeStatus) : that.tdeStatus != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
@@ -1386,6 +2049,7 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.dbVersion.hashCode());
             result = 31 * result + (this.payType.hashCode());
             result = 31 * result + (this.allowShutDown != null ? this.allowShutDown.hashCode() : 0);
+            result = 31 * result + (this.architecture != null ? this.architecture.hashCode() : 0);
             result = 31 * result + (this.autoRenewPeriod != null ? this.autoRenewPeriod.hashCode() : 0);
             result = 31 * result + (this.backupRetentionPolicyOnClusterDeletion != null ? this.backupRetentionPolicyOnClusterDeletion.hashCode() : 0);
             result = 31 * result + (this.cloneDataPoint != null ? this.cloneDataPoint.hashCode() : 0);
@@ -1394,12 +2058,21 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.creationOption != null ? this.creationOption.hashCode() : 0);
             result = 31 * result + (this.dbClusterDescription != null ? this.dbClusterDescription.hashCode() : 0);
             result = 31 * result + (this.dbClusterParameters != null ? this.dbClusterParameters.hashCode() : 0);
+            result = 31 * result + (this.dbMinorVersion != null ? this.dbMinorVersion.hashCode() : 0);
+            result = 31 * result + (this.dbNodeNum != null ? this.dbNodeNum.hashCode() : 0);
             result = 31 * result + (this.defaultTimeZone != null ? this.defaultTimeZone.hashCode() : 0);
             result = 31 * result + (this.gdnId != null ? this.gdnId.hashCode() : 0);
+            result = 31 * result + (this.hotStandbyCluster != null ? this.hotStandbyCluster.hashCode() : 0);
+            result = 31 * result + (this.loosePolarLogBin != null ? this.loosePolarLogBin.hashCode() : 0);
+            result = 31 * result + (this.looseXEngine != null ? this.looseXEngine.hashCode() : 0);
+            result = 31 * result + (this.looseXEngineUseMemoryPct != null ? this.looseXEngineUseMemoryPct.hashCode() : 0);
             result = 31 * result + (this.lowerCaseTableNames != null ? this.lowerCaseTableNames.hashCode() : 0);
             result = 31 * result + (this.maintainTime != null ? this.maintainTime.hashCode() : 0);
+            result = 31 * result + (this.parameterGroupId != null ? this.parameterGroupId.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
+            result = 31 * result + (this.proxyClass != null ? this.proxyClass.hashCode() : 0);
+            result = 31 * result + (this.proxyType != null ? this.proxyType.hashCode() : 0);
             result = 31 * result + (this.renewalStatus != null ? this.renewalStatus.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.scaleMax != null ? this.scaleMax.hashCode() : 0);
@@ -1410,6 +2083,13 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
             result = 31 * result + (this.serverlessType != null ? this.serverlessType.hashCode() : 0);
             result = 31 * result + (this.sourceResourceId != null ? this.sourceResourceId.hashCode() : 0);
+            result = 31 * result + (this.standbyAz != null ? this.standbyAz.hashCode() : 0);
+            result = 31 * result + (this.storageAutoScale != null ? this.storageAutoScale.hashCode() : 0);
+            result = 31 * result + (this.storagePayType != null ? this.storagePayType.hashCode() : 0);
+            result = 31 * result + (this.storageSpace != null ? this.storageSpace.hashCode() : 0);
+            result = 31 * result + (this.storageType != null ? this.storageType.hashCode() : 0);
+            result = 31 * result + (this.storageUpperBound != null ? this.storageUpperBound.hashCode() : 0);
+            result = 31 * result + (this.strictConsistency != null ? this.strictConsistency.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tdeStatus != null ? this.tdeStatus.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);

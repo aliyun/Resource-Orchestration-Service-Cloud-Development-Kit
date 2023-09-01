@@ -28,24 +28,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
-        /// </remarks>
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object SecurityGroupId
-        {
-            get;
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: The ID of the specified VSwitch. Currently, ECI instances can only be deployed in VPCs.
-        /// </remarks>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object VSwitchId
-        {
-            get;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: acrRegistryInfo: Enterprise Edition access credential configuration information.
         /// </remarks>
         [JsiiProperty(name: "acrRegistryInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.AcrRegistryInfoProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -270,6 +252,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
+        /// If no security group is specified, the system automatically uses the default security group in the region you select.
+        /// If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+        /// </remarks>
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecurityGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: slsEnable: Enable user log collection. The default is False.
         /// </remarks>
         [JsiiProperty(name: "slsEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -352,6 +349,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: vSwitchId: The ID of the specified VSwitch.
+        /// If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+        /// If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+        /// </remarks>
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? VSwitchId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: zoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
         /// </remarks>
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -387,24 +399,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// </remarks>
             [JsiiProperty(name: "containerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ContainerGroupName
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
-            /// </remarks>
-            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object SecurityGroupId
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: vSwitchId: The ID of the specified VSwitch. Currently, ECI instances can only be deployed in VPCs.
-            /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object VSwitchId
             {
                 get => GetInstanceProperty<object>()!;
             }
@@ -583,6 +577,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
+            /// If no security group is specified, the system automatically uses the default security group in the region you select.
+            /// If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: slsEnable: Enable user log collection. The default is False.
             /// </remarks>
             [JsiiOptional]
@@ -642,6 +648,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             [JsiiOptional]
             [JsiiProperty(name: "volume", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.VolumeProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Volume
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchId: The ID of the specified VSwitch.
+            /// If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+            /// If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
             {
                 get => GetInstanceProperty<object?>();
             }

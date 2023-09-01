@@ -44,6 +44,7 @@ export interface AutoEnableServiceProps {
      * TrafficMirror: VPC Traffic Mirroring
      * VS: Video Surveillance
      * Xtrace: Tracing Anlaysis
+     * CDN: Content Delivery Network
      *
      */
     readonly serviceName: string | ros.IResolvable;

@@ -55,6 +55,11 @@ export interface RosBucketProps {
     readonly refererConfiguration?: RosBucket.RefererConfigurationProperty | ros.IResolvable;
 
     /**
+     * @Property resourceGroupId: The resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule.
      */
     readonly serverSideEncryptionConfiguration?: RosBucket.ServerSideEncryptionConfigurationProperty | ros.IResolvable;
@@ -91,6 +96,7 @@ function RosBucketPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('policy', ros.hashValidator(ros.validateAny))(properties.policy));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.storageClass && (typeof properties.storageClass) !== 'object') {
         errors.collect(ros.propertyValidator('storageClass', ros.validateAllowedValues)({
           data: properties.storageClass,
@@ -149,6 +155,7 @@ function rosBucketPropsToRosTemplate(properties: any, enableResourcePropertyCons
       Policy: ros.hashMapper(ros.objectToRosTemplate)(properties.policy),
       RedundancyType: ros.stringToRosTemplate(properties.redundancyType),
       RefererConfiguration: rosBucketRefererConfigurationPropertyToRosTemplate(properties.refererConfiguration),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       ServerSideEncryptionConfiguration: rosBucketServerSideEncryptionConfigurationPropertyToRosTemplate(properties.serverSideEncryptionConfiguration),
       StorageClass: ros.stringToRosTemplate(properties.storageClass),
       Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
@@ -237,6 +244,11 @@ export class RosBucket extends ros.RosResource {
     public refererConfiguration: RosBucket.RefererConfigurationProperty | ros.IResolvable | undefined;
 
     /**
+     * @Property resourceGroupId: The resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule.
      */
     public serverSideEncryptionConfiguration: RosBucket.ServerSideEncryptionConfigurationProperty | ros.IResolvable | undefined;
@@ -284,6 +296,7 @@ export class RosBucket extends ros.RosResource {
         this.policy = props.policy;
         this.redundancyType = props.redundancyType;
         this.refererConfiguration = props.refererConfiguration;
+        this.resourceGroupId = props.resourceGroupId;
         this.serverSideEncryptionConfiguration = props.serverSideEncryptionConfiguration;
         this.storageClass = props.storageClass;
         this.tags = props.tags;
@@ -303,6 +316,7 @@ export class RosBucket extends ros.RosResource {
             policy: this.policy,
             redundancyType: this.redundancyType,
             refererConfiguration: this.refererConfiguration,
+            resourceGroupId: this.resourceGroupId,
             serverSideEncryptionConfiguration: this.serverSideEncryptionConfiguration,
             storageClass: this.storageClass,
             tags: this.tags,
@@ -870,4 +884,129 @@ function rosBucketWebsiteConfigurationPropertyToRosTemplate(properties: any): an
       IndexDocument: ros.stringToRosTemplate(properties.indexDocument),
       ErrorDocument: ros.stringToRosTemplate(properties.errorDocument),
     };
+}
+
+/**
+ * Properties for defining a `ALIYUN::OSS::Domain`
+ */
+export interface RosDomainProps {
+
+    /**
+     * @Property bucketName: bucket name.
+     */
+    readonly bucketName: string | ros.IResolvable;
+
+    /**
+     * @Property domainName: Domain name
+     */
+    readonly domainName: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDomainProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDomainProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDomainPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucketName', ros.requiredValidator)(properties.bucketName));
+    errors.collect(ros.propertyValidator('bucketName', ros.validateString)(properties.bucketName));
+    errors.collect(ros.propertyValidator('domainName', ros.requiredValidator)(properties.domainName));
+    if(properties.domainName && (Array.isArray(properties.domainName) || (typeof properties.domainName) === 'string')) {
+        errors.collect(ros.propertyValidator('domainName', ros.validateLength)({
+            data: properties.domainName.length,
+            min: 1,
+            max: 64,
+          }));
+    }
+    errors.collect(ros.propertyValidator('domainName', ros.validateString)(properties.domainName));
+    return errors.wrap('supplied properties not correct for "RosDomainProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::Domain` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDomainProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::Domain` resource.
+ */
+// @ts-ignore TS6133
+function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDomainPropsValidator(properties).assertSuccess();
+    }
+    return {
+      BucketName: ros.stringToRosTemplate(properties.bucketName),
+      DomainName: ros.stringToRosTemplate(properties.domainName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::OSS::Domain`
+ */
+export class RosDomain extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::Domain";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute BucketName: The name of Bucket
+     */
+    public readonly attrBucketName: ros.IResolvable;
+
+    /**
+     * @Attribute DomainName: The custom domain name.
+     */
+    public readonly attrDomainName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bucketName: bucket name.
+     */
+    public bucketName: string | ros.IResolvable;
+
+    /**
+     * @Property domainName: Domain name
+     */
+    public domainName: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::OSS::Domain`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDomainProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDomain.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBucketName = this.getAtt('BucketName');
+        this.attrDomainName = this.getAtt('DomainName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bucketName = props.bucketName;
+        this.domainName = props.domainName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bucketName: this.bucketName,
+            domainName: this.domainName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDomainPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

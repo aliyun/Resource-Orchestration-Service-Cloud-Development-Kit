@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eventbridge;
 /**
  * Properties for defining a <code>ALIYUN::EventBridge::Rule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.355Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.790Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eventbridge.$Module.class, fqn = "@alicloud/ros-cdk-eventbridge.RosRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosRuleProps.Jsii$Proxy.class)
 public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {

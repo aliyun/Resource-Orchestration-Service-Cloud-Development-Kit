@@ -333,6 +333,72 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
+        private object? _dedicatedHostGroupId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs. This parameter is valid when you create the read-only instance in a dedicated cluster.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "dedicatedHostGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DedicatedHostGroupId
+        {
+            get => _dedicatedHostGroupId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _dedicatedHostGroupId = value;
+            }
+        }
+
+        private object? _deletionProtection;
+
+        /// <remarks>
+        /// <strong>Property</strong>: deletionProtection: Specifies whether to enable the release protection feature for the read-only instance. Valid values:- **true**: enables the feature.- **false** (default): disables the feature.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DeletionProtection
+        {
+            get => _deletionProtection;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _deletionProtection = value;
+            }
+        }
+
         private object? _payType;
 
         /// <remarks>
@@ -541,6 +607,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         {
             get;
             set;
+        }
+
+        private object? _targetDedicatedHostIdForMaster;
+
+        /// <remarks>
+        /// <strong>Property</strong>: targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides. This parameter is valid when you create the read-only instance in a dedicated cluster.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "targetDedicatedHostIdForMaster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? TargetDedicatedHostIdForMaster
+        {
+            get => _targetDedicatedHostIdForMaster;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _targetDedicatedHostIdForMaster = value;
+            }
         }
 
         private object? _vpcId;

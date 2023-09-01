@@ -221,6 +221,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
         }
 
+        private object? _deletionProtectionConfig;
+
+        /// <summary>Property deletionProtectionConfig: The configuration of the deletion protection feature.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionProtectionConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancer.DeletionProtectionConfigProperty\"}]}}", isOptional: true)]
+        public object? DeletionProtectionConfig
+        {
+            get => _deletionProtectionConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IDeletionProtectionConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IDeletionProtectionConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _deletionProtectionConfig = value;
+            }
+        }
+
         private object? _loadBalancerBillingConfig;
 
         /// <summary>Property loadBalancerBillingConfig: The configuration of the billing method.</summary>
@@ -317,6 +348,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
         }
 
+        private object? _modificationProtectionConfig;
+
+        /// <summary>Property modificationProtectionConfig: The configuration of the configuration read-only mode.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "modificationProtectionConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancer.ModificationProtectionConfigProperty\"}]}}", isOptional: true)]
+        public object? ModificationProtectionConfig
+        {
+            get => _modificationProtectionConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IModificationProtectionConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IModificationProtectionConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _modificationProtectionConfig = value;
+            }
+        }
+
         private object? _resourceGroupId;
 
         /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
@@ -346,6 +408,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
                 _resourceGroupId = value;
             }
+        }
+
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancer.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.ITagsProperty[]? Tags
+        {
+            get;
+            set;
         }
 
         private object? _trafficAffinityEnabled;

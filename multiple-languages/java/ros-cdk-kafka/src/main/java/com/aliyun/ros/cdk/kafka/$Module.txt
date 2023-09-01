@@ -1,5 +1,10 @@
+@alicloud/ros-cdk-kafka.ConsumerGroup=com.aliyun.ros.cdk.kafka.ConsumerGroup
+@alicloud/ros-cdk-kafka.ConsumerGroupProps=com.aliyun.ros.cdk.kafka.ConsumerGroupProps
 @alicloud/ros-cdk-kafka.Instance=com.aliyun.ros.cdk.kafka.Instance
 @alicloud/ros-cdk-kafka.InstanceProps=com.aliyun.ros.cdk.kafka.InstanceProps
+@alicloud/ros-cdk-kafka.RosConsumerGroup=com.aliyun.ros.cdk.kafka.RosConsumerGroup
+@alicloud/ros-cdk-kafka.RosConsumerGroup.TagsProperty=com.aliyun.ros.cdk.kafka.RosConsumerGroup$TagsProperty
+@alicloud/ros-cdk-kafka.RosConsumerGroupProps=com.aliyun.ros.cdk.kafka.RosConsumerGroupProps
 @alicloud/ros-cdk-kafka.RosInstance=com.aliyun.ros.cdk.kafka.RosInstance
 @alicloud/ros-cdk-kafka.RosInstance.DeployOptionProperty=com.aliyun.ros.cdk.kafka.RosInstance$DeployOptionProperty
 @alicloud/ros-cdk-kafka.RosInstance.TagsProperty=com.aliyun.ros.cdk.kafka.RosInstance$TagsProperty

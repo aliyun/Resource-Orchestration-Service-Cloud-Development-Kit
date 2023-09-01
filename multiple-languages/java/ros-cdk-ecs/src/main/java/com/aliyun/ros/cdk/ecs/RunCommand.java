@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  <code>ALIYUN::ECS::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.736Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.156Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RunCommand")
 public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
 
@@ -439,6 +439,19 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder sync(final com.aliyun.ros.cdk.core.IResolvable sync) {
             this.props.sync(sync);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to run_command.
+         * <p>
+         * Max support 20 tags to add during create run_command. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to run_command. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

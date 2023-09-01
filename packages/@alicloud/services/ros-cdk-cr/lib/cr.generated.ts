@@ -451,6 +451,185 @@ export class RosInstanceEndpointAclPolicy extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`
+ */
+export interface RosInstanceVpcEndpointLinkedVpcProps {
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the vpc.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vswitchId: The ID of the vswitch.
+     */
+    readonly vswitchId: string | ros.IResolvable;
+
+    /**
+     * @Property enableCreateDnsRecordInPvzt: Whether to automatically create Privatezone records. 
+     * If you enable automatic Privatezone record creation, Privatezone records will be automatically created when VPC instances are added.
+     * Valid values:
+     * - **true**: Automatically creates a Privatezone record.
+     * - **false** (default): Do not automatically create Privatezone records.
+     */
+    readonly enableCreateDnsRecordInPvzt?: boolean | ros.IResolvable;
+
+    /**
+     * @Property moduleName: The name of the module in the instance for which a whitelist is configured. Valid values:
+     * - **Registry** (default): Access the image repository.
+     * - **Chart**: Access Helm Chart.
+     */
+    readonly moduleName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceVpcEndpointLinkedVpcProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceVpcEndpointLinkedVpcProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceVpcEndpointLinkedVpcPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enableCreateDnsRecordInPvzt', ros.validateBoolean)(properties.enableCreateDnsRecordInPvzt));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('moduleName', ros.validateString)(properties.moduleName));
+    errors.collect(ros.propertyValidator('vswitchId', ros.requiredValidator)(properties.vswitchId));
+    errors.collect(ros.propertyValidator('vswitchId', ros.validateString)(properties.vswitchId));
+    return errors.wrap('supplied properties not correct for "RosInstanceVpcEndpointLinkedVpcProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CR::InstanceVpcEndpointLinkedVpc` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceVpcEndpointLinkedVpcProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CR::InstanceVpcEndpointLinkedVpc` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceVpcEndpointLinkedVpcPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstanceVpcEndpointLinkedVpcPropsValidator(properties).assertSuccess();
+    }
+    return {
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VswitchId: ros.stringToRosTemplate(properties.vswitchId),
+      EnableCreateDNSRecordInPvzt: ros.booleanToRosTemplate(properties.enableCreateDnsRecordInPvzt),
+      ModuleName: ros.stringToRosTemplate(properties.moduleName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`
+ */
+export class RosInstanceVpcEndpointLinkedVpc extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::InstanceVpcEndpointLinkedVpc";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute InstanceId: The ID of the instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The ID of the vpc.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute VswitchId: The ID of the vswitch.
+     */
+    public readonly attrVswitchId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the vpc.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vswitchId: The ID of the vswitch.
+     */
+    public vswitchId: string | ros.IResolvable;
+
+    /**
+     * @Property enableCreateDnsRecordInPvzt: Whether to automatically create Privatezone records. 
+     * If you enable automatic Privatezone record creation, Privatezone records will be automatically created when VPC instances are added.
+     * Valid values:
+     * - **true**: Automatically creates a Privatezone record.
+     * - **false** (default): Do not automatically create Privatezone records.
+     */
+    public enableCreateDnsRecordInPvzt: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property moduleName: The name of the module in the instance for which a whitelist is configured. Valid values:
+     * - **Registry** (default): Access the image repository.
+     * - **Chart**: Access Helm Chart.
+     */
+    public moduleName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceVpcEndpointLinkedVpcProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstanceVpcEndpointLinkedVpc.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrVswitchId = this.getAtt('VswitchId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.vpcId = props.vpcId;
+        this.vswitchId = props.vswitchId;
+        this.enableCreateDnsRecordInPvzt = props.enableCreateDnsRecordInPvzt;
+        this.moduleName = props.moduleName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            vpcId: this.vpcId,
+            vswitchId: this.vswitchId,
+            enableCreateDnsRecordInPvzt: this.enableCreateDnsRecordInPvzt,
+            moduleName: this.moduleName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstanceVpcEndpointLinkedVpcPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::CR::Namespace`
  */
 export interface RosNamespaceProps {

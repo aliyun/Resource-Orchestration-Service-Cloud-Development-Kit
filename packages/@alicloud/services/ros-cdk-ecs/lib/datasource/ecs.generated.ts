@@ -3,6 +3,122 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `DATASOURCE::ECS::Activations`
+ */
+export interface RosActivationsProps {
+
+    /**
+     * @Property activationId: Activation code ID.
+     */
+    readonly activationId?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The default prefix of the instance name.
+     */
+    readonly instanceName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosActivationsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosActivationsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosActivationsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('activationId', ros.validateString)(properties.activationId));
+    return errors.wrap('supplied properties not correct for "RosActivationsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Activations` resource
+ *
+ * @param properties - the TypeScript properties of a `RosActivationsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ECS::Activations` resource.
+ */
+// @ts-ignore TS6133
+function rosActivationsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosActivationsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ActivationId: ros.stringToRosTemplate(properties.activationId),
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+    };
+}
+
+/**
+ * A ROS template type:  `DATASOURCE::ECS::Activations`
+ */
+export class RosActivations extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Activations";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ActivationIds: The list of activation IDs.
+     */
+    public readonly attrActivationIds: ros.IResolvable;
+
+    /**
+     * @Attribute Activations: The list of activations.
+     */
+    public readonly attrActivations: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property activationId: Activation code ID.
+     */
+    public activationId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceName: The default prefix of the instance name.
+     */
+    public instanceName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `DATASOURCE::ECS::Activations`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosActivationsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosActivations.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrActivationIds = this.getAtt('ActivationIds');
+        this.attrActivations = this.getAtt('Activations');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.activationId = props.activationId;
+        this.instanceName = props.instanceName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            activationId: this.activationId,
+            instanceName: this.instanceName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosActivationsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `DATASOURCE::ECS::AutoSnapshotPolicies`
  */
 export interface RosAutoSnapshotPoliciesProps {

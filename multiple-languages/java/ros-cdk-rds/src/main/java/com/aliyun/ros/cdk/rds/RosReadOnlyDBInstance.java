@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS template type:  <code>ALIYUN::RDS::ReadOnlyDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.768Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.182Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosReadOnlyDBInstance")
 public class RosReadOnlyDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -237,6 +237,42 @@ public class RosReadOnlyDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "dedicatedHostGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDedicatedHostGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dedicatedHostGroupId", value);
+    }
+
+    /**
+     */
+    public void setDedicatedHostGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dedicatedHostGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
+        return software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeletionProtection(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "deletionProtection", value);
+    }
+
+    /**
+     */
+    public void setDeletionProtection(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deletionProtection", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
         return software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -335,6 +371,24 @@ public class RosReadOnlyDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTargetDedicatedHostIdForMaster() {
+        return software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForMaster", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTargetDedicatedHostIdForMaster(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "targetDedicatedHostIdForMaster", value);
+    }
+
+    /**
+     */
+    public void setTargetDedicatedHostIdForMaster(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "targetDedicatedHostIdForMaster", value);
     }
 
     /**
@@ -554,6 +608,40 @@ public class RosReadOnlyDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param dedicatedHostGroupId This parameter is required.
+         */
+        public Builder dedicatedHostGroupId(final java.lang.String dedicatedHostGroupId) {
+            this.props.dedicatedHostGroupId(dedicatedHostGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dedicatedHostGroupId This parameter is required.
+         */
+        public Builder dedicatedHostGroupId(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostGroupId) {
+            this.props.dedicatedHostGroupId(dedicatedHostGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deletionProtection This parameter is required.
+         */
+        public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deletionProtection This parameter is required.
+         */
+        public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param payType This parameter is required.
          */
         public Builder payType(final java.lang.String payType) {
@@ -643,6 +731,23 @@ public class RosReadOnlyDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param targetDedicatedHostIdForMaster This parameter is required.
+         */
+        public Builder targetDedicatedHostIdForMaster(final java.lang.String targetDedicatedHostIdForMaster) {
+            this.props.targetDedicatedHostIdForMaster(targetDedicatedHostIdForMaster);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param targetDedicatedHostIdForMaster This parameter is required.
+         */
+        public Builder targetDedicatedHostIdForMaster(final com.aliyun.ros.cdk.core.IResolvable targetDedicatedHostIdForMaster) {
+            this.props.targetDedicatedHostIdForMaster(targetDedicatedHostIdForMaster);
             return this;
         }
 

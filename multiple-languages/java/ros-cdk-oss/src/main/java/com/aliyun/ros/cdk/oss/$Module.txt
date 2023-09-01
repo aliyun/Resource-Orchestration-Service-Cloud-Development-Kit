@@ -1,5 +1,7 @@
 @alicloud/ros-cdk-oss.Bucket=com.aliyun.ros.cdk.oss.Bucket
 @alicloud/ros-cdk-oss.BucketProps=com.aliyun.ros.cdk.oss.BucketProps
+@alicloud/ros-cdk-oss.Domain=com.aliyun.ros.cdk.oss.Domain
+@alicloud/ros-cdk-oss.DomainProps=com.aliyun.ros.cdk.oss.DomainProps
 @alicloud/ros-cdk-oss.RosBucket=com.aliyun.ros.cdk.oss.RosBucket
 @alicloud/ros-cdk-oss.RosBucket.AbortMultipartUploadProperty=com.aliyun.ros.cdk.oss.RosBucket$AbortMultipartUploadProperty
 @alicloud/ros-cdk-oss.RosBucket.CORSConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$CORSConfigurationProperty
@@ -13,6 +15,8 @@
 @alicloud/ros-cdk-oss.RosBucket.VersioningConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$VersioningConfigurationProperty
 @alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$WebsiteConfigurationProperty
 @alicloud/ros-cdk-oss.RosBucketProps=com.aliyun.ros.cdk.oss.RosBucketProps
+@alicloud/ros-cdk-oss.RosDomain=com.aliyun.ros.cdk.oss.RosDomain
+@alicloud/ros-cdk-oss.RosDomainProps=com.aliyun.ros.cdk.oss.RosDomainProps
 @alicloud/ros-cdk-oss.datasource.Buckets=com.aliyun.ros.cdk.oss.datasource.Buckets
 @alicloud/ros-cdk-oss.datasource.BucketsProps=com.aliyun.ros.cdk.oss.datasource.BucketsProps
 @alicloud/ros-cdk-oss.datasource.RosBuckets=com.aliyun.ros.cdk.oss.datasource.RosBuckets

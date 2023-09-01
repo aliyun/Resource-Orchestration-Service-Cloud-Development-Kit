@@ -65,6 +65,16 @@ export interface ReadOnlyDBInstanceProps {
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
+     * Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs. This parameter is valid when you create the read-only instance in a dedicated cluster.
+     */
+    readonly dedicatedHostGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance. Valid values:- **true**: enables the feature.- **false** (default): disables the feature.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * Property payType: The billing method.
      */
     readonly payType?: string | ros.IResolvable;
@@ -107,6 +117,11 @@ export interface ReadOnlyDBInstanceProps {
      * Can be a null string.
      */
     readonly tags?: { [key: string]: (any) };
+
+    /**
+     * Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides. This parameter is valid when you create the read-only instance in a dedicated cluster.
+     */
+    readonly targetDedicatedHostIdForMaster?: string | ros.IResolvable;
 
     /**
      * Property vpcId: The ID of the VPC.
@@ -156,17 +171,20 @@ export class ReadOnlyDBInstance extends ros.Resource {
 
         const rosReadOnlyDBInstance = new RosReadOnlyDBInstance(this, id,  {
             periodType: props.periodType === undefined || props.periodType === null ? 'Month' : props.periodType,
+            targetDedicatedHostIdForMaster: props.targetDedicatedHostIdForMaster,
             category: props.category,
             engineVersion: props.engineVersion,
             privateIpAddress: props.privateIpAddress,
-            zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
+            zoneId: props.zoneId,
             vpcId: props.vpcId,
             dbInstanceClass: props.dbInstanceClass,
-            vSwitchId: props.vSwitchId,
+            dedicatedHostGroupId: props.dedicatedHostGroupId,
             autoRenew: props.autoRenew,
+            vSwitchId: props.vSwitchId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
+            deletionProtection: props.deletionProtection,
             dbInstanceStorageType: props.dbInstanceStorageType,
             dbInstanceId: props.dbInstanceId,
             dbInstanceStorage: props.dbInstanceStorage,

@@ -3,6 +3,157 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::OOS::DefaultPatchBaseline`
+ */
+export interface RosDefaultPatchBaselineProps {
+
+    /**
+     * @Property patchBaselineName: The name of the patch baseline.
+     */
+    readonly patchBaselineName: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDefaultPatchBaselineProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDefaultPatchBaselineProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDefaultPatchBaselinePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('patchBaselineName', ros.requiredValidator)(properties.patchBaselineName));
+    errors.collect(ros.propertyValidator('patchBaselineName', ros.validateString)(properties.patchBaselineName));
+    return errors.wrap('supplied properties not correct for "RosDefaultPatchBaselineProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::DefaultPatchBaseline` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDefaultPatchBaselineProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::DefaultPatchBaseline` resource.
+ */
+// @ts-ignore TS6133
+function rosDefaultPatchBaselinePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDefaultPatchBaselinePropsValidator(properties).assertSuccess();
+    }
+    return {
+      PatchBaselineName: ros.stringToRosTemplate(properties.patchBaselineName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::OOS::DefaultPatchBaseline`
+ */
+export class RosDefaultPatchBaseline extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OOS::DefaultPatchBaseline";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ApprovalRules: The rules of scanning and installing patches for the specified operating system.
+     */
+    public readonly attrApprovalRules: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedBy: The creator of the patch baseline.
+     */
+    public readonly attrCreatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute CreatedDate: The time when the patch baseline was created.
+     */
+    public readonly attrCreatedDate: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the patch baseline.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute OperationSystem: The type of the operating system.
+     */
+    public readonly attrOperationSystem: ros.IResolvable;
+
+    /**
+     * @Attribute PatchBaselineId: The ID of the patch baseline.
+     */
+    public readonly attrPatchBaselineId: ros.IResolvable;
+
+    /**
+     * @Attribute PatchBaselineName: The name of the patch baseline.
+     */
+    public readonly attrPatchBaselineName: ros.IResolvable;
+
+    /**
+     * @Attribute ShareType: The share type of the patch baseline.
+     */
+    public readonly attrShareType: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedBy: The user who last modified the patch baseline.
+     */
+    public readonly attrUpdatedBy: ros.IResolvable;
+
+    /**
+     * @Attribute UpdatedDate: The time when the patch baseline was last modified.
+     */
+    public readonly attrUpdatedDate: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property patchBaselineName: The name of the patch baseline.
+     */
+    public patchBaselineName: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::OOS::DefaultPatchBaseline`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDefaultPatchBaselineProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDefaultPatchBaseline.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrApprovalRules = this.getAtt('ApprovalRules');
+        this.attrCreatedBy = this.getAtt('CreatedBy');
+        this.attrCreatedDate = this.getAtt('CreatedDate');
+        this.attrDescription = this.getAtt('Description');
+        this.attrOperationSystem = this.getAtt('OperationSystem');
+        this.attrPatchBaselineId = this.getAtt('PatchBaselineId');
+        this.attrPatchBaselineName = this.getAtt('PatchBaselineName');
+        this.attrShareType = this.getAtt('ShareType');
+        this.attrUpdatedBy = this.getAtt('UpdatedBy');
+        this.attrUpdatedDate = this.getAtt('UpdatedDate');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.patchBaselineName = props.patchBaselineName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            patchBaselineName: this.patchBaselineName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDefaultPatchBaselinePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::OOS::Execution`
  */
 export interface RosExecutionProps {

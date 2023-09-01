@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * A ROS template type:  <code>ALIYUN::EDAS::K8sCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.032Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.467Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosK8sCluster")
 public class RosK8sCluster extends com.aliyun.ros.cdk.core.RosResource {
 

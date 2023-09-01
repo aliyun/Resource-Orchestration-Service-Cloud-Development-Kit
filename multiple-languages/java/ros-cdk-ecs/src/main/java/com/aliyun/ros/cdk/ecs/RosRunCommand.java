@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  <code>ALIYUN::ECS::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.693Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.113Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRunCommand")
 public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -341,6 +341,18 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty> getTags() {
+        return java.util.Optional.ofNullable((java.util.List<com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty>)(software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    }
+
+    /**
+     */
+    public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty> value) {
+        software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTimed() {
         return software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -391,6 +403,174 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setWorkingDir(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "workingDir", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRunCommand.TagsProperty")
+    @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface TagsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
+            java.lang.Object key;
+            java.lang.Object value;
+
+            /**
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link TagsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public TagsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TagsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("key", om.valueToTree(this.getKey()));
+                if (this.getValue() != null) {
+                    data.set("value", om.valueToTree(this.getValue()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosRunCommand.TagsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                TagsProperty.Jsii$Proxy that = (TagsProperty.Jsii$Proxy) o;
+
+                if (!key.equals(that.key)) return false;
+                return this.value != null ? this.value.equals(that.value) : that.value == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value != null ? this.value.hashCode() : 0);
+                return result;
+            }
+        }
     }
 
     /**
@@ -620,6 +800,15 @@ public class RosRunCommand extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder sync(final com.aliyun.ros.cdk.core.IResolvable sync) {
             this.props.sync(sync);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tags This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

@@ -45,6 +45,11 @@ export class Route extends ros.Resource {
      */
 
     /**
+     * Attribute RouteEntryId: The ID of the route entry.
+     */
+    public readonly attrRouteEntryId: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::ECS::Route`.
      *
      * Param scope - scope in which this resource is defined
@@ -62,5 +67,6 @@ export class Route extends ros.Resource {
             destinationCidrBlock: props.destinationCidrBlock,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRoute;
+        this.attrRouteEntryId = rosRoute.attrRouteEntryId;
     }
 }

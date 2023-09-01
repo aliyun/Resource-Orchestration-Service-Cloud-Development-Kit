@@ -37,5 +37,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         protected Route(DeputyProps props): base(props)
         {
         }
+
+        /// <summary>Attribute RouteEntryId: The ID of the route entry.</summary>
+        [JsiiProperty(name: "attrRouteEntryId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRouteEntryId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
     }
 }

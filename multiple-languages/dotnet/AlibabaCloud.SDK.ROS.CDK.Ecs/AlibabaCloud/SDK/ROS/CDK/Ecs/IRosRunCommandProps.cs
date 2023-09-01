@@ -175,6 +175,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to run_command. Max support 20 tags to add during create run_command. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosRunCommand.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Ecs.RosRunCommand.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: timed: Specifies whether to periodically run the script. Valid values:
         /// true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
         /// false: runs once only.
@@ -365,6 +378,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public object? Sync
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tags: Tags to attach to run_command. Max support 20 tags to add during create run_command. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosRunCommand.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Ecs.RosRunCommand.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosRunCommand.ITagsProperty[]?>();
             }
 
             /// <remarks>

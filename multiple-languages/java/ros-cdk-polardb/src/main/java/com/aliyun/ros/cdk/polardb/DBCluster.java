@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS resource type:  <code>ALIYUN::POLARDB::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.312Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.762Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -291,6 +291,35 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property architecture: The architecture of CPU.
+         * <p>
+         * Valid values:
+         * X86
+         * ARM
+         * <p>
+         * @return {@code this}
+         * @param architecture Property architecture: The architecture of CPU. This parameter is required.
+         */
+        public Builder architecture(final java.lang.String architecture) {
+            this.props.architecture(architecture);
+            return this;
+        }
+        /**
+         * Property architecture: The architecture of CPU.
+         * <p>
+         * Valid values:
+         * X86
+         * ARM
+         * <p>
+         * @return {@code this}
+         * @param architecture Property architecture: The architecture of CPU. This parameter is required.
+         */
+        public Builder architecture(final com.aliyun.ros.cdk.core.IResolvable architecture) {
+            this.props.architecture(architecture);
+            return this;
+        }
+
+        /**
          * Property autoRenewPeriod: Set the cluster auto renewal time.
          * <p>
          * Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
@@ -537,6 +566,66 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dbMinorVersion: The minor version of the cluster.
+         * <p>
+         * Valid values:
+         * 8.0.2
+         * 8.0.1
+         * This parameter is valid only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 8.0.
+         * <p>
+         * @return {@code this}
+         * @param dbMinorVersion Property dbMinorVersion: The minor version of the cluster. This parameter is required.
+         */
+        public Builder dbMinorVersion(final java.lang.String dbMinorVersion) {
+            this.props.dbMinorVersion(dbMinorVersion);
+            return this;
+        }
+        /**
+         * Property dbMinorVersion: The minor version of the cluster.
+         * <p>
+         * Valid values:
+         * 8.0.2
+         * 8.0.1
+         * This parameter is valid only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 8.0.
+         * <p>
+         * @return {@code this}
+         * @param dbMinorVersion Property dbMinorVersion: The minor version of the cluster. This parameter is required.
+         */
+        public Builder dbMinorVersion(final com.aliyun.ros.cdk.core.IResolvable dbMinorVersion) {
+            this.props.dbMinorVersion(dbMinorVersion);
+            return this;
+        }
+
+        /**
+         * Property dbNodeNum: The number of Standard Edition nodes.
+         * <p>
+         * Default value: 1. Valid values:
+         * 1: only one primary node.
+         * 2: one read-only node and one primary node.
+         * <p>
+         * @return {@code this}
+         * @param dbNodeNum Property dbNodeNum: The number of Standard Edition nodes. This parameter is required.
+         */
+        public Builder dbNodeNum(final java.lang.Number dbNodeNum) {
+            this.props.dbNodeNum(dbNodeNum);
+            return this;
+        }
+        /**
+         * Property dbNodeNum: The number of Standard Edition nodes.
+         * <p>
+         * Default value: 1. Valid values:
+         * 1: only one primary node.
+         * 2: one read-only node and one primary node.
+         * <p>
+         * @return {@code this}
+         * @param dbNodeNum Property dbNodeNum: The number of Standard Edition nodes. This parameter is required.
+         */
+        public Builder dbNodeNum(final com.aliyun.ros.cdk.core.IResolvable dbNodeNum) {
+            this.props.dbNodeNum(dbNodeNum);
+            return this;
+        }
+
+        /**
          * Property defaultTimeZone: Set up a time zone (UTC), the value range is as follows: System:  The default time zone is the same as the time zone where the region is located.
          * <p>
          * This is default value.
@@ -591,6 +680,106 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature.
+         * <p>
+         * Default value: ON. Valid values:
+         * ON: enables the hot standby storage cluster feature.
+         * OFF: disables the hot standby storage cluster feature
+         * STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
+         * The default value for Standard Edition clusters is STANDBY.
+         * <p>
+         * @return {@code this}
+         * @param hotStandbyCluster Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature. This parameter is required.
+         */
+        public Builder hotStandbyCluster(final java.lang.String hotStandbyCluster) {
+            this.props.hotStandbyCluster(hotStandbyCluster);
+            return this;
+        }
+        /**
+         * Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature.
+         * <p>
+         * Default value: ON. Valid values:
+         * ON: enables the hot standby storage cluster feature.
+         * OFF: disables the hot standby storage cluster feature
+         * STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
+         * The default value for Standard Edition clusters is STANDBY.
+         * <p>
+         * @return {@code this}
+         * @param hotStandbyCluster Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature. This parameter is required.
+         */
+        public Builder hotStandbyCluster(final com.aliyun.ros.cdk.core.IResolvable hotStandbyCluster) {
+            this.props.hotStandbyCluster(hotStandbyCluster);
+            return this;
+        }
+
+        /**
+         * Property loosePolarLogBin: Enable the Binlog function, the value range is as follows: ON: The cluster enables the Binlog function OFF: The cluster disables the Binlog function This parameter takes effect only when the parameter DBType is MySQL.
+         * <p>
+         * @return {@code this}
+         * @param loosePolarLogBin Property loosePolarLogBin: Enable the Binlog function, the value range is as follows: ON: The cluster enables the Binlog function OFF: The cluster disables the Binlog function This parameter takes effect only when the parameter DBType is MySQL. This parameter is required.
+         */
+        public Builder loosePolarLogBin(final java.lang.String loosePolarLogBin) {
+            this.props.loosePolarLogBin(loosePolarLogBin);
+            return this;
+        }
+        /**
+         * Property loosePolarLogBin: Enable the Binlog function, the value range is as follows: ON: The cluster enables the Binlog function OFF: The cluster disables the Binlog function This parameter takes effect only when the parameter DBType is MySQL.
+         * <p>
+         * @return {@code this}
+         * @param loosePolarLogBin Property loosePolarLogBin: Enable the Binlog function, the value range is as follows: ON: The cluster enables the Binlog function OFF: The cluster disables the Binlog function This parameter takes effect only when the parameter DBType is MySQL. This parameter is required.
+         */
+        public Builder loosePolarLogBin(final com.aliyun.ros.cdk.core.IResolvable loosePolarLogBin) {
+            this.props.loosePolarLogBin(loosePolarLogBin);
+            return this;
+        }
+
+        /**
+         * Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows: ON: The cluster starts the X-Engine enginen OFF: The cluster shuts down the X-Engine engine This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.
+         * <p>
+         * @return {@code this}
+         * @param looseXEngine Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows: ON: The cluster starts the X-Engine enginen OFF: The cluster shuts down the X-Engine engine This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB. This parameter is required.
+         */
+        public Builder looseXEngine(final java.lang.String looseXEngine) {
+            this.props.looseXEngine(looseXEngine);
+            return this;
+        }
+        /**
+         * Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows: ON: The cluster starts the X-Engine enginen OFF: The cluster shuts down the X-Engine engine This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.
+         * <p>
+         * @return {@code this}
+         * @param looseXEngine Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows: ON: The cluster starts the X-Engine enginen OFF: The cluster shuts down the X-Engine engine This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB. This parameter is required.
+         */
+        public Builder looseXEngine(final com.aliyun.ros.cdk.core.IResolvable looseXEngine) {
+            this.props.looseXEngine(looseXEngine);
+            return this;
+        }
+
+        /**
+         * Property looseXEngineUseMemoryPct: Set the ratio of enabling the X-Engine storage engine, an integer ranging from 10 to 90.
+         * <p>
+         * This parameter takes effect only when the parameter LooseXEngine is ON.
+         * <p>
+         * @return {@code this}
+         * @param looseXEngineUseMemoryPct Property looseXEngineUseMemoryPct: Set the ratio of enabling the X-Engine storage engine, an integer ranging from 10 to 90. This parameter is required.
+         */
+        public Builder looseXEngineUseMemoryPct(final java.lang.Number looseXEngineUseMemoryPct) {
+            this.props.looseXEngineUseMemoryPct(looseXEngineUseMemoryPct);
+            return this;
+        }
+        /**
+         * Property looseXEngineUseMemoryPct: Set the ratio of enabling the X-Engine storage engine, an integer ranging from 10 to 90.
+         * <p>
+         * This parameter takes effect only when the parameter LooseXEngine is ON.
+         * <p>
+         * @return {@code this}
+         * @param looseXEngineUseMemoryPct Property looseXEngineUseMemoryPct: Set the ratio of enabling the X-Engine storage engine, an integer ranging from 10 to 90. This parameter is required.
+         */
+        public Builder looseXEngineUseMemoryPct(final com.aliyun.ros.cdk.core.IResolvable looseXEngineUseMemoryPct) {
+            this.props.looseXEngineUseMemoryPct(looseXEngineUseMemoryPct);
+            return this;
+        }
+
+        /**
          * Property lowerCaseTableNames: Whether the table name is case sensitive, the value range is as follows: 1: Not case sensitive0: case sensitive The default value is 1.
          * <p>
          * Note: This parameter takes effect only when the value of DBType is MySQL.
@@ -637,6 +826,31 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder maintainTime(final com.aliyun.ros.cdk.core.IResolvable maintainTime) {
             this.props.maintainTime(maintainTime);
+            return this;
+        }
+
+        /**
+         * Property parameterGroupId: The ID of the parameter template.
+         * <p>
+         * You can call the DescribeParameterGroups operation to query the details of all parameter templates of a specified region, such as the ID of a parameter template.
+         * <p>
+         * @return {@code this}
+         * @param parameterGroupId Property parameterGroupId: The ID of the parameter template. This parameter is required.
+         */
+        public Builder parameterGroupId(final java.lang.String parameterGroupId) {
+            this.props.parameterGroupId(parameterGroupId);
+            return this;
+        }
+        /**
+         * Property parameterGroupId: The ID of the parameter template.
+         * <p>
+         * You can call the DescribeParameterGroups operation to query the details of all parameter templates of a specified region, such as the ID of a parameter template.
+         * <p>
+         * @return {@code this}
+         * @param parameterGroupId Property parameterGroupId: The ID of the parameter template. This parameter is required.
+         */
+        public Builder parameterGroupId(final com.aliyun.ros.cdk.core.IResolvable parameterGroupId) {
+            this.props.parameterGroupId(parameterGroupId);
             return this;
         }
 
@@ -689,6 +903,76 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);
+            return this;
+        }
+
+        /**
+         * Property proxyClass: The specifications of the Standard Edition PolarProxy.
+         * <p>
+         * Valid values:
+         * polar.maxscale.g2.medium.c: 2 cores
+         * polar.maxscale.g2.large.c: 4 cores
+         * polar.maxscale.g2.xlarge.c: 8 cores
+         * polar.maxscale.g2.2xlarge.c: 16 cores
+         * polar.maxscale.g2.3xlarge.c: 24 cores
+         * polar.maxscale.g2.4xlarge.c: 32 cores
+         * polar.maxscale.g2.8xlarge.c: 64 cores
+         * <p>
+         * @return {@code this}
+         * @param proxyClass Property proxyClass: The specifications of the Standard Edition PolarProxy. This parameter is required.
+         */
+        public Builder proxyClass(final java.lang.String proxyClass) {
+            this.props.proxyClass(proxyClass);
+            return this;
+        }
+        /**
+         * Property proxyClass: The specifications of the Standard Edition PolarProxy.
+         * <p>
+         * Valid values:
+         * polar.maxscale.g2.medium.c: 2 cores
+         * polar.maxscale.g2.large.c: 4 cores
+         * polar.maxscale.g2.xlarge.c: 8 cores
+         * polar.maxscale.g2.2xlarge.c: 16 cores
+         * polar.maxscale.g2.3xlarge.c: 24 cores
+         * polar.maxscale.g2.4xlarge.c: 32 cores
+         * polar.maxscale.g2.8xlarge.c: 64 cores
+         * <p>
+         * @return {@code this}
+         * @param proxyClass Property proxyClass: The specifications of the Standard Edition PolarProxy. This parameter is required.
+         */
+        public Builder proxyClass(final com.aliyun.ros.cdk.core.IResolvable proxyClass) {
+            this.props.proxyClass(proxyClass);
+            return this;
+        }
+
+        /**
+         * Property proxyType: The type of PolarProxy.
+         * <p>
+         * Default value: OFF. Valid values:
+         * OFF: disables PolarProxy.
+         * EXCLUSIVE: Dedicated Enterprise Edition
+         * GENERAL: Standard Enterprise Edition
+         * <p>
+         * @return {@code this}
+         * @param proxyType Property proxyType: The type of PolarProxy. This parameter is required.
+         */
+        public Builder proxyType(final java.lang.String proxyType) {
+            this.props.proxyType(proxyType);
+            return this;
+        }
+        /**
+         * Property proxyType: The type of PolarProxy.
+         * <p>
+         * Default value: OFF. Valid values:
+         * OFF: disables PolarProxy.
+         * EXCLUSIVE: Dedicated Enterprise Edition
+         * GENERAL: Standard Enterprise Edition
+         * <p>
+         * @return {@code this}
+         * @param proxyType Property proxyType: The type of PolarProxy. This parameter is required.
+         */
+        public Builder proxyType(final com.aliyun.ros.cdk.core.IResolvable proxyType) {
+            this.props.proxyType(proxyType);
             return this;
         }
 
@@ -925,6 +1209,203 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder sourceResourceId(final com.aliyun.ros.cdk.core.IResolvable sourceResourceId) {
             this.props.sourceResourceId(sourceResourceId);
+            return this;
+        }
+
+        /**
+         * Property standbyAz: The zone where the hot standby storage cluster is stored.
+         * <p>
+         * This is valid for Standard Edition clusters of Multi-zone Edition.
+         * This parameter takes effect only when the multi-zone data consistency feature is enabled.
+         * <p>
+         * @return {@code this}
+         * @param standbyAz Property standbyAz: The zone where the hot standby storage cluster is stored. This parameter is required.
+         */
+        public Builder standbyAz(final java.lang.String standbyAz) {
+            this.props.standbyAz(standbyAz);
+            return this;
+        }
+        /**
+         * Property standbyAz: The zone where the hot standby storage cluster is stored.
+         * <p>
+         * This is valid for Standard Edition clusters of Multi-zone Edition.
+         * This parameter takes effect only when the multi-zone data consistency feature is enabled.
+         * <p>
+         * @return {@code this}
+         * @param standbyAz Property standbyAz: The zone where the hot standby storage cluster is stored. This parameter is required.
+         */
+        public Builder standbyAz(final com.aliyun.ros.cdk.core.IResolvable standbyAz) {
+            this.props.standbyAz(standbyAz);
+            return this;
+        }
+
+        /**
+         * Property storageAutoScale: Whether to enable automatic storage scale for standard version clusters.
+         * <p>
+         * The value range is as follows:
+         * Enable: Enable automatic storage scale.
+         * Disable: Disable automatic storage scale.
+         * <p>
+         * @return {@code this}
+         * @param storageAutoScale Property storageAutoScale: Whether to enable automatic storage scale for standard version clusters. This parameter is required.
+         */
+        public Builder storageAutoScale(final java.lang.String storageAutoScale) {
+            this.props.storageAutoScale(storageAutoScale);
+            return this;
+        }
+        /**
+         * Property storageAutoScale: Whether to enable automatic storage scale for standard version clusters.
+         * <p>
+         * The value range is as follows:
+         * Enable: Enable automatic storage scale.
+         * Disable: Disable automatic storage scale.
+         * <p>
+         * @return {@code this}
+         * @param storageAutoScale Property storageAutoScale: Whether to enable automatic storage scale for standard version clusters. This parameter is required.
+         */
+        public Builder storageAutoScale(final com.aliyun.ros.cdk.core.IResolvable storageAutoScale) {
+            this.props.storageAutoScale(storageAutoScale);
+            return this;
+        }
+
+        /**
+         * Property storagePayType: The storage pay type.
+         * <p>
+         * @return {@code this}
+         * @param storagePayType Property storagePayType: The storage pay type. This parameter is required.
+         */
+        public Builder storagePayType(final java.lang.String storagePayType) {
+            this.props.storagePayType(storagePayType);
+            return this;
+        }
+        /**
+         * Property storagePayType: The storage pay type.
+         * <p>
+         * @return {@code this}
+         * @param storagePayType Property storagePayType: The storage pay type. This parameter is required.
+         */
+        public Builder storagePayType(final com.aliyun.ros.cdk.core.IResolvable storagePayType) {
+            this.props.storagePayType(storagePayType);
+            return this;
+        }
+
+        /**
+         * Property storageSpace: The storage space that uses the subscription billing method.
+         * <p>
+         * Unit: GB.
+         * Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+         * <p>
+         * @return {@code this}
+         * @param storageSpace Property storageSpace: The storage space that uses the subscription billing method. This parameter is required.
+         */
+        public Builder storageSpace(final java.lang.Number storageSpace) {
+            this.props.storageSpace(storageSpace);
+            return this;
+        }
+        /**
+         * Property storageSpace: The storage space that uses the subscription billing method.
+         * <p>
+         * Unit: GB.
+         * Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+         * <p>
+         * @return {@code this}
+         * @param storageSpace Property storageSpace: The storage space that uses the subscription billing method. This parameter is required.
+         */
+        public Builder storageSpace(final com.aliyun.ros.cdk.core.IResolvable storageSpace) {
+            this.props.storageSpace(storageSpace);
+            return this;
+        }
+
+        /**
+         * Property storageType: The storage type.
+         * <p>
+         * Valid values for Enterprise Edition:
+         * PSL5
+         * PSL4
+         * Valid values for Standard Edition:
+         * ESSDPL1
+         * ESSDPL2
+         * ESSDPL3
+         * This parameter is invalid for serverless clusters.
+         * <p>
+         * @return {@code this}
+         * @param storageType Property storageType: The storage type. This parameter is required.
+         */
+        public Builder storageType(final java.lang.String storageType) {
+            this.props.storageType(storageType);
+            return this;
+        }
+        /**
+         * Property storageType: The storage type.
+         * <p>
+         * Valid values for Enterprise Edition:
+         * PSL5
+         * PSL4
+         * Valid values for Standard Edition:
+         * ESSDPL1
+         * ESSDPL2
+         * ESSDPL3
+         * This parameter is invalid for serverless clusters.
+         * <p>
+         * @return {@code this}
+         * @param storageType Property storageType: The storage type. This parameter is required.
+         */
+        public Builder storageType(final com.aliyun.ros.cdk.core.IResolvable storageType) {
+            this.props.storageType(storageType);
+            return this;
+        }
+
+        /**
+         * Property storageUpperBound: Set the upper limit of automatic scale of standard cluster storage, unit: GB.
+         * <p>
+         * The maximum value is 32000.
+         * <p>
+         * @return {@code this}
+         * @param storageUpperBound Property storageUpperBound: Set the upper limit of automatic scale of standard cluster storage, unit: GB. This parameter is required.
+         */
+        public Builder storageUpperBound(final java.lang.Number storageUpperBound) {
+            this.props.storageUpperBound(storageUpperBound);
+            return this;
+        }
+        /**
+         * Property storageUpperBound: Set the upper limit of automatic scale of standard cluster storage, unit: GB.
+         * <p>
+         * The maximum value is 32000.
+         * <p>
+         * @return {@code this}
+         * @param storageUpperBound Property storageUpperBound: Set the upper limit of automatic scale of standard cluster storage, unit: GB. This parameter is required.
+         */
+        public Builder storageUpperBound(final com.aliyun.ros.cdk.core.IResolvable storageUpperBound) {
+            this.props.storageUpperBound(storageUpperBound);
+            return this;
+        }
+
+        /**
+         * Property strictConsistency: Specifies whether to enable the multi-zone data consistency feature.
+         * <p>
+         * Valid values:
+         * ON: enables the multi-zone data consistency feature, which is valid for Standard Edition clusters of Multi-zone Edition.
+         * OFF: disables the multi-zone data consistency feature.
+         * <p>
+         * @return {@code this}
+         * @param strictConsistency Property strictConsistency: Specifies whether to enable the multi-zone data consistency feature. This parameter is required.
+         */
+        public Builder strictConsistency(final java.lang.String strictConsistency) {
+            this.props.strictConsistency(strictConsistency);
+            return this;
+        }
+        /**
+         * Property strictConsistency: Specifies whether to enable the multi-zone data consistency feature.
+         * <p>
+         * Valid values:
+         * ON: enables the multi-zone data consistency feature, which is valid for Standard Edition clusters of Multi-zone Edition.
+         * OFF: disables the multi-zone data consistency feature.
+         * <p>
+         * @return {@code this}
+         * @param strictConsistency Property strictConsistency: Specifies whether to enable the multi-zone data consistency feature. This parameter is required.
+         */
+        public Builder strictConsistency(final com.aliyun.ros.cdk.core.IResolvable strictConsistency) {
+            this.props.strictConsistency(strictConsistency);
             return this;
         }
 

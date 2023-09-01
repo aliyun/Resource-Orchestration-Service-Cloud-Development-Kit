@@ -438,6 +438,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
             }
         }
 
+        private object? _securityIpConfig;
+
+        /// <summary>Property securityIpConfig: Instance whitelist configuration.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "securityIpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardbx.RosDBInstance.SecurityIpConfigProperty\"}]}}", isOptional: true)]
+        public object? SecurityIpConfig
+        {
+            get => _securityIpConfig;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Polardbx.RosDBInstance.ISecurityIpConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Polardbx.RosDBInstance.ISecurityIpConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _securityIpConfig = value;
+            }
+        }
+
         private object? _tertiaryZone;
 
         /// <summary>Property tertiaryZone: The tertiary zone.</summary>

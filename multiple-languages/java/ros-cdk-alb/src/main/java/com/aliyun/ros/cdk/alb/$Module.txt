@@ -36,6 +36,7 @@
 @alicloud/ros-cdk-alb.RosListenerProps=com.aliyun.ros.cdk.alb.RosListenerProps
 @alicloud/ros-cdk-alb.RosLoadBalancer=com.aliyun.ros.cdk.alb.RosLoadBalancer
 @alicloud/ros-cdk-alb.RosLoadBalancer.AccessLogConfigProperty=com.aliyun.ros.cdk.alb.RosLoadBalancer$AccessLogConfigProperty
+@alicloud/ros-cdk-alb.RosLoadBalancer.LoadBalancerAddressesProperty=com.aliyun.ros.cdk.alb.RosLoadBalancer$LoadBalancerAddressesProperty
 @alicloud/ros-cdk-alb.RosLoadBalancer.LoadBalancerBillingConfigProperty=com.aliyun.ros.cdk.alb.RosLoadBalancer$LoadBalancerBillingConfigProperty
 @alicloud/ros-cdk-alb.RosLoadBalancer.ModificationProtectionConfigProperty=com.aliyun.ros.cdk.alb.RosLoadBalancer$ModificationProtectionConfigProperty
 @alicloud/ros-cdk-alb.RosLoadBalancer.TagsProperty=com.aliyun.ros.cdk.alb.RosLoadBalancer$TagsProperty

@@ -100,6 +100,15 @@ export interface InstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * Property shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+     * 1: You can create an instance in the standard architecture that contains only a single data node. 
+     * For more information about the standard architecture, see Cluster master-replica instances.
+     * 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes. 
+     * For more information about the cluster architecture, see Cluster master-replica instances.
+     */
+    readonly shardCount?: number | ros.IResolvable;
+
+    /**
      * Property sslEnabled: Modifies the SSL status. Valid values:
      * Disable: disables SSL encryption.
      * Enable: enables SSL encryption.
@@ -317,8 +326,15 @@ export class Instance extends ros.Resource {
 
         const rosInstance = new RosInstance(this, id,  {
             connections: props.connections,
-            engineVersion: props.engineVersion,
             resourceGroupId: props.resourceGroupId,
+            shardCount: props.shardCount,
+            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
+            sslEnabled: props.sslEnabled,
+            tairConfig: props.tairConfig,
+            tags: props.tags,
+            backupPolicy: props.backupPolicy,
+            password: props.password,
+            engineVersion: props.engineVersion,
             zoneId: props.zoneId,
             evictionPolicy: props.evictionPolicy,
             vSwitchId: props.vSwitchId,
@@ -331,14 +347,8 @@ export class Instance extends ros.Resource {
             secondaryZoneId: props.secondaryZoneId,
             autoRenewDuration: props.autoRenewDuration,
             instanceName: props.instanceName,
-            deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             vpcId: props.vpcId,
-            sslEnabled: props.sslEnabled,
-            tairConfig: props.tairConfig,
             chargeType: props.chargeType,
-            tags: props.tags,
-            backupPolicy: props.backupPolicy,
-            password: props.password,
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;

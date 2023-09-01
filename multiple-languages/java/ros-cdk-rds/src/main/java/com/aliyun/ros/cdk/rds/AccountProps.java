@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a <code>ALIYUN::RDS::Account</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.607Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.034Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.AccountProps")
 @software.amazon.jsii.Jsii.Proxy(AccountProps.Jsii$Proxy.class)
 public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
@@ -12,8 +12,11 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
      * Property accountName: Account name, which must be unique and meet the following requirements: Start with a letter;
      * <p>
      * Consist of lower-case letters, digits, and underscores (_);
-     * Contain no more than 16 characters.
-     * For other invalid characters, see Forbidden keywords table.
+     * Length:
+     * MySQL 8.0 and 5.7: 2-32 characters.
+     * MySQL 5.6、MariaDB and PostgreSQL Local version: 2-16 characters.
+     * SQL Server: 2-64 characters.
+     * PostgreSQL Cloud version: 2-63 characters.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAccountName();
 
@@ -74,8 +77,11 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link AccountProps#getAccountName}
          * @param accountName Property accountName: Account name, which must be unique and meet the following requirements: Start with a letter;. This parameter is required.
          *                    Consist of lower-case letters, digits, and underscores (_);
-         *                    Contain no more than 16 characters.
-         *                    For other invalid characters, see Forbidden keywords table.
+         *                    Length:
+         *                    MySQL 8.0 and 5.7: 2-32 characters.
+         *                    MySQL 5.6、MariaDB and PostgreSQL Local version: 2-16 characters.
+         *                    SQL Server: 2-64 characters.
+         *                    PostgreSQL Cloud version: 2-63 characters.
          * @return {@code this}
          */
         public Builder accountName(java.lang.String accountName) {
@@ -87,8 +93,11 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link AccountProps#getAccountName}
          * @param accountName Property accountName: Account name, which must be unique and meet the following requirements: Start with a letter;. This parameter is required.
          *                    Consist of lower-case letters, digits, and underscores (_);
-         *                    Contain no more than 16 characters.
-         *                    For other invalid characters, see Forbidden keywords table.
+         *                    Length:
+         *                    MySQL 8.0 and 5.7: 2-32 characters.
+         *                    MySQL 5.6、MariaDB and PostgreSQL Local version: 2-16 characters.
+         *                    SQL Server: 2-64 characters.
+         *                    PostgreSQL Cloud version: 2-63 characters.
          * @return {@code this}
          */
         public Builder accountName(com.aliyun.ros.cdk.core.IResolvable accountName) {

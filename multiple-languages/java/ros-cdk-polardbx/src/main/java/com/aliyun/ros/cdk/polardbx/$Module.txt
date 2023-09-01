@@ -7,6 +7,7 @@
 @alicloud/ros-cdk-polardbx.RosAccount=com.aliyun.ros.cdk.polardbx.RosAccount
 @alicloud/ros-cdk-polardbx.RosAccountProps=com.aliyun.ros.cdk.polardbx.RosAccountProps
 @alicloud/ros-cdk-polardbx.RosDBInstance=com.aliyun.ros.cdk.polardbx.RosDBInstance
+@alicloud/ros-cdk-polardbx.RosDBInstance.SecurityIpConfigProperty=com.aliyun.ros.cdk.polardbx.RosDBInstance$SecurityIpConfigProperty
 @alicloud/ros-cdk-polardbx.RosDBInstanceProps=com.aliyun.ros.cdk.polardbx.RosDBInstanceProps
 @alicloud/ros-cdk-polardbx.RosDatabase=com.aliyun.ros.cdk.polardbx.RosDatabase
 @alicloud/ros-cdk-polardbx.RosDatabase.AccountsProperty=com.aliyun.ros.cdk.polardbx.RosDatabase$AccountsProperty

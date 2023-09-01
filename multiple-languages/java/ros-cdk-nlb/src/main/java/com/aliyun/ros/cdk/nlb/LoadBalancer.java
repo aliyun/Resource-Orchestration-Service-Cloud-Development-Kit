@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * A ROS resource type:  <code>ALIYUN::NLB::LoadBalancer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.074Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.499Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.LoadBalancer")
 public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
 
@@ -274,6 +274,27 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property deletionProtectionConfig: The configuration of the deletion protection feature.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtectionConfig Property deletionProtectionConfig: The configuration of the deletion protection feature. This parameter is required.
+         */
+        public Builder deletionProtectionConfig(final com.aliyun.ros.cdk.core.IResolvable deletionProtectionConfig) {
+            this.props.deletionProtectionConfig(deletionProtectionConfig);
+            return this;
+        }
+        /**
+         * Property deletionProtectionConfig: The configuration of the deletion protection feature.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtectionConfig Property deletionProtectionConfig: The configuration of the deletion protection feature. This parameter is required.
+         */
+        public Builder deletionProtectionConfig(final com.aliyun.ros.cdk.nlb.RosLoadBalancer.DeletionProtectionConfigProperty deletionProtectionConfig) {
+            this.props.deletionProtectionConfig(deletionProtectionConfig);
+            return this;
+        }
+
+        /**
          * Property loadBalancerBillingConfig: The configuration of the billing method.
          * <p>
          * @return {@code this}
@@ -341,6 +362,27 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property modificationProtectionConfig: The configuration of the configuration read-only mode.
+         * <p>
+         * @return {@code this}
+         * @param modificationProtectionConfig Property modificationProtectionConfig: The configuration of the configuration read-only mode. This parameter is required.
+         */
+        public Builder modificationProtectionConfig(final com.aliyun.ros.cdk.core.IResolvable modificationProtectionConfig) {
+            this.props.modificationProtectionConfig(modificationProtectionConfig);
+            return this;
+        }
+        /**
+         * Property modificationProtectionConfig: The configuration of the configuration read-only mode.
+         * <p>
+         * @return {@code this}
+         * @param modificationProtectionConfig Property modificationProtectionConfig: The configuration of the configuration read-only mode. This parameter is required.
+         */
+        public Builder modificationProtectionConfig(final com.aliyun.ros.cdk.nlb.RosLoadBalancer.ModificationProtectionConfigProperty modificationProtectionConfig) {
+            this.props.modificationProtectionConfig(modificationProtectionConfig);
+            return this;
+        }
+
+        /**
          * Property resourceGroupId: The ID of the resource group.
          * <p>
          * @return {@code this}
@@ -358,6 +400,19 @@ public class LoadBalancer extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

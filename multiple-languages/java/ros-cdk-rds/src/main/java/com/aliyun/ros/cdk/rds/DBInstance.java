@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  <code>ALIYUN::RDS::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.611Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.037Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -157,24 +157,26 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property dbInstanceStorage: Database instance storage size.
+         * Property dbInstanceStorage: The storage capacity of the instance.
          * <p>
-         * mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+         * Unit: GB. The storage capacity increases in increments of 5 GB.
+         * You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
          * <p>
          * @return {@code this}
-         * @param dbInstanceStorage Property dbInstanceStorage: Database instance storage size. This parameter is required.
+         * @param dbInstanceStorage Property dbInstanceStorage: The storage capacity of the instance. This parameter is required.
          */
         public Builder dbInstanceStorage(final java.lang.Number dbInstanceStorage) {
             this.props.dbInstanceStorage(dbInstanceStorage);
             return this;
         }
         /**
-         * Property dbInstanceStorage: Database instance storage size.
+         * Property dbInstanceStorage: The storage capacity of the instance.
          * <p>
-         * mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+         * Unit: GB. The storage capacity increases in increments of 5 GB.
+         * You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
          * <p>
          * @return {@code this}
-         * @param dbInstanceStorage Property dbInstanceStorage: Database instance storage size. This parameter is required.
+         * @param dbInstanceStorage Property dbInstanceStorage: The storage capacity of the instance. This parameter is required.
          */
         public Builder dbInstanceStorage(final com.aliyun.ros.cdk.core.IResolvable dbInstanceStorage) {
             this.props.dbInstanceStorage(dbInstanceStorage);
@@ -913,6 +915,27 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property instanceNetworkType: Instance network type, VPC or Classic.
+         * <p>
+         * @return {@code this}
+         * @param instanceNetworkType Property instanceNetworkType: Instance network type, VPC or Classic. This parameter is required.
+         */
+        public Builder instanceNetworkType(final java.lang.String instanceNetworkType) {
+            this.props.instanceNetworkType(instanceNetworkType);
+            return this;
+        }
+        /**
+         * Property instanceNetworkType: Instance network type, VPC or Classic.
+         * <p>
+         * @return {@code this}
+         * @param instanceNetworkType Property instanceNetworkType: Instance network type, VPC or Classic. This parameter is required.
+         */
+        public Builder instanceNetworkType(final com.aliyun.ros.cdk.core.IResolvable instanceNetworkType) {
+            this.props.instanceNetworkType(instanceNetworkType);
+            return this;
+        }
+
+        /**
          * Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance.
          * <p>
          * Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance.
@@ -1559,7 +1582,7 @@ public class DBInstance extends com.aliyun.ros.cdk.core.Resource {
          * Property tags: The tags of an instance.
          * <p>
          * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-         * At most 5 tags can be specified.
+         * At most 20 tags can be specified.
          * Key
          * It can be up to 64 characters in length.
          * Cannot begin with aliyun.

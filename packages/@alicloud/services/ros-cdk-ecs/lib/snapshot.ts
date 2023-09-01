@@ -43,6 +43,12 @@ export interface SnapshotProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * Property retentionDays: Set the retention period of a snapshot in days. The snapshot will be automatically released after the retention period expires.
+     * The value ranges from 1 to 65536.
+     */
+    readonly retentionDays?: number | ros.IResolvable;
+
+    /**
      * Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
      */
     readonly snapshotName?: string | ros.IResolvable;
@@ -88,6 +94,7 @@ export class Snapshot extends ros.Resource {
             description: props.description,
             resourceGroupId: props.resourceGroupId,
             timeout: props.timeout === undefined || props.timeout === null ? 200 : props.timeout,
+            retentionDays: props.retentionDays,
             snapshotName: props.snapshotName,
             instantAccessRetentionDays: props.instantAccessRetentionDays,
             tags: props.tags,

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * A ROS resource type:  <code>ALIYUN::ECI::ContainerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.315Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:36.698Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ContainerGroup")
 public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -201,56 +201,6 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder containerGroupName(final com.aliyun.ros.cdk.core.IResolvable containerGroupName) {
             this.props.containerGroupName(containerGroupName);
-            return this;
-        }
-
-        /**
-         * Property securityGroupId: The ID of the security group to which the instance belongs.
-         * <p>
-         * Instances in the same security group can access one another.
-         * <p>
-         * @return {@code this}
-         * @param securityGroupId Property securityGroupId: The ID of the security group to which the instance belongs. This parameter is required.
-         */
-        public Builder securityGroupId(final java.lang.String securityGroupId) {
-            this.props.securityGroupId(securityGroupId);
-            return this;
-        }
-        /**
-         * Property securityGroupId: The ID of the security group to which the instance belongs.
-         * <p>
-         * Instances in the same security group can access one another.
-         * <p>
-         * @return {@code this}
-         * @param securityGroupId Property securityGroupId: The ID of the security group to which the instance belongs. This parameter is required.
-         */
-        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
-            this.props.securityGroupId(securityGroupId);
-            return this;
-        }
-
-        /**
-         * Property vSwitchId: The ID of the specified VSwitch.
-         * <p>
-         * Currently, ECI instances can only be deployed in VPCs.
-         * <p>
-         * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch. This parameter is required.
-         */
-        public Builder vSwitchId(final java.lang.String vSwitchId) {
-            this.props.vSwitchId(vSwitchId);
-            return this;
-        }
-        /**
-         * Property vSwitchId: The ID of the specified VSwitch.
-         * <p>
-         * Currently, ECI instances can only be deployed in VPCs.
-         * <p>
-         * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch. This parameter is required.
-         */
-        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
-            this.props.vSwitchId(vSwitchId);
             return this;
         }
 
@@ -628,6 +578,35 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property securityGroupId: The ID of the security group to which the instance belongs.
+         * <p>
+         * Instances in the same security group can access one another.
+         * If no security group is specified, the system automatically uses the default security group in the region you select.
+         * If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupId Property securityGroupId: The ID of the security group to which the instance belongs. This parameter is required.
+         */
+        public Builder securityGroupId(final java.lang.String securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+        /**
+         * Property securityGroupId: The ID of the security group to which the instance belongs.
+         * <p>
+         * Instances in the same security group can access one another.
+         * If no security group is specified, the system automatically uses the default security group in the region you select.
+         * If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupId Property securityGroupId: The ID of the security group to which the instance belongs. This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
          * Property slsEnable: Enable user log collection.
          * <p>
          * The default is False.
@@ -776,6 +755,33 @@ public class ContainerGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder volume(final java.util.List<? extends java.lang.Object> volume) {
             this.props.volume(volume);
+            return this;
+        }
+
+        /**
+         * Property vSwitchId: The ID of the specified VSwitch.
+         * <p>
+         * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+         * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+         * <p>
+         * @return {@code this}
+         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch. This parameter is required.
+         */
+        public Builder vSwitchId(final java.lang.String vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
+        /**
+         * Property vSwitchId: The ID of the specified VSwitch.
+         * <p>
+         * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+         * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+         * <p>
+         * @return {@code this}
+         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch. This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
             return this;
         }
 

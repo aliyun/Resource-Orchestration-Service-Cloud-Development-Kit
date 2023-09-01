@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.searchengine.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::SearchEngine::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.330Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.686Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.searchengine.$Module.class, fqn = "@alicloud/ros-cdk-searchengine.datasource.RosInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstancesProps.Jsii$Proxy.class)
 public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable {

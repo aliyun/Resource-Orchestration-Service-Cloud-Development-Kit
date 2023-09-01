@@ -329,6 +329,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: deletionProtectionConfig: The configuration of the deletion protection feature.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "deletionProtectionConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancer.DeletionProtectionConfigProperty\"}]}}", isOptional: true)]
+        public virtual object? DeletionProtectionConfig
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IDeletionProtectionConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IDeletionProtectionConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: loadBalancerBillingConfig: The configuration of the billing method.
         /// </remarks>
         [JsiiOptional]
@@ -423,6 +454,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: modificationProtectionConfig: The configuration of the configuration read-only mode.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "modificationProtectionConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancer.ModificationProtectionConfigProperty\"}]}}", isOptional: true)]
+        public virtual object? ModificationProtectionConfig
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IModificationProtectionConfigProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IModificationProtectionConfigProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
         /// </remarks>
         [JsiiOptional]
@@ -454,6 +516,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancer.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.ITagsProperty[]? Tags
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.ITagsProperty[]?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: trafficAffinityEnabled: Whether enable traffic affinity. Default: false
         /// </remarks>
         [JsiiOptional]
@@ -481,6 +554,256 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                     }
                 }
                 SetInstanceProperty(value);
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IDeletionProtectionConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer.DeletionProtectionConfigProperty")]
+        public interface IDeletionProtectionConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: enabled: Specifies whether to enable deletion protection. Valid values:
+            /// true: yes
+            /// false (default): no
+            /// </remarks>
+            [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Enabled
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: reason: The reason why the deletion protection feature is enabled or disabled. The value must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The value must start with a letter.
+            /// </remarks>
+            [JsiiProperty(name: "reason", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Reason
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IDeletionProtectionConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer.DeletionProtectionConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IDeletionProtectionConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enabled: Specifies whether to enable deletion protection. Valid values:
+                /// true: yes
+                /// false (default): no
+                /// </remarks>
+                [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Enabled
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: reason: The reason why the deletion protection feature is enabled or disabled. The value must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The value must start with a letter.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "reason", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Reason
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-nlb.RosLoadBalancer.DeletionProtectionConfigProperty")]
+        public class DeletionProtectionConfigProperty : AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IDeletionProtectionConfigProperty
+        {
+            private object _enabled;
+
+            /// <remarks>
+            /// <strong>Property</strong>: enabled: Specifies whether to enable deletion protection. Valid values:
+            /// true: yes
+            /// false (default): no
+            /// </remarks>
+            [JsiiProperty(name: "enabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Enabled
+            {
+                get => _enabled;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enabled = value;
+                }
+            }
+
+            private object? _reason;
+
+            /// <remarks>
+            /// <strong>Property</strong>: reason: The reason why the deletion protection feature is enabled or disabled. The value must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The value must start with a letter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "reason", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Reason
+            {
+                get => _reason;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _reason = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ILoadBalancerAddressesProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerAddressesProperty")]
+        public interface ILoadBalancerAddressesProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: allocationId: The ID of the elastic IP address (EIP) that is associated with the Internet-facing NLB instance.
+            /// </remarks>
+            [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object AllocationId
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: privateIPv4Address: The private IP address.
+            /// </remarks>
+            [JsiiProperty(name: "privateIPv4Address", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? PrivateIPv4Address
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ILoadBalancerAddressesProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerAddressesProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.ILoadBalancerAddressesProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: allocationId: The ID of the elastic IP address (EIP) that is associated with the Internet-facing NLB instance.
+                /// </remarks>
+                [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object AllocationId
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: privateIPv4Address: The private IP address.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "privateIPv4Address", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? PrivateIPv4Address
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerAddressesProperty")]
+        public class LoadBalancerAddressesProperty : AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.ILoadBalancerAddressesProperty
+        {
+            private object _allocationId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: allocationId: The ID of the elastic IP address (EIP) that is associated with the Internet-facing NLB instance.
+            /// </remarks>
+            [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AllocationId
+            {
+                get => _allocationId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _allocationId = value;
+                }
+            }
+
+            private object? _privateIPv4Address;
+
+            /// <remarks>
+            /// <strong>Property</strong>: privateIPv4Address: The private IP address.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "privateIPv4Address", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrivateIPv4Address
+            {
+                get => _privateIPv4Address;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _privateIPv4Address = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(ILoadBalancerBillingConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerBillingConfigProperty")]
@@ -553,6 +876,256 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
             }
         }
+        [JsiiInterface(nativeType: typeof(IModificationProtectionConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer.ModificationProtectionConfigProperty")]
+        public interface IModificationProtectionConfigProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: status: Specifies whether to enable the configuration read-only mode. Valid values:
+            /// NonProtection: does not enable the configuration read-only mode. You cannot set the Reason parameter. If the Reason parameter is set, the value is cleared.
+            /// ConsoleProtection: enables the configuration read-only mode. You can set the Reason parameter.
+            /// </remarks>
+            [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Status
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: reason: The reason why the configuration read-only mode is enabled. The value must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The value must start with a letter.
+            /// </remarks>
+            [JsiiProperty(name: "reason", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Reason
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IModificationProtectionConfigProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer.ModificationProtectionConfigProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IModificationProtectionConfigProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: status: Specifies whether to enable the configuration read-only mode. Valid values:
+                /// NonProtection: does not enable the configuration read-only mode. You cannot set the Reason parameter. If the Reason parameter is set, the value is cleared.
+                /// ConsoleProtection: enables the configuration read-only mode. You can set the Reason parameter.
+                /// </remarks>
+                [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Status
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: reason: The reason why the configuration read-only mode is enabled. The value must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The value must start with a letter.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "reason", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Reason
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-nlb.RosLoadBalancer.ModificationProtectionConfigProperty")]
+        public class ModificationProtectionConfigProperty : AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.IModificationProtectionConfigProperty
+        {
+            private object _status;
+
+            /// <remarks>
+            /// <strong>Property</strong>: status: Specifies whether to enable the configuration read-only mode. Valid values:
+            /// NonProtection: does not enable the configuration read-only mode. You cannot set the Reason parameter. If the Reason parameter is set, the value is cleared.
+            /// ConsoleProtection: enables the configuration read-only mode. You can set the Reason parameter.
+            /// </remarks>
+            [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Status
+            {
+                get => _status;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _status = value;
+                }
+            }
+
+            private object? _reason;
+
+            /// <remarks>
+            /// <strong>Property</strong>: reason: The reason why the configuration read-only mode is enabled. The value must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The value must start with a letter.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "reason", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Reason
+            {
+                get => _reason;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _reason = value;
+                }
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer.TagsProperty")]
+        public interface ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Value
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer.TagsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.ITagsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key: undefined
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value: undefined
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Value
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-nlb.RosLoadBalancer.TagsProperty")]
+        public class TagsProperty : AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.ITagsProperty
+        {
+            private object _key;
+
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Key
+            {
+                get => _key;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _key = value;
+                }
+            }
+
+            private object? _value;
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Value
+            {
+                get => _value;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _value = value;
+                }
+            }
+        }
         [JsiiInterface(nativeType: typeof(IZoneMappingsProperty), fullyQualifiedName: "@alicloud/ros-cdk-nlb.RosLoadBalancer.ZoneMappingsProperty")]
         public interface IZoneMappingsProperty
         {
@@ -575,7 +1148,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: allocationId:
+            /// <strong>Property</strong>: allocationId: The ID of the elastic IP address (EIP) that is associated with the Internet-facing NLB instance.
             /// </remarks>
             [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -588,7 +1161,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: privateIPv4Address:
+            /// <strong>Property</strong>: loadBalancerAddresses: Load balancer addresses. This property has higher priority than AllocationId and EipType in ZoneMappings.
+            /// </remarks>
+            [JsiiProperty(name: "loadBalancerAddresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerAddressesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? LoadBalancerAddresses
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: privateIPv4Address: The private IP address.
             /// </remarks>
             [JsiiProperty(name: "privateIPv4Address", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -626,7 +1212,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: allocationId:
+                /// <strong>Property</strong>: allocationId: The ID of the elastic IP address (EIP) that is associated with the Internet-facing NLB instance.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -636,7 +1222,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: privateIPv4Address:
+                /// <strong>Property</strong>: loadBalancerAddresses: Load balancer addresses. This property has higher priority than AllocationId and EipType in ZoneMappings.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "loadBalancerAddresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerAddressesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+                public object? LoadBalancerAddresses
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: privateIPv4Address: The private IP address.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "privateIPv4Address", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -718,7 +1314,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             private object? _allocationId;
 
             /// <remarks>
-            /// <strong>Property</strong>: allocationId:
+            /// <strong>Property</strong>: allocationId: The ID of the elastic IP address (EIP) that is associated with the Internet-facing NLB instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -748,10 +1344,60 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
             }
 
+            private object? _loadBalancerAddresses;
+
+            /// <remarks>
+            /// <strong>Property</strong>: loadBalancerAddresses: Load balancer addresses. This property has higher priority than AllocationId and EipType in ZoneMappings.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "loadBalancerAddresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerAddressesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? LoadBalancerAddresses
+            {
+                get => _loadBalancerAddresses;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case object[] cast_cd4240:
+                                for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                                {
+                                    switch (cast_cd4240[__idx_f64a5c])
+                                    {
+                                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                            break;
+                                        case AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.ILoadBalancerAddressesProperty cast_201718:
+                                            break;
+                                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                            // Not enough information to type-check...
+                                            break;
+                                        case null:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.ILoadBalancerAddressesProperty).FullName}; received null", nameof(value));
+                                        default:
+                                            throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Nlb.RosLoadBalancer.ILoadBalancerAddressesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                    }
+                                }
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _loadBalancerAddresses = value;
+                }
+            }
+
             private object? _privateIPv4Address;
 
             /// <remarks>
-            /// <strong>Property</strong>: privateIPv4Address:
+            /// <strong>Property</strong>: privateIPv4Address: The private IP address.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "privateIPv4Address", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

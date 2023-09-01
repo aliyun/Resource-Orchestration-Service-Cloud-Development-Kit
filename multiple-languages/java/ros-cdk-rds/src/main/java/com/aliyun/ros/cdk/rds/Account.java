@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  <code>ALIYUN::RDS::Account</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.604Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.031Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource {
 
@@ -93,8 +93,11 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
          * Property accountName: Account name, which must be unique and meet the following requirements: Start with a letter;
          * <p>
          * Consist of lower-case letters, digits, and underscores (_);
-         * Contain no more than 16 characters.
-         * For other invalid characters, see Forbidden keywords table.
+         * Length:
+         * MySQL 8.0 and 5.7: 2-32 characters.
+         * MySQL 5.6、MariaDB and PostgreSQL Local version: 2-16 characters.
+         * SQL Server: 2-64 characters.
+         * PostgreSQL Cloud version: 2-63 characters.
          * <p>
          * @return {@code this}
          * @param accountName Property accountName: Account name, which must be unique and meet the following requirements: Start with a letter;. This parameter is required.
@@ -107,8 +110,11 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
          * Property accountName: Account name, which must be unique and meet the following requirements: Start with a letter;
          * <p>
          * Consist of lower-case letters, digits, and underscores (_);
-         * Contain no more than 16 characters.
-         * For other invalid characters, see Forbidden keywords table.
+         * Length:
+         * MySQL 8.0 and 5.7: 2-32 characters.
+         * MySQL 5.6、MariaDB and PostgreSQL Local version: 2-16 characters.
+         * SQL Server: 2-64 characters.
+         * PostgreSQL Cloud version: 2-63 characters.
          * <p>
          * @return {@code this}
          * @param accountName Property accountName: Account name, which must be unique and meet the following requirements: Start with a letter;. This parameter is required.

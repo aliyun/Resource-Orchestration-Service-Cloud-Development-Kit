@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS resource type:  <code>ALIYUN::REDIS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.831Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.229Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -711,6 +711,39 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props().securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * Property shardCount: The number of data nodes in the instance.
+         * <p>
+         * Default value: 1. Valid values:
+         * 1: You can create an instance in the standard architecture that contains only a single data node.
+         * For more information about the standard architecture, see Cluster master-replica instances.
+         * 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+         * For more information about the cluster architecture, see Cluster master-replica instances.
+         * <p>
+         * @return {@code this}
+         * @param shardCount Property shardCount: The number of data nodes in the instance. This parameter is required.
+         */
+        public Builder shardCount(final java.lang.Number shardCount) {
+            this.props().shardCount(shardCount);
+            return this;
+        }
+        /**
+         * Property shardCount: The number of data nodes in the instance.
+         * <p>
+         * Default value: 1. Valid values:
+         * 1: You can create an instance in the standard architecture that contains only a single data node.
+         * For more information about the standard architecture, see Cluster master-replica instances.
+         * 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+         * For more information about the cluster architecture, see Cluster master-replica instances.
+         * <p>
+         * @return {@code this}
+         * @param shardCount Property shardCount: The number of data nodes in the instance. This parameter is required.
+         */
+        public Builder shardCount(final com.aliyun.ros.cdk.core.IResolvable shardCount) {
+            this.props().shardCount(shardCount);
             return this;
         }
 

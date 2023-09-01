@@ -159,39 +159,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        private object? _autoPay;
-
-        /// <remarks>
-        /// <strong>Property</strong>: autoPay: Whether to pay automatically.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? AutoPay
-        {
-            get => _autoPay;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case bool cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            break;
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _autoPay = value;
-            }
-        }
-
         private object? _autoReleaseTime;
 
         /// <remarks>

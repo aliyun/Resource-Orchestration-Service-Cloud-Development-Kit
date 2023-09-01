@@ -1,3 +1,4 @@
+export * from './activation';
 export * from './assignipv6addresses';
 export * from './assignprivateipaddresses';
 export * from './autoprovisioninggroup';

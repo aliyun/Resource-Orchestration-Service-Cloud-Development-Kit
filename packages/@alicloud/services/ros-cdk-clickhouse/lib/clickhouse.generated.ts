@@ -560,3 +560,350 @@ export class RosDBCluster extends ros.RosResource {
         return rosDBClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `ALIYUN::ClickHouse::SynDb`
+ */
+export interface RosSynDbProps {
+
+    /**
+     * @Property ckPassword: The password of the database account
+     */
+    readonly ckPassword: string | ros.IResolvable;
+
+    /**
+     * @Property ckUserName: The account of the clickhouse database.
+     */
+    readonly ckUserName: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: Clickhouse cluster id.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property rdsId: The instance id of RDS.
+     */
+    readonly rdsId: string | ros.IResolvable;
+
+    /**
+     * @Property rdsPassword: The password of the RDS database account.
+     */
+    readonly rdsPassword: string | ros.IResolvable;
+
+    /**
+     * @Property rdsUserName: The account of the RDS database.
+     */
+    readonly rdsUserName: string | ros.IResolvable;
+
+    /**
+     * @Property skipUnsupported: Skip unsupported table or not.
+     */
+    readonly skipUnsupported: boolean | ros.IResolvable;
+
+    /**
+     * @Property synDbTables: The tables to syn.
+     */
+    readonly synDbTables: Array<RosSynDb.SynDbTablesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property clickhousePort: The port of clickhouse id.
+     */
+    readonly clickhousePort?: number | ros.IResolvable;
+
+    /**
+     * @Property limitUpper: The maximum number of rows to sync per second.
+     */
+    readonly limitUpper?: number | ros.IResolvable;
+
+    /**
+     * @Property rdsPort: The port of rds.
+     */
+    readonly rdsPort?: number | ros.IResolvable;
+
+    /**
+     * @Property rdsVpcId: The vpc of rds.
+     */
+    readonly rdsVpcId?: string | ros.IResolvable;
+
+    /**
+     * @Property rdsVpcUrl: Intranet address of ApsaraDB for RDS.
+     */
+    readonly rdsVpcUrl?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSynDbProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSynDbProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSynDbPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('rdsVpcUrl', ros.validateString)(properties.rdsVpcUrl));
+    errors.collect(ros.propertyValidator('limitUpper', ros.validateNumber)(properties.limitUpper));
+    errors.collect(ros.propertyValidator('skipUnsupported', ros.requiredValidator)(properties.skipUnsupported));
+    errors.collect(ros.propertyValidator('skipUnsupported', ros.validateBoolean)(properties.skipUnsupported));
+    errors.collect(ros.propertyValidator('rdsId', ros.requiredValidator)(properties.rdsId));
+    errors.collect(ros.propertyValidator('rdsId', ros.validateString)(properties.rdsId));
+    errors.collect(ros.propertyValidator('rdsPassword', ros.requiredValidator)(properties.rdsPassword));
+    errors.collect(ros.propertyValidator('rdsPassword', ros.validateString)(properties.rdsPassword));
+    errors.collect(ros.propertyValidator('rdsUserName', ros.requiredValidator)(properties.rdsUserName));
+    errors.collect(ros.propertyValidator('rdsUserName', ros.validateString)(properties.rdsUserName));
+    errors.collect(ros.propertyValidator('ckPassword', ros.requiredValidator)(properties.ckPassword));
+    errors.collect(ros.propertyValidator('ckPassword', ros.validateString)(properties.ckPassword));
+    errors.collect(ros.propertyValidator('ckUserName', ros.requiredValidator)(properties.ckUserName));
+    errors.collect(ros.propertyValidator('ckUserName', ros.validateString)(properties.ckUserName));
+    errors.collect(ros.propertyValidator('clickhousePort', ros.validateNumber)(properties.clickhousePort));
+    errors.collect(ros.propertyValidator('synDbTables', ros.requiredValidator)(properties.synDbTables));
+    if(properties.synDbTables && (Array.isArray(properties.synDbTables) || (typeof properties.synDbTables) === 'string')) {
+        errors.collect(ros.propertyValidator('synDbTables', ros.validateLength)({
+            data: properties.synDbTables.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('synDbTables', ros.listValidator(RosSynDb_SynDbTablesPropertyValidator))(properties.synDbTables));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('rdsPort', ros.validateNumber)(properties.rdsPort));
+    errors.collect(ros.propertyValidator('rdsVpcId', ros.validateString)(properties.rdsVpcId));
+    return errors.wrap('supplied properties not correct for "RosSynDbProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::SynDb` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSynDbProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::SynDb` resource.
+ */
+// @ts-ignore TS6133
+function rosSynDbPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSynDbPropsValidator(properties).assertSuccess();
+    }
+    return {
+      CkPassword: ros.stringToRosTemplate(properties.ckPassword),
+      CkUserName: ros.stringToRosTemplate(properties.ckUserName),
+      DbClusterId: ros.stringToRosTemplate(properties.dbClusterId),
+      RdsId: ros.stringToRosTemplate(properties.rdsId),
+      RdsPassword: ros.stringToRosTemplate(properties.rdsPassword),
+      RdsUserName: ros.stringToRosTemplate(properties.rdsUserName),
+      SkipUnsupported: ros.booleanToRosTemplate(properties.skipUnsupported),
+      SynDbTables: ros.listMapper(rosSynDbSynDbTablesPropertyToRosTemplate)(properties.synDbTables),
+      ClickhousePort: ros.numberToRosTemplate(properties.clickhousePort),
+      LimitUpper: ros.numberToRosTemplate(properties.limitUpper),
+      RdsPort: ros.numberToRosTemplate(properties.rdsPort),
+      RdsVpcId: ros.stringToRosTemplate(properties.rdsVpcId),
+      RdsVpcUrl: ros.stringToRosTemplate(properties.rdsVpcUrl),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ClickHouse::SynDb`
+ */
+export class RosSynDb extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ClickHouse::SynDb";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DbClusterId: The id of clickhouse.
+     */
+    public readonly attrDbClusterId: ros.IResolvable;
+
+    /**
+     * @Attribute RdsId: The id of RDS
+     */
+    public readonly attrRdsId: ros.IResolvable;
+
+    /**
+     * @Attribute SynDbs: Sync Dbs
+     */
+    public readonly attrSynDbs: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property ckPassword: The password of the database account
+     */
+    public ckPassword: string | ros.IResolvable;
+
+    /**
+     * @Property ckUserName: The account of the clickhouse database.
+     */
+    public ckUserName: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: Clickhouse cluster id.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property rdsId: The instance id of RDS.
+     */
+    public rdsId: string | ros.IResolvable;
+
+    /**
+     * @Property rdsPassword: The password of the RDS database account.
+     */
+    public rdsPassword: string | ros.IResolvable;
+
+    /**
+     * @Property rdsUserName: The account of the RDS database.
+     */
+    public rdsUserName: string | ros.IResolvable;
+
+    /**
+     * @Property skipUnsupported: Skip unsupported table or not.
+     */
+    public skipUnsupported: boolean | ros.IResolvable;
+
+    /**
+     * @Property synDbTables: The tables to syn.
+     */
+    public synDbTables: Array<RosSynDb.SynDbTablesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property clickhousePort: The port of clickhouse id.
+     */
+    public clickhousePort: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property limitUpper: The maximum number of rows to sync per second.
+     */
+    public limitUpper: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property rdsPort: The port of rds.
+     */
+    public rdsPort: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property rdsVpcId: The vpc of rds.
+     */
+    public rdsVpcId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property rdsVpcUrl: Intranet address of ApsaraDB for RDS.
+     */
+    public rdsVpcUrl: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ClickHouse::SynDb`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSynDbProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSynDb.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDbClusterId = this.getAtt('DbClusterId');
+        this.attrRdsId = this.getAtt('RdsId');
+        this.attrSynDbs = this.getAtt('SynDbs');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.ckPassword = props.ckPassword;
+        this.ckUserName = props.ckUserName;
+        this.dbClusterId = props.dbClusterId;
+        this.rdsId = props.rdsId;
+        this.rdsPassword = props.rdsPassword;
+        this.rdsUserName = props.rdsUserName;
+        this.skipUnsupported = props.skipUnsupported;
+        this.synDbTables = props.synDbTables;
+        this.clickhousePort = props.clickhousePort;
+        this.limitUpper = props.limitUpper;
+        this.rdsPort = props.rdsPort;
+        this.rdsVpcId = props.rdsVpcId;
+        this.rdsVpcUrl = props.rdsVpcUrl;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            ckPassword: this.ckPassword,
+            ckUserName: this.ckUserName,
+            dbClusterId: this.dbClusterId,
+            rdsId: this.rdsId,
+            rdsPassword: this.rdsPassword,
+            rdsUserName: this.rdsUserName,
+            skipUnsupported: this.skipUnsupported,
+            synDbTables: this.synDbTables,
+            clickhousePort: this.clickhousePort,
+            limitUpper: this.limitUpper,
+            rdsPort: this.rdsPort,
+            rdsVpcId: this.rdsVpcId,
+            rdsVpcUrl: this.rdsVpcUrl,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSynDbPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSynDb {
+    /**
+     * @stability external
+     */
+    export interface SynDbTablesProperty {
+        /**
+         * @Property schema: Database name.
+         */
+        readonly schema: string | ros.IResolvable;
+        /**
+         * @Property tables: Table names
+         */
+        readonly tables: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SynDbTablesProperty`
+ *
+ * @param properties - the TypeScript properties of a `SynDbTablesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSynDb_SynDbTablesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('schema', ros.requiredValidator)(properties.schema));
+    errors.collect(ros.propertyValidator('schema', ros.validateString)(properties.schema));
+    errors.collect(ros.propertyValidator('tables', ros.requiredValidator)(properties.tables));
+    if(properties.tables && (Array.isArray(properties.tables) || (typeof properties.tables) === 'string')) {
+        errors.collect(ros.propertyValidator('tables', ros.validateLength)({
+            data: properties.tables.length,
+            min: undefined,
+            max: 30,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tables', ros.listValidator(ros.validateString))(properties.tables));
+    return errors.wrap('supplied properties not correct for "SynDbTablesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::SynDb.SynDbTables` resource
+ *
+ * @param properties - the TypeScript properties of a `SynDbTablesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::SynDb.SynDbTables` resource.
+ */
+// @ts-ignore TS6133
+function rosSynDbSynDbTablesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSynDb_SynDbTablesPropertyValidator(properties).assertSuccess();
+    return {
+      Schema: ros.stringToRosTemplate(properties.schema),
+      Tables: ros.listMapper(ros.stringToRosTemplate)(properties.tables),
+    };
+}

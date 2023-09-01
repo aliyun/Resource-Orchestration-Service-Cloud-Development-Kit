@@ -853,10 +853,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
             /// <remarks>
             /// <strong>Property</strong>: version: Service version.
             /// </remarks>
-            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object Version
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Version
             {
-                get;
+                get
+                {
+                    return null;
+                }
             }
 
             [JsiiTypeProxy(nativeType: typeof(IServiceProperty), fullyQualifiedName: "@alicloud/ros-cdk-computenest.RosServiceInstance.ServiceProperty")]
@@ -878,10 +882,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
                 /// <remarks>
                 /// <strong>Property</strong>: version: Service version.
                 /// </remarks>
-                [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object Version
+                [JsiiOptional]
+                [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Version
                 {
-                    get => GetInstanceProperty<object>()!;
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -922,13 +927,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
                 }
             }
 
-            private object _version;
+            private object? _version;
 
             /// <remarks>
             /// <strong>Property</strong>: version: Service version.
             /// </remarks>
-            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Version
+            [JsiiOptional]
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Version
             {
                 get => _version;
                 set
@@ -945,7 +951,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
                                 // Not enough information to type-check...
                                 break;
                             case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                break;
                             default:
                                 throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                         }

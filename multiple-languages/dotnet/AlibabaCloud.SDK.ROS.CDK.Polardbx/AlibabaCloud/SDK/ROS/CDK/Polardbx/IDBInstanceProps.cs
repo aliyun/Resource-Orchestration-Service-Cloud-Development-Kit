@@ -135,6 +135,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
             }
         }
 
+        /// <summary>Property securityIpConfig: Instance whitelist configuration.</summary>
+        [JsiiProperty(name: "securityIpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardbx.RosDBInstance.SecurityIpConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SecurityIpConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property tertiaryZone: The tertiary zone.</summary>
         [JsiiProperty(name: "tertiaryZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -273,6 +284,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
             [JsiiOptional]
             [JsiiProperty(name: "secondaryZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecondaryZone
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property securityIpConfig: Instance whitelist configuration.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "securityIpConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardbx.RosDBInstance.SecurityIpConfigProperty\"}]}}", isOptional: true)]
+            public object? SecurityIpConfig
             {
                 get => GetInstanceProperty<object?>();
             }

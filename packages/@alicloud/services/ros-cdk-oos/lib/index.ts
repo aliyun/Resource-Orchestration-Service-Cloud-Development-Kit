@@ -1,3 +1,4 @@
+export * from './defaultpatchbaseline';
 export * from './execution';
 export * from './parameter';
 export * from './patchbaseline';

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.directmail.datasource;
 /**
  * A ROS template type:  <code>DATASOURCE::DirectMail::Domains</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.074Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:36.460Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.datasource.RosDomains")
 public class RosDomains extends com.aliyun.ros.cdk.core.RosResource {
 

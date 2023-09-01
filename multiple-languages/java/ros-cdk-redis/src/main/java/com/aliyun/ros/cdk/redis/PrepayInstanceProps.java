@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * Properties for defining a <code>ALIYUN::REDIS::PrepayInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.856Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.243Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.PrepayInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayInstanceProps.Jsii$Proxy.class)
 public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -153,6 +153,19 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     * Property shardCount: The number of data nodes in the instance.
+     * <p>
+     * Default value: 1. Valid values:
+     * 1: You can create an instance in the standard architecture that contains only a single data node.
+     * For more information about the standard architecture, see Cluster master-replica instances.
+     * 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+     * For more information about the cluster architecture, see Cluster master-replica instances.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getShardCount() {
+        return null;
+    }
+
+    /**
      * Property sslEnabled: Modifies the SSL status.
      * <p>
      * Valid values:
@@ -244,6 +257,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object resourceGroupId;
         java.lang.Object secondaryZoneId;
         java.lang.Object securityGroupId;
+        java.lang.Object shardCount;
         java.lang.Object sslEnabled;
         java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty> tags;
         java.lang.Object tairConfig;
@@ -627,6 +641,36 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link PrepayInstanceProps#getShardCount}
+         * @param shardCount Property shardCount: The number of data nodes in the instance.
+         *                   Default value: 1. Valid values:
+         *                   1: You can create an instance in the standard architecture that contains only a single data node.
+         *                   For more information about the standard architecture, see Cluster master-replica instances.
+         *                   2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+         *                   For more information about the cluster architecture, see Cluster master-replica instances.
+         * @return {@code this}
+         */
+        public Builder shardCount(java.lang.Number shardCount) {
+            this.shardCount = shardCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getShardCount}
+         * @param shardCount Property shardCount: The number of data nodes in the instance.
+         *                   Default value: 1. Valid values:
+         *                   1: You can create an instance in the standard architecture that contains only a single data node.
+         *                   For more information about the standard architecture, see Cluster master-replica instances.
+         *                   2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+         *                   For more information about the cluster architecture, see Cluster master-replica instances.
+         * @return {@code this}
+         */
+        public Builder shardCount(com.aliyun.ros.cdk.core.IResolvable shardCount) {
+            this.shardCount = shardCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link PrepayInstanceProps#getSslEnabled}
          * @param sslEnabled Property sslEnabled: Modifies the SSL status.
          *                   Valid values:
@@ -813,6 +857,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object secondaryZoneId;
         private final java.lang.Object securityGroupId;
+        private final java.lang.Object shardCount;
         private final java.lang.Object sslEnabled;
         private final java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty> tags;
         private final java.lang.Object tairConfig;
@@ -844,6 +889,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secondaryZoneId = software.amazon.jsii.Kernel.get(this, "secondaryZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.shardCount = software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sslEnabled = software.amazon.jsii.Kernel.get(this, "sslEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty.class)));
             this.tairConfig = software.amazon.jsii.Kernel.get(this, "tairConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -876,6 +922,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.resourceGroupId = builder.resourceGroupId;
             this.secondaryZoneId = builder.secondaryZoneId;
             this.securityGroupId = builder.securityGroupId;
+            this.shardCount = builder.shardCount;
             this.sslEnabled = builder.sslEnabled;
             this.tags = (java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty>)builder.tags;
             this.tairConfig = builder.tairConfig;
@@ -971,6 +1018,11 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getShardCount() {
+            return this.shardCount;
+        }
+
+        @Override
         public final java.lang.Object getSslEnabled() {
             return this.sslEnabled;
         }
@@ -1062,6 +1114,9 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             if (this.getSecurityGroupId() != null) {
                 data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
             }
+            if (this.getShardCount() != null) {
+                data.set("shardCount", om.valueToTree(this.getShardCount()));
+            }
             if (this.getSslEnabled() != null) {
                 data.set("sslEnabled", om.valueToTree(this.getSslEnabled()));
             }
@@ -1118,6 +1173,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.secondaryZoneId != null ? !this.secondaryZoneId.equals(that.secondaryZoneId) : that.secondaryZoneId != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
+            if (this.shardCount != null ? !this.shardCount.equals(that.shardCount) : that.shardCount != null) return false;
             if (this.sslEnabled != null ? !this.sslEnabled.equals(that.sslEnabled) : that.sslEnabled != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tairConfig != null ? !this.tairConfig.equals(that.tairConfig) : that.tairConfig != null) return false;
@@ -1146,6 +1202,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.secondaryZoneId != null ? this.secondaryZoneId.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
+            result = 31 * result + (this.shardCount != null ? this.shardCount.hashCode() : 0);
             result = 31 * result + (this.sslEnabled != null ? this.sslEnabled.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tairConfig != null ? this.tairConfig.hashCode() : 0);

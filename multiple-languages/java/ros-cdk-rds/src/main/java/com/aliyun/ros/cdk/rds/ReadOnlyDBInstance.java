@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  <code>ALIYUN::RDS::ReadOnlyDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.703Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.122Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstance")
 public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -343,6 +343,56 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs.
+         * <p>
+         * This parameter is valid when you create the read-only instance in a dedicated cluster.
+         * <p>
+         * @return {@code this}
+         * @param dedicatedHostGroupId Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs. This parameter is required.
+         */
+        public Builder dedicatedHostGroupId(final java.lang.String dedicatedHostGroupId) {
+            this.props.dedicatedHostGroupId(dedicatedHostGroupId);
+            return this;
+        }
+        /**
+         * Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs.
+         * <p>
+         * This parameter is valid when you create the read-only instance in a dedicated cluster.
+         * <p>
+         * @return {@code this}
+         * @param dedicatedHostGroupId Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs. This parameter is required.
+         */
+        public Builder dedicatedHostGroupId(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostGroupId) {
+            this.props.dedicatedHostGroupId(dedicatedHostGroupId);
+            return this;
+        }
+
+        /**
+         * Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance.
+         * <p>
+         * Valid values:- <strong>true</strong>: enables the feature.- <strong>false</strong> (default): disables the feature.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance. This parameter is required.
+         */
+        public Builder deletionProtection(final java.lang.Boolean deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+        /**
+         * Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance.
+         * <p>
+         * Valid values:- <strong>true</strong>: enables the feature.- <strong>false</strong> (default): disables the feature.
+         * <p>
+         * @return {@code this}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance. This parameter is required.
+         */
+        public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+
+        /**
          * Property payType: The billing method.
          * <p>
          * @return {@code this}
@@ -480,6 +530,31 @@ public class ReadOnlyDBInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides.
+         * <p>
+         * This parameter is valid when you create the read-only instance in a dedicated cluster.
+         * <p>
+         * @return {@code this}
+         * @param targetDedicatedHostIdForMaster Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides. This parameter is required.
+         */
+        public Builder targetDedicatedHostIdForMaster(final java.lang.String targetDedicatedHostIdForMaster) {
+            this.props.targetDedicatedHostIdForMaster(targetDedicatedHostIdForMaster);
+            return this;
+        }
+        /**
+         * Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides.
+         * <p>
+         * This parameter is valid when you create the read-only instance in a dedicated cluster.
+         * <p>
+         * @return {@code this}
+         * @param targetDedicatedHostIdForMaster Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides. This parameter is required.
+         */
+        public Builder targetDedicatedHostIdForMaster(final com.aliyun.ros.cdk.core.IResolvable targetDedicatedHostIdForMaster) {
+            this.props.targetDedicatedHostIdForMaster(targetDedicatedHostIdForMaster);
             return this;
         }
 

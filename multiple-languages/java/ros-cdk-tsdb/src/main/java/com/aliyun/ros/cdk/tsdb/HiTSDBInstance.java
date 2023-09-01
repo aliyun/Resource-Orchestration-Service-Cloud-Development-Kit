@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * A ROS resource type:  <code>ALIYUN::TSDB::HiTSDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.594Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:40.075Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.HiTSDBInstance")
 public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -134,15 +134,6 @@ public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property instanceClass: The type of the instance.
          * <p>
-         * For more information, see Instance types:
-         * tsdb.1x.basic: Basic Edition I
-         * tsdb.3x.basic: Basic Edition II
-         * tsdb.4x.basic: Basic Edition III
-         * tsdb.12x.standard: Standard Edition I
-         * tsdb.24x.standard: Standard Edition II
-         * tsdb.48x.large: Ultimate Edition I
-         * tsdb.96x.large: Ultimate Edition II and so on.
-         * <p>
          * @return {@code this}
          * @param instanceClass Property instanceClass: The type of the instance. This parameter is required.
          */
@@ -152,15 +143,6 @@ public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * Property instanceClass: The type of the instance.
-         * <p>
-         * For more information, see Instance types:
-         * tsdb.1x.basic: Basic Edition I
-         * tsdb.3x.basic: Basic Edition II
-         * tsdb.4x.basic: Basic Edition III
-         * tsdb.12x.standard: Standard Edition I
-         * tsdb.24x.standard: Standard Edition II
-         * tsdb.48x.large: Ultimate Edition I
-         * tsdb.96x.large: Ultimate Edition II and so on.
          * <p>
          * @return {@code this}
          * @param instanceClass Property instanceClass: The type of the instance. This parameter is required.
@@ -328,7 +310,11 @@ public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property payType: The billing method.
          * <p>
-         * Valid values: POSTPAY and PREPAY. The POSTPAY value indicates the pay-as-you-go method, and the PREPAY value indicates the subscription method. Default POSTPAY
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>prepay</strong>: The prepay value indicates the subscription method.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param payType Property payType: The billing method. This parameter is required.
@@ -340,7 +326,11 @@ public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property payType: The billing method.
          * <p>
-         * Valid values: POSTPAY and PREPAY. The POSTPAY value indicates the pay-as-you-go method, and the PREPAY value indicates the subscription method. Default POSTPAY
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>prepay</strong>: The prepay value indicates the subscription method.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param payType Property payType: The billing method. This parameter is required.

@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-ecs.Activation=com.aliyun.ros.cdk.ecs.Activation
+@alicloud/ros-cdk-ecs.ActivationProps=com.aliyun.ros.cdk.ecs.ActivationProps
 @alicloud/ros-cdk-ecs.AssignIpv6Addresses=com.aliyun.ros.cdk.ecs.AssignIpv6Addresses
 @alicloud/ros-cdk-ecs.AssignIpv6AddressesProps=com.aliyun.ros.cdk.ecs.AssignIpv6AddressesProps
 @alicloud/ros-cdk-ecs.AssignPrivateIpAddresses=com.aliyun.ros.cdk.ecs.AssignPrivateIpAddresses
@@ -48,6 +50,9 @@
 @alicloud/ros-cdk-ecs.PrefixListProps=com.aliyun.ros.cdk.ecs.PrefixListProps
 @alicloud/ros-cdk-ecs.RamRoleAttachment=com.aliyun.ros.cdk.ecs.RamRoleAttachment
 @alicloud/ros-cdk-ecs.RamRoleAttachmentProps=com.aliyun.ros.cdk.ecs.RamRoleAttachmentProps
+@alicloud/ros-cdk-ecs.RosActivation=com.aliyun.ros.cdk.ecs.RosActivation
+@alicloud/ros-cdk-ecs.RosActivation.TagsProperty=com.aliyun.ros.cdk.ecs.RosActivation$TagsProperty
+@alicloud/ros-cdk-ecs.RosActivationProps=com.aliyun.ros.cdk.ecs.RosActivationProps
 @alicloud/ros-cdk-ecs.RosAssignIpv6Addresses=com.aliyun.ros.cdk.ecs.RosAssignIpv6Addresses
 @alicloud/ros-cdk-ecs.RosAssignIpv6AddressesProps=com.aliyun.ros.cdk.ecs.RosAssignIpv6AddressesProps
 @alicloud/ros-cdk-ecs.RosAssignPrivateIpAddresses=com.aliyun.ros.cdk.ecs.RosAssignPrivateIpAddresses
@@ -62,6 +67,7 @@
 @alicloud/ros-cdk-ecs.RosAutoSnapshotPolicy.TagsProperty=com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicy$TagsProperty
 @alicloud/ros-cdk-ecs.RosAutoSnapshotPolicyProps=com.aliyun.ros.cdk.ecs.RosAutoSnapshotPolicyProps
 @alicloud/ros-cdk-ecs.RosCommand=com.aliyun.ros.cdk.ecs.RosCommand
+@alicloud/ros-cdk-ecs.RosCommand.TagsProperty=com.aliyun.ros.cdk.ecs.RosCommand$TagsProperty
 @alicloud/ros-cdk-ecs.RosCommandProps=com.aliyun.ros.cdk.ecs.RosCommandProps
 @alicloud/ros-cdk-ecs.RosCopyImage=com.aliyun.ros.cdk.ecs.RosCopyImage
 @alicloud/ros-cdk-ecs.RosCopyImage.TagProperty=com.aliyun.ros.cdk.ecs.RosCopyImage$TagProperty
@@ -128,6 +134,7 @@
 @alicloud/ros-cdk-ecs.RosRoute.NextHopListProperty=com.aliyun.ros.cdk.ecs.RosRoute$NextHopListProperty
 @alicloud/ros-cdk-ecs.RosRouteProps=com.aliyun.ros.cdk.ecs.RosRouteProps
 @alicloud/ros-cdk-ecs.RosRunCommand=com.aliyun.ros.cdk.ecs.RosRunCommand
+@alicloud/ros-cdk-ecs.RosRunCommand.TagsProperty=com.aliyun.ros.cdk.ecs.RosRunCommand$TagsProperty
 @alicloud/ros-cdk-ecs.RosRunCommandProps=com.aliyun.ros.cdk.ecs.RosRunCommandProps
 @alicloud/ros-cdk-ecs.RosSNatEntry=com.aliyun.ros.cdk.ecs.RosSNatEntry
 @alicloud/ros-cdk-ecs.RosSNatEntryProps=com.aliyun.ros.cdk.ecs.RosSNatEntryProps
@@ -180,6 +187,8 @@
 @alicloud/ros-cdk-ecs.VSwitch=com.aliyun.ros.cdk.ecs.VSwitch
 @alicloud/ros-cdk-ecs.VSwitchProps=com.aliyun.ros.cdk.ecs.VSwitchProps
 @alicloud/ros-cdk-ecs.Vpc=com.aliyun.ros.cdk.ecs.Vpc
+@alicloud/ros-cdk-ecs.datasource.Activations=com.aliyun.ros.cdk.ecs.datasource.Activations
+@alicloud/ros-cdk-ecs.datasource.ActivationsProps=com.aliyun.ros.cdk.ecs.datasource.ActivationsProps
 @alicloud/ros-cdk-ecs.datasource.AutoSnapshotPolicies=com.aliyun.ros.cdk.ecs.datasource.AutoSnapshotPolicies
 @alicloud/ros-cdk-ecs.datasource.AutoSnapshotPoliciesProps=com.aliyun.ros.cdk.ecs.datasource.AutoSnapshotPoliciesProps
 @alicloud/ros-cdk-ecs.datasource.Commands=com.aliyun.ros.cdk.ecs.datasource.Commands
@@ -208,6 +217,8 @@
 @alicloud/ros-cdk-ecs.datasource.NetworkInterfacesProps=com.aliyun.ros.cdk.ecs.datasource.NetworkInterfacesProps
 @alicloud/ros-cdk-ecs.datasource.RecommendInstanceTypes=com.aliyun.ros.cdk.ecs.datasource.RecommendInstanceTypes
 @alicloud/ros-cdk-ecs.datasource.RecommendInstanceTypesProps=com.aliyun.ros.cdk.ecs.datasource.RecommendInstanceTypesProps
+@alicloud/ros-cdk-ecs.datasource.RosActivations=com.aliyun.ros.cdk.ecs.datasource.RosActivations
+@alicloud/ros-cdk-ecs.datasource.RosActivationsProps=com.aliyun.ros.cdk.ecs.datasource.RosActivationsProps
 @alicloud/ros-cdk-ecs.datasource.RosAutoSnapshotPolicies=com.aliyun.ros.cdk.ecs.datasource.RosAutoSnapshotPolicies
 @alicloud/ros-cdk-ecs.datasource.RosAutoSnapshotPolicies.TagsProperty=com.aliyun.ros.cdk.ecs.datasource.RosAutoSnapshotPolicies$TagsProperty
 @alicloud/ros-cdk-ecs.datasource.RosAutoSnapshotPoliciesProps=com.aliyun.ros.cdk.ecs.datasource.RosAutoSnapshotPoliciesProps

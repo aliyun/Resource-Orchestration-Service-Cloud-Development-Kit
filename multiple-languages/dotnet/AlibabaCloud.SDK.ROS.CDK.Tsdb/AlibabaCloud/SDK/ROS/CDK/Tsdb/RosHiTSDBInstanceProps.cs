@@ -13,14 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
         private object _instanceClass;
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceClass: The type of the instance. For more information, see Instance types:
-        /// tsdb.1x.basic: Basic Edition I
-        /// tsdb.3x.basic: Basic Edition II
-        /// tsdb.4x.basic: Basic Edition III
-        /// tsdb.12x.standard: Standard Edition I
-        /// tsdb.24x.standard: Standard Edition II
-        /// tsdb.48x.large: Ultimate Edition I
-        /// tsdb.96x.large: Ultimate Edition II and so on.
+        /// <strong>Property</strong>: instanceClass: The type of the instance.
         /// </remarks>
         [JsiiProperty(name: "instanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InstanceClass
@@ -319,7 +312,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
         private object? _payType;
 
         /// <remarks>
-        /// <strong>Property</strong>: payType: The billing method. Valid values: POSTPAY and PREPAY. The POSTPAY value indicates the pay-as-you-go method, and the PREPAY value indicates the subscription method. Default POSTPAY
+        /// <strong>Property</strong>: payType: The billing method. Valid values:
+        /// - **prepay**: The prepay value indicates the subscription method.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

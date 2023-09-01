@@ -1,5 +1,6 @@
 export * from './instance';
 export * from './instanceendpointaclpolicy';
+export * from './instancevpcendpointlinkedvpc';
 export * from './namespace';
 export * from './repository';
 export * from './userinfo';

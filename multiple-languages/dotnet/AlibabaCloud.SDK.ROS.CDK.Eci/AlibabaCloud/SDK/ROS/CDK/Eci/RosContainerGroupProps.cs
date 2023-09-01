@@ -92,70 +92,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
         }
 
-        private object _securityGroupId;
-
-        /// <remarks>
-        /// <strong>Property</strong>: securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
-        /// </remarks>
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public object SecurityGroupId
-        {
-            get => _securityGroupId;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _securityGroupId = value;
-            }
-        }
-
-        private object _vSwitchId;
-
-        /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: The ID of the specified VSwitch. Currently, ECI instances can only be deployed in VPCs.
-        /// </remarks>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public object VSwitchId
-        {
-            get => _vSwitchId;
-            set
-            {
-                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                {
-                    switch (value)
-                    {
-                        case string cast_cd4240:
-                            break;
-                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                            break;
-                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                            // Not enough information to type-check...
-                            break;
-                        case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                        default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                    }
-                }
-                _vSwitchId = value;
-            }
-        }
-
         private object? _acrRegistryInfo;
 
         /// <remarks>
@@ -885,6 +821,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
         }
 
+        private object? _securityGroupId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
+        /// If no security group is specified, the system automatically uses the default security group in the region you select.
+        /// If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SecurityGroupId
+        {
+            get => _securityGroupId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _securityGroupId = value;
+            }
+        }
+
         private object? _slsEnable;
 
         /// <remarks>
@@ -1158,6 +1129,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                     }
                 }
                 _volume = value;
+            }
+        }
+
+        private object? _vSwitchId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: vSwitchId: The ID of the specified VSwitch.
+        /// If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+        /// If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? VSwitchId
+        {
+            get => _vSwitchId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _vSwitchId = value;
             }
         }
 

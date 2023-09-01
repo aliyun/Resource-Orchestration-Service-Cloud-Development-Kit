@@ -3,6 +3,266 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::ECS::Activation`
+ */
+export interface RosActivationProps {
+
+    /**
+     * @Property description: The description of the activation code. It must be 1 to 100 characters in length.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceCount: The maximum number of times that you can use the activation code to register managed instances. Valid values: 1 to 1000.Default value: 10.
+     */
+    readonly instanceCount?: number | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The default instance name prefix. The instance name prefix must be 2 to 50 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). If you use the activation code that is created by calling this operation (CreateActivation) to register managed instances, the instances are assigned sequential names that are prefixed by the value of this parameter. You can also specify a new instance name to replace the assigned sequential name when you register a managed instance.If you specify InstanceName when you register a managed instance, an instance name in theformat of <InstanceName>-<Number> is generated. The number of digits in the <Number> value isdetermined by that in the InstanceCount value. Example: 001. If you do not specify InstanceName, the hostname (Hostname) is used as the instance name.
+     */
+    readonly instanceName?: string | ros.IResolvable;
+
+    /**
+     * @Property ipAddressRange: The IP addresses of hosts that are allowed to use the activation code. The value can be IPv4 addresses, IPv6 addresses, or CIDR blocks.
+     */
+    readonly ipAddressRange?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosActivation.TagsProperty[];
+
+    /**
+     * @Property timeToLiveInHours: The validity period of the activation code. The activation code can no longer be used to register instances after the period ends. Unit: hours. Valid values: 1 to 876576, which represents a range of time from 1 hour to 100 years.Default value: 4.
+     */
+    readonly timeToLiveInHours?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosActivationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosActivationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosActivationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    if(properties.instanceCount && (typeof properties.instanceCount) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceCount', ros.validateRange)({
+            data: properties.instanceCount,
+            min: 1,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('instanceCount', ros.validateNumber)(properties.instanceCount));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.timeToLiveInHours && (typeof properties.timeToLiveInHours) !== 'object') {
+        errors.collect(ros.propertyValidator('timeToLiveInHours', ros.validateRange)({
+            data: properties.timeToLiveInHours,
+            min: 1,
+            max: 876576,
+          }));
+    }
+    errors.collect(ros.propertyValidator('timeToLiveInHours', ros.validateNumber)(properties.timeToLiveInHours));
+    errors.collect(ros.propertyValidator('ipAddressRange', ros.validateString)(properties.ipAddressRange));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosActivation_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosActivationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::Activation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosActivationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::Activation` resource.
+ */
+// @ts-ignore TS6133
+function rosActivationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosActivationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Description: ros.stringToRosTemplate(properties.description),
+      InstanceCount: ros.numberToRosTemplate(properties.instanceCount),
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      IpAddressRange: ros.stringToRosTemplate(properties.ipAddressRange),
+      Tags: ros.listMapper(rosActivationTagsPropertyToRosTemplate)(properties.tags),
+      TimeToLiveInHours: ros.numberToRosTemplate(properties.timeToLiveInHours),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ECS::Activation`
+ */
+export class RosActivation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::Activation";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ActivationCode: Activation code.
+     */
+    public readonly attrActivationCode: ros.IResolvable;
+
+    /**
+     * @Attribute ActivationId: Activation code ID.
+     */
+    public readonly attrActivationId: ros.IResolvable;
+
+    /**
+     * @Attribute DeregisteredCount: The number of instances that have been logged out.
+     */
+    public readonly attrDeregisteredCount: ros.IResolvable;
+
+    /**
+     * @Attribute RegisteredCount: The number of registered instances.
+     */
+    public readonly attrRegisteredCount: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property description: The description of the activation code. It must be 1 to 100 characters in length.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceCount: The maximum number of times that you can use the activation code to register managed instances. Valid values: 1 to 1000.Default value: 10.
+     */
+    public instanceCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceName: The default instance name prefix. The instance name prefix must be 2 to 50 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). If you use the activation code that is created by calling this operation (CreateActivation) to register managed instances, the instances are assigned sequential names that are prefixed by the value of this parameter. You can also specify a new instance name to replace the assigned sequential name when you register a managed instance.If you specify InstanceName when you register a managed instance, an instance name in theformat of <InstanceName>-<Number> is generated. The number of digits in the <Number> value isdetermined by that in the InstanceCount value. Example: 001. If you do not specify InstanceName, the hostname (Hostname) is used as the instance name.
+     */
+    public instanceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipAddressRange: The IP addresses of hosts that are allowed to use the activation code. The value can be IPv4 addresses, IPv6 addresses, or CIDR blocks.
+     */
+    public ipAddressRange: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosActivation.TagsProperty[] | undefined;
+
+    /**
+     * @Property timeToLiveInHours: The validity period of the activation code. The activation code can no longer be used to register instances after the period ends. Unit: hours. Valid values: 1 to 876576, which represents a range of time from 1 hour to 100 years.Default value: 4.
+     */
+    public timeToLiveInHours: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ECS::Activation`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosActivationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosActivation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrActivationCode = this.getAtt('ActivationCode');
+        this.attrActivationId = this.getAtt('ActivationId');
+        this.attrDeregisteredCount = this.getAtt('DeregisteredCount');
+        this.attrRegisteredCount = this.getAtt('RegisteredCount');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.description = props.description;
+        this.instanceCount = props.instanceCount;
+        this.instanceName = props.instanceName;
+        this.ipAddressRange = props.ipAddressRange;
+        this.tags = props.tags;
+        this.timeToLiveInHours = props.timeToLiveInHours;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            description: this.description,
+            instanceCount: this.instanceCount,
+            instanceName: this.instanceName,
+            ipAddressRange: this.ipAddressRange,
+            tags: this.tags,
+            timeToLiveInHours: this.timeToLiveInHours,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosActivationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosActivation {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosActivation_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::Activation.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::Activation.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosActivationTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosActivation_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::ECS::AssignIpv6Addresses`
  */
 export interface RosAssignIpv6AddressesProps {
@@ -1590,6 +1850,11 @@ export interface RosCommandProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to command. Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCommand.TagsProperty[];
+
+    /**
      * @Property timeout: Total timeout when the command is executed in the instance. Input the time unit as second. Default is 60s.
      */
     readonly timeout?: number | ros.IResolvable;
@@ -1617,6 +1882,14 @@ function RosCommandPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
     errors.collect(ros.propertyValidator('enableParameter', ros.validateBoolean)(properties.enableParameter));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCommand_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosCommandProps"');
 }
@@ -1640,6 +1913,7 @@ function rosCommandPropsToRosTemplate(properties: any, enableResourcePropertyCon
       Description: ros.stringToRosTemplate(properties.description),
       EnableParameter: ros.booleanToRosTemplate(properties.enableParameter),
       Name: ros.stringToRosTemplate(properties.name),
+      Tags: ros.listMapper(rosCommandTagsPropertyToRosTemplate)(properties.tags),
       Timeout: ros.numberToRosTemplate(properties.timeout),
       WorkingDir: ros.stringToRosTemplate(properties.workingDir),
     };
@@ -1694,6 +1968,11 @@ export class RosCommand extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to command. Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosCommand.TagsProperty[] | undefined;
+
+    /**
      * @Property timeout: Total timeout when the command is executed in the instance. Input the time unit as second. Default is 60s.
      */
     public timeout: number | ros.IResolvable | undefined;
@@ -1720,6 +1999,7 @@ export class RosCommand extends ros.RosResource {
         this.description = props.description;
         this.enableParameter = props.enableParameter;
         this.name = props.name;
+        this.tags = props.tags;
         this.timeout = props.timeout;
         this.workingDir = props.workingDir;
     }
@@ -1732,6 +2012,7 @@ export class RosCommand extends ros.RosResource {
             description: this.description,
             enableParameter: this.enableParameter,
             name: this.name,
+            tags: this.tags,
             timeout: this.timeout,
             workingDir: this.workingDir,
         };
@@ -1739,6 +2020,54 @@ export class RosCommand extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosCommandPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosCommand {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCommand_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::Command.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::Command.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosCommandTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCommand_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -5474,11 +5803,6 @@ export interface RosInstanceGroupProps {
     readonly allocatePublicIp?: boolean | ros.IResolvable;
 
     /**
-     * @Property autoPay: Whether to pay automatically.
-     */
-    readonly autoPay?: boolean | ros.IResolvable;
-
-    /**
      * @Property autoReleaseTime: Auto release time for created instance, Follow ISO8601 standard using UTC time. format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
      */
     readonly autoReleaseTime?: string | ros.IResolvable;
@@ -6007,7 +6331,6 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
           data: properties.systemDiskCategory,
@@ -6045,7 +6368,6 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
       MaxAmount: ros.numberToRosTemplate(properties.maxAmount),
       AllocatePublicIP: ros.booleanToRosTemplate(properties.allocatePublicIp),
-      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
       AutoReleaseTime: ros.stringToRosTemplate(properties.autoReleaseTime),
       AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
       AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
@@ -6186,11 +6508,6 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip. If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
      */
     public allocatePublicIp: boolean | ros.IResolvable | undefined;
-
-    /**
-     * @Property autoPay: Whether to pay automatically.
-     */
-    public autoPay: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property autoReleaseTime: Auto release time for created instance, Follow ISO8601 standard using UTC time. format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
@@ -6535,7 +6852,6 @@ export class RosInstanceGroup extends ros.RosResource {
         this.instanceType = props.instanceType;
         this.maxAmount = props.maxAmount;
         this.allocatePublicIp = props.allocatePublicIp;
-        this.autoPay = props.autoPay;
         this.autoReleaseTime = props.autoReleaseTime;
         this.autoRenew = props.autoRenew;
         this.autoRenewPeriod = props.autoRenewPeriod;
@@ -6601,7 +6917,6 @@ export class RosInstanceGroup extends ros.RosResource {
             instanceType: this.instanceType,
             maxAmount: this.maxAmount,
             allocatePublicIp: this.allocatePublicIp,
-            autoPay: this.autoPay,
             autoReleaseTime: this.autoReleaseTime,
             autoRenew: this.autoRenew,
             autoRenewPeriod: this.autoRenewPeriod,
@@ -10759,6 +11074,11 @@ export class RosRoute extends ros.RosResource {
      * containing the properties of this ROS resource.
      */
 
+    /**
+     * @Attribute RouteEntryId: The ID of the route entry.
+     */
+    public readonly attrRouteEntryId: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -10796,6 +11116,7 @@ export class RosRoute extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRouteProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRoute.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrRouteEntryId = this.getAtt('RouteEntryId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.destinationCidrBlock = props.destinationCidrBlock;
@@ -10956,6 +11277,11 @@ export interface RosRunCommandProps {
     readonly sync?: boolean | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to run_command. Max support 20 tags to add during create run_command. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosRunCommand.TagsProperty[];
+
+    /**
      * @Property timed: Specifies whether to periodically run the script. Valid values:
      * true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
      * false: runs once only.
@@ -11020,6 +11346,14 @@ function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
     errors.collect(ros.propertyValidator('keepCommand', ros.validateBoolean)(properties.keepCommand));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosRunCommand_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosRunCommandProps"');
 }
 
@@ -11049,6 +11383,7 @@ function rosRunCommandPropsToRosTemplate(properties: any, enableResourceProperty
       Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
       RunAgainOn: ros.listMapper(ros.stringToRosTemplate)(properties.runAgainOn),
       Sync: ros.booleanToRosTemplate(properties.sync),
+      Tags: ros.listMapper(rosRunCommandTagsPropertyToRosTemplate)(properties.tags),
       Timed: ros.booleanToRosTemplate(properties.timed),
       Timeout: ros.numberToRosTemplate(properties.timeout),
       WorkingDir: ros.stringToRosTemplate(properties.workingDir),
@@ -11175,6 +11510,11 @@ export class RosRunCommand extends ros.RosResource {
     public sync: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to run_command. Max support 20 tags to add during create run_command. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosRunCommand.TagsProperty[] | undefined;
+
+    /**
      * @Property timed: Specifies whether to periodically run the script. Valid values:
      * true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
      * false: runs once only.
@@ -11223,6 +11563,7 @@ export class RosRunCommand extends ros.RosResource {
         this.parameters = props.parameters;
         this.runAgainOn = props.runAgainOn;
         this.sync = props.sync;
+        this.tags = props.tags;
         this.timed = props.timed;
         this.timeout = props.timeout;
         this.workingDir = props.workingDir;
@@ -11243,6 +11584,7 @@ export class RosRunCommand extends ros.RosResource {
             parameters: this.parameters,
             runAgainOn: this.runAgainOn,
             sync: this.sync,
+            tags: this.tags,
             timed: this.timed,
             timeout: this.timeout,
             workingDir: this.workingDir,
@@ -11251,6 +11593,54 @@ export class RosRunCommand extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosRunCommandPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosRunCommand {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRunCommand_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::RunCommand.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::RunCommand.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosRunCommandTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRunCommand_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -13111,6 +13501,12 @@ export interface RosSnapshotProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property retentionDays: Set the retention period of a snapshot in days. The snapshot will be automatically released after the retention period expires.
+     * The value ranges from 1 to 65536.
+     */
+    readonly retentionDays?: number | ros.IResolvable;
+
+    /**
      * @Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
      */
     readonly snapshotName?: string | ros.IResolvable;
@@ -13147,6 +13543,14 @@ function RosSnapshotPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    if(properties.retentionDays && (typeof properties.retentionDays) !== 'object') {
+        errors.collect(ros.propertyValidator('retentionDays', ros.validateRange)({
+            data: properties.retentionDays,
+            min: 1,
+            max: 65536,
+          }));
+    }
+    errors.collect(ros.propertyValidator('retentionDays', ros.validateNumber)(properties.retentionDays));
     errors.collect(ros.propertyValidator('snapshotName', ros.validateString)(properties.snapshotName));
     errors.collect(ros.propertyValidator('instantAccessRetentionDays', ros.validateNumber)(properties.instantAccessRetentionDays));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -13181,6 +13585,7 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
       InstantAccess: ros.booleanToRosTemplate(properties.instantAccess),
       InstantAccessRetentionDays: ros.numberToRosTemplate(properties.instantAccessRetentionDays),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      RetentionDays: ros.numberToRosTemplate(properties.retentionDays),
       SnapshotName: ros.stringToRosTemplate(properties.snapshotName),
       Tags: ros.listMapper(rosSnapshotTagsPropertyToRosTemplate)(properties.tags),
       Timeout: ros.numberToRosTemplate(properties.timeout),
@@ -13244,6 +13649,12 @@ export class RosSnapshot extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property retentionDays: Set the retention period of a snapshot in days. The snapshot will be automatically released after the retention period expires.
+     * The value ranges from 1 to 65536.
+     */
+    public retentionDays: number | ros.IResolvable | undefined;
+
+    /**
      * @Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
      */
     public snapshotName: string | ros.IResolvable | undefined;
@@ -13275,6 +13686,7 @@ export class RosSnapshot extends ros.RosResource {
         this.instantAccess = props.instantAccess;
         this.instantAccessRetentionDays = props.instantAccessRetentionDays;
         this.resourceGroupId = props.resourceGroupId;
+        this.retentionDays = props.retentionDays;
         this.snapshotName = props.snapshotName;
         this.tags = props.tags;
         this.timeout = props.timeout;
@@ -13288,6 +13700,7 @@ export class RosSnapshot extends ros.RosResource {
             instantAccess: this.instantAccess,
             instantAccessRetentionDays: this.instantAccessRetentionDays,
             resourceGroupId: this.resourceGroupId,
+            retentionDays: this.retentionDays,
             snapshotName: this.snapshotName,
             tags: this.tags,
             timeout: this.timeout,

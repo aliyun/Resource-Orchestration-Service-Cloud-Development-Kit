@@ -485,7 +485,7 @@ export namespace RosServiceInstance {
         /**
          * @Property version: Service version.
          */
-        readonly version: string | ros.IResolvable;
+        readonly version?: string | ros.IResolvable;
         /**
          * @Property serviceId: The service ID.
          */
@@ -502,7 +502,6 @@ export namespace RosServiceInstance {
 function RosServiceInstance_ServicePropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
     errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
     errors.collect(ros.propertyValidator('serviceId', ros.requiredValidator)(properties.serviceId));
     errors.collect(ros.propertyValidator('serviceId', ros.validateString)(properties.serviceId));

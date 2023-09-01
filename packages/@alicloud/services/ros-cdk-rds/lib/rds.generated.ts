@@ -174,8 +174,11 @@ export interface RosAccountProps {
      * @Property accountName: Account name, which must be unique and meet the following requirements:
      * Start with a letter;
      * Consist of lower-case letters, digits, and underscores (_);
-     * Contain no more than 16 characters.
-     * For other invalid characters, see Forbidden keywords table.
+     * Length:
+     * MySQL 8.0 and 5.7: 2-32 characters.
+     * MySQL 5.6、MariaDB and PostgreSQL Local version: 2-16 characters.
+     * SQL Server: 2-64 characters.
+     * PostgreSQL Cloud version: 2-63 characters.
      */
     readonly accountName: string | ros.IResolvable;
 
@@ -291,8 +294,11 @@ export class RosAccount extends ros.RosResource {
      * @Property accountName: Account name, which must be unique and meet the following requirements:
      * Start with a letter;
      * Consist of lower-case letters, digits, and underscores (_);
-     * Contain no more than 16 characters.
-     * For other invalid characters, see Forbidden keywords table.
+     * Length:
+     * MySQL 8.0 and 5.7: 2-32 characters.
+     * MySQL 5.6、MariaDB and PostgreSQL Local version: 2-16 characters.
+     * SQL Server: 2-64 characters.
+     * PostgreSQL Cloud version: 2-63 characters.
      */
     public accountName: string | ros.IResolvable;
 
@@ -709,7 +715,8 @@ export interface RosDBInstanceProps {
     readonly dbInstanceClass: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     * @Property dbInstanceStorage: The storage capacity of the instance. Unit: GB. The storage capacity increases in increments of 5 GB. 
+     * You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
      */
     readonly dbInstanceStorage: number | ros.IResolvable;
 
@@ -900,6 +907,11 @@ export interface RosDBInstanceProps {
     readonly highSpaceUsageProtection?: string | ros.IResolvable;
 
     /**
+     * @Property instanceNetworkType: Instance network type, VPC or Classic
+     */
+    readonly instanceNetworkType?: string | ros.IResolvable;
+
+    /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
      * Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance. 
      * You can retain the default value. Note You must specify this parameter when the BackupPolicyMode 
@@ -1059,7 +1071,7 @@ export interface RosDBInstanceProps {
     /**
      * @Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-     * At most 5 tags can be specified.
+     * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
@@ -1139,6 +1151,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('instanceNetworkType', ros.validateString)(properties.instanceNetworkType));
     if(properties.archiveBackupKeepCount && (typeof properties.archiveBackupKeepCount) !== 'object') {
         errors.collect(ros.propertyValidator('archiveBackupKeepCount', ros.validateRange)({
             data: properties.archiveBackupKeepCount,
@@ -1385,6 +1398,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       EnableBackupLog: ros.booleanToRosTemplate(properties.enableBackupLog),
       EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
       HighSpaceUsageProtection: ros.stringToRosTemplate(properties.highSpaceUsageProtection),
+      InstanceNetworkType: ros.stringToRosTemplate(properties.instanceNetworkType),
       LocalLogRetentionHours: ros.numberToRosTemplate(properties.localLogRetentionHours),
       LocalLogRetentionSpace: ros.numberToRosTemplate(properties.localLogRetentionSpace),
       LogBackupFrequency: ros.stringToRosTemplate(properties.logBackupFrequency),
@@ -1478,7 +1492,8 @@ export class RosDBInstance extends ros.RosResource {
     public dbInstanceClass: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     * @Property dbInstanceStorage: The storage capacity of the instance. Unit: GB. The storage capacity increases in increments of 5 GB. 
+     * You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
      */
     public dbInstanceStorage: number | ros.IResolvable;
 
@@ -1669,6 +1684,11 @@ export class RosDBInstance extends ros.RosResource {
     public highSpaceUsageProtection: string | ros.IResolvable | undefined;
 
     /**
+     * @Property instanceNetworkType: Instance network type, VPC or Classic
+     */
+    public instanceNetworkType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
      * Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance. 
      * You can retain the default value. Note You must specify this parameter when the BackupPolicyMode 
@@ -1828,7 +1848,7 @@ export class RosDBInstance extends ros.RosResource {
     /**
      * @Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-     * At most 5 tags can be specified.
+     * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
@@ -1919,6 +1939,7 @@ export class RosDBInstance extends ros.RosResource {
         this.enableBackupLog = props.enableBackupLog;
         this.encryptionKey = props.encryptionKey;
         this.highSpaceUsageProtection = props.highSpaceUsageProtection;
+        this.instanceNetworkType = props.instanceNetworkType;
         this.localLogRetentionHours = props.localLogRetentionHours;
         this.localLogRetentionSpace = props.localLogRetentionSpace;
         this.logBackupFrequency = props.logBackupFrequency;
@@ -1985,6 +2006,7 @@ export class RosDBInstance extends ros.RosResource {
             enableBackupLog: this.enableBackupLog,
             encryptionKey: this.encryptionKey,
             highSpaceUsageProtection: this.highSpaceUsageProtection,
+            instanceNetworkType: this.instanceNetworkType,
             localLogRetentionHours: this.localLogRetentionHours,
             localLogRetentionSpace: this.localLogRetentionSpace,
             logBackupFrequency: this.logBackupFrequency,
@@ -2238,7 +2260,8 @@ export interface RosDBInstanceCloneProps {
     readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     * @Property dbInstanceStorage: The storage capacity of the instance. Unit: GB. The storage capacity increases in increments of 5 GB. 
+     * You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
      */
     readonly dbInstanceStorage?: number | ros.IResolvable;
 
@@ -2388,7 +2411,7 @@ export interface RosDBInstanceCloneProps {
     /**
      * @Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-     * At most 5 tags can be specified.
+     * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
@@ -2742,7 +2765,8 @@ export class RosDBInstanceClone extends ros.RosResource {
     public dbInstanceDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     * @Property dbInstanceStorage: The storage capacity of the instance. Unit: GB. The storage capacity increases in increments of 5 GB. 
+     * You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
      */
     public dbInstanceStorage: number | ros.IResolvable | undefined;
 
@@ -2892,7 +2916,7 @@ export class RosDBInstanceClone extends ros.RosResource {
     /**
      * @Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-     * At most 5 tags can be specified.
+     * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
@@ -3944,7 +3968,8 @@ export interface RosPrepayDBInstanceProps {
     readonly dbInstanceClass: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     * @Property dbInstanceStorage: The storage capacity of the instance. Unit: GB. The storage capacity increases in increments of 5 GB. 
+     * You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
      */
     readonly dbInstanceStorage: number | ros.IResolvable;
 
@@ -4148,6 +4173,11 @@ export interface RosPrepayDBInstanceProps {
     readonly highSpaceUsageProtection?: string | ros.IResolvable;
 
     /**
+     * @Property instanceNetworkType: Instance network type, VPC or Classic
+     */
+    readonly instanceNetworkType?: string | ros.IResolvable;
+
+    /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
      * Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance. 
      * You can retain the default value. Note You must specify this parameter when the BackupPolicyMode 
@@ -4295,7 +4325,7 @@ export interface RosPrepayDBInstanceProps {
     /**
      * @Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-     * At most 5 tags can be specified.
+     * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
@@ -4376,6 +4406,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('instanceNetworkType', ros.validateString)(properties.instanceNetworkType));
     if(properties.archiveBackupKeepCount && (typeof properties.archiveBackupKeepCount) !== 'object') {
         errors.collect(ros.propertyValidator('archiveBackupKeepCount', ros.validateRange)({
             data: properties.archiveBackupKeepCount,
@@ -4637,6 +4668,7 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
       EnableBackupLog: ros.booleanToRosTemplate(properties.enableBackupLog),
       EncryptionKey: ros.stringToRosTemplate(properties.encryptionKey),
       HighSpaceUsageProtection: ros.stringToRosTemplate(properties.highSpaceUsageProtection),
+      InstanceNetworkType: ros.stringToRosTemplate(properties.instanceNetworkType),
       LocalLogRetentionHours: ros.numberToRosTemplate(properties.localLogRetentionHours),
       LocalLogRetentionSpace: ros.numberToRosTemplate(properties.localLogRetentionSpace),
       LogBackupFrequency: ros.stringToRosTemplate(properties.logBackupFrequency),
@@ -4738,7 +4770,8 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public dbInstanceClass: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     * @Property dbInstanceStorage: The storage capacity of the instance. Unit: GB. The storage capacity increases in increments of 5 GB. 
+     * You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
      */
     public dbInstanceStorage: number | ros.IResolvable;
 
@@ -4942,6 +4975,11 @@ export class RosPrepayDBInstance extends ros.RosResource {
     public highSpaceUsageProtection: string | ros.IResolvable | undefined;
 
     /**
+     * @Property instanceNetworkType: Instance network type, VPC or Classic
+     */
+    public instanceNetworkType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance. 
      * Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance. 
      * You can retain the default value. Note You must specify this parameter when the BackupPolicyMode 
@@ -5089,7 +5127,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
     /**
      * @Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-     * At most 5 tags can be specified.
+     * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
@@ -5185,6 +5223,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
         this.enableBackupLog = props.enableBackupLog;
         this.encryptionKey = props.encryptionKey;
         this.highSpaceUsageProtection = props.highSpaceUsageProtection;
+        this.instanceNetworkType = props.instanceNetworkType;
         this.localLogRetentionHours = props.localLogRetentionHours;
         this.localLogRetentionSpace = props.localLogRetentionSpace;
         this.logBackupFrequency = props.logBackupFrequency;
@@ -5253,6 +5292,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
             enableBackupLog: this.enableBackupLog,
             encryptionKey: this.encryptionKey,
             highSpaceUsageProtection: this.highSpaceUsageProtection,
+            instanceNetworkType: this.instanceNetworkType,
             localLogRetentionHours: this.localLogRetentionHours,
             localLogRetentionSpace: this.localLogRetentionSpace,
             logBackupFrequency: this.logBackupFrequency,
@@ -5493,6 +5533,16 @@ export interface RosReadOnlyDBInstanceProps {
     readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
+     * @Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs. This parameter is valid when you create the read-only instance in a dedicated cluster.
+     */
+    readonly dedicatedHostGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance. Valid values:- **true**: enables the feature.- **false** (default): disables the feature.
+     */
+    readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
      * @Property payType: The billing method.
      */
     readonly payType?: string | ros.IResolvable;
@@ -5537,6 +5587,11 @@ export interface RosReadOnlyDBInstanceProps {
     readonly tags?: { [key: string]: (any) };
 
     /**
+     * @Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides. This parameter is valid when you create the read-only instance in a dedicated cluster.
+     */
+    readonly targetDedicatedHostIdForMaster?: string | ros.IResolvable;
+
+    /**
      * @Property vpcId: The ID of the VPC.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -5564,6 +5619,7 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
         }));
     }
     errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
+    errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
@@ -5574,14 +5630,15 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -5596,6 +5653,7 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateString)(properties.dbInstanceStorageType));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
@@ -5629,12 +5687,15 @@ function rosReadOnlyDBInstancePropsToRosTemplate(properties: any, enableResource
       Category: ros.stringToRosTemplate(properties.category),
       DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
       DBInstanceStorageType: ros.stringToRosTemplate(properties.dbInstanceStorageType),
+      DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
       PayType: ros.stringToRosTemplate(properties.payType),
       Period: ros.numberToRosTemplate(properties.period),
       PeriodType: ros.stringToRosTemplate(properties.periodType),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
+      TargetDedicatedHostIdForMaster: ros.stringToRosTemplate(properties.targetDedicatedHostIdForMaster),
       VPCId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
@@ -5729,6 +5790,16 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     public dbInstanceStorageType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs. This parameter is valid when you create the read-only instance in a dedicated cluster.
+     */
+    public dedicatedHostGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance. Valid values:- **true**: enables the feature.- **false** (default): disables the feature.
+     */
+    public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property payType: The billing method.
      */
     public payType: string | ros.IResolvable | undefined;
@@ -5773,6 +5844,11 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
     public tags: { [key: string]: (any) } | undefined;
 
     /**
+     * @Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides. This parameter is valid when you create the read-only instance in a dedicated cluster.
+     */
+    public targetDedicatedHostIdForMaster: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vpcId: The ID of the VPC.
      */
     public vpcId: string | ros.IResolvable | undefined;
@@ -5805,12 +5881,15 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
         this.category = props.category;
         this.dbInstanceDescription = props.dbInstanceDescription;
         this.dbInstanceStorageType = props.dbInstanceStorageType;
+        this.dedicatedHostGroupId = props.dedicatedHostGroupId;
+        this.deletionProtection = props.deletionProtection;
         this.payType = props.payType;
         this.period = props.period;
         this.periodType = props.periodType;
         this.privateIpAddress = props.privateIpAddress;
         this.resourceGroupId = props.resourceGroupId;
         this.tags = props.tags;
+        this.targetDedicatedHostIdForMaster = props.targetDedicatedHostIdForMaster;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
     }
@@ -5827,12 +5906,15 @@ export class RosReadOnlyDBInstance extends ros.RosResource {
             category: this.category,
             dbInstanceDescription: this.dbInstanceDescription,
             dbInstanceStorageType: this.dbInstanceStorageType,
+            dedicatedHostGroupId: this.dedicatedHostGroupId,
+            deletionProtection: this.deletionProtection,
             payType: this.payType,
             period: this.period,
             periodType: this.periodType,
             privateIpAddress: this.privateIpAddress,
             resourceGroupId: this.resourceGroupId,
             tags: this.tags,
+            targetDedicatedHostIdForMaster: this.targetDedicatedHostIdForMaster,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
         };

@@ -189,6 +189,11 @@ export class Instance extends ros.Resource {
      */
 
     /**
+     * Attribute AuthInfos: The list of the Lindorm instance auth infos.
+     */
+    public readonly attrAuthInfos: ros.IResolvable;
+
+    /**
      * Attribute InstanceId: The ID of the Lindorm instance that is created.
      */
     public readonly attrInstanceId: ros.IResolvable;
@@ -234,6 +239,7 @@ export class Instance extends ros.Resource {
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
+        this.attrAuthInfos = rosInstance.attrAuthInfos;
         this.attrInstanceId = rosInstance.attrInstanceId;
         this.attrJdbcUrlList = rosInstance.attrJdbcUrlList;
     }

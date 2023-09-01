@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::KMS::Secrets</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.771Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.214Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.datasource.RosSecretsProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecretsProps.Jsii$Proxy.class)
 public interface RosSecretsProps extends software.amazon.jsii.JsiiSerializable {

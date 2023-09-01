@@ -119,6 +119,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
+        /// <summary>Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs.</summary>
+        /// <remarks>
+        /// This parameter is valid when you create the read-only instance in a dedicated cluster.
+        /// </remarks>
+        [JsiiProperty(name: "dedicatedHostGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DedicatedHostGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance.</summary>
+        /// <remarks>
+        /// Valid values:- <strong>true</strong>: enables the feature.- <strong>false</strong> (default): disables the feature.
+        /// </remarks>
+        [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionProtection
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property payType: The billing method.</summary>
         [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -200,6 +228,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         System.Collections.Generic.IDictionary<string, object>? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides.</summary>
+        /// <remarks>
+        /// This parameter is valid when you create the read-only instance in a dedicated cluster.
+        /// </remarks>
+        [JsiiProperty(name: "targetDedicatedHostIdForMaster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TargetDedicatedHostIdForMaster
         {
             get
             {
@@ -336,6 +378,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs.</summary>
+            /// <remarks>
+            /// This parameter is valid when you create the read-only instance in a dedicated cluster.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dedicatedHostGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DedicatedHostGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance.</summary>
+            /// <remarks>
+            /// Valid values:- <strong>true</strong>: enables the feature.- <strong>false</strong> (default): disables the feature.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionProtection
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property payType: The billing method.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -404,6 +468,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             public System.Collections.Generic.IDictionary<string, object>? Tags
             {
                 get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>?>();
+            }
+
+            /// <summary>Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides.</summary>
+            /// <remarks>
+            /// This parameter is valid when you create the read-only instance in a dedicated cluster.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "targetDedicatedHostIdForMaster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TargetDedicatedHostIdForMaster
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vpcId: The ID of the VPC.</summary>

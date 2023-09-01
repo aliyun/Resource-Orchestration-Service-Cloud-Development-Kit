@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::CEN::TransitRouterRouteTables</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:58.477Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:35.618Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.RosTransitRouterRouteTablesProps")
 @software.amazon.jsii.Jsii.Proxy(RosTransitRouterRouteTablesProps.Jsii$Proxy.class)
 public interface RosTransitRouterRouteTablesProps extends software.amazon.jsii.JsiiSerializable {

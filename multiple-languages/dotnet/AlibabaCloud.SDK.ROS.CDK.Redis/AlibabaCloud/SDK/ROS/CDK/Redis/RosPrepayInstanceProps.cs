@@ -618,6 +618,63 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
+        private object? _shardCount;
+
+        /// <remarks>
+        /// <strong>Property</strong>: shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+        /// 1: You can create an instance in the standard architecture that contains only a single data node.
+        /// For more information about the standard architecture, see Cluster master-replica instances.
+        /// 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+        /// For more information about the cluster architecture, see Cluster master-replica instances.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ShardCount
+        {
+            get => _shardCount;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _shardCount = value;
+            }
+        }
+
         private object? _sslEnabled;
 
         /// <remarks>

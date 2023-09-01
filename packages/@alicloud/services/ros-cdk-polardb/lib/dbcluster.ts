@@ -42,6 +42,13 @@ export interface DBClusterProps {
     readonly allowShutDown?: boolean | ros.IResolvable;
 
     /**
+     * Property architecture: The architecture of CPU. Valid values:
+     * X86
+     * ARM
+     */
+    readonly architecture?: string | ros.IResolvable;
+
+    /**
      * Property autoRenewPeriod: Set the cluster auto renewal time. Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
@@ -109,6 +116,21 @@ export interface DBClusterProps {
     readonly dbClusterParameters?: RosDBCluster.DBClusterParametersProperty | ros.IResolvable;
 
     /**
+     * Property dbMinorVersion: The minor version of the cluster. Valid values:
+     * 8.0.2
+     * 8.0.1
+     * This parameter is valid only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 8.0.
+     */
+    readonly dbMinorVersion?: string | ros.IResolvable;
+
+    /**
+     * Property dbNodeNum: The number of Standard Edition nodes. Default value: 1. Valid values:
+     * 1: only one primary node.
+     * 2: one read-only node and one primary node.
+     */
+    readonly dbNodeNum?: number | ros.IResolvable;
+
+    /**
      * Property defaultTimeZone: Set up a time zone (UTC), the value range is as follows:
      * System:  The default time zone is the same as the time zone where the region is located. This is default value.
      * Other pickable value range is from -12:00 to +13:00, for example, 00:00.
@@ -121,6 +143,37 @@ export interface DBClusterProps {
      * Note: This parameter is required when the CreationOption is CreateGdnStandby.
      */
     readonly gdnId?: string | ros.IResolvable;
+
+    /**
+     * Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature. Default value: ON. Valid values:
+     * ON: enables the hot standby storage cluster feature.
+     * OFF: disables the hot standby storage cluster feature
+     * STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
+     * The default value for Standard Edition clusters is STANDBY.
+     */
+    readonly hotStandbyCluster?: string | ros.IResolvable;
+
+    /**
+     * Property loosePolarLogBin: Enable the Binlog function, the value range is as follows:
+     * ON: The cluster enables the Binlog function
+     * OFF: The cluster disables the Binlog function
+     * This parameter takes effect only when the parameter DBType is MySQL.
+     */
+    readonly loosePolarLogBin?: string | ros.IResolvable;
+
+    /**
+     * Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows:
+     * ON: The cluster starts the X-Engine enginen
+     * OFF: The cluster shuts down the X-Engine engine
+     * This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.
+     */
+    readonly looseXEngine?: string | ros.IResolvable;
+
+    /**
+     * Property looseXEngineUseMemoryPct: Set the ratio of enabling the X-Engine storage engine, an integer ranging from 10 to 90.
+     * This parameter takes effect only when the parameter LooseXEngine is ON.
+     */
+    readonly looseXEngineUseMemoryPct?: number | ros.IResolvable;
 
     /**
      * Property lowerCaseTableNames: Whether the table name is case sensitive, the value range is as follows:
@@ -138,6 +191,12 @@ export interface DBClusterProps {
     readonly maintainTime?: string | ros.IResolvable;
 
     /**
+     * Property parameterGroupId: The ID of the parameter template.
+     * You can call the DescribeParameterGroups operation to query the details of all parameter templates of a specified region, such as the ID of a parameter template.
+     */
+    readonly parameterGroupId?: string | ros.IResolvable;
+
+    /**
      * Property period: The subscription period of the clusterIf PeriodUnit is month, the valid range is 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36
      * If periodUnit is year, the valid range is 1, 2, 3
      */
@@ -150,6 +209,26 @@ export interface DBClusterProps {
      * Default value: Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
+
+    /**
+     * Property proxyClass: The specifications of the Standard Edition PolarProxy. Valid values:
+     * polar.maxscale.g2.medium.c: 2 cores
+     * polar.maxscale.g2.large.c: 4 cores
+     * polar.maxscale.g2.xlarge.c: 8 cores
+     * polar.maxscale.g2.2xlarge.c: 16 cores
+     * polar.maxscale.g2.3xlarge.c: 24 cores
+     * polar.maxscale.g2.4xlarge.c: 32 cores
+     * polar.maxscale.g2.8xlarge.c: 64 cores
+     */
+    readonly proxyClass?: string | ros.IResolvable;
+
+    /**
+     * Property proxyType: The type of PolarProxy. Default value: OFF. Valid values:
+     * OFF: disables PolarProxy.
+     * EXCLUSIVE: Dedicated Enterprise Edition
+     * GENERAL: Standard Enterprise Edition
+     */
+    readonly proxyType?: string | ros.IResolvable;
 
     /**
      * Property renewalStatus: The auto renewal status of the cluster Valid values:
@@ -212,6 +291,55 @@ export interface DBClusterProps {
      * This parameter is required if the CreationOption parameter is not set to Normal.
      */
     readonly sourceResourceId?: string | ros.IResolvable;
+
+    /**
+     * Property standbyAz: The zone where the hot standby storage cluster is stored. This is valid for Standard Edition clusters of Multi-zone Edition.
+     * This parameter takes effect only when the multi-zone data consistency feature is enabled.
+     */
+    readonly standbyAz?: string | ros.IResolvable;
+
+    /**
+     * Property storageAutoScale: Whether to enable automatic storage scale for standard version clusters. The value range is as follows:
+     * Enable: Enable automatic storage scale.
+     * Disable: Disable automatic storage scale.
+     */
+    readonly storageAutoScale?: string | ros.IResolvable;
+
+    /**
+     * Property storagePayType: The storage pay type.
+     */
+    readonly storagePayType?: string | ros.IResolvable;
+
+    /**
+     * Property storageSpace: The storage space that uses the subscription billing method. Unit: GB.
+     * Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+     */
+    readonly storageSpace?: number | ros.IResolvable;
+
+    /**
+     * Property storageType: The storage type. Valid values for Enterprise Edition:
+     * PSL5
+     * PSL4
+     * Valid values for Standard Edition:
+     * ESSDPL1
+     * ESSDPL2
+     * ESSDPL3
+     * This parameter is invalid for serverless clusters.
+     */
+    readonly storageType?: string | ros.IResolvable;
+
+    /**
+     * Property storageUpperBound: Set the upper limit of automatic scale of standard cluster storage, unit: GB.
+     * The maximum value is 32000.
+     */
+    readonly storageUpperBound?: number | ros.IResolvable;
+
+    /**
+     * Property strictConsistency: Specifies whether to enable the multi-zone data consistency feature. Valid values:
+     * ON: enables the multi-zone data consistency feature, which is valid for Standard Edition clusters of Multi-zone Edition.
+     * OFF: disables the multi-zone data consistency feature.
+     */
+    readonly strictConsistency?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
@@ -319,39 +447,56 @@ export class DBCluster extends ros.Resource {
 
         const rosDBCluster = new RosDBCluster(this, id,  {
             defaultTimeZone: props.defaultTimeZone,
-            cloneDataPoint: props.cloneDataPoint === undefined || props.cloneDataPoint === null ? 'LATEST' : props.cloneDataPoint,
             gdnId: props.gdnId,
             resourceGroupId: props.resourceGroupId,
+            storagePayType: props.storagePayType,
             backupRetentionPolicyOnClusterDeletion: props.backupRetentionPolicyOnClusterDeletion,
-            sourceResourceId: props.sourceResourceId,
+            looseXEngine: props.looseXEngine,
             dbType: props.dbType,
-            scaleRoNumMin: props.scaleRoNumMin,
+            storageAutoScale: props.storageAutoScale,
+            proxyClass: props.proxyClass,
             dbVersion: props.dbVersion,
-            clusterNetworkType: props.clusterNetworkType === undefined || props.clusterNetworkType === null ? 'VPC' : props.clusterNetworkType,
-            securityIpList: props.securityIpList,
+            dbMinorVersion: props.dbMinorVersion,
             dbClusterParameters: props.dbClusterParameters,
-            maintainTime: props.maintainTime,
             tags: props.tags,
-            lowerCaseTableNames: props.lowerCaseTableNames,
-            autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             tdeStatus: props.tdeStatus,
-            zoneId: props.zoneId,
+            storageType: props.storageType,
+            architecture: props.architecture,
             vSwitchId: props.vSwitchId,
-            scaleRoNumMax: props.scaleRoNumMax,
             renewalStatus: props.renewalStatus === undefined || props.renewalStatus === null ? 'Normal' : props.renewalStatus,
             dbClusterDescription: props.dbClusterDescription,
             period: props.period,
             payType: props.payType,
+            securityGroupIds: props.securityGroupIds,
+            allowShutDown: props.allowShutDown,
+            loosePolarLogBin: props.loosePolarLogBin,
+            vpcId: props.vpcId,
+            proxyType: props.proxyType,
+            dbNodeNum: props.dbNodeNum,
+            periodUnit: props.periodUnit,
+            storageUpperBound: props.storageUpperBound,
+            cloneDataPoint: props.cloneDataPoint === undefined || props.cloneDataPoint === null ? 'LATEST' : props.cloneDataPoint,
+            hotStandbyCluster: props.hotStandbyCluster,
+            sourceResourceId: props.sourceResourceId,
+            scaleRoNumMin: props.scaleRoNumMin,
+            clusterNetworkType: props.clusterNetworkType === undefined || props.clusterNetworkType === null ? 'VPC' : props.clusterNetworkType,
+            securityIpList: props.securityIpList,
+            maintainTime: props.maintainTime,
+            standbyAz: props.standbyAz,
+            lowerCaseTableNames: props.lowerCaseTableNames,
+            autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
+            zoneId: props.zoneId,
+            scaleRoNumMax: props.scaleRoNumMax,
+            looseXEngineUseMemoryPct: props.looseXEngineUseMemoryPct,
             scaleMax: props.scaleMax,
             creationCategory: props.creationCategory,
-            securityGroupIds: props.securityGroupIds,
+            strictConsistency: props.strictConsistency,
             dbNodeClass: props.dbNodeClass,
             creationOption: props.creationOption === undefined || props.creationOption === null ? 'Normal' : props.creationOption,
-            allowShutDown: props.allowShutDown,
-            vpcId: props.vpcId,
+            parameterGroupId: props.parameterGroupId,
+            storageSpace: props.storageSpace,
             serverlessType: props.serverlessType,
             scaleMin: props.scaleMin,
-            periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;
         this.attrClusterConnectionString = rosDBCluster.attrClusterConnectionString;

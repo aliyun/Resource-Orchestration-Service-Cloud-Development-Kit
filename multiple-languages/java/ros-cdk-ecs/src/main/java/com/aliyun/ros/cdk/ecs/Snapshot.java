@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  <code>ALIYUN::ECS::Snapshot</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.778Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.202Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Snapshot")
 public class Snapshot extends com.aliyun.ros.cdk.core.Resource {
 
@@ -221,6 +221,33 @@ public class Snapshot extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property retentionDays: Set the retention period of a snapshot in days.
+         * <p>
+         * The snapshot will be automatically released after the retention period expires.
+         * The value ranges from 1 to 65536.
+         * <p>
+         * @return {@code this}
+         * @param retentionDays Property retentionDays: Set the retention period of a snapshot in days. This parameter is required.
+         */
+        public Builder retentionDays(final java.lang.Number retentionDays) {
+            this.props.retentionDays(retentionDays);
+            return this;
+        }
+        /**
+         * Property retentionDays: Set the retention period of a snapshot in days.
+         * <p>
+         * The snapshot will be automatically released after the retention period expires.
+         * The value ranges from 1 to 65536.
+         * <p>
+         * @return {@code this}
+         * @param retentionDays Property retentionDays: Set the retention period of a snapshot in days. This parameter is required.
+         */
+        public Builder retentionDays(final com.aliyun.ros.cdk.core.IResolvable retentionDays) {
+            this.props.retentionDays(retentionDays);
             return this;
         }
 
