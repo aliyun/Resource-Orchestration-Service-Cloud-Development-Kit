@@ -3246,9 +3246,19 @@ export namespace RosMasterSlaveServerGroup {
          */
         readonly serverType?: string | ros.IResolvable;
         /**
+         * @Property type: Specify the type of backend server. This parameter must be of the STRING type. Valid values:
+     * ecs: an ECS instance
+     * eni: an elastic network interface (ENI).
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
          * @Property serverId: ECS instance ID
          */
         readonly serverId: string | ros.IResolvable;
+        /**
+         * @Property serverIp: The IP of ECS or ENI.
+         */
+        readonly serverIp?: string | ros.IResolvable;
         /**
          * @Property port: The port used by backend server. From 1 to 65535
          */
@@ -3276,8 +3286,10 @@ function RosMasterSlaveServerGroup_MasterSlaveBackendServersPropertyValidator(pr
         }));
     }
     errors.collect(ros.propertyValidator('serverType', ros.validateString)(properties.serverType));
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
+    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     if(properties.port && (typeof properties.port) !== 'object') {
         errors.collect(ros.propertyValidator('port', ros.validateRange)({
@@ -3312,7 +3324,9 @@ function rosMasterSlaveServerGroupMasterSlaveBackendServersPropertyToRosTemplate
     RosMasterSlaveServerGroup_MasterSlaveBackendServersPropertyValidator(properties).assertSuccess();
     return {
       ServerType: ros.stringToRosTemplate(properties.serverType),
+      Type: ros.stringToRosTemplate(properties.type),
       ServerId: ros.stringToRosTemplate(properties.serverId),
+      ServerIp: ros.stringToRosTemplate(properties.serverIp),
       Port: ros.numberToRosTemplate(properties.port),
       Weight: ros.numberToRosTemplate(properties.weight),
     };

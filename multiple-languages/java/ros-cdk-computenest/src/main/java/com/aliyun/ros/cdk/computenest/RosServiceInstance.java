@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.computenest;
 /**
  * A ROS template type:  <code>ALIYUN::ComputeNest::ServiceInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:58.687Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:35.878Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.RosServiceInstance")
 public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -637,7 +637,9 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getVersion();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getVersion() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link ServiceProperty}
@@ -678,7 +680,7 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link ServiceProperty#getVersion}
-             * @param version the value to be set. This parameter is required.
+             * @param version the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -689,7 +691,7 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link ServiceProperty#getVersion}
-             * @param version the value to be set. This parameter is required.
+             * @param version the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -735,7 +737,7 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.serviceId = java.util.Objects.requireNonNull(builder.serviceId, "serviceId is required");
-                this.version = java.util.Objects.requireNonNull(builder.version, "version is required");
+                this.version = builder.version;
             }
 
             @Override
@@ -755,7 +757,9 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("serviceId", om.valueToTree(this.getServiceId()));
-                data.set("version", om.valueToTree(this.getVersion()));
+                if (this.getVersion() != null) {
+                    data.set("version", om.valueToTree(this.getVersion()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-computenest.RosServiceInstance.ServiceProperty"));
@@ -775,13 +779,13 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
                 ServiceProperty.Jsii$Proxy that = (ServiceProperty.Jsii$Proxy) o;
 
                 if (!serviceId.equals(that.serviceId)) return false;
-                return this.version.equals(that.version);
+                return this.version != null ? this.version.equals(that.version) : that.version == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.serviceId.hashCode();
-                result = 31 * result + (this.version.hashCode());
+                result = 31 * result + (this.version != null ? this.version.hashCode() : 0);
                 return result;
             }
         }

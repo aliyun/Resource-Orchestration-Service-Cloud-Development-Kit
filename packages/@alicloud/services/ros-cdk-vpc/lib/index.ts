@@ -34,6 +34,8 @@ export * from './snatentry';
 export * from './sslvpnclientcert';
 export * from './sslvpnserver';
 export * from './trafficmirrorfilter';
+export * from './trafficmirrorsession';
+export * from './trafficmirrorsessionsourcesaddition';
 export * from './virtualborderrouter';
 export * from './vpcpeerconnection';
 export * from './vpnconnection';

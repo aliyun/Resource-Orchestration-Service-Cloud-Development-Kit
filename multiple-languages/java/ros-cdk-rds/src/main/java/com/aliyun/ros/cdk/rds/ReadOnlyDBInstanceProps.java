@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a <code>ALIYUN::RDS::ReadOnlyDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.706Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.125Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ReadOnlyDBInstanceProps.Jsii$Proxy.class)
 public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -87,6 +87,24 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs.
+     * <p>
+     * This parameter is valid when you create the read-only instance in a dedicated cluster.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostGroupId() {
+        return null;
+    }
+
+    /**
+     * Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance.
+     * <p>
+     * Valid values:- <strong>true</strong>: enables the feature.- <strong>false</strong> (default): disables the feature.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
+        return null;
+    }
+
+    /**
      * Property payType: The billing method.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
@@ -148,6 +166,15 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
+     * Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides.
+     * <p>
+     * This parameter is valid when you create the read-only instance in a dedicated cluster.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTargetDedicatedHostIdForMaster() {
+        return null;
+    }
+
+    /**
      * Property vpcId: The ID of the VPC.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
@@ -180,12 +207,15 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object category;
         java.lang.Object dbInstanceDescription;
         java.lang.Object dbInstanceStorageType;
+        java.lang.Object dedicatedHostGroupId;
+        java.lang.Object deletionProtection;
         java.lang.Object payType;
         java.lang.Object period;
         java.lang.Object periodType;
         java.lang.Object privateIpAddress;
         java.lang.Object resourceGroupId;
         java.util.Map<java.lang.String, java.lang.Object> tags;
+        java.lang.Object targetDedicatedHostIdForMaster;
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
 
@@ -406,6 +436,50 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getDedicatedHostGroupId}
+         * @param dedicatedHostGroupId Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs.
+         *                             This parameter is valid when you create the read-only instance in a dedicated cluster.
+         * @return {@code this}
+         */
+        public Builder dedicatedHostGroupId(java.lang.String dedicatedHostGroupId) {
+            this.dedicatedHostGroupId = dedicatedHostGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getDedicatedHostGroupId}
+         * @param dedicatedHostGroupId Property dedicatedHostGroupId: The ID of the dedicated cluster to which the read-only instance belongs.
+         *                             This parameter is valid when you create the read-only instance in a dedicated cluster.
+         * @return {@code this}
+         */
+        public Builder dedicatedHostGroupId(com.aliyun.ros.cdk.core.IResolvable dedicatedHostGroupId) {
+            this.dedicatedHostGroupId = dedicatedHostGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance.
+         *                           Valid values:- <strong>true</strong>: enables the feature.- <strong>false</strong> (default): disables the feature.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(java.lang.Boolean deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getDeletionProtection}
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable the release protection feature for the read-only instance.
+         *                           Valid values:- <strong>true</strong>: enables the feature.- <strong>false</strong> (default): disables the feature.
+         * @return {@code this}
+         */
+        public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
+            this.deletionProtection = deletionProtection;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getPayType}
          * @param payType Property payType: The billing method.
          * @return {@code this}
@@ -537,6 +611,28 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getTargetDedicatedHostIdForMaster}
+         * @param targetDedicatedHostIdForMaster Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides.
+         *                                       This parameter is valid when you create the read-only instance in a dedicated cluster.
+         * @return {@code this}
+         */
+        public Builder targetDedicatedHostIdForMaster(java.lang.String targetDedicatedHostIdForMaster) {
+            this.targetDedicatedHostIdForMaster = targetDedicatedHostIdForMaster;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getTargetDedicatedHostIdForMaster}
+         * @param targetDedicatedHostIdForMaster Property targetDedicatedHostIdForMaster: The ID of the host on which the primary instance resides.
+         *                                       This parameter is valid when you create the read-only instance in a dedicated cluster.
+         * @return {@code this}
+         */
+        public Builder targetDedicatedHostIdForMaster(com.aliyun.ros.cdk.core.IResolvable targetDedicatedHostIdForMaster) {
+            this.targetDedicatedHostIdForMaster = targetDedicatedHostIdForMaster;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getVpcId}
          * @param vpcId Property vpcId: The ID of the VPC.
          * @return {@code this}
@@ -601,12 +697,15 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object category;
         private final java.lang.Object dbInstanceDescription;
         private final java.lang.Object dbInstanceStorageType;
+        private final java.lang.Object dedicatedHostGroupId;
+        private final java.lang.Object deletionProtection;
         private final java.lang.Object payType;
         private final java.lang.Object period;
         private final java.lang.Object periodType;
         private final java.lang.Object privateIpAddress;
         private final java.lang.Object resourceGroupId;
         private final java.util.Map<java.lang.String, java.lang.Object> tags;
+        private final java.lang.Object targetDedicatedHostIdForMaster;
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
 
@@ -625,12 +724,15 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceStorageType = software.amazon.jsii.Kernel.get(this, "dbInstanceStorageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dedicatedHostGroupId = software.amazon.jsii.Kernel.get(this, "dedicatedHostGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
+            this.targetDedicatedHostIdForMaster = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForMaster", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -650,12 +752,15 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             this.category = builder.category;
             this.dbInstanceDescription = builder.dbInstanceDescription;
             this.dbInstanceStorageType = builder.dbInstanceStorageType;
+            this.dedicatedHostGroupId = builder.dedicatedHostGroupId;
+            this.deletionProtection = builder.deletionProtection;
             this.payType = builder.payType;
             this.period = builder.period;
             this.periodType = builder.periodType;
             this.privateIpAddress = builder.privateIpAddress;
             this.resourceGroupId = builder.resourceGroupId;
             this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
+            this.targetDedicatedHostIdForMaster = builder.targetDedicatedHostIdForMaster;
             this.vpcId = builder.vpcId;
             this.vSwitchId = builder.vSwitchId;
         }
@@ -706,6 +811,16 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getDedicatedHostGroupId() {
+            return this.dedicatedHostGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getDeletionProtection() {
+            return this.deletionProtection;
+        }
+
+        @Override
         public final java.lang.Object getPayType() {
             return this.payType;
         }
@@ -733,6 +848,11 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final java.util.Map<java.lang.String, java.lang.Object> getTags() {
             return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getTargetDedicatedHostIdForMaster() {
+            return this.targetDedicatedHostIdForMaster;
         }
 
         @Override
@@ -768,6 +888,12 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             if (this.getDbInstanceStorageType() != null) {
                 data.set("dbInstanceStorageType", om.valueToTree(this.getDbInstanceStorageType()));
             }
+            if (this.getDedicatedHostGroupId() != null) {
+                data.set("dedicatedHostGroupId", om.valueToTree(this.getDedicatedHostGroupId()));
+            }
+            if (this.getDeletionProtection() != null) {
+                data.set("deletionProtection", om.valueToTree(this.getDeletionProtection()));
+            }
             if (this.getPayType() != null) {
                 data.set("payType", om.valueToTree(this.getPayType()));
             }
@@ -785,6 +911,9 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
+            }
+            if (this.getTargetDedicatedHostIdForMaster() != null) {
+                data.set("targetDedicatedHostIdForMaster", om.valueToTree(this.getTargetDedicatedHostIdForMaster()));
             }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
@@ -819,12 +948,15 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             if (this.category != null ? !this.category.equals(that.category) : that.category != null) return false;
             if (this.dbInstanceDescription != null ? !this.dbInstanceDescription.equals(that.dbInstanceDescription) : that.dbInstanceDescription != null) return false;
             if (this.dbInstanceStorageType != null ? !this.dbInstanceStorageType.equals(that.dbInstanceStorageType) : that.dbInstanceStorageType != null) return false;
+            if (this.dedicatedHostGroupId != null ? !this.dedicatedHostGroupId.equals(that.dedicatedHostGroupId) : that.dedicatedHostGroupId != null) return false;
+            if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodType != null ? !this.periodType.equals(that.periodType) : that.periodType != null) return false;
             if (this.privateIpAddress != null ? !this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.targetDedicatedHostIdForMaster != null ? !this.targetDedicatedHostIdForMaster.equals(that.targetDedicatedHostIdForMaster) : that.targetDedicatedHostIdForMaster != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             return this.vSwitchId != null ? this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId == null;
         }
@@ -840,12 +972,15 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.category != null ? this.category.hashCode() : 0);
             result = 31 * result + (this.dbInstanceDescription != null ? this.dbInstanceDescription.hashCode() : 0);
             result = 31 * result + (this.dbInstanceStorageType != null ? this.dbInstanceStorageType.hashCode() : 0);
+            result = 31 * result + (this.dedicatedHostGroupId != null ? this.dedicatedHostGroupId.hashCode() : 0);
+            result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodType != null ? this.periodType.hashCode() : 0);
             result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.targetDedicatedHostIdForMaster != null ? this.targetDedicatedHostIdForMaster.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             return result;

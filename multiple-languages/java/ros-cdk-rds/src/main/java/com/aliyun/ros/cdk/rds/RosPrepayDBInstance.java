@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS template type:  <code>ALIYUN::RDS::PrepayDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.756Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.170Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosPrepayDBInstance")
 public class RosPrepayDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -711,6 +711,24 @@ public class RosPrepayDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setHighSpaceUsageProtection(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "highSpaceUsageProtection", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceNetworkType() {
+        return software.amazon.jsii.Kernel.get(this, "instanceNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceNetworkType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceNetworkType", value);
+    }
+
+    /**
+     */
+    public void setInstanceNetworkType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceNetworkType", value);
     }
 
     /**
@@ -2309,6 +2327,23 @@ public class RosPrepayDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder highSpaceUsageProtection(final com.aliyun.ros.cdk.core.IResolvable highSpaceUsageProtection) {
             this.props.highSpaceUsageProtection(highSpaceUsageProtection);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param instanceNetworkType This parameter is required.
+         */
+        public Builder instanceNetworkType(final java.lang.String instanceNetworkType) {
+            this.props.instanceNetworkType(instanceNetworkType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceNetworkType This parameter is required.
+         */
+        public Builder instanceNetworkType(final com.aliyun.ros.cdk.core.IResolvable instanceNetworkType) {
+            this.props.instanceNetworkType(instanceNetworkType);
             return this;
         }
 

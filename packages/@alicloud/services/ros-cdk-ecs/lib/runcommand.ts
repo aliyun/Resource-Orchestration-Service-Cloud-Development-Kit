@@ -91,6 +91,11 @@ export interface RunCommandProps {
     readonly sync?: boolean | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to run_command. Max support 20 tags to add during create run_command. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosRunCommand.TagsProperty[];
+
+    /**
      * Property timed: Specifies whether to periodically run the script. Valid values:
      * true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
      * false: runs once only.
@@ -169,6 +174,7 @@ export class RunCommand extends ros.Resource {
             sync: props.sync === undefined || props.sync === null ? false : props.sync,
             instanceIds: props.instanceIds,
             keepCommand: props.keepCommand,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRunCommand;
         this.attrCommandId = rosRunCommand.attrCommandId;

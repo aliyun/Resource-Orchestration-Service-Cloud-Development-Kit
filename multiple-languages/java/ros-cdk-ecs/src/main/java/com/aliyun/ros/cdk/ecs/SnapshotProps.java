@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a <code>ALIYUN::ECS::Snapshot</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.780Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.204Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SnapshotProps")
 @software.amazon.jsii.Jsii.Proxy(SnapshotProps.Jsii$Proxy.class)
 public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
@@ -57,6 +57,16 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property retentionDays: Set the retention period of a snapshot in days.
+     * <p>
+     * The snapshot will be automatically released after the retention period expires.
+     * The value ranges from 1 to 65536.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRetentionDays() {
+        return null;
+    }
+
+    /**
      * Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters.
      * <p>
      * It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
@@ -96,6 +106,7 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object instantAccess;
         java.lang.Object instantAccessRetentionDays;
         java.lang.Object resourceGroupId;
+        java.lang.Object retentionDays;
         java.lang.Object snapshotName;
         java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> tags;
         java.lang.Object timeout;
@@ -225,6 +236,30 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link SnapshotProps#getRetentionDays}
+         * @param retentionDays Property retentionDays: Set the retention period of a snapshot in days.
+         *                      The snapshot will be automatically released after the retention period expires.
+         *                      The value ranges from 1 to 65536.
+         * @return {@code this}
+         */
+        public Builder retentionDays(java.lang.Number retentionDays) {
+            this.retentionDays = retentionDays;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SnapshotProps#getRetentionDays}
+         * @param retentionDays Property retentionDays: Set the retention period of a snapshot in days.
+         *                      The snapshot will be automatically released after the retention period expires.
+         *                      The value ranges from 1 to 65536.
+         * @return {@code this}
+         */
+        public Builder retentionDays(com.aliyun.ros.cdk.core.IResolvable retentionDays) {
+            this.retentionDays = retentionDays;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SnapshotProps#getSnapshotName}
          * @param snapshotName Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters.
          *                     It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
@@ -299,6 +334,7 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object instantAccess;
         private final java.lang.Object instantAccessRetentionDays;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object retentionDays;
         private final java.lang.Object snapshotName;
         private final java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty> tags;
         private final java.lang.Object timeout;
@@ -314,6 +350,7 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
             this.instantAccess = software.amazon.jsii.Kernel.get(this, "instantAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instantAccessRetentionDays = software.amazon.jsii.Kernel.get(this, "instantAccessRetentionDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.retentionDays = software.amazon.jsii.Kernel.get(this, "retentionDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.snapshotName = software.amazon.jsii.Kernel.get(this, "snapshotName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty.class)));
             this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -330,6 +367,7 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
             this.instantAccess = builder.instantAccess;
             this.instantAccessRetentionDays = builder.instantAccessRetentionDays;
             this.resourceGroupId = builder.resourceGroupId;
+            this.retentionDays = builder.retentionDays;
             this.snapshotName = builder.snapshotName;
             this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSnapshot.TagsProperty>)builder.tags;
             this.timeout = builder.timeout;
@@ -358,6 +396,11 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getRetentionDays() {
+            return this.retentionDays;
         }
 
         @Override
@@ -394,6 +437,9 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
+            if (this.getRetentionDays() != null) {
+                data.set("retentionDays", om.valueToTree(this.getRetentionDays()));
+            }
             if (this.getSnapshotName() != null) {
                 data.set("snapshotName", om.valueToTree(this.getSnapshotName()));
             }
@@ -426,6 +472,7 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
             if (this.instantAccess != null ? !this.instantAccess.equals(that.instantAccess) : that.instantAccess != null) return false;
             if (this.instantAccessRetentionDays != null ? !this.instantAccessRetentionDays.equals(that.instantAccessRetentionDays) : that.instantAccessRetentionDays != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.retentionDays != null ? !this.retentionDays.equals(that.retentionDays) : that.retentionDays != null) return false;
             if (this.snapshotName != null ? !this.snapshotName.equals(that.snapshotName) : that.snapshotName != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.timeout != null ? this.timeout.equals(that.timeout) : that.timeout == null;
@@ -438,6 +485,7 @@ public interface SnapshotProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.instantAccess != null ? this.instantAccess.hashCode() : 0);
             result = 31 * result + (this.instantAccessRetentionDays != null ? this.instantAccessRetentionDays.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.retentionDays != null ? this.retentionDays.hashCode() : 0);
             result = 31 * result + (this.snapshotName != null ? this.snapshotName.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);

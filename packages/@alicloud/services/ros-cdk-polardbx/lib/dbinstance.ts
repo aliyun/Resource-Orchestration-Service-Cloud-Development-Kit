@@ -74,6 +74,11 @@ export interface DBInstanceProps {
     readonly secondaryZone?: string | ros.IResolvable;
 
     /**
+     * Property securityIpConfig: Instance whitelist configuration.
+     */
+    readonly securityIpConfig?: RosDBInstance.SecurityIpConfigProperty | ros.IResolvable;
+
+    /**
      * Property tertiaryZone: The tertiary zone.
      */
     readonly tertiaryZone?: string | ros.IResolvable;
@@ -95,6 +100,11 @@ export class DBInstance extends ros.Resource {
      */
 
     /**
+     * Attribute ConnectionString: Intranet connection string.
+     */
+    public readonly attrConnectionString: ros.IResolvable;
+
+    /**
      * Attribute DBInstanceName: The name of the instance that you create.
      */
     public readonly attrDbInstanceName: ros.IResolvable;
@@ -103,6 +113,11 @@ export class DBInstance extends ros.Resource {
      * Attribute OrderId: The ID of the order.
      */
     public readonly attrOrderId: ros.IResolvable;
+
+    /**
+     * Attribute Port: Intranet connection port.
+     */
+    public readonly attrPort: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::PolarDBX::DBInstance`.
@@ -119,20 +134,23 @@ export class DBInstance extends ros.Resource {
             engineVersion: props.engineVersion,
             resourceGroupId: props.resourceGroupId,
             vpcId: props.vpcId,
-            autoRenew: props.autoRenew,
             vSwitchId: props.vSwitchId,
+            autoRenew: props.autoRenew,
             period: props.period,
             payType: props.payType === undefined || props.payType === null ? 'POSTPAY' : props.payType,
             dbNodeClass: props.dbNodeClass,
             secondaryZone: props.secondaryZone,
             tertiaryZone: props.tertiaryZone,
+            securityIpConfig: props.securityIpConfig,
             dbNodeCount: props.dbNodeCount,
-            primaryZone: props.primaryZone,
             usedTime: props.usedTime,
+            primaryZone: props.primaryZone,
             dbInstanceDescription: props.dbInstanceDescription,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBInstance;
+        this.attrConnectionString = rosDBInstance.attrConnectionString;
         this.attrDbInstanceName = rosDBInstance.attrDbInstanceName;
         this.attrOrderId = rosDBInstance.attrOrderId;
+        this.attrPort = rosDBInstance.attrPort;
     }
 }

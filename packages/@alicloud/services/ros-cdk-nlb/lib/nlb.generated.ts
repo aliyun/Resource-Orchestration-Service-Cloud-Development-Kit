@@ -466,6 +466,11 @@ export interface RosLoadBalancerProps {
     readonly crossZoneEnabled?: boolean | ros.IResolvable;
 
     /**
+     * @Property deletionProtectionConfig: The configuration of the deletion protection feature.
+     */
+    readonly deletionProtectionConfig?: RosLoadBalancer.DeletionProtectionConfigProperty | ros.IResolvable;
+
+    /**
      * @Property loadBalancerBillingConfig: The configuration of the billing method.
      */
     readonly loadBalancerBillingConfig?: RosLoadBalancer.LoadBalancerBillingConfigProperty | ros.IResolvable;
@@ -482,9 +487,19 @@ export interface RosLoadBalancerProps {
     readonly loadBalancerType?: string | ros.IResolvable;
 
     /**
+     * @Property modificationProtectionConfig: The configuration of the configuration read-only mode.
+     */
+    readonly modificationProtectionConfig?: RosLoadBalancer.ModificationProtectionConfigProperty | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosLoadBalancer.TagsProperty[];
 
     /**
      * @Property trafficAffinityEnabled: Whether enable traffic affinity. Default: false
@@ -502,7 +517,6 @@ export interface RosLoadBalancerProps {
 function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
     if(properties.addressIpVersion && (typeof properties.addressIpVersion) !== 'object') {
         errors.collect(ros.propertyValidator('addressIpVersion', ros.validateAllowedValues)({
           data: properties.addressIpVersion,
@@ -511,9 +525,23 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('loadBalancerBillingConfig', RosLoadBalancer_LoadBalancerBillingConfigPropertyValidator)(properties.loadBalancerBillingConfig));
+    errors.collect(ros.propertyValidator('zoneMappings', ros.requiredValidator)(properties.zoneMappings));
+    if(properties.zoneMappings && (Array.isArray(properties.zoneMappings) || (typeof properties.zoneMappings) === 'string')) {
+        errors.collect(ros.propertyValidator('zoneMappings', ros.validateLength)({
+            data: properties.zoneMappings.length,
+            min: 2,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('zoneMappings', ros.listValidator(RosLoadBalancer_ZoneMappingsPropertyValidator))(properties.zoneMappings));
+    errors.collect(ros.propertyValidator('modificationProtectionConfig', RosLoadBalancer_ModificationProtectionConfigPropertyValidator)(properties.modificationProtectionConfig));
+    errors.collect(ros.propertyValidator('crossZoneEnabled', ros.validateBoolean)(properties.crossZoneEnabled));
+    errors.collect(ros.propertyValidator('loadBalancerType', ros.validateString)(properties.loadBalancerType));
+    errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
+    errors.collect(ros.propertyValidator('deletionProtectionConfig', RosLoadBalancer_DeletionProtectionConfigPropertyValidator)(properties.deletionProtectionConfig));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('loadBalancerBillingConfig', RosLoadBalancer_LoadBalancerBillingConfigPropertyValidator)(properties.loadBalancerBillingConfig));
     errors.collect(ros.propertyValidator('trafficAffinityEnabled', ros.validateBoolean)(properties.trafficAffinityEnabled));
     errors.collect(ros.propertyValidator('bandwidthPackageId', ros.validateString)(properties.bandwidthPackageId));
     errors.collect(ros.propertyValidator('addressType', ros.requiredValidator)(properties.addressType));
@@ -524,17 +552,14 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('addressType', ros.validateString)(properties.addressType));
-    errors.collect(ros.propertyValidator('zoneMappings', ros.requiredValidator)(properties.zoneMappings));
-    if(properties.zoneMappings && (Array.isArray(properties.zoneMappings) || (typeof properties.zoneMappings) === 'string')) {
-        errors.collect(ros.propertyValidator('zoneMappings', ros.validateLength)({
-            data: properties.zoneMappings.length,
-            min: 2,
-            max: 3,
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
           }));
     }
-    errors.collect(ros.propertyValidator('zoneMappings', ros.listValidator(RosLoadBalancer_ZoneMappingsPropertyValidator))(properties.zoneMappings));
-    errors.collect(ros.propertyValidator('crossZoneEnabled', ros.validateBoolean)(properties.crossZoneEnabled));
-    errors.collect(ros.propertyValidator('loadBalancerType', ros.validateString)(properties.loadBalancerType));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosLoadBalancer_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosLoadBalancerProps"');
 }
 
@@ -558,10 +583,13 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
       AddressIpVersion: ros.stringToRosTemplate(properties.addressIpVersion),
       BandwidthPackageId: ros.stringToRosTemplate(properties.bandwidthPackageId),
       CrossZoneEnabled: ros.booleanToRosTemplate(properties.crossZoneEnabled),
+      DeletionProtectionConfig: rosLoadBalancerDeletionProtectionConfigPropertyToRosTemplate(properties.deletionProtectionConfig),
       LoadBalancerBillingConfig: rosLoadBalancerLoadBalancerBillingConfigPropertyToRosTemplate(properties.loadBalancerBillingConfig),
       LoadBalancerName: ros.stringToRosTemplate(properties.loadBalancerName),
       LoadBalancerType: ros.stringToRosTemplate(properties.loadBalancerType),
+      ModificationProtectionConfig: rosLoadBalancerModificationProtectionConfigPropertyToRosTemplate(properties.modificationProtectionConfig),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosLoadBalancerTagsPropertyToRosTemplate)(properties.tags),
       TrafficAffinityEnabled: ros.booleanToRosTemplate(properties.trafficAffinityEnabled),
     };
 }
@@ -651,6 +679,11 @@ export class RosLoadBalancer extends ros.RosResource {
     public crossZoneEnabled: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionProtectionConfig: The configuration of the deletion protection feature.
+     */
+    public deletionProtectionConfig: RosLoadBalancer.DeletionProtectionConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property loadBalancerBillingConfig: The configuration of the billing method.
      */
     public loadBalancerBillingConfig: RosLoadBalancer.LoadBalancerBillingConfigProperty | ros.IResolvable | undefined;
@@ -667,9 +700,19 @@ export class RosLoadBalancer extends ros.RosResource {
     public loadBalancerType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property modificationProtectionConfig: The configuration of the configuration read-only mode.
+     */
+    public modificationProtectionConfig: RosLoadBalancer.ModificationProtectionConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosLoadBalancer.TagsProperty[] | undefined;
 
     /**
      * @Property trafficAffinityEnabled: Whether enable traffic affinity. Default: false
@@ -700,10 +743,13 @@ export class RosLoadBalancer extends ros.RosResource {
         this.addressIpVersion = props.addressIpVersion;
         this.bandwidthPackageId = props.bandwidthPackageId;
         this.crossZoneEnabled = props.crossZoneEnabled;
+        this.deletionProtectionConfig = props.deletionProtectionConfig;
         this.loadBalancerBillingConfig = props.loadBalancerBillingConfig;
         this.loadBalancerName = props.loadBalancerName;
         this.loadBalancerType = props.loadBalancerType;
+        this.modificationProtectionConfig = props.modificationProtectionConfig;
         this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
         this.trafficAffinityEnabled = props.trafficAffinityEnabled;
     }
 
@@ -716,16 +762,117 @@ export class RosLoadBalancer extends ros.RosResource {
             addressIpVersion: this.addressIpVersion,
             bandwidthPackageId: this.bandwidthPackageId,
             crossZoneEnabled: this.crossZoneEnabled,
+            deletionProtectionConfig: this.deletionProtectionConfig,
             loadBalancerBillingConfig: this.loadBalancerBillingConfig,
             loadBalancerName: this.loadBalancerName,
             loadBalancerType: this.loadBalancerType,
+            modificationProtectionConfig: this.modificationProtectionConfig,
             resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
             trafficAffinityEnabled: this.trafficAffinityEnabled,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosLoadBalancerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosLoadBalancer {
+    /**
+     * @stability external
+     */
+    export interface DeletionProtectionConfigProperty {
+        /**
+         * @Property enabled: Specifies whether to enable deletion protection. Valid values:
+     * true: yes
+     * false (default): no
+         */
+        readonly enabled: string | ros.IResolvable;
+        /**
+         * @Property reason: The reason why the deletion protection feature is enabled or disabled. The value must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The value must start with a letter.
+         */
+        readonly reason?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DeletionProtectionConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `DeletionProtectionConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoadBalancer_DeletionProtectionConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enabled', ros.requiredValidator)(properties.enabled));
+    errors.collect(ros.propertyValidator('enabled', ros.validateString)(properties.enabled));
+    errors.collect(ros.propertyValidator('reason', ros.validateString)(properties.reason));
+    return errors.wrap('supplied properties not correct for "DeletionProtectionConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::LoadBalancer.DeletionProtectionConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `DeletionProtectionConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::LoadBalancer.DeletionProtectionConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosLoadBalancerDeletionProtectionConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLoadBalancer_DeletionProtectionConfigPropertyValidator(properties).assertSuccess();
+    return {
+      Enabled: ros.stringToRosTemplate(properties.enabled),
+      Reason: ros.stringToRosTemplate(properties.reason),
+    };
+}
+
+export namespace RosLoadBalancer {
+    /**
+     * @stability external
+     */
+    export interface LoadBalancerAddressesProperty {
+        /**
+         * @Property allocationId: The ID of the elastic IP address (EIP) that is associated with the Internet-facing NLB instance.
+         */
+        readonly allocationId: string | ros.IResolvable;
+        /**
+         * @Property privateIPv4Address: The private IP address.
+         */
+        readonly privateIPv4Address?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LoadBalancerAddressesProperty`
+ *
+ * @param properties - the TypeScript properties of a `LoadBalancerAddressesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoadBalancer_LoadBalancerAddressesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('allocationId', ros.requiredValidator)(properties.allocationId));
+    errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
+    errors.collect(ros.propertyValidator('privateIPv4Address', ros.validateString)(properties.privateIPv4Address));
+    return errors.wrap('supplied properties not correct for "LoadBalancerAddressesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::LoadBalancer.LoadBalancerAddresses` resource
+ *
+ * @param properties - the TypeScript properties of a `LoadBalancerAddressesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::LoadBalancer.LoadBalancerAddresses` resource.
+ */
+// @ts-ignore TS6133
+function rosLoadBalancerLoadBalancerAddressesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLoadBalancer_LoadBalancerAddressesPropertyValidator(properties).assertSuccess();
+    return {
+      AllocationId: ros.stringToRosTemplate(properties.allocationId),
+      PrivateIPv4Address: ros.stringToRosTemplate(properties.privateIPv4Address),
+    };
 }
 
 export namespace RosLoadBalancer {
@@ -779,6 +926,104 @@ export namespace RosLoadBalancer {
     /**
      * @stability external
      */
+    export interface ModificationProtectionConfigProperty {
+        /**
+         * @Property status: Specifies whether to enable the configuration read-only mode. Valid values:
+     * NonProtection: does not enable the configuration read-only mode. You cannot set the Reason parameter. If the Reason parameter is set, the value is cleared.
+     * ConsoleProtection: enables the configuration read-only mode. You can set the Reason parameter.
+         */
+        readonly status: string | ros.IResolvable;
+        /**
+         * @Property reason: The reason why the configuration read-only mode is enabled. The value must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The value must start with a letter.
+         */
+        readonly reason?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ModificationProtectionConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `ModificationProtectionConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoadBalancer_ModificationProtectionConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('status', ros.requiredValidator)(properties.status));
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('reason', ros.validateString)(properties.reason));
+    return errors.wrap('supplied properties not correct for "ModificationProtectionConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::LoadBalancer.ModificationProtectionConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `ModificationProtectionConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::LoadBalancer.ModificationProtectionConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosLoadBalancerModificationProtectionConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLoadBalancer_ModificationProtectionConfigPropertyValidator(properties).assertSuccess();
+    return {
+      Status: ros.stringToRosTemplate(properties.status),
+      Reason: ros.stringToRosTemplate(properties.reason),
+    };
+}
+
+export namespace RosLoadBalancer {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoadBalancer_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::LoadBalancer.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::LoadBalancer.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosLoadBalancerTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLoadBalancer_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosLoadBalancer {
+    /**
+     * @stability external
+     */
     export interface ZoneMappingsProperty {
         /**
          * @Property zoneId: The ID of the zone to which the NLB instance belongs.
@@ -789,11 +1034,15 @@ export namespace RosLoadBalancer {
          */
         readonly vSwitchId: string | ros.IResolvable;
         /**
-         * @Property allocationId:
+         * @Property allocationId: The ID of the elastic IP address (EIP) that is associated with the Internet-facing NLB instance.
          */
         readonly allocationId?: string | ros.IResolvable;
         /**
-         * @Property privateIPv4Address:
+         * @Property loadBalancerAddresses: Load balancer addresses. This property has higher priority than AllocationId and EipType in ZoneMappings.
+         */
+        readonly loadBalancerAddresses?: Array<RosLoadBalancer.LoadBalancerAddressesProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property privateIPv4Address: The private IP address.
          */
         readonly privateIPv4Address?: string | ros.IResolvable;
     }
@@ -813,6 +1062,14 @@ function RosLoadBalancer_ZoneMappingsPropertyValidator(properties: any): ros.Val
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
+    if(properties.loadBalancerAddresses && (Array.isArray(properties.loadBalancerAddresses) || (typeof properties.loadBalancerAddresses) === 'string')) {
+        errors.collect(ros.propertyValidator('loadBalancerAddresses', ros.validateLength)({
+            data: properties.loadBalancerAddresses.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('loadBalancerAddresses', ros.listValidator(RosLoadBalancer_LoadBalancerAddressesPropertyValidator))(properties.loadBalancerAddresses));
     errors.collect(ros.propertyValidator('privateIPv4Address', ros.validateString)(properties.privateIPv4Address));
     return errors.wrap('supplied properties not correct for "ZoneMappingsProperty"');
 }
@@ -832,6 +1089,7 @@ function rosLoadBalancerZoneMappingsPropertyToRosTemplate(properties: any): any 
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       AllocationId: ros.stringToRosTemplate(properties.allocationId),
+      LoadBalancerAddresses: ros.listMapper(rosLoadBalancerLoadBalancerAddressesPropertyToRosTemplate)(properties.loadBalancerAddresses),
       PrivateIPv4Address: ros.stringToRosTemplate(properties.privateIPv4Address),
     };
 }

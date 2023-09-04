@@ -111,6 +111,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             }
         }
 
+        /// <summary>Property resourceGroupId: The resource group id.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule.</summary>
         [JsiiProperty(name: "serverSideEncryptionConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.ServerSideEncryptionConfigurationProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -252,6 +263,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             [JsiiOptional]
             [JsiiProperty(name: "refererConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.RefererConfigurationProperty\"}]}}", isOptional: true)]
             public object? RefererConfiguration
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The resource group id.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

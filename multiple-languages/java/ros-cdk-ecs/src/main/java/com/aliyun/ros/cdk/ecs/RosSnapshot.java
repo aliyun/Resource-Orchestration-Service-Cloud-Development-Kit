@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  <code>ALIYUN::ECS::Snapshot</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.145Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSnapshot")
 public class RosSnapshot extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -149,6 +149,24 @@ public class RosSnapshot extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRetentionDays() {
+        return software.amazon.jsii.Kernel.get(this, "retentionDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRetentionDays(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "retentionDays", value);
+    }
+
+    /**
+     */
+    public void setRetentionDays(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "retentionDays", value);
     }
 
     /**
@@ -475,6 +493,23 @@ public class RosSnapshot extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param retentionDays This parameter is required.
+         */
+        public Builder retentionDays(final java.lang.Number retentionDays) {
+            this.props.retentionDays(retentionDays);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param retentionDays This parameter is required.
+         */
+        public Builder retentionDays(final com.aliyun.ros.cdk.core.IResolvable retentionDays) {
+            this.props.retentionDays(retentionDays);
             return this;
         }
 

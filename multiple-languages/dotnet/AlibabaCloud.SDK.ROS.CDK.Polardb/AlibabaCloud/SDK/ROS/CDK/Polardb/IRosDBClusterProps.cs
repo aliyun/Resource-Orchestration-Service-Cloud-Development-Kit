@@ -66,6 +66,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: architecture: The architecture of CPU. Valid values:
+        /// X86
+        /// ARM
+        /// </remarks>
+        [JsiiProperty(name: "architecture", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Architecture
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: autoRenewPeriod: Set the cluster auto renewal time. Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
         /// </remarks>
         [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -197,6 +212,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: dbMinorVersion: The minor version of the cluster. Valid values:
+        /// 8.0.2
+        /// 8.0.1
+        /// This parameter is valid only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 8.0.
+        /// </remarks>
+        [JsiiProperty(name: "dbMinorVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DbMinorVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: dbNodeNum: The number of Standard Edition nodes. Default value: 1. Valid values:
+        /// 1: only one primary node.
+        /// 2: one read-only node and one primary node.
+        /// </remarks>
+        [JsiiProperty(name: "dbNodeNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DbNodeNum
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: defaultTimeZone: Set up a time zone (UTC), the value range is as follows:
         /// System:  The default time zone is the same as the time zone where the region is located. This is default value.
         /// Other pickable value range is from -12:00 to +13:00, for example, 00:00.
@@ -219,6 +265,69 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         [JsiiProperty(name: "gdnId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? GdnId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature. Default value: ON. Valid values:
+        /// ON: enables the hot standby storage cluster feature.
+        /// OFF: disables the hot standby storage cluster feature
+        /// STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
+        /// The default value for Standard Edition clusters is STANDBY.
+        /// </remarks>
+        [JsiiProperty(name: "hotStandbyCluster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HotStandbyCluster
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: loosePolarLogBin: Enable the Binlog function, the value range is as follows:
+        /// ON: The cluster enables the Binlog function
+        /// OFF: The cluster disables the Binlog function
+        /// This parameter takes effect only when the parameter DBType is MySQL.
+        /// </remarks>
+        [JsiiProperty(name: "loosePolarLogBin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LoosePolarLogBin
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: looseXEngine: Enable the X-Engine storage engine function, the value range is as follows:
+        /// ON: The cluster starts the X-Engine enginen
+        /// OFF: The cluster shuts down the X-Engine engine
+        /// This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.
+        /// </remarks>
+        [JsiiProperty(name: "looseXEngine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LooseXEngine
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: looseXEngineUseMemoryPct: Set the ratio of enabling the X-Engine storage engine, an integer ranging from 10 to 90.
+        /// This parameter takes effect only when the parameter LooseXEngine is ON.
+        /// </remarks>
+        [JsiiProperty(name: "looseXEngineUseMemoryPct", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LooseXEngineUseMemoryPct
         {
             get
             {
@@ -258,6 +367,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: parameterGroupId: The ID of the parameter template.
+        /// You can call the DescribeParameterGroups operation to query the details of all parameter templates of a specified region, such as the ID of a parameter template.
+        /// </remarks>
+        [JsiiProperty(name: "parameterGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ParameterGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: period: The subscription period of the clusterIf PeriodUnit is month, the valid range is 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36
         /// If periodUnit is year, the valid range is 1, 2, 3
         /// </remarks>
@@ -280,6 +403,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PeriodUnit
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: proxyClass: The specifications of the Standard Edition PolarProxy. Valid values:
+        /// polar.maxscale.g2.medium.c: 2 cores
+        /// polar.maxscale.g2.large.c: 4 cores
+        /// polar.maxscale.g2.xlarge.c: 8 cores
+        /// polar.maxscale.g2.2xlarge.c: 16 cores
+        /// polar.maxscale.g2.3xlarge.c: 24 cores
+        /// polar.maxscale.g2.4xlarge.c: 32 cores
+        /// polar.maxscale.g2.8xlarge.c: 64 cores
+        /// </remarks>
+        [JsiiProperty(name: "proxyClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProxyClass
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: proxyType: The type of PolarProxy. Default value: OFF. Valid values:
+        /// OFF: disables PolarProxy.
+        /// EXCLUSIVE: Dedicated Enterprise Edition
+        /// GENERAL: Standard Enterprise Edition
+        /// </remarks>
+        [JsiiProperty(name: "proxyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ProxyType
         {
             get
             {
@@ -429,6 +588,111 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: standbyAz: The zone where the hot standby storage cluster is stored. This is valid for Standard Edition clusters of Multi-zone Edition.
+        /// This parameter takes effect only when the multi-zone data consistency feature is enabled.
+        /// </remarks>
+        [JsiiProperty(name: "standbyAz", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StandbyAz
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: storageAutoScale: Whether to enable automatic storage scale for standard version clusters. The value range is as follows:
+        /// Enable: Enable automatic storage scale.
+        /// Disable: Disable automatic storage scale.
+        /// </remarks>
+        [JsiiProperty(name: "storageAutoScale", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageAutoScale
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: storagePayType: The storage pay type.
+        /// </remarks>
+        [JsiiProperty(name: "storagePayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StoragePayType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: storageSpace: The storage space that uses the subscription billing method. Unit: GB.
+        /// Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+        /// </remarks>
+        [JsiiProperty(name: "storageSpace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageSpace
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: storageType: The storage type. Valid values for Enterprise Edition:
+        /// PSL5
+        /// PSL4
+        /// Valid values for Standard Edition:
+        /// ESSDPL1
+        /// ESSDPL2
+        /// ESSDPL3
+        /// This parameter is invalid for serverless clusters.
+        /// </remarks>
+        [JsiiProperty(name: "storageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: storageUpperBound: Set the upper limit of automatic scale of standard cluster storage, unit: GB.
+        /// The maximum value is 32000.
+        /// </remarks>
+        [JsiiProperty(name: "storageUpperBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageUpperBound
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: strictConsistency: Specifies whether to enable the multi-zone data consistency feature. Valid values:
+        /// ON: enables the multi-zone data consistency feature, which is valid for Standard Edition clusters of Multi-zone Edition.
+        /// OFF: disables the multi-zone data consistency feature.
+        /// </remarks>
+        [JsiiProperty(name: "strictConsistency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StrictConsistency
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
@@ -559,6 +823,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: architecture: The architecture of CPU. Valid values:
+            /// X86
+            /// ARM
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "architecture", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Architecture
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: autoRenewPeriod: Set the cluster auto renewal time. Valid values: 1, 2, 3, 6, 12, 24, 36. Default to 1.
             /// </remarks>
             [JsiiOptional]
@@ -666,6 +942,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: dbMinorVersion: The minor version of the cluster. Valid values:
+            /// 8.0.2
+            /// 8.0.1
+            /// This parameter is valid only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 8.0.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dbMinorVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbMinorVersion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: dbNodeNum: The number of Standard Edition nodes. Default value: 1. Valid values:
+            /// 1: only one primary node.
+            /// 2: one read-only node and one primary node.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dbNodeNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbNodeNum
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: defaultTimeZone: Set up a time zone (UTC), the value range is as follows:
             /// System:  The default time zone is the same as the time zone where the region is located. This is default value.
             /// Other pickable value range is from -12:00 to +13:00, for example, 00:00.
@@ -685,6 +986,57 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             [JsiiOptional]
             [JsiiProperty(name: "gdnId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? GdnId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature. Default value: ON. Valid values:
+            /// ON: enables the hot standby storage cluster feature.
+            /// OFF: disables the hot standby storage cluster feature
+            /// STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
+            /// The default value for Standard Edition clusters is STANDBY.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "hotStandbyCluster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HotStandbyCluster
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: loosePolarLogBin: Enable the Binlog function, the value range is as follows:
+            /// ON: The cluster enables the Binlog function
+            /// OFF: The cluster disables the Binlog function
+            /// This parameter takes effect only when the parameter DBType is MySQL.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "loosePolarLogBin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LoosePolarLogBin
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: looseXEngine: Enable the X-Engine storage engine function, the value range is as follows:
+            /// ON: The cluster starts the X-Engine enginen
+            /// OFF: The cluster shuts down the X-Engine engine
+            /// This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "looseXEngine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LooseXEngine
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: looseXEngineUseMemoryPct: Set the ratio of enabling the X-Engine storage engine, an integer ranging from 10 to 90.
+            /// This parameter takes effect only when the parameter LooseXEngine is ON.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "looseXEngineUseMemoryPct", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LooseXEngineUseMemoryPct
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -715,6 +1067,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: parameterGroupId: The ID of the parameter template.
+            /// You can call the DescribeParameterGroups operation to query the details of all parameter templates of a specified region, such as the ID of a parameter template.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "parameterGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ParameterGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: period: The subscription period of the clusterIf PeriodUnit is month, the valid range is 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36
             /// If periodUnit is year, the valid range is 1, 2, 3
             /// </remarks>
@@ -734,6 +1097,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             [JsiiOptional]
             [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PeriodUnit
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: proxyClass: The specifications of the Standard Edition PolarProxy. Valid values:
+            /// polar.maxscale.g2.medium.c: 2 cores
+            /// polar.maxscale.g2.large.c: 4 cores
+            /// polar.maxscale.g2.xlarge.c: 8 cores
+            /// polar.maxscale.g2.2xlarge.c: 16 cores
+            /// polar.maxscale.g2.3xlarge.c: 24 cores
+            /// polar.maxscale.g2.4xlarge.c: 32 cores
+            /// polar.maxscale.g2.8xlarge.c: 64 cores
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "proxyClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProxyClass
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: proxyType: The type of PolarProxy. Default value: OFF. Valid values:
+            /// OFF: disables PolarProxy.
+            /// EXCLUSIVE: Dedicated Enterprise Edition
+            /// GENERAL: Standard Enterprise Edition
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "proxyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProxyType
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -845,6 +1238,90 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             [JsiiOptional]
             [JsiiProperty(name: "sourceResourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SourceResourceId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: standbyAz: The zone where the hot standby storage cluster is stored. This is valid for Standard Edition clusters of Multi-zone Edition.
+            /// This parameter takes effect only when the multi-zone data consistency feature is enabled.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "standbyAz", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StandbyAz
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageAutoScale: Whether to enable automatic storage scale for standard version clusters. The value range is as follows:
+            /// Enable: Enable automatic storage scale.
+            /// Disable: Disable automatic storage scale.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageAutoScale", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageAutoScale
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storagePayType: The storage pay type.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storagePayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StoragePayType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageSpace: The storage space that uses the subscription billing method. Unit: GB.
+            /// Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageSpace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageSpace
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageType: The storage type. Valid values for Enterprise Edition:
+            /// PSL5
+            /// PSL4
+            /// Valid values for Standard Edition:
+            /// ESSDPL1
+            /// ESSDPL2
+            /// ESSDPL3
+            /// This parameter is invalid for serverless clusters.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storageUpperBound: Set the upper limit of automatic scale of standard cluster storage, unit: GB.
+            /// The maximum value is 32000.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageUpperBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageUpperBound
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: strictConsistency: Specifies whether to enable the multi-zone data consistency feature. Valid values:
+            /// ON: enables the multi-zone data consistency feature, which is valid for Standard Edition clusters of Multi-zone Edition.
+            /// OFF: disables the multi-zone data consistency feature.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "strictConsistency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StrictConsistency
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -30,15 +30,10 @@ export interface Ipv6InternetBandwidthProps {
 
     /**
      * Property internetChargeType: IPv6 public network bandwidth billing, value:
-     * PayByTraffic: by using the traffic accounting.
-     * PayByBandwidth (default): Bandwidth billing.
+     * - **PayByTraffic**: by using the traffic accounting.
+     * - **PayByBandwidth** (default): Bandwidth billing.
      */
     readonly internetChargeType?: string | ros.IResolvable;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: RosIpv6InternetBandwidth.TagsProperty[];
 }
 
 /**
@@ -70,7 +65,6 @@ export class Ipv6InternetBandwidth extends ros.Resource {
             bandwidth: props.bandwidth,
             ipv6AddressId: props.ipv6AddressId,
             ipv6GatewayId: props.ipv6GatewayId,
-            tags: props.tags,
             internetChargeType: props.internetChargeType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosIpv6InternetBandwidth;

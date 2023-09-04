@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * Properties for defining a <code>ALIYUN::NLB::LoadBalancer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.084Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.512Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosLoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(RosLoadBalancerProps.Jsii$Proxy.class)
 public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,6 +40,12 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtectionConfig() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerBillingConfig() {
         return null;
     }
@@ -58,7 +64,19 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getModificationProtectionConfig() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty> getTags() {
         return null;
     }
 
@@ -84,10 +102,13 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object addressIpVersion;
         java.lang.Object bandwidthPackageId;
         java.lang.Object crossZoneEnabled;
+        java.lang.Object deletionProtectionConfig;
         java.lang.Object loadBalancerBillingConfig;
         java.lang.Object loadBalancerName;
         java.lang.Object loadBalancerType;
+        java.lang.Object modificationProtectionConfig;
         java.lang.Object resourceGroupId;
+        java.util.List<com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty> tags;
         java.lang.Object trafficAffinityEnabled;
 
         /**
@@ -211,6 +232,26 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosLoadBalancerProps#getDeletionProtectionConfig}
+         * @param deletionProtectionConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder deletionProtectionConfig(com.aliyun.ros.cdk.core.IResolvable deletionProtectionConfig) {
+            this.deletionProtectionConfig = deletionProtectionConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLoadBalancerProps#getDeletionProtectionConfig}
+         * @param deletionProtectionConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder deletionProtectionConfig(com.aliyun.ros.cdk.nlb.RosLoadBalancer.DeletionProtectionConfigProperty deletionProtectionConfig) {
+            this.deletionProtectionConfig = deletionProtectionConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLoadBalancerProps#getLoadBalancerBillingConfig}
          * @param loadBalancerBillingConfig the value to be set.
          * @return {@code this}
@@ -271,6 +312,26 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosLoadBalancerProps#getModificationProtectionConfig}
+         * @param modificationProtectionConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder modificationProtectionConfig(com.aliyun.ros.cdk.core.IResolvable modificationProtectionConfig) {
+            this.modificationProtectionConfig = modificationProtectionConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLoadBalancerProps#getModificationProtectionConfig}
+         * @param modificationProtectionConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder modificationProtectionConfig(com.aliyun.ros.cdk.nlb.RosLoadBalancer.ModificationProtectionConfigProperty modificationProtectionConfig) {
+            this.modificationProtectionConfig = modificationProtectionConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLoadBalancerProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
@@ -287,6 +348,17 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLoadBalancerProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty>)tags;
             return this;
         }
 
@@ -332,10 +404,13 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object addressIpVersion;
         private final java.lang.Object bandwidthPackageId;
         private final java.lang.Object crossZoneEnabled;
+        private final java.lang.Object deletionProtectionConfig;
         private final java.lang.Object loadBalancerBillingConfig;
         private final java.lang.Object loadBalancerName;
         private final java.lang.Object loadBalancerType;
+        private final java.lang.Object modificationProtectionConfig;
         private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty> tags;
         private final java.lang.Object trafficAffinityEnabled;
 
         /**
@@ -350,16 +425,20 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
             this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bandwidthPackageId = software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.crossZoneEnabled = software.amazon.jsii.Kernel.get(this, "crossZoneEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionProtectionConfig = software.amazon.jsii.Kernel.get(this, "deletionProtectionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerBillingConfig = software.amazon.jsii.Kernel.get(this, "loadBalancerBillingConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerType = software.amazon.jsii.Kernel.get(this, "loadBalancerType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.modificationProtectionConfig = software.amazon.jsii.Kernel.get(this, "modificationProtectionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty.class)));
             this.trafficAffinityEnabled = software.amazon.jsii.Kernel.get(this, "trafficAffinityEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.addressType = java.util.Objects.requireNonNull(builder.addressType, "addressType is required");
@@ -368,10 +447,13 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
             this.addressIpVersion = builder.addressIpVersion;
             this.bandwidthPackageId = builder.bandwidthPackageId;
             this.crossZoneEnabled = builder.crossZoneEnabled;
+            this.deletionProtectionConfig = builder.deletionProtectionConfig;
             this.loadBalancerBillingConfig = builder.loadBalancerBillingConfig;
             this.loadBalancerName = builder.loadBalancerName;
             this.loadBalancerType = builder.loadBalancerType;
+            this.modificationProtectionConfig = builder.modificationProtectionConfig;
             this.resourceGroupId = builder.resourceGroupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty>)builder.tags;
             this.trafficAffinityEnabled = builder.trafficAffinityEnabled;
         }
 
@@ -406,6 +488,11 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getDeletionProtectionConfig() {
+            return this.deletionProtectionConfig;
+        }
+
+        @Override
         public final java.lang.Object getLoadBalancerBillingConfig() {
             return this.loadBalancerBillingConfig;
         }
@@ -421,8 +508,18 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getModificationProtectionConfig() {
+            return this.modificationProtectionConfig;
+        }
+
+        @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -448,6 +545,9 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
             if (this.getCrossZoneEnabled() != null) {
                 data.set("crossZoneEnabled", om.valueToTree(this.getCrossZoneEnabled()));
             }
+            if (this.getDeletionProtectionConfig() != null) {
+                data.set("deletionProtectionConfig", om.valueToTree(this.getDeletionProtectionConfig()));
+            }
             if (this.getLoadBalancerBillingConfig() != null) {
                 data.set("loadBalancerBillingConfig", om.valueToTree(this.getLoadBalancerBillingConfig()));
             }
@@ -457,8 +557,14 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
             if (this.getLoadBalancerType() != null) {
                 data.set("loadBalancerType", om.valueToTree(this.getLoadBalancerType()));
             }
+            if (this.getModificationProtectionConfig() != null) {
+                data.set("modificationProtectionConfig", om.valueToTree(this.getModificationProtectionConfig()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getTrafficAffinityEnabled() != null) {
                 data.set("trafficAffinityEnabled", om.valueToTree(this.getTrafficAffinityEnabled()));
@@ -487,10 +593,13 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
             if (this.addressIpVersion != null ? !this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion != null) return false;
             if (this.bandwidthPackageId != null ? !this.bandwidthPackageId.equals(that.bandwidthPackageId) : that.bandwidthPackageId != null) return false;
             if (this.crossZoneEnabled != null ? !this.crossZoneEnabled.equals(that.crossZoneEnabled) : that.crossZoneEnabled != null) return false;
+            if (this.deletionProtectionConfig != null ? !this.deletionProtectionConfig.equals(that.deletionProtectionConfig) : that.deletionProtectionConfig != null) return false;
             if (this.loadBalancerBillingConfig != null ? !this.loadBalancerBillingConfig.equals(that.loadBalancerBillingConfig) : that.loadBalancerBillingConfig != null) return false;
             if (this.loadBalancerName != null ? !this.loadBalancerName.equals(that.loadBalancerName) : that.loadBalancerName != null) return false;
             if (this.loadBalancerType != null ? !this.loadBalancerType.equals(that.loadBalancerType) : that.loadBalancerType != null) return false;
+            if (this.modificationProtectionConfig != null ? !this.modificationProtectionConfig.equals(that.modificationProtectionConfig) : that.modificationProtectionConfig != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.trafficAffinityEnabled != null ? this.trafficAffinityEnabled.equals(that.trafficAffinityEnabled) : that.trafficAffinityEnabled == null;
         }
 
@@ -502,10 +611,13 @@ public interface RosLoadBalancerProps extends software.amazon.jsii.JsiiSerializa
             result = 31 * result + (this.addressIpVersion != null ? this.addressIpVersion.hashCode() : 0);
             result = 31 * result + (this.bandwidthPackageId != null ? this.bandwidthPackageId.hashCode() : 0);
             result = 31 * result + (this.crossZoneEnabled != null ? this.crossZoneEnabled.hashCode() : 0);
+            result = 31 * result + (this.deletionProtectionConfig != null ? this.deletionProtectionConfig.hashCode() : 0);
             result = 31 * result + (this.loadBalancerBillingConfig != null ? this.loadBalancerBillingConfig.hashCode() : 0);
             result = 31 * result + (this.loadBalancerName != null ? this.loadBalancerName.hashCode() : 0);
             result = 31 * result + (this.loadBalancerType != null ? this.loadBalancerType.hashCode() : 0);
+            result = 31 * result + (this.modificationProtectionConfig != null ? this.modificationProtectionConfig.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.trafficAffinityEnabled != null ? this.trafficAffinityEnabled.hashCode() : 0);
             return result;
         }

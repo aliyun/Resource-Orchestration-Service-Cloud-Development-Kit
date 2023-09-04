@@ -56,6 +56,11 @@ export interface BucketProps {
     readonly refererConfiguration?: RosBucket.RefererConfigurationProperty | ros.IResolvable;
 
     /**
+     * Property resourceGroupId: The resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule.
      */
     readonly serverSideEncryptionConfiguration?: RosBucket.ServerSideEncryptionConfigurationProperty | ros.IResolvable;
@@ -118,6 +123,7 @@ export class Bucket extends ros.Resource {
 
         const rosBucket = new RosBucket(this, id,  {
             policy: props.policy,
+            resourceGroupId: props.resourceGroupId,
             storageClass: props.storageClass,
             redundancyType: props.redundancyType === undefined || props.redundancyType === null ? 'LRS' : props.redundancyType,
             websiteConfiguration: props.websiteConfiguration,

@@ -228,6 +228,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
+        /// <summary>Property shardCount: The number of data nodes in the instance.</summary>
+        /// <remarks>
+        /// Default value: 1. Valid values:
+        /// 1: You can create an instance in the standard architecture that contains only a single data node.
+        /// For more information about the standard architecture, see Cluster master-replica instances.
+        /// 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+        /// For more information about the cluster architecture, see Cluster master-replica instances.
+        /// </remarks>
+        [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ShardCount
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property sslEnabled: Modifies the SSL status.</summary>
         /// <remarks>
         /// Valid values:
@@ -498,6 +516,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             [JsiiOptional]
             [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property shardCount: The number of data nodes in the instance.</summary>
+            /// <remarks>
+            /// Default value: 1. Valid values:
+            /// 1: You can create an instance in the standard architecture that contains only a single data node.
+            /// For more information about the standard architecture, see Cluster master-replica instances.
+            /// 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes.
+            /// For more information about the cluster architecture, see Cluster master-replica instances.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ShardCount
             {
                 get => GetInstanceProperty<object?>();
             }

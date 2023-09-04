@@ -20,16 +20,6 @@ export interface ContainerGroupProps {
     readonly containerGroupName: string | ros.IResolvable;
 
     /**
-     * Property securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
-     */
-    readonly securityGroupId: string | ros.IResolvable;
-
-    /**
-     * Property vSwitchId: The ID of the specified VSwitch. Currently, ECI instances can only be deployed in VPCs.
-     */
-    readonly vSwitchId: string | ros.IResolvable;
-
-    /**
      * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
      */
     readonly acrRegistryInfo?: Array<RosContainerGroup.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable;
@@ -118,6 +108,13 @@ export interface ContainerGroupProps {
     readonly securityContextSysctl?: Array<RosContainerGroup.SecurityContextSysctlProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
+     * If no security group is specified, the system automatically uses the default security group in the region you select.
+     * If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
      * Property slsEnable: Enable user log collection. The default is False.
      */
     readonly slsEnable?: boolean | ros.IResolvable;
@@ -150,6 +147,13 @@ export interface ContainerGroupProps {
      * Property volume: The data volume. You can specify a maximum of 20 data volumes.
      */
     readonly volume?: Array<RosContainerGroup.VolumeProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property vSwitchId: The ID of the specified VSwitch.
+     * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+     * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+     */
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * Property zoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.

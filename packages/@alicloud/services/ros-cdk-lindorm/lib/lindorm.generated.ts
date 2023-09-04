@@ -337,6 +337,11 @@ export class RosInstance extends ros.RosResource {
      */
 
     /**
+     * @Attribute AuthInfos: The list of the Lindorm instance auth infos.
+     */
+    public readonly attrAuthInfos: ros.IResolvable;
+
+    /**
      * @Attribute InstanceId: The ID of the Lindorm instance that is created.
      */
     public readonly attrInstanceId: ros.IResolvable;
@@ -527,6 +532,7 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAuthInfos = this.getAtt('AuthInfos');
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrJdbcUrlList = this.getAtt('JdbcUrlList');
 
@@ -1031,6 +1037,11 @@ export class RosMultiZoneInstance extends ros.RosResource {
      */
 
     /**
+     * @Attribute AuthInfos: The list of the Lindorm instance auth infos.
+     */
+    public readonly attrAuthInfos: ros.IResolvable;
+
+    /**
      * @Attribute InstanceId: The ID of the Lindorm instance that is created.
      */
     public readonly attrInstanceId: ros.IResolvable;
@@ -1283,6 +1294,7 @@ export class RosMultiZoneInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMultiZoneInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMultiZoneInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAuthInfos = this.getAtt('AuthInfos');
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrJdbcUrlList = this.getAtt('JdbcUrlList');
 

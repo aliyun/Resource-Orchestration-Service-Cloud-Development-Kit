@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  <code>ALIYUN::SLB::MasterSlaveServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.415Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.879Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosMasterSlaveServerGroup")
 public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -155,7 +155,21 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServerIp() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getServerType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
             return null;
         }
 
@@ -174,7 +188,9 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             java.lang.Object port;
             java.lang.Object serverId;
             java.lang.Object weight;
+            java.lang.Object serverIp;
             java.lang.Object serverType;
+            java.lang.Object type;
 
             /**
              * Sets the value of {@link MasterSlaveBackendServersProperty#getPort}
@@ -243,6 +259,28 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             }
 
             /**
+             * Sets the value of {@link MasterSlaveBackendServersProperty#getServerIp}
+             * @param serverIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverIp(java.lang.String serverIp) {
+                this.serverIp = serverIp;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MasterSlaveBackendServersProperty#getServerIp}
+             * @param serverIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverIp(com.aliyun.ros.cdk.core.IResolvable serverIp) {
+                this.serverIp = serverIp;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link MasterSlaveBackendServersProperty#getServerType}
              * @param serverType the value to be set.
              * @return {@code this}
@@ -261,6 +299,28 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder serverType(com.aliyun.ros.cdk.core.IResolvable serverType) {
                 this.serverType = serverType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MasterSlaveBackendServersProperty#getType}
+             * @param type the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MasterSlaveBackendServersProperty#getType}
+             * @param type the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+                this.type = type;
                 return this;
             }
 
@@ -285,7 +345,9 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             private final java.lang.Object port;
             private final java.lang.Object serverId;
             private final java.lang.Object weight;
+            private final java.lang.Object serverIp;
             private final java.lang.Object serverType;
+            private final java.lang.Object type;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -296,7 +358,9 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
                 this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.serverId = software.amazon.jsii.Kernel.get(this, "serverId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serverIp = software.amazon.jsii.Kernel.get(this, "serverIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.serverType = software.amazon.jsii.Kernel.get(this, "serverType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -307,7 +371,9 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
                 this.port = java.util.Objects.requireNonNull(builder.port, "port is required");
                 this.serverId = java.util.Objects.requireNonNull(builder.serverId, "serverId is required");
                 this.weight = java.util.Objects.requireNonNull(builder.weight, "weight is required");
+                this.serverIp = builder.serverIp;
                 this.serverType = builder.serverType;
+                this.type = builder.type;
             }
 
             @Override
@@ -326,8 +392,18 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             }
 
             @Override
+            public final java.lang.Object getServerIp() {
+                return this.serverIp;
+            }
+
+            @Override
             public final java.lang.Object getServerType() {
                 return this.serverType;
+            }
+
+            @Override
+            public final java.lang.Object getType() {
+                return this.type;
             }
 
             @Override
@@ -339,8 +415,14 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
                 data.set("port", om.valueToTree(this.getPort()));
                 data.set("serverId", om.valueToTree(this.getServerId()));
                 data.set("weight", om.valueToTree(this.getWeight()));
+                if (this.getServerIp() != null) {
+                    data.set("serverIp", om.valueToTree(this.getServerIp()));
+                }
                 if (this.getServerType() != null) {
                     data.set("serverType", om.valueToTree(this.getServerType()));
+                }
+                if (this.getType() != null) {
+                    data.set("type", om.valueToTree(this.getType()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -363,7 +445,9 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
                 if (!port.equals(that.port)) return false;
                 if (!serverId.equals(that.serverId)) return false;
                 if (!weight.equals(that.weight)) return false;
-                return this.serverType != null ? this.serverType.equals(that.serverType) : that.serverType == null;
+                if (this.serverIp != null ? !this.serverIp.equals(that.serverIp) : that.serverIp != null) return false;
+                if (this.serverType != null ? !this.serverType.equals(that.serverType) : that.serverType != null) return false;
+                return this.type != null ? this.type.equals(that.type) : that.type == null;
             }
 
             @Override
@@ -371,7 +455,9 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
                 int result = this.port.hashCode();
                 result = 31 * result + (this.serverId.hashCode());
                 result = 31 * result + (this.weight.hashCode());
+                result = 31 * result + (this.serverIp != null ? this.serverIp.hashCode() : 0);
                 result = 31 * result + (this.serverType != null ? this.serverType.hashCode() : 0);
+                result = 31 * result + (this.type != null ? this.type.hashCode() : 0);
                 return result;
             }
         }

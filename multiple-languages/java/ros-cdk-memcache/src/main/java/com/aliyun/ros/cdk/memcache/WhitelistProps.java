@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * Properties for defining a <code>ALIYUN::Memcache::Whitelist</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.854Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.289Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.WhitelistProps")
 @software.amazon.jsii.Jsii.Proxy(WhitelistProps.Jsii$Proxy.class)
 public interface WhitelistProps extends software.amazon.jsii.JsiiSerializable {

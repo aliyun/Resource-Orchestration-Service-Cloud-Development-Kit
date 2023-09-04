@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a <code>ALIYUN::RDS::PrepayDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.692Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.111Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayDBInstanceProps.Jsii$Proxy.class)
 public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,9 +21,10 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
     @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceClass();
 
     /**
-     * Property dbInstanceStorage: Database instance storage size.
+     * Property dbInstanceStorage: The storage capacity of the instance.
      * <p>
-     * mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     * Unit: GB. The storage capacity increases in increments of 5 GB.
+     * You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceStorage();
 
@@ -314,6 +315,13 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
+     * Property instanceNetworkType: Instance network type, VPC or Classic.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceNetworkType() {
+        return null;
+    }
+
+    /**
      * Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance.
      * <p>
      * Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance.
@@ -533,7 +541,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
      * Property tags: The tags of an instance.
      * <p>
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-     * At most 5 tags can be specified.
+     * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
@@ -640,6 +648,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         java.lang.Object enableBackupLog;
         java.lang.Object encryptionKey;
         java.lang.Object highSpaceUsageProtection;
+        java.lang.Object instanceNetworkType;
         java.lang.Object localLogRetentionHours;
         java.lang.Object localLogRetentionSpace;
         java.lang.Object logBackupFrequency;
@@ -715,8 +724,9 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getDbInstanceStorage}
-         * @param dbInstanceStorage Property dbInstanceStorage: Database instance storage size. This parameter is required.
-         *                          mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+         * @param dbInstanceStorage Property dbInstanceStorage: The storage capacity of the instance. This parameter is required.
+         *                          Unit: GB. The storage capacity increases in increments of 5 GB.
+         *                          You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
          * @return {@code this}
          */
         public Builder dbInstanceStorage(java.lang.Number dbInstanceStorage) {
@@ -726,8 +736,9 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link PrepayDBInstanceProps#getDbInstanceStorage}
-         * @param dbInstanceStorage Property dbInstanceStorage: Database instance storage size. This parameter is required.
-         *                          mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+         * @param dbInstanceStorage Property dbInstanceStorage: The storage capacity of the instance. This parameter is required.
+         *                          Unit: GB. The storage capacity increases in increments of 5 GB.
+         *                          You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
          * @return {@code this}
          */
         public Builder dbInstanceStorage(com.aliyun.ros.cdk.core.IResolvable dbInstanceStorage) {
@@ -1464,6 +1475,26 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link PrepayDBInstanceProps#getInstanceNetworkType}
+         * @param instanceNetworkType Property instanceNetworkType: Instance network type, VPC or Classic.
+         * @return {@code this}
+         */
+        public Builder instanceNetworkType(java.lang.String instanceNetworkType) {
+            this.instanceNetworkType = instanceNetworkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayDBInstanceProps#getInstanceNetworkType}
+         * @param instanceNetworkType Property instanceNetworkType: Instance network type, VPC or Classic.
+         * @return {@code this}
+         */
+        public Builder instanceNetworkType(com.aliyun.ros.cdk.core.IResolvable instanceNetworkType) {
+            this.instanceNetworkType = instanceNetworkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link PrepayDBInstanceProps#getLocalLogRetentionHours}
          * @param localLogRetentionHours Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance.
          *                               Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance.
@@ -2005,7 +2036,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
          * Sets the value of {@link PrepayDBInstanceProps#getTags}
          * @param tags Property tags: The tags of an instance.
          *             You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-         *             At most 5 tags can be specified.
+         *             At most 20 tags can be specified.
          *             Key
          *             It can be up to 64 characters in length.
          *             Cannot begin with aliyun.
@@ -2199,6 +2230,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         private final java.lang.Object enableBackupLog;
         private final java.lang.Object encryptionKey;
         private final java.lang.Object highSpaceUsageProtection;
+        private final java.lang.Object instanceNetworkType;
         private final java.lang.Object localLogRetentionHours;
         private final java.lang.Object localLogRetentionSpace;
         private final java.lang.Object logBackupFrequency;
@@ -2269,6 +2301,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.enableBackupLog = software.amazon.jsii.Kernel.get(this, "enableBackupLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionKey = software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.highSpaceUsageProtection = software.amazon.jsii.Kernel.get(this, "highSpaceUsageProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceNetworkType = software.amazon.jsii.Kernel.get(this, "instanceNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.localLogRetentionHours = software.amazon.jsii.Kernel.get(this, "localLogRetentionHours", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.localLogRetentionSpace = software.amazon.jsii.Kernel.get(this, "localLogRetentionSpace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logBackupFrequency = software.amazon.jsii.Kernel.get(this, "logBackupFrequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2340,6 +2373,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             this.enableBackupLog = builder.enableBackupLog;
             this.encryptionKey = builder.encryptionKey;
             this.highSpaceUsageProtection = builder.highSpaceUsageProtection;
+            this.instanceNetworkType = builder.instanceNetworkType;
             this.localLogRetentionHours = builder.localLogRetentionHours;
             this.localLogRetentionSpace = builder.localLogRetentionSpace;
             this.logBackupFrequency = builder.logBackupFrequency;
@@ -2535,6 +2569,11 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getHighSpaceUsageProtection() {
             return this.highSpaceUsageProtection;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceNetworkType() {
+            return this.instanceNetworkType;
         }
 
         @Override
@@ -2778,6 +2817,9 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (this.getHighSpaceUsageProtection() != null) {
                 data.set("highSpaceUsageProtection", om.valueToTree(this.getHighSpaceUsageProtection()));
             }
+            if (this.getInstanceNetworkType() != null) {
+                data.set("instanceNetworkType", om.valueToTree(this.getInstanceNetworkType()));
+            }
             if (this.getLocalLogRetentionHours() != null) {
                 data.set("localLogRetentionHours", om.valueToTree(this.getLocalLogRetentionHours()));
             }
@@ -2919,6 +2961,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             if (this.enableBackupLog != null ? !this.enableBackupLog.equals(that.enableBackupLog) : that.enableBackupLog != null) return false;
             if (this.encryptionKey != null ? !this.encryptionKey.equals(that.encryptionKey) : that.encryptionKey != null) return false;
             if (this.highSpaceUsageProtection != null ? !this.highSpaceUsageProtection.equals(that.highSpaceUsageProtection) : that.highSpaceUsageProtection != null) return false;
+            if (this.instanceNetworkType != null ? !this.instanceNetworkType.equals(that.instanceNetworkType) : that.instanceNetworkType != null) return false;
             if (this.localLogRetentionHours != null ? !this.localLogRetentionHours.equals(that.localLogRetentionHours) : that.localLogRetentionHours != null) return false;
             if (this.localLogRetentionSpace != null ? !this.localLogRetentionSpace.equals(that.localLogRetentionSpace) : that.localLogRetentionSpace != null) return false;
             if (this.logBackupFrequency != null ? !this.logBackupFrequency.equals(that.logBackupFrequency) : that.logBackupFrequency != null) return false;
@@ -2986,6 +3029,7 @@ public interface PrepayDBInstanceProps extends software.amazon.jsii.JsiiSerializ
             result = 31 * result + (this.enableBackupLog != null ? this.enableBackupLog.hashCode() : 0);
             result = 31 * result + (this.encryptionKey != null ? this.encryptionKey.hashCode() : 0);
             result = 31 * result + (this.highSpaceUsageProtection != null ? this.highSpaceUsageProtection.hashCode() : 0);
+            result = 31 * result + (this.instanceNetworkType != null ? this.instanceNetworkType.hashCode() : 0);
             result = 31 * result + (this.localLogRetentionHours != null ? this.localLogRetentionHours.hashCode() : 0);
             result = 31 * result + (this.localLogRetentionSpace != null ? this.localLogRetentionSpace.hashCode() : 0);
             result = 31 * result + (this.logBackupFrequency != null ? this.logBackupFrequency.hashCode() : 0);

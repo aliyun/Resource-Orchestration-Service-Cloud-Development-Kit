@@ -55,7 +55,7 @@ function RosClusterApplicationResourcesPropsValidator(properties: any): ros.Vali
     if(properties.kind && (typeof properties.kind) !== 'object') {
         errors.collect(ros.propertyValidator('kind', ros.validateAllowedValues)({
           data: properties.kind,
-          allowedValues: ["ConfigMap","Service","PodTemplate","Namespace","Secret","Node","ComponentStatus","ReplicationController","LimitRange","ResourceQuota","PersistentVolumeClaim","ServiceAccount","PersistentVolume","Endpoints","Binding","Pod","Event"],
+          allowedValues: ["ConfigMap","Service","PodTemplate","Namespace","Secret","Node","ComponentStatus","ReplicationController","LimitRange","ResourceQuota","PersistentVolumeClaim","ServiceAccount","PersistentVolume","Endpoints","Binding","Pod","Event","Ingress"],
         }));
     }
     errors.collect(ros.propertyValidator('kind', ros.validateString)(properties.kind));

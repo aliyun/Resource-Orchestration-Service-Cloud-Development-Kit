@@ -463,6 +463,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property tags: Tags to attach to run_command.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create run_command. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosRunCommand.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Ecs.RosRunCommand.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
+
         private object? _timed;
 
         /// <summary>Property timed: Specifies whether to periodically run the script.</summary>

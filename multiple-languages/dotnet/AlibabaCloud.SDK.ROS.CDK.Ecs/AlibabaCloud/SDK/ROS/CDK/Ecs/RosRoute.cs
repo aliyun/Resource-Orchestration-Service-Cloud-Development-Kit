@@ -50,6 +50,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.RosRoute))!;
 
+        /// <remarks>
+        /// <strong>Attribute</strong>: RouteEntryId: The ID of the route entry.
+        /// </remarks>
+        [JsiiProperty(name: "attrRouteEntryId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRouteEntryId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties
         {
@@ -86,7 +95,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.</summary>
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         public virtual bool EnableResourcePropertyConstraint
         {

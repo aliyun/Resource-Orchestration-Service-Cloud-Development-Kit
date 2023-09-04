@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a <code>ALIYUN::VPC::Ipv6InternetBandwidth</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.778Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:40.273Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosIpv6InternetBandwidthProps")
 @software.amazon.jsii.Jsii.Proxy(RosIpv6InternetBandwidthProps.Jsii$Proxy.class)
 public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,12 +27,6 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
     }
 
     /**
-     */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty> getTags() {
-        return null;
-    }
-
-    /**
      * @return a {@link Builder} of {@link RosIpv6InternetBandwidthProps}
      */
     static Builder builder() {
@@ -46,7 +40,6 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
         java.lang.Object ipv6AddressId;
         java.lang.Object ipv6GatewayId;
         java.lang.Object internetChargeType;
-        java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosIpv6InternetBandwidthProps#getBandwidth}
@@ -129,17 +122,6 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
         }
 
         /**
-         * Sets the value of {@link RosIpv6InternetBandwidthProps#getTags}
-         * @param tags the value to be set.
-         * @return {@code this}
-         */
-        @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty>)tags;
-            return this;
-        }
-
-        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosIpv6InternetBandwidthProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -159,7 +141,6 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
         private final java.lang.Object ipv6AddressId;
         private final java.lang.Object ipv6GatewayId;
         private final java.lang.Object internetChargeType;
-        private final java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -171,20 +152,17 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
             this.ipv6AddressId = software.amazon.jsii.Kernel.get(this, "ipv6AddressId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6GatewayId = software.amazon.jsii.Kernel.get(this, "ipv6GatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
             this.ipv6AddressId = java.util.Objects.requireNonNull(builder.ipv6AddressId, "ipv6AddressId is required");
             this.ipv6GatewayId = java.util.Objects.requireNonNull(builder.ipv6GatewayId, "ipv6GatewayId is required");
             this.internetChargeType = builder.internetChargeType;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -208,11 +186,6 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty> getTags() {
-            return this.tags;
-        }
-
-        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -223,9 +196,6 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
             data.set("ipv6GatewayId", om.valueToTree(this.getIpv6GatewayId()));
             if (this.getInternetChargeType() != null) {
                 data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
-            }
-            if (this.getTags() != null) {
-                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -248,8 +218,7 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
             if (!bandwidth.equals(that.bandwidth)) return false;
             if (!ipv6AddressId.equals(that.ipv6AddressId)) return false;
             if (!ipv6GatewayId.equals(that.ipv6GatewayId)) return false;
-            if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
-            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
+            return this.internetChargeType != null ? this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType == null;
         }
 
         @Override
@@ -258,7 +227,6 @@ public interface RosIpv6InternetBandwidthProps extends software.amazon.jsii.Jsii
             result = 31 * result + (this.ipv6AddressId.hashCode());
             result = 31 * result + (this.ipv6GatewayId.hashCode());
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
-            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

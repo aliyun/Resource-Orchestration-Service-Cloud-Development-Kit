@@ -211,11 +211,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: serverIp: The IP of ECS or ENI.
+            /// </remarks>
+            [JsiiProperty(name: "serverIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ServerIp
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: serverType: The identity of backend server. Could be "Master" (default) or "Slave"
             /// </remarks>
             [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? ServerType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: type: Specify the type of backend server. This parameter must be of the STRING type. Valid values:
+            /// ecs: an ECS instance
+            /// eni: an elastic network interface (ENI).
+            /// </remarks>
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Type
             {
                 get
                 {
@@ -258,11 +286,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: serverIp: The IP of ECS or ENI.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "serverIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ServerIp
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: serverType: The identity of backend server. Could be "Master" (default) or "Slave"
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? ServerType
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: type: Specify the type of backend server. This parameter must be of the STRING type. Valid values:
+                /// ecs: an ECS instance
+                /// eni: an elastic network interface (ENI).
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Type
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -409,6 +459,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 }
             }
 
+            private object? _serverIp;
+
+            /// <remarks>
+            /// <strong>Property</strong>: serverIp: The IP of ECS or ENI.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "serverIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ServerIp
+            {
+                get => _serverIp;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _serverIp = value;
+                }
+            }
+
             private object? _serverType;
 
             /// <remarks>
@@ -439,6 +522,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                         }
                     }
                     _serverType = value;
+                }
+            }
+
+            private object? _type;
+
+            /// <remarks>
+            /// <strong>Property</strong>: type: Specify the type of backend server. This parameter must be of the STRING type. Valid values:
+            /// ecs: an ECS instance
+            /// eni: an elastic network interface (ENI).
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Type
+            {
+                get => _type;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _type = value;
                 }
             }
         }

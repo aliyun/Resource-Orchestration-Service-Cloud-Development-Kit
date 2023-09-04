@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * Properties for defining a <code>ALIYUN::OSS::Bucket</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.617Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucketProps")
 @software.amazon.jsii.Jsii.Proxy(RosBucketProps.Jsii$Proxy.class)
 public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
@@ -62,6 +62,12 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getServerSideEncryptionConfiguration() {
         return null;
     }
@@ -109,6 +115,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object policy;
         java.lang.Object redundancyType;
         java.lang.Object refererConfiguration;
+        java.lang.Object resourceGroupId;
         java.lang.Object serverSideEncryptionConfiguration;
         java.lang.Object storageClass;
         java.util.Map<java.lang.String, java.lang.Object> tags;
@@ -296,6 +303,26 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosBucketProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBucketProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosBucketProps#getServerSideEncryptionConfiguration}
          * @param serverSideEncryptionConfiguration the value to be set.
          * @return {@code this}
@@ -411,6 +438,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object policy;
         private final java.lang.Object redundancyType;
         private final java.lang.Object refererConfiguration;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object serverSideEncryptionConfiguration;
         private final java.lang.Object storageClass;
         private final java.util.Map<java.lang.String, java.lang.Object> tags;
@@ -432,6 +460,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.redundancyType = software.amazon.jsii.Kernel.get(this, "redundancyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.refererConfiguration = software.amazon.jsii.Kernel.get(this, "refererConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverSideEncryptionConfiguration = software.amazon.jsii.Kernel.get(this, "serverSideEncryptionConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageClass = software.amazon.jsii.Kernel.get(this, "storageClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
@@ -454,6 +483,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             this.policy = builder.policy;
             this.redundancyType = builder.redundancyType;
             this.refererConfiguration = builder.refererConfiguration;
+            this.resourceGroupId = builder.resourceGroupId;
             this.serverSideEncryptionConfiguration = builder.serverSideEncryptionConfiguration;
             this.storageClass = builder.storageClass;
             this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
@@ -504,6 +534,11 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getRefererConfiguration() {
             return this.refererConfiguration;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -562,6 +597,9 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getRefererConfiguration() != null) {
                 data.set("refererConfiguration", om.valueToTree(this.getRefererConfiguration()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getServerSideEncryptionConfiguration() != null) {
                 data.set("serverSideEncryptionConfiguration", om.valueToTree(this.getServerSideEncryptionConfiguration()));
             }
@@ -604,6 +642,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
             if (this.redundancyType != null ? !this.redundancyType.equals(that.redundancyType) : that.redundancyType != null) return false;
             if (this.refererConfiguration != null ? !this.refererConfiguration.equals(that.refererConfiguration) : that.refererConfiguration != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.serverSideEncryptionConfiguration != null ? !this.serverSideEncryptionConfiguration.equals(that.serverSideEncryptionConfiguration) : that.serverSideEncryptionConfiguration != null) return false;
             if (this.storageClass != null ? !this.storageClass.equals(that.storageClass) : that.storageClass != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -622,6 +661,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);
             result = 31 * result + (this.redundancyType != null ? this.redundancyType.hashCode() : 0);
             result = 31 * result + (this.refererConfiguration != null ? this.refererConfiguration.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.serverSideEncryptionConfiguration != null ? this.serverSideEncryptionConfiguration.hashCode() : 0);
             result = 31 * result + (this.storageClass != null ? this.storageClass.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

@@ -107,7 +107,6 @@
 @alicloud/ros-cdk-vpc.RosIpv6Gateway.TagsProperty=com.aliyun.ros.cdk.vpc.RosIpv6Gateway$TagsProperty
 @alicloud/ros-cdk-vpc.RosIpv6GatewayProps=com.aliyun.ros.cdk.vpc.RosIpv6GatewayProps
 @alicloud/ros-cdk-vpc.RosIpv6InternetBandwidth=com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth
-@alicloud/ros-cdk-vpc.RosIpv6InternetBandwidth.TagsProperty=com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth$TagsProperty
 @alicloud/ros-cdk-vpc.RosIpv6InternetBandwidthProps=com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidthProps
 @alicloud/ros-cdk-vpc.RosNatGateway=com.aliyun.ros.cdk.vpc.RosNatGateway
 @alicloud/ros-cdk-vpc.RosNatGateway.TagsProperty=com.aliyun.ros.cdk.vpc.RosNatGateway$TagsProperty
@@ -146,6 +145,11 @@
 @alicloud/ros-cdk-vpc.RosTrafficMirrorFilter.EgressRulesProperty=com.aliyun.ros.cdk.vpc.RosTrafficMirrorFilter$EgressRulesProperty
 @alicloud/ros-cdk-vpc.RosTrafficMirrorFilter.IngressRulesProperty=com.aliyun.ros.cdk.vpc.RosTrafficMirrorFilter$IngressRulesProperty
 @alicloud/ros-cdk-vpc.RosTrafficMirrorFilterProps=com.aliyun.ros.cdk.vpc.RosTrafficMirrorFilterProps
+@alicloud/ros-cdk-vpc.RosTrafficMirrorSession=com.aliyun.ros.cdk.vpc.RosTrafficMirrorSession
+@alicloud/ros-cdk-vpc.RosTrafficMirrorSession.TagProperty=com.aliyun.ros.cdk.vpc.RosTrafficMirrorSession$TagProperty
+@alicloud/ros-cdk-vpc.RosTrafficMirrorSessionProps=com.aliyun.ros.cdk.vpc.RosTrafficMirrorSessionProps
+@alicloud/ros-cdk-vpc.RosTrafficMirrorSessionSourcesAddition=com.aliyun.ros.cdk.vpc.RosTrafficMirrorSessionSourcesAddition
+@alicloud/ros-cdk-vpc.RosTrafficMirrorSessionSourcesAdditionProps=com.aliyun.ros.cdk.vpc.RosTrafficMirrorSessionSourcesAdditionProps
 @alicloud/ros-cdk-vpc.RosVirtualBorderRouter=com.aliyun.ros.cdk.vpc.RosVirtualBorderRouter
 @alicloud/ros-cdk-vpc.RosVirtualBorderRouterProps=com.aliyun.ros.cdk.vpc.RosVirtualBorderRouterProps
 @alicloud/ros-cdk-vpc.RosVpcPeerConnection=com.aliyun.ros.cdk.vpc.RosVpcPeerConnection
@@ -176,6 +180,10 @@
 @alicloud/ros-cdk-vpc.SslVpnServerProps=com.aliyun.ros.cdk.vpc.SslVpnServerProps
 @alicloud/ros-cdk-vpc.TrafficMirrorFilter=com.aliyun.ros.cdk.vpc.TrafficMirrorFilter
 @alicloud/ros-cdk-vpc.TrafficMirrorFilterProps=com.aliyun.ros.cdk.vpc.TrafficMirrorFilterProps
+@alicloud/ros-cdk-vpc.TrafficMirrorSession=com.aliyun.ros.cdk.vpc.TrafficMirrorSession
+@alicloud/ros-cdk-vpc.TrafficMirrorSessionProps=com.aliyun.ros.cdk.vpc.TrafficMirrorSessionProps
+@alicloud/ros-cdk-vpc.TrafficMirrorSessionSourcesAddition=com.aliyun.ros.cdk.vpc.TrafficMirrorSessionSourcesAddition
+@alicloud/ros-cdk-vpc.TrafficMirrorSessionSourcesAdditionProps=com.aliyun.ros.cdk.vpc.TrafficMirrorSessionSourcesAdditionProps
 @alicloud/ros-cdk-vpc.VirtualBorderRouter=com.aliyun.ros.cdk.vpc.VirtualBorderRouter
 @alicloud/ros-cdk-vpc.VirtualBorderRouterProps=com.aliyun.ros.cdk.vpc.VirtualBorderRouterProps
 @alicloud/ros-cdk-vpc.VpcPeerConnection=com.aliyun.ros.cdk.vpc.VpcPeerConnection

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  <code>ALIYUN::VPC::Ipv6InternetBandwidth</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.698Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:40.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.Ipv6InternetBandwidth")
 public class Ipv6InternetBandwidth extends com.aliyun.ros.cdk.core.Resource {
 
@@ -165,40 +165,31 @@ public class Ipv6InternetBandwidth extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property internetChargeType: IPv6 public network bandwidth billing, value: PayByTraffic: by using the traffic accounting.
+         * Property internetChargeType: IPv6 public network bandwidth billing, value: - <strong>PayByTraffic</strong>: by using the traffic accounting.
          * <p>
-         * PayByBandwidth (default): Bandwidth billing.
+         * <ul>
+         * <li><strong>PayByBandwidth</strong> (default): Bandwidth billing.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param internetChargeType Property internetChargeType: IPv6 public network bandwidth billing, value: PayByTraffic: by using the traffic accounting. This parameter is required.
+         * @param internetChargeType Property internetChargeType: IPv6 public network bandwidth billing, value: - <strong>PayByTraffic</strong>: by using the traffic accounting. This parameter is required.
          */
         public Builder internetChargeType(final java.lang.String internetChargeType) {
             this.props.internetChargeType(internetChargeType);
             return this;
         }
         /**
-         * Property internetChargeType: IPv6 public network bandwidth billing, value: PayByTraffic: by using the traffic accounting.
+         * Property internetChargeType: IPv6 public network bandwidth billing, value: - <strong>PayByTraffic</strong>: by using the traffic accounting.
          * <p>
-         * PayByBandwidth (default): Bandwidth billing.
+         * <ul>
+         * <li><strong>PayByBandwidth</strong> (default): Bandwidth billing.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param internetChargeType Property internetChargeType: IPv6 public network bandwidth billing, value: PayByTraffic: by using the traffic accounting. This parameter is required.
+         * @param internetChargeType Property internetChargeType: IPv6 public network bandwidth billing, value: - <strong>PayByTraffic</strong>: by using the traffic accounting. This parameter is required.
          */
         public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.props.internetChargeType(internetChargeType);
-            return this;
-        }
-
-        /**
-         * Property tags: Tags to attach to instance.
-         * <p>
-         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-         * <p>
-         * @return {@code this}
-         * @param tags Property tags: Tags to attach to instance. This parameter is required.
-         */
-        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosIpv6InternetBandwidth.TagsProperty> tags) {
-            this.props.tags(tags);
             return this;
         }
 

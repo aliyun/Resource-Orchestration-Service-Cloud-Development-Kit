@@ -170,6 +170,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property tags: Tags to attach to command.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCommand.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Ecs.RosCommand.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
+
         private object? _timeout;
 
         /// <summary>Property timeout: Total timeout when the command is executed in the instance.</summary>

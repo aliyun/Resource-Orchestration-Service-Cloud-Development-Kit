@@ -129,9 +129,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _internetChargeType;
 
-        /// <summary>Property internetChargeType: IPv6 public network bandwidth billing, value: PayByTraffic: by using the traffic accounting.</summary>
+        /// <summary>Property internetChargeType: IPv6 public network bandwidth billing, value: - **PayByTraffic**: by using the traffic accounting.</summary>
         /// <remarks>
-        /// PayByBandwidth (default): Bandwidth billing.
+        /// <list type="bullet">
+        /// <description><strong>PayByBandwidth</strong> (default): Bandwidth billing.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -159,18 +161,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 }
                 _internetChargeType = value;
             }
-        }
-
-        /// <summary>Property tags: Tags to attach to instance.</summary>
-        /// <remarks>
-        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-        /// </remarks>
-        [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-vpc.RosIpv6InternetBandwidth.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
-        public AlibabaCloud.SDK.ROS.CDK.Vpc.RosIpv6InternetBandwidth.ITagsProperty[]? Tags
-        {
-            get;
-            set;
         }
     }
 }

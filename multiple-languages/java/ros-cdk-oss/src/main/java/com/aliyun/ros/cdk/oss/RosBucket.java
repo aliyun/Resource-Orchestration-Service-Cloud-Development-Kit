@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * A ROS template type:  <code>ALIYUN::OSS::Bucket</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.171Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.611Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucket")
 public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -245,6 +245,24 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setRefererConfiguration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.oss.RosBucket.RefererConfigurationProperty value) {
         software.amazon.jsii.Kernel.set(this, "refererConfiguration", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
     }
 
     /**
@@ -2512,6 +2530,23 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder refererConfiguration(final com.aliyun.ros.cdk.oss.RosBucket.RefererConfigurationProperty refererConfiguration) {
             this.props.refererConfiguration(refererConfiguration);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

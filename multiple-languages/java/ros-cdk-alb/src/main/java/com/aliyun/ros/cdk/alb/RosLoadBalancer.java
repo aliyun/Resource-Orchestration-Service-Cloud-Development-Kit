@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * A ROS template type:  <code>ALIYUN::ALB::LoadBalancer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:57.914Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:34.965Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosLoadBalancer")
 public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -561,6 +561,174 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosLoadBalancer.LoadBalancerAddressesProperty")
+    @software.amazon.jsii.Jsii.Proxy(LoadBalancerAddressesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface LoadBalancerAddressesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getAllocationId();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEipType() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link LoadBalancerAddressesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link LoadBalancerAddressesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<LoadBalancerAddressesProperty> {
+            java.lang.Object allocationId;
+            java.lang.Object eipType;
+
+            /**
+             * Sets the value of {@link LoadBalancerAddressesProperty#getAllocationId}
+             * @param allocationId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allocationId(java.lang.String allocationId) {
+                this.allocationId = allocationId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LoadBalancerAddressesProperty#getAllocationId}
+             * @param allocationId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allocationId(com.aliyun.ros.cdk.core.IResolvable allocationId) {
+                this.allocationId = allocationId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LoadBalancerAddressesProperty#getEipType}
+             * @param eipType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder eipType(java.lang.String eipType) {
+                this.eipType = eipType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LoadBalancerAddressesProperty#getEipType}
+             * @param eipType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder eipType(com.aliyun.ros.cdk.core.IResolvable eipType) {
+                this.eipType = eipType;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link LoadBalancerAddressesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public LoadBalancerAddressesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link LoadBalancerAddressesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LoadBalancerAddressesProperty {
+            private final java.lang.Object allocationId;
+            private final java.lang.Object eipType;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.allocationId = software.amazon.jsii.Kernel.get(this, "allocationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.eipType = software.amazon.jsii.Kernel.get(this, "eipType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.allocationId = java.util.Objects.requireNonNull(builder.allocationId, "allocationId is required");
+                this.eipType = builder.eipType;
+            }
+
+            @Override
+            public final java.lang.Object getAllocationId() {
+                return this.allocationId;
+            }
+
+            @Override
+            public final java.lang.Object getEipType() {
+                return this.eipType;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("allocationId", om.valueToTree(this.getAllocationId()));
+                if (this.getEipType() != null) {
+                    data.set("eipType", om.valueToTree(this.getEipType()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosLoadBalancer.LoadBalancerAddressesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                LoadBalancerAddressesProperty.Jsii$Proxy that = (LoadBalancerAddressesProperty.Jsii$Proxy) o;
+
+                if (!allocationId.equals(that.allocationId)) return false;
+                return this.eipType != null ? this.eipType.equals(that.eipType) : that.eipType == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.allocationId.hashCode();
+                result = 31 * result + (this.eipType != null ? this.eipType.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosLoadBalancer.LoadBalancerBillingConfigProperty")
     @software.amazon.jsii.Jsii.Proxy(LoadBalancerBillingConfigProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1038,6 +1206,27 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
         @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAllocationId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEipType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerAddresses() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link ZoneMappingsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1051,6 +1240,9 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<ZoneMappingsProperty> {
             java.lang.Object vSwitchId;
             java.lang.Object zoneId;
+            java.lang.Object allocationId;
+            java.lang.Object eipType;
+            java.lang.Object loadBalancerAddresses;
 
             /**
              * Sets the value of {@link ZoneMappingsProperty#getVSwitchId}
@@ -1097,6 +1289,72 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ZoneMappingsProperty#getAllocationId}
+             * @param allocationId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allocationId(java.lang.String allocationId) {
+                this.allocationId = allocationId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ZoneMappingsProperty#getAllocationId}
+             * @param allocationId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allocationId(com.aliyun.ros.cdk.core.IResolvable allocationId) {
+                this.allocationId = allocationId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ZoneMappingsProperty#getEipType}
+             * @param eipType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder eipType(java.lang.String eipType) {
+                this.eipType = eipType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ZoneMappingsProperty#getEipType}
+             * @param eipType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder eipType(com.aliyun.ros.cdk.core.IResolvable eipType) {
+                this.eipType = eipType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ZoneMappingsProperty#getLoadBalancerAddresses}
+             * @param loadBalancerAddresses the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder loadBalancerAddresses(com.aliyun.ros.cdk.core.IResolvable loadBalancerAddresses) {
+                this.loadBalancerAddresses = loadBalancerAddresses;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ZoneMappingsProperty#getLoadBalancerAddresses}
+             * @param loadBalancerAddresses the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder loadBalancerAddresses(java.util.List<? extends java.lang.Object> loadBalancerAddresses) {
+                this.loadBalancerAddresses = loadBalancerAddresses;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link ZoneMappingsProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1116,6 +1374,9 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ZoneMappingsProperty {
             private final java.lang.Object vSwitchId;
             private final java.lang.Object zoneId;
+            private final java.lang.Object allocationId;
+            private final java.lang.Object eipType;
+            private final java.lang.Object loadBalancerAddresses;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1125,6 +1386,9 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.allocationId = software.amazon.jsii.Kernel.get(this, "allocationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.eipType = software.amazon.jsii.Kernel.get(this, "eipType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.loadBalancerAddresses = software.amazon.jsii.Kernel.get(this, "loadBalancerAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1134,6 +1398,9 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
                 this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+                this.allocationId = builder.allocationId;
+                this.eipType = builder.eipType;
+                this.loadBalancerAddresses = builder.loadBalancerAddresses;
             }
 
             @Override
@@ -1147,6 +1414,21 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getAllocationId() {
+                return this.allocationId;
+            }
+
+            @Override
+            public final java.lang.Object getEipType() {
+                return this.eipType;
+            }
+
+            @Override
+            public final java.lang.Object getLoadBalancerAddresses() {
+                return this.loadBalancerAddresses;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -1154,6 +1436,15 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
                 data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
+                if (this.getAllocationId() != null) {
+                    data.set("allocationId", om.valueToTree(this.getAllocationId()));
+                }
+                if (this.getEipType() != null) {
+                    data.set("eipType", om.valueToTree(this.getEipType()));
+                }
+                if (this.getLoadBalancerAddresses() != null) {
+                    data.set("loadBalancerAddresses", om.valueToTree(this.getLoadBalancerAddresses()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-alb.RosLoadBalancer.ZoneMappingsProperty"));
@@ -1173,13 +1464,19 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 ZoneMappingsProperty.Jsii$Proxy that = (ZoneMappingsProperty.Jsii$Proxy) o;
 
                 if (!vSwitchId.equals(that.vSwitchId)) return false;
-                return this.zoneId.equals(that.zoneId);
+                if (!zoneId.equals(that.zoneId)) return false;
+                if (this.allocationId != null ? !this.allocationId.equals(that.allocationId) : that.allocationId != null) return false;
+                if (this.eipType != null ? !this.eipType.equals(that.eipType) : that.eipType != null) return false;
+                return this.loadBalancerAddresses != null ? this.loadBalancerAddresses.equals(that.loadBalancerAddresses) : that.loadBalancerAddresses == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.vSwitchId.hashCode();
                 result = 31 * result + (this.zoneId.hashCode());
+                result = 31 * result + (this.allocationId != null ? this.allocationId.hashCode() : 0);
+                result = 31 * result + (this.eipType != null ? this.eipType.hashCode() : 0);
+                result = 31 * result + (this.loadBalancerAddresses != null ? this.loadBalancerAddresses.hashCode() : 0);
                 return result;
             }
         }

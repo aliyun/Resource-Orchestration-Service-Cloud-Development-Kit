@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a <code>ALIYUN::ROS::AutoEnableService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.064Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.388Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableServiceProps")
 @software.amazon.jsii.Jsii.Proxy(AutoEnableServiceProps.Jsii$Proxy.class)
 public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,6 +46,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
      * TrafficMirror: VPC Traffic Mirroring
      * VS: Video Surveillance
      * Xtrace: Tracing Anlaysis
+     * CDN: Content Delivery Network
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
@@ -99,6 +100,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    TrafficMirror: VPC Traffic Mirroring
          *                    VS: Video Surveillance
          *                    Xtrace: Tracing Anlaysis
+         *                    CDN: Content Delivery Network
          * @return {@code this}
          */
         public Builder serviceName(java.lang.String serviceName) {
@@ -144,6 +146,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    TrafficMirror: VPC Traffic Mirroring
          *                    VS: Video Surveillance
          *                    Xtrace: Tracing Anlaysis
+         *                    CDN: Content Delivery Network
          * @return {@code this}
          */
         public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {

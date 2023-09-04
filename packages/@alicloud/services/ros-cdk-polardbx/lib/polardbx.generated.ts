@@ -232,6 +232,11 @@ export interface RosDBInstanceProps {
     readonly secondaryZone?: string | ros.IResolvable;
 
     /**
+     * @Property securityIpConfig: Instance whitelist configuration.
+     */
+    readonly securityIpConfig?: RosDBInstance.SecurityIpConfigProperty | ros.IResolvable;
+
+    /**
      * @Property tertiaryZone: The tertiary zone.
      */
     readonly tertiaryZone?: string | ros.IResolvable;
@@ -265,9 +270,9 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
@@ -280,6 +285,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbNodeClass', ros.validateString)(properties.dbNodeClass));
     errors.collect(ros.propertyValidator('secondaryZone', ros.validateString)(properties.secondaryZone));
     errors.collect(ros.propertyValidator('tertiaryZone', ros.validateString)(properties.tertiaryZone));
+    errors.collect(ros.propertyValidator('securityIpConfig', RosDBInstance_SecurityIpConfigPropertyValidator)(properties.securityIpConfig));
     errors.collect(ros.propertyValidator('dbNodeCount', ros.requiredValidator)(properties.dbNodeCount));
     if(properties.dbNodeCount && (typeof properties.dbNodeCount) !== 'object') {
         errors.collect(ros.propertyValidator('dbNodeCount', ros.validateRange)({
@@ -289,9 +295,9 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('dbNodeCount', ros.validateNumber)(properties.dbNodeCount));
+    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
     errors.collect(ros.propertyValidator('primaryZone', ros.requiredValidator)(properties.primaryZone));
     errors.collect(ros.propertyValidator('primaryZone', ros.validateString)(properties.primaryZone));
-    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
     if(properties.dbInstanceDescription && (Array.isArray(properties.dbInstanceDescription) || (typeof properties.dbInstanceDescription) === 'string')) {
         errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateLength)({
             data: properties.dbInstanceDescription.length,
@@ -330,6 +336,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
       Period: ros.stringToRosTemplate(properties.period),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecondaryZone: ros.stringToRosTemplate(properties.secondaryZone),
+      SecurityIpConfig: rosDBInstanceSecurityIpConfigPropertyToRosTemplate(properties.securityIpConfig),
       TertiaryZone: ros.stringToRosTemplate(properties.tertiaryZone),
       UsedTime: ros.numberToRosTemplate(properties.usedTime),
     };
@@ -350,6 +357,11 @@ export class RosDBInstance extends ros.RosResource {
      */
 
     /**
+     * @Attribute ConnectionString: Intranet connection string.
+     */
+    public readonly attrConnectionString: ros.IResolvable;
+
+    /**
      * @Attribute DBInstanceName: The name of the instance that you create.
      */
     public readonly attrDbInstanceName: ros.IResolvable;
@@ -358,6 +370,11 @@ export class RosDBInstance extends ros.RosResource {
      * @Attribute OrderId: The ID of the order.
      */
     public readonly attrOrderId: ros.IResolvable;
+
+    /**
+     * @Attribute Port: Intranet connection port.
+     */
+    public readonly attrPort: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -428,6 +445,11 @@ export class RosDBInstance extends ros.RosResource {
     public secondaryZone: string | ros.IResolvable | undefined;
 
     /**
+     * @Property securityIpConfig: Instance whitelist configuration.
+     */
+    public securityIpConfig: RosDBInstance.SecurityIpConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property tertiaryZone: The tertiary zone.
      */
     public tertiaryZone: string | ros.IResolvable | undefined;
@@ -446,8 +468,10 @@ export class RosDBInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDBInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDBInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConnectionString = this.getAtt('ConnectionString');
         this.attrDbInstanceName = this.getAtt('DBInstanceName');
         this.attrOrderId = this.getAtt('OrderId');
+        this.attrPort = this.getAtt('Port');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbNodeClass = props.dbNodeClass;
@@ -463,6 +487,7 @@ export class RosDBInstance extends ros.RosResource {
         this.period = props.period;
         this.resourceGroupId = props.resourceGroupId;
         this.secondaryZone = props.secondaryZone;
+        this.securityIpConfig = props.securityIpConfig;
         this.tertiaryZone = props.tertiaryZone;
         this.usedTime = props.usedTime;
     }
@@ -483,6 +508,7 @@ export class RosDBInstance extends ros.RosResource {
             period: this.period,
             resourceGroupId: this.resourceGroupId,
             secondaryZone: this.secondaryZone,
+            securityIpConfig: this.securityIpConfig,
             tertiaryZone: this.tertiaryZone,
             usedTime: this.usedTime,
         };
@@ -490,6 +516,60 @@ export class RosDBInstance extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDBInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosDBInstance {
+    /**
+     * @stability external
+     */
+    export interface SecurityIpConfigProperty {
+        /**
+         * @Property groupName: The whitelist group name of the instance.
+         */
+        readonly groupName?: string | ros.IResolvable;
+        /**
+         * @Property securityIpList: The IP list in the whitelist group, multiple IP whitelists are separated by commas (,).
+         */
+        readonly securityIpList?: string | ros.IResolvable;
+        /**
+         * @Property modifyMode: Whitelist modification mode, the value range is as follows:
+     * 0: Overwrite and modify the whitelist group;1: Add a whitelist group;2: Delete the whitelist group.
+         */
+        readonly modifyMode?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SecurityIpConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `SecurityIpConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBInstance_SecurityIpConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('modifyMode', ros.validateString)(properties.modifyMode));
+    return errors.wrap('supplied properties not correct for "SecurityIpConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PolarDBX::DBInstance.SecurityIpConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `SecurityIpConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PolarDBX::DBInstance.SecurityIpConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosDBInstanceSecurityIpConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDBInstance_SecurityIpConfigPropertyValidator(properties).assertSuccess();
+    return {
+      GroupName: ros.stringToRosTemplate(properties.groupName),
+      SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
+      ModifyMode: ros.stringToRosTemplate(properties.modifyMode),
+    };
 }
 
 /**

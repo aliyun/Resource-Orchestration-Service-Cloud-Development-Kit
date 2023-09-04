@@ -25,9 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             get;
         }
 
-        /// <summary>Property dbInstanceStorage: Database instance storage size.</summary>
+        /// <summary>Property dbInstanceStorage: The storage capacity of the instance.</summary>
         /// <remarks>
-        /// mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+        /// Unit: GB. The storage capacity increases in increments of 5 GB.
+        /// You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
         /// </remarks>
         [JsiiProperty(name: "dbInstanceStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DbInstanceStorage
@@ -453,6 +454,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
+        /// <summary>Property instanceNetworkType: Instance network type, VPC or Classic.</summary>
+        [JsiiProperty(name: "instanceNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceNetworkType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance.</summary>
         /// <remarks>
         /// Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance.
@@ -780,7 +792,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <summary>Property tags: The tags of an instance.</summary>
         /// <remarks>
         /// You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-        /// At most 5 tags can be specified.
+        /// At most 20 tags can be specified.
         /// Key
         /// It can be up to 64 characters in length.
         /// Cannot begin with aliyun.
@@ -902,9 +914,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property dbInstanceStorage: Database instance storage size.</summary>
+            /// <summary>Property dbInstanceStorage: The storage capacity of the instance.</summary>
             /// <remarks>
-            /// mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+            /// Unit: GB. The storage capacity increases in increments of 5 GB.
+            /// You can call the DescribeAvailableResource operation to query the storage capacity range that is supported for a specified instance type in a region.
             /// </remarks>
             [JsiiProperty(name: "dbInstanceStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DbInstanceStorage
@@ -1252,6 +1265,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property instanceNetworkType: Instance network type, VPC or Classic.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceNetworkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceNetworkType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance.</summary>
             /// <remarks>
             /// Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance.
@@ -1510,7 +1531,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <summary>Property tags: The tags of an instance.</summary>
             /// <remarks>
             /// You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
-            /// At most 5 tags can be specified.
+            /// At most 20 tags can be specified.
             /// Key
             /// It can be up to 64 characters in length.
             /// Cannot begin with aliyun.

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * A ROS template type:  <code>ALIYUN::NLB::LoadBalancer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.082Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.508Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosLoadBalancer")
 public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -223,6 +223,24 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtectionConfig() {
+        return software.amazon.jsii.Kernel.get(this, "deletionProtectionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeletionProtectionConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deletionProtectionConfig", value);
+    }
+
+    /**
+     */
+    public void setDeletionProtectionConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.nlb.RosLoadBalancer.DeletionProtectionConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "deletionProtectionConfig", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerBillingConfig() {
         return software.amazon.jsii.Kernel.get(this, "loadBalancerBillingConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -277,6 +295,24 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getModificationProtectionConfig() {
+        return software.amazon.jsii.Kernel.get(this, "modificationProtectionConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setModificationProtectionConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "modificationProtectionConfig", value);
+    }
+
+    /**
+     */
+    public void setModificationProtectionConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.nlb.RosLoadBalancer.ModificationProtectionConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "modificationProtectionConfig", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -295,6 +331,18 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty> getTags() {
+        return java.util.Optional.ofNullable((java.util.List<com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty>)(software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    }
+
+    /**
+     */
+    public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty> value) {
+        software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTrafficAffinityEnabled() {
         return software.amazon.jsii.Kernel.get(this, "trafficAffinityEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -309,6 +357,342 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTrafficAffinityEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "trafficAffinityEnabled", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosLoadBalancer.DeletionProtectionConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(DeletionProtectionConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface DeletionProtectionConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getEnabled();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getReason() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link DeletionProtectionConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link DeletionProtectionConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<DeletionProtectionConfigProperty> {
+            java.lang.Object enabled;
+            java.lang.Object reason;
+
+            /**
+             * Sets the value of {@link DeletionProtectionConfigProperty#getEnabled}
+             * @param enabled the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enabled(java.lang.String enabled) {
+                this.enabled = enabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeletionProtectionConfigProperty#getEnabled}
+             * @param enabled the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enabled(com.aliyun.ros.cdk.core.IResolvable enabled) {
+                this.enabled = enabled;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeletionProtectionConfigProperty#getReason}
+             * @param reason the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder reason(java.lang.String reason) {
+                this.reason = reason;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DeletionProtectionConfigProperty#getReason}
+             * @param reason the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder reason(com.aliyun.ros.cdk.core.IResolvable reason) {
+                this.reason = reason;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link DeletionProtectionConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public DeletionProtectionConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link DeletionProtectionConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DeletionProtectionConfigProperty {
+            private final java.lang.Object enabled;
+            private final java.lang.Object reason;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.enabled = software.amazon.jsii.Kernel.get(this, "enabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.reason = software.amazon.jsii.Kernel.get(this, "reason", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.enabled = java.util.Objects.requireNonNull(builder.enabled, "enabled is required");
+                this.reason = builder.reason;
+            }
+
+            @Override
+            public final java.lang.Object getEnabled() {
+                return this.enabled;
+            }
+
+            @Override
+            public final java.lang.Object getReason() {
+                return this.reason;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("enabled", om.valueToTree(this.getEnabled()));
+                if (this.getReason() != null) {
+                    data.set("reason", om.valueToTree(this.getReason()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-nlb.RosLoadBalancer.DeletionProtectionConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                DeletionProtectionConfigProperty.Jsii$Proxy that = (DeletionProtectionConfigProperty.Jsii$Proxy) o;
+
+                if (!enabled.equals(that.enabled)) return false;
+                return this.reason != null ? this.reason.equals(that.reason) : that.reason == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.enabled.hashCode();
+                result = 31 * result + (this.reason != null ? this.reason.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerAddressesProperty")
+    @software.amazon.jsii.Jsii.Proxy(LoadBalancerAddressesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface LoadBalancerAddressesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getAllocationId();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIPv4Address() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link LoadBalancerAddressesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link LoadBalancerAddressesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<LoadBalancerAddressesProperty> {
+            java.lang.Object allocationId;
+            java.lang.Object privateIPv4Address;
+
+            /**
+             * Sets the value of {@link LoadBalancerAddressesProperty#getAllocationId}
+             * @param allocationId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allocationId(java.lang.String allocationId) {
+                this.allocationId = allocationId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LoadBalancerAddressesProperty#getAllocationId}
+             * @param allocationId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder allocationId(com.aliyun.ros.cdk.core.IResolvable allocationId) {
+                this.allocationId = allocationId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LoadBalancerAddressesProperty#getPrivateIPv4Address}
+             * @param privateIPv4Address the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder privateIPv4Address(java.lang.String privateIPv4Address) {
+                this.privateIPv4Address = privateIPv4Address;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link LoadBalancerAddressesProperty#getPrivateIPv4Address}
+             * @param privateIPv4Address the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder privateIPv4Address(com.aliyun.ros.cdk.core.IResolvable privateIPv4Address) {
+                this.privateIPv4Address = privateIPv4Address;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link LoadBalancerAddressesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public LoadBalancerAddressesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link LoadBalancerAddressesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LoadBalancerAddressesProperty {
+            private final java.lang.Object allocationId;
+            private final java.lang.Object privateIPv4Address;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.allocationId = software.amazon.jsii.Kernel.get(this, "allocationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.privateIPv4Address = software.amazon.jsii.Kernel.get(this, "privateIPv4Address", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.allocationId = java.util.Objects.requireNonNull(builder.allocationId, "allocationId is required");
+                this.privateIPv4Address = builder.privateIPv4Address;
+            }
+
+            @Override
+            public final java.lang.Object getAllocationId() {
+                return this.allocationId;
+            }
+
+            @Override
+            public final java.lang.Object getPrivateIPv4Address() {
+                return this.privateIPv4Address;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("allocationId", om.valueToTree(this.getAllocationId()));
+                if (this.getPrivateIPv4Address() != null) {
+                    data.set("privateIPv4Address", om.valueToTree(this.getPrivateIPv4Address()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-nlb.RosLoadBalancer.LoadBalancerAddressesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                LoadBalancerAddressesProperty.Jsii$Proxy that = (LoadBalancerAddressesProperty.Jsii$Proxy) o;
+
+                if (!allocationId.equals(that.allocationId)) return false;
+                return this.privateIPv4Address != null ? this.privateIPv4Address.equals(that.privateIPv4Address) : that.privateIPv4Address == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.allocationId.hashCode();
+                result = 31 * result + (this.privateIPv4Address != null ? this.privateIPv4Address.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -441,6 +825,342 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosLoadBalancer.ModificationProtectionConfigProperty")
+    @software.amazon.jsii.Jsii.Proxy(ModificationProtectionConfigProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ModificationProtectionConfigProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getStatus();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getReason() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ModificationProtectionConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ModificationProtectionConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ModificationProtectionConfigProperty> {
+            java.lang.Object status;
+            java.lang.Object reason;
+
+            /**
+             * Sets the value of {@link ModificationProtectionConfigProperty#getStatus}
+             * @param status the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder status(java.lang.String status) {
+                this.status = status;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ModificationProtectionConfigProperty#getStatus}
+             * @param status the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder status(com.aliyun.ros.cdk.core.IResolvable status) {
+                this.status = status;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ModificationProtectionConfigProperty#getReason}
+             * @param reason the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder reason(java.lang.String reason) {
+                this.reason = reason;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ModificationProtectionConfigProperty#getReason}
+             * @param reason the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder reason(com.aliyun.ros.cdk.core.IResolvable reason) {
+                this.reason = reason;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ModificationProtectionConfigProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ModificationProtectionConfigProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ModificationProtectionConfigProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ModificationProtectionConfigProperty {
+            private final java.lang.Object status;
+            private final java.lang.Object reason;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.reason = software.amazon.jsii.Kernel.get(this, "reason", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.status = java.util.Objects.requireNonNull(builder.status, "status is required");
+                this.reason = builder.reason;
+            }
+
+            @Override
+            public final java.lang.Object getStatus() {
+                return this.status;
+            }
+
+            @Override
+            public final java.lang.Object getReason() {
+                return this.reason;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("status", om.valueToTree(this.getStatus()));
+                if (this.getReason() != null) {
+                    data.set("reason", om.valueToTree(this.getReason()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-nlb.RosLoadBalancer.ModificationProtectionConfigProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ModificationProtectionConfigProperty.Jsii$Proxy that = (ModificationProtectionConfigProperty.Jsii$Proxy) o;
+
+                if (!status.equals(that.status)) return false;
+                return this.reason != null ? this.reason.equals(that.reason) : that.reason == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.status.hashCode();
+                result = 31 * result + (this.reason != null ? this.reason.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosLoadBalancer.TagsProperty")
+    @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface TagsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
+            java.lang.Object key;
+            java.lang.Object value;
+
+            /**
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link TagsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public TagsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TagsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("key", om.valueToTree(this.getKey()));
+                if (this.getValue() != null) {
+                    data.set("value", om.valueToTree(this.getValue()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-nlb.RosLoadBalancer.TagsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                TagsProperty.Jsii$Proxy that = (TagsProperty.Jsii$Proxy) o;
+
+                if (!key.equals(that.key)) return false;
+                return this.value != null ? this.value.equals(that.value) : that.value == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value != null ? this.value.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosLoadBalancer.ZoneMappingsProperty")
     @software.amazon.jsii.Jsii.Proxy(ZoneMappingsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -466,6 +1186,13 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerAddresses() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIPv4Address() {
             return null;
         }
@@ -485,6 +1212,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object vSwitchId;
             java.lang.Object zoneId;
             java.lang.Object allocationId;
+            java.lang.Object loadBalancerAddresses;
             java.lang.Object privateIPv4Address;
 
             /**
@@ -554,6 +1282,28 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ZoneMappingsProperty#getLoadBalancerAddresses}
+             * @param loadBalancerAddresses the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder loadBalancerAddresses(com.aliyun.ros.cdk.core.IResolvable loadBalancerAddresses) {
+                this.loadBalancerAddresses = loadBalancerAddresses;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ZoneMappingsProperty#getLoadBalancerAddresses}
+             * @param loadBalancerAddresses the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder loadBalancerAddresses(java.util.List<? extends java.lang.Object> loadBalancerAddresses) {
+                this.loadBalancerAddresses = loadBalancerAddresses;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ZoneMappingsProperty#getPrivateIPv4Address}
              * @param privateIPv4Address the value to be set.
              * @return {@code this}
@@ -596,6 +1346,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object vSwitchId;
             private final java.lang.Object zoneId;
             private final java.lang.Object allocationId;
+            private final java.lang.Object loadBalancerAddresses;
             private final java.lang.Object privateIPv4Address;
 
             /**
@@ -607,6 +1358,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.allocationId = software.amazon.jsii.Kernel.get(this, "allocationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.loadBalancerAddresses = software.amazon.jsii.Kernel.get(this, "loadBalancerAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.privateIPv4Address = software.amazon.jsii.Kernel.get(this, "privateIPv4Address", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -618,6 +1370,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
                 this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
                 this.allocationId = builder.allocationId;
+                this.loadBalancerAddresses = builder.loadBalancerAddresses;
                 this.privateIPv4Address = builder.privateIPv4Address;
             }
 
@@ -637,6 +1390,11 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getLoadBalancerAddresses() {
+                return this.loadBalancerAddresses;
+            }
+
+            @Override
             public final java.lang.Object getPrivateIPv4Address() {
                 return this.privateIPv4Address;
             }
@@ -651,6 +1409,9 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
                 if (this.getAllocationId() != null) {
                     data.set("allocationId", om.valueToTree(this.getAllocationId()));
+                }
+                if (this.getLoadBalancerAddresses() != null) {
+                    data.set("loadBalancerAddresses", om.valueToTree(this.getLoadBalancerAddresses()));
                 }
                 if (this.getPrivateIPv4Address() != null) {
                     data.set("privateIPv4Address", om.valueToTree(this.getPrivateIPv4Address()));
@@ -676,6 +1437,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 if (!vSwitchId.equals(that.vSwitchId)) return false;
                 if (!zoneId.equals(that.zoneId)) return false;
                 if (this.allocationId != null ? !this.allocationId.equals(that.allocationId) : that.allocationId != null) return false;
+                if (this.loadBalancerAddresses != null ? !this.loadBalancerAddresses.equals(that.loadBalancerAddresses) : that.loadBalancerAddresses != null) return false;
                 return this.privateIPv4Address != null ? this.privateIPv4Address.equals(that.privateIPv4Address) : that.privateIPv4Address == null;
             }
 
@@ -684,6 +1446,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.vSwitchId.hashCode();
                 result = 31 * result + (this.zoneId.hashCode());
                 result = 31 * result + (this.allocationId != null ? this.allocationId.hashCode() : 0);
+                result = 31 * result + (this.loadBalancerAddresses != null ? this.loadBalancerAddresses.hashCode() : 0);
                 result = 31 * result + (this.privateIPv4Address != null ? this.privateIPv4Address.hashCode() : 0);
                 return result;
             }
@@ -820,6 +1583,23 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param deletionProtectionConfig This parameter is required.
+         */
+        public Builder deletionProtectionConfig(final com.aliyun.ros.cdk.core.IResolvable deletionProtectionConfig) {
+            this.props.deletionProtectionConfig(deletionProtectionConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deletionProtectionConfig This parameter is required.
+         */
+        public Builder deletionProtectionConfig(final com.aliyun.ros.cdk.nlb.RosLoadBalancer.DeletionProtectionConfigProperty deletionProtectionConfig) {
+            this.props.deletionProtectionConfig(deletionProtectionConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param loadBalancerBillingConfig This parameter is required.
          */
         public Builder loadBalancerBillingConfig(final com.aliyun.ros.cdk.core.IResolvable loadBalancerBillingConfig) {
@@ -871,6 +1651,23 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param modificationProtectionConfig This parameter is required.
+         */
+        public Builder modificationProtectionConfig(final com.aliyun.ros.cdk.core.IResolvable modificationProtectionConfig) {
+            this.props.modificationProtectionConfig(modificationProtectionConfig);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param modificationProtectionConfig This parameter is required.
+         */
+        public Builder modificationProtectionConfig(final com.aliyun.ros.cdk.nlb.RosLoadBalancer.ModificationProtectionConfigProperty modificationProtectionConfig) {
+            this.props.modificationProtectionConfig(modificationProtectionConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param resourceGroupId This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
@@ -883,6 +1680,15 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tags This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.nlb.RosLoadBalancer.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

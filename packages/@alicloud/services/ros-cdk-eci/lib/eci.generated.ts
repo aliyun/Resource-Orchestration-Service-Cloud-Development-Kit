@@ -19,16 +19,6 @@ export interface RosContainerGroupProps {
     readonly containerGroupName: string | ros.IResolvable;
 
     /**
-     * @Property securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
-     */
-    readonly securityGroupId: string | ros.IResolvable;
-
-    /**
-     * @Property vSwitchId: The ID of the specified VSwitch. Currently, ECI instances can only be deployed in VPCs.
-     */
-    readonly vSwitchId: string | ros.IResolvable;
-
-    /**
      * @Property acrRegistryInfo: Enterprise Edition access credential configuration information.
      */
     readonly acrRegistryInfo?: Array<RosContainerGroup.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable;
@@ -117,6 +107,13 @@ export interface RosContainerGroupProps {
     readonly securityContextSysctl?: Array<RosContainerGroup.SecurityContextSysctlProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
+     * If no security group is specified, the system automatically uses the default security group in the region you select.
+     * If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property slsEnable: Enable user log collection. The default is False.
      */
     readonly slsEnable?: boolean | ros.IResolvable;
@@ -149,6 +146,13 @@ export interface RosContainerGroupProps {
      * @Property volume: The data volume. You can specify a maximum of 20 data volumes.
      */
     readonly volume?: Array<RosContainerGroup.VolumeProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the specified VSwitch.
+     * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+     * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+     */
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
@@ -209,9 +213,7 @@ function RosContainerGroupPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('hostAliase', ros.listValidator(RosContainerGroup_HostAliasePropertyValidator))(properties.hostAliase));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('terminationGracePeriodSeconds', ros.validateNumber)(properties.terminationGracePeriodSeconds));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('slsEnable', ros.validateBoolean)(properties.slsEnable));
     if(properties.restartPolicy && (typeof properties.restartPolicy) !== 'object') {
@@ -257,8 +259,6 @@ function rosContainerGroupPropsToRosTemplate(properties: any, enableResourceProp
     return {
       Container: ros.listMapper(rosContainerGroupContainerPropertyToRosTemplate)(properties.container),
       ContainerGroupName: ros.stringToRosTemplate(properties.containerGroupName),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       AcrRegistryInfo: ros.listMapper(rosContainerGroupAcrRegistryInfoPropertyToRosTemplate)(properties.acrRegistryInfo),
       ActiveDeadlineSeconds: ros.numberToRosTemplate(properties.activeDeadlineSeconds),
       AutoMatchImageCache: ros.booleanToRosTemplate(properties.autoMatchImageCache),
@@ -276,12 +276,14 @@ function rosContainerGroupPropsToRosTemplate(properties: any, enableResourceProp
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       RestartPolicy: ros.stringToRosTemplate(properties.restartPolicy),
       SecurityContextSysctl: ros.listMapper(rosContainerGroupSecurityContextSysctlPropertyToRosTemplate)(properties.securityContextSysctl),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SlsEnable: ros.booleanToRosTemplate(properties.slsEnable),
       SpotPriceLimit: ros.numberToRosTemplate(properties.spotPriceLimit),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
       Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
       TerminationGracePeriodSeconds: ros.numberToRosTemplate(properties.terminationGracePeriodSeconds),
       Volume: ros.listMapper(rosContainerGroupVolumePropertyToRosTemplate)(properties.volume),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
     };
 }
@@ -363,16 +365,6 @@ export class RosContainerGroup extends ros.RosResource {
      * The length is [2,128] English lowercase letters, numbers or hyphens (-), cannot begin or end with a hyphens.
      */
     public containerGroupName: string | ros.IResolvable;
-
-    /**
-     * @Property securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
-     */
-    public securityGroupId: string | ros.IResolvable;
-
-    /**
-     * @Property vSwitchId: The ID of the specified VSwitch. Currently, ECI instances can only be deployed in VPCs.
-     */
-    public vSwitchId: string | ros.IResolvable;
 
     /**
      * @Property acrRegistryInfo: Enterprise Edition access credential configuration information.
@@ -463,6 +455,13 @@ export class RosContainerGroup extends ros.RosResource {
     public securityContextSysctl: Array<RosContainerGroup.SecurityContextSysctlProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
+     * If no security group is specified, the system automatically uses the default security group in the region you select.
+     * If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+     */
+    public securityGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property slsEnable: Enable user log collection. The default is False.
      */
     public slsEnable: boolean | ros.IResolvable | undefined;
@@ -497,6 +496,13 @@ export class RosContainerGroup extends ros.RosResource {
     public volume: Array<RosContainerGroup.VolumeProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property vSwitchId: The ID of the specified VSwitch.
+     * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+     * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+     */
+    public vSwitchId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property zoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
      */
     public zoneId: string | ros.IResolvable | undefined;
@@ -524,8 +530,6 @@ export class RosContainerGroup extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.container = props.container;
         this.containerGroupName = props.containerGroupName;
-        this.securityGroupId = props.securityGroupId;
-        this.vSwitchId = props.vSwitchId;
         this.acrRegistryInfo = props.acrRegistryInfo;
         this.activeDeadlineSeconds = props.activeDeadlineSeconds;
         this.autoMatchImageCache = props.autoMatchImageCache;
@@ -543,12 +547,14 @@ export class RosContainerGroup extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.restartPolicy = props.restartPolicy;
         this.securityContextSysctl = props.securityContextSysctl;
+        this.securityGroupId = props.securityGroupId;
         this.slsEnable = props.slsEnable;
         this.spotPriceLimit = props.spotPriceLimit;
         this.spotStrategy = props.spotStrategy;
         this.tag = props.tag;
         this.terminationGracePeriodSeconds = props.terminationGracePeriodSeconds;
         this.volume = props.volume;
+        this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
     }
 
@@ -557,8 +563,6 @@ export class RosContainerGroup extends ros.RosResource {
         return {
             container: this.container,
             containerGroupName: this.containerGroupName,
-            securityGroupId: this.securityGroupId,
-            vSwitchId: this.vSwitchId,
             acrRegistryInfo: this.acrRegistryInfo,
             activeDeadlineSeconds: this.activeDeadlineSeconds,
             autoMatchImageCache: this.autoMatchImageCache,
@@ -576,12 +580,14 @@ export class RosContainerGroup extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             restartPolicy: this.restartPolicy,
             securityContextSysctl: this.securityContextSysctl,
+            securityGroupId: this.securityGroupId,
             slsEnable: this.slsEnable,
             spotPriceLimit: this.spotPriceLimit,
             spotStrategy: this.spotStrategy,
             tag: this.tag,
             terminationGracePeriodSeconds: this.terminationGracePeriodSeconds,
             volume: this.volume,
+            vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
         };
     }

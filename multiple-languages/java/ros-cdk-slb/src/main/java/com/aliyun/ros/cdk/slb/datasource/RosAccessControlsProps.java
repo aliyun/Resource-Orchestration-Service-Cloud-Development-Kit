@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::SLB::AccessControls</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.433Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.926Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.RosAccessControlsProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessControlsProps.Jsii$Proxy.class)
 public interface RosAccessControlsProps extends software.amazon.jsii.JsiiSerializable {

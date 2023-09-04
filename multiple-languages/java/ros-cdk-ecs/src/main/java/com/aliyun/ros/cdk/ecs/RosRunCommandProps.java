@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a <code>ALIYUN::ECS::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.695Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.115Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRunCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RosRunCommandProps.Jsii$Proxy.class)
 public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializable {
@@ -76,6 +76,12 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTimed() {
         return null;
     }
@@ -114,6 +120,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object parameters;
         java.lang.Object runAgainOn;
         java.lang.Object sync;
+        java.util.List<com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty> tags;
         java.lang.Object timed;
         java.lang.Object timeout;
         java.lang.Object workingDir;
@@ -359,6 +366,17 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRunCommandProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRunCommandProps#getTimed}
          * @param timed the value to be set.
          * @return {@code this}
@@ -446,6 +464,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object parameters;
         private final java.lang.Object runAgainOn;
         private final java.lang.Object sync;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty> tags;
         private final java.lang.Object timed;
         private final java.lang.Object timeout;
         private final java.lang.Object workingDir;
@@ -468,6 +487,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.runAgainOn = software.amazon.jsii.Kernel.get(this, "runAgainOn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sync = software.amazon.jsii.Kernel.get(this, "sync", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty.class)));
             this.timed = software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.workingDir = software.amazon.jsii.Kernel.get(this, "workingDir", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -476,6 +496,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.commandContent = java.util.Objects.requireNonNull(builder.commandContent, "commandContent is required");
@@ -490,6 +511,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             this.parameters = builder.parameters;
             this.runAgainOn = builder.runAgainOn;
             this.sync = builder.sync;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty>)builder.tags;
             this.timed = builder.timed;
             this.timeout = builder.timeout;
             this.workingDir = builder.workingDir;
@@ -556,6 +578,11 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosRunCommand.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         public final java.lang.Object getTimed() {
             return this.timed;
         }
@@ -606,6 +633,9 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getSync() != null) {
                 data.set("sync", om.valueToTree(this.getSync()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getTimed() != null) {
                 data.set("timed", om.valueToTree(this.getTimed()));
             }
@@ -645,6 +675,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
             if (this.runAgainOn != null ? !this.runAgainOn.equals(that.runAgainOn) : that.runAgainOn != null) return false;
             if (this.sync != null ? !this.sync.equals(that.sync) : that.sync != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.timed != null ? !this.timed.equals(that.timed) : that.timed != null) return false;
             if (this.timeout != null ? !this.timeout.equals(that.timeout) : that.timeout != null) return false;
             return this.workingDir != null ? this.workingDir.equals(that.workingDir) : that.workingDir == null;
@@ -664,6 +695,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             result = 31 * result + (this.runAgainOn != null ? this.runAgainOn.hashCode() : 0);
             result = 31 * result + (this.sync != null ? this.sync.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timed != null ? this.timed.hashCode() : 0);
             result = 31 * result + (this.timeout != null ? this.timeout.hashCode() : 0);
             result = 31 * result + (this.workingDir != null ? this.workingDir.hashCode() : 0);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  <code>ALIYUN::POLARDB::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.355Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.805Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -213,6 +213,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getArchitecture() {
+        return software.amazon.jsii.Kernel.get(this, "architecture", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setArchitecture(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "architecture", value);
+    }
+
+    /**
+     */
+    public void setArchitecture(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "architecture", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -357,6 +375,42 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbMinorVersion() {
+        return software.amazon.jsii.Kernel.get(this, "dbMinorVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDbMinorVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbMinorVersion", value);
+    }
+
+    /**
+     */
+    public void setDbMinorVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbMinorVersion", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbNodeNum() {
+        return software.amazon.jsii.Kernel.get(this, "dbNodeNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDbNodeNum(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "dbNodeNum", value);
+    }
+
+    /**
+     */
+    public void setDbNodeNum(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbNodeNum", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDefaultTimeZone() {
         return software.amazon.jsii.Kernel.get(this, "defaultTimeZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -389,6 +443,78 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setGdnId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "gdnId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHotStandbyCluster() {
+        return software.amazon.jsii.Kernel.get(this, "hotStandbyCluster", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHotStandbyCluster(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "hotStandbyCluster", value);
+    }
+
+    /**
+     */
+    public void setHotStandbyCluster(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "hotStandbyCluster", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLoosePolarLogBin() {
+        return software.amazon.jsii.Kernel.get(this, "loosePolarLogBin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLoosePolarLogBin(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "loosePolarLogBin", value);
+    }
+
+    /**
+     */
+    public void setLoosePolarLogBin(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "loosePolarLogBin", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLooseXEngine() {
+        return software.amazon.jsii.Kernel.get(this, "looseXEngine", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLooseXEngine(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "looseXEngine", value);
+    }
+
+    /**
+     */
+    public void setLooseXEngine(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "looseXEngine", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLooseXEngineUseMemoryPct() {
+        return software.amazon.jsii.Kernel.get(this, "looseXEngineUseMemoryPct", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLooseXEngineUseMemoryPct(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "looseXEngineUseMemoryPct", value);
+    }
+
+    /**
+     */
+    public void setLooseXEngineUseMemoryPct(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "looseXEngineUseMemoryPct", value);
     }
 
     /**
@@ -429,6 +555,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getParameterGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "parameterGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setParameterGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "parameterGroupId", value);
+    }
+
+    /**
+     */
+    public void setParameterGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "parameterGroupId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -461,6 +605,42 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPeriodUnit(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "periodUnit", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProxyClass() {
+        return software.amazon.jsii.Kernel.get(this, "proxyClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProxyClass(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "proxyClass", value);
+    }
+
+    /**
+     */
+    public void setProxyClass(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "proxyClass", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProxyType() {
+        return software.amazon.jsii.Kernel.get(this, "proxyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProxyType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "proxyType", value);
+    }
+
+    /**
+     */
+    public void setProxyType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "proxyType", value);
     }
 
     /**
@@ -657,6 +837,132 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSourceResourceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sourceResourceId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStandbyAz() {
+        return software.amazon.jsii.Kernel.get(this, "standbyAz", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStandbyAz(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "standbyAz", value);
+    }
+
+    /**
+     */
+    public void setStandbyAz(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "standbyAz", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageAutoScale() {
+        return software.amazon.jsii.Kernel.get(this, "storageAutoScale", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageAutoScale(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "storageAutoScale", value);
+    }
+
+    /**
+     */
+    public void setStorageAutoScale(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageAutoScale", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStoragePayType() {
+        return software.amazon.jsii.Kernel.get(this, "storagePayType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStoragePayType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "storagePayType", value);
+    }
+
+    /**
+     */
+    public void setStoragePayType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storagePayType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageSpace() {
+        return software.amazon.jsii.Kernel.get(this, "storageSpace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageSpace(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "storageSpace", value);
+    }
+
+    /**
+     */
+    public void setStorageSpace(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageSpace", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageType() {
+        return software.amazon.jsii.Kernel.get(this, "storageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "storageType", value);
+    }
+
+    /**
+     */
+    public void setStorageType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageUpperBound() {
+        return software.amazon.jsii.Kernel.get(this, "storageUpperBound", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageUpperBound(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "storageUpperBound", value);
+    }
+
+    /**
+     */
+    public void setStorageUpperBound(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageUpperBound", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStrictConsistency() {
+        return software.amazon.jsii.Kernel.get(this, "strictConsistency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStrictConsistency(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "strictConsistency", value);
+    }
+
+    /**
+     */
+    public void setStrictConsistency(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "strictConsistency", value);
     }
 
     /**
@@ -1196,6 +1502,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param architecture This parameter is required.
+         */
+        public Builder architecture(final java.lang.String architecture) {
+            this.props.architecture(architecture);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param architecture This parameter is required.
+         */
+        public Builder architecture(final com.aliyun.ros.cdk.core.IResolvable architecture) {
+            this.props.architecture(architecture);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param autoRenewPeriod This parameter is required.
          */
         public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
@@ -1332,6 +1655,40 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param dbMinorVersion This parameter is required.
+         */
+        public Builder dbMinorVersion(final java.lang.String dbMinorVersion) {
+            this.props.dbMinorVersion(dbMinorVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbMinorVersion This parameter is required.
+         */
+        public Builder dbMinorVersion(final com.aliyun.ros.cdk.core.IResolvable dbMinorVersion) {
+            this.props.dbMinorVersion(dbMinorVersion);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param dbNodeNum This parameter is required.
+         */
+        public Builder dbNodeNum(final java.lang.Number dbNodeNum) {
+            this.props.dbNodeNum(dbNodeNum);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbNodeNum This parameter is required.
+         */
+        public Builder dbNodeNum(final com.aliyun.ros.cdk.core.IResolvable dbNodeNum) {
+            this.props.dbNodeNum(dbNodeNum);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param defaultTimeZone This parameter is required.
          */
         public Builder defaultTimeZone(final java.lang.String defaultTimeZone) {
@@ -1361,6 +1718,74 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder gdnId(final com.aliyun.ros.cdk.core.IResolvable gdnId) {
             this.props.gdnId(gdnId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param hotStandbyCluster This parameter is required.
+         */
+        public Builder hotStandbyCluster(final java.lang.String hotStandbyCluster) {
+            this.props.hotStandbyCluster(hotStandbyCluster);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param hotStandbyCluster This parameter is required.
+         */
+        public Builder hotStandbyCluster(final com.aliyun.ros.cdk.core.IResolvable hotStandbyCluster) {
+            this.props.hotStandbyCluster(hotStandbyCluster);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param loosePolarLogBin This parameter is required.
+         */
+        public Builder loosePolarLogBin(final java.lang.String loosePolarLogBin) {
+            this.props.loosePolarLogBin(loosePolarLogBin);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param loosePolarLogBin This parameter is required.
+         */
+        public Builder loosePolarLogBin(final com.aliyun.ros.cdk.core.IResolvable loosePolarLogBin) {
+            this.props.loosePolarLogBin(loosePolarLogBin);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param looseXEngine This parameter is required.
+         */
+        public Builder looseXEngine(final java.lang.String looseXEngine) {
+            this.props.looseXEngine(looseXEngine);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param looseXEngine This parameter is required.
+         */
+        public Builder looseXEngine(final com.aliyun.ros.cdk.core.IResolvable looseXEngine) {
+            this.props.looseXEngine(looseXEngine);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param looseXEngineUseMemoryPct This parameter is required.
+         */
+        public Builder looseXEngineUseMemoryPct(final java.lang.Number looseXEngineUseMemoryPct) {
+            this.props.looseXEngineUseMemoryPct(looseXEngineUseMemoryPct);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param looseXEngineUseMemoryPct This parameter is required.
+         */
+        public Builder looseXEngineUseMemoryPct(final com.aliyun.ros.cdk.core.IResolvable looseXEngineUseMemoryPct) {
+            this.props.looseXEngineUseMemoryPct(looseXEngineUseMemoryPct);
             return this;
         }
 
@@ -1400,6 +1825,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param parameterGroupId This parameter is required.
+         */
+        public Builder parameterGroupId(final java.lang.String parameterGroupId) {
+            this.props.parameterGroupId(parameterGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param parameterGroupId This parameter is required.
+         */
+        public Builder parameterGroupId(final com.aliyun.ros.cdk.core.IResolvable parameterGroupId) {
+            this.props.parameterGroupId(parameterGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param period This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
@@ -1429,6 +1871,40 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param proxyClass This parameter is required.
+         */
+        public Builder proxyClass(final java.lang.String proxyClass) {
+            this.props.proxyClass(proxyClass);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param proxyClass This parameter is required.
+         */
+        public Builder proxyClass(final com.aliyun.ros.cdk.core.IResolvable proxyClass) {
+            this.props.proxyClass(proxyClass);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param proxyType This parameter is required.
+         */
+        public Builder proxyType(final java.lang.String proxyType) {
+            this.props.proxyType(proxyType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param proxyType This parameter is required.
+         */
+        public Builder proxyType(final com.aliyun.ros.cdk.core.IResolvable proxyType) {
+            this.props.proxyType(proxyType);
             return this;
         }
 
@@ -1599,6 +2075,125 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder sourceResourceId(final com.aliyun.ros.cdk.core.IResolvable sourceResourceId) {
             this.props.sourceResourceId(sourceResourceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param standbyAz This parameter is required.
+         */
+        public Builder standbyAz(final java.lang.String standbyAz) {
+            this.props.standbyAz(standbyAz);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param standbyAz This parameter is required.
+         */
+        public Builder standbyAz(final com.aliyun.ros.cdk.core.IResolvable standbyAz) {
+            this.props.standbyAz(standbyAz);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageAutoScale This parameter is required.
+         */
+        public Builder storageAutoScale(final java.lang.String storageAutoScale) {
+            this.props.storageAutoScale(storageAutoScale);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageAutoScale This parameter is required.
+         */
+        public Builder storageAutoScale(final com.aliyun.ros.cdk.core.IResolvable storageAutoScale) {
+            this.props.storageAutoScale(storageAutoScale);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storagePayType This parameter is required.
+         */
+        public Builder storagePayType(final java.lang.String storagePayType) {
+            this.props.storagePayType(storagePayType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storagePayType This parameter is required.
+         */
+        public Builder storagePayType(final com.aliyun.ros.cdk.core.IResolvable storagePayType) {
+            this.props.storagePayType(storagePayType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageSpace This parameter is required.
+         */
+        public Builder storageSpace(final java.lang.Number storageSpace) {
+            this.props.storageSpace(storageSpace);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageSpace This parameter is required.
+         */
+        public Builder storageSpace(final com.aliyun.ros.cdk.core.IResolvable storageSpace) {
+            this.props.storageSpace(storageSpace);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageType This parameter is required.
+         */
+        public Builder storageType(final java.lang.String storageType) {
+            this.props.storageType(storageType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageType This parameter is required.
+         */
+        public Builder storageType(final com.aliyun.ros.cdk.core.IResolvable storageType) {
+            this.props.storageType(storageType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageUpperBound This parameter is required.
+         */
+        public Builder storageUpperBound(final java.lang.Number storageUpperBound) {
+            this.props.storageUpperBound(storageUpperBound);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageUpperBound This parameter is required.
+         */
+        public Builder storageUpperBound(final com.aliyun.ros.cdk.core.IResolvable storageUpperBound) {
+            this.props.storageUpperBound(storageUpperBound);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param strictConsistency This parameter is required.
+         */
+        public Builder strictConsistency(final java.lang.String strictConsistency) {
+            this.props.strictConsistency(strictConsistency);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param strictConsistency This parameter is required.
+         */
+        public Builder strictConsistency(final com.aliyun.ros.cdk.core.IResolvable strictConsistency) {
+            this.props.strictConsistency(strictConsistency);
             return this;
         }
 

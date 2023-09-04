@@ -45,6 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// TrafficMirror: VPC Traffic Mirroring
         /// VS: Video Surveillance
         /// Xtrace: Tracing Anlaysis
+        /// CDN: Content Delivery Network
         /// </remarks>
         [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ServiceName
@@ -97,6 +98,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// TrafficMirror: VPC Traffic Mirroring
             /// VS: Video Surveillance
             /// Xtrace: Tracing Anlaysis
+            /// CDN: Content Delivery Network
             /// </remarks>
             [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServiceName

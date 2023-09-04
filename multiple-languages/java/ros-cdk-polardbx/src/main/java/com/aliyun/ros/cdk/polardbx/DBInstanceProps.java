@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardbx;
 /**
  * Properties for defining a <code>ALIYUN::PolarDBX::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.406Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.861Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardbx.$Module.class, fqn = "@alicloud/ros-cdk-polardbx.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -94,6 +94,13 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property securityIpConfig: Instance whitelist configuration.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpConfig() {
+        return null;
+    }
+
+    /**
      * Property tertiaryZone: The tertiary zone.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTertiaryZone() {
@@ -132,6 +139,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object period;
         java.lang.Object resourceGroupId;
         java.lang.Object secondaryZone;
+        java.lang.Object securityIpConfig;
         java.lang.Object tertiaryZone;
         java.lang.Object usedTime;
 
@@ -404,6 +412,26 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getSecurityIpConfig}
+         * @param securityIpConfig Property securityIpConfig: Instance whitelist configuration.
+         * @return {@code this}
+         */
+        public Builder securityIpConfig(com.aliyun.ros.cdk.core.IResolvable securityIpConfig) {
+            this.securityIpConfig = securityIpConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getSecurityIpConfig}
+         * @param securityIpConfig Property securityIpConfig: Instance whitelist configuration.
+         * @return {@code this}
+         */
+        public Builder securityIpConfig(com.aliyun.ros.cdk.polardbx.RosDBInstance.SecurityIpConfigProperty securityIpConfig) {
+            this.securityIpConfig = securityIpConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getTertiaryZone}
          * @param tertiaryZone Property tertiaryZone: The tertiary zone.
          * @return {@code this}
@@ -474,6 +502,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object period;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object secondaryZone;
+        private final java.lang.Object securityIpConfig;
         private final java.lang.Object tertiaryZone;
         private final java.lang.Object usedTime;
 
@@ -496,6 +525,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secondaryZone = software.amazon.jsii.Kernel.get(this, "secondaryZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityIpConfig = software.amazon.jsii.Kernel.get(this, "securityIpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tertiaryZone = software.amazon.jsii.Kernel.get(this, "tertiaryZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.usedTime = software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -518,6 +548,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.period = builder.period;
             this.resourceGroupId = builder.resourceGroupId;
             this.secondaryZone = builder.secondaryZone;
+            this.securityIpConfig = builder.securityIpConfig;
             this.tertiaryZone = builder.tertiaryZone;
             this.usedTime = builder.usedTime;
         }
@@ -588,6 +619,11 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getSecurityIpConfig() {
+            return this.securityIpConfig;
+        }
+
+        @Override
         public final java.lang.Object getTertiaryZone() {
             return this.tertiaryZone;
         }
@@ -628,6 +664,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getSecondaryZone() != null) {
                 data.set("secondaryZone", om.valueToTree(this.getSecondaryZone()));
             }
+            if (this.getSecurityIpConfig() != null) {
+                data.set("securityIpConfig", om.valueToTree(this.getSecurityIpConfig()));
+            }
             if (this.getTertiaryZone() != null) {
                 data.set("tertiaryZone", om.valueToTree(this.getTertiaryZone()));
             }
@@ -665,6 +704,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.secondaryZone != null ? !this.secondaryZone.equals(that.secondaryZone) : that.secondaryZone != null) return false;
+            if (this.securityIpConfig != null ? !this.securityIpConfig.equals(that.securityIpConfig) : that.securityIpConfig != null) return false;
             if (this.tertiaryZone != null ? !this.tertiaryZone.equals(that.tertiaryZone) : that.tertiaryZone != null) return false;
             return this.usedTime != null ? this.usedTime.equals(that.usedTime) : that.usedTime == null;
         }
@@ -684,6 +724,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.secondaryZone != null ? this.secondaryZone.hashCode() : 0);
+            result = 31 * result + (this.securityIpConfig != null ? this.securityIpConfig.hashCode() : 0);
             result = 31 * result + (this.tertiaryZone != null ? this.tertiaryZone.hashCode() : 0);
             result = 31 * result + (this.usedTime != null ? this.usedTime.hashCode() : 0);
             return result;

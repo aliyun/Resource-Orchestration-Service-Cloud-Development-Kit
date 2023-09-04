@@ -51,6 +51,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Lindorm.RosInstance))!;
 
         /// <remarks>
+        /// <strong>Attribute</strong>: AuthInfos: The list of the Lindorm instance auth infos.
+        /// </remarks>
+        [JsiiProperty(name: "attrAuthInfos", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAuthInfos
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: InstanceId: The ID of the Lindorm instance that is created.
         /// </remarks>
         [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]

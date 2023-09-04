@@ -3,22 +3,13 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * Properties for defining a <code>ALIYUN::TSDB::HiTSDBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:02.596Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:40.077Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.HiTSDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(HiTSDBInstanceProps.Jsii$Proxy.class)
 public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property instanceClass: The type of the instance.
-     * <p>
-     * For more information, see Instance types:
-     * tsdb.1x.basic: Basic Edition I
-     * tsdb.3x.basic: Basic Edition II
-     * tsdb.4x.basic: Basic Edition III
-     * tsdb.12x.standard: Standard Edition I
-     * tsdb.24x.standard: Standard Edition II
-     * tsdb.48x.large: Ultimate Edition I
-     * tsdb.96x.large: Ultimate Edition II and so on.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceClass();
 
@@ -70,7 +61,11 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
     /**
      * Property payType: The billing method.
      * <p>
-     * Valid values: POSTPAY and PREPAY. The POSTPAY value indicates the pay-as-you-go method, and the PREPAY value indicates the subscription method. Default POSTPAY
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><strong>prepay</strong>: The prepay value indicates the subscription method.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
         return null;
@@ -117,14 +112,6 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getInstanceClass}
          * @param instanceClass Property instanceClass: The type of the instance. This parameter is required.
-         *                      For more information, see Instance types:
-         *                      tsdb.1x.basic: Basic Edition I
-         *                      tsdb.3x.basic: Basic Edition II
-         *                      tsdb.4x.basic: Basic Edition III
-         *                      tsdb.12x.standard: Standard Edition I
-         *                      tsdb.24x.standard: Standard Edition II
-         *                      tsdb.48x.large: Ultimate Edition I
-         *                      tsdb.96x.large: Ultimate Edition II and so on.
          * @return {@code this}
          */
         public Builder instanceClass(java.lang.String instanceClass) {
@@ -135,14 +122,6 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getInstanceClass}
          * @param instanceClass Property instanceClass: The type of the instance. This parameter is required.
-         *                      For more information, see Instance types:
-         *                      tsdb.1x.basic: Basic Edition I
-         *                      tsdb.3x.basic: Basic Edition II
-         *                      tsdb.4x.basic: Basic Edition III
-         *                      tsdb.12x.standard: Standard Edition I
-         *                      tsdb.24x.standard: Standard Edition II
-         *                      tsdb.48x.large: Ultimate Edition I
-         *                      tsdb.96x.large: Ultimate Edition II and so on.
          * @return {@code this}
          */
         public Builder instanceClass(com.aliyun.ros.cdk.core.IResolvable instanceClass) {
@@ -297,7 +276,11 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getPayType}
          * @param payType Property payType: The billing method.
-         *                Valid values: POSTPAY and PREPAY. The POSTPAY value indicates the pay-as-you-go method, and the PREPAY value indicates the subscription method. Default POSTPAY
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li><strong>prepay</strong>: The prepay value indicates the subscription method.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
@@ -308,7 +291,11 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getPayType}
          * @param payType Property payType: The billing method.
-         *                Valid values: POSTPAY and PREPAY. The POSTPAY value indicates the pay-as-you-go method, and the PREPAY value indicates the subscription method. Default POSTPAY
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li><strong>prepay</strong>: The prepay value indicates the subscription method.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {

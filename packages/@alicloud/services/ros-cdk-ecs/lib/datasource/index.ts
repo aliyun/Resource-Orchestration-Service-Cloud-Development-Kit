@@ -1,3 +1,4 @@
+export * from './activations';
 export * from './autosnapshotpolicies';
 export * from './commands';
 export * from './dedicatedhostclusters';

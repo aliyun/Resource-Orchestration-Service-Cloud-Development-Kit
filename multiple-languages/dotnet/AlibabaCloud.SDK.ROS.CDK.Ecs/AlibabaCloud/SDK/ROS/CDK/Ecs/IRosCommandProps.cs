@@ -71,6 +71,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to command. Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCommand.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Ecs.RosCommand.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: timeout: Total timeout when the command is executed in the instance. Input the time unit as second. Default is 60s.
         /// </remarks>
         [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -152,6 +165,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public object? Name
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tags: Tags to attach to command. Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCommand.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Ecs.RosCommand.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosCommand.ITagsProperty[]?>();
             }
 
             /// <remarks>

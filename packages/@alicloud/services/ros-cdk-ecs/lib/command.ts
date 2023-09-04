@@ -35,6 +35,11 @@ export interface CommandProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to command. Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCommand.TagsProperty[];
+
+    /**
      * Property timeout: Total timeout when the command is executed in the instance. Input the time unit as second. Default is 60s.
      */
     readonly timeout?: number | ros.IResolvable;
@@ -77,6 +82,7 @@ export class Command extends ros.Resource {
             description: props.description,
             timeout: props.timeout,
             enableParameter: props.enableParameter,
+            tags: props.tags,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCommand;

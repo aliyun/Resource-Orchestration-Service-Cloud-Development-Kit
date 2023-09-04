@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  <code>ALIYUN::ECS::InstanceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.446Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:36.841Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroup")
 public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -238,27 +238,6 @@ public class InstanceGroup extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder allocatePublicIp(final com.aliyun.ros.cdk.core.IResolvable allocatePublicIp) {
             this.props.allocatePublicIp(allocatePublicIp);
-            return this;
-        }
-
-        /**
-         * Property autoPay: Whether to pay automatically.
-         * <p>
-         * @return {@code this}
-         * @param autoPay Property autoPay: Whether to pay automatically. This parameter is required.
-         */
-        public Builder autoPay(final java.lang.Boolean autoPay) {
-            this.props.autoPay(autoPay);
-            return this;
-        }
-        /**
-         * Property autoPay: Whether to pay automatically.
-         * <p>
-         * @return {@code this}
-         * @param autoPay Property autoPay: Whether to pay automatically. This parameter is required.
-         */
-        public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
-            this.props.autoPay(autoPay);
             return this;
         }
 

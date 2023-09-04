@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * Properties for defining a <code>ALIYUN::ECI::ContainerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.348Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:36.738Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosContainerGroupProps.Jsii$Proxy.class)
 public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,14 +15,6 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getContainerGroupName();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
      */
@@ -128,6 +120,12 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSlsEnable() {
         return null;
     }
@@ -164,6 +162,12 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
@@ -180,8 +184,6 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
     public static final class Builder implements software.amazon.jsii.Builder<RosContainerGroupProps> {
         java.lang.Object container;
         java.lang.Object containerGroupName;
-        java.lang.Object securityGroupId;
-        java.lang.Object vSwitchId;
         java.lang.Object acrRegistryInfo;
         java.lang.Object activeDeadlineSeconds;
         java.lang.Object autoMatchImageCache;
@@ -199,12 +201,14 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object resourceGroupId;
         java.lang.Object restartPolicy;
         java.lang.Object securityContextSysctl;
+        java.lang.Object securityGroupId;
         java.lang.Object slsEnable;
         java.lang.Object spotPriceLimit;
         java.lang.Object spotStrategy;
         java.lang.Object tag;
         java.lang.Object terminationGracePeriodSeconds;
         java.lang.Object volume;
+        java.lang.Object vSwitchId;
         java.lang.Object zoneId;
 
         /**
@@ -244,46 +248,6 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
          */
         public Builder containerGroupName(com.aliyun.ros.cdk.core.IResolvable containerGroupName) {
             this.containerGroupName = containerGroupName;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosContainerGroupProps#getSecurityGroupId}
-         * @param securityGroupId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder securityGroupId(java.lang.String securityGroupId) {
-            this.securityGroupId = securityGroupId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosContainerGroupProps#getSecurityGroupId}
-         * @param securityGroupId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
-            this.securityGroupId = securityGroupId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosContainerGroupProps#getVSwitchId}
-         * @param vSwitchId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder vSwitchId(java.lang.String vSwitchId) {
-            this.vSwitchId = vSwitchId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosContainerGroupProps#getVSwitchId}
-         * @param vSwitchId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
-            this.vSwitchId = vSwitchId;
             return this;
         }
 
@@ -628,6 +592,26 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(java.lang.String securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getSlsEnable}
          * @param slsEnable the value to be set.
          * @return {@code this}
@@ -748,6 +732,26 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link RosContainerGroupProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContainerGroupProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosContainerGroupProps#getZoneId}
          * @param zoneId the value to be set.
          * @return {@code this}
@@ -785,8 +789,6 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosContainerGroupProps {
         private final java.lang.Object container;
         private final java.lang.Object containerGroupName;
-        private final java.lang.Object securityGroupId;
-        private final java.lang.Object vSwitchId;
         private final java.lang.Object acrRegistryInfo;
         private final java.lang.Object activeDeadlineSeconds;
         private final java.lang.Object autoMatchImageCache;
@@ -804,12 +806,14 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object restartPolicy;
         private final java.lang.Object securityContextSysctl;
+        private final java.lang.Object securityGroupId;
         private final java.lang.Object slsEnable;
         private final java.lang.Object spotPriceLimit;
         private final java.lang.Object spotStrategy;
         private final java.lang.Object tag;
         private final java.lang.Object terminationGracePeriodSeconds;
         private final java.lang.Object volume;
+        private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
 
         /**
@@ -820,8 +824,6 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             super(objRef);
             this.container = software.amazon.jsii.Kernel.get(this, "container", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerGroupName = software.amazon.jsii.Kernel.get(this, "containerGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.acrRegistryInfo = software.amazon.jsii.Kernel.get(this, "acrRegistryInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.activeDeadlineSeconds = software.amazon.jsii.Kernel.get(this, "activeDeadlineSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoMatchImageCache = software.amazon.jsii.Kernel.get(this, "autoMatchImageCache", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -839,12 +841,14 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.restartPolicy = software.amazon.jsii.Kernel.get(this, "restartPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityContextSysctl = software.amazon.jsii.Kernel.get(this, "securityContextSysctl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slsEnable = software.amazon.jsii.Kernel.get(this, "slsEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tag = software.amazon.jsii.Kernel.get(this, "tag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.terminationGracePeriodSeconds = software.amazon.jsii.Kernel.get(this, "terminationGracePeriodSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.volume = software.amazon.jsii.Kernel.get(this, "volume", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -855,8 +859,6 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.container = java.util.Objects.requireNonNull(builder.container, "container is required");
             this.containerGroupName = java.util.Objects.requireNonNull(builder.containerGroupName, "containerGroupName is required");
-            this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
-            this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.acrRegistryInfo = builder.acrRegistryInfo;
             this.activeDeadlineSeconds = builder.activeDeadlineSeconds;
             this.autoMatchImageCache = builder.autoMatchImageCache;
@@ -874,12 +876,14 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             this.resourceGroupId = builder.resourceGroupId;
             this.restartPolicy = builder.restartPolicy;
             this.securityContextSysctl = builder.securityContextSysctl;
+            this.securityGroupId = builder.securityGroupId;
             this.slsEnable = builder.slsEnable;
             this.spotPriceLimit = builder.spotPriceLimit;
             this.spotStrategy = builder.spotStrategy;
             this.tag = builder.tag;
             this.terminationGracePeriodSeconds = builder.terminationGracePeriodSeconds;
             this.volume = builder.volume;
+            this.vSwitchId = builder.vSwitchId;
             this.zoneId = builder.zoneId;
         }
 
@@ -891,16 +895,6 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getContainerGroupName() {
             return this.containerGroupName;
-        }
-
-        @Override
-        public final java.lang.Object getSecurityGroupId() {
-            return this.securityGroupId;
-        }
-
-        @Override
-        public final java.lang.Object getVSwitchId() {
-            return this.vSwitchId;
         }
 
         @Override
@@ -989,6 +983,11 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getSecurityGroupId() {
+            return this.securityGroupId;
+        }
+
+        @Override
         public final java.lang.Object getSlsEnable() {
             return this.slsEnable;
         }
@@ -1019,6 +1018,11 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getVSwitchId() {
+            return this.vSwitchId;
+        }
+
+        @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
@@ -1031,8 +1035,6 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
             data.set("container", om.valueToTree(this.getContainer()));
             data.set("containerGroupName", om.valueToTree(this.getContainerGroupName()));
-            data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
-            data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             if (this.getAcrRegistryInfo() != null) {
                 data.set("acrRegistryInfo", om.valueToTree(this.getAcrRegistryInfo()));
             }
@@ -1084,6 +1086,9 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             if (this.getSecurityContextSysctl() != null) {
                 data.set("securityContextSysctl", om.valueToTree(this.getSecurityContextSysctl()));
             }
+            if (this.getSecurityGroupId() != null) {
+                data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
+            }
             if (this.getSlsEnable() != null) {
                 data.set("slsEnable", om.valueToTree(this.getSlsEnable()));
             }
@@ -1101,6 +1106,9 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             }
             if (this.getVolume() != null) {
                 data.set("volume", om.valueToTree(this.getVolume()));
+            }
+            if (this.getVSwitchId() != null) {
+                data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
@@ -1125,8 +1133,6 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
 
             if (!container.equals(that.container)) return false;
             if (!containerGroupName.equals(that.containerGroupName)) return false;
-            if (!securityGroupId.equals(that.securityGroupId)) return false;
-            if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (this.acrRegistryInfo != null ? !this.acrRegistryInfo.equals(that.acrRegistryInfo) : that.acrRegistryInfo != null) return false;
             if (this.activeDeadlineSeconds != null ? !this.activeDeadlineSeconds.equals(that.activeDeadlineSeconds) : that.activeDeadlineSeconds != null) return false;
             if (this.autoMatchImageCache != null ? !this.autoMatchImageCache.equals(that.autoMatchImageCache) : that.autoMatchImageCache != null) return false;
@@ -1144,12 +1150,14 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.restartPolicy != null ? !this.restartPolicy.equals(that.restartPolicy) : that.restartPolicy != null) return false;
             if (this.securityContextSysctl != null ? !this.securityContextSysctl.equals(that.securityContextSysctl) : that.securityContextSysctl != null) return false;
+            if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.slsEnable != null ? !this.slsEnable.equals(that.slsEnable) : that.slsEnable != null) return false;
             if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.tag != null ? !this.tag.equals(that.tag) : that.tag != null) return false;
             if (this.terminationGracePeriodSeconds != null ? !this.terminationGracePeriodSeconds.equals(that.terminationGracePeriodSeconds) : that.terminationGracePeriodSeconds != null) return false;
             if (this.volume != null ? !this.volume.equals(that.volume) : that.volume != null) return false;
+            if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
@@ -1157,8 +1165,6 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
         public final int hashCode() {
             int result = this.container.hashCode();
             result = 31 * result + (this.containerGroupName.hashCode());
-            result = 31 * result + (this.securityGroupId.hashCode());
-            result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.acrRegistryInfo != null ? this.acrRegistryInfo.hashCode() : 0);
             result = 31 * result + (this.activeDeadlineSeconds != null ? this.activeDeadlineSeconds.hashCode() : 0);
             result = 31 * result + (this.autoMatchImageCache != null ? this.autoMatchImageCache.hashCode() : 0);
@@ -1176,12 +1182,14 @@ public interface RosContainerGroupProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.restartPolicy != null ? this.restartPolicy.hashCode() : 0);
             result = 31 * result + (this.securityContextSysctl != null ? this.securityContextSysctl.hashCode() : 0);
+            result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.slsEnable != null ? this.slsEnable.hashCode() : 0);
             result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.tag != null ? this.tag.hashCode() : 0);
             result = 31 * result + (this.terminationGracePeriodSeconds != null ? this.terminationGracePeriodSeconds.hashCode() : 0);
             result = 31 * result + (this.volume != null ? this.volume.hashCode() : 0);
+            result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }

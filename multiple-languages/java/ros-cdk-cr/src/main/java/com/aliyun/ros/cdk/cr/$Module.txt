@@ -2,6 +2,8 @@
 @alicloud/ros-cdk-cr.InstanceEndpointAclPolicy=com.aliyun.ros.cdk.cr.InstanceEndpointAclPolicy
 @alicloud/ros-cdk-cr.InstanceEndpointAclPolicyProps=com.aliyun.ros.cdk.cr.InstanceEndpointAclPolicyProps
 @alicloud/ros-cdk-cr.InstanceProps=com.aliyun.ros.cdk.cr.InstanceProps
+@alicloud/ros-cdk-cr.InstanceVpcEndpointLinkedVpc=com.aliyun.ros.cdk.cr.InstanceVpcEndpointLinkedVpc
+@alicloud/ros-cdk-cr.InstanceVpcEndpointLinkedVpcProps=com.aliyun.ros.cdk.cr.InstanceVpcEndpointLinkedVpcProps
 @alicloud/ros-cdk-cr.Namespace=com.aliyun.ros.cdk.cr.Namespace
 @alicloud/ros-cdk-cr.NamespaceProps=com.aliyun.ros.cdk.cr.NamespaceProps
 @alicloud/ros-cdk-cr.Repository=com.aliyun.ros.cdk.cr.Repository
@@ -10,6 +12,8 @@
 @alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicy=com.aliyun.ros.cdk.cr.RosInstanceEndpointAclPolicy
 @alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicyProps=com.aliyun.ros.cdk.cr.RosInstanceEndpointAclPolicyProps
 @alicloud/ros-cdk-cr.RosInstanceProps=com.aliyun.ros.cdk.cr.RosInstanceProps
+@alicloud/ros-cdk-cr.RosInstanceVpcEndpointLinkedVpc=com.aliyun.ros.cdk.cr.RosInstanceVpcEndpointLinkedVpc
+@alicloud/ros-cdk-cr.RosInstanceVpcEndpointLinkedVpcProps=com.aliyun.ros.cdk.cr.RosInstanceVpcEndpointLinkedVpcProps
 @alicloud/ros-cdk-cr.RosNamespace=com.aliyun.ros.cdk.cr.RosNamespace
 @alicloud/ros-cdk-cr.RosNamespaceProps=com.aliyun.ros.cdk.cr.RosNamespaceProps
 @alicloud/ros-cdk-cr.RosRepository=com.aliyun.ros.cdk.cr.RosRepository

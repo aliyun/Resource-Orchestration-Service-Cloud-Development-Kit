@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * Properties for defining a <code>ALIYUN::ECI::ContainerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.320Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:36.711Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.ContainerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ContainerGroupProps.Jsii$Proxy.class)
 public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,20 +19,6 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
      * The length is [2,128] English lowercase letters, numbers or hyphens (-), cannot begin or end with a hyphens.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getContainerGroupName();
-
-    /**
-     * Property securityGroupId: The ID of the security group to which the instance belongs.
-     * <p>
-     * Instances in the same security group can access one another.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId();
-
-    /**
-     * Property vSwitchId: The ID of the specified VSwitch.
-     * <p>
-     * Currently, ECI instances can only be deployed in VPCs.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
      * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
@@ -162,6 +148,17 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     * Property securityGroupId: The ID of the security group to which the instance belongs.
+     * <p>
+     * Instances in the same security group can access one another.
+     * If no security group is specified, the system automatically uses the default security group in the region you select.
+     * If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return null;
+    }
+
+    /**
      * Property slsEnable: Enable user log collection.
      * <p>
      * The default is False.
@@ -217,6 +214,16 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     * Property vSwitchId: The ID of the specified VSwitch.
+     * <p>
+     * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+     * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+        return null;
+    }
+
+    /**
      * Property zoneId: The ID of the zone in which the instance resides.
      * <p>
      * If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
@@ -237,8 +244,6 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
     public static final class Builder implements software.amazon.jsii.Builder<ContainerGroupProps> {
         java.lang.Object container;
         java.lang.Object containerGroupName;
-        java.lang.Object securityGroupId;
-        java.lang.Object vSwitchId;
         java.lang.Object acrRegistryInfo;
         java.lang.Object activeDeadlineSeconds;
         java.lang.Object autoMatchImageCache;
@@ -256,12 +261,14 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object resourceGroupId;
         java.lang.Object restartPolicy;
         java.lang.Object securityContextSysctl;
+        java.lang.Object securityGroupId;
         java.lang.Object slsEnable;
         java.lang.Object spotPriceLimit;
         java.lang.Object spotStrategy;
         java.lang.Object tag;
         java.lang.Object terminationGracePeriodSeconds;
         java.lang.Object volume;
+        java.lang.Object vSwitchId;
         java.lang.Object zoneId;
 
         /**
@@ -303,50 +310,6 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
          */
         public Builder containerGroupName(com.aliyun.ros.cdk.core.IResolvable containerGroupName) {
             this.containerGroupName = containerGroupName;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ContainerGroupProps#getSecurityGroupId}
-         * @param securityGroupId Property securityGroupId: The ID of the security group to which the instance belongs. This parameter is required.
-         *                        Instances in the same security group can access one another.
-         * @return {@code this}
-         */
-        public Builder securityGroupId(java.lang.String securityGroupId) {
-            this.securityGroupId = securityGroupId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ContainerGroupProps#getSecurityGroupId}
-         * @param securityGroupId Property securityGroupId: The ID of the security group to which the instance belongs. This parameter is required.
-         *                        Instances in the same security group can access one another.
-         * @return {@code this}
-         */
-        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
-            this.securityGroupId = securityGroupId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ContainerGroupProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch. This parameter is required.
-         *                  Currently, ECI instances can only be deployed in VPCs.
-         * @return {@code this}
-         */
-        public Builder vSwitchId(java.lang.String vSwitchId) {
-            this.vSwitchId = vSwitchId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ContainerGroupProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch. This parameter is required.
-         *                  Currently, ECI instances can only be deployed in VPCs.
-         * @return {@code this}
-         */
-        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
-            this.vSwitchId = vSwitchId;
             return this;
         }
 
@@ -701,6 +664,32 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link ContainerGroupProps#getSecurityGroupId}
+         * @param securityGroupId Property securityGroupId: The ID of the security group to which the instance belongs.
+         *                        Instances in the same security group can access one another.
+         *                        If no security group is specified, the system automatically uses the default security group in the region you select.
+         *                        If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(java.lang.String securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ContainerGroupProps#getSecurityGroupId}
+         * @param securityGroupId Property securityGroupId: The ID of the security group to which the instance belongs.
+         *                        Instances in the same security group can access one another.
+         *                        If no security group is specified, the system automatically uses the default security group in the region you select.
+         *                        If you do not have a default security group in this region, the system automatically creates a default security group and adds the container protocol and port you declared to the inbound direction rules of this security group.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ContainerGroupProps#getSlsEnable}
          * @param slsEnable Property slsEnable: Enable user log collection.
          *                  The default is False.
@@ -837,6 +826,30 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link ContainerGroupProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch.
+         *                  If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+         *                  If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+         * @return {@code this}
+         */
+        public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ContainerGroupProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: The ID of the specified VSwitch.
+         *                  If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
+         *                  If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ContainerGroupProps#getZoneId}
          * @param zoneId Property zoneId: The ID of the zone in which the instance resides.
          *               If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
@@ -876,8 +889,6 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ContainerGroupProps {
         private final java.lang.Object container;
         private final java.lang.Object containerGroupName;
-        private final java.lang.Object securityGroupId;
-        private final java.lang.Object vSwitchId;
         private final java.lang.Object acrRegistryInfo;
         private final java.lang.Object activeDeadlineSeconds;
         private final java.lang.Object autoMatchImageCache;
@@ -895,12 +906,14 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object restartPolicy;
         private final java.lang.Object securityContextSysctl;
+        private final java.lang.Object securityGroupId;
         private final java.lang.Object slsEnable;
         private final java.lang.Object spotPriceLimit;
         private final java.lang.Object spotStrategy;
         private final java.lang.Object tag;
         private final java.lang.Object terminationGracePeriodSeconds;
         private final java.lang.Object volume;
+        private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
 
         /**
@@ -911,8 +924,6 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
             super(objRef);
             this.container = software.amazon.jsii.Kernel.get(this, "container", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerGroupName = software.amazon.jsii.Kernel.get(this, "containerGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.acrRegistryInfo = software.amazon.jsii.Kernel.get(this, "acrRegistryInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.activeDeadlineSeconds = software.amazon.jsii.Kernel.get(this, "activeDeadlineSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoMatchImageCache = software.amazon.jsii.Kernel.get(this, "autoMatchImageCache", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -930,12 +941,14 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.restartPolicy = software.amazon.jsii.Kernel.get(this, "restartPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityContextSysctl = software.amazon.jsii.Kernel.get(this, "securityContextSysctl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.slsEnable = software.amazon.jsii.Kernel.get(this, "slsEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tag = software.amazon.jsii.Kernel.get(this, "tag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.terminationGracePeriodSeconds = software.amazon.jsii.Kernel.get(this, "terminationGracePeriodSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.volume = software.amazon.jsii.Kernel.get(this, "volume", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -946,8 +959,6 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.container = java.util.Objects.requireNonNull(builder.container, "container is required");
             this.containerGroupName = java.util.Objects.requireNonNull(builder.containerGroupName, "containerGroupName is required");
-            this.securityGroupId = java.util.Objects.requireNonNull(builder.securityGroupId, "securityGroupId is required");
-            this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.acrRegistryInfo = builder.acrRegistryInfo;
             this.activeDeadlineSeconds = builder.activeDeadlineSeconds;
             this.autoMatchImageCache = builder.autoMatchImageCache;
@@ -965,12 +976,14 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
             this.resourceGroupId = builder.resourceGroupId;
             this.restartPolicy = builder.restartPolicy;
             this.securityContextSysctl = builder.securityContextSysctl;
+            this.securityGroupId = builder.securityGroupId;
             this.slsEnable = builder.slsEnable;
             this.spotPriceLimit = builder.spotPriceLimit;
             this.spotStrategy = builder.spotStrategy;
             this.tag = builder.tag;
             this.terminationGracePeriodSeconds = builder.terminationGracePeriodSeconds;
             this.volume = builder.volume;
+            this.vSwitchId = builder.vSwitchId;
             this.zoneId = builder.zoneId;
         }
 
@@ -982,16 +995,6 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         @Override
         public final java.lang.Object getContainerGroupName() {
             return this.containerGroupName;
-        }
-
-        @Override
-        public final java.lang.Object getSecurityGroupId() {
-            return this.securityGroupId;
-        }
-
-        @Override
-        public final java.lang.Object getVSwitchId() {
-            return this.vSwitchId;
         }
 
         @Override
@@ -1080,6 +1083,11 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getSecurityGroupId() {
+            return this.securityGroupId;
+        }
+
+        @Override
         public final java.lang.Object getSlsEnable() {
             return this.slsEnable;
         }
@@ -1110,6 +1118,11 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getVSwitchId() {
+            return this.vSwitchId;
+        }
+
+        @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
@@ -1122,8 +1135,6 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
             data.set("container", om.valueToTree(this.getContainer()));
             data.set("containerGroupName", om.valueToTree(this.getContainerGroupName()));
-            data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
-            data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             if (this.getAcrRegistryInfo() != null) {
                 data.set("acrRegistryInfo", om.valueToTree(this.getAcrRegistryInfo()));
             }
@@ -1175,6 +1186,9 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
             if (this.getSecurityContextSysctl() != null) {
                 data.set("securityContextSysctl", om.valueToTree(this.getSecurityContextSysctl()));
             }
+            if (this.getSecurityGroupId() != null) {
+                data.set("securityGroupId", om.valueToTree(this.getSecurityGroupId()));
+            }
             if (this.getSlsEnable() != null) {
                 data.set("slsEnable", om.valueToTree(this.getSlsEnable()));
             }
@@ -1192,6 +1206,9 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getVolume() != null) {
                 data.set("volume", om.valueToTree(this.getVolume()));
+            }
+            if (this.getVSwitchId() != null) {
+                data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
@@ -1216,8 +1233,6 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
 
             if (!container.equals(that.container)) return false;
             if (!containerGroupName.equals(that.containerGroupName)) return false;
-            if (!securityGroupId.equals(that.securityGroupId)) return false;
-            if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (this.acrRegistryInfo != null ? !this.acrRegistryInfo.equals(that.acrRegistryInfo) : that.acrRegistryInfo != null) return false;
             if (this.activeDeadlineSeconds != null ? !this.activeDeadlineSeconds.equals(that.activeDeadlineSeconds) : that.activeDeadlineSeconds != null) return false;
             if (this.autoMatchImageCache != null ? !this.autoMatchImageCache.equals(that.autoMatchImageCache) : that.autoMatchImageCache != null) return false;
@@ -1235,12 +1250,14 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.restartPolicy != null ? !this.restartPolicy.equals(that.restartPolicy) : that.restartPolicy != null) return false;
             if (this.securityContextSysctl != null ? !this.securityContextSysctl.equals(that.securityContextSysctl) : that.securityContextSysctl != null) return false;
+            if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.slsEnable != null ? !this.slsEnable.equals(that.slsEnable) : that.slsEnable != null) return false;
             if (this.spotPriceLimit != null ? !this.spotPriceLimit.equals(that.spotPriceLimit) : that.spotPriceLimit != null) return false;
             if (this.spotStrategy != null ? !this.spotStrategy.equals(that.spotStrategy) : that.spotStrategy != null) return false;
             if (this.tag != null ? !this.tag.equals(that.tag) : that.tag != null) return false;
             if (this.terminationGracePeriodSeconds != null ? !this.terminationGracePeriodSeconds.equals(that.terminationGracePeriodSeconds) : that.terminationGracePeriodSeconds != null) return false;
             if (this.volume != null ? !this.volume.equals(that.volume) : that.volume != null) return false;
+            if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
             return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
         }
 
@@ -1248,8 +1265,6 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
         public final int hashCode() {
             int result = this.container.hashCode();
             result = 31 * result + (this.containerGroupName.hashCode());
-            result = 31 * result + (this.securityGroupId.hashCode());
-            result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.acrRegistryInfo != null ? this.acrRegistryInfo.hashCode() : 0);
             result = 31 * result + (this.activeDeadlineSeconds != null ? this.activeDeadlineSeconds.hashCode() : 0);
             result = 31 * result + (this.autoMatchImageCache != null ? this.autoMatchImageCache.hashCode() : 0);
@@ -1267,12 +1282,14 @@ public interface ContainerGroupProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.restartPolicy != null ? this.restartPolicy.hashCode() : 0);
             result = 31 * result + (this.securityContextSysctl != null ? this.securityContextSysctl.hashCode() : 0);
+            result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.slsEnable != null ? this.slsEnable.hashCode() : 0);
             result = 31 * result + (this.spotPriceLimit != null ? this.spotPriceLimit.hashCode() : 0);
             result = 31 * result + (this.spotStrategy != null ? this.spotStrategy.hashCode() : 0);
             result = 31 * result + (this.tag != null ? this.tag.hashCode() : 0);
             result = 31 * result + (this.terminationGracePeriodSeconds != null ? this.terminationGracePeriodSeconds.hashCode() : 0);
             result = 31 * result + (this.volume != null ? this.volume.hashCode() : 0);
+            result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
             return result;
         }

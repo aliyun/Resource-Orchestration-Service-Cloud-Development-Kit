@@ -2338,6 +2338,56 @@ export namespace RosLoadBalancer {
     /**
      * @stability external
      */
+    export interface LoadBalancerAddressesProperty {
+        /**
+         * @Property allocationId: The ID of the elastic IP address (EIP) that is associated with the ALB instance.
+         */
+        readonly allocationId: string | ros.IResolvable;
+        /**
+         * @Property eipType: The type of the elastic IP address (EIP). Valid values:
+     * Common: elastic IP address, referred to as EIP.
+     * Anycast: Anycast elastic IP address, referred to as Anycast EIP.
+         */
+        readonly eipType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LoadBalancerAddressesProperty`
+ *
+ * @param properties - the TypeScript properties of a `LoadBalancerAddressesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoadBalancer_LoadBalancerAddressesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('allocationId', ros.requiredValidator)(properties.allocationId));
+    errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
+    errors.collect(ros.propertyValidator('eipType', ros.validateString)(properties.eipType));
+    return errors.wrap('supplied properties not correct for "LoadBalancerAddressesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ALB::LoadBalancer.LoadBalancerAddresses` resource
+ *
+ * @param properties - the TypeScript properties of a `LoadBalancerAddressesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ALB::LoadBalancer.LoadBalancerAddresses` resource.
+ */
+// @ts-ignore TS6133
+function rosLoadBalancerLoadBalancerAddressesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLoadBalancer_LoadBalancerAddressesPropertyValidator(properties).assertSuccess();
+    return {
+      AllocationId: ros.stringToRosTemplate(properties.allocationId),
+      EipType: ros.stringToRosTemplate(properties.eipType),
+    };
+}
+
+export namespace RosLoadBalancer {
+    /**
+     * @stability external
+     */
     export interface LoadBalancerBillingConfigProperty {
         /**
          * @Property payType: The billing method of the ALB instance. Set the value to PostPay, which indicates the pay-as-you-go billing method.
@@ -2487,9 +2537,23 @@ export namespace RosLoadBalancer {
          */
         readonly zoneId: string | ros.IResolvable;
         /**
+         * @Property allocationId: The ID of the elastic IP address (EIP) that is associated with the ALB instance.
+         */
+        readonly allocationId?: string | ros.IResolvable;
+        /**
          * @Property vSwitchId: The ID of the vSwitch in the zone. Each zone can contain only one vSwitch and one subnet.
          */
         readonly vSwitchId: string | ros.IResolvable;
+        /**
+         * @Property eipType: The type of the elastic IP address (EIP). Valid values:
+     * Common: elastic IP address, referred to as EIP.
+     * Anycast: Anycast elastic IP address, referred to as Anycast EIP.
+         */
+        readonly eipType?: string | ros.IResolvable;
+        /**
+         * @Property loadBalancerAddresses: Load balancer addresses. This property has higher priority than AllocationId and EipType in ZoneMappings.
+         */
+        readonly loadBalancerAddresses?: Array<RosLoadBalancer.LoadBalancerAddressesProperty | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -2504,8 +2568,18 @@ function RosLoadBalancer_ZoneMappingsPropertyValidator(properties: any): ros.Val
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('eipType', ros.validateString)(properties.eipType));
+    if(properties.loadBalancerAddresses && (Array.isArray(properties.loadBalancerAddresses) || (typeof properties.loadBalancerAddresses) === 'string')) {
+        errors.collect(ros.propertyValidator('loadBalancerAddresses', ros.validateLength)({
+            data: properties.loadBalancerAddresses.length,
+            min: undefined,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('loadBalancerAddresses', ros.listValidator(RosLoadBalancer_LoadBalancerAddressesPropertyValidator))(properties.loadBalancerAddresses));
     return errors.wrap('supplied properties not correct for "ZoneMappingsProperty"');
 }
 
@@ -2522,7 +2596,10 @@ function rosLoadBalancerZoneMappingsPropertyToRosTemplate(properties: any): any 
     RosLoadBalancer_ZoneMappingsPropertyValidator(properties).assertSuccess();
     return {
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      AllocationId: ros.stringToRosTemplate(properties.allocationId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      EipType: ros.stringToRosTemplate(properties.eipType),
+      LoadBalancerAddresses: ros.listMapper(rosLoadBalancerLoadBalancerAddressesPropertyToRosTemplate)(properties.loadBalancerAddresses),
     };
 }
 

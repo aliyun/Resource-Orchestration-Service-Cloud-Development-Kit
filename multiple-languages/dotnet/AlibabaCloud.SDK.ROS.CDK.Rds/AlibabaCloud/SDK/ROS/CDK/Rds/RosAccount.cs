@@ -69,8 +69,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <strong>Property</strong>: accountName: Account name, which must be unique and meet the following requirements:
         /// Start with a letter;
         /// Consist of lower-case letters, digits, and underscores (_);
-        /// Contain no more than 16 characters.
-        /// For other invalid characters, see Forbidden keywords table.
+        /// Length:
+        /// MySQL 8.0 and 5.7: 2-32 characters.
+        /// MySQL 5.6、MariaDB and PostgreSQL Local version: 2-16 characters.
+        /// SQL Server: 2-64 characters.
+        /// PostgreSQL Cloud version: 2-63 characters.
         /// </remarks>
         [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AccountName

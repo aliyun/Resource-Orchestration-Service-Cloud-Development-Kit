@@ -477,6 +477,15 @@ export interface RosInstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+     * 1: You can create an instance in the standard architecture that contains only a single data node. 
+     * For more information about the standard architecture, see Cluster master-replica instances.
+     * 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes. 
+     * For more information about the cluster architecture, see Cluster master-replica instances.
+     */
+    readonly shardCount?: number | ros.IResolvable;
+
+    /**
      * @Property sslEnabled: Modifies the SSL status. Valid values:
      * Disable: disables SSL encryption.
      * Enable: enables SSL encryption.
@@ -528,8 +537,28 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('connections', RosInstance_ConnectionsPropertyValidator)(properties.connections));
-    errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('shardCount', ros.validateNumber)(properties.shardCount));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    if(properties.sslEnabled && (typeof properties.sslEnabled) !== 'object') {
+        errors.collect(ros.propertyValidator('sslEnabled', ros.validateAllowedValues)({
+          data: properties.sslEnabled,
+          allowedValues: ["Disable","Enable","Update"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
+    errors.collect(ros.propertyValidator('tairConfig', RosInstance_TairConfigPropertyValidator)(properties.tairConfig));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('backupPolicy', RosInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.evictionPolicy && (typeof properties.evictionPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('evictionPolicy', ros.validateAllowedValues)({
@@ -561,16 +590,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateNumber)(properties.autoRenewDuration));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    if(properties.sslEnabled && (typeof properties.sslEnabled) !== 'object') {
-        errors.collect(ros.propertyValidator('sslEnabled', ros.validateAllowedValues)({
-          data: properties.sslEnabled,
-          allowedValues: ["Disable","Enable","Update"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
-    errors.collect(ros.propertyValidator('tairConfig', RosInstance_TairConfigPropertyValidator)(properties.tairConfig));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
@@ -578,16 +598,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('backupPolicy', RosInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
-    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -629,6 +639,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecondaryZoneId: ros.stringToRosTemplate(properties.secondaryZoneId),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      ShardCount: ros.numberToRosTemplate(properties.shardCount),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
       TairConfig: rosInstanceTairConfigPropertyToRosTemplate(properties.tairConfig),
@@ -903,6 +914,15 @@ export class RosInstance extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+     * 1: You can create an instance in the standard architecture that contains only a single data node. 
+     * For more information about the standard architecture, see Cluster master-replica instances.
+     * 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes. 
+     * For more information about the cluster architecture, see Cluster master-replica instances.
+     */
+    public shardCount: number | ros.IResolvable | undefined;
+
+    /**
      * @Property sslEnabled: Modifies the SSL status. Valid values:
      * Disable: disables SSL encryption.
      * Enable: enables SSL encryption.
@@ -1001,6 +1021,7 @@ export class RosInstance extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.secondaryZoneId = props.secondaryZoneId;
         this.securityGroupId = props.securityGroupId;
+        this.shardCount = props.shardCount;
         this.sslEnabled = props.sslEnabled;
         this.tags = props.tags;
         this.tairConfig = props.tairConfig;
@@ -1030,6 +1051,7 @@ export class RosInstance extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             secondaryZoneId: this.secondaryZoneId,
             securityGroupId: this.securityGroupId,
+            shardCount: this.shardCount,
             sslEnabled: this.sslEnabled,
             tags: this.tags,
             tairConfig: this.tairConfig,
@@ -1699,6 +1721,15 @@ export interface RosPrepayInstanceProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
+     * @Property shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+     * 1: You can create an instance in the standard architecture that contains only a single data node. 
+     * For more information about the standard architecture, see Cluster master-replica instances.
+     * 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes. 
+     * For more information about the cluster architecture, see Cluster master-replica instances.
+     */
+    readonly shardCount?: number | ros.IResolvable;
+
+    /**
      * @Property sslEnabled: Modifies the SSL status. Valid values:
      * Disable: disables SSL encryption.
      * Enable: enables SSL encryption.
@@ -1750,8 +1781,28 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('connections', RosPrepayInstance_ConnectionsPropertyValidator)(properties.connections));
-    errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('shardCount', ros.validateNumber)(properties.shardCount));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    if(properties.sslEnabled && (typeof properties.sslEnabled) !== 'object') {
+        errors.collect(ros.propertyValidator('sslEnabled', ros.validateAllowedValues)({
+          data: properties.sslEnabled,
+          allowedValues: ["Disable","Enable","Update"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
+    errors.collect(ros.propertyValidator('tairConfig', RosPrepayInstance_TairConfigPropertyValidator)(properties.tairConfig));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPrepayInstance_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('backupPolicy', RosPrepayInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.evictionPolicy && (typeof properties.evictionPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('evictionPolicy', ros.validateAllowedValues)({
@@ -1784,24 +1835,7 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateNumber)(properties.autoRenewDuration));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
-    if(properties.sslEnabled && (typeof properties.sslEnabled) !== 'object') {
-        errors.collect(ros.propertyValidator('sslEnabled', ros.validateAllowedValues)({
-          data: properties.sslEnabled,
-          allowedValues: ["Disable","Enable","Update"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('sslEnabled', ros.validateString)(properties.sslEnabled));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('tairConfig', RosPrepayInstance_TairConfigPropertyValidator)(properties.tairConfig));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPrepayInstance_TagsPropertyValidator))(properties.tags));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -1809,8 +1843,6 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
-    errors.collect(ros.propertyValidator('backupPolicy', RosPrepayInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
-    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "RosPrepayInstanceProps"');
 }
 
@@ -1845,6 +1877,7 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecondaryZoneId: ros.stringToRosTemplate(properties.secondaryZoneId),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      ShardCount: ros.numberToRosTemplate(properties.shardCount),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
       Tags: ros.listMapper(rosPrepayInstanceTagsPropertyToRosTemplate)(properties.tags),
       TairConfig: rosPrepayInstanceTairConfigPropertyToRosTemplate(properties.tairConfig),
@@ -2122,6 +2155,15 @@ export class RosPrepayInstance extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property shardCount: The number of data nodes in the instance. Default value: 1. Valid values:
+     * 1: You can create an instance in the standard architecture that contains only a single data node. 
+     * For more information about the standard architecture, see Cluster master-replica instances.
+     * 2 to 32: You can create an instance in the cluster architecturethat contains the specified number of data nodes. 
+     * For more information about the cluster architecture, see Cluster master-replica instances.
+     */
+    public shardCount: number | ros.IResolvable | undefined;
+
+    /**
      * @Property sslEnabled: Modifies the SSL status. Valid values:
      * Disable: disables SSL encryption.
      * Enable: enables SSL encryption.
@@ -2220,6 +2262,7 @@ export class RosPrepayInstance extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.secondaryZoneId = props.secondaryZoneId;
         this.securityGroupId = props.securityGroupId;
+        this.shardCount = props.shardCount;
         this.sslEnabled = props.sslEnabled;
         this.tags = props.tags;
         this.tairConfig = props.tairConfig;
@@ -2249,6 +2292,7 @@ export class RosPrepayInstance extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             secondaryZoneId: this.secondaryZoneId,
             securityGroupId: this.securityGroupId,
+            shardCount: this.shardCount,
             sslEnabled: this.sslEnabled,
             tags: this.tags,
             tairConfig: this.tairConfig,

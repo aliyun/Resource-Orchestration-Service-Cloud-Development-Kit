@@ -4451,15 +4451,10 @@ export interface RosIpv6InternetBandwidthProps {
 
     /**
      * @Property internetChargeType: IPv6 public network bandwidth billing, value:
-     * PayByTraffic: by using the traffic accounting.
-     * PayByBandwidth (default): Bandwidth billing.
+     * - **PayByTraffic**: by using the traffic accounting.
+     * - **PayByBandwidth** (default): Bandwidth billing.
      */
     readonly internetChargeType?: string | ros.IResolvable;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: RosIpv6InternetBandwidth.TagsProperty[];
 }
 
 /**
@@ -4485,14 +4480,6 @@ function RosIpv6InternetBandwidthPropsValidator(properties: any): ros.Validation
     errors.collect(ros.propertyValidator('ipv6AddressId', ros.validateString)(properties.ipv6AddressId));
     errors.collect(ros.propertyValidator('ipv6GatewayId', ros.requiredValidator)(properties.ipv6GatewayId));
     errors.collect(ros.propertyValidator('ipv6GatewayId', ros.validateString)(properties.ipv6GatewayId));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosIpv6InternetBandwidth_TagsPropertyValidator))(properties.tags));
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
@@ -4521,7 +4508,6 @@ function rosIpv6InternetBandwidthPropsToRosTemplate(properties: any, enableResou
       Ipv6AddressId: ros.stringToRosTemplate(properties.ipv6AddressId),
       Ipv6GatewayId: ros.stringToRosTemplate(properties.ipv6GatewayId),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
-      Tags: ros.listMapper(rosIpv6InternetBandwidthTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -4569,15 +4555,10 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
 
     /**
      * @Property internetChargeType: IPv6 public network bandwidth billing, value:
-     * PayByTraffic: by using the traffic accounting.
-     * PayByBandwidth (default): Bandwidth billing.
+     * - **PayByTraffic**: by using the traffic accounting.
+     * - **PayByBandwidth** (default): Bandwidth billing.
      */
     public internetChargeType: string | ros.IResolvable | undefined;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public tags: RosIpv6InternetBandwidth.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::Ipv6InternetBandwidth`.
@@ -4595,7 +4576,6 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
         this.ipv6AddressId = props.ipv6AddressId;
         this.ipv6GatewayId = props.ipv6GatewayId;
         this.internetChargeType = props.internetChargeType;
-        this.tags = props.tags;
     }
 
 
@@ -4605,60 +4585,11 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
             ipv6AddressId: this.ipv6AddressId,
             ipv6GatewayId: this.ipv6GatewayId,
             internetChargeType: this.internetChargeType,
-            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosIpv6InternetBandwidthPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
-}
-
-export namespace RosIpv6InternetBandwidth {
-    /**
-     * @stability external
-     */
-    export interface TagsProperty {
-        /**
-         * @Property value: undefined
-         */
-        readonly value?: string | ros.IResolvable;
-        /**
-         * @Property key: undefined
-         */
-        readonly key: string | ros.IResolvable;
-    }
-}
-/**
- * Determine whether the given properties match those of a `TagsProperty`
- *
- * @param properties - the TypeScript properties of a `TagsProperty`
- *
- * @returns the result of the validation.
- */
-function RosIpv6InternetBandwidth_TagsPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
-    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
-    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
-    return errors.wrap('supplied properties not correct for "TagsProperty"');
-}
-
-/**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipv6InternetBandwidth.Tags` resource
- *
- * @param properties - the TypeScript properties of a `TagsProperty`
- *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipv6InternetBandwidth.Tags` resource.
- */
-// @ts-ignore TS6133
-function rosIpv6InternetBandwidthTagsPropertyToRosTemplate(properties: any): any {
-    if (!ros.canInspect(properties)) { return properties; }
-    RosIpv6InternetBandwidth_TagsPropertyValidator(properties).assertSuccess();
-    return {
-      Value: ros.stringToRosTemplate(properties.value),
-      Key: ros.stringToRosTemplate(properties.key),
-    };
 }
 
 /**
@@ -8132,6 +8063,458 @@ function rosTrafficMirrorFilterIngressRulesPropertyToRosTemplate(properties: any
       DestinationCidrBlock: ros.stringToRosTemplate(properties.destinationCidrBlock),
       Protocol: ros.stringToRosTemplate(properties.protocol),
     };
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::TrafficMirrorSession`
+ */
+export interface RosTrafficMirrorSessionProps {
+
+    /**
+     * @Property priority: The priority of the traffic mirror session. Valid values: **1 to 32766**.
+     * A smaller value indicates a higher priority. You cannot specify identical priorities for traffic mirror sessions that are created in the same region by using the same account.
+     */
+    readonly priority: number | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorFilterId: The ID of the filter.
+     */
+    readonly trafficMirrorFilterId: string | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorSourceIds: undefined
+     */
+    readonly trafficMirrorSourceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorTargetId: The ID of the traffic mirror destination. You can specify only an elastic network interface (ENI) or a Server Load Balancer (SLB) instance as a traffic mirror destination.
+     */
+    readonly trafficMirrorTargetId: string | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorTargetType: The type of the traffic mirror destination. Valid values:
+     * - **NetworkInterface**: an ENI
+     * - **SLB**: an SLB instance
+     */
+    readonly trafficMirrorTargetType: string | ros.IResolvable;
+
+    /**
+     * @Property enabled: Specifies whether to enable the traffic mirror session. Valid values:
+     * - **false** (default): does not enable the traffic mirror session.
+     * - **true**: enables the traffic mirror session.
+     */
+    readonly enabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property packetLength: The maximum transmission unit (MTU). Default value: **1500**.
+     */
+    readonly packetLength?: number | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the mirrored traffic belongs.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tag:
+     */
+    readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorSessionDescription: The description of the traffic mirror session.
+     * The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     */
+    readonly trafficMirrorSessionDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorSessionName: The name of the traffic mirror session.
+     * The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+     */
+    readonly trafficMirrorSessionName?: string | ros.IResolvable;
+
+    /**
+     * @Property virtualNetworkId: The VXLAN network identifier (VNI). Valid values: **0 to 16777215**. 
+     * You can use VNIs to identify mirrored traffic from different sessions at the traffic mirror destination. You can specify a custom VNI or use a random VNI allocated by the system. If you want the system to randomly allocate a VNI, do not enter a value.
+     */
+    readonly virtualNetworkId?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTrafficMirrorSessionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTrafficMirrorSessionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrafficMirrorSessionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('trafficMirrorTargetId', ros.requiredValidator)(properties.trafficMirrorTargetId));
+    errors.collect(ros.propertyValidator('trafficMirrorTargetId', ros.validateString)(properties.trafficMirrorTargetId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.virtualNetworkId && (typeof properties.virtualNetworkId) !== 'object') {
+        errors.collect(ros.propertyValidator('virtualNetworkId', ros.validateRange)({
+            data: properties.virtualNetworkId,
+            min: 0,
+            max: 16777215,
+          }));
+    }
+    errors.collect(ros.propertyValidator('virtualNetworkId', ros.validateNumber)(properties.virtualNetworkId));
+    errors.collect(ros.propertyValidator('trafficMirrorSourceIds', ros.requiredValidator)(properties.trafficMirrorSourceIds));
+    errors.collect(ros.propertyValidator('trafficMirrorSourceIds', ros.listValidator(ros.validateString))(properties.trafficMirrorSourceIds));
+    errors.collect(ros.propertyValidator('priority', ros.requiredValidator)(properties.priority));
+    if(properties.priority && (typeof properties.priority) !== 'object') {
+        errors.collect(ros.propertyValidator('priority', ros.validateRange)({
+            data: properties.priority,
+            min: 1,
+            max: 32766,
+          }));
+    }
+    errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
+    errors.collect(ros.propertyValidator('packetLength', ros.validateNumber)(properties.packetLength));
+    errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
+    if(properties.trafficMirrorSessionDescription && (Array.isArray(properties.trafficMirrorSessionDescription) || (typeof properties.trafficMirrorSessionDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('trafficMirrorSessionDescription', ros.validateLength)({
+            data: properties.trafficMirrorSessionDescription.length,
+            min: 1,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('trafficMirrorSessionDescription', ros.validateString)(properties.trafficMirrorSessionDescription));
+    errors.collect(ros.propertyValidator('tag', ros.listValidator(ros.validateRosTag))(properties.tag));
+    if(properties.trafficMirrorSessionName && (Array.isArray(properties.trafficMirrorSessionName) || (typeof properties.trafficMirrorSessionName) === 'string')) {
+        errors.collect(ros.propertyValidator('trafficMirrorSessionName', ros.validateLength)({
+            data: properties.trafficMirrorSessionName.length,
+            min: 1,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('trafficMirrorSessionName', ros.validateString)(properties.trafficMirrorSessionName));
+    errors.collect(ros.propertyValidator('trafficMirrorFilterId', ros.requiredValidator)(properties.trafficMirrorFilterId));
+    errors.collect(ros.propertyValidator('trafficMirrorFilterId', ros.validateString)(properties.trafficMirrorFilterId));
+    errors.collect(ros.propertyValidator('trafficMirrorTargetType', ros.requiredValidator)(properties.trafficMirrorTargetType));
+    errors.collect(ros.propertyValidator('trafficMirrorTargetType', ros.validateString)(properties.trafficMirrorTargetType));
+    return errors.wrap('supplied properties not correct for "RosTrafficMirrorSessionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorSession` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTrafficMirrorSessionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorSession` resource.
+ */
+// @ts-ignore TS6133
+function rosTrafficMirrorSessionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTrafficMirrorSessionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Priority: ros.numberToRosTemplate(properties.priority),
+      TrafficMirrorFilterId: ros.stringToRosTemplate(properties.trafficMirrorFilterId),
+      TrafficMirrorSourceIds: ros.listMapper(ros.stringToRosTemplate)(properties.trafficMirrorSourceIds),
+      TrafficMirrorTargetId: ros.stringToRosTemplate(properties.trafficMirrorTargetId),
+      TrafficMirrorTargetType: ros.stringToRosTemplate(properties.trafficMirrorTargetType),
+      Enabled: ros.booleanToRosTemplate(properties.enabled),
+      PacketLength: ros.numberToRosTemplate(properties.packetLength),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tag: ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
+      TrafficMirrorSessionDescription: ros.stringToRosTemplate(properties.trafficMirrorSessionDescription),
+      TrafficMirrorSessionName: ros.stringToRosTemplate(properties.trafficMirrorSessionName),
+      VirtualNetworkId: ros.numberToRosTemplate(properties.virtualNetworkId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::TrafficMirrorSession`
+ */
+export class RosTrafficMirrorSession extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::TrafficMirrorSession";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute TrafficMirrorSessionId: The ID of the traffic mirror session.
+     */
+    public readonly attrTrafficMirrorSessionId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property priority: The priority of the traffic mirror session. Valid values: **1 to 32766**.
+     * A smaller value indicates a higher priority. You cannot specify identical priorities for traffic mirror sessions that are created in the same region by using the same account.
+     */
+    public priority: number | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorFilterId: The ID of the filter.
+     */
+    public trafficMirrorFilterId: string | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorSourceIds: undefined
+     */
+    public trafficMirrorSourceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorTargetId: The ID of the traffic mirror destination. You can specify only an elastic network interface (ENI) or a Server Load Balancer (SLB) instance as a traffic mirror destination.
+     */
+    public trafficMirrorTargetId: string | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorTargetType: The type of the traffic mirror destination. Valid values:
+     * - **NetworkInterface**: an ENI
+     * - **SLB**: an SLB instance
+     */
+    public trafficMirrorTargetType: string | ros.IResolvable;
+
+    /**
+     * @Property enabled: Specifies whether to enable the traffic mirror session. Valid values:
+     * - **false** (default): does not enable the traffic mirror session.
+     * - **true**: enables the traffic mirror session.
+     */
+    public enabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property packetLength: The maximum transmission unit (MTU). Default value: **1500**.
+     */
+    public packetLength: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the mirrored traffic belongs.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tag:
+     */
+    public tag: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property trafficMirrorSessionDescription: The description of the traffic mirror session.
+     * The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     */
+    public trafficMirrorSessionDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property trafficMirrorSessionName: The name of the traffic mirror session.
+     * The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+     */
+    public trafficMirrorSessionName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property virtualNetworkId: The VXLAN network identifier (VNI). Valid values: **0 to 16777215**. 
+     * You can use VNIs to identify mirrored traffic from different sessions at the traffic mirror destination. You can specify a custom VNI or use a random VNI allocated by the system. If you want the system to randomly allocate a VNI, do not enter a value.
+     */
+    public virtualNetworkId: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::TrafficMirrorSession`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTrafficMirrorSessionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTrafficMirrorSession.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTrafficMirrorSessionId = this.getAtt('TrafficMirrorSessionId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.priority = props.priority;
+        this.trafficMirrorFilterId = props.trafficMirrorFilterId;
+        this.trafficMirrorSourceIds = props.trafficMirrorSourceIds;
+        this.trafficMirrorTargetId = props.trafficMirrorTargetId;
+        this.trafficMirrorTargetType = props.trafficMirrorTargetType;
+        this.enabled = props.enabled;
+        this.packetLength = props.packetLength;
+        this.resourceGroupId = props.resourceGroupId;
+        this.tag = props.tag;
+        this.trafficMirrorSessionDescription = props.trafficMirrorSessionDescription;
+        this.trafficMirrorSessionName = props.trafficMirrorSessionName;
+        this.virtualNetworkId = props.virtualNetworkId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            priority: this.priority,
+            trafficMirrorFilterId: this.trafficMirrorFilterId,
+            trafficMirrorSourceIds: this.trafficMirrorSourceIds,
+            trafficMirrorTargetId: this.trafficMirrorTargetId,
+            trafficMirrorTargetType: this.trafficMirrorTargetType,
+            enabled: this.enabled,
+            packetLength: this.packetLength,
+            resourceGroupId: this.resourceGroupId,
+            tag: this.tag,
+            trafficMirrorSessionDescription: this.trafficMirrorSessionDescription,
+            trafficMirrorSessionName: this.trafficMirrorSessionName,
+            virtualNetworkId: this.virtualNetworkId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTrafficMirrorSessionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosTrafficMirrorSession {
+    /**
+     * @stability external
+     */
+    export interface TagProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrafficMirrorSession_TagPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorSession.Tag` resource
+ *
+ * @param properties - the TypeScript properties of a `TagProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorSession.Tag` resource.
+ */
+// @ts-ignore TS6133
+function rosTrafficMirrorSessionTagPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTrafficMirrorSession_TagPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`
+ */
+export interface RosTrafficMirrorSessionSourcesAdditionProps {
+
+    /**
+     * @Property trafficMirrorSessionId: The ID of the traffic mirror session.
+     */
+    readonly trafficMirrorSessionId: string | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorSourceIds: undefined
+     */
+    readonly trafficMirrorSourceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTrafficMirrorSessionSourcesAdditionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTrafficMirrorSessionSourcesAdditionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTrafficMirrorSessionSourcesAdditionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('trafficMirrorSourceIds', ros.requiredValidator)(properties.trafficMirrorSourceIds));
+    errors.collect(ros.propertyValidator('trafficMirrorSourceIds', ros.listValidator(ros.validateString))(properties.trafficMirrorSourceIds));
+    errors.collect(ros.propertyValidator('trafficMirrorSessionId', ros.requiredValidator)(properties.trafficMirrorSessionId));
+    errors.collect(ros.propertyValidator('trafficMirrorSessionId', ros.validateString)(properties.trafficMirrorSessionId));
+    return errors.wrap('supplied properties not correct for "RosTrafficMirrorSessionSourcesAdditionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTrafficMirrorSessionSourcesAdditionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition` resource.
+ */
+// @ts-ignore TS6133
+function rosTrafficMirrorSessionSourcesAdditionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTrafficMirrorSessionSourcesAdditionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      TrafficMirrorSessionId: ros.stringToRosTemplate(properties.trafficMirrorSessionId),
+      TrafficMirrorSourceIds: ros.listMapper(ros.stringToRosTemplate)(properties.trafficMirrorSourceIds),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`
+ */
+export class RosTrafficMirrorSessionSourcesAddition extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::TrafficMirrorSessionSourcesAddition";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property trafficMirrorSessionId: The ID of the traffic mirror session.
+     */
+    public trafficMirrorSessionId: string | ros.IResolvable;
+
+    /**
+     * @Property trafficMirrorSourceIds: undefined
+     */
+    public trafficMirrorSourceIds: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTrafficMirrorSessionSourcesAdditionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTrafficMirrorSessionSourcesAddition.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.trafficMirrorSessionId = props.trafficMirrorSessionId;
+        this.trafficMirrorSourceIds = props.trafficMirrorSourceIds;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            trafficMirrorSessionId: this.trafficMirrorSessionId,
+            trafficMirrorSourceIds: this.trafficMirrorSourceIds,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTrafficMirrorSessionSourcesAdditionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }
 
 /**

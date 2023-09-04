@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::FC::Functions</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:00.443Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.883Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.FunctionsProps")
 @software.amazon.jsii.Jsii.Proxy(FunctionsProps.Jsii$Proxy.class)
 public interface FunctionsProps extends software.amazon.jsii.JsiiSerializable {

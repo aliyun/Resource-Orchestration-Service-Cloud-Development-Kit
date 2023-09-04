@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::DBS::BackupPlans</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.029Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:36.412Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.datasource.RosBackupPlansProps")
 @software.amazon.jsii.Jsii.Proxy(RosBackupPlansProps.Jsii$Proxy.class)
 public interface RosBackupPlansProps extends software.amazon.jsii.JsiiSerializable {

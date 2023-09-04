@@ -3,6 +3,207 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::KAFKA::ConsumerGroup`
+ */
+export interface RosConsumerGroupProps {
+
+    /**
+     * @Property consumerId: Group name. Value:
+     * Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
+     * The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
+     * Once the group name is created, it cannot be modified.
+     */
+    readonly consumerId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Kafka instance id.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property remark: Remark description.
+     */
+    readonly remark?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosConsumerGroup.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosConsumerGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumerGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('consumerId', ros.requiredValidator)(properties.consumerId));
+    errors.collect(ros.propertyValidator('consumerId', ros.validateString)(properties.consumerId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosConsumerGroup_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
+    return errors.wrap('supplied properties not correct for "RosConsumerGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::KAFKA::ConsumerGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::KAFKA::ConsumerGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosConsumerGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ConsumerId: ros.stringToRosTemplate(properties.consumerId),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      Remark: ros.stringToRosTemplate(properties.remark),
+      Tags: ros.listMapper(rosConsumerGroupTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::KAFKA::ConsumerGroup`
+ */
+export class RosConsumerGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::KAFKA::ConsumerGroup";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ConsumerId: Consumer group ID
+     */
+    public readonly attrConsumerId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property consumerId: Group name. Value:
+     * Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
+     * The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
+     * Once the group name is created, it cannot be modified.
+     */
+    public consumerId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: Kafka instance id.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property remark: Remark description.
+     */
+    public remark: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosConsumerGroup.TagsProperty[] | undefined;
+
+    /**
+     * Create a new `ALIYUN::KAFKA::ConsumerGroup`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosConsumerGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosConsumerGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConsumerId = this.getAtt('ConsumerId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.consumerId = props.consumerId;
+        this.instanceId = props.instanceId;
+        this.remark = props.remark;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            consumerId: this.consumerId,
+            instanceId: this.instanceId,
+            remark: this.remark,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosConsumerGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosConsumerGroup {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumerGroup_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::KAFKA::ConsumerGroup.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::KAFKA::ConsumerGroup.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosConsumerGroup_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::KAFKA::Instance`
  */
 export interface RosInstanceProps {

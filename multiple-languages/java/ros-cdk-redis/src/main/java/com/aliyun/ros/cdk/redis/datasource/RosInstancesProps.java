@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::REDIS::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.968Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.311Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.datasource.RosInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstancesProps.Jsii$Proxy.class)
 public interface RosInstancesProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * A ROS template type:  <code>ALIYUN::ECI::ContainerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.328Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:36.721Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosContainerGroup")
 public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -165,42 +165,6 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setSecurityGroupId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "securityGroupId", java.util.Objects.requireNonNull(value, "securityGroupId is required"));
-    }
-
-    /**
-     */
-    public void setSecurityGroupId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "securityGroupId", java.util.Objects.requireNonNull(value, "securityGroupId is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId() {
-        return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setVSwitchId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "vSwitchId", java.util.Objects.requireNonNull(value, "vSwitchId is required"));
-    }
-
-    /**
-     */
-    public void setVSwitchId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "vSwitchId", java.util.Objects.requireNonNull(value, "vSwitchId is required"));
     }
 
     /**
@@ -591,6 +555,24 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSlsEnable() {
         return software.amazon.jsii.Kernel.get(this, "slsEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -727,6 +709,24 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
         software.amazon.jsii.Kernel.set(this, "volume", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVSwitchId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchId", value);
+    }
+
+    /**
+     */
+    public void setVSwitchId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchId", value);
     }
 
     /**
@@ -6789,40 +6789,6 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param securityGroupId This parameter is required.
-         */
-        public Builder securityGroupId(final java.lang.String securityGroupId) {
-            this.props.securityGroupId(securityGroupId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param securityGroupId This parameter is required.
-         */
-        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
-            this.props.securityGroupId(securityGroupId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param vSwitchId This parameter is required.
-         */
-        public Builder vSwitchId(final java.lang.String vSwitchId) {
-            this.props.vSwitchId(vSwitchId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param vSwitchId This parameter is required.
-         */
-        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
-            this.props.vSwitchId(vSwitchId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param acrRegistryInfo This parameter is required.
          */
         public Builder acrRegistryInfo(final com.aliyun.ros.cdk.core.IResolvable acrRegistryInfo) {
@@ -7112,6 +7078,23 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final java.lang.String securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param slsEnable This parameter is required.
          */
         public Builder slsEnable(final java.lang.Boolean slsEnable) {
@@ -7209,6 +7192,23 @@ public class RosContainerGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder volume(final java.util.List<? extends java.lang.Object> volume) {
             this.props.volume(volume);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param vSwitchId This parameter is required.
+         */
+        public Builder vSwitchId(final java.lang.String vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vSwitchId This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
             return this;
         }
 

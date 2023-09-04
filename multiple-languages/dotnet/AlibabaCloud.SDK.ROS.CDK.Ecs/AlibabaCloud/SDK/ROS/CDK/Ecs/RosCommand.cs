@@ -228,6 +228,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to command. Max support 20 tags to add during create command. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCommand.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Ecs.RosCommand.ITagsProperty[]? Tags
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosCommand.ITagsProperty[]?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: timeout: Total timeout when the command is executed in the instance. Input the time unit as second. Default is 60s.
         /// </remarks>
         [JsiiOptional]
@@ -306,6 +317,128 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                     }
                 }
                 SetInstanceProperty(value);
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosCommand.TagsProperty")]
+        public interface ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Value
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosCommand.TagsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.RosCommand.ITagsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key: undefined
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value: undefined
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Value
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosCommand.TagsProperty")]
+        public class TagsProperty : AlibabaCloud.SDK.ROS.CDK.Ecs.RosCommand.ITagsProperty
+        {
+            private object _key;
+
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Key
+            {
+                get => _key;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _key = value;
+                }
+            }
+
+            private object? _value;
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Value
+            {
+                get => _value;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _value = value;
+                }
             }
         }
     }

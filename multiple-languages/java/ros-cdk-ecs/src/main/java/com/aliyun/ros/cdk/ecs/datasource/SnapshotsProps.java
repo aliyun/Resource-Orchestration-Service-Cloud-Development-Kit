@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::ECS::Snapshots</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:55:59.934Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.365Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.SnapshotsProps")
 @software.amazon.jsii.Jsii.Proxy(SnapshotsProps.Jsii$Proxy.class)
 public interface SnapshotsProps extends software.amazon.jsii.JsiiSerializable {

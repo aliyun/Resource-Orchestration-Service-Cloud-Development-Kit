@@ -41,6 +41,11 @@ export interface LoadBalancerProps {
     readonly crossZoneEnabled?: boolean | ros.IResolvable;
 
     /**
+     * Property deletionProtectionConfig: The configuration of the deletion protection feature.
+     */
+    readonly deletionProtectionConfig?: RosLoadBalancer.DeletionProtectionConfigProperty | ros.IResolvable;
+
+    /**
      * Property loadBalancerBillingConfig: The configuration of the billing method.
      */
     readonly loadBalancerBillingConfig?: RosLoadBalancer.LoadBalancerBillingConfigProperty | ros.IResolvable;
@@ -57,9 +62,19 @@ export interface LoadBalancerProps {
     readonly loadBalancerType?: string | ros.IResolvable;
 
     /**
+     * Property modificationProtectionConfig: The configuration of the configuration read-only mode.
+     */
+    readonly modificationProtectionConfig?: RosLoadBalancer.ModificationProtectionConfigProperty | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosLoadBalancer.TagsProperty[];
 
     /**
      * Property trafficAffinityEnabled: Whether enable traffic affinity. Default: false
@@ -123,17 +138,20 @@ export class LoadBalancer extends ros.Resource {
         super(scope, id);
 
         const rosLoadBalancer = new RosLoadBalancer(this, id,  {
-            loadBalancerName: props.loadBalancerName,
             addressIpVersion: props.addressIpVersion,
             resourceGroupId: props.resourceGroupId,
-            vpcId: props.vpcId,
             loadBalancerBillingConfig: props.loadBalancerBillingConfig,
+            zoneMappings: props.zoneMappings,
+            modificationProtectionConfig: props.modificationProtectionConfig,
+            crossZoneEnabled: props.crossZoneEnabled,
+            loadBalancerType: props.loadBalancerType,
+            loadBalancerName: props.loadBalancerName,
+            deletionProtectionConfig: props.deletionProtectionConfig,
+            vpcId: props.vpcId,
             trafficAffinityEnabled: props.trafficAffinityEnabled,
             bandwidthPackageId: props.bandwidthPackageId,
             addressType: props.addressType,
-            zoneMappings: props.zoneMappings,
-            crossZoneEnabled: props.crossZoneEnabled,
-            loadBalancerType: props.loadBalancerType,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLoadBalancer;
         this.attrAddressIpVersion = rosLoadBalancer.attrAddressIpVersion;

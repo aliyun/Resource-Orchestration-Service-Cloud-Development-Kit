@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a <code>ALIYUN::RDS::DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-07-25T03:56:01.745Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceProps.Jsii$Proxy.class)
 public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -169,6 +169,12 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHighSpaceUsageProtection() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceNetworkType() {
         return null;
     }
 
@@ -403,6 +409,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object enableBackupLog;
         java.lang.Object encryptionKey;
         java.lang.Object highSpaceUsageProtection;
+        java.lang.Object instanceNetworkType;
         java.lang.Object localLogRetentionHours;
         java.lang.Object localLogRetentionSpace;
         java.lang.Object logBackupFrequency;
@@ -1013,6 +1020,26 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder highSpaceUsageProtection(com.aliyun.ros.cdk.core.IResolvable highSpaceUsageProtection) {
             this.highSpaceUsageProtection = highSpaceUsageProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getInstanceNetworkType}
+         * @param instanceNetworkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceNetworkType(java.lang.String instanceNetworkType) {
+            this.instanceNetworkType = instanceNetworkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceProps#getInstanceNetworkType}
+         * @param instanceNetworkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceNetworkType(com.aliyun.ros.cdk.core.IResolvable instanceNetworkType) {
+            this.instanceNetworkType = instanceNetworkType;
             return this;
         }
 
@@ -1692,6 +1719,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object enableBackupLog;
         private final java.lang.Object encryptionKey;
         private final java.lang.Object highSpaceUsageProtection;
+        private final java.lang.Object instanceNetworkType;
         private final java.lang.Object localLogRetentionHours;
         private final java.lang.Object localLogRetentionSpace;
         private final java.lang.Object logBackupFrequency;
@@ -1760,6 +1788,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.enableBackupLog = software.amazon.jsii.Kernel.get(this, "enableBackupLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.encryptionKey = software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.highSpaceUsageProtection = software.amazon.jsii.Kernel.get(this, "highSpaceUsageProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceNetworkType = software.amazon.jsii.Kernel.get(this, "instanceNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.localLogRetentionHours = software.amazon.jsii.Kernel.get(this, "localLogRetentionHours", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.localLogRetentionSpace = software.amazon.jsii.Kernel.get(this, "localLogRetentionSpace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logBackupFrequency = software.amazon.jsii.Kernel.get(this, "logBackupFrequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1829,6 +1858,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             this.enableBackupLog = builder.enableBackupLog;
             this.encryptionKey = builder.encryptionKey;
             this.highSpaceUsageProtection = builder.highSpaceUsageProtection;
+            this.instanceNetworkType = builder.instanceNetworkType;
             this.localLogRetentionHours = builder.localLogRetentionHours;
             this.localLogRetentionSpace = builder.localLogRetentionSpace;
             this.logBackupFrequency = builder.logBackupFrequency;
@@ -2006,6 +2036,11 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getHighSpaceUsageProtection() {
             return this.highSpaceUsageProtection;
+        }
+
+        @Override
+        public final java.lang.Object getInstanceNetworkType() {
+            return this.instanceNetworkType;
         }
 
         @Override
@@ -2251,6 +2286,9 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getHighSpaceUsageProtection() != null) {
                 data.set("highSpaceUsageProtection", om.valueToTree(this.getHighSpaceUsageProtection()));
             }
+            if (this.getInstanceNetworkType() != null) {
+                data.set("instanceNetworkType", om.valueToTree(this.getInstanceNetworkType()));
+            }
             if (this.getLocalLogRetentionHours() != null) {
                 data.set("localLogRetentionHours", om.valueToTree(this.getLocalLogRetentionHours()));
             }
@@ -2394,6 +2432,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             if (this.enableBackupLog != null ? !this.enableBackupLog.equals(that.enableBackupLog) : that.enableBackupLog != null) return false;
             if (this.encryptionKey != null ? !this.encryptionKey.equals(that.encryptionKey) : that.encryptionKey != null) return false;
             if (this.highSpaceUsageProtection != null ? !this.highSpaceUsageProtection.equals(that.highSpaceUsageProtection) : that.highSpaceUsageProtection != null) return false;
+            if (this.instanceNetworkType != null ? !this.instanceNetworkType.equals(that.instanceNetworkType) : that.instanceNetworkType != null) return false;
             if (this.localLogRetentionHours != null ? !this.localLogRetentionHours.equals(that.localLogRetentionHours) : that.localLogRetentionHours != null) return false;
             if (this.localLogRetentionSpace != null ? !this.localLogRetentionSpace.equals(that.localLogRetentionSpace) : that.localLogRetentionSpace != null) return false;
             if (this.logBackupFrequency != null ? !this.logBackupFrequency.equals(that.logBackupFrequency) : that.logBackupFrequency != null) return false;
@@ -2459,6 +2498,7 @@ public interface RosDBInstanceProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.enableBackupLog != null ? this.enableBackupLog.hashCode() : 0);
             result = 31 * result + (this.encryptionKey != null ? this.encryptionKey.hashCode() : 0);
             result = 31 * result + (this.highSpaceUsageProtection != null ? this.highSpaceUsageProtection.hashCode() : 0);
+            result = 31 * result + (this.instanceNetworkType != null ? this.instanceNetworkType.hashCode() : 0);
             result = 31 * result + (this.localLogRetentionHours != null ? this.localLogRetentionHours.hashCode() : 0);
             result = 31 * result + (this.localLogRetentionSpace != null ? this.localLogRetentionSpace.hashCode() : 0);
             result = 31 * result + (this.logBackupFrequency != null ? this.logBackupFrequency.hashCode() : 0);

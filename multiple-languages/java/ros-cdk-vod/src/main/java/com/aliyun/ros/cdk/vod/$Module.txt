@@ -1,7 +1,15 @@
 @alicloud/ros-cdk-vod.EditingProject=com.aliyun.ros.cdk.vod.EditingProject
 @alicloud/ros-cdk-vod.EditingProjectProps=com.aliyun.ros.cdk.vod.EditingProjectProps
+@alicloud/ros-cdk-vod.MessageCallback=com.aliyun.ros.cdk.vod.MessageCallback
+@alicloud/ros-cdk-vod.MessageCallbackProps=com.aliyun.ros.cdk.vod.MessageCallbackProps
 @alicloud/ros-cdk-vod.RosEditingProject=com.aliyun.ros.cdk.vod.RosEditingProject
 @alicloud/ros-cdk-vod.RosEditingProjectProps=com.aliyun.ros.cdk.vod.RosEditingProjectProps
+@alicloud/ros-cdk-vod.RosMessageCallback=com.aliyun.ros.cdk.vod.RosMessageCallback
+@alicloud/ros-cdk-vod.RosMessageCallbackProps=com.aliyun.ros.cdk.vod.RosMessageCallbackProps
+@alicloud/ros-cdk-vod.RosStorage=com.aliyun.ros.cdk.vod.RosStorage
+@alicloud/ros-cdk-vod.RosStorageProps=com.aliyun.ros.cdk.vod.RosStorageProps
+@alicloud/ros-cdk-vod.Storage=com.aliyun.ros.cdk.vod.Storage
+@alicloud/ros-cdk-vod.StorageProps=com.aliyun.ros.cdk.vod.StorageProps
 @alicloud/ros-cdk-vod.datasource.EditingProjects=com.aliyun.ros.cdk.vod.datasource.EditingProjects
 @alicloud/ros-cdk-vod.datasource.EditingProjectsProps=com.aliyun.ros.cdk.vod.datasource.EditingProjectsProps
 @alicloud/ros-cdk-vod.datasource.RosEditingProjects=com.aliyun.ros.cdk.vod.datasource.RosEditingProjects
