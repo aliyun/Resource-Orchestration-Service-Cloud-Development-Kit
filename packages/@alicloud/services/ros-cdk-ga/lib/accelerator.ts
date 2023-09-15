@@ -9,34 +9,54 @@ export { RosAccelerator as AcceleratorProperty };
 export interface AcceleratorProps {
 
     /**
-     * Property duration: The Duration of the GA instance
-     */
-    readonly duration: string | ros.IResolvable;
-
-    /**
-     * Property pricingCycle: The PricingCycle of the GA instance.
-     */
-    readonly pricingCycle: string | ros.IResolvable;
-
-    /**
-     * Property spec: The instance type of the GA instance
-     */
-    readonly spec: string | ros.IResolvable;
-
-    /**
      * Property acceleratorName: The Name of the GA instance
      */
     readonly acceleratorName?: string | ros.IResolvable;
 
     /**
-     * Property autoPay: The AutoPay of the GA instance.
+     * Property autoPay: Whether to pay automatically.
      */
-    readonly autoPay?: string | ros.IResolvable;
+    readonly autoPay?: boolean | ros.IResolvable;
 
     /**
      * Property autoUseCoupon: The AutoUseCoupon of the GA instance.
      */
     readonly autoUseCoupon?: string | ros.IResolvable;
+
+    /**
+     * Property bandwidthBillingType: Bandwidth billing method.
+     */
+    readonly bandwidthBillingType?: string | ros.IResolvable;
+
+    /**
+     * Property duration: Length of purchase.
+     */
+    readonly duration?: string | ros.IResolvable;
+
+    /**
+     * Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
+     * Property ipSetConfig: Accelerate zone configuration.
+     */
+    readonly ipSetConfig?: RosAccelerator.IpSetConfigProperty | ros.IResolvable;
+
+    /**
+     * Property pricingCycle: Billing cycle.
+     */
+    readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ResourceGroup Id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property spec: Specifications of Global Acceleration Instances.
+     */
+    readonly spec?: string | ros.IResolvable;
 }
 
 /**
@@ -101,15 +121,19 @@ export class Accelerator extends ros.Resource {
      * Param id    - scoped id of the resource
      * Param props - resource properties
      */
-    constructor(scope: ros.Construct, id: string, props: AcceleratorProps, enableResourcePropertyConstraint:boolean = true) {
+    constructor(scope: ros.Construct, id: string, props: AcceleratorProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
 
         const rosAccelerator = new RosAccelerator(this, id,  {
+            bandwidthBillingType: props.bandwidthBillingType,
             acceleratorName: props.acceleratorName,
+            resourceGroupId: props.resourceGroupId,
             autoUseCoupon: props.autoUseCoupon,
+            instanceChargeType: props.instanceChargeType,
             pricingCycle: props.pricingCycle,
             duration: props.duration,
-            autoPay: props.autoPay,
+            autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
+            ipSetConfig: props.ipSetConfig,
             spec: props.spec,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccelerator;

@@ -42,13 +42,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             get;
         }
 
-        /// <summary>Property aclId: The ID of the access control list associated with the listener to be created.</summary>
+        /// <summary>Property aclId: The ID of the access control associated with the listener to be created.</summary>
         /// <remarks>
         /// If the value of the AclStatus parameter is on, this parameter is required.
         /// </remarks>
         [JsiiProperty(name: "aclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AclId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property aclIds: The ID list of the access controls associated with the listener to be created.</summary>
+        /// <remarks>
+        /// If the value of the AclStatus parameter is on, this parameter is required.AclIds have higher priority than AclId.
+        /// </remarks>
+        [JsiiProperty(name: "aclIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AclIds
         {
             get
             {
@@ -357,13 +371,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property aclId: The ID of the access control list associated with the listener to be created.</summary>
+            /// <summary>Property aclId: The ID of the access control associated with the listener to be created.</summary>
             /// <remarks>
             /// If the value of the AclStatus parameter is on, this parameter is required.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "aclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AclId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property aclIds: The ID list of the access controls associated with the listener to be created.</summary>
+            /// <remarks>
+            /// If the value of the AclStatus parameter is on, this parameter is required.AclIds have higher priority than AclId.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "aclIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? AclIds
             {
                 get => GetInstanceProperty<object?>();
             }

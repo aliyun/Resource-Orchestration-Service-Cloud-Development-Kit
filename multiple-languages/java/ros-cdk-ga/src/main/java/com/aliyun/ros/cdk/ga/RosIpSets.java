@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  <code>ALIYUN::GA::IpSets</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.985Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:26.511Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosIpSets")
 public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -149,6 +149,13 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIspType() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link AccelerateRegionProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -163,6 +170,7 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object accelerateRegionId;
             java.lang.Object bandwidth;
             java.lang.Object ipVersion;
+            java.lang.Object ispType;
 
             /**
              * Sets the value of {@link AccelerateRegionProperty#getAccelerateRegionId}
@@ -231,6 +239,28 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link AccelerateRegionProperty#getIspType}
+             * @param ispType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ispType(java.lang.String ispType) {
+                this.ispType = ispType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccelerateRegionProperty#getIspType}
+             * @param ispType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ispType(com.aliyun.ros.cdk.core.IResolvable ispType) {
+                this.ispType = ispType;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link AccelerateRegionProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -251,6 +281,7 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object accelerateRegionId;
             private final java.lang.Object bandwidth;
             private final java.lang.Object ipVersion;
+            private final java.lang.Object ispType;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -261,6 +292,7 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
                 this.accelerateRegionId = software.amazon.jsii.Kernel.get(this, "accelerateRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ipVersion = software.amazon.jsii.Kernel.get(this, "ipVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ispType = software.amazon.jsii.Kernel.get(this, "ispType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -271,6 +303,7 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
                 this.accelerateRegionId = java.util.Objects.requireNonNull(builder.accelerateRegionId, "accelerateRegionId is required");
                 this.bandwidth = java.util.Objects.requireNonNull(builder.bandwidth, "bandwidth is required");
                 this.ipVersion = builder.ipVersion;
+                this.ispType = builder.ispType;
             }
 
             @Override
@@ -289,6 +322,11 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getIspType() {
+                return this.ispType;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -298,6 +336,9 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("bandwidth", om.valueToTree(this.getBandwidth()));
                 if (this.getIpVersion() != null) {
                     data.set("ipVersion", om.valueToTree(this.getIpVersion()));
+                }
+                if (this.getIspType() != null) {
+                    data.set("ispType", om.valueToTree(this.getIspType()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -319,7 +360,8 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
 
                 if (!accelerateRegionId.equals(that.accelerateRegionId)) return false;
                 if (!bandwidth.equals(that.bandwidth)) return false;
-                return this.ipVersion != null ? this.ipVersion.equals(that.ipVersion) : that.ipVersion == null;
+                if (this.ipVersion != null ? !this.ipVersion.equals(that.ipVersion) : that.ipVersion != null) return false;
+                return this.ispType != null ? this.ispType.equals(that.ispType) : that.ispType == null;
             }
 
             @Override
@@ -327,6 +369,7 @@ public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.accelerateRegionId.hashCode();
                 result = 31 * result + (this.bandwidth.hashCode());
                 result = 31 * result + (this.ipVersion != null ? this.ipVersion.hashCode() : 0);
+                result = 31 * result + (this.ispType != null ? this.ispType.hashCode() : 0);
                 return result;
             }
         }

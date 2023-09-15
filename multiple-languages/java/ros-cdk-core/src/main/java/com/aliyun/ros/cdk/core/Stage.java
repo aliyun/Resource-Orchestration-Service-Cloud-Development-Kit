@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * copies of your application which should be be deployed to different
  * environments.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:34.813Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:23.044Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stage")
 public class Stage extends com.aliyun.ros.cdk.core.Construct {
 

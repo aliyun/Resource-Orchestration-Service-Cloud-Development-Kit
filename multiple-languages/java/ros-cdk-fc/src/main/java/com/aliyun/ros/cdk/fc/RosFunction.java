@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  <code>ALIYUN::FC::Function</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.827Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:26.365Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunction")
 public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -1953,12 +1953,16 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getArgs();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getArgs() {
+            return null;
+        }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getCommand();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCommand() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link CustomRuntimeConfigProperty}
@@ -1977,7 +1981,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link CustomRuntimeConfigProperty#getArgs}
-             * @param args the value to be set. This parameter is required.
+             * @param args the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1988,7 +1992,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link CustomRuntimeConfigProperty#getArgs}
-             * @param args the value to be set. This parameter is required.
+             * @param args the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1999,7 +2003,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link CustomRuntimeConfigProperty#getCommand}
-             * @param command the value to be set. This parameter is required.
+             * @param command the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2010,7 +2014,7 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link CustomRuntimeConfigProperty#getCommand}
-             * @param command the value to be set. This parameter is required.
+             * @param command the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2055,8 +2059,8 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-                this.args = java.util.Objects.requireNonNull(builder.args, "args is required");
-                this.command = java.util.Objects.requireNonNull(builder.command, "command is required");
+                this.args = builder.args;
+                this.command = builder.command;
             }
 
             @Override
@@ -2075,8 +2079,12 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-                data.set("args", om.valueToTree(this.getArgs()));
-                data.set("command", om.valueToTree(this.getCommand()));
+                if (this.getArgs() != null) {
+                    data.set("args", om.valueToTree(this.getArgs()));
+                }
+                if (this.getCommand() != null) {
+                    data.set("command", om.valueToTree(this.getCommand()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-fc.RosFunction.CustomRuntimeConfigProperty"));
@@ -2095,14 +2103,14 @@ public class RosFunction extends com.aliyun.ros.cdk.core.RosResource {
 
                 CustomRuntimeConfigProperty.Jsii$Proxy that = (CustomRuntimeConfigProperty.Jsii$Proxy) o;
 
-                if (!args.equals(that.args)) return false;
-                return this.command.equals(that.command);
+                if (this.args != null ? !this.args.equals(that.args) : that.args != null) return false;
+                return this.command != null ? this.command.equals(that.command) : that.command == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.args.hashCode();
-                result = 31 * result + (this.command.hashCode());
+                int result = this.args != null ? this.args.hashCode() : 0;
+                result = 31 * result + (this.command != null ? this.command.hashCode() : 0);
                 return result;
             }
         }

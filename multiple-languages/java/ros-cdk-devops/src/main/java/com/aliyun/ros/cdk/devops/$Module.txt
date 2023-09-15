@@ -1,0 +1,9 @@
+@alicloud/ros-cdk-devops.Pipeline=com.aliyun.ros.cdk.devops.Pipeline
+@alicloud/ros-cdk-devops.PipelineProps=com.aliyun.ros.cdk.devops.PipelineProps
+@alicloud/ros-cdk-devops.RosPipeline=com.aliyun.ros.cdk.devops.RosPipeline
+@alicloud/ros-cdk-devops.RosPipelineProps=com.aliyun.ros.cdk.devops.RosPipelineProps
+@alicloud/ros-cdk-devops.RosVariableGroup=com.aliyun.ros.cdk.devops.RosVariableGroup
+@alicloud/ros-cdk-devops.RosVariableGroup.VariablesProperty=com.aliyun.ros.cdk.devops.RosVariableGroup$VariablesProperty
+@alicloud/ros-cdk-devops.RosVariableGroupProps=com.aliyun.ros.cdk.devops.RosVariableGroupProps
+@alicloud/ros-cdk-devops.VariableGroup=com.aliyun.ros.cdk.devops.VariableGroup
+@alicloud/ros-cdk-devops.VariableGroupProps=com.aliyun.ros.cdk.devops.VariableGroupProps

@@ -25,6 +25,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
+        /// <summary>Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.</summary>
+        /// <remarks>
+        /// Default: false
+        /// </remarks>
+        [JsiiProperty(name: "autoReboot", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoReboot
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::ECS::SSHKeyPairAttachment`.</summary>
         [JsiiTypeProxy(nativeType: typeof(ISSHKeyPairAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.SSHKeyPairAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.ISSHKeyPairAttachmentProps
@@ -48,6 +62,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public object KeyPairName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.</summary>
+            /// <remarks>
+            /// Default: false
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoReboot", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoReboot
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

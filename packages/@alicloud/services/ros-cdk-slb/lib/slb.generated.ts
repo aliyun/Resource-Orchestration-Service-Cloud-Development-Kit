@@ -1130,10 +1130,16 @@ export interface RosListenerProps {
     readonly protocol: string | ros.IResolvable;
 
     /**
-     * @Property aclId: The ID of the access control list associated with the listener to be created.
+     * @Property aclId: The ID of the access control associated with the listener to be created.
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
     readonly aclId?: string | ros.IResolvable;
+
+    /**
+     * @Property aclIds: The ID list of the access controls associated with the listener to be created.
+     * If the value of the AclStatus parameter is on, this parameter is required.AclIds have higher priority than AclId.
+     */
+    readonly aclIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property aclStatus: Indicates whether to enable access control.
@@ -1260,24 +1266,7 @@ export interface RosListenerProps {
 function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.requestTimeout && (typeof properties.requestTimeout) !== 'object') {
-        errors.collect(ros.propertyValidator('requestTimeout', ros.validateRange)({
-            data: properties.requestTimeout,
-            min: 1,
-            max: 180,
-          }));
-    }
-    errors.collect(ros.propertyValidator('requestTimeout', ros.validateNumber)(properties.requestTimeout));
     errors.collect(ros.propertyValidator('vServerGroupId', ros.validateString)(properties.vServerGroupId));
-    errors.collect(ros.propertyValidator('listenerPort', ros.requiredValidator)(properties.listenerPort));
-    if(properties.listenerPort && (typeof properties.listenerPort) !== 'object') {
-        errors.collect(ros.propertyValidator('listenerPort', ros.validateRange)({
-            data: properties.listenerPort,
-            min: 0,
-            max: 65535,
-          }));
-    }
-    errors.collect(ros.propertyValidator('listenerPort', ros.validateNumber)(properties.listenerPort));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -1286,8 +1275,6 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('tlsCipherPolicy', ros.validateString)(properties.tlsCipherPolicy));
-    errors.collect(ros.propertyValidator('caCertificateId', ros.validateString)(properties.caCertificateId));
     if(properties.scheduler && (typeof properties.scheduler) !== 'object') {
         errors.collect(ros.propertyValidator('scheduler', ros.validateAllowedValues)({
           data: properties.scheduler,
@@ -1295,7 +1282,6 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('scheduler', ros.validateString)(properties.scheduler));
-    errors.collect(ros.propertyValidator('aclId', ros.validateString)(properties.aclId));
     errors.collect(ros.propertyValidator('healthCheck', RosListener_HealthCheckPropertyValidator)(properties.healthCheck));
     if(properties.idleTimeout && (typeof properties.idleTimeout) !== 'object') {
         errors.collect(ros.propertyValidator('idleTimeout', ros.validateRange)({
@@ -1315,22 +1301,6 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('backendServerPort', ros.validateNumber)(properties.backendServerPort));
-    errors.collect(ros.propertyValidator('persistence', RosListener_PersistencePropertyValidator)(properties.persistence));
-    if(properties.portRange && (Array.isArray(properties.portRange) || (typeof properties.portRange) === 'string')) {
-        errors.collect(ros.propertyValidator('portRange', ros.validateLength)({
-            data: properties.portRange.length,
-            min: 1,
-            max: 1,
-          }));
-    }
-    errors.collect(ros.propertyValidator('portRange', ros.listValidator(RosListener_PortRangePropertyValidator))(properties.portRange));
-    if(properties.aclStatus && (typeof properties.aclStatus) !== 'object') {
-        errors.collect(ros.propertyValidator('aclStatus', ros.validateAllowedValues)({
-          data: properties.aclStatus,
-          allowedValues: ["on","off"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('aclStatus', ros.validateString)(properties.aclStatus));
     errors.collect(ros.propertyValidator('bandwidth', ros.requiredValidator)(properties.bandwidth));
     if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
         errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
@@ -1348,6 +1318,51 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('gzip', ros.validateString)(properties.gzip));
     errors.collect(ros.propertyValidator('serverCertificateId', ros.validateString)(properties.serverCertificateId));
+    errors.collect(ros.propertyValidator('httpConfig', RosListener_HttpConfigPropertyValidator)(properties.httpConfig));
+    errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
+    if(properties.protocol && (typeof properties.protocol) !== 'object') {
+        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
+          data: properties.protocol,
+          allowedValues: ["http","https","tcp","udp"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    if(properties.requestTimeout && (typeof properties.requestTimeout) !== 'object') {
+        errors.collect(ros.propertyValidator('requestTimeout', ros.validateRange)({
+            data: properties.requestTimeout,
+            min: 1,
+            max: 180,
+          }));
+    }
+    errors.collect(ros.propertyValidator('requestTimeout', ros.validateNumber)(properties.requestTimeout));
+    errors.collect(ros.propertyValidator('listenerPort', ros.requiredValidator)(properties.listenerPort));
+    if(properties.listenerPort && (typeof properties.listenerPort) !== 'object') {
+        errors.collect(ros.propertyValidator('listenerPort', ros.validateRange)({
+            data: properties.listenerPort,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('listenerPort', ros.validateNumber)(properties.listenerPort));
+    errors.collect(ros.propertyValidator('tlsCipherPolicy', ros.validateString)(properties.tlsCipherPolicy));
+    errors.collect(ros.propertyValidator('caCertificateId', ros.validateString)(properties.caCertificateId));
+    errors.collect(ros.propertyValidator('aclId', ros.validateString)(properties.aclId));
+    errors.collect(ros.propertyValidator('persistence', RosListener_PersistencePropertyValidator)(properties.persistence));
+    if(properties.portRange && (Array.isArray(properties.portRange) || (typeof properties.portRange) === 'string')) {
+        errors.collect(ros.propertyValidator('portRange', ros.validateLength)({
+            data: properties.portRange.length,
+            min: 1,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('portRange', ros.listValidator(RosListener_PortRangePropertyValidator))(properties.portRange));
+    if(properties.aclStatus && (typeof properties.aclStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('aclStatus', ros.validateAllowedValues)({
+          data: properties.aclStatus,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('aclStatus', ros.validateString)(properties.aclStatus));
     errors.collect(ros.propertyValidator('masterSlaveServerGroupId', ros.validateString)(properties.masterSlaveServerGroupId));
     errors.collect(ros.propertyValidator('startListener', ros.validateBoolean)(properties.startListener));
     if(properties.aclType && (typeof properties.aclType) !== 'object') {
@@ -1357,16 +1372,8 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('aclType', ros.validateString)(properties.aclType));
-    errors.collect(ros.propertyValidator('httpConfig', RosListener_HttpConfigPropertyValidator)(properties.httpConfig));
     errors.collect(ros.propertyValidator('enableHttp2', ros.validateString)(properties.enableHttp2));
-    errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
-    if(properties.protocol && (typeof properties.protocol) !== 'object') {
-        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
-          data: properties.protocol,
-          allowedValues: ["http","https","tcp","udp"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    errors.collect(ros.propertyValidator('aclIds', ros.listValidator(ros.validateString))(properties.aclIds));
     return errors.wrap('supplied properties not correct for "RosListenerProps"');
 }
 
@@ -1389,6 +1396,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
       Protocol: ros.stringToRosTemplate(properties.protocol),
       AclId: ros.stringToRosTemplate(properties.aclId),
+      AclIds: ros.listMapper(ros.stringToRosTemplate)(properties.aclIds),
       AclStatus: ros.stringToRosTemplate(properties.aclStatus),
       AclType: ros.stringToRosTemplate(properties.aclType),
       BackendServerPort: ros.numberToRosTemplate(properties.backendServerPort),
@@ -1459,10 +1467,16 @@ export class RosListener extends ros.RosResource {
     public protocol: string | ros.IResolvable;
 
     /**
-     * @Property aclId: The ID of the access control list associated with the listener to be created.
+     * @Property aclId: The ID of the access control associated with the listener to be created.
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
     public aclId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property aclIds: The ID list of the access controls associated with the listener to be created.
+     * If the value of the AclStatus parameter is on, this parameter is required.AclIds have higher priority than AclId.
+     */
+    public aclIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property aclStatus: Indicates whether to enable access control.
@@ -1596,6 +1610,7 @@ export class RosListener extends ros.RosResource {
         this.loadBalancerId = props.loadBalancerId;
         this.protocol = props.protocol;
         this.aclId = props.aclId;
+        this.aclIds = props.aclIds;
         this.aclStatus = props.aclStatus;
         this.aclType = props.aclType;
         this.backendServerPort = props.backendServerPort;
@@ -1625,6 +1640,7 @@ export class RosListener extends ros.RosResource {
             loadBalancerId: this.loadBalancerId,
             protocol: this.protocol,
             aclId: this.aclId,
+            aclIds: this.aclIds,
             aclStatus: this.aclStatus,
             aclType: this.aclType,
             backendServerPort: this.backendServerPort,

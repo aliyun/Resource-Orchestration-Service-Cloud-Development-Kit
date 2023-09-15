@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  <code>ALIYUN::SLB::Listener</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.826Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:28.352Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -155,6 +155,40 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setAclId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "aclId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAclIds() {
+        return software.amazon.jsii.Kernel.get(this, "aclIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAclIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "aclIds", value);
+    }
+
+    /**
+     */
+    public void setAclIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "aclIds", value);
     }
 
     /**
@@ -2077,6 +2111,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder aclId(final com.aliyun.ros.cdk.core.IResolvable aclId) {
             this.props.aclId(aclId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param aclIds This parameter is required.
+         */
+        public Builder aclIds(final com.aliyun.ros.cdk.core.IResolvable aclIds) {
+            this.props.aclIds(aclIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param aclIds This parameter is required.
+         */
+        public Builder aclIds(final java.util.List<? extends java.lang.Object> aclIds) {
+            this.props.aclIds(aclIds);
             return this;
         }
 

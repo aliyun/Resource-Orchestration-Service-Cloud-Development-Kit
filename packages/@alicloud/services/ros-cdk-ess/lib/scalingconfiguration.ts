@@ -226,6 +226,11 @@ export class ScalingConfiguration extends ros.Resource {
     public readonly attrScalingConfigurationId: ros.IResolvable;
 
     /**
+     * Attribute ScalingGroupId: The id of the scaling group to which the scaling configuration belongs.
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::ESS::ScalingConfiguration`.
      *
      * Param scope - scope in which this resource is defined
@@ -273,5 +278,6 @@ export class ScalingConfiguration extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingConfiguration;
         this.attrScalingConfigurationId = rosScalingConfiguration.attrScalingConfigurationId;
+        this.attrScalingGroupId = rosScalingConfiguration.attrScalingGroupId;
     }
 }

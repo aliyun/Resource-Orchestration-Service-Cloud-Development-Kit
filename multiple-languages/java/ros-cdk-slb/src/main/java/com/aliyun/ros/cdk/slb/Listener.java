@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  <code>ALIYUN::SLB::Listener</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.713Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:28.299Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -189,27 +189,52 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property aclId: The ID of the access control list associated with the listener to be created.
+         * Property aclId: The ID of the access control associated with the listener to be created.
          * <p>
          * If the value of the AclStatus parameter is on, this parameter is required.
          * <p>
          * @return {@code this}
-         * @param aclId Property aclId: The ID of the access control list associated with the listener to be created. This parameter is required.
+         * @param aclId Property aclId: The ID of the access control associated with the listener to be created. This parameter is required.
          */
         public Builder aclId(final java.lang.String aclId) {
             this.props.aclId(aclId);
             return this;
         }
         /**
-         * Property aclId: The ID of the access control list associated with the listener to be created.
+         * Property aclId: The ID of the access control associated with the listener to be created.
          * <p>
          * If the value of the AclStatus parameter is on, this parameter is required.
          * <p>
          * @return {@code this}
-         * @param aclId Property aclId: The ID of the access control list associated with the listener to be created. This parameter is required.
+         * @param aclId Property aclId: The ID of the access control associated with the listener to be created. This parameter is required.
          */
         public Builder aclId(final com.aliyun.ros.cdk.core.IResolvable aclId) {
             this.props.aclId(aclId);
+            return this;
+        }
+
+        /**
+         * Property aclIds: The ID list of the access controls associated with the listener to be created.
+         * <p>
+         * If the value of the AclStatus parameter is on, this parameter is required.AclIds have higher priority than AclId.
+         * <p>
+         * @return {@code this}
+         * @param aclIds Property aclIds: The ID list of the access controls associated with the listener to be created. This parameter is required.
+         */
+        public Builder aclIds(final com.aliyun.ros.cdk.core.IResolvable aclIds) {
+            this.props.aclIds(aclIds);
+            return this;
+        }
+        /**
+         * Property aclIds: The ID list of the access controls associated with the listener to be created.
+         * <p>
+         * If the value of the AclStatus parameter is on, this parameter is required.AclIds have higher priority than AclId.
+         * <p>
+         * @return {@code this}
+         * @param aclIds Property aclIds: The ID list of the access controls associated with the listener to be created. This parameter is required.
+         */
+        public Builder aclIds(final java.util.List<? extends java.lang.Object> aclIds) {
+            this.props.aclIds(aclIds);
             return this;
         }
 

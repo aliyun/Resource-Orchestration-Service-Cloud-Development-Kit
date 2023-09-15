@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS resource type:  <code>ALIYUN::GA::Accelerator</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.944Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:26.472Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.Accelerator")
 public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
 
@@ -24,12 +24,12 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
-     * @param props This parameter is required.
+     * @param props
      * @param enableResourcePropertyConstraint
      */
-    public Accelerator(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ga.AcceleratorProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
+    public Accelerator(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ga.AcceleratorProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required"), enableResourcePropertyConstraint });
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), props, enableResourcePropertyConstraint });
     }
 
     /**
@@ -41,11 +41,26 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
-     * @param props This parameter is required.
+     * @param props
      */
-    public Accelerator(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ga.AcceleratorProps props) {
+    public Accelerator(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ga.AcceleratorProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), props });
+    }
+
+    /**
+     * Create a new <code>ALIYUN::GA::Accelerator</code>.
+     * <p>
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     */
+    public Accelerator(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
+        super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+        software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required") });
     }
 
     /**
@@ -136,76 +151,12 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
         private final com.aliyun.ros.cdk.core.Construct scope;
         private final java.lang.String id;
         private final java.lang.Boolean enableResourcePropertyConstraint;
-        private final com.aliyun.ros.cdk.ga.AcceleratorProps.Builder props;
+        private com.aliyun.ros.cdk.ga.AcceleratorProps.Builder props;
 
         private Builder(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
             this.scope = scope;
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-            this.props = new com.aliyun.ros.cdk.ga.AcceleratorProps.Builder();
-        }
-
-        /**
-         * Property duration: The Duration of the GA instance.
-         * <p>
-         * @return {@code this}
-         * @param duration Property duration: The Duration of the GA instance. This parameter is required.
-         */
-        public Builder duration(final java.lang.String duration) {
-            this.props.duration(duration);
-            return this;
-        }
-        /**
-         * Property duration: The Duration of the GA instance.
-         * <p>
-         * @return {@code this}
-         * @param duration Property duration: The Duration of the GA instance. This parameter is required.
-         */
-        public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
-            this.props.duration(duration);
-            return this;
-        }
-
-        /**
-         * Property pricingCycle: The PricingCycle of the GA instance.
-         * <p>
-         * @return {@code this}
-         * @param pricingCycle Property pricingCycle: The PricingCycle of the GA instance. This parameter is required.
-         */
-        public Builder pricingCycle(final java.lang.String pricingCycle) {
-            this.props.pricingCycle(pricingCycle);
-            return this;
-        }
-        /**
-         * Property pricingCycle: The PricingCycle of the GA instance.
-         * <p>
-         * @return {@code this}
-         * @param pricingCycle Property pricingCycle: The PricingCycle of the GA instance. This parameter is required.
-         */
-        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
-            this.props.pricingCycle(pricingCycle);
-            return this;
-        }
-
-        /**
-         * Property spec: The instance type of the GA instance.
-         * <p>
-         * @return {@code this}
-         * @param spec Property spec: The instance type of the GA instance. This parameter is required.
-         */
-        public Builder spec(final java.lang.String spec) {
-            this.props.spec(spec);
-            return this;
-        }
-        /**
-         * Property spec: The instance type of the GA instance.
-         * <p>
-         * @return {@code this}
-         * @param spec Property spec: The instance type of the GA instance. This parameter is required.
-         */
-        public Builder spec(final com.aliyun.ros.cdk.core.IResolvable spec) {
-            this.props.spec(spec);
-            return this;
         }
 
         /**
@@ -215,7 +166,7 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
          * @param acceleratorName Property acceleratorName: The Name of the GA instance. This parameter is required.
          */
         public Builder acceleratorName(final java.lang.String acceleratorName) {
-            this.props.acceleratorName(acceleratorName);
+            this.props().acceleratorName(acceleratorName);
             return this;
         }
         /**
@@ -225,28 +176,28 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
          * @param acceleratorName Property acceleratorName: The Name of the GA instance. This parameter is required.
          */
         public Builder acceleratorName(final com.aliyun.ros.cdk.core.IResolvable acceleratorName) {
-            this.props.acceleratorName(acceleratorName);
+            this.props().acceleratorName(acceleratorName);
             return this;
         }
 
         /**
-         * Property autoPay: The AutoPay of the GA instance.
+         * Property autoPay: Whether to pay automatically.
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: The AutoPay of the GA instance. This parameter is required.
+         * @param autoPay Property autoPay: Whether to pay automatically. This parameter is required.
          */
-        public Builder autoPay(final java.lang.String autoPay) {
-            this.props.autoPay(autoPay);
+        public Builder autoPay(final java.lang.Boolean autoPay) {
+            this.props().autoPay(autoPay);
             return this;
         }
         /**
-         * Property autoPay: The AutoPay of the GA instance.
+         * Property autoPay: Whether to pay automatically.
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: The AutoPay of the GA instance. This parameter is required.
+         * @param autoPay Property autoPay: Whether to pay automatically. This parameter is required.
          */
         public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
-            this.props.autoPay(autoPay);
+            this.props().autoPay(autoPay);
             return this;
         }
 
@@ -257,7 +208,7 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
          * @param autoUseCoupon Property autoUseCoupon: The AutoUseCoupon of the GA instance. This parameter is required.
          */
         public Builder autoUseCoupon(final java.lang.String autoUseCoupon) {
-            this.props.autoUseCoupon(autoUseCoupon);
+            this.props().autoUseCoupon(autoUseCoupon);
             return this;
         }
         /**
@@ -267,7 +218,154 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
          * @param autoUseCoupon Property autoUseCoupon: The AutoUseCoupon of the GA instance. This parameter is required.
          */
         public Builder autoUseCoupon(final com.aliyun.ros.cdk.core.IResolvable autoUseCoupon) {
-            this.props.autoUseCoupon(autoUseCoupon);
+            this.props().autoUseCoupon(autoUseCoupon);
+            return this;
+        }
+
+        /**
+         * Property bandwidthBillingType: Bandwidth billing method.
+         * <p>
+         * @return {@code this}
+         * @param bandwidthBillingType Property bandwidthBillingType: Bandwidth billing method. This parameter is required.
+         */
+        public Builder bandwidthBillingType(final java.lang.String bandwidthBillingType) {
+            this.props().bandwidthBillingType(bandwidthBillingType);
+            return this;
+        }
+        /**
+         * Property bandwidthBillingType: Bandwidth billing method.
+         * <p>
+         * @return {@code this}
+         * @param bandwidthBillingType Property bandwidthBillingType: Bandwidth billing method. This parameter is required.
+         */
+        public Builder bandwidthBillingType(final com.aliyun.ros.cdk.core.IResolvable bandwidthBillingType) {
+            this.props().bandwidthBillingType(bandwidthBillingType);
+            return this;
+        }
+
+        /**
+         * Property duration: Length of purchase.
+         * <p>
+         * @return {@code this}
+         * @param duration Property duration: Length of purchase. This parameter is required.
+         */
+        public Builder duration(final java.lang.String duration) {
+            this.props().duration(duration);
+            return this;
+        }
+        /**
+         * Property duration: Length of purchase.
+         * <p>
+         * @return {@code this}
+         * @param duration Property duration: Length of purchase. This parameter is required.
+         */
+        public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
+            this.props().duration(duration);
+            return this;
+        }
+
+        /**
+         * Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).
+         * <p>
+         * @return {@code this}
+         * @param instanceChargeType Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid). This parameter is required.
+         */
+        public Builder instanceChargeType(final java.lang.String instanceChargeType) {
+            this.props().instanceChargeType(instanceChargeType);
+            return this;
+        }
+        /**
+         * Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).
+         * <p>
+         * @return {@code this}
+         * @param instanceChargeType Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid). This parameter is required.
+         */
+        public Builder instanceChargeType(final com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.props().instanceChargeType(instanceChargeType);
+            return this;
+        }
+
+        /**
+         * Property ipSetConfig: Accelerate zone configuration.
+         * <p>
+         * @return {@code this}
+         * @param ipSetConfig Property ipSetConfig: Accelerate zone configuration. This parameter is required.
+         */
+        public Builder ipSetConfig(final com.aliyun.ros.cdk.core.IResolvable ipSetConfig) {
+            this.props().ipSetConfig(ipSetConfig);
+            return this;
+        }
+        /**
+         * Property ipSetConfig: Accelerate zone configuration.
+         * <p>
+         * @return {@code this}
+         * @param ipSetConfig Property ipSetConfig: Accelerate zone configuration. This parameter is required.
+         */
+        public Builder ipSetConfig(final com.aliyun.ros.cdk.ga.RosAccelerator.IpSetConfigProperty ipSetConfig) {
+            this.props().ipSetConfig(ipSetConfig);
+            return this;
+        }
+
+        /**
+         * Property pricingCycle: Billing cycle.
+         * <p>
+         * @return {@code this}
+         * @param pricingCycle Property pricingCycle: Billing cycle. This parameter is required.
+         */
+        public Builder pricingCycle(final java.lang.String pricingCycle) {
+            this.props().pricingCycle(pricingCycle);
+            return this;
+        }
+        /**
+         * Property pricingCycle: Billing cycle.
+         * <p>
+         * @return {@code this}
+         * @param pricingCycle Property pricingCycle: Billing cycle. This parameter is required.
+         */
+        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.props().pricingCycle(pricingCycle);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ResourceGroup Id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ResourceGroup Id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ResourceGroup Id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ResourceGroup Id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property spec: Specifications of Global Acceleration Instances.
+         * <p>
+         * @return {@code this}
+         * @param spec Property spec: Specifications of Global Acceleration Instances. This parameter is required.
+         */
+        public Builder spec(final java.lang.String spec) {
+            this.props().spec(spec);
+            return this;
+        }
+        /**
+         * Property spec: Specifications of Global Acceleration Instances.
+         * <p>
+         * @return {@code this}
+         * @param spec Property spec: Specifications of Global Acceleration Instances. This parameter is required.
+         */
+        public Builder spec(final com.aliyun.ros.cdk.core.IResolvable spec) {
+            this.props().spec(spec);
             return this;
         }
 
@@ -279,9 +377,16 @@ public class Accelerator extends com.aliyun.ros.cdk.core.Resource {
             return new com.aliyun.ros.cdk.ga.Accelerator(
                 this.scope,
                 this.id,
-                this.props.build(),
+                this.props != null ? this.props.build() : null,
                 this.enableResourcePropertyConstraint
             );
+        }
+
+        private com.aliyun.ros.cdk.ga.AcceleratorProps.Builder props() {
+            if (this.props == null) {
+                this.props = new com.aliyun.ros.cdk.ga.AcceleratorProps.Builder();
+            }
+            return this.props;
         }
     }
 }

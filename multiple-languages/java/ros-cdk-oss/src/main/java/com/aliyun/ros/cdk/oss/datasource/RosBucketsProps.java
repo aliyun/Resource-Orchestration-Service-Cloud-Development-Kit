@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::OSS::Buckets</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.621Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:27.180Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.datasource.RosBucketsProps")
 @software.amazon.jsii.Jsii.Proxy(RosBucketsProps.Jsii$Proxy.class)
 public interface RosBucketsProps extends software.amazon.jsii.JsiiSerializable {

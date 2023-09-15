@@ -7848,6 +7848,11 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
+     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
+
+    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -8128,6 +8133,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
+        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -12017,6 +12023,12 @@ export interface RosSSHKeyPairAttachmentProps {
      * @Property keyPairName: SSH key pair name.
      */
     readonly keyPairName: string | ros.IResolvable;
+
+    /**
+     * @Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.
+     * Default: false
+     */
+    readonly autoReboot?: boolean | ros.IResolvable;
 }
 
 /**
@@ -12031,6 +12043,7 @@ function RosSSHKeyPairAttachmentPropsValidator(properties: any): ros.ValidationR
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('keyPairName', ros.requiredValidator)(properties.keyPairName));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    errors.collect(ros.propertyValidator('autoReboot', ros.validateBoolean)(properties.autoReboot));
     errors.collect(ros.propertyValidator('instanceIds', ros.requiredValidator)(properties.instanceIds));
     errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateAny))(properties.instanceIds));
     return errors.wrap('supplied properties not correct for "RosSSHKeyPairAttachmentProps"');
@@ -12052,6 +12065,7 @@ function rosSSHKeyPairAttachmentPropsToRosTemplate(properties: any, enableResour
     return {
       InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
+      AutoReboot: ros.booleanToRosTemplate(properties.autoReboot),
     };
 }
 
@@ -12083,6 +12097,12 @@ export class RosSSHKeyPairAttachment extends ros.RosResource {
     public keyPairName: string | ros.IResolvable;
 
     /**
+     * @Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.
+     * Default: false
+     */
+    public autoReboot: boolean | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::ECS::SSHKeyPairAttachment`.
      *
      * @param scope - scope in which this resource is defined
@@ -12095,6 +12115,7 @@ export class RosSSHKeyPairAttachment extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceIds = props.instanceIds;
         this.keyPairName = props.keyPairName;
+        this.autoReboot = props.autoReboot;
     }
 
 
@@ -12102,6 +12123,7 @@ export class RosSSHKeyPairAttachment extends ros.RosResource {
         return {
             instanceIds: this.instanceIds,
             keyPairName: this.keyPairName,
+            autoReboot: this.autoReboot,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
