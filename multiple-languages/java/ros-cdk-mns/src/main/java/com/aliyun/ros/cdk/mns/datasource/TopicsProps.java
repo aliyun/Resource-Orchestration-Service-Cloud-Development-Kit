@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::MNS::Topics</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.318Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:49.307Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.datasource.TopicsProps")
 @software.amazon.jsii.Jsii.Proxy(TopicsProps.Jsii$Proxy.class)
 public interface TopicsProps extends software.amazon.jsii.JsiiSerializable {

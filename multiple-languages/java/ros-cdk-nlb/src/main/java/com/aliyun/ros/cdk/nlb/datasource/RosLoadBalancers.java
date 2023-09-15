@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb.datasource;
 /**
  * A ROS template type:  <code>DATASOURCE::NLB::LoadBalancers</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.540Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:49.496Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.datasource.RosLoadBalancers")
 public class RosLoadBalancers extends com.aliyun.ros.cdk.core.RosResource {
 

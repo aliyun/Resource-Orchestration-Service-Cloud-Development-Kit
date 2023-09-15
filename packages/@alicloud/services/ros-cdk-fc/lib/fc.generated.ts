@@ -1404,11 +1404,11 @@ export namespace RosFunction {
         /**
          * @Property args: The startup parameters.
          */
-        readonly args: Array<string | ros.IResolvable> | ros.IResolvable;
+        readonly args?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property command: The startup command.
          */
-        readonly command: Array<string | ros.IResolvable> | ros.IResolvable;
+        readonly command?: Array<string | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -1421,9 +1421,7 @@ export namespace RosFunction {
 function RosFunction_CustomRuntimeConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('args', ros.requiredValidator)(properties.args));
     errors.collect(ros.propertyValidator('args', ros.listValidator(ros.validateString))(properties.args));
-    errors.collect(ros.propertyValidator('command', ros.requiredValidator)(properties.command));
     errors.collect(ros.propertyValidator('command', ros.listValidator(ros.validateString))(properties.command));
     return errors.wrap('supplied properties not correct for "CustomRuntimeConfigProperty"');
 }

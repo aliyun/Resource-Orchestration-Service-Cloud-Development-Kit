@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::PAI::Workspaces</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.704Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:49.625Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.datasource.WorkspacesProps")
 @software.amazon.jsii.Jsii.Proxy(WorkspacesProps.Jsii$Proxy.class)
 public interface WorkspacesProps extends software.amazon.jsii.JsiiSerializable {

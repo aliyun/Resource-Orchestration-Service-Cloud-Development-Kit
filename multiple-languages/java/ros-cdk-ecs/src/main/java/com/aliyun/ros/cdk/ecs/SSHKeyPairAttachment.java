@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  <code>ALIYUN::ECS::SSHKeyPairAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.166Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:48.106Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SSHKeyPairAttachment")
 public class SSHKeyPairAttachment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -125,6 +125,31 @@ public class SSHKeyPairAttachment extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.props.keyPairName(keyPairName);
+            return this;
+        }
+
+        /**
+         * Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.
+         * <p>
+         * Default: false
+         * <p>
+         * @return {@code this}
+         * @param autoReboot Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect. This parameter is required.
+         */
+        public Builder autoReboot(final java.lang.Boolean autoReboot) {
+            this.props.autoReboot(autoReboot);
+            return this;
+        }
+        /**
+         * Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.
+         * <p>
+         * Default: false
+         * <p>
+         * @return {@code this}
+         * @param autoReboot Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect. This parameter is required.
+         */
+        public Builder autoReboot(final com.aliyun.ros.cdk.core.IResolvable autoReboot) {
+            this.props.autoReboot(autoReboot);
             return this;
         }
 

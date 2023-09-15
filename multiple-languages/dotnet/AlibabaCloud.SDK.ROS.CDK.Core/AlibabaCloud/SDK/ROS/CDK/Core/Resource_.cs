@@ -136,6 +136,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get => GetInstanceProperty<string>()!;
         }
 
+        [JsiiProperty(name: "ref", typeJson: "{\"primitive\":\"string\"}")]
+        public virtual string Ref
+        {
+            get => GetInstanceProperty<string>()!;
+        }
+
         /// <summary>The stack in which this resource is defined.</summary>
         [JsiiProperty(name: "stack", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Stack\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.Stack Stack

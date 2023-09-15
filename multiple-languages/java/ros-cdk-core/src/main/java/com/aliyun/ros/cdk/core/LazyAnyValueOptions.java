@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options for creating lazy untyped tokens.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:34.788Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:46.085Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.LazyAnyValueOptions")
 @software.amazon.jsii.Jsii.Proxy(LazyAnyValueOptions.Jsii$Proxy.class)
 public interface LazyAnyValueOptions extends software.amazon.jsii.JsiiSerializable {

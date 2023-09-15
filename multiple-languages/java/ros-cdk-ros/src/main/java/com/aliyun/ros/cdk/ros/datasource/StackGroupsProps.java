@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::ROS::StackGroups</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.453Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:50.256Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.datasource.StackGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(StackGroupsProps.Jsii$Proxy.class)
 public interface StackGroupsProps extends software.amazon.jsii.JsiiSerializable {

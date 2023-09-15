@@ -8,34 +8,54 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosAcceleratorProps {
 
     /**
-     * @Property duration: The Duration of the GA instance
-     */
-    readonly duration: string | ros.IResolvable;
-
-    /**
-     * @Property pricingCycle: The PricingCycle of the GA instance.
-     */
-    readonly pricingCycle: string | ros.IResolvable;
-
-    /**
-     * @Property spec: The instance type of the GA instance
-     */
-    readonly spec: string | ros.IResolvable;
-
-    /**
      * @Property acceleratorName: The Name of the GA instance
      */
     readonly acceleratorName?: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: The AutoPay of the GA instance.
+     * @Property autoPay: Whether to pay automatically.
      */
-    readonly autoPay?: string | ros.IResolvable;
+    readonly autoPay?: boolean | ros.IResolvable;
 
     /**
      * @Property autoUseCoupon: The AutoUseCoupon of the GA instance.
      */
     readonly autoUseCoupon?: string | ros.IResolvable;
+
+    /**
+     * @Property bandwidthBillingType: Bandwidth billing method.
+     */
+    readonly bandwidthBillingType?: string | ros.IResolvable;
+
+    /**
+     * @Property duration: Length of purchase.
+     */
+    readonly duration?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property ipSetConfig: Accelerate zone configuration.
+     */
+    readonly ipSetConfig?: RosAccelerator.IpSetConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property pricingCycle: Billing cycle.
+     */
+    readonly pricingCycle?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ResourceGroup Id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property spec: Specifications of Global Acceleration Instances.
+     */
+    readonly spec?: string | ros.IResolvable;
 }
 
 /**
@@ -48,14 +68,21 @@ export interface RosAcceleratorProps {
 function RosAcceleratorPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bandwidthBillingType', ros.validateString)(properties.bandwidthBillingType));
     errors.collect(ros.propertyValidator('acceleratorName', ros.validateString)(properties.acceleratorName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('autoUseCoupon', ros.validateString)(properties.autoUseCoupon));
-    errors.collect(ros.propertyValidator('pricingCycle', ros.requiredValidator)(properties.pricingCycle));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
-    errors.collect(ros.propertyValidator('duration', ros.requiredValidator)(properties.duration));
     errors.collect(ros.propertyValidator('duration', ros.validateString)(properties.duration));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateString)(properties.autoPay));
-    errors.collect(ros.propertyValidator('spec', ros.requiredValidator)(properties.spec));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('ipSetConfig', RosAccelerator_IpSetConfigPropertyValidator)(properties.ipSetConfig));
     errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
     return errors.wrap('supplied properties not correct for "RosAcceleratorProps"');
 }
@@ -74,12 +101,16 @@ function rosAcceleratorPropsToRosTemplate(properties: any, enableResourcePropert
         RosAcceleratorPropsValidator(properties).assertSuccess();
     }
     return {
-      Duration: ros.stringToRosTemplate(properties.duration),
-      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
-      Spec: ros.stringToRosTemplate(properties.spec),
       AcceleratorName: ros.stringToRosTemplate(properties.acceleratorName),
-      AutoPay: ros.stringToRosTemplate(properties.autoPay),
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
       AutoUseCoupon: ros.stringToRosTemplate(properties.autoUseCoupon),
+      BandwidthBillingType: ros.stringToRosTemplate(properties.bandwidthBillingType),
+      Duration: ros.stringToRosTemplate(properties.duration),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      IpSetConfig: rosAcceleratorIpSetConfigPropertyToRosTemplate(properties.ipSetConfig),
+      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Spec: ros.stringToRosTemplate(properties.spec),
     };
 }
 
@@ -146,34 +177,54 @@ export class RosAccelerator extends ros.RosResource {
 
 
     /**
-     * @Property duration: The Duration of the GA instance
-     */
-    public duration: string | ros.IResolvable;
-
-    /**
-     * @Property pricingCycle: The PricingCycle of the GA instance.
-     */
-    public pricingCycle: string | ros.IResolvable;
-
-    /**
-     * @Property spec: The instance type of the GA instance
-     */
-    public spec: string | ros.IResolvable;
-
-    /**
      * @Property acceleratorName: The Name of the GA instance
      */
     public acceleratorName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoPay: The AutoPay of the GA instance.
+     * @Property autoPay: Whether to pay automatically.
      */
-    public autoPay: string | ros.IResolvable | undefined;
+    public autoPay: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property autoUseCoupon: The AutoUseCoupon of the GA instance.
      */
     public autoUseCoupon: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property bandwidthBillingType: Bandwidth billing method.
+     */
+    public bandwidthBillingType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property duration: Length of purchase.
+     */
+    public duration: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).
+     */
+    public instanceChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipSetConfig: Accelerate zone configuration.
+     */
+    public ipSetConfig: RosAccelerator.IpSetConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property pricingCycle: Billing cycle.
+     */
+    public pricingCycle: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ResourceGroup Id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property spec: Specifications of Global Acceleration Instances.
+     */
+    public spec: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::GA::Accelerator`.
@@ -195,28 +246,77 @@ export class RosAccelerator extends ros.RosResource {
         this.attrSpec = this.getAtt('Spec');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.duration = props.duration;
-        this.pricingCycle = props.pricingCycle;
-        this.spec = props.spec;
         this.acceleratorName = props.acceleratorName;
         this.autoPay = props.autoPay;
         this.autoUseCoupon = props.autoUseCoupon;
+        this.bandwidthBillingType = props.bandwidthBillingType;
+        this.duration = props.duration;
+        this.instanceChargeType = props.instanceChargeType;
+        this.ipSetConfig = props.ipSetConfig;
+        this.pricingCycle = props.pricingCycle;
+        this.resourceGroupId = props.resourceGroupId;
+        this.spec = props.spec;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            duration: this.duration,
-            pricingCycle: this.pricingCycle,
-            spec: this.spec,
             acceleratorName: this.acceleratorName,
             autoPay: this.autoPay,
             autoUseCoupon: this.autoUseCoupon,
+            bandwidthBillingType: this.bandwidthBillingType,
+            duration: this.duration,
+            instanceChargeType: this.instanceChargeType,
+            ipSetConfig: this.ipSetConfig,
+            pricingCycle: this.pricingCycle,
+            resourceGroupId: this.resourceGroupId,
+            spec: this.spec,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosAcceleratorPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosAccelerator {
+    /**
+     * @stability external
+     */
+    export interface IpSetConfigProperty {
+        /**
+         * @Property accessMode: Accelerated regional access mode.
+         */
+        readonly accessMode?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `IpSetConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `IpSetConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccelerator_IpSetConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('accessMode', ros.validateString)(properties.accessMode));
+    return errors.wrap('supplied properties not correct for "IpSetConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::Accelerator.IpSetConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `IpSetConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::Accelerator.IpSetConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosAcceleratorIpSetConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAccelerator_IpSetConfigPropertyValidator(properties).assertSuccess();
+    return {
+      AccessMode: ros.stringToRosTemplate(properties.accessMode),
+    };
 }
 
 /**
@@ -1217,6 +1317,10 @@ export namespace RosIpSets {
          */
         readonly ipVersion?: string | ros.IResolvable;
         /**
+         * @Property ispType: Accelerated area public network line type.
+         */
+        readonly ispType?: string | ros.IResolvable;
+        /**
          * @Property bandwidth: The bandwidth allocated to the acceleration region. Unit: Mbit/s.
      * Note
      * The minimum bandwidth allocated to each accelerated region is 2 Mbit/s.
@@ -1247,6 +1351,7 @@ function RosIpSets_AccelerateRegionPropertyValidator(properties: any): ros.Valid
         }));
     }
     errors.collect(ros.propertyValidator('ipVersion', ros.validateString)(properties.ipVersion));
+    errors.collect(ros.propertyValidator('ispType', ros.validateString)(properties.ispType));
     errors.collect(ros.propertyValidator('bandwidth', ros.requiredValidator)(properties.bandwidth));
     if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
         errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
@@ -1274,6 +1379,7 @@ function rosIpSetsAccelerateRegionPropertyToRosTemplate(properties: any): any {
     RosIpSets_AccelerateRegionPropertyValidator(properties).assertSuccess();
     return {
       IpVersion: ros.stringToRosTemplate(properties.ipVersion),
+      IspType: ros.stringToRosTemplate(properties.ispType),
       Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
       AccelerateRegionId: ros.stringToRosTemplate(properties.accelerateRegionId),
     };

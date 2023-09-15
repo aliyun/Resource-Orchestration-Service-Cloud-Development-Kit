@@ -62,6 +62,15 @@ export interface InstanceProps {
     readonly instanceName?: string | ros.IResolvable;
 
     /**
+     * Property nodeType: The type of node. Valid value:
+     * - **STAND_ALONE**
+     * - **MASTER_SLAVE**
+     * - **double**
+     * - **single**
+     */
+    readonly nodeType?: string | ros.IResolvable;
+
+    /**
      * Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
     readonly password?: string | ros.IResolvable;
@@ -349,6 +358,7 @@ export class Instance extends ros.Resource {
             instanceName: props.instanceName,
             vpcId: props.vpcId,
             chargeType: props.chargeType,
+            nodeType: props.nodeType,
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;

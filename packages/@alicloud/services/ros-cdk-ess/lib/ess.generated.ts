@@ -635,6 +635,11 @@ export class RosLifecycleHook extends ros.RosResource {
      */
     public readonly attrLifecycleHookId: ros.IResolvable;
 
+    /**
+     * @Attribute ScalingGroupId: The id of the scaling group to which the lifecycle hook belongs.
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -697,6 +702,7 @@ export class RosLifecycleHook extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosLifecycleHookProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosLifecycleHook.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrLifecycleHookId = this.getAtt('LifecycleHookId');
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.lifecycleTransition = props.lifecycleTransition;
@@ -1129,6 +1135,11 @@ export class RosScalingConfiguration extends ros.RosResource {
      */
     public readonly attrScalingConfigurationId: ros.IResolvable;
 
+    /**
+     * @Attribute ScalingGroupId: The id of the scaling group to which the scaling configuration belongs.
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -1343,6 +1354,7 @@ export class RosScalingConfiguration extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosScalingConfigurationProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosScalingConfiguration.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrScalingConfigurationId = this.getAtt('ScalingConfigurationId');
+        this.attrScalingGroupId = this.getAtt('ScalingGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.scalingGroupId = props.scalingGroupId;

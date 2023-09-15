@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::POLARDB::GlobalDatabaseNetworks</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.834Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:49.722Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.GlobalDatabaseNetworksProps")
 @software.amazon.jsii.Jsii.Proxy(GlobalDatabaseNetworksProps.Jsii$Proxy.class)
 public interface GlobalDatabaseNetworksProps extends software.amazon.jsii.JsiiSerializable {

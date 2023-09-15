@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a <code>ALIYUN::SLB::Listener</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.723Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:50.372Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,11 +33,20 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getProtocol();
 
     /**
-     * Property aclId: The ID of the access control list associated with the listener to be created.
+     * Property aclId: The ID of the access control associated with the listener to be created.
      * <p>
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAclId() {
+        return null;
+    }
+
+    /**
+     * Property aclIds: The ID list of the access controls associated with the listener to be created.
+     * <p>
+     * If the value of the AclStatus parameter is on, this parameter is required.AclIds have higher priority than AclId.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAclIds() {
         return null;
     }
 
@@ -229,6 +238,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object loadBalancerId;
         java.lang.Object protocol;
         java.lang.Object aclId;
+        java.lang.Object aclIds;
         java.lang.Object aclStatus;
         java.lang.Object aclType;
         java.lang.Object backendServerPort;
@@ -335,7 +345,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getAclId}
-         * @param aclId Property aclId: The ID of the access control list associated with the listener to be created.
+         * @param aclId Property aclId: The ID of the access control associated with the listener to be created.
          *              If the value of the AclStatus parameter is on, this parameter is required.
          * @return {@code this}
          */
@@ -346,12 +356,34 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getAclId}
-         * @param aclId Property aclId: The ID of the access control list associated with the listener to be created.
+         * @param aclId Property aclId: The ID of the access control associated with the listener to be created.
          *              If the value of the AclStatus parameter is on, this parameter is required.
          * @return {@code this}
          */
         public Builder aclId(com.aliyun.ros.cdk.core.IResolvable aclId) {
             this.aclId = aclId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getAclIds}
+         * @param aclIds Property aclIds: The ID list of the access controls associated with the listener to be created.
+         *               If the value of the AclStatus parameter is on, this parameter is required.AclIds have higher priority than AclId.
+         * @return {@code this}
+         */
+        public Builder aclIds(com.aliyun.ros.cdk.core.IResolvable aclIds) {
+            this.aclIds = aclIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ListenerProps#getAclIds}
+         * @param aclIds Property aclIds: The ID list of the access controls associated with the listener to be created.
+         *               If the value of the AclStatus parameter is on, this parameter is required.AclIds have higher priority than AclId.
+         * @return {@code this}
+         */
+        public Builder aclIds(java.util.List<? extends java.lang.Object> aclIds) {
+            this.aclIds = aclIds;
             return this;
         }
 
@@ -816,6 +848,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object loadBalancerId;
         private final java.lang.Object protocol;
         private final java.lang.Object aclId;
+        private final java.lang.Object aclIds;
         private final java.lang.Object aclStatus;
         private final java.lang.Object aclType;
         private final java.lang.Object backendServerPort;
@@ -847,6 +880,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aclId = software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aclIds = software.amazon.jsii.Kernel.get(this, "aclIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aclStatus = software.amazon.jsii.Kernel.get(this, "aclStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aclType = software.amazon.jsii.Kernel.get(this, "aclType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backendServerPort = software.amazon.jsii.Kernel.get(this, "backendServerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -878,6 +912,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
             this.protocol = java.util.Objects.requireNonNull(builder.protocol, "protocol is required");
             this.aclId = builder.aclId;
+            this.aclIds = builder.aclIds;
             this.aclStatus = builder.aclStatus;
             this.aclType = builder.aclType;
             this.backendServerPort = builder.backendServerPort;
@@ -922,6 +957,11 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getAclId() {
             return this.aclId;
+        }
+
+        @Override
+        public final java.lang.Object getAclIds() {
+            return this.aclIds;
         }
 
         @Override
@@ -1032,6 +1072,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getAclId() != null) {
                 data.set("aclId", om.valueToTree(this.getAclId()));
             }
+            if (this.getAclIds() != null) {
+                data.set("aclIds", om.valueToTree(this.getAclIds()));
+            }
             if (this.getAclStatus() != null) {
                 data.set("aclStatus", om.valueToTree(this.getAclStatus()));
             }
@@ -1112,6 +1155,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             if (!loadBalancerId.equals(that.loadBalancerId)) return false;
             if (!protocol.equals(that.protocol)) return false;
             if (this.aclId != null ? !this.aclId.equals(that.aclId) : that.aclId != null) return false;
+            if (this.aclIds != null ? !this.aclIds.equals(that.aclIds) : that.aclIds != null) return false;
             if (this.aclStatus != null ? !this.aclStatus.equals(that.aclStatus) : that.aclStatus != null) return false;
             if (this.aclType != null ? !this.aclType.equals(that.aclType) : that.aclType != null) return false;
             if (this.backendServerPort != null ? !this.backendServerPort.equals(that.backendServerPort) : that.backendServerPort != null) return false;
@@ -1140,6 +1184,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.loadBalancerId.hashCode());
             result = 31 * result + (this.protocol.hashCode());
             result = 31 * result + (this.aclId != null ? this.aclId.hashCode() : 0);
+            result = 31 * result + (this.aclIds != null ? this.aclIds.hashCode() : 0);
             result = 31 * result + (this.aclStatus != null ? this.aclStatus.hashCode() : 0);
             result = 31 * result + (this.aclType != null ? this.aclType.hashCode() : 0);
             result = 31 * result + (this.backendServerPort != null ? this.backendServerPort.hashCode() : 0);

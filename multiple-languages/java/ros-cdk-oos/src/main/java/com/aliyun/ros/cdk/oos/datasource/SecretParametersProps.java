@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::OOS::SecretParameters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.604Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:49.543Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.SecretParametersProps")
 @software.amazon.jsii.Jsii.Proxy(SecretParametersProps.Jsii$Proxy.class)
 public interface SecretParametersProps extends software.amazon.jsii.JsiiSerializable {

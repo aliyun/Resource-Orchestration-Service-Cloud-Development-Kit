@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::PAI::Datasets</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.696Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:49.610Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.datasource.DatasetsProps")
 @software.amazon.jsii.Jsii.Proxy(DatasetsProps.Jsii$Proxy.class)
 public interface DatasetsProps extends software.amazon.jsii.JsiiSerializable {

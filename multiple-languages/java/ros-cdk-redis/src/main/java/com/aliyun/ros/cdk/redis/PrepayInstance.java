@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS resource type:  <code>ALIYUN::REDIS::PrepayInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.238Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:50.076Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.PrepayInstance")
 public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -556,6 +556,45 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.props().instanceName(instanceName);
+            return this;
+        }
+
+        /**
+         * Property nodeType: The type of node.
+         * <p>
+         * Valid value:
+         * <p>
+         * <ul>
+         * <li><strong>STAND_ALONE</strong></li>
+         * <li><strong>MASTER_SLAVE</strong></li>
+         * <li><strong>double</strong></li>
+         * <li><strong>single</strong></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param nodeType Property nodeType: The type of node. This parameter is required.
+         */
+        public Builder nodeType(final java.lang.String nodeType) {
+            this.props().nodeType(nodeType);
+            return this;
+        }
+        /**
+         * Property nodeType: The type of node.
+         * <p>
+         * Valid value:
+         * <p>
+         * <ul>
+         * <li><strong>STAND_ALONE</strong></li>
+         * <li><strong>MASTER_SLAVE</strong></li>
+         * <li><strong>double</strong></li>
+         * <li><strong>single</strong></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param nodeType Property nodeType: The type of node. This parameter is required.
+         */
+        public Builder nodeType(final com.aliyun.ros.cdk.core.IResolvable nodeType) {
+            this.props().nodeType(nodeType);
             return this;
         }
 

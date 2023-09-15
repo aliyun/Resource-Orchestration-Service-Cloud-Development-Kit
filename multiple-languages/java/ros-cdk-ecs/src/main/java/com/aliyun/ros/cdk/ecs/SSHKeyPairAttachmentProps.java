@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a <code>ALIYUN::ECS::SSHKeyPairAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.167Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:48.107Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SSHKeyPairAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(SSHKeyPairAttachmentProps.Jsii$Proxy.class)
 public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,15 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
     @org.jetbrains.annotations.NotNull java.lang.Object getKeyPairName();
 
     /**
+     * Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.
+     * <p>
+     * Default: false
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoReboot() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link SSHKeyPairAttachmentProps}
      */
     static Builder builder() {
@@ -32,6 +41,7 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
     public static final class Builder implements software.amazon.jsii.Builder<SSHKeyPairAttachmentProps> {
         java.lang.Object instanceIds;
         java.lang.Object keyPairName;
+        java.lang.Object autoReboot;
 
         /**
          * Sets the value of {@link SSHKeyPairAttachmentProps#getInstanceIds}
@@ -76,6 +86,28 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link SSHKeyPairAttachmentProps#getAutoReboot}
+         * @param autoReboot Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.
+         *                   Default: false
+         * @return {@code this}
+         */
+        public Builder autoReboot(java.lang.Boolean autoReboot) {
+            this.autoReboot = autoReboot;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SSHKeyPairAttachmentProps#getAutoReboot}
+         * @param autoReboot Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.
+         *                   Default: false
+         * @return {@code this}
+         */
+        public Builder autoReboot(com.aliyun.ros.cdk.core.IResolvable autoReboot) {
+            this.autoReboot = autoReboot;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link SSHKeyPairAttachmentProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -93,6 +125,7 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SSHKeyPairAttachmentProps {
         private final java.lang.Object instanceIds;
         private final java.lang.Object keyPairName;
+        private final java.lang.Object autoReboot;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -102,6 +135,7 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
             super(objRef);
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoReboot = software.amazon.jsii.Kernel.get(this, "autoReboot", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -111,6 +145,7 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceIds = java.util.Objects.requireNonNull(builder.instanceIds, "instanceIds is required");
             this.keyPairName = java.util.Objects.requireNonNull(builder.keyPairName, "keyPairName is required");
+            this.autoReboot = builder.autoReboot;
         }
 
         @Override
@@ -124,6 +159,11 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
+        public final java.lang.Object getAutoReboot() {
+            return this.autoReboot;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -131,6 +171,9 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
 
             data.set("instanceIds", om.valueToTree(this.getInstanceIds()));
             data.set("keyPairName", om.valueToTree(this.getKeyPairName()));
+            if (this.getAutoReboot() != null) {
+                data.set("autoReboot", om.valueToTree(this.getAutoReboot()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.SSHKeyPairAttachmentProps"));
@@ -150,13 +193,15 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
             SSHKeyPairAttachmentProps.Jsii$Proxy that = (SSHKeyPairAttachmentProps.Jsii$Proxy) o;
 
             if (!instanceIds.equals(that.instanceIds)) return false;
-            return this.keyPairName.equals(that.keyPairName);
+            if (!keyPairName.equals(that.keyPairName)) return false;
+            return this.autoReboot != null ? this.autoReboot.equals(that.autoReboot) : that.autoReboot == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.instanceIds.hashCode();
             result = 31 * result + (this.keyPairName.hashCode());
+            result = 31 * result + (this.autoReboot != null ? this.autoReboot.hashCode() : 0);
             return result;
         }
     }

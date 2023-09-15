@@ -353,6 +353,47 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
+        private object? _nodeType;
+
+        /// <summary>Property nodeType: The type of node.</summary>
+        /// <remarks>
+        /// Valid value:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>STAND_ALONE</strong></description>
+        /// <description><strong>MASTER_SLAVE</strong></description>
+        /// <description><strong>double</strong></description>
+        /// <description><strong>single</strong></description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "nodeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? NodeType
+        {
+            get => _nodeType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _nodeType = value;
+            }
+        }
+
         private object? _password;
 
         /// <summary>Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers.</summary>

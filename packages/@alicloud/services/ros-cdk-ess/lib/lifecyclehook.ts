@@ -74,6 +74,11 @@ export class LifecycleHook extends ros.Resource {
     public readonly attrLifecycleHookId: ros.IResolvable;
 
     /**
+     * Attribute ScalingGroupId: The id of the scaling group to which the lifecycle hook belongs.
+     */
+    public readonly attrScalingGroupId: ros.IResolvable;
+
+    /**
      * Create a new `ALIYUN::ESS::LifecycleHook`.
      *
      * Param scope - scope in which this resource is defined
@@ -94,5 +99,6 @@ export class LifecycleHook extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosLifecycleHook;
         this.attrLifecycleHookId = rosLifecycleHook.attrLifecycleHookId;
+        this.attrScalingGroupId = rosLifecycleHook.attrScalingGroupId;
     }
 }

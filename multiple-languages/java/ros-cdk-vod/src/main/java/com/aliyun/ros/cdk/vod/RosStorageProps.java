@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vod;
 /**
  * Properties for defining a <code>ALIYUN::VOD::Storage</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:40.114Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:50.633Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.RosStorageProps")
 @software.amazon.jsii.Jsii.Proxy(RosStorageProps.Jsii$Proxy.class)
 public interface RosStorageProps extends software.amazon.jsii.JsiiSerializable {

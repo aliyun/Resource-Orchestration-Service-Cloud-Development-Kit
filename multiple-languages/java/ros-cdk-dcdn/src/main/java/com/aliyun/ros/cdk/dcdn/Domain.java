@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dcdn;
 /**
  * A ROS resource type:  <code>ALIYUN::DCDN::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:36.413Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:47.330Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dcdn.$Module.class, fqn = "@alicloud/ros-cdk-dcdn.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource {
 

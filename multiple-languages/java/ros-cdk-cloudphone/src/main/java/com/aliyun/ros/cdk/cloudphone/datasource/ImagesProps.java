@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudphone.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::CloudPhone::Images</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:35.711Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:46.870Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.datasource.ImagesProps")
 @software.amazon.jsii.Jsii.Proxy(ImagesProps.Jsii$Proxy.class)
 public interface ImagesProps extends software.amazon.jsii.JsiiSerializable {

@@ -139,6 +139,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
+        /// <summary>Property nodeType: The type of node.</summary>
+        /// <remarks>
+        /// Valid value:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>STAND_ALONE</strong></description>
+        /// <description><strong>MASTER_SLAVE</strong></description>
+        /// <description><strong>double</strong></description>
+        /// <description><strong>single</strong></description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "nodeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NodeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers.</summary>
         [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -448,6 +469,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             [JsiiOptional]
             [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InstanceName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property nodeType: The type of node.</summary>
+            /// <remarks>
+            /// Valid value:
+            ///
+            /// <list type="bullet">
+            /// <description><strong>STAND_ALONE</strong></description>
+            /// <description><strong>MASTER_SLAVE</strong></description>
+            /// <description><strong>double</strong></description>
+            /// <description><strong>single</strong></description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "nodeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NodeType
             {
                 get => GetInstanceProperty<object?>();
             }

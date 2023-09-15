@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::CS::ClusterNodePools</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:36.361Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:47.274Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.datasource.ClusterNodePoolsProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterNodePoolsProps.Jsii$Proxy.class)
 public interface ClusterNodePoolsProps extends software.amazon.jsii.JsiiSerializable {

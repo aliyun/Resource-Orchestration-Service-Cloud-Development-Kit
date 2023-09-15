@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::EDAS::Applications</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.480Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:48.320Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.datasource.RosApplicationsProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationsProps.Jsii$Proxy.class)
 public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializable {

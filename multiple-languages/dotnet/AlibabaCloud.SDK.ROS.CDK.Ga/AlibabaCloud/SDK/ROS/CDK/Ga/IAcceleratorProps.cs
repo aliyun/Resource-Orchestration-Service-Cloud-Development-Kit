@@ -8,27 +8,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
     [JsiiInterface(nativeType: typeof(IAcceleratorProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.AcceleratorProps")]
     public interface IAcceleratorProps
     {
-        /// <summary>Property duration: The Duration of the GA instance.</summary>
-        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object Duration
-        {
-            get;
-        }
-
-        /// <summary>Property pricingCycle: The PricingCycle of the GA instance.</summary>
-        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object PricingCycle
-        {
-            get;
-        }
-
-        /// <summary>Property spec: The instance type of the GA instance.</summary>
-        [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object Spec
-        {
-            get;
-        }
-
         /// <summary>Property acceleratorName: The Name of the GA instance.</summary>
         [JsiiProperty(name: "acceleratorName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -40,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
-        /// <summary>Property autoPay: The AutoPay of the GA instance.</summary>
-        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        /// <summary>Property autoPay: Whether to pay automatically.</summary>
+        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AutoPay
         {
@@ -62,33 +41,89 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
+        /// <summary>Property bandwidthBillingType: Bandwidth billing method.</summary>
+        [JsiiProperty(name: "bandwidthBillingType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BandwidthBillingType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property duration: Length of purchase.</summary>
+        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Duration
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).</summary>
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceChargeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property ipSetConfig: Accelerate zone configuration.</summary>
+        [JsiiProperty(name: "ipSetConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosAccelerator.IpSetConfigProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IpSetConfig
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property pricingCycle: Billing cycle.</summary>
+        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PricingCycle
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property resourceGroupId: The ResourceGroup Id.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property spec: Specifications of Global Acceleration Instances.</summary>
+        [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Spec
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `ALIYUN::GA::Accelerator`.</summary>
         [JsiiTypeProxy(nativeType: typeof(IAcceleratorProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.AcceleratorProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ga.IAcceleratorProps
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
-            }
-
-            /// <summary>Property duration: The Duration of the GA instance.</summary>
-            [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Duration
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property pricingCycle: The PricingCycle of the GA instance.</summary>
-            [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object PricingCycle
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property spec: The instance type of the GA instance.</summary>
-            [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Spec
-            {
-                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property acceleratorName: The Name of the GA instance.</summary>
@@ -99,9 +134,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property autoPay: The AutoPay of the GA instance.</summary>
+            /// <summary>Property autoPay: Whether to pay automatically.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AutoPay
             {
                 get => GetInstanceProperty<object?>();
@@ -111,6 +146,62 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             [JsiiOptional]
             [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AutoUseCoupon
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property bandwidthBillingType: Bandwidth billing method.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "bandwidthBillingType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BandwidthBillingType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property duration: Length of purchase.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Duration
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceChargeType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ipSetConfig: Accelerate zone configuration.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipSetConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosAccelerator.IpSetConfigProperty\"}]}}", isOptional: true)]
+            public object? IpSetConfig
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property pricingCycle: Billing cycle.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PricingCycle
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ResourceGroup Id.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property spec: Specifications of Global Acceleration Instances.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Spec
             {
                 get => GetInstanceProperty<object?>();
             }

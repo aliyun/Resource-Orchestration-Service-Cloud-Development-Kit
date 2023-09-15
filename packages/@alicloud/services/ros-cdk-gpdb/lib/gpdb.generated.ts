@@ -52,8 +52,20 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('accountPassword', ros.requiredValidator)(properties.accountPassword));
+    if(properties.accountPassword && (typeof properties.accountPassword) !== 'object') {
+        errors.collect(ros.propertyValidator('accountPassword', ros.validateAllowedPattern)({
+          data: properties.accountPassword,
+          reg: /^(?=.*[a-zA-Z])(?=.*[a-z0-9])(?=.*[a-z!@#$%^&*()_+=-])(?=.*[A-Z0-9])(?=.*[A-Z!@#$%^&*()_+=-])(?=.*[0-9!@#$%^&*()_+=-])[a-zA-Z0-9!@#$%^&*()_+=-]{8,32}$|^$/
+        }));
+    }
     errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
     errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    if(properties.accountName && (typeof properties.accountName) !== 'object') {
+        errors.collect(ros.propertyValidator('accountName', ros.validateAllowedPattern)({
+          data: properties.accountName,
+          reg: /^(?!root$)(?!gp)[a-z][a-z0-9_]{0,14}[a-z0-9]$/
+        }));
+    }
     errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     return errors.wrap('supplied properties not correct for "RosAccountProps"');
 }

@@ -117,6 +117,10 @@ export abstract class Resource extends Construct implements IResource {
     return Token.asAny(this.resource?.getAtt(name));
   }
 
+  public get ref(): string {
+    return Token.asString(this.resource?.ref);
+  }
+
   /**
    * Called when this resource is referenced across environments
    * (account/region) to order to request that a physical name will be generated

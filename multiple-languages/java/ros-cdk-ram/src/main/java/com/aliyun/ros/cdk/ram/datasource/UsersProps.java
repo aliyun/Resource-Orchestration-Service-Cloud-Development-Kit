@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::RAM::Users</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.027Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-15T07:33:49.875Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.UsersProps")
 @software.amazon.jsii.Jsii.Proxy(UsersProps.Jsii$Proxy.class)
 public interface UsersProps extends software.amazon.jsii.JsiiSerializable {

@@ -72,5 +72,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 _keyPairName = value;
             }
         }
+
+        private object? _autoReboot;
+
+        /// <summary>Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.</summary>
+        /// <remarks>
+        /// Default: false
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoReboot", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AutoReboot
+        {
+            get => _autoReboot;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _autoReboot = value;
+            }
+        }
     }
 }
