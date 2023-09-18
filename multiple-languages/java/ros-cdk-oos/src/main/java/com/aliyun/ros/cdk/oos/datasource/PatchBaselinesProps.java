@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::OOS::PatchBaselines</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.600Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:27.163Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.PatchBaselinesProps")
 @software.amazon.jsii.Jsii.Proxy(PatchBaselinesProps.Jsii$Proxy.class)
 public interface PatchBaselinesProps extends software.amazon.jsii.JsiiSerializable {

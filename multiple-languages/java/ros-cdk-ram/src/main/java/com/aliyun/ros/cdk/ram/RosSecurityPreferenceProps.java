@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a <code>ALIYUN::RAM::SecurityPreference</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:38.986Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:27.562Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosSecurityPreferenceProps")
 @software.amazon.jsii.Jsii.Proxy(RosSecurityPreferenceProps.Jsii$Proxy.class)
 public interface RosSecurityPreferenceProps extends software.amazon.jsii.JsiiSerializable {

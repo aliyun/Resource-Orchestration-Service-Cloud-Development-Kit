@@ -439,6 +439,15 @@ export interface RosInstanceProps {
     readonly instanceName?: string | ros.IResolvable;
 
     /**
+     * @Property nodeType: The type of node. Valid value:
+     * - **STAND_ALONE**
+     * - **MASTER_SLAVE**
+     * - **double**
+     * - **single**
+     */
+    readonly nodeType?: string | ros.IResolvable;
+
+    /**
      * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
     readonly password?: string | ros.IResolvable;
@@ -598,6 +607,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('nodeType', ros.validateString)(properties.nodeType));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -632,6 +642,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       InstanceClass: ros.stringToRosTemplate(properties.instanceClass),
       InstanceMaintainTime: rosInstanceInstanceMaintainTimePropertyToRosTemplate(properties.instanceMaintainTime),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      NodeType: ros.stringToRosTemplate(properties.nodeType),
       Password: ros.stringToRosTemplate(properties.password),
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
@@ -876,6 +887,15 @@ export class RosInstance extends ros.RosResource {
     public instanceName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property nodeType: The type of node. Valid value:
+     * - **STAND_ALONE**
+     * - **MASTER_SLAVE**
+     * - **double**
+     * - **single**
+     */
+    public nodeType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
     public password: string | ros.IResolvable | undefined;
@@ -1014,6 +1034,7 @@ export class RosInstance extends ros.RosResource {
         this.instanceClass = props.instanceClass;
         this.instanceMaintainTime = props.instanceMaintainTime;
         this.instanceName = props.instanceName;
+        this.nodeType = props.nodeType;
         this.password = props.password;
         this.period = props.period;
         this.periodUnit = props.periodUnit;
@@ -1044,6 +1065,7 @@ export class RosInstance extends ros.RosResource {
             instanceClass: this.instanceClass,
             instanceMaintainTime: this.instanceMaintainTime,
             instanceName: this.instanceName,
+            nodeType: this.nodeType,
             password: this.password,
             period: this.period,
             periodUnit: this.periodUnit,
@@ -1683,6 +1705,15 @@ export interface RosPrepayInstanceProps {
     readonly instanceName?: string | ros.IResolvable;
 
     /**
+     * @Property nodeType: The type of node. Valid value:
+     * - **STAND_ALONE**
+     * - **MASTER_SLAVE**
+     * - **double**
+     * - **single**
+     */
+    readonly nodeType?: string | ros.IResolvable;
+
+    /**
      * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
     readonly password?: string | ros.IResolvable;
@@ -1836,6 +1867,7 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateNumber)(properties.autoRenewDuration));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('nodeType', ros.validateString)(properties.nodeType));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -1870,6 +1902,7 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       InstanceClass: ros.stringToRosTemplate(properties.instanceClass),
       InstanceMaintainTime: rosPrepayInstanceInstanceMaintainTimePropertyToRosTemplate(properties.instanceMaintainTime),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      NodeType: ros.stringToRosTemplate(properties.nodeType),
       Password: ros.stringToRosTemplate(properties.password),
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
@@ -2117,6 +2150,15 @@ export class RosPrepayInstance extends ros.RosResource {
     public instanceName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property nodeType: The type of node. Valid value:
+     * - **STAND_ALONE**
+     * - **MASTER_SLAVE**
+     * - **double**
+     * - **single**
+     */
+    public nodeType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
     public password: string | ros.IResolvable | undefined;
@@ -2255,6 +2297,7 @@ export class RosPrepayInstance extends ros.RosResource {
         this.instanceClass = props.instanceClass;
         this.instanceMaintainTime = props.instanceMaintainTime;
         this.instanceName = props.instanceName;
+        this.nodeType = props.nodeType;
         this.password = props.password;
         this.period = props.period;
         this.periodUnit = props.periodUnit;
@@ -2285,6 +2328,7 @@ export class RosPrepayInstance extends ros.RosResource {
             instanceClass: this.instanceClass,
             instanceMaintainTime: this.instanceMaintainTime,
             instanceName: this.instanceName,
+            nodeType: this.nodeType,
             password: this.password,
             period: this.period,
             periodUnit: this.periodUnit,

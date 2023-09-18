@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * Properties for defining a <code>ALIYUN::REDIS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.234Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:27.870Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -86,6 +86,22 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
+        return null;
+    }
+
+    /**
+     * Property nodeType: The type of node.
+     * <p>
+     * Valid value:
+     * <p>
+     * <ul>
+     * <li><strong>STAND_ALONE</strong></li>
+     * <li><strong>MASTER_SLAVE</strong></li>
+     * <li><strong>double</strong></li>
+     * <li><strong>single</strong></li>
+     * </ul>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNodeType() {
         return null;
     }
 
@@ -245,6 +261,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object instanceClass;
         java.lang.Object instanceMaintainTime;
         java.lang.Object instanceName;
+        java.lang.Object nodeType;
         java.lang.Object password;
         java.lang.Object period;
         java.lang.Object periodUnit;
@@ -472,6 +489,42 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getNodeType}
+         * @param nodeType Property nodeType: The type of node.
+         *                 Valid value:
+         *                 <p>
+         *                 <ul>
+         *                 <li><strong>STAND_ALONE</strong></li>
+         *                 <li><strong>MASTER_SLAVE</strong></li>
+         *                 <li><strong>double</strong></li>
+         *                 <li><strong>single</strong></li>
+         *                 </ul>
+         * @return {@code this}
+         */
+        public Builder nodeType(java.lang.String nodeType) {
+            this.nodeType = nodeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getNodeType}
+         * @param nodeType Property nodeType: The type of node.
+         *                 Valid value:
+         *                 <p>
+         *                 <ul>
+         *                 <li><strong>STAND_ALONE</strong></li>
+         *                 <li><strong>MASTER_SLAVE</strong></li>
+         *                 <li><strong>double</strong></li>
+         *                 <li><strong>single</strong></li>
+         *                 </ul>
+         * @return {@code this}
+         */
+        public Builder nodeType(com.aliyun.ros.cdk.core.IResolvable nodeType) {
+            this.nodeType = nodeType;
             return this;
         }
 
@@ -837,6 +890,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object instanceClass;
         private final java.lang.Object instanceMaintainTime;
         private final java.lang.Object instanceName;
+        private final java.lang.Object nodeType;
         private final java.lang.Object password;
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
@@ -869,6 +923,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceClass = software.amazon.jsii.Kernel.get(this, "instanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceMaintainTime = software.amazon.jsii.Kernel.get(this, "instanceMaintainTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nodeType = software.amazon.jsii.Kernel.get(this, "nodeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -902,6 +957,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.instanceClass = builder.instanceClass;
             this.instanceMaintainTime = builder.instanceMaintainTime;
             this.instanceName = builder.instanceName;
+            this.nodeType = builder.nodeType;
             this.password = builder.password;
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
@@ -967,6 +1023,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getInstanceName() {
             return this.instanceName;
+        }
+
+        @Override
+        public final java.lang.Object getNodeType() {
+            return this.nodeType;
         }
 
         @Override
@@ -1080,6 +1141,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getInstanceName() != null) {
                 data.set("instanceName", om.valueToTree(this.getInstanceName()));
             }
+            if (this.getNodeType() != null) {
+                data.set("nodeType", om.valueToTree(this.getNodeType()));
+            }
             if (this.getPassword() != null) {
                 data.set("password", om.valueToTree(this.getPassword()));
             }
@@ -1153,6 +1217,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.instanceClass != null ? !this.instanceClass.equals(that.instanceClass) : that.instanceClass != null) return false;
             if (this.instanceMaintainTime != null ? !this.instanceMaintainTime.equals(that.instanceMaintainTime) : that.instanceMaintainTime != null) return false;
             if (this.instanceName != null ? !this.instanceName.equals(that.instanceName) : that.instanceName != null) return false;
+            if (this.nodeType != null ? !this.nodeType.equals(that.nodeType) : that.nodeType != null) return false;
             if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
@@ -1182,6 +1247,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.instanceClass != null ? this.instanceClass.hashCode() : 0);
             result = 31 * result + (this.instanceMaintainTime != null ? this.instanceMaintainTime.hashCode() : 0);
             result = 31 * result + (this.instanceName != null ? this.instanceName.hashCode() : 0);
+            result = 31 * result + (this.nodeType != null ? this.nodeType.hashCode() : 0);
             result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);

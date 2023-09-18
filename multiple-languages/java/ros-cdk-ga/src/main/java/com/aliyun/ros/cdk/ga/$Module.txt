@@ -11,6 +11,7 @@
 @alicloud/ros-cdk-ga.Listener=com.aliyun.ros.cdk.ga.Listener
 @alicloud/ros-cdk-ga.ListenerProps=com.aliyun.ros.cdk.ga.ListenerProps
 @alicloud/ros-cdk-ga.RosAccelerator=com.aliyun.ros.cdk.ga.RosAccelerator
+@alicloud/ros-cdk-ga.RosAccelerator.IpSetConfigProperty=com.aliyun.ros.cdk.ga.RosAccelerator$IpSetConfigProperty
 @alicloud/ros-cdk-ga.RosAcceleratorProps=com.aliyun.ros.cdk.ga.RosAcceleratorProps
 @alicloud/ros-cdk-ga.RosBandwidthPackage=com.aliyun.ros.cdk.ga.RosBandwidthPackage
 @alicloud/ros-cdk-ga.RosBandwidthPackageAcceleratorAddition=com.aliyun.ros.cdk.ga.RosBandwidthPackageAcceleratorAddition

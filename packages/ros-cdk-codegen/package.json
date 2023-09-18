@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@alicloud/ros-2019-09-10": "^1.0.0",
-    "@alicloud/ros-cdk-spec": "^1.0.20",
+    "@alicloud/ros-cdk-spec": "^1.0.21",
     "codemaker": "^1.7.0",
     "fs-extra": "^9.0.1",
     "readline-sync": "^1.4.10",

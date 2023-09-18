@@ -29,10 +29,16 @@ export interface ListenerProps {
     readonly protocol: string | ros.IResolvable;
 
     /**
-     * Property aclId: The ID of the access control list associated with the listener to be created.
+     * Property aclId: The ID of the access control associated with the listener to be created.
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
     readonly aclId?: string | ros.IResolvable;
+
+    /**
+     * Property aclIds: The ID list of the access controls associated with the listener to be created.
+     * If the value of the AclStatus parameter is on, this parameter is required.AclIds have higher priority than AclId.
+     */
+    readonly aclIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property aclStatus: Indicates whether to enable access control.
@@ -180,30 +186,31 @@ export class Listener extends ros.Resource {
         super(scope, id);
 
         const rosListener = new RosListener(this, id,  {
-            requestTimeout: props.requestTimeout,
             vServerGroupId: props.vServerGroupId,
-            listenerPort: props.listenerPort,
             description: props.description,
-            tlsCipherPolicy: props.tlsCipherPolicy,
-            caCertificateId: props.caCertificateId,
             scheduler: props.scheduler === undefined || props.scheduler === null ? 'wrr' : props.scheduler,
-            aclId: props.aclId,
             healthCheck: props.healthCheck,
             idleTimeout: props.idleTimeout,
             loadBalancerId: props.loadBalancerId,
             backendServerPort: props.backendServerPort,
-            persistence: props.persistence,
-            portRange: props.portRange,
-            aclStatus: props.aclStatus === undefined || props.aclStatus === null ? 'off' : props.aclStatus,
             bandwidth: props.bandwidth,
             gzip: props.gzip,
             serverCertificateId: props.serverCertificateId,
+            httpConfig: props.httpConfig,
+            protocol: props.protocol,
+            requestTimeout: props.requestTimeout,
+            listenerPort: props.listenerPort,
+            tlsCipherPolicy: props.tlsCipherPolicy,
+            caCertificateId: props.caCertificateId,
+            aclId: props.aclId,
+            persistence: props.persistence,
+            portRange: props.portRange,
+            aclStatus: props.aclStatus === undefined || props.aclStatus === null ? 'off' : props.aclStatus,
             masterSlaveServerGroupId: props.masterSlaveServerGroupId,
             startListener: props.startListener === undefined || props.startListener === null ? true : props.startListener,
             aclType: props.aclType,
-            httpConfig: props.httpConfig,
             enableHttp2: props.enableHttp2,
-            protocol: props.protocol,
+            aclIds: props.aclIds,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosListener;
         this.attrListenerPortsAndProtocol = rosListener.attrListenerPortsAndProtocol;

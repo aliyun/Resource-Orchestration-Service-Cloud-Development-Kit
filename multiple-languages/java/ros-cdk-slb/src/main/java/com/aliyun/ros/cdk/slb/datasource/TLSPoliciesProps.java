@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::SLB::TLSPolicies</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.944Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:28.418Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.TLSPoliciesProps")
 @software.amazon.jsii.Jsii.Proxy(TLSPoliciesProps.Jsii$Proxy.class)
 public interface TLSPoliciesProps extends software.amazon.jsii.JsiiSerializable {

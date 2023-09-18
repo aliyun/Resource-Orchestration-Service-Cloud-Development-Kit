@@ -204,6 +204,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 }
             }
 
+            /// <remarks>
+            /// <strong>Property</strong>: ispType: Accelerated area public network line type.
+            /// </remarks>
+            [JsiiProperty(name: "ispType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? IspType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
             [JsiiTypeProxy(nativeType: typeof(IAccelerateRegionProperty), fullyQualifiedName: "@alicloud/ros-cdk-ga.RosIpSets.AccelerateRegionProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ga.RosIpSets.IAccelerateRegionProperty
             {
@@ -239,6 +252,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 [JsiiOptional]
                 [JsiiProperty(name: "ipVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? IpVersion
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: ispType: Accelerated area public network line type.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "ispType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? IspType
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -367,6 +390,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                         }
                     }
                     _ipVersion = value;
+                }
+            }
+
+            private object? _ispType;
+
+            /// <remarks>
+            /// <strong>Property</strong>: ispType: Accelerated area public network line type.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ispType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IspType
+            {
+                get => _ispType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _ispType = value;
                 }
             }
         }

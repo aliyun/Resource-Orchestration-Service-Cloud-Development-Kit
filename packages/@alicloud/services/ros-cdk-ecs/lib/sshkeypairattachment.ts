@@ -17,6 +17,12 @@ export interface SSHKeyPairAttachmentProps {
      * Property keyPairName: SSH key pair name.
      */
     readonly keyPairName: string | ros.IResolvable;
+
+    /**
+     * Property autoReboot: If the instance is running, whether to reboot the instance for the ssh key to take effect.
+     * Default: false
+     */
+    readonly autoReboot?: boolean | ros.IResolvable;
 }
 
 /**
@@ -41,6 +47,7 @@ export class SSHKeyPairAttachment extends ros.Resource {
 
         const rosSSHKeyPairAttachment = new RosSSHKeyPairAttachment(this, id,  {
             keyPairName: props.keyPairName,
+            autoReboot: props.autoReboot === undefined || props.autoReboot === null ? false : props.autoReboot,
             instanceIds: props.instanceIds,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSSHKeyPairAttachment;

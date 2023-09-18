@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::RAM::Roles</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:39.012Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:27.587Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.RosRolesProps")
 @software.amazon.jsii.Jsii.Proxy(RosRolesProps.Jsii$Proxy.class)
 public interface RosRolesProps extends software.amazon.jsii.JsiiSerializable {

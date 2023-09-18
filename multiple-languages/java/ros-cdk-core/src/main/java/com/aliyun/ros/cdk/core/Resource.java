@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A construct which represents a resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:34.792Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:23.023Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Resource")
 public abstract class Resource extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.IResource {
 
@@ -85,6 +85,10 @@ public abstract class Resource extends com.aliyun.ros.cdk.core.Construct impleme
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
     protected @org.jetbrains.annotations.NotNull java.lang.String getPhysicalName() {
         return software.amazon.jsii.Kernel.get(this, "physicalName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    }
+
+    public @org.jetbrains.annotations.NotNull java.lang.String getRef() {
+        return software.amazon.jsii.Kernel.get(this, "ref", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
     }
 
     /**

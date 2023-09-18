@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a <code>ALIYUN::ECS::SSHKeyPairAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.88.0 (build eaabd08)", date = "2023-09-01T09:26:37.121Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:25.606Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSSHKeyPairAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosSSHKeyPairAttachmentProps.Jsii$Proxy.class)
 public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,12 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
     @org.jetbrains.annotations.NotNull java.lang.Object getKeyPairName();
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoReboot() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosSSHKeyPairAttachmentProps}
      */
     static Builder builder() {
@@ -28,6 +34,7 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
     public static final class Builder implements software.amazon.jsii.Builder<RosSSHKeyPairAttachmentProps> {
         java.lang.Object instanceIds;
         java.lang.Object keyPairName;
+        java.lang.Object autoReboot;
 
         /**
          * Sets the value of {@link RosSSHKeyPairAttachmentProps#getInstanceIds}
@@ -70,6 +77,26 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
         }
 
         /**
+         * Sets the value of {@link RosSSHKeyPairAttachmentProps#getAutoReboot}
+         * @param autoReboot the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoReboot(java.lang.Boolean autoReboot) {
+            this.autoReboot = autoReboot;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSSHKeyPairAttachmentProps#getAutoReboot}
+         * @param autoReboot the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoReboot(com.aliyun.ros.cdk.core.IResolvable autoReboot) {
+            this.autoReboot = autoReboot;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosSSHKeyPairAttachmentProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -87,6 +114,7 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSSHKeyPairAttachmentProps {
         private final java.lang.Object instanceIds;
         private final java.lang.Object keyPairName;
+        private final java.lang.Object autoReboot;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -96,6 +124,7 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
             super(objRef);
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoReboot = software.amazon.jsii.Kernel.get(this, "autoReboot", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -105,6 +134,7 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceIds = java.util.Objects.requireNonNull(builder.instanceIds, "instanceIds is required");
             this.keyPairName = java.util.Objects.requireNonNull(builder.keyPairName, "keyPairName is required");
+            this.autoReboot = builder.autoReboot;
         }
 
         @Override
@@ -118,6 +148,11 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
         }
 
         @Override
+        public final java.lang.Object getAutoReboot() {
+            return this.autoReboot;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -125,6 +160,9 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
 
             data.set("instanceIds", om.valueToTree(this.getInstanceIds()));
             data.set("keyPairName", om.valueToTree(this.getKeyPairName()));
+            if (this.getAutoReboot() != null) {
+                data.set("autoReboot", om.valueToTree(this.getAutoReboot()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosSSHKeyPairAttachmentProps"));
@@ -144,13 +182,15 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
             RosSSHKeyPairAttachmentProps.Jsii$Proxy that = (RosSSHKeyPairAttachmentProps.Jsii$Proxy) o;
 
             if (!instanceIds.equals(that.instanceIds)) return false;
-            return this.keyPairName.equals(that.keyPairName);
+            if (!keyPairName.equals(that.keyPairName)) return false;
+            return this.autoReboot != null ? this.autoReboot.equals(that.autoReboot) : that.autoReboot == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.instanceIds.hashCode();
             result = 31 * result + (this.keyPairName.hashCode());
+            result = 31 * result + (this.autoReboot != null ? this.autoReboot.hashCode() : 0);
             return result;
         }
     }
