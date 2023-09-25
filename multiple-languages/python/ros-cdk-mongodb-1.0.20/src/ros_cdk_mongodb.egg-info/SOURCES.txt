@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+NOTICE
+README.md
+pyproject.toml
+setup.py
+src/ros_cdk_mongodb/__init__.py
+src/ros_cdk_mongodb/py.typed
+src/ros_cdk_mongodb.egg-info/PKG-INFO
+src/ros_cdk_mongodb.egg-info/SOURCES.txt
+src/ros_cdk_mongodb.egg-info/dependency_links.txt
+src/ros_cdk_mongodb.egg-info/requires.txt
+src/ros_cdk_mongodb.egg-info/top_level.txt
+src/ros_cdk_mongodb/_jsii/__init__.py
+src/ros_cdk_mongodb/_jsii/ros-cdk-mongodb@1.0.20.jsii.tgz
+src/ros_cdk_mongodb/datasource/__init__.py

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dfs;
 /**
  * Properties for defining a <code>ALIYUN::DFS::AccessRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:24.606Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.410Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.RosAccessRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessRuleProps.Jsii$Proxy.class)
 public interface RosAccessRuleProps extends software.amazon.jsii.JsiiSerializable {

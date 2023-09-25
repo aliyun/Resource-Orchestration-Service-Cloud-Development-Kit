@@ -252,7 +252,7 @@ export interface InstanceGroupProps {
     readonly systemDiskBurstingEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
+     * Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry.Old instances will not be changed.
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -399,6 +399,11 @@ export class InstanceGroup extends ros.Resource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
+     * Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
+
+    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -484,6 +489,7 @@ export class InstanceGroup extends ros.Resource {
         this.attrOrderId = rosInstanceGroup.attrOrderId;
         this.attrPrivateIps = rosInstanceGroup.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroup.attrPublicIps;
+        this.attrRelatedOrderIds = rosInstanceGroup.attrRelatedOrderIds;
         this.attrZoneIds = rosInstanceGroup.attrZoneIds;
     }
 }

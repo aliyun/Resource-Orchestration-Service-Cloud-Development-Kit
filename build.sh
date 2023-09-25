@@ -281,6 +281,22 @@ copy_js() {
     done
 }
 
+set_dependency_jsii_packages() {
+  root=$PWD
+  packages_json_file="$PWD/package.json"
+  multiple_languages_dir="$PWD/multiple-languages"
+
+  if [ ! -d "$multiple_languages_dir" ]; then
+        echo "directory $multiple_languages_dir not found"
+        exit 1
+  fi
+  dotnet_dir="$multiple_languages_dir/dotnet"
+  java_dir="$multiple_languages_dir/java"
+  python_dir="$multiple_languages_dir/python"
+
+  python3 $root/tools/set_dependency_jsii_packages.py --dotnet_dir_path=${dotnet_dir} --java_dir_path=${java_dir} --python_dir_path=${python_dir} --packages_json_file=${packages_json_file}
+}
+
 
 case "$ACTION" in
     setup-dependency)
@@ -318,6 +334,9 @@ case "$ACTION" in
     ;;
     convert-js-project)
           convert_js_project
+    ;;
+    set-dependency-jsii-packages)
+          set_dependency_jsii_packages
     ;;
     *)
         usage

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::VPC::HaVips</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:29.037Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:27.409Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.RosHaVipsProps")
 @software.amazon.jsii.Jsii.Proxy(RosHaVipsProps.Jsii$Proxy.class)
 public interface RosHaVipsProps extends software.amazon.jsii.JsiiSerializable {

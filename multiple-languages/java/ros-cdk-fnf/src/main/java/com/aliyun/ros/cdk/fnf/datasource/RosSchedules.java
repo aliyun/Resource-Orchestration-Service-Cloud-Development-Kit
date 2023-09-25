@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf.datasource;
 /**
  * A ROS template type:  <code>DATASOURCE::FNF::Schedules</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:26.459Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.536Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.datasource.RosSchedules")
 public class RosSchedules extends com.aliyun.ros.cdk.core.RosResource {
 

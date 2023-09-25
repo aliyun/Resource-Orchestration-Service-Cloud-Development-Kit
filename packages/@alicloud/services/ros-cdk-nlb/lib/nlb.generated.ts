@@ -1095,6 +1095,119 @@ function rosLoadBalancerZoneMappingsPropertyToRosTemplate(properties: any): any 
 }
 
 /**
+ * Properties for defining a `ALIYUN::NLB::SecurityGroupAttachment`
+ */
+export interface RosSecurityGroupAttachmentProps {
+
+    /**
+     * @Property loadBalancerId: The ID of the network-based server load balancer instance to be bound to the security group.
+     */
+    readonly loadBalancerId: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupIds: List of security group id.
+     */
+    readonly securityGroupIds: Array<any | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSecurityGroupAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecurityGroupAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.requiredValidator)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.requiredValidator)(properties.securityGroupIds));
+    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
+            data: properties.securityGroupIds.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateAny))(properties.securityGroupIds));
+    return errors.wrap('supplied properties not correct for "RosSecurityGroupAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::SecurityGroupAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSecurityGroupAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::SecurityGroupAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSecurityGroupAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
+      SecurityGroupIds: ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::NLB::SecurityGroupAttachment`
+ */
+export class RosSecurityGroupAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::NLB::SecurityGroupAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property loadBalancerId: The ID of the network-based server load balancer instance to be bound to the security group.
+     */
+    public loadBalancerId: string | ros.IResolvable;
+
+    /**
+     * @Property securityGroupIds: List of security group id.
+     */
+    public securityGroupIds: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::NLB::SecurityGroupAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSecurityGroupAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSecurityGroupAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.loadBalancerId = props.loadBalancerId;
+        this.securityGroupIds = props.securityGroupIds;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            loadBalancerId: this.loadBalancerId,
+            securityGroupIds: this.securityGroupIds,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSecurityGroupAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::NLB::ServerGroup`
  */
 export interface RosServerGroupProps {
@@ -1569,27 +1682,34 @@ export namespace RosServerGroup {
      */
     export interface ServersProperty {
         /**
-         * @Property serverType: Type of backend server
+         * @Property serverType: The type of the backend server. Valid values:
+     * - **Ecs**: an ECS instance.
+     * - **Eni**: an ENI.
+     * - **Eci**: an elastic container instance.
+     * - **Ip**: an IP address.
          */
         readonly serverType: string | ros.IResolvable;
         /**
-         * @Property description: undefined
+         * @Property description: The description of the servers. The description must be 2 to 256 characters in length, and can contain letters, digits, commas (,), periods (.), semicolons (;), forward slashes (/), at signs (@), underscores (_), and hyphens (-).
          */
         readonly description?: string | ros.IResolvable;
         /**
-         * @Property serverId: Id of server
+         * @Property serverId: The ID of the server. You can specify at most 40 server IDs in each call.
+     * If the server group type is **Instance**, set the ServerId parameter to the ID of an Elastic Compute Service (ECS) instance, an elastic network interface (ENI), or an elastic container instance. These backend servers are specified by **Ecs**, **Eni**, or **Eci**.
+     * If the server group type is **Ip**, set the ServerId parameter to an IP address.
          */
         readonly serverId: string | ros.IResolvable;
         /**
-         * @Property serverIp: undefined
+         * @Property serverIp: The IP address of the server. If the server group type is **Ip**, ServerId is taken as the value of this parameter.
          */
         readonly serverIp?: string | ros.IResolvable;
         /**
-         * @Property port: Port used by the backend server
+         * @Property port: The port used by the backend server. Valid values: 1 to 65535.
          */
         readonly port: number | ros.IResolvable;
         /**
-         * @Property weight: Weight of the backend server
+         * @Property weight: The weight of the backend server. Valid values: 0 to 100. Default value: 100.
+     * If the weight of a backend server is set to 0, no requests are forwarded to the backend server.
          */
         readonly weight?: number | ros.IResolvable;
     }

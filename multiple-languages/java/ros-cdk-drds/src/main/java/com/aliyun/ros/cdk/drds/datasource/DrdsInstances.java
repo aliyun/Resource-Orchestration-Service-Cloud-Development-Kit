@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds.datasource;
 /**
  * A ROS resource type:  <code>DATASOURCE::DRDS::DrdsInstances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:24.787Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.488Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.datasource.DrdsInstances")
 public class DrdsInstances extends com.aliyun.ros.cdk.core.Resource {
 

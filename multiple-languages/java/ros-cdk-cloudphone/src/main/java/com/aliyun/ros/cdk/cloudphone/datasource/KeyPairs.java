@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudphone.datasource;
 /**
  * A ROS resource type:  <code>DATASOURCE::CloudPhone::KeyPairs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:23.984Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.825Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.datasource.KeyPairs")
 public class KeyPairs extends com.aliyun.ros.cdk.core.Resource {
 

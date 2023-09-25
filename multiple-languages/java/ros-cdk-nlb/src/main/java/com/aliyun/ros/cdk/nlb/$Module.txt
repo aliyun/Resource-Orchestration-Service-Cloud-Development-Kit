@@ -12,10 +12,14 @@
 @alicloud/ros-cdk-nlb.RosLoadBalancer.TagsProperty=com.aliyun.ros.cdk.nlb.RosLoadBalancer$TagsProperty
 @alicloud/ros-cdk-nlb.RosLoadBalancer.ZoneMappingsProperty=com.aliyun.ros.cdk.nlb.RosLoadBalancer$ZoneMappingsProperty
 @alicloud/ros-cdk-nlb.RosLoadBalancerProps=com.aliyun.ros.cdk.nlb.RosLoadBalancerProps
+@alicloud/ros-cdk-nlb.RosSecurityGroupAttachment=com.aliyun.ros.cdk.nlb.RosSecurityGroupAttachment
+@alicloud/ros-cdk-nlb.RosSecurityGroupAttachmentProps=com.aliyun.ros.cdk.nlb.RosSecurityGroupAttachmentProps
 @alicloud/ros-cdk-nlb.RosServerGroup=com.aliyun.ros.cdk.nlb.RosServerGroup
 @alicloud/ros-cdk-nlb.RosServerGroup.HealthCheckConfigProperty=com.aliyun.ros.cdk.nlb.RosServerGroup$HealthCheckConfigProperty
 @alicloud/ros-cdk-nlb.RosServerGroup.ServersProperty=com.aliyun.ros.cdk.nlb.RosServerGroup$ServersProperty
 @alicloud/ros-cdk-nlb.RosServerGroupProps=com.aliyun.ros.cdk.nlb.RosServerGroupProps
+@alicloud/ros-cdk-nlb.SecurityGroupAttachment=com.aliyun.ros.cdk.nlb.SecurityGroupAttachment
+@alicloud/ros-cdk-nlb.SecurityGroupAttachmentProps=com.aliyun.ros.cdk.nlb.SecurityGroupAttachmentProps
 @alicloud/ros-cdk-nlb.ServerGroup=com.aliyun.ros.cdk.nlb.ServerGroup
 @alicloud/ros-cdk-nlb.ServerGroupProps=com.aliyun.ros.cdk.nlb.ServerGroupProps
 @alicloud/ros-cdk-nlb.datasource.LoadBalancers=com.aliyun.ros.cdk.nlb.datasource.LoadBalancers

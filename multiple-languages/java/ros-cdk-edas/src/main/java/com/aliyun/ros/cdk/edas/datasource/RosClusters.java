@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas.datasource;
 /**
  * A ROS template type:  <code>DATASOURCE::EDAS::Clusters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:26.046Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.198Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.datasource.RosClusters")
 public class RosClusters extends com.aliyun.ros.cdk.core.RosResource {
 

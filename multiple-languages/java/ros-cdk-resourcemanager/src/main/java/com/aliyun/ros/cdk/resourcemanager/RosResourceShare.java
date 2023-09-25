@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * A ROS template type:  <code>ALIYUN::ResourceManager::ResourceShare</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:28.012Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.691Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosResourceShare")
 public class RosResourceShare extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -77,6 +77,58 @@ public class RosResourceShare extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setResourceShareName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "resourceShareName", java.util.Objects.requireNonNull(value, "resourceShareName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAllowExternalTargets() {
+        return software.amazon.jsii.Kernel.get(this, "allowExternalTargets", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAllowExternalTargets(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "allowExternalTargets", value);
+    }
+
+    /**
+     */
+    public void setAllowExternalTargets(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "allowExternalTargets", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPermissionNames() {
+        return software.amazon.jsii.Kernel.get(this, "permissionNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPermissionNames(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "permissionNames", value);
+    }
+
+    /**
+     */
+    public void setPermissionNames(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "permissionNames", value);
     }
 
     /**
@@ -351,6 +403,40 @@ public class RosResourceShare extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceShareName(final com.aliyun.ros.cdk.core.IResolvable resourceShareName) {
             this.props.resourceShareName(resourceShareName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param allowExternalTargets This parameter is required.
+         */
+        public Builder allowExternalTargets(final java.lang.Boolean allowExternalTargets) {
+            this.props.allowExternalTargets(allowExternalTargets);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param allowExternalTargets This parameter is required.
+         */
+        public Builder allowExternalTargets(final com.aliyun.ros.cdk.core.IResolvable allowExternalTargets) {
+            this.props.allowExternalTargets(allowExternalTargets);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param permissionNames This parameter is required.
+         */
+        public Builder permissionNames(final com.aliyun.ros.cdk.core.IResolvable permissionNames) {
+            this.props.permissionNames(permissionNames);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param permissionNames This parameter is required.
+         */
+        public Builder permissionNames(final java.util.List<? extends java.lang.Object> permissionNames) {
+            this.props.permissionNames(permissionNames);
             return this;
         }
 

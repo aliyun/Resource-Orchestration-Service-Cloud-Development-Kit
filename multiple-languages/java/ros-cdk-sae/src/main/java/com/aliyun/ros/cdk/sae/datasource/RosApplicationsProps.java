@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::SAE::Applications</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:28.178Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.835Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.datasource.RosApplicationsProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationsProps.Jsii$Proxy.class)
 public interface RosApplicationsProps extends software.amazon.jsii.JsiiSerializable {

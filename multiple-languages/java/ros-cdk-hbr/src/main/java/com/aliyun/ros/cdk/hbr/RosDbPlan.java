@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * A ROS template type:  <code>ALIYUN::HBR::DbPlan</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:26.620Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.670Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosDbPlan")
 public class RosDbPlan extends com.aliyun.ros.cdk.core.RosResource {
 

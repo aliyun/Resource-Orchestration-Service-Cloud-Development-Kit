@@ -19,6 +19,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             get;
         }
 
+        /// <summary>Property allowExternalTargets: Whether to allow sharing to accounts outside the resource directory.</summary>
+        /// <remarks>
+        /// Value:
+        /// false (default): Only allow sharing within the resource directory.
+        /// true: Allow sharing to any account.
+        /// </remarks>
+        [JsiiProperty(name: "allowExternalTargets", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AllowExternalTargets
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property permissionNames: Sharing permission name.</summary>
+        /// <remarks>
+        /// When empty, the system automatically binds the default permissions associated with the resource type.
+        /// </remarks>
+        [JsiiProperty(name: "permissionNames", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PermissionNames
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property resources:.</summary>
         [JsiiProperty(name: "resources", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-resourcemanager.RosResourceShare.ResourcesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -63,6 +93,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             public object ResourceShareName
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property allowExternalTargets: Whether to allow sharing to accounts outside the resource directory.</summary>
+            /// <remarks>
+            /// Value:
+            /// false (default): Only allow sharing within the resource directory.
+            /// true: Allow sharing to any account.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "allowExternalTargets", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AllowExternalTargets
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property permissionNames: Sharing permission name.</summary>
+            /// <remarks>
+            /// When empty, the system automatically binds the default permissions associated with the resource type.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "permissionNames", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? PermissionNames
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property resources:.</summary>

@@ -14,3 +14,7 @@
 @alicloud/ros-cdk-arms.RosManagedPrometheusProps=com.aliyun.ros.cdk.arms.RosManagedPrometheusProps
 @alicloud/ros-cdk-arms.RosRetcodeApp=com.aliyun.ros.cdk.arms.RosRetcodeApp
 @alicloud/ros-cdk-arms.RosRetcodeAppProps=com.aliyun.ros.cdk.arms.RosRetcodeAppProps
+@alicloud/ros-cdk-arms.datasource.Prometheis=com.aliyun.ros.cdk.arms.datasource.Prometheis
+@alicloud/ros-cdk-arms.datasource.PrometheisProps=com.aliyun.ros.cdk.arms.datasource.PrometheisProps
+@alicloud/ros-cdk-arms.datasource.RosPrometheis=com.aliyun.ros.cdk.arms.datasource.RosPrometheis
+@alicloud/ros-cdk-arms.datasource.RosPrometheisProps=com.aliyun.ros.cdk.arms.datasource.RosPrometheisProps

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * A ROS template type:  <code>ALIYUN::CDN::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:23.621Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.599Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.RosDomain")
 public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 

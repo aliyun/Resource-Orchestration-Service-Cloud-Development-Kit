@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a <code>ALIYUN::CMS::ResourceMetricRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:24.091Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.999Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosResourceMetricRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourceMetricRuleProps.Jsii$Proxy.class)
 public interface RosResourceMetricRuleProps extends software.amazon.jsii.JsiiSerializable {

@@ -4384,7 +4384,7 @@ export interface RosInstanceProps {
     readonly spotStrategy?: string | ros.IResolvable;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -4571,12 +4571,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
-    if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
-        errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
-          data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
-        }));
-    }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
     errors.collect(ros.propertyValidator('spotInterruptionBehavior', ros.validateString)(properties.spotInterruptionBehavior));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
@@ -4889,7 +4883,7 @@ export class RosInstance extends ros.RosResource {
     public spotStrategy: string | ros.IResolvable | undefined;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
@@ -6026,7 +6020,7 @@ export interface RosInstanceGroupProps {
     readonly systemDiskBurstingEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry.Old instances will not be changed.
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -6331,12 +6325,6 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
-        errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
-          data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
-        }));
-    }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
     if(properties.eniMappings && (Array.isArray(properties.eniMappings) || (typeof properties.eniMappings) === 'string')) {
         errors.collect(ros.propertyValidator('eniMappings', ros.validateLength)({
@@ -6480,6 +6468,11 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable;
+
+    /**
+     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
+     */
+    public readonly attrRelatedOrderIds: ros.IResolvable;
 
     /**
      * @Attribute ZoneIds: Zone id of created instances.
@@ -6733,7 +6726,7 @@ export class RosInstanceGroup extends ros.RosResource {
     public systemDiskBurstingEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry.Old instances will not be changed.
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
@@ -6845,6 +6838,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
+        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -7474,7 +7468,7 @@ export interface RosInstanceGroupCloneProps {
     readonly systemDiskBurstingEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry.Old instances will not be changed.
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -7678,12 +7672,6 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateAny))(properties.securityGroupIds));
     errors.collect(ros.propertyValidator('loadBalancerIdToAttach', ros.validateString)(properties.loadBalancerIdToAttach));
-    if(properties.systemDiskCategory && (typeof properties.systemDiskCategory) !== 'object') {
-        errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateAllowedValues)({
-          data: properties.systemDiskCategory,
-          allowedValues: ["cloud","cloud_efficiency","cloud_ssd","cloud_essd","ephemeral_ssd","cloud_auto"],
-        }));
-    }
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     if(properties.eniMappings && (Array.isArray(properties.eniMappings) || (typeof properties.eniMappings) === 'string')) {
@@ -8051,7 +8039,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public systemDiskBurstingEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
+     * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry.Old instances will not be changed.
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
@@ -10367,6 +10355,11 @@ export interface RosNetworkInterfaceAttachmentProps {
     readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
+     * @Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping.
+     */
+    readonly ecsRestartOption?: string | ros.IResolvable;
+
+    /**
      * @Property trunkNetworkInstanceId: undefined
      */
     readonly trunkNetworkInstanceId?: string | ros.IResolvable;
@@ -10382,9 +10375,16 @@ export interface RosNetworkInterfaceAttachmentProps {
 function RosNetworkInterfaceAttachmentPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('trunkNetworkInstanceId', ros.validateString)(properties.trunkNetworkInstanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
-    errors.collect(ros.propertyValidator('trunkNetworkInstanceId', ros.validateString)(properties.trunkNetworkInstanceId));
+    if(properties.ecsRestartOption && (typeof properties.ecsRestartOption) !== 'object') {
+        errors.collect(ros.propertyValidator('ecsRestartOption', ros.validateAllowedValues)({
+          data: properties.ecsRestartOption,
+          allowedValues: ["Auto","NotRestart","Restart"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ecsRestartOption', ros.validateString)(properties.ecsRestartOption));
     errors.collect(ros.propertyValidator('networkInterfaceId', ros.requiredValidator)(properties.networkInterfaceId));
     errors.collect(ros.propertyValidator('networkInterfaceId', ros.validateString)(properties.networkInterfaceId));
     return errors.wrap('supplied properties not correct for "RosNetworkInterfaceAttachmentProps"');
@@ -10406,6 +10406,7 @@ function rosNetworkInterfaceAttachmentPropsToRosTemplate(properties: any, enable
     return {
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       NetworkInterfaceId: ros.stringToRosTemplate(properties.networkInterfaceId),
+      EcsRestartOption: ros.stringToRosTemplate(properties.ecsRestartOption),
       TrunkNetworkInstanceId: ros.stringToRosTemplate(properties.trunkNetworkInstanceId),
     };
 }
@@ -10453,6 +10454,11 @@ export class RosNetworkInterfaceAttachment extends ros.RosResource {
     public networkInterfaceId: string | ros.IResolvable;
 
     /**
+     * @Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping.
+     */
+    public ecsRestartOption: string | ros.IResolvable | undefined;
+
+    /**
      * @Property trunkNetworkInstanceId: undefined
      */
     public trunkNetworkInstanceId: string | ros.IResolvable | undefined;
@@ -10473,6 +10479,7 @@ export class RosNetworkInterfaceAttachment extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceId = props.instanceId;
         this.networkInterfaceId = props.networkInterfaceId;
+        this.ecsRestartOption = props.ecsRestartOption;
         this.trunkNetworkInstanceId = props.trunkNetworkInstanceId;
     }
 
@@ -10481,6 +10488,7 @@ export class RosNetworkInterfaceAttachment extends ros.RosResource {
         return {
             instanceId: this.instanceId,
             networkInterfaceId: this.networkInterfaceId,
+            ecsRestartOption: this.ecsRestartOption,
             trunkNetworkInstanceId: this.trunkNetworkInstanceId,
         };
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * Properties for defining a <code>ALIYUN::SAE::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:28.126Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.807Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.ApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ApplicationProps.Jsii$Proxy.class)
 public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable {

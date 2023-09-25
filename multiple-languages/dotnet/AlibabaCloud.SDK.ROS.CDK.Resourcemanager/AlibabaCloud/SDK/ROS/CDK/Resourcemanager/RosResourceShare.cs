@@ -105,6 +105,87 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: allowExternalTargets: Whether to allow sharing to accounts outside the resource directory. Value:
+        /// false (default): Only allow sharing within the resource directory.
+        /// true: Allow sharing to any account.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "allowExternalTargets", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AllowExternalTargets
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: permissionNames: Sharing permission name. When empty, the system automatically binds the default permissions associated with the resource type.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "permissionNames", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? PermissionNames
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case string cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resources:
         /// </remarks>
         [JsiiOptional]
@@ -216,8 +297,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 
             /// <remarks>
             /// <strong>Property</strong>: resourceType: The type of the shared resource.
-            /// Set the value to VSwitch.
-            /// Only the vSwitches in virtual private clouds (VPCs) can be shared.
+            /// Support resource type include:
+            /// VPC: VSwitch, PrefixList, PublicIpAddressPool
+            /// ROS: ROSTemplate
+            /// ServiceCatalog: ServiceCatalogPortfolio
+            /// ECS: Image, Snapshot
+            /// KMS: KMSInstance
             /// </remarks>
             [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object ResourceType
@@ -243,8 +328,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 
                 /// <remarks>
                 /// <strong>Property</strong>: resourceType: The type of the shared resource.
-                /// Set the value to VSwitch.
-                /// Only the vSwitches in virtual private clouds (VPCs) can be shared.
+                /// Support resource type include:
+                /// VPC: VSwitch, PrefixList, PublicIpAddressPool
+                /// ROS: ROSTemplate
+                /// ServiceCatalog: ServiceCatalogPortfolio
+                /// ECS: Image, Snapshot
+                /// KMS: KMSInstance
                 /// </remarks>
                 [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object ResourceType
@@ -294,8 +383,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 
             /// <remarks>
             /// <strong>Property</strong>: resourceType: The type of the shared resource.
-            /// Set the value to VSwitch.
-            /// Only the vSwitches in virtual private clouds (VPCs) can be shared.
+            /// Support resource type include:
+            /// VPC: VSwitch, PrefixList, PublicIpAddressPool
+            /// ROS: ROSTemplate
+            /// ServiceCatalog: ServiceCatalogPortfolio
+            /// ECS: Image, Snapshot
+            /// KMS: KMSInstance
             /// </remarks>
             [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ResourceType

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eais;
 /**
  * Properties for defining a <code>ALIYUN::EAIS::ClientInstanceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:24.941Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.537Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.ClientInstanceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(ClientInstanceAttachmentProps.Jsii$Proxy.class)
 public interface ClientInstanceAttachmentProps extends software.amazon.jsii.JsiiSerializable {

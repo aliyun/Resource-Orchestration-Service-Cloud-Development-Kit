@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ebs.datasource;
 /**
  * A ROS resource type:  <code>DATASOURCE::EBS::DiskReplicaPairs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:25.090Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.572Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.datasource.DiskReplicaPairs")
 public class DiskReplicaPairs extends com.aliyun.ros.cdk.core.Resource {
 

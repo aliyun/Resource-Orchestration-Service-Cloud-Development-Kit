@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::ECS::DedicatedHostClusters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:25.775Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.995Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.DedicatedHostClustersProps")
 @software.amazon.jsii.Jsii.Proxy(DedicatedHostClustersProps.Jsii$Proxy.class)
 public interface DedicatedHostClustersProps extends software.amazon.jsii.JsiiSerializable {

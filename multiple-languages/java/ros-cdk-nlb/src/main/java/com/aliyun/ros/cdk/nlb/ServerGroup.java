@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * A ROS resource type:  <code>ALIYUN::NLB::ServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:27.093Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.045Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.ServerGroup")
 public class ServerGroup extends com.aliyun.ros.cdk.core.Resource {
 

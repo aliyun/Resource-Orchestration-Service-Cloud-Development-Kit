@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * A ROS resource type:  <code>ALIYUN::ResourceManager::ResourceShare</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:27.996Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.680Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.ResourceShare")
 public class ResourceShare extends com.aliyun.ros.cdk.core.Resource {
 
@@ -113,6 +113,60 @@ public class ResourceShare extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resourceShareName(final com.aliyun.ros.cdk.core.IResolvable resourceShareName) {
             this.props.resourceShareName(resourceShareName);
+            return this;
+        }
+
+        /**
+         * Property allowExternalTargets: Whether to allow sharing to accounts outside the resource directory.
+         * <p>
+         * Value:
+         * false (default): Only allow sharing within the resource directory.
+         * true: Allow sharing to any account.
+         * <p>
+         * @return {@code this}
+         * @param allowExternalTargets Property allowExternalTargets: Whether to allow sharing to accounts outside the resource directory. This parameter is required.
+         */
+        public Builder allowExternalTargets(final java.lang.Boolean allowExternalTargets) {
+            this.props.allowExternalTargets(allowExternalTargets);
+            return this;
+        }
+        /**
+         * Property allowExternalTargets: Whether to allow sharing to accounts outside the resource directory.
+         * <p>
+         * Value:
+         * false (default): Only allow sharing within the resource directory.
+         * true: Allow sharing to any account.
+         * <p>
+         * @return {@code this}
+         * @param allowExternalTargets Property allowExternalTargets: Whether to allow sharing to accounts outside the resource directory. This parameter is required.
+         */
+        public Builder allowExternalTargets(final com.aliyun.ros.cdk.core.IResolvable allowExternalTargets) {
+            this.props.allowExternalTargets(allowExternalTargets);
+            return this;
+        }
+
+        /**
+         * Property permissionNames: Sharing permission name.
+         * <p>
+         * When empty, the system automatically binds the default permissions associated with the resource type.
+         * <p>
+         * @return {@code this}
+         * @param permissionNames Property permissionNames: Sharing permission name. This parameter is required.
+         */
+        public Builder permissionNames(final com.aliyun.ros.cdk.core.IResolvable permissionNames) {
+            this.props.permissionNames(permissionNames);
+            return this;
+        }
+        /**
+         * Property permissionNames: Sharing permission name.
+         * <p>
+         * When empty, the system automatically binds the default permissions associated with the resource type.
+         * <p>
+         * @return {@code this}
+         * @param permissionNames Property permissionNames: Sharing permission name. This parameter is required.
+         */
+        public Builder permissionNames(final java.util.List<? extends java.lang.Object> permissionNames) {
+            this.props.permissionNames(permissionNames);
             return this;
         }
 

@@ -5,3 +5,4 @@ export * from './retcodeapp';
 
 // ALIYUN::ARMS Resources:
 export * from './arms.generated';
+export * as datasource from './datasource';

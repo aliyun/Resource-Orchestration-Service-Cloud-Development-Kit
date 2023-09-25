@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.devops;
 /**
  * Properties for defining a <code>ALIYUN::DEVOPS::VariableGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:24.583Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.VariableGroupProps")
 @software.amazon.jsii.Jsii.Proxy(VariableGroupProps.Jsii$Proxy.class)
 public interface VariableGroupProps extends software.amazon.jsii.JsiiSerializable {

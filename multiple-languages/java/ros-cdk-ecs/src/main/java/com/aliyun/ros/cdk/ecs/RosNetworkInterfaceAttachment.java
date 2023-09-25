@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  <code>ALIYUN::ECS::NetworkInterfaceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:25.578Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.887Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosNetworkInterfaceAttachment")
 public class RosNetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -111,6 +111,24 @@ public class RosNetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEcsRestartOption() {
+        return software.amazon.jsii.Kernel.get(this, "ecsRestartOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEcsRestartOption(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ecsRestartOption", value);
+    }
+
+    /**
+     */
+    public void setEcsRestartOption(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ecsRestartOption", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTrunkNetworkInstanceId() {
         return software.amazon.jsii.Kernel.get(this, "trunkNetworkInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -184,6 +202,23 @@ public class RosNetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.RosRe
          */
         public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
             this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ecsRestartOption This parameter is required.
+         */
+        public Builder ecsRestartOption(final java.lang.String ecsRestartOption) {
+            this.props.ecsRestartOption(ecsRestartOption);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ecsRestartOption This parameter is required.
+         */
+        public Builder ecsRestartOption(final com.aliyun.ros.cdk.core.IResolvable ecsRestartOption) {
+            this.props.ecsRestartOption(ecsRestartOption);
             return this;
         }
 

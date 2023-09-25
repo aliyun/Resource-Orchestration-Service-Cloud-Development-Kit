@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse.datasource;
 /**
  * A ROS resource type:  <code>DATASOURCE::ClickHouse::DBClusters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:23.916Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.775Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.datasource.DBClusters")
 public class DBClusters extends com.aliyun.ros.cdk.core.Resource {
 

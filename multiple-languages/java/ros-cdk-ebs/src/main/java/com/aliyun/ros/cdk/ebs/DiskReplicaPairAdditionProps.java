@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ebs;
 /**
  * Properties for defining a <code>ALIYUN::EBS::DiskReplicaPairAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:25.056Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.562Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.DiskReplicaPairAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(DiskReplicaPairAdditionProps.Jsii$Proxy.class)
 public interface DiskReplicaPairAdditionProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::FNF::Flows</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:26.458Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.536Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.datasource.FlowsProps")
 @software.amazon.jsii.Jsii.Proxy(FlowsProps.Jsii$Proxy.class)
 public interface FlowsProps extends software.amazon.jsii.JsiiSerializable {

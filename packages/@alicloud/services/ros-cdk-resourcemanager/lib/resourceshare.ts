@@ -16,6 +16,18 @@ export interface ResourceShareProps {
     readonly resourceShareName: string | ros.IResolvable;
 
     /**
+     * Property allowExternalTargets: Whether to allow sharing to accounts outside the resource directory. Value:
+     * false (default): Only allow sharing within the resource directory.
+     * true: Allow sharing to any account.
+     */
+    readonly allowExternalTargets?: boolean | ros.IResolvable;
+
+    /**
+     * Property permissionNames: Sharing permission name. When empty, the system automatically binds the default permissions associated with the resource type.
+     */
+    readonly permissionNames?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property resources:
      */
     readonly resources?: Array<RosResourceShare.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
@@ -56,8 +68,10 @@ export class ResourceShare extends ros.Resource {
 
         const rosResourceShare = new RosResourceShare(this, id,  {
             resourceShareName: props.resourceShareName,
+            allowExternalTargets: props.allowExternalTargets === undefined || props.allowExternalTargets === null ? false : props.allowExternalTargets,
             targets: props.targets,
             resources: props.resources,
+            permissionNames: props.permissionNames,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosResourceShare;
         this.attrResourceShareId = rosResourceShare.attrResourceShareId;

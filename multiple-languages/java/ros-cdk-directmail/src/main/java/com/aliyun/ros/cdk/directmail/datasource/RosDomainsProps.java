@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.directmail.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::DirectMail::Domains</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:24.630Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.429Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.datasource.RosDomainsProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainsProps.Jsii$Proxy.class)
 public interface RosDomainsProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eais;
 /**
  * A ROS template type:  <code>ALIYUN::EAIS::ClientInstanceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:24.973Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.539Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.RosClientInstanceAttachment")
 public class RosClientInstanceAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

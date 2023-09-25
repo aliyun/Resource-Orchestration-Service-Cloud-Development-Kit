@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vod;
 /**
  * A ROS template type:  <code>ALIYUN::VOD::MessageCallback</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:28.620Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:27.144Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.RosMessageCallback")
 public class RosMessageCallback extends com.aliyun.ros.cdk.core.RosResource {
 

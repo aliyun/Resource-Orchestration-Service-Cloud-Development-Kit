@@ -1,5 +1,26 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.45] (2023-09-25)
+
+### Features
+
+- Update ROS resource sdk packages (Added the ALIYUN::ResourceManager::ResourceShareAssociation, ALIYUN::ESS::ServerGroupAttachment, ALIYUN::NLB::SecurityGroupAttachment, ALIYUN::OSS::Directory, and ALIYUN::ESS::LoadBalancerAttachment resource type).
+- Fix reference resources bug(resource_object.resource.ref).
+
+## [ros-cdk-cli 1.0.44] (2023-09-15)
+
+### Features
+
+-  Added methods to reference resources(resource_object.ref).
+
+-  Update ROS resource sdk packages (Added the ALIYUN::Hologram::Instance，ALIYUN::DEVOPS::Pipeline and ALIYUN::DEVOPS::VariableGroup resource type). 
+
+## [ros-cdk-cli 1.0.43] (2023-09-01)
+
+### Features
+
+-  Update ROS resource sdk packages (Added the ALIYUN::SWAS::Instance and ALIYUN::SWAS::Instances resource type). 
+
 ## [ros-cdk-cli 1.0.41~1.0.42] (2023-07-25)
 
 ### Features

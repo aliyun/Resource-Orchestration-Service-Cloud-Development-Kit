@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  <code>ALIYUN::ECS::NetworkInterfaceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:25.448Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.781Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterfaceAttachment")
 public class NetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.Resource {
 
@@ -142,6 +142,27 @@ public class NetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.Resource
          */
         public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
             this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
+
+        /**
+         * Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping.
+         * <p>
+         * @return {@code this}
+         * @param ecsRestartOption Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping. This parameter is required.
+         */
+        public Builder ecsRestartOption(final java.lang.String ecsRestartOption) {
+            this.props.ecsRestartOption(ecsRestartOption);
+            return this;
+        }
+        /**
+         * Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping.
+         * <p>
+         * @return {@code this}
+         * @param ecsRestartOption Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping. This parameter is required.
+         */
+        public Builder ecsRestartOption(final com.aliyun.ros.cdk.core.IResolvable ecsRestartOption) {
+            this.props.ecsRestartOption(ecsRestartOption);
             return this;
         }
 

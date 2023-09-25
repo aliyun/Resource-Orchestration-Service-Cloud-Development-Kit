@@ -7,6 +7,7 @@ export * from './policyattachment';
 export * from './resourcedirectory';
 export * from './resourcegroup';
 export * from './resourceshare';
+export * from './resourceshareassociation';
 
 // ALIYUN::ResourceManager Resources:
 export * from './resourcemanager.generated';

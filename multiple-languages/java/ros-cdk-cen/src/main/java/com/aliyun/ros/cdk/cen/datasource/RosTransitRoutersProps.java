@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::CEN::TransitRouters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:23.854Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.753Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.RosTransitRoutersProps")
 @software.amazon.jsii.Jsii.Proxy(RosTransitRoutersProps.Jsii$Proxy.class)
 public interface RosTransitRoutersProps extends software.amazon.jsii.JsiiSerializable {

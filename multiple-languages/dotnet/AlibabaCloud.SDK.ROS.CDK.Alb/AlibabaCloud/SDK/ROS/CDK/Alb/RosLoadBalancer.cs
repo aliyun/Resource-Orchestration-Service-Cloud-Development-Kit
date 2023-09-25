@@ -735,21 +735,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 get;
             }
 
-            /// <remarks>
-            /// <strong>Property</strong>: eipType: The type of the elastic IP address (EIP). Valid values:
-            /// Common: elastic IP address, referred to as EIP.
-            /// Anycast: Anycast elastic IP address, referred to as Anycast EIP.
-            /// </remarks>
-            [JsiiProperty(name: "eipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? EipType
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
             [JsiiTypeProxy(nativeType: typeof(ILoadBalancerAddressesProperty), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosLoadBalancer.LoadBalancerAddressesProperty")]
             internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.RosLoadBalancer.ILoadBalancerAddressesProperty
             {
@@ -764,18 +749,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 public object AllocationId
                 {
                     get => GetInstanceProperty<object>()!;
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: eipType: The type of the elastic IP address (EIP). Valid values:
-                /// Common: elastic IP address, referred to as EIP.
-                /// Anycast: Anycast elastic IP address, referred to as Anycast EIP.
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "eipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? EipType
-                {
-                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -813,41 +786,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                         }
                     }
                     _allocationId = value;
-                }
-            }
-
-            private object? _eipType;
-
-            /// <remarks>
-            /// <strong>Property</strong>: eipType: The type of the elastic IP address (EIP). Valid values:
-            /// Common: elastic IP address, referred to as EIP.
-            /// Anycast: Anycast elastic IP address, referred to as Anycast EIP.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "eipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? EipType
-            {
-                get => _eipType;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                break;
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _eipType = value;
                 }
             }
         }
@@ -1211,21 +1149,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: eipType: The type of the elastic IP address (EIP). Valid values:
-            /// Common: elastic IP address, referred to as EIP.
-            /// Anycast: Anycast elastic IP address, referred to as Anycast EIP.
-            /// </remarks>
-            [JsiiProperty(name: "eipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            object? EipType
-            {
-                get
-                {
-                    return null;
-                }
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: loadBalancerAddresses: Load balancer addresses. This property has higher priority than AllocationId and EipType in ZoneMappings.
             /// </remarks>
             [JsiiProperty(name: "loadBalancerAddresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosLoadBalancer.LoadBalancerAddressesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -1269,18 +1192,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 [JsiiOptional]
                 [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? AllocationId
-                {
-                    get => GetInstanceProperty<object?>();
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: eipType: The type of the elastic IP address (EIP). Valid values:
-                /// Common: elastic IP address, referred to as EIP.
-                /// Anycast: Anycast elastic IP address, referred to as Anycast EIP.
-                /// </remarks>
-                [JsiiOptional]
-                [JsiiProperty(name: "eipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-                public object? EipType
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -1395,41 +1306,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                         }
                     }
                     _allocationId = value;
-                }
-            }
-
-            private object? _eipType;
-
-            /// <remarks>
-            /// <strong>Property</strong>: eipType: The type of the elastic IP address (EIP). Valid values:
-            /// Common: elastic IP address, referred to as EIP.
-            /// Anycast: Anycast elastic IP address, referred to as Anycast EIP.
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "eipType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? EipType
-            {
-                get => _eipType;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                break;
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _eipType = value;
                 }
             }
 
