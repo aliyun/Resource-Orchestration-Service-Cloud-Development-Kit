@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns;
 /**
  * Properties for defining a <code>ALIYUN::MNS::Topic</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.856Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.609Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {

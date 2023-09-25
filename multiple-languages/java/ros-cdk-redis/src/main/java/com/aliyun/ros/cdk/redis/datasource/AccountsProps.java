@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::REDIS::Accounts</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.644Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.376Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.datasource.AccountsProps")
 @software.amazon.jsii.Jsii.Proxy(AccountsProps.Jsii$Proxy.class)
 public interface AccountsProps extends software.amazon.jsii.JsiiSerializable {

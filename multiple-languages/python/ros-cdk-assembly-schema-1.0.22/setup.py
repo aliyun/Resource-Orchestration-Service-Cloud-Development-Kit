@@ -34,7 +34,7 @@ kwargs = json.loads(
     },
     "python_requires": "~=3.7",
     "install_requires": [
-        "jsii>1.12.0, <=1.85.0"
+        "jsii>1.12.0, <=1.85.0",
         "publication>=0.0.3",
         "typeguard~=2.13.3"
     ],

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eais.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::EAIS::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.552Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.302Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.datasource.InstancesProps")
 @software.amazon.jsii.Jsii.Proxy(InstancesProps.Jsii$Proxy.class)
 public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {

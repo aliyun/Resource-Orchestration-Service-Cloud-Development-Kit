@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a <code>ALIYUN::EDAS::DeployGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.124Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.865Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.DeployGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DeployGroupProps.Jsii$Proxy.class)
 public interface DeployGroupProps extends software.amazon.jsii.JsiiSerializable {

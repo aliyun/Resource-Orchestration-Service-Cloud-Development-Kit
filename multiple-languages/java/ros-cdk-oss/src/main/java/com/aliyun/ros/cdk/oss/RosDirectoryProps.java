@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * Properties for defining a <code>ALIYUN::OSS::Directory</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.111Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.854Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosDirectoryProps")
 @software.amazon.jsii.Jsii.Proxy(RosDirectoryProps.Jsii$Proxy.class)
 public interface RosDirectoryProps extends software.amazon.jsii.JsiiSerializable {

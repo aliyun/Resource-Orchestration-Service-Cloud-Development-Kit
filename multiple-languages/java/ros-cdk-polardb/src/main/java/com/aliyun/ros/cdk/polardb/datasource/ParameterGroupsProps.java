@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::POLARDB::ParameterGroups</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.300Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.036Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.ParameterGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(ParameterGroupsProps.Jsii$Proxy.class)
 public interface ParameterGroupsProps extends software.amazon.jsii.JsiiSerializable {

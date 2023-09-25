@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.foas;
 /**
  * Properties for defining a <code>ALIYUN::FOAS::Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.541Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.280Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.ProjectProps")
 @software.amazon.jsii.Jsii.Proxy(ProjectProps.Jsii$Proxy.class)
 public interface ProjectProps extends software.amazon.jsii.JsiiSerializable {

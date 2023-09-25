@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::ECS::KeyPairs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.077Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.824Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosKeyPairsProps")
 @software.amazon.jsii.Jsii.Proxy(RosKeyPairsProps.Jsii$Proxy.class)
 public interface RosKeyPairsProps extends software.amazon.jsii.JsiiSerializable {

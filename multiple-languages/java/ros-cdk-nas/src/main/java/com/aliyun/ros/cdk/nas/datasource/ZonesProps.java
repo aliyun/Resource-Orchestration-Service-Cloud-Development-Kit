@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::NAS::Zones</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.004Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.752Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.datasource.ZonesProps")
 @software.amazon.jsii.Jsii.Proxy(ZonesProps.Jsii$Proxy.class)
 public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::PVTZ::Rules</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.368Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.102Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.datasource.RosRulesProps")
 @software.amazon.jsii.Jsii.Proxy(RosRulesProps.Jsii$Proxy.class)
 public interface RosRulesProps extends software.amazon.jsii.JsiiSerializable {

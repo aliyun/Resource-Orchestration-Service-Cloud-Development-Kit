@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a <code>ALIYUN::CMS::GroupMetricRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.867Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.766Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.GroupMetricRuleProps")
 @software.amazon.jsii.Jsii.Proxy(GroupMetricRuleProps.Jsii$Proxy.class)
 public interface GroupMetricRuleProps extends software.amazon.jsii.JsiiSerializable {

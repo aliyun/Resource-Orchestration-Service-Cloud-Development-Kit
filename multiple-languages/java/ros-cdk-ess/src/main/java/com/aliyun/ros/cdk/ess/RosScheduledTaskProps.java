@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a <code>ALIYUN::ESS::ScheduledTask</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.373Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.115Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScheduledTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RosScheduledTaskProps.Jsii$Proxy.class)
 public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializable {

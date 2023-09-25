@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::ESS::ScalingConfigurations</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.432Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.176Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.datasource.RosScalingConfigurationsProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingConfigurationsProps.Jsii$Proxy.class)
 public interface RosScalingConfigurationsProps extends software.amazon.jsii.JsiiSerializable {

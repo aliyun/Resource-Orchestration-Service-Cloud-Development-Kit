@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * A ROS resource type:  <code>ALIYUN::CR::InstanceVpcEndpointLinkedVpc</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.130Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.896Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.InstanceVpcEndpointLinkedVpc")
 public class InstanceVpcEndpointLinkedVpc extends com.aliyun.ros.cdk.core.Resource {
 

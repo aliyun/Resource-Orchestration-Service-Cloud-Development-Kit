@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::DTS::MigrationInstances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.534Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.283Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.datasource.MigrationInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(MigrationInstancesProps.Jsii$Proxy.class)
 public interface MigrationInstancesProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos.datasource;
 /**
  * A ROS resource type:  <code>DATASOURCE::OOS::PatchBaselines</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.094Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.838Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.PatchBaselines")
 public class PatchBaselines extends com.aliyun.ros.cdk.core.Resource {
 

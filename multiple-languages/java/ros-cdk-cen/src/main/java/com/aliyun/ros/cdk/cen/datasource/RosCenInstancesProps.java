@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::CEN::CenInstances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.744Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.662Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.RosCenInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenInstancesProps.Jsii$Proxy.class)
 public interface RosCenInstancesProps extends software.amazon.jsii.JsiiSerializable {

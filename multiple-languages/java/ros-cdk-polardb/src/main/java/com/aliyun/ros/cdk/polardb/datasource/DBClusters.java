@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
 /**
  * A ROS resource type:  <code>DATASOURCE::POLARDB::DBClusters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.282Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.018Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.DBClusters")
 public class DBClusters extends com.aliyun.ros.cdk.core.Resource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  <code>ALIYUN::GA::IpSets</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.586Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.325Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosIpSets")
 public class RosIpSets extends com.aliyun.ros.cdk.core.RosResource {
 

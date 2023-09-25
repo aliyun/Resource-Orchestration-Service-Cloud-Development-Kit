@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * Properties for defining a <code>ALIYUN::ClickHouse::SynDb</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.771Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.689Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.RosSynDbProps")
 @software.amazon.jsii.Jsii.Proxy(RosSynDbProps.Jsii$Proxy.class)
 public interface RosSynDbProps extends software.amazon.jsii.JsiiSerializable {

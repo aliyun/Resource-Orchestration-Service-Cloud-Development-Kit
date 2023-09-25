@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * Properties for defining a <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.807Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.724Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcFirewallControlPolicyProps.Jsii$Proxy.class)
 public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.JsiiSerializable {

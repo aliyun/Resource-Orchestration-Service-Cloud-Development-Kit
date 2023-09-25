@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ebs;
 /**
  * Properties for defining a <code>ALIYUN::EBS::DiskReplicaGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.316Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.RosDiskReplicaGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosDiskReplicaGroupProps.Jsii$Proxy.class)
 public interface RosDiskReplicaGroupProps extends software.amazon.jsii.JsiiSerializable {

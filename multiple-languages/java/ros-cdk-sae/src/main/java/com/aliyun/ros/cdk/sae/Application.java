@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * A ROS resource type:  <code>ALIYUN::SAE::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.803Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.529Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.Application")
 public class Application extends com.aliyun.ros.cdk.core.Resource {
 

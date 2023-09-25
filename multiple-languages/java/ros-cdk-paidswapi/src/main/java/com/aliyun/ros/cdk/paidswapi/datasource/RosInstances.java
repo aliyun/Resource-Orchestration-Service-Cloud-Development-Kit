@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paidswapi.datasource;
 /**
  * A ROS template type:  <code>DATASOURCE::PaiDswApi::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.222Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.962Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidswapi.$Module.class, fqn = "@alicloud/ros-cdk-paidswapi.datasource.RosInstances")
 public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 

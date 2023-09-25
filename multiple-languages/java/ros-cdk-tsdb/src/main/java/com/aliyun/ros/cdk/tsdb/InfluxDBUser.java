@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * A ROS resource type:  <code>ALIYUN::TSDB::InfluxDBUser</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:27.132Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.016Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.InfluxDBUser")
 public class InfluxDBUser extends com.aliyun.ros.cdk.core.Resource {
 

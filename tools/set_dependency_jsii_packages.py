@@ -34,7 +34,7 @@ def sync_dotnet_jsii_version():
     if not jsii_version:
         print('未获取到packages.json内的jsii版本信息')
         exit(1)
-    reset_jsii_version = csproj_and_pom_files_version_range_to_interval(jsii_version)
+    reset_jsii_version = csproj_files_version_range_to_interval(jsii_version)
     if os.path.exists(dotnet_dir_path):
         csproj_files = find_reset_files(dotnet_dir_path, '*.csproj')
         for file in csproj_files:
@@ -46,7 +46,7 @@ def sync_java_jsii_version():
     if not jsii_version:
         print('未获取到packages.json内的jsii版本信息')
         exit(1)
-    reset_jsii_version = csproj_and_pom_files_version_range_to_interval(jsii_version)
+    reset_jsii_version = pom_files_version_range_to_interval(jsii_version)
     if os.path.exists(java_dir_path):
         pom_files = find_reset_files(java_dir_path, '*.xml')
         for file in pom_files:
@@ -78,7 +78,7 @@ def find_reset_files(directory, reset_file_type):
     return reset_files
 
 
-def csproj_and_pom_files_version_range_to_interval(version_range):
+def pom_files_version_range_to_interval(version_range):
     version_range = version_range.strip()
 
     # 判断是否是 >x.y.z 格式
@@ -92,6 +92,23 @@ def csproj_and_pom_files_version_range_to_interval(version_range):
         start_version = version_range[0][1:]
         end_version = version_range[1][2:]
         return f'({start_version},{end_version}]'
+
+    # 匹配 ^x.y.z
+    match = re.match(r'\^(\d+\.\d+\.\d+)', version_range)
+    if match:
+        version = match.group(1)
+        # 将 ^x.y.z 转换成 [x.y.z, x.y+1.0)
+        return f'[{version}, {int(version.split(".")[0]) + 1}.0.0)'
+
+
+def csproj_files_version_range_to_interval(version_range):
+    version_range = version_range.strip()
+
+    # 判断是否是 >x.y.z <=a.b.c 格式
+    if re.match(r'^>[0-9]+\.[0-9]+\.[0-9]+\s+<=[0-9]+\.[0-9]+\.[0-9]+$', version_range):
+        version_range = version_range.split()
+        end_version = version_range[1][2:]
+        return f'{end_version}'
 
     # 匹配 ^x.y.z
     match = re.match(r'\^(\d+\.\d+\.\d+)', version_range)
@@ -149,7 +166,7 @@ def update_python_setup_files_version(requires_file_path, jsii_version):
     with open(requires_file_path, 'r') as file:
         content = file.read()
         pattern = '(\"jsii.*)'
-        replaced_content = re.sub(pattern, '\"' + jsii_version + '\"', content, flags=re.MULTILINE)
+        replaced_content = re.sub(pattern, '\"' + jsii_version + '\"' + ',', content, flags=re.MULTILINE)
     with open(requires_file_path, 'w') as file:
         file.write(replaced_content)
 

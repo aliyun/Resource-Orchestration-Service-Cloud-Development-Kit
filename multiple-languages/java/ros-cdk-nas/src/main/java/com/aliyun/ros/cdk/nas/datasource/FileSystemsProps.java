@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::NAS::FileSystems</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.000Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.748Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.datasource.FileSystemsProps")
 @software.amazon.jsii.Jsii.Proxy(FileSystemsProps.Jsii$Proxy.class)
 public interface FileSystemsProps extends software.amazon.jsii.JsiiSerializable {

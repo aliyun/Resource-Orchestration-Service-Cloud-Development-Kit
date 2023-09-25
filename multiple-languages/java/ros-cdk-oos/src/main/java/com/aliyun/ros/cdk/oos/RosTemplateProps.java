@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Properties for defining a <code>ALIYUN::OOS::Template</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.091Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.835Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(RosTemplateProps.Jsii$Proxy.class)
 public interface RosTemplateProps extends software.amazon.jsii.JsiiSerializable {
