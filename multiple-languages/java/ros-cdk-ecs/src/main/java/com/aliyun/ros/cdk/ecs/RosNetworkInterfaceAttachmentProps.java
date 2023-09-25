@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a <code>ALIYUN::ECS::NetworkInterfaceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:25.579Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.888Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosNetworkInterfaceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosNetworkInterfaceAttachmentProps.Jsii$Proxy.class)
 public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,6 +15,12 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEcsRestartOption() {
+        return null;
+    }
 
     /**
      */
@@ -34,6 +40,7 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
     public static final class Builder implements software.amazon.jsii.Builder<RosNetworkInterfaceAttachmentProps> {
         java.lang.Object instanceId;
         java.lang.Object networkInterfaceId;
+        java.lang.Object ecsRestartOption;
         java.lang.Object trunkNetworkInstanceId;
 
         /**
@@ -77,6 +84,26 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
         }
 
         /**
+         * Sets the value of {@link RosNetworkInterfaceAttachmentProps#getEcsRestartOption}
+         * @param ecsRestartOption the value to be set.
+         * @return {@code this}
+         */
+        public Builder ecsRestartOption(java.lang.String ecsRestartOption) {
+            this.ecsRestartOption = ecsRestartOption;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNetworkInterfaceAttachmentProps#getEcsRestartOption}
+         * @param ecsRestartOption the value to be set.
+         * @return {@code this}
+         */
+        public Builder ecsRestartOption(com.aliyun.ros.cdk.core.IResolvable ecsRestartOption) {
+            this.ecsRestartOption = ecsRestartOption;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosNetworkInterfaceAttachmentProps#getTrunkNetworkInstanceId}
          * @param trunkNetworkInstanceId the value to be set.
          * @return {@code this}
@@ -114,6 +141,7 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosNetworkInterfaceAttachmentProps {
         private final java.lang.Object instanceId;
         private final java.lang.Object networkInterfaceId;
+        private final java.lang.Object ecsRestartOption;
         private final java.lang.Object trunkNetworkInstanceId;
 
         /**
@@ -124,6 +152,7 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
             super(objRef);
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ecsRestartOption = software.amazon.jsii.Kernel.get(this, "ecsRestartOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.trunkNetworkInstanceId = software.amazon.jsii.Kernel.get(this, "trunkNetworkInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -134,6 +163,7 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
             this.networkInterfaceId = java.util.Objects.requireNonNull(builder.networkInterfaceId, "networkInterfaceId is required");
+            this.ecsRestartOption = builder.ecsRestartOption;
             this.trunkNetworkInstanceId = builder.trunkNetworkInstanceId;
         }
 
@@ -145,6 +175,11 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
         @Override
         public final java.lang.Object getNetworkInterfaceId() {
             return this.networkInterfaceId;
+        }
+
+        @Override
+        public final java.lang.Object getEcsRestartOption() {
+            return this.ecsRestartOption;
         }
 
         @Override
@@ -160,6 +195,9 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
 
             data.set("instanceId", om.valueToTree(this.getInstanceId()));
             data.set("networkInterfaceId", om.valueToTree(this.getNetworkInterfaceId()));
+            if (this.getEcsRestartOption() != null) {
+                data.set("ecsRestartOption", om.valueToTree(this.getEcsRestartOption()));
+            }
             if (this.getTrunkNetworkInstanceId() != null) {
                 data.set("trunkNetworkInstanceId", om.valueToTree(this.getTrunkNetworkInstanceId()));
             }
@@ -183,6 +221,7 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
 
             if (!instanceId.equals(that.instanceId)) return false;
             if (!networkInterfaceId.equals(that.networkInterfaceId)) return false;
+            if (this.ecsRestartOption != null ? !this.ecsRestartOption.equals(that.ecsRestartOption) : that.ecsRestartOption != null) return false;
             return this.trunkNetworkInstanceId != null ? this.trunkNetworkInstanceId.equals(that.trunkNetworkInstanceId) : that.trunkNetworkInstanceId == null;
         }
 
@@ -190,6 +229,7 @@ public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii
         public final int hashCode() {
             int result = this.instanceId.hashCode();
             result = 31 * result + (this.networkInterfaceId.hashCode());
+            result = 31 * result + (this.ecsRestartOption != null ? this.ecsRestartOption.hashCode() : 0);
             result = 31 * result + (this.trunkNetworkInstanceId != null ? this.trunkNetworkInstanceId.hashCode() : 0);
             return result;
         }

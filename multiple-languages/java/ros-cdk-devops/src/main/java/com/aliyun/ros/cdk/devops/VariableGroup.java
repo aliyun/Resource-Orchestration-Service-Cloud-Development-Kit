@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.devops;
 /**
  * A ROS resource type:  <code>ALIYUN::DEVOPS::VariableGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:24.582Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.390Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.VariableGroup")
 public class VariableGroup extends com.aliyun.ros.cdk.core.Resource {
 

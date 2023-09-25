@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  <code>ALIYUN::ECS::InstanceGroupClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:25.353Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.727Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupClone")
 public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -1010,7 +1010,7 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property systemDiskCategory: Category of system disk.
          * <p>
-         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
+         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry.Old instances will not be changed.
          * <p>
          * @return {@code this}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk. This parameter is required.
@@ -1022,7 +1022,7 @@ public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property systemDiskCategory: Category of system disk.
          * <p>
-         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto.Old instances will not be changed.
+         * Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry.Old instances will not be changed.
          * <p>
          * @return {@code this}
          * @param systemDiskCategory Property systemDiskCategory: Category of system disk. This parameter is required.

@@ -732,6 +732,207 @@ export class RosLifecycleHook extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::ESS::LoadBalancerAttachment`
+ */
+export interface RosLoadBalancerAttachmentProps {
+
+    /**
+     * @Property scalingGroupId: The ID of the scaling group.
+     */
+    readonly scalingGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property forceAttach: Specifies whether to add all instances in the current scaling group to the backend server groups of the attached CLB instance. Valid values:
+     * true
+     * false
+     * Default value: false.
+     */
+    readonly forceAttach?: boolean | ros.IResolvable;
+
+    /**
+     * @Property loadBalancerConfigs: Load balancer configuration list.
+     */
+    readonly loadBalancerConfigs?: Array<RosLoadBalancerAttachment.LoadBalancerConfigsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property loadBalancers: The ID of CLB instance N that you want to attach to the scaling group. Valid values of N: 1 to 5.
+     */
+    readonly loadBalancers?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosLoadBalancerAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosLoadBalancerAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoadBalancerAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('forceAttach', ros.validateBoolean)(properties.forceAttach));
+    if(properties.loadBalancers && (Array.isArray(properties.loadBalancers) || (typeof properties.loadBalancers) === 'string')) {
+        errors.collect(ros.propertyValidator('loadBalancers', ros.validateLength)({
+            data: properties.loadBalancers.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('loadBalancers', ros.listValidator(ros.validateString))(properties.loadBalancers));
+    if(properties.loadBalancerConfigs && (Array.isArray(properties.loadBalancerConfigs) || (typeof properties.loadBalancerConfigs) === 'string')) {
+        errors.collect(ros.propertyValidator('loadBalancerConfigs', ros.validateLength)({
+            data: properties.loadBalancerConfigs.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('loadBalancerConfigs', ros.listValidator(RosLoadBalancerAttachment_LoadBalancerConfigsPropertyValidator))(properties.loadBalancerConfigs));
+    return errors.wrap('supplied properties not correct for "RosLoadBalancerAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::LoadBalancerAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosLoadBalancerAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::LoadBalancerAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosLoadBalancerAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosLoadBalancerAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ScalingGroupId: ros.stringToRosTemplate(properties.scalingGroupId),
+      ForceAttach: ros.booleanToRosTemplate(properties.forceAttach),
+      LoadBalancerConfigs: ros.listMapper(rosLoadBalancerAttachmentLoadBalancerConfigsPropertyToRosTemplate)(properties.loadBalancerConfigs),
+      LoadBalancers: ros.listMapper(ros.stringToRosTemplate)(properties.loadBalancers),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ESS::LoadBalancerAttachment`
+ */
+export class RosLoadBalancerAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::LoadBalancerAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property scalingGroupId: The ID of the scaling group.
+     */
+    public scalingGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property forceAttach: Specifies whether to add all instances in the current scaling group to the backend server groups of the attached CLB instance. Valid values:
+     * true
+     * false
+     * Default value: false.
+     */
+    public forceAttach: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property loadBalancerConfigs: Load balancer configuration list.
+     */
+    public loadBalancerConfigs: Array<RosLoadBalancerAttachment.LoadBalancerConfigsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property loadBalancers: The ID of CLB instance N that you want to attach to the scaling group. Valid values of N: 1 to 5.
+     */
+    public loadBalancers: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ESS::LoadBalancerAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosLoadBalancerAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosLoadBalancerAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.scalingGroupId = props.scalingGroupId;
+        this.forceAttach = props.forceAttach;
+        this.loadBalancerConfigs = props.loadBalancerConfigs;
+        this.loadBalancers = props.loadBalancers;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            scalingGroupId: this.scalingGroupId,
+            forceAttach: this.forceAttach,
+            loadBalancerConfigs: this.loadBalancerConfigs,
+            loadBalancers: this.loadBalancers,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosLoadBalancerAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosLoadBalancerAttachment {
+    /**
+     * @stability external
+     */
+    export interface LoadBalancerConfigsProperty {
+        /**
+         * @Property loadBalancerId: The ID of the CLB instance.
+         */
+        readonly loadBalancerId?: string | ros.IResolvable;
+        /**
+         * @Property weight: The weight of an Elastic Compute Service (ECS) instance as a backend server in the backend server groups of the attached CLB instance. If you increase the weight of an ECS instance, the number of access requests that are forwarded to the ECS instance also increases. If you set Weight to 0 for an ECS instance, no access requests are forwarded to the ECS instance.
+     * Valid values: 0 to 100.
+         */
+        readonly weight?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LoadBalancerConfigsProperty`
+ *
+ * @param properties - the TypeScript properties of a `LoadBalancerConfigsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoadBalancerAttachment_LoadBalancerConfigsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
+    return errors.wrap('supplied properties not correct for "LoadBalancerConfigsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::LoadBalancerAttachment.LoadBalancerConfigs` resource
+ *
+ * @param properties - the TypeScript properties of a `LoadBalancerConfigsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::LoadBalancerAttachment.LoadBalancerConfigs` resource.
+ */
+// @ts-ignore TS6133
+function rosLoadBalancerAttachmentLoadBalancerConfigsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLoadBalancerAttachment_LoadBalancerConfigsPropertyValidator(properties).assertSuccess();
+    return {
+      LoadBalancerId: ros.stringToRosTemplate(properties.loadBalancerId),
+      Weight: ros.numberToRosTemplate(properties.weight),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::ESS::ScalingConfiguration`
  */
 export interface RosScalingConfigurationProps {
@@ -3866,4 +4067,232 @@ export class RosScheduledTask extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosScheduledTaskPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `ALIYUN::ESS::ServerGroupAttachment`
+ */
+export interface RosServerGroupAttachmentProps {
+
+    /**
+     * @Property scalingGroupId: The ID of the scaling group.
+     */
+    readonly scalingGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property serverGroups: A collection of information about server groups.
+     */
+    readonly serverGroups: Array<RosServerGroupAttachment.ServerGroupsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property forceAttach: Specifies whether to add the Elastic Compute Service (ECS) instances in the scaling group to the backend server group of the newly attached SLB instance. Valid values:
+     * true
+     * false
+     * Default value: false.
+     */
+    readonly forceAttach?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosServerGroupAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosServerGroupAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosServerGroupAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('serverGroups', ros.requiredValidator)(properties.serverGroups));
+    if(properties.serverGroups && (Array.isArray(properties.serverGroups) || (typeof properties.serverGroups) === 'string')) {
+        errors.collect(ros.propertyValidator('serverGroups', ros.validateLength)({
+            data: properties.serverGroups.length,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('serverGroups', ros.listValidator(RosServerGroupAttachment_ServerGroupsPropertyValidator))(properties.serverGroups));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
+    errors.collect(ros.propertyValidator('forceAttach', ros.validateBoolean)(properties.forceAttach));
+    return errors.wrap('supplied properties not correct for "RosServerGroupAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ServerGroupAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosServerGroupAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ServerGroupAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosServerGroupAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosServerGroupAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ScalingGroupId: ros.stringToRosTemplate(properties.scalingGroupId),
+      ServerGroups: ros.listMapper(rosServerGroupAttachmentServerGroupsPropertyToRosTemplate)(properties.serverGroups),
+      ForceAttach: ros.booleanToRosTemplate(properties.forceAttach),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ESS::ServerGroupAttachment`
+ */
+export class RosServerGroupAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ESS::ServerGroupAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ScalingActivityId: The ID of the scaling activity during which one or more SLB instances are attached to the scaling group and the ECS instances in the scaling group are added to the backend server groups of the SLB instances.
+Note This parameter is returned only after you set the ForceAttach parameter to true.
+     */
+    public readonly attrScalingActivityId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property scalingGroupId: The ID of the scaling group.
+     */
+    public scalingGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property serverGroups: A collection of information about server groups.
+     */
+    public serverGroups: Array<RosServerGroupAttachment.ServerGroupsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property forceAttach: Specifies whether to add the Elastic Compute Service (ECS) instances in the scaling group to the backend server group of the newly attached SLB instance. Valid values:
+     * true
+     * false
+     * Default value: false.
+     */
+    public forceAttach: boolean | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ESS::ServerGroupAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosServerGroupAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosServerGroupAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrScalingActivityId = this.getAtt('ScalingActivityId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.scalingGroupId = props.scalingGroupId;
+        this.serverGroups = props.serverGroups;
+        this.forceAttach = props.forceAttach;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            scalingGroupId: this.scalingGroupId,
+            serverGroups: this.serverGroups,
+            forceAttach: this.forceAttach,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosServerGroupAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosServerGroupAttachment {
+    /**
+     * @stability external
+     */
+    export interface ServerGroupsProperty {
+        /**
+         * @Property type: The type of backend server group.
+     * Valid values:
+     * ALB
+     * NLB
+         */
+        readonly type: string | ros.IResolvable;
+        /**
+         * @Property port: The port number used by an ECS instance in the scaling group after Auto Scaling adds the ECS instance to backend server group.
+     * ALB server group port range [1,65535], NLB server group port range [0,65535].
+         */
+        readonly port: number | ros.IResolvable;
+        /**
+         * @Property serverGroupId: The ID of backend server group.
+         */
+        readonly serverGroupId: string | ros.IResolvable;
+        /**
+         * @Property weight: The weight of an ECS instance in the scaling group as a backend server after Auto Scaling adds the ECS instance to backend server group. Valid values: 0 to 100.
+     * If you increase the weight of an ECS instance in a backend server group, the number of access requests that are forwarded to the ECS instance increases. If you set the Weight parameter for an ECS instance in a backend server group to 0, no access requests are forwarded to the ECS instance.
+         */
+        readonly weight: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ServerGroupsProperty`
+ *
+ * @param properties - the TypeScript properties of a `ServerGroupsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosServerGroupAttachment_ServerGroupsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["ALB","NLB"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    if(properties.port && (typeof properties.port) !== 'object') {
+        errors.collect(ros.propertyValidator('port', ros.validateRange)({
+            data: properties.port,
+            min: 0,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('serverGroupId', ros.requiredValidator)(properties.serverGroupId));
+    errors.collect(ros.propertyValidator('serverGroupId', ros.validateString)(properties.serverGroupId));
+    errors.collect(ros.propertyValidator('weight', ros.requiredValidator)(properties.weight));
+    if(properties.weight && (typeof properties.weight) !== 'object') {
+        errors.collect(ros.propertyValidator('weight', ros.validateRange)({
+            data: properties.weight,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
+    return errors.wrap('supplied properties not correct for "ServerGroupsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ServerGroupAttachment.ServerGroups` resource
+ *
+ * @param properties - the TypeScript properties of a `ServerGroupsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ServerGroupAttachment.ServerGroups` resource.
+ */
+// @ts-ignore TS6133
+function rosServerGroupAttachmentServerGroupsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosServerGroupAttachment_ServerGroupsPropertyValidator(properties).assertSuccess();
+    return {
+      Type: ros.stringToRosTemplate(properties.type),
+      Port: ros.numberToRosTemplate(properties.port),
+      ServerGroupId: ros.stringToRosTemplate(properties.serverGroupId),
+      Weight: ros.numberToRosTemplate(properties.weight),
+    };
 }

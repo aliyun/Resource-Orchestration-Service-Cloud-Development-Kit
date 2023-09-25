@@ -887,6 +887,144 @@ function rosBucketWebsiteConfigurationPropertyToRosTemplate(properties: any): an
 }
 
 /**
+ * Properties for defining a `ALIYUN::OSS::Directory`
+ */
+export interface RosDirectoryProps {
+
+    /**
+     * @Property bucketName: bucket name.
+     */
+    readonly bucketName: string | ros.IResolvable;
+
+    /**
+     * @Property directoryName: Directory name
+     */
+    readonly directoryName: string | ros.IResolvable;
+
+    /**
+     * @Property deletionForce: Whether force delete the relative objects in the directory. Default value is false.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDirectoryProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDirectoryProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDirectoryPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucketName', ros.requiredValidator)(properties.bucketName));
+    errors.collect(ros.propertyValidator('bucketName', ros.validateString)(properties.bucketName));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('directoryName', ros.requiredValidator)(properties.directoryName));
+    if(properties.directoryName && (typeof properties.directoryName) !== 'object') {
+        errors.collect(ros.propertyValidator('directoryName', ros.validateAllowedPattern)({
+          data: properties.directoryName,
+          reg: /[^\\/\\](?!\/\/)(.*){1,254}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('directoryName', ros.validateString)(properties.directoryName));
+    return errors.wrap('supplied properties not correct for "RosDirectoryProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::Directory` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDirectoryProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::Directory` resource.
+ */
+// @ts-ignore TS6133
+function rosDirectoryPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDirectoryPropsValidator(properties).assertSuccess();
+    }
+    return {
+      BucketName: ros.stringToRosTemplate(properties.bucketName),
+      DirectoryName: ros.stringToRosTemplate(properties.directoryName),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::OSS::Directory`
+ */
+export class RosDirectory extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::Directory";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute BucketName: The name of Bucket
+     */
+    public readonly attrBucketName: ros.IResolvable;
+
+    /**
+     * @Attribute DirectoryName: The name of Directory
+     */
+    public readonly attrDirectoryName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bucketName: bucket name.
+     */
+    public bucketName: string | ros.IResolvable;
+
+    /**
+     * @Property directoryName: Directory name
+     */
+    public directoryName: string | ros.IResolvable;
+
+    /**
+     * @Property deletionForce: Whether force delete the relative objects in the directory. Default value is false.
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::OSS::Directory`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDirectoryProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDirectory.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBucketName = this.getAtt('BucketName');
+        this.attrDirectoryName = this.getAtt('DirectoryName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bucketName = props.bucketName;
+        this.directoryName = props.directoryName;
+        this.deletionForce = props.deletionForce;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bucketName: this.bucketName,
+            directoryName: this.directoryName,
+            deletionForce: this.deletionForce,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDirectoryPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::OSS::Domain`
  */
 export interface RosDomainProps {

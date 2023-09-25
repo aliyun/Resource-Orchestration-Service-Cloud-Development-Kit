@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * Properties for defining a <code>ALIYUN::EMR::FlowProject</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:26.146Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.284Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.FlowProjectProps")
 @software.amazon.jsii.Jsii.Proxy(FlowProjectProps.Jsii$Proxy.class)
 public interface FlowProjectProps extends software.amazon.jsii.JsiiSerializable {

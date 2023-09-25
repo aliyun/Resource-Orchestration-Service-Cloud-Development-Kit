@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::RAM::Groups</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:27.580Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.420Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.GroupsProps")
 @software.amazon.jsii.Jsii.Proxy(GroupsProps.Jsii$Proxy.class)
 public interface GroupsProps extends software.amazon.jsii.JsiiSerializable {

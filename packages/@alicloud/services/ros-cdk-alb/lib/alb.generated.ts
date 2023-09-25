@@ -2343,12 +2343,6 @@ export namespace RosLoadBalancer {
          * @Property allocationId: The ID of the elastic IP address (EIP) that is associated with the ALB instance.
          */
         readonly allocationId: string | ros.IResolvable;
-        /**
-         * @Property eipType: The type of the elastic IP address (EIP). Valid values:
-     * Common: elastic IP address, referred to as EIP.
-     * Anycast: Anycast elastic IP address, referred to as Anycast EIP.
-         */
-        readonly eipType?: string | ros.IResolvable;
     }
 }
 /**
@@ -2363,7 +2357,6 @@ function RosLoadBalancer_LoadBalancerAddressesPropertyValidator(properties: any)
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('allocationId', ros.requiredValidator)(properties.allocationId));
     errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
-    errors.collect(ros.propertyValidator('eipType', ros.validateString)(properties.eipType));
     return errors.wrap('supplied properties not correct for "LoadBalancerAddressesProperty"');
 }
 
@@ -2380,7 +2373,6 @@ function rosLoadBalancerLoadBalancerAddressesPropertyToRosTemplate(properties: a
     RosLoadBalancer_LoadBalancerAddressesPropertyValidator(properties).assertSuccess();
     return {
       AllocationId: ros.stringToRosTemplate(properties.allocationId),
-      EipType: ros.stringToRosTemplate(properties.eipType),
     };
 }
 
@@ -2537,19 +2529,13 @@ export namespace RosLoadBalancer {
          */
         readonly zoneId: string | ros.IResolvable;
         /**
-         * @Property allocationId: The ID of the elastic IP address (EIP) that is associated with the ALB instance.
-         */
-        readonly allocationId?: string | ros.IResolvable;
-        /**
          * @Property vSwitchId: The ID of the vSwitch in the zone. Each zone can contain only one vSwitch and one subnet.
          */
         readonly vSwitchId: string | ros.IResolvable;
         /**
-         * @Property eipType: The type of the elastic IP address (EIP). Valid values:
-     * Common: elastic IP address, referred to as EIP.
-     * Anycast: Anycast elastic IP address, referred to as Anycast EIP.
+         * @Property allocationId: The ID of the elastic IP address (EIP) that is associated with the ALB instance.
          */
-        readonly eipType?: string | ros.IResolvable;
+        readonly allocationId?: string | ros.IResolvable;
         /**
          * @Property loadBalancerAddresses: Load balancer addresses. This property has higher priority than AllocationId and EipType in ZoneMappings.
          */
@@ -2568,10 +2554,9 @@ function RosLoadBalancer_ZoneMappingsPropertyValidator(properties: any): ros.Val
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('eipType', ros.validateString)(properties.eipType));
+    errors.collect(ros.propertyValidator('allocationId', ros.validateString)(properties.allocationId));
     if(properties.loadBalancerAddresses && (Array.isArray(properties.loadBalancerAddresses) || (typeof properties.loadBalancerAddresses) === 'string')) {
         errors.collect(ros.propertyValidator('loadBalancerAddresses', ros.validateLength)({
             data: properties.loadBalancerAddresses.length,
@@ -2596,9 +2581,8 @@ function rosLoadBalancerZoneMappingsPropertyToRosTemplate(properties: any): any 
     RosLoadBalancer_ZoneMappingsPropertyValidator(properties).assertSuccess();
     return {
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
-      AllocationId: ros.stringToRosTemplate(properties.allocationId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
-      EipType: ros.stringToRosTemplate(properties.eipType),
+      AllocationId: ros.stringToRosTemplate(properties.allocationId),
       LoadBalancerAddresses: ros.listMapper(rosLoadBalancerLoadBalancerAddressesPropertyToRosTemplate)(properties.loadBalancerAddresses),
     };
 }

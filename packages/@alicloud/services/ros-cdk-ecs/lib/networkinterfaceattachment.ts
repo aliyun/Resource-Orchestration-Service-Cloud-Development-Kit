@@ -19,6 +19,11 @@ export interface NetworkInterfaceAttachmentProps {
     readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
+     * Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping.
+     */
+    readonly ecsRestartOption?: string | ros.IResolvable;
+
+    /**
      * Property trunkNetworkInstanceId: undefined
      */
     readonly trunkNetworkInstanceId?: string | ros.IResolvable;
@@ -60,8 +65,9 @@ export class NetworkInterfaceAttachment extends ros.Resource {
         super(scope, id);
 
         const rosNetworkInterfaceAttachment = new RosNetworkInterfaceAttachment(this, id,  {
-            instanceId: props.instanceId,
             trunkNetworkInstanceId: props.trunkNetworkInstanceId,
+            instanceId: props.instanceId,
+            ecsRestartOption: props.ecsRestartOption,
             networkInterfaceId: props.networkInterfaceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNetworkInterfaceAttachment;

@@ -1976,3 +1976,181 @@ function rosClusterPostInstallScriptPropertyToRosTemplate(properties: any): any 
       Url: ros.stringToRosTemplate(properties.url),
     };
 }
+
+/**
+ * Properties for defining a `ALIYUN::EHPC::Users`
+ */
+export interface RosUsersProps {
+
+    /**
+     * @Property clusterId: The cluster ID.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property users: The information about the users.
+     */
+    readonly users: Array<RosUsers.UsersProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosUsersProps`
+ *
+ * @param properties - the TypeScript properties of a `RosUsersProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosUsersPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('users', ros.requiredValidator)(properties.users));
+    if(properties.users && (Array.isArray(properties.users) || (typeof properties.users) === 'string')) {
+        errors.collect(ros.propertyValidator('users', ros.validateLength)({
+            data: properties.users.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('users', ros.listValidator(RosUsers_UsersPropertyValidator))(properties.users));
+    return errors.wrap('supplied properties not correct for "RosUsersProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::Users` resource
+ *
+ * @param properties - the TypeScript properties of a `RosUsersProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::Users` resource.
+ */
+// @ts-ignore TS6133
+function rosUsersPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosUsersPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ClusterId: ros.stringToRosTemplate(properties.clusterId),
+      Users: ros.listMapper(rosUsersUsersPropertyToRosTemplate)(properties.users),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::EHPC::Users`
+ */
+export class RosUsers extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EHPC::Users";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterId: The cluster ID.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property users: The information about the users.
+     */
+    public users: Array<RosUsers.UsersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::EHPC::Users`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosUsersProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosUsers.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterId = props.clusterId;
+        this.users = props.users;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterId: this.clusterId,
+            users: this.users,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosUsersPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosUsers {
+    /**
+     * @stability external
+     */
+    export interface UsersProperty {
+        /**
+         * @Property group: The permission group to which the user N belongs. Valid values:
+     * - **users**: an ordinary permission group. It is applicable to ordinary users that need only to submit and debug jobs.
+     * - **wheel**: a sudo permission group. It is applicable to the administrator who needs to manage the cluster. In addition to submitting and debugging jobs, users who have sudo permissions can run sudo commands to install software and restart nodes.
+     * Valid values of N: 1 to 100.
+         */
+        readonly group: string | ros.IResolvable;
+        /**
+         * @Property password: The password of the Nth user. The password must be 8 to 30 characters in length and contain three of the following items:
+     * - Uppercase letter
+     * - Lowercase letter
+     * - Digit
+     * - Special character: ()~!@#$%^&*-_+=|{}[]:;'/<>,.?/
+     * Valid values of N: 1 to 100.
+         */
+        readonly password: string | ros.IResolvable;
+        /**
+         * @Property name: The name of the user that you want to add. The name must be 6 to 30 characters in length and can contain letters, digits, and periods (.). It must start with a letter. 
+     * Valid values of N: 1 to 100.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `UsersProperty`
+ *
+ * @param properties - the TypeScript properties of a `UsersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosUsers_UsersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('group', ros.requiredValidator)(properties.group));
+    errors.collect(ros.propertyValidator('group', ros.validateString)(properties.group));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "UsersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::Users.Users` resource
+ *
+ * @param properties - the TypeScript properties of a `UsersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::Users.Users` resource.
+ */
+// @ts-ignore TS6133
+function rosUsersUsersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosUsers_UsersPropertyValidator(properties).assertSuccess();
+    return {
+      Group: ros.stringToRosTemplate(properties.group),
+      Password: ros.stringToRosTemplate(properties.password),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}

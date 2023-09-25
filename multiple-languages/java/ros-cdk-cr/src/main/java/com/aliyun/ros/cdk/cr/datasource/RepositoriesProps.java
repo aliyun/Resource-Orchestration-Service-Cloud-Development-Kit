@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::CR::Repositories</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:24.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.161Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.datasource.RepositoriesProps")
 @software.amazon.jsii.Jsii.Proxy(RepositoriesProps.Jsii$Proxy.class)
 public interface RepositoriesProps extends software.amazon.jsii.JsiiSerializable {

@@ -22,6 +22,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
+        /// <summary>Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping.</summary>
+        [JsiiProperty(name: "ecsRestartOption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EcsRestartOption
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property trunkNetworkInstanceId: undefined.</summary>
         [JsiiProperty(name: "trunkNetworkInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -53,6 +64,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             public object NetworkInterfaceId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "ecsRestartOption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EcsRestartOption
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property trunkNetworkInstanceId: undefined.</summary>

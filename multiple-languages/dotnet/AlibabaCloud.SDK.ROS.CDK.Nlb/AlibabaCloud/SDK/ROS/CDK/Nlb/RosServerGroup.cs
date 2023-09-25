@@ -1306,7 +1306,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         public interface IServersProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: port: Port used by the backend server
+            /// <strong>Property</strong>: port: The port used by the backend server. Valid values: 1 to 65535.
             /// </remarks>
             [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object Port
@@ -1315,7 +1315,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: serverId: Id of server
+            /// <strong>Property</strong>: serverId: The ID of the server. You can specify at most 40 server IDs in each call.
+            /// If the server group type is **Instance**, set the ServerId parameter to the ID of an Elastic Compute Service (ECS) instance, an elastic network interface (ENI), or an elastic container instance. These backend servers are specified by **Ecs**, **Eni**, or **Eci**.
+            /// If the server group type is **Ip**, set the ServerId parameter to an IP address.
             /// </remarks>
             [JsiiProperty(name: "serverId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object ServerId
@@ -1324,7 +1326,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: serverType: Type of backend server
+            /// <strong>Property</strong>: serverType: The type of the backend server. Valid values:
+            /// - **Ecs**: an ECS instance.
+            /// - **Eni**: an ENI.
+            /// - **Eci**: an elastic container instance.
+            /// - **Ip**: an IP address.
             /// </remarks>
             [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object ServerType
@@ -1333,7 +1339,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: description: undefined
+            /// <strong></strong>: ), underscores (_), and hyphens (-).
+            ///
+            /// <strong>Property</strong>: description: The description of the servers. The description must be 2 to 256 characters in length, and can contain letters, digits, commas (,), periods (.), semicolons (;), forward slashes (/), at signs (
             /// </remarks>
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1346,7 +1354,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: serverIp: undefined
+            /// <strong>Property</strong>: serverIp: The IP address of the server. If the server group type is **Ip**, ServerId is taken as the value of this parameter.
             /// </remarks>
             [JsiiProperty(name: "serverIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1359,7 +1367,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: weight: Weight of the backend server
+            /// <strong>Property</strong>: weight: The weight of the backend server. Valid values: 0 to 100. Default value: 100.
+            /// If the weight of a backend server is set to 0, no requests are forwarded to the backend server.
             /// </remarks>
             [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1379,7 +1388,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: port: Port used by the backend server
+                /// <strong>Property</strong>: port: The port used by the backend server. Valid values: 1 to 65535.
                 /// </remarks>
                 [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object Port
@@ -1388,7 +1397,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: serverId: Id of server
+                /// <strong>Property</strong>: serverId: The ID of the server. You can specify at most 40 server IDs in each call.
+                /// If the server group type is **Instance**, set the ServerId parameter to the ID of an Elastic Compute Service (ECS) instance, an elastic network interface (ENI), or an elastic container instance. These backend servers are specified by **Ecs**, **Eni**, or **Eci**.
+                /// If the server group type is **Ip**, set the ServerId parameter to an IP address.
                 /// </remarks>
                 [JsiiProperty(name: "serverId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object ServerId
@@ -1397,7 +1408,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: serverType: Type of backend server
+                /// <strong>Property</strong>: serverType: The type of the backend server. Valid values:
+                /// - **Ecs**: an ECS instance.
+                /// - **Eni**: an ENI.
+                /// - **Eci**: an elastic container instance.
+                /// - **Ip**: an IP address.
                 /// </remarks>
                 [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object ServerType
@@ -1406,7 +1421,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: description: undefined
+                /// <strong></strong>: ), underscores (_), and hyphens (-).
+                ///
+                /// <strong>Property</strong>: description: The description of the servers. The description must be 2 to 256 characters in length, and can contain letters, digits, commas (,), periods (.), semicolons (;), forward slashes (/), at signs (
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1416,7 +1433,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: serverIp: undefined
+                /// <strong>Property</strong>: serverIp: The IP address of the server. If the server group type is **Ip**, ServerId is taken as the value of this parameter.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "serverIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1426,7 +1443,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: weight: Weight of the backend server
+                /// <strong>Property</strong>: weight: The weight of the backend server. Valid values: 0 to 100. Default value: 100.
+                /// If the weight of a backend server is set to 0, no requests are forwarded to the backend server.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1444,7 +1462,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             private object _port;
 
             /// <remarks>
-            /// <strong>Property</strong>: port: Port used by the backend server
+            /// <strong>Property</strong>: port: The port used by the backend server. Valid values: 1 to 65535.
             /// </remarks>
             [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Port
@@ -1496,7 +1514,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             private object _serverId;
 
             /// <remarks>
-            /// <strong>Property</strong>: serverId: Id of server
+            /// <strong>Property</strong>: serverId: The ID of the server. You can specify at most 40 server IDs in each call.
+            /// If the server group type is **Instance**, set the ServerId parameter to the ID of an Elastic Compute Service (ECS) instance, an elastic network interface (ENI), or an elastic container instance. These backend servers are specified by **Ecs**, **Eni**, or **Eci**.
+            /// If the server group type is **Ip**, set the ServerId parameter to an IP address.
             /// </remarks>
             [JsiiProperty(name: "serverId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServerId
@@ -1528,7 +1548,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             private object _serverType;
 
             /// <remarks>
-            /// <strong>Property</strong>: serverType: Type of backend server
+            /// <strong>Property</strong>: serverType: The type of the backend server. Valid values:
+            /// - **Ecs**: an ECS instance.
+            /// - **Eni**: an ENI.
+            /// - **Eci**: an elastic container instance.
+            /// - **Ip**: an IP address.
             /// </remarks>
             [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServerType
@@ -1560,7 +1584,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             private object? _description;
 
             /// <remarks>
-            /// <strong>Property</strong>: description: undefined
+            /// <strong></strong>: ), underscores (_), and hyphens (-).
+            ///
+            /// <strong>Property</strong>: description: The description of the servers. The description must be 2 to 256 characters in length, and can contain letters, digits, commas (,), periods (.), semicolons (;), forward slashes (/), at signs (
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1593,7 +1619,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             private object? _serverIp;
 
             /// <remarks>
-            /// <strong>Property</strong>: serverIp: undefined
+            /// <strong>Property</strong>: serverIp: The IP address of the server. If the server group type is **Ip**, ServerId is taken as the value of this parameter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "serverIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1626,7 +1652,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             private object? _weight;
 
             /// <remarks>
-            /// <strong>Property</strong>: weight: Weight of the backend server
+            /// <strong>Property</strong>: weight: The weight of the backend server. Valid values: 0 to 100. Default value: 100.
+            /// If the weight of a backend server is set to 0, no requests are forwarded to the backend server.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

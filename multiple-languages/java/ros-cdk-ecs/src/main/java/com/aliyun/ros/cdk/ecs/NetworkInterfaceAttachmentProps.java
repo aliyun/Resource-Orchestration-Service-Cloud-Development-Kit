@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a <code>ALIYUN::ECS::NetworkInterfaceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-15T09:57:25.449Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.782Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterfaceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkInterfaceAttachmentProps.Jsii$Proxy.class)
 public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,13 @@ public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.Js
      * Property networkInterfaceId: Network interface id.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId();
+
+    /**
+     * Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEcsRestartOption() {
+        return null;
+    }
 
     /**
      * Property trunkNetworkInstanceId: undefined.
@@ -37,6 +44,7 @@ public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.Js
     public static final class Builder implements software.amazon.jsii.Builder<NetworkInterfaceAttachmentProps> {
         java.lang.Object instanceId;
         java.lang.Object networkInterfaceId;
+        java.lang.Object ecsRestartOption;
         java.lang.Object trunkNetworkInstanceId;
 
         /**
@@ -80,6 +88,26 @@ public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.Js
         }
 
         /**
+         * Sets the value of {@link NetworkInterfaceAttachmentProps#getEcsRestartOption}
+         * @param ecsRestartOption Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping.
+         * @return {@code this}
+         */
+        public Builder ecsRestartOption(java.lang.String ecsRestartOption) {
+            this.ecsRestartOption = ecsRestartOption;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link NetworkInterfaceAttachmentProps#getEcsRestartOption}
+         * @param ecsRestartOption Property ecsRestartOption: Control whether to restart the ECS instance when binding an elastic network card.Only effective for ENI that does not support hot swapping.
+         * @return {@code this}
+         */
+        public Builder ecsRestartOption(com.aliyun.ros.cdk.core.IResolvable ecsRestartOption) {
+            this.ecsRestartOption = ecsRestartOption;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link NetworkInterfaceAttachmentProps#getTrunkNetworkInstanceId}
          * @param trunkNetworkInstanceId Property trunkNetworkInstanceId: undefined.
          * @return {@code this}
@@ -117,6 +145,7 @@ public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.Js
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NetworkInterfaceAttachmentProps {
         private final java.lang.Object instanceId;
         private final java.lang.Object networkInterfaceId;
+        private final java.lang.Object ecsRestartOption;
         private final java.lang.Object trunkNetworkInstanceId;
 
         /**
@@ -127,6 +156,7 @@ public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.Js
             super(objRef);
             this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ecsRestartOption = software.amazon.jsii.Kernel.get(this, "ecsRestartOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.trunkNetworkInstanceId = software.amazon.jsii.Kernel.get(this, "trunkNetworkInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -137,6 +167,7 @@ public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.Js
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceId = java.util.Objects.requireNonNull(builder.instanceId, "instanceId is required");
             this.networkInterfaceId = java.util.Objects.requireNonNull(builder.networkInterfaceId, "networkInterfaceId is required");
+            this.ecsRestartOption = builder.ecsRestartOption;
             this.trunkNetworkInstanceId = builder.trunkNetworkInstanceId;
         }
 
@@ -148,6 +179,11 @@ public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.Js
         @Override
         public final java.lang.Object getNetworkInterfaceId() {
             return this.networkInterfaceId;
+        }
+
+        @Override
+        public final java.lang.Object getEcsRestartOption() {
+            return this.ecsRestartOption;
         }
 
         @Override
@@ -163,6 +199,9 @@ public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.Js
 
             data.set("instanceId", om.valueToTree(this.getInstanceId()));
             data.set("networkInterfaceId", om.valueToTree(this.getNetworkInterfaceId()));
+            if (this.getEcsRestartOption() != null) {
+                data.set("ecsRestartOption", om.valueToTree(this.getEcsRestartOption()));
+            }
             if (this.getTrunkNetworkInstanceId() != null) {
                 data.set("trunkNetworkInstanceId", om.valueToTree(this.getTrunkNetworkInstanceId()));
             }
@@ -186,6 +225,7 @@ public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.Js
 
             if (!instanceId.equals(that.instanceId)) return false;
             if (!networkInterfaceId.equals(that.networkInterfaceId)) return false;
+            if (this.ecsRestartOption != null ? !this.ecsRestartOption.equals(that.ecsRestartOption) : that.ecsRestartOption != null) return false;
             return this.trunkNetworkInstanceId != null ? this.trunkNetworkInstanceId.equals(that.trunkNetworkInstanceId) : that.trunkNetworkInstanceId == null;
         }
 
@@ -193,6 +233,7 @@ public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.Js
         public final int hashCode() {
             int result = this.instanceId.hashCode();
             result = 31 * result + (this.networkInterfaceId.hashCode());
+            result = 31 * result + (this.ecsRestartOption != null ? this.ecsRestartOption.hashCode() : 0);
             result = 31 * result + (this.trunkNetworkInstanceId != null ? this.trunkNetworkInstanceId.hashCode() : 0);
             return result;
         }

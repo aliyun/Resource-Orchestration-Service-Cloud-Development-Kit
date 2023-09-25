@@ -1202,6 +1202,18 @@ export interface RosResourceShareProps {
     readonly resourceShareName: string | ros.IResolvable;
 
     /**
+     * @Property allowExternalTargets: Whether to allow sharing to accounts outside the resource directory. Value:
+     * false (default): Only allow sharing within the resource directory.
+     * true: Allow sharing to any account.
+     */
+    readonly allowExternalTargets?: boolean | ros.IResolvable;
+
+    /**
+     * @Property permissionNames: Sharing permission name. When empty, the system automatically binds the default permissions associated with the resource type.
+     */
+    readonly permissionNames?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property resources:
      */
     readonly resources?: Array<RosResourceShare.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
@@ -1233,6 +1245,7 @@ function RosResourceSharePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('resourceShareName', ros.validateString)(properties.resourceShareName));
+    errors.collect(ros.propertyValidator('allowExternalTargets', ros.validateBoolean)(properties.allowExternalTargets));
     if(properties.targets && (Array.isArray(properties.targets) || (typeof properties.targets) === 'string')) {
         errors.collect(ros.propertyValidator('targets', ros.validateLength)({
             data: properties.targets.length,
@@ -1249,6 +1262,14 @@ function RosResourceSharePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('resources', ros.listValidator(RosResourceShare_ResourcesPropertyValidator))(properties.resources));
+    if(properties.permissionNames && (Array.isArray(properties.permissionNames) || (typeof properties.permissionNames) === 'string')) {
+        errors.collect(ros.propertyValidator('permissionNames', ros.validateLength)({
+            data: properties.permissionNames.length,
+            min: undefined,
+            max: 6,
+          }));
+    }
+    errors.collect(ros.propertyValidator('permissionNames', ros.listValidator(ros.validateString))(properties.permissionNames));
     return errors.wrap('supplied properties not correct for "RosResourceShareProps"');
 }
 
@@ -1267,6 +1288,8 @@ function rosResourceSharePropsToRosTemplate(properties: any, enableResourcePrope
     }
     return {
       ResourceShareName: ros.stringToRosTemplate(properties.resourceShareName),
+      AllowExternalTargets: ros.booleanToRosTemplate(properties.allowExternalTargets),
+      PermissionNames: ros.listMapper(ros.stringToRosTemplate)(properties.permissionNames),
       Resources: ros.listMapper(rosResourceShareResourcesPropertyToRosTemplate)(properties.resources),
       Targets: ros.listMapper(ros.stringToRosTemplate)(properties.targets),
     };
@@ -1302,6 +1325,18 @@ export class RosResourceShare extends ros.RosResource {
     public resourceShareName: string | ros.IResolvable;
 
     /**
+     * @Property allowExternalTargets: Whether to allow sharing to accounts outside the resource directory. Value:
+     * false (default): Only allow sharing within the resource directory.
+     * true: Allow sharing to any account.
+     */
+    public allowExternalTargets: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property permissionNames: Sharing permission name. When empty, the system automatically binds the default permissions associated with the resource type.
+     */
+    public permissionNames: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property resources:
      */
     public resources: Array<RosResourceShare.ResourcesProperty | ros.IResolvable> | ros.IResolvable | undefined;
@@ -1327,6 +1362,8 @@ export class RosResourceShare extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.resourceShareName = props.resourceShareName;
+        this.allowExternalTargets = props.allowExternalTargets;
+        this.permissionNames = props.permissionNames;
         this.resources = props.resources;
         this.targets = props.targets;
     }
@@ -1335,6 +1372,8 @@ export class RosResourceShare extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             resourceShareName: this.resourceShareName,
+            allowExternalTargets: this.allowExternalTargets,
+            permissionNames: this.permissionNames,
             resources: this.resources,
             targets: this.targets,
         };
@@ -1355,8 +1394,12 @@ export namespace RosResourceShare {
         readonly resourceId: string | ros.IResolvable;
         /**
          * @Property resourceType: The type of the shared resource.
-     * Set the value to VSwitch.
-     * Only the vSwitches in virtual private clouds (VPCs) can be shared.
+     * Support resource type include:
+     * VPC: VSwitch, PrefixList, PublicIpAddressPool
+     * ROS: ROSTemplate
+     * ServiceCatalog: ServiceCatalogPortfolio
+     * ECS: Image, Snapshot
+     * KMS: KMSInstance
          */
         readonly resourceType: string | ros.IResolvable;
     }
@@ -1389,6 +1432,227 @@ function RosResourceShare_ResourcesPropertyValidator(properties: any): ros.Valid
 function rosResourceShareResourcesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosResourceShare_ResourcesPropertyValidator(properties).assertSuccess();
+    return {
+      ResourceId: ros.stringToRosTemplate(properties.resourceId),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+    };
+}
+
+/**
+ * Properties for defining a `ALIYUN::ResourceManager::ResourceShareAssociation`
+ */
+export interface RosResourceShareAssociationProps {
+
+    /**
+     * @Property resourceShareId: The ID of the resource share.
+     */
+    readonly resourceShareId: string | ros.IResolvable;
+
+    /**
+     * @Property permissionNames: Sharing permission name. When empty, the system automatically binds the default permissions associated with the resource type.
+     */
+    readonly permissionNames?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resources:
+     */
+    readonly resources?: Array<RosResourceShareAssociation.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property targets: The shared target.
+     * A shared target shares the resources of resource owners. You can share your resources
+     * only with the member accounts in your resource directory. A shared target is indicated
+     * by its account ID. For more information about how to obtain the ID, see View the basic information of a member account.
+     */
+    readonly targets?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosResourceShareAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosResourceShareAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceShareAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceShareId', ros.requiredValidator)(properties.resourceShareId));
+    errors.collect(ros.propertyValidator('resourceShareId', ros.validateString)(properties.resourceShareId));
+    if(properties.targets && (Array.isArray(properties.targets) || (typeof properties.targets) === 'string')) {
+        errors.collect(ros.propertyValidator('targets', ros.validateLength)({
+            data: properties.targets.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('targets', ros.listValidator(ros.validateString))(properties.targets));
+    if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
+        errors.collect(ros.propertyValidator('resources', ros.validateLength)({
+            data: properties.resources.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resources', ros.listValidator(RosResourceShareAssociation_ResourcesPropertyValidator))(properties.resources));
+    if(properties.permissionNames && (Array.isArray(properties.permissionNames) || (typeof properties.permissionNames) === 'string')) {
+        errors.collect(ros.propertyValidator('permissionNames', ros.validateLength)({
+            data: properties.permissionNames.length,
+            min: undefined,
+            max: 6,
+          }));
+    }
+    errors.collect(ros.propertyValidator('permissionNames', ros.listValidator(ros.validateString))(properties.permissionNames));
+    return errors.wrap('supplied properties not correct for "RosResourceShareAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ResourceShareAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosResourceShareAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ResourceShareAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceShareAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosResourceShareAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ResourceShareId: ros.stringToRosTemplate(properties.resourceShareId),
+      PermissionNames: ros.listMapper(ros.stringToRosTemplate)(properties.permissionNames),
+      Resources: ros.listMapper(rosResourceShareAssociationResourcesPropertyToRosTemplate)(properties.resources),
+      Targets: ros.listMapper(ros.stringToRosTemplate)(properties.targets),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ResourceManager::ResourceShareAssociation`
+ */
+export class RosResourceShareAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ResourceManager::ResourceShareAssociation";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ResourceShareId: The ID of the resource share.
+     */
+    public readonly attrResourceShareId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property resourceShareId: The ID of the resource share.
+     */
+    public resourceShareId: string | ros.IResolvable;
+
+    /**
+     * @Property permissionNames: Sharing permission name. When empty, the system automatically binds the default permissions associated with the resource type.
+     */
+    public permissionNames: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resources:
+     */
+    public resources: Array<RosResourceShareAssociation.ResourcesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property targets: The shared target.
+     * A shared target shares the resources of resource owners. You can share your resources
+     * only with the member accounts in your resource directory. A shared target is indicated
+     * by its account ID. For more information about how to obtain the ID, see View the basic information of a member account.
+     */
+    public targets: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ResourceManager::ResourceShareAssociation`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosResourceShareAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosResourceShareAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrResourceShareId = this.getAtt('ResourceShareId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.resourceShareId = props.resourceShareId;
+        this.permissionNames = props.permissionNames;
+        this.resources = props.resources;
+        this.targets = props.targets;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            resourceShareId: this.resourceShareId,
+            permissionNames: this.permissionNames,
+            resources: this.resources,
+            targets: this.targets,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosResourceShareAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosResourceShareAssociation {
+    /**
+     * @stability external
+     */
+    export interface ResourcesProperty {
+        /**
+         * @Property resourceId: The ID of the shared resource.
+         */
+        readonly resourceId: string | ros.IResolvable;
+        /**
+         * @Property resourceType: The type of the shared resource.
+     * Support resource type include:
+     * VPC: VSwitch, PrefixList, PublicIpAddressPool
+     * ROS: ROSTemplate
+     * ServiceCatalog: ServiceCatalogPortfolio
+     * ECS: Image, Snapshot
+     * KMS: KMSInstance
+         */
+        readonly resourceType: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourcesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceShareAssociation_ResourcesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceId', ros.requiredValidator)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    return errors.wrap('supplied properties not correct for "ResourcesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ResourceShareAssociation.Resources` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ResourceManager::ResourceShareAssociation.Resources` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceShareAssociationResourcesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceShareAssociation_ResourcesPropertyValidator(properties).assertSuccess();
     return {
       ResourceId: ros.stringToRosTemplate(properties.resourceId),
       ResourceType: ros.stringToRosTemplate(properties.resourceType),
