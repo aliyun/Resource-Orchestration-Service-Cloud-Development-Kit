@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acm;
 /**
  * A ROS resource type:  <code>ALIYUN::ACM::Namespace</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.194Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:43.962Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.Namespace")
 public class Namespace extends com.aliyun.ros.cdk.core.Resource {
 

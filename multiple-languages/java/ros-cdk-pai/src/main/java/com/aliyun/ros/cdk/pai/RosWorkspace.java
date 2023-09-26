@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai;
 /**
  * A ROS template type:  <code>ALIYUN::PAI::Workspace</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.156Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.898Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.RosWorkspace")
 public class RosWorkspace extends com.aliyun.ros.cdk.core.RosResource {
 

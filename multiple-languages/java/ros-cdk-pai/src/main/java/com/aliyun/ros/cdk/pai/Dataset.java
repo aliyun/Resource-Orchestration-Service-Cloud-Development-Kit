@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai;
 /**
  * A ROS resource type:  <code>ALIYUN::PAI::Dataset</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:26.147Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.889Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.Dataset")
 public class Dataset extends com.aliyun.ros.cdk.core.Resource {
 

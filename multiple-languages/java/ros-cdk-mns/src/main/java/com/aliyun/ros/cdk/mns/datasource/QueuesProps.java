@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::MNS::Queues</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:25.869Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.623Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.datasource.QueuesProps")
 @software.amazon.jsii.Jsii.Proxy(QueuesProps.Jsii$Proxy.class)
 public interface QueuesProps extends software.amazon.jsii.JsiiSerializable {

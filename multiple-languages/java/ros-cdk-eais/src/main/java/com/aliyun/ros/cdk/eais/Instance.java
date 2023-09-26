@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eais;
 /**
  * A ROS resource type:  <code>ALIYUN::EAIS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:24.537Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.287Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eais.$Module.class, fqn = "@alicloud/ros-cdk-eais.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 

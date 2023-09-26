@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vod;
 /**
  * Properties for defining a <code>ALIYUN::VOD::EditingProject</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:27.140Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.050Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.EditingProjectProps")
 @software.amazon.jsii.Jsii.Proxy(EditingProjectProps.Jsii$Proxy.class)
 public interface EditingProjectProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::ARMS::Prometheis</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.526Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.306Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.PrometheisProps")
 @software.amazon.jsii.Jsii.Proxy(PrometheisProps.Jsii$Proxy.class)
 public interface PrometheisProps extends software.amazon.jsii.JsiiSerializable {

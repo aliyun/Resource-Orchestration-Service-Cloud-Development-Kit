@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudphone.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::CloudPhone::KeyPairs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T05:23:23.825Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.741Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.datasource.KeyPairsProps")
 @software.amazon.jsii.Jsii.Proxy(KeyPairsProps.Jsii$Proxy.class)
 public interface KeyPairsProps extends software.amazon.jsii.JsiiSerializable {
