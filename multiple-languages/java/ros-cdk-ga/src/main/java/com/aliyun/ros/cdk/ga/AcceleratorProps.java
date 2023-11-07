@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a <code>ALIYUN::GA::Accelerator</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.303Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.708Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.AcceleratorProps")
 @software.amazon.jsii.Jsii.Proxy(AcceleratorProps.Jsii$Proxy.class)
 public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,6 +40,13 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
      * Property duration: Length of purchase.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
+        return null;
+    }
+
+    /**
+     * Property enableCrossBorder: Whether the global acceleration instance enables the cross-border line function.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableCrossBorder() {
         return null;
     }
 
@@ -93,6 +100,7 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object autoUseCoupon;
         java.lang.Object bandwidthBillingType;
         java.lang.Object duration;
+        java.lang.Object enableCrossBorder;
         java.lang.Object instanceChargeType;
         java.lang.Object ipSetConfig;
         java.lang.Object pricingCycle;
@@ -196,6 +204,26 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
             this.duration = duration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AcceleratorProps#getEnableCrossBorder}
+         * @param enableCrossBorder Property enableCrossBorder: Whether the global acceleration instance enables the cross-border line function.
+         * @return {@code this}
+         */
+        public Builder enableCrossBorder(java.lang.Boolean enableCrossBorder) {
+            this.enableCrossBorder = enableCrossBorder;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AcceleratorProps#getEnableCrossBorder}
+         * @param enableCrossBorder Property enableCrossBorder: Whether the global acceleration instance enables the cross-border line function.
+         * @return {@code this}
+         */
+        public Builder enableCrossBorder(com.aliyun.ros.cdk.core.IResolvable enableCrossBorder) {
+            this.enableCrossBorder = enableCrossBorder;
             return this;
         }
 
@@ -320,6 +348,7 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object autoUseCoupon;
         private final java.lang.Object bandwidthBillingType;
         private final java.lang.Object duration;
+        private final java.lang.Object enableCrossBorder;
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object ipSetConfig;
         private final java.lang.Object pricingCycle;
@@ -337,6 +366,7 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
             this.autoUseCoupon = software.amazon.jsii.Kernel.get(this, "autoUseCoupon", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bandwidthBillingType = software.amazon.jsii.Kernel.get(this, "bandwidthBillingType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableCrossBorder = software.amazon.jsii.Kernel.get(this, "enableCrossBorder", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipSetConfig = software.amazon.jsii.Kernel.get(this, "ipSetConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -354,6 +384,7 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
             this.autoUseCoupon = builder.autoUseCoupon;
             this.bandwidthBillingType = builder.bandwidthBillingType;
             this.duration = builder.duration;
+            this.enableCrossBorder = builder.enableCrossBorder;
             this.instanceChargeType = builder.instanceChargeType;
             this.ipSetConfig = builder.ipSetConfig;
             this.pricingCycle = builder.pricingCycle;
@@ -384,6 +415,11 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getDuration() {
             return this.duration;
+        }
+
+        @Override
+        public final java.lang.Object getEnableCrossBorder() {
+            return this.enableCrossBorder;
         }
 
         @Override
@@ -432,6 +468,9 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getDuration() != null) {
                 data.set("duration", om.valueToTree(this.getDuration()));
             }
+            if (this.getEnableCrossBorder() != null) {
+                data.set("enableCrossBorder", om.valueToTree(this.getEnableCrossBorder()));
+            }
             if (this.getInstanceChargeType() != null) {
                 data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
             }
@@ -470,6 +509,7 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
             if (this.autoUseCoupon != null ? !this.autoUseCoupon.equals(that.autoUseCoupon) : that.autoUseCoupon != null) return false;
             if (this.bandwidthBillingType != null ? !this.bandwidthBillingType.equals(that.bandwidthBillingType) : that.bandwidthBillingType != null) return false;
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
+            if (this.enableCrossBorder != null ? !this.enableCrossBorder.equals(that.enableCrossBorder) : that.enableCrossBorder != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.ipSetConfig != null ? !this.ipSetConfig.equals(that.ipSetConfig) : that.ipSetConfig != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
@@ -484,6 +524,7 @@ public interface AcceleratorProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.autoUseCoupon != null ? this.autoUseCoupon.hashCode() : 0);
             result = 31 * result + (this.bandwidthBillingType != null ? this.bandwidthBillingType.hashCode() : 0);
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
+            result = 31 * result + (this.enableCrossBorder != null ? this.enableCrossBorder.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.ipSetConfig != null ? this.ipSetConfig.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);

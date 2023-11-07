@@ -163,6 +163,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
+        private object? _enableCrossBorder;
+
+        /// <summary>Property enableCrossBorder: Whether the global acceleration instance enables the cross-border line function.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableCrossBorder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EnableCrossBorder
+        {
+            get => _enableCrossBorder;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _enableCrossBorder = value;
+            }
+        }
+
         private object? _instanceChargeType;
 
         /// <summary>Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).</summary>

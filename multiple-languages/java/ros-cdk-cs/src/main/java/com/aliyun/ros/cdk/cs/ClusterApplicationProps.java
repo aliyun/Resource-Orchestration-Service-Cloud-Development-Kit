@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a <code>ALIYUN::CS::ClusterApplication</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.947Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterApplicationProps.Jsii$Proxy.class)
 public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -22,17 +22,24 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
      * Property defaultNamespace: The default namespace for the application, default value is default.
      * <p>
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultNamespace() {
         return null;
     }
 
     /**
-     * Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.
+     * Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
      * <p>
-     * If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</li>
+     * <li>None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultNamespaceDeletion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRolePolicy() {
         return null;
     }
 
@@ -49,7 +56,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object clusterId;
         java.lang.Object yamlContent;
         java.lang.Object defaultNamespace;
-        java.lang.Object defaultNamespaceDeletion;
+        java.lang.Object rolePolicy;
 
         /**
          * Sets the value of {@link ClusterApplicationProps#getClusterId}
@@ -95,6 +102,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
          * Sets the value of {@link ClusterApplicationProps#getDefaultNamespace}
          * @param defaultNamespace Property defaultNamespace: The default namespace for the application, default value is default.
          *                         If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+         *                         If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
          * @return {@code this}
          */
         public Builder defaultNamespace(java.lang.String defaultNamespace) {
@@ -106,6 +114,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
          * Sets the value of {@link ClusterApplicationProps#getDefaultNamespace}
          * @param defaultNamespace Property defaultNamespace: The default namespace for the application, default value is default.
          *                         If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+         *                         If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
          * @return {@code this}
          */
         public Builder defaultNamespace(com.aliyun.ros.cdk.core.IResolvable defaultNamespace) {
@@ -114,24 +123,36 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
-         * Sets the value of {@link ClusterApplicationProps#getDefaultNamespaceDeletion}
-         * @param defaultNamespaceDeletion Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.
-         *                                 If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+         * Sets the value of {@link ClusterApplicationProps#getRolePolicy}
+         * @param rolePolicy Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</li>
+         *                   <li>None: Do nothing.
+         *                   The default value is EnsureAdminRoleAndBinding.</li>
+         *                   </ul>
          * @return {@code this}
          */
-        public Builder defaultNamespaceDeletion(java.lang.Boolean defaultNamespaceDeletion) {
-            this.defaultNamespaceDeletion = defaultNamespaceDeletion;
+        public Builder rolePolicy(java.lang.String rolePolicy) {
+            this.rolePolicy = rolePolicy;
             return this;
         }
 
         /**
-         * Sets the value of {@link ClusterApplicationProps#getDefaultNamespaceDeletion}
-         * @param defaultNamespaceDeletion Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.
-         *                                 If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+         * Sets the value of {@link ClusterApplicationProps#getRolePolicy}
+         * @param rolePolicy Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</li>
+         *                   <li>None: Do nothing.
+         *                   The default value is EnsureAdminRoleAndBinding.</li>
+         *                   </ul>
          * @return {@code this}
          */
-        public Builder defaultNamespaceDeletion(com.aliyun.ros.cdk.core.IResolvable defaultNamespaceDeletion) {
-            this.defaultNamespaceDeletion = defaultNamespaceDeletion;
+        public Builder rolePolicy(com.aliyun.ros.cdk.core.IResolvable rolePolicy) {
+            this.rolePolicy = rolePolicy;
             return this;
         }
 
@@ -154,7 +175,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object clusterId;
         private final java.lang.Object yamlContent;
         private final java.lang.Object defaultNamespace;
-        private final java.lang.Object defaultNamespaceDeletion;
+        private final java.lang.Object rolePolicy;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -165,7 +186,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.yamlContent = software.amazon.jsii.Kernel.get(this, "yamlContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultNamespace = software.amazon.jsii.Kernel.get(this, "defaultNamespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.defaultNamespaceDeletion = software.amazon.jsii.Kernel.get(this, "defaultNamespaceDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -176,7 +197,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             this.clusterId = java.util.Objects.requireNonNull(builder.clusterId, "clusterId is required");
             this.yamlContent = java.util.Objects.requireNonNull(builder.yamlContent, "yamlContent is required");
             this.defaultNamespace = builder.defaultNamespace;
-            this.defaultNamespaceDeletion = builder.defaultNamespaceDeletion;
+            this.rolePolicy = builder.rolePolicy;
         }
 
         @Override
@@ -195,8 +216,8 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.Object getDefaultNamespaceDeletion() {
-            return this.defaultNamespaceDeletion;
+        public final java.lang.Object getRolePolicy() {
+            return this.rolePolicy;
         }
 
         @Override
@@ -210,8 +231,8 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             if (this.getDefaultNamespace() != null) {
                 data.set("defaultNamespace", om.valueToTree(this.getDefaultNamespace()));
             }
-            if (this.getDefaultNamespaceDeletion() != null) {
-                data.set("defaultNamespaceDeletion", om.valueToTree(this.getDefaultNamespaceDeletion()));
+            if (this.getRolePolicy() != null) {
+                data.set("rolePolicy", om.valueToTree(this.getRolePolicy()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -234,7 +255,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             if (!clusterId.equals(that.clusterId)) return false;
             if (!yamlContent.equals(that.yamlContent)) return false;
             if (this.defaultNamespace != null ? !this.defaultNamespace.equals(that.defaultNamespace) : that.defaultNamespace != null) return false;
-            return this.defaultNamespaceDeletion != null ? this.defaultNamespaceDeletion.equals(that.defaultNamespaceDeletion) : that.defaultNamespaceDeletion == null;
+            return this.rolePolicy != null ? this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy == null;
         }
 
         @Override
@@ -242,7 +263,7 @@ public interface ClusterApplicationProps extends software.amazon.jsii.JsiiSerial
             int result = this.clusterId.hashCode();
             result = 31 * result + (this.yamlContent.hashCode());
             result = 31 * result + (this.defaultNamespace != null ? this.defaultNamespace.hashCode() : 0);
-            result = 31 * result + (this.defaultNamespaceDeletion != null ? this.defaultNamespaceDeletion.hashCode() : 0);
+            result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);
             return result;
         }
     }

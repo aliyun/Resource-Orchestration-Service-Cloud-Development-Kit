@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a <code>ALIYUN::VPC::DhcpOptionsSet</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.232Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.589Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosDhcpOptionsSetProps")
 @software.amazon.jsii.Jsii.Proxy(RosDhcpOptionsSetProps.Jsii$Proxy.class)
 public interface RosDhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializable {

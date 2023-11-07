@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a <code>ALIYUN::VPC::VirtualBorderRouter</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.300Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.660Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVirtualBorderRouterProps")
 @software.amazon.jsii.Jsii.Proxy(RosVirtualBorderRouterProps.Jsii$Proxy.class)
 public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSerializable {

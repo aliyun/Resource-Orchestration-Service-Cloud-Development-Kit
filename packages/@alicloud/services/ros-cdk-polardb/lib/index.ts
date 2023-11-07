@@ -1,3 +1,4 @@
+export * from './aitask';
 export * from './account';
 export * from './accountprivilege';
 export * from './dbcluster';

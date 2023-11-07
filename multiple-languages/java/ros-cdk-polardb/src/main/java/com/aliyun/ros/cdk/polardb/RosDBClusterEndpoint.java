@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  <code>ALIYUN::POLARDB::DBClusterEndpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.006Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.496Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterEndpoint")
 public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -195,7 +195,70 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionPersist() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getConsistLevel() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConsistTimeout() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConsistTimeoutAction() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDistributedTransaction() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnableHtapImci() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnableOverloadThrottle() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancePolicy() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMasterAcceptReads() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMaxParallelDegree() {
             return null;
         }
 
@@ -211,7 +274,38 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EndpointConfigProperty> {
+            java.lang.Object connectionPersist;
             java.lang.Object consistLevel;
+            java.lang.Object consistTimeout;
+            java.lang.Object consistTimeoutAction;
+            java.lang.Object distributedTransaction;
+            java.lang.Object enableHtapImci;
+            java.lang.Object enableOverloadThrottle;
+            java.lang.Object loadBalancePolicy;
+            java.lang.Object masterAcceptReads;
+            java.lang.Object maxParallelDegree;
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getConnectionPersist}
+             * @param connectionPersist the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPersist(java.lang.String connectionPersist) {
+                this.connectionPersist = connectionPersist;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getConnectionPersist}
+             * @param connectionPersist the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder connectionPersist(com.aliyun.ros.cdk.core.IResolvable connectionPersist) {
+                this.connectionPersist = connectionPersist;
+                return this;
+            }
 
             /**
              * Sets the value of {@link EndpointConfigProperty#getConsistLevel}
@@ -236,6 +330,182 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link EndpointConfigProperty#getConsistTimeout}
+             * @param consistTimeout the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder consistTimeout(java.lang.String consistTimeout) {
+                this.consistTimeout = consistTimeout;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getConsistTimeout}
+             * @param consistTimeout the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder consistTimeout(com.aliyun.ros.cdk.core.IResolvable consistTimeout) {
+                this.consistTimeout = consistTimeout;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getConsistTimeoutAction}
+             * @param consistTimeoutAction the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder consistTimeoutAction(java.lang.String consistTimeoutAction) {
+                this.consistTimeoutAction = consistTimeoutAction;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getConsistTimeoutAction}
+             * @param consistTimeoutAction the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder consistTimeoutAction(com.aliyun.ros.cdk.core.IResolvable consistTimeoutAction) {
+                this.consistTimeoutAction = consistTimeoutAction;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getDistributedTransaction}
+             * @param distributedTransaction the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder distributedTransaction(java.lang.String distributedTransaction) {
+                this.distributedTransaction = distributedTransaction;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getDistributedTransaction}
+             * @param distributedTransaction the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder distributedTransaction(com.aliyun.ros.cdk.core.IResolvable distributedTransaction) {
+                this.distributedTransaction = distributedTransaction;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getEnableHtapImci}
+             * @param enableHtapImci the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableHtapImci(java.lang.String enableHtapImci) {
+                this.enableHtapImci = enableHtapImci;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getEnableHtapImci}
+             * @param enableHtapImci the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableHtapImci(com.aliyun.ros.cdk.core.IResolvable enableHtapImci) {
+                this.enableHtapImci = enableHtapImci;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getEnableOverloadThrottle}
+             * @param enableOverloadThrottle the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableOverloadThrottle(java.lang.String enableOverloadThrottle) {
+                this.enableOverloadThrottle = enableOverloadThrottle;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getEnableOverloadThrottle}
+             * @param enableOverloadThrottle the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableOverloadThrottle(com.aliyun.ros.cdk.core.IResolvable enableOverloadThrottle) {
+                this.enableOverloadThrottle = enableOverloadThrottle;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getLoadBalancePolicy}
+             * @param loadBalancePolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder loadBalancePolicy(java.lang.String loadBalancePolicy) {
+                this.loadBalancePolicy = loadBalancePolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getLoadBalancePolicy}
+             * @param loadBalancePolicy the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder loadBalancePolicy(com.aliyun.ros.cdk.core.IResolvable loadBalancePolicy) {
+                this.loadBalancePolicy = loadBalancePolicy;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getMasterAcceptReads}
+             * @param masterAcceptReads the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder masterAcceptReads(java.lang.String masterAcceptReads) {
+                this.masterAcceptReads = masterAcceptReads;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getMasterAcceptReads}
+             * @param masterAcceptReads the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder masterAcceptReads(com.aliyun.ros.cdk.core.IResolvable masterAcceptReads) {
+                this.masterAcceptReads = masterAcceptReads;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getMaxParallelDegree}
+             * @param maxParallelDegree the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxParallelDegree(java.lang.String maxParallelDegree) {
+                this.maxParallelDegree = maxParallelDegree;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getMaxParallelDegree}
+             * @param maxParallelDegree the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder maxParallelDegree(com.aliyun.ros.cdk.core.IResolvable maxParallelDegree) {
+                this.maxParallelDegree = maxParallelDegree;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link EndpointConfigProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -253,7 +523,16 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EndpointConfigProperty {
+            private final java.lang.Object connectionPersist;
             private final java.lang.Object consistLevel;
+            private final java.lang.Object consistTimeout;
+            private final java.lang.Object consistTimeoutAction;
+            private final java.lang.Object distributedTransaction;
+            private final java.lang.Object enableHtapImci;
+            private final java.lang.Object enableOverloadThrottle;
+            private final java.lang.Object loadBalancePolicy;
+            private final java.lang.Object masterAcceptReads;
+            private final java.lang.Object maxParallelDegree;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -261,7 +540,16 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
+                this.connectionPersist = software.amazon.jsii.Kernel.get(this, "connectionPersist", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.consistLevel = software.amazon.jsii.Kernel.get(this, "consistLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.consistTimeout = software.amazon.jsii.Kernel.get(this, "consistTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.consistTimeoutAction = software.amazon.jsii.Kernel.get(this, "consistTimeoutAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.distributedTransaction = software.amazon.jsii.Kernel.get(this, "distributedTransaction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enableHtapImci = software.amazon.jsii.Kernel.get(this, "enableHtapImci", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enableOverloadThrottle = software.amazon.jsii.Kernel.get(this, "enableOverloadThrottle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.loadBalancePolicy = software.amazon.jsii.Kernel.get(this, "loadBalancePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.masterAcceptReads = software.amazon.jsii.Kernel.get(this, "masterAcceptReads", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.maxParallelDegree = software.amazon.jsii.Kernel.get(this, "maxParallelDegree", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -269,7 +557,21 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.connectionPersist = builder.connectionPersist;
                 this.consistLevel = builder.consistLevel;
+                this.consistTimeout = builder.consistTimeout;
+                this.consistTimeoutAction = builder.consistTimeoutAction;
+                this.distributedTransaction = builder.distributedTransaction;
+                this.enableHtapImci = builder.enableHtapImci;
+                this.enableOverloadThrottle = builder.enableOverloadThrottle;
+                this.loadBalancePolicy = builder.loadBalancePolicy;
+                this.masterAcceptReads = builder.masterAcceptReads;
+                this.maxParallelDegree = builder.maxParallelDegree;
+            }
+
+            @Override
+            public final java.lang.Object getConnectionPersist() {
+                return this.connectionPersist;
             }
 
             @Override
@@ -278,13 +580,80 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getConsistTimeout() {
+                return this.consistTimeout;
+            }
+
+            @Override
+            public final java.lang.Object getConsistTimeoutAction() {
+                return this.consistTimeoutAction;
+            }
+
+            @Override
+            public final java.lang.Object getDistributedTransaction() {
+                return this.distributedTransaction;
+            }
+
+            @Override
+            public final java.lang.Object getEnableHtapImci() {
+                return this.enableHtapImci;
+            }
+
+            @Override
+            public final java.lang.Object getEnableOverloadThrottle() {
+                return this.enableOverloadThrottle;
+            }
+
+            @Override
+            public final java.lang.Object getLoadBalancePolicy() {
+                return this.loadBalancePolicy;
+            }
+
+            @Override
+            public final java.lang.Object getMasterAcceptReads() {
+                return this.masterAcceptReads;
+            }
+
+            @Override
+            public final java.lang.Object getMaxParallelDegree() {
+                return this.maxParallelDegree;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+                if (this.getConnectionPersist() != null) {
+                    data.set("connectionPersist", om.valueToTree(this.getConnectionPersist()));
+                }
                 if (this.getConsistLevel() != null) {
                     data.set("consistLevel", om.valueToTree(this.getConsistLevel()));
+                }
+                if (this.getConsistTimeout() != null) {
+                    data.set("consistTimeout", om.valueToTree(this.getConsistTimeout()));
+                }
+                if (this.getConsistTimeoutAction() != null) {
+                    data.set("consistTimeoutAction", om.valueToTree(this.getConsistTimeoutAction()));
+                }
+                if (this.getDistributedTransaction() != null) {
+                    data.set("distributedTransaction", om.valueToTree(this.getDistributedTransaction()));
+                }
+                if (this.getEnableHtapImci() != null) {
+                    data.set("enableHtapImci", om.valueToTree(this.getEnableHtapImci()));
+                }
+                if (this.getEnableOverloadThrottle() != null) {
+                    data.set("enableOverloadThrottle", om.valueToTree(this.getEnableOverloadThrottle()));
+                }
+                if (this.getLoadBalancePolicy() != null) {
+                    data.set("loadBalancePolicy", om.valueToTree(this.getLoadBalancePolicy()));
+                }
+                if (this.getMasterAcceptReads() != null) {
+                    data.set("masterAcceptReads", om.valueToTree(this.getMasterAcceptReads()));
+                }
+                if (this.getMaxParallelDegree() != null) {
+                    data.set("maxParallelDegree", om.valueToTree(this.getMaxParallelDegree()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -304,12 +673,30 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
                 EndpointConfigProperty.Jsii$Proxy that = (EndpointConfigProperty.Jsii$Proxy) o;
 
-                return this.consistLevel != null ? this.consistLevel.equals(that.consistLevel) : that.consistLevel == null;
+                if (this.connectionPersist != null ? !this.connectionPersist.equals(that.connectionPersist) : that.connectionPersist != null) return false;
+                if (this.consistLevel != null ? !this.consistLevel.equals(that.consistLevel) : that.consistLevel != null) return false;
+                if (this.consistTimeout != null ? !this.consistTimeout.equals(that.consistTimeout) : that.consistTimeout != null) return false;
+                if (this.consistTimeoutAction != null ? !this.consistTimeoutAction.equals(that.consistTimeoutAction) : that.consistTimeoutAction != null) return false;
+                if (this.distributedTransaction != null ? !this.distributedTransaction.equals(that.distributedTransaction) : that.distributedTransaction != null) return false;
+                if (this.enableHtapImci != null ? !this.enableHtapImci.equals(that.enableHtapImci) : that.enableHtapImci != null) return false;
+                if (this.enableOverloadThrottle != null ? !this.enableOverloadThrottle.equals(that.enableOverloadThrottle) : that.enableOverloadThrottle != null) return false;
+                if (this.loadBalancePolicy != null ? !this.loadBalancePolicy.equals(that.loadBalancePolicy) : that.loadBalancePolicy != null) return false;
+                if (this.masterAcceptReads != null ? !this.masterAcceptReads.equals(that.masterAcceptReads) : that.masterAcceptReads != null) return false;
+                return this.maxParallelDegree != null ? this.maxParallelDegree.equals(that.maxParallelDegree) : that.maxParallelDegree == null;
             }
 
             @Override
             public final int hashCode() {
-                int result = this.consistLevel != null ? this.consistLevel.hashCode() : 0;
+                int result = this.connectionPersist != null ? this.connectionPersist.hashCode() : 0;
+                result = 31 * result + (this.consistLevel != null ? this.consistLevel.hashCode() : 0);
+                result = 31 * result + (this.consistTimeout != null ? this.consistTimeout.hashCode() : 0);
+                result = 31 * result + (this.consistTimeoutAction != null ? this.consistTimeoutAction.hashCode() : 0);
+                result = 31 * result + (this.distributedTransaction != null ? this.distributedTransaction.hashCode() : 0);
+                result = 31 * result + (this.enableHtapImci != null ? this.enableHtapImci.hashCode() : 0);
+                result = 31 * result + (this.enableOverloadThrottle != null ? this.enableOverloadThrottle.hashCode() : 0);
+                result = 31 * result + (this.loadBalancePolicy != null ? this.loadBalancePolicy.hashCode() : 0);
+                result = 31 * result + (this.masterAcceptReads != null ? this.masterAcceptReads.hashCode() : 0);
+                result = 31 * result + (this.maxParallelDegree != null ? this.maxParallelDegree.hashCode() : 0);
                 return result;
             }
         }

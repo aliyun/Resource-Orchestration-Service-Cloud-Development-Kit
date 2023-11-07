@@ -225,7 +225,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: namespace: Namespace to use with helm. Default is default
+        /// <strong>Property</strong>: namespace: Namespace to use with helm. Default is default.
+        /// If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

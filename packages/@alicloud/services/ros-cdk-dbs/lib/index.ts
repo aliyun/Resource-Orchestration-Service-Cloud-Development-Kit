@@ -1,3 +1,4 @@
+export * from './download';
 export * from './restoretask';
 
 // ALIYUN::DBS Resources:

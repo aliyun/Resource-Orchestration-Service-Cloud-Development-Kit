@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a <code>ALIYUN::VPC::VpnGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.325Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.695Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpnGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpnGatewayProps.Jsii$Proxy.class)
 public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,12 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDisasterRecoveryVSwitchId() {
         return null;
     }
 
@@ -54,6 +60,12 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
@@ -67,6 +79,12 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpnType() {
         return null;
     }
 
@@ -90,13 +108,16 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object vpcId;
         java.lang.Object autoPay;
         java.lang.Object description;
+        java.lang.Object disasterRecoveryVSwitchId;
         java.lang.Object enableIpsec;
         java.lang.Object enableSsl;
         java.lang.Object instanceChargeType;
         java.lang.Object name;
+        java.lang.Object networkType;
         java.lang.Object period;
         java.lang.Object sslConnections;
         java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> tags;
+        java.lang.Object vpnType;
         java.lang.Object vSwitchId;
 
         /**
@@ -176,6 +197,26 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnGatewayProps#getDisasterRecoveryVSwitchId}
+         * @param disasterRecoveryVSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder disasterRecoveryVSwitchId(java.lang.String disasterRecoveryVSwitchId) {
+            this.disasterRecoveryVSwitchId = disasterRecoveryVSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnGatewayProps#getDisasterRecoveryVSwitchId}
+         * @param disasterRecoveryVSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder disasterRecoveryVSwitchId(com.aliyun.ros.cdk.core.IResolvable disasterRecoveryVSwitchId) {
+            this.disasterRecoveryVSwitchId = disasterRecoveryVSwitchId;
             return this;
         }
 
@@ -260,6 +301,26 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosVpnGatewayProps#getNetworkType}
+         * @param networkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder networkType(java.lang.String networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnGatewayProps#getNetworkType}
+         * @param networkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVpnGatewayProps#getPeriod}
          * @param period the value to be set.
          * @return {@code this}
@@ -311,6 +372,26 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosVpnGatewayProps#getVpnType}
+         * @param vpnType the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpnType(java.lang.String vpnType) {
+            this.vpnType = vpnType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnGatewayProps#getVpnType}
+         * @param vpnType the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpnType(com.aliyun.ros.cdk.core.IResolvable vpnType) {
+            this.vpnType = vpnType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVpnGatewayProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
@@ -350,13 +431,16 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object vpcId;
         private final java.lang.Object autoPay;
         private final java.lang.Object description;
+        private final java.lang.Object disasterRecoveryVSwitchId;
         private final java.lang.Object enableIpsec;
         private final java.lang.Object enableSsl;
         private final java.lang.Object instanceChargeType;
         private final java.lang.Object name;
+        private final java.lang.Object networkType;
         private final java.lang.Object period;
         private final java.lang.Object sslConnections;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> tags;
+        private final java.lang.Object vpnType;
         private final java.lang.Object vSwitchId;
 
         /**
@@ -369,13 +453,16 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.disasterRecoveryVSwitchId = software.amazon.jsii.Kernel.get(this, "disasterRecoveryVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableIpsec = software.amazon.jsii.Kernel.get(this, "enableIpsec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableSsl = software.amazon.jsii.Kernel.get(this, "enableSsl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sslConnections = software.amazon.jsii.Kernel.get(this, "sslConnections", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty.class)));
+            this.vpnType = software.amazon.jsii.Kernel.get(this, "vpnType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -389,13 +476,16 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.autoPay = builder.autoPay;
             this.description = builder.description;
+            this.disasterRecoveryVSwitchId = builder.disasterRecoveryVSwitchId;
             this.enableIpsec = builder.enableIpsec;
             this.enableSsl = builder.enableSsl;
             this.instanceChargeType = builder.instanceChargeType;
             this.name = builder.name;
+            this.networkType = builder.networkType;
             this.period = builder.period;
             this.sslConnections = builder.sslConnections;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty>)builder.tags;
+            this.vpnType = builder.vpnType;
             this.vSwitchId = builder.vSwitchId;
         }
 
@@ -420,6 +510,11 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getDisasterRecoveryVSwitchId() {
+            return this.disasterRecoveryVSwitchId;
+        }
+
+        @Override
         public final java.lang.Object getEnableIpsec() {
             return this.enableIpsec;
         }
@@ -440,6 +535,11 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getNetworkType() {
+            return this.networkType;
+        }
+
+        @Override
         public final java.lang.Object getPeriod() {
             return this.period;
         }
@@ -452,6 +552,11 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> getTags() {
             return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getVpnType() {
+            return this.vpnType;
         }
 
         @Override
@@ -473,6 +578,9 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getDisasterRecoveryVSwitchId() != null) {
+                data.set("disasterRecoveryVSwitchId", om.valueToTree(this.getDisasterRecoveryVSwitchId()));
+            }
             if (this.getEnableIpsec() != null) {
                 data.set("enableIpsec", om.valueToTree(this.getEnableIpsec()));
             }
@@ -485,6 +593,9 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
             }
+            if (this.getNetworkType() != null) {
+                data.set("networkType", om.valueToTree(this.getNetworkType()));
+            }
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
@@ -493,6 +604,9 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
+            }
+            if (this.getVpnType() != null) {
+                data.set("vpnType", om.valueToTree(this.getVpnType()));
             }
             if (this.getVSwitchId() != null) {
                 data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
@@ -519,13 +633,16 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
             if (!vpcId.equals(that.vpcId)) return false;
             if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.disasterRecoveryVSwitchId != null ? !this.disasterRecoveryVSwitchId.equals(that.disasterRecoveryVSwitchId) : that.disasterRecoveryVSwitchId != null) return false;
             if (this.enableIpsec != null ? !this.enableIpsec.equals(that.enableIpsec) : that.enableIpsec != null) return false;
             if (this.enableSsl != null ? !this.enableSsl.equals(that.enableSsl) : that.enableSsl != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.sslConnections != null ? !this.sslConnections.equals(that.sslConnections) : that.sslConnections != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.vpnType != null ? !this.vpnType.equals(that.vpnType) : that.vpnType != null) return false;
             return this.vSwitchId != null ? this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId == null;
         }
 
@@ -535,13 +652,16 @@ public interface RosVpnGatewayProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.autoPay != null ? this.autoPay.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.disasterRecoveryVSwitchId != null ? this.disasterRecoveryVSwitchId.hashCode() : 0);
             result = 31 * result + (this.enableIpsec != null ? this.enableIpsec.hashCode() : 0);
             result = 31 * result + (this.enableSsl != null ? this.enableSsl.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.sslConnections != null ? this.sslConnections.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.vpnType != null ? this.vpnType.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             return result;
         }

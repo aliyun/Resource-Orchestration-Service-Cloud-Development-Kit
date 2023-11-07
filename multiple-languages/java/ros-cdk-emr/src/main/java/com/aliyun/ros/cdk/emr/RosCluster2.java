@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS template type:  <code>ALIYUN::EMR::Cluster2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.029Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.405Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosCluster2")
 public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -1744,6 +1744,13 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMasterRootPassword() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getRamRole() {
             return null;
         }
@@ -1764,6 +1771,7 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object vpcId;
             java.lang.Object zoneId;
             java.lang.Object keyPairName;
+            java.lang.Object masterRootPassword;
             java.lang.Object ramRole;
 
             /**
@@ -1855,6 +1863,28 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link NodeAttributesProperty#getMasterRootPassword}
+             * @param masterRootPassword the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder masterRootPassword(java.lang.String masterRootPassword) {
+                this.masterRootPassword = masterRootPassword;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NodeAttributesProperty#getMasterRootPassword}
+             * @param masterRootPassword the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder masterRootPassword(com.aliyun.ros.cdk.core.IResolvable masterRootPassword) {
+                this.masterRootPassword = masterRootPassword;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link NodeAttributesProperty#getRamRole}
              * @param ramRole the value to be set.
              * @return {@code this}
@@ -1898,6 +1928,7 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object vpcId;
             private final java.lang.Object zoneId;
             private final java.lang.Object keyPairName;
+            private final java.lang.Object masterRootPassword;
             private final java.lang.Object ramRole;
 
             /**
@@ -1910,6 +1941,7 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
                 this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.masterRootPassword = software.amazon.jsii.Kernel.get(this, "masterRootPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.ramRole = software.amazon.jsii.Kernel.get(this, "ramRole", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
@@ -1922,6 +1954,7 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
                 this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
                 this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
                 this.keyPairName = builder.keyPairName;
+                this.masterRootPassword = builder.masterRootPassword;
                 this.ramRole = builder.ramRole;
             }
 
@@ -1946,6 +1979,11 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getMasterRootPassword() {
+                return this.masterRootPassword;
+            }
+
+            @Override
             public final java.lang.Object getRamRole() {
                 return this.ramRole;
             }
@@ -1961,6 +1999,9 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
                 if (this.getKeyPairName() != null) {
                     data.set("keyPairName", om.valueToTree(this.getKeyPairName()));
+                }
+                if (this.getMasterRootPassword() != null) {
+                    data.set("masterRootPassword", om.valueToTree(this.getMasterRootPassword()));
                 }
                 if (this.getRamRole() != null) {
                     data.set("ramRole", om.valueToTree(this.getRamRole()));
@@ -1987,6 +2028,7 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
                 if (!vpcId.equals(that.vpcId)) return false;
                 if (!zoneId.equals(that.zoneId)) return false;
                 if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
+                if (this.masterRootPassword != null ? !this.masterRootPassword.equals(that.masterRootPassword) : that.masterRootPassword != null) return false;
                 return this.ramRole != null ? this.ramRole.equals(that.ramRole) : that.ramRole == null;
             }
 
@@ -1996,6 +2038,7 @@ public class RosCluster2 extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.vpcId.hashCode());
                 result = 31 * result + (this.zoneId.hashCode());
                 result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);
+                result = 31 * result + (this.masterRootPassword != null ? this.masterRootPassword.hashCode() : 0);
                 result = 31 * result + (this.ramRole != null ? this.ramRole.hashCode() : 0);
                 return result;
             }

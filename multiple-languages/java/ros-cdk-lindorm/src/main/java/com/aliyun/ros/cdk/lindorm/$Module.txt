@@ -6,3 +6,8 @@
 @alicloud/ros-cdk-lindorm.RosInstanceProps=com.aliyun.ros.cdk.lindorm.RosInstanceProps
 @alicloud/ros-cdk-lindorm.RosMultiZoneInstance=com.aliyun.ros.cdk.lindorm.RosMultiZoneInstance
 @alicloud/ros-cdk-lindorm.RosMultiZoneInstanceProps=com.aliyun.ros.cdk.lindorm.RosMultiZoneInstanceProps
+@alicloud/ros-cdk-lindorm.datasource.Instances=com.aliyun.ros.cdk.lindorm.datasource.Instances
+@alicloud/ros-cdk-lindorm.datasource.InstancesProps=com.aliyun.ros.cdk.lindorm.datasource.InstancesProps
+@alicloud/ros-cdk-lindorm.datasource.RosInstances=com.aliyun.ros.cdk.lindorm.datasource.RosInstances
+@alicloud/ros-cdk-lindorm.datasource.RosInstances.TagsProperty=com.aliyun.ros.cdk.lindorm.datasource.RosInstances$TagsProperty
+@alicloud/ros-cdk-lindorm.datasource.RosInstancesProps=com.aliyun.ros.cdk.lindorm.datasource.RosInstancesProps

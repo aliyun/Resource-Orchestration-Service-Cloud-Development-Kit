@@ -103,6 +103,57 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: asn: The autonomous system number of the local data center gateway device.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "asn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Asn
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: description: Description of the user gateway.
         /// The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
         /// </remarks>

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc.datasource;
 /**
  * A ROS resource type:  <code>DATASOURCE::FC::CustomDomains</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.650Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.CustomDomains")
 public class CustomDomains extends com.aliyun.ros.cdk.core.Resource {
 

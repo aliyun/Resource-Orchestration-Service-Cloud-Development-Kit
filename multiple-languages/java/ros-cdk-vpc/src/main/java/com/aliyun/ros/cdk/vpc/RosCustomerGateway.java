@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  <code>ALIYUN::VPC::CustomerGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.229Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.587Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosCustomerGateway")
 public class RosCustomerGateway extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -77,6 +77,24 @@ public class RosCustomerGateway extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setIpAddress(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "ipAddress", java.util.Objects.requireNonNull(value, "ipAddress is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAsn() {
+        return software.amazon.jsii.Kernel.get(this, "asn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAsn(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "asn", value);
+    }
+
+    /**
+     */
+    public void setAsn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "asn", value);
     }
 
     /**
@@ -155,6 +173,23 @@ public class RosCustomerGateway extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder ipAddress(final com.aliyun.ros.cdk.core.IResolvable ipAddress) {
             this.props.ipAddress(ipAddress);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param asn This parameter is required.
+         */
+        public Builder asn(final java.lang.Number asn) {
+            this.props.asn(asn);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param asn This parameter is required.
+         */
+        public Builder asn(final com.aliyun.ros.cdk.core.IResolvable asn) {
+            this.props.asn(asn);
             return this;
         }
 

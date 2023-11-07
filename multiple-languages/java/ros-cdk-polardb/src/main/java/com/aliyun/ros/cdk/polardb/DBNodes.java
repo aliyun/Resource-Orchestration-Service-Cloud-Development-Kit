@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS resource type:  <code>ALIYUN::POLARDB::DBNodes</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.995Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.471Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBNodes")
 public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
 
@@ -139,6 +139,31 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dbNodeType: Node type.
+         * <p>
+         * Ranges: RO|STANDBY|DLNode
+         * <p>
+         * @return {@code this}
+         * @param dbNodeType Property dbNodeType: Node type. This parameter is required.
+         */
+        public Builder dbNodeType(final java.lang.String dbNodeType) {
+            this.props.dbNodeType(dbNodeType);
+            return this;
+        }
+        /**
+         * Property dbNodeType: Node type.
+         * <p>
+         * Ranges: RO|STANDBY|DLNode
+         * <p>
+         * @return {@code this}
+         * @param dbNodeType Property dbNodeType: Node type. This parameter is required.
+         */
+        public Builder dbNodeType(final com.aliyun.ros.cdk.core.IResolvable dbNodeType) {
+            this.props.dbNodeType(dbNodeType);
+            return this;
+        }
+
+        /**
          * Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
          * <p>
          * @return {@code this}
@@ -156,6 +181,27 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder imciSwitch(final com.aliyun.ros.cdk.core.IResolvable imciSwitch) {
             this.props.imciSwitch(imciSwitch);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group id.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group id. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

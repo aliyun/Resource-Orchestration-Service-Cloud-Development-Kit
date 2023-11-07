@@ -165,6 +165,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        private object? _disasterRecoveryVSwitchId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: disasterRecoveryVSwitchId: The second vSwitch with which you want to associate the VPN gateway.
+        /// If you call this operation in a region that supports the dual-tunnel mode, this parameter is required.
+        /// You need to specify two vSwitches in different zones from the VPC associated with the VPN gateway to implement disaster recovery across zones.
+        /// For a region that supports only one zone, disaster recovery across zones is not supported. We recommend that you specify two vSwitches in the zone to implement high availability. You can specify the same vSwitch.
+        /// For more information about the regions and zones that support the dual-tunnel mode, see Upgrade a VPN gateway to enable the dual-tunnel mode.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "disasterRecoveryVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DisasterRecoveryVSwitchId
+        {
+            get => _disasterRecoveryVSwitchId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _disasterRecoveryVSwitchId = value;
+            }
+        }
+
         private object? _enableIpsec;
 
         /// <remarks>
@@ -303,6 +340,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        private object? _networkType;
+
+        /// <remarks>
+        /// <strong>Property</strong>: networkType: The network type of the VPN gateway. Valid values: public|private
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? NetworkType
+        {
+            get => _networkType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _networkType = value;
+            }
+        }
+
         private object? _period;
 
         /// <remarks>
@@ -419,6 +489,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         {
             get;
             set;
+        }
+
+        private object? _vpnType;
+
+        /// <remarks>
+        /// <strong>Property</strong>: vpnType: VPN gateway type.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "vpnType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? VpnType
+        {
+            get => _vpnType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _vpnType = value;
+            }
         }
 
         private object? _vSwitchId;

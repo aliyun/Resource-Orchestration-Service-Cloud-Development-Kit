@@ -3,6 +3,317 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::DBS::Download`
+ */
+export interface RosDownloadProps {
+
+    /**
+     * @Property formatType: The format to which the downloaded backup set is converted. 
+     * Valid values: CSV|SQL|Parquet
+     */
+    readonly formatType: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The ID of the instance.
+     */
+    readonly instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property bakSetId: The ID of the backup set. You can call the DescribeBackups operation to query the ID of the backup set.
+     * This parameter is required if the BakSetType parameter is set to full.
+     */
+    readonly bakSetId?: string | ros.IResolvable;
+
+    /**
+     * @Property bakSetSize: The size of the full backup set. Unit: bytes. 
+     * You can call the DescribeBackups operation to query the size of the full backup set.
+     */
+    readonly bakSetSize?: string | ros.IResolvable;
+
+    /**
+     * @Property bakSetType: The type of the download task. Valid values:
+     * full: downloads a full backup set
+     * pitr: downloads a backup set at a specific point in time.
+     */
+    readonly bakSetType?: string | ros.IResolvable;
+
+    /**
+     * @Property deleteBackupSetInOss: Whether to delete the backup set in OSS when deleting the stack.
+     * Valid values: true|false, default is true.
+     */
+    readonly deleteBackupSetInOss?: boolean | ros.IResolvable;
+
+    /**
+     * @Property downloadAddressDuration: When the download target is a URL, set the link validity period. 
+     * The default URL validity period is 7200 seconds. 
+     * The effective duration range can be set from 300 seconds to 86400 seconds
+     */
+    readonly downloadAddressDuration?: number | ros.IResolvable;
+
+    /**
+     * @Property downloadPointInTime: The point in time at which the backup set is downloaded. 
+     * Specify a UNIX timestamp representing the number of milliseconds that have elapsed since January 1, 1970, 00:00:00 UTC.
+     * This parameter is required if the BakSetType parameter is set to pitr.
+     */
+    readonly downloadPointInTime?: string | ros.IResolvable;
+
+    /**
+     * @Property targetBucket: The name of the OSS bucket that is used to store the backup set.
+     * This parameter is required if the TargetType parameter is set to OSS.
+     * Make sure that your account is granted the AliyunDBSDefaultRole permission. 
+     * For more information, see Use RAM for resource authorization. 
+     * You can also grant permissions based on the operation instructions in the Resource Access Management (RAM) console.
+     */
+    readonly targetBucket?: string | ros.IResolvable;
+
+    /**
+     * @Property targetOssRegion: The region in which the OSS bucket resides.
+     * This parameter is required if the TargetType parameter is set to OSS.
+     */
+    readonly targetOssRegion?: string | ros.IResolvable;
+
+    /**
+     * @Property targetPath: The destination path to which the backup set is downloaded.
+     * This parameter is required if the TargetType parameter is set to OSS.
+     */
+    readonly targetPath?: string | ros.IResolvable;
+
+    /**
+     * @Property targetType: The type of the destination to which the backup set is downloaded. 
+     * Valid values: OSS|URL
+     */
+    readonly targetType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDownloadProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDownloadProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDownloadPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bakSetId', ros.validateString)(properties.bakSetId));
+    errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('downloadPointInTime', ros.validateString)(properties.downloadPointInTime));
+    errors.collect(ros.propertyValidator('bakSetType', ros.validateString)(properties.bakSetType));
+    errors.collect(ros.propertyValidator('bakSetSize', ros.validateString)(properties.bakSetSize));
+    errors.collect(ros.propertyValidator('targetPath', ros.validateString)(properties.targetPath));
+    errors.collect(ros.propertyValidator('targetType', ros.validateString)(properties.targetType));
+    errors.collect(ros.propertyValidator('targetOssRegion', ros.validateString)(properties.targetOssRegion));
+    errors.collect(ros.propertyValidator('deleteBackupSetInOss', ros.validateBoolean)(properties.deleteBackupSetInOss));
+    errors.collect(ros.propertyValidator('targetBucket', ros.validateString)(properties.targetBucket));
+    errors.collect(ros.propertyValidator('formatType', ros.requiredValidator)(properties.formatType));
+    errors.collect(ros.propertyValidator('formatType', ros.validateString)(properties.formatType));
+    if(properties.downloadAddressDuration && (typeof properties.downloadAddressDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('downloadAddressDuration', ros.validateRange)({
+            data: properties.downloadAddressDuration,
+            min: 300,
+            max: 86400,
+          }));
+    }
+    errors.collect(ros.propertyValidator('downloadAddressDuration', ros.validateNumber)(properties.downloadAddressDuration));
+    return errors.wrap('supplied properties not correct for "RosDownloadProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DBS::Download` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDownloadProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DBS::Download` resource.
+ */
+// @ts-ignore TS6133
+function rosDownloadPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDownloadPropsValidator(properties).assertSuccess();
+    }
+    return {
+      FormatType: ros.stringToRosTemplate(properties.formatType),
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      BakSetId: ros.stringToRosTemplate(properties.bakSetId),
+      BakSetSize: ros.stringToRosTemplate(properties.bakSetSize),
+      BakSetType: ros.stringToRosTemplate(properties.bakSetType),
+      DeleteBackupSetInOss: ros.booleanToRosTemplate(properties.deleteBackupSetInOss),
+      DownloadAddressDuration: ros.numberToRosTemplate(properties.downloadAddressDuration),
+      DownloadPointInTime: ros.stringToRosTemplate(properties.downloadPointInTime),
+      TargetBucket: ros.stringToRosTemplate(properties.targetBucket),
+      TargetOssRegion: ros.stringToRosTemplate(properties.targetOssRegion),
+      TargetPath: ros.stringToRosTemplate(properties.targetPath),
+      TargetType: ros.stringToRosTemplate(properties.targetType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::DBS::Download`
+ */
+export class RosDownload extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DBS::Download";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute BakSetId: The ID of the backup set.
+     */
+    public readonly attrBakSetId: ros.IResolvable;
+
+    /**
+     * @Attribute DownloadAddressInfo: The download address information.
+     */
+    public readonly attrDownloadAddressInfo: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: The ID of the instance.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
+
+    /**
+     * @Attribute TaskId: The ID of the download task.
+     */
+    public readonly attrTaskId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property formatType: The format to which the downloaded backup set is converted. 
+     * Valid values: CSV|SQL|Parquet
+     */
+    public formatType: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: The ID of the instance.
+     */
+    public instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property bakSetId: The ID of the backup set. You can call the DescribeBackups operation to query the ID of the backup set.
+     * This parameter is required if the BakSetType parameter is set to full.
+     */
+    public bakSetId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property bakSetSize: The size of the full backup set. Unit: bytes. 
+     * You can call the DescribeBackups operation to query the size of the full backup set.
+     */
+    public bakSetSize: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property bakSetType: The type of the download task. Valid values:
+     * full: downloads a full backup set
+     * pitr: downloads a backup set at a specific point in time.
+     */
+    public bakSetType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deleteBackupSetInOss: Whether to delete the backup set in OSS when deleting the stack.
+     * Valid values: true|false, default is true.
+     */
+    public deleteBackupSetInOss: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property downloadAddressDuration: When the download target is a URL, set the link validity period. 
+     * The default URL validity period is 7200 seconds. 
+     * The effective duration range can be set from 300 seconds to 86400 seconds
+     */
+    public downloadAddressDuration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property downloadPointInTime: The point in time at which the backup set is downloaded. 
+     * Specify a UNIX timestamp representing the number of milliseconds that have elapsed since January 1, 1970, 00:00:00 UTC.
+     * This parameter is required if the BakSetType parameter is set to pitr.
+     */
+    public downloadPointInTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property targetBucket: The name of the OSS bucket that is used to store the backup set.
+     * This parameter is required if the TargetType parameter is set to OSS.
+     * Make sure that your account is granted the AliyunDBSDefaultRole permission. 
+     * For more information, see Use RAM for resource authorization. 
+     * You can also grant permissions based on the operation instructions in the Resource Access Management (RAM) console.
+     */
+    public targetBucket: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property targetOssRegion: The region in which the OSS bucket resides.
+     * This parameter is required if the TargetType parameter is set to OSS.
+     */
+    public targetOssRegion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property targetPath: The destination path to which the backup set is downloaded.
+     * This parameter is required if the TargetType parameter is set to OSS.
+     */
+    public targetPath: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property targetType: The type of the destination to which the backup set is downloaded. 
+     * Valid values: OSS|URL
+     */
+    public targetType: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::DBS::Download`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDownloadProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDownload.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBakSetId = this.getAtt('BakSetId');
+        this.attrDownloadAddressInfo = this.getAtt('DownloadAddressInfo');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrTaskId = this.getAtt('TaskId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.formatType = props.formatType;
+        this.instanceName = props.instanceName;
+        this.bakSetId = props.bakSetId;
+        this.bakSetSize = props.bakSetSize;
+        this.bakSetType = props.bakSetType;
+        this.deleteBackupSetInOss = props.deleteBackupSetInOss;
+        this.downloadAddressDuration = props.downloadAddressDuration;
+        this.downloadPointInTime = props.downloadPointInTime;
+        this.targetBucket = props.targetBucket;
+        this.targetOssRegion = props.targetOssRegion;
+        this.targetPath = props.targetPath;
+        this.targetType = props.targetType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            formatType: this.formatType,
+            instanceName: this.instanceName,
+            bakSetId: this.bakSetId,
+            bakSetSize: this.bakSetSize,
+            bakSetType: this.bakSetType,
+            deleteBackupSetInOss: this.deleteBackupSetInOss,
+            downloadAddressDuration: this.downloadAddressDuration,
+            downloadPointInTime: this.downloadPointInTime,
+            targetBucket: this.targetBucket,
+            targetOssRegion: this.targetOssRegion,
+            targetPath: this.targetPath,
+            targetType: this.targetType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDownloadPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::DBS::RestoreTask`
  */
 export interface RosRestoreTaskProps {

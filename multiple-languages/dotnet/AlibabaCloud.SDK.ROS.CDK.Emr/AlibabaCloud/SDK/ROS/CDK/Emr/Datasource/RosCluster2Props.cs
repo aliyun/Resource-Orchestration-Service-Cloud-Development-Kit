@@ -1,0 +1,288 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Emr.Datasource
+{
+    /// <summary>Properties for defining a `DATASOURCE::EMR::Cluster2`.</summary>
+    [JsiiByValue(fqn: "@alicloud/ros-cdk-emr.datasource.RosCluster2Props")]
+    public class RosCluster2Props : AlibabaCloud.SDK.ROS.CDK.Emr.Datasource.IRosCluster2Props
+    {
+        private object? _clusterIds;
+
+        /// <remarks>
+        /// <strong>Property</strong>: clusterIds: The list of emr cluster id.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "clusterIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? ClusterIds
+        {
+            get => _clusterIds;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case string cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _clusterIds = value;
+            }
+        }
+
+        private object? _clusterName;
+
+        /// <remarks>
+        /// <strong>Property</strong>: clusterName: The name of cluster.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ClusterName
+        {
+            get => _clusterName;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _clusterName = value;
+            }
+        }
+
+        private object? _clusterStates;
+
+        /// <remarks>
+        /// <strong>Property</strong>: clusterStates: The list of emr cluster state.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "clusterStates", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? ClusterStates
+        {
+            get => _clusterStates;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case string cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _clusterStates = value;
+            }
+        }
+
+        private object? _clusterType;
+
+        /// <remarks>
+        /// <strong>Property</strong>: clusterType: The list of emr cluster type.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? ClusterType
+        {
+            get => _clusterType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case string cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _clusterType = value;
+            }
+        }
+
+        private object? _paymentTypes;
+
+        /// <remarks>
+        /// <strong>Property</strong>: paymentTypes: The payment type of emr cluster.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "paymentTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? PaymentTypes
+        {
+            get => _paymentTypes;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case string cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _paymentTypes = value;
+            }
+        }
+
+        private object? _resourceGroupId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: resourceGroupId: The resource group id of emr cluster.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get => _resourceGroupId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _resourceGroupId = value;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags of emr cluster.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-emr.datasource.RosCluster2.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Emr.Datasource.RosCluster2.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
+    }
+}

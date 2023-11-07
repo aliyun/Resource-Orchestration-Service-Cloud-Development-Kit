@@ -20,11 +20,11 @@ export interface Cluster2Props {
 
     /**
      * Property clusterType: Cluster type.Ranges:
-     * Datalake: The new version of the data lake.
+     * DATALAKE: The new version of the data lake.
      * OLAP: Data analysis.
-     * DataFlow: Real -time data stream.
-     * DataServing: Data service.
-     * Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+     * DATAFLOW: Real -time data stream.
+     * DATASERVING: Data service.
+     * HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
      */
     readonly clusterType: string | ros.IResolvable;
 

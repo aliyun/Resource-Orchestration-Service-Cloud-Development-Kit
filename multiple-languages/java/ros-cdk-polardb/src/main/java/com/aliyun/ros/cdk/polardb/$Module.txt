@@ -1,3 +1,5 @@
+@alicloud/ros-cdk-polardb.AITask=com.aliyun.ros.cdk.polardb.AITask
+@alicloud/ros-cdk-polardb.AITaskProps=com.aliyun.ros.cdk.polardb.AITaskProps
 @alicloud/ros-cdk-polardb.Account=com.aliyun.ros.cdk.polardb.Account
 @alicloud/ros-cdk-polardb.AccountPrivilege=com.aliyun.ros.cdk.polardb.AccountPrivilege
 @alicloud/ros-cdk-polardb.AccountPrivilegeProps=com.aliyun.ros.cdk.polardb.AccountPrivilegeProps
@@ -18,11 +20,14 @@
 @alicloud/ros-cdk-polardb.GlobalDatabaseNetworkProps=com.aliyun.ros.cdk.polardb.GlobalDatabaseNetworkProps
 @alicloud/ros-cdk-polardb.ParameterGroup=com.aliyun.ros.cdk.polardb.ParameterGroup
 @alicloud/ros-cdk-polardb.ParameterGroupProps=com.aliyun.ros.cdk.polardb.ParameterGroupProps
+@alicloud/ros-cdk-polardb.RosAITask=com.aliyun.ros.cdk.polardb.RosAITask
+@alicloud/ros-cdk-polardb.RosAITaskProps=com.aliyun.ros.cdk.polardb.RosAITaskProps
 @alicloud/ros-cdk-polardb.RosAccount=com.aliyun.ros.cdk.polardb.RosAccount
 @alicloud/ros-cdk-polardb.RosAccountPrivilege=com.aliyun.ros.cdk.polardb.RosAccountPrivilege
 @alicloud/ros-cdk-polardb.RosAccountPrivilegeProps=com.aliyun.ros.cdk.polardb.RosAccountPrivilegeProps
 @alicloud/ros-cdk-polardb.RosAccountProps=com.aliyun.ros.cdk.polardb.RosAccountProps
 @alicloud/ros-cdk-polardb.RosDBCluster=com.aliyun.ros.cdk.polardb.RosDBCluster
+@alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty=com.aliyun.ros.cdk.polardb.RosDBCluster$ColdStorageOptionProperty
 @alicloud/ros-cdk-polardb.RosDBCluster.DBClusterParametersProperty=com.aliyun.ros.cdk.polardb.RosDBCluster$DBClusterParametersProperty
 @alicloud/ros-cdk-polardb.RosDBCluster.TagsProperty=com.aliyun.ros.cdk.polardb.RosDBCluster$TagsProperty
 @alicloud/ros-cdk-polardb.RosDBClusterAccessWhiteList=com.aliyun.ros.cdk.polardb.RosDBClusterAccessWhiteList

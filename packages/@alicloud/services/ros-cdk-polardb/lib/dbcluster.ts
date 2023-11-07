@@ -82,6 +82,11 @@ export interface DBClusterProps {
     readonly clusterNetworkType?: string | ros.IResolvable;
 
     /**
+     * Property coldStorageOption: The option of cold storage.
+     */
+    readonly coldStorageOption?: RosDBCluster.ColdStorageOptionProperty | ros.IResolvable;
+
+    /**
      * Property creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
      */
     readonly creationCategory?: string | ros.IResolvable;
@@ -248,6 +253,11 @@ export interface DBClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
+     * Property restartMasterNode: Whether to restart the master node.
+     */
+    readonly restartMasterNode?: boolean | ros.IResolvable;
+
+    /**
      * Property scaleMax: Maximum limit of single-node scaling.
      */
     readonly scaleMax?: number | ros.IResolvable;
@@ -391,6 +401,11 @@ export class DBCluster extends ros.Resource {
     public readonly attrClusterEndpointId: ros.IResolvable;
 
     /**
+     * Attribute ColdStorageInstanceId: The ID of the cold storage instance.
+     */
+    public readonly attrColdStorageInstanceId: ros.IResolvable;
+
+    /**
      * Attribute CustomConnectionStrings: The custom connection strings of the db cluster.
      */
     public readonly attrCustomConnectionStrings: ros.IResolvable;
@@ -486,6 +501,7 @@ export class DBCluster extends ros.Resource {
             lowerCaseTableNames: props.lowerCaseTableNames,
             autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             zoneId: props.zoneId,
+            coldStorageOption: props.coldStorageOption,
             scaleRoNumMax: props.scaleRoNumMax,
             looseXEngineUseMemoryPct: props.looseXEngineUseMemoryPct,
             scaleMax: props.scaleMax,
@@ -496,11 +512,13 @@ export class DBCluster extends ros.Resource {
             parameterGroupId: props.parameterGroupId,
             storageSpace: props.storageSpace,
             serverlessType: props.serverlessType,
+            restartMasterNode: props.restartMasterNode,
             scaleMin: props.scaleMin,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;
         this.attrClusterConnectionString = rosDBCluster.attrClusterConnectionString;
         this.attrClusterEndpointId = rosDBCluster.attrClusterEndpointId;
+        this.attrColdStorageInstanceId = rosDBCluster.attrColdStorageInstanceId;
         this.attrCustomConnectionStrings = rosDBCluster.attrCustomConnectionStrings;
         this.attrCustomEndpointIds = rosDBCluster.attrCustomEndpointIds;
         this.attrDbClusterId = rosDBCluster.attrDbClusterId;

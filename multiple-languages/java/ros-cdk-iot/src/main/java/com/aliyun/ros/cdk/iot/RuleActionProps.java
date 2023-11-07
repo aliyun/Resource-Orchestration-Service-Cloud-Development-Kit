@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a <code>ALIYUN::IOT::RuleAction</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.490Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.917Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RuleActionProps")
 @software.amazon.jsii.Jsii.Proxy(RuleActionProps.Jsii$Proxy.class)
 public interface RuleActionProps extends software.amazon.jsii.JsiiSerializable {

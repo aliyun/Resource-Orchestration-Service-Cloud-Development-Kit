@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * A ROS resource type:  <code>ALIYUN::REDIS::Whitelist</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.374Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.905Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.Whitelist")
 public class Whitelist extends com.aliyun.ros.cdk.core.Resource {
 

@@ -1,5 +1,12 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.46] (2023-11-07)
+
+### Features
+
+- Update ROS resource sdk packages (Added the ALIYUN::VPC::VpnAttachment,ALIYUN::ThreatDetection::Instance,DATASOURCE::ThreatDetection::Instances,DATASOURCE::ROCKETMQ5::ConsumerGroups,ALIYUN::POLARDB::AITask,DATASOURCE::Lindorm::Instances,DATASOURCE::KMS::Instances,DATASOURCE::KAFKA::Instances,DATASOURCE::Hologram::Instances,DATASOURCE::EMR::Cluster2,ALIYUN::DEVOPS::PipelineRun,ALIYUN::DEVOPS::PipelineRelations,ALIYUN::DBS::Download,ALIYUN::CEN::TransitRouterVpnAttachment resource type).
+
+
 ## [ros-cdk-cli 1.0.45] (2023-09-25)
 
 ### Features

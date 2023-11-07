@@ -3,6 +3,151 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::POLARDB::AITask`
+ */
+export interface RosAITaskProps {
+
+    /**
+     * @Property dbClusterId: The ID of the DB cluster.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property password: The password of the database account that enables the PolarDB for AI function is required.
+     */
+    readonly password: string | ros.IResolvable;
+
+    /**
+     * @Property username: The database account that enables the PolarDB for AI function is required.
+     */
+    readonly username: string | ros.IResolvable;
+
+    /**
+     * @Property nodeType: The type of the node. Valid values:
+     * DLNode: AI node(default).
+     * SearchNode: Search ai node.
+     */
+    readonly nodeType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAITaskProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAITaskProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAITaskPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('username', ros.requiredValidator)(properties.username));
+    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
+    errors.collect(ros.propertyValidator('nodeType', ros.validateString)(properties.nodeType));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "RosAITaskProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::AITask` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAITaskProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::AITask` resource.
+ */
+// @ts-ignore TS6133
+function rosAITaskPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAITaskPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
+      Password: ros.stringToRosTemplate(properties.password),
+      Username: ros.stringToRosTemplate(properties.username),
+      NodeType: ros.stringToRosTemplate(properties.nodeType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::POLARDB::AITask`
+ */
+export class RosAITask extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::AITask";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DBClusterId: The ID of the DB cluster.
+     */
+    public readonly attrDbClusterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbClusterId: The ID of the DB cluster.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property password: The password of the database account that enables the PolarDB for AI function is required.
+     */
+    public password: string | ros.IResolvable;
+
+    /**
+     * @Property username: The database account that enables the PolarDB for AI function is required.
+     */
+    public username: string | ros.IResolvable;
+
+    /**
+     * @Property nodeType: The type of the node. Valid values:
+     * DLNode: AI node(default).
+     * SearchNode: Search ai node.
+     */
+    public nodeType: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::POLARDB::AITask`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAITaskProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAITask.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDbClusterId = this.getAtt('DBClusterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbClusterId = props.dbClusterId;
+        this.password = props.password;
+        this.username = props.username;
+        this.nodeType = props.nodeType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbClusterId: this.dbClusterId,
+            password: this.password,
+            username: this.username,
+            nodeType: this.nodeType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAITaskPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::POLARDB::Account`
  */
 export interface RosAccountProps {
@@ -494,6 +639,11 @@ export interface RosDBClusterProps {
     readonly clusterNetworkType?: string | ros.IResolvable;
 
     /**
+     * @Property coldStorageOption: The option of cold storage.
+     */
+    readonly coldStorageOption?: RosDBCluster.ColdStorageOptionProperty | ros.IResolvable;
+
+    /**
      * @Property creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
      */
     readonly creationCategory?: string | ros.IResolvable;
@@ -658,6 +808,11 @@ export interface RosDBClusterProps {
      * @Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property restartMasterNode: Whether to restart the master node.
+     */
+    readonly restartMasterNode?: boolean | ros.IResolvable;
 
     /**
      * @Property scaleMax: Maximum limit of single-node scaling.
@@ -856,7 +1011,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -910,6 +1065,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('coldStorageOption', RosDBCluster_ColdStorageOptionPropertyValidator)(properties.coldStorageOption));
     if(properties.scaleRoNumMax && (typeof properties.scaleRoNumMax) !== 'object') {
         errors.collect(ros.propertyValidator('scaleRoNumMax', ros.validateRange)({
             data: properties.scaleRoNumMax,
@@ -947,6 +1103,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('serverlessType', ros.validateString)(properties.serverlessType));
+    errors.collect(ros.propertyValidator('restartMasterNode', ros.validateBoolean)(properties.restartMasterNode));
     if(properties.scaleMin && (typeof properties.scaleMin) !== 'object') {
         errors.collect(ros.propertyValidator('scaleMin', ros.validateRange)({
             data: properties.scaleMin,
@@ -982,6 +1139,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       BackupRetentionPolicyOnClusterDeletion: ros.stringToRosTemplate(properties.backupRetentionPolicyOnClusterDeletion),
       CloneDataPoint: ros.stringToRosTemplate(properties.cloneDataPoint),
       ClusterNetworkType: ros.stringToRosTemplate(properties.clusterNetworkType),
+      ColdStorageOption: rosDBClusterColdStorageOptionPropertyToRosTemplate(properties.coldStorageOption),
       CreationCategory: ros.stringToRosTemplate(properties.creationCategory),
       CreationOption: ros.stringToRosTemplate(properties.creationOption),
       DBClusterDescription: ros.stringToRosTemplate(properties.dbClusterDescription),
@@ -1003,6 +1161,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       ProxyType: ros.stringToRosTemplate(properties.proxyType),
       RenewalStatus: ros.stringToRosTemplate(properties.renewalStatus),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      RestartMasterNode: ros.booleanToRosTemplate(properties.restartMasterNode),
       ScaleMax: ros.numberToRosTemplate(properties.scaleMax),
       ScaleMin: ros.numberToRosTemplate(properties.scaleMin),
       ScaleRoNumMax: ros.numberToRosTemplate(properties.scaleRoNumMax),
@@ -1049,6 +1208,11 @@ export class RosDBCluster extends ros.RosResource {
      * @Attribute ClusterEndpointId: The cluster endpoint ID of the db cluster.
      */
     public readonly attrClusterEndpointId: ros.IResolvable;
+
+    /**
+     * @Attribute ColdStorageInstanceId: The ID of the cold storage instance.
+     */
+    public readonly attrColdStorageInstanceId: ros.IResolvable;
 
     /**
      * @Attribute CustomConnectionStrings: The custom connection strings of the db cluster.
@@ -1170,6 +1334,11 @@ export class RosDBCluster extends ros.RosResource {
      * @Property clusterNetworkType: The network type of the cluster. Currently, only VPC is supported. Default value: VPC.
      */
     public clusterNetworkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property coldStorageOption: The option of cold storage.
+     */
+    public coldStorageOption: RosDBCluster.ColdStorageOptionProperty | ros.IResolvable | undefined;
 
     /**
      * @Property creationCategory: Cluster series. The value could be Normal (standard version), Basic and ArchiveNormal.
@@ -1338,6 +1507,11 @@ export class RosDBCluster extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property restartMasterNode: Whether to restart the master node.
+     */
+    public restartMasterNode: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property scaleMax: Maximum limit of single-node scaling.
      */
     public scaleMax: number | ros.IResolvable | undefined;
@@ -1470,6 +1644,7 @@ export class RosDBCluster extends ros.RosResource {
         super(scope, id, { type: RosDBCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrClusterConnectionString = this.getAtt('ClusterConnectionString');
         this.attrClusterEndpointId = this.getAtt('ClusterEndpointId');
+        this.attrColdStorageInstanceId = this.getAtt('ColdStorageInstanceId');
         this.attrCustomConnectionStrings = this.getAtt('CustomConnectionStrings');
         this.attrCustomEndpointIds = this.getAtt('CustomEndpointIds');
         this.attrDbClusterId = this.getAtt('DBClusterId');
@@ -1491,6 +1666,7 @@ export class RosDBCluster extends ros.RosResource {
         this.backupRetentionPolicyOnClusterDeletion = props.backupRetentionPolicyOnClusterDeletion;
         this.cloneDataPoint = props.cloneDataPoint;
         this.clusterNetworkType = props.clusterNetworkType;
+        this.coldStorageOption = props.coldStorageOption;
         this.creationCategory = props.creationCategory;
         this.creationOption = props.creationOption;
         this.dbClusterDescription = props.dbClusterDescription;
@@ -1512,6 +1688,7 @@ export class RosDBCluster extends ros.RosResource {
         this.proxyType = props.proxyType;
         this.renewalStatus = props.renewalStatus;
         this.resourceGroupId = props.resourceGroupId;
+        this.restartMasterNode = props.restartMasterNode;
         this.scaleMax = props.scaleMax;
         this.scaleMin = props.scaleMin;
         this.scaleRoNumMax = props.scaleRoNumMax;
@@ -1547,6 +1724,7 @@ export class RosDBCluster extends ros.RosResource {
             backupRetentionPolicyOnClusterDeletion: this.backupRetentionPolicyOnClusterDeletion,
             cloneDataPoint: this.cloneDataPoint,
             clusterNetworkType: this.clusterNetworkType,
+            coldStorageOption: this.coldStorageOption,
             creationCategory: this.creationCategory,
             creationOption: this.creationOption,
             dbClusterDescription: this.dbClusterDescription,
@@ -1568,6 +1746,7 @@ export class RosDBCluster extends ros.RosResource {
             proxyType: this.proxyType,
             renewalStatus: this.renewalStatus,
             resourceGroupId: this.resourceGroupId,
+            restartMasterNode: this.restartMasterNode,
             scaleMax: this.scaleMax,
             scaleMin: this.scaleMin,
             scaleRoNumMax: this.scaleRoNumMax,
@@ -1593,6 +1772,61 @@ export class RosDBCluster extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDBClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosDBCluster {
+    /**
+     * @stability external
+     */
+    export interface ColdStorageOptionProperty {
+        /**
+         * @Property description: The description of the cold storage instance. If the description is set, it means a cold storage instance is created.
+     * The length is no more than 256 characters.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property enable: Whether to create the cold storage instance.
+         */
+        readonly enable?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ColdStorageOptionProperty`
+ *
+ * @param properties - the TypeScript properties of a `ColdStorageOptionProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBCluster_ColdStorageOptionPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: undefined,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    return errors.wrap('supplied properties not correct for "ColdStorageOptionProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::DBCluster.ColdStorageOption` resource
+ *
+ * @param properties - the TypeScript properties of a `ColdStorageOptionProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::DBCluster.ColdStorageOption` resource.
+ */
+// @ts-ignore TS6133
+function rosDBClusterColdStorageOptionPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDBCluster_ColdStorageOptionPropertyValidator(properties).assertSuccess();
+    return {
+      Description: ros.stringToRosTemplate(properties.description),
+      Enable: ros.booleanToRosTemplate(properties.enable),
+    };
 }
 
 export namespace RosDBCluster {
@@ -2077,13 +2311,66 @@ export namespace RosDBClusterEndpoint {
      */
     export interface EndpointConfigProperty {
         /**
+         * @Property distributedTransaction: Set up transaction splitting. Valid values:
+     * on: Turn on transaction splitting (default value)
+     * off: Turn off transaction splitting
+         */
+        readonly distributedTransaction?: string | ros.IResolvable;
+        /**
+         * @Property consistTimeoutAction: Global consistency read timeout policy. Valid values: 
+     * 0: This request occurs to the master node (default).
+     * 1: Sql error report.
+         */
+        readonly consistTimeoutAction?: string | ros.IResolvable;
+        /**
+         * @Property consistTimeout: Global consistency read timeout.
+         */
+        readonly consistTimeout?: string | ros.IResolvable;
+        /**
+         * @Property connectionPersist: Set up a connection pool. Valid values: 
+     * off: Turn off the connection pool (default value) 
+     * Session: Enable session-level connection pooling 
+     * Transaction: Enable transaction-level connection pooling.
+         */
+        readonly connectionPersist?: string | ros.IResolvable;
+        /**
+         * @Property loadBalancePolicy: Set load balancing policy. Valid values:
+     * 0: Load balancing based on the number of connections (default)
+     * 1: Load balancing based on the number of active requests
+         */
+        readonly loadBalancePolicy?: string | ros.IResolvable;
+        /**
          * @Property consistLevel: The consistency level of the cluster connection point. Valid values:
      * 0: eventual consistency
-     * 1: session consistency
+     * 1: session consistency2: Global consistency (strong)
      * For example, {"ConsistLevel": "0"}.
      * Note If the ReadWriteMode parameter is set to ReadOnly, the value of this parameter must be 0.
          */
         readonly consistLevel?: string | ros.IResolvable;
+        /**
+         * @Property enableOverloadThrottle: Set whether to enable overload protection. Valid values: 
+     * on: Turn on overload protection.
+     * off: Turn off overload protection (default).
+         */
+        readonly enableOverloadThrottle?: string | ros.IResolvable;
+        /**
+         * @Property masterAcceptReads: Set whether the main library accepts reading. Valid values: 
+     * on: Indicates that the main library accepts reading.
+     * off: Indicates that the main library does not accept reading (default value)
+         */
+        readonly masterAcceptReads?: string | ros.IResolvable;
+        /**
+         * @Property maxParallelDegree: Set up parallel queries. Valid values: 
+     * on: Enable parallel query.
+     * off: Turn off parallel query (default).
+         */
+        readonly maxParallelDegree?: string | ros.IResolvable;
+        /**
+         * @Property enableHtapImci: Set up row/column storage to automatically divert traffic. Valid values: 
+     * on: Turn on the automatic traffic diversion function of row storage/column storage
+     * off: Turn off the automatic drainage function of row storage/column storage (default)
+         */
+        readonly enableHtapImci?: string | ros.IResolvable;
     }
 }
 /**
@@ -2096,13 +2383,22 @@ export namespace RosDBClusterEndpoint {
 function RosDBClusterEndpoint_EndpointConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('distributedTransaction', ros.validateString)(properties.distributedTransaction));
+    errors.collect(ros.propertyValidator('consistTimeoutAction', ros.validateString)(properties.consistTimeoutAction));
+    errors.collect(ros.propertyValidator('consistTimeout', ros.validateString)(properties.consistTimeout));
+    errors.collect(ros.propertyValidator('connectionPersist', ros.validateString)(properties.connectionPersist));
+    errors.collect(ros.propertyValidator('loadBalancePolicy', ros.validateString)(properties.loadBalancePolicy));
     if(properties.consistLevel && (typeof properties.consistLevel) !== 'object') {
         errors.collect(ros.propertyValidator('consistLevel', ros.validateAllowedValues)({
           data: properties.consistLevel,
-          allowedValues: ["0","1"],
+          allowedValues: ["0","1","2"],
         }));
     }
     errors.collect(ros.propertyValidator('consistLevel', ros.validateString)(properties.consistLevel));
+    errors.collect(ros.propertyValidator('enableOverloadThrottle', ros.validateString)(properties.enableOverloadThrottle));
+    errors.collect(ros.propertyValidator('masterAcceptReads', ros.validateString)(properties.masterAcceptReads));
+    errors.collect(ros.propertyValidator('maxParallelDegree', ros.validateString)(properties.maxParallelDegree));
+    errors.collect(ros.propertyValidator('enableHtapImci', ros.validateString)(properties.enableHtapImci));
     return errors.wrap('supplied properties not correct for "EndpointConfigProperty"');
 }
 
@@ -2118,7 +2414,16 @@ function rosDBClusterEndpointEndpointConfigPropertyToRosTemplate(properties: any
     if (!ros.canInspect(properties)) { return properties; }
     RosDBClusterEndpoint_EndpointConfigPropertyValidator(properties).assertSuccess();
     return {
+      DistributedTransaction: ros.stringToRosTemplate(properties.distributedTransaction),
+      ConsistTimeoutAction: ros.stringToRosTemplate(properties.consistTimeoutAction),
+      ConsistTimeout: ros.stringToRosTemplate(properties.consistTimeout),
+      ConnectionPersist: ros.stringToRosTemplate(properties.connectionPersist),
+      LoadBalancePolicy: ros.stringToRosTemplate(properties.loadBalancePolicy),
       ConsistLevel: ros.stringToRosTemplate(properties.consistLevel),
+      EnableOverloadThrottle: ros.stringToRosTemplate(properties.enableOverloadThrottle),
+      MasterAcceptReads: ros.stringToRosTemplate(properties.masterAcceptReads),
+      MaxParallelDegree: ros.stringToRosTemplate(properties.maxParallelDegree),
+      EnableHtapImci: ros.stringToRosTemplate(properties.enableHtapImci),
     };
 }
 
@@ -2548,9 +2853,19 @@ export interface RosDBNodesProps {
     readonly dbClusterId: string | ros.IResolvable;
 
     /**
+     * @Property dbNodeType: Node type. Ranges: RO|STANDBY|DLNode
+     */
+    readonly dbNodeType?: string | ros.IResolvable;
+
+    /**
      * @Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
      */
     readonly imciSwitch?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -2563,6 +2878,7 @@ export interface RosDBNodesProps {
 function RosDBNodesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('amount', ros.requiredValidator)(properties.amount));
     if(properties.amount && (typeof properties.amount) !== 'object') {
         errors.collect(ros.propertyValidator('amount', ros.validateRange)({
@@ -2581,6 +2897,13 @@ function RosDBNodesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('imciSwitch', ros.validateString)(properties.imciSwitch));
+    if(properties.dbNodeType && (typeof properties.dbNodeType) !== 'object') {
+        errors.collect(ros.propertyValidator('dbNodeType', ros.validateAllowedValues)({
+          data: properties.dbNodeType,
+          allowedValues: ["RO","STANDBY","DLNode"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbNodeType', ros.validateString)(properties.dbNodeType));
     return errors.wrap('supplied properties not correct for "RosDBNodesProps"');
 }
 
@@ -2600,7 +2923,9 @@ function rosDBNodesPropsToRosTemplate(properties: any, enableResourcePropertyCon
     return {
       Amount: ros.numberToRosTemplate(properties.amount),
       DBClusterId: ros.stringToRosTemplate(properties.dbClusterId),
+      DBNodeType: ros.stringToRosTemplate(properties.dbNodeType),
       ImciSwitch: ros.stringToRosTemplate(properties.imciSwitch),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
     };
 }
 
@@ -2642,9 +2967,19 @@ export class RosDBNodes extends ros.RosResource {
     public dbClusterId: string | ros.IResolvable;
 
     /**
+     * @Property dbNodeType: Node type. Ranges: RO|STANDBY|DLNode
+     */
+    public dbNodeType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
      */
     public imciSwitch: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBNodes`.
@@ -2661,7 +2996,9 @@ export class RosDBNodes extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.amount = props.amount;
         this.dbClusterId = props.dbClusterId;
+        this.dbNodeType = props.dbNodeType;
         this.imciSwitch = props.imciSwitch;
+        this.resourceGroupId = props.resourceGroupId;
     }
 
 
@@ -2669,7 +3006,9 @@ export class RosDBNodes extends ros.RosResource {
         return {
             amount: this.amount,
             dbClusterId: this.dbClusterId,
+            dbNodeType: this.dbNodeType,
             imciSwitch: this.imciSwitch,
+            resourceGroupId: this.resourceGroupId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

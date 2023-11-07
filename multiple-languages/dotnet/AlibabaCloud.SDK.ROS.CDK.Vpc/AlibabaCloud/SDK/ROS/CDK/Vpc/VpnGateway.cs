@@ -38,6 +38,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         {
         }
 
+        /// <summary>Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.</summary>
+        [JsiiProperty(name: "attrDisasterRecoveryInternetIp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDisasterRecoveryInternetIp
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute DisasterRecoveryVSwitchId: The ID of the second vSwitch associated with the VPN gateway.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.</summary>
+        [JsiiProperty(name: "attrDisasterRecoveryVSwitchId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDisasterRecoveryVSwitchId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute InternetIp: The public IP address of the VPN gateway.</summary>
         [JsiiProperty(name: "attrInternetIp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInternetIp
@@ -66,9 +80,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <summary>Attribute SslVpnInternetIp: The IP address of the SSL-VPN connection.This attribute is returned only when the VPN gateway is a public VPN gateway and supports only the single-tunnel mode. In addition, the VPN gateway must have the SSL-VPN feature enabled.</summary>
+        [JsiiProperty(name: "attrSslVpnInternetIp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSslVpnInternetIp
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute VpcId: The ID of the virtual private cloud (VPC) to which the VPN gateway belongs.</summary>
+        [JsiiProperty(name: "attrVpcId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute VpnGatewayId: ID of the VPN gateway.</summary>
         [JsiiProperty(name: "attrVpnGatewayId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpnGatewayId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute VpnType: The type of the VPN gateway.</summary>
+        [JsiiProperty(name: "attrVpnType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpnType
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute VSwitchId: The ID of the vSwitch to which the VPN gateway belongs.</summary>
+        [JsiiProperty(name: "attrVSwitchId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVSwitchId
         {
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }

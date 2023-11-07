@@ -19,9 +19,19 @@ export interface DBNodesProps {
     readonly dbClusterId: string | ros.IResolvable;
 
     /**
+     * Property dbNodeType: Node type. Ranges: RO|STANDBY|DLNode
+     */
+    readonly dbNodeType?: string | ros.IResolvable;
+
+    /**
      * Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.
      */
     readonly imciSwitch?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -55,9 +65,11 @@ export class DBNodes extends ros.Resource {
         super(scope, id);
 
         const rosDBNodes = new RosDBNodes(this, id,  {
+            resourceGroupId: props.resourceGroupId,
             amount: props.amount,
             dbClusterId: props.dbClusterId,
             imciSwitch: props.imciSwitch,
+            dbNodeType: props.dbNodeType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBNodes;
         this.attrDbNodeIds = rosDBNodes.attrDbNodeIds;

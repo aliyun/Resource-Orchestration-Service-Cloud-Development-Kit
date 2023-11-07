@@ -14,6 +14,11 @@ export interface CustomerGatewayProps {
     readonly ipAddress: string | ros.IResolvable;
 
     /**
+     * Property asn: The autonomous system number of the local data center gateway device.
+     */
+    readonly asn?: number | ros.IResolvable;
+
+    /**
      * Property description: Description of the user gateway.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
@@ -54,6 +59,7 @@ export class CustomerGateway extends ros.Resource {
         const rosCustomerGateway = new RosCustomerGateway(this, id,  {
             description: props.description,
             ipAddress: props.ipAddress,
+            asn: props.asn,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCustomerGateway;

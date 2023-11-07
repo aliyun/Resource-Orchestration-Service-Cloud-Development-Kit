@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * A ROS template type:  <code>ALIYUN::EHPC::Users</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.984Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.353Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosUsers")
 public class RosUsers extends com.aliyun.ros.cdk.core.RosResource {
 

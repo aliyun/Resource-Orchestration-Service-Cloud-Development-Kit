@@ -957,6 +957,13 @@ export interface RosClusterProps {
     readonly keyPairName?: string | ros.IResolvable;
 
     /**
+     * @Property networkInterfaceTrafficMode: Communication mode of an elastic NIC. Value values:
+     * - **Standard**: The TCP communication mode is used.
+     * - **HighPerformance**: Enables the Elastic RDMA Interface (ERI) and uses the RDMA communication mode.
+     */
+    readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
+
+    /**
      * @Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
      */
     readonly password?: string | ros.IResolvable;
@@ -1226,6 +1233,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
     errors.collect(ros.propertyValidator('remoteDirectory', ros.validateString)(properties.remoteDirectory));
+    errors.collect(ros.propertyValidator('networkInterfaceTrafficMode', ros.validateString)(properties.networkInterfaceTrafficMode));
     errors.collect(ros.propertyValidator('sccClusterId', ros.validateString)(properties.sccClusterId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('systemDiskLevel', ros.validateString)(properties.systemDiskLevel));
@@ -1247,7 +1255,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.ecsChargeType && (typeof properties.ecsChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('ecsChargeType', ros.validateAllowedValues)({
           data: properties.ecsChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('ecsChargeType', ros.validateString)(properties.ecsChargeType));
@@ -1297,6 +1305,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       IsComputeEss: ros.booleanToRosTemplate(properties.isComputeEss),
       JobQueue: ros.stringToRosTemplate(properties.jobQueue),
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
+      NetworkInterfaceTrafficMode: ros.stringToRosTemplate(properties.networkInterfaceTrafficMode),
       Password: ros.stringToRosTemplate(properties.password),
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
@@ -1525,6 +1534,13 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
     public keyPairName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property networkInterfaceTrafficMode: Communication mode of an elastic NIC. Value values:
+     * - **Standard**: The TCP communication mode is used.
+     * - **HighPerformance**: Enables the Elastic RDMA Interface (ERI) and uses the RDMA communication mode.
+     */
+    public networkInterfaceTrafficMode: string | ros.IResolvable | undefined;
+
+    /**
      * @Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
      */
     public password: string | ros.IResolvable | undefined;
@@ -1712,6 +1728,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
         this.isComputeEss = props.isComputeEss;
         this.jobQueue = props.jobQueue;
         this.keyPairName = props.keyPairName;
+        this.networkInterfaceTrafficMode = props.networkInterfaceTrafficMode;
         this.password = props.password;
         this.period = props.period;
         this.periodUnit = props.periodUnit;
@@ -1769,6 +1786,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
             isComputeEss: this.isComputeEss,
             jobQueue: this.jobQueue,
             keyPairName: this.keyPairName,
+            networkInterfaceTrafficMode: this.networkInterfaceTrafficMode,
             password: this.password,
             period: this.period,
             periodUnit: this.periodUnit,

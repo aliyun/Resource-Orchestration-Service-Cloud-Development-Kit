@@ -39,6 +39,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             }
         }
 
+        /// <summary>Property originServers: The list of origin URLs.</summary>
+        /// <remarks>
+        /// It has the same function as Sources, but has a higher priority than it.
+        /// </remarks>
+        [JsiiProperty(name: "originServers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cdn.RosDomain.OriginServersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? OriginServers
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
         /// <remarks>
         /// If this is left blank, the system automatically fills in the ID of the default resource group.
@@ -135,6 +149,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             [JsiiOptional]
             [JsiiProperty(name: "checkUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CheckUrl
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property originServers: The list of origin URLs.</summary>
+            /// <remarks>
+            /// It has the same function as Sources, but has a higher priority than it.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "originServers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cdn.RosDomain.OriginServersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? OriginServers
             {
                 get => GetInstanceProperty<object?>();
             }

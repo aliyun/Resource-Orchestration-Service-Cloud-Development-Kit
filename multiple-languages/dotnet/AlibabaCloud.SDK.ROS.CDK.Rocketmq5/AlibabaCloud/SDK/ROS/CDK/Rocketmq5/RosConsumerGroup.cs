@@ -86,7 +86,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
         /// <remarks>
         /// <strong>Property</strong>: consumeRetryPolicy: The consumption retry policy of the consumer group to be created.
         /// </remarks>
-        [JsiiProperty(name: "consumeRetryPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-rocketmq5.RosConsumerGroup.ConsumeRetryPolicyProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "consumeRetryPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-rocketmq5.RosConsumerGroup.ConsumeRetryPolicyProperty\"}]}}")]
         public virtual object ConsumeRetryPolicy
         {
             get => GetInstanceProperty<object>()!;
@@ -96,17 +96,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
                 {
                     switch (value)
                     {
-                        case AlibabaCloud.SDK.ROS.CDK.Rocketmq5.RosConsumerGroup.IConsumeRetryPolicyProperty cast_cd4240:
-                            break;
                         case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Rocketmq5.RosConsumerGroup.IConsumeRetryPolicyProperty cast_cd4240:
                             break;
                         case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
                             // Not enough information to type-check...
                             break;
                         case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Rocketmq5.RosConsumerGroup.IConsumeRetryPolicyProperty).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Rocketmq5.RosConsumerGroup.IConsumeRetryPolicyProperty).FullName}; received null", nameof(value));
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Rocketmq5.RosConsumerGroup.IConsumeRetryPolicyProperty).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Rocketmq5.RosConsumerGroup.IConsumeRetryPolicyProperty).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);

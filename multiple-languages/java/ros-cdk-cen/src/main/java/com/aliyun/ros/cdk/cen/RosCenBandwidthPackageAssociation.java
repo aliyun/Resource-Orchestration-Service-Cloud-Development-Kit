@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS template type:  <code>ALIYUN::CEN::CenBandwidthPackageAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.633Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenBandwidthPackageAssociation")
 public class RosCenBandwidthPackageAssociation extends com.aliyun.ros.cdk.core.RosResource {
 

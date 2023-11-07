@@ -546,7 +546,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));

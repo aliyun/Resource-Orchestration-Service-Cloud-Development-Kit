@@ -63,6 +63,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
+        /// <summary>Property enableCrossBorder: Whether the global acceleration instance enables the cross-border line function.</summary>
+        [JsiiProperty(name: "enableCrossBorder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnableCrossBorder
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).</summary>
         [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -162,6 +173,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             [JsiiOptional]
             [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Duration
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property enableCrossBorder: Whether the global acceleration instance enables the cross-border line function.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableCrossBorder", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableCrossBorder
             {
                 get => GetInstanceProperty<object?>();
             }

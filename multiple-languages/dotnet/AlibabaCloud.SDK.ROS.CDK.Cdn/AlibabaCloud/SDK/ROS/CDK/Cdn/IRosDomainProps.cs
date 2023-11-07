@@ -40,6 +40,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: originServers: The list of origin URLs. It has the same function as Sources, but has a higher priority than it.
+        /// </remarks>
+        [JsiiProperty(name: "originServers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cdn.RosDomain.OriginServersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? OriginServers
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resourceGroupId: The ID of the resource group. If this is left blank, the system automatically fills in the ID of the default resource group.
         /// </remarks>
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -136,6 +149,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             [JsiiOptional]
             [JsiiProperty(name: "checkUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CheckUrl
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: originServers: The list of origin URLs. It has the same function as Sources, but has a higher priority than it.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "originServers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cdn.RosDomain.OriginServersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? OriginServers
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -142,7 +142,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));

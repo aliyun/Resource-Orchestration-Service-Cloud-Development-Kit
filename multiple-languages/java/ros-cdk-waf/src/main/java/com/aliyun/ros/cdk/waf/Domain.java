@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * A ROS resource type:  <code>ALIYUN::WAF::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.444Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.828Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource {
 

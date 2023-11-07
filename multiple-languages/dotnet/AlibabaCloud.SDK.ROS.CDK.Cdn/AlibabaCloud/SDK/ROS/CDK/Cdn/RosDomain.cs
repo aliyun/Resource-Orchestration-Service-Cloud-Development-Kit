@@ -173,6 +173,54 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: originServers: The list of origin URLs. It has the same function as Sources, but has a higher priority than it.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "originServers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cdn.RosDomain.OriginServersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? OriginServers
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Cdn.RosDomain.IOriginServersProperty cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cdn.RosDomain.IOriginServersProperty).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cdn.RosDomain.IOriginServersProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: resourceGroupId: The ID of the resource group. If this is left blank, the system automatically fills in the ID of the default resource group.
         /// </remarks>
         [JsiiOptional]
@@ -304,6 +352,337 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
                     }
                 }
                 SetInstanceProperty(value);
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IOriginServersProperty), fullyQualifiedName: "@alicloud/ros-cdk-cdn.RosDomain.OriginServersProperty")]
+        public interface IOriginServersProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: content: The address of the origin server. You can specify an IP address or a domain name.
+            /// </remarks>
+            [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Content
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: type: The type of the origin server. Valid values:
+            /// ipaddr: the IP address
+            /// domain: the domain name
+            /// oss: the endpoint of an Object Storage Service (OSS) bucket
+            /// fc_domain: the domain name of Function Compute
+            /// </remarks>
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Type
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: port: The port. Valid values:
+            /// 80: the default port
+            /// 443: the HTTPS port
+            /// A custom port
+            /// </remarks>
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Port
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: priority: The priority of the origin server if multiple origin servers are specified. Default value: 20. Valid values:
+            /// 20: the primary origin server
+            /// 30: the secondary origin server
+            /// </remarks>
+            [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Priority
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: weight: The weight of the origin server if multiple origin servers are specified. Valid values: 0 to 100. Default value: 10.
+            /// </remarks>
+            [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Weight
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IOriginServersProperty), fullyQualifiedName: "@alicloud/ros-cdk-cdn.RosDomain.OriginServersProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cdn.RosDomain.IOriginServersProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: content: The address of the origin server. You can specify an IP address or a domain name.
+                /// </remarks>
+                [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Content
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: type: The type of the origin server. Valid values:
+                /// ipaddr: the IP address
+                /// domain: the domain name
+                /// oss: the endpoint of an Object Storage Service (OSS) bucket
+                /// fc_domain: the domain name of Function Compute
+                /// </remarks>
+                [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Type
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: port: The port. Valid values:
+                /// 80: the default port
+                /// 443: the HTTPS port
+                /// A custom port
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Port
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: priority: The priority of the origin server if multiple origin servers are specified. Default value: 20. Valid values:
+                /// 20: the primary origin server
+                /// 30: the secondary origin server
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Priority
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: weight: The weight of the origin server if multiple origin servers are specified. Valid values: 0 to 100. Default value: 10.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Weight
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-cdn.RosDomain.OriginServersProperty")]
+        public class OriginServersProperty : AlibabaCloud.SDK.ROS.CDK.Cdn.RosDomain.IOriginServersProperty
+        {
+            private object _content;
+
+            /// <remarks>
+            /// <strong>Property</strong>: content: The address of the origin server. You can specify an IP address or a domain name.
+            /// </remarks>
+            [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Content
+            {
+                get => _content;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _content = value;
+                }
+            }
+
+            private object _type;
+
+            /// <remarks>
+            /// <strong>Property</strong>: type: The type of the origin server. Valid values:
+            /// ipaddr: the IP address
+            /// domain: the domain name
+            /// oss: the endpoint of an Object Storage Service (OSS) bucket
+            /// fc_domain: the domain name of Function Compute
+            /// </remarks>
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Type
+            {
+                get => _type;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _type = value;
+                }
+            }
+
+            private object? _port;
+
+            /// <remarks>
+            /// <strong>Property</strong>: port: The port. Valid values:
+            /// 80: the default port
+            /// 443: the HTTPS port
+            /// A custom port
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Port
+            {
+                get => _port;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _port = value;
+                }
+            }
+
+            private object? _priority;
+
+            /// <remarks>
+            /// <strong>Property</strong>: priority: The priority of the origin server if multiple origin servers are specified. Default value: 20. Valid values:
+            /// 20: the primary origin server
+            /// 30: the secondary origin server
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Priority
+            {
+                get => _priority;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _priority = value;
+                }
+            }
+
+            private object? _weight;
+
+            /// <remarks>
+            /// <strong>Property</strong>: weight: The weight of the origin server if multiple origin servers are specified. Valid values: 0 to 100. Default value: 10.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Weight
+            {
+                get => _weight;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _weight = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-cdn.RosDomain.TagsProperty")]

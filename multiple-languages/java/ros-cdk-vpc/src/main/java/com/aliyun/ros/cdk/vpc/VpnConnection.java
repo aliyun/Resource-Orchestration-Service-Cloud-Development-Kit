@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  <code>ALIYUN::VPC::VpnConnection</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.359Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.741Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnConnection")
 public class VpnConnection extends com.aliyun.ros.cdk.core.Resource {
 
@@ -104,27 +104,6 @@ public class VpnConnection extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property customerGatewayId: The ID of the user gateway.
-         * <p>
-         * @return {@code this}
-         * @param customerGatewayId Property customerGatewayId: The ID of the user gateway. This parameter is required.
-         */
-        public Builder customerGatewayId(final java.lang.String customerGatewayId) {
-            this.props.customerGatewayId(customerGatewayId);
-            return this;
-        }
-        /**
-         * Property customerGatewayId: The ID of the user gateway.
-         * <p>
-         * @return {@code this}
-         * @param customerGatewayId Property customerGatewayId: The ID of the user gateway. This parameter is required.
-         */
-        public Builder customerGatewayId(final com.aliyun.ros.cdk.core.IResolvable customerGatewayId) {
-            this.props.customerGatewayId(customerGatewayId);
-            return this;
-        }
-
-        /**
          * Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
          * <p>
          * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
@@ -196,6 +175,87 @@ public class VpnConnection extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property autoConfigRoute: Specifies whether to automatically configure routes.
+         * <p>
+         * Valid values:
+         * true (default)
+         * false
+         * <p>
+         * @return {@code this}
+         * @param autoConfigRoute Property autoConfigRoute: Specifies whether to automatically configure routes. This parameter is required.
+         */
+        public Builder autoConfigRoute(final java.lang.Boolean autoConfigRoute) {
+            this.props.autoConfigRoute(autoConfigRoute);
+            return this;
+        }
+        /**
+         * Property autoConfigRoute: Specifies whether to automatically configure routes.
+         * <p>
+         * Valid values:
+         * true (default)
+         * false
+         * <p>
+         * @return {@code this}
+         * @param autoConfigRoute Property autoConfigRoute: Specifies whether to automatically configure routes. This parameter is required.
+         */
+        public Builder autoConfigRoute(final com.aliyun.ros.cdk.core.IResolvable autoConfigRoute) {
+            this.props.autoConfigRoute(autoConfigRoute);
+            return this;
+        }
+
+        /**
+         * Property bgpConfig: The Border Gateway Protocol (BGP) configuration.
+         * <p>
+         * This parameter is required when the VPN gateway has dynamic BGP enabled.
+         * Before you configure BGP, we recommend that you learn about how BGP works and its limits. For more information, see VPN Gateway supports BGP dynamic routing.
+         * We recommend that you use a private ASN to establish a connection with Alibaba Cloud over BGP.
+         * Refer to the relevant documentation for the private ASN range.
+         * <p>
+         * @return {@code this}
+         * @param bgpConfig Property bgpConfig: The Border Gateway Protocol (BGP) configuration. This parameter is required.
+         */
+        public Builder bgpConfig(final com.aliyun.ros.cdk.core.IResolvable bgpConfig) {
+            this.props.bgpConfig(bgpConfig);
+            return this;
+        }
+        /**
+         * Property bgpConfig: The Border Gateway Protocol (BGP) configuration.
+         * <p>
+         * This parameter is required when the VPN gateway has dynamic BGP enabled.
+         * Before you configure BGP, we recommend that you learn about how BGP works and its limits. For more information, see VPN Gateway supports BGP dynamic routing.
+         * We recommend that you use a private ASN to establish a connection with Alibaba Cloud over BGP.
+         * Refer to the relevant documentation for the private ASN range.
+         * <p>
+         * @return {@code this}
+         * @param bgpConfig Property bgpConfig: The Border Gateway Protocol (BGP) configuration. This parameter is required.
+         */
+        public Builder bgpConfig(final com.aliyun.ros.cdk.vpc.RosVpnConnection.BgpConfigProperty bgpConfig) {
+            this.props.bgpConfig(bgpConfig);
+            return this;
+        }
+
+        /**
+         * Property customerGatewayId: The ID of the user gateway.
+         * <p>
+         * @return {@code this}
+         * @param customerGatewayId Property customerGatewayId: The ID of the user gateway. This parameter is required.
+         */
+        public Builder customerGatewayId(final java.lang.String customerGatewayId) {
+            this.props.customerGatewayId(customerGatewayId);
+            return this;
+        }
+        /**
+         * Property customerGatewayId: The ID of the user gateway.
+         * <p>
+         * @return {@code this}
+         * @param customerGatewayId Property customerGatewayId: The ID of the user gateway. This parameter is required.
+         */
+        public Builder customerGatewayId(final com.aliyun.ros.cdk.core.IResolvable customerGatewayId) {
+            this.props.customerGatewayId(customerGatewayId);
+            return this;
+        }
+
+        /**
          * Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation.
          * <p>
          * Value:
@@ -221,6 +281,89 @@ public class VpnConnection extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder effectImmediately(final com.aliyun.ros.cdk.core.IResolvable effectImmediately) {
             this.props.effectImmediately(effectImmediately);
+            return this;
+        }
+
+        /**
+         * Property enableDpd: Specifies whether to enable the dead peer detection (DPD) feature.
+         * <p>
+         * Valid values:
+         * true (default) The initiator of the IPsec-VPN connection sends DPD packets to verify the existence and availability of the peer. If no response is received from the peer within a specified period of time, the connection fails. ISAKMP SAs and IPsec SAs are deleted. The IPsec tunnel is also deleted.
+         * false: disables DPD. The IPsec initiator does not send DPD packets.
+         * <p>
+         * @return {@code this}
+         * @param enableDpd Property enableDpd: Specifies whether to enable the dead peer detection (DPD) feature. This parameter is required.
+         */
+        public Builder enableDpd(final java.lang.Boolean enableDpd) {
+            this.props.enableDpd(enableDpd);
+            return this;
+        }
+        /**
+         * Property enableDpd: Specifies whether to enable the dead peer detection (DPD) feature.
+         * <p>
+         * Valid values:
+         * true (default) The initiator of the IPsec-VPN connection sends DPD packets to verify the existence and availability of the peer. If no response is received from the peer within a specified period of time, the connection fails. ISAKMP SAs and IPsec SAs are deleted. The IPsec tunnel is also deleted.
+         * false: disables DPD. The IPsec initiator does not send DPD packets.
+         * <p>
+         * @return {@code this}
+         * @param enableDpd Property enableDpd: Specifies whether to enable the dead peer detection (DPD) feature. This parameter is required.
+         */
+        public Builder enableDpd(final com.aliyun.ros.cdk.core.IResolvable enableDpd) {
+            this.props.enableDpd(enableDpd);
+            return this;
+        }
+
+        /**
+         * Property enableNatTraversal: Specifies whether to enable NAT traversal.
+         * <p>
+         * Valid values:
+         * true (default) After NAT traversal is enabled, the initiator does not check the UDP ports during IKE negotiations and can automatically discover NAT gateway devices along the VPN tunnel.
+         * false
+         * <p>
+         * @return {@code this}
+         * @param enableNatTraversal Property enableNatTraversal: Specifies whether to enable NAT traversal. This parameter is required.
+         */
+        public Builder enableNatTraversal(final java.lang.Boolean enableNatTraversal) {
+            this.props.enableNatTraversal(enableNatTraversal);
+            return this;
+        }
+        /**
+         * Property enableNatTraversal: Specifies whether to enable NAT traversal.
+         * <p>
+         * Valid values:
+         * true (default) After NAT traversal is enabled, the initiator does not check the UDP ports during IKE negotiations and can automatically discover NAT gateway devices along the VPN tunnel.
+         * false
+         * <p>
+         * @return {@code this}
+         * @param enableNatTraversal Property enableNatTraversal: Specifies whether to enable NAT traversal. This parameter is required.
+         */
+        public Builder enableNatTraversal(final com.aliyun.ros.cdk.core.IResolvable enableNatTraversal) {
+            this.props.enableNatTraversal(enableNatTraversal);
+            return this;
+        }
+
+        /**
+         * Property enableTunnelsBgp: Specifies whether to enable the BGP feature for the tunnel.
+         * <p>
+         * Valid values: true and false. Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param enableTunnelsBgp Property enableTunnelsBgp: Specifies whether to enable the BGP feature for the tunnel. This parameter is required.
+         */
+        public Builder enableTunnelsBgp(final java.lang.Boolean enableTunnelsBgp) {
+            this.props.enableTunnelsBgp(enableTunnelsBgp);
+            return this;
+        }
+        /**
+         * Property enableTunnelsBgp: Specifies whether to enable the BGP feature for the tunnel.
+         * <p>
+         * Valid values: true and false. Default value: false.
+         * <p>
+         * @return {@code this}
+         * @param enableTunnelsBgp Property enableTunnelsBgp: Specifies whether to enable the BGP feature for the tunnel. This parameter is required.
+         */
+        public Builder enableTunnelsBgp(final com.aliyun.ros.cdk.core.IResolvable enableTunnelsBgp) {
+            this.props.enableTunnelsBgp(enableTunnelsBgp);
             return this;
         }
 
@@ -309,6 +452,58 @@ public class VpnConnection extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * Property remoteCaCertificate: The peer CA certificate when a ShangMi (SM) VPN gateway is used to establish the IPsec-VPN connection.
+         * <p>
+         * This parameter is required when an SM VPN gateway is used to establish the IPsec-VPN connection.
+         * You can ignore this parameter when a standard VPN gateway is used to create the IPsec-VPN connection.
+         * <p>
+         * @return {@code this}
+         * @param remoteCaCertificate Property remoteCaCertificate: The peer CA certificate when a ShangMi (SM) VPN gateway is used to establish the IPsec-VPN connection. This parameter is required.
+         */
+        public Builder remoteCaCertificate(final java.lang.String remoteCaCertificate) {
+            this.props.remoteCaCertificate(remoteCaCertificate);
+            return this;
+        }
+        /**
+         * Property remoteCaCertificate: The peer CA certificate when a ShangMi (SM) VPN gateway is used to establish the IPsec-VPN connection.
+         * <p>
+         * This parameter is required when an SM VPN gateway is used to establish the IPsec-VPN connection.
+         * You can ignore this parameter when a standard VPN gateway is used to create the IPsec-VPN connection.
+         * <p>
+         * @return {@code this}
+         * @param remoteCaCertificate Property remoteCaCertificate: The peer CA certificate when a ShangMi (SM) VPN gateway is used to establish the IPsec-VPN connection. This parameter is required.
+         */
+        public Builder remoteCaCertificate(final com.aliyun.ros.cdk.core.IResolvable remoteCaCertificate) {
+            this.props.remoteCaCertificate(remoteCaCertificate);
+            return this;
+        }
+
+        /**
+         * Property tunnelOptionsSpecification: TunnelOptionsSpecification parameters are supported by dual-tunnel IPsec-VPN gateways.
+         * <p>
+         * You can modify both the active and standby tunnels of the IPsec-VPN connection.
+         * <p>
+         * @return {@code this}
+         * @param tunnelOptionsSpecification Property tunnelOptionsSpecification: TunnelOptionsSpecification parameters are supported by dual-tunnel IPsec-VPN gateways. This parameter is required.
+         */
+        public Builder tunnelOptionsSpecification(final com.aliyun.ros.cdk.core.IResolvable tunnelOptionsSpecification) {
+            this.props.tunnelOptionsSpecification(tunnelOptionsSpecification);
+            return this;
+        }
+        /**
+         * Property tunnelOptionsSpecification: TunnelOptionsSpecification parameters are supported by dual-tunnel IPsec-VPN gateways.
+         * <p>
+         * You can modify both the active and standby tunnels of the IPsec-VPN connection.
+         * <p>
+         * @return {@code this}
+         * @param tunnelOptionsSpecification Property tunnelOptionsSpecification: TunnelOptionsSpecification parameters are supported by dual-tunnel IPsec-VPN gateways. This parameter is required.
+         */
+        public Builder tunnelOptionsSpecification(final java.util.List<? extends java.lang.Object> tunnelOptionsSpecification) {
+            this.props.tunnelOptionsSpecification(tunnelOptionsSpecification);
             return this;
         }
 
