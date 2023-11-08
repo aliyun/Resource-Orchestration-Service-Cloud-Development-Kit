@@ -14,3 +14,7 @@
 @alicloud/ros-cdk-rocketmq5.RosTopicProps=com.aliyun.ros.cdk.rocketmq5.RosTopicProps
 @alicloud/ros-cdk-rocketmq5.Topic=com.aliyun.ros.cdk.rocketmq5.Topic
 @alicloud/ros-cdk-rocketmq5.TopicProps=com.aliyun.ros.cdk.rocketmq5.TopicProps
+@alicloud/ros-cdk-rocketmq5.datasource.ConsumerGroups=com.aliyun.ros.cdk.rocketmq5.datasource.ConsumerGroups
+@alicloud/ros-cdk-rocketmq5.datasource.ConsumerGroupsProps=com.aliyun.ros.cdk.rocketmq5.datasource.ConsumerGroupsProps
+@alicloud/ros-cdk-rocketmq5.datasource.RosConsumerGroups=com.aliyun.ros.cdk.rocketmq5.datasource.RosConsumerGroups
+@alicloud/ros-cdk-rocketmq5.datasource.RosConsumerGroupsProps=com.aliyun.ros.cdk.rocketmq5.datasource.RosConsumerGroupsProps

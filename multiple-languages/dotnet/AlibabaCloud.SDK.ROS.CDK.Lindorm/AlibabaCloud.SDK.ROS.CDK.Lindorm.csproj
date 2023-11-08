@@ -28,7 +28,7 @@
 		
     
 		
-		<PackageVersion>1.0.20</PackageVersion>
+		<PackageVersion>1.0.21</PackageVersion>
 		
 		
     
@@ -127,7 +127,7 @@
 		
     
 		
-		<EmbeddedResource Include="alicloud-ros-cdk-lindorm-1.0.20.tgz"/>
+		<EmbeddedResource Include="alicloud-ros-cdk-lindorm-1.0.21.tgz"/>
 		
 		
   

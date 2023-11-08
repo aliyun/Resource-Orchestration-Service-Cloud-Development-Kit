@@ -38,6 +38,7 @@ export * from './trafficmirrorsession';
 export * from './trafficmirrorsessionsourcesaddition';
 export * from './virtualborderrouter';
 export * from './vpcpeerconnection';
+export * from './vpnattachment';
 export * from './vpnconnection';
 export * from './vpngateway';
 export * from './vpnpbrrouteentry';

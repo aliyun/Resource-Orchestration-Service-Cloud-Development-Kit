@@ -284,15 +284,149 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         public interface IEndpointConfigProperty
         {
             /// <remarks>
+            /// <strong>Property</strong>: connectionPersist: Set up a connection pool. Valid values:
+            /// off: Turn off the connection pool (default value)
+            /// Session: Enable session-level connection pooling
+            /// Transaction: Enable transaction-level connection pooling.
+            /// </remarks>
+            [JsiiProperty(name: "connectionPersist", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ConnectionPersist
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: consistLevel: The consistency level of the cluster connection point. Valid values:
             /// 0: eventual consistency
-            /// 1: session consistency
+            /// 1: session consistency2: Global consistency (strong)
             /// For example, {"ConsistLevel": "0"}.
             /// Note If the ReadWriteMode parameter is set to ReadOnly, the value of this parameter must be 0.
             /// </remarks>
             [JsiiProperty(name: "consistLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? ConsistLevel
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: consistTimeout: Global consistency read timeout.
+            /// </remarks>
+            [JsiiProperty(name: "consistTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ConsistTimeout
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: consistTimeoutAction: Global consistency read timeout policy. Valid values:
+            /// 0: This request occurs to the master node (default).
+            /// 1: Sql error report.
+            /// </remarks>
+            [JsiiProperty(name: "consistTimeoutAction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ConsistTimeoutAction
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: distributedTransaction: Set up transaction splitting. Valid values:
+            /// on: Turn on transaction splitting (default value)
+            /// off: Turn off transaction splitting
+            /// </remarks>
+            [JsiiProperty(name: "distributedTransaction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DistributedTransaction
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableHtapImci: Set up row/column storage to automatically divert traffic. Valid values:
+            /// on: Turn on the automatic traffic diversion function of row storage/column storage
+            /// off: Turn off the automatic drainage function of row storage/column storage (default)
+            /// </remarks>
+            [JsiiProperty(name: "enableHtapImci", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? EnableHtapImci
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableOverloadThrottle: Set whether to enable overload protection. Valid values:
+            /// on: Turn on overload protection.
+            /// off: Turn off overload protection (default).
+            /// </remarks>
+            [JsiiProperty(name: "enableOverloadThrottle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? EnableOverloadThrottle
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: loadBalancePolicy: Set load balancing policy. Valid values:
+            /// 0: Load balancing based on the number of connections (default)
+            /// 1: Load balancing based on the number of active requests
+            /// </remarks>
+            [JsiiProperty(name: "loadBalancePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? LoadBalancePolicy
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: masterAcceptReads: Set whether the main library accepts reading. Valid values:
+            /// on: Indicates that the main library accepts reading.
+            /// off: Indicates that the main library does not accept reading (default value)
+            /// </remarks>
+            [JsiiProperty(name: "masterAcceptReads", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? MasterAcceptReads
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: maxParallelDegree: Set up parallel queries. Valid values:
+            /// on: Enable parallel query.
+            /// off: Turn off parallel query (default).
+            /// </remarks>
+            [JsiiProperty(name: "maxParallelDegree", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? MaxParallelDegree
             {
                 get
                 {
@@ -308,9 +442,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: connectionPersist: Set up a connection pool. Valid values:
+                /// off: Turn off the connection pool (default value)
+                /// Session: Enable session-level connection pooling
+                /// Transaction: Enable transaction-level connection pooling.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "connectionPersist", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConnectionPersist
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: consistLevel: The consistency level of the cluster connection point. Valid values:
                 /// 0: eventual consistency
-                /// 1: session consistency
+                /// 1: session consistency2: Global consistency (strong)
                 /// For example, {"ConsistLevel": "0"}.
                 /// Note If the ReadWriteMode parameter is set to ReadOnly, the value of this parameter must be 0.
                 /// </remarks>
@@ -320,17 +467,147 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 {
                     get => GetInstanceProperty<object?>();
                 }
+
+                /// <remarks>
+                /// <strong>Property</strong>: consistTimeout: Global consistency read timeout.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "consistTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConsistTimeout
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: consistTimeoutAction: Global consistency read timeout policy. Valid values:
+                /// 0: This request occurs to the master node (default).
+                /// 1: Sql error report.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "consistTimeoutAction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConsistTimeoutAction
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: distributedTransaction: Set up transaction splitting. Valid values:
+                /// on: Turn on transaction splitting (default value)
+                /// off: Turn off transaction splitting
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "distributedTransaction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DistributedTransaction
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enableHtapImci: Set up row/column storage to automatically divert traffic. Valid values:
+                /// on: Turn on the automatic traffic diversion function of row storage/column storage
+                /// off: Turn off the automatic drainage function of row storage/column storage (default)
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "enableHtapImci", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? EnableHtapImci
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enableOverloadThrottle: Set whether to enable overload protection. Valid values:
+                /// on: Turn on overload protection.
+                /// off: Turn off overload protection (default).
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "enableOverloadThrottle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? EnableOverloadThrottle
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: loadBalancePolicy: Set load balancing policy. Valid values:
+                /// 0: Load balancing based on the number of connections (default)
+                /// 1: Load balancing based on the number of active requests
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "loadBalancePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? LoadBalancePolicy
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: masterAcceptReads: Set whether the main library accepts reading. Valid values:
+                /// on: Indicates that the main library accepts reading.
+                /// off: Indicates that the main library does not accept reading (default value)
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "masterAcceptReads", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MasterAcceptReads
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: maxParallelDegree: Set up parallel queries. Valid values:
+                /// on: Enable parallel query.
+                /// off: Turn off parallel query (default).
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "maxParallelDegree", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MaxParallelDegree
+                {
+                    get => GetInstanceProperty<object?>();
+                }
             }
         }
         [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.RosDBClusterEndpoint.EndpointConfigProperty")]
         public class EndpointConfigProperty : AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBClusterEndpoint.IEndpointConfigProperty
         {
+            private object? _connectionPersist;
+
+            /// <remarks>
+            /// <strong>Property</strong>: connectionPersist: Set up a connection pool. Valid values:
+            /// off: Turn off the connection pool (default value)
+            /// Session: Enable session-level connection pooling
+            /// Transaction: Enable transaction-level connection pooling.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "connectionPersist", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConnectionPersist
+            {
+                get => _connectionPersist;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _connectionPersist = value;
+                }
+            }
+
             private object? _consistLevel;
 
             /// <remarks>
             /// <strong>Property</strong>: consistLevel: The consistency level of the cluster connection point. Valid values:
             /// 0: eventual consistency
-            /// 1: session consistency
+            /// 1: session consistency2: Global consistency (strong)
             /// For example, {"ConsistLevel": "0"}.
             /// Note If the ReadWriteMode parameter is set to ReadOnly, the value of this parameter must be 0.
             /// </remarks>
@@ -359,6 +636,284 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                         }
                     }
                     _consistLevel = value;
+                }
+            }
+
+            private object? _consistTimeout;
+
+            /// <remarks>
+            /// <strong>Property</strong>: consistTimeout: Global consistency read timeout.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "consistTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConsistTimeout
+            {
+                get => _consistTimeout;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _consistTimeout = value;
+                }
+            }
+
+            private object? _consistTimeoutAction;
+
+            /// <remarks>
+            /// <strong>Property</strong>: consistTimeoutAction: Global consistency read timeout policy. Valid values:
+            /// 0: This request occurs to the master node (default).
+            /// 1: Sql error report.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "consistTimeoutAction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConsistTimeoutAction
+            {
+                get => _consistTimeoutAction;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _consistTimeoutAction = value;
+                }
+            }
+
+            private object? _distributedTransaction;
+
+            /// <remarks>
+            /// <strong>Property</strong>: distributedTransaction: Set up transaction splitting. Valid values:
+            /// on: Turn on transaction splitting (default value)
+            /// off: Turn off transaction splitting
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "distributedTransaction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DistributedTransaction
+            {
+                get => _distributedTransaction;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _distributedTransaction = value;
+                }
+            }
+
+            private object? _enableHtapImci;
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableHtapImci: Set up row/column storage to automatically divert traffic. Valid values:
+            /// on: Turn on the automatic traffic diversion function of row storage/column storage
+            /// off: Turn off the automatic drainage function of row storage/column storage (default)
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableHtapImci", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableHtapImci
+            {
+                get => _enableHtapImci;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enableHtapImci = value;
+                }
+            }
+
+            private object? _enableOverloadThrottle;
+
+            /// <remarks>
+            /// <strong>Property</strong>: enableOverloadThrottle: Set whether to enable overload protection. Valid values:
+            /// on: Turn on overload protection.
+            /// off: Turn off overload protection (default).
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enableOverloadThrottle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnableOverloadThrottle
+            {
+                get => _enableOverloadThrottle;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enableOverloadThrottle = value;
+                }
+            }
+
+            private object? _loadBalancePolicy;
+
+            /// <remarks>
+            /// <strong>Property</strong>: loadBalancePolicy: Set load balancing policy. Valid values:
+            /// 0: Load balancing based on the number of connections (default)
+            /// 1: Load balancing based on the number of active requests
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "loadBalancePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LoadBalancePolicy
+            {
+                get => _loadBalancePolicy;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _loadBalancePolicy = value;
+                }
+            }
+
+            private object? _masterAcceptReads;
+
+            /// <remarks>
+            /// <strong>Property</strong>: masterAcceptReads: Set whether the main library accepts reading. Valid values:
+            /// on: Indicates that the main library accepts reading.
+            /// off: Indicates that the main library does not accept reading (default value)
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "masterAcceptReads", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterAcceptReads
+            {
+                get => _masterAcceptReads;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _masterAcceptReads = value;
+                }
+            }
+
+            private object? _maxParallelDegree;
+
+            /// <remarks>
+            /// <strong>Property</strong>: maxParallelDegree: Set up parallel queries. Valid values:
+            /// on: Enable parallel query.
+            /// off: Turn off parallel query (default).
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "maxParallelDegree", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaxParallelDegree
+            {
+                get => _maxParallelDegree;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _maxParallelDegree = value;
                 }
             }
         }

@@ -1,3 +1,4 @@
+export * from './instances';
 export * from './secrets';
 
 // DATASOURCE::KMS Resources:

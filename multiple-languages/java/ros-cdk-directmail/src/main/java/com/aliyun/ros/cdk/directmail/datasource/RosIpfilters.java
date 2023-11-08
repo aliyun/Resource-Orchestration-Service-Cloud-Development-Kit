@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.directmail.datasource;
 /**
  * A ROS template type:  <code>DATASOURCE::DirectMail::Ipfilters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.181Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.449Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.directmail.$Module.class, fqn = "@alicloud/ros-cdk-directmail.datasource.RosIpfilters")
 public class RosIpfilters extends com.aliyun.ros.cdk.core.RosResource {
 

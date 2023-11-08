@@ -75,6 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <summary>Property defaultNamespace: The default namespace for the application, default value is default.</summary>
         /// <remarks>
         /// If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+        /// If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "defaultNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -104,24 +105,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        private object? _defaultNamespaceDeletion;
+        private object? _rolePolicy;
 
-        /// <summary>Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.</summary>
+        /// <summary>Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.</summary>
         /// <remarks>
-        /// If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</description>
+        /// <description>None: Do nothing.
+        /// The default value is EnsureAdminRoleAndBinding.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "defaultNamespaceDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        public object? DefaultNamespaceDeletion
+        [JsiiProperty(name: "rolePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RolePolicy
         {
-            get => _defaultNamespaceDeletion;
+            get => _rolePolicy;
             set
             {
                 if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
                 {
                     switch (value)
                     {
-                        case bool cast_cd4240:
+                        case string cast_cd4240:
                             break;
                         case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
                             break;
@@ -131,10 +138,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
                         case null:
                             break;
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
-                _defaultNamespaceDeletion = value;
+                _rolePolicy = value;
             }
         }
     }

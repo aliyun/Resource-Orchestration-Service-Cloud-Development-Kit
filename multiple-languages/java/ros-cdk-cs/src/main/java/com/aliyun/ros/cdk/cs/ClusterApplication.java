@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  <code>ALIYUN::CS::ClusterApplication</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.937Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.183Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterApplication")
 public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource {
 
@@ -135,6 +135,7 @@ public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource {
          * Property defaultNamespace: The default namespace for the application, default value is default.
          * <p>
          * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+         * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
          * <p>
          * @return {@code this}
          * @param defaultNamespace Property defaultNamespace: The default namespace for the application, default value is default. This parameter is required.
@@ -147,6 +148,7 @@ public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource {
          * Property defaultNamespace: The default namespace for the application, default value is default.
          * <p>
          * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+         * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
          * <p>
          * @return {@code this}
          * @param defaultNamespace Property defaultNamespace: The default namespace for the application, default value is default. This parameter is required.
@@ -157,27 +159,39 @@ public class ClusterApplication extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.
+         * Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
          * <p>
-         * If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</li>
+         * <li>None: Do nothing.
+         * The default value is EnsureAdminRoleAndBinding.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param defaultNamespaceDeletion Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. This parameter is required.
+         * @param rolePolicy Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. This parameter is required.
          */
-        public Builder defaultNamespaceDeletion(final java.lang.Boolean defaultNamespaceDeletion) {
-            this.props.defaultNamespaceDeletion(defaultNamespaceDeletion);
+        public Builder rolePolicy(final java.lang.String rolePolicy) {
+            this.props.rolePolicy(rolePolicy);
             return this;
         }
         /**
-         * Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace.
+         * Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
          * <p>
-         * If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.</li>
+         * <li>None: Do nothing.
+         * The default value is EnsureAdminRoleAndBinding.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param defaultNamespaceDeletion Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. This parameter is required.
+         * @param rolePolicy Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. This parameter is required.
          */
-        public Builder defaultNamespaceDeletion(final com.aliyun.ros.cdk.core.IResolvable defaultNamespaceDeletion) {
-            this.props.defaultNamespaceDeletion(defaultNamespaceDeletion);
+        public Builder rolePolicy(final com.aliyun.ros.cdk.core.IResolvable rolePolicy) {
+            this.props.rolePolicy(rolePolicy);
             return this;
         }
 

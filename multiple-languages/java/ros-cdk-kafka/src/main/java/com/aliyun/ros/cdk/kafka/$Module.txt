@@ -14,3 +14,7 @@
 @alicloud/ros-cdk-kafka.RosTopicProps=com.aliyun.ros.cdk.kafka.RosTopicProps
 @alicloud/ros-cdk-kafka.Topic=com.aliyun.ros.cdk.kafka.Topic
 @alicloud/ros-cdk-kafka.TopicProps=com.aliyun.ros.cdk.kafka.TopicProps
+@alicloud/ros-cdk-kafka.datasource.Instances=com.aliyun.ros.cdk.kafka.datasource.Instances
+@alicloud/ros-cdk-kafka.datasource.InstancesProps=com.aliyun.ros.cdk.kafka.datasource.InstancesProps
+@alicloud/ros-cdk-kafka.datasource.RosInstances=com.aliyun.ros.cdk.kafka.datasource.RosInstances
+@alicloud/ros-cdk-kafka.datasource.RosInstancesProps=com.aliyun.ros.cdk.kafka.datasource.RosInstancesProps

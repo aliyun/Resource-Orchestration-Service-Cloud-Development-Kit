@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a <code>ALIYUN::POLARDB::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.980Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.461Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -103,6 +103,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
      * Currently, only VPC is supported. Default value: VPC.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getClusterNetworkType() {
+        return null;
+    }
+
+    /**
+     * Property coldStorageOption: The option of cold storage.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getColdStorageOption() {
         return null;
     }
 
@@ -329,6 +336,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property restartMasterNode: Whether to restart the master node.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRestartMasterNode() {
+        return null;
+    }
+
+    /**
      * Property scaleMax: Maximum limit of single-node scaling.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getScaleMax() {
@@ -528,6 +542,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object backupRetentionPolicyOnClusterDeletion;
         java.lang.Object cloneDataPoint;
         java.lang.Object clusterNetworkType;
+        java.lang.Object coldStorageOption;
         java.lang.Object creationCategory;
         java.lang.Object creationOption;
         java.lang.Object dbClusterDescription;
@@ -549,6 +564,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object proxyType;
         java.lang.Object renewalStatus;
         java.lang.Object resourceGroupId;
+        java.lang.Object restartMasterNode;
         java.lang.Object scaleMax;
         java.lang.Object scaleMin;
         java.lang.Object scaleRoNumMax;
@@ -821,6 +837,26 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder clusterNetworkType(com.aliyun.ros.cdk.core.IResolvable clusterNetworkType) {
             this.clusterNetworkType = clusterNetworkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getColdStorageOption}
+         * @param coldStorageOption Property coldStorageOption: The option of cold storage.
+         * @return {@code this}
+         */
+        public Builder coldStorageOption(com.aliyun.ros.cdk.core.IResolvable coldStorageOption) {
+            this.coldStorageOption = coldStorageOption;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getColdStorageOption}
+         * @param coldStorageOption Property coldStorageOption: The option of cold storage.
+         * @return {@code this}
+         */
+        public Builder coldStorageOption(com.aliyun.ros.cdk.polardb.RosDBCluster.ColdStorageOptionProperty coldStorageOption) {
+            this.coldStorageOption = coldStorageOption;
             return this;
         }
 
@@ -1363,6 +1399,26 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBClusterProps#getRestartMasterNode}
+         * @param restartMasterNode Property restartMasterNode: Whether to restart the master node.
+         * @return {@code this}
+         */
+        public Builder restartMasterNode(java.lang.Boolean restartMasterNode) {
+            this.restartMasterNode = restartMasterNode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBClusterProps#getRestartMasterNode}
+         * @param restartMasterNode Property restartMasterNode: Whether to restart the master node.
+         * @return {@code this}
+         */
+        public Builder restartMasterNode(com.aliyun.ros.cdk.core.IResolvable restartMasterNode) {
+            this.restartMasterNode = restartMasterNode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBClusterProps#getScaleMax}
          * @param scaleMax Property scaleMax: Maximum limit of single-node scaling.
          * @return {@code this}
@@ -1836,6 +1892,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object backupRetentionPolicyOnClusterDeletion;
         private final java.lang.Object cloneDataPoint;
         private final java.lang.Object clusterNetworkType;
+        private final java.lang.Object coldStorageOption;
         private final java.lang.Object creationCategory;
         private final java.lang.Object creationOption;
         private final java.lang.Object dbClusterDescription;
@@ -1857,6 +1914,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object proxyType;
         private final java.lang.Object renewalStatus;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object restartMasterNode;
         private final java.lang.Object scaleMax;
         private final java.lang.Object scaleMin;
         private final java.lang.Object scaleRoNumMax;
@@ -1894,6 +1952,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.backupRetentionPolicyOnClusterDeletion = software.amazon.jsii.Kernel.get(this, "backupRetentionPolicyOnClusterDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloneDataPoint = software.amazon.jsii.Kernel.get(this, "cloneDataPoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterNetworkType = software.amazon.jsii.Kernel.get(this, "clusterNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.coldStorageOption = software.amazon.jsii.Kernel.get(this, "coldStorageOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.creationCategory = software.amazon.jsii.Kernel.get(this, "creationCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.creationOption = software.amazon.jsii.Kernel.get(this, "creationOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbClusterDescription = software.amazon.jsii.Kernel.get(this, "dbClusterDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1915,6 +1974,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.proxyType = software.amazon.jsii.Kernel.get(this, "proxyType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.renewalStatus = software.amazon.jsii.Kernel.get(this, "renewalStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restartMasterNode = software.amazon.jsii.Kernel.get(this, "restartMasterNode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scaleMax = software.amazon.jsii.Kernel.get(this, "scaleMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scaleMin = software.amazon.jsii.Kernel.get(this, "scaleMin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scaleRoNumMax = software.amazon.jsii.Kernel.get(this, "scaleRoNumMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1953,6 +2013,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.backupRetentionPolicyOnClusterDeletion = builder.backupRetentionPolicyOnClusterDeletion;
             this.cloneDataPoint = builder.cloneDataPoint;
             this.clusterNetworkType = builder.clusterNetworkType;
+            this.coldStorageOption = builder.coldStorageOption;
             this.creationCategory = builder.creationCategory;
             this.creationOption = builder.creationOption;
             this.dbClusterDescription = builder.dbClusterDescription;
@@ -1974,6 +2035,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.proxyType = builder.proxyType;
             this.renewalStatus = builder.renewalStatus;
             this.resourceGroupId = builder.resourceGroupId;
+            this.restartMasterNode = builder.restartMasterNode;
             this.scaleMax = builder.scaleMax;
             this.scaleMin = builder.scaleMin;
             this.scaleRoNumMax = builder.scaleRoNumMax;
@@ -2044,6 +2106,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getClusterNetworkType() {
             return this.clusterNetworkType;
+        }
+
+        @Override
+        public final java.lang.Object getColdStorageOption() {
+            return this.coldStorageOption;
         }
 
         @Override
@@ -2149,6 +2216,11 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getRestartMasterNode() {
+            return this.restartMasterNode;
         }
 
         @Override
@@ -2279,6 +2351,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getClusterNetworkType() != null) {
                 data.set("clusterNetworkType", om.valueToTree(this.getClusterNetworkType()));
             }
+            if (this.getColdStorageOption() != null) {
+                data.set("coldStorageOption", om.valueToTree(this.getColdStorageOption()));
+            }
             if (this.getCreationCategory() != null) {
                 data.set("creationCategory", om.valueToTree(this.getCreationCategory()));
             }
@@ -2341,6 +2416,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getRestartMasterNode() != null) {
+                data.set("restartMasterNode", om.valueToTree(this.getRestartMasterNode()));
             }
             if (this.getScaleMax() != null) {
                 data.set("scaleMax", om.valueToTree(this.getScaleMax()));
@@ -2430,6 +2508,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.backupRetentionPolicyOnClusterDeletion != null ? !this.backupRetentionPolicyOnClusterDeletion.equals(that.backupRetentionPolicyOnClusterDeletion) : that.backupRetentionPolicyOnClusterDeletion != null) return false;
             if (this.cloneDataPoint != null ? !this.cloneDataPoint.equals(that.cloneDataPoint) : that.cloneDataPoint != null) return false;
             if (this.clusterNetworkType != null ? !this.clusterNetworkType.equals(that.clusterNetworkType) : that.clusterNetworkType != null) return false;
+            if (this.coldStorageOption != null ? !this.coldStorageOption.equals(that.coldStorageOption) : that.coldStorageOption != null) return false;
             if (this.creationCategory != null ? !this.creationCategory.equals(that.creationCategory) : that.creationCategory != null) return false;
             if (this.creationOption != null ? !this.creationOption.equals(that.creationOption) : that.creationOption != null) return false;
             if (this.dbClusterDescription != null ? !this.dbClusterDescription.equals(that.dbClusterDescription) : that.dbClusterDescription != null) return false;
@@ -2451,6 +2530,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.proxyType != null ? !this.proxyType.equals(that.proxyType) : that.proxyType != null) return false;
             if (this.renewalStatus != null ? !this.renewalStatus.equals(that.renewalStatus) : that.renewalStatus != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.restartMasterNode != null ? !this.restartMasterNode.equals(that.restartMasterNode) : that.restartMasterNode != null) return false;
             if (this.scaleMax != null ? !this.scaleMax.equals(that.scaleMax) : that.scaleMax != null) return false;
             if (this.scaleMin != null ? !this.scaleMin.equals(that.scaleMin) : that.scaleMin != null) return false;
             if (this.scaleRoNumMax != null ? !this.scaleRoNumMax.equals(that.scaleRoNumMax) : that.scaleRoNumMax != null) return false;
@@ -2485,6 +2565,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.backupRetentionPolicyOnClusterDeletion != null ? this.backupRetentionPolicyOnClusterDeletion.hashCode() : 0);
             result = 31 * result + (this.cloneDataPoint != null ? this.cloneDataPoint.hashCode() : 0);
             result = 31 * result + (this.clusterNetworkType != null ? this.clusterNetworkType.hashCode() : 0);
+            result = 31 * result + (this.coldStorageOption != null ? this.coldStorageOption.hashCode() : 0);
             result = 31 * result + (this.creationCategory != null ? this.creationCategory.hashCode() : 0);
             result = 31 * result + (this.creationOption != null ? this.creationOption.hashCode() : 0);
             result = 31 * result + (this.dbClusterDescription != null ? this.dbClusterDescription.hashCode() : 0);
@@ -2506,6 +2587,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.proxyType != null ? this.proxyType.hashCode() : 0);
             result = 31 * result + (this.renewalStatus != null ? this.renewalStatus.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.restartMasterNode != null ? this.restartMasterNode.hashCode() : 0);
             result = 31 * result + (this.scaleMax != null ? this.scaleMax.hashCode() : 0);
             result = 31 * result + (this.scaleMin != null ? this.scaleMin.hashCode() : 0);
             result = 31 * result + (this.scaleRoNumMax != null ? this.scaleRoNumMax.hashCode() : 0);

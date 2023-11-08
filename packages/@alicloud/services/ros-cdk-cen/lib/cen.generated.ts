@@ -3908,3 +3908,310 @@ function rosTransitRouterVpcAttachmentZoneMappingsPropertyToRosTemplate(properti
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
+
+/**
+ * Properties for defining a `ALIYUN::CEN::TransitRouterVpnAttachment`
+ */
+export interface RosTransitRouterVpnAttachmentProps {
+
+    /**
+     * @Property vpnId: IPsec connection ID
+     */
+    readonly vpnId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Availability zone ID in the current region.
+     */
+    readonly zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property autoPublishRouteEnabled: Whether to allow forwarding router instances to automatically publish route entries to IPsec connections. Default is true.
+     */
+    readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    readonly cenId?: string | ros.IResolvable;
+
+    /**
+     * @Property deletionForce: Whether to forcefully delete the VPN connection.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
+     * @Property routeTableAssociationEnabled: Whether to enable route association and forwarding relationship.
+     */
+    readonly routeTableAssociationEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property routeTablePropagationEnabled: Whether to enable route learning relationships.
+     */
+    readonly routeTablePropagationEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to TransitRouterVpnAttachment. Max support 20 tags to add during create TransitRouterVpnAttachment. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosTransitRouterVpnAttachment.TagsProperty[];
+
+    /**
+     * @Property transitRouterAttachmentDescription: Description of the VPN connection.
+     */
+    readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterAttachmentName: The name of the VPN connection.
+     */
+    readonly transitRouterAttachmentName?: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: Forwarding router instance ID
+     */
+    readonly transitRouterId?: string | ros.IResolvable;
+
+    /**
+     * @Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+     */
+    readonly vpnOwnerId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterVpnAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterVpnAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterVpnAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('autoPublishRouteEnabled', ros.validateBoolean)(properties.autoPublishRouteEnabled));
+    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateBoolean)(properties.routeTableAssociationEnabled));
+    errors.collect(ros.propertyValidator('vpnOwnerId', ros.validateString)(properties.vpnOwnerId));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateBoolean)(properties.routeTablePropagationEnabled));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosTransitRouterVpnAttachment_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateString)(properties.transitRouterAttachmentDescription));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    errors.collect(ros.propertyValidator('vpnId', ros.requiredValidator)(properties.vpnId));
+    errors.collect(ros.propertyValidator('vpnId', ros.validateString)(properties.vpnId));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterVpnAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterVpnAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterVpnAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterVpnAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterVpnAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterVpnAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      VpnId: ros.stringToRosTemplate(properties.vpnId),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      AutoPublishRouteEnabled: ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
+      CenId: ros.stringToRosTemplate(properties.cenId),
+      DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
+      RouteTableAssociationEnabled: ros.booleanToRosTemplate(properties.routeTableAssociationEnabled),
+      RouteTablePropagationEnabled: ros.booleanToRosTemplate(properties.routeTablePropagationEnabled),
+      Tags: ros.listMapper(rosTransitRouterVpnAttachmentTagsPropertyToRosTemplate)(properties.tags),
+      TransitRouterAttachmentDescription: ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
+      TransitRouterAttachmentName: ros.stringToRosTemplate(properties.transitRouterAttachmentName),
+      TransitRouterId: ros.stringToRosTemplate(properties.transitRouterId),
+      VpnOwnerId: ros.stringToRosTemplate(properties.vpnOwnerId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::CEN::TransitRouterVpnAttachment`
+ */
+export class RosTransitRouterVpnAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterVpnAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute TransitRouterAttachmentId: The ID of the VPN connection.
+     */
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vpnId: IPsec connection ID
+     */
+    public vpnId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Availability zone ID in the current region.
+     */
+    public zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property autoPublishRouteEnabled: Whether to allow forwarding router instances to automatically publish route entries to IPsec connections. Default is true.
+     */
+    public autoPublishRouteEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property cenId: The ID of the CEN instance.
+     */
+    public cenId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deletionForce: Whether to forcefully delete the VPN connection.
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTableAssociationEnabled: Whether to enable route association and forwarding relationship.
+     */
+    public routeTableAssociationEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTablePropagationEnabled: Whether to enable route learning relationships.
+     */
+    public routeTablePropagationEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to TransitRouterVpnAttachment. Max support 20 tags to add during create TransitRouterVpnAttachment. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosTransitRouterVpnAttachment.TagsProperty[] | undefined;
+
+    /**
+     * @Property transitRouterAttachmentDescription: Description of the VPN connection.
+     */
+    public transitRouterAttachmentDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterAttachmentName: The name of the VPN connection.
+     */
+    public transitRouterAttachmentName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterId: Forwarding router instance ID
+     */
+    public transitRouterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+     */
+    public vpnOwnerId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::CEN::TransitRouterVpnAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterVpnAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterVpnAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vpnId = props.vpnId;
+        this.zoneId = props.zoneId;
+        this.autoPublishRouteEnabled = props.autoPublishRouteEnabled;
+        this.cenId = props.cenId;
+        this.deletionForce = props.deletionForce;
+        this.routeTableAssociationEnabled = props.routeTableAssociationEnabled;
+        this.routeTablePropagationEnabled = props.routeTablePropagationEnabled;
+        this.tags = props.tags;
+        this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
+        this.transitRouterAttachmentName = props.transitRouterAttachmentName;
+        this.transitRouterId = props.transitRouterId;
+        this.vpnOwnerId = props.vpnOwnerId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vpnId: this.vpnId,
+            zoneId: this.zoneId,
+            autoPublishRouteEnabled: this.autoPublishRouteEnabled,
+            cenId: this.cenId,
+            deletionForce: this.deletionForce,
+            routeTableAssociationEnabled: this.routeTableAssociationEnabled,
+            routeTablePropagationEnabled: this.routeTablePropagationEnabled,
+            tags: this.tags,
+            transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
+            transitRouterAttachmentName: this.transitRouterAttachmentName,
+            transitRouterId: this.transitRouterId,
+            vpnOwnerId: this.vpnOwnerId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterVpnAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosTransitRouterVpnAttachment {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterVpnAttachment_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterVpnAttachment.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterVpnAttachment.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterVpnAttachmentTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosTransitRouterVpnAttachment_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}

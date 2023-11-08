@@ -349,6 +349,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
         }
 
+        /// <summary>Property networkInterfaceTrafficMode: Communication mode of an elastic NIC.</summary>
+        /// <remarks>
+        /// Value values:
+        ///
+        /// <list type="bullet">
+        /// <description><strong>Standard</strong>: The TCP communication mode is used.</description>
+        /// <description><strong>HighPerformance</strong>: Enables the Elastic RDMA Interface (ERI) and uses the RDMA communication mode.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "networkInterfaceTrafficMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NetworkInterfaceTrafficMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property password: Root password of jump server (login node).</summary>
         /// <remarks>
         /// 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ &amp; * - + = | {} []:; '&lt;&gt;, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
@@ -964,6 +983,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             [JsiiOptional]
             [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? KeyPairName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property networkInterfaceTrafficMode: Communication mode of an elastic NIC.</summary>
+            /// <remarks>
+            /// Value values:
+            ///
+            /// <list type="bullet">
+            /// <description><strong>Standard</strong>: The TCP communication mode is used.</description>
+            /// <description><strong>HighPerformance</strong>: Enables the Elastic RDMA Interface (ERI) and uses the RDMA communication mode.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "networkInterfaceTrafficMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NetworkInterfaceTrafficMode
             {
                 get => GetInstanceProperty<object?>();
             }

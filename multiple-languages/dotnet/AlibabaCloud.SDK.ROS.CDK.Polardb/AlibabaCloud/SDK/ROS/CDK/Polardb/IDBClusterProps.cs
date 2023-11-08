@@ -147,6 +147,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
+        /// <summary>Property coldStorageOption: The option of cold storage.</summary>
+        [JsiiProperty(name: "coldStorageOption", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ColdStorageOption
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property creationCategory: Cluster series.</summary>
         /// <remarks>
         /// The value could be Normal (standard version), Basic and ArchiveNormal.
@@ -462,6 +473,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property restartMasterNode: Whether to restart the master node.</summary>
+        [JsiiProperty(name: "restartMasterNode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RestartMasterNode
         {
             get
             {
@@ -869,6 +891,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property coldStorageOption: The option of cold storage.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "coldStorageOption", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty\"}]}}", isOptional: true)]
+            public object? ColdStorageOption
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property creationCategory: Cluster series.</summary>
             /// <remarks>
             /// The value could be Normal (standard version), Basic and ArchiveNormal.
@@ -1124,6 +1154,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property restartMasterNode: Whether to restart the master node.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "restartMasterNode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RestartMasterNode
             {
                 get => GetInstanceProperty<object?>();
             }

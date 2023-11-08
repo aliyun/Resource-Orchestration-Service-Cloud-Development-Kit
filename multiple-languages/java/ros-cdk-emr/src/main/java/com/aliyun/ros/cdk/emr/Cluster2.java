@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * A ROS resource type:  <code>ALIYUN::EMR::Cluster2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.013Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.388Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.Cluster2")
 public class Cluster2 extends com.aliyun.ros.cdk.core.Resource {
 
@@ -139,20 +139,20 @@ public class Cluster2 extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property clusterType: Cluster type.Ranges: Datalake: The new version of the data lake. OLAP: Data analysis. DataFlow: Real -time data stream. DataServing: Data service. Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+         * Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
          * <p>
          * @return {@code this}
-         * @param clusterType Property clusterType: Cluster type.Ranges: Datalake: The new version of the data lake. OLAP: Data analysis. DataFlow: Real -time data stream. DataServing: Data service. Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
+         * @param clusterType Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
          */
         public Builder clusterType(final java.lang.String clusterType) {
             this.props.clusterType(clusterType);
             return this;
         }
         /**
-         * Property clusterType: Cluster type.Ranges: Datalake: The new version of the data lake. OLAP: Data analysis. DataFlow: Real -time data stream. DataServing: Data service. Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+         * Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
          * <p>
          * @return {@code this}
-         * @param clusterType Property clusterType: Cluster type.Ranges: Datalake: The new version of the data lake. OLAP: Data analysis. DataFlow: Real -time data stream. DataServing: Data service. Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
+         * @param clusterType Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
          */
         public Builder clusterType(final com.aliyun.ros.cdk.core.IResolvable clusterType) {
             this.props.clusterType(clusterType);

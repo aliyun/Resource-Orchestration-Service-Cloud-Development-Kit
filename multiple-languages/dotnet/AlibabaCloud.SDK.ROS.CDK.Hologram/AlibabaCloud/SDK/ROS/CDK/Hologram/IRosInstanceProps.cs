@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
         /// <remarks>
         /// <strong>Property</strong>: endpoints: List of domain names.
         /// </remarks>
-        [JsiiProperty(name: "endpoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-hologram.RosInstance.EndpointsProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        [JsiiProperty(name: "endpoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-hologram.RosInstance.EndpointsProperty\"}]}},\"kind\":\"array\"}}]}}")]
         object Endpoints
         {
             get;
@@ -140,6 +140,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: initialDatabases: Initialize the database and split multiple database names ",".
+        /// </remarks>
+        [JsiiProperty(name: "initialDatabases", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InitialDatabases
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: leaderInstanceId: The id of leader instance.
+        /// </remarks>
+        [JsiiProperty(name: "leaderInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LeaderInstanceId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: pricingCycle: Billing cycle. Value:
         /// - Month: monthly billing
         /// - Hour: hourly billing
@@ -240,7 +266,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
             /// <remarks>
             /// <strong>Property</strong>: endpoints: List of domain names.
             /// </remarks>
-            [JsiiProperty(name: "endpoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-hologram.RosInstance.EndpointsProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+            [JsiiProperty(name: "endpoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-hologram.RosInstance.EndpointsProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object Endpoints
             {
                 get => GetInstanceProperty<object>()!;
@@ -349,6 +375,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
             [JsiiOptional]
             [JsiiProperty(name: "gatewayCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? GatewayCount
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: initialDatabases: Initialize the database and split multiple database names ",".
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "initialDatabases", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InitialDatabases
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: leaderInstanceId: The id of leader instance.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "leaderInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LeaderInstanceId
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -45,6 +45,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// VS: Video Surveillance
         /// Xtrace: Tracing Anlaysis
         /// CDN: Content Delivery Network
+        /// CDT: Cloud Data Transfer
+        /// CDTCb: Cloud Data Transfer for Cross Border
+        /// TransitRouter: Cen Transit Router
         /// </remarks>
         [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ServiceName
@@ -97,6 +100,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// VS: Video Surveillance
             /// Xtrace: Tracing Anlaysis
             /// CDN: Content Delivery Network
+            /// CDT: Cloud Data Transfer
+            /// CDTCb: Cloud Data Transfer for Cross Border
+            /// TransitRouter: Cen Transit Router
             /// </remarks>
             [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServiceName

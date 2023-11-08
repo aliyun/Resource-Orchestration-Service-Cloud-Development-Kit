@@ -54,6 +54,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property disasterRecoveryVSwitchId: The second vSwitch with which you want to associate the VPN gateway.</summary>
+        /// <remarks>
+        /// If you call this operation in a region that supports the dual-tunnel mode, this parameter is required.
+        /// You need to specify two vSwitches in different zones from the VPC associated with the VPN gateway to implement disaster recovery across zones.
+        /// For a region that supports only one zone, disaster recovery across zones is not supported. We recommend that you specify two vSwitches in the zone to implement high availability. You can specify the same vSwitch.
+        /// For more information about the regions and zones that support the dual-tunnel mode, see Upgrade a VPN gateway to enable the dual-tunnel mode.
+        /// </remarks>
+        [JsiiProperty(name: "disasterRecoveryVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DisasterRecoveryVSwitchId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property enableIpsec: Whether to enable IPsec-VPN.</summary>
         /// <remarks>
         /// The IPsec-VPN feature provides a site-to-site connection. You can securely connect your local data center network to a private network or two proprietary networks by creating an IPsec tunnel. Value:
@@ -112,6 +129,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property networkType: The network type of the VPN gateway.</summary>
+        /// <remarks>
+        /// Valid values: public|private
+        /// </remarks>
+        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NetworkType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property period: Purchase time, value: 1~9|12|24|36.</summary>
         /// <remarks>
         /// When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
@@ -144,6 +175,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnGateway.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnGateway.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property vpnType: VPN gateway type.</summary>
+        [JsiiProperty(name: "vpnType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? VpnType
         {
             get
             {
@@ -210,6 +252,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property disasterRecoveryVSwitchId: The second vSwitch with which you want to associate the VPN gateway.</summary>
+            /// <remarks>
+            /// If you call this operation in a region that supports the dual-tunnel mode, this parameter is required.
+            /// You need to specify two vSwitches in different zones from the VPC associated with the VPN gateway to implement disaster recovery across zones.
+            /// For a region that supports only one zone, disaster recovery across zones is not supported. We recommend that you specify two vSwitches in the zone to implement high availability. You can specify the same vSwitch.
+            /// For more information about the regions and zones that support the dual-tunnel mode, see Upgrade a VPN gateway to enable the dual-tunnel mode.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "disasterRecoveryVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DisasterRecoveryVSwitchId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property enableIpsec: Whether to enable IPsec-VPN.</summary>
             /// <remarks>
             /// The IPsec-VPN feature provides a site-to-site connection. You can securely connect your local data center network to a private network or two proprietary networks by creating an IPsec tunnel. Value:
@@ -256,6 +312,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property networkType: The network type of the VPN gateway.</summary>
+            /// <remarks>
+            /// Valid values: public|private
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NetworkType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property period: Purchase time, value: 1~9|12|24|36.</summary>
             /// <remarks>
             /// When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
@@ -284,6 +351,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnGateway.ITagsProperty[]? Tags
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnGateway.ITagsProperty[]?>();
+            }
+
+            /// <summary>Property vpnType: VPN gateway type.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpnType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpnType
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.</summary>

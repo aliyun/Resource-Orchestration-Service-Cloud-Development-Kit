@@ -10,6 +10,10 @@
 @alicloud/ros-cdk-kms.RosSecretProps=com.aliyun.ros.cdk.kms.RosSecretProps
 @alicloud/ros-cdk-kms.Secret=com.aliyun.ros.cdk.kms.Secret
 @alicloud/ros-cdk-kms.SecretProps=com.aliyun.ros.cdk.kms.SecretProps
+@alicloud/ros-cdk-kms.datasource.Instances=com.aliyun.ros.cdk.kms.datasource.Instances
+@alicloud/ros-cdk-kms.datasource.InstancesProps=com.aliyun.ros.cdk.kms.datasource.InstancesProps
+@alicloud/ros-cdk-kms.datasource.RosInstances=com.aliyun.ros.cdk.kms.datasource.RosInstances
+@alicloud/ros-cdk-kms.datasource.RosInstancesProps=com.aliyun.ros.cdk.kms.datasource.RosInstancesProps
 @alicloud/ros-cdk-kms.datasource.RosSecrets=com.aliyun.ros.cdk.kms.datasource.RosSecrets
 @alicloud/ros-cdk-kms.datasource.RosSecretsProps=com.aliyun.ros.cdk.kms.datasource.RosSecretsProps
 @alicloud/ros-cdk-kms.datasource.Secrets=com.aliyun.ros.cdk.kms.datasource.Secrets

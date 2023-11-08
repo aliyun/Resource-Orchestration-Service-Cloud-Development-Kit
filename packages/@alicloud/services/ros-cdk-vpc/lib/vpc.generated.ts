@@ -1308,6 +1308,11 @@ export interface RosCustomerGatewayProps {
     readonly ipAddress: string | ros.IResolvable;
 
     /**
+     * @Property asn: The autonomous system number of the local data center gateway device.
+     */
+    readonly asn?: number | ros.IResolvable;
+
+    /**
      * @Property description: Description of the user gateway.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
@@ -1340,6 +1345,14 @@ function RosCustomerGatewayPropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('ipAddress', ros.requiredValidator)(properties.ipAddress));
     errors.collect(ros.propertyValidator('ipAddress', ros.validateString)(properties.ipAddress));
+    if(properties.asn && (typeof properties.asn) !== 'object') {
+        errors.collect(ros.propertyValidator('asn', ros.validateRange)({
+            data: properties.asn,
+            min: 1,
+            max: 4294967295,
+          }));
+    }
+    errors.collect(ros.propertyValidator('asn', ros.validateNumber)(properties.asn));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
@@ -1366,6 +1379,7 @@ function rosCustomerGatewayPropsToRosTemplate(properties: any, enableResourcePro
     }
     return {
       IpAddress: ros.stringToRosTemplate(properties.ipAddress),
+      Asn: ros.numberToRosTemplate(properties.asn),
       Description: ros.stringToRosTemplate(properties.description),
       Name: ros.stringToRosTemplate(properties.name),
     };
@@ -1399,6 +1413,11 @@ export class RosCustomerGateway extends ros.RosResource {
     public ipAddress: string | ros.IResolvable;
 
     /**
+     * @Property asn: The autonomous system number of the local data center gateway device.
+     */
+    public asn: number | ros.IResolvable | undefined;
+
+    /**
      * @Property description: Description of the user gateway.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
@@ -1423,6 +1442,7 @@ export class RosCustomerGateway extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.ipAddress = props.ipAddress;
+        this.asn = props.asn;
         this.description = props.description;
         this.name = props.name;
     }
@@ -1431,6 +1451,7 @@ export class RosCustomerGateway extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             ipAddress: this.ipAddress,
+            asn: this.asn,
             description: this.description,
             name: this.name,
         };
@@ -4709,7 +4730,7 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -6904,7 +6925,7 @@ function RosRouterInterfacePropsValidator(properties: any): ros.ValidationResult
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -8982,9 +9003,9 @@ export class RosVpcPeerConnection extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpnConnection`
+ * Properties for defining a `ALIYUN::VPC::VpnAttachment`
  */
-export interface RosVpnConnectionProps {
+export interface RosVpnAttachmentProps {
 
     /**
      * @Property customerGatewayId: The ID of the user gateway.
@@ -9004,9 +9025,20 @@ export interface RosVpnConnectionProps {
     readonly remoteSubnet: string | ros.IResolvable;
 
     /**
-     * @Property vpnGatewayId: ID of the VPN gateway.
+     * @Property autoConfigRoute: Specifies whether to automatically configure routes. Valid values:
+     * true (default) 
+     * false
      */
-    readonly vpnGatewayId: string | ros.IResolvable;
+    readonly autoConfigRoute?: boolean | ros.IResolvable;
+
+    /**
+     * @Property bgpConfig: The Border Gateway Protocol (BGP) configuration.
+     * This parameter is required when the VPN gateway has dynamic BGP enabled.
+     * Before you configure BGP, we recommend that you learn about how BGP works and its limits. For more information, see VPN Gateway supports BGP dynamic routing.
+     * We recommend that you use a private ASN to establish a connection with Alibaba Cloud over BGP. 
+     * Refer to the relevant documentation for the private ASN range.
+     */
+    readonly bgpConfig?: RosVpnAttachment.BgpConfigProperty | ros.IResolvable;
 
     /**
      * @Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation. Value:
@@ -9014,6 +9046,749 @@ export interface RosVpnConnectionProps {
      * False (default): Negotiate when traffic enters.
      */
     readonly effectImmediately?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableDpd: Specifies whether to enable the dead peer detection (DPD) feature. Valid values: 
+     * true (default) The initiator of the IPsec-VPN connection sends DPD packets to verify the existence and availability of the peer. If no response is received from the peer within a specified period of time, the connection fails. ISAKMP SAs and IPsec SAs are deleted. The IPsec tunnel is also deleted. 
+     * false: disables DPD. The IPsec initiator does not send DPD packets.
+     */
+    readonly enableDpd?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableNatTraversal: Specifies whether to enable NAT traversal. Valid values: 
+     * true (default) After NAT traversal is enabled, the initiator does not check the UDP ports during IKE negotiations and can automatically discover NAT gateway devices along the VPN tunnel. 
+     * false
+     */
+    readonly enableNatTraversal?: boolean | ros.IResolvable;
+
+    /**
+     * @Property healthCheckConfig: Whether to enable the health check configuration.
+     */
+    readonly healthCheckConfig?: RosVpnAttachment.HealthCheckConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property ikeConfig: Configuration information for the first phase of negotiation.
+     */
+    readonly ikeConfig?: RosVpnAttachment.IkeConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property ipsecConfig: Configuration information for the second phase negotiation.
+     */
+    readonly ipsecConfig?: RosVpnAttachment.IpsecConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the IPsec connection.
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property networkType: The network type of the IPsec connection. Value: public|private.
+     */
+    readonly networkType?: string | ros.IResolvable;
+
+    /**
+     * @Property remoteCaCert: The peer CA certificate when a ShangMi (SM) VPN gateway is used to establish the IPsec-VPN connection. 
+     * This parameter is required when an SM VPN gateway is used to establish the IPsec-VPN connection. 
+     * You can ignore this parameter when a standard VPN gateway is used to create the IPsec-VPN connection.
+     */
+    readonly remoteCaCert?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVpnAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVpnAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('localSubnet', ros.requiredValidator)(properties.localSubnet));
+    errors.collect(ros.propertyValidator('localSubnet', ros.validateString)(properties.localSubnet));
+    errors.collect(ros.propertyValidator('customerGatewayId', ros.requiredValidator)(properties.customerGatewayId));
+    errors.collect(ros.propertyValidator('customerGatewayId', ros.validateString)(properties.customerGatewayId));
+    errors.collect(ros.propertyValidator('autoConfigRoute', ros.validateBoolean)(properties.autoConfigRoute));
+    if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
+        errors.collect(ros.propertyValidator('name', ros.validateLength)({
+            data: properties.name.length,
+            min: 2,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('effectImmediately', ros.validateBoolean)(properties.effectImmediately));
+    errors.collect(ros.propertyValidator('bgpConfig', RosVpnAttachment_BgpConfigPropertyValidator)(properties.bgpConfig));
+    errors.collect(ros.propertyValidator('remoteSubnet', ros.requiredValidator)(properties.remoteSubnet));
+    errors.collect(ros.propertyValidator('remoteSubnet', ros.validateString)(properties.remoteSubnet));
+    errors.collect(ros.propertyValidator('remoteCaCert', ros.validateString)(properties.remoteCaCert));
+    errors.collect(ros.propertyValidator('ipsecConfig', RosVpnAttachment_IpsecConfigPropertyValidator)(properties.ipsecConfig));
+    if(properties.networkType && (typeof properties.networkType) !== 'object') {
+        errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
+          data: properties.networkType,
+          allowedValues: ["public","private"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('healthCheckConfig', RosVpnAttachment_HealthCheckConfigPropertyValidator)(properties.healthCheckConfig));
+    errors.collect(ros.propertyValidator('enableNatTraversal', ros.validateBoolean)(properties.enableNatTraversal));
+    errors.collect(ros.propertyValidator('ikeConfig', RosVpnAttachment_IkeConfigPropertyValidator)(properties.ikeConfig));
+    errors.collect(ros.propertyValidator('enableDpd', ros.validateBoolean)(properties.enableDpd));
+    return errors.wrap('supplied properties not correct for "RosVpnAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVpnAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVpnAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      CustomerGatewayId: ros.stringToRosTemplate(properties.customerGatewayId),
+      LocalSubnet: ros.stringToRosTemplate(properties.localSubnet),
+      RemoteSubnet: ros.stringToRosTemplate(properties.remoteSubnet),
+      AutoConfigRoute: ros.booleanToRosTemplate(properties.autoConfigRoute),
+      BgpConfig: rosVpnAttachmentBgpConfigPropertyToRosTemplate(properties.bgpConfig),
+      EffectImmediately: ros.booleanToRosTemplate(properties.effectImmediately),
+      EnableDpd: ros.booleanToRosTemplate(properties.enableDpd),
+      EnableNatTraversal: ros.booleanToRosTemplate(properties.enableNatTraversal),
+      HealthCheckConfig: rosVpnAttachmentHealthCheckConfigPropertyToRosTemplate(properties.healthCheckConfig),
+      IkeConfig: rosVpnAttachmentIkeConfigPropertyToRosTemplate(properties.ikeConfig),
+      IpsecConfig: rosVpnAttachmentIpsecConfigPropertyToRosTemplate(properties.ipsecConfig),
+      Name: ros.stringToRosTemplate(properties.name),
+      NetworkType: ros.stringToRosTemplate(properties.networkType),
+      RemoteCaCert: ros.stringToRosTemplate(properties.remoteCaCert),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::VpnAttachment`
+ */
+export class RosVpnAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpnAttachment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute InternetIp: The gateway IP address of the IPsec connection.
+     */
+    public readonly attrInternetIp: ros.IResolvable;
+
+    /**
+     * @Attribute PeerVpnAttachmentConfig: Peer vpc Attachment config.
+     */
+    public readonly attrPeerVpnAttachmentConfig: ros.IResolvable;
+
+    /**
+     * @Attribute VpnAttachmentId: ID of the IPsec attachment.
+     */
+    public readonly attrVpnAttachmentId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property customerGatewayId: The ID of the user gateway.
+     */
+    public customerGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
+     * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+     */
+    public localSubnet: string | ros.IResolvable;
+
+    /**
+     * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
+     * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+     */
+    public remoteSubnet: string | ros.IResolvable;
+
+    /**
+     * @Property autoConfigRoute: Specifies whether to automatically configure routes. Valid values:
+     * true (default) 
+     * false
+     */
+    public autoConfigRoute: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property bgpConfig: The Border Gateway Protocol (BGP) configuration.
+     * This parameter is required when the VPN gateway has dynamic BGP enabled.
+     * Before you configure BGP, we recommend that you learn about how BGP works and its limits. For more information, see VPN Gateway supports BGP dynamic routing.
+     * We recommend that you use a private ASN to establish a connection with Alibaba Cloud over BGP. 
+     * Refer to the relevant documentation for the private ASN range.
+     */
+    public bgpConfig: RosVpnAttachment.BgpConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation. Value:
+     * True: Negotiate immediately after the configuration is complete.
+     * False (default): Negotiate when traffic enters.
+     */
+    public effectImmediately: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableDpd: Specifies whether to enable the dead peer detection (DPD) feature. Valid values: 
+     * true (default) The initiator of the IPsec-VPN connection sends DPD packets to verify the existence and availability of the peer. If no response is received from the peer within a specified period of time, the connection fails. ISAKMP SAs and IPsec SAs are deleted. The IPsec tunnel is also deleted. 
+     * false: disables DPD. The IPsec initiator does not send DPD packets.
+     */
+    public enableDpd: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableNatTraversal: Specifies whether to enable NAT traversal. Valid values: 
+     * true (default) After NAT traversal is enabled, the initiator does not check the UDP ports during IKE negotiations and can automatically discover NAT gateway devices along the VPN tunnel. 
+     * false
+     */
+    public enableNatTraversal: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property healthCheckConfig: Whether to enable the health check configuration.
+     */
+    public healthCheckConfig: RosVpnAttachment.HealthCheckConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property ikeConfig: Configuration information for the first phase of negotiation.
+     */
+    public ikeConfig: RosVpnAttachment.IkeConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipsecConfig: Configuration information for the second phase negotiation.
+     */
+    public ipsecConfig: RosVpnAttachment.IpsecConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the IPsec connection.
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property networkType: The network type of the IPsec connection. Value: public|private.
+     */
+    public networkType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property remoteCaCert: The peer CA certificate when a ShangMi (SM) VPN gateway is used to establish the IPsec-VPN connection. 
+     * This parameter is required when an SM VPN gateway is used to establish the IPsec-VPN connection. 
+     * You can ignore this parameter when a standard VPN gateway is used to create the IPsec-VPN connection.
+     */
+    public remoteCaCert: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::VpnAttachment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVpnAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVpnAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInternetIp = this.getAtt('InternetIp');
+        this.attrPeerVpnAttachmentConfig = this.getAtt('PeerVpnAttachmentConfig');
+        this.attrVpnAttachmentId = this.getAtt('VpnAttachmentId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.customerGatewayId = props.customerGatewayId;
+        this.localSubnet = props.localSubnet;
+        this.remoteSubnet = props.remoteSubnet;
+        this.autoConfigRoute = props.autoConfigRoute;
+        this.bgpConfig = props.bgpConfig;
+        this.effectImmediately = props.effectImmediately;
+        this.enableDpd = props.enableDpd;
+        this.enableNatTraversal = props.enableNatTraversal;
+        this.healthCheckConfig = props.healthCheckConfig;
+        this.ikeConfig = props.ikeConfig;
+        this.ipsecConfig = props.ipsecConfig;
+        this.name = props.name;
+        this.networkType = props.networkType;
+        this.remoteCaCert = props.remoteCaCert;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            customerGatewayId: this.customerGatewayId,
+            localSubnet: this.localSubnet,
+            remoteSubnet: this.remoteSubnet,
+            autoConfigRoute: this.autoConfigRoute,
+            bgpConfig: this.bgpConfig,
+            effectImmediately: this.effectImmediately,
+            enableDpd: this.enableDpd,
+            enableNatTraversal: this.enableNatTraversal,
+            healthCheckConfig: this.healthCheckConfig,
+            ikeConfig: this.ikeConfig,
+            ipsecConfig: this.ipsecConfig,
+            name: this.name,
+            networkType: this.networkType,
+            remoteCaCert: this.remoteCaCert,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVpnAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosVpnAttachment {
+    /**
+     * @stability external
+     */
+    export interface BgpConfigProperty {
+        /**
+         * @Property enableBgp: Specifies whether to enable the BGP feature for the tunnel. 
+     * Valid values: true and false. Default value: false.
+         */
+        readonly enableBgp?: boolean | ros.IResolvable;
+        /**
+         * @Property localAsn: the ASN on the Alibaba Cloud side. Valid values: 1 to 4294967295. Default value: 45104.
+         */
+        readonly localAsn?: number | ros.IResolvable;
+        /**
+         * @Property tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0/16. The subnet mask of the CIDR block must be 30 bits in length.
+         */
+        readonly tunnelCidr?: string | ros.IResolvable;
+        /**
+         * @Property localBgpIp: the BGP IP address on the Alibaba Cloud side. 
+     * This IP address must fall within the CIDR block of the IPsec tunnel.
+         */
+        readonly localBgpIp?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `BgpConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `BgpConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnAttachment_BgpConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enableBgp', ros.validateBoolean)(properties.enableBgp));
+    if(properties.localAsn && (typeof properties.localAsn) !== 'object') {
+        errors.collect(ros.propertyValidator('localAsn', ros.validateRange)({
+            data: properties.localAsn,
+            min: 1,
+            max: 4294967295,
+          }));
+    }
+    errors.collect(ros.propertyValidator('localAsn', ros.validateNumber)(properties.localAsn));
+    errors.collect(ros.propertyValidator('tunnelCidr', ros.validateString)(properties.tunnelCidr));
+    errors.collect(ros.propertyValidator('localBgpIp', ros.validateString)(properties.localBgpIp));
+    return errors.wrap('supplied properties not correct for "BgpConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnAttachment.BgpConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `BgpConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnAttachment.BgpConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnAttachmentBgpConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpnAttachment_BgpConfigPropertyValidator(properties).assertSuccess();
+    return {
+      EnableBgp: ros.booleanToRosTemplate(properties.enableBgp),
+      LocalAsn: ros.numberToRosTemplate(properties.localAsn),
+      TunnelCidr: ros.stringToRosTemplate(properties.tunnelCidr),
+      LocalBgpIp: ros.stringToRosTemplate(properties.localBgpIp),
+    };
+}
+
+export namespace RosVpnAttachment {
+    /**
+     * @stability external
+     */
+    export interface HealthCheckConfigProperty {
+        /**
+         * @Property policy: Whether to revoke published routes when the health check fails.
+         */
+        readonly policy?: string | ros.IResolvable;
+        /**
+         * @Property enable:
+         */
+        readonly enable?: boolean | ros.IResolvable;
+        /**
+         * @Property dip:
+         */
+        readonly dip?: string | ros.IResolvable;
+        /**
+         * @Property retry:
+         */
+        readonly retry?: number | ros.IResolvable;
+        /**
+         * @Property sip:
+         */
+        readonly sip?: string | ros.IResolvable;
+        /**
+         * @Property interval:
+         */
+        readonly interval?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `HealthCheckConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `HealthCheckConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnAttachment_HealthCheckConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    errors.collect(ros.propertyValidator('dip', ros.validateString)(properties.dip));
+    errors.collect(ros.propertyValidator('retry', ros.validateNumber)(properties.retry));
+    errors.collect(ros.propertyValidator('sip', ros.validateString)(properties.sip));
+    errors.collect(ros.propertyValidator('interval', ros.validateNumber)(properties.interval));
+    return errors.wrap('supplied properties not correct for "HealthCheckConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnAttachment.HealthCheckConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `HealthCheckConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnAttachment.HealthCheckConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnAttachmentHealthCheckConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpnAttachment_HealthCheckConfigPropertyValidator(properties).assertSuccess();
+    return {
+      Policy: ros.stringToRosTemplate(properties.policy),
+      Enable: ros.booleanToRosTemplate(properties.enable),
+      Dip: ros.stringToRosTemplate(properties.dip),
+      Retry: ros.numberToRosTemplate(properties.retry),
+      Sip: ros.stringToRosTemplate(properties.sip),
+      Interval: ros.numberToRosTemplate(properties.interval),
+    };
+}
+
+export namespace RosVpnAttachment {
+    /**
+     * @stability external
+     */
+    export interface IkeConfigProperty {
+        /**
+         * @Property ikeAuthAlg: The authentication algorithm negotiated in the first phase. 
+     * If the VPN gateway instance type is normal, the value is md5|sha1|sha256|sha384|sha512, and the default value is md5.
+     * If the VPN gateway instance type is national secret type, The value is sm3 (default value).
+         */
+        readonly ikeAuthAlg?: string | ros.IResolvable;
+        /**
+         * @Property localId: ID of the VPN gateway. The length is limited to 100 characters. The default value is the public IP address of the VPN gateway.
+         */
+        readonly localId?: string | ros.IResolvable;
+        /**
+         * @Property ikeEncAlg: The authentication algorithm negotiated in the first phase. 
+     * If the VPN gateway instance type is normal, the value is aes|aes192|aes256|des|3des, and the default value is aes.
+     * If the VPN gateway instance type is national secret type, The value is sm4 (default value).
+         */
+        readonly ikeEncAlg?: string | ros.IResolvable;
+        /**
+         * @Property ikeVersion: The version of the IKE protocol. Value: ikev1|ikev2, default: ikev1.
+         */
+        readonly ikeVersion?: string | ros.IResolvable;
+        /**
+         * @Property ikeMode: Negotiation mode for IKE V1. Value: main|aggressive, default: main.
+         */
+        readonly ikeMode?: string | ros.IResolvable;
+        /**
+         * @Property ikeLifetime: The life cycle of the SA negotiated in the first phase. The value ranges from 0 to 86400, in seconds. The default value is 86400.
+         */
+        readonly ikeLifetime?: number | ros.IResolvable;
+        /**
+         * @Property remoteId: ID of the user gateway. The length is limited to 100 characters. The default value is the public IP address of the user gateway.
+         */
+        readonly remoteId?: string | ros.IResolvable;
+        /**
+         * @Property psk: Used for identity authentication between the IPsec VPN gateway and the user gateway. It is generated randomly by default, or you can specify the key manually. The length is limited to 100 characters.
+         */
+        readonly psk?: string | ros.IResolvable;
+        /**
+         * @Property ikePfs: Diffie-Hellman key exchange algorithm used in the first phase negotiation. Value: group1|group2|group5|group14|group24, default value: group2.
+         */
+        readonly ikePfs?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `IkeConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `IkeConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnAttachment_IkeConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.ikeAuthAlg && (typeof properties.ikeAuthAlg) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeAuthAlg', ros.validateAllowedValues)({
+          data: properties.ikeAuthAlg,
+          allowedValues: ["md5","sha1","sha256","sha384","sha512","sm3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikeAuthAlg', ros.validateString)(properties.ikeAuthAlg));
+    if(properties.localId && (Array.isArray(properties.localId) || (typeof properties.localId) === 'string')) {
+        errors.collect(ros.propertyValidator('localId', ros.validateLength)({
+            data: properties.localId.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('localId', ros.validateString)(properties.localId));
+    if(properties.ikeEncAlg && (typeof properties.ikeEncAlg) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeEncAlg', ros.validateAllowedValues)({
+          data: properties.ikeEncAlg,
+          allowedValues: ["aes","aes192","aes256","des","3des","sm4"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikeEncAlg', ros.validateString)(properties.ikeEncAlg));
+    if(properties.ikeVersion && (typeof properties.ikeVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeVersion', ros.validateAllowedValues)({
+          data: properties.ikeVersion,
+          allowedValues: ["ikev1","ikev2"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikeVersion', ros.validateString)(properties.ikeVersion));
+    if(properties.ikeMode && (typeof properties.ikeMode) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeMode', ros.validateAllowedValues)({
+          data: properties.ikeMode,
+          allowedValues: ["main","aggressive"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikeMode', ros.validateString)(properties.ikeMode));
+    if(properties.ikeLifetime && (typeof properties.ikeLifetime) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeLifetime', ros.validateRange)({
+            data: properties.ikeLifetime,
+            min: 0,
+            max: 86400,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ikeLifetime', ros.validateNumber)(properties.ikeLifetime));
+    if(properties.remoteId && (Array.isArray(properties.remoteId) || (typeof properties.remoteId) === 'string')) {
+        errors.collect(ros.propertyValidator('remoteId', ros.validateLength)({
+            data: properties.remoteId.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('remoteId', ros.validateString)(properties.remoteId));
+    if(properties.psk && (Array.isArray(properties.psk) || (typeof properties.psk) === 'string')) {
+        errors.collect(ros.propertyValidator('psk', ros.validateLength)({
+            data: properties.psk.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('psk', ros.validateString)(properties.psk));
+    if(properties.ikePfs && (typeof properties.ikePfs) !== 'object') {
+        errors.collect(ros.propertyValidator('ikePfs', ros.validateAllowedValues)({
+          data: properties.ikePfs,
+          allowedValues: ["group1","group2","group5","group14","group24"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikePfs', ros.validateString)(properties.ikePfs));
+    return errors.wrap('supplied properties not correct for "IkeConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnAttachment.IkeConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `IkeConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnAttachment.IkeConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnAttachmentIkeConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpnAttachment_IkeConfigPropertyValidator(properties).assertSuccess();
+    return {
+      IkeAuthAlg: ros.stringToRosTemplate(properties.ikeAuthAlg),
+      LocalId: ros.stringToRosTemplate(properties.localId),
+      IkeEncAlg: ros.stringToRosTemplate(properties.ikeEncAlg),
+      IkeVersion: ros.stringToRosTemplate(properties.ikeVersion),
+      IkeMode: ros.stringToRosTemplate(properties.ikeMode),
+      IkeLifetime: ros.numberToRosTemplate(properties.ikeLifetime),
+      RemoteId: ros.stringToRosTemplate(properties.remoteId),
+      Psk: ros.stringToRosTemplate(properties.psk),
+      IkePfs: ros.stringToRosTemplate(properties.ikePfs),
+    };
+}
+
+export namespace RosVpnAttachment {
+    /**
+     * @stability external
+     */
+    export interface IpsecConfigProperty {
+        /**
+         * @Property ipsecPfs: Forwards all protocol packets. The Diffie-Hellman key exchange algorithm used in the first phase negotiation, the value: group1|group2|group5|group14|group24, default value: group2.
+         */
+        readonly ipsecPfs?: string | ros.IResolvable;
+        /**
+         * @Property ipsecEncAlg: The authentication algorithm negotiated in the second phase. 
+     * If the VPN gateway instance type is normal, the value is aes|aes192|aes256|des|3des, and the default value is aes.
+     * If the VPN gateway instance type is national secret type, The value is sm4 (default value).
+         */
+        readonly ipsecEncAlg?: string | ros.IResolvable;
+        /**
+         * @Property ipsecAuthAlg: The authentication algorithm negotiated in the first phase. 
+     * If the VPN gateway instance type is normal, the value is md5|sha1|sha256|sha384|sha512, and the default value is md5.
+     * If the VPN gateway instance type is national secret type, The value is sm3 (default value).
+         */
+        readonly ipsecAuthAlg?: string | ros.IResolvable;
+        /**
+         * @Property ipsecLifetime: IpsecLifetime: The life cycle of the SA negotiated in the second phase. The value ranges from 0 to 86400, in seconds. The default value is 86400.
+         */
+        readonly ipsecLifetime?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `IpsecConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `IpsecConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnAttachment_IpsecConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.ipsecPfs && (typeof properties.ipsecPfs) !== 'object') {
+        errors.collect(ros.propertyValidator('ipsecPfs', ros.validateAllowedValues)({
+          data: properties.ipsecPfs,
+          allowedValues: ["disabled","group1","group2","group5","group14","group24"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipsecPfs', ros.validateString)(properties.ipsecPfs));
+    if(properties.ipsecEncAlg && (typeof properties.ipsecEncAlg) !== 'object') {
+        errors.collect(ros.propertyValidator('ipsecEncAlg', ros.validateAllowedValues)({
+          data: properties.ipsecEncAlg,
+          allowedValues: ["aes","aes192","aes256","des","3des","sm4"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipsecEncAlg', ros.validateString)(properties.ipsecEncAlg));
+    if(properties.ipsecAuthAlg && (typeof properties.ipsecAuthAlg) !== 'object') {
+        errors.collect(ros.propertyValidator('ipsecAuthAlg', ros.validateAllowedValues)({
+          data: properties.ipsecAuthAlg,
+          allowedValues: ["md5","sha1","sha256","sha384","sha512","sm3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipsecAuthAlg', ros.validateString)(properties.ipsecAuthAlg));
+    if(properties.ipsecLifetime && (typeof properties.ipsecLifetime) !== 'object') {
+        errors.collect(ros.propertyValidator('ipsecLifetime', ros.validateRange)({
+            data: properties.ipsecLifetime,
+            min: 0,
+            max: 86400,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipsecLifetime', ros.validateNumber)(properties.ipsecLifetime));
+    return errors.wrap('supplied properties not correct for "IpsecConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnAttachment.IpsecConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `IpsecConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnAttachment.IpsecConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnAttachmentIpsecConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpnAttachment_IpsecConfigPropertyValidator(properties).assertSuccess();
+    return {
+      IpsecPfs: ros.stringToRosTemplate(properties.ipsecPfs),
+      IpsecEncAlg: ros.stringToRosTemplate(properties.ipsecEncAlg),
+      IpsecAuthAlg: ros.stringToRosTemplate(properties.ipsecAuthAlg),
+      IpsecLifetime: ros.numberToRosTemplate(properties.ipsecLifetime),
+    };
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::VpnConnection`
+ */
+export interface RosVpnConnectionProps {
+
+    /**
+     * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
+     * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+     */
+    readonly localSubnet: string | ros.IResolvable;
+
+    /**
+     * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
+     * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+     */
+    readonly remoteSubnet: string | ros.IResolvable;
+
+    /**
+     * @Property vpnGatewayId: ID of the VPN gateway.
+     */
+    readonly vpnGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property autoConfigRoute: Specifies whether to automatically configure routes. Valid values:
+     * true (default) 
+     * false
+     */
+    readonly autoConfigRoute?: boolean | ros.IResolvable;
+
+    /**
+     * @Property bgpConfig: The Border Gateway Protocol (BGP) configuration.
+     * This parameter is required when the VPN gateway has dynamic BGP enabled.
+     * Before you configure BGP, we recommend that you learn about how BGP works and its limits. For more information, see VPN Gateway supports BGP dynamic routing.
+     * We recommend that you use a private ASN to establish a connection with Alibaba Cloud over BGP. 
+     * Refer to the relevant documentation for the private ASN range.
+     */
+    readonly bgpConfig?: RosVpnConnection.BgpConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property customerGatewayId: The ID of the user gateway.
+     */
+    readonly customerGatewayId?: string | ros.IResolvable;
+
+    /**
+     * @Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation. Value:
+     * True: Negotiate immediately after the configuration is complete.
+     * False (default): Negotiate when traffic enters.
+     */
+    readonly effectImmediately?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableDpd: Specifies whether to enable the dead peer detection (DPD) feature. Valid values: 
+     * true (default) The initiator of the IPsec-VPN connection sends DPD packets to verify the existence and availability of the peer. If no response is received from the peer within a specified period of time, the connection fails. ISAKMP SAs and IPsec SAs are deleted. The IPsec tunnel is also deleted. 
+     * false: disables DPD. The IPsec initiator does not send DPD packets.
+     */
+    readonly enableDpd?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableNatTraversal: Specifies whether to enable NAT traversal. Valid values: 
+     * true (default) After NAT traversal is enabled, the initiator does not check the UDP ports during IKE negotiations and can automatically discover NAT gateway devices along the VPN tunnel. 
+     * false
+     */
+    readonly enableNatTraversal?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableTunnelsBgp: Specifies whether to enable the BGP feature for the tunnel. 
+     * Valid values: true and false. Default value: false.
+     */
+    readonly enableTunnelsBgp?: boolean | ros.IResolvable;
 
     /**
      * @Property healthCheckConfig: Whether to enable the health check configuration.
@@ -9035,6 +9810,19 @@ export interface RosVpnConnectionProps {
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
      */
     readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property remoteCaCertificate: The peer CA certificate when a ShangMi (SM) VPN gateway is used to establish the IPsec-VPN connection. 
+     * This parameter is required when an SM VPN gateway is used to establish the IPsec-VPN connection. 
+     * You can ignore this parameter when a standard VPN gateway is used to create the IPsec-VPN connection.
+     */
+    readonly remoteCaCertificate?: string | ros.IResolvable;
+
+    /**
+     * @Property tunnelOptionsSpecification: TunnelOptionsSpecification parameters are supported by dual-tunnel IPsec-VPN gateways. 
+     * You can modify both the active and standby tunnels of the IPsec-VPN connection.
+     */
+    readonly tunnelOptionsSpecification?: Array<RosVpnConnection.TunnelOptionsSpecificationProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -9049,16 +9837,9 @@ function RosVpnConnectionPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('localSubnet', ros.requiredValidator)(properties.localSubnet));
     errors.collect(ros.propertyValidator('localSubnet', ros.validateString)(properties.localSubnet));
-    errors.collect(ros.propertyValidator('effectImmediately', ros.validateBoolean)(properties.effectImmediately));
-    errors.collect(ros.propertyValidator('remoteSubnet', ros.requiredValidator)(properties.remoteSubnet));
-    errors.collect(ros.propertyValidator('remoteSubnet', ros.validateString)(properties.remoteSubnet));
-    errors.collect(ros.propertyValidator('customerGatewayId', ros.requiredValidator)(properties.customerGatewayId));
     errors.collect(ros.propertyValidator('customerGatewayId', ros.validateString)(properties.customerGatewayId));
-    errors.collect(ros.propertyValidator('vpnGatewayId', ros.requiredValidator)(properties.vpnGatewayId));
-    errors.collect(ros.propertyValidator('vpnGatewayId', ros.validateString)(properties.vpnGatewayId));
-    errors.collect(ros.propertyValidator('ipsecConfig', RosVpnConnection_IpsecConfigPropertyValidator)(properties.ipsecConfig));
-    errors.collect(ros.propertyValidator('healthCheckConfig', RosVpnConnection_HealthCheckConfigPropertyValidator)(properties.healthCheckConfig));
-    errors.collect(ros.propertyValidator('ikeConfig', RosVpnConnection_IkeConfigPropertyValidator)(properties.ikeConfig));
+    errors.collect(ros.propertyValidator('enableTunnelsBgp', ros.validateBoolean)(properties.enableTunnelsBgp));
+    errors.collect(ros.propertyValidator('autoConfigRoute', ros.validateBoolean)(properties.autoConfigRoute));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
@@ -9067,6 +9848,19 @@ function RosVpnConnectionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('effectImmediately', ros.validateBoolean)(properties.effectImmediately));
+    errors.collect(ros.propertyValidator('bgpConfig', RosVpnConnection_BgpConfigPropertyValidator)(properties.bgpConfig));
+    errors.collect(ros.propertyValidator('tunnelOptionsSpecification', ros.listValidator(RosVpnConnection_TunnelOptionsSpecificationPropertyValidator))(properties.tunnelOptionsSpecification));
+    errors.collect(ros.propertyValidator('remoteSubnet', ros.requiredValidator)(properties.remoteSubnet));
+    errors.collect(ros.propertyValidator('remoteSubnet', ros.validateString)(properties.remoteSubnet));
+    errors.collect(ros.propertyValidator('vpnGatewayId', ros.requiredValidator)(properties.vpnGatewayId));
+    errors.collect(ros.propertyValidator('vpnGatewayId', ros.validateString)(properties.vpnGatewayId));
+    errors.collect(ros.propertyValidator('ipsecConfig', RosVpnConnection_IpsecConfigPropertyValidator)(properties.ipsecConfig));
+    errors.collect(ros.propertyValidator('remoteCaCertificate', ros.validateString)(properties.remoteCaCertificate));
+    errors.collect(ros.propertyValidator('healthCheckConfig', RosVpnConnection_HealthCheckConfigPropertyValidator)(properties.healthCheckConfig));
+    errors.collect(ros.propertyValidator('enableNatTraversal', ros.validateBoolean)(properties.enableNatTraversal));
+    errors.collect(ros.propertyValidator('ikeConfig', RosVpnConnection_IkeConfigPropertyValidator)(properties.ikeConfig));
+    errors.collect(ros.propertyValidator('enableDpd', ros.validateBoolean)(properties.enableDpd));
     return errors.wrap('supplied properties not correct for "RosVpnConnectionProps"');
 }
 
@@ -9084,15 +9878,22 @@ function rosVpnConnectionPropsToRosTemplate(properties: any, enableResourcePrope
         RosVpnConnectionPropsValidator(properties).assertSuccess();
     }
     return {
-      CustomerGatewayId: ros.stringToRosTemplate(properties.customerGatewayId),
       LocalSubnet: ros.stringToRosTemplate(properties.localSubnet),
       RemoteSubnet: ros.stringToRosTemplate(properties.remoteSubnet),
       VpnGatewayId: ros.stringToRosTemplate(properties.vpnGatewayId),
+      AutoConfigRoute: ros.booleanToRosTemplate(properties.autoConfigRoute),
+      BgpConfig: rosVpnConnectionBgpConfigPropertyToRosTemplate(properties.bgpConfig),
+      CustomerGatewayId: ros.stringToRosTemplate(properties.customerGatewayId),
       EffectImmediately: ros.booleanToRosTemplate(properties.effectImmediately),
+      EnableDpd: ros.booleanToRosTemplate(properties.enableDpd),
+      EnableNatTraversal: ros.booleanToRosTemplate(properties.enableNatTraversal),
+      EnableTunnelsBgp: ros.booleanToRosTemplate(properties.enableTunnelsBgp),
       HealthCheckConfig: rosVpnConnectionHealthCheckConfigPropertyToRosTemplate(properties.healthCheckConfig),
       IkeConfig: rosVpnConnectionIkeConfigPropertyToRosTemplate(properties.ikeConfig),
       IpsecConfig: rosVpnConnectionIpsecConfigPropertyToRosTemplate(properties.ipsecConfig),
       Name: ros.stringToRosTemplate(properties.name),
+      RemoteCaCertificate: ros.stringToRosTemplate(properties.remoteCaCertificate),
+      TunnelOptionsSpecification: ros.listMapper(rosVpnConnectionTunnelOptionsSpecificationPropertyToRosTemplate)(properties.tunnelOptionsSpecification),
     };
 }
 
@@ -9129,11 +9930,6 @@ export class RosVpnConnection extends ros.RosResource {
 
 
     /**
-     * @Property customerGatewayId: The ID of the user gateway.
-     */
-    public customerGatewayId: string | ros.IResolvable;
-
-    /**
      * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
      * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
      */
@@ -9151,11 +9947,52 @@ export class RosVpnConnection extends ros.RosResource {
     public vpnGatewayId: string | ros.IResolvable;
 
     /**
+     * @Property autoConfigRoute: Specifies whether to automatically configure routes. Valid values:
+     * true (default) 
+     * false
+     */
+    public autoConfigRoute: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property bgpConfig: The Border Gateway Protocol (BGP) configuration.
+     * This parameter is required when the VPN gateway has dynamic BGP enabled.
+     * Before you configure BGP, we recommend that you learn about how BGP works and its limits. For more information, see VPN Gateway supports BGP dynamic routing.
+     * We recommend that you use a private ASN to establish a connection with Alibaba Cloud over BGP. 
+     * Refer to the relevant documentation for the private ASN range.
+     */
+    public bgpConfig: RosVpnConnection.BgpConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property customerGatewayId: The ID of the user gateway.
+     */
+    public customerGatewayId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation. Value:
      * True: Negotiate immediately after the configuration is complete.
      * False (default): Negotiate when traffic enters.
      */
     public effectImmediately: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableDpd: Specifies whether to enable the dead peer detection (DPD) feature. Valid values: 
+     * true (default) The initiator of the IPsec-VPN connection sends DPD packets to verify the existence and availability of the peer. If no response is received from the peer within a specified period of time, the connection fails. ISAKMP SAs and IPsec SAs are deleted. The IPsec tunnel is also deleted. 
+     * false: disables DPD. The IPsec initiator does not send DPD packets.
+     */
+    public enableDpd: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableNatTraversal: Specifies whether to enable NAT traversal. Valid values: 
+     * true (default) After NAT traversal is enabled, the initiator does not check the UDP ports during IKE negotiations and can automatically discover NAT gateway devices along the VPN tunnel. 
+     * false
+     */
+    public enableNatTraversal: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableTunnelsBgp: Specifies whether to enable the BGP feature for the tunnel. 
+     * Valid values: true and false. Default value: false.
+     */
+    public enableTunnelsBgp: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property healthCheckConfig: Whether to enable the health check configuration.
@@ -9179,6 +10016,19 @@ export class RosVpnConnection extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
+     * @Property remoteCaCertificate: The peer CA certificate when a ShangMi (SM) VPN gateway is used to establish the IPsec-VPN connection. 
+     * This parameter is required when an SM VPN gateway is used to establish the IPsec-VPN connection. 
+     * You can ignore this parameter when a standard VPN gateway is used to create the IPsec-VPN connection.
+     */
+    public remoteCaCertificate: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tunnelOptionsSpecification: TunnelOptionsSpecification parameters are supported by dual-tunnel IPsec-VPN gateways. 
+     * You can modify both the active and standby tunnels of the IPsec-VPN connection.
+     */
+    public tunnelOptionsSpecification: Array<RosVpnConnection.TunnelOptionsSpecificationProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * Create a new `ALIYUN::VPC::VpnConnection`.
      *
      * @param scope - scope in which this resource is defined
@@ -9192,29 +10042,43 @@ export class RosVpnConnection extends ros.RosResource {
         this.attrVpnConnectionId = this.getAtt('VpnConnectionId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.customerGatewayId = props.customerGatewayId;
         this.localSubnet = props.localSubnet;
         this.remoteSubnet = props.remoteSubnet;
         this.vpnGatewayId = props.vpnGatewayId;
+        this.autoConfigRoute = props.autoConfigRoute;
+        this.bgpConfig = props.bgpConfig;
+        this.customerGatewayId = props.customerGatewayId;
         this.effectImmediately = props.effectImmediately;
+        this.enableDpd = props.enableDpd;
+        this.enableNatTraversal = props.enableNatTraversal;
+        this.enableTunnelsBgp = props.enableTunnelsBgp;
         this.healthCheckConfig = props.healthCheckConfig;
         this.ikeConfig = props.ikeConfig;
         this.ipsecConfig = props.ipsecConfig;
         this.name = props.name;
+        this.remoteCaCertificate = props.remoteCaCertificate;
+        this.tunnelOptionsSpecification = props.tunnelOptionsSpecification;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            customerGatewayId: this.customerGatewayId,
             localSubnet: this.localSubnet,
             remoteSubnet: this.remoteSubnet,
             vpnGatewayId: this.vpnGatewayId,
+            autoConfigRoute: this.autoConfigRoute,
+            bgpConfig: this.bgpConfig,
+            customerGatewayId: this.customerGatewayId,
             effectImmediately: this.effectImmediately,
+            enableDpd: this.enableDpd,
+            enableNatTraversal: this.enableNatTraversal,
+            enableTunnelsBgp: this.enableTunnelsBgp,
             healthCheckConfig: this.healthCheckConfig,
             ikeConfig: this.ikeConfig,
             ipsecConfig: this.ipsecConfig,
             name: this.name,
+            remoteCaCertificate: this.remoteCaCertificate,
+            tunnelOptionsSpecification: this.tunnelOptionsSpecification,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -9226,7 +10090,79 @@ export namespace RosVpnConnection {
     /**
      * @stability external
      */
+    export interface BgpConfigProperty {
+        /**
+         * @Property enableBgp: Specifies whether to enable the BGP feature for the tunnel. 
+     * Valid values: true and false. Default value: false.
+         */
+        readonly enableBgp?: boolean | ros.IResolvable;
+        /**
+         * @Property localAsn: the ASN on the Alibaba Cloud side. Valid values: 1 to 4294967295. Default value: 45104.
+         */
+        readonly localAsn?: number | ros.IResolvable;
+        /**
+         * @Property tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0/16. The subnet mask of the CIDR block must be 30 bits in length.
+         */
+        readonly tunnelCidr?: string | ros.IResolvable;
+        /**
+         * @Property localBgpIp: the BGP IP address on the Alibaba Cloud side. 
+     * This IP address must fall within the CIDR block of the IPsec tunnel.
+         */
+        readonly localBgpIp?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `BgpConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `BgpConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnConnection_BgpConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enableBgp', ros.validateBoolean)(properties.enableBgp));
+    if(properties.localAsn && (typeof properties.localAsn) !== 'object') {
+        errors.collect(ros.propertyValidator('localAsn', ros.validateRange)({
+            data: properties.localAsn,
+            min: 1,
+            max: 4294967295,
+          }));
+    }
+    errors.collect(ros.propertyValidator('localAsn', ros.validateNumber)(properties.localAsn));
+    errors.collect(ros.propertyValidator('tunnelCidr', ros.validateString)(properties.tunnelCidr));
+    errors.collect(ros.propertyValidator('localBgpIp', ros.validateString)(properties.localBgpIp));
+    return errors.wrap('supplied properties not correct for "BgpConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnConnection.BgpConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `BgpConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnConnection.BgpConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnConnectionBgpConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpnConnection_BgpConfigPropertyValidator(properties).assertSuccess();
+    return {
+      EnableBgp: ros.booleanToRosTemplate(properties.enableBgp),
+      LocalAsn: ros.numberToRosTemplate(properties.localAsn),
+      TunnelCidr: ros.stringToRosTemplate(properties.tunnelCidr),
+      LocalBgpIp: ros.stringToRosTemplate(properties.localBgpIp),
+    };
+}
+
+export namespace RosVpnConnection {
+    /**
+     * @stability external
+     */
     export interface HealthCheckConfigProperty {
+        /**
+         * @Property policy: Whether to revoke published routes when the health check fails.
+         */
+        readonly policy?: string | ros.IResolvable;
         /**
          * @Property enable:
          */
@@ -9234,7 +10170,7 @@ export namespace RosVpnConnection {
         /**
          * @Property dip:
          */
-        readonly dip?: boolean | ros.IResolvable;
+        readonly dip?: string | ros.IResolvable;
         /**
          * @Property retry:
          */
@@ -9259,8 +10195,9 @@ export namespace RosVpnConnection {
 function RosVpnConnection_HealthCheckConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
     errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
-    errors.collect(ros.propertyValidator('dip', ros.validateBoolean)(properties.dip));
+    errors.collect(ros.propertyValidator('dip', ros.validateString)(properties.dip));
     errors.collect(ros.propertyValidator('retry', ros.validateNumber)(properties.retry));
     errors.collect(ros.propertyValidator('sip', ros.validateString)(properties.sip));
     errors.collect(ros.propertyValidator('interval', ros.validateNumber)(properties.interval));
@@ -9279,8 +10216,9 @@ function rosVpnConnectionHealthCheckConfigPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosVpnConnection_HealthCheckConfigPropertyValidator(properties).assertSuccess();
     return {
+      Policy: ros.stringToRosTemplate(properties.policy),
       Enable: ros.booleanToRosTemplate(properties.enable),
-      Dip: ros.booleanToRosTemplate(properties.dip),
+      Dip: ros.stringToRosTemplate(properties.dip),
       Retry: ros.numberToRosTemplate(properties.retry),
       Sip: ros.stringToRosTemplate(properties.sip),
       Interval: ros.numberToRosTemplate(properties.interval),
@@ -9293,17 +10231,21 @@ export namespace RosVpnConnection {
      */
     export interface IkeConfigProperty {
         /**
-         * @Property ikeAuthAlg: The authentication algorithm negotiated in the first phase, the value is md5|sha1, and the default value is md5.
+         * @Property ikeAuthAlg: The authentication algorithm negotiated in the first phase. 
+     * If the VPN gateway instance type is normal, the value is md5|sha1|sha256|sha384|sha512, and the default value is md5.
+     * If the VPN gateway instance type is national secret type, The value is sm3 (default value).
          */
         readonly ikeAuthAlg?: string | ros.IResolvable;
         /**
-         * @Property ikeEncAlg: The encryption algorithm negotiated in the first phase, value: aes|aes192|aes256|des|3des, default value: aes.
+         * @Property localId: ID of the VPN gateway. The length is limited to 100 characters. The default value is the public IP address of the VPN gateway.
+         */
+        readonly localId?: string | ros.IResolvable;
+        /**
+         * @Property ikeEncAlg: The authentication algorithm negotiated in the first phase. 
+     * If the VPN gateway instance type is normal, the value is aes|aes192|aes256|des|3des, and the default value is aes.
+     * If the VPN gateway instance type is national secret type, The value is sm4 (default value).
          */
         readonly ikeEncAlg?: string | ros.IResolvable;
-        /**
-         * @Property localIdIPsec: ID of the VPN gateway. The length is limited to 100 characters. The default value is the public IP address of the VPN gateway.
-         */
-        readonly localIdIPsec?: string | ros.IResolvable;
         /**
          * @Property ikeVersion: The version of the IKE protocol. Value: ikev1|ikev2, default: ikev1.
          */
@@ -9343,25 +10285,25 @@ function RosVpnConnection_IkeConfigPropertyValidator(properties: any): ros.Valid
     if(properties.ikeAuthAlg && (typeof properties.ikeAuthAlg) !== 'object') {
         errors.collect(ros.propertyValidator('ikeAuthAlg', ros.validateAllowedValues)({
           data: properties.ikeAuthAlg,
-          allowedValues: ["md5","sha1"],
+          allowedValues: ["md5","sha1","sha256","sha384","sha512","sm3"],
         }));
     }
     errors.collect(ros.propertyValidator('ikeAuthAlg', ros.validateString)(properties.ikeAuthAlg));
-    if(properties.ikeEncAlg && (typeof properties.ikeEncAlg) !== 'object') {
-        errors.collect(ros.propertyValidator('ikeEncAlg', ros.validateAllowedValues)({
-          data: properties.ikeEncAlg,
-          allowedValues: ["aes","aes192","aes256","des","3des"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('ikeEncAlg', ros.validateString)(properties.ikeEncAlg));
-    if(properties.localIdIPsec && (Array.isArray(properties.localIdIPsec) || (typeof properties.localIdIPsec) === 'string')) {
-        errors.collect(ros.propertyValidator('localIdIPsec', ros.validateLength)({
-            data: properties.localIdIPsec.length,
+    if(properties.localId && (Array.isArray(properties.localId) || (typeof properties.localId) === 'string')) {
+        errors.collect(ros.propertyValidator('localId', ros.validateLength)({
+            data: properties.localId.length,
             min: undefined,
             max: 100,
           }));
     }
-    errors.collect(ros.propertyValidator('localIdIPsec', ros.validateString)(properties.localIdIPsec));
+    errors.collect(ros.propertyValidator('localId', ros.validateString)(properties.localId));
+    if(properties.ikeEncAlg && (typeof properties.ikeEncAlg) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeEncAlg', ros.validateAllowedValues)({
+          data: properties.ikeEncAlg,
+          allowedValues: ["aes","aes192","aes256","des","3des","sm4"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikeEncAlg', ros.validateString)(properties.ikeEncAlg));
     if(properties.ikeVersion && (typeof properties.ikeVersion) !== 'object') {
         errors.collect(ros.propertyValidator('ikeVersion', ros.validateAllowedValues)({
           data: properties.ikeVersion,
@@ -9423,8 +10365,8 @@ function rosVpnConnectionIkeConfigPropertyToRosTemplate(properties: any): any {
     RosVpnConnection_IkeConfigPropertyValidator(properties).assertSuccess();
     return {
       IkeAuthAlg: ros.stringToRosTemplate(properties.ikeAuthAlg),
+      LocalId: ros.stringToRosTemplate(properties.localId),
       IkeEncAlg: ros.stringToRosTemplate(properties.ikeEncAlg),
-      LocalIdIPsec: ros.stringToRosTemplate(properties.localIdIPsec),
       IkeVersion: ros.stringToRosTemplate(properties.ikeVersion),
       IkeMode: ros.stringToRosTemplate(properties.ikeMode),
       IkeLifetime: ros.numberToRosTemplate(properties.ikeLifetime),
@@ -9444,11 +10386,15 @@ export namespace RosVpnConnection {
          */
         readonly ipsecPfs?: string | ros.IResolvable;
         /**
-         * @Property ipsecEncAlg: Encryption algorithm negotiated in the second phase. Value: aes|aes192|aes256|des|3des, default value: aes.
+         * @Property ipsecEncAlg: The authentication algorithm negotiated in the second phase. 
+     * If the VPN gateway instance type is normal, the value is aes|aes192|aes256|des|3des, and the default value is aes.
+     * If the VPN gateway instance type is national secret type, The value is sm4 (default value).
          */
         readonly ipsecEncAlg?: string | ros.IResolvable;
         /**
-         * @Property ipsecAuthAlg: Authentication algorithm negotiated in the second phase. Value: md5|sha1, default value: md5.
+         * @Property ipsecAuthAlg: The authentication algorithm negotiated in the first phase. 
+     * If the VPN gateway instance type is normal, the value is md5|sha1|sha256|sha384|sha512, and the default value is md5.
+     * If the VPN gateway instance type is national secret type, The value is sm3 (default value).
          */
         readonly ipsecAuthAlg?: string | ros.IResolvable;
         /**
@@ -9470,21 +10416,21 @@ function RosVpnConnection_IpsecConfigPropertyValidator(properties: any): ros.Val
     if(properties.ipsecPfs && (typeof properties.ipsecPfs) !== 'object') {
         errors.collect(ros.propertyValidator('ipsecPfs', ros.validateAllowedValues)({
           data: properties.ipsecPfs,
-          allowedValues: ["group1","group2","group5","group14","group24"],
+          allowedValues: ["disabled","group1","group2","group5","group14","group24"],
         }));
     }
     errors.collect(ros.propertyValidator('ipsecPfs', ros.validateString)(properties.ipsecPfs));
     if(properties.ipsecEncAlg && (typeof properties.ipsecEncAlg) !== 'object') {
         errors.collect(ros.propertyValidator('ipsecEncAlg', ros.validateAllowedValues)({
           data: properties.ipsecEncAlg,
-          allowedValues: ["aes","aes192","aes256","des","3des"],
+          allowedValues: ["aes","aes192","aes256","des","3des","sm4"],
         }));
     }
     errors.collect(ros.propertyValidator('ipsecEncAlg', ros.validateString)(properties.ipsecEncAlg));
     if(properties.ipsecAuthAlg && (typeof properties.ipsecAuthAlg) !== 'object') {
         errors.collect(ros.propertyValidator('ipsecAuthAlg', ros.validateAllowedValues)({
           data: properties.ipsecAuthAlg,
-          allowedValues: ["md5","sha1"],
+          allowedValues: ["md5","sha1","sha256","sha384","sha512","sm3"],
         }));
     }
     errors.collect(ros.propertyValidator('ipsecAuthAlg', ros.validateString)(properties.ipsecAuthAlg));
@@ -9515,6 +10461,401 @@ function rosVpnConnectionIpsecConfigPropertyToRosTemplate(properties: any): any 
       IpsecEncAlg: ros.stringToRosTemplate(properties.ipsecEncAlg),
       IpsecAuthAlg: ros.stringToRosTemplate(properties.ipsecAuthAlg),
       IpsecLifetime: ros.numberToRosTemplate(properties.ipsecLifetime),
+    };
+}
+
+export namespace RosVpnConnection {
+    /**
+     * @stability external
+     */
+    export interface TunnelBgpConfigProperty {
+        /**
+         * @Property localAsn: the ASN on the Alibaba Cloud side. Valid values: 1 to 4294967295. Default value: 45104.
+         */
+        readonly localAsn?: number | ros.IResolvable;
+        /**
+         * @Property tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0/16. The subnet mask of the CIDR block must be 30 bits in length.
+         */
+        readonly tunnelCidr?: string | ros.IResolvable;
+        /**
+         * @Property localBgpIp: the BGP IP address on the Alibaba Cloud side. 
+     * This IP address must fall within the CIDR block of the IPsec tunnel.
+         */
+        readonly localBgpIp?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TunnelBgpConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `TunnelBgpConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnConnection_TunnelBgpConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.localAsn && (typeof properties.localAsn) !== 'object') {
+        errors.collect(ros.propertyValidator('localAsn', ros.validateRange)({
+            data: properties.localAsn,
+            min: 1,
+            max: 4294967295,
+          }));
+    }
+    errors.collect(ros.propertyValidator('localAsn', ros.validateNumber)(properties.localAsn));
+    errors.collect(ros.propertyValidator('tunnelCidr', ros.validateString)(properties.tunnelCidr));
+    errors.collect(ros.propertyValidator('localBgpIp', ros.validateString)(properties.localBgpIp));
+    return errors.wrap('supplied properties not correct for "TunnelBgpConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnConnection.TunnelBgpConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `TunnelBgpConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnConnection.TunnelBgpConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnConnectionTunnelBgpConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpnConnection_TunnelBgpConfigPropertyValidator(properties).assertSuccess();
+    return {
+      LocalAsn: ros.numberToRosTemplate(properties.localAsn),
+      TunnelCidr: ros.stringToRosTemplate(properties.tunnelCidr),
+      LocalBgpIp: ros.stringToRosTemplate(properties.localBgpIp),
+    };
+}
+
+export namespace RosVpnConnection {
+    /**
+     * @stability external
+     */
+    export interface TunnelIkeConfigProperty {
+        /**
+         * @Property ikeAuthAlg: The authentication algorithm negotiated in the first phase. 
+     * If the VPN gateway instance type is normal, the value is md5|sha1|sha256|sha384|sha512, and the default value is md5.
+     * If the VPN gateway instance type is national secret type, The value is sm3 (default value).
+         */
+        readonly ikeAuthAlg?: string | ros.IResolvable;
+        /**
+         * @Property localId: ID of the VPN gateway. The length is limited to 100 characters. The default value is the public IP address of the VPN gateway.
+         */
+        readonly localId?: string | ros.IResolvable;
+        /**
+         * @Property ikeEncAlg: The authentication algorithm negotiated in the first phase. 
+     * If the VPN gateway instance type is normal, the value is aes|aes192|aes256|des|3des, and the default value is aes.
+     * If the VPN gateway instance type is national secret type, The value is sm4 (default value).
+         */
+        readonly ikeEncAlg?: string | ros.IResolvable;
+        /**
+         * @Property ikeVersion: The version of the IKE protocol. Value: ikev1|ikev2, default: ikev1.
+         */
+        readonly ikeVersion?: string | ros.IResolvable;
+        /**
+         * @Property ikeMode: Negotiation mode for IKE V1. Value: main|aggressive, default: main.
+         */
+        readonly ikeMode?: string | ros.IResolvable;
+        /**
+         * @Property ikeLifetime: The life cycle of the SA negotiated in the first phase. The value ranges from 0 to 86400, in seconds. The default value is 86400.
+         */
+        readonly ikeLifetime?: number | ros.IResolvable;
+        /**
+         * @Property remoteId: ID of the user gateway. The length is limited to 100 characters. The default value is the public IP address of the user gateway.
+         */
+        readonly remoteId?: string | ros.IResolvable;
+        /**
+         * @Property psk: Used for identity authentication between the IPsec VPN gateway and the user gateway. It is generated randomly by default, or you can specify the key manually. The length is limited to 100 characters.
+         */
+        readonly psk?: string | ros.IResolvable;
+        /**
+         * @Property ikePfs: Diffie-Hellman key exchange algorithm used in the first phase negotiation. Value: group1|group2|group5|group14|group24, default value: group2.
+         */
+        readonly ikePfs?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TunnelIkeConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `TunnelIkeConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnConnection_TunnelIkeConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.ikeAuthAlg && (typeof properties.ikeAuthAlg) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeAuthAlg', ros.validateAllowedValues)({
+          data: properties.ikeAuthAlg,
+          allowedValues: ["md5","sha1","sha256","sha384","sha512","sm3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikeAuthAlg', ros.validateString)(properties.ikeAuthAlg));
+    if(properties.localId && (Array.isArray(properties.localId) || (typeof properties.localId) === 'string')) {
+        errors.collect(ros.propertyValidator('localId', ros.validateLength)({
+            data: properties.localId.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('localId', ros.validateString)(properties.localId));
+    if(properties.ikeEncAlg && (typeof properties.ikeEncAlg) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeEncAlg', ros.validateAllowedValues)({
+          data: properties.ikeEncAlg,
+          allowedValues: ["aes","aes192","aes256","des","3des","sm4"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikeEncAlg', ros.validateString)(properties.ikeEncAlg));
+    if(properties.ikeVersion && (typeof properties.ikeVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeVersion', ros.validateAllowedValues)({
+          data: properties.ikeVersion,
+          allowedValues: ["ikev1","ikev2"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikeVersion', ros.validateString)(properties.ikeVersion));
+    if(properties.ikeMode && (typeof properties.ikeMode) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeMode', ros.validateAllowedValues)({
+          data: properties.ikeMode,
+          allowedValues: ["main","aggressive"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikeMode', ros.validateString)(properties.ikeMode));
+    if(properties.ikeLifetime && (typeof properties.ikeLifetime) !== 'object') {
+        errors.collect(ros.propertyValidator('ikeLifetime', ros.validateRange)({
+            data: properties.ikeLifetime,
+            min: 0,
+            max: 86400,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ikeLifetime', ros.validateNumber)(properties.ikeLifetime));
+    if(properties.remoteId && (Array.isArray(properties.remoteId) || (typeof properties.remoteId) === 'string')) {
+        errors.collect(ros.propertyValidator('remoteId', ros.validateLength)({
+            data: properties.remoteId.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('remoteId', ros.validateString)(properties.remoteId));
+    if(properties.psk && (Array.isArray(properties.psk) || (typeof properties.psk) === 'string')) {
+        errors.collect(ros.propertyValidator('psk', ros.validateLength)({
+            data: properties.psk.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('psk', ros.validateString)(properties.psk));
+    if(properties.ikePfs && (typeof properties.ikePfs) !== 'object') {
+        errors.collect(ros.propertyValidator('ikePfs', ros.validateAllowedValues)({
+          data: properties.ikePfs,
+          allowedValues: ["group1","group2","group5","group14","group24"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ikePfs', ros.validateString)(properties.ikePfs));
+    return errors.wrap('supplied properties not correct for "TunnelIkeConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnConnection.TunnelIkeConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `TunnelIkeConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnConnection.TunnelIkeConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnConnectionTunnelIkeConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpnConnection_TunnelIkeConfigPropertyValidator(properties).assertSuccess();
+    return {
+      IkeAuthAlg: ros.stringToRosTemplate(properties.ikeAuthAlg),
+      LocalId: ros.stringToRosTemplate(properties.localId),
+      IkeEncAlg: ros.stringToRosTemplate(properties.ikeEncAlg),
+      IkeVersion: ros.stringToRosTemplate(properties.ikeVersion),
+      IkeMode: ros.stringToRosTemplate(properties.ikeMode),
+      IkeLifetime: ros.numberToRosTemplate(properties.ikeLifetime),
+      RemoteId: ros.stringToRosTemplate(properties.remoteId),
+      Psk: ros.stringToRosTemplate(properties.psk),
+      IkePfs: ros.stringToRosTemplate(properties.ikePfs),
+    };
+}
+
+export namespace RosVpnConnection {
+    /**
+     * @stability external
+     */
+    export interface TunnelIpsecConfigProperty {
+        /**
+         * @Property ipsecPfs: Forwards all protocol packets. The Diffie-Hellman key exchange algorithm used in the first phase negotiation, the value: group1|group2|group5|group14|group24, default value: group2.
+         */
+        readonly ipsecPfs?: string | ros.IResolvable;
+        /**
+         * @Property ipsecEncAlg: The authentication algorithm negotiated in the second phase. 
+     * If the VPN gateway instance type is normal, the value is aes|aes192|aes256|des|3des, and the default value is aes.
+     * If the VPN gateway instance type is national secret type, The value is sm4 (default value).
+         */
+        readonly ipsecEncAlg?: string | ros.IResolvable;
+        /**
+         * @Property ipsecAuthAlg: The authentication algorithm negotiated in the first phase. 
+     * If the VPN gateway instance type is normal, the value is md5|sha1|sha256|sha384|sha512, and the default value is md5.
+     * If the VPN gateway instance type is national secret type, The value is sm3 (default value).
+         */
+        readonly ipsecAuthAlg?: string | ros.IResolvable;
+        /**
+         * @Property ipsecLifetime: IpsecLifetime: The life cycle of the SA negotiated in the second phase. The value ranges from 0 to 86400, in seconds. The default value is 86400.
+         */
+        readonly ipsecLifetime?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TunnelIpsecConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `TunnelIpsecConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnConnection_TunnelIpsecConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.ipsecPfs && (typeof properties.ipsecPfs) !== 'object') {
+        errors.collect(ros.propertyValidator('ipsecPfs', ros.validateAllowedValues)({
+          data: properties.ipsecPfs,
+          allowedValues: ["disabled","group1","group2","group5","group14","group24"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipsecPfs', ros.validateString)(properties.ipsecPfs));
+    if(properties.ipsecEncAlg && (typeof properties.ipsecEncAlg) !== 'object') {
+        errors.collect(ros.propertyValidator('ipsecEncAlg', ros.validateAllowedValues)({
+          data: properties.ipsecEncAlg,
+          allowedValues: ["aes","aes192","aes256","des","3des","sm4"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipsecEncAlg', ros.validateString)(properties.ipsecEncAlg));
+    if(properties.ipsecAuthAlg && (typeof properties.ipsecAuthAlg) !== 'object') {
+        errors.collect(ros.propertyValidator('ipsecAuthAlg', ros.validateAllowedValues)({
+          data: properties.ipsecAuthAlg,
+          allowedValues: ["md5","sha1","sha256","sha384","sha512","sm3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipsecAuthAlg', ros.validateString)(properties.ipsecAuthAlg));
+    if(properties.ipsecLifetime && (typeof properties.ipsecLifetime) !== 'object') {
+        errors.collect(ros.propertyValidator('ipsecLifetime', ros.validateRange)({
+            data: properties.ipsecLifetime,
+            min: 0,
+            max: 86400,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ipsecLifetime', ros.validateNumber)(properties.ipsecLifetime));
+    return errors.wrap('supplied properties not correct for "TunnelIpsecConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnConnection.TunnelIpsecConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `TunnelIpsecConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnConnection.TunnelIpsecConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnConnectionTunnelIpsecConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpnConnection_TunnelIpsecConfigPropertyValidator(properties).assertSuccess();
+    return {
+      IpsecPfs: ros.stringToRosTemplate(properties.ipsecPfs),
+      IpsecEncAlg: ros.stringToRosTemplate(properties.ipsecEncAlg),
+      IpsecAuthAlg: ros.stringToRosTemplate(properties.ipsecAuthAlg),
+      IpsecLifetime: ros.numberToRosTemplate(properties.ipsecLifetime),
+    };
+}
+
+export namespace RosVpnConnection {
+    /**
+     * @stability external
+     */
+    export interface TunnelOptionsSpecificationProperty {
+        /**
+         * @Property role: The tunnel role. Valid values: master|slave
+         */
+        readonly role?: string | ros.IResolvable;
+        /**
+         * @Property tunnelIkeConfig: Configuration information for the first phase of negotiation.
+         */
+        readonly tunnelIkeConfig?: RosVpnConnection.TunnelIkeConfigProperty | ros.IResolvable;
+        /**
+         * @Property customerGatewayId: The ID of the customer gateway.
+         */
+        readonly customerGatewayId?: string | ros.IResolvable;
+        /**
+         * @Property tunnelBgpConfig: The BGP configurations.
+         */
+        readonly tunnelBgpConfig?: RosVpnConnection.TunnelBgpConfigProperty | ros.IResolvable;
+        /**
+         * @Property remoteCaCertificate: The peer CA certificate when a ShangMi (SM) VPN gateway is used to establish the IPsec-VPN connection. 
+     * This parameter is required when an SM VPN gateway is used to establish the IPsec-VPN connection. 
+     * You can ignore this parameter when a standard VPN gateway is used to create the IPsec-VPN connection.
+         */
+        readonly remoteCaCertificate?: string | ros.IResolvable;
+        /**
+         * @Property enableNatTraversal: Specifies whether to enable NAT traversal. Valid values: 
+     * true (default) After NAT traversal is enabled, the initiator does not check the UDP ports during IKE negotiations and can automatically discover NAT gateway devices along the VPN tunnel. 
+     * false
+         */
+        readonly enableNatTraversal?: boolean | ros.IResolvable;
+        /**
+         * @Property tunnelIpsecConfig: The configuration of Phase 2 negotiations.
+         */
+        readonly tunnelIpsecConfig?: RosVpnConnection.TunnelIpsecConfigProperty | ros.IResolvable;
+        /**
+         * @Property enableDpd: Specifies whether to enable the dead peer detection (DPD) feature. Valid values: 
+     * true (default) The initiator of the IPsec-VPN connection sends DPD packets to verify the existence and availability of the peer. If no response is received from the peer within a specified period of time, the connection fails. ISAKMP SAs and IPsec SAs are deleted. The IPsec tunnel is also deleted. 
+     * false: disables DPD. The IPsec initiator does not send DPD packets.
+         */
+        readonly enableDpd?: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TunnelOptionsSpecificationProperty`
+ *
+ * @param properties - the TypeScript properties of a `TunnelOptionsSpecificationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnConnection_TunnelOptionsSpecificationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.role && (typeof properties.role) !== 'object') {
+        errors.collect(ros.propertyValidator('role', ros.validateAllowedValues)({
+          data: properties.role,
+          allowedValues: ["master","slave"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
+    errors.collect(ros.propertyValidator('tunnelIkeConfig', RosVpnConnection_TunnelIkeConfigPropertyValidator)(properties.tunnelIkeConfig));
+    errors.collect(ros.propertyValidator('customerGatewayId', ros.validateString)(properties.customerGatewayId));
+    errors.collect(ros.propertyValidator('tunnelBgpConfig', RosVpnConnection_TunnelBgpConfigPropertyValidator)(properties.tunnelBgpConfig));
+    errors.collect(ros.propertyValidator('remoteCaCertificate', ros.validateString)(properties.remoteCaCertificate));
+    errors.collect(ros.propertyValidator('enableNatTraversal', ros.validateBoolean)(properties.enableNatTraversal));
+    errors.collect(ros.propertyValidator('tunnelIpsecConfig', RosVpnConnection_TunnelIpsecConfigPropertyValidator)(properties.tunnelIpsecConfig));
+    errors.collect(ros.propertyValidator('enableDpd', ros.validateBoolean)(properties.enableDpd));
+    return errors.wrap('supplied properties not correct for "TunnelOptionsSpecificationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnConnection.TunnelOptionsSpecification` resource
+ *
+ * @param properties - the TypeScript properties of a `TunnelOptionsSpecificationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnConnection.TunnelOptionsSpecification` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnConnectionTunnelOptionsSpecificationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpnConnection_TunnelOptionsSpecificationPropertyValidator(properties).assertSuccess();
+    return {
+      Role: ros.stringToRosTemplate(properties.role),
+      TunnelIkeConfig: rosVpnConnectionTunnelIkeConfigPropertyToRosTemplate(properties.tunnelIkeConfig),
+      CustomerGatewayId: ros.stringToRosTemplate(properties.customerGatewayId),
+      TunnelBgpConfig: rosVpnConnectionTunnelBgpConfigPropertyToRosTemplate(properties.tunnelBgpConfig),
+      RemoteCaCertificate: ros.stringToRosTemplate(properties.remoteCaCertificate),
+      EnableNatTraversal: ros.booleanToRosTemplate(properties.enableNatTraversal),
+      TunnelIpsecConfig: rosVpnConnectionTunnelIpsecConfigPropertyToRosTemplate(properties.tunnelIpsecConfig),
+      EnableDpd: ros.booleanToRosTemplate(properties.enableDpd),
     };
 }
 
@@ -9549,6 +10890,15 @@ export interface RosVpnGatewayProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property disasterRecoveryVSwitchId: The second vSwitch with which you want to associate the VPN gateway.
+     * If you call this operation in a region that supports the dual-tunnel mode, this parameter is required.
+     * You need to specify two vSwitches in different zones from the VPC associated with the VPN gateway to implement disaster recovery across zones.
+     * For a region that supports only one zone, disaster recovery across zones is not supported. We recommend that you specify two vSwitches in the zone to implement high availability. You can specify the same vSwitch.
+     * For more information about the regions and zones that support the dual-tunnel mode, see Upgrade a VPN gateway to enable the dual-tunnel mode.
+     */
+    readonly disasterRecoveryVSwitchId?: string | ros.IResolvable;
+
+    /**
      * @Property enableIpsec: Whether to enable IPsec-VPN. The IPsec-VPN feature provides a site-to-site connection. You can securely connect your local data center network to a private network or two proprietary networks by creating an IPsec tunnel. Value:
      * True (default): Enables the IPsec-VPN feature.
      * False: The IPsec-VPN function is not enabled.
@@ -9575,6 +10925,11 @@ export interface RosVpnGatewayProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * @Property networkType: The network type of the VPN gateway. Valid values: public|private
+     */
+    readonly networkType?: string | ros.IResolvable;
+
+    /**
      * @Property period: Purchase time, value: 1~9|12|24|36.
      * When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
      */
@@ -9589,6 +10944,11 @@ export interface RosVpnGatewayProps {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosVpnGateway.TagsProperty[];
+
+    /**
+     * @Property vpnType: VPN gateway type.
+     */
+    readonly vpnType?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
@@ -9608,7 +10968,9 @@ function RosVpnGatewayPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('enableIpsec', ros.validateBoolean)(properties.enableIpsec));
     errors.collect(ros.propertyValidator('enableSsl', ros.validateBoolean)(properties.enableSsl));
+    errors.collect(ros.propertyValidator('vpnType', ros.validateString)(properties.vpnType));
     errors.collect(ros.propertyValidator('sslConnections', ros.validateNumber)(properties.sslConnections));
+    errors.collect(ros.propertyValidator('disasterRecoveryVSwitchId', ros.validateString)(properties.disasterRecoveryVSwitchId));
     if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
         errors.collect(ros.propertyValidator('description', ros.validateLength)({
             data: properties.description.length,
@@ -9617,8 +10979,6 @@ function RosVpnGatewayPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
@@ -9626,14 +10986,6 @@ function RosVpnGatewayPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
-    errors.collect(ros.propertyValidator('bandwidth', ros.requiredValidator)(properties.bandwidth));
-    if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
-        errors.collect(ros.propertyValidator('bandwidth', ros.validateAllowedValues)({
-          data: properties.bandwidth,
-          allowedValues: [5,10,20,50,100,200],
-        }));
-    }
-    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -9643,14 +10995,6 @@ function RosVpnGatewayPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVpnGateway_TagsPropertyValidator))(properties.tags));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
@@ -9659,6 +11003,31 @@ function RosVpnGatewayPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.networkType && (typeof properties.networkType) !== 'object') {
+        errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
+          data: properties.networkType,
+          allowedValues: ["public","private"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('bandwidth', ros.requiredValidator)(properties.bandwidth));
+    if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidth', ros.validateAllowedValues)({
+          data: properties.bandwidth,
+          allowedValues: [5,10,20,50,100,200],
+        }));
+    }
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVpnGateway_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosVpnGatewayProps"');
 }
 
@@ -9680,13 +11049,16 @@ function rosVpnGatewayPropsToRosTemplate(properties: any, enableResourceProperty
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       AutoPay: ros.booleanToRosTemplate(properties.autoPay),
       Description: ros.stringToRosTemplate(properties.description),
+      DisasterRecoveryVSwitchId: ros.stringToRosTemplate(properties.disasterRecoveryVSwitchId),
       EnableIpsec: ros.booleanToRosTemplate(properties.enableIpsec),
       EnableSsl: ros.booleanToRosTemplate(properties.enableSsl),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       Name: ros.stringToRosTemplate(properties.name),
+      NetworkType: ros.stringToRosTemplate(properties.networkType),
       Period: ros.numberToRosTemplate(properties.period),
       SslConnections: ros.numberToRosTemplate(properties.sslConnections),
       Tags: ros.listMapper(rosVpnGatewayTagsPropertyToRosTemplate)(properties.tags),
+      VpnType: ros.stringToRosTemplate(properties.vpnType),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
@@ -9704,6 +11076,16 @@ export class RosVpnGateway extends ros.RosResource {
      * A factory method that creates a new instance of this class from an object
      * containing the properties of this ROS resource.
      */
+
+    /**
+     * @Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
+     */
+    public readonly attrDisasterRecoveryInternetIp: ros.IResolvable;
+
+    /**
+     * @Attribute DisasterRecoveryVSwitchId: The ID of the second vSwitch associated with the VPN gateway.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
+     */
+    public readonly attrDisasterRecoveryVSwitchId: ros.IResolvable;
 
     /**
      * @Attribute InternetIp: The public IP address of the VPN gateway.
@@ -9726,9 +11108,29 @@ export class RosVpnGateway extends ros.RosResource {
     public readonly attrSslMaxConnections: ros.IResolvable;
 
     /**
+     * @Attribute SslVpnInternetIp: The IP address of the SSL-VPN connection.This attribute is returned only when the VPN gateway is a public VPN gateway and supports only the single-tunnel mode. In addition, the VPN gateway must have the SSL-VPN feature enabled.
+     */
+    public readonly attrSslVpnInternetIp: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: The ID of the vSwitch to which the VPN gateway belongs.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The ID of the virtual private cloud (VPC) to which the VPN gateway belongs.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
      * @Attribute VpnGatewayId: ID of the VPN gateway.
      */
     public readonly attrVpnGatewayId: ros.IResolvable;
+
+    /**
+     * @Attribute VpnType: The type of the VPN gateway.
+     */
+    public readonly attrVpnType: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -9759,6 +11161,15 @@ export class RosVpnGateway extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property disasterRecoveryVSwitchId: The second vSwitch with which you want to associate the VPN gateway.
+     * If you call this operation in a region that supports the dual-tunnel mode, this parameter is required.
+     * You need to specify two vSwitches in different zones from the VPC associated with the VPN gateway to implement disaster recovery across zones.
+     * For a region that supports only one zone, disaster recovery across zones is not supported. We recommend that you specify two vSwitches in the zone to implement high availability. You can specify the same vSwitch.
+     * For more information about the regions and zones that support the dual-tunnel mode, see Upgrade a VPN gateway to enable the dual-tunnel mode.
+     */
+    public disasterRecoveryVSwitchId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property enableIpsec: Whether to enable IPsec-VPN. The IPsec-VPN feature provides a site-to-site connection. You can securely connect your local data center network to a private network or two proprietary networks by creating an IPsec tunnel. Value:
      * True (default): Enables the IPsec-VPN feature.
      * False: The IPsec-VPN function is not enabled.
@@ -9785,6 +11196,11 @@ export class RosVpnGateway extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
+     * @Property networkType: The network type of the VPN gateway. Valid values: public|private
+     */
+    public networkType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property period: Purchase time, value: 1~9|12|24|36.
      * When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
      */
@@ -9801,6 +11217,11 @@ export class RosVpnGateway extends ros.RosResource {
     public tags: RosVpnGateway.TagsProperty[] | undefined;
 
     /**
+     * @Property vpnType: VPN gateway type.
+     */
+    public vpnType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
@@ -9814,24 +11235,33 @@ export class RosVpnGateway extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosVpnGatewayProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosVpnGateway.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDisasterRecoveryInternetIp = this.getAtt('DisasterRecoveryInternetIp');
+        this.attrDisasterRecoveryVSwitchId = this.getAtt('DisasterRecoveryVSwitchId');
         this.attrInternetIp = this.getAtt('InternetIp');
         this.attrOrderId = this.getAtt('OrderId');
         this.attrSpec = this.getAtt('Spec');
         this.attrSslMaxConnections = this.getAtt('SslMaxConnections');
+        this.attrSslVpnInternetIp = this.getAtt('SslVpnInternetIp');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVpcId = this.getAtt('VpcId');
         this.attrVpnGatewayId = this.getAtt('VpnGatewayId');
+        this.attrVpnType = this.getAtt('VpnType');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bandwidth = props.bandwidth;
         this.vpcId = props.vpcId;
         this.autoPay = props.autoPay;
         this.description = props.description;
+        this.disasterRecoveryVSwitchId = props.disasterRecoveryVSwitchId;
         this.enableIpsec = props.enableIpsec;
         this.enableSsl = props.enableSsl;
         this.instanceChargeType = props.instanceChargeType;
         this.name = props.name;
+        this.networkType = props.networkType;
         this.period = props.period;
         this.sslConnections = props.sslConnections;
         this.tags = props.tags;
+        this.vpnType = props.vpnType;
         this.vSwitchId = props.vSwitchId;
     }
 
@@ -9842,13 +11272,16 @@ export class RosVpnGateway extends ros.RosResource {
             vpcId: this.vpcId,
             autoPay: this.autoPay,
             description: this.description,
+            disasterRecoveryVSwitchId: this.disasterRecoveryVSwitchId,
             enableIpsec: this.enableIpsec,
             enableSsl: this.enableSsl,
             instanceChargeType: this.instanceChargeType,
             name: this.name,
+            networkType: this.networkType,
             period: this.period,
             sslConnections: this.sslConnections,
             tags: this.tags,
+            vpnType: this.vpnType,
             vSwitchId: this.vSwitchId,
         };
     }

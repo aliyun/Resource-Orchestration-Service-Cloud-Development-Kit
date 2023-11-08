@@ -33,6 +33,11 @@ export interface RosAcceleratorProps {
     readonly duration?: string | ros.IResolvable;
 
     /**
+     * @Property enableCrossBorder: Whether the global acceleration instance enables the cross-border line function.
+     */
+    readonly enableCrossBorder?: boolean | ros.IResolvable;
+
+    /**
      * @Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).
      */
     readonly instanceChargeType?: string | ros.IResolvable;
@@ -75,11 +80,12 @@ function RosAcceleratorPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
+    errors.collect(ros.propertyValidator('enableCrossBorder', ros.validateBoolean)(properties.enableCrossBorder));
     errors.collect(ros.propertyValidator('duration', ros.validateString)(properties.duration));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('ipSetConfig', RosAccelerator_IpSetConfigPropertyValidator)(properties.ipSetConfig));
@@ -106,6 +112,7 @@ function rosAcceleratorPropsToRosTemplate(properties: any, enableResourcePropert
       AutoUseCoupon: ros.stringToRosTemplate(properties.autoUseCoupon),
       BandwidthBillingType: ros.stringToRosTemplate(properties.bandwidthBillingType),
       Duration: ros.stringToRosTemplate(properties.duration),
+      EnableCrossBorder: ros.booleanToRosTemplate(properties.enableCrossBorder),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       IpSetConfig: rosAcceleratorIpSetConfigPropertyToRosTemplate(properties.ipSetConfig),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
@@ -202,6 +209,11 @@ export class RosAccelerator extends ros.RosResource {
     public duration: string | ros.IResolvable | undefined;
 
     /**
+     * @Property enableCrossBorder: Whether the global acceleration instance enables the cross-border line function.
+     */
+    public enableCrossBorder: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).
      */
     public instanceChargeType: string | ros.IResolvable | undefined;
@@ -251,6 +263,7 @@ export class RosAccelerator extends ros.RosResource {
         this.autoUseCoupon = props.autoUseCoupon;
         this.bandwidthBillingType = props.bandwidthBillingType;
         this.duration = props.duration;
+        this.enableCrossBorder = props.enableCrossBorder;
         this.instanceChargeType = props.instanceChargeType;
         this.ipSetConfig = props.ipSetConfig;
         this.pricingCycle = props.pricingCycle;
@@ -266,6 +279,7 @@ export class RosAccelerator extends ros.RosResource {
             autoUseCoupon: this.autoUseCoupon,
             bandwidthBillingType: this.bandwidthBillingType,
             duration: this.duration,
+            enableCrossBorder: this.enableCrossBorder,
             instanceChargeType: this.instanceChargeType,
             ipSetConfig: this.ipSetConfig,
             pricingCycle: this.pricingCycle,

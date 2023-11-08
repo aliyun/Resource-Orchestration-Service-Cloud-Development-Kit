@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * Properties for defining a <code>ALIYUN::EHPC::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.980Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.349Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -163,6 +163,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceTrafficMode() {
         return null;
     }
 
@@ -343,6 +349,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object isComputeEss;
         java.lang.Object jobQueue;
         java.lang.Object keyPairName;
+        java.lang.Object networkInterfaceTrafficMode;
         java.lang.Object password;
         java.lang.Object period;
         java.lang.Object periodUnit;
@@ -948,6 +955,26 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getNetworkInterfaceTrafficMode}
+         * @param networkInterfaceTrafficMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder networkInterfaceTrafficMode(java.lang.String networkInterfaceTrafficMode) {
+            this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getNetworkInterfaceTrafficMode}
+         * @param networkInterfaceTrafficMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder networkInterfaceTrafficMode(com.aliyun.ros.cdk.core.IResolvable networkInterfaceTrafficMode) {
+            this.networkInterfaceTrafficMode = networkInterfaceTrafficMode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getPassword}
          * @param password the value to be set.
          * @return {@code this}
@@ -1452,6 +1479,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object isComputeEss;
         private final java.lang.Object jobQueue;
         private final java.lang.Object keyPairName;
+        private final java.lang.Object networkInterfaceTrafficMode;
         private final java.lang.Object password;
         private final java.lang.Object period;
         private final java.lang.Object periodUnit;
@@ -1511,6 +1539,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.isComputeEss = software.amazon.jsii.Kernel.get(this, "isComputeEss", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.jobQueue = software.amazon.jsii.Kernel.get(this, "jobQueue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkInterfaceTrafficMode = software.amazon.jsii.Kernel.get(this, "networkInterfaceTrafficMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1570,6 +1599,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             this.isComputeEss = builder.isComputeEss;
             this.jobQueue = builder.jobQueue;
             this.keyPairName = builder.keyPairName;
+            this.networkInterfaceTrafficMode = builder.networkInterfaceTrafficMode;
             this.password = builder.password;
             this.period = builder.period;
             this.periodUnit = builder.periodUnit;
@@ -1738,6 +1768,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
+        }
+
+        @Override
+        public final java.lang.Object getNetworkInterfaceTrafficMode() {
+            return this.networkInterfaceTrafficMode;
         }
 
         @Override
@@ -1932,6 +1967,9 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getKeyPairName() != null) {
                 data.set("keyPairName", om.valueToTree(this.getKeyPairName()));
             }
+            if (this.getNetworkInterfaceTrafficMode() != null) {
+                data.set("networkInterfaceTrafficMode", om.valueToTree(this.getNetworkInterfaceTrafficMode()));
+            }
             if (this.getPassword() != null) {
                 data.set("password", om.valueToTree(this.getPassword()));
             }
@@ -2048,6 +2086,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             if (this.isComputeEss != null ? !this.isComputeEss.equals(that.isComputeEss) : that.isComputeEss != null) return false;
             if (this.jobQueue != null ? !this.jobQueue.equals(that.jobQueue) : that.jobQueue != null) return false;
             if (this.keyPairName != null ? !this.keyPairName.equals(that.keyPairName) : that.keyPairName != null) return false;
+            if (this.networkInterfaceTrafficMode != null ? !this.networkInterfaceTrafficMode.equals(that.networkInterfaceTrafficMode) : that.networkInterfaceTrafficMode != null) return false;
             if (this.password != null ? !this.password.equals(that.password) : that.password != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
@@ -2104,6 +2143,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.isComputeEss != null ? this.isComputeEss.hashCode() : 0);
             result = 31 * result + (this.jobQueue != null ? this.jobQueue.hashCode() : 0);
             result = 31 * result + (this.keyPairName != null ? this.keyPairName.hashCode() : 0);
+            result = 31 * result + (this.networkInterfaceTrafficMode != null ? this.networkInterfaceTrafficMode.hashCode() : 0);
             result = 31 * result + (this.password != null ? this.password.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);

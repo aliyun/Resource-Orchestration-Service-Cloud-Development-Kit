@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  <code>ALIYUN::POLARDB::DBNodes</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.014Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.505Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBNodes")
 public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -105,6 +105,24 @@ public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbNodeType() {
+        return software.amazon.jsii.Kernel.get(this, "dbNodeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDbNodeType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbNodeType", value);
+    }
+
+    /**
+     */
+    public void setDbNodeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbNodeType", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getImciSwitch() {
         return software.amazon.jsii.Kernel.get(this, "imciSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -119,6 +137,24 @@ public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setImciSwitch(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "imciSwitch", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
     }
 
     /**
@@ -183,6 +219,23 @@ public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param dbNodeType This parameter is required.
+         */
+        public Builder dbNodeType(final java.lang.String dbNodeType) {
+            this.props.dbNodeType(dbNodeType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbNodeType This parameter is required.
+         */
+        public Builder dbNodeType(final com.aliyun.ros.cdk.core.IResolvable dbNodeType) {
+            this.props.dbNodeType(dbNodeType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param imciSwitch This parameter is required.
          */
         public Builder imciSwitch(final java.lang.String imciSwitch) {
@@ -195,6 +248,23 @@ public class RosDBNodes extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder imciSwitch(final com.aliyun.ros.cdk.core.IResolvable imciSwitch) {
             this.props.imciSwitch(imciSwitch);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

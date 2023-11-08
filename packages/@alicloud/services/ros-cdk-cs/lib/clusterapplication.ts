@@ -21,13 +21,17 @@ export interface ClusterApplicationProps {
     /**
      * Property defaultNamespace: The default namespace for the application, default value is default.
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     readonly defaultNamespace?: string | ros.IResolvable;
 
     /**
-     * Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+     * Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
+     * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
+     * - None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.
      */
-    readonly defaultNamespaceDeletion?: boolean | ros.IResolvable;
+    readonly rolePolicy?: string | ros.IResolvable;
 }
 
 /**
@@ -56,10 +60,10 @@ export class ClusterApplication extends ros.Resource {
         super(scope, id);
 
         const rosClusterApplication = new RosClusterApplication(this, id,  {
-            yamlContent: props.yamlContent,
+            rolePolicy: props.rolePolicy === undefined || props.rolePolicy === null ? 'EnsureAdminRoleAndBinding' : props.rolePolicy,
             clusterId: props.clusterId,
+            yamlContent: props.yamlContent,
             defaultNamespace: props.defaultNamespace === undefined || props.defaultNamespace === null ? 'default' : props.defaultNamespace,
-            defaultNamespaceDeletion: props.defaultNamespaceDeletion,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosClusterApplication;
         this.attrClusterId = rosClusterApplication.attrClusterId;

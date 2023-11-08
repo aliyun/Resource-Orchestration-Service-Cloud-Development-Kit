@@ -160,7 +160,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.paymentType && (typeof properties.paymentType) !== 'object') {
         errors.collect(ros.propertyValidator('paymentType', ros.validateAllowedValues)({
           data: properties.paymentType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));

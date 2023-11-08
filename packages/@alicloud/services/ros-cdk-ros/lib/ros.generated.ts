@@ -44,7 +44,9 @@ export interface RosAutoEnableServiceProps {
      * VS: Video Surveillance
      * Xtrace: Tracing Anlaysis
      * CDN: Content Delivery Network
-     *
+     * CDT: Cloud Data Transfer
+     * CDTCb: Cloud Data Transfer for Cross Border
+     * TransitRouter: Cen Transit Router
      */
     readonly serviceName: string | ros.IResolvable;
 }
@@ -63,7 +65,7 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["IOT","EMAS","MaxCompute","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","SLS","NAS","OSS","MNS","TrafficMirror","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","AHAS","BrainIndustrial","OTS","CDN","PrivateLink"],
+          allowedValues: ["IOT","EMAS","MaxCompute","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","TransitRouter","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","SLS","NAS","CDTCb","OSS","MNS","TrafficMirror","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","CDT","AHAS","BrainIndustrial","OTS","CDN","PrivateLink"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
@@ -142,7 +144,9 @@ export class RosAutoEnableService extends ros.RosResource {
      * VS: Video Surveillance
      * Xtrace: Tracing Anlaysis
      * CDN: Content Delivery Network
-     *
+     * CDT: Cloud Data Transfer
+     * CDTCb: Cloud Data Transfer for Cross Border
+     * TransitRouter: Cen Transit Router
      */
     public serviceName: string | ros.IResolvable;
 

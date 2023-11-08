@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * A ROS resource type:  <code>ALIYUN::EHPC::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.949Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.310Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -802,6 +802,41 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.props.keyPairName(keyPairName);
+            return this;
+        }
+
+        /**
+         * Property networkInterfaceTrafficMode: Communication mode of an elastic NIC.
+         * <p>
+         * Value values:
+         * <p>
+         * <ul>
+         * <li><strong>Standard</strong>: The TCP communication mode is used.</li>
+         * <li><strong>HighPerformance</strong>: Enables the Elastic RDMA Interface (ERI) and uses the RDMA communication mode.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: Communication mode of an elastic NIC. This parameter is required.
+         */
+        public Builder networkInterfaceTrafficMode(final java.lang.String networkInterfaceTrafficMode) {
+            this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
+            return this;
+        }
+        /**
+         * Property networkInterfaceTrafficMode: Communication mode of an elastic NIC.
+         * <p>
+         * Value values:
+         * <p>
+         * <ul>
+         * <li><strong>Standard</strong>: The TCP communication mode is used.</li>
+         * <li><strong>HighPerformance</strong>: Enables the Elastic RDMA Interface (ERI) and uses the RDMA communication mode.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: Communication mode of an elastic NIC. This parameter is required.
+         */
+        public Builder networkInterfaceTrafficMode(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceTrafficMode) {
+            this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
             return this;
         }
 

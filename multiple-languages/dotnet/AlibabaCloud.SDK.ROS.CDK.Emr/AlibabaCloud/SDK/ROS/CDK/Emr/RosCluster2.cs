@@ -153,11 +153,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 
         /// <remarks>
         /// <strong>Property</strong>: clusterType: Cluster type.Ranges:
-        /// Datalake: The new version of the data lake.
+        /// DATALAKE: The new version of the data lake.
         /// OLAP: Data analysis.
-        /// DataFlow: Real -time data stream.
-        /// DataServing: Data service.
-        /// Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+        /// DATAFLOW: Real -time data stream.
+        /// DATASERVING: Data service.
+        /// HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
         /// </remarks>
         [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ClusterType
@@ -2059,6 +2059,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: masterRootPassword: MASTER node root password.
+            /// </remarks>
+            [JsiiProperty(name: "masterRootPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? MasterRootPassword
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: ramRole: The role of the ECS access resource binding. Default value: AliyunECSInstanceForEMRRole.
             /// </remarks>
             [JsiiProperty(name: "ramRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2111,6 +2124,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 [JsiiOptional]
                 [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? KeyPairName
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: masterRootPassword: MASTER node root password.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "masterRootPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? MasterRootPassword
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -2257,6 +2280,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                         }
                     }
                     _keyPairName = value;
+                }
+            }
+
+            private object? _masterRootPassword;
+
+            /// <remarks>
+            /// <strong>Property</strong>: masterRootPassword: MASTER node root password.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "masterRootPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterRootPassword
+            {
+                get => _masterRootPassword;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _masterRootPassword = value;
                 }
             }
 

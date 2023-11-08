@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.emr;
 /**
  * Properties for defining a <code>ALIYUN::EMR::Cluster2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.015Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.390Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.Cluster2Props")
 @software.amazon.jsii.Jsii.Proxy(Cluster2Props.Jsii$Proxy.class)
 public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
@@ -19,7 +19,7 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterName();
 
     /**
-     * Property clusterType: Cluster type.Ranges: Datalake: The new version of the data lake. OLAP: Data analysis. DataFlow: Real -time data stream. DataServing: Data service. Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+     * Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterType();
 
@@ -168,7 +168,7 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Cluster2Props#getClusterType}
-         * @param clusterType Property clusterType: Cluster type.Ranges: Datalake: The new version of the data lake. OLAP: Data analysis. DataFlow: Real -time data stream. DataServing: Data service. Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
+         * @param clusterType Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
          * @return {@code this}
          */
         public Builder clusterType(java.lang.String clusterType) {
@@ -178,7 +178,7 @@ public interface Cluster2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Cluster2Props#getClusterType}
-         * @param clusterType Property clusterType: Cluster type.Ranges: Datalake: The new version of the data lake. OLAP: Data analysis. DataFlow: Real -time data stream. DataServing: Data service. Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
+         * @param clusterType Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
          * @return {@code this}
          */
         public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {

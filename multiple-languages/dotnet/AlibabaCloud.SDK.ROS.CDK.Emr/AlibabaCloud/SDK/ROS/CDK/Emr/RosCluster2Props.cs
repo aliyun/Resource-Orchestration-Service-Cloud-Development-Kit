@@ -95,11 +95,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 
         /// <remarks>
         /// <strong>Property</strong>: clusterType: Cluster type.Ranges:
-        /// Datalake: The new version of the data lake.
+        /// DATALAKE: The new version of the data lake.
         /// OLAP: Data analysis.
-        /// DataFlow: Real -time data stream.
-        /// DataServing: Data service.
-        /// Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+        /// DATAFLOW: Real -time data stream.
+        /// DATASERVING: Data service.
+        /// HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
         /// </remarks>
         [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ClusterType

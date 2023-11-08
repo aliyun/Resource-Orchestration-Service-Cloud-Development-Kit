@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse.datasource;
 /**
  * Properties for defining a <code>DATASOURCE::MSE::Gateways</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.706Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.155Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.datasource.RosGatewaysProps")
 @software.amazon.jsii.Jsii.Proxy(RosGatewaysProps.Jsii$Proxy.class)
 public interface RosGatewaysProps extends software.amazon.jsii.JsiiSerializable {

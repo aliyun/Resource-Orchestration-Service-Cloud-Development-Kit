@@ -901,13 +901,17 @@ export interface RosClusterApplicationProps {
     /**
      * @Property defaultNamespace: The default namespace for the application, default value is default.
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     readonly defaultNamespace?: string | ros.IResolvable;
 
     /**
-     * @Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+     * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
+     * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
+     * - None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.
      */
-    readonly defaultNamespaceDeletion?: boolean | ros.IResolvable;
+    readonly rolePolicy?: string | ros.IResolvable;
 }
 
 /**
@@ -920,6 +924,15 @@ export interface RosClusterApplicationProps {
 function RosClusterApplicationPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.rolePolicy && (typeof properties.rolePolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('rolePolicy', ros.validateAllowedValues)({
+          data: properties.rolePolicy,
+          allowedValues: ["EnsureAdminRoleAndBinding","None"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('rolePolicy', ros.validateString)(properties.rolePolicy));
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('yamlContent', ros.requiredValidator)(properties.yamlContent));
     if(properties.yamlContent && (Array.isArray(properties.yamlContent) || (typeof properties.yamlContent) === 'string')) {
         errors.collect(ros.propertyValidator('yamlContent', ros.validateLength)({
@@ -929,10 +942,7 @@ function RosClusterApplicationPropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('yamlContent', ros.validateString)(properties.yamlContent));
-    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
-    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
     errors.collect(ros.propertyValidator('defaultNamespace', ros.validateString)(properties.defaultNamespace));
-    errors.collect(ros.propertyValidator('defaultNamespaceDeletion', ros.validateBoolean)(properties.defaultNamespaceDeletion));
     return errors.wrap('supplied properties not correct for "RosClusterApplicationProps"');
 }
 
@@ -953,7 +963,7 @@ function rosClusterApplicationPropsToRosTemplate(properties: any, enableResource
       ClusterId: ros.stringToRosTemplate(properties.clusterId),
       YamlContent: ros.stringToRosTemplate(properties.yamlContent),
       DefaultNamespace: ros.stringToRosTemplate(properties.defaultNamespace),
-      DefaultNamespaceDeletion: ros.booleanToRosTemplate(properties.defaultNamespaceDeletion),
+      RolePolicy: ros.stringToRosTemplate(properties.rolePolicy),
     };
 }
 
@@ -992,13 +1002,17 @@ export class RosClusterApplication extends ros.RosResource {
     /**
      * @Property defaultNamespace: The default namespace for the application, default value is default.
      * If a namespace is defined in yaml metadata, its priority is higher than DefaultNamespace.
+     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     public defaultNamespace: string | ros.IResolvable | undefined;
 
     /**
-     * @Property defaultNamespaceDeletion: Whether to delete the namespace specified by DefaultNamespace. If DefaultNamespace is in ('default', 'kube-node-lease', 'kube-public', 'kube-system', 'arms-prom'), no matter whether DefaultNamespaceDeletion is true or not, it will not be deleted.
+     * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
+     * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
+     * - None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.
      */
-    public defaultNamespaceDeletion: boolean | ros.IResolvable | undefined;
+    public rolePolicy: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CS::ClusterApplication`.
@@ -1015,7 +1029,7 @@ export class RosClusterApplication extends ros.RosResource {
         this.clusterId = props.clusterId;
         this.yamlContent = props.yamlContent;
         this.defaultNamespace = props.defaultNamespace;
-        this.defaultNamespaceDeletion = props.defaultNamespaceDeletion;
+        this.rolePolicy = props.rolePolicy;
     }
 
 
@@ -1024,7 +1038,7 @@ export class RosClusterApplication extends ros.RosResource {
             clusterId: this.clusterId,
             yamlContent: this.yamlContent,
             defaultNamespace: this.defaultNamespace,
-            defaultNamespaceDeletion: this.defaultNamespaceDeletion,
+            rolePolicy: this.rolePolicy,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1063,7 +1077,8 @@ export interface RosClusterHelmApplicationProps {
     readonly credential?: RosClusterHelmApplication.CredentialProperty | ros.IResolvable;
 
     /**
-     * @Property namespace: Namespace to use with helm. Default is default
+     * @Property namespace: Namespace to use with helm. Default is default.
+     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     readonly namespace?: string | ros.IResolvable;
 }
@@ -1167,7 +1182,8 @@ export class RosClusterHelmApplication extends ros.RosResource {
     public credential: RosClusterHelmApplication.CredentialProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property namespace: Namespace to use with helm. Default is default
+     * @Property namespace: Namespace to use with helm. Default is default.
+     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     public namespace: string | ros.IResolvable | undefined;
 
@@ -3071,7 +3087,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -5049,7 +5065,7 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -6128,7 +6144,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));

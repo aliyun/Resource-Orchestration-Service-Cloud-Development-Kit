@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * Properties for defining a <code>ALIYUN::DMS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.188Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.456Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -112,20 +112,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getSafeRule();
 
     /**
-     * Property tid: The ID of the tenant.
-     * <p>
-     * Note To query the ID, log on to the DMS Enterprise console and choose System Management
-     * <p>
-     * <blockquote>
-     * <p>
-     * Instance Management or System Management &gt; User Management. The ID of the tenant
-     * appears in the Service Specification section.
-     * <p>
-     * </blockquote>
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getTid();
-
-    /**
      * Property dataLinkName: The name of the data link for cross-database query.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDataLinkName() {
@@ -168,6 +154,22 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * Note You must specify this parameter if the InstanceType parameter is set to PostgreSQL or Oracle.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSid() {
+        return null;
+    }
+
+    /**
+     * Property tid: The ID of the tenant.
+     * <p>
+     * Note To query the ID, log on to the DMS Enterprise console and choose System Management
+     * <p>
+     * <blockquote>
+     * <p>
+     * Instance Management or System Management &gt; User Management. The ID of the tenant
+     * appears in the Service Specification section.
+     * <p>
+     * </blockquote>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTid() {
         return null;
     }
 
@@ -215,12 +217,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object port;
         java.lang.Object queryTimeout;
         java.lang.Object safeRule;
-        java.lang.Object tid;
         java.lang.Object dataLinkName;
         java.lang.Object ddlOnline;
         java.lang.Object ecsInstanceId;
         java.lang.Object ecsRegion;
         java.lang.Object sid;
+        java.lang.Object tid;
         java.lang.Object useDsql;
         java.lang.Object vpcId;
 
@@ -543,42 +545,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link InstanceProps#getTid}
-         * @param tid Property tid: The ID of the tenant. This parameter is required.
-         *            Note To query the ID, log on to the DMS Enterprise console and choose System Management
-         *            <p>
-         *            <blockquote>
-         *            <p>
-         *            Instance Management or System Management &gt; User Management. The ID of the tenant
-         *            appears in the Service Specification section.
-         *            <p>
-         *            </blockquote>
-         * @return {@code this}
-         */
-        public Builder tid(java.lang.Number tid) {
-            this.tid = tid;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link InstanceProps#getTid}
-         * @param tid Property tid: The ID of the tenant. This parameter is required.
-         *            Note To query the ID, log on to the DMS Enterprise console and choose System Management
-         *            <p>
-         *            <blockquote>
-         *            <p>
-         *            Instance Management or System Management &gt; User Management. The ID of the tenant
-         *            appears in the Service Specification section.
-         *            <p>
-         *            </blockquote>
-         * @return {@code this}
-         */
-        public Builder tid(com.aliyun.ros.cdk.core.IResolvable tid) {
-            this.tid = tid;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link InstanceProps#getDataLinkName}
          * @param dataLinkName Property dataLinkName: The name of the data link for cross-database query.
          * @return {@code this}
@@ -693,6 +659,42 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getTid}
+         * @param tid Property tid: The ID of the tenant.
+         *            Note To query the ID, log on to the DMS Enterprise console and choose System Management
+         *            <p>
+         *            <blockquote>
+         *            <p>
+         *            Instance Management or System Management &gt; User Management. The ID of the tenant
+         *            appears in the Service Specification section.
+         *            <p>
+         *            </blockquote>
+         * @return {@code this}
+         */
+        public Builder tid(java.lang.Number tid) {
+            this.tid = tid;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getTid}
+         * @param tid Property tid: The ID of the tenant.
+         *            Note To query the ID, log on to the DMS Enterprise console and choose System Management
+         *            <p>
+         *            <blockquote>
+         *            <p>
+         *            Instance Management or System Management &gt; User Management. The ID of the tenant
+         *            appears in the Service Specification section.
+         *            <p>
+         *            </blockquote>
+         * @return {@code this}
+         */
+        public Builder tid(com.aliyun.ros.cdk.core.IResolvable tid) {
+            this.tid = tid;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getUseDsql}
          * @param useDsql Property useDsql: Specifies whether to enable cross-database query for the database instance.
          *                Valid
@@ -771,12 +773,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object port;
         private final java.lang.Object queryTimeout;
         private final java.lang.Object safeRule;
-        private final java.lang.Object tid;
         private final java.lang.Object dataLinkName;
         private final java.lang.Object ddlOnline;
         private final java.lang.Object ecsInstanceId;
         private final java.lang.Object ecsRegion;
         private final java.lang.Object sid;
+        private final java.lang.Object tid;
         private final java.lang.Object useDsql;
         private final java.lang.Object vpcId;
 
@@ -799,12 +801,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.queryTimeout = software.amazon.jsii.Kernel.get(this, "queryTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.safeRule = software.amazon.jsii.Kernel.get(this, "safeRule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.tid = software.amazon.jsii.Kernel.get(this, "tid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dataLinkName = software.amazon.jsii.Kernel.get(this, "dataLinkName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ddlOnline = software.amazon.jsii.Kernel.get(this, "ddlOnline", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ecsInstanceId = software.amazon.jsii.Kernel.get(this, "ecsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ecsRegion = software.amazon.jsii.Kernel.get(this, "ecsRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sid = software.amazon.jsii.Kernel.get(this, "sid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tid = software.amazon.jsii.Kernel.get(this, "tid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.useDsql = software.amazon.jsii.Kernel.get(this, "useDsql", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -827,12 +829,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.port = java.util.Objects.requireNonNull(builder.port, "port is required");
             this.queryTimeout = java.util.Objects.requireNonNull(builder.queryTimeout, "queryTimeout is required");
             this.safeRule = java.util.Objects.requireNonNull(builder.safeRule, "safeRule is required");
-            this.tid = java.util.Objects.requireNonNull(builder.tid, "tid is required");
             this.dataLinkName = builder.dataLinkName;
             this.ddlOnline = builder.ddlOnline;
             this.ecsInstanceId = builder.ecsInstanceId;
             this.ecsRegion = builder.ecsRegion;
             this.sid = builder.sid;
+            this.tid = builder.tid;
             this.useDsql = builder.useDsql;
             this.vpcId = builder.vpcId;
         }
@@ -903,11 +905,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Object getTid() {
-            return this.tid;
-        }
-
-        @Override
         public final java.lang.Object getDataLinkName() {
             return this.dataLinkName;
         }
@@ -930,6 +927,11 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getSid() {
             return this.sid;
+        }
+
+        @Override
+        public final java.lang.Object getTid() {
+            return this.tid;
         }
 
         @Override
@@ -961,7 +963,6 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             data.set("port", om.valueToTree(this.getPort()));
             data.set("queryTimeout", om.valueToTree(this.getQueryTimeout()));
             data.set("safeRule", om.valueToTree(this.getSafeRule()));
-            data.set("tid", om.valueToTree(this.getTid()));
             if (this.getDataLinkName() != null) {
                 data.set("dataLinkName", om.valueToTree(this.getDataLinkName()));
             }
@@ -976,6 +977,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getSid() != null) {
                 data.set("sid", om.valueToTree(this.getSid()));
+            }
+            if (this.getTid() != null) {
+                data.set("tid", om.valueToTree(this.getTid()));
             }
             if (this.getUseDsql() != null) {
                 data.set("useDsql", om.valueToTree(this.getUseDsql()));
@@ -1014,12 +1018,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (!port.equals(that.port)) return false;
             if (!queryTimeout.equals(that.queryTimeout)) return false;
             if (!safeRule.equals(that.safeRule)) return false;
-            if (!tid.equals(that.tid)) return false;
             if (this.dataLinkName != null ? !this.dataLinkName.equals(that.dataLinkName) : that.dataLinkName != null) return false;
             if (this.ddlOnline != null ? !this.ddlOnline.equals(that.ddlOnline) : that.ddlOnline != null) return false;
             if (this.ecsInstanceId != null ? !this.ecsInstanceId.equals(that.ecsInstanceId) : that.ecsInstanceId != null) return false;
             if (this.ecsRegion != null ? !this.ecsRegion.equals(that.ecsRegion) : that.ecsRegion != null) return false;
             if (this.sid != null ? !this.sid.equals(that.sid) : that.sid != null) return false;
+            if (this.tid != null ? !this.tid.equals(that.tid) : that.tid != null) return false;
             if (this.useDsql != null ? !this.useDsql.equals(that.useDsql) : that.useDsql != null) return false;
             return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
@@ -1039,12 +1043,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.port.hashCode());
             result = 31 * result + (this.queryTimeout.hashCode());
             result = 31 * result + (this.safeRule.hashCode());
-            result = 31 * result + (this.tid.hashCode());
             result = 31 * result + (this.dataLinkName != null ? this.dataLinkName.hashCode() : 0);
             result = 31 * result + (this.ddlOnline != null ? this.ddlOnline.hashCode() : 0);
             result = 31 * result + (this.ecsInstanceId != null ? this.ecsInstanceId.hashCode() : 0);
             result = 31 * result + (this.ecsRegion != null ? this.ecsRegion.hashCode() : 0);
             result = 31 * result + (this.sid != null ? this.sid.hashCode() : 0);
+            result = 31 * result + (this.tid != null ? this.tid.hashCode() : 0);
             result = 31 * result + (this.useDsql != null ? this.useDsql.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;

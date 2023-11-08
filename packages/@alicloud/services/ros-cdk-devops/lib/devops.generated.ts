@@ -130,6 +130,319 @@ export class RosPipeline extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::DEVOPS::PipelineRelations`
+ */
+export interface RosPipelineRelationsProps {
+
+    /**
+     * @Property organizationId: Corporate identity, also known as enterprise id, can obtain in cloud effect access links.
+     */
+    readonly organizationId: string | ros.IResolvable;
+
+    /**
+     * @Property pipelineId: The pipeline ID, which can be obtained from the pipeline link.
+     */
+    readonly pipelineId: number | ros.IResolvable;
+
+    /**
+     * @Property relObjectIds: Ids of the associated resource. For now, only variable group ids are supported.
+     */
+    readonly relObjectIds: Array<number | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property relObjectType: Associated resource type. Valid values:
+     * - VARIABLE_GROUP
+     * - OOS_APP_ID
+     * For now, only VARIABLE GROUP is supported.
+     */
+    readonly relObjectType: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPipelineRelationsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPipelineRelationsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPipelineRelationsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('relObjectType', ros.requiredValidator)(properties.relObjectType));
+    errors.collect(ros.propertyValidator('relObjectType', ros.validateString)(properties.relObjectType));
+    errors.collect(ros.propertyValidator('relObjectIds', ros.requiredValidator)(properties.relObjectIds));
+    errors.collect(ros.propertyValidator('relObjectIds', ros.listValidator(ros.validateNumber))(properties.relObjectIds));
+    errors.collect(ros.propertyValidator('pipelineId', ros.requiredValidator)(properties.pipelineId));
+    errors.collect(ros.propertyValidator('pipelineId', ros.validateNumber)(properties.pipelineId));
+    errors.collect(ros.propertyValidator('organizationId', ros.requiredValidator)(properties.organizationId));
+    errors.collect(ros.propertyValidator('organizationId', ros.validateString)(properties.organizationId));
+    return errors.wrap('supplied properties not correct for "RosPipelineRelationsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DEVOPS::PipelineRelations` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPipelineRelationsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DEVOPS::PipelineRelations` resource.
+ */
+// @ts-ignore TS6133
+function rosPipelineRelationsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPipelineRelationsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      OrganizationId: ros.stringToRosTemplate(properties.organizationId),
+      PipelineId: ros.numberToRosTemplate(properties.pipelineId),
+      RelObjectIds: ros.listMapper(ros.numberToRosTemplate)(properties.relObjectIds),
+      RelObjectType: ros.stringToRosTemplate(properties.relObjectType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::DEVOPS::PipelineRelations`
+ */
+export class RosPipelineRelations extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DEVOPS::PipelineRelations";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property organizationId: Corporate identity, also known as enterprise id, can obtain in cloud effect access links.
+     */
+    public organizationId: string | ros.IResolvable;
+
+    /**
+     * @Property pipelineId: The pipeline ID, which can be obtained from the pipeline link.
+     */
+    public pipelineId: number | ros.IResolvable;
+
+    /**
+     * @Property relObjectIds: Ids of the associated resource. For now, only variable group ids are supported.
+     */
+    public relObjectIds: Array<number | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property relObjectType: Associated resource type. Valid values:
+     * - VARIABLE_GROUP
+     * - OOS_APP_ID
+     * For now, only VARIABLE GROUP is supported.
+     */
+    public relObjectType: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::DEVOPS::PipelineRelations`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPipelineRelationsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPipelineRelations.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.organizationId = props.organizationId;
+        this.pipelineId = props.pipelineId;
+        this.relObjectIds = props.relObjectIds;
+        this.relObjectType = props.relObjectType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            organizationId: this.organizationId,
+            pipelineId: this.pipelineId,
+            relObjectIds: this.relObjectIds,
+            relObjectType: this.relObjectType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPipelineRelationsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::DEVOPS::PipelineRun`
+ */
+export interface RosPipelineRunProps {
+
+    /**
+     * @Property organizationId: Corporate identity, also known as enterprise id, can obtain in cloud effect access links.
+     */
+    readonly organizationId: string | ros.IResolvable;
+
+    /**
+     * @Property pipelineId: The pipeline ID, which can be obtained from the pipeline link.
+     */
+    readonly pipelineId: number | ros.IResolvable;
+
+    /**
+     * @Property params: Pipeline operating parameters. Keys:
+     * - **branchModeBranchs**: Branch mode runs branches.
+     * - **envs**: Running variables.
+     * - **runningBranchs**: Running branches whose key is the warehouse address.
+     * - **runningTags**: Running tags whose key is the warehouse address.
+     */
+    readonly params?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property sync: Whether to wait synchronously for the result of the pipeline execution. If you select true, the resource will not be created until the pipeline is complete. **Default is false.**
+     * Note: Do not set this option to true when the pipeline has a pause policy configured, as publishing requires manual intervention and synchronization is not appropriate.
+     */
+    readonly sync?: boolean | ros.IResolvable;
+
+    /**
+     * @Property timeout: Maximum wait time for pipeline execution in minutes. This parameter need only be configured if Sync is set to true. **Default is 10.**
+     */
+    readonly timeout?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPipelineRunProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPipelineRunProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPipelineRunPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.timeout && (typeof properties.timeout) !== 'object') {
+        errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
+            data: properties.timeout,
+            min: 1,
+            max: 120,
+          }));
+    }
+    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    errors.collect(ros.propertyValidator('pipelineId', ros.requiredValidator)(properties.pipelineId));
+    errors.collect(ros.propertyValidator('pipelineId', ros.validateNumber)(properties.pipelineId));
+    errors.collect(ros.propertyValidator('params', ros.hashValidator(ros.validateAny))(properties.params));
+    errors.collect(ros.propertyValidator('organizationId', ros.requiredValidator)(properties.organizationId));
+    errors.collect(ros.propertyValidator('organizationId', ros.validateString)(properties.organizationId));
+    errors.collect(ros.propertyValidator('sync', ros.validateBoolean)(properties.sync));
+    return errors.wrap('supplied properties not correct for "RosPipelineRunProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DEVOPS::PipelineRun` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPipelineRunProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DEVOPS::PipelineRun` resource.
+ */
+// @ts-ignore TS6133
+function rosPipelineRunPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPipelineRunPropsValidator(properties).assertSuccess();
+    }
+    return {
+      OrganizationId: ros.stringToRosTemplate(properties.organizationId),
+      PipelineId: ros.numberToRosTemplate(properties.pipelineId),
+      Params: ros.hashMapper(ros.objectToRosTemplate)(properties.params),
+      Sync: ros.booleanToRosTemplate(properties.sync),
+      Timeout: ros.numberToRosTemplate(properties.timeout),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::DEVOPS::PipelineRun`
+ */
+export class RosPipelineRun extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DEVOPS::PipelineRun";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute PipelineRunId: Pipeline run id.
+     */
+    public readonly attrPipelineRunId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property organizationId: Corporate identity, also known as enterprise id, can obtain in cloud effect access links.
+     */
+    public organizationId: string | ros.IResolvable;
+
+    /**
+     * @Property pipelineId: The pipeline ID, which can be obtained from the pipeline link.
+     */
+    public pipelineId: number | ros.IResolvable;
+
+    /**
+     * @Property params: Pipeline operating parameters. Keys:
+     * - **branchModeBranchs**: Branch mode runs branches.
+     * - **envs**: Running variables.
+     * - **runningBranchs**: Running branches whose key is the warehouse address.
+     * - **runningTags**: Running tags whose key is the warehouse address.
+     */
+    public params: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property sync: Whether to wait synchronously for the result of the pipeline execution. If you select true, the resource will not be created until the pipeline is complete. **Default is false.**
+     * Note: Do not set this option to true when the pipeline has a pause policy configured, as publishing requires manual intervention and synchronization is not appropriate.
+     */
+    public sync: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property timeout: Maximum wait time for pipeline execution in minutes. This parameter need only be configured if Sync is set to true. **Default is 10.**
+     */
+    public timeout: number | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::DEVOPS::PipelineRun`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPipelineRunProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPipelineRun.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPipelineRunId = this.getAtt('PipelineRunId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.organizationId = props.organizationId;
+        this.pipelineId = props.pipelineId;
+        this.params = props.params;
+        this.sync = props.sync;
+        this.timeout = props.timeout;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            organizationId: this.organizationId,
+            pipelineId: this.pipelineId,
+            params: this.params,
+            sync: this.sync,
+            timeout: this.timeout,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPipelineRunPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::DEVOPS::VariableGroup`
  */
 export interface RosVariableGroupProps {

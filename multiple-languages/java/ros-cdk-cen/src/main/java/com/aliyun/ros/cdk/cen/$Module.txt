@@ -54,6 +54,9 @@
 @alicloud/ros-cdk-cen.RosTransitRouterVpcAttachment=com.aliyun.ros.cdk.cen.RosTransitRouterVpcAttachment
 @alicloud/ros-cdk-cen.RosTransitRouterVpcAttachment.ZoneMappingsProperty=com.aliyun.ros.cdk.cen.RosTransitRouterVpcAttachment$ZoneMappingsProperty
 @alicloud/ros-cdk-cen.RosTransitRouterVpcAttachmentProps=com.aliyun.ros.cdk.cen.RosTransitRouterVpcAttachmentProps
+@alicloud/ros-cdk-cen.RosTransitRouterVpnAttachment=com.aliyun.ros.cdk.cen.RosTransitRouterVpnAttachment
+@alicloud/ros-cdk-cen.RosTransitRouterVpnAttachment.TagsProperty=com.aliyun.ros.cdk.cen.RosTransitRouterVpnAttachment$TagsProperty
+@alicloud/ros-cdk-cen.RosTransitRouterVpnAttachmentProps=com.aliyun.ros.cdk.cen.RosTransitRouterVpnAttachmentProps
 @alicloud/ros-cdk-cen.RouteEntry=com.aliyun.ros.cdk.cen.RouteEntry
 @alicloud/ros-cdk-cen.RouteEntryProps=com.aliyun.ros.cdk.cen.RouteEntryProps
 @alicloud/ros-cdk-cen.TransitRouter=com.aliyun.ros.cdk.cen.TransitRouter
@@ -72,6 +75,8 @@
 @alicloud/ros-cdk-cen.TransitRouterVbrAttachmentProps=com.aliyun.ros.cdk.cen.TransitRouterVbrAttachmentProps
 @alicloud/ros-cdk-cen.TransitRouterVpcAttachment=com.aliyun.ros.cdk.cen.TransitRouterVpcAttachment
 @alicloud/ros-cdk-cen.TransitRouterVpcAttachmentProps=com.aliyun.ros.cdk.cen.TransitRouterVpcAttachmentProps
+@alicloud/ros-cdk-cen.TransitRouterVpnAttachment=com.aliyun.ros.cdk.cen.TransitRouterVpnAttachment
+@alicloud/ros-cdk-cen.TransitRouterVpnAttachmentProps=com.aliyun.ros.cdk.cen.TransitRouterVpnAttachmentProps
 @alicloud/ros-cdk-cen.datasource.CenBandwidthPackages=com.aliyun.ros.cdk.cen.datasource.CenBandwidthPackages
 @alicloud/ros-cdk-cen.datasource.CenBandwidthPackagesProps=com.aliyun.ros.cdk.cen.datasource.CenBandwidthPackagesProps
 @alicloud/ros-cdk-cen.datasource.CenInstances=com.aliyun.ros.cdk.cen.datasource.CenInstances

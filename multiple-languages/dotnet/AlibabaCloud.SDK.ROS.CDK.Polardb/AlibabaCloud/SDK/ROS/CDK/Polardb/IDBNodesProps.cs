@@ -22,10 +22,35 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             get;
         }
 
+        /// <summary>Property dbNodeType: Node type.</summary>
+        /// <remarks>
+        /// Ranges: RO|STANDBY|DLNode
+        /// </remarks>
+        [JsiiProperty(name: "dbNodeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DbNodeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.</summary>
         [JsiiProperty(name: "imciSwitch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ImciSwitch
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property resourceGroupId: Resource group id.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
         {
             get
             {
@@ -55,10 +80,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property dbNodeType: Node type.</summary>
+            /// <remarks>
+            /// Ranges: RO|STANDBY|DLNode
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "dbNodeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbNodeType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property imciSwitch: Specifies whether to enable the In-Memory Column Index (IMCI) feature.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "imciSwitch", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ImciSwitch
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: Resource group id.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

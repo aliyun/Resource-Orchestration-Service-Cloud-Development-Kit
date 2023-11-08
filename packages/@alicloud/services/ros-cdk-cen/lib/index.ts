@@ -16,6 +16,7 @@ export * from './transitrouterroutetableassociation';
 export * from './transitrouterroutetablepropagation';
 export * from './transitroutervbrattachment';
 export * from './transitroutervpcattachment';
+export * from './transitroutervpnattachment';
 
 // ALIYUN::CEN Resources:
 export * from './cen.generated';

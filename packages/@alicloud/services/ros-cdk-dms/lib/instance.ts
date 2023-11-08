@@ -91,14 +91,6 @@ export interface InstanceProps {
     readonly safeRule: string | ros.IResolvable;
 
     /**
-     * Property tid: The ID of the tenant.
-     * Note To query the ID, log on to the DMS Enterprise console and choose System Management
-     * > Instance Management or System Management > User Management. The ID of the tenant
-     * appears in the Service Specification section.
-     */
-    readonly tid: number | ros.IResolvable;
-
-    /**
      * Property dataLinkName: The name of the data link for cross-database query.
      */
     readonly dataLinkName?: string | ros.IResolvable;
@@ -129,6 +121,14 @@ export interface InstanceProps {
      * Note You must specify this parameter if the InstanceType parameter is set to PostgreSQL or Oracle.
      */
     readonly sid?: string | ros.IResolvable;
+
+    /**
+     * Property tid: The ID of the tenant.
+     * Note To query the ID, log on to the DMS Enterprise console and choose System Management
+     * > Instance Management or System Management > User Management. The ID of the tenant
+     * appears in the Service Specification section.
+     */
+    readonly tid?: number | ros.IResolvable;
 
     /**
      * Property useDsql: Specifies whether to enable cross-database query for the database instance. Valid

@@ -45,7 +45,9 @@ export interface AutoEnableServiceProps {
      * VS: Video Surveillance
      * Xtrace: Tracing Anlaysis
      * CDN: Content Delivery Network
-     *
+     * CDT: Cloud Data Transfer
+     * CDTCb: Cloud Data Transfer for Cross Border
+     * TransitRouter: Cen Transit Router
      */
     readonly serviceName: string | ros.IResolvable;
 }

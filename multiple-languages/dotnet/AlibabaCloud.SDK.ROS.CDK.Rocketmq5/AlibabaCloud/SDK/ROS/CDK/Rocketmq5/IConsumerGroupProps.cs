@@ -9,7 +9,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
     public interface IConsumerGroupProps
     {
         /// <summary>Property consumeRetryPolicy: The consumption retry policy of the consumer group to be created.</summary>
-        [JsiiProperty(name: "consumeRetryPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-rocketmq5.RosConsumerGroup.ConsumeRetryPolicyProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "consumeRetryPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-rocketmq5.RosConsumerGroup.ConsumeRetryPolicyProperty\"}]}}")]
         object ConsumeRetryPolicy
         {
             get;
@@ -62,7 +62,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
             }
 
             /// <summary>Property consumeRetryPolicy: The consumption retry policy of the consumer group to be created.</summary>
-            [JsiiProperty(name: "consumeRetryPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-rocketmq5.RosConsumerGroup.ConsumeRetryPolicyProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            [JsiiProperty(name: "consumeRetryPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-rocketmq5.RosConsumerGroup.ConsumeRetryPolicyProperty\"}]}}")]
             public object ConsumeRetryPolicy
             {
                 get => GetInstanceProperty<object>()!;
