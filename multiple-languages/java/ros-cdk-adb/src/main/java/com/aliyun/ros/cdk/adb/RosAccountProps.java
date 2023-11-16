@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adb;
 /**
  * Properties for defining a <code>ALIYUN::ADB::Account</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.009Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.187Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.RosAccountProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccountProps.Jsii$Proxy.class)
 public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {

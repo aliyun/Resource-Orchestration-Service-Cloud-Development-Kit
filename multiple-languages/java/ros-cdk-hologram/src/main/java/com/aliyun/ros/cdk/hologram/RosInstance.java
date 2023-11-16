@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hologram;
 /**
  * A ROS template type:  <code>ALIYUN::Hologram::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.451Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.873Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hologram.$Module.class, fqn = "@alicloud/ros-cdk-hologram.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -218,14 +218,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
                 final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
                 if (
-                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.hologram.RosInstance.EndpointsProperty)
-                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.hologram.RosInstance.EndpointsProperty)
                     && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
                 ) {
                     throw new IllegalArgumentException(
                         new java.lang.StringBuilder("Expected ")
                             .append("value").append(".get(").append(__idx_ac66f0).append(")")
-                            .append(" to be one of: com.aliyun.ros.cdk.hologram.RosInstance.EndpointsProperty, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.hologram.RosInstance.EndpointsProperty; received ")
                             .append(__val_ac66f0.getClass()).toString());
                 }
             }
@@ -393,6 +393,42 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setGatewayCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "gatewayCount", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInitialDatabases() {
+        return software.amazon.jsii.Kernel.get(this, "initialDatabases", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInitialDatabases(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "initialDatabases", value);
+    }
+
+    /**
+     */
+    public void setInitialDatabases(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "initialDatabases", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLeaderInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "leaderInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLeaderInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "leaderInstanceId", value);
+    }
+
+    /**
+     */
+    public void setLeaderInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "leaderInstanceId", value);
     }
 
     /**
@@ -1237,6 +1273,40 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder gatewayCount(final com.aliyun.ros.cdk.core.IResolvable gatewayCount) {
             this.props.gatewayCount(gatewayCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param initialDatabases This parameter is required.
+         */
+        public Builder initialDatabases(final java.lang.String initialDatabases) {
+            this.props.initialDatabases(initialDatabases);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param initialDatabases This parameter is required.
+         */
+        public Builder initialDatabases(final com.aliyun.ros.cdk.core.IResolvable initialDatabases) {
+            this.props.initialDatabases(initialDatabases);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param leaderInstanceId This parameter is required.
+         */
+        public Builder leaderInstanceId(final java.lang.String leaderInstanceId) {
+            this.props.leaderInstanceId(leaderInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param leaderInstanceId This parameter is required.
+         */
+        public Builder leaderInstanceId(final com.aliyun.ros.cdk.core.IResolvable leaderInstanceId) {
+            this.props.leaderInstanceId(leaderInstanceId);
             return this;
         }
 

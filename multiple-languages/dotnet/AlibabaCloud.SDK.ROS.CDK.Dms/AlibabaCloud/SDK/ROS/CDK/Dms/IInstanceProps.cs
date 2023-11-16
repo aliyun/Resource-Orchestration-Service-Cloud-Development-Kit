@@ -142,19 +142,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
             get;
         }
 
-        /// <summary>Property tid: The ID of the tenant.</summary>
-        /// <remarks>
-        /// Note To query the ID, log on to the DMS Enterprise console and choose System Management
-        ///
-        ///     Instance Management or System Management &gt; User Management. The ID of the tenant
-        ///     appears in the Service Specification section.
-        /// </remarks>
-        [JsiiProperty(name: "tid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object Tid
-        {
-            get;
-        }
-
         /// <summary>Property dataLinkName: The name of the data link for cross-database query.</summary>
         [JsiiProperty(name: "dataLinkName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -218,6 +205,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         [JsiiProperty(name: "sid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Sid
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property tid: The ID of the tenant.</summary>
+        /// <remarks>
+        /// Note To query the ID, log on to the DMS Enterprise console and choose System Management
+        ///
+        ///     Instance Management or System Management &gt; User Management. The ID of the tenant
+        ///     appears in the Service Specification section.
+        /// </remarks>
+        [JsiiProperty(name: "tid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Tid
         {
             get
             {
@@ -398,19 +402,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property tid: The ID of the tenant.</summary>
-            /// <remarks>
-            /// Note To query the ID, log on to the DMS Enterprise console and choose System Management
-            ///
-            ///     Instance Management or System Management &gt; User Management. The ID of the tenant
-            ///     appears in the Service Specification section.
-            /// </remarks>
-            [JsiiProperty(name: "tid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object Tid
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property dataLinkName: The name of the data link for cross-database query.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "dataLinkName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -462,6 +453,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
             [JsiiOptional]
             [JsiiProperty(name: "sid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Sid
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tid: The ID of the tenant.</summary>
+            /// <remarks>
+            /// Note To query the ID, log on to the DMS Enterprise console and choose System Management
+            ///
+            ///     Instance Management or System Management &gt; User Management. The ID of the tenant
+            ///     appears in the Service Specification section.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Tid
             {
                 get => GetInstanceProperty<object?>();
             }

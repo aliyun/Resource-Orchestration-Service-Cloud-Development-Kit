@@ -52,6 +52,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
+        /// <summary>Attribute ColdStorageInstanceId: The ID of the cold storage instance.</summary>
+        [JsiiProperty(name: "attrColdStorageInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrColdStorageInstanceId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
         /// <summary>Attribute CustomConnectionStrings: The custom connection strings of the db cluster.</summary>
         [JsiiProperty(name: "attrCustomConnectionStrings", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCustomConnectionStrings

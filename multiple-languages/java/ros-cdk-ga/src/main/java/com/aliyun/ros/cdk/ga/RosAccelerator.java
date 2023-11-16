@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  <code>ALIYUN::GA::Accelerator</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.314Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.720Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosAccelerator")
 public class RosAccelerator extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -197,6 +197,24 @@ public class RosAccelerator extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDuration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "duration", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableCrossBorder() {
+        return software.amazon.jsii.Kernel.get(this, "enableCrossBorder", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableCrossBorder(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableCrossBorder", value);
+    }
+
+    /**
+     */
+    public void setEnableCrossBorder(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableCrossBorder", value);
     }
 
     /**
@@ -526,6 +544,23 @@ public class RosAccelerator extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
             this.props.duration(duration);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param enableCrossBorder This parameter is required.
+         */
+        public Builder enableCrossBorder(final java.lang.Boolean enableCrossBorder) {
+            this.props.enableCrossBorder(enableCrossBorder);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableCrossBorder This parameter is required.
+         */
+        public Builder enableCrossBorder(final com.aliyun.ros.cdk.core.IResolvable enableCrossBorder) {
+            this.props.enableCrossBorder(enableCrossBorder);
             return this;
         }
 

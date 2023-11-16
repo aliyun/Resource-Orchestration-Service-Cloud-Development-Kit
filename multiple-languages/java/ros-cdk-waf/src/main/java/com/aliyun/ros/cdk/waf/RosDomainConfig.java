@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * A ROS template type:  <code>ALIYUN::WAF::DomainConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.462Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.852Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.RosDomainConfig")
 public class RosDomainConfig extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  <code>ALIYUN::VPC::VpnGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.324Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.693Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpnGateway")
 public class RosVpnGateway extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,6 +44,18 @@ public class RosVpnGateway extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDisasterRecoveryInternetIp() {
+        return software.amazon.jsii.Kernel.get(this, "attrDisasterRecoveryInternetIp", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDisasterRecoveryVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDisasterRecoveryVSwitchId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInternetIp() {
         return software.amazon.jsii.Kernel.get(this, "attrInternetIp", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
@@ -68,8 +80,32 @@ public class RosVpnGateway extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSslVpnInternetIp() {
+        return software.amazon.jsii.Kernel.get(this, "attrSslVpnInternetIp", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpcId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpnGatewayId() {
         return software.amazon.jsii.Kernel.get(this, "attrVpnGatewayId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpnType() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpnType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVSwitchId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -159,6 +195,24 @@ public class RosVpnGateway extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDisasterRecoveryVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "disasterRecoveryVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDisasterRecoveryVSwitchId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "disasterRecoveryVSwitchId", value);
+    }
+
+    /**
+     */
+    public void setDisasterRecoveryVSwitchId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "disasterRecoveryVSwitchId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEnableIpsec() {
         return software.amazon.jsii.Kernel.get(this, "enableIpsec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -231,6 +285,24 @@ public class RosVpnGateway extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
+        return software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNetworkType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "networkType", value);
+    }
+
+    /**
+     */
+    public void setNetworkType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "networkType", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -275,6 +347,24 @@ public class RosVpnGateway extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVpnType() {
+        return software.amazon.jsii.Kernel.get(this, "vpnType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVpnType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vpnType", value);
+    }
+
+    /**
+     */
+    public void setVpnType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vpnType", value);
     }
 
     /**
@@ -559,6 +649,23 @@ public class RosVpnGateway extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param disasterRecoveryVSwitchId This parameter is required.
+         */
+        public Builder disasterRecoveryVSwitchId(final java.lang.String disasterRecoveryVSwitchId) {
+            this.props.disasterRecoveryVSwitchId(disasterRecoveryVSwitchId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param disasterRecoveryVSwitchId This parameter is required.
+         */
+        public Builder disasterRecoveryVSwitchId(final com.aliyun.ros.cdk.core.IResolvable disasterRecoveryVSwitchId) {
+            this.props.disasterRecoveryVSwitchId(disasterRecoveryVSwitchId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param enableIpsec This parameter is required.
          */
         public Builder enableIpsec(final java.lang.Boolean enableIpsec) {
@@ -627,6 +734,23 @@ public class RosVpnGateway extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param networkType This parameter is required.
+         */
+        public Builder networkType(final java.lang.String networkType) {
+            this.props.networkType(networkType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param networkType This parameter is required.
+         */
+        public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.props.networkType(networkType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param period This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
@@ -665,6 +789,23 @@ public class RosVpnGateway extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param vpnType This parameter is required.
+         */
+        public Builder vpnType(final java.lang.String vpnType) {
+            this.props.vpnType(vpnType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vpnType This parameter is required.
+         */
+        public Builder vpnType(final com.aliyun.ros.cdk.core.IResolvable vpnType) {
+            this.props.vpnType(vpnType);
             return this;
         }
 

@@ -24,6 +24,11 @@ export interface DomainProps {
     readonly checkUrl?: string | ros.IResolvable;
 
     /**
+     * Property originServers: The list of origin URLs. It has the same function as Sources, but has a higher priority than it.
+     */
+    readonly originServers?: Array<RosDomain.OriginServersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property resourceGroupId: The ID of the resource group. If this is left blank, the system automatically fills in the ID of the default resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -84,6 +89,7 @@ export class Domain extends ros.Resource {
             resourceGroupId: props.resourceGroupId,
             scope: props.scope,
             domainName: props.domainName,
+            originServers: props.originServers,
             cdnType: props.cdnType,
             topLevelDomain: props.topLevelDomain,
             sources: props.sources,

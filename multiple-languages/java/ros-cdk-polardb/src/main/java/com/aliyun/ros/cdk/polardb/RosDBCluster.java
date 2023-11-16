@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  <code>ALIYUN::POLARDB::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.002Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.490Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -52,6 +52,12 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterEndpointId() {
         return software.amazon.jsii.Kernel.get(this, "attrClusterEndpointId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrColdStorageInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrColdStorageInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -299,6 +305,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setClusterNetworkType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "clusterNetworkType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getColdStorageOption() {
+        return software.amazon.jsii.Kernel.get(this, "coldStorageOption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setColdStorageOption(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "coldStorageOption", value);
+    }
+
+    /**
+     */
+    public void setColdStorageOption(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.polardb.RosDBCluster.ColdStorageOptionProperty value) {
+        software.amazon.jsii.Kernel.set(this, "coldStorageOption", value);
     }
 
     /**
@@ -681,6 +705,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRestartMasterNode() {
+        return software.amazon.jsii.Kernel.get(this, "restartMasterNode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRestartMasterNode(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "restartMasterNode", value);
+    }
+
+    /**
+     */
+    public void setRestartMasterNode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "restartMasterNode", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getScaleMax() {
         return software.amazon.jsii.Kernel.get(this, "scaleMax", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -1047,6 +1089,178 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty")
+    @software.amazon.jsii.Jsii.Proxy(ColdStorageOptionProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ColdStorageOptionProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnable() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ColdStorageOptionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ColdStorageOptionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ColdStorageOptionProperty> {
+            java.lang.Object description;
+            java.lang.Object enable;
+
+            /**
+             * Sets the value of {@link ColdStorageOptionProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(java.lang.String description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ColdStorageOptionProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ColdStorageOptionProperty#getEnable}
+             * @param enable the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enable(java.lang.Boolean enable) {
+                this.enable = enable;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ColdStorageOptionProperty#getEnable}
+             * @param enable the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enable(com.aliyun.ros.cdk.core.IResolvable enable) {
+                this.enable = enable;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ColdStorageOptionProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ColdStorageOptionProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ColdStorageOptionProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ColdStorageOptionProperty {
+            private final java.lang.Object description;
+            private final java.lang.Object enable;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.description = builder.description;
+                this.enable = builder.enable;
+            }
+
+            @Override
+            public final java.lang.Object getDescription() {
+                return this.description;
+            }
+
+            @Override
+            public final java.lang.Object getEnable() {
+                return this.enable;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getDescription() != null) {
+                    data.set("description", om.valueToTree(this.getDescription()));
+                }
+                if (this.getEnable() != null) {
+                    data.set("enable", om.valueToTree(this.getEnable()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ColdStorageOptionProperty.Jsii$Proxy that = (ColdStorageOptionProperty.Jsii$Proxy) o;
+
+                if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+                return this.enable != null ? this.enable.equals(that.enable) : that.enable == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.description != null ? this.description.hashCode() : 0;
+                result = 31 * result + (this.enable != null ? this.enable.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -1587,6 +1801,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param coldStorageOption This parameter is required.
+         */
+        public Builder coldStorageOption(final com.aliyun.ros.cdk.core.IResolvable coldStorageOption) {
+            this.props.coldStorageOption(coldStorageOption);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param coldStorageOption This parameter is required.
+         */
+        public Builder coldStorageOption(final com.aliyun.ros.cdk.polardb.RosDBCluster.ColdStorageOptionProperty coldStorageOption) {
+            this.props.coldStorageOption(coldStorageOption);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param creationCategory This parameter is required.
          */
         public Builder creationCategory(final java.lang.String creationCategory) {
@@ -1939,6 +2170,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param restartMasterNode This parameter is required.
+         */
+        public Builder restartMasterNode(final java.lang.Boolean restartMasterNode) {
+            this.props.restartMasterNode(restartMasterNode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param restartMasterNode This parameter is required.
+         */
+        public Builder restartMasterNode(final com.aliyun.ros.cdk.core.IResolvable restartMasterNode) {
+            this.props.restartMasterNode(restartMasterNode);
             return this;
         }
 

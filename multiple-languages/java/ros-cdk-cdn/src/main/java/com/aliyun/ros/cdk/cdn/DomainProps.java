@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * Properties for defining a <code>ALIYUN::CDN::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.497Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.576Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DomainProps")
 @software.amazon.jsii.Jsii.Proxy(DomainProps.Jsii$Proxy.class)
 public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,6 +26,15 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
      * Property checkUrl: The validation of the origin.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCheckUrl() {
+        return null;
+    }
+
+    /**
+     * Property originServers: The list of origin URLs.
+     * <p>
+     * It has the same function as Sources, but has a higher priority than it.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOriginServers() {
         return null;
     }
 
@@ -83,6 +92,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object cdnType;
         java.lang.Object domainName;
         java.lang.Object checkUrl;
+        java.lang.Object originServers;
         java.lang.Object resourceGroupId;
         java.lang.Object scope;
         java.lang.Object sources;
@@ -150,6 +160,28 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder checkUrl(com.aliyun.ros.cdk.core.IResolvable checkUrl) {
             this.checkUrl = checkUrl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getOriginServers}
+         * @param originServers Property originServers: The list of origin URLs.
+         *                      It has the same function as Sources, but has a higher priority than it.
+         * @return {@code this}
+         */
+        public Builder originServers(com.aliyun.ros.cdk.core.IResolvable originServers) {
+            this.originServers = originServers;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getOriginServers}
+         * @param originServers Property originServers: The list of origin URLs.
+         *                      It has the same function as Sources, but has a higher priority than it.
+         * @return {@code this}
+         */
+        public Builder originServers(java.util.List<? extends java.lang.Object> originServers) {
+            this.originServers = originServers;
             return this;
         }
 
@@ -268,6 +300,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object cdnType;
         private final java.lang.Object domainName;
         private final java.lang.Object checkUrl;
+        private final java.lang.Object originServers;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object scope;
         private final java.lang.Object sources;
@@ -283,6 +316,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             this.cdnType = software.amazon.jsii.Kernel.get(this, "cdnType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.checkUrl = software.amazon.jsii.Kernel.get(this, "checkUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.originServers = software.amazon.jsii.Kernel.get(this, "originServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.scope = software.amazon.jsii.Kernel.get(this, "scope", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sources = software.amazon.jsii.Kernel.get(this, "sources", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -299,6 +333,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             this.cdnType = java.util.Objects.requireNonNull(builder.cdnType, "cdnType is required");
             this.domainName = java.util.Objects.requireNonNull(builder.domainName, "domainName is required");
             this.checkUrl = builder.checkUrl;
+            this.originServers = builder.originServers;
             this.resourceGroupId = builder.resourceGroupId;
             this.scope = builder.scope;
             this.sources = builder.sources;
@@ -319,6 +354,11 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getCheckUrl() {
             return this.checkUrl;
+        }
+
+        @Override
+        public final java.lang.Object getOriginServers() {
+            return this.originServers;
         }
 
         @Override
@@ -357,6 +397,9 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getCheckUrl() != null) {
                 data.set("checkUrl", om.valueToTree(this.getCheckUrl()));
             }
+            if (this.getOriginServers() != null) {
+                data.set("originServers", om.valueToTree(this.getOriginServers()));
+            }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
@@ -393,6 +436,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             if (!cdnType.equals(that.cdnType)) return false;
             if (!domainName.equals(that.domainName)) return false;
             if (this.checkUrl != null ? !this.checkUrl.equals(that.checkUrl) : that.checkUrl != null) return false;
+            if (this.originServers != null ? !this.originServers.equals(that.originServers) : that.originServers != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.scope != null ? !this.scope.equals(that.scope) : that.scope != null) return false;
             if (this.sources != null ? !this.sources.equals(that.sources) : that.sources != null) return false;
@@ -405,6 +449,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             int result = this.cdnType.hashCode();
             result = 31 * result + (this.domainName.hashCode());
             result = 31 * result + (this.checkUrl != null ? this.checkUrl.hashCode() : 0);
+            result = 31 * result + (this.originServers != null ? this.originServers.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.scope != null ? this.scope.hashCode() : 0);
             result = 31 * result + (this.sources != null ? this.sources.hashCode() : 0);

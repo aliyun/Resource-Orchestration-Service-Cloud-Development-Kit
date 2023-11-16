@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hologram;
 /**
  * Properties for defining a <code>ALIYUN::Hologram::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.453Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.876Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hologram.$Module.class, fqn = "@alicloud/ros-cdk-hologram.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -55,6 +55,18 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGatewayCount() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInitialDatabases() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLeaderInstanceId() {
         return null;
     }
 
@@ -114,6 +126,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object cpu;
         java.lang.Object duration;
         java.lang.Object gatewayCount;
+        java.lang.Object initialDatabases;
+        java.lang.Object leaderInstanceId;
         java.lang.Object pricingCycle;
         java.lang.Object productCode;
         java.lang.Object resourceGroupId;
@@ -322,6 +336,46 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getInitialDatabases}
+         * @param initialDatabases the value to be set.
+         * @return {@code this}
+         */
+        public Builder initialDatabases(java.lang.String initialDatabases) {
+            this.initialDatabases = initialDatabases;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getInitialDatabases}
+         * @param initialDatabases the value to be set.
+         * @return {@code this}
+         */
+        public Builder initialDatabases(com.aliyun.ros.cdk.core.IResolvable initialDatabases) {
+            this.initialDatabases = initialDatabases;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getLeaderInstanceId}
+         * @param leaderInstanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder leaderInstanceId(java.lang.String leaderInstanceId) {
+            this.leaderInstanceId = leaderInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getLeaderInstanceId}
+         * @param leaderInstanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder leaderInstanceId(com.aliyun.ros.cdk.core.IResolvable leaderInstanceId) {
+            this.leaderInstanceId = leaderInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getPricingCycle}
          * @param pricingCycle the value to be set.
          * @return {@code this}
@@ -458,6 +512,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object cpu;
         private final java.lang.Object duration;
         private final java.lang.Object gatewayCount;
+        private final java.lang.Object initialDatabases;
+        private final java.lang.Object leaderInstanceId;
         private final java.lang.Object pricingCycle;
         private final java.lang.Object productCode;
         private final java.lang.Object resourceGroupId;
@@ -481,6 +537,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.cpu = software.amazon.jsii.Kernel.get(this, "cpu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.gatewayCount = software.amazon.jsii.Kernel.get(this, "gatewayCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.initialDatabases = software.amazon.jsii.Kernel.get(this, "initialDatabases", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.leaderInstanceId = software.amazon.jsii.Kernel.get(this, "leaderInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.productCode = software.amazon.jsii.Kernel.get(this, "productCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -505,6 +563,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.cpu = builder.cpu;
             this.duration = builder.duration;
             this.gatewayCount = builder.gatewayCount;
+            this.initialDatabases = builder.initialDatabases;
+            this.leaderInstanceId = builder.leaderInstanceId;
             this.pricingCycle = builder.pricingCycle;
             this.productCode = builder.productCode;
             this.resourceGroupId = builder.resourceGroupId;
@@ -564,6 +624,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getInitialDatabases() {
+            return this.initialDatabases;
+        }
+
+        @Override
+        public final java.lang.Object getLeaderInstanceId() {
+            return this.leaderInstanceId;
+        }
+
+        @Override
         public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
@@ -619,6 +689,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getGatewayCount() != null) {
                 data.set("gatewayCount", om.valueToTree(this.getGatewayCount()));
             }
+            if (this.getInitialDatabases() != null) {
+                data.set("initialDatabases", om.valueToTree(this.getInitialDatabases()));
+            }
+            if (this.getLeaderInstanceId() != null) {
+                data.set("leaderInstanceId", om.valueToTree(this.getLeaderInstanceId()));
+            }
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
             }
@@ -665,6 +741,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.cpu != null ? !this.cpu.equals(that.cpu) : that.cpu != null) return false;
             if (this.duration != null ? !this.duration.equals(that.duration) : that.duration != null) return false;
             if (this.gatewayCount != null ? !this.gatewayCount.equals(that.gatewayCount) : that.gatewayCount != null) return false;
+            if (this.initialDatabases != null ? !this.initialDatabases.equals(that.initialDatabases) : that.initialDatabases != null) return false;
+            if (this.leaderInstanceId != null ? !this.leaderInstanceId.equals(that.leaderInstanceId) : that.leaderInstanceId != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
             if (this.productCode != null ? !this.productCode.equals(that.productCode) : that.productCode != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
@@ -685,6 +763,8 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.cpu != null ? this.cpu.hashCode() : 0);
             result = 31 * result + (this.duration != null ? this.duration.hashCode() : 0);
             result = 31 * result + (this.gatewayCount != null ? this.gatewayCount.hashCode() : 0);
+            result = 31 * result + (this.initialDatabases != null ? this.initialDatabases.hashCode() : 0);
+            result = 31 * result + (this.leaderInstanceId != null ? this.leaderInstanceId.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
             result = 31 * result + (this.productCode != null ? this.productCode.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);

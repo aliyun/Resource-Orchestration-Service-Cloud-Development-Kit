@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  <code>ALIYUN::CS::ClusterHelmApplication</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.948Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.185Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterHelmApplication")
 public class ClusterHelmApplication extends com.aliyun.ros.cdk.core.Resource {
 
@@ -205,7 +205,8 @@ public class ClusterHelmApplication extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property namespace: Namespace to use with helm.
          * <p>
-         * Default is default
+         * Default is default.
+         * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
          * <p>
          * @return {@code this}
          * @param namespace Property namespace: Namespace to use with helm. This parameter is required.
@@ -217,7 +218,8 @@ public class ClusterHelmApplication extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property namespace: Namespace to use with helm.
          * <p>
-         * Default is default
+         * Default is default.
+         * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
          * <p>
          * @return {@code this}
          * @param namespace Property namespace: Namespace to use with helm. This parameter is required.

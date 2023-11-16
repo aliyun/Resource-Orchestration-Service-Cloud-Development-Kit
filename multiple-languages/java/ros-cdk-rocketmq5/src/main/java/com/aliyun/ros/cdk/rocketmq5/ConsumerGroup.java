@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq5;
 /**
  * A ROS resource type:  <code>ALIYUN::ROCKETMQ5::ConsumerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.450Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.987Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.ConsumerGroup")
 public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -109,7 +109,7 @@ public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param consumeRetryPolicy Property consumeRetryPolicy: The consumption retry policy of the consumer group to be created. This parameter is required.
          */
-        public Builder consumeRetryPolicy(final com.aliyun.ros.cdk.rocketmq5.RosConsumerGroup.ConsumeRetryPolicyProperty consumeRetryPolicy) {
+        public Builder consumeRetryPolicy(final com.aliyun.ros.cdk.core.IResolvable consumeRetryPolicy) {
             this.props.consumeRetryPolicy(consumeRetryPolicy);
             return this;
         }
@@ -119,7 +119,7 @@ public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param consumeRetryPolicy Property consumeRetryPolicy: The consumption retry policy of the consumer group to be created. This parameter is required.
          */
-        public Builder consumeRetryPolicy(final com.aliyun.ros.cdk.core.IResolvable consumeRetryPolicy) {
+        public Builder consumeRetryPolicy(final com.aliyun.ros.cdk.rocketmq5.RosConsumerGroup.ConsumeRetryPolicyProperty consumeRetryPolicy) {
             this.props.consumeRetryPolicy(consumeRetryPolicy);
             return this;
         }

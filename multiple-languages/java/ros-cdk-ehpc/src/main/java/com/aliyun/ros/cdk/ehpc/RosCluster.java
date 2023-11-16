@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * A ROS template type:  <code>ALIYUN::EHPC::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.975Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.344Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -631,6 +631,24 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setKeyPairName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "keyPairName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceTrafficMode() {
+        return software.amazon.jsii.Kernel.get(this, "networkInterfaceTrafficMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNetworkInterfaceTrafficMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "networkInterfaceTrafficMode", value);
+    }
+
+    /**
+     */
+    public void setNetworkInterfaceTrafficMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "networkInterfaceTrafficMode", value);
     }
 
     /**
@@ -2310,6 +2328,23 @@ public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.props.keyPairName(keyPairName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param networkInterfaceTrafficMode This parameter is required.
+         */
+        public Builder networkInterfaceTrafficMode(final java.lang.String networkInterfaceTrafficMode) {
+            this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param networkInterfaceTrafficMode This parameter is required.
+         */
+        public Builder networkInterfaceTrafficMode(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceTrafficMode) {
+            this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
             return this;
         }
 

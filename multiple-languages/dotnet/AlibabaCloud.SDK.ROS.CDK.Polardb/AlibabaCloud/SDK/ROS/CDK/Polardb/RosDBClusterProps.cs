@@ -379,6 +379,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
+        private object? _coldStorageOption;
+
+        /// <remarks>
+        /// <strong>Property</strong>: coldStorageOption: The option of cold storage.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "coldStorageOption", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty\"}]}}", isOptional: true)]
+        public object? ColdStorageOption
+        {
+            get => _coldStorageOption;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.IColdStorageOptionProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.IColdStorageOptionProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _coldStorageOption = value;
+            }
+        }
+
         private object? _creationCategory;
 
         /// <remarks>
@@ -1210,6 +1243,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                     }
                 }
                 _resourceGroupId = value;
+            }
+        }
+
+        private object? _restartMasterNode;
+
+        /// <remarks>
+        /// <strong>Property</strong>: restartMasterNode: Whether to restart the master node.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "restartMasterNode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? RestartMasterNode
+        {
+            get => _restartMasterNode;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _restartMasterNode = value;
             }
         }
 

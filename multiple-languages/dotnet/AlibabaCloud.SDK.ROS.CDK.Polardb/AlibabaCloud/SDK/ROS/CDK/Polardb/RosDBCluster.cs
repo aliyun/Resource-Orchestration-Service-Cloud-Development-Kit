@@ -69,6 +69,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
+        /// <strong>Attribute</strong>: ColdStorageInstanceId: The ID of the cold storage instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrColdStorageInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrColdStorageInstanceId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
         /// <strong>Attribute</strong>: CustomConnectionStrings: The custom connection strings of the db cluster.
         /// </remarks>
         [JsiiProperty(name: "attrCustomConnectionStrings", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
@@ -505,6 +514,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                             break;
                         default:
                             throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: coldStorageOption: The option of cold storage.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "coldStorageOption", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty\"}]}}", isOptional: true)]
+        public virtual object? ColdStorageOption
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.IColdStorageOptionProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.IColdStorageOptionProperty).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 SetInstanceProperty(value);
@@ -1304,6 +1344,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: restartMasterNode: Whether to restart the master node.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "restartMasterNode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RestartMasterNode
+        {
+            get => GetInstanceProperty<object?>();
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                SetInstanceProperty(value);
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: scaleMax: Maximum limit of single-node scaling.
         /// </remarks>
         [JsiiOptional]
@@ -2058,6 +2129,135 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                     }
                 }
                 SetInstanceProperty(value);
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IColdStorageOptionProperty), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty")]
+        public interface IColdStorageOptionProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: description: The description of the cold storage instance. If the description is set, it means a cold storage instance is created.
+            /// The length is no more than 256 characters.
+            /// </remarks>
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Description
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: enable: Whether to create the cold storage instance.
+            /// </remarks>
+            [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Enable
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IColdStorageOptionProperty), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.IColdStorageOptionProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: description: The description of the cold storage instance. If the description is set, it means a cold storage instance is created.
+                /// The length is no more than 256 characters.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Description
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: enable: Whether to create the cold storage instance.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Enable
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.RosDBCluster.ColdStorageOptionProperty")]
+        public class ColdStorageOptionProperty : AlibabaCloud.SDK.ROS.CDK.Polardb.RosDBCluster.IColdStorageOptionProperty
+        {
+            private object? _description;
+
+            /// <remarks>
+            /// <strong>Property</strong>: description: The description of the cold storage instance. If the description is set, it means a cold storage instance is created.
+            /// The length is no more than 256 characters.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
+            {
+                get => _description;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _description = value;
+                }
+            }
+
+            private object? _enable;
+
+            /// <remarks>
+            /// <strong>Property</strong>: enable: Whether to create the cold storage instance.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Enable
+            {
+                get => _enable;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case bool cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _enable = value;
+                }
             }
         }
         [JsiiInterface(nativeType: typeof(IDBClusterParametersProperty), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBCluster.DBClusterParametersProperty")]

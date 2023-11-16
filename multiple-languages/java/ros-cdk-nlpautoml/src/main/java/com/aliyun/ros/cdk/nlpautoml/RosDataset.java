@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlpautoml;
 /**
  * A ROS template type:  <code>ALIYUN::NLPAUTOML::Dataset</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.803Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.271Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlpautoml.$Module.class, fqn = "@alicloud/ros-cdk-nlpautoml.RosDataset")
 public class RosDataset extends com.aliyun.ros.cdk.core.RosResource {
 

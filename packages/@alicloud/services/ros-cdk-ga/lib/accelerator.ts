@@ -34,6 +34,11 @@ export interface AcceleratorProps {
     readonly duration?: string | ros.IResolvable;
 
     /**
+     * Property enableCrossBorder: Whether the global acceleration instance enables the cross-border line function.
+     */
+    readonly enableCrossBorder?: boolean | ros.IResolvable;
+
+    /**
      * Property instanceChargeType: Global acceleration instance payment type, the default value is PREPAY (prepaid).
      */
     readonly instanceChargeType?: string | ros.IResolvable;
@@ -131,6 +136,7 @@ export class Accelerator extends ros.Resource {
             autoUseCoupon: props.autoUseCoupon,
             instanceChargeType: props.instanceChargeType,
             pricingCycle: props.pricingCycle,
+            enableCrossBorder: props.enableCrossBorder === undefined || props.enableCrossBorder === null ? false : props.enableCrossBorder,
             duration: props.duration,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             ipSetConfig: props.ipSetConfig,

@@ -1,5 +1,9 @@
+@alicloud/ros-cdk-dbs.Download=com.aliyun.ros.cdk.dbs.Download
+@alicloud/ros-cdk-dbs.DownloadProps=com.aliyun.ros.cdk.dbs.DownloadProps
 @alicloud/ros-cdk-dbs.RestoreTask=com.aliyun.ros.cdk.dbs.RestoreTask
 @alicloud/ros-cdk-dbs.RestoreTaskProps=com.aliyun.ros.cdk.dbs.RestoreTaskProps
+@alicloud/ros-cdk-dbs.RosDownload=com.aliyun.ros.cdk.dbs.RosDownload
+@alicloud/ros-cdk-dbs.RosDownloadProps=com.aliyun.ros.cdk.dbs.RosDownloadProps
 @alicloud/ros-cdk-dbs.RosRestoreTask=com.aliyun.ros.cdk.dbs.RosRestoreTask
 @alicloud/ros-cdk-dbs.RosRestoreTaskProps=com.aliyun.ros.cdk.dbs.RosRestoreTaskProps
 @alicloud/ros-cdk-dbs.datasource.BackupPlans=com.aliyun.ros.cdk.dbs.datasource.BackupPlans

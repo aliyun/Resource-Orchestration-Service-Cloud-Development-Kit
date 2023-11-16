@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a <code>ALIYUN::POLARDB::DBNodes</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.015Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.507Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBNodesProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBNodesProps.Jsii$Proxy.class)
 public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,7 +18,19 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbNodeType() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImciSwitch() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -34,7 +46,9 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<RosDBNodesProps> {
         java.lang.Object amount;
         java.lang.Object dbClusterId;
+        java.lang.Object dbNodeType;
         java.lang.Object imciSwitch;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link RosDBNodesProps#getAmount}
@@ -77,6 +91,26 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDBNodesProps#getDbNodeType}
+         * @param dbNodeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbNodeType(java.lang.String dbNodeType) {
+            this.dbNodeType = dbNodeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodesProps#getDbNodeType}
+         * @param dbNodeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbNodeType(com.aliyun.ros.cdk.core.IResolvable dbNodeType) {
+            this.dbNodeType = dbNodeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBNodesProps#getImciSwitch}
          * @param imciSwitch the value to be set.
          * @return {@code this}
@@ -93,6 +127,26 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder imciSwitch(com.aliyun.ros.cdk.core.IResolvable imciSwitch) {
             this.imciSwitch = imciSwitch;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodesProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBNodesProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
             return this;
         }
 
@@ -114,7 +168,9 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDBNodesProps {
         private final java.lang.Object amount;
         private final java.lang.Object dbClusterId;
+        private final java.lang.Object dbNodeType;
         private final java.lang.Object imciSwitch;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -124,7 +180,9 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.amount = software.amazon.jsii.Kernel.get(this, "amount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbNodeType = software.amazon.jsii.Kernel.get(this, "dbNodeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.imciSwitch = software.amazon.jsii.Kernel.get(this, "imciSwitch", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -134,7 +192,9 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.amount = java.util.Objects.requireNonNull(builder.amount, "amount is required");
             this.dbClusterId = java.util.Objects.requireNonNull(builder.dbClusterId, "dbClusterId is required");
+            this.dbNodeType = builder.dbNodeType;
             this.imciSwitch = builder.imciSwitch;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override
@@ -148,8 +208,18 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getDbNodeType() {
+            return this.dbNodeType;
+        }
+
+        @Override
         public final java.lang.Object getImciSwitch() {
             return this.imciSwitch;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -160,8 +230,14 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
 
             data.set("amount", om.valueToTree(this.getAmount()));
             data.set("dbClusterId", om.valueToTree(this.getDbClusterId()));
+            if (this.getDbNodeType() != null) {
+                data.set("dbNodeType", om.valueToTree(this.getDbNodeType()));
+            }
             if (this.getImciSwitch() != null) {
                 data.set("imciSwitch", om.valueToTree(this.getImciSwitch()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -183,14 +259,18 @@ public interface RosDBNodesProps extends software.amazon.jsii.JsiiSerializable {
 
             if (!amount.equals(that.amount)) return false;
             if (!dbClusterId.equals(that.dbClusterId)) return false;
-            return this.imciSwitch != null ? this.imciSwitch.equals(that.imciSwitch) : that.imciSwitch == null;
+            if (this.dbNodeType != null ? !this.dbNodeType.equals(that.dbNodeType) : that.dbNodeType != null) return false;
+            if (this.imciSwitch != null ? !this.imciSwitch.equals(that.imciSwitch) : that.imciSwitch != null) return false;
+            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.amount.hashCode();
             result = 31 * result + (this.dbClusterId.hashCode());
+            result = 31 * result + (this.dbNodeType != null ? this.dbNodeType.hashCode() : 0);
             result = 31 * result + (this.imciSwitch != null ? this.imciSwitch.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }
     }

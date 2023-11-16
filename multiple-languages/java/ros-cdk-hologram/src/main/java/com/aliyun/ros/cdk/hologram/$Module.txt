@@ -4,3 +4,7 @@
 @alicloud/ros-cdk-hologram.RosInstance.EndpointsProperty=com.aliyun.ros.cdk.hologram.RosInstance$EndpointsProperty
 @alicloud/ros-cdk-hologram.RosInstance.TagsProperty=com.aliyun.ros.cdk.hologram.RosInstance$TagsProperty
 @alicloud/ros-cdk-hologram.RosInstanceProps=com.aliyun.ros.cdk.hologram.RosInstanceProps
+@alicloud/ros-cdk-hologram.datasource.Instances=com.aliyun.ros.cdk.hologram.datasource.Instances
+@alicloud/ros-cdk-hologram.datasource.InstancesProps=com.aliyun.ros.cdk.hologram.datasource.InstancesProps
+@alicloud/ros-cdk-hologram.datasource.RosInstances=com.aliyun.ros.cdk.hologram.datasource.RosInstances
+@alicloud/ros-cdk-hologram.datasource.RosInstancesProps=com.aliyun.ros.cdk.hologram.datasource.RosInstancesProps

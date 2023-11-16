@@ -1227,7 +1227,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE","Serverless"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE","Serverless"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -2532,7 +2532,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE","Serverless"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE","Serverless"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -5649,7 +5649,7 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hologram;
 /**
  * A ROS resource type:  <code>ALIYUN::Hologram::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.444Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.855Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hologram.$Module.class, fqn = "@alicloud/ros-cdk-hologram.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -583,6 +583,48 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder gatewayCount(final com.aliyun.ros.cdk.core.IResolvable gatewayCount) {
             this.props.gatewayCount(gatewayCount);
+            return this;
+        }
+
+        /**
+         * Property initialDatabases: Initialize the database and split multiple database names ",".
+         * <p>
+         * @return {@code this}
+         * @param initialDatabases Property initialDatabases: Initialize the database and split multiple database names ",". This parameter is required.
+         */
+        public Builder initialDatabases(final java.lang.String initialDatabases) {
+            this.props.initialDatabases(initialDatabases);
+            return this;
+        }
+        /**
+         * Property initialDatabases: Initialize the database and split multiple database names ",".
+         * <p>
+         * @return {@code this}
+         * @param initialDatabases Property initialDatabases: Initialize the database and split multiple database names ",". This parameter is required.
+         */
+        public Builder initialDatabases(final com.aliyun.ros.cdk.core.IResolvable initialDatabases) {
+            this.props.initialDatabases(initialDatabases);
+            return this;
+        }
+
+        /**
+         * Property leaderInstanceId: The id of leader instance.
+         * <p>
+         * @return {@code this}
+         * @param leaderInstanceId Property leaderInstanceId: The id of leader instance. This parameter is required.
+         */
+        public Builder leaderInstanceId(final java.lang.String leaderInstanceId) {
+            this.props.leaderInstanceId(leaderInstanceId);
+            return this;
+        }
+        /**
+         * Property leaderInstanceId: The id of leader instance.
+         * <p>
+         * @return {@code this}
+         * @param leaderInstanceId Property leaderInstanceId: The id of leader instance. This parameter is required.
+         */
+        public Builder leaderInstanceId(final com.aliyun.ros.cdk.core.IResolvable leaderInstanceId) {
+            this.props.leaderInstanceId(leaderInstanceId);
             return this;
         }
 

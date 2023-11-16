@@ -34,7 +34,8 @@ export interface ClusterHelmApplicationProps {
     readonly credential?: RosClusterHelmApplication.CredentialProperty | ros.IResolvable;
 
     /**
-     * Property namespace: Namespace to use with helm. Default is default
+     * Property namespace: Namespace to use with helm. Default is default.
+     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     readonly namespace?: string | ros.IResolvable;
 }

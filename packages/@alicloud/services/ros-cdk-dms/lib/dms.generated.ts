@@ -90,14 +90,6 @@ export interface RosInstanceProps {
     readonly safeRule: string | ros.IResolvable;
 
     /**
-     * @Property tid: The ID of the tenant.
-     * Note To query the ID, log on to the DMS Enterprise console and choose System Management
-     * > Instance Management or System Management > User Management. The ID of the tenant
-     * appears in the Service Specification section.
-     */
-    readonly tid: number | ros.IResolvable;
-
-    /**
      * @Property dataLinkName: The name of the data link for cross-database query.
      */
     readonly dataLinkName?: string | ros.IResolvable;
@@ -128,6 +120,14 @@ export interface RosInstanceProps {
      * Note You must specify this parameter if the InstanceType parameter is set to PostgreSQL or Oracle.
      */
     readonly sid?: string | ros.IResolvable;
+
+    /**
+     * @Property tid: The ID of the tenant.
+     * Note To query the ID, log on to the DMS Enterprise console and choose System Management
+     * > Instance Management or System Management > User Management. The ID of the tenant
+     * appears in the Service Specification section.
+     */
+    readonly tid?: number | ros.IResolvable;
 
     /**
      * @Property useDsql: Specifies whether to enable cross-database query for the database instance. Valid
@@ -169,7 +169,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('ddlOnline', ros.validateNumber)(properties.ddlOnline));
     errors.collect(ros.propertyValidator('envType', ros.requiredValidator)(properties.envType));
     errors.collect(ros.propertyValidator('envType', ros.validateString)(properties.envType));
-    errors.collect(ros.propertyValidator('tid', ros.requiredValidator)(properties.tid));
     errors.collect(ros.propertyValidator('tid', ros.validateNumber)(properties.tid));
     if(properties.useDsql && (typeof properties.useDsql) !== 'object') {
         errors.collect(ros.propertyValidator('useDsql', ros.validateAllowedValues)({
@@ -197,12 +196,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('databaseUser', ros.requiredValidator)(properties.databaseUser));
     errors.collect(ros.propertyValidator('databaseUser', ros.validateString)(properties.databaseUser));
     errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
-    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
-        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
-          data: properties.instanceType,
-          allowedValues: ["MySQL","SQLServer","PostgreSQL","Oracle","DRDS","OceanBase","Mongo","Redis"],
-        }));
-    }
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     errors.collect(ros.propertyValidator('dataLinkName', ros.validateString)(properties.dataLinkName));
     errors.collect(ros.propertyValidator('queryTimeout', ros.requiredValidator)(properties.queryTimeout));
@@ -237,12 +230,12 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       Port: ros.numberToRosTemplate(properties.port),
       QueryTimeout: ros.numberToRosTemplate(properties.queryTimeout),
       SafeRule: ros.stringToRosTemplate(properties.safeRule),
-      Tid: ros.numberToRosTemplate(properties.tid),
       DataLinkName: ros.stringToRosTemplate(properties.dataLinkName),
       DdlOnline: ros.numberToRosTemplate(properties.ddlOnline),
       EcsInstanceId: ros.stringToRosTemplate(properties.ecsInstanceId),
       EcsRegion: ros.stringToRosTemplate(properties.ecsRegion),
       Sid: ros.stringToRosTemplate(properties.sid),
+      Tid: ros.numberToRosTemplate(properties.tid),
       UseDsql: ros.numberToRosTemplate(properties.useDsql),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
     };
@@ -363,14 +356,6 @@ export class RosInstance extends ros.RosResource {
     public safeRule: string | ros.IResolvable;
 
     /**
-     * @Property tid: The ID of the tenant.
-     * Note To query the ID, log on to the DMS Enterprise console and choose System Management
-     * > Instance Management or System Management > User Management. The ID of the tenant
-     * appears in the Service Specification section.
-     */
-    public tid: number | ros.IResolvable;
-
-    /**
      * @Property dataLinkName: The name of the data link for cross-database query.
      */
     public dataLinkName: string | ros.IResolvable | undefined;
@@ -401,6 +386,14 @@ export class RosInstance extends ros.RosResource {
      * Note You must specify this parameter if the InstanceType parameter is set to PostgreSQL or Oracle.
      */
     public sid: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tid: The ID of the tenant.
+     * Note To query the ID, log on to the DMS Enterprise console and choose System Management
+     * > Instance Management or System Management > User Management. The ID of the tenant
+     * appears in the Service Specification section.
+     */
+    public tid: number | ros.IResolvable | undefined;
 
     /**
      * @Property useDsql: Specifies whether to enable cross-database query for the database instance. Valid
@@ -443,12 +436,12 @@ export class RosInstance extends ros.RosResource {
         this.port = props.port;
         this.queryTimeout = props.queryTimeout;
         this.safeRule = props.safeRule;
-        this.tid = props.tid;
         this.dataLinkName = props.dataLinkName;
         this.ddlOnline = props.ddlOnline;
         this.ecsInstanceId = props.ecsInstanceId;
         this.ecsRegion = props.ecsRegion;
         this.sid = props.sid;
+        this.tid = props.tid;
         this.useDsql = props.useDsql;
         this.vpcId = props.vpcId;
     }
@@ -469,12 +462,12 @@ export class RosInstance extends ros.RosResource {
             port: this.port,
             queryTimeout: this.queryTimeout,
             safeRule: this.safeRule,
-            tid: this.tid,
             dataLinkName: this.dataLinkName,
             ddlOnline: this.ddlOnline,
             ecsInstanceId: this.ecsInstanceId,
             ecsRegion: this.ecsRegion,
             sid: this.sid,
+            tid: this.tid,
             useDsql: this.useDsql,
             vpcId: this.vpcId,
         };

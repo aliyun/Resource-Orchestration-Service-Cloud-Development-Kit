@@ -23,6 +23,11 @@ export interface RosDomainProps {
     readonly checkUrl?: string | ros.IResolvable;
 
     /**
+     * @Property originServers: The list of origin URLs. It has the same function as Sources, but has a higher priority than it.
+     */
+    readonly originServers?: Array<RosDomain.OriginServersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group. If this is left blank, the system automatically fills in the ID of the default resource group.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
@@ -63,6 +68,14 @@ function RosDomainPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('scope', ros.validateString)(properties.scope));
     errors.collect(ros.propertyValidator('domainName', ros.requiredValidator)(properties.domainName));
     errors.collect(ros.propertyValidator('domainName', ros.validateString)(properties.domainName));
+    if(properties.originServers && (Array.isArray(properties.originServers) || (typeof properties.originServers) === 'string')) {
+        errors.collect(ros.propertyValidator('originServers', ros.validateLength)({
+            data: properties.originServers.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('originServers', ros.listValidator(RosDomain_OriginServersPropertyValidator))(properties.originServers));
     errors.collect(ros.propertyValidator('cdnType', ros.requiredValidator)(properties.cdnType));
     if(properties.cdnType && (typeof properties.cdnType) !== 'object') {
         errors.collect(ros.propertyValidator('cdnType', ros.validateAllowedValues)({
@@ -101,6 +114,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
       CdnType: ros.stringToRosTemplate(properties.cdnType),
       DomainName: ros.stringToRosTemplate(properties.domainName),
       CheckUrl: ros.stringToRosTemplate(properties.checkUrl),
+      OriginServers: ros.listMapper(rosDomainOriginServersPropertyToRosTemplate)(properties.originServers),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Scope: ros.stringToRosTemplate(properties.scope),
       Sources: ros.stringToRosTemplate(properties.sources),
@@ -152,6 +166,11 @@ export class RosDomain extends ros.RosResource {
     public checkUrl: string | ros.IResolvable | undefined;
 
     /**
+     * @Property originServers: The list of origin URLs. It has the same function as Sources, but has a higher priority than it.
+     */
+    public originServers: Array<RosDomain.OriginServersProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property resourceGroupId: The ID of the resource group. If this is left blank, the system automatically fills in the ID of the default resource group.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
@@ -192,6 +211,7 @@ export class RosDomain extends ros.RosResource {
         this.cdnType = props.cdnType;
         this.domainName = props.domainName;
         this.checkUrl = props.checkUrl;
+        this.originServers = props.originServers;
         this.resourceGroupId = props.resourceGroupId;
         this.scope = props.scope;
         this.sources = props.sources;
@@ -205,6 +225,7 @@ export class RosDomain extends ros.RosResource {
             cdnType: this.cdnType,
             domainName: this.domainName,
             checkUrl: this.checkUrl,
+            originServers: this.originServers,
             resourceGroupId: this.resourceGroupId,
             scope: this.scope,
             sources: this.sources,
@@ -215,6 +236,94 @@ export class RosDomain extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDomainPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosDomain {
+    /**
+     * @stability external
+     */
+    export interface OriginServersProperty {
+        /**
+         * @Property type: The type of the origin server. Valid values:
+     * ipaddr: the IP address
+     * domain: the domain name
+     * oss: the endpoint of an Object Storage Service (OSS) bucket
+     * fc_domain: the domain name of Function Compute
+         */
+        readonly type: string | ros.IResolvable;
+        /**
+         * @Property content: The address of the origin server. You can specify an IP address or a domain name.
+         */
+        readonly content: string | ros.IResolvable;
+        /**
+         * @Property priority: The priority of the origin server if multiple origin servers are specified. Default value: 20. Valid values:
+     * 20: the primary origin server
+     * 30: the secondary origin server
+         */
+        readonly priority?: string | ros.IResolvable;
+        /**
+         * @Property port: The port. Valid values:
+     * 80: the default port
+     * 443: the HTTPS port
+     * A custom port
+         */
+        readonly port?: number | ros.IResolvable;
+        /**
+         * @Property weight: The weight of the origin server if multiple origin servers are specified. Valid values: 0 to 100. Default value: 10.
+         */
+        readonly weight?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OriginServersProperty`
+ *
+ * @param properties - the TypeScript properties of a `OriginServersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosDomain_OriginServersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["ipaddr","domain","oss","fc_domain"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('content', ros.requiredValidator)(properties.content));
+    errors.collect(ros.propertyValidator('content', ros.validateString)(properties.content));
+    if(properties.priority && (typeof properties.priority) !== 'object') {
+        errors.collect(ros.propertyValidator('priority', ros.validateAllowedValues)({
+          data: properties.priority,
+          allowedValues: ["20","30"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('priority', ros.validateString)(properties.priority));
+    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('weight', ros.validateString)(properties.weight));
+    return errors.wrap('supplied properties not correct for "OriginServersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CDN::Domain.OriginServers` resource
+ *
+ * @param properties - the TypeScript properties of a `OriginServersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CDN::Domain.OriginServers` resource.
+ */
+// @ts-ignore TS6133
+function rosDomainOriginServersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosDomain_OriginServersPropertyValidator(properties).assertSuccess();
+    return {
+      Type: ros.stringToRosTemplate(properties.type),
+      Content: ros.stringToRosTemplate(properties.content),
+      Priority: ros.stringToRosTemplate(properties.priority),
+      Port: ros.numberToRosTemplate(properties.port),
+      Weight: ros.stringToRosTemplate(properties.weight),
+    };
 }
 
 export namespace RosDomain {

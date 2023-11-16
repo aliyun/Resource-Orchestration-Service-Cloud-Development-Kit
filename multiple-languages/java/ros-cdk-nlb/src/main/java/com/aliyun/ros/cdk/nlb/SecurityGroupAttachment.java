@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * A ROS resource type:  <code>ALIYUN::NLB::SecurityGroupAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.789Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.247Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.SecurityGroupAttachment")
 public class SecurityGroupAttachment extends com.aliyun.ros.cdk.core.Resource {
 

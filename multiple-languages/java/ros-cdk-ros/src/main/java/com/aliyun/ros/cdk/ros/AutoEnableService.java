@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS resource type:  <code>ALIYUN::ROS::AutoEnableService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.462Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.001Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableService")
 public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -121,6 +121,9 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * VS: Video Surveillance
          * Xtrace: Tracing Anlaysis
          * CDN: Content Delivery Network
+         * CDT: Cloud Data Transfer
+         * CDTCb: Cloud Data Transfer for Cross Border
+         * TransitRouter: Cen Transit Router
          * <p>
          * @return {@code this}
          * @param serviceName Property serviceName: Which service to enable. This parameter is required.
@@ -168,6 +171,9 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * VS: Video Surveillance
          * Xtrace: Tracing Anlaysis
          * CDN: Content Delivery Network
+         * CDT: Cloud Data Transfer
+         * CDTCb: Cloud Data Transfer for Cross Border
+         * TransitRouter: Cen Transit Router
          * <p>
          * @return {@code this}
          * @param serviceName Property serviceName: Which service to enable. This parameter is required.

@@ -80,6 +80,16 @@ export interface InstanceProps {
     readonly gatewayCount?: number | ros.IResolvable;
 
     /**
+     * Property initialDatabases: Initialize the database and split multiple database names ",".
+     */
+    readonly initialDatabases?: string | ros.IResolvable;
+
+    /**
+     * Property leaderInstanceId: The id of leader instance.
+     */
+    readonly leaderInstanceId?: string | ros.IResolvable;
+
+    /**
      * Property pricingCycle: Billing cycle. Value:
      * - Month: monthly billing
      * - Hour: hourly billing
@@ -264,18 +274,20 @@ export class Instance extends ros.Resource {
 
         const rosInstance = new RosInstance(this, id,  {
             coldStorageSize: props.coldStorageSize,
+            leaderInstanceId: props.leaderInstanceId,
             resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
             productCode: props.productCode,
             pricingCycle: props.pricingCycle,
             scaleType: props.scaleType,
-            storageSize: props.storageSize,
             cpu: props.cpu,
+            storageSize: props.storageSize,
             duration: props.duration,
             autoPay: props.autoPay,
             endpoints: props.endpoints,
             instanceName: props.instanceName,
             gatewayCount: props.gatewayCount,
+            initialDatabases: props.initialDatabases,
             paymentType: props.paymentType,
             instanceType: props.instanceType,
             tags: props.tags,

@@ -172,6 +172,13 @@ export interface ClusterProps {
     readonly keyPairName?: string | ros.IResolvable;
 
     /**
+     * Property networkInterfaceTrafficMode: Communication mode of an elastic NIC. Value values:
+     * - **Standard**: The TCP communication mode is used.
+     * - **HighPerformance**: Enables the Elastic RDMA Interface (ERI) and uses the RDMA communication mode.
+     */
+    readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
+
+    /**
      * Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, / Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
      */
     readonly password?: string | ros.IResolvable;
@@ -400,6 +407,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
             autoRenewPeriod: props.autoRenewPeriod,
             keyPairName: props.keyPairName,
             remoteDirectory: props.remoteDirectory,
+            networkInterfaceTrafficMode: props.networkInterfaceTrafficMode,
             sccClusterId: props.sccClusterId,
             zoneId: props.zoneId,
             systemDiskLevel: props.systemDiskLevel,

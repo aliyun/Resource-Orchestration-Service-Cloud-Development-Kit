@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS resource type:  <code>ALIYUN::POLARDB::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:46.970Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.440Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -60,6 +60,13 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterEndpointId() {
         return software.amazon.jsii.Kernel.get(this, "attrClusterEndpointId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ColdStorageInstanceId: The ID of the cold storage instance.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrColdStorageInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrColdStorageInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -438,6 +445,27 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder clusterNetworkType(final com.aliyun.ros.cdk.core.IResolvable clusterNetworkType) {
             this.props.clusterNetworkType(clusterNetworkType);
+            return this;
+        }
+
+        /**
+         * Property coldStorageOption: The option of cold storage.
+         * <p>
+         * @return {@code this}
+         * @param coldStorageOption Property coldStorageOption: The option of cold storage. This parameter is required.
+         */
+        public Builder coldStorageOption(final com.aliyun.ros.cdk.core.IResolvable coldStorageOption) {
+            this.props.coldStorageOption(coldStorageOption);
+            return this;
+        }
+        /**
+         * Property coldStorageOption: The option of cold storage.
+         * <p>
+         * @return {@code this}
+         * @param coldStorageOption Property coldStorageOption: The option of cold storage. This parameter is required.
+         */
+        public Builder coldStorageOption(final com.aliyun.ros.cdk.polardb.RosDBCluster.ColdStorageOptionProperty coldStorageOption) {
+            this.props.coldStorageOption(coldStorageOption);
             return this;
         }
 
@@ -1029,6 +1057,27 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property restartMasterNode: Whether to restart the master node.
+         * <p>
+         * @return {@code this}
+         * @param restartMasterNode Property restartMasterNode: Whether to restart the master node. This parameter is required.
+         */
+        public Builder restartMasterNode(final java.lang.Boolean restartMasterNode) {
+            this.props.restartMasterNode(restartMasterNode);
+            return this;
+        }
+        /**
+         * Property restartMasterNode: Whether to restart the master node.
+         * <p>
+         * @return {@code this}
+         * @param restartMasterNode Property restartMasterNode: Whether to restart the master node. This parameter is required.
+         */
+        public Builder restartMasterNode(final com.aliyun.ros.cdk.core.IResolvable restartMasterNode) {
+            this.props.restartMasterNode(restartMasterNode);
             return this;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a <code>ALIYUN::ResourceManager::PolicyAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:47.409Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.943Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.PolicyAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(PolicyAttachmentProps.Jsii$Proxy.class)
 public interface PolicyAttachmentProps extends software.amazon.jsii.JsiiSerializable {

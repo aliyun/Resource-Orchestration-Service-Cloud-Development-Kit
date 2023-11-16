@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a <code>ALIYUN::CS::ClusterHelmApplication</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.949Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.186Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ClusterHelmApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ClusterHelmApplicationProps.Jsii$Proxy.class)
 public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -44,7 +44,8 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
     /**
      * Property namespace: Namespace to use with helm.
      * <p>
-     * Default is default
+     * Default is default.
+     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNamespace() {
         return null;
@@ -174,7 +175,8 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         /**
          * Sets the value of {@link ClusterHelmApplicationProps#getNamespace}
          * @param namespace Property namespace: Namespace to use with helm.
-         *                  Default is default
+         *                  Default is default.
+         *                  If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
          * @return {@code this}
          */
         public Builder namespace(java.lang.String namespace) {
@@ -185,7 +187,8 @@ public interface ClusterHelmApplicationProps extends software.amazon.jsii.JsiiSe
         /**
          * Sets the value of {@link ClusterHelmApplicationProps#getNamespace}
          * @param namespace Property namespace: Namespace to use with helm.
-         *                  Default is default
+         *                  Default is default.
+         *                  If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
          * @return {@code this}
          */
         public Builder namespace(com.aliyun.ros.cdk.core.IResolvable namespace) {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * A ROS template type:  <code>ALIYUN::DMS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:45.191Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.459Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -309,24 +309,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getTid() {
-        return software.amazon.jsii.Kernel.get(this, "tid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setTid(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "tid", java.util.Objects.requireNonNull(value, "tid is required"));
-    }
-
-    /**
-     */
-    public void setTid(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "tid", java.util.Objects.requireNonNull(value, "tid is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDataLinkName() {
         return software.amazon.jsii.Kernel.get(this, "dataLinkName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -413,6 +395,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSid(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sid", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTid() {
+        return software.amazon.jsii.Kernel.get(this, "tid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTid(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "tid", value);
+    }
+
+    /**
+     */
+    public void setTid(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tid", value);
     }
 
     /**
@@ -700,23 +700,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param tid This parameter is required.
-         */
-        public Builder tid(final java.lang.Number tid) {
-            this.props.tid(tid);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param tid This parameter is required.
-         */
-        public Builder tid(final com.aliyun.ros.cdk.core.IResolvable tid) {
-            this.props.tid(tid);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param dataLinkName This parameter is required.
          */
         public Builder dataLinkName(final java.lang.String dataLinkName) {
@@ -797,6 +780,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder sid(final com.aliyun.ros.cdk.core.IResolvable sid) {
             this.props.sid(sid);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tid This parameter is required.
+         */
+        public Builder tid(final java.lang.Number tid) {
+            this.props.tid(tid);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tid This parameter is required.
+         */
+        public Builder tid(final com.aliyun.ros.cdk.core.IResolvable tid) {
+            this.props.tid(tid);
             return this;
         }
 

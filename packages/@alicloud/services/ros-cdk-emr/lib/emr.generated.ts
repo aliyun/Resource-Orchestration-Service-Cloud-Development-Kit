@@ -308,7 +308,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -1016,7 +1016,7 @@ function RosCluster_HostGroupPropertyValidator(properties: any): ros.ValidationR
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -1182,11 +1182,11 @@ export interface RosCluster2Props {
 
     /**
      * @Property clusterType: Cluster type.Ranges:
-     * Datalake: The new version of the data lake.
+     * DATALAKE: The new version of the data lake.
      * OLAP: Data analysis.
-     * DataFlow: Real -time data stream.
-     * DataServing: Data service.
-     * Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+     * DATAFLOW: Real -time data stream.
+     * DATASERVING: Data service.
+     * HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
      */
     readonly clusterType: string | ros.IResolvable;
 
@@ -1310,7 +1310,7 @@ function RosCluster2PropsValidator(properties: any): ros.ValidationResult {
     if(properties.paymentType && (typeof properties.paymentType) !== 'object') {
         errors.collect(ros.propertyValidator('paymentType', ros.validateAllowedValues)({
           data: properties.paymentType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
@@ -1395,11 +1395,11 @@ export class RosCluster2 extends ros.RosResource {
 
     /**
      * @Property clusterType: Cluster type.Ranges:
-     * Datalake: The new version of the data lake.
+     * DATALAKE: The new version of the data lake.
      * OLAP: Data analysis.
-     * DataFlow: Real -time data stream.
-     * DataServing: Data service.
-     * Hadoop: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+     * DATAFLOW: Real -time data stream.
+     * DATASERVING: Data service.
+     * HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
      */
     public clusterType: string | ros.IResolvable;
 
@@ -1925,6 +1925,10 @@ export namespace RosCluster2 {
          */
         readonly zoneId: string | ros.IResolvable;
         /**
+         * @Property masterRootPassword: MASTER node root password.
+         */
+        readonly masterRootPassword?: string | ros.IResolvable;
+        /**
          * @Property securityGroupId: Security group ID. EMR only supports common security groups, not enterprise security groups.
          */
         readonly securityGroupId: string | ros.IResolvable;
@@ -1949,6 +1953,7 @@ function RosCluster2_NodeAttributesPropertyValidator(properties: any): ros.Valid
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('masterRootPassword', ros.validateString)(properties.masterRootPassword));
     errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('ramRole', ros.validateString)(properties.ramRole));
@@ -1970,6 +1975,7 @@ function rosCluster2NodeAttributesPropertyToRosTemplate(properties: any): any {
       KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      MasterRootPassword: ros.stringToRosTemplate(properties.masterRootPassword),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       RamRole: ros.stringToRosTemplate(properties.ramRole),
     };

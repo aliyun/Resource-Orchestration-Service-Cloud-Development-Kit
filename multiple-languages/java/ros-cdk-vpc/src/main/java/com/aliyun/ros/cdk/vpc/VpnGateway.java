@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  <code>ALIYUN::VPC::VpnGateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:48.362Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.745Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnGateway")
 public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
 
@@ -49,6 +49,20 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDisasterRecoveryInternetIp() {
+        return software.amazon.jsii.Kernel.get(this, "attrDisasterRecoveryInternetIp", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute DisasterRecoveryVSwitchId: The ID of the second vSwitch associated with the VPN gateway.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDisasterRecoveryVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDisasterRecoveryVSwitchId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
      * Attribute InternetIp: The public IP address of the VPN gateway.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInternetIp() {
@@ -77,10 +91,38 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute SslVpnInternetIp: The IP address of the SSL-VPN connection.This attribute is returned only when the VPN gateway is a public VPN gateway and supports only the single-tunnel mode. In addition, the VPN gateway must have the SSL-VPN feature enabled.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSslVpnInternetIp() {
+        return software.amazon.jsii.Kernel.get(this, "attrSslVpnInternetIp", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute VpcId: The ID of the virtual private cloud (VPC) to which the VPN gateway belongs.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpcId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
      * Attribute VpnGatewayId: ID of the VPN gateway.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpnGatewayId() {
         return software.amazon.jsii.Kernel.get(this, "attrVpnGatewayId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute VpnType: The type of the VPN gateway.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpnType() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpnType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute VSwitchId: The ID of the vSwitch to which the VPN gateway belongs.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVSwitchId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -216,6 +258,37 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property disasterRecoveryVSwitchId: The second vSwitch with which you want to associate the VPN gateway.
+         * <p>
+         * If you call this operation in a region that supports the dual-tunnel mode, this parameter is required.
+         * You need to specify two vSwitches in different zones from the VPC associated with the VPN gateway to implement disaster recovery across zones.
+         * For a region that supports only one zone, disaster recovery across zones is not supported. We recommend that you specify two vSwitches in the zone to implement high availability. You can specify the same vSwitch.
+         * For more information about the regions and zones that support the dual-tunnel mode, see Upgrade a VPN gateway to enable the dual-tunnel mode.
+         * <p>
+         * @return {@code this}
+         * @param disasterRecoveryVSwitchId Property disasterRecoveryVSwitchId: The second vSwitch with which you want to associate the VPN gateway. This parameter is required.
+         */
+        public Builder disasterRecoveryVSwitchId(final java.lang.String disasterRecoveryVSwitchId) {
+            this.props.disasterRecoveryVSwitchId(disasterRecoveryVSwitchId);
+            return this;
+        }
+        /**
+         * Property disasterRecoveryVSwitchId: The second vSwitch with which you want to associate the VPN gateway.
+         * <p>
+         * If you call this operation in a region that supports the dual-tunnel mode, this parameter is required.
+         * You need to specify two vSwitches in different zones from the VPC associated with the VPN gateway to implement disaster recovery across zones.
+         * For a region that supports only one zone, disaster recovery across zones is not supported. We recommend that you specify two vSwitches in the zone to implement high availability. You can specify the same vSwitch.
+         * For more information about the regions and zones that support the dual-tunnel mode, see Upgrade a VPN gateway to enable the dual-tunnel mode.
+         * <p>
+         * @return {@code this}
+         * @param disasterRecoveryVSwitchId Property disasterRecoveryVSwitchId: The second vSwitch with which you want to associate the VPN gateway. This parameter is required.
+         */
+        public Builder disasterRecoveryVSwitchId(final com.aliyun.ros.cdk.core.IResolvable disasterRecoveryVSwitchId) {
+            this.props.disasterRecoveryVSwitchId(disasterRecoveryVSwitchId);
+            return this;
+        }
+
+        /**
          * Property enableIpsec: Whether to enable IPsec-VPN.
          * <p>
          * The IPsec-VPN feature provides a site-to-site connection. You can securely connect your local data center network to a private network or two proprietary networks by creating an IPsec tunnel. Value:
@@ -322,6 +395,31 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property networkType: The network type of the VPN gateway.
+         * <p>
+         * Valid values: public|private
+         * <p>
+         * @return {@code this}
+         * @param networkType Property networkType: The network type of the VPN gateway. This parameter is required.
+         */
+        public Builder networkType(final java.lang.String networkType) {
+            this.props.networkType(networkType);
+            return this;
+        }
+        /**
+         * Property networkType: The network type of the VPN gateway.
+         * <p>
+         * Valid values: public|private
+         * <p>
+         * @return {@code this}
+         * @param networkType Property networkType: The network type of the VPN gateway. This parameter is required.
+         */
+        public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.props.networkType(networkType);
+            return this;
+        }
+
+        /**
          * Property period: Purchase time, value: 1~9|12|24|36.
          * <p>
          * When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
@@ -377,6 +475,27 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property vpnType: VPN gateway type.
+         * <p>
+         * @return {@code this}
+         * @param vpnType Property vpnType: VPN gateway type. This parameter is required.
+         */
+        public Builder vpnType(final java.lang.String vpnType) {
+            this.props.vpnType(vpnType);
+            return this;
+        }
+        /**
+         * Property vpnType: VPN gateway type.
+         * <p>
+         * @return {@code this}
+         * @param vpnType Property vpnType: VPN gateway type. This parameter is required.
+         */
+        public Builder vpnType(final com.aliyun.ros.cdk.core.IResolvable vpnType) {
+            this.props.vpnType(vpnType);
             return this;
         }
 

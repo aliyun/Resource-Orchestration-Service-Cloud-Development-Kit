@@ -79,6 +79,16 @@ export interface RosInstanceProps {
     readonly gatewayCount?: number | ros.IResolvable;
 
     /**
+     * @Property initialDatabases: Initialize the database and split multiple database names ",".
+     */
+    readonly initialDatabases?: string | ros.IResolvable;
+
+    /**
+     * @Property leaderInstanceId: The id of leader instance.
+     */
+    readonly leaderInstanceId?: string | ros.IResolvable;
+
+    /**
      * @Property pricingCycle: Billing cycle. Value:
      * - Month: monthly billing
      * - Hour: hourly billing
@@ -132,6 +142,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('coldStorageSize', ros.validateNumber)(properties.coldStorageSize));
+    errors.collect(ros.propertyValidator('leaderInstanceId', ros.validateString)(properties.leaderInstanceId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
@@ -150,8 +161,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('scaleType', ros.validateString)(properties.scaleType));
-    errors.collect(ros.propertyValidator('storageSize', ros.validateNumber)(properties.storageSize));
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
+    errors.collect(ros.propertyValidator('storageSize', ros.validateNumber)(properties.storageSize));
     if(properties.duration && (typeof properties.duration) !== 'object') {
         errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
           data: properties.duration,
@@ -165,6 +176,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('gatewayCount', ros.validateNumber)(properties.gatewayCount));
+    errors.collect(ros.propertyValidator('initialDatabases', ros.validateString)(properties.initialDatabases));
     errors.collect(ros.propertyValidator('paymentType', ros.requiredValidator)(properties.paymentType));
     if(properties.paymentType && (typeof properties.paymentType) !== 'object') {
         errors.collect(ros.propertyValidator('paymentType', ros.validateAllowedValues)({
@@ -216,6 +228,8 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       Cpu: ros.numberToRosTemplate(properties.cpu),
       Duration: ros.numberToRosTemplate(properties.duration),
       GatewayCount: ros.numberToRosTemplate(properties.gatewayCount),
+      InitialDatabases: ros.stringToRosTemplate(properties.initialDatabases),
+      LeaderInstanceId: ros.stringToRosTemplate(properties.leaderInstanceId),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
       ProductCode: ros.stringToRosTemplate(properties.productCode),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
@@ -434,6 +448,16 @@ export class RosInstance extends ros.RosResource {
     public gatewayCount: number | ros.IResolvable | undefined;
 
     /**
+     * @Property initialDatabases: Initialize the database and split multiple database names ",".
+     */
+    public initialDatabases: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property leaderInstanceId: The id of leader instance.
+     */
+    public leaderInstanceId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property pricingCycle: Billing cycle. Value:
      * - Month: monthly billing
      * - Hour: hourly billing
@@ -520,6 +544,8 @@ export class RosInstance extends ros.RosResource {
         this.cpu = props.cpu;
         this.duration = props.duration;
         this.gatewayCount = props.gatewayCount;
+        this.initialDatabases = props.initialDatabases;
+        this.leaderInstanceId = props.leaderInstanceId;
         this.pricingCycle = props.pricingCycle;
         this.productCode = props.productCode;
         this.resourceGroupId = props.resourceGroupId;
@@ -541,6 +567,8 @@ export class RosInstance extends ros.RosResource {
             cpu: this.cpu,
             duration: this.duration,
             gatewayCount: this.gatewayCount,
+            initialDatabases: this.initialDatabases,
+            leaderInstanceId: this.leaderInstanceId,
             pricingCycle: this.pricingCycle,
             productCode: this.productCode,
             resourceGroupId: this.resourceGroupId,

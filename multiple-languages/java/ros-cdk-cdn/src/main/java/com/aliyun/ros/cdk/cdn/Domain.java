@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * A ROS resource type:  <code>ALIYUN::CDN::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-09-25T10:01:44.488Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.574Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource {
 
@@ -166,6 +166,31 @@ public class Domain extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder checkUrl(final com.aliyun.ros.cdk.core.IResolvable checkUrl) {
             this.props.checkUrl(checkUrl);
+            return this;
+        }
+
+        /**
+         * Property originServers: The list of origin URLs.
+         * <p>
+         * It has the same function as Sources, but has a higher priority than it.
+         * <p>
+         * @return {@code this}
+         * @param originServers Property originServers: The list of origin URLs. This parameter is required.
+         */
+        public Builder originServers(final com.aliyun.ros.cdk.core.IResolvable originServers) {
+            this.props.originServers(originServers);
+            return this;
+        }
+        /**
+         * Property originServers: The list of origin URLs.
+         * <p>
+         * It has the same function as Sources, but has a higher priority than it.
+         * <p>
+         * @return {@code this}
+         * @param originServers Property originServers: The list of origin URLs. This parameter is required.
+         */
+        public Builder originServers(final java.util.List<? extends java.lang.Object> originServers) {
+            this.props.originServers(originServers);
             return this;
         }
 

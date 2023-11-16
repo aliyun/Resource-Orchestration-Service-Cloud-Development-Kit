@@ -2877,7 +2877,7 @@ function RosDedicatedHostPropsValidator(properties: any): ros.ValidationResult {
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -3424,7 +3424,7 @@ function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     if(properties.size && (typeof properties.size) !== 'object') {
         errors.collect(ros.propertyValidator('size', ros.validateRange)({
             data: properties.size,
-            min: 5,
+            min: 1,
             max: undefined,
           }));
     }
@@ -4476,7 +4476,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -5324,7 +5324,7 @@ function RosInstanceClonePropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -6132,7 +6132,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","PREPAY","PRE"],
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -6468,11 +6468,6 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Attribute PublicIps: Public IP address list of created ecs instances.
      */
     public readonly attrPublicIps: ros.IResolvable;
-
-    /**
-     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
 
     /**
      * @Attribute ZoneIds: Zone id of created instances.
@@ -6838,7 +6833,6 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
-        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -7836,11 +7830,6 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public readonly attrPublicIps: ros.IResolvable;
 
     /**
-     * @Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable;
-
-    /**
      * @Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable;
@@ -8121,7 +8110,6 @@ export class RosInstanceGroupClone extends ros.RosResource {
         this.attrOrderId = this.getAtt('OrderId');
         this.attrPrivateIps = this.getAtt('PrivateIps');
         this.attrPublicIps = this.getAtt('PublicIps');
-        this.attrRelatedOrderIds = this.getAtt('RelatedOrderIds');
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;

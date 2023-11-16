@@ -13,7 +13,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
         private object _endpoints;
 
         /// <summary>Property endpoints: List of domain names.</summary>
-        [JsiiProperty(name: "endpoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-hologram.RosInstance.EndpointsProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        [JsiiProperty(name: "endpoints", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-hologram.RosInstance.EndpointsProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public object Endpoints
         {
             get => _endpoints;
@@ -30,17 +30,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
                             {
                                 switch (cast_cd4240[__idx_f64a5c])
                                 {
-                                    case AlibabaCloud.SDK.ROS.CDK.Hologram.RosInstance.IEndpointsProperty cast_201718:
-                                        break;
                                     case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Hologram.RosInstance.IEndpointsProperty cast_201718:
                                         break;
                                     case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
                                         // Not enough information to type-check...
                                         break;
                                     case null:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Hologram.RosInstance.IEndpointsProperty).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Hologram.RosInstance.IEndpointsProperty).FullName}; received null", nameof(value));
                                     default:
-                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Hologram.RosInstance.IEndpointsProperty).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Hologram.RosInstance.IEndpointsProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
                                 }
                             }
                             break;
@@ -461,6 +461,68 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hologram
                     }
                 }
                 _gatewayCount = value;
+            }
+        }
+
+        private object? _initialDatabases;
+
+        /// <summary>Property initialDatabases: Initialize the database and split multiple database names ",".</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "initialDatabases", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? InitialDatabases
+        {
+            get => _initialDatabases;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _initialDatabases = value;
+            }
+        }
+
+        private object? _leaderInstanceId;
+
+        /// <summary>Property leaderInstanceId: The id of leader instance.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "leaderInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? LeaderInstanceId
+        {
+            get => _leaderInstanceId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _leaderInstanceId = value;
             }
         }
 

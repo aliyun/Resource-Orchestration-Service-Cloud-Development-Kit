@@ -15,6 +15,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
+        /// <summary>Property asn: The autonomous system number of the local data center gateway device.</summary>
+        [JsiiProperty(name: "asn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Asn
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property description: Description of the user gateway.</summary>
         /// <remarks>
         /// The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
@@ -56,6 +67,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public object IpAddress
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property asn: The autonomous system number of the local data center gateway device.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "asn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Asn
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property description: Description of the user gateway.</summary>
