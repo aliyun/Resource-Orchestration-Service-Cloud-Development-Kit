@@ -1,0 +1,8 @@
+{
+	"app": "dotnet run -p src/Demo/Demo.csproj",
+	"context": {
+		"ros-cdk:enableStackNameDuplicates": "true",
+		"ros-cdk:enableDiffNoFail": "true"
+	},
+	"languageInfo": "csharp"
+}
