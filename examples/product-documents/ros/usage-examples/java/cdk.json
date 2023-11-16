@@ -1,0 +1,8 @@
+{
+	"app": "mvn -e -q exec:java",
+	"context": {
+		"ros-cdk:enableStackNameDuplicates": "true",
+		"ros-cdk:enableDiffNoFail": "true"
+	},
+	"languageInfo": "java"
+}

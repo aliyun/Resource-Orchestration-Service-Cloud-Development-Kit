@@ -1,0 +1,8 @@
+{
+	"app": "npx ts-node bin/demo.ts",
+	"context": {
+		"ros-cdk:enableStackNameDuplicates": "true",
+		"ros-cdk:enableDiffNoFail": "true"
+	},
+	"languageInfo": "typescript"
+}
