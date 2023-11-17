@@ -1,0 +1,256 @@
+{
+  "version": "6.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "svn-ecs-stack": {
+      "type": "aliyun:ros:stack",
+      "properties": {
+        "templateFile": "svn-ecs-stack.template.json"
+      },
+      "dependencies": [
+        "svn-ecs-stack.assets"
+      ],
+      "metadata": {
+        "/svn-ecs-stack/ROSTemplateFormatVersion": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ROSTemplateFormatVersion",
+            "trace": [
+              "new Stack (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/jsii-kernel-7gO9uH/node_modules/@alicloud/ros-cdk-core/lib/stack.js:80:9)",
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/Description": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "Description",
+            "trace": [
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/ECS_password": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ECS_password",
+            "trace": [
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/ImageId": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ImageId",
+            "trace": [
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/InstanceType": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "InstanceType",
+            "trace": [
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/ZoneId": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ZoneId",
+            "trace": [
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/VPC/VPC": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "VPC",
+            "trace": [
+              "new Vpc (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/jsii-kernel-7gO9uH/node_modules/@alicloud/ros-cdk-ecs/lib/vpc.js:20:24)",
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/VSwitch/VSwitch": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "VSwitch",
+            "trace": [
+              "new VSwitch (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/jsii-kernel-7gO9uH/node_modules/@alicloud/ros-cdk-ecs/lib/vswitch.js:20:28)",
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/SecurityGroup/SecurityGroup": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "SecurityGroup",
+            "trace": [
+              "new SecurityGroup (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/jsii-kernel-7gO9uH/node_modules/@alicloud/ros-cdk-ecs/lib/securitygroup.js:20:34)",
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/SecurityGroupIngress_22/SecurityGroupIngress_22": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "SecurityGroupIngress_22",
+            "trace": [
+              "new SecurityGroupIngress (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/jsii-kernel-7gO9uH/node_modules/@alicloud/ros-cdk-ecs/lib/securitygroupingress.js:24:41)",
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/SecurityGroupIngress_80/SecurityGroupIngress_80": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "SecurityGroupIngress_80",
+            "trace": [
+              "new SecurityGroupIngress (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/jsii-kernel-7gO9uH/node_modules/@alicloud/ros-cdk-ecs/lib/securitygroupingress.js:24:41)",
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/SecurityGroupIngress_443/SecurityGroupIngress_443": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "SecurityGroupIngress_443",
+            "trace": [
+              "new SecurityGroupIngress (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/jsii-kernel-7gO9uH/node_modules/@alicloud/ros-cdk-ecs/lib/securitygroupingress.js:24:41)",
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/SecurityGroupIngress_3690/SecurityGroupIngress_3690": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "SecurityGroupIngress_3690",
+            "trace": [
+              "new SecurityGroupIngress (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/jsii-kernel-7gO9uH/node_modules/@alicloud/ros-cdk-ecs/lib/securitygroupingress.js:24:41)",
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/ECS-demo/ECS-demo": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "ECS-demo",
+            "trace": [
+              "new Instance (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/jsii-kernel-7gO9uH/node_modules/@alicloud/ros-cdk-ecs/lib/instance.js:20:29)",
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/InstallWeb/InstallWeb": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "InstallWeb",
+            "trace": [
+              "new RunCommand (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/jsii-kernel-7gO9uH/node_modules/@alicloud/ros-cdk-ecs/lib/runcommand.js:20:31)",
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ],
+        "/svn-ecs-stack/URL of repository": [
+          {
+            "type": "aliyun:ros:logicalId",
+            "data": "URL of repository",
+            "trace": [
+              "Kernel._create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9964:29)",
+              "Kernel.create (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:9693:29)",
+              "KernelHost.processRequest (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11544:36)",
+              "KernelHost.run (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11504:22)",
+              "Immediate._onImmediate (/private/var/folders/4g/mr8hntxx7_n9qcv11xyh5kf40000gp/T/tmpxb8pnbia/lib/program.js:11505:46)",
+              "process.processImmediate (node:internal/timers:476:21)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
