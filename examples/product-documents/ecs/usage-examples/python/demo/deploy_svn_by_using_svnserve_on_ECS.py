@@ -9,7 +9,7 @@ class ECS_SVN_svnserve_CentOS_7(core.Stack):
 
         """
         Note：
-        The following code only covers the deployment and configuration part of SVN in the documentation.        
+        The following code only cover the deployment and configuration part of SVN in the documentation.        
         
         The ECS created in the script has the following configuration:
         Instance type: ecs.c6.large(default value), you may choose other instance types in the template
