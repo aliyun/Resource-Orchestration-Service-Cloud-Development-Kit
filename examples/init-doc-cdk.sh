@@ -97,17 +97,19 @@ func(){
         done < "$1"
     else
         if [ $1 == "README.md" ]; then
-            title="### Product documents"
+            title1="### Product documents"
+            title2="|Document link    |Project directory    |Languages  |"
         else
-            title="### 产品文档" 
+            title1="### 产品文档" 
+            title2="|文档链接    |项目目录    |支持语言  |"
         fi
         while IFS= read -r line; do
             echo "$line" >> "$tmp_file"
-            if [[ $line =~ $title ]]; then
+            if [[ $line =~ $title1 ]]; then
                 echo "" >> "$tmp_file"
                 echo "$product_content" >> "$tmp_file"
                 echo "" >> "$tmp_file"
-                echo "|Document link    |Project directory    |Languages  |" >> "$tmp_file"
+                echo "$title2" >> "$tmp_file"
                 echo "|-----------------|---------------------|-----------|" >> "$tmp_file"
                 echo "$new_content" >> "$tmp_file"
             fi
