@@ -11,12 +11,13 @@ English | [简体中文](./README-CN.md)
 ## Introduction
 Examples of CDK usage code and best practices are as follows:
 
-- `Product documents` : The CDK usage code covered in Alibabacloud product documents.
+- `Documents` : The examples provided in the documents category automate the deployment and configuration specified in Aliyun/Alibaba Cloud product documents.
 
 ## Details
 
-### Product documents
-The examples provided in documents repository automate the deployment and configuration specified in Aliyun/Alibaba Cloud product documents. The tables below demonstrate the mapping between the product documents and the CDK example code in various programming languages.
+### Documents
+
+The tables below demonstrate the mapping between the product documents and the CDK example code in various programming languages.
 
 #### ecs
 
@@ -26,6 +27,7 @@ The examples provided in documents repository automate the deployment and config
 
 #### ros
 
-|Document link    |Project directory    |Languages  |
-|-----------------|---------------------|-----------|
-|[CDK usage examples](https://www.alibabacloud.com/help/en/ros/developer-reference/usage-examples/)|[usage-exmaples](documents/ros/usage-examples/)|[python](documents/ros/usage-examples/python/)/[java](documents/ros/usage-examples/java/)/[javascript](documents/ros/usage-examples/javascript/)/[typescript](documents/ros/usage-examples/typescript/)/[csharp](documents/ros/usage-examples/csharp/)|
+|Document           |Language Projects    |
+|-------------------|---------------------|
+|[CDK usage examples](https://www.alibabacloud.com/help/en/ros/developer-reference/usage-examples/)|[python](./documents/ros/usage-examples/python/)/[java](./documents/ros/usage-examples/java/)/[javascript](./documents/ros/usage-examples/javascript/)/[typescript](./documents/ros/usage-examples/typescript/)/[csharp](./documents/ros/usage-examples/csharp/)|
+

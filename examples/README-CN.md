@@ -12,11 +12,13 @@
 
 CDK 使用代码的示例和最佳实践分类如下：
 
-- `产品文档`：阿里云产品文档中涉及的CDK使用代码。
+- `文档`：该分类中提供的示例实现了阿里云产品文档中对阿里云产品资源的部署和配置。
 
 ## 详细说明
 
-### 产品文档
+### 文档
+
+下面的表格展示了产品文档与CDK各种编程语言示例代码的对应关系。
 
 #### ecs
 
@@ -26,7 +28,7 @@ CDK 使用代码的示例和最佳实践分类如下：
 
 #### ros
 
-|文档链接    |项目目录    |支持语言  |
-|-----------------|---------------------|-----------|
-|[CDK 使用示例](https://help.aliyun.com/zh/ros/developer-reference/usage-examples)|[usage-exmaples](documents/ros/usage-examples/)|[python](documents/ros/usage-examples/python/)/[java](documents/ros/usage-examples/java/)/[javascript](documents/ros/usage-examples/javascript/)/[typescript](documents/ros/usage-examples/typescript/)/[csharp](documents/ros/usage-examples/csharp/)|
+|文档               |语言示例               |
+|-------------------|---------------------|
+|[CDK 使用示例](https://help.aliyun.com/zh/ros/developer-reference/usage-examples)|[python](./documents/ros/usage-examples/python/)/[java](./documents/ros/usage-examples/java/)/[javascript](./documents/ros/usage-examples/javascript/)/[typescript](./documents/ros/usage-examples/typescript/)/[csharp](./documents/ros/usage-examples/csharp/)|
 
