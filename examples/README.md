@@ -12,11 +12,13 @@ English | [简体中文](./README-CN.md)
 
 Examples of CDK usage code and best practices are as follows:
 
-- `Documents` : The CDK usage code covered in Alibabacloud product documents.
+- `Documents` : The examples provided in the documents category automate the deployment and configuration specified in Aliyun/Alibaba Cloud product documents.
 
 ## Details
 
 ### Documents
+
+The tables below demonstrate the mapping between the product documents and the CDK example code in various programming languages.
 
 #### ros
 
