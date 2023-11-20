@@ -1,6 +1,6 @@
 #!/bin/bash
 # usage: ./init-doc-cdk.sh [product name] [document name] ([language] ...)
-# for example: ./init-doc-cdk.sh ros usage-examples python java javascript typescript csharp
+# for example: ./init-doc-cdk.sh ros deploy-SVN-by-using-svnserve python java javascript typescript csharp
 
 cd documents
 product=$1

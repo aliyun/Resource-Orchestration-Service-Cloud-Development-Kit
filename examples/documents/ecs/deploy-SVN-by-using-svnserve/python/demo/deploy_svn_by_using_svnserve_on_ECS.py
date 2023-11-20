@@ -64,7 +64,6 @@ class ECS_SVN_svnserve_CentOS_7(core.Stack):
             "ZoneId",
             type=core.RosParameterType.STRING,
             association_property="ALIYUN::ECS::Instance::ZoneId",
-            default_value="cn-hangzhou-k"
         )
 
         # Resources - Create resources in the template
