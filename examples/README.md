@@ -22,5 +22,5 @@ Examples of CDK usage code and best practices are as follows:
 
 |Document           |Language Projects    |
 |-------------------|---------------------|
-|[CDK usage examples](https://www.alibabacloud.com/help/en/ros/developer-reference/usage-examples/)|[python](./product-documents/ros/usage-examples/python/)/[java](./product-documents/ros/usage-examples/java/)/[javascript](./product-documents/ros/usage-examples/javascript/)/[typescript](./product-documents/ros/usage-examples/typescript/)/[csharp](./product-documents/ros/usage-examples/csharp/)|
+|[CDK usage examples](https://www.alibabacloud.com/help/en/ros/developer-reference/usage-examples/)|[python](./documents/ros/usage-examples/python/)/[java](./documents/ros/usage-examples/java/)/[javascript](./documents/ros/usage-examples/javascript/)/[typescript](./documents/ros/usage-examples/typescript/)/[csharp](./documents/ros/usage-examples/csharp/)|
 
