@@ -22,11 +22,11 @@ CDK 使用代码的示例和最佳实践分类如下：
 
 | 文档链接                                                                | 项目目录                                       | 支持语言                                                |
 |-----------------------------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
-| [部署和使用SVN](https://help.aliyun.com/zh/ecs/use-cases/deploying-and-using-svn)|[usage-exmaples](./product-documents/ecs/usage-examples/) | [python](./product-documents/ecs/usage-examples/python/) |
+| [部署和使用SVN](https://help.aliyun.com/zh/ecs/use-cases/deploying-and-using-svn)|[usage-exmaples](documents/ecs/usage-examples/) | [python](documents/ecs/usage-examples/python/) |
 
 #### ros
 
 |文档链接    |项目目录    |支持语言  |
 |-----------------|---------------------|-----------|
-|[CDK 使用示例](https://help.aliyun.com/zh/ros/developer-reference/usage-examples)|[usage-exmaples](./product-documents/ros/usage-examples/)|[python](./product-documents/ros/usage-examples/python/)/[java](./product-documents/ros/usage-examples/java/)/[javascript](./product-documents/ros/usage-examples/javascript/)/[typescript](./product-documents/ros/usage-examples/typescript/)/[csharp](./product-documents/ros/usage-examples/csharp/)|
+|[CDK 使用示例](https://help.aliyun.com/zh/ros/developer-reference/usage-examples)|[usage-exmaples](documents/ros/usage-examples/)|[python](documents/ros/usage-examples/python/)/[java](documents/ros/usage-examples/java/)/[javascript](documents/ros/usage-examples/javascript/)/[typescript](documents/ros/usage-examples/typescript/)/[csharp](documents/ros/usage-examples/csharp/)|
 

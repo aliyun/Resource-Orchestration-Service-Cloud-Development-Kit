@@ -2,7 +2,7 @@
 # usage: ./init-doc-cdk.sh [product name] [document name] ([language] ...)
 # for example: ./init-doc-cdk.sh ros usage-examples python java javascript typescript csharp
 
-cd product-documents
+cd documents
 product=$1
 product_existed=true
 document=$2
