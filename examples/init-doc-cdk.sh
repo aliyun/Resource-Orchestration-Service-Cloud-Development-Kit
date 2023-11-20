@@ -2,7 +2,7 @@
 # usage: ./init-doc-cdk.sh [product name] [document name] ([language] ...)
 # for example: ./init-doc-cdk.sh ros usage-examples python java javascript typescript csharp
 
-cd product-documents
+cd documents
 product=$1
 product_existed=true
 document=$2
@@ -11,8 +11,8 @@ shift 2
 
 product_content="#### $product"
 last_row_content="\|----"
-document_content="(./product-documents/$product/$document/)"
-new_content="|[Please fill in the document name](Please-fill-in-the-document-URL)|[$document]$document_content|"
+document_content="(./documents/$product/$document/)"
+new_content="|[Please fill in the document name](Please-fill-in-the-document-URL)|"
 
 if [ ! -d $product ]; then
     product_existed=false
@@ -24,6 +24,12 @@ if [ ! -d $document ]; then
     mkdir $document
 fi
 cd $document
+
+if [ ! -d ".metadaya.yml" ]; then
+    echo "ChinaDocument: https://aliyun.com/xxxx" > .metadaya.yml
+    echo "IntlDocument: https://alibabacloud.com/xxxx" >> .metadaya.yml
+    echo "DocutmentId: xxx" >> .metadaya.yml
+fi
 
 first_language=true
 until [ $# -eq 0 ]
@@ -41,13 +47,13 @@ do
         if [ "$first_language" = true ];
         then
             if [ $document_existed = true ]; then
-                new_language="/[$1](./product-documents/$product/$document/$1/)"
+                new_language="/[$1](./documents/$product/$document/$1/)"
             else
-                new_language="[$1](./product-documents/$product/$document/$1/)"
+                new_language="[$1](./documents/$product/$document/$1/)"
             fi
             first_language=false
         else
-            new_language="$new_language""/[$1](./product-documents/$product/$document/$1/)"
+            new_language="$new_language""/[$1](./documents/$product/$document/$1/)"
         fi
     fi
     shift 1
@@ -97,11 +103,11 @@ func(){
         done < "$1"
     else
         if [ $1 == "README.md" ]; then
-            title1="### Product documents"
-            title2="|Document link    |Project directory    |Languages  |"
+            title1="### Documents"
+            title2="|Document           |Language Projects    |"
         else
-            title1="### 产品文档" 
-            title2="|文档链接    |项目目录    |支持语言  |"
+            title1="### 文档" 
+            title2="|文档               |语言示例               |"
         fi
         while IFS= read -r line; do
             echo "$line" >> "$tmp_file"
@@ -110,7 +116,7 @@ func(){
                 echo "$product_content" >> "$tmp_file"
                 echo "" >> "$tmp_file"
                 echo "$title2" >> "$tmp_file"
-                echo "|-----------------|---------------------|-----------|" >> "$tmp_file"
+                echo "|-------------------|---------------------|" >> "$tmp_file"
                 echo "$new_content" >> "$tmp_file"
             fi
         done < "$1"
