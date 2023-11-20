@@ -25,10 +25,10 @@ if [ ! -d $document ]; then
 fi
 cd $document
 
-if [ ! -d ".metadaya.yml" ]; then
-    echo "ChinaDocument: https://aliyun.com/xxxx" > .metadaya.yml
-    echo "IntlDocument: https://alibabacloud.com/xxxx" >> .metadaya.yml
-    echo "DocutmentId: xxx" >> .metadaya.yml
+if [ ! -d ".metadata.yml" ]; then
+    echo "ChinaDocument: https://aliyun.com/xxxx" > .metadata.yml
+    echo "IntlDocument: https://alibabacloud.com/xxxx" >> .metadata.yml
+    echo "DocutmentId: xxx" >> .metadata.yml
 fi
 
 first_language=true
@@ -103,10 +103,10 @@ func(){
         done < "$1"
     else
         if [ $1 == "README.md" ]; then
-            title1="### Documents"
+            title1="The tables below demonstrate the mapping between the product documents and the CDK example code in various programming languages."
             title2="|Document           |Language Projects    |"
         else
-            title1="### 文档" 
+            title1="下面的表格展示了产品文档与CDK各种编程语言示例代码的对应关系。" 
             title2="|文档               |语言示例               |"
         fi
         while IFS= read -r line; do
