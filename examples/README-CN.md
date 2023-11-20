@@ -22,9 +22,11 @@ CDK 使用代码的示例和最佳实践分类如下：
 
 #### ecs
 
-| 文档链接                                                                | 项目目录                                       | 支持语言                                                |
-|-----------------------------------------------------------------------------|----------------------------------------------------------|----------------------------------------------------------|
-| [部署和使用SVN](https://help.aliyun.com/zh/ecs/use-cases/deploying-and-using-svn)|[usage-exmaples](documents/ecs/deploy-SVN-by-using-svnserve/) | [python](documents/ecs/deploy-SVN-by-using-svnserve/python/) |
+|文档               |语言示例               |
+|-------------------|---------------------|
+|[部署和使用SVN](https://help.aliyun.com/zh/ecs/use-cases/deploying-and-using-svn)|[python](documents/ecs/deploy-SVN-by-using-svnserve/python/) |
+
+
 
 #### ros
 

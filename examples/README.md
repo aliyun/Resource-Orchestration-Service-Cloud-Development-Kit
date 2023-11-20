@@ -21,9 +21,10 @@ The tables below demonstrate the mapping between the product documents and the C
 
 #### ecs
 
-| Document link                    |Project directory    |Languages  |
-|----------------------------------|---------------------|-----------|
-| [Deploy SVN by using svnserve](https://www.alibabacloud.com/help/en/ecs/use-cases/deploying-and-using-svn) | [usage-exmaples](documents/ecs/deploy-SVN-by-using-svnserve/) | [python](documents/ecs/deploy-SVN-by-using-svnserve/python/)|
+|Document           |Language Projects    |
+|-------------------|---------------------|
+|[Deploy SVN by using svnserve](https://www.alibabacloud.com/help/en/ecs/use-cases/deploying-and-using-svn)|[python](documents/ecs/deploy-SVN-by-using-svnserve/python/)|
+
 
 #### ros
 
