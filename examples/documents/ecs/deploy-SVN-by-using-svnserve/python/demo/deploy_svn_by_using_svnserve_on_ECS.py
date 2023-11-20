@@ -13,21 +13,22 @@ class ECS_SVN_svnserve_CentOS_7(core.Stack):
         
         The ECS created in the script has the following configuration:
         Instance type: ecs.c6.large(default value), you may choose other instance types in the template
-        CentOS 7.2 64-bit public image
+        OS: CentOS 7.2 64-bit public image
         Network type：VPC
-        Security group：Inbound rules are added to the security groups of the instance to allow traffic on port 22, 80, 443, 3690
+        Security group：Inbound rules are added to the security groups to allow traffic on port 22, 80, 443, 3690
         Public IP: assigned
         
         SVN: 1.7.14
 
         """
 
-        core.RosInfo(self, core.RosInfo.description, "Script created by Yunjie Peng")
+        core.RosInfo(self, core.RosInfo.description,
+                     "The stack is used for deploying SVN by svnsever on an ECS instance.")
 
-        # Parameters - Set paramters for the template
+        # Parameters - Set parameters for the template
         # ECS password parameter
         ecs_password_param = core.RosParameter(self,
-                                               "ECS_password",
+                                               "ECSPassword",
                                                type=core.RosParameterType.STRING,
                                                association_property="ALIYUN::ECS::Instance::Password",
                                                )
@@ -108,7 +109,7 @@ class ECS_SVN_svnserve_CentOS_7(core.Stack):
 
         # Create an ECS instance
         ecs_instance = ecs.Instance(self, "ECS-demo", ecs.InstanceProps(
-            instance_name='ecs-svn-svnserve-pyj-ros-python-cdk2',
+            instance_name='ecs-svn-svnserve-ros-python-cdk',
             vpc_id=vpc.resource.ref,
             v_switch_id=vswitch.resource.ref,
             security_group_id=sg.resource.ref,
@@ -137,28 +138,27 @@ class ECS_SVN_svnserve_CentOS_7(core.Stack):
                                 "sudo svnadmin create /var/svn/svnrepos \n"
                                 "cd svnrepos \n"
                                 "ls \n"
-                               
+
                                 # Configure the username and password of the SVN repository
                                 "cd conf/ \n"
                                 "sudo echo 'userTest = passWDTest' >> passwd \n"
-                                
+
                                 # Configure the read and write permissions for the account
                                 "sudo echo '[/]' >> authz \n"
                                 "sudo echo 'userTest=rw' >> authz \n"
-                                
+
                                 # Modify the configurations of SVN
                                 "sudo sed -i 's/# anon-access = read/anon-access = read/' svnserve.conf \n"
                                 "sudo sed -i 's/# auth-access = write/auth-access = write/' svnserve.conf \n"
                                 "sudo sed -i 's/# password-db = passwd/password-db = passwd/' svnserve.conf \n"
                                 "sudo sed -i 's/# authz-db = authz/authz-db = authz/' svnserve.conf \n"
                                 "sudo sed -i 's/# realm = My First Repository/realm = \/var\/svn\/svnrepos/' svnserve.conf \n"
-                                
+
                                 # Start the SVN repository
                                 "sudo svnserve -d -r /var/svn/svnrepos/ \n"
                                 "ps -ef |grep svn \n"
             ),
         )
-
 
         # Output - Set output for the template
         core.RosOutput(self, "URL of repository",
