@@ -20,6 +20,14 @@ CDK 使用代码的示例和最佳实践分类如下：
 
 下面的表格展示了产品文档与CDK各种编程语言示例代码的对应关系。
 
+#### ecs
+
+|文档               |语言示例               |
+|-------------------|---------------------|
+|[部署和使用SVN](https://help.aliyun.com/zh/ecs/use-cases/deploying-and-using-svn)|[python](documents/ecs/deploy-SVN-by-using-svnserve/python/) |
+
+
+
 #### ros
 
 |文档               |语言示例               |

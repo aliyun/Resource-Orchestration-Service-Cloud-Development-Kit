@@ -1,0 +1,195 @@
+{
+  "ROSTemplateFormatVersion": "2015-09-01",
+  "Description": "The stack is used for deploying SVN by svnsever on an ECS instance.",
+  "Parameters": {
+    "ECSPassword": {
+      "Type": "String",
+      "AssociationProperty": "ALIYUN::ECS::Instance::Password"
+    },
+    "ImageId": {
+      "Type": "String",
+      "Label": "公共镜像CentOS_7_4_64位",
+      "Description": {
+        "zh-cn": "镜像ID",
+        "en": "Image ID"
+      },
+      "Default": "centos_7_04_64_20G_alibase_201701015.vhd"
+    },
+    "InstanceType": {
+      "Type": "String",
+      "Label": "Instance Type",
+      "Description": {
+        "zh-cn": "<font color='blue'><b>1.选择机型前请先确认当前可用区下该机型是否有货，部分机型需要提前报备</b></font><br><font color='blue'><b>2.可选机型列表</font><br></b></font>[ecs.c5.large <font color='green'>2vCPU 4GiB 内网带宽1Gbps 内网收发包30万PPS</font>]<br></b>[ecs.c5.xlarge <font color='green'>4vCPU 8GiB 内网带宽1.5Gbps 内网收发包50万PPS</font>]<br></b>[ecs.c5.2xlarge <font color='green'>8vCPU 16GiB 内网带宽2.5Gbps 内网收发包80万PPS</font>]",
+        "en": "<font color='blue'><b>1.Before selecting the model please confirm that the current available zone under the model is in stock, some models need to be reported in advance</b></font><br><font color='blue'><b>2.List of optional models</font><br></b></font>[ecs.c5.large <font color='green'>2vCPU 4GiB Intranet bandwidth1Gbps In-grid sending and receiving packages30MillionPPS</font>]<br></b>[ecs.c5.xlarge <font color='green'>4vCPU 8GiB Intranet bandwidth1.5Gbps In-grid sending and receiving packages50MillionPPS</font>]<br></b>[ecs.c5.2xlarge <font color='green'>8vCPU 16GiB Intranet bandwidth2.5Gbps In-grid sending and receiving packages80MillionPPS</font>]"
+      },
+      "AssociationProperty": "ALIYUN::ECS::Instance::InstanceType",
+      "AssociationPropertyMetadata": {
+        "ZoneId": "ZoneId"
+      },
+      "Default": "ecs.c6.large"
+    },
+    "ZoneId": {
+      "Type": "String",
+      "AssociationProperty": "ALIYUN::ECS::Instance::ZoneId"
+    }
+  },
+  "Resources": {
+    "VPC": {
+      "Type": "ALIYUN::ECS::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/8",
+        "Description": "This is ros python cdk test",
+        "EnableIpv6": false,
+        "VpcName": "svn-svnserve-centos-7-ros-cdk-vpc"
+      }
+    },
+    "VSwitch": {
+      "Type": "ALIYUN::ECS::VSwitch",
+      "Properties": {
+        "ZoneId": {
+          "Ref": "ZoneId"
+        },
+        "VpcId": {
+          "Ref": "VPC"
+        },
+        "CidrBlock": "10.0.0.0/16"
+      }
+    },
+    "SecurityGroup": {
+      "Type": "ALIYUN::ECS::SecurityGroup",
+      "Properties": {
+        "VpcId": {
+          "Ref": "VPC"
+        }
+      }
+    },
+    "SecurityGroupIngress_22": {
+      "Type": "ALIYUN::ECS::SecurityGroupIngress",
+      "Properties": {
+        "SecurityGroupId": {
+          "Ref": "SecurityGroup"
+        },
+        "IpProtocol": "tcp",
+        "PortRange": "22/22",
+        "NicType": "intranet",
+        "Priority": 1,
+        "SourceCidrIp": "0.0.0.0/0"
+      }
+    },
+    "SecurityGroupIngress_80": {
+      "Type": "ALIYUN::ECS::SecurityGroupIngress",
+      "Properties": {
+        "SecurityGroupId": {
+          "Ref": "SecurityGroup"
+        },
+        "IpProtocol": "tcp",
+        "PortRange": "80/80",
+        "NicType": "intranet",
+        "Priority": 1,
+        "SourceCidrIp": "0.0.0.0/0"
+      }
+    },
+    "SecurityGroupIngress_443": {
+      "Type": "ALIYUN::ECS::SecurityGroupIngress",
+      "Properties": {
+        "SecurityGroupId": {
+          "Ref": "SecurityGroup"
+        },
+        "IpProtocol": "tcp",
+        "PortRange": "443/443",
+        "NicType": "intranet",
+        "Priority": 1,
+        "SourceCidrIp": "0.0.0.0/0"
+      }
+    },
+    "SecurityGroupIngress_3690": {
+      "Type": "ALIYUN::ECS::SecurityGroupIngress",
+      "Properties": {
+        "SecurityGroupId": {
+          "Ref": "SecurityGroup"
+        },
+        "IpProtocol": "tcp",
+        "PortRange": "3690/3690",
+        "NicType": "intranet",
+        "Priority": 1,
+        "SourceCidrIp": "0.0.0.0/0"
+      }
+    },
+    "ECS-demo": {
+      "Type": "ALIYUN::ECS::Instance",
+      "Properties": {
+        "VpcId": {
+          "Ref": "VPC"
+        },
+        "VSwitchId": {
+          "Ref": "VSwitch"
+        },
+        "SecurityGroupId": {
+          "Ref": "SecurityGroup"
+        },
+        "ImageId": {
+          "Ref": "ImageId"
+        },
+        "InstanceType": {
+          "Ref": "InstanceType"
+        },
+        "AllocatePublicIP": true,
+        "AutoRenew": "False",
+        "AutoRenewPeriod": 1,
+        "InstanceChargeType": "PayAsYouGo",
+        "InstanceName": "ecs-svn-svnserve-ros-python-cdk",
+        "InternetChargeType": "PayByTraffic",
+        "InternetMaxBandwidthOut": 1,
+        "IoOptimized": "optimized",
+        "Password": {
+          "Ref": "ECSPassword"
+        },
+        "Period": 1,
+        "PeriodUnit": "Month",
+        "SystemDiskCategory": "cloud_efficiency"
+      }
+    },
+    "InstallWeb": {
+      "Type": "ALIYUN::ECS::RunCommand",
+      "Properties": {
+        "InstanceIds": [
+          {
+            "Fn::GetAtt": [
+              "ECS-demo",
+              "InstanceId"
+            ]
+          }
+        ],
+        "CommandContent": "sudo yum install -y subversion \nsvnserve --version \nros-notify -d '{\"data\" : \"Install SVN.\"}'\nsudo mkdir /var/svn \ncd /var/svn \nsudo svnadmin create /var/svn/svnrepos \ncd svnrepos \nls \ncd conf/ \nsudo echo 'userTest = passWDTest' >> passwd \nsudo echo '[/]' >> authz \nsudo echo 'userTest=rw' >> authz \nsudo sed -i 's/# anon-access = read/anon-access = read/' svnserve.conf \nsudo sed -i 's/# auth-access = write/auth-access = write/' svnserve.conf \nsudo sed -i 's/# password-db = passwd/password-db = passwd/' svnserve.conf \nsudo sed -i 's/# authz-db = authz/authz-db = authz/' svnserve.conf \nsudo sed -i 's/# realm = My First Repository/realm = \\/var\\/svn\\/svnrepos/' svnserve.conf \nsudo svnserve -d -r /var/svn/svnrepos/ \nps -ef |grep svn \n",
+        "Type": "RunShellScript",
+        "Sync": true,
+        "Timeout": 600
+      }
+    }
+  },
+  "Outputs": {
+    "URL of repository": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "svn://",
+            {
+              "Fn::GetAtt": [
+                "ECS-demo",
+                "PublicIp"
+              ]
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "Metadata": {
+    "ALIYUN::ROS::Interface": {
+      "TemplateTags": [
+        "Create by ROS CDK"
+      ]
+    }
+  }
+}
