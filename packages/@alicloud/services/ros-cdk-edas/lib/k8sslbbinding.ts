@@ -4,7 +4,8 @@ import { RosK8sSlbBinding } from './edas.generated';
 export { RosK8sSlbBinding as K8sSlbBindingProperty };
 
 /**
- * Properties for defining a `ALIYUN::EDAS::K8sSlbBinding`
+ * Properties for defining a `K8sSlbBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
  */
 export interface K8sSlbBindingProps {
 
@@ -48,14 +49,11 @@ export interface K8sSlbBindingProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EDAS::K8sSlbBinding`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sSlbBinding`, which is used to bind a Server Load Balancer (SLB) instance to an application in a Container Service for Kubernetes (ACK) cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosK8sSlbBinding`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
  */
 export class K8sSlbBinding extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Address: The address of load balancer instance.
@@ -83,8 +81,6 @@ export class K8sSlbBinding extends ros.Resource {
     public readonly attrLoadBalancerName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EDAS::K8sSlbBinding`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

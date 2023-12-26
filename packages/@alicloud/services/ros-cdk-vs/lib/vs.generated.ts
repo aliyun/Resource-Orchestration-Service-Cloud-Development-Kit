@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::VS::Group`
+ * Properties for defining a `RosGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vs-group
  */
 export interface RosGroupProps {
 
@@ -45,7 +46,7 @@ export interface RosGroupProps {
     readonly app?: string | ros.IResolvable;
 
     /**
-     * @Property callback: Updating the space callback device / flow state
+     * @Property callback: Updating the space callback device \/ flow state
      */
     readonly callback?: string | ros.IResolvable;
 
@@ -124,18 +125,15 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::VS::Group`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VS::Group`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vs-group
  */
 export class RosGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VS::Group";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GbId: GB ID space provided. (Applies only to access the space marked States)
@@ -198,7 +196,7 @@ export class RosGroup extends ros.RosResource {
     public app: string | ros.IResolvable | undefined;
 
     /**
-     * @Property callback: Updating the space callback device / flow state
+     * @Property callback: Updating the space callback device \/ flow state
      */
     public callback: string | ros.IResolvable | undefined;
 
@@ -218,8 +216,6 @@ export class RosGroup extends ros.RosResource {
     public lazyPull: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VS::Group`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

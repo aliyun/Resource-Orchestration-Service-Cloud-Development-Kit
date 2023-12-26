@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::HBR::BackupClients`
+ * Properties for defining a `RosBackupClients`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
  */
 export interface RosBackupClientsProps {
 
@@ -68,18 +69,15 @@ function rosBackupClientsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::HBR::BackupClients`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::BackupClients`, which is used to install backup clients on Elastic Compute Service (ECS) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BackupClients` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
  */
 export class RosBackupClients extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::BackupClients";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClientIds: ID list of clients installed in instances
@@ -105,8 +103,6 @@ export class RosBackupClients extends ros.RosResource {
     public tags: RosBackupClients.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::HBR::BackupClients`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -182,7 +178,8 @@ function rosBackupClientsTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::HBR::DbAgent`
+ * Properties for defining a `RosDbAgent`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
  */
 export interface RosDbAgentProps {
 
@@ -233,18 +230,15 @@ function rosDbAgentPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::HBR::DbAgent`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbAgent`, which is used to install a Cloud Backup backup client for a database.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DbAgent` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
  */
 export class RosDbAgent extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::DbAgent";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: Uni backup agent instance ids
@@ -275,8 +269,6 @@ export class RosDbAgent extends ros.RosResource {
     public instanceInfo: Array<RosDbAgent.InstanceInfoProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::HBR::DbAgent`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -383,7 +375,8 @@ function rosDbAgentInstanceInfoPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::HBR::DbPlan`
+ * Properties for defining a `RosDbPlan`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
  */
 export interface RosDbPlanProps {
 
@@ -521,18 +514,15 @@ function rosDbPlanPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::HBR::DbPlan`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbPlan`, which is used to create a backup plan.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DbPlan` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
  */
 export class RosDbPlan extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::DbPlan";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ContinuousPlan: Continuous backup plan schedule. Use {   "type": "continuous" }.
@@ -708,8 +698,6 @@ export class RosDbPlan extends ros.RosResource {
     public source: RosDbPlan.SourceProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::HBR::DbPlan`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -784,7 +772,7 @@ export namespace RosDbPlan {
      */
     export interface SourceProperty {
         /**
-         * @Property entries: Backup database instance or databases or tables. For Oracle, use ["oracle://${instanceName}", "oracle://${instanceName}/archivelog"], ${instanceName} is the name of the oracle database instance, which can be get from dbAgent resource. For Mysql, use "mysql://${instanceName}". For SQL Server,  use ["mssql://${instanceName}/${databse1}", "mssql://${instanceName}/${databse2}"], ${databse} can be get from dbAgent resource(MSSQL)
+         * @Property entries: Backup database instance or databases or tables. For Oracle, use ["oracle:\/\/${instanceName}", "oracle:\/\/${instanceName}\/archivelog"], ${instanceName} is the name of the oracle database instance, which can be get from dbAgent resource. For Mysql, use "mysql:\/\/${instanceName}". For SQL Server,  use ["mssql:\/\/${instanceName}\/${databse1}", "mssql:\/\/${instanceName}\/${databse2}"], ${databse} can be get from dbAgent resource(MSSQL)
          */
         readonly entries?: Array<string | ros.IResolvable> | ros.IResolvable;
     }
@@ -820,7 +808,8 @@ function rosDbPlanSourcePropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::HBR::DbVault`
+ * Properties for defining a `RosDbVault`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
  */
 export interface RosDbVaultProps {
 
@@ -901,18 +890,15 @@ function rosDbVaultPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::HBR::DbVault`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbVault`, which is used to create a mirror vault.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DbVault` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
  */
 export class RosDbVault extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::DbVault";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Description: Description of the vault.
@@ -968,8 +954,6 @@ export class RosDbVault extends ros.RosResource {
     public tags: RosDbVault.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::HBR::DbVault`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1054,7 +1038,8 @@ function rosDbVaultTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::HBR::RestoreJob`
+ * Properties for defining a `RosRestoreJob`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
 export interface RosRestoreJobProps {
 
@@ -1094,7 +1079,7 @@ export interface RosRestoreJobProps {
     readonly targetInstanceId: string | ros.IResolvable;
 
     /**
-     * @Property targetPath: Target path. For instance, "/".
+     * @Property targetPath: Target path. For instance, "\/".
      */
     readonly targetPath: string | ros.IResolvable;
 
@@ -1174,18 +1159,15 @@ function rosRestoreJobPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::HBR::RestoreJob`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RestoreJob` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
 export class RosRestoreJob extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::RestoreJob";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ErrorMessage: Error message of restore job
@@ -1251,7 +1233,7 @@ export class RosRestoreJob extends ros.RosResource {
     public targetInstanceId: string | ros.IResolvable;
 
     /**
-     * @Property targetPath: Target path. For instance, "/".
+     * @Property targetPath: Target path. For instance, "\/".
      */
     public targetPath: string | ros.IResolvable;
 
@@ -1261,8 +1243,6 @@ export class RosRestoreJob extends ros.RosResource {
     public vaultId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::HBR::RestoreJob`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1307,7 +1287,8 @@ export class RosRestoreJob extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::HBR::Vault`
+ * Properties for defining a `RosVault`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
  */
 export interface RosVaultProps {
 
@@ -1453,18 +1434,15 @@ function rosVaultPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::HBR::Vault`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::Vault`, which is used to create a backup vault.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Vault` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
  */
 export class RosVault extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::HBR::Vault";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BackupPlanStatistics: The statistics of backup plans that use the backup vault.
@@ -1670,8 +1648,6 @@ export class RosVault extends ros.RosResource {
     public vaultStorageClass: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::HBR::Vault`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

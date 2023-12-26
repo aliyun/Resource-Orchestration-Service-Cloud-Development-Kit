@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::Deployment`.</summary>
+    /// <summary>Properties for defining a `Deployment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.DeploymentProps")]
     public class DeploymentProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IDeploymentProps
     {

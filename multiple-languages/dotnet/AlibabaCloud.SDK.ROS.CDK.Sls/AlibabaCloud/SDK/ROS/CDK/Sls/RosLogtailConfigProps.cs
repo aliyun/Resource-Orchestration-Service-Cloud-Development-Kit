@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLS::LogtailConfig`.</summary>
+    /// <summary>Properties for defining a `RosLogtailConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosLogtailConfigProps")]
     public class RosLogtailConfigProps : AlibabaCloud.SDK.ROS.CDK.Sls.IRosLogtailConfigProps
     {
@@ -190,7 +193,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         ///   "content"
         /// ],
         /// "localStorage": true,
-        /// "logPath": "/var/log/test",
+        /// "logPath": "\/var\/log\/test",
         /// "logTimezone": "",
         /// "logType": "delimiter_log",
         /// "maxDepth": 100,

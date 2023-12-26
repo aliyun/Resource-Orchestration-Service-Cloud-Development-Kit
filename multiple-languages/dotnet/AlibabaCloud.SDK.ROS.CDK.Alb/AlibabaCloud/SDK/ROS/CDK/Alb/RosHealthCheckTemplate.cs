@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>A ROS template type:  `ALIYUN::ALB::HealthCheckTemplate`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`, which is used to create a health check template.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `HealthCheckTemplate` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosHealthCheckTemplate), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosHealthCheckTemplate", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-alb.RosHealthCheckTemplateProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosHealthCheckTemplate : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ALB::HealthCheckTemplate`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -340,12 +343,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong></strong>: $ ^ : ' , +. The URL path must start with a forward slash (/).
+        /// <strong></strong>: $ ^ : ' , +. The URL path must start with a forward slash (\/).
         /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
         ///
         /// <strong>Property</strong>: healthCheckPath: The URL path that is used for health checks.
         /// It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-        /// (-), forward slashes (/), periods (.), percent signs (%), question marks (?), number
+        /// (-), forward slashes (\/), periods (.), percent signs (%), question marks (?), number
         /// signs (#), and ampersands (&). It can also contain the following extended characters:
         /// _ ; ~ ! ( ) * [ ]
         /// </remarks>

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::SmartAccessGateway`.</summary>
+    /// <summary>Properties for defining a `SmartAccessGateway`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISmartAccessGatewayProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.SmartAccessGatewayProps")]
     public interface ISmartAccessGatewayProps
     {
@@ -289,7 +292,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::SmartAccessGateway`.</summary>
+        /// <summary>Properties for defining a `SmartAccessGateway`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISmartAccessGatewayProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.SmartAccessGatewayProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.ISmartAccessGatewayProps
         {

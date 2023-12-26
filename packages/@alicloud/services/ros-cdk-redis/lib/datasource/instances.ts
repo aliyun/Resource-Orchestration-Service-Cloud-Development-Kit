@@ -4,7 +4,8 @@ import { RosInstances } from './redis.generated';
 export { RosInstances as InstancesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::REDIS::Instances`
+ * Properties for defining a `Instances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instances
  */
 export interface InstancesProps {
 
@@ -12,7 +13,7 @@ export interface InstancesProps {
      * Property architectureType: The architecture of the instance. Valid values:
      * cluster: The instance is a cluster instance.
      * standard: The instance is a standard instance.
-     * rwsplit: The instance is a read/write splitting instance.
+     * rwsplit: The instance is a read\/write splitting instance.
      */
     readonly architectureType?: string | ros.IResolvable;
 
@@ -128,14 +129,11 @@ export interface InstancesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::REDIS::Instances`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::REDIS::Instances`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instances
  */
 export class Instances extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceIds: The list of The Redis instance Ids.
@@ -148,8 +146,6 @@ export class Instances extends ros.Resource {
     public readonly attrInstances: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::REDIS::Instances`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

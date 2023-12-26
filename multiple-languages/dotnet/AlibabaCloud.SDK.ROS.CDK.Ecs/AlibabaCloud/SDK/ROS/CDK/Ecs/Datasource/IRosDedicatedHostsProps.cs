@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::DedicatedHosts`.</summary>
+    /// <summary>Properties for defining a `RosDedicatedHosts`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhosts
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDedicatedHostsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.RosDedicatedHostsProps")]
     public interface IRosDedicatedHostsProps
     {
@@ -116,7 +119,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::DedicatedHosts`.</summary>
+        /// <summary>Properties for defining a `RosDedicatedHosts`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhosts
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDedicatedHostsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.RosDedicatedHostsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosDedicatedHostsProps
         {

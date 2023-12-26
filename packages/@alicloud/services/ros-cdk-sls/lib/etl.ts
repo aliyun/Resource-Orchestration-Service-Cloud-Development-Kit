@@ -4,7 +4,8 @@ import { RosEtl } from './sls.generated';
 export { RosEtl as EtlProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLS::Etl`
+ * Properties for defining a `Etl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
  */
 export interface EtlProps {
 
@@ -40,14 +41,11 @@ export interface EtlProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLS::Etl`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Etl`, which is used to create a data transformation task.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEtl`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
  */
 export class Etl extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Name: ETL name.
@@ -55,8 +53,6 @@ export class Etl extends ros.Resource {
     public readonly attrName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLS::Etl`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

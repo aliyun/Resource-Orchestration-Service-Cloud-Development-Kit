@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Memcache
 {
-    /// <summary>Properties for defining a `ALIYUN::Memcache::Whitelist`.</summary>
+    /// <summary>Properties for defining a `RosWhitelist`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-whitelist
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosWhitelistProps), fullyQualifiedName: "@alicloud/ros-cdk-memcache.RosWhitelistProps")]
     public interface IRosWhitelistProps
     {
@@ -52,7 +55,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::Memcache::Whitelist`.</summary>
+        /// <summary>Properties for defining a `RosWhitelist`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-whitelist
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosWhitelistProps), fullyQualifiedName: "@alicloud/ros-cdk-memcache.RosWhitelistProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Memcache.IRosWhitelistProps
         {

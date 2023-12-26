@@ -4,15 +4,18 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::VPC`.</summary>
+    /// <summary>Properties for defining a `RosVPC`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosVPCProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosVPCProps")]
     public interface IRosVPCProps
     {
         /// <remarks>
         /// <strong>Property</strong>: cidrBlock: The IP address range of the VPC in the CIDR block form. You can use the following IP address ranges and their subnets:
-        /// 10.0.0.0/8
-        /// 172.16.0.0/12 (Default)
-        /// 192.168.0.0/16
+        /// 10.0.0.0\/8
+        /// 172.16.0.0\/12 (Default)
+        /// 192.168.0.0\/16
         /// </remarks>
         [JsiiProperty(name: "cidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -146,7 +149,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::VPC`.</summary>
+        /// <summary>Properties for defining a `RosVPC`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosVPCProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosVPCProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IRosVPCProps
         {
@@ -156,9 +162,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <remarks>
             /// <strong>Property</strong>: cidrBlock: The IP address range of the VPC in the CIDR block form. You can use the following IP address ranges and their subnets:
-            /// 10.0.0.0/8
-            /// 172.16.0.0/12 (Default)
-            /// 192.168.0.0/16
+            /// 10.0.0.0\/8
+            /// 172.16.0.0\/12 (Default)
+            /// 192.168.0.0\/16
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "cidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

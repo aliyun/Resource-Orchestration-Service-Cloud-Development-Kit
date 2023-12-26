@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::MSE::Gateways`.</summary>
+    /// <summary>Properties for defining a `Gateways`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IGatewaysProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.datasource.GatewaysProps")]
     public interface IGatewaysProps
     {
@@ -63,7 +66,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::MSE::Gateways`.</summary>
+        /// <summary>Properties for defining a `Gateways`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IGatewaysProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.datasource.GatewaysProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mse.Datasource.IGatewaysProps
         {

@@ -4,7 +4,8 @@ import { RosDisk } from './ecs.generated';
 export { RosDisk as DiskProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::Disk`
+ * Properties for defining a `Disk`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
 export interface DiskProps {
 
@@ -34,7 +35,7 @@ export interface DiskProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
+     * Property diskCategory: The disk category, now support cloud\/cloud_ssd\/cloud_essd\/cloud_efficiency\/san_ssd\/san_efficiency\/cloud_auto, depends the region.
      */
     readonly diskCategory?: string | ros.IResolvable;
 
@@ -62,7 +63,7 @@ export interface DiskProps {
     readonly multiAttach?: string | ros.IResolvable;
 
     /**
-     * Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      */
     readonly performanceLevel?: string | ros.IResolvable;
 
@@ -103,14 +104,11 @@ export interface DiskProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::Disk`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Disk`, which is used to create a cloud disk for an Elastic Compute Service (ECS) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisk`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
 export class Disk extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DiskId: Id of created disk.
@@ -123,8 +121,6 @@ export class Disk extends ros.Resource {
     public readonly attrStatus: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::Disk`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

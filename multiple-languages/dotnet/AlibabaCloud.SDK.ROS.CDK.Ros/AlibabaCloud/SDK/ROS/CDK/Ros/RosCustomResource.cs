@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>A ROS template type:  `ALIYUN::ROS::CustomResource`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::CustomResource`.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `CustomResource` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ros.RosCustomResource), fullyQualifiedName: "@alicloud/ros-cdk-ros.RosCustomResource", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ros.RosCustomResourceProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosCustomResource : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ROS::CustomResource`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -75,22 +78,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <remarks>
         /// <strong>Property</strong>: serviceToken: The service token that was given to the template developer by the service provider to access the service.
         /// Allowed values:
-        /// - Function Compute: acs:fc:<region_id>:<account_id>:services/<service_name>/functions/<function_name>
-        /// - MNS Queue: acs:mns:<region_id>:<account_id>:queues/<queue_name> or acs:mns:<region_id>:<account_id>:/queues/<queue_name>
-        /// - MNS Topic: acs:mns:<region_id>:<account_id>:topics/<topic_name> or acs:mns:<region_id>:<account_id>:/topics/<topic_name>
+        /// - Function Compute: acs:fc:<region_id>:<account_id>:services\/<service_name>\/functions\/<function_name>
+        /// - MNS Queue: acs:mns:<region_id>:<account_id>:queues\/<queue_name> or acs:mns:<region_id>:<account_id>:\/queues\/<queue_name>
+        /// - MNS Topic: acs:mns:<region_id>:<account_id>:topics\/<topic_name> or acs:mns:<region_id>:<account_id>:\/topics\/<topic_name>
         /// - HTTP&HTTPS: web[options]:<url>
         /// Two options are supported:
         /// - sync: sync HTTP&HTTPS request.
         /// - idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
         /// Examples:
-        /// - acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function
-        /// - acs:mns:cn-hangzhou:123456789:queues/test-queue
-        /// - acs:mns:cn-hangzhou:123456789:/queues/test-queue
-        /// - acs:mns:cn-hangzhou:123456789:topics/test-topic
-        /// - acs:mns:cn-hangzhou:123456789:/topics/test-topic
-        /// - web:https://abc.com
-        /// - web[sync]:http://abc.com
-        /// - web[sync,idempotent]:https://abc.com
+        /// - acs:fc:cn-hangzhou:123456789:services\/test-service\/functions\/test-function
+        /// - acs:mns:cn-hangzhou:123456789:queues\/test-queue
+        /// - acs:mns:cn-hangzhou:123456789:\/queues\/test-queue
+        /// - acs:mns:cn-hangzhou:123456789:topics\/test-topic
+        /// - acs:mns:cn-hangzhou:123456789:\/topics\/test-topic
+        /// - web:https:\/\/abc.com
+        /// - web[sync]:http:\/\/abc.com
+        /// - web[sync,idempotent]:https:\/\/abc.com
         /// </remarks>
         [JsiiProperty(name: "serviceToken", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ServiceToken
@@ -273,7 +276,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// The signature algorithm:
             /// 1.Concatenating signature string:POST
             /// \n
-            /// <content type: if ContentType is specified, use it, else use application/json.>
+            /// <content type: if ContentType is specified, use it, else use application\/json.>
             /// \n
             /// <md5 of request data: without Signature, json format, utf-8 encoded, sort keys, ensure ascii.>
             /// \n
@@ -283,7 +286,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// \n
             /// ...<header N key>:<header 2 value>
             /// \n
-            /// <url in ServiceToken: such as https://abc.com>
+            /// <url in ServiceToken: such as https:\/\/abc.com>
             /// 2.calculate signature with sha1.
             /// </remarks>
             [JsiiProperty(name: "signKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -335,7 +338,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
                 /// The signature algorithm:
                 /// 1.Concatenating signature string:POST
                 /// \n
-                /// <content type: if ContentType is specified, use it, else use application/json.>
+                /// <content type: if ContentType is specified, use it, else use application\/json.>
                 /// \n
                 /// <md5 of request data: without Signature, json format, utf-8 encoded, sort keys, ensure ascii.>
                 /// \n
@@ -345,7 +348,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
                 /// \n
                 /// ...<header N key>:<header 2 value>
                 /// \n
-                /// <url in ServiceToken: such as https://abc.com>
+                /// <url in ServiceToken: such as https:\/\/abc.com>
                 /// 2.calculate signature with sha1.
                 /// </remarks>
                 [JsiiOptional]
@@ -439,7 +442,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// The signature algorithm:
             /// 1.Concatenating signature string:POST
             /// \n
-            /// <content type: if ContentType is specified, use it, else use application/json.>
+            /// <content type: if ContentType is specified, use it, else use application\/json.>
             /// \n
             /// <md5 of request data: without Signature, json format, utf-8 encoded, sort keys, ensure ascii.>
             /// \n
@@ -449,7 +452,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// \n
             /// ...<header N key>:<header 2 value>
             /// \n
-            /// <url in ServiceToken: such as https://abc.com>
+            /// <url in ServiceToken: such as https:\/\/abc.com>
             /// 2.calculate signature with sha1.
             /// </remarks>
             [JsiiOptional]

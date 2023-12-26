@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
-    /// <summary>Properties for defining a `ALIYUN::REDIS::PrepayInstance`.</summary>
+    /// <summary>Properties for defining a `PrepayInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.PrepayInstanceProps")]
     public class PrepayInstanceProps : AlibabaCloud.SDK.ROS.CDK.Redis.IPrepayInstanceProps
     {

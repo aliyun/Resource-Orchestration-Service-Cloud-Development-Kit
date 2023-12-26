@@ -4,7 +4,8 @@ import { RosReadOnlyDBInstance } from './rds.generated';
 export { RosReadOnlyDBInstance as ReadOnlyDBInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`
+ * Properties for defining a `ReadOnlyDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */
 export interface ReadOnlyDBInstanceProps {
 
@@ -108,12 +109,12 @@ export interface ReadOnlyDBInstanceProps {
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     readonly tags?: { [key: string]: (any) };
@@ -135,14 +136,11 @@ export interface ReadOnlyDBInstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RDS::ReadOnlyDBInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`, which is used to create a read-only ApsaraDB RDS instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosReadOnlyDBInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */
 export class ReadOnlyDBInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ConnectionString: DB instance connection url by Intranet.
@@ -160,8 +158,6 @@ export class ReadOnlyDBInstance extends ros.Resource {
     public readonly attrPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RDS::ReadOnlyDBInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

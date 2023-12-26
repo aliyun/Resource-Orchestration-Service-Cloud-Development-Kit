@@ -4,7 +4,8 @@ import { RosListener } from './alb.generated';
 export { RosListener as ListenerProperty };
 
 /**
- * Properties for defining a `ALIYUN::ALB::Listener`
+ * Properties for defining a `Listener`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */
 export interface ListenerProps {
 
@@ -53,7 +54,7 @@ export interface ListenerProps {
     readonly gzipEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property http2Enabled: Specifies whether to enable HTTP/2. Default value: on.
+     * Property http2Enabled: Specifies whether to enable HTTP\/2. Default value: on.
      * Valid values: true and false.
      * Default value: true.
      * Note Only HTTPS listeners support this parameter.
@@ -109,14 +110,11 @@ export interface ListenerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ALB::Listener`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Listener`, which is used to create an HTTP, HTTPS, or Quick UDP Internet Connections (QUIC) listener.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */
 export class Listener extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ListenerId: The ID of the listener.
@@ -124,8 +122,6 @@ export class Listener extends ros.Resource {
     public readonly attrListenerId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ALB::Listener`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

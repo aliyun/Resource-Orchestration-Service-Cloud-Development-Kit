@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * Properties for defining a <code>ALIYUN::SLS::Audit</code>.
+ * Properties for defining a <code>Audit</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.340Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.147Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.AuditProps")
 @software.amazon.jsii.Jsii.Proxy(AuditProps.Jsii$Proxy.class)
 public interface AuditProps extends software.amazon.jsii.JsiiSerializable {

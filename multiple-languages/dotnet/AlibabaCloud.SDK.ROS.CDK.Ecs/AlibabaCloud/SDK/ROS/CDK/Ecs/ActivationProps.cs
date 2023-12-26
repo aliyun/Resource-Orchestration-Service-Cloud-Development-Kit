@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::Activation`.</summary>
+    /// <summary>Properties for defining a `Activation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-activation
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.ActivationProps")]
     public class ActivationProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IActivationProps
     {

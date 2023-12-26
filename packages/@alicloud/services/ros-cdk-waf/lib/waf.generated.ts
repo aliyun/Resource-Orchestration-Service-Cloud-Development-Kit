@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::WAF::AclRule`
+ * Properties for defining a `RosAclRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-aclrule
  */
 export interface RosAclRuleProps {
 
@@ -86,18 +87,15 @@ function rosAclRulePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::WAF::AclRule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::AclRule`, which is used to add an HTTP access control list (ACL) rule for a specified domain name.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AclRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-aclrule
  */
 export class RosAclRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::WAF::AclRule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -131,8 +129,6 @@ export class RosAclRule extends ros.RosResource {
     public ruleId: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::WAF::AclRule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -164,7 +160,8 @@ export class RosAclRule extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::WAF::Domain`
+ * Properties for defining a `RosDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domain
  */
 export interface RosDomainProps {
 
@@ -316,18 +313,15 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::WAF::Domain`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::Domain`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domain
  */
 export class RosDomain extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::WAF::Domain";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterType: Cluster type
@@ -488,8 +482,6 @@ export class RosDomain extends ros.RosResource {
     public writeTime: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::WAF::Domain`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -605,7 +597,8 @@ function rosDomainLogHeadersPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::WAF::DomainConfig`
+ * Properties for defining a `RosDomainConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domainconfig
  */
 export interface RosDomainConfigProps {
 
@@ -785,18 +778,15 @@ function rosDomainConfigPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::WAF::DomainConfig`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::DomainConfig`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DomainConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domainconfig
  */
 export class RosDomainConfig extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::WAF::DomainConfig";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Cname: CNAME assigned by WAF instance.
@@ -892,8 +882,6 @@ export class RosDomainConfig extends ros.RosResource {
     public sourceIps: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::WAF::DomainConfig`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -941,7 +929,8 @@ export class RosDomainConfig extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::WAF::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-instance
  */
 export interface RosInstanceProps {
 
@@ -1078,18 +1067,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::WAF::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::WAF::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute EndDate: Due date of the instance
@@ -1190,8 +1176,6 @@ export class RosInstance extends ros.RosResource {
     public renewPeriod: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::WAF::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1245,7 +1229,8 @@ export class RosInstance extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::WAF::LogServiceEnable`
+ * Properties for defining a `RosLogServiceEnable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
  */
 export interface RosLogServiceEnableProps {
 
@@ -1298,18 +1283,15 @@ function rosLogServiceEnablePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::WAF::LogServiceEnable`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::LogServiceEnable`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LogServiceEnable` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
  */
 export class RosLogServiceEnable extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::WAF::LogServiceEnable";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Domain: The domain name that is added to WAF.
@@ -1337,8 +1319,6 @@ You can call the DescribeInstanceInfo operation to query the ID of the WAF insta
     public instanceId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::WAF::LogServiceEnable`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1366,7 +1346,8 @@ You can call the DescribeInstanceInfo operation to query the ID of the WAF insta
 }
 
 /**
- * Properties for defining a `ALIYUN::WAF::WafSwitch`
+ * Properties for defining a `RosWafSwitch`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-wafswitch
  */
 export interface RosWafSwitchProps {
 
@@ -1450,18 +1431,15 @@ function rosWafSwitchPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::WAF::WafSwitch`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::WafSwitch`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WafSwitch` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-wafswitch
  */
 export class RosWafSwitch extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::WAF::WafSwitch";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1492,8 +1470,6 @@ export class RosWafSwitch extends ros.RosResource {
     public region: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::WAF::WafSwitch`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

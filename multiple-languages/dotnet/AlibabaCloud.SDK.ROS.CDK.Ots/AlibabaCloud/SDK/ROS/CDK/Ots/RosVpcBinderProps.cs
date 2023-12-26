@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::OTS::VpcBinder`.</summary>
+    /// <summary>Properties for defining a `RosVpcBinder`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vpcbinder
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosVpcBinderProps")]
     public class RosVpcBinderProps : AlibabaCloud.SDK.ROS.CDK.Ots.IRosVpcBinderProps
     {

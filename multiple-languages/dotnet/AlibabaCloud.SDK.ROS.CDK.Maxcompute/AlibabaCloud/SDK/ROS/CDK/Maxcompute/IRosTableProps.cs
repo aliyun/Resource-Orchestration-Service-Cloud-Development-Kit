@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Maxcompute
 {
-    /// <summary>Properties for defining a `ALIYUN::MaxCompute::Table`.</summary>
+    /// <summary>Properties for defining a `RosTable`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-table
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosTableProps), fullyQualifiedName: "@alicloud/ros-cdk-maxcompute.RosTableProps")]
     public interface IRosTableProps
     {
@@ -99,7 +102,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Maxcompute
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::MaxCompute::Table`.</summary>
+        /// <summary>Properties for defining a `RosTable`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-table
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosTableProps), fullyQualifiedName: "@alicloud/ros-cdk-maxcompute.RosTableProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Maxcompute.IRosTableProps
         {

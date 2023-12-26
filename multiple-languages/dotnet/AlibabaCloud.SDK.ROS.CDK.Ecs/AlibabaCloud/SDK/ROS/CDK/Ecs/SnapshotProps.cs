@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::Snapshot`.</summary>
+    /// <summary>Properties for defining a `Snapshot`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.SnapshotProps")]
     public class SnapshotProps : AlibabaCloud.SDK.ROS.CDK.Ecs.ISnapshotProps
     {
@@ -42,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _description;
 
-        /// <summary>Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://.</summary>
+        /// <summary>Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/.</summary>
         /// <remarks>
         /// The description will appear on the console. By default, the value is zero.
         /// </remarks>

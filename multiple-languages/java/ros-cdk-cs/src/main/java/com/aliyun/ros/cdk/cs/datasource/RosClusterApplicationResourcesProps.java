@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cs.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::CS::ClusterApplicationResources</code>.
+ * Properties for defining a <code>RosClusterApplicationResources</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.341Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.749Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.datasource.RosClusterApplicationResourcesProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterApplicationResourcesProps.Jsii$Proxy.class)
 public interface RosClusterApplicationResourcesProps extends software.amazon.jsii.JsiiSerializable {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::Savedsearch`.</summary>
+    /// <summary>Properties for defining a `Savedsearch`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISavedsearchProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.SavedsearchProps")]
     public interface ISavedsearchProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::Savedsearch`.</summary>
+        /// <summary>Properties for defining a `Savedsearch`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISavedsearchProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.SavedsearchProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.ISavedsearchProps
         {

@@ -4,7 +4,8 @@ import { RosZones } from './rds.generated';
 export { RosZones as ZonesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::RDS::Zones`
+ * Properties for defining a `Zones`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
  */
 export interface ZonesProps {
 
@@ -48,14 +49,11 @@ export interface ZonesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::RDS::Zones`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RDS::Zones`, which is used to query the zones that are available to an ApsaraDB RDS instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZones`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
  */
 export class Zones extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ZoneIds: The list of zone IDs.
@@ -68,8 +66,6 @@ export class Zones extends ros.Resource {
     public readonly attrZones: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::RDS::Zones`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

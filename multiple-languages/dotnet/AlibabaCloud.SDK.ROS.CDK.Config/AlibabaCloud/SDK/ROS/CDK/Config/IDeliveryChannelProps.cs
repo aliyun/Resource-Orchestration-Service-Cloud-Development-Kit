@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Config
 {
-    /// <summary>Properties for defining a `ALIYUN::Config::DeliveryChannel`.</summary>
+    /// <summary>Properties for defining a `DeliveryChannel`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDeliveryChannelProps), fullyQualifiedName: "@alicloud/ros-cdk-config.DeliveryChannelProps")]
     public interface IDeliveryChannelProps
     {
@@ -96,7 +99,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::Config::DeliveryChannel`.</summary>
+        /// <summary>Properties for defining a `DeliveryChannel`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDeliveryChannelProps), fullyQualifiedName: "@alicloud/ros-cdk-config.DeliveryChannelProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Config.IDeliveryChannelProps
         {

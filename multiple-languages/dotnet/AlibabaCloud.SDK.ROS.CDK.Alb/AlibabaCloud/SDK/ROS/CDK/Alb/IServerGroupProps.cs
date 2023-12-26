@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>Properties for defining a `ALIYUN::ALB::ServerGroup`.</summary>
+    /// <summary>Properties for defining a `ServerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IServerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.ServerGroupProps")]
     public interface IServerGroupProps
     {
@@ -146,7 +149,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ALB::ServerGroup`.</summary>
+        /// <summary>Properties for defining a `ServerGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IServerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.ServerGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.IServerGroupProps
         {

@@ -4,7 +4,8 @@ import { RosDBClusterEndpoint } from './polardb.generated';
 export { RosDBClusterEndpoint as DBClusterEndpointProperty };
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBClusterEndpoint`
+ * Properties for defining a `DBClusterEndpoint`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
  */
 export interface DBClusterEndpointProps {
 
@@ -37,7 +38,7 @@ export interface DBClusterEndpointProps {
     readonly nodes?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property readWriteMode: The read/write mode of the cluster connection point. Valid values:
+     * Property readWriteMode: The read\/write mode of the cluster connection point. Valid values:
      * ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
      * ReadOnly: receives and forwards only read requests.
      * Default value: ReadOnly.
@@ -46,14 +47,11 @@ export interface DBClusterEndpointProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::POLARDB::DBClusterEndpoint`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`, which is used to create a custom endpoint for a PolarDB cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusterEndpoint`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
  */
 export class DBClusterEndpoint extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Addresses: The address items of the db cluster endpoint.
@@ -71,8 +69,6 @@ export class DBClusterEndpoint extends ros.Resource {
     public readonly attrDbEndpointId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBClusterEndpoint`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::NatGateway`.</summary>
+    /// <summary>Properties for defining a `RosNatGateway`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosNatGatewayProps")]
     public class RosNatGatewayProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosNatGatewayProps
     {

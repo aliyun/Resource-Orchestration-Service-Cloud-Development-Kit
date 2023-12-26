@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::BgpGroup`.</summary>
+    /// <summary>Properties for defining a `RosBgpGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosBgpGroupProps")]
     public class RosBgpGroupProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosBgpGroupProps
     {
@@ -131,7 +134,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: description: The description of the BGP group. The description must be 2 to 256 characters in length.
-        /// It must start with a letter but cannot start with http:// or https://.
+        /// It must start with a letter but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -254,7 +257,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the BGP group. The name must be 2 to 128 characters in length and can
         /// contain digits, periods (.), underscores (_), and hyphens (-). The name must start
-        /// with a letter but cannot start with http:// or https://.
+        /// with a letter but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

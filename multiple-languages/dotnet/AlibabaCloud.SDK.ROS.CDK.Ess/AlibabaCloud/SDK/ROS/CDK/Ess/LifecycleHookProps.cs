@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ESS::LifecycleHook`.</summary>
+    /// <summary>Properties for defining a `LifecycleHook`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ess.LifecycleHookProps")]
     public class LifecycleHookProps : AlibabaCloud.SDK.ROS.CDK.Ess.ILifecycleHookProps
     {

@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
 {
-    /// <summary>A ROS template type:  `DATASOURCE::REDIS::Instances`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instances`.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instances
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Redis.Datasource.RosInstances), fullyQualifiedName: "@alicloud/ros-cdk-redis.datasource.RosInstances", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-redis.datasource.RosInstancesProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosInstances : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `DATASOURCE::REDIS::Instances`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -85,7 +88,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
         /// <strong>Property</strong>: architectureType: The architecture of the instance. Valid values:
         /// cluster: The instance is a cluster instance.
         /// standard: The instance is a standard instance.
-        /// rwsplit: The instance is a read/write splitting instance.
+        /// rwsplit: The instance is a read\/write splitting instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "architectureType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

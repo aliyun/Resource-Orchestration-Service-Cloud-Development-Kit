@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::KAFKA::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-kafka.InstanceProps")]
     public class InstanceProps : AlibabaCloud.SDK.ROS.CDK.Kafka.IInstanceProps
     {

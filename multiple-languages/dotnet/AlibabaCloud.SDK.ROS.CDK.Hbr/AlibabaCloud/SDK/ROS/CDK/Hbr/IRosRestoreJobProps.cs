@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
-    /// <summary>Properties for defining a `ALIYUN::HBR::RestoreJob`.</summary>
+    /// <summary>Properties for defining a `RosRestoreJob`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosRestoreJobProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.RosRestoreJobProps")]
     public interface IRosRestoreJobProps
     {
@@ -72,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: targetPath: Target path. For instance, "/".
+        /// <strong>Property</strong>: targetPath: Target path. For instance, "\/".
         /// </remarks>
         [JsiiProperty(name: "targetPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object TargetPath
@@ -89,7 +92,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::HBR::RestoreJob`.</summary>
+        /// <summary>Properties for defining a `RosRestoreJob`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosRestoreJobProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.RosRestoreJobProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Hbr.IRosRestoreJobProps
         {
@@ -161,7 +167,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: targetPath: Target path. For instance, "/".
+            /// <strong>Property</strong>: targetPath: Target path. For instance, "\/".
             /// </remarks>
             [JsiiProperty(name: "targetPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object TargetPath

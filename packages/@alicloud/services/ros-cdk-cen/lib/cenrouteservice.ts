@@ -4,7 +4,8 @@ import { RosCenRouteService } from './cen.generated';
 export { RosCenRouteService as CenRouteServiceProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenRouteService`
+ * Properties for defining a `CenRouteService`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */
 export interface CenRouteServiceProps {
 
@@ -48,14 +49,11 @@ export interface CenRouteServiceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::CenRouteService`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to configure the access to an Alibaba Cloud service.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenRouteService`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */
 export class CenRouteService extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Id: The ID of the cloud service. It is formatted to {CenId}/{HostRegionId}/{Host}/{AccessRegionId}
@@ -63,8 +61,6 @@ export class CenRouteService extends ros.Resource {
     public readonly attrId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::CenRouteService`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
-    /// <summary>Properties for defining a `ALIYUN::HBR::BackupClients`.</summary>
+    /// <summary>Properties for defining a `RosBackupClients`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosBackupClientsProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.RosBackupClientsProps")]
     public interface IRosBackupClientsProps
     {
@@ -30,7 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::HBR::BackupClients`.</summary>
+        /// <summary>Properties for defining a `RosBackupClients`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosBackupClientsProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.RosBackupClientsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Hbr.IRosBackupClientsProps
         {

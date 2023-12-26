@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CMS::AlarmContacts`.</summary>
+    /// <summary>Properties for defining a `RosAlarmContacts`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontacts
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.datasource.RosAlarmContactsProps")]
     public class RosAlarmContactsProps : AlibabaCloud.SDK.ROS.CDK.Cms.Datasource.IRosAlarmContactsProps
     {

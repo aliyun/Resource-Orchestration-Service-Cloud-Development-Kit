@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::PolarDBX::Database`.</summary>
+    /// <summary>Properties for defining a `Database`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-database
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardbx.DatabaseProps")]
     public class DatabaseProps : AlibabaCloud.SDK.ROS.CDK.Polardbx.IDatabaseProps
     {

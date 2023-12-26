@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FC::Trigger`.</summary>
+    /// <summary>Properties for defining a `RosTrigger`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.RosTriggerProps")]
     public class RosTriggerProps : AlibabaCloud.SDK.ROS.CDK.Fc.IRosTriggerProps
     {
@@ -176,7 +179,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <remarks>
         /// <strong>Property</strong>: invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
-        /// Example : "acs:ram::1234567890:role/fc-test"
+        /// Example : "acs:ram::1234567890:role\/fc-test"
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "invocationRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

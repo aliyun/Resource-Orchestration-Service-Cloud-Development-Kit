@@ -4,7 +4,8 @@ import { RosNodes } from './ehpc.generated';
 export { RosNodes as NodesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::EHPC::Nodes`
+ * Properties for defining a `Nodes`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ehpc-nodes
  */
 export interface NodesProps {
 
@@ -43,14 +44,11 @@ export interface NodesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::EHPC::Nodes`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EHPC::Nodes`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNodes`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ehpc-nodes
  */
 export class Nodes extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute NodeIds: The list of node IDs.
@@ -63,8 +61,6 @@ export class Nodes extends ros.Resource {
     public readonly attrNodes: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::EHPC::Nodes`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

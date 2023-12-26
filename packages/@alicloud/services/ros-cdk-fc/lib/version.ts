@@ -4,7 +4,8 @@ import { RosVersion } from './fc.generated';
 export { RosVersion as VersionProperty };
 
 /**
- * Properties for defining a `ALIYUN::FC::Version`
+ * Properties for defining a `Version`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-version
  */
 export interface VersionProps {
 
@@ -20,14 +21,11 @@ export interface VersionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FC::Version`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Version`, which is used to release a Version.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVersion`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-version
  */
 export class Version extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ServiceName: The service name
@@ -40,8 +38,6 @@ export class Version extends ros.Resource {
     public readonly attrVersionId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FC::Version`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

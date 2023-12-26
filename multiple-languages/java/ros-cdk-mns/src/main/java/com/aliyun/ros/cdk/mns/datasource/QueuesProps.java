@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.mns.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::MNS::Queues</code>.
+ * Properties for defining a <code>Queues</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-queues
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.053Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.datasource.QueuesProps")
 @software.amazon.jsii.Jsii.Proxy(QueuesProps.Jsii$Proxy.class)
 public interface QueuesProps extends software.amazon.jsii.JsiiSerializable {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
-    /// <summary>Properties for defining a `ALIYUN::RAM::SAMLProvider`.</summary>
+    /// <summary>Properties for defining a `SAMLProvider`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISAMLProviderProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.SAMLProviderProps")]
     public interface ISAMLProviderProps
     {
@@ -57,7 +60,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RAM::SAMLProvider`.</summary>
+        /// <summary>Properties for defining a `SAMLProvider`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISAMLProviderProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.SAMLProviderProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.ISAMLProviderProps
         {

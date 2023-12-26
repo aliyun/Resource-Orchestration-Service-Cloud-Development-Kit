@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::PrefixLists`.</summary>
+    /// <summary>Properties for defining a `RosPrefixLists`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosPrefixListsProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.RosPrefixListsProps")]
     public interface IRosPrefixListsProps
     {
@@ -34,7 +37,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::PrefixLists`.</summary>
+        /// <summary>Properties for defining a `RosPrefixLists`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosPrefixListsProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.RosPrefixListsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IRosPrefixListsProps
         {

@@ -4,7 +4,8 @@ import { RosDataset } from './pai.generated';
 export { RosDataset as DatasetProperty };
 
 /**
- * Properties for defining a `ALIYUN::PAI::Dataset`
+ * Properties for defining a `Dataset`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
  */
 export interface DatasetProps {
 
@@ -32,11 +33,11 @@ export interface DatasetProps {
 
     /**
      * Property uri: The Uri configuration sample is as follows:
-     * - The data source type is OSS:'oss:// bucket.endpoint/object'
+     * - The data source type is OSS:'oss:\/\/ bucket.endpoint\/object'
      * - The data source type is NAS:
-     * The general NAS format is: 'nas://<nasfisid>.region/subpath/to/dir/';
-     * CPFS1.0:'nas://<cpfs-fsid>.region/subpath/to/dir /';
-     * CPFS2.0:'nas://<cpfs-fsid>.region/<protocolserviceid>/'.
+     * The general NAS format is: 'nas:\/\/<nasfisid>.region\/subpath\/to\/dir\/';
+     * CPFS1.0:'nas:\/\/<cpfs-fsid>.region\/subpath\/to\/dir \/';
+     * CPFS2.0:'nas:\/\/<cpfs-fsid>.region\/<protocolserviceid>\/'.
      * CPFS1.0 and CPFS2.0 are distinguished by the format of fsid: CPFS1.0 is cpfs-<8-bit ascii characters>;CPFS2.0 is cpfs-<16 ascii characters>.
      */
     readonly uri: string | ros.IResolvable;
@@ -93,14 +94,11 @@ export interface DatasetProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PAI::Dataset`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Dataset`, which is used to create a dataset.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDataset`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
  */
 export class Dataset extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Accessibility: Workspace visibility.
@@ -183,8 +181,6 @@ export class Dataset extends ros.Resource {
     public readonly attrWorkspaceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PAI::Dataset`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

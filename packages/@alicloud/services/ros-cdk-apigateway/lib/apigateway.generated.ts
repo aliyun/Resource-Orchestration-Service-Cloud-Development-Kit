@@ -3,12 +3,13 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Api`
+ * Properties for defining a `RosApi`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
 export interface RosApiProps {
 
     /**
-     * @Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     readonly apiName: string | ros.IResolvable;
 
@@ -280,18 +281,15 @@ function rosApiPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::Api`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Api`, which is used to create an API.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Api` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
 export class RosApi extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Api";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ApiId: The id of the API.
@@ -302,7 +300,7 @@ export class RosApi extends ros.RosResource {
 
 
     /**
-     * @Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     public apiName: string | ros.IResolvable;
 
@@ -443,8 +441,6 @@ export class RosApi extends ros.RosResource {
     public webSocketApiType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Api`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -645,7 +641,7 @@ export namespace RosApi {
      */
     export interface FunctionComputeConfigProperty {
         /**
-         * @Property path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: /getUserInfo/[userId].
+         * @Property path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: \/getUserInfo\/[userId].
          */
         readonly path?: string | ros.IResolvable;
         /**
@@ -674,7 +670,7 @@ export namespace RosApi {
          */
         readonly method?: string | ros.IResolvable;
         /**
-         * @Property onlyBusinessPath: If set true. The path in the trigger path (for example, /2016-08-15/proxy/xxx/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
+         * @Property onlyBusinessPath: If set true. The path in the trigger path (for example, \/2016-08-15\/proxy\/xxx\/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
          */
         readonly onlyBusinessPath?: boolean | ros.IResolvable;
         /**
@@ -690,7 +686,7 @@ export namespace RosApi {
          */
         readonly roleArn?: string | ros.IResolvable;
         /**
-         * @Property fcBaseUrl: Trigger path. Starts with http:// or https://
+         * @Property fcBaseUrl: Trigger path. Starts with http:\/\/ or https:\/\/
          */
         readonly fcBaseUrl?: string | ros.IResolvable;
     }
@@ -906,7 +902,7 @@ export namespace RosApi {
          */
         readonly postBodyDescription?: string | ros.IResolvable;
         /**
-         * @Property bodyFormat: Describe how data transform to the server, "FORM" for k-v and "STREAM" for bit stream.BodyFormat is required if RequestMode is specified as MAPPING and RequestHttpMethod is POST/PUT/PATCH.
+         * @Property bodyFormat: Describe how data transform to the server, "FORM" for k-v and "STREAM" for bit stream.BodyFormat is required if RequestMode is specified as MAPPING and RequestHttpMethod is POST\/PUT\/PATCH.
          */
         readonly bodyFormat?: string | ros.IResolvable;
     }
@@ -1144,7 +1140,7 @@ export namespace RosApi {
      */
     export interface ServiceConfigProperty {
         /**
-         * @Property serviceAddress: Backend service call address. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServiceAddress corresponds to http://api.a.com:8080.
+         * @Property serviceAddress: Backend service call address. If the complete backend service address is http:\/\/api.a.com:8080\/object\/add?key1=value1&key2=value2, ServiceAddress corresponds to http:\/\/api.a.com:8080.
          */
         readonly serviceAddress?: string | ros.IResolvable;
         /**
@@ -1180,7 +1176,7 @@ export namespace RosApi {
          */
         readonly serviceHttpMethod?: string | ros.IResolvable;
         /**
-         * @Property servicePath: Backend service call path. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServicePath corresponds to /object/add.
+         * @Property servicePath: Backend service call path. If the complete backend service address is http:\/\/api.a.com:8080\/object\/add?key1=value1&key2=value2, ServicePath corresponds to \/object\/add.
          */
         readonly servicePath?: string | ros.IResolvable;
         /**
@@ -1542,7 +1538,7 @@ export namespace RosApi {
          */
         readonly vpcId: string | ros.IResolvable;
         /**
-         * @Property instanceId: The id of the instance (ECS/SLB).
+         * @Property instanceId: The id of the instance (ECS\/SLB).
          */
         readonly instanceId: string | ros.IResolvable;
         /**
@@ -1589,12 +1585,13 @@ function rosApiVpcConfigPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::App`
+ * Properties for defining a `RosApp`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
  */
 export interface RosAppProps {
 
     /**
-     * @Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     readonly appName: string | ros.IResolvable;
 
@@ -1697,18 +1694,15 @@ function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::App`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::App`, which is used to create an application. Before you call a third-party API, you must create an application and use the application as an identity to call the API.
+ * @Note This class does not contain additional functions, so it is recommended to use the `App` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
  */
 export class RosApp extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::App";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppCode: The code of the APP.
@@ -1739,7 +1733,7 @@ export class RosApp extends ros.RosResource {
 
 
     /**
-     * @Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     public appName: string | ros.IResolvable;
 
@@ -1773,8 +1767,6 @@ export class RosApp extends ros.RosResource {
     public tags: RosApp.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::App`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1861,7 +1853,8 @@ function rosAppTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Authorization`
+ * Properties for defining a `RosAuthorization`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
  */
 export interface RosAuthorizationProps {
 
@@ -1970,18 +1963,15 @@ function rosAuthorizationPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::Authorization`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Authorization`, which is used to authorize APIs to access applications.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Authorization` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
  */
 export class RosAuthorization extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Authorization";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2018,8 +2008,6 @@ export class RosAuthorization extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Authorization`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2053,7 +2041,8 @@ export class RosAuthorization extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::CustomDomain`
+ * Properties for defining a `RosCustomDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain
  */
 export interface RosCustomDomainProps {
 
@@ -2126,18 +2115,15 @@ function rosCustomDomainPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::CustomDomain`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::CustomDomain`, which is used to bind a custom domain name and upload an SSL certificate to a specified API group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain
  */
 export class RosCustomDomain extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::CustomDomain";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CertificateId: The id of the certificate.
@@ -2173,8 +2159,6 @@ export class RosCustomDomain extends ros.RosResource {
     public certificatePrivateKey: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::CustomDomain`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2207,7 +2191,8 @@ export class RosCustomDomain extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Deployment`
+ * Properties for defining a `RosDeployment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment
  */
 export interface RosDeploymentProps {
 
@@ -2287,18 +2272,15 @@ function rosDeploymentPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::Deployment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Deployment`, which is used to release an API to a specified runtime environment, or switch a released API to a specified version.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Deployment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment
  */
 export class RosDeployment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Deployment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2329,8 +2311,6 @@ export class RosDeployment extends ros.RosResource {
     public historyVersion: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Deployment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2362,12 +2342,13 @@ export class RosDeployment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Group`
+ * Properties for defining a `RosGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
 export interface RosGroupProps {
 
     /**
-     * @Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     readonly groupName: string | ros.IResolvable;
 
@@ -2463,18 +2444,15 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::Group`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Group`, which is used to create an API group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
 export class RosGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Group";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupId: The id of the created Group resource
@@ -2495,7 +2473,7 @@ export class RosGroup extends ros.RosResource {
 
 
     /**
-     * @Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     public groupName: string | ros.IResolvable;
 
@@ -2536,8 +2514,6 @@ export class RosGroup extends ros.RosResource {
     public vpcIntranetEnable: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Group`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2626,7 +2602,8 @@ function rosGroupTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-instance
  */
 export interface RosInstanceProps {
 
@@ -2765,18 +2742,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Instance`, which is used to create a dedicated instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute EgressIpv6Enable: Whether enable egress IPV6.
@@ -2876,8 +2850,6 @@ export class RosInstance extends ros.RosResource {
     public tags: RosInstance.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2975,7 +2947,8 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::LogConfig`
+ * Properties for defining a `RosLogConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-logconfig
  */
 export interface RosLogConfigProps {
 
@@ -3041,18 +3014,15 @@ function rosLogConfigPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::LogConfig`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::LogConfig`, which is used to create a log configuration.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LogConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-logconfig
  */
 export class RosLogConfig extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::LogConfig";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SlsLogStore: Logstore name of SLS
@@ -3078,8 +3048,6 @@ export class RosLogConfig extends ros.RosResource {
     public slsProject: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::LogConfig`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3107,7 +3075,8 @@ export class RosLogConfig extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Plugin`
+ * Properties for defining a `RosPlugin`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-plugin
  */
 export interface RosPluginProps {
 
@@ -3188,18 +3157,15 @@ function rosPluginPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::Plugin`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Plugin`, which is used to create an API Gateway plug-in.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Plugin` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-plugin
  */
 export class RosPlugin extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Plugin";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Description: The description of the plug-in, which cannot exceed 200 characters.
@@ -3255,8 +3221,6 @@ export class RosPlugin extends ros.RosResource {
     public tags: RosPlugin.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Plugin`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3341,7 +3305,8 @@ function rosPluginTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::PluginAttachment`
+ * Properties for defining a `RosPluginAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
  */
 export interface RosPluginAttachmentProps {
 
@@ -3410,18 +3375,15 @@ function rosPluginAttachmentPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::PluginAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::PluginAttachment`, which is used to bind a plug-in to an API.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PluginAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
  */
 export class RosPluginAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::PluginAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ApiId: The api id.
@@ -3455,8 +3417,6 @@ export class RosPluginAttachment extends ros.RosResource {
     public stageName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::PluginAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3486,7 +3446,8 @@ export class RosPluginAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Signature`
+ * Properties for defining a `RosSignature`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signature
  */
 export interface RosSignatureProps {
 
@@ -3496,7 +3457,7 @@ export interface RosSignatureProps {
     readonly signatureKey: string | ros.IResolvable;
 
     /**
-     * @Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     readonly signatureName: string | ros.IResolvable;
 
@@ -3546,18 +3507,15 @@ function rosSignaturePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::Signature`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Signature`, which is used to create a backend signature.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Signature` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signature
  */
 export class RosSignature extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Signature";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SignatureId: The id of the created signature
@@ -3573,7 +3531,7 @@ export class RosSignature extends ros.RosResource {
     public signatureKey: string | ros.IResolvable;
 
     /**
-     * @Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property signatureName: The name of the Signature.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     public signatureName: string | ros.IResolvable;
 
@@ -3583,8 +3541,6 @@ export class RosSignature extends ros.RosResource {
     public signatureSecret: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Signature`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3613,7 +3569,8 @@ export class RosSignature extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::SignatureBinding`
+ * Properties for defining a `RosSignatureBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
  */
 export interface RosSignatureBindingProps {
 
@@ -3694,18 +3651,15 @@ function rosSignatureBindingPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::SignatureBinding`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::SignatureBinding`, which is used to bind backend signatures to APIs.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SignatureBinding` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
  */
 export class RosSignatureBinding extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::SignatureBinding";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3731,8 +3685,6 @@ export class RosSignatureBinding extends ros.RosResource {
     public stageName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::SignatureBinding`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3762,7 +3714,8 @@ export class RosSignatureBinding extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::StageConfig`
+ * Properties for defining a `RosStageConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-stageconfig
  */
 export interface RosStageConfigProps {
 
@@ -3828,18 +3781,15 @@ function rosStageConfigPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::StageConfig`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::StageConfig`, which is used to configure the test, staging, or production environment variables for an API group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `StageConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-stageconfig
  */
 export class RosStageConfig extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::StageConfig";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3860,8 +3810,6 @@ export class RosStageConfig extends ros.RosResource {
     public variables: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::StageConfig`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3889,7 +3837,8 @@ export class RosStageConfig extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::TrafficControl`
+ * Properties for defining a `RosTrafficControl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */
 export interface RosTrafficControlProps {
 
@@ -3899,12 +3848,12 @@ export interface RosTrafficControlProps {
     readonly apiDefault: number | ros.IResolvable;
 
     /**
-     * @Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     readonly trafficControlName: string | ros.IResolvable;
 
     /**
-     * @Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
+     * @Property trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.
      */
     readonly trafficControlUnit: string | ros.IResolvable;
 
@@ -3983,18 +3932,15 @@ function rosTrafficControlPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::TrafficControl`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControl`, which is used to create a custom throttling policy.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TrafficControl` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */
 export class RosTrafficControl extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::TrafficControl";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TrafficControlId: The id of the traffic control
@@ -4010,12 +3956,12 @@ export class RosTrafficControl extends ros.RosResource {
     public apiDefault: number | ros.IResolvable;
 
     /**
-     * @Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * @Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     public trafficControlName: string | ros.IResolvable;
 
     /**
-     * @Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
+     * @Property trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.
      */
     public trafficControlUnit: string | ros.IResolvable;
 
@@ -4040,8 +3986,6 @@ export class RosTrafficControl extends ros.RosResource {
     public userDefault: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::TrafficControl`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4140,7 +4084,8 @@ function rosTrafficControlSpecialPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::TrafficControlBinding`
+ * Properties for defining a `RosTrafficControlBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrolbinding
  */
 export interface RosTrafficControlBindingProps {
 
@@ -4221,18 +4166,15 @@ function rosTrafficControlBindingPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::TrafficControlBinding`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControlBinding`, which is used to bind a custom throttling policy to APIs.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TrafficControlBinding` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrolbinding
  */
 export class RosTrafficControlBinding extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::TrafficControlBinding";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -4258,8 +4200,6 @@ export class RosTrafficControlBinding extends ros.RosResource {
     public trafficControlId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::TrafficControlBinding`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4289,12 +4229,13 @@ export class RosTrafficControlBinding extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::VpcAccessConfig`
+ * Properties for defining a `RosVpcAccessConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
  */
 export interface RosVpcAccessConfigProps {
 
     /**
-     * @Property instanceId: The id of the instance (ECS/SLB).
+     * @Property instanceId: The id of the instance (ECS\/SLB).
      */
     readonly instanceId: string | ros.IResolvable;
 
@@ -4364,7 +4305,9 @@ function rosVpcAccessConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::ApiGateway::VpcAccessConfig`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`, which is used to configure the VPC authorization for an instance so that VPC API can provide services externally.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcAccessConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
  */
 export class RosVpcAccessConfig extends ros.RosResource {
     /**
@@ -4372,16 +4315,11 @@ export class RosVpcAccessConfig extends ros.RosResource {
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::VpcAccessConfig";
 
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
-
     public enableResourcePropertyConstraint: boolean;
 
 
     /**
-     * @Property instanceId: The id of the instance (ECS/SLB).
+     * @Property instanceId: The id of the instance (ECS\/SLB).
      */
     public instanceId: string | ros.IResolvable;
 
@@ -4401,8 +4339,6 @@ export class RosVpcAccessConfig extends ros.RosResource {
     public vpcId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::VpcAccessConfig`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

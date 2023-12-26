@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dbs
 {
-    /// <summary>Properties for defining a `ALIYUN::DBS::Download`.</summary>
+    /// <summary>Properties for defining a `Download`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDownloadProps), fullyQualifiedName: "@alicloud/ros-cdk-dbs.DownloadProps")]
     public interface IDownloadProps
     {
@@ -174,7 +177,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DBS::Download`.</summary>
+        /// <summary>Properties for defining a `Download`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDownloadProps), fullyQualifiedName: "@alicloud/ros-cdk-dbs.DownloadProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dbs.IDownloadProps
         {

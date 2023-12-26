@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fnf.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::FNF::Schedules`.</summary>
+    /// <summary>Properties for defining a `Schedules`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISchedulesProps), fullyQualifiedName: "@alicloud/ros-cdk-fnf.datasource.SchedulesProps")]
     public interface ISchedulesProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf.Datasource
             get;
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::FNF::Schedules`.</summary>
+        /// <summary>Properties for defining a `Schedules`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-schedules
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISchedulesProps), fullyQualifiedName: "@alicloud/ros-cdk-fnf.datasource.SchedulesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fnf.Datasource.ISchedulesProps
         {

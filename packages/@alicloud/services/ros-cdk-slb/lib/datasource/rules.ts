@@ -4,7 +4,8 @@ import { RosRules } from './slb.generated';
 export { RosRules as RulesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::SLB::Rules`
+ * Properties for defining a `Rules`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-rules
  */
 export interface RulesProps {
 
@@ -25,14 +26,11 @@ export interface RulesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::SLB::Rules`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::Rules`, which is used to query the forwarding rules that are configured for a listener.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRules`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-rules
  */
 export class Rules extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RuleIds: The list of rule IDs.
@@ -45,8 +43,6 @@ export class Rules extends ros.Resource {
     public readonly attrRules: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::SLB::Rules`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

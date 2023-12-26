@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::DhcpOptionsSet`.</summary>
+    /// <summary>Properties for defining a `DhcpOptionsSet`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.DhcpOptionsSetProps")]
     public class DhcpOptionsSetProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IDhcpOptionsSetProps
     {

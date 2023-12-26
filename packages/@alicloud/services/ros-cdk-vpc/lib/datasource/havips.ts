@@ -4,7 +4,8 @@ import { RosHaVips } from './vpc.generated';
 export { RosHaVips as HaVipsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::VPC::HaVips`
+ * Properties for defining a `HaVips`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havips
  */
 export interface HaVipsProps {
 
@@ -15,14 +16,11 @@ export interface HaVipsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::VPC::HaVips`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::HaVips`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHaVips`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havips
  */
 export class HaVips extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute HaVipIds: The list of ha vip IDs.
@@ -35,8 +33,6 @@ export class HaVips extends ros.Resource {
     public readonly attrHaVips: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::VPC::HaVips`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

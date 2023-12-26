@@ -4,7 +4,8 @@ import { RosCenBandwidthPackage } from './cen.generated';
 export { RosCenBandwidthPackage as CenBandwidthPackageProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenBandwidthPackage`
+ * Properties for defining a `CenBandwidthPackage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
  */
 export interface CenBandwidthPackageProps {
 
@@ -49,13 +50,13 @@ export interface CenBandwidthPackageProps {
 
     /**
      * Property description: The description of the bandwidth package.
-     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
+     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * Property name: The name of the bandwidth package.
-     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
+     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -76,14 +77,11 @@ export interface CenBandwidthPackageProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::CenBandwidthPackage`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances in different regions.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthPackage`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
  */
 export class CenBandwidthPackage extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CenBandwidthPackageId: The ID of the bandwidth package.
@@ -91,8 +89,6 @@ export class CenBandwidthPackage extends ros.Resource {
     public readonly attrCenBandwidthPackageId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::CenBandwidthPackage`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

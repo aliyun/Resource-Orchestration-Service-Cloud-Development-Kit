@@ -4,7 +4,8 @@ import { RosParameter } from './oos.generated';
 export { RosParameter as ParameterProperty };
 
 /**
- * Properties for defining a `ALIYUN::OOS::Parameter`
+ * Properties for defining a `Parameter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
 export interface ParameterProps {
 
@@ -50,14 +51,11 @@ export interface ParameterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::OOS::Parameter`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosParameter`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
 export class Parameter extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Name: The Name of the parameter.
@@ -70,8 +68,6 @@ export class Parameter extends ros.Resource {
     public readonly attrValue: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OOS::Parameter`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

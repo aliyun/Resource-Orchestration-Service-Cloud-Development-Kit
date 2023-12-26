@@ -4,7 +4,8 @@ import { RosRetcodeApp } from './arms.generated';
 export { RosRetcodeApp as RetcodeAppProperty };
 
 /**
- * Properties for defining a `ALIYUN::ARMS::RetcodeApp`
+ * Properties for defining a `RetcodeApp`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
  */
 export interface RetcodeAppProps {
 
@@ -25,14 +26,11 @@ export interface RetcodeAppProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ARMS::RetcodeApp`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::RetcodeApp`, which is used to create an Application Real-Time Monitoring Service (ARMS) browser monitoring job.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRetcodeApp`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
  */
 export class RetcodeApp extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AppId: The ID of the application for which you created the browser monitoring job.
@@ -45,8 +43,6 @@ export class RetcodeApp extends ros.Resource {
     public readonly attrPid: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ARMS::RetcodeApp`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

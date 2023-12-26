@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
-    /// <summary>Properties for defining a `ALIYUN::RAM::User`.</summary>
+    /// <summary>Properties for defining a `User`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IUserProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.UserProps")]
     public interface IUserProps
     {
@@ -117,7 +120,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RAM::User`.</summary>
+        /// <summary>Properties for defining a `User`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IUserProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.UserProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.IUserProps
         {

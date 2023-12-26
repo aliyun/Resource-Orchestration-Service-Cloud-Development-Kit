@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CS::AnyCluster`.</summary>
+    /// <summary>Properties for defining a `RosAnyCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.RosAnyClusterProps")]
     public class RosAnyClusterProps : AlibabaCloud.SDK.ROS.CDK.Cs.IRosAnyClusterProps
     {

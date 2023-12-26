@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.slb;
 
 /**
- * Properties for defining a <code>ALIYUN::SLB::DomainExtension</code>.
+ * Properties for defining a <code>RosDomainExtension</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.263Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.081Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosDomainExtensionProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainExtensionProps.Jsii$Proxy.class)
 public interface RosDomainExtensionProps extends software.amazon.jsii.JsiiSerializable {

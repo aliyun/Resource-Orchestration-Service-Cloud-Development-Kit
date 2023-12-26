@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::PrepayDBInstance`.</summary>
+    /// <summary>Properties for defining a `PrepayDBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IPrepayDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.PrepayDBInstanceProps")]
     public interface IPrepayDBInstanceProps
     {
@@ -789,6 +792,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
+        /// <summary>Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL.</summary>
+        [JsiiProperty(name: "storageAutoScale", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageAutoScale
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property storageThreshold: Storage space automatic expansion trigger threshold (percentage).</summary>
+        [JsiiProperty(name: "storageThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageThreshold
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.</summary>
+        [JsiiProperty(name: "storageUpperBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? StorageUpperBound
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property tags: The tags of an instance.</summary>
         /// <remarks>
         /// You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
@@ -889,7 +925,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::PrepayDBInstance`.</summary>
+        /// <summary>Properties for defining a `PrepayDBInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IPrepayDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.PrepayDBInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IPrepayDBInstanceProps
         {
@@ -1524,6 +1563,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             [JsiiOptional]
             [JsiiProperty(name: "sslSetting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SslSetting
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageAutoScale", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageAutoScale
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property storageThreshold: Storage space automatic expansion trigger threshold (percentage).</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageThreshold
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "storageUpperBound", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageUpperBound
             {
                 get => GetInstanceProperty<object?>();
             }

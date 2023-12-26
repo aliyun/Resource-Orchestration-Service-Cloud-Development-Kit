@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::GPDB::DBInstance`.</summary>
+    /// <summary>Properties for defining a `RosDBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-gpdb.RosDBInstanceProps")]
     public class RosDBInstanceProps : AlibabaCloud.SDK.ROS.CDK.Gpdb.IRosDBInstanceProps
     {
@@ -632,7 +635,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         private object? _periodUnit;
 
         /// <remarks>
-        /// <strong>Property</strong>: periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
+        /// <strong>Property</strong>: periodUnit: Unit of subscription period, it could be Month\/Year. Default value is Month.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -4,7 +4,8 @@ import { RosClusterApplicationResources } from './cs.generated';
 export { RosClusterApplicationResources as ClusterApplicationResourcesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CS::ClusterApplicationResources`
+ * Properties for defining a `ClusterApplicationResources`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
  */
 export interface ClusterApplicationResourcesProps {
 
@@ -40,14 +41,11 @@ export interface ClusterApplicationResourcesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CS::ClusterApplicationResources`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterApplicationResources`, which is used to query the details of specified types of resources in a Container Service for Kubernetes (ACK) cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterApplicationResources`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
  */
 export class ClusterApplicationResources extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Response: Query result of kubernetes resource(s).
@@ -55,8 +53,6 @@ export class ClusterApplicationResources extends ros.Resource {
     public readonly attrResponse: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CS::ClusterApplicationResources`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

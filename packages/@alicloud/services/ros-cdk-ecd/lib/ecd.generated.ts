@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ECD::Bundle`
+ * Properties for defining a `RosBundle`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
  */
 export interface RosBundleProps {
 
@@ -148,18 +149,15 @@ function rosBundlePropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECD::Bundle`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Bundle`, which is used to create a custom desktop template.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Bundle` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
  */
 export class RosBundle extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECD::Bundle";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BundleId: Desktop bundle ID.
@@ -232,8 +230,6 @@ export class RosBundle extends ros.RosResource {
     public userDiskPerformanceLevel: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECD::Bundle`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -274,7 +270,8 @@ export class RosBundle extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECD::Desktops`
+ * Properties for defining a `RosDesktops`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
 export interface RosDesktopsProps {
 
@@ -402,7 +399,7 @@ export interface RosDesktopsProps {
     readonly promotionId?: string | ros.IResolvable;
 
     /**
-     * @Property tags: The list of desktops tags in the form of key/value pairs.
+     * @Property tags: The list of desktops tags in the form of key\/value pairs.
      * You can define a maximum of 20 tags for each desktops.
      */
     readonly tags?: RosDesktops.TagsProperty[];
@@ -564,18 +561,15 @@ function rosDesktopsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECD::Desktops`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Desktops` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
 export class RosDesktops extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECD::Desktops";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DesktopId: The ID of the cloud desktop. If multiple cloud desktops are created in a call, the
@@ -716,7 +710,7 @@ Note This parameter is returned only when the ChargeType parameter is set to Pre
     public promotionId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property tags: The list of desktops tags in the form of key/value pairs.
+     * @Property tags: The list of desktops tags in the form of key\/value pairs.
      * You can define a maximum of 20 tags for each desktops.
      */
     public tags: RosDesktops.TagsProperty[] | undefined;
@@ -755,8 +749,6 @@ Note This parameter is returned only when the ChargeType parameter is set to Pre
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECD::Desktops`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -872,12 +864,13 @@ function rosDesktopsTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECD::SimpleOfficeSite`
+ * Properties for defining a `RosSimpleOfficeSite`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */
 export interface RosSimpleOfficeSiteProps {
 
     /**
-     * @Property bandwidth: The maximum public bandwidth. Value range: 10 to 200. Unit: Mbit/s. This parameter is available if you set EnableInternetAccess to true.
+     * @Property bandwidth: The maximum public bandwidth. Value range: 10 to 200. Unit: Mbit\/s. This parameter is available if you set EnableInternetAccess to true.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
@@ -895,7 +888,7 @@ export interface RosSimpleOfficeSiteProps {
     readonly cenOwnerId?: number | ros.IResolvable;
 
     /**
-     * @Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0/12, 172.16.0.0/12, 192.168.0.0/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0/12 or 172.16.0.0/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0/16, the mask is 1624 bits in length.
+     * @Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0\/12, 172.16.0.0\/12, 192.168.0.0\/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0\/12 or 172.16.0.0\/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0\/16, the mask is 1624 bits in length.
      */
     readonly cidrBlock?: string | ros.IResolvable;
 
@@ -938,7 +931,7 @@ export interface RosSimpleOfficeSiteProps {
     readonly needVerifyZeroDevice?: boolean | ros.IResolvable;
 
     /**
-     * @Property officeSiteName: The name of the workspace. The name must be 2 to 255 characters in length. It must start with a letter and cannot start with http:// or https://. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     * @Property officeSiteName: The name of the workspace. The name must be 2 to 255 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
      */
     readonly officeSiteName?: string | ros.IResolvable;
 
@@ -1014,18 +1007,15 @@ function rosSimpleOfficeSitePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECD::SimpleOfficeSite`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`, which is used to create a workspace of the convenience account type.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SimpleOfficeSite` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */
 export class RosSimpleOfficeSite extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECD::SimpleOfficeSite";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute OfficeSiteId: The ID of the workspace.
@@ -1036,7 +1026,7 @@ export class RosSimpleOfficeSite extends ros.RosResource {
 
 
     /**
-     * @Property bandwidth: The maximum public bandwidth. Value range: 10 to 200. Unit: Mbit/s. This parameter is available if you set EnableInternetAccess to true.
+     * @Property bandwidth: The maximum public bandwidth. Value range: 10 to 200. Unit: Mbit\/s. This parameter is available if you set EnableInternetAccess to true.
      */
     public bandwidth: number | ros.IResolvable | undefined;
 
@@ -1054,7 +1044,7 @@ export class RosSimpleOfficeSite extends ros.RosResource {
     public cenOwnerId: number | ros.IResolvable | undefined;
 
     /**
-     * @Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0/12, 172.16.0.0/12, 192.168.0.0/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0/12 or 172.16.0.0/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0/16, the mask is 1624 bits in length.
+     * @Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0\/12, 172.16.0.0\/12, 192.168.0.0\/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0\/12 or 172.16.0.0\/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0\/16, the mask is 1624 bits in length.
      */
     public cidrBlock: string | ros.IResolvable | undefined;
 
@@ -1097,7 +1087,7 @@ export class RosSimpleOfficeSite extends ros.RosResource {
     public needVerifyZeroDevice: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property officeSiteName: The name of the workspace. The name must be 2 to 255 characters in length. It must start with a letter and cannot start with http:// or https://. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     * @Property officeSiteName: The name of the workspace. The name must be 2 to 255 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. The name can contain letters, digits, colons (:), underscores (_), and hyphens (-).
      */
     public officeSiteName: string | ros.IResolvable | undefined;
 
@@ -1112,8 +1102,6 @@ export class RosSimpleOfficeSite extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECD::SimpleOfficeSite`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

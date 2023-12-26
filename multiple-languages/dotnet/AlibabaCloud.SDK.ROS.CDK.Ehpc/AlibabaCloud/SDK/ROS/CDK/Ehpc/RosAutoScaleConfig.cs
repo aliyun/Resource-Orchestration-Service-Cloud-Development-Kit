@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 {
-    /// <summary>A ROS template type:  `ALIYUN::EHPC::AutoScaleConfig`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::AutoScaleConfig`, which is used to configure the auto scaling settings of a cluster.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AutoScaleConfig` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ehpc.RosAutoScaleConfig), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.RosAutoScaleConfig", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ehpc.RosAutoScaleConfigProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosAutoScaleConfig : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::EHPC::AutoScaleConfig`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -793,10 +796,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
             /// <remarks>
             /// <strong>Property</strong>: dataDiskPerformanceLevel: The performance level of the ESSD used as the data disk. The parameter takes effect only when the Queues.N.DataDisks.M.DataDiskCategory parameter is set to cloud_essd. Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// Default value: PL1
             /// </remarks>
             [JsiiProperty(name: "dataDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -876,10 +879,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
                 /// <remarks>
                 /// <strong>Property</strong>: dataDiskPerformanceLevel: The performance level of the ESSD used as the data disk. The parameter takes effect only when the Queues.N.DataDisks.M.DataDiskCategory parameter is set to cloud_essd. Valid values:
-                /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-                /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-                /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-                /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+                /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+                /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+                /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+                /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
                 /// Default value: PL1
                 /// </remarks>
                 [JsiiOptional]
@@ -1044,10 +1047,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
             /// <remarks>
             /// <strong>Property</strong>: dataDiskPerformanceLevel: The performance level of the ESSD used as the data disk. The parameter takes effect only when the Queues.N.DataDisks.M.DataDiskCategory parameter is set to cloud_essd. Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// Default value: PL1
             /// </remarks>
             [JsiiOptional]
@@ -1676,10 +1679,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
             /// <remarks>
             /// <strong>Property</strong>: systemDiskLevel: The performance level of the system disk specified for the compute nodes that are added in the queue. Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// Default value: PL1
             /// </remarks>
             [JsiiProperty(name: "systemDiskLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1896,10 +1899,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
                 /// <remarks>
                 /// <strong>Property</strong>: systemDiskLevel: The performance level of the system disk specified for the compute nodes that are added in the queue. Valid values:
-                /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-                /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-                /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-                /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+                /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+                /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+                /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+                /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
                 /// Default value: PL1
                 /// </remarks>
                 [JsiiOptional]
@@ -2611,10 +2614,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
             /// <remarks>
             /// <strong>Property</strong>: systemDiskLevel: The performance level of the system disk specified for the compute nodes that are added in the queue. Valid values:
-            /// PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-            /// PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-            /// PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-            /// PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+            /// PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+            /// PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+            /// PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+            /// PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
             /// Default value: PL1
             /// </remarks>
             [JsiiOptional]

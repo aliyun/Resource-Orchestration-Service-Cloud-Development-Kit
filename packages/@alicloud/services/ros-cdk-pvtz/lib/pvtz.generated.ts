@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::PVTZ::Rule`
+ * Properties for defining a `RosRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-rule
  */
 export interface RosRuleProps {
 
@@ -86,18 +87,15 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::PVTZ::Rule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Rule`, which is used to add a forwarding rule.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-rule
  */
 export class RosRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PVTZ::Rule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateTime: The timestamp when the forwarding rule was created.
@@ -169,8 +167,6 @@ export class RosRule extends ros.RosResource {
     public zoneName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PVTZ::Rule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -259,7 +255,8 @@ function rosRuleForwardIpPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::PVTZ::UserVpcAuthorization`
+ * Properties for defining a `RosUserVpcAuthorization`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-uservpcauthorization
  */
 export interface RosUserVpcAuthorizationProps {
 
@@ -333,18 +330,15 @@ function rosUserVpcAuthorizationPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * A ROS template type:  `ALIYUN::PVTZ::UserVpcAuthorization`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::UserVpcAuthorization`, which is used to associate virtual private clouds (VPCs) across accounts.
+ * @Note This class does not contain additional functions, so it is recommended to use the `UserVpcAuthorization` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-uservpcauthorization
  */
 export class RosUserVpcAuthorization extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PVTZ::UserVpcAuthorization";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AuthType: Authorization type.
@@ -387,8 +381,6 @@ export class RosUserVpcAuthorization extends ros.RosResource {
     public ignoreDeletionForbidden: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PVTZ::UserVpcAuthorization`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -422,7 +414,8 @@ export class RosUserVpcAuthorization extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::PVTZ::Zone`
+ * Properties for defining a `RosZone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
 export interface RosZoneProps {
 
@@ -550,18 +543,15 @@ function rosZonePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::PVTZ::Zone`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a private zone.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Zone` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
 export class RosZone extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PVTZ::Zone";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ZoneId: Zone ID.
@@ -629,8 +619,6 @@ export class RosZone extends ros.RosResource {
     public zoneType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PVTZ::Zone`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -720,7 +708,8 @@ function rosZoneTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::PVTZ::ZoneRecord`
+ * Properties for defining a `RosZoneRecord`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
  */
 export interface RosZoneRecordProps {
 
@@ -829,18 +818,15 @@ function rosZoneRecordPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::PVTZ::ZoneRecord`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneRecord`, which is used to add a Domain Name Service (DNS) record to a private zone.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ZoneRecord` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
  */
 export class RosZoneRecord extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PVTZ::ZoneRecord";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Record: Record data.
@@ -896,8 +882,6 @@ export class RosZoneRecord extends ros.RosResource {
     public ttl: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PVTZ::ZoneRecord`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -936,7 +920,8 @@ export class RosZoneRecord extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::PVTZ::ZoneVpcBinder`
+ * Properties for defining a `RosZoneVpcBinder`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonevpcbinder
  */
 export interface RosZoneVpcBinderProps {
 
@@ -995,18 +980,15 @@ function rosZoneVpcBinderPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::PVTZ::ZoneVpcBinder`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneVpcBinder`, which is used to bind a private zone to or unbind a private zone from a virtual private cloud (VPC).
+ * @Note This class does not contain additional functions, so it is recommended to use the `ZoneVpcBinder` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonevpcbinder
  */
 export class RosZoneVpcBinder extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PVTZ::ZoneVpcBinder";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Vpcs: Vpc list
@@ -1032,8 +1014,6 @@ export class RosZoneVpcBinder extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PVTZ::ZoneVpcBinder`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

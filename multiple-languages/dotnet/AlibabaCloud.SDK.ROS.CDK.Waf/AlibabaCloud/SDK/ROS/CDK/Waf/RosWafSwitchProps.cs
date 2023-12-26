@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::WAF::WafSwitch`.</summary>
+    /// <summary>Properties for defining a `RosWafSwitch`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-wafswitch
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-waf.RosWafSwitchProps")]
     public class RosWafSwitchProps : AlibabaCloud.SDK.ROS.CDK.Waf.IRosWafSwitchProps
     {

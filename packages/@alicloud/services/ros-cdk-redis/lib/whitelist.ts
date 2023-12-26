@@ -4,7 +4,8 @@ import { RosWhitelist } from './redis.generated';
 export { RosWhitelist as WhitelistProperty };
 
 /**
- * Properties for defining a `ALIYUN::REDIS::Whitelist`
+ * Properties for defining a `Whitelist`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
  */
 export interface WhitelistProps {
 
@@ -30,14 +31,11 @@ export interface WhitelistProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::REDIS::Whitelist`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Whitelist`, which is used to configure an IP address whitelist for an ApsaraDB for Redis instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWhitelist`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
  */
 export class Whitelist extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
@@ -55,8 +53,6 @@ export class Whitelist extends ros.Resource {
     public readonly attrSecurityIps: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::REDIS::Whitelist`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

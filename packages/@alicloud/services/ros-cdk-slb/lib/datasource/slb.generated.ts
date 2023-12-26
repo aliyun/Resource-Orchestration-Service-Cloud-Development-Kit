@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::SLB::AccessControls`
+ * Properties for defining a `RosAccessControls`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrols
  */
 export interface RosAccessControlsProps {
 
@@ -60,18 +61,15 @@ function rosAccessControlsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `DATASOURCE::SLB::AccessControls`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::AccessControls`, which is used to query created access control lists (ACLs).
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessControls` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrols
  */
 export class RosAccessControls extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::SLB::AccessControls";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccessControls: The list of access controls.
@@ -102,8 +100,6 @@ export class RosAccessControls extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::SLB::AccessControls`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -133,7 +129,8 @@ export class RosAccessControls extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::SLB::DomainExtensions`
+ * Properties for defining a `RosDomainExtensions`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
  */
 export interface RosDomainExtensionsProps {
 
@@ -193,18 +190,15 @@ function rosDomainExtensionsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `DATASOURCE::SLB::DomainExtensions`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::DomainExtensions`, which is used to query the domain name extensions that are added to a listener of a Server Load Balancer (SLB) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DomainExtensions` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
  */
 export class RosDomainExtensions extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::SLB::DomainExtensions";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DomainExtensionIds: The list of domain extension IDs.
@@ -236,8 +230,6 @@ export class RosDomainExtensions extends ros.RosResource {
     public domainExtensionId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::SLB::DomainExtensions`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -267,7 +259,8 @@ export class RosDomainExtensions extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::SLB::LoadBalancers`
+ * Properties for defining a `RosLoadBalancers`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancers
  */
 export interface RosLoadBalancersProps {
 
@@ -419,18 +412,15 @@ function rosLoadBalancersPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::SLB::LoadBalancers`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancers`, which is used to query created Classic Load Balancer (CLB) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancers` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancers
  */
 export class RosLoadBalancers extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::SLB::LoadBalancers";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute LoadBalancerIds: The list of load balancer IDs.
@@ -516,8 +506,6 @@ export class RosLoadBalancers extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::SLB::LoadBalancers`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -569,7 +557,8 @@ export class RosLoadBalancers extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::SLB::Rules`
+ * Properties for defining a `RosRules`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-rules
  */
 export interface RosRulesProps {
 
@@ -628,18 +617,15 @@ function rosRulesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::SLB::Rules`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Rules`, which is used to query the forwarding rules that are configured for a listener.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Rules` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-rules
  */
 export class RosRules extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::SLB::Rules";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RuleIds: The list of rule IDs.
@@ -670,8 +656,6 @@ export class RosRules extends ros.RosResource {
     public listenerProtocol: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::SLB::Rules`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -701,7 +685,8 @@ export class RosRules extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::SLB::TLSPolicies`
+ * Properties for defining a `RosTLSPolicies`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-tlspolicies
  */
 export interface RosTLSPoliciesProps {
 
@@ -752,18 +737,15 @@ function rosTLSPoliciesPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::SLB::TLSPolicies`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::TLSPolicies`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TLSPolicies` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-tlspolicies
  */
 export class RosTLSPolicies extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::SLB::TLSPolicies";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: The list of instance IDs.
@@ -789,8 +771,6 @@ export class RosTLSPolicies extends ros.RosResource {
     public tlsPolicyName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::SLB::TLSPolicies`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -818,7 +798,8 @@ export class RosTLSPolicies extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::SLB::VServerGroups`
+ * Properties for defining a `RosVServerGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
  */
 export interface RosVServerGroupsProps {
 
@@ -862,18 +843,15 @@ function rosVServerGroupsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::SLB::VServerGroups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::VServerGroups`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
  */
 export class RosVServerGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::SLB::VServerGroups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute VServerGroupIds: The list of VServer group IDs.
@@ -894,8 +872,6 @@ export class RosVServerGroups extends ros.RosResource {
     public loadBalancerId: string | ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::SLB::VServerGroups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -921,7 +897,8 @@ export class RosVServerGroups extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::SLB::Zones`
+ * Properties for defining a `RosZones`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-zones
  */
 export interface RosZonesProps {
 
@@ -975,18 +952,15 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::SLB::Zones`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Zones`, which is used to query the zones in which Server Load Balancer (SLB) instances are deployed.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-zones
  */
 export class RosZones extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::SLB::Zones";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ZoneIds: The list of The primary zone Ids.
@@ -1016,8 +990,6 @@ export class RosZones extends ros.RosResource {
     public addressType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::SLB::Zones`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

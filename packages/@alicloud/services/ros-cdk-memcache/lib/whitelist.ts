@@ -4,7 +4,8 @@ import { RosWhitelist } from './memcache.generated';
 export { RosWhitelist as WhitelistProperty };
 
 /**
- * Properties for defining a `ALIYUN::Memcache::Whitelist`
+ * Properties for defining a `Whitelist`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-whitelist
  */
 export interface WhitelistProps {
 
@@ -30,14 +31,11 @@ export interface WhitelistProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::Memcache::Whitelist`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Whitelist`, which is used to create a Whitelist.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWhitelist`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-whitelist
  */
 export class Whitelist extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
@@ -55,8 +53,6 @@ export class Whitelist extends ros.Resource {
     public readonly attrSecurityIps: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::Memcache::Whitelist`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

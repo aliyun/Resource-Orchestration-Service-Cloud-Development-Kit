@@ -4,7 +4,8 @@ import { RosBandwidthPackage } from './ga.generated';
 export { RosBandwidthPackage as BandwidthPackageProperty };
 
 /**
- * Properties for defining a `ALIYUN::GA::BandwidthPackage`
+ * Properties for defining a `BandwidthPackage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
  */
 export interface BandwidthPackageProps {
 
@@ -70,14 +71,11 @@ export interface BandwidthPackageProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::GA::BandwidthPackage`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BandwidthPackage`, which is used to create a bandwidth plan.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBandwidthPackage`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
  */
 export class BandwidthPackage extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AutoPay: The AutoPay of the bandwidth
@@ -145,8 +143,6 @@ export class BandwidthPackage extends ros.Resource {
     public readonly attrType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GA::BandwidthPackage`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

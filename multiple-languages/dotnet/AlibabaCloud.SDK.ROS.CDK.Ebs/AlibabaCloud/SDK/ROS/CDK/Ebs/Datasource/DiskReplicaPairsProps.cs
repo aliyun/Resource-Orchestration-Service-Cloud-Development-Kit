@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ebs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::EBS::DiskReplicaPairs`.</summary>
+    /// <summary>Properties for defining a `DiskReplicaPairs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ebs.datasource.DiskReplicaPairsProps")]
     public class DiskReplicaPairsProps : AlibabaCloud.SDK.ROS.CDK.Ebs.Datasource.IDiskReplicaPairsProps
     {

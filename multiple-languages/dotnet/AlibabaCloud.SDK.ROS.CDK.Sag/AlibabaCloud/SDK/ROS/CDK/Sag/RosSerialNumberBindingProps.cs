@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAG::SerialNumberBinding`.</summary>
+    /// <summary>Properties for defining a `RosSerialNumberBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-serialnumberbinding
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.RosSerialNumberBindingProps")]
     public class RosSerialNumberBindingProps : AlibabaCloud.SDK.ROS.CDK.Sag.IRosSerialNumberBindingProps
     {

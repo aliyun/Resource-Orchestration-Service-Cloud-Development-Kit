@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::HaVip`.</summary>
+    /// <summary>Properties for defining a `HaVip`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IHaVipProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.HaVipProps")]
     public interface IHaVipProps
     {
@@ -82,7 +85,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::HaVip`.</summary>
+        /// <summary>Properties for defining a `HaVip`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IHaVipProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.HaVipProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IHaVipProps
         {

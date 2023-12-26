@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::InstanceGroupClone`.</summary>
+    /// <summary>Properties for defining a `InstanceGroupClone`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstanceGroupCloneProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.InstanceGroupCloneProps")]
     public interface IInstanceGroupCloneProps
     {
@@ -350,7 +353,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.Old instances will not be changed.
         /// </remarks>
@@ -407,7 +410,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
         /// </remarks>
-        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SecurityGroupIds
         {
@@ -625,7 +628,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::InstanceGroupClone`.</summary>
+        /// <summary>Properties for defining a `InstanceGroupClone`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstanceGroupCloneProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.InstanceGroupCloneProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IInstanceGroupCloneProps
         {
@@ -903,7 +909,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.</summary>
+            /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year.</summary>
             /// <remarks>
             /// Default value is Month.Old instances will not be changed.
             /// </remarks>
@@ -949,7 +955,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? SecurityGroupIds
             {
                 get => GetInstanceProperty<object?>();

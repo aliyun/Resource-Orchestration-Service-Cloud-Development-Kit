@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 {
-    /// <summary>Properties for defining a `ALIYUN::EHPC::Cluster`.</summary>
+    /// <summary>Properties for defining a `Cluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.ClusterProps")]
     public interface IClusterProps
     {
@@ -382,7 +385,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
         }
 
-        /// <summary>Property period: The purchase of long resources, units: week / month / year.</summary>
+        /// <summary>Property period: The purchase of long resources, units: week \/ month \/ year.</summary>
         /// <remarks>
         /// When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
         /// </remarks>
@@ -701,7 +704,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EHPC::Cluster`.</summary>
+        /// <summary>Properties for defining a `Cluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.ClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ehpc.IClusterProps
         {
@@ -1014,7 +1020,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property period: The purchase of long resources, units: week / month / year.</summary>
+            /// <summary>Property period: The purchase of long resources, units: week \/ month \/ year.</summary>
             /// <remarks>
             /// When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
             /// </remarks>

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::DiskAttachment`.</summary>
+    /// <summary>Properties for defining a `DiskAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDiskAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.DiskAttachmentProps")]
     public interface IDiskAttachmentProps
     {
@@ -61,7 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::DiskAttachment`.</summary>
+        /// <summary>Properties for defining a `DiskAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDiskAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.DiskAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IDiskAttachmentProps
         {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::KMS::Alias`.</summary>
+    /// <summary>Properties for defining a `Alias`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-kms.AliasProps")]
     public class AliasProps : AlibabaCloud.SDK.ROS.CDK.Kms.IAliasProps
     {

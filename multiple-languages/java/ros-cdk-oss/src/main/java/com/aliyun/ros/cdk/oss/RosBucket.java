@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oss;
 
 /**
- * A ROS template type:  <code>ALIYUN::OSS::Bucket</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OSS::Bucket</code>, which is used to create an Object Storage Service (OSS) bucket.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.323Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.098Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucket")
 public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::OSS::Bucket</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -143,6 +141,24 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDeletionForce(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "deletionForce", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableOssHdfsService() {
+        return software.amazon.jsii.Kernel.get(this, "enableOssHdfsService", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableOssHdfsService(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableOssHdfsService", value);
+    }
+
+    /**
+     */
+    public void setEnableOssHdfsService(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableOssHdfsService", value);
     }
 
     /**
@@ -2445,6 +2461,23 @@ public class RosBucket extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
             this.props.deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param enableOssHdfsService This parameter is required.
+         */
+        public Builder enableOssHdfsService(final java.lang.Boolean enableOssHdfsService) {
+            this.props.enableOssHdfsService(enableOssHdfsService);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableOssHdfsService This parameter is required.
+         */
+        public Builder enableOssHdfsService(final com.aliyun.ros.cdk.core.IResolvable enableOssHdfsService) {
+            this.props.enableOssHdfsService(enableOssHdfsService);
             return this;
         }
 

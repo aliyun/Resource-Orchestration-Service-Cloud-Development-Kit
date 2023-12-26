@@ -4,29 +4,32 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>Properties for defining a `ALIYUN::ROS::CustomResource`.</summary>
+    /// <summary>Properties for defining a `RosCustomResource`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosCustomResourceProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.RosCustomResourceProps")]
     public interface IRosCustomResourceProps
     {
         /// <remarks>
         /// <strong>Property</strong>: serviceToken: The service token that was given to the template developer by the service provider to access the service.
         /// Allowed values:
-        /// - Function Compute: acs:fc:<region_id>:<account_id>:services/<service_name>/functions/<function_name>
-        /// - MNS Queue: acs:mns:<region_id>:<account_id>:queues/<queue_name> or acs:mns:<region_id>:<account_id>:/queues/<queue_name>
-        /// - MNS Topic: acs:mns:<region_id>:<account_id>:topics/<topic_name> or acs:mns:<region_id>:<account_id>:/topics/<topic_name>
+        /// - Function Compute: acs:fc:<region_id>:<account_id>:services\/<service_name>\/functions\/<function_name>
+        /// - MNS Queue: acs:mns:<region_id>:<account_id>:queues\/<queue_name> or acs:mns:<region_id>:<account_id>:\/queues\/<queue_name>
+        /// - MNS Topic: acs:mns:<region_id>:<account_id>:topics\/<topic_name> or acs:mns:<region_id>:<account_id>:\/topics\/<topic_name>
         /// - HTTP&HTTPS: web[options]:<url>
         /// Two options are supported:
         /// - sync: sync HTTP&HTTPS request.
         /// - idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
         /// Examples:
-        /// - acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function
-        /// - acs:mns:cn-hangzhou:123456789:queues/test-queue
-        /// - acs:mns:cn-hangzhou:123456789:/queues/test-queue
-        /// - acs:mns:cn-hangzhou:123456789:topics/test-topic
-        /// - acs:mns:cn-hangzhou:123456789:/topics/test-topic
-        /// - web:https://abc.com
-        /// - web[sync]:http://abc.com
-        /// - web[sync,idempotent]:https://abc.com
+        /// - acs:fc:cn-hangzhou:123456789:services\/test-service\/functions\/test-function
+        /// - acs:mns:cn-hangzhou:123456789:queues\/test-queue
+        /// - acs:mns:cn-hangzhou:123456789:\/queues\/test-queue
+        /// - acs:mns:cn-hangzhou:123456789:topics\/test-topic
+        /// - acs:mns:cn-hangzhou:123456789:\/topics\/test-topic
+        /// - web:https:\/\/abc.com
+        /// - web[sync]:http:\/\/abc.com
+        /// - web[sync,idempotent]:https:\/\/abc.com
         /// </remarks>
         [JsiiProperty(name: "serviceToken", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ServiceToken
@@ -71,7 +74,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ROS::CustomResource`.</summary>
+        /// <summary>Properties for defining a `RosCustomResource`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosCustomResourceProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.RosCustomResourceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ros.IRosCustomResourceProps
         {
@@ -82,22 +88,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             /// <remarks>
             /// <strong>Property</strong>: serviceToken: The service token that was given to the template developer by the service provider to access the service.
             /// Allowed values:
-            /// - Function Compute: acs:fc:<region_id>:<account_id>:services/<service_name>/functions/<function_name>
-            /// - MNS Queue: acs:mns:<region_id>:<account_id>:queues/<queue_name> or acs:mns:<region_id>:<account_id>:/queues/<queue_name>
-            /// - MNS Topic: acs:mns:<region_id>:<account_id>:topics/<topic_name> or acs:mns:<region_id>:<account_id>:/topics/<topic_name>
+            /// - Function Compute: acs:fc:<region_id>:<account_id>:services\/<service_name>\/functions\/<function_name>
+            /// - MNS Queue: acs:mns:<region_id>:<account_id>:queues\/<queue_name> or acs:mns:<region_id>:<account_id>:\/queues\/<queue_name>
+            /// - MNS Topic: acs:mns:<region_id>:<account_id>:topics\/<topic_name> or acs:mns:<region_id>:<account_id>:\/topics\/<topic_name>
             /// - HTTP&HTTPS: web[options]:<url>
             /// Two options are supported:
             /// - sync: sync HTTP&HTTPS request.
             /// - idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
             /// Examples:
-            /// - acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function
-            /// - acs:mns:cn-hangzhou:123456789:queues/test-queue
-            /// - acs:mns:cn-hangzhou:123456789:/queues/test-queue
-            /// - acs:mns:cn-hangzhou:123456789:topics/test-topic
-            /// - acs:mns:cn-hangzhou:123456789:/topics/test-topic
-            /// - web:https://abc.com
-            /// - web[sync]:http://abc.com
-            /// - web[sync,idempotent]:https://abc.com
+            /// - acs:fc:cn-hangzhou:123456789:services\/test-service\/functions\/test-function
+            /// - acs:mns:cn-hangzhou:123456789:queues\/test-queue
+            /// - acs:mns:cn-hangzhou:123456789:\/queues\/test-queue
+            /// - acs:mns:cn-hangzhou:123456789:topics\/test-topic
+            /// - acs:mns:cn-hangzhou:123456789:\/topics\/test-topic
+            /// - web:https:\/\/abc.com
+            /// - web[sync]:http:\/\/abc.com
+            /// - web[sync,idempotent]:https:\/\/abc.com
             /// </remarks>
             [JsiiProperty(name: "serviceToken", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ServiceToken

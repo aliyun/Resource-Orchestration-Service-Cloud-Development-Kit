@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NAS::FileSystem`.</summary>
+    /// <summary>Properties for defining a `FileSystem`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nas.FileSystemProps")]
     public class FileSystemProps : AlibabaCloud.SDK.ROS.CDK.Nas.IFileSystemProps
     {
@@ -81,7 +84,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 
         private object? _bandwidth;
 
-        /// <summary>Property bandwidth: Maximum file system throughput, unit is MB/s.</summary>
+        /// <summary>Property bandwidth: Maximum file system throughput, unit is MB\/s.</summary>
         /// <remarks>
         /// Required and valid only when FileSystemType=cpfs.
         /// </remarks>

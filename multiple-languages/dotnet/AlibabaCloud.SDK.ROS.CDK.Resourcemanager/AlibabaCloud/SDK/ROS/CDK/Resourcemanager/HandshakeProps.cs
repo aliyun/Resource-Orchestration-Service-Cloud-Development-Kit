@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ResourceManager::Handshake`.</summary>
+    /// <summary>Properties for defining a `Handshake`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-handshake
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-resourcemanager.HandshakeProps")]
     public class HandshakeProps : AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IHandshakeProps
     {

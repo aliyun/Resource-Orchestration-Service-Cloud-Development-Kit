@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::CEN::TransitRouters`.</summary>
+    /// <summary>Properties for defining a `RosTransitRouters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouters
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.datasource.RosTransitRoutersProps")]
     public class RosTransitRoutersProps : AlibabaCloud.SDK.ROS.CDK.Cen.Datasource.IRosTransitRoutersProps
     {

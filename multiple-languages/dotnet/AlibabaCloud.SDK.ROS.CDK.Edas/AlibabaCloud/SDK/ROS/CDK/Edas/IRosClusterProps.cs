@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
-    /// <summary>Properties for defining a `ALIYUN::EDAS::Cluster`.</summary>
+    /// <summary>Properties for defining a `RosCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-cluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.RosClusterProps")]
     public interface IRosClusterProps
     {
@@ -49,7 +52,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
+        /// <strong>Property</strong>: oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) \/ 4 (1: 4) \/ 8 (1: 8 ratio)
         /// </remarks>
         [JsiiProperty(name: "oversoldFactor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -87,7 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EDAS::Cluster`.</summary>
+        /// <summary>Properties for defining a `RosCluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-cluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-edas.RosClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Edas.IRosClusterProps
         {
@@ -133,7 +139,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
+            /// <strong>Property</strong>: oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) \/ 4 (1: 4) \/ 8 (1: 8 ratio)
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "oversoldFactor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::AMQP::Binding`.</summary>
+    /// <summary>Properties for defining a `RosBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-amqp.RosBindingProps")]
     public class RosBindingProps : AlibabaCloud.SDK.ROS.CDK.Amqp.IRosBindingProps
     {

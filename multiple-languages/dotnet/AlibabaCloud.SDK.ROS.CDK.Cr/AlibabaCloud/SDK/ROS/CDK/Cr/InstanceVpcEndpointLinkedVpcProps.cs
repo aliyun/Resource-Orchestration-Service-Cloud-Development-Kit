@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`.</summary>
+    /// <summary>Properties for defining a `InstanceVpcEndpointLinkedVpc`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cr.InstanceVpcEndpointLinkedVpcProps")]
     public class InstanceVpcEndpointLinkedVpcProps : AlibabaCloud.SDK.ROS.CDK.Cr.IInstanceVpcEndpointLinkedVpcProps
     {

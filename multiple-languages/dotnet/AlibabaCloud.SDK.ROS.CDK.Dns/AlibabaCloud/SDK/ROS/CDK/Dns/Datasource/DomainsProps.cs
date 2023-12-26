@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dns.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::DNS::Domains`.</summary>
+    /// <summary>Properties for defining a `Domains`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domains
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dns.datasource.DomainsProps")]
     public class DomainsProps : AlibabaCloud.SDK.ROS.CDK.Dns.Datasource.IDomainsProps
     {

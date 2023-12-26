@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::REDIS::Connection`.</summary>
+    /// <summary>Properties for defining a `Connection`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-connection
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.ConnectionProps")]
     public class ConnectionProps : AlibabaCloud.SDK.ROS.CDK.Redis.IConnectionProps
     {

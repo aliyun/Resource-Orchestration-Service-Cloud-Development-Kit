@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CEN::CenVbrHealthCheck`.</summary>
+    /// <summary>Properties for defining a `CenVbrHealthCheck`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.CenVbrHealthCheckProps")]
     public class CenVbrHealthCheckProps : AlibabaCloud.SDK.ROS.CDK.Cen.ICenVbrHealthCheckProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::KeyPairs`.</summary>
+    /// <summary>Properties for defining a `KeyPairs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypairs
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IKeyPairsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.KeyPairsProps")]
     public interface IKeyPairsProps
     {
@@ -65,7 +68,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::KeyPairs`.</summary>
+        /// <summary>Properties for defining a `KeyPairs`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypairs
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IKeyPairsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.KeyPairsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IKeyPairsProps
         {

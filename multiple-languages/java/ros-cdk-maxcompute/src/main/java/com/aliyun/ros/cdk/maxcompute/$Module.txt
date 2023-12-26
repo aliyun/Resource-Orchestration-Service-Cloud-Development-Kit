@@ -1,3 +1,10 @@
+@alicloud/ros-cdk-maxcompute.Project=com.aliyun.ros.cdk.maxcompute.Project
+@alicloud/ros-cdk-maxcompute.ProjectProps=com.aliyun.ros.cdk.maxcompute.ProjectProps
+@alicloud/ros-cdk-maxcompute.RosProject=com.aliyun.ros.cdk.maxcompute.RosProject
+@alicloud/ros-cdk-maxcompute.RosProject.EncryptionProperty=com.aliyun.ros.cdk.maxcompute.RosProject$EncryptionProperty
+@alicloud/ros-cdk-maxcompute.RosProject.IpWhiteListProperty=com.aliyun.ros.cdk.maxcompute.RosProject$IpWhiteListProperty
+@alicloud/ros-cdk-maxcompute.RosProject.PropertiesProperty=com.aliyun.ros.cdk.maxcompute.RosProject$PropertiesProperty
+@alicloud/ros-cdk-maxcompute.RosProjectProps=com.aliyun.ros.cdk.maxcompute.RosProjectProps
 @alicloud/ros-cdk-maxcompute.RosTable=com.aliyun.ros.cdk.maxcompute.RosTable
 @alicloud/ros-cdk-maxcompute.RosTable.ColumnsProperty=com.aliyun.ros.cdk.maxcompute.RosTable$ColumnsProperty
 @alicloud/ros-cdk-maxcompute.RosTable.PartitionsProperty=com.aliyun.ros.cdk.maxcompute.RosTable$PartitionsProperty

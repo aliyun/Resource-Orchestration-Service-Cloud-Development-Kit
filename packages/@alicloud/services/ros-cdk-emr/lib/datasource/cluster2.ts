@@ -4,7 +4,8 @@ import { RosCluster2 } from './emr.generated';
 export { RosCluster2 as Cluster2Property };
 
 /**
- * Properties for defining a `DATASOURCE::EMR::Cluster2`
+ * Properties for defining a `Cluster2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
  */
 export interface Cluster2Props {
 
@@ -45,14 +46,11 @@ export interface Cluster2Props {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::EMR::Cluster2`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::Cluster2`ALIYUN::ENS::Instance is used to create an Edge Node Service (ENS) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster2`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
  */
 export class Cluster2 extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterIds: The list of the cluster id.
@@ -65,8 +63,6 @@ export class Cluster2 extends ros.Resource {
     public readonly attrClusters: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::EMR::Cluster2`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

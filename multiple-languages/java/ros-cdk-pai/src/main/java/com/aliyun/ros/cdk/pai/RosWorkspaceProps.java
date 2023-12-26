@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.pai;
 
 /**
- * Properties for defining a <code>ALIYUN::PAI::Workspace</code>.
+ * Properties for defining a <code>RosWorkspace</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.384Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.159Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.RosWorkspaceProps")
 @software.amazon.jsii.Jsii.Proxy(RosWorkspaceProps.Jsii$Proxy.class)
 public interface RosWorkspaceProps extends software.amazon.jsii.JsiiSerializable {

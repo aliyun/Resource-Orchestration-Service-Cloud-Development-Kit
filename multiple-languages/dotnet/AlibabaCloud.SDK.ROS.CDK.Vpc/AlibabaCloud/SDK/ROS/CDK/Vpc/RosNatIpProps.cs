@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::NatIp`.</summary>
+    /// <summary>Properties for defining a `RosNatIp`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosNatIpProps")]
     public class RosNatIpProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosNatIpProps
     {
@@ -80,7 +83,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: natIpDescription: The description of the NAT IP address.
         /// The description must be 2 to 256 characters in length. It must start with a letter
-        /// but cannot start with http:// or https://.
+        /// but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "natIpDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object NatIpDescription
@@ -115,7 +118,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: natIpName: The name of the NAT IP address.
         /// The name must be 2 to 128 characters in length, and can contain letters, digits, periods
         /// (.), underscores (_), and hyphens (-). It must start with a letter. It cannot start
-        /// with http:// or https://.
+        /// with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "natIpName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object NatIpName

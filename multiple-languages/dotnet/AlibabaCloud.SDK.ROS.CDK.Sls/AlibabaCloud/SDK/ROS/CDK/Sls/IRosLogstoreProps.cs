@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::Logstore`.</summary>
+    /// <summary>Properties for defining a `RosLogstore`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosLogstoreProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosLogstoreProps")]
     public interface IRosLogstoreProps
     {
@@ -61,7 +64,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.
+        /// <strong>Property</strong>: enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS\/Android\/APP access information.
         /// Default to false.
         /// </remarks>
         [JsiiProperty(name: "enableTracking", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -144,7 +147,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::Logstore`.</summary>
+        /// <summary>Properties for defining a `RosLogstore`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosLogstoreProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosLogstoreProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.IRosLogstoreProps
         {
@@ -199,7 +205,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.
+            /// <strong>Property</strong>: enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS\/Android\/APP access information.
             /// Default to false.
             /// </remarks>
             [JsiiOptional]

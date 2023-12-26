@@ -4,7 +4,8 @@ import { RosHealthCheckTemplate } from './alb.generated';
 export { RosHealthCheckTemplate as HealthCheckTemplateProperty };
 
 /**
- * Properties for defining a `ALIYUN::ALB::HealthCheckTemplate`
+ * Properties for defining a `HealthCheckTemplate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
 export interface HealthCheckTemplateProps {
 
@@ -66,9 +67,9 @@ export interface HealthCheckTemplateProps {
     /**
      * Property healthCheckPath: The URL path that is used for health checks.
      * It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-     * (-), forward slashes (/), periods (.), percent signs (%), question marks (?), number
+     * (-), forward slashes (\/), periods (.), percent signs (%), question marks (?), number
      * signs (#), and ampersands (&). It can also contain the following extended characters:
-     * _ ; ~ ! ( ) * [ ] @ $ ^ : ' , +. The URL path must start with a forward slash (/).
+     * _ ; ~ ! ( ) * [ ] @ $ ^ : ' , +. The URL path must start with a forward slash (\/).
      * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
      */
     readonly healthCheckPath?: string | ros.IResolvable;
@@ -113,14 +114,11 @@ export interface HealthCheckTemplateProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ALB::HealthCheckTemplate`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`, which is used to create a health check template.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHealthCheckTemplate`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
 export class HealthCheckTemplate extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute HealthCheckTemplateId: The ID of the health check template.
@@ -128,8 +126,6 @@ export class HealthCheckTemplate extends ros.Resource {
     public readonly attrHealthCheckTemplateId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ALB::HealthCheckTemplate`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

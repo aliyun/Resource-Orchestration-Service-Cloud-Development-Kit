@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::AssignIpv6Addresses`.</summary>
+    /// <summary>Properties for defining a `RosAssignIpv6Addresses`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosAssignIpv6AddressesProps")]
     public class RosAssignIpv6AddressesProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosAssignIpv6AddressesProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::DBClusterAccessWhiteList`.</summary>
+    /// <summary>Properties for defining a `RosDBClusterAccessWhiteList`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDBClusterAccessWhiteListProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBClusterAccessWhiteListProps")]
     public interface IRosDBClusterAccessWhiteListProps
     {
@@ -22,8 +25,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// whitelist group can contain a maximum of 1,000 IP addresses. Separate multiple IP
         /// addresses with a comma (,). The following two formats are supported:
         /// IP address: for example, 10.23.12.24.
-        /// Classless inter-domain routing (CIDR) block: for example, 10.23.12.24/24, where the
-        /// suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
+        /// Classless inter-domain routing (CIDR) block: for example, 10.23.12.24\/24, where the
+        /// suffix \/24 indicates the number of bits for the prefix of the IP address. The suffix
         /// ranges from 1 to 32.
         /// </remarks>
         [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -47,7 +50,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::POLARDB::DBClusterAccessWhiteList`.</summary>
+        /// <summary>Properties for defining a `RosDBClusterAccessWhiteList`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDBClusterAccessWhiteListProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBClusterAccessWhiteListProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.IRosDBClusterAccessWhiteListProps
         {
@@ -69,8 +75,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// whitelist group can contain a maximum of 1,000 IP addresses. Separate multiple IP
             /// addresses with a comma (,). The following two formats are supported:
             /// IP address: for example, 10.23.12.24.
-            /// Classless inter-domain routing (CIDR) block: for example, 10.23.12.24/24, where the
-            /// suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
+            /// Classless inter-domain routing (CIDR) block: for example, 10.23.12.24\/24, where the
+            /// suffix \/24 indicates the number of bits for the prefix of the IP address. The suffix
             /// ranges from 1 to 32.
             /// </remarks>
             [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]

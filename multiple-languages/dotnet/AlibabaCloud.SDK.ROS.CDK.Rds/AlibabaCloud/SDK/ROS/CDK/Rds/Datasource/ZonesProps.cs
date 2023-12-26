@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::RDS::Zones`.</summary>
+    /// <summary>Properties for defining a `Zones`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.datasource.ZonesProps")]
     public class ZonesProps : AlibabaCloud.SDK.ROS.CDK.Rds.Datasource.IZonesProps
     {

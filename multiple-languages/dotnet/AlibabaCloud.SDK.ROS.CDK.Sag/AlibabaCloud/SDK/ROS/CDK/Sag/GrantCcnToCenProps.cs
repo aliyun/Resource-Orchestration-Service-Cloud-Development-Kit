@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAG::GrantCcnToCen`.</summary>
+    /// <summary>Properties for defining a `GrantCcnToCen`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-grantccntocen
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.GrantCcnToCenProps")]
     public class GrantCcnToCenProps : AlibabaCloud.SDK.ROS.CDK.Sag.IGrantCcnToCenProps
     {

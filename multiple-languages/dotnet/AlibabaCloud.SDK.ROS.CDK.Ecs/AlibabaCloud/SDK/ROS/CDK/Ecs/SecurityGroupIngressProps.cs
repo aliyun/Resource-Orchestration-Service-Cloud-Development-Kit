@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::SecurityGroupIngress`.</summary>
+    /// <summary>Properties for defining a `SecurityGroupIngress`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingress
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.SecurityGroupIngressProps")]
     public class SecurityGroupIngressProps : AlibabaCloud.SDK.ROS.CDK.Ecs.ISecurityGroupIngressProps
     {

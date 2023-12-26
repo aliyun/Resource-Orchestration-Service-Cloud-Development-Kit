@@ -4,7 +4,8 @@ import { RosAutoScaleConfig } from './ehpc.generated';
 export { RosAutoScaleConfig as AutoScaleConfigProperty };
 
 /**
- * Properties for defining a `ALIYUN::EHPC::AutoScaleConfig`
+ * Properties for defining a `AutoScaleConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
  */
 export interface AutoScaleConfigProps {
 
@@ -105,14 +106,11 @@ export interface AutoScaleConfigProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EHPC::AutoScaleConfig`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::AutoScaleConfig`, which is used to configure the auto scaling settings of a cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoScaleConfig`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
  */
 export class AutoScaleConfig extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterId: Cluster Id.
@@ -120,8 +118,6 @@ export class AutoScaleConfig extends ros.Resource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EHPC::AutoScaleConfig`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

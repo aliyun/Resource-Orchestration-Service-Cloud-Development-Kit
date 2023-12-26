@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * Properties for defining a <code>ALIYUN::SAG::ACLAssociation</code>.
+ * Properties for defining a <code>RosACLAssociation</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclassociation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.147Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.980Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosACLAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(RosACLAssociationProps.Jsii$Proxy.class)
 public interface RosACLAssociationProps extends software.amazon.jsii.JsiiSerializable {

@@ -4,7 +4,8 @@ import { RosInstance } from './waf.generated';
 export { RosInstance as InstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::WAF::Instance`
+ * Properties for defining a `Instance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-instance
  */
 export interface InstanceProps {
 
@@ -75,14 +76,11 @@ export interface InstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::WAF::Instance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::Instance`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-instance
  */
 export class Instance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute EndDate: Due date of the instance
@@ -115,8 +113,6 @@ export class Instance extends ros.Resource {
     public readonly attrTrial: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::WAF::Instance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

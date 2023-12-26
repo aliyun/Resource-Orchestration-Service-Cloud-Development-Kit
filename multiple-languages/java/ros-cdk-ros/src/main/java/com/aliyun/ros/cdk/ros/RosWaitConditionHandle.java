@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * A ROS template type:  <code>ALIYUN::ROS::WaitConditionHandle</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROS::WaitConditionHandle</code>, which is used to receive signals.
+ * <p>
+ * You can use ALIYUN::ROS::WaitConditionHandle together with ALIYUN::ROS::WaitCondition to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.046Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.894Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosWaitConditionHandle")
 public class RosWaitConditionHandle extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +22,6 @@ public class RosWaitConditionHandle extends com.aliyun.ros.cdk.core.RosResource 
     }
 
     /**
-     * Create a new <code>ALIYUN::ROS::WaitConditionHandle</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.

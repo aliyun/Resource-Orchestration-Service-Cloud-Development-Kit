@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>Properties for defining a `ALIYUN::OOS::Execution`.</summary>
+    /// <summary>Properties for defining a `Execution`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IExecutionProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.ExecutionProps")]
     public interface IExecutionProps
     {
@@ -117,7 +120,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::OOS::Execution`.</summary>
+        /// <summary>Properties for defining a `Execution`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IExecutionProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.ExecutionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oos.IExecutionProps
         {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DBS::RestoreTask`.</summary>
+    /// <summary>Properties for defining a `RosRestoreTask`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dbs.RosRestoreTaskProps")]
     public class RosRestoreTaskProps : AlibabaCloud.SDK.ROS.CDK.Dbs.IRosRestoreTaskProps
     {

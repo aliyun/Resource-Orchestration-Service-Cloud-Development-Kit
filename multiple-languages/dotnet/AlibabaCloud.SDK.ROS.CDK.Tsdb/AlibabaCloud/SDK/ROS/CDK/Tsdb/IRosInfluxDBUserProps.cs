@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
 {
-    /// <summary>Properties for defining a `ALIYUN::TSDB::InfluxDBUser`.</summary>
+    /// <summary>Properties for defining a `RosInfluxDBUser`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbuser
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosInfluxDBUserProps), fullyQualifiedName: "@alicloud/ros-cdk-tsdb.RosInfluxDBUserProps")]
     public interface IRosInfluxDBUserProps
     {
@@ -61,7 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::TSDB::InfluxDBUser`.</summary>
+        /// <summary>Properties for defining a `RosInfluxDBUser`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbuser
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosInfluxDBUserProps), fullyQualifiedName: "@alicloud/ros-cdk-tsdb.RosInfluxDBUserProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Tsdb.IRosInfluxDBUserProps
         {

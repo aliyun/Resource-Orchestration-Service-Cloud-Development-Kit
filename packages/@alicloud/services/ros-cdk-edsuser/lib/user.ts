@@ -4,7 +4,8 @@ import { RosUser } from './edsuser.generated';
 export { RosUser as UserProperty };
 
 /**
- * Properties for defining a `ALIYUN::EdsUser::User`
+ * Properties for defining a `User`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edsuser-user
  */
 export interface UserProps {
 
@@ -48,14 +49,11 @@ export interface UserProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EdsUser::User`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EdsUser::User`, which is used to create a convenience user.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edsuser-user
  */
 export class User extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute EndUserId: The name of the end user.
@@ -63,8 +61,6 @@ export class User extends ros.Resource {
     public readonly attrEndUserId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EdsUser::User`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

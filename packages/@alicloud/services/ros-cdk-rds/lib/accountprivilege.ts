@@ -4,7 +4,8 @@ import { RosAccountPrivilege } from './rds.generated';
 export { RosAccountPrivilege as AccountPrivilegeProperty };
 
 /**
- * Properties for defining a `ALIYUN::RDS::AccountPrivilege`
+ * Properties for defining a `AccountPrivilege`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
  */
 export interface AccountPrivilegeProps {
 
@@ -30,18 +31,13 @@ export interface AccountPrivilegeProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RDS::AccountPrivilege`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::AccountPrivilege`, which is used to authorize an account to access a database.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccountPrivilege`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
  */
 export class AccountPrivilege extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::RDS::AccountPrivilege`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

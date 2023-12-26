@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::CommonBandwidthPackageIp`.</summary>
+    /// <summary>Properties for defining a `RosCommonBandwidthPackageIp`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackageip
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosCommonBandwidthPackageIpProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosCommonBandwidthPackageIpProps")]
     public interface IRosCommonBandwidthPackageIpProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::CommonBandwidthPackageIp`.</summary>
+        /// <summary>Properties for defining a `RosCommonBandwidthPackageIp`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackageip
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosCommonBandwidthPackageIpProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosCommonBandwidthPackageIpProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosCommonBandwidthPackageIpProps
         {

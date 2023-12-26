@@ -4,7 +4,8 @@ import { RosChildInstanceRouteEntryToAttachment } from './cen.generated';
 export { RosChildInstanceRouteEntryToAttachment as ChildInstanceRouteEntryToAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`
+ * Properties for defining a `ChildInstanceRouteEntryToAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
  */
 export interface ChildInstanceRouteEntryToAttachmentProps {
 
@@ -30,14 +31,11 @@ export interface ChildInstanceRouteEntryToAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`, which is used to add a route to a network instance that is connected to an Enterprise Edition transit router.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosChildInstanceRouteEntryToAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
  */
 export class ChildInstanceRouteEntryToAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CenId: The ID of the CEN instance.
@@ -60,8 +58,6 @@ export class ChildInstanceRouteEntryToAttachment extends ros.Resource {
     public readonly attrTransitRouterAttachmentId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::CR::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
  */
 export interface RosInstanceProps {
 
@@ -136,18 +137,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::CR::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Instance`, which is used to create a Container Registry Enterprise Edition instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateTime: The creation time of the resource.
@@ -230,8 +228,6 @@ export class RosInstance extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CR::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -275,7 +271,8 @@ export class RosInstance extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CR::InstanceEndpointAclPolicy`
+ * Properties for defining a `RosInstanceEndpointAclPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
  */
 export interface RosInstanceEndpointAclPolicyProps {
 
@@ -356,18 +353,15 @@ function rosInstanceEndpointAclPolicyPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * A ROS template type:  `ALIYUN::CR::InstanceEndpointAclPolicy`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceEndpointAclPolicy`, which is used to create a whitelist for the access port of a public-facing instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceEndpointAclPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
  */
 export class RosInstanceEndpointAclPolicy extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::InstanceEndpointAclPolicy";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Entry: The IP address range that is allowed to access the instance.
@@ -414,8 +408,6 @@ export class RosInstanceEndpointAclPolicy extends ros.RosResource {
     public regionId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CR::InstanceEndpointAclPolicy`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -451,7 +443,8 @@ export class RosInstanceEndpointAclPolicy extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`
+ * Properties for defining a `RosInstanceVpcEndpointLinkedVpc`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
 export interface RosInstanceVpcEndpointLinkedVpcProps {
 
@@ -531,18 +524,15 @@ function rosInstanceVpcEndpointLinkedVpcPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * A ROS template type:  `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`, which is used to associate a virtual private cloud (VPC) with a Container Registry instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceVpcEndpointLinkedVpc` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
 export class RosInstanceVpcEndpointLinkedVpc extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::InstanceVpcEndpointLinkedVpc";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: The ID of the instance.
@@ -594,8 +584,6 @@ export class RosInstanceVpcEndpointLinkedVpc extends ros.RosResource {
     public moduleName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -630,7 +618,8 @@ export class RosInstanceVpcEndpointLinkedVpc extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CR::Namespace`
+ * Properties for defining a `RosNamespace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-namespace
  */
 export interface RosNamespaceProps {
 
@@ -708,18 +697,15 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::CR::Namespace`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Namespace`, which is used to create a namespace.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-namespace
  */
 export class RosNamespace extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::Namespace";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: The ID of the enterprise edition instance which namespace belongs to.
@@ -760,8 +746,6 @@ export class RosNamespace extends ros.RosResource {
     public instanceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CR::Namespace`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -794,7 +778,8 @@ export class RosNamespace extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CR::Repository`
+ * Properties for defining a `RosRepository`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-repository
  */
 export interface RosRepositoryProps {
 
@@ -924,18 +909,15 @@ function rosRepositoryPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::CR::Repository`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::Repository`, which is used to create an image repository.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Repository` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-repository
  */
 export class RosRepository extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::Repository";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: The ID of the enterprise edition instance which repository belongs to.
@@ -1006,8 +988,6 @@ export class RosRepository extends ros.RosResource {
     public tagImmutability: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CR::Repository`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1134,7 +1114,8 @@ function rosRepositoryRepoSourcePropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CR::UserInfo`
+ * Properties for defining a `RosUserInfo`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
  */
 export interface RosUserInfoProps {
 
@@ -1178,18 +1159,15 @@ function rosUserInfoPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::CR::UserInfo`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CR::UserInfo`, which is used to create the information about a user.
+ * @Note This class does not contain additional functions, so it is recommended to use the `UserInfo` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
  */
 export class RosUserInfo extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CR::UserInfo";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute LoginName: Login name.
@@ -1210,8 +1188,6 @@ export class RosUserInfo extends ros.RosResource {
     public user: RosUserInfo.UserProperty | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CR::UserInfo`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

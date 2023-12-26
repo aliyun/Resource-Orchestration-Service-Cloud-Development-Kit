@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::TrafficMirrorSession`.</summary>
+    /// <summary>Properties for defining a `TrafficMirrorSession`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.TrafficMirrorSessionProps")]
     public class TrafficMirrorSessionProps : AlibabaCloud.SDK.ROS.CDK.Vpc.ITrafficMirrorSessionProps
     {

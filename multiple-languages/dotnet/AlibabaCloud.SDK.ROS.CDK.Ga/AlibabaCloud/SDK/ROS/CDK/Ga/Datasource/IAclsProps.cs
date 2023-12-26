@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::GA::Acls`.</summary>
+    /// <summary>Properties for defining a `Acls`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acls
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAclsProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.datasource.AclsProps")]
     public interface IAclsProps
     {
@@ -41,7 +44,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::GA::Acls`.</summary>
+        /// <summary>Properties for defining a `Acls`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acls
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAclsProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.datasource.AclsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ga.Datasource.IAclsProps
         {

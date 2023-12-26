@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::TrafficControlBinding`.</summary>
+    /// <summary>Properties for defining a `TrafficControlBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrolbinding
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.TrafficControlBindingProps")]
     public class TrafficControlBindingProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.ITrafficControlBindingProps
     {

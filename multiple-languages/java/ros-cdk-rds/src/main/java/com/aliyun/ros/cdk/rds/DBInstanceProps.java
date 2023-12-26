@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.rds;
 
 /**
- * Properties for defining a <code>ALIYUN::RDS::DBInstance</code>.
+ * Properties for defining a <code>DBInstance</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.715Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.515Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -530,6 +532,27 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageAutoScale() {
+        return null;
+    }
+
+    /**
+     * Property storageThreshold: Storage space automatic expansion trigger threshold (percentage).
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageThreshold() {
+        return null;
+    }
+
+    /**
+     * Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageUpperBound() {
+        return null;
+    }
+
+    /**
      * Property tags: The tags of an instance.
      * <p>
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
@@ -662,6 +685,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object slaveZoneIds;
         java.lang.Object sqlCollectorStatus;
         java.lang.Object sslSetting;
+        java.lang.Object storageAutoScale;
+        java.lang.Object storageThreshold;
+        java.lang.Object storageUpperBound;
         java.util.Map<java.lang.String, java.lang.Object> tags;
         java.lang.Object targetDedicatedHostIdForLog;
         java.lang.Object targetDedicatedHostIdForMaster;
@@ -1989,6 +2015,66 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getStorageAutoScale}
+         * @param storageAutoScale Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL.
+         * @return {@code this}
+         */
+        public Builder storageAutoScale(java.lang.String storageAutoScale) {
+            this.storageAutoScale = storageAutoScale;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getStorageAutoScale}
+         * @param storageAutoScale Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL.
+         * @return {@code this}
+         */
+        public Builder storageAutoScale(com.aliyun.ros.cdk.core.IResolvable storageAutoScale) {
+            this.storageAutoScale = storageAutoScale;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getStorageThreshold}
+         * @param storageThreshold Property storageThreshold: Storage space automatic expansion trigger threshold (percentage).
+         * @return {@code this}
+         */
+        public Builder storageThreshold(java.lang.Number storageThreshold) {
+            this.storageThreshold = storageThreshold;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getStorageThreshold}
+         * @param storageThreshold Property storageThreshold: Storage space automatic expansion trigger threshold (percentage).
+         * @return {@code this}
+         */
+        public Builder storageThreshold(com.aliyun.ros.cdk.core.IResolvable storageThreshold) {
+            this.storageThreshold = storageThreshold;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getStorageUpperBound}
+         * @param storageUpperBound Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+         * @return {@code this}
+         */
+        public Builder storageUpperBound(java.lang.Number storageUpperBound) {
+            this.storageUpperBound = storageUpperBound;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getStorageUpperBound}
+         * @param storageUpperBound Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+         * @return {@code this}
+         */
+        public Builder storageUpperBound(com.aliyun.ros.cdk.core.IResolvable storageUpperBound) {
+            this.storageUpperBound = storageUpperBound;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getTags}
          * @param tags Property tags: The tags of an instance.
          *             You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
@@ -2208,6 +2294,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object slaveZoneIds;
         private final java.lang.Object sqlCollectorStatus;
         private final java.lang.Object sslSetting;
+        private final java.lang.Object storageAutoScale;
+        private final java.lang.Object storageThreshold;
+        private final java.lang.Object storageUpperBound;
         private final java.util.Map<java.lang.String, java.lang.Object> tags;
         private final java.lang.Object targetDedicatedHostIdForLog;
         private final java.lang.Object targetDedicatedHostIdForMaster;
@@ -2277,6 +2366,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.slaveZoneIds = software.amazon.jsii.Kernel.get(this, "slaveZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sqlCollectorStatus = software.amazon.jsii.Kernel.get(this, "sqlCollectorStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sslSetting = software.amazon.jsii.Kernel.get(this, "sslSetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storageAutoScale = software.amazon.jsii.Kernel.get(this, "storageAutoScale", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storageThreshold = software.amazon.jsii.Kernel.get(this, "storageThreshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.storageUpperBound = software.amazon.jsii.Kernel.get(this, "storageUpperBound", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
             this.targetDedicatedHostIdForLog = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.targetDedicatedHostIdForMaster = software.amazon.jsii.Kernel.get(this, "targetDedicatedHostIdForMaster", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -2347,6 +2439,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             this.slaveZoneIds = builder.slaveZoneIds;
             this.sqlCollectorStatus = builder.sqlCollectorStatus;
             this.sslSetting = builder.sslSetting;
+            this.storageAutoScale = builder.storageAutoScale;
+            this.storageThreshold = builder.storageThreshold;
+            this.storageUpperBound = builder.storageUpperBound;
             this.tags = (java.util.Map<java.lang.String, java.lang.Object>)builder.tags;
             this.targetDedicatedHostIdForLog = builder.targetDedicatedHostIdForLog;
             this.targetDedicatedHostIdForMaster = builder.targetDedicatedHostIdForMaster;
@@ -2632,6 +2727,21 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getStorageAutoScale() {
+            return this.storageAutoScale;
+        }
+
+        @Override
+        public final java.lang.Object getStorageThreshold() {
+            return this.storageThreshold;
+        }
+
+        @Override
+        public final java.lang.Object getStorageUpperBound() {
+            return this.storageUpperBound;
+        }
+
+        @Override
         public final java.util.Map<java.lang.String, java.lang.Object> getTags() {
             return this.tags;
         }
@@ -2827,6 +2937,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getSslSetting() != null) {
                 data.set("sslSetting", om.valueToTree(this.getSslSetting()));
             }
+            if (this.getStorageAutoScale() != null) {
+                data.set("storageAutoScale", om.valueToTree(this.getStorageAutoScale()));
+            }
+            if (this.getStorageThreshold() != null) {
+                data.set("storageThreshold", om.valueToTree(this.getStorageThreshold()));
+            }
+            if (this.getStorageUpperBound() != null) {
+                data.set("storageUpperBound", om.valueToTree(this.getStorageUpperBound()));
+            }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
@@ -2921,6 +3040,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.slaveZoneIds != null ? !this.slaveZoneIds.equals(that.slaveZoneIds) : that.slaveZoneIds != null) return false;
             if (this.sqlCollectorStatus != null ? !this.sqlCollectorStatus.equals(that.sqlCollectorStatus) : that.sqlCollectorStatus != null) return false;
             if (this.sslSetting != null ? !this.sslSetting.equals(that.sslSetting) : that.sslSetting != null) return false;
+            if (this.storageAutoScale != null ? !this.storageAutoScale.equals(that.storageAutoScale) : that.storageAutoScale != null) return false;
+            if (this.storageThreshold != null ? !this.storageThreshold.equals(that.storageThreshold) : that.storageThreshold != null) return false;
+            if (this.storageUpperBound != null ? !this.storageUpperBound.equals(that.storageUpperBound) : that.storageUpperBound != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.targetDedicatedHostIdForLog != null ? !this.targetDedicatedHostIdForLog.equals(that.targetDedicatedHostIdForLog) : that.targetDedicatedHostIdForLog != null) return false;
             if (this.targetDedicatedHostIdForMaster != null ? !this.targetDedicatedHostIdForMaster.equals(that.targetDedicatedHostIdForMaster) : that.targetDedicatedHostIdForMaster != null) return false;
@@ -2987,6 +3109,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.slaveZoneIds != null ? this.slaveZoneIds.hashCode() : 0);
             result = 31 * result + (this.sqlCollectorStatus != null ? this.sqlCollectorStatus.hashCode() : 0);
             result = 31 * result + (this.sslSetting != null ? this.sslSetting.hashCode() : 0);
+            result = 31 * result + (this.storageAutoScale != null ? this.storageAutoScale.hashCode() : 0);
+            result = 31 * result + (this.storageThreshold != null ? this.storageThreshold.hashCode() : 0);
+            result = 31 * result + (this.storageUpperBound != null ? this.storageUpperBound.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.targetDedicatedHostIdForLog != null ? this.targetDedicatedHostIdForLog.hashCode() : 0);
             result = 31 * result + (this.targetDedicatedHostIdForMaster != null ? this.targetDedicatedHostIdForMaster.hashCode() : 0);

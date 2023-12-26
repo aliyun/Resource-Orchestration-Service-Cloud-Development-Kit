@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ESS::ScalingRule`.</summary>
+    /// <summary>Properties for defining a `RosScalingRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ess.RosScalingRuleProps")]
     public class RosScalingRuleProps : AlibabaCloud.SDK.ROS.CDK.Ess.IRosScalingRuleProps
     {

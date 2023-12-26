@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::OOS::DefaultPatchBaseline`.</summary>
+    /// <summary>Properties for defining a `RosDefaultPatchBaseline`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-oos.RosDefaultPatchBaselineProps")]
     public class RosDefaultPatchBaselineProps : AlibabaCloud.SDK.ROS.CDK.Oos.IRosDefaultPatchBaselineProps
     {

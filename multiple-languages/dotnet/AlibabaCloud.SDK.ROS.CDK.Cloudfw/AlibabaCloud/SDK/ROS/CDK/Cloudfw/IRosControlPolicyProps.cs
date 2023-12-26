@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>Properties for defining a `ALIYUN::CLOUDFW::ControlPolicy`.</summary>
+    /// <summary>Properties for defining a `RosControlPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosControlPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.RosControlPolicyProps")]
     public interface IRosControlPolicyProps
     {
@@ -42,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
         /// <remarks>
         /// <strong>Property</strong>: destination: Security Access Control destination address policy.
-        /// When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4/24
+        /// When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4\/24
         /// When DestinationType as a group, Destination for the purpose of the address book name. For example: db_group
         /// When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
         /// When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
@@ -99,7 +102,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
         /// <remarks>
         /// <strong>Property</strong>: source: Security access control source address policy.
-        /// When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0/24
+        /// When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0\/24
         /// When SourceType as a group, Source name for the source address book. For example: db_group
         /// When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
         /// </remarks>
@@ -177,7 +180,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CLOUDFW::ControlPolicy`.</summary>
+        /// <summary>Properties for defining a `RosControlPolicy`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosControlPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.RosControlPolicyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cloudfw.IRosControlPolicyProps
         {
@@ -219,7 +225,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
             /// <remarks>
             /// <strong>Property</strong>: destination: Security Access Control destination address policy.
-            /// When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4/24
+            /// When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4\/24
             /// When DestinationType as a group, Destination for the purpose of the address book name. For example: db_group
             /// When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
             /// When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
@@ -276,7 +282,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
             /// <remarks>
             /// <strong>Property</strong>: source: Security access control source address policy.
-            /// When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0/24
+            /// When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0\/24
             /// When SourceType as a group, Source name for the source address book. For example: db_group
             /// When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
             /// </remarks>

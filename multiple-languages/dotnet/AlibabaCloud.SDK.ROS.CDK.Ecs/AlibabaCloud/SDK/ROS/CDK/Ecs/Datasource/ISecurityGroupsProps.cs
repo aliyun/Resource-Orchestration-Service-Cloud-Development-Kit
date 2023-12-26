@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::SecurityGroups`.</summary>
+    /// <summary>Properties for defining a `SecurityGroups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISecurityGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.SecurityGroupsProps")]
     public interface ISecurityGroupsProps
     {
@@ -113,7 +116,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::SecurityGroups`.</summary>
+        /// <summary>Properties for defining a `SecurityGroups`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISecurityGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.SecurityGroupsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.ISecurityGroupsProps
         {

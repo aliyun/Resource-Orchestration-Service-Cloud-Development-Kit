@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mns.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::MNS::Topics`.</summary>
+    /// <summary>Properties for defining a `Topics`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topics
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mns.datasource.TopicsProps")]
     public class TopicsProps : AlibabaCloud.SDK.ROS.CDK.Mns.Datasource.ITopicsProps
     {

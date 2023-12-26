@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::TrafficMirrorFilter`.</summary>
+    /// <summary>Properties for defining a `TrafficMirrorFilter`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorfilter
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.TrafficMirrorFilterProps")]
     public class TrafficMirrorFilterProps : AlibabaCloud.SDK.ROS.CDK.Vpc.ITrafficMirrorFilterProps
     {
@@ -140,7 +143,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _trafficMirrorFilterName;
 
-        /// <summary>Property trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:// or https://.</summary>
+        /// <summary>Property trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "trafficMirrorFilterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? TrafficMirrorFilterName

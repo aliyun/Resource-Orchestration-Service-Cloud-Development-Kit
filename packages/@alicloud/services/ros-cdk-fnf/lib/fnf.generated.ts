@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::FNF::Flow`
+ * Properties for defining a `RosFlow`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */
 export interface RosFlowProps {
 
@@ -76,18 +77,15 @@ function rosFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::FNF::Flow`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`, which is used to create a flow.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Flow` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */
 export class RosFlow extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FNF::Flow";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreatedTime: Flow creation time.
@@ -138,8 +136,6 @@ export class RosFlow extends ros.RosResource {
     public roleArn: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FNF::Flow`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -175,7 +171,8 @@ export class RosFlow extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::FNF::Schedule`
+ * Properties for defining a `RosSchedule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
  */
 export interface RosScheduleProps {
 
@@ -256,18 +253,15 @@ function rosSchedulePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::FNF::Schedule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Schedule`, which is used to create a time-based schedule.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Schedule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
  */
 export class RosSchedule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FNF::Schedule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FlowName: Flow name.
@@ -318,8 +312,6 @@ export class RosSchedule extends ros.RosResource {
     public payload: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FNF::Schedule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

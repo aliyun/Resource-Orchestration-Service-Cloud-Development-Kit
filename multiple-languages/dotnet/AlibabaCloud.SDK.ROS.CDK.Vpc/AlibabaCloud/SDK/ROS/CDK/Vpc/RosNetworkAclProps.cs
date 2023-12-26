@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::NetworkAcl`.</summary>
+    /// <summary>Properties for defining a `RosNetworkAcl`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkacl
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosNetworkAclProps")]
     public class RosNetworkAclProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosNetworkAclProps
     {
@@ -47,7 +50,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: description: The description of the network ACL.
         /// The description must be 2 to 256 characters in length. The description must start
-        /// with a letter but cannot start with http:// or https://.
+        /// with a letter but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -183,7 +186,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: networkAclName: The name of the network ACL.
         /// The name must be 2 to 128 characters in length and can contain letters, digits, periods
         /// (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-        /// start with http:// or https://.
+        /// start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "networkAclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

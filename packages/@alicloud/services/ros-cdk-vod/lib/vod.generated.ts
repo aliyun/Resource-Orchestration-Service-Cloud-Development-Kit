@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::VOD::EditingProject`
+ * Properties for defining a `RosEditingProject`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
  */
 export interface RosEditingProjectProps {
 
@@ -62,18 +63,15 @@ function rosEditingProjectPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::VOD::EditingProject`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::EditingProject`, which is used to create an online editing project.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EditingProject` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
  */
 export class RosEditingProject extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VOD::EditingProject";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateTime: The time when the online editing project was created.
@@ -127,8 +125,6 @@ The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The t
     public timeline: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VOD::EditingProject`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -162,7 +158,8 @@ The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format. The t
 }
 
 /**
- * Properties for defining a `ALIYUN::VOD::MessageCallback`
+ * Properties for defining a `RosMessageCallback`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
  */
 export interface RosMessageCallbackProps {
 
@@ -267,18 +264,15 @@ function rosMessageCallbackPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::VOD::MessageCallback`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::MessageCallback`, which is used to configure the callback method, callback URL, and event types for an event notification.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MessageCallback` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
  */
 export class RosMessageCallback extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VOD::MessageCallback";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppId: appid.
@@ -376,8 +370,6 @@ export class RosMessageCallback extends ros.RosResource {
     public mnsQueueName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VOD::MessageCallback`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -423,7 +415,8 @@ export class RosMessageCallback extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VOD::Storage`
+ * Properties for defining a `RosStorage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-storage
  */
 export interface RosStorageProps {
 
@@ -482,18 +475,15 @@ function rosStoragePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::VOD::Storage`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VOD::Storage`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Storage` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-storage
  */
 export class RosStorage extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VOD::Storage";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateTime: The creation time of the storage.
@@ -559,8 +549,6 @@ export class RosStorage extends ros.RosResource {
     public defaultUpload: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VOD::Storage`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mns.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::MNS::Subscriptions`.</summary>
+    /// <summary>Properties for defining a `RosSubscriptions`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosSubscriptionsProps), fullyQualifiedName: "@alicloud/ros-cdk-mns.datasource.RosSubscriptionsProps")]
     public interface IRosSubscriptionsProps
     {
@@ -30,7 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::MNS::Subscriptions`.</summary>
+        /// <summary>Properties for defining a `RosSubscriptions`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosSubscriptionsProps), fullyQualifiedName: "@alicloud/ros-cdk-mns.datasource.RosSubscriptionsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mns.Datasource.IRosSubscriptionsProps
         {

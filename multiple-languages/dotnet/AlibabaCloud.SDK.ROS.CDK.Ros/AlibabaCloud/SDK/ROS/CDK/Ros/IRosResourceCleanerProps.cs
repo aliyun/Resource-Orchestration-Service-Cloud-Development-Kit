@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>Properties for defining a `ALIYUN::ROS::ResourceCleaner`.</summary>
+    /// <summary>Properties for defining a `RosResourceCleaner`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosResourceCleanerProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.RosResourceCleanerProps")]
     public interface IRosResourceCleanerProps
     {
@@ -176,7 +179,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ROS::ResourceCleaner`.</summary>
+        /// <summary>Properties for defining a `RosResourceCleaner`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosResourceCleanerProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.RosResourceCleanerProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ros.IRosResourceCleanerProps
         {

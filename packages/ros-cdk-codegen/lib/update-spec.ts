@@ -147,6 +147,8 @@ export function specGenerator() {
         }
 
         resourceTypes[`${type}`] = {
+            Description: typeDetail.Description ? typeDetail.Description : '',
+            Documentation: typeDetail.Documentation ? typeDetail.Documentation : '',
             Attributes: typeDetail.Attributes ? typeDetail.Attributes : {},
             Properties: typeDetail.Properties ? typeDetail.Properties : {},
         };
@@ -178,6 +180,8 @@ export async function specOriginGenerator(endpoint: string, accessKeyId: string,
             let typeDetail = await client.getResourceType({ResourceType: type});
 
             resourceTypes[`${typeDetail.ResourceType}`] = {
+                Description: typeDetail.Description ? typeDetail.Description : '',
+                Documentation: `https://www.alibabacloud.com/help/ros/developer-reference/${type.toLowerCase().replace(/::/g, '-')}`,
                 Attributes: typeDetail.Attributes ? typeDetail.Attributes : {},
                 Properties: typeDetail.Properties ? typeDetail.Properties : {},
             };

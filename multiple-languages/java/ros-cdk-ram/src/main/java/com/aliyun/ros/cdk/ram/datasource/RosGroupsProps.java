@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ram.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::RAM::Groups</code>.
+ * Properties for defining a <code>RosGroups</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-groups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.665Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.455Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.RosGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(RosGroupsProps.Jsii$Proxy.class)
 public interface RosGroupsProps extends software.amazon.jsii.JsiiSerializable {

@@ -4,7 +4,8 @@ import { RosCenBandwidthLimit } from './cen.generated';
 export { RosCenBandwidthLimit as CenBandwidthLimitProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenBandwidthLimit`
+ * Properties for defining a `CenBandwidthLimit`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
 export interface CenBandwidthLimitProps {
 
@@ -30,18 +31,13 @@ export interface CenBandwidthLimitProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::CenBandwidthLimit`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the cross-region interconnection bandwidth in a bandwidth plan.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthLimit`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
 export class CenBandwidthLimit extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::CEN::CenBandwidthLimit`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::DhcpOptionsSetAttachment`.</summary>
+    /// <summary>Properties for defining a `RosDhcpOptionsSetAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionssetattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDhcpOptionsSetAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosDhcpOptionsSetAttachmentProps")]
     public interface IRosDhcpOptionsSetAttachmentProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::DhcpOptionsSetAttachment`.</summary>
+        /// <summary>Properties for defining a `RosDhcpOptionsSetAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionssetattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDhcpOptionsSetAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosDhcpOptionsSetAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosDhcpOptionsSetAttachmentProps
         {

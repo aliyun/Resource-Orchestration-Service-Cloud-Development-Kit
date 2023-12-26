@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Directmail
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DirectMail::Ipfilter`.</summary>
+    /// <summary>Properties for defining a `RosIpfilter`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-ipfilter
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-directmail.RosIpfilterProps")]
     public class RosIpfilterProps : AlibabaCloud.SDK.ROS.CDK.Directmail.IRosIpfilterProps
     {

@@ -4,12 +4,18 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Directmail.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::DirectMail::Domains`.</summary>
+    /// <summary>Properties for defining a `Domains`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-domains
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDomainsProps), fullyQualifiedName: "@alicloud/ros-cdk-directmail.datasource.DomainsProps")]
     public interface IDomainsProps
     {
 
-        /// <summary>Properties for defining a `DATASOURCE::DirectMail::Domains`.</summary>
+        /// <summary>Properties for defining a `Domains`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-domains
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDomainsProps), fullyQualifiedName: "@alicloud/ros-cdk-directmail.datasource.DomainsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Directmail.Datasource.IDomainsProps
         {

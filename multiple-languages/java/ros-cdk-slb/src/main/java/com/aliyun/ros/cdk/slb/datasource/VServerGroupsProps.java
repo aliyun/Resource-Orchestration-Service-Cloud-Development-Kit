@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.slb.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::SLB::VServerGroups</code>.
+ * Properties for defining a <code>VServerGroups</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.317Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.140Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.VServerGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(VServerGroupsProps.Jsii$Proxy.class)
 public interface VServerGroupsProps extends software.amazon.jsii.JsiiSerializable {

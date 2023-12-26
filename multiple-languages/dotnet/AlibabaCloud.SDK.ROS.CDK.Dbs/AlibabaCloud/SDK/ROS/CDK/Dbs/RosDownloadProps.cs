@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DBS::Download`.</summary>
+    /// <summary>Properties for defining a `RosDownload`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dbs.RosDownloadProps")]
     public class RosDownloadProps : AlibabaCloud.SDK.ROS.CDK.Dbs.IRosDownloadProps
     {

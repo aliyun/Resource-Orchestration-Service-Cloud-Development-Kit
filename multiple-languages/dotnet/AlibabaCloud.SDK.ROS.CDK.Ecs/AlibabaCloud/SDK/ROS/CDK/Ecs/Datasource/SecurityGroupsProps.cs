@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::SecurityGroups`.</summary>
+    /// <summary>Properties for defining a `SecurityGroups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.SecurityGroupsProps")]
     public class SecurityGroupsProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.ISecurityGroupsProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::SLB::AccessControls`.</summary>
+    /// <summary>Properties for defining a `AccessControls`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrols
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.datasource.AccessControlsProps")]
     public class AccessControlsProps : AlibabaCloud.SDK.ROS.CDK.Slb.Datasource.IAccessControlsProps
     {

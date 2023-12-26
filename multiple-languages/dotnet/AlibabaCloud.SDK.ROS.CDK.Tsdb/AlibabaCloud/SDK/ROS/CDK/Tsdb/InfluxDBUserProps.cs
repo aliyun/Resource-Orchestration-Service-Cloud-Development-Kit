@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::TSDB::InfluxDBUser`.</summary>
+    /// <summary>Properties for defining a `InfluxDBUser`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbuser
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-tsdb.InfluxDBUserProps")]
     public class InfluxDBUserProps : AlibabaCloud.SDK.ROS.CDK.Tsdb.IInfluxDBUserProps
     {

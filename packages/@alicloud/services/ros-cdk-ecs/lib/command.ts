@@ -4,7 +4,8 @@ import { RosCommand } from './ecs.generated';
 export { RosCommand as CommandProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::Command`
+ * Properties for defining a `Command`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
  */
 export interface CommandProps {
 
@@ -51,14 +52,11 @@ export interface CommandProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::Command`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Command`, which is used to create a Cloud Assistant command.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCommand`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
  */
 export class Command extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CommandId: The id of command created.
@@ -66,8 +64,6 @@ export class Command extends ros.Resource {
     public readonly attrCommandId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::Command`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

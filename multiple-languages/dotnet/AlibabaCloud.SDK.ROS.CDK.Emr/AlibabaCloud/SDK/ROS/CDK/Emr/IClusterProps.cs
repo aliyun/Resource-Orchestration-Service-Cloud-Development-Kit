@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Emr
 {
-    /// <summary>Properties for defining a `ALIYUN::EMR::Cluster`.</summary>
+    /// <summary>Properties for defining a `Cluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-emr.ClusterProps")]
     public interface IClusterProps
     {
@@ -203,7 +206,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             }
         }
 
-        /// <summary>Property ioOptimized: Indicates wether I/O optimization is enabled.</summary>
+        /// <summary>Property ioOptimized: Indicates wether I\/O optimization is enabled.</summary>
         /// <remarks>
         /// Default value: true.
         /// </remarks>
@@ -497,7 +500,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EMR::Cluster`.</summary>
+        /// <summary>Properties for defining a `Cluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-emr.ClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Emr.IClusterProps
         {
@@ -667,7 +673,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property ioOptimized: Indicates wether I/O optimization is enabled.</summary>
+            /// <summary>Property ioOptimized: Indicates wether I\/O optimization is enabled.</summary>
             /// <remarks>
             /// Default value: true.
             /// </remarks>

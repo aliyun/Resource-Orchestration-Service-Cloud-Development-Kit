@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vod
 {
-    /// <summary>Properties for defining a `ALIYUN::VOD::EditingProject`.</summary>
+    /// <summary>Properties for defining a `EditingProject`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IEditingProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-vod.EditingProjectProps")]
     public interface IEditingProjectProps
     {
@@ -40,7 +43,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vod
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VOD::EditingProject`.</summary>
+        /// <summary>Properties for defining a `EditingProject`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IEditingProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-vod.EditingProjectProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vod.IEditingProjectProps
         {

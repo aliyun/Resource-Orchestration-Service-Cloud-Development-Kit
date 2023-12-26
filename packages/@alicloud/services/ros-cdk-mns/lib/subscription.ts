@@ -4,15 +4,16 @@ import { RosSubscription } from './mns.generated';
 export { RosSubscription as SubscriptionProperty };
 
 /**
- * Properties for defining a `ALIYUN::MNS::Subscription`
+ * Properties for defining a `Subscription`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
 export interface SubscriptionProps {
 
     /**
      * Property endpoint: Terminal address of the message recipient for the created subscription.
      * Currently, four types of endpoints are supported: 
-     * 1. HttpEndpoint, which must be prefixed with "http://"; 
-     * 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName}; 
+     * 1. HttpEndpoint, which must be prefixed with "http:\/\/"; 
+     * 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues\/{QueueName}; 
      * 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
      * 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
      */
@@ -36,26 +37,23 @@ export interface SubscriptionProps {
 
     /**
      * Property notifyContentFormat: Format of the message content pushed to the endpoint.
-     * XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
+     * XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts\/NotifyContentFormat.
      */
     readonly notifyContentFormat?: string | ros.IResolvable;
 
     /**
      * Property notifyStrategy: Retry policy that will be applied when an error occurs during message push to the endpoint.
-     * BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
+     * BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts\/NotifyStrategy.
      */
     readonly notifyStrategy?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::MNS::Subscription`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Subscription`, which is used to subscribe an endpoint to an Alibaba Cloud Message Service (MNS) topic. For a subscription to be created, the owner of the endpoint must confirm the subscription.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscription`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
 export class Subscription extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SubscriptionName: Subscription name
@@ -73,8 +71,6 @@ export class Subscription extends ros.Resource {
     public readonly attrTopicName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::MNS::Subscription`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
-    /// <summary>Properties for defining a `ALIYUN::CS::ClusterApplication`.</summary>
+    /// <summary>Properties for defining a `RosClusterApplication`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosClusterApplicationProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosClusterApplicationProps")]
     public interface IRosClusterApplicationProps
     {
@@ -57,7 +60,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CS::ClusterApplication`.</summary>
+        /// <remarks>
+        /// <strong>Property</strong>: stage: At what stage to run. Valid values:
+        /// - All: all stages, including create, update, and delete.
+        /// - Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+        /// The default is All.
+        /// </remarks>
+        [JsiiProperty(name: "stage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Stage
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Properties for defining a `RosClusterApplication`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosClusterApplicationProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosClusterApplicationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.IRosClusterApplicationProps
         {
@@ -104,6 +126,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             [JsiiOptional]
             [JsiiProperty(name: "rolePolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? RolePolicy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: stage: At what stage to run. Valid values:
+            /// - All: all stages, including create, update, and delete.
+            /// - Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+            /// The default is All.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "stage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Stage
             {
                 get => GetInstanceProperty<object?>();
             }

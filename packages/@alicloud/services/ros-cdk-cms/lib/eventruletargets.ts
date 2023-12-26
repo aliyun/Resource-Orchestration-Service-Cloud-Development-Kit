@@ -4,7 +4,8 @@ import { RosEventRuleTargets } from './cms.generated';
 export { RosEventRuleTargets as EventRuleTargetsProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::EventRuleTargets`
+ * Properties for defining a `EventRuleTargets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */
 export interface EventRuleTargetsProps {
 
@@ -40,18 +41,13 @@ export interface EventRuleTargetsProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::EventRuleTargets`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRuleTargets`, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEventRuleTargets`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */
 export class EventRuleTargets extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::CMS::EventRuleTargets`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

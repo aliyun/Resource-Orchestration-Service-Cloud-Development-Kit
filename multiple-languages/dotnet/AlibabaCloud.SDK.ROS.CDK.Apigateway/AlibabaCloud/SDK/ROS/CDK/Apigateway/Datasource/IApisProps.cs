@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ApiGateway::Apis`.</summary>
+    /// <summary>Properties for defining a `Apis`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IApisProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.datasource.ApisProps")]
     public interface IApisProps
     {
@@ -74,7 +77,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ApiGateway::Apis`.</summary>
+        /// <summary>Properties for defining a `Apis`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IApisProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.datasource.ApisProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource.IApisProps
         {

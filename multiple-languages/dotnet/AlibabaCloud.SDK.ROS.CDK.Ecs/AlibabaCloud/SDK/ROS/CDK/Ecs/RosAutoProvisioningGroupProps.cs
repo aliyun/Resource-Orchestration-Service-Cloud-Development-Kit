@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::AutoProvisioningGroup`.</summary>
+    /// <summary>Properties for defining a `RosAutoProvisioningGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroupProps")]
     public class RosAutoProvisioningGroupProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosAutoProvisioningGroupProps
     {
@@ -50,7 +53,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <remarks>
         /// <strong>Property</strong>: autoProvisioningGroupName: The name of the auto provisioning group to be created. It must be 2 to 128 characters
-        /// in length. It must start with a letter but cannot start with http:// or https://.
+        /// in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
         /// It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
         /// </remarks>
         [JsiiOptional]

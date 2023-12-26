@@ -8,6 +8,7 @@ export * from './scalinggroupenable';
 export * from './scalingrule';
 export * from './scheduledtask';
 export * from './servergroupattachment';
+export * from './vservergroupattachment';
 
 // ALIYUN::ESS Resources:
 export * from './ess.generated';

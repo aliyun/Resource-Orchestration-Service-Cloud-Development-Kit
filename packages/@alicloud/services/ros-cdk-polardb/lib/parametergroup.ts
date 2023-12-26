@@ -4,7 +4,8 @@ import { RosParameterGroup } from './polardb.generated';
 export { RosParameterGroup as ParameterGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::ParameterGroup`
+ * Properties for defining a `ParameterGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
  */
 export interface ParameterGroupProps {
 
@@ -40,14 +41,11 @@ export interface ParameterGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::POLARDB::ParameterGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::ParameterGroup`, which is used to create a parameter template of PolarDB.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosParameterGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
  */
 export class ParameterGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CreateTime: The time when the parameter template was created.
@@ -100,8 +98,6 @@ export class ParameterGroup extends ros.Resource {
     public readonly attrParameters: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::POLARDB::ParameterGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

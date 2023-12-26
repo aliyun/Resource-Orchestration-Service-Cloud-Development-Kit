@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen.datasource;
 
 /**
- * A ROS template type:  <code>DATASOURCE::CEN::TransitRouters</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CEN::TransitRouters</code>, which is used to query the transit routers of a Cloud Enterprise Network (CEN) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.819Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.244Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.RosTransitRouters")
 public class RosTransitRouters extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosTransitRouters extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>DATASOURCE::CEN::TransitRouters</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.

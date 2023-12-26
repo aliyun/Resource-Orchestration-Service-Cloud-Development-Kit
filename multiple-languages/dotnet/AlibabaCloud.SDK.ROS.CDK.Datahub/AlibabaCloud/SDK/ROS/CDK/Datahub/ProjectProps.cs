@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DATAHUB::Project`.</summary>
+    /// <summary>Properties for defining a `Project`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datahub-project
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-datahub.ProjectProps")]
     public class ProjectProps : AlibabaCloud.SDK.ROS.CDK.Datahub.IProjectProps
     {

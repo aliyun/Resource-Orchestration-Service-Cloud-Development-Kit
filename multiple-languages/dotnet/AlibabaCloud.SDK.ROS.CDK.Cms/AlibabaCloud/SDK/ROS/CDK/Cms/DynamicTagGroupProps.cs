@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CMS::DynamicTagGroup`.</summary>
+    /// <summary>Properties for defining a `DynamicTagGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.DynamicTagGroupProps")]
     public class DynamicTagGroupProps : AlibabaCloud.SDK.ROS.CDK.Cms.IDynamicTagGroupProps
     {

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::RAM::AccessKey`
+ * Properties for defining a `RosAccessKey`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
  */
 export interface RosAccessKeyProps {
 
@@ -47,18 +48,15 @@ function rosAccessKeyPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::AccessKey`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AccessKey`, which is used to obtain the AccessKey pair (AccessKey ID and AccessKey secret) of a specified user and its status.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessKey` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
  */
 export class RosAccessKey extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::AccessKey";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccessKeyId: Id of access key.
@@ -84,8 +82,6 @@ export class RosAccessKey extends ros.RosResource {
     public userName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::AccessKey`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -112,7 +108,391 @@ export class RosAccessKey extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RAM::AttachPolicyToRole`
+ * Properties for defining a `RosAppSecret`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-appsecret
+ */
+export interface RosAppSecretProps {
+
+    /**
+     * @Property appId: The ID of the application.
+     */
+    readonly appId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAppSecretProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAppSecretProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAppSecretPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('appId', ros.requiredValidator)(properties.appId));
+    errors.collect(ros.propertyValidator('appId', ros.validateString)(properties.appId));
+    return errors.wrap('supplied properties not correct for "RosAppSecretProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::AppSecret` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAppSecretProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::AppSecret` resource.
+ */
+// @ts-ignore TS6133
+function rosAppSecretPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAppSecretPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AppId: ros.stringToRosTemplate(properties.appId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AppSecret`ALIYUN::RAM::ManagedPolicy is used to create a Resource Access Management (RAM) policy.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AppSecret` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-appsecret
+ */
+export class RosAppSecret extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::AppSecret";
+
+    /**
+     * @Attribute AppSecretId: The ID of the application secret.
+     */
+    public readonly attrAppSecretId: ros.IResolvable;
+
+    /**
+     * @Attribute AppSecretValue: The content of the application secret. This value can be used as the client secret for open authorization.
+     */
+    public readonly attrAppSecretValue: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property appId: The ID of the application.
+     */
+    public appId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAppSecretProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAppSecret.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAppSecretId = this.getAtt('AppSecretId');
+        this.attrAppSecretValue = this.getAtt('AppSecretValue');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.appId = props.appId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            appId: this.appId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAppSecretPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosApplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-application
+ */
+export interface RosApplicationProps {
+
+    /**
+     * @Property appName: The name of the application. The name can be up to 64 characters in length. The name can contain letters, digits, periods (.), underscores (_), and hyphens (-).
+     */
+    readonly appName: string | ros.IResolvable;
+
+    /**
+     * @Property appType: The type of the application. Valid values:
+     * - **WebApp**: a web application that interacts with a browser.
+     * - **NativeApp**: a native application that runs on an operating system, such as a desktop operating system or a mobile operating system.
+     * - **ServerApp**: an application that accesses Alibaba Cloud services without the need of manual user logon. User provisioning is automated based on the System for Cross-Domain Identity Management (SCIM) protocol.
+     */
+    readonly appType: string | ros.IResolvable;
+
+    /**
+     * @Property displayName: The display name of the application. The name can be up to 24 characters in length.
+     */
+    readonly displayName: string | ros.IResolvable;
+
+    /**
+     * @Property accessTokenValidity: The validity period of the access token.
+     * Valid values: 900 to 10800. Unit: seconds.
+     * Default value: 3600.
+     */
+    readonly accessTokenValidity?: number | ros.IResolvable;
+
+    /**
+     * @Property isMultiTenant: Indicates whether the application can be installed by using other Alibaba Cloud accounts. Valid values:
+     * - **true**: If you do not set this parameter for applications of the NativeApp and ServerApp types, true is used.
+     * - **false**: If you do not set this parameter for applications of the WebApp type, false is used.
+     */
+    readonly isMultiTenant?: boolean | ros.IResolvable;
+
+    /**
+     * @Property predefinedScopes: List of the scopes of application permissions.
+     */
+    readonly predefinedScopes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property redirectUris: List of the callback URLs.
+     */
+    readonly redirectUris?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property refreshTokenValidity: The validity period of the refreshed token.
+     * Valid values: 7200 to 31536000. Unit: seconds.
+     * Default value:
+     * - For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.
+     * - For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.
+     */
+    readonly refreshTokenValidity?: number | ros.IResolvable;
+
+    /**
+     * @Property requiredScopes: Required scope of application permissions. You can set one or more of the scopes set in the **PredefinedScopes** to be required, so that when a user authorizes the application, the required scopes are selected by default and cannot be canceled.
+     * **Notes**: If you set a **RequiredScopes** entry that is not within the scope of **PredefinedScopes**, the required range will not take effect.
+     */
+    readonly requiredScopes?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property secretRequired: Indicates whether a secret is required. Valid values: **true** and **false**.
+     * **Note**:
+     * - For applications of the WebApp and ServerApp types, this parameter is automatically set to **true** and cannot be changed.
+     * - For applications of the NativeApp type, this parameter can be set to true or false. If you do not set this parameter, false is used. Applications of the NativeApp type run in untrusted environments and the secrets of these applications are not protected. Therefore, we recommend that you do not set this parameter to true unless otherwise specified.
+     */
+    readonly secretRequired?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosApplicationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('predefinedScopes', ros.listValidator(ros.validateString))(properties.predefinedScopes));
+    errors.collect(ros.propertyValidator('secretRequired', ros.validateBoolean)(properties.secretRequired));
+    errors.collect(ros.propertyValidator('displayName', ros.requiredValidator)(properties.displayName));
+    if(properties.displayName && (Array.isArray(properties.displayName) || (typeof properties.displayName) === 'string')) {
+        errors.collect(ros.propertyValidator('displayName', ros.validateLength)({
+            data: properties.displayName.length,
+            min: undefined,
+            max: 24,
+          }));
+    }
+    errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
+    errors.collect(ros.propertyValidator('isMultiTenant', ros.validateBoolean)(properties.isMultiTenant));
+    if(properties.accessTokenValidity && (typeof properties.accessTokenValidity) !== 'object') {
+        errors.collect(ros.propertyValidator('accessTokenValidity', ros.validateRange)({
+            data: properties.accessTokenValidity,
+            min: 900,
+            max: 10800,
+          }));
+    }
+    errors.collect(ros.propertyValidator('accessTokenValidity', ros.validateNumber)(properties.accessTokenValidity));
+    errors.collect(ros.propertyValidator('redirectUris', ros.listValidator(ros.validateString))(properties.redirectUris));
+    if(properties.refreshTokenValidity && (typeof properties.refreshTokenValidity) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshTokenValidity', ros.validateRange)({
+            data: properties.refreshTokenValidity,
+            min: 7200,
+            max: 31536000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('refreshTokenValidity', ros.validateNumber)(properties.refreshTokenValidity));
+    errors.collect(ros.propertyValidator('appType', ros.requiredValidator)(properties.appType));
+    errors.collect(ros.propertyValidator('appType', ros.validateString)(properties.appType));
+    errors.collect(ros.propertyValidator('requiredScopes', ros.listValidator(ros.validateString))(properties.requiredScopes));
+    errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
+    if(properties.appName && (typeof properties.appName) !== 'object') {
+        errors.collect(ros.propertyValidator('appName', ros.validateAllowedPattern)({
+          data: properties.appName,
+          reg: /^[-_.a-zA-Z0-9]{1,64}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
+    return errors.wrap('supplied properties not correct for "RosApplicationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::Application` resource
+ *
+ * @param properties - the TypeScript properties of a `RosApplicationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::Application` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosApplicationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AppName: ros.stringToRosTemplate(properties.appName),
+      AppType: ros.stringToRosTemplate(properties.appType),
+      DisplayName: ros.stringToRosTemplate(properties.displayName),
+      AccessTokenValidity: ros.numberToRosTemplate(properties.accessTokenValidity),
+      IsMultiTenant: ros.booleanToRosTemplate(properties.isMultiTenant),
+      PredefinedScopes: ros.listMapper(ros.stringToRosTemplate)(properties.predefinedScopes),
+      RedirectUris: ros.listMapper(ros.stringToRosTemplate)(properties.redirectUris),
+      RefreshTokenValidity: ros.numberToRosTemplate(properties.refreshTokenValidity),
+      RequiredScopes: ros.listMapper(ros.stringToRosTemplate)(properties.requiredScopes),
+      SecretRequired: ros.booleanToRosTemplate(properties.secretRequired),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`ALIYUN::RAM::Group is used to create a Resource Access Management (RAM) user group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-application
+ */
+export class RosApplication extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::Application";
+
+    /**
+     * @Attribute AppId: The ID of the application.
+     */
+    public readonly attrAppId: ros.IResolvable;
+
+    /**
+     * @Attribute AppName: The name of the application.
+     */
+    public readonly attrAppName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property appName: The name of the application. The name can be up to 64 characters in length. The name can contain letters, digits, periods (.), underscores (_), and hyphens (-).
+     */
+    public appName: string | ros.IResolvable;
+
+    /**
+     * @Property appType: The type of the application. Valid values:
+     * - **WebApp**: a web application that interacts with a browser.
+     * - **NativeApp**: a native application that runs on an operating system, such as a desktop operating system or a mobile operating system.
+     * - **ServerApp**: an application that accesses Alibaba Cloud services without the need of manual user logon. User provisioning is automated based on the System for Cross-Domain Identity Management (SCIM) protocol.
+     */
+    public appType: string | ros.IResolvable;
+
+    /**
+     * @Property displayName: The display name of the application. The name can be up to 24 characters in length.
+     */
+    public displayName: string | ros.IResolvable;
+
+    /**
+     * @Property accessTokenValidity: The validity period of the access token.
+     * Valid values: 900 to 10800. Unit: seconds.
+     * Default value: 3600.
+     */
+    public accessTokenValidity: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property isMultiTenant: Indicates whether the application can be installed by using other Alibaba Cloud accounts. Valid values:
+     * - **true**: If you do not set this parameter for applications of the NativeApp and ServerApp types, true is used.
+     * - **false**: If you do not set this parameter for applications of the WebApp type, false is used.
+     */
+    public isMultiTenant: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property predefinedScopes: List of the scopes of application permissions.
+     */
+    public predefinedScopes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property redirectUris: List of the callback URLs.
+     */
+    public redirectUris: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshTokenValidity: The validity period of the refreshed token.
+     * Valid values: 7200 to 31536000. Unit: seconds.
+     * Default value:
+     * - For applications of the WebApp and ServerApp types, if this parameter is left empty, the value 2592000 is used. The value 2592000 indicates that the validity period of the refreshed token is 30 days.
+     * - For applications of the NativeApp type, if this parameter is left empty, the value 7776000 is used. The value 7776000 indicates that the validity period of the refreshed token is 90 days.
+     */
+    public refreshTokenValidity: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property requiredScopes: Required scope of application permissions. You can set one or more of the scopes set in the **PredefinedScopes** to be required, so that when a user authorizes the application, the required scopes are selected by default and cannot be canceled.
+     * **Notes**: If you set a **RequiredScopes** entry that is not within the scope of **PredefinedScopes**, the required range will not take effect.
+     */
+    public requiredScopes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property secretRequired: Indicates whether a secret is required. Valid values: **true** and **false**.
+     * **Note**:
+     * - For applications of the WebApp and ServerApp types, this parameter is automatically set to **true** and cannot be changed.
+     * - For applications of the NativeApp type, this parameter can be set to true or false. If you do not set this parameter, false is used. Applications of the NativeApp type run in untrusted environments and the secrets of these applications are not protected. Therefore, we recommend that you do not set this parameter to true unless otherwise specified.
+     */
+    public secretRequired: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosApplicationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosApplication.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAppId = this.getAtt('AppId');
+        this.attrAppName = this.getAtt('AppName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.appName = props.appName;
+        this.appType = props.appType;
+        this.displayName = props.displayName;
+        this.accessTokenValidity = props.accessTokenValidity;
+        this.isMultiTenant = props.isMultiTenant;
+        this.predefinedScopes = props.predefinedScopes;
+        this.redirectUris = props.redirectUris;
+        this.refreshTokenValidity = props.refreshTokenValidity;
+        this.requiredScopes = props.requiredScopes;
+        this.secretRequired = props.secretRequired;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            appName: this.appName,
+            appType: this.appType,
+            displayName: this.displayName,
+            accessTokenValidity: this.accessTokenValidity,
+            isMultiTenant: this.isMultiTenant,
+            predefinedScopes: this.predefinedScopes,
+            redirectUris: this.redirectUris,
+            refreshTokenValidity: this.refreshTokenValidity,
+            requiredScopes: this.requiredScopes,
+            secretRequired: this.secretRequired,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosApplicationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosAttachPolicyToRole`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytorole
  */
 export interface RosAttachPolicyToRoleProps {
 
@@ -178,18 +558,15 @@ function rosAttachPolicyToRolePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::AttachPolicyToRole`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToRole`, which is used to attach a policy to a specified role.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AttachPolicyToRole` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytorole
  */
 export class RosAttachPolicyToRole extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::AttachPolicyToRole";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -210,8 +587,6 @@ export class RosAttachPolicyToRole extends ros.RosResource {
     public roleName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::AttachPolicyToRole`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -239,7 +614,8 @@ export class RosAttachPolicyToRole extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RAM::AttachPolicyToUser`
+ * Properties for defining a `RosAttachPolicyToUser`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
  */
 export interface RosAttachPolicyToUserProps {
 
@@ -305,18 +681,15 @@ function rosAttachPolicyToUserPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::AttachPolicyToUser`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`, which is used to grant permissions to a specified user.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AttachPolicyToUser` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
  */
 export class RosAttachPolicyToUser extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::AttachPolicyToUser";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -337,8 +710,6 @@ export class RosAttachPolicyToUser extends ros.RosResource {
     public userName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::AttachPolicyToUser`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -366,7 +737,8 @@ export class RosAttachPolicyToUser extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RAM::Group`
+ * Properties for defining a `RosGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
  */
 export interface RosGroupProps {
 
@@ -455,18 +827,15 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::Group`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Group`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
  */
 export class RosGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::Group";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupName: Id of ram group.
@@ -510,8 +879,6 @@ export class RosGroup extends ros.RosResource {
     public policyAttachments: RosGroup.PolicyAttachmentsProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RAM::Group`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -786,7 +1153,8 @@ function rosGroupStatementPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::RAM::ManagedPolicy`
+ * Properties for defining a `RosManagedPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-managedpolicy
  */
 export interface RosManagedPolicyProps {
 
@@ -889,18 +1257,15 @@ function rosManagedPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::ManagedPolicy`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ManagedPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-managedpolicy
  */
 export class RosManagedPolicy extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::ManagedPolicy";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute PolicyName: When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the ARN.
@@ -954,8 +1319,6 @@ export class RosManagedPolicy extends ros.RosResource {
     public users: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RAM::ManagedPolicy`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1102,7 +1465,8 @@ function rosManagedPolicyStatementPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::RAM::RamAccountAlias`
+ * Properties for defining a `RosRamAccountAlias`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
  */
 export interface RosRamAccountAliasProps {
 
@@ -1163,18 +1527,15 @@ function rosRamAccountAliasPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::RamAccountAlias`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::RamAccountAlias`, which is used to create an alias for an Alibaba Cloud account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RamAccountAlias` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
  */
 export class RosRamAccountAlias extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::RamAccountAlias";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountAlias: The alias of the Alibaba Cloud account.
@@ -1194,8 +1555,6 @@ export class RosRamAccountAlias extends ros.RosResource {
     public accountAlias: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::RamAccountAlias`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1220,7 +1579,8 @@ export class RosRamAccountAlias extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RAM::Role`
+ * Properties for defining a `RosRole`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
 export interface RosRoleProps {
 
@@ -1333,18 +1693,15 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::Role`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`, which is used to create a RAM role.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Role` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
 export class RosRole extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::Role";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Arn: Name of alicloud resource.
@@ -1410,8 +1767,6 @@ export class RosRole extends ros.RosResource {
     public policyAttachments: RosRole.PolicyAttachmentsProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RAM::Role`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2014,7 +2369,8 @@ function rosRoleStatementPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::RAM::SAMLProvider`
+ * Properties for defining a `RosSAMLProvider`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
 export interface RosSAMLProviderProps {
 
@@ -2034,7 +2390,7 @@ export interface RosSAMLProviderProps {
     readonly samlMetadataDocument?: string | ros.IResolvable;
 
     /**
-     * @Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+     * @Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss:\/\/ros\/document\/demo and oss:\/\/ros\/document\/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
      */
     readonly samlMetadataDocumentUrl?: string | ros.IResolvable;
 }
@@ -2107,18 +2463,15 @@ function rosSAMLProviderPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::SAMLProvider`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SAMLProvider`, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
+ * @Note This class does not contain additional functions, so it is recommended to use the `SAMLProvider` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
 export class RosSAMLProvider extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::SAMLProvider";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Arn: ARN.
@@ -2149,13 +2502,11 @@ export class RosSAMLProvider extends ros.RosResource {
     public samlMetadataDocument: string | ros.IResolvable | undefined;
 
     /**
-     * @Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss://ros/document/demo and oss://ros/document/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
+     * @Property samlMetadataDocumentUrl: The URL for the file that contains the SAML metadata document. The URL must point to a document located in an HTTP or HTTPS web server or an Alibaba Cloud OSS bucket. Examples: oss:\/\/ros\/document\/demo and oss:\/\/ros\/document\/demo?RegionId=cn-hangzhou. The URL can be up to 1,024 bytes in length.
      */
     public samlMetadataDocumentUrl: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RAM::SAMLProvider`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2187,7 +2538,8 @@ export class RosSAMLProvider extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RAM::SecurityPreference`
+ * Properties for defining a `RosSecurityPreference`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
  */
 export interface RosSecurityPreferenceProps {
 
@@ -2239,7 +2591,7 @@ export interface RosSecurityPreferenceProps {
      * If you do not specify a subnet mask, RAM users can log on to the console by using
      * all IP addresses.
      * If you want to specify multiple subnet masks, separate the subnet masks with semicolons
-     * (;). Example: 192.168.0.0/16;10.0.0.0/8.
+     * (;). Example: 192.168.0.0\/16;10.0.0.0\/8.
      * A maximum of 25 subnet masks can be set. The total length of the subnet masks can
      * be 1 to 512 characters.
      */
@@ -2297,18 +2649,15 @@ function rosSecurityPreferencePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::SecurityPreference`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SecurityPreference`, which is used to configure security preferences for Resource Access Management (RAM) users.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPreference` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
  */
 export class RosSecurityPreference extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::SecurityPreference";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AllowUserToChangePassword: Specifies whether RAM users can change their passwords.
@@ -2396,7 +2745,7 @@ export class RosSecurityPreference extends ros.RosResource {
      * If you do not specify a subnet mask, RAM users can log on to the console by using
      * all IP addresses.
      * If you want to specify multiple subnet masks, separate the subnet masks with semicolons
-     * (;). Example: 192.168.0.0/16;10.0.0.0/8.
+     * (;). Example: 192.168.0.0\/16;10.0.0.0\/8.
      * A maximum of 25 subnet masks can be set. The total length of the subnet masks can
      * be 1 to 512 characters.
      */
@@ -2409,8 +2758,6 @@ export class RosSecurityPreference extends ros.RosResource {
     public loginSessionDuration: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RAM::SecurityPreference`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2453,7 +2800,8 @@ export class RosSecurityPreference extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::RAM::User`
+ * Properties for defining a `RosUser`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
  */
 export interface RosUserProps {
 
@@ -2567,18 +2915,15 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::User`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::User`, which is used to create a Resource Access Management (RAM) user.
+ * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
  */
 export class RosUser extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::User";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateDate: Create date of ram user.
@@ -2654,8 +2999,6 @@ export class RosUser extends ros.RosResource {
     public policyAttachments: RosUser.PolicyAttachmentsProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::RAM::User`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3001,7 +3344,8 @@ function rosUserStatementPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::RAM::UserToGroupAddition`
+ * Properties for defining a `RosUserToGroupAddition`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-usertogroupaddition
  */
 export interface RosUserToGroupAdditionProps {
 
@@ -3053,18 +3397,15 @@ function rosUserToGroupAdditionPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::RAM::UserToGroupAddition`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::UserToGroupAddition`, which is used to add users to a RAM group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `UserToGroupAddition` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-usertogroupaddition
  */
 export class RosUserToGroupAddition extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::RAM::UserToGroupAddition";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3080,8 +3421,6 @@ export class RosUserToGroupAddition extends ros.RosResource {
     public users: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::UserToGroupAddition`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

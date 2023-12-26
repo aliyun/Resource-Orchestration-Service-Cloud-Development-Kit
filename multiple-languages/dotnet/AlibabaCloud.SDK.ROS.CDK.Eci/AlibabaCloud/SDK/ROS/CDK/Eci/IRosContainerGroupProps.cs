@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Eci
 {
-    /// <summary>Properties for defining a `ALIYUN::ECI::ContainerGroup`.</summary>
+    /// <summary>Properties for defining a `RosContainerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosContainerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroupProps")]
     public interface IRosContainerGroupProps
     {
@@ -310,7 +313,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tag: The list of container group tags in the form of key/value pairs. You can define a maximum of 20 tags for each container group.
+        /// <strong>Property</strong>: tag: The list of container group tags in the form of key\/value pairs. You can define a maximum of 20 tags for each container group.
         /// </remarks>
         [JsiiProperty(name: "tag", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -376,7 +379,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECI::ContainerGroup`.</summary>
+        /// <summary>Properties for defining a `RosContainerGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosContainerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-eci.RosContainerGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eci.IRosContainerGroupProps
         {
@@ -623,7 +629,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: tag: The list of container group tags in the form of key/value pairs. You can define a maximum of 20 tags for each container group.
+            /// <strong>Property</strong>: tag: The list of container group tags in the form of key\/value pairs. You can define a maximum of 20 tags for each container group.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "tag", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

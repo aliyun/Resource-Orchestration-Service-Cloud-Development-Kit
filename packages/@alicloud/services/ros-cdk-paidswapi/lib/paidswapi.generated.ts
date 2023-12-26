@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::PaiDswApi::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidswapi-instance
  */
 export interface RosInstanceProps {
 
@@ -128,18 +129,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::PaiDswApi::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PaiDswApi::Instance`, which is used to create a Data Science Workshop (DSW) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidswapi-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PaiDswApi::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Accessibility: Whether the workspace is visible to others.
@@ -274,8 +272,6 @@ export class RosInstance extends ros.RosResource {
     public workspaceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PaiDswApi::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EMR::FlowProject`.</summary>
+    /// <summary>Properties for defining a `RosFlowProject`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-emr.RosFlowProjectProps")]
     public class RosFlowProjectProps : AlibabaCloud.SDK.ROS.CDK.Emr.IRosFlowProjectProps
     {

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::EDAS::Applications`
+ * Properties for defining a `RosApplications`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
  */
 export interface RosApplicationsProps {
 
@@ -67,18 +68,15 @@ function rosApplicationsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `DATASOURCE::EDAS::Applications`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::Applications`, which is used to query applications.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Applications` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
  */
 export class RosApplications extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::EDAS::Applications";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppIds: The list of application IDs.
@@ -114,8 +112,6 @@ export class RosApplications extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::EDAS::Applications`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -147,7 +143,8 @@ export class RosApplications extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::EDAS::Clusters`
+ * Properties for defining a `RosClusters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-clusters
  */
 export interface RosClustersProps {
 
@@ -197,18 +194,15 @@ function rosClustersPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::EDAS::Clusters`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::Clusters`, which is used to query clusters.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Clusters` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-clusters
  */
 export class RosClusters extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::EDAS::Clusters";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterIds: The list of cluster IDs.
@@ -234,8 +228,6 @@ export class RosClusters extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::EDAS::Clusters`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -263,7 +255,8 @@ export class RosClusters extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::EDAS::UserDefineRegions`
+ * Properties for defining a `RosUserDefineRegions`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-userdefineregions
  */
 export interface RosUserDefineRegionsProps {
 }
@@ -299,18 +292,15 @@ function rosUserDefineRegionsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `DATASOURCE::EDAS::UserDefineRegions`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `UserDefineRegions` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-userdefineregions
  */
 export class RosUserDefineRegions extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::EDAS::UserDefineRegions";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Ids: The list of user define region IDs.
@@ -326,8 +316,6 @@ export class RosUserDefineRegions extends ros.RosResource {
 
 
     /**
-     * Create a new `DATASOURCE::EDAS::UserDefineRegions`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

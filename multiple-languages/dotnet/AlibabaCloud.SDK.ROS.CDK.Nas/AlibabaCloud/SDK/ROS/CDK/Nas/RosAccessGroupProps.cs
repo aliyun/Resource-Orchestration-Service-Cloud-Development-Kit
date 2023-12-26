@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NAS::AccessGroup`.</summary>
+    /// <summary>Properties for defining a `RosAccessGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nas.RosAccessGroupProps")]
     public class RosAccessGroupProps : AlibabaCloud.SDK.ROS.CDK.Nas.IRosAccessGroupProps
     {

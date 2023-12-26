@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::AITask`.</summary>
+    /// <summary>Properties for defining a `RosAITask`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.RosAITaskProps")]
     public class RosAITaskProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IRosAITaskProps
     {

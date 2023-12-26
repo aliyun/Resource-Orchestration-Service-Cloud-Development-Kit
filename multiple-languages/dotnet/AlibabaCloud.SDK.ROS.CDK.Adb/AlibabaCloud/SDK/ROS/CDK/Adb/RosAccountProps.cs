@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ADB::Account`.</summary>
+    /// <summary>Properties for defining a `RosAccount`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-account
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-adb.RosAccountProps")]
     public class RosAccountProps : AlibabaCloud.SDK.ROS.CDK.Adb.IRosAccountProps
     {
@@ -116,7 +119,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
 
         /// <remarks>
         /// <strong>Property</strong>: accountDescription: The description of the account.
-        /// The description cannot start with http://or https://.
+        /// The description cannot start with http:\/\/or https:\/\/.
         /// The description can be up to 256 characters in length.
         /// </remarks>
         [JsiiOptional]

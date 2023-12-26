@@ -4,7 +4,8 @@ import { RosAccount } from './polardb.generated';
 export { RosAccount as AccountProperty };
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::Account`
+ * Properties for defining a `Account`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
 export interface AccountProps {
 
@@ -30,7 +31,7 @@ export interface AccountProps {
 
     /**
      * Property accountDescription: The description of the database account. The description must comply with the following rules:
-     * - It cannot start with http:// or https://.
+     * - It cannot start with http:\/\/ or https:\/\/.
      * - It must be 2 to 256 characters in length.
      */
     readonly accountDescription?: string | ros.IResolvable;
@@ -63,18 +64,13 @@ export interface AccountProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::POLARDB::Account`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Account`, which is used to create a database account for a specified PolarDB cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
 export class Account extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::POLARDB::Account`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

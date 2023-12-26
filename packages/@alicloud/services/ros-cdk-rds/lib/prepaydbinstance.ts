@@ -4,7 +4,8 @@ import { RosPrepayDBInstance } from './rds.generated';
 export { RosPrepayDBInstance as PrepayDBInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::RDS::PrepayDBInstance`
+ * Properties for defining a `PrepayDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
 export interface PrepayDBInstanceProps {
 
@@ -25,7 +26,7 @@ export interface PrepayDBInstanceProps {
     readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
-     * Property engine: Database instance engine type. Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
+     * Property engine: Database instance engine type. Support MySQL\/SQLServer\/PostgreSQL\/PPAS\/MariaDB now.
      */
     readonly engine: string | ros.IResolvable;
 
@@ -374,18 +375,33 @@ export interface PrepayDBInstanceProps {
     readonly sslSetting?: string | ros.IResolvable;
 
     /**
+     * Property storageAutoScale: Storage space automatic expansion switch, only supported by MySQL and PostgreSQL
+     */
+    readonly storageAutoScale?: string | ros.IResolvable;
+
+    /**
+     * Property storageThreshold: Storage space automatic expansion trigger threshold (percentage)
+     */
+    readonly storageThreshold?: number | ros.IResolvable;
+
+    /**
+     * Property storageUpperBound: The total storage space upper limit for automatic storage space expansion, that is, automatic expansion will not cause the total storage space of the instance to exceed this value.
+     */
+    readonly storageUpperBound?: number | ros.IResolvable;
+
+    /**
      * Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
      * At most 20 tags can be specified.
      * Key
      * It can be up to 64 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Cannot be a null string.
      * Value
      * It can be up to 128 characters in length.
      * Cannot begin with aliyun.
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      * Can be a null string.
      */
     readonly tags?: { [key: string]: (any) };
@@ -422,14 +438,11 @@ export interface PrepayDBInstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RDS::PrepayDBInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create a subscription ApsaraDB RDS instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrepayDBInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
 export class PrepayDBInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DBInstanceId: The instance id of created database instance.
@@ -472,8 +485,6 @@ export class PrepayDBInstance extends ros.Resource {
     public readonly attrPublicPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RDS::PrepayDBInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -487,6 +498,8 @@ export class PrepayDBInstance extends ros.Resource {
             archiveBackupRetentionPeriod: props.archiveBackupRetentionPeriod,
             dbTimeZone: props.dbTimeZone,
             port: props.port,
+            storageThreshold: props.storageThreshold,
+            storageAutoScale: props.storageAutoScale === undefined || props.storageAutoScale === null ? 'Disable' : props.storageAutoScale,
             instanceNetworkType: props.instanceNetworkType,
             archiveBackupKeepCount: props.archiveBackupKeepCount,
             logBackupRetentionPeriod: props.logBackupRetentionPeriod,
@@ -494,9 +507,9 @@ export class PrepayDBInstance extends ros.Resource {
             dbMappings: props.dbMappings,
             connectionStringPrefix: props.connectionStringPrefix,
             multiAz: props.multiAz === undefined || props.multiAz === null ? false : props.multiAz,
-            engine: props.engine,
             tags: props.tags,
             dbInstanceDescription: props.dbInstanceDescription,
+            engine: props.engine,
             targetDedicatedHostIdForMaster: props.targetDedicatedHostIdForMaster,
             engineVersion: props.engineVersion,
             dbInstanceClass: props.dbInstanceClass,
@@ -513,6 +526,7 @@ export class PrepayDBInstance extends ros.Resource {
             masterUsername: props.masterUsername,
             connectionMode: props.connectionMode,
             localLogRetentionSpace: props.localLogRetentionSpace,
+            storageUpperBound: props.storageUpperBound,
             category: props.category,
             privateIpAddress: props.privateIpAddress,
             targetDedicatedHostIdForSlave: props.targetDedicatedHostIdForSlave,
@@ -531,15 +545,15 @@ export class PrepayDBInstance extends ros.Resource {
             zoneId: props.zoneId,
             targetDedicatedHostIdForLog: props.targetDedicatedHostIdForLog,
             allocatePublicConnection: props.allocatePublicConnection,
-            preferredBackupTime: props.preferredBackupTime,
             securityGroupId: props.securityGroupId,
+            preferredBackupTime: props.preferredBackupTime,
             quantity: props.quantity === undefined || props.quantity === null ? 1 : props.quantity,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,
             dbInstanceStorageType: props.dbInstanceStorageType,
             backUpCategory: props.backUpCategory,
             compressType: props.compressType,
-            logBackupFrequency: props.logBackupFrequency,
             connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
+            logBackupFrequency: props.logBackupFrequency,
             couponCode: props.couponCode,
             masterUserType: props.masterUserType === undefined || props.masterUserType === null ? 'Normal' : props.masterUserType,
             serverlessConfig: props.serverlessConfig,

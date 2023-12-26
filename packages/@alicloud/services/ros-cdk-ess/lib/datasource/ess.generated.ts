@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::ESS::ScalingConfigurations`
+ * Properties for defining a `RosScalingConfigurations`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
  */
 export interface RosScalingConfigurationsProps {
 
@@ -74,18 +75,15 @@ function rosScalingConfigurationsPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ESS::ScalingConfigurations`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ESS::ScalingConfigurations`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ScalingConfigurations` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
  */
 export class RosScalingConfigurations extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ESS::ScalingConfigurations";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ScalingConfigurationIds: The list of scaling configuration IDs.
@@ -116,8 +114,6 @@ export class RosScalingConfigurations extends ros.RosResource {
     public scalingGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ESS::ScalingConfigurations`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -147,7 +143,8 @@ export class RosScalingConfigurations extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ESS::ScalingGroups`
+ * Properties for defining a `RosScalingGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalinggroups
  */
 export interface RosScalingGroupsProps {
 
@@ -221,18 +218,15 @@ function rosScalingGroupsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ESS::ScalingGroups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ESS::ScalingGroups`, which is used to query scaling groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ScalingGroups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalinggroups
  */
 export class RosScalingGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ESS::ScalingGroups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ScalingGroupIds: The list of scaling group IDs.
@@ -266,8 +260,6 @@ export class RosScalingGroups extends ros.RosResource {
     public scalingGroupNames: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ESS::ScalingGroups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

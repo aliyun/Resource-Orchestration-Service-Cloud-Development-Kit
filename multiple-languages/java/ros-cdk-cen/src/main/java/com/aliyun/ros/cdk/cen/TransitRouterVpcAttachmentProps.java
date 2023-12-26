@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * Properties for defining a <code>ALIYUN::CEN::TransitRouterVpcAttachment</code>.
+ * Properties for defining a <code>TransitRouterVpcAttachment</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.776Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.219Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpcAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(TransitRouterVpcAttachmentProps.Jsii$Proxy.class)
 public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.JsiiSerializable {

@@ -4,7 +4,8 @@ import { RosServerGroupAttachment } from './ess.generated';
 export { RosServerGroupAttachment as ServerGroupAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::ESS::ServerGroupAttachment`
+ * Properties for defining a `ServerGroupAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
 export interface ServerGroupAttachmentProps {
 
@@ -28,14 +29,11 @@ export interface ServerGroupAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ESS::ServerGroupAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServerGroupAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
 export class ServerGroupAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ScalingActivityId: The ID of the scaling activity during which one or more SLB instances are attached to the scaling group and the ECS instances in the scaling group are added to the backend server groups of the SLB instances.
@@ -44,8 +42,6 @@ Note This parameter is returned only after you set the ForceAttach parameter to 
     public readonly attrScalingActivityId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ESS::ServerGroupAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

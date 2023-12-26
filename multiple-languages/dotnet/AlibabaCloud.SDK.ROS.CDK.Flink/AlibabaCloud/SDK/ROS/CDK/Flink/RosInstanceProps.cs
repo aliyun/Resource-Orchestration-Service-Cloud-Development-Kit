@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::Flink::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-flink.RosInstanceProps")]
     public class RosInstanceProps : AlibabaCloud.SDK.ROS.CDK.Flink.IRosInstanceProps
     {

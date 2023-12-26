@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::RouteEntries`.</summary>
+    /// <summary>Properties for defining a `RouteEntries`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRouteEntriesProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.RouteEntriesProps")]
     public interface IRouteEntriesProps
     {
@@ -118,7 +121,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::RouteEntries`.</summary>
+        /// <summary>Properties for defining a `RouteEntries`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRouteEntriesProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.RouteEntriesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IRouteEntriesProps
         {

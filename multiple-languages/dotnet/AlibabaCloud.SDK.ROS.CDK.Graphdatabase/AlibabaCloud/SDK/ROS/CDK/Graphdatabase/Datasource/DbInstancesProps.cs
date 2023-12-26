@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::GraphDatabase::DbInstances`.</summary>
+    /// <summary>Properties for defining a `DbInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-graphdatabase.datasource.DbInstancesProps")]
     public class DbInstancesProps : AlibabaCloud.SDK.ROS.CDK.Graphdatabase.Datasource.IDbInstancesProps
     {

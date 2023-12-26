@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nlb;
 
 /**
- * A ROS template type:  <code>ALIYUN::NLB::LoadBalancer</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NLB::LoadBalancer</code>, which is used to create a Network Load Balancer (NLB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.238Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.012Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosLoadBalancer")
 public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::NLB::LoadBalancer</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -1186,6 +1184,13 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEipType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerAddresses() {
             return null;
         }
@@ -1212,6 +1217,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object vSwitchId;
             java.lang.Object zoneId;
             java.lang.Object allocationId;
+            java.lang.Object eipType;
             java.lang.Object loadBalancerAddresses;
             java.lang.Object privateIPv4Address;
 
@@ -1282,6 +1288,28 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ZoneMappingsProperty#getEipType}
+             * @param eipType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder eipType(java.lang.String eipType) {
+                this.eipType = eipType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ZoneMappingsProperty#getEipType}
+             * @param eipType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder eipType(com.aliyun.ros.cdk.core.IResolvable eipType) {
+                this.eipType = eipType;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ZoneMappingsProperty#getLoadBalancerAddresses}
              * @param loadBalancerAddresses the value to be set.
              * @return {@code this}
@@ -1346,6 +1374,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object vSwitchId;
             private final java.lang.Object zoneId;
             private final java.lang.Object allocationId;
+            private final java.lang.Object eipType;
             private final java.lang.Object loadBalancerAddresses;
             private final java.lang.Object privateIPv4Address;
 
@@ -1358,6 +1387,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.allocationId = software.amazon.jsii.Kernel.get(this, "allocationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.eipType = software.amazon.jsii.Kernel.get(this, "eipType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.loadBalancerAddresses = software.amazon.jsii.Kernel.get(this, "loadBalancerAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.privateIPv4Address = software.amazon.jsii.Kernel.get(this, "privateIPv4Address", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
@@ -1370,6 +1400,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
                 this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
                 this.allocationId = builder.allocationId;
+                this.eipType = builder.eipType;
                 this.loadBalancerAddresses = builder.loadBalancerAddresses;
                 this.privateIPv4Address = builder.privateIPv4Address;
             }
@@ -1387,6 +1418,11 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
             @Override
             public final java.lang.Object getAllocationId() {
                 return this.allocationId;
+            }
+
+            @Override
+            public final java.lang.Object getEipType() {
+                return this.eipType;
             }
 
             @Override
@@ -1409,6 +1445,9 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
                 if (this.getAllocationId() != null) {
                     data.set("allocationId", om.valueToTree(this.getAllocationId()));
+                }
+                if (this.getEipType() != null) {
+                    data.set("eipType", om.valueToTree(this.getEipType()));
                 }
                 if (this.getLoadBalancerAddresses() != null) {
                     data.set("loadBalancerAddresses", om.valueToTree(this.getLoadBalancerAddresses()));
@@ -1437,6 +1476,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 if (!vSwitchId.equals(that.vSwitchId)) return false;
                 if (!zoneId.equals(that.zoneId)) return false;
                 if (this.allocationId != null ? !this.allocationId.equals(that.allocationId) : that.allocationId != null) return false;
+                if (this.eipType != null ? !this.eipType.equals(that.eipType) : that.eipType != null) return false;
                 if (this.loadBalancerAddresses != null ? !this.loadBalancerAddresses.equals(that.loadBalancerAddresses) : that.loadBalancerAddresses != null) return false;
                 return this.privateIPv4Address != null ? this.privateIPv4Address.equals(that.privateIPv4Address) : that.privateIPv4Address == null;
             }
@@ -1446,6 +1486,7 @@ public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
                 int result = this.vSwitchId.hashCode();
                 result = 31 * result + (this.zoneId.hashCode());
                 result = 31 * result + (this.allocationId != null ? this.allocationId.hashCode() : 0);
+                result = 31 * result + (this.eipType != null ? this.eipType.hashCode() : 0);
                 result = 31 * result + (this.loadBalancerAddresses != null ? this.loadBalancerAddresses.hashCode() : 0);
                 result = 31 * result + (this.privateIPv4Address != null ? this.privateIPv4Address.hashCode() : 0);
                 return result;

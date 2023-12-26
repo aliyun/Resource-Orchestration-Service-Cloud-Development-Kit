@@ -4,7 +4,8 @@ import { RosDiskAttachment } from './ecs.generated';
 export { RosDiskAttachment as DiskAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::DiskAttachment`
+ * Properties for defining a `DiskAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
 export interface DiskAttachmentProps {
 
@@ -29,20 +30,17 @@ export interface DiskAttachmentProps {
     readonly deleteWithInstance?: boolean | ros.IResolvable;
 
     /**
-     * Property device: The device where the volume is exposed on the instance. could be /dev/xvd[b-z]. If not specification, will use default value.
+     * Property device: The device where the volume is exposed on the instance. could be \/dev\/xvd[b-z]. If not specification, will use default value.
      */
     readonly device?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::DiskAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an ECS instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
 export class DiskAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Device: The device where the volume is exposed on ecs instance.
@@ -60,8 +58,6 @@ export class DiskAttachment extends ros.Resource {
     public readonly attrStatus: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::DiskAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

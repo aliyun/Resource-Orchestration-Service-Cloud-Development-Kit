@@ -4,7 +4,8 @@ import { RosResourceMetricRule } from './cms.generated';
 export { RosResourceMetricRule as ResourceMetricRuleProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::ResourceMetricRule`
+ * Properties for defining a `ResourceMetricRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
 export interface ResourceMetricRuleProps {
 
@@ -125,14 +126,11 @@ export interface ResourceMetricRuleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::ResourceMetricRule`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ResourceMetricRule`, which is used to create an alert rule for a metric of a resource.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceMetricRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
 export class ResourceMetricRule extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RuleId: The ID of the alert rule.
@@ -145,8 +143,6 @@ export class ResourceMetricRule extends ros.Resource {
     public readonly attrRuleName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::ResourceMetricRule`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

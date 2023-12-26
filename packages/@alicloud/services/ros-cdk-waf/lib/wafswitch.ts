@@ -4,7 +4,8 @@ import { RosWafSwitch } from './waf.generated';
 export { RosWafSwitch as WafSwitchProperty };
 
 /**
- * Properties for defining a `ALIYUN::WAF::WafSwitch`
+ * Properties for defining a `WafSwitch`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-wafswitch
  */
 export interface WafSwitchProps {
 
@@ -35,18 +36,13 @@ export interface WafSwitchProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::WAF::WafSwitch`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::WAF::WafSwitch`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWafSwitch`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-wafswitch
  */
 export class WafSwitch extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::WAF::WafSwitch`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>Properties for defining a `ALIYUN::NAS::FileSystem`.</summary>
+    /// <summary>Properties for defining a `FileSystem`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IFileSystemProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.FileSystemProps")]
     public interface IFileSystemProps
     {
@@ -31,7 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             get;
         }
 
-        /// <summary>Property bandwidth: Maximum file system throughput, unit is MB/s.</summary>
+        /// <summary>Property bandwidth: Maximum file system throughput, unit is MB\/s.</summary>
         /// <remarks>
         /// Required and valid only when FileSystemType=cpfs.
         /// </remarks>
@@ -198,7 +201,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::NAS::FileSystem`.</summary>
+        /// <summary>Properties for defining a `FileSystem`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IFileSystemProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.FileSystemProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nas.IFileSystemProps
         {
@@ -229,7 +235,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property bandwidth: Maximum file system throughput, unit is MB/s.</summary>
+            /// <summary>Property bandwidth: Maximum file system throughput, unit is MB\/s.</summary>
             /// <remarks>
             /// Required and valid only when FileSystemType=cpfs.
             /// </remarks>

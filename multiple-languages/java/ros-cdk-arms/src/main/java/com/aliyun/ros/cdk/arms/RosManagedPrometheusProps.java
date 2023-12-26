@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.arms;
 
 /**
- * Properties for defining a <code>ALIYUN::ARMS::ManagedPrometheus</code>.
+ * Properties for defining a <code>RosManagedPrometheus</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.487Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.955Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosManagedPrometheusProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedPrometheusProps.Jsii$Proxy.class)
 public interface RosManagedPrometheusProps extends software.amazon.jsii.JsiiSerializable {

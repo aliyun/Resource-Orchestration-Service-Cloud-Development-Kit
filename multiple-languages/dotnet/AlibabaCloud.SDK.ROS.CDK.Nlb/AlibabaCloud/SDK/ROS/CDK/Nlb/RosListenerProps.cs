@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NLB::Listener`.</summary>
+    /// <summary>Properties for defining a `RosListener`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nlb.RosListenerProps")]
     public class RosListenerProps : AlibabaCloud.SDK.ROS.CDK.Nlb.IRosListenerProps
     {

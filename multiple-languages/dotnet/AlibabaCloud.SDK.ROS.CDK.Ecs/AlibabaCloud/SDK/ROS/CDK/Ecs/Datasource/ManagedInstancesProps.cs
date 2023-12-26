@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::ManagedInstances`.</summary>
+    /// <summary>Properties for defining a `ManagedInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.ManagedInstancesProps")]
     public class ManagedInstancesProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IManagedInstancesProps
     {

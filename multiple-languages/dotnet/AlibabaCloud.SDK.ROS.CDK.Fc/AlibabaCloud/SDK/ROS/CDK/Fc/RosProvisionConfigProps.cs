@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FC::ProvisionConfig`.</summary>
+    /// <summary>Properties for defining a `RosProvisionConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-provisionconfig
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.RosProvisionConfigProps")]
     public class RosProvisionConfigProps : AlibabaCloud.SDK.ROS.CDK.Fc.IRosProvisionConfigProps
     {

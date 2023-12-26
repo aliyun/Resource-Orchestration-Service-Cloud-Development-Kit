@@ -4,7 +4,8 @@ import { RosFlowLog } from './vpc.generated';
 export { RosFlowLog as FlowLogProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::FlowLog`
+ * Properties for defining a `FlowLog`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
  */
 export interface FlowLogProps {
 
@@ -45,14 +46,11 @@ export interface FlowLogProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::FlowLog`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FlowLog`, which is used to create a flow log.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowLog`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
  */
 export class FlowLog extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Description: The Description of flow log.
@@ -95,8 +93,6 @@ export class FlowLog extends ros.Resource {
     public readonly attrTrafficType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::FlowLog`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

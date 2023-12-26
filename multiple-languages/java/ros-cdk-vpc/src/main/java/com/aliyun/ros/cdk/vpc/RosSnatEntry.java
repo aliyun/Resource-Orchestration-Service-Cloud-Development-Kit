@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * A ROS template type:  <code>ALIYUN::VPC::SnatEntry</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::SnatEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.644Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.482Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosSnatEntry")
 public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::VPC::SnatEntry</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -159,18 +157,29 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setSourceVSwitchIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
-        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
-            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
-                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
-            }
-        }
+    public void setSourceVSwitchIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sourceVSwitchIds", value);
     }
 
     /**
      */
-    public void setSourceVSwitchIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setSourceVSwitchIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof java.lang.String)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: java.lang.String, com.aliyun.ros.cdk.core.IResolvable; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
         software.amazon.jsii.Kernel.set(this, "sourceVSwitchIds", value);
     }
 
@@ -289,7 +298,7 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param sourceVSwitchIds This parameter is required.
          */
-        public Builder sourceVSwitchIds(final java.util.List<? extends java.lang.Object> sourceVSwitchIds) {
+        public Builder sourceVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable sourceVSwitchIds) {
             this.props.sourceVSwitchIds(sourceVSwitchIds);
             return this;
         }
@@ -297,7 +306,7 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param sourceVSwitchIds This parameter is required.
          */
-        public Builder sourceVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable sourceVSwitchIds) {
+        public Builder sourceVSwitchIds(final java.util.List<? extends java.lang.Object> sourceVSwitchIds) {
             this.props.sourceVSwitchIds(sourceVSwitchIds);
             return this;
         }

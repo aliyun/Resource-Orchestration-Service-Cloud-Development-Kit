@@ -4,7 +4,8 @@ import { RosNetworkInterfaces } from './ecs.generated';
 export { RosNetworkInterfaces as NetworkInterfacesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::NetworkInterfaces`
+ * Properties for defining a `NetworkInterfaces`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-networkinterfaces
  */
 export interface NetworkInterfacesProps {
 
@@ -94,14 +95,11 @@ export interface NetworkInterfacesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::NetworkInterfaces`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::NetworkInterfaces`, which is used to query the details of elastic network interfaces (ENIs).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterfaces`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-networkinterfaces
  */
 export class NetworkInterfaces extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute NetworkInterfaceIds: The list of NetworkInterfaceIds.
@@ -114,8 +112,6 @@ export class NetworkInterfaces extends ros.Resource {
     public readonly attrNetworkInterfaces: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::NetworkInterfaces`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

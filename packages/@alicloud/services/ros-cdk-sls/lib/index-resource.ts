@@ -4,7 +4,8 @@ import { RosIndex } from './sls.generated';
 export { RosIndex as IndexProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLS::Index`
+ * Properties for defining a `Index`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
  */
 export interface IndexProps {
 
@@ -43,18 +44,13 @@ export interface IndexProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLS::Index`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Index`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIndex`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
  */
 export class Index extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::SLS::Index`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

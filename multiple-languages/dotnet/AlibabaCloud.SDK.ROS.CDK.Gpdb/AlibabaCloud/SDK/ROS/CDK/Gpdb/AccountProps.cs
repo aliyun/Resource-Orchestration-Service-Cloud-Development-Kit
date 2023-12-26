@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::GPDB::Account`.</summary>
+    /// <summary>Properties for defining a `Account`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-account
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-gpdb.AccountProps")]
     public class AccountProps : AlibabaCloud.SDK.ROS.CDK.Gpdb.IAccountProps
     {

@@ -4,7 +4,8 @@ import { RosAnyCluster } from './cs.generated';
 export { RosAnyCluster as AnyClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::CS::AnyCluster`
+ * Properties for defining a `AnyCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
  */
 export interface AnyClusterProps {
 
@@ -15,14 +16,11 @@ export interface AnyClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CS::AnyCluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::AnyCluster`, which is used to create an ACK cluster of a specific type.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAnyCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
  */
 export class AnyCluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute APIServerSLBId: The id of API server SLB
@@ -75,8 +73,6 @@ export class AnyCluster extends ros.Resource {
     public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CS::AnyCluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

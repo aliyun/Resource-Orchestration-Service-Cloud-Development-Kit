@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ResourceManager::ResourceShareAssociation`.</summary>
+    /// <summary>Properties for defining a `ResourceShareAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshareassociation
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-resourcemanager.ResourceShareAssociationProps")]
     public class ResourceShareAssociationProps : AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IResourceShareAssociationProps
     {

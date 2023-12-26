@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::QosPolicy`.</summary>
+    /// <summary>Properties for defining a `QosPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IQosPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.QosPolicyProps")]
     public interface IQosPolicyProps
     {
@@ -171,7 +174,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::QosPolicy`.</summary>
+        /// <summary>Properties for defining a `QosPolicy`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IQosPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.QosPolicyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IQosPolicyProps
         {

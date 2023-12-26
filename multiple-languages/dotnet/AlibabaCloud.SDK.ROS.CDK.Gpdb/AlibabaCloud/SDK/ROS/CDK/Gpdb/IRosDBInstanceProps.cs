@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
-    /// <summary>Properties for defining a `ALIYUN::GPDB::DBInstance`.</summary>
+    /// <summary>Properties for defining a `RosDBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.RosDBInstanceProps")]
     public interface IRosDBInstanceProps
     {
@@ -219,7 +222,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
+        /// <strong>Property</strong>: periodUnit: Unit of subscription period, it could be Month\/Year. Default value is Month.
         /// </remarks>
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -386,7 +389,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GPDB::DBInstance`.</summary>
+        /// <summary>Properties for defining a `RosDBInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-gpdb.RosDBInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Gpdb.IRosDBInstanceProps
         {
@@ -566,7 +572,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
+            /// <strong>Property</strong>: periodUnit: Unit of subscription period, it could be Month\/Year. Default value is Month.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

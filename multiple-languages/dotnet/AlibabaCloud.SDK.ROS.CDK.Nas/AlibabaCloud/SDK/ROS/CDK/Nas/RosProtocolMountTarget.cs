@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>A ROS template type:  `ALIYUN::NAS::ProtocolMountTarget`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`, which is used to create an export directory for a protocol service.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ProtocolMountTarget` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Nas.RosProtocolMountTarget), fullyQualifiedName: "@alicloud/ros-cdk-nas.RosProtocolMountTarget", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-nas.RosProtocolMountTargetProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosProtocolMountTarget : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::NAS::ProtocolMountTarget`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -255,7 +258,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <strong>Property</strong>: description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
         /// limit:
         /// The length is 2 to 128 English or Chinese characters.
-        /// Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+        /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
         /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
         /// </remarks>
         [JsiiOptional]
@@ -330,7 +333,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// Format:
         /// The length is 1 to 1024 characters.
         /// Use UTF-8 encoding.
-        /// It must start with the positive oblique line (/), and the root directory must be/.
+        /// It must start with the positive oblique line (\/), and the root directory must be\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

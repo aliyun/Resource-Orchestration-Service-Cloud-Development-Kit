@@ -4,7 +4,8 @@ import { RosExchange } from './amqp.generated';
 export { RosExchange as ExchangeProperty };
 
 /**
- * Properties for defining a `ALIYUN::AMQP::Exchange`
+ * Properties for defining a `Exchange`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */
 export interface ExchangeProps {
 
@@ -53,14 +54,11 @@ export interface ExchangeProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::AMQP::Exchange`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Exchange`, which is used to create an exchange.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosExchange`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */
 export class Exchange extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ExchangeName: The name of the exchange.
@@ -68,8 +66,6 @@ export class Exchange extends ros.Resource {
     public readonly attrExchangeName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::AMQP::Exchange`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

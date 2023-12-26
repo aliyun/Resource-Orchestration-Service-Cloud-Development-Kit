@@ -4,7 +4,8 @@ import { RosTemplate } from './oos.generated';
 export { RosTemplate as TemplateProperty };
 
 /**
- * Properties for defining a `ALIYUN::OOS::Template`
+ * Properties for defining a `Template`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
 export interface TemplateProps {
 
@@ -30,14 +31,11 @@ export interface TemplateProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::OOS::Template`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Template`, which is used to create a template.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTemplate`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */
 export class Template extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ExecutionPolicy: Execution Policy
@@ -55,8 +53,6 @@ export class Template extends ros.Resource {
     public readonly attrTemplateName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OOS::Template`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

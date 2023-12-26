@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ALB::HealthCheckTemplate`.</summary>
+    /// <summary>Properties for defining a `HealthCheckTemplate`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.HealthCheckTemplateProps")]
     public class HealthCheckTemplateProps : AlibabaCloud.SDK.ROS.CDK.Alb.IHealthCheckTemplateProps
     {

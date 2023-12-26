@@ -4,20 +4,18 @@ import { RosFlows } from './fnf.generated';
 export { RosFlows as FlowsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::FNF::Flows`
+ * Properties for defining a `Flows`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
  */
 export interface FlowsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::FNF::Flows`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Flows`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlows`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
  */
 export class Flows extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute FlowNames: The list of flow names.
@@ -30,8 +28,6 @@ export class Flows extends ros.Resource {
     public readonly attrFlows: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::FNF::Flows`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

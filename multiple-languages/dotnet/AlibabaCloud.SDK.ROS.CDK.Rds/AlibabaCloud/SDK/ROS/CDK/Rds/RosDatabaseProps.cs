@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RDS::Database`.</summary>
+    /// <summary>Properties for defining a `RosDatabase`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.RosDatabaseProps")]
     public class RosDatabaseProps : AlibabaCloud.SDK.ROS.CDK.Rds.IRosDatabaseProps
     {
@@ -126,7 +129,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <strong>Property</strong>: dbDescription: The description of the database. The description must be 2 to 256 characters in length.
         /// The description must start with a letter and can contain letters, digits, underscores
         /// (_), and hyphens (-).
-        /// Note The description cannot start with http:// or https://.
+        /// Note The description cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dbDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

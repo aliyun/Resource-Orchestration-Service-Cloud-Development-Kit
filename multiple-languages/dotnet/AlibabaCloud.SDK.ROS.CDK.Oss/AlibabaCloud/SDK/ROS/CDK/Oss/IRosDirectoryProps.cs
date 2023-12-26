@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oss
 {
-    /// <summary>Properties for defining a `ALIYUN::OSS::Directory`.</summary>
+    /// <summary>Properties for defining a `RosDirectory`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDirectoryProps), fullyQualifiedName: "@alicloud/ros-cdk-oss.RosDirectoryProps")]
     public interface IRosDirectoryProps
     {
@@ -39,7 +42,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::OSS::Directory`.</summary>
+        /// <summary>Properties for defining a `RosDirectory`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDirectoryProps), fullyQualifiedName: "@alicloud/ros-cdk-oss.RosDirectoryProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oss.IRosDirectoryProps
         {

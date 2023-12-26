@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::CS::ClusterUserKubeconfig`.</summary>
+    /// <summary>Properties for defining a `RosClusterUserKubeconfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusteruserkubeconfig
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.datasource.RosClusterUserKubeconfigProps")]
     public class RosClusterUserKubeconfigProps : AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.IRosClusterUserKubeconfigProps
     {

@@ -4,7 +4,8 @@ import { RosTransitRouterVbrAttachment } from './cen.generated';
 export { RosTransitRouterVbrAttachment as TransitRouterVbrAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouterVbrAttachment`
+ * Properties for defining a `TransitRouterVbrAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
  */
 export interface TransitRouterVbrAttachmentProps {
 
@@ -45,14 +46,11 @@ export interface TransitRouterVbrAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::TransitRouterVbrAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection from an Enterprise Edition transit router.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVbrAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
  */
 export class TransitRouterVbrAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AutoPublishRouteEnabled: AutoPublishRouteEnabled
@@ -105,8 +103,6 @@ export class TransitRouterVbrAttachment extends ros.Resource {
     public readonly attrVbrOwnerId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouterVbrAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

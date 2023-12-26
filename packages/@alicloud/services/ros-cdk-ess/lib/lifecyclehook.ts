@@ -4,7 +4,8 @@ import { RosLifecycleHook } from './ess.generated';
 export { RosLifecycleHook as LifecycleHookProperty };
 
 /**
- * Properties for defining a `ALIYUN::ESS::LifecycleHook`
+ * Properties for defining a `LifecycleHook`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
  */
 export interface LifecycleHookProps {
 
@@ -46,9 +47,9 @@ export interface LifecycleHookProps {
      * region: the region to which the scaling group locates
      * account-id: Alibaba Cloud ID
      * For example:
-     * MNS queue: acs:ess:{region}:{account-id}:queue/{queuename}
-     * MNS topic: acs:ess:{region}:{account-id}:topic/{topicname}
-     * OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
+     * MNS queue: acs:ess:{region}:{account-id}:queue\/{queuename}
+     * MNS topic: acs:ess:{region}:{account-id}:topic\/{topicname}
+     * OOS template: acs:ess:{region}:{account-id}:oos\/{templatename}
      */
     readonly notificationArn?: string | ros.IResolvable;
 
@@ -59,14 +60,11 @@ export interface LifecycleHookProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ESS::LifecycleHook`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LifecycleHook`, which is used to create a lifecycle hook for a scaling group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLifecycleHook`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-lifecyclehook
  */
 export class LifecycleHook extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute LifecycleHookId: The lifecycle hook ID
@@ -79,8 +77,6 @@ export class LifecycleHook extends ros.Resource {
     public readonly attrScalingGroupId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ESS::LifecycleHook`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

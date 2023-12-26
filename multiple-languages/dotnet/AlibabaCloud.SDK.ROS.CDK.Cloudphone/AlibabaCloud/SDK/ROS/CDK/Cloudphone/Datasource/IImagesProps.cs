@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CloudPhone::Images`.</summary>
+    /// <summary>Properties for defining a `Images`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-images
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IImagesProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudphone.datasource.ImagesProps")]
     public interface IImagesProps
     {
@@ -41,7 +44,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::CloudPhone::Images`.</summary>
+        /// <summary>Properties for defining a `Images`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-images
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IImagesProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudphone.datasource.ImagesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cloudphone.Datasource.IImagesProps
         {

@@ -4,12 +4,15 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Kms
 {
-    /// <summary>Properties for defining a `ALIYUN::KMS::Alias`.</summary>
+    /// <summary>Properties for defining a `RosAlias`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAliasProps), fullyQualifiedName: "@alicloud/ros-cdk-kms.RosAliasProps")]
     public interface IRosAliasProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
+        /// <strong>Property</strong>: aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias\/ must be included.
         /// </remarks>
         [JsiiProperty(name: "aliasName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AliasName
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::KMS::Alias`.</summary>
+        /// <summary>Properties for defining a `RosAlias`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAliasProps), fullyQualifiedName: "@alicloud/ros-cdk-kms.RosAliasProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Kms.IRosAliasProps
         {
@@ -35,7 +41,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
+            /// <strong>Property</strong>: aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias\/ must be included.
             /// </remarks>
             [JsiiProperty(name: "aliasName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AliasName

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::ForwardEntry`.</summary>
+    /// <summary>Properties for defining a `RosForwardEntry`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-forwardentry
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosForwardEntryProps")]
     public class RosForwardEntryProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosForwardEntryProps
     {
@@ -45,7 +48,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object _externalPort;
 
         /// <remarks>
-        /// <strong>Property</strong>: externalPort: Source port, now support [1-65535]|Any|x/y
+        /// <strong>Property</strong>: externalPort: Source port, now support [1-65535]|Any|x\/y
         /// </remarks>
         [JsiiProperty(name: "externalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ExternalPort
@@ -141,7 +144,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object _internalPort;
 
         /// <remarks>
-        /// <strong>Property</strong>: internalPort: Destination port, now support [1-65535]|Any|x/y
+        /// <strong>Property</strong>: internalPort: Destination port, now support [1-65535]|Any|x\/y
         /// </remarks>
         [JsiiProperty(name: "internalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object InternalPort
@@ -205,7 +208,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _forwardEntryName;
 
         /// <remarks>
-        /// <strong>Property</strong>: forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+        /// <strong>Property</strong>: forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "forwardEntryName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

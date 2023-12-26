@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Activations`
+ * Properties for defining a `RosActivations`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activations
  */
 export interface RosActivationsProps {
 
@@ -53,18 +54,15 @@ function rosActivationsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::Activations`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Activations`, which is used to query activation codes.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Activations` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activations
  */
 export class RosActivations extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Activations";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ActivationIds: The list of activation IDs.
@@ -90,8 +88,6 @@ export class RosActivations extends ros.RosResource {
     public instanceName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::Activations`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -119,7 +115,8 @@ export class RosActivations extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::AutoSnapshotPolicies`
+ * Properties for defining a `RosAutoSnapshotPolicies`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicies
  */
 export interface RosAutoSnapshotPoliciesProps {
 
@@ -183,18 +180,15 @@ function rosAutoSnapshotPoliciesPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::AutoSnapshotPolicies`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::AutoSnapshotPolicies`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AutoSnapshotPolicies` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-autosnapshotpolicies
  */
 export class RosAutoSnapshotPolicies extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::AutoSnapshotPolicies";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AutoSnapshotPolicies: The list of auto snapshot policies.
@@ -225,8 +219,6 @@ export class RosAutoSnapshotPolicies extends ros.RosResource {
     public tags: RosAutoSnapshotPolicies.TagsProperty[] | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::AutoSnapshotPolicies`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -304,7 +296,8 @@ function rosAutoSnapshotPoliciesTagsPropertyToRosTemplate(properties: any): any 
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Commands`
+ * Properties for defining a `RosCommands`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
  */
 export interface RosCommandsProps {
 
@@ -377,18 +370,15 @@ function rosCommandsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::Commands`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Commands`, which is used to query all available commands that you created.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Commands` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
  */
 export class RosCommands extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Commands";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CommandIds: The list of command IDs.
@@ -427,8 +417,6 @@ export class RosCommands extends ros.RosResource {
     public type: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::Commands`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -460,7 +448,8 @@ export class RosCommands extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::DedicatedHostClusters`
+ * Properties for defining a `RosDedicatedHostClusters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostclusters
  */
 export interface RosDedicatedHostClustersProps {
 
@@ -520,18 +509,15 @@ function rosDedicatedHostClustersPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::DedicatedHostClusters`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`, which is used to query the information about dedicated host clusters.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostClusters` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostclusters
  */
 export class RosDedicatedHostClusters extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::DedicatedHostClusters";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DedicatedHostClusterIds: The list of dedicated host cluster IDs.
@@ -565,8 +551,6 @@ export class RosDedicatedHostClusters extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::DedicatedHostClusters`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -596,7 +580,8 @@ export class RosDedicatedHostClusters extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::DedicatedHosts`
+ * Properties for defining a `RosDedicatedHosts`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhosts
  */
 export interface RosDedicatedHostsProps {
 
@@ -706,18 +691,15 @@ function rosDedicatedHostsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::DedicatedHosts`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHosts`, which is used to query dedicated hosts.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHosts` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhosts
  */
 export class RosDedicatedHosts extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::DedicatedHosts";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DedicatedHostIds: The list of dedicated host ids.
@@ -777,8 +759,6 @@ export class RosDedicatedHosts extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::DedicatedHosts`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -866,7 +846,8 @@ function rosDedicatedHostsTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::DeploymentSets`
+ * Properties for defining a `RosDeploymentSets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-deploymentsets
  */
 export interface RosDeploymentSetsProps {
 
@@ -939,18 +920,15 @@ function rosDeploymentSetsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::DeploymentSets`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DeploymentSets`, which is used to query one or more deployment sets.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DeploymentSets` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-deploymentsets
  */
 export class RosDeploymentSets extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::DeploymentSets";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DeploymentSetIds: the list of deployment set ids
@@ -988,8 +966,6 @@ export class RosDeploymentSets extends ros.RosResource {
     public strategy: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::DeploymentSets`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1021,7 +997,8 @@ export class RosDeploymentSets extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::DiskCategories`
+ * Properties for defining a `RosDiskCategories`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
  */
 export interface RosDiskCategoriesProps {
 
@@ -1116,18 +1093,15 @@ function rosDiskCategoriesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::DiskCategories`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DiskCategories`, which is used to query the disk types and categories.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DiskCategories` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
  */
 export class RosDiskCategories extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::DiskCategories";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DiskCategories: The list of disk categories.
@@ -1184,8 +1158,6 @@ export class RosDiskCategories extends ros.RosResource {
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::DiskCategories`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1219,7 +1191,8 @@ export class RosDiskCategories extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Disks`
+ * Properties for defining a `RosDisks`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
  */
 export interface RosDisksProps {
 
@@ -1242,7 +1215,7 @@ export interface RosDisksProps {
      * ephemeral: retired local disk
      * ephemeral_ssd: local SSD
      * cloud_essd: ESSD
-     * local_ssd_pro: I/O-intensive local disk
+     * local_ssd_pro: I\/O-intensive local disk
      * local_hdd_pro: throughput-intensive local disk
      */
     readonly category?: string | ros.IResolvable;
@@ -1503,18 +1476,15 @@ function rosDisksPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::Disks`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Disks`, which is used to query the Elastic Block Storage (EBS) devices that you created. The following EBS devices are supported: cloud disks and local disks.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Disks` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
  */
 export class RosDisks extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Disks";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DiskIds: The list of disk IDs.
@@ -1548,7 +1518,7 @@ export class RosDisks extends ros.RosResource {
      * ephemeral: retired local disk
      * ephemeral_ssd: local SSD
      * cloud_essd: ESSD
-     * local_ssd_pro: I/O-intensive local disk
+     * local_ssd_pro: I\/O-intensive local disk
      * local_hdd_pro: throughput-intensive local disk
      */
     public category: string | ros.IResolvable | undefined;
@@ -1692,8 +1662,6 @@ export class RosDisks extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::Disks`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1859,7 +1827,8 @@ function rosDisksTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::HpcClusters`
+ * Properties for defining a `RosHpcClusters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-hpcclusters
  */
 export interface RosHpcClustersProps {
 
@@ -1909,18 +1878,15 @@ function rosHpcClustersPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::HpcClusters`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::HpcClusters`, which is used to query available High Performance Computing (HPC) clusters.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HpcClusters` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-hpcclusters
  */
 export class RosHpcClusters extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::HpcClusters";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HpcClusterIds: the list of hpc cluster ids
@@ -1941,8 +1907,6 @@ export class RosHpcClusters extends ros.RosResource {
     public hpcClusterIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::HpcClusters`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1968,7 +1932,8 @@ export class RosHpcClusters extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Images`
+ * Properties for defining a `RosImages`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
  */
 export interface RosImagesProps {
 
@@ -2034,7 +1999,7 @@ export interface RosImagesProps {
     readonly isSupportCloudinit?: boolean | ros.IResolvable;
 
     /**
-     * @Property isSupportIoOptimized: Specifies whether the image can be used on I/O optimized instances.
+     * @Property isSupportIoOptimized: Specifies whether the image can be used on I\/O optimized instances.
      */
     readonly isSupportIoOptimized?: boolean | ros.IResolvable;
 
@@ -2180,18 +2145,15 @@ function rosImagesPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::Images`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Images`, which is used to query available images.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Images` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
  */
 export class RosImages extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Images";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ImageIds: The list of image IDs.
@@ -2268,7 +2230,7 @@ export class RosImages extends ros.RosResource {
     public isSupportCloudinit: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property isSupportIoOptimized: Specifies whether the image can be used on I/O optimized instances.
+     * @Property isSupportIoOptimized: Specifies whether the image can be used on I\/O optimized instances.
      */
     public isSupportIoOptimized: boolean | ros.IResolvable | undefined;
 
@@ -2314,8 +2276,6 @@ export class RosImages extends ros.RosResource {
     public usage: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::Images`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2419,7 +2379,8 @@ function rosImagesTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Instances`
+ * Properties for defining a `RosInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instances
  */
 export interface RosInstancesProps {
 
@@ -2506,7 +2467,7 @@ export interface RosInstancesProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property ioOptimized: Specifies whether the instance is I/O optimized.
+     * @Property ioOptimized: Specifies whether the instance is I\/O optimized.
      */
     readonly ioOptimized?: boolean | ros.IResolvable;
 
@@ -2726,18 +2687,15 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::Instances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Instances`, which is used to query the details of Elastic Compute Service (ECS) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instances
  */
 export class RosInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Instances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: The list of InstanceIds.
@@ -2835,7 +2793,7 @@ export class RosInstances extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ioOptimized: Specifies whether the instance is I/O optimized.
+     * @Property ioOptimized: Specifies whether the instance is I\/O optimized.
      */
     public ioOptimized: boolean | ros.IResolvable | undefined;
 
@@ -2907,8 +2865,6 @@ export class RosInstances extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::Instances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3082,7 +3038,8 @@ function rosInstancesTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::KeyPairs`
+ * Properties for defining a `RosKeyPairs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypairs
  */
 export interface RosKeyPairsProps {
 
@@ -3157,18 +3114,15 @@ function rosKeyPairsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::KeyPairs`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::KeyPairs`, which is used to query one or more key pairs.
+ * @Note This class does not contain additional functions, so it is recommended to use the `KeyPairs` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-keypairs
  */
 export class RosKeyPairs extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::KeyPairs";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute KeyPairNames: The list of key pair names.
@@ -3208,8 +3162,6 @@ export class RosKeyPairs extends ros.RosResource {
     public tags: RosKeyPairs.TagsProperty[] | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::KeyPairs`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3289,7 +3241,8 @@ function rosKeyPairsTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::ManagedInstances`
+ * Properties for defining a `RosManagedInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
  */
 export interface RosManagedInstancesProps {
 
@@ -3389,18 +3342,15 @@ function rosManagedInstancesPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::ManagedInstances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::ManagedInstances`, which is used to query managed instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ManagedInstances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
  */
 export class RosManagedInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::ManagedInstances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: The list of managed instance ids.
@@ -3448,8 +3398,6 @@ export class RosManagedInstances extends ros.RosResource {
     public tags: RosManagedInstances.TagsProperty[] | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::ManagedInstances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3533,7 +3481,8 @@ function rosManagedInstancesTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::NetworkInterfaces`
+ * Properties for defining a `RosNetworkInterfaces`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-networkinterfaces
  */
 export interface RosNetworkInterfacesProps {
 
@@ -3709,18 +3658,15 @@ function rosNetworkInterfacesPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::NetworkInterfaces`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::NetworkInterfaces`, which is used to query the details of elastic network interfaces (ENIs).
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkInterfaces` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-networkinterfaces
  */
 export class RosNetworkInterfaces extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::NetworkInterfaces";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NetworkInterfaceIds: The list of NetworkInterfaceIds.
@@ -3820,8 +3766,6 @@ export class RosNetworkInterfaces extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::NetworkInterfaces`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3921,7 +3865,8 @@ function rosNetworkInterfacesTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::RecommendInstanceTypes`
+ * Properties for defining a `RosRecommendInstanceTypes`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
  */
 export interface RosRecommendInstanceTypesProps {
 
@@ -3956,9 +3901,9 @@ export interface RosRecommendInstanceTypesProps {
     readonly instanceTypeFamilies?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property ioOptimized: Specifies whether to match I/O optimized instances. The IoOptimized parameter cannot be specified when the instance is not I/O optimized. Valid values:
-     * optimized: matches I/O optimized instances.
-     * none: matches non-I/O optimized instances.
+     * @Property ioOptimized: Specifies whether to match I\/O optimized instances. The IoOptimized parameter cannot be specified when the instance is not I\/O optimized. Valid values:
+     * optimized: matches I\/O optimized instances.
+     * none: matches non-I\/O optimized instances.
      * Default value: optimized.
      * If you query alternative instance types for retired instance types, this parameter is set to none by default. 
      * Default value: none.
@@ -4010,8 +3955,8 @@ export interface RosRecommendInstanceTypesProps {
      * cloud_ssd: standard SSD
      * cloud_essd: enhanced SSD (ESSD)
      * cloud: basic disk
-     * For non-I/O optimized instances, the default value is cloud.
-     * For I/O optimized instances, the default value is cloud_efficiency.
+     * For non-I\/O optimized instances, the default value is cloud.
+     * For I\/O optimized instances, the default value is cloud_efficiency.
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
 
@@ -4137,18 +4082,15 @@ function rosRecommendInstanceTypesPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::RecommendInstanceTypes`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::RecommendInstanceTypes`, which is used to query the recommended Elastic Compute Service (ECS) instance types.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RecommendInstanceTypes` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
  */
 export class RosRecommendInstanceTypes extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::RecommendInstanceTypes";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceTypeIds: The list of instance type ids. Note that instance type ids are not unique.
@@ -4194,9 +4136,9 @@ export class RosRecommendInstanceTypes extends ros.RosResource {
     public instanceTypeFamilies: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property ioOptimized: Specifies whether to match I/O optimized instances. The IoOptimized parameter cannot be specified when the instance is not I/O optimized. Valid values:
-     * optimized: matches I/O optimized instances.
-     * none: matches non-I/O optimized instances.
+     * @Property ioOptimized: Specifies whether to match I\/O optimized instances. The IoOptimized parameter cannot be specified when the instance is not I\/O optimized. Valid values:
+     * optimized: matches I\/O optimized instances.
+     * none: matches non-I\/O optimized instances.
      * Default value: optimized.
      * If you query alternative instance types for retired instance types, this parameter is set to none by default. 
      * Default value: none.
@@ -4248,8 +4190,8 @@ export class RosRecommendInstanceTypes extends ros.RosResource {
      * cloud_ssd: standard SSD
      * cloud_essd: enhanced SSD (ESSD)
      * cloud: basic disk
-     * For non-I/O optimized instances, the default value is cloud.
-     * For I/O optimized instances, the default value is cloud_efficiency.
+     * For non-I\/O optimized instances, the default value is cloud.
+     * For I\/O optimized instances, the default value is cloud_efficiency.
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
@@ -4267,8 +4209,6 @@ export class RosRecommendInstanceTypes extends ros.RosResource {
     public zoneMatchMode: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::RecommendInstanceTypes`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4320,7 +4260,8 @@ export class RosRecommendInstanceTypes extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::SecurityGroups`
+ * Properties for defining a `RosSecurityGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
  */
 export interface RosSecurityGroupsProps {
 
@@ -4432,18 +4373,15 @@ function rosSecurityGroupsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::SecurityGroups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::SecurityGroups`, which is used to query the basic information about security groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
  */
 export class RosSecurityGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::SecurityGroups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SecurityGroupIds: The list of security group ids.
@@ -4505,8 +4443,6 @@ export class RosSecurityGroups extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::SecurityGroups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4594,7 +4530,8 @@ function rosSecurityGroupsTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Snapshots`
+ * Properties for defining a `RosSnapshots`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshots
  */
 export interface RosSnapshotsProps {
 
@@ -4806,18 +4743,15 @@ function rosSnapshotsPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::Snapshots`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Snapshots`, which is used to query all snapshots of an Elastic Compute Service (ECS) instance or a disk.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Snapshots` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshots
  */
 export class RosSnapshots extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Snapshots";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SnapshotIds: the list of snapshot ids.
@@ -4928,8 +4862,6 @@ export class RosSnapshots extends ros.RosResource {
     public usage: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::Snapshots`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5079,7 +5011,8 @@ function rosSnapshotsTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Zones`
+ * Properties for defining a `RosZones`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-zones
  */
 export interface RosZonesProps {
 
@@ -5107,9 +5040,9 @@ export interface RosZonesProps {
     readonly instanceType?: string | ros.IResolvable;
 
     /**
-     * @Property ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
-     * none: non-I/O optimized
-     * optimized: I/O optimized
+     * @Property ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
+     * none: non-I\/O optimized
+     * optimized: I\/O optimized
      * Default value: optimized.
      */
     readonly ioOptimized?: string | ros.IResolvable;
@@ -5177,18 +5110,15 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ECS::Zones`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Zones`, which is used to query zones.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-zones
  */
 export class RosZones extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ECS::Zones";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ZoneIds: The list of zone IDs.
@@ -5227,9 +5157,9 @@ export class RosZones extends ros.RosResource {
     public instanceType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
-     * none: non-I/O optimized
-     * optimized: I/O optimized
+     * @Property ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
+     * none: non-I\/O optimized
+     * optimized: I\/O optimized
      * Default value: optimized.
      */
     public ioOptimized: string | ros.IResolvable | undefined;
@@ -5254,8 +5184,6 @@ export class RosZones extends ros.RosResource {
     public systemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ECS::Zones`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

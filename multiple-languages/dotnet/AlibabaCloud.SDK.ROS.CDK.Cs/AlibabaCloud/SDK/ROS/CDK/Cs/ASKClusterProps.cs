@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CS::ASKCluster`.</summary>
+    /// <summary>Properties for defining a `ASKCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cs.ASKClusterProps")]
     public class ASKClusterProps : AlibabaCloud.SDK.ROS.CDK.Cs.IASKClusterProps
     {

@@ -4,7 +4,8 @@ import { RosCopyImage } from './ecs.generated';
 export { RosCopyImage as CopyImageProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::CopyImage`
+ * Properties for defining a `CopyImage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
  */
 export interface CopyImageProps {
 
@@ -19,7 +20,13 @@ export interface CopyImageProps {
     readonly imageId: string | ros.IResolvable;
 
     /**
-     * Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.
+     * Property allowCopyInSameRegion: Whether to allow copying images in the same region. 
+     * If set to true, the image will not be copied, the source image id will be returned, and the original image will not be deleted.
+     */
+    readonly allowCopyInSameRegion?: boolean | ros.IResolvable;
+
+    /**
+     * Property destinationDescription: The description of the destination custom image.It cannot begin with http:\/\/ or https:\/\/.  Default value: null.
      */
     readonly destinationDescription?: string | ros.IResolvable;
 
@@ -55,14 +62,11 @@ export interface CopyImageProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::CopyImage`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CopyImage`, which is used to copy a custom image from one region to another region.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCopyImage`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
  */
 export class CopyImage extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DestinationRegionId: ID of the region to where the destination custom image belongs.
@@ -80,8 +84,6 @@ export class CopyImage extends ros.Resource {
     public readonly attrSourceRegionId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::CopyImage`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -93,6 +95,7 @@ export class CopyImage extends ros.Resource {
             sourceRegionId: props.sourceRegionId,
             kmsKeyId: props.kmsKeyId,
             resourceGroupId: props.resourceGroupId,
+            allowCopyInSameRegion: props.allowCopyInSameRegion,
             destinationRegionId: props.destinationRegionId,
             encrypted: props.encrypted,
             imageId: props.imageId,

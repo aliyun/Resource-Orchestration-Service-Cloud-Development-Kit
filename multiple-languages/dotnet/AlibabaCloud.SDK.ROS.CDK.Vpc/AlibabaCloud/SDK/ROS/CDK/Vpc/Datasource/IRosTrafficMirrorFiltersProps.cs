@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::TrafficMirrorFilters`.</summary>
+    /// <summary>Properties for defining a `RosTrafficMirrorFilters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosTrafficMirrorFiltersProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.RosTrafficMirrorFiltersProps")]
     public interface IRosTrafficMirrorFiltersProps
     {
@@ -21,7 +24,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::TrafficMirrorFilters`.</summary>
+        /// <summary>Properties for defining a `RosTrafficMirrorFilters`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-trafficmirrorfilters
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosTrafficMirrorFiltersProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.RosTrafficMirrorFiltersProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IRosTrafficMirrorFiltersProps
         {

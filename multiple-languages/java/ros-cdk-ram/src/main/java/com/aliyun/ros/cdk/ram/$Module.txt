@@ -1,5 +1,9 @@
 @alicloud/ros-cdk-ram.AccessKey=com.aliyun.ros.cdk.ram.AccessKey
 @alicloud/ros-cdk-ram.AccessKeyProps=com.aliyun.ros.cdk.ram.AccessKeyProps
+@alicloud/ros-cdk-ram.AppSecret=com.aliyun.ros.cdk.ram.AppSecret
+@alicloud/ros-cdk-ram.AppSecretProps=com.aliyun.ros.cdk.ram.AppSecretProps
+@alicloud/ros-cdk-ram.Application=com.aliyun.ros.cdk.ram.Application
+@alicloud/ros-cdk-ram.ApplicationProps=com.aliyun.ros.cdk.ram.ApplicationProps
 @alicloud/ros-cdk-ram.AttachPolicyToRole=com.aliyun.ros.cdk.ram.AttachPolicyToRole
 @alicloud/ros-cdk-ram.AttachPolicyToRoleProps=com.aliyun.ros.cdk.ram.AttachPolicyToRoleProps
 @alicloud/ros-cdk-ram.AttachPolicyToUser=com.aliyun.ros.cdk.ram.AttachPolicyToUser
@@ -14,6 +18,10 @@
 @alicloud/ros-cdk-ram.RoleProps=com.aliyun.ros.cdk.ram.RoleProps
 @alicloud/ros-cdk-ram.RosAccessKey=com.aliyun.ros.cdk.ram.RosAccessKey
 @alicloud/ros-cdk-ram.RosAccessKeyProps=com.aliyun.ros.cdk.ram.RosAccessKeyProps
+@alicloud/ros-cdk-ram.RosAppSecret=com.aliyun.ros.cdk.ram.RosAppSecret
+@alicloud/ros-cdk-ram.RosAppSecretProps=com.aliyun.ros.cdk.ram.RosAppSecretProps
+@alicloud/ros-cdk-ram.RosApplication=com.aliyun.ros.cdk.ram.RosApplication
+@alicloud/ros-cdk-ram.RosApplicationProps=com.aliyun.ros.cdk.ram.RosApplicationProps
 @alicloud/ros-cdk-ram.RosAttachPolicyToRole=com.aliyun.ros.cdk.ram.RosAttachPolicyToRole
 @alicloud/ros-cdk-ram.RosAttachPolicyToRoleProps=com.aliyun.ros.cdk.ram.RosAttachPolicyToRoleProps
 @alicloud/ros-cdk-ram.RosAttachPolicyToUser=com.aliyun.ros.cdk.ram.RosAttachPolicyToUser

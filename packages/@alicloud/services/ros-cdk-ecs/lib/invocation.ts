@@ -4,7 +4,8 @@ import { RosInvocation } from './ecs.generated';
 export { RosInvocation as InvocationProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::Invocation`
+ * Properties for defining a `Invocation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */
 export interface InvocationProps {
 
@@ -24,6 +25,25 @@ export interface InvocationProps {
     readonly commandName?: string | ros.IResolvable;
 
     /**
+     * Property containerId: The ID of the container. Only 64-bit hexadecimal strings are supported. You can use container IDs that are prefixed with docker:\/\/, containerd:\/\/, or cri-o:\/\/ to specify container runtimes.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.- If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    readonly containerId?: string | ros.IResolvable;
+
+    /**
+     * Property containerName: The name of the container.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.
+     * - If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    readonly containerName?: string | ros.IResolvable;
+
+    /**
      * Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
      */
     readonly frequency?: string | ros.IResolvable;
@@ -40,25 +60,62 @@ export interface InvocationProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * Property repeatMode: Specifies how to run the command. Valid values:
+     * - **Once**: immediately runs the command.
+     * - **Period**: runs the command on a schedule. If you set this parameter to Period, you must specify **Frequency**.
+     * - **NextRebootOnly**: runs the command the next time the instance is started.
+     * - **EveryReboot*: runs the command every time the instance is started.
+     * Default value:
+     * - If you do not specify Frequency, the default value is Once.
+     * - If you specify **Frequency**, **Period** is used as the value of RepeatMode regardless of whether RepeatMode is set to Period.
+     */
+    readonly repeatMode?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group to which to assign the command executions. The instances specified by InstanceIds must belong to the specified resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * Property sync: Whether to invoke synchronously.
      */
     readonly sync?: boolean | ros.IResolvable;
 
     /**
-     * Property timed: Whether it is timed execution. Default is False.
+     * Property tags: Tags to attach to invocation. Max support 20 tags to add during create invocation. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly timed?: boolean | ros.IResolvable;
+    readonly tags?: RosInvocation.TagsProperty[];
+
+    /**
+     * Property timeout: The timeout period for the command execution. Unit: seconds.
+     * - The timeout period cannot be less than 10 seconds.
+     * - A timeout error occurs if the command cannot be run because the process slows down or because a specific module or Cloud Assistant Agent does not exist. When the specified timeout period ends, the command process is forcefully terminated.
+     * - If you do not specify this parameter, the timeout period that is specified when the command is created is used.
+     * - This timeout period is applicable only to this execution. The timeout period of the command is not modified.
+     */
+    readonly timeout?: number | ros.IResolvable;
+
+    /**
+     * Property username: The username to use to run the command on instances. The username can be up to 255 characters in length.
+     * - For Linux instances, the root username is used by default.
+     * - For Windows instances, the System username is used by default.
+     * You can also specify other usernames that already exist in the instances to run the command. For security purposes, we recommend that you run Cloud Assistant commands as a regular user.
+     */
+    readonly username?: string | ros.IResolvable;
+
+    /**
+     * Property windowsPasswordName: The name of the password to use to run the command on Windows instances. The name can be up to 255 characters in length.
+     * If you do not want to use the default System user to run the command on Windows instances, specify both **WindowsPasswordName** and **Username**. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
+     */
+    readonly windowsPasswordName?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::Invocation`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Invocation`, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInvocation`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */
 export class Invocation extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InvokeId: The id of command execution.
@@ -76,8 +133,6 @@ export class Invocation extends ros.Resource {
     public readonly attrInvokeResults: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::Invocation`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -87,12 +142,19 @@ export class Invocation extends ros.Resource {
 
         const rosInvocation = new RosInvocation(this, id,  {
             parameters: props.parameters,
-            timed: props.timed,
+            resourceGroupId: props.resourceGroupId,
+            timeout: props.timeout,
+            windowsPasswordName: props.windowsPasswordName,
+            repeatMode: props.repeatMode,
+            username: props.username,
+            containerName: props.containerName,
+            containerId: props.containerId,
             frequency: props.frequency,
             commandName: props.commandName,
             commandId: props.commandId,
             sync: props.sync === undefined || props.sync === null ? false : props.sync,
             instanceIds: props.instanceIds,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInvocation;
         this.attrInvokeId = rosInvocation.attrInvokeId;

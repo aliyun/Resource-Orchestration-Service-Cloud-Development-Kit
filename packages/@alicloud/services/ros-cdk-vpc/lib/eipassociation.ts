@@ -4,7 +4,8 @@ import { RosEIPAssociation } from './vpc.generated';
 export { RosEIPAssociation as EIPAssociationProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::EIPAssociation`
+ * Properties for defining a `EIPAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipassociation
  */
 export interface EIPAssociationProps {
 
@@ -14,7 +15,7 @@ export interface EIPAssociationProps {
     readonly allocationId: string | ros.IResolvable;
 
     /**
-     * Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
+     * Property instanceId: ECS\/SLB\/NAT\/HaVip\/ENI instance id to bid the EIP.
      */
     readonly instanceId: string | ros.IResolvable;
 
@@ -35,14 +36,11 @@ export interface EIPAssociationProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::EIPAssociation`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPAssociation`, which is used to associate an elastic IP address (EIP) with a cloud service instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIPAssociation`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipassociation
  */
 export class EIPAssociation extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
@@ -55,8 +53,6 @@ export class EIPAssociation extends ros.Resource {
     public readonly attrEipAddress: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::EIPAssociation`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

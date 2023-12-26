@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::Ipv6InternetBandwidth`.</summary>
+    /// <summary>Properties for defining a `Ipv6InternetBandwidth`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6internetbandwidth
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IIpv6InternetBandwidthProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.Ipv6InternetBandwidthProps")]
     public interface IIpv6InternetBandwidthProps
     {
@@ -52,7 +55,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::Ipv6InternetBandwidth`.</summary>
+        /// <summary>Properties for defining a `Ipv6InternetBandwidth`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6internetbandwidth
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IIpv6InternetBandwidthProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.Ipv6InternetBandwidthProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IIpv6InternetBandwidthProps
         {

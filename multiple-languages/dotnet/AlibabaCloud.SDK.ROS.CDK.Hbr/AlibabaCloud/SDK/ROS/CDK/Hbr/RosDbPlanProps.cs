@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::HBR::DbPlan`.</summary>
+    /// <summary>Properties for defining a `RosDbPlan`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-hbr.RosDbPlanProps")]
     public class RosDbPlanProps : AlibabaCloud.SDK.ROS.CDK.Hbr.IRosDbPlanProps
     {

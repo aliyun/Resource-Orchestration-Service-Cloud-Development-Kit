@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::CS::ASKCluster`
+ * Properties for defining a `RosASKCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
 export interface RosASKClusterProps {
 
@@ -62,7 +63,7 @@ export interface RosASKClusterProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
 
@@ -195,18 +196,15 @@ function rosASKClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::CS::ASKCluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ASKCluster`, which is used to create a Serverless Kubernetes (ASK) cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ASKCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-askcluster
  */
 export class RosASKCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ASKCluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute APIServerSLBId: The id of API server SLB
@@ -316,7 +314,7 @@ export class RosASKCluster extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     public serviceCidr: string | ros.IResolvable | undefined;
 
@@ -369,8 +367,6 @@ export class RosASKCluster extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CS::ASKCluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -538,7 +534,8 @@ function rosASKClusterTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CS::AnyCluster`
+ * Properties for defining a `RosAnyCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
  */
 export interface RosAnyClusterProps {
 
@@ -582,18 +579,15 @@ function rosAnyClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::CS::AnyCluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::AnyCluster`, which is used to create an ACK cluster of a specific type.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AnyCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
  */
 export class RosAnyCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::AnyCluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute APIServerSLBId: The id of API server SLB
@@ -654,8 +648,6 @@ export class RosAnyCluster extends ros.RosResource {
     public clusterConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CS::AnyCluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -689,7 +681,8 @@ export class RosAnyCluster extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CS::ClusterAddons`
+ * Properties for defining a `RosClusterAddons`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusteraddons
  */
 export interface RosClusterAddonsProps {
 
@@ -759,18 +752,15 @@ function rosClusterAddonsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::CS::ClusterAddons`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterAddons`, which is used to install components in a cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClusterAddons` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusteraddons
  */
 export class RosClusterAddons extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ClusterAddons";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: Cluster ID.
@@ -800,8 +790,6 @@ export class RosClusterAddons extends ros.RosResource {
     public installedIgnore: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CS::ClusterAddons`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -884,7 +872,8 @@ function rosClusterAddonsAddonsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CS::ClusterApplication`
+ * Properties for defining a `RosClusterApplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
 export interface RosClusterApplicationProps {
 
@@ -912,6 +901,14 @@ export interface RosClusterApplicationProps {
      * The default value is EnsureAdminRoleAndBinding.
      */
     readonly rolePolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property stage: At what stage to run. Valid values:
+     * - All: all stages, including create, update, and delete.
+     * - Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+     * The default is All.
+     */
+    readonly stage?: string | ros.IResolvable;
 }
 
 /**
@@ -943,6 +940,13 @@ function RosClusterApplicationPropsValidator(properties: any): ros.ValidationRes
     }
     errors.collect(ros.propertyValidator('yamlContent', ros.validateString)(properties.yamlContent));
     errors.collect(ros.propertyValidator('defaultNamespace', ros.validateString)(properties.defaultNamespace));
+    if(properties.stage && (typeof properties.stage) !== 'object') {
+        errors.collect(ros.propertyValidator('stage', ros.validateAllowedValues)({
+          data: properties.stage,
+          allowedValues: ["All","Delete"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('stage', ros.validateString)(properties.stage));
     return errors.wrap('supplied properties not correct for "RosClusterApplicationProps"');
 }
 
@@ -964,22 +968,20 @@ function rosClusterApplicationPropsToRosTemplate(properties: any, enableResource
       YamlContent: ros.stringToRosTemplate(properties.yamlContent),
       DefaultNamespace: ros.stringToRosTemplate(properties.defaultNamespace),
       RolePolicy: ros.stringToRosTemplate(properties.rolePolicy),
+      Stage: ros.stringToRosTemplate(properties.stage),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::CS::ClusterApplication`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterApplication`, which is used to deploy a container application.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClusterApplication` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
 export class RosClusterApplication extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ClusterApplication";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: The ID of the cluster.
@@ -1015,8 +1017,14 @@ export class RosClusterApplication extends ros.RosResource {
     public rolePolicy: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CS::ClusterApplication`.
-     *
+     * @Property stage: At what stage to run. Valid values:
+     * - All: all stages, including create, update, and delete.
+     * - Delete: the delete stage. This means that only in the deletion stage of this resource will apply yaml to the cluster.
+     * The default is All.
+     */
+    public stage: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1030,6 +1038,7 @@ export class RosClusterApplication extends ros.RosResource {
         this.yamlContent = props.yamlContent;
         this.defaultNamespace = props.defaultNamespace;
         this.rolePolicy = props.rolePolicy;
+        this.stage = props.stage;
     }
 
 
@@ -1039,6 +1048,7 @@ export class RosClusterApplication extends ros.RosResource {
             yamlContent: this.yamlContent,
             defaultNamespace: this.defaultNamespace,
             rolePolicy: this.rolePolicy,
+            stage: this.stage,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1047,7 +1057,8 @@ export class RosClusterApplication extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CS::ClusterHelmApplication`
+ * Properties for defining a `RosClusterHelmApplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
 export interface RosClusterHelmApplicationProps {
 
@@ -1078,9 +1089,17 @@ export interface RosClusterHelmApplicationProps {
 
     /**
      * @Property namespace: Namespace to use with helm. Default is default.
-     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+     * If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     readonly namespace?: string | ros.IResolvable;
+
+    /**
+     * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
+     * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
+     * - None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.
+     */
+    readonly rolePolicy?: string | ros.IResolvable;
 }
 
 /**
@@ -1093,6 +1112,13 @@ export interface RosClusterHelmApplicationProps {
 function RosClusterHelmApplicationPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.rolePolicy && (typeof properties.rolePolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('rolePolicy', ros.validateAllowedValues)({
+          data: properties.rolePolicy,
+          allowedValues: ["EnsureAdminRoleAndBinding","None"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('rolePolicy', ros.validateString)(properties.rolePolicy));
     errors.collect(ros.propertyValidator('credential', RosClusterHelmApplication_CredentialPropertyValidator)(properties.credential));
     errors.collect(ros.propertyValidator('chartValues', ros.hashValidator(ros.validateAny))(properties.chartValues));
     errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
@@ -1131,22 +1157,20 @@ function rosClusterHelmApplicationPropsToRosTemplate(properties: any, enableReso
       ChartValues: ros.hashMapper(ros.objectToRosTemplate)(properties.chartValues),
       Credential: rosClusterHelmApplicationCredentialPropertyToRosTemplate(properties.credential),
       Namespace: ros.stringToRosTemplate(properties.namespace),
+      RolePolicy: ros.stringToRosTemplate(properties.rolePolicy),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::CS::ClusterHelmApplication`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`, which is used to deploy an application by using Helm.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClusterHelmApplication` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
 export class RosClusterHelmApplication extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ClusterHelmApplication";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: The ID of the cluster.
@@ -1183,13 +1207,19 @@ export class RosClusterHelmApplication extends ros.RosResource {
 
     /**
      * @Property namespace: Namespace to use with helm. Default is default.
-     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+     * If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     public namespace: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CS::ClusterHelmApplication`.
-     *
+     * @Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
+     * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
+     * - None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.
+     */
+    public rolePolicy: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1205,6 +1235,7 @@ export class RosClusterHelmApplication extends ros.RosResource {
         this.chartValues = props.chartValues;
         this.credential = props.credential;
         this.namespace = props.namespace;
+        this.rolePolicy = props.rolePolicy;
     }
 
 
@@ -1216,6 +1247,7 @@ export class RosClusterHelmApplication extends ros.RosResource {
             chartValues: this.chartValues,
             credential: this.credential,
             namespace: this.namespace,
+            rolePolicy: this.rolePolicy,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1273,7 +1305,8 @@ function rosClusterHelmApplicationCredentialPropertyToRosTemplate(properties: an
 }
 
 /**
- * Properties for defining a `ALIYUN::CS::ClusterNodePool`
+ * Properties for defining a `RosClusterNodePool`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
  */
 export interface RosClusterNodePoolProps {
 
@@ -1367,18 +1400,15 @@ function rosClusterNodePoolPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::CS::ClusterNodePool`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterNodePool`, which is used to create a node pool for a Container Service for Kubernetes (ACK) cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClusterNodePool` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
  */
 export class RosClusterNodePool extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ClusterNodePool";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NodePoolId: Cluster node pool ID.
@@ -1429,8 +1459,6 @@ export class RosClusterNodePool extends ros.RosResource {
     public teeConfig: RosClusterNodePool.TeeConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CS::ClusterNodePool`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1596,10 +1624,10 @@ export namespace RosClusterNodePool {
         readonly encrypted?: boolean | ros.IResolvable;
         /**
          * @Property performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
          */
         readonly performanceLevel?: string | ros.IResolvable;
         /**
@@ -1975,10 +2003,10 @@ export namespace RosClusterNodePool {
         readonly onDemandBaseCapacity?: number | ros.IResolvable;
         /**
          * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
          */
         readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
         /**
@@ -1999,7 +2027,7 @@ export namespace RosClusterNodePool {
         readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property tags: Adds labels only to ECS instances.
-     * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+     * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:\/\/ or http:\/\/.
          */
         readonly tags?: RosClusterNodePool.TagsProperty[];
         /**
@@ -2513,7 +2541,8 @@ function rosClusterNodePoolUpgradeConfigPropertyToRosTemplate(properties: any): 
 }
 
 /**
- * Properties for defining a `ALIYUN::CS::KubernetesCluster`
+ * Properties for defining a `RosKubernetesCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-kubernetescluster
  */
 export interface RosKubernetesClusterProps {
 
@@ -2594,7 +2623,7 @@ export interface RosKubernetesClusterProps {
     readonly cloudMonitorFlags?: boolean | ros.IResolvable;
 
     /**
-     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
 
@@ -2638,7 +2667,7 @@ export interface RosKubernetesClusterProps {
      * How to mount a data disk:
      * If the ECS instances have data disks mounted and the file system of the last 
      * data disk is not initialized, the system automatically formats the data disk to ext4. 
-     * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+     * Then, the system mounts the data disk to \/var\/lib\/docker and \/var\/lib\/kubelet.
      * The system does not create or mount a new data disk if no data disk has been 
      * mounted to the ECS instances.
      */
@@ -2830,7 +2859,7 @@ export interface RosKubernetesClusterProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
 
@@ -3184,18 +3213,15 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::CS::KubernetesCluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::KubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) dedicated cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `KubernetesCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-kubernetescluster
  */
 export class RosKubernetesCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::KubernetesCluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute APIServerSLBId: The id of API server SLB
@@ -3327,7 +3353,7 @@ export class RosKubernetesCluster extends ros.RosResource {
     public cloudMonitorFlags: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     public containerCidr: string | ros.IResolvable | undefined;
 
@@ -3371,7 +3397,7 @@ export class RosKubernetesCluster extends ros.RosResource {
      * How to mount a data disk:
      * If the ECS instances have data disks mounted and the file system of the last 
      * data disk is not initialized, the system automatically formats the data disk to ext4. 
-     * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+     * Then, the system mounts the data disk to \/var\/lib\/docker and \/var\/lib\/kubelet.
      * The system does not create or mount a new data disk if no data disk has been 
      * mounted to the ECS instances.
      */
@@ -3563,7 +3589,7 @@ export class RosKubernetesCluster extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     public serviceCidr: string | ros.IResolvable | undefined;
 
@@ -3665,8 +3691,6 @@ export class RosKubernetesCluster extends ros.RosResource {
     public workerZoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CS::KubernetesCluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3898,10 +3922,10 @@ export namespace RosKubernetesCluster {
         readonly encrypted?: boolean | ros.IResolvable;
         /**
          * @Property performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
          */
         readonly performanceLevel?: string | ros.IResolvable;
         /**
@@ -4372,10 +4396,10 @@ export namespace RosKubernetesCluster {
         readonly internetMaxBandwidthOut?: number | ros.IResolvable;
         /**
          * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
          */
         readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
         /**
@@ -4396,7 +4420,7 @@ export namespace RosKubernetesCluster {
         readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property tags: Adds labels only to ECS instances.
-     * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+     * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:\/\/ or http:\/\/.
          */
         readonly tags?: RosKubernetesCluster.ScalingGroupTagsProperty[];
         /**
@@ -4742,7 +4766,8 @@ function rosKubernetesClusterWorkerDataDisksPropertyToRosTemplate(properties: an
 }
 
 /**
- * Properties for defining a `ALIYUN::CS::ManagedEdgeKubernetesCluster`
+ * Properties for defining a `RosManagedEdgeKubernetesCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
 export interface RosManagedEdgeKubernetesClusterProps {
 
@@ -4802,7 +4827,7 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly clusterSpec?: string | ros.IResolvable;
 
     /**
-     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
 
@@ -4891,7 +4916,7 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
 
@@ -4916,7 +4941,7 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly timeoutMins?: number | ros.IResolvable;
 
     /**
-     * @Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
+     * @Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0\/16. 
      * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -5134,18 +5159,15 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * A ROS template type:  `ALIYUN::CS::ManagedEdgeKubernetesCluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a managed edge cluster of Container Service for Kubernetes (ACK).
+ * @Note This class does not contain additional functions, so it is recommended to use the `ManagedEdgeKubernetesCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
 export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ManagedEdgeKubernetesCluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute APIServerSLBId: The id of API server SLB
@@ -5256,7 +5278,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public clusterSpec: string | ros.IResolvable | undefined;
 
     /**
-     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     public containerCidr: string | ros.IResolvable | undefined;
 
@@ -5345,7 +5367,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     public serviceCidr: string | ros.IResolvable | undefined;
 
@@ -5370,7 +5392,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public timeoutMins: number | ros.IResolvable | undefined;
 
     /**
-     * @Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
+     * @Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0\/16. 
      * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
     public vpcId: string | ros.IResolvable | undefined;
@@ -5426,8 +5448,6 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public zoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5690,7 +5710,8 @@ function rosManagedEdgeKubernetesClusterWorkerDataDisksPropertyToRosTemplate(pro
 }
 
 /**
- * Properties for defining a `ALIYUN::CS::ManagedKubernetesCluster`
+ * Properties for defining a `RosManagedKubernetesCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
 export interface RosManagedKubernetesClusterProps {
 
@@ -5768,7 +5789,7 @@ export interface RosManagedKubernetesClusterProps {
     readonly clusterSpec?: string | ros.IResolvable;
 
     /**
-     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
 
@@ -5812,7 +5833,7 @@ export interface RosManagedKubernetesClusterProps {
      * How to mount a data disk:
      * If the ECS instances have data disks mounted and the file system of the last 
      * data disk is not initialized, the system automatically formats the data disk to ext4. 
-     * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+     * Then, the system mounts the data disk to \/var\/lib\/docker and \/var\/lib\/kubelet.
      * The system does not create or mount a new data disk if no data disk has been 
      * mounted to the ECS instances.
      */
@@ -5951,7 +5972,7 @@ export interface RosManagedKubernetesClusterProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
 
@@ -6226,18 +6247,15 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::CS::ManagedKubernetesCluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ManagedKubernetesCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
 export class RosManagedKubernetesCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CS::ManagedKubernetesCluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute APIServerSLBId: The id of API server SLB
@@ -6366,7 +6384,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public clusterSpec: string | ros.IResolvable | undefined;
 
     /**
-     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     public containerCidr: string | ros.IResolvable | undefined;
 
@@ -6410,7 +6428,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * How to mount a data disk:
      * If the ECS instances have data disks mounted and the file system of the last 
      * data disk is not initialized, the system automatically formats the data disk to ext4. 
-     * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+     * Then, the system mounts the data disk to \/var\/lib\/docker and \/var\/lib\/kubelet.
      * The system does not create or mount a new data disk if no data disk has been 
      * mounted to the ECS instances.
      */
@@ -6549,7 +6567,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     public serviceCidr: string | ros.IResolvable | undefined;
 
@@ -6629,8 +6647,6 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public zoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CS::ManagedKubernetesCluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -6840,10 +6856,10 @@ export namespace RosManagedKubernetesCluster {
         readonly encrypted?: boolean | ros.IResolvable;
         /**
          * @Property performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
          */
         readonly performanceLevel?: string | ros.IResolvable;
         /**
@@ -7255,10 +7271,10 @@ export namespace RosManagedKubernetesCluster {
         readonly internetMaxBandwidthOut?: number | ros.IResolvable;
         /**
          * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-     * PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-     * PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-     * PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-     * PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+     * PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+     * PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+     * PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
          */
         readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
         /**
@@ -7279,7 +7295,7 @@ export namespace RosManagedKubernetesCluster {
         readonly zoneIds?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property tags: Adds labels only to ECS instances.
-     * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+     * A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:\/\/ or http:\/\/.
          */
         readonly tags?: RosManagedKubernetesCluster.ScalingGroupTagsProperty[];
         /**

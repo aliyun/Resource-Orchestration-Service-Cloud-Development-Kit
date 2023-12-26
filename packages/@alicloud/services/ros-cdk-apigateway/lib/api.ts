@@ -4,12 +4,13 @@ import { RosApi } from './apigateway.generated';
 export { RosApi as ApiProperty };
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Api`
+ * Properties for defining a `Api`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
 export interface ApiProps {
 
     /**
-     * Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     readonly apiName: string | ros.IResolvable;
 
@@ -151,14 +152,11 @@ export interface ApiProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ApiGateway::Api`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Api`, which is used to create an API.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApi`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
 export class Api extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ApiId: The id of the API.
@@ -166,8 +164,6 @@ export class Api extends ros.Resource {
     public readonly attrApiId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Api`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

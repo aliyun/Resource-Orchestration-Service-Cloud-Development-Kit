@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Flink
 {
-    /// <summary>Properties for defining a `ALIYUN::Flink::Namespace`.</summary>
+    /// <summary>Properties for defining a `Namespace`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(INamespaceProps), fullyQualifiedName: "@alicloud/ros-cdk-flink.NamespaceProps")]
     public interface INamespaceProps
     {
@@ -33,7 +36,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::Flink::Namespace`.</summary>
+        /// <summary>Properties for defining a `Namespace`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(INamespaceProps), fullyQualifiedName: "@alicloud/ros-cdk-flink.NamespaceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Flink.INamespaceProps
         {

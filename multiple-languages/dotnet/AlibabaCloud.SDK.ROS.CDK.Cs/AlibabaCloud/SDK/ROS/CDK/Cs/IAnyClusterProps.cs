@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
-    /// <summary>Properties for defining a `ALIYUN::CS::AnyCluster`.</summary>
+    /// <summary>Properties for defining a `AnyCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAnyClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.AnyClusterProps")]
     public interface IAnyClusterProps
     {
@@ -15,7 +18,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CS::AnyCluster`.</summary>
+        /// <summary>Properties for defining a `AnyCluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-anycluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAnyClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.AnyClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.IAnyClusterProps
         {

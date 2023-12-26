@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::MSE::Clusters`.</summary>
+    /// <summary>Properties for defining a `RosClusters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-clusters
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosClustersProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.datasource.RosClustersProps")]
     public interface IRosClustersProps
     {
@@ -21,7 +24,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::MSE::Clusters`.</summary>
+        /// <summary>Properties for defining a `RosClusters`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-clusters
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosClustersProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.datasource.RosClustersProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mse.Datasource.IRosClustersProps
         {

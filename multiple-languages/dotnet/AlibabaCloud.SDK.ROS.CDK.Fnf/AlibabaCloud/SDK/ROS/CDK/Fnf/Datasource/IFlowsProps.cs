@@ -4,12 +4,18 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fnf.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::FNF::Flows`.</summary>
+    /// <summary>Properties for defining a `Flows`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IFlowsProps), fullyQualifiedName: "@alicloud/ros-cdk-fnf.datasource.FlowsProps")]
     public interface IFlowsProps
     {
 
-        /// <summary>Properties for defining a `DATASOURCE::FNF::Flows`.</summary>
+        /// <summary>Properties for defining a `Flows`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flows
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IFlowsProps), fullyQualifiedName: "@alicloud/ros-cdk-fnf.datasource.FlowsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fnf.Datasource.IFlowsProps
         {

@@ -4,7 +4,8 @@ import { RosAcls } from './ga.generated';
 export { RosAcls as AclsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::GA::Acls`
+ * Properties for defining a `Acls`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acls
  */
 export interface AclsProps {
 
@@ -25,14 +26,11 @@ export interface AclsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::GA::Acls`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::GA::Acls`, which is used to query access control lists (ACLs).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAcls`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ga-acls
  */
 export class Acls extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AclIds: The list of acl IDs.
@@ -45,8 +43,6 @@ export class Acls extends ros.Resource {
     public readonly attrAcls: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::GA::Acls`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

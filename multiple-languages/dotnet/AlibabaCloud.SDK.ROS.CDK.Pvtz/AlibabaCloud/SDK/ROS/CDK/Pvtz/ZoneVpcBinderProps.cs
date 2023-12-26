@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::PVTZ::ZoneVpcBinder`.</summary>
+    /// <summary>Properties for defining a `ZoneVpcBinder`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonevpcbinder
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-pvtz.ZoneVpcBinderProps")]
     public class ZoneVpcBinderProps : AlibabaCloud.SDK.ROS.CDK.Pvtz.IZoneVpcBinderProps
     {

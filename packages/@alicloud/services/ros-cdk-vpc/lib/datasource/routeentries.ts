@@ -4,7 +4,8 @@ import { RosRouteEntries } from './vpc.generated';
 export { RosRouteEntries as RouteEntriesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::VPC::RouteEntries`
+ * Properties for defining a `RouteEntries`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
  */
 export interface RouteEntriesProps {
 
@@ -64,14 +65,11 @@ export interface RouteEntriesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::VPC::RouteEntries`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::RouteEntries`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteEntries`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
  */
 export class RouteEntries extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RouteEntries: The list of The route entries.
@@ -84,8 +82,6 @@ export class RouteEntries extends ros.Resource {
     public readonly attrRouteEntryIds: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::VPC::RouteEntries`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

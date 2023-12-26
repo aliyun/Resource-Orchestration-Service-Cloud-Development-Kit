@@ -4,7 +4,8 @@ import { RosClusterHelmApplication } from './cs.generated';
 export { RosClusterHelmApplication as ClusterHelmApplicationProperty };
 
 /**
- * Properties for defining a `ALIYUN::CS::ClusterHelmApplication`
+ * Properties for defining a `ClusterHelmApplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
 export interface ClusterHelmApplicationProps {
 
@@ -35,20 +36,25 @@ export interface ClusterHelmApplicationProps {
 
     /**
      * Property namespace: Namespace to use with helm. Default is default.
-     * If the DefaultNamespace does not exist, ROS will automatically create it and delete it during the deletion phase.
+     * If the Namespace does not exist, ROS will automatically create it and delete it during the deletion phase.
      */
     readonly namespace?: string | ros.IResolvable;
+
+    /**
+     * Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
+     * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
+     * - None: Do nothing.
+     * The default value is EnsureAdminRoleAndBinding.
+     */
+    readonly rolePolicy?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CS::ClusterHelmApplication`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterHelmApplication`, which is used to deploy an application by using Helm.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterHelmApplication`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
 export class ClusterHelmApplication extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterId: The ID of the cluster.
@@ -56,8 +62,6 @@ export class ClusterHelmApplication extends ros.Resource {
     public readonly attrClusterId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CS::ClusterHelmApplication`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -66,6 +70,7 @@ export class ClusterHelmApplication extends ros.Resource {
         super(scope, id);
 
         const rosClusterHelmApplication = new RosClusterHelmApplication(this, id,  {
+            rolePolicy: props.rolePolicy === undefined || props.rolePolicy === null ? 'EnsureAdminRoleAndBinding' : props.rolePolicy,
             credential: props.credential,
             chartValues: props.chartValues,
             clusterId: props.clusterId,

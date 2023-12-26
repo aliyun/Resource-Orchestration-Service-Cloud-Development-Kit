@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
-    /// <summary>Properties for defining a `ALIYUN::HBR::DbPlan`.</summary>
+    /// <summary>Properties for defining a `DbPlan`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDbPlanProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.DbPlanProps")]
     public interface IDbPlanProps
     {
@@ -161,7 +164,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::HBR::DbPlan`.</summary>
+        /// <summary>Properties for defining a `DbPlan`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDbPlanProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.DbPlanProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Hbr.IDbPlanProps
         {

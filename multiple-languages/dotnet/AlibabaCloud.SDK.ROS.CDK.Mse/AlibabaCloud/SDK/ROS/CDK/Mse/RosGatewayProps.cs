@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MSE::Gateway`.</summary>
+    /// <summary>Properties for defining a `RosGateway`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mse.RosGatewayProps")]
     public class RosGatewayProps : AlibabaCloud.SDK.ROS.CDK.Mse.IRosGatewayProps
     {

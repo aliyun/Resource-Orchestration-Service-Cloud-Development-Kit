@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cddc
 {
-    /// <summary>Properties for defining a `ALIYUN::CDDC::DedicatedHostGroup`.</summary>
+    /// <summary>Properties for defining a `DedicatedHostGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDedicatedHostGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-cddc.DedicatedHostGroupProps")]
     public interface IDedicatedHostGroupProps
     {
@@ -99,7 +102,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CDDC::DedicatedHostGroup`.</summary>
+        /// <summary>Properties for defining a `DedicatedHostGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDedicatedHostGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-cddc.DedicatedHostGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cddc.IDedicatedHostGroupProps
         {

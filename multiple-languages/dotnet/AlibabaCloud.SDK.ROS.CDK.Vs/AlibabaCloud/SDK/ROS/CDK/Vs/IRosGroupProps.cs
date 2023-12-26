@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vs
 {
-    /// <summary>Properties for defining a `ALIYUN::VS::Group`.</summary>
+    /// <summary>Properties for defining a `RosGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vs-group
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-vs.RosGroupProps")]
     public interface IRosGroupProps
     {
@@ -78,7 +81,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: callback: Updating the space callback device / flow state
+        /// <strong>Property</strong>: callback: Updating the space callback device \/ flow state
         /// </remarks>
         [JsiiProperty(name: "callback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -129,7 +132,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VS::Group`.</summary>
+        /// <summary>Properties for defining a `RosGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vs-group
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-vs.RosGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vs.IRosGroupProps
         {
@@ -204,7 +210,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: callback: Updating the space callback device / flow state
+            /// <strong>Property</strong>: callback: Updating the space callback device \/ flow state
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "callback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

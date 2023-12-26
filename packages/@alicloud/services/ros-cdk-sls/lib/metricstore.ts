@@ -4,7 +4,8 @@ import { RosMetricStore } from './sls.generated';
 export { RosMetricStore as MetricStoreProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLS::MetricStore`
+ * Properties for defining a `MetricStore`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-metricstore
  */
 export interface MetricStoreProps {
 
@@ -45,14 +46,11 @@ export interface MetricStoreProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLS::MetricStore`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::MetricStore`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMetricStore`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-metricstore
  */
 export class MetricStore extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute LogstoreName: Metric store name.
@@ -60,8 +58,6 @@ export class MetricStore extends ros.Resource {
     public readonly attrLogstoreName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLS::MetricStore`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ACTIONTRAIL::Trail`.</summary>
+    /// <summary>Properties for defining a `Trail`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-actiontrail.TrailProps")]
     public class TrailProps : AlibabaCloud.SDK.ROS.CDK.Actiontrail.ITrailProps
     {

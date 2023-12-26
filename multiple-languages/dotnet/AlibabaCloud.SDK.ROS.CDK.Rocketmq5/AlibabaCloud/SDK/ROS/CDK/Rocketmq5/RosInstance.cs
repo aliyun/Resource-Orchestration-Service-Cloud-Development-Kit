@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
 {
-    /// <summary>A ROS template type:  `ALIYUN::ROCKETMQ5::Instance`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Instance`.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Rocketmq5.RosInstance), fullyQualifiedName: "@alicloud/ros-cdk-rocketmq5.RosInstance", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-rocketmq5.RosInstanceProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosInstance : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ROCKETMQ5::Instance`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -551,7 +554,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: flowOutBandwidth: Public network bandwidth specification. Unit: Mb/s.
+            /// <strong>Property</strong>: flowOutBandwidth: Public network bandwidth specification. Unit: Mb\/s.
             /// It needs to be filled in only when the billing type of the public network is billed by fixed bandwidth.
             /// </remarks>
             [JsiiProperty(name: "flowOutBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -594,7 +597,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: flowOutBandwidth: Public network bandwidth specification. Unit: Mb/s.
+                /// <strong>Property</strong>: flowOutBandwidth: Public network bandwidth specification. Unit: Mb\/s.
                 /// It needs to be filled in only when the billing type of the public network is billed by fixed bandwidth.
                 /// </remarks>
                 [JsiiOptional]
@@ -655,7 +658,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
             private object? _flowOutBandwidth;
 
             /// <remarks>
-            /// <strong>Property</strong>: flowOutBandwidth: Public network bandwidth specification. Unit: Mb/s.
+            /// <strong>Property</strong>: flowOutBandwidth: Public network bandwidth specification. Unit: Mb\/s.
             /// It needs to be filled in only when the billing type of the public network is billed by fixed bandwidth.
             /// </remarks>
             [JsiiOptional]

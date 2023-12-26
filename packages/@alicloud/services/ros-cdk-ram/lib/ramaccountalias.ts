@@ -4,7 +4,8 @@ import { RosRamAccountAlias } from './ram.generated';
 export { RosRamAccountAlias as RamAccountAliasProperty };
 
 /**
- * Properties for defining a `ALIYUN::RAM::RamAccountAlias`
+ * Properties for defining a `RamAccountAlias`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
  */
 export interface RamAccountAliasProps {
 
@@ -19,14 +20,11 @@ export interface RamAccountAliasProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RAM::RamAccountAlias`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::RamAccountAlias`, which is used to create an alias for an Alibaba Cloud account.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRamAccountAlias`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
  */
 export class RamAccountAlias extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccountAlias: The alias of the Alibaba Cloud account.
@@ -34,8 +32,6 @@ export class RamAccountAlias extends ros.Resource {
     public readonly attrAccountAlias: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::RamAccountAlias`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

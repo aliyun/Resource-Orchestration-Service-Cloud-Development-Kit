@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CEN::CenRouteService`.</summary>
+    /// <summary>Properties for defining a `CenRouteService`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.CenRouteServiceProps")]
     public class CenRouteServiceProps : AlibabaCloud.SDK.ROS.CDK.Cen.ICenRouteServiceProps
     {

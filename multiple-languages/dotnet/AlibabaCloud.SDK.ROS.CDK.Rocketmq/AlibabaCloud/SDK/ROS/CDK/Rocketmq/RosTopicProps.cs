@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ROCKETMQ::Topic`.</summary>
+    /// <summary>Properties for defining a `RosTopic`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rocketmq.RosTopicProps")]
     public class RosTopicProps : AlibabaCloud.SDK.ROS.CDK.Rocketmq.IRosTopicProps
     {
@@ -50,7 +53,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// 1: partitionally ordered message
         /// 2: globally ordered message
         /// 4: transactional message
-        /// 5: scheduled/delayed message
+        /// 5: scheduled\/delayed message
         /// </remarks>
         [JsiiProperty(name: "messageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object MessageType

@@ -4,7 +4,8 @@ import { RosInstance } from './memcache.generated';
 export { RosInstance as InstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::Memcache::Instance`
+ * Properties for defining a `Instance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
  */
 export interface InstanceProps {
 
@@ -75,7 +76,7 @@ export interface InstanceProps {
 
     /**
      * Property instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
-     * with a letter. The following characters are not supported: at signs (@), forward slashes (/), colons (:), equal signs (=), double quotation marks
+     * with a letter. The following characters are not supported: at signs (@), forward slashes (\/), colons (:), equal signs (=), double quotation marks
      * ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
      */
     readonly instanceName?: string | ros.IResolvable;
@@ -141,14 +142,11 @@ export interface InstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::Memcache::Instance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Instance`ALIYUN::MEMCACHE::Instance is used to create an ApsaraDB for Memcache (OCS) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
  */
 export class Instance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ConnectionDomain: The internal endpoint of the instance.
@@ -176,8 +174,6 @@ export class Instance extends ros.Resource {
     public readonly attrQps: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::Memcache::Instance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

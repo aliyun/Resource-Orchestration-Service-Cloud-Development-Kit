@@ -4,7 +4,8 @@ import { RosVpnAttachment } from './vpc.generated';
 export { RosVpnAttachment as VpnAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpnAttachment`
+ * Properties for defining a `VpnAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
  */
 export interface VpnAttachmentProps {
 
@@ -15,13 +16,13 @@ export interface VpnAttachmentProps {
 
     /**
      * Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+     * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
      */
     readonly localSubnet: string | ros.IResolvable;
 
     /**
      * Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+     * Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
      */
     readonly remoteSubnet: string | ros.IResolvable;
 
@@ -79,7 +80,7 @@ export interface VpnAttachmentProps {
 
     /**
      * Property name: The name of the IPsec connection.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
      */
     readonly name?: string | ros.IResolvable;
 
@@ -97,14 +98,11 @@ export interface VpnAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::VpnAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnAttachment`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
  */
 export class VpnAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InternetIp: The gateway IP address of the IPsec connection.
@@ -122,8 +120,6 @@ export class VpnAttachment extends ros.Resource {
     public readonly attrVpnAttachmentId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::VpnAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

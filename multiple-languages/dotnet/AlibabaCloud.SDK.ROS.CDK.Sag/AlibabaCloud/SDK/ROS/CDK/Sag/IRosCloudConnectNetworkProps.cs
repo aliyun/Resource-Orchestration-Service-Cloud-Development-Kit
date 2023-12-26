@@ -4,13 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::CloudConnectNetwork`.</summary>
+    /// <summary>Properties for defining a `RosCloudConnectNetwork`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosCloudConnectNetworkProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosCloudConnectNetworkProps")]
     public interface IRosCloudConnectNetworkProps
     {
         /// <remarks>
         /// <strong>Property</strong>: description: The description of the CCN instance.
-        /// The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+        /// The description can contain 2 to 256 characters. The description cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -37,7 +40,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the CCN instance.
-        /// The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+        /// The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -62,7 +65,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::CloudConnectNetwork`.</summary>
+        /// <summary>Properties for defining a `RosCloudConnectNetwork`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosCloudConnectNetworkProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosCloudConnectNetworkProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IRosCloudConnectNetworkProps
         {
@@ -72,7 +78,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
             /// <remarks>
             /// <strong>Property</strong>: description: The description of the CCN instance.
-            /// The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+            /// The description can contain 2 to 256 characters. The description cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -93,7 +99,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
             /// <remarks>
             /// <strong>Property</strong>: name: The name of the CCN instance.
-            /// The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+            /// The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

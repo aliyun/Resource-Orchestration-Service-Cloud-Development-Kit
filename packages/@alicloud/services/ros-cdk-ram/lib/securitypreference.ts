@@ -4,7 +4,8 @@ import { RosSecurityPreference } from './ram.generated';
 export { RosSecurityPreference as SecurityPreferenceProperty };
 
 /**
- * Properties for defining a `ALIYUN::RAM::SecurityPreference`
+ * Properties for defining a `SecurityPreference`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
  */
 export interface SecurityPreferenceProps {
 
@@ -56,7 +57,7 @@ export interface SecurityPreferenceProps {
      * If you do not specify a subnet mask, RAM users can log on to the console by using
      * all IP addresses.
      * If you want to specify multiple subnet masks, separate the subnet masks with semicolons
-     * (;). Example: 192.168.0.0/16;10.0.0.0/8.
+     * (;). Example: 192.168.0.0\/16;10.0.0.0\/8.
      * A maximum of 25 subnet masks can be set. The total length of the subnet masks can
      * be 1 to 512 characters.
      */
@@ -70,14 +71,11 @@ export interface SecurityPreferenceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RAM::SecurityPreference`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SecurityPreference`, which is used to configure security preferences for Resource Access Management (RAM) users.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityPreference`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
  */
 export class SecurityPreference extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AllowUserToChangePassword: Specifies whether RAM users can change their passwords.
@@ -115,8 +113,6 @@ export class SecurityPreference extends ros.Resource {
     public readonly attrLoginSessionDuration: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::SecurityPreference`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

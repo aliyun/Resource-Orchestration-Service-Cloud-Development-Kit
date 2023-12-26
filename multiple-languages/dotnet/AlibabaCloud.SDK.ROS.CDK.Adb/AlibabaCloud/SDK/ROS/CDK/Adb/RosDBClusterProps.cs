@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ADB::DBCluster`.</summary>
+    /// <summary>Properties for defining a `RosDBCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-adb.RosDBClusterProps")]
     public class RosDBClusterProps : AlibabaCloud.SDK.ROS.CDK.Adb.IRosDBClusterProps
     {

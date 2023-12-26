@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
-    /// <summary>Properties for defining a `ALIYUN::CS::KubernetesCluster`.</summary>
+    /// <summary>Properties for defining a `RosKubernetesCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-kubernetescluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosKubernetesClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesClusterProps")]
     public interface IRosKubernetesClusterProps
     {
@@ -153,7 +156,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+        /// <strong>Property</strong>: containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
         /// </remarks>
         [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -237,7 +240,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// How to mount a data disk:
         /// If the ECS instances have data disks mounted and the file system of the last
         /// data disk is not initialized, the system automatically formats the data disk to ext4.
-        /// Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+        /// Then, the system mounts the data disk to \/var\/lib\/docker and \/var\/lib\/kubelet.
         /// The system does not create or mount a new data disk if no data disk has been
         /// mounted to the ECS instances.
         /// </remarks>
@@ -661,7 +664,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+        /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
         /// </remarks>
         [JsiiProperty(name: "serviceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -898,7 +901,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CS::KubernetesCluster`.</summary>
+        /// <summary>Properties for defining a `RosKubernetesCluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-kubernetescluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosKubernetesClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosKubernetesClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.IRosKubernetesClusterProps
         {
@@ -1033,7 +1039,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+            /// <strong>Property</strong>: containerCidr: The container network segment cannot conflict with the VPC network segment. When the sytem is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1102,7 +1108,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// How to mount a data disk:
             /// If the ECS instances have data disks mounted and the file system of the last
             /// data disk is not initialized, the system automatically formats the data disk to ext4.
-            /// Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+            /// Then, the system mounts the data disk to \/var\/lib\/docker and \/var\/lib\/kubelet.
             /// The system does not create or mount a new data disk if no data disk has been
             /// mounted to the ECS instances.
             /// </remarks>
@@ -1439,7 +1445,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+            /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "serviceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

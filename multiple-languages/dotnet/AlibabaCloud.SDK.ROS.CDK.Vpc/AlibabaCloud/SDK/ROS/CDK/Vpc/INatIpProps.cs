@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::NatIp`.</summary>
+    /// <summary>Properties for defining a `NatIp`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(INatIpProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.NatIpProps")]
     public interface INatIpProps
     {
@@ -71,7 +74,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::NatIp`.</summary>
+        /// <summary>Properties for defining a `NatIp`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(INatIpProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.NatIpProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.INatIpProps
         {

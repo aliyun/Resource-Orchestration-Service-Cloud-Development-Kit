@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::Command`.</summary>
+    /// <summary>Properties for defining a `RosCommand`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosCommandProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosCommandProps")]
     public interface IRosCommandProps
     {
@@ -109,7 +112,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::Command`.</summary>
+        /// <summary>Properties for defining a `RosCommand`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosCommandProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosCommandProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IRosCommandProps
         {

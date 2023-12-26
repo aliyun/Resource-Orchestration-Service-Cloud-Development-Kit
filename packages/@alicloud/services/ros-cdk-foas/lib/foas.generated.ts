@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::FOAS::Cluster`
+ * Properties for defining a `RosCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-cluster
  */
 export interface RosClusterProps {
 
@@ -123,18 +124,15 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::FOAS::Cluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FOAS::Cluster`, which is used to create a cluster for an order in exclusive mode.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-cluster
  */
 export class RosCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FOAS::Cluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterId: Cluster ID.
@@ -214,8 +212,6 @@ export class RosCluster extends ros.RosResource {
     public orderId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FOAS::Cluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -368,7 +364,8 @@ function rosClusterOrderPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::FOAS::Project`
+ * Properties for defining a `RosProject`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-project
  */
 export interface RosProjectProps {
 
@@ -491,18 +488,15 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::FOAS::Project`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FOAS::Project`, which is used to create a project in a Realtime Compute cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-project
  */
 export class RosProject extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FOAS::Project";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute State: Project state.
@@ -545,8 +539,6 @@ export class RosProject extends ros.RosResource {
     public orderId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FOAS::Project`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MONGODB::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mongodb.RosInstanceProps")]
     public class RosInstanceProps : AlibabaCloud.SDK.ROS.CDK.Mongodb.IRosInstanceProps
     {

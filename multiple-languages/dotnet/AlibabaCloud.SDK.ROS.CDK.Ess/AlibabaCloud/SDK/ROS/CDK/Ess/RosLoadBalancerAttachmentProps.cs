@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ESS::LoadBalancerAttachment`.</summary>
+    /// <summary>Properties for defining a `RosLoadBalancerAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ess.RosLoadBalancerAttachmentProps")]
     public class RosLoadBalancerAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Ess.IRosLoadBalancerAttachmentProps
     {

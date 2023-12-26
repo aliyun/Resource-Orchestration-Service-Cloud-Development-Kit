@@ -4,7 +4,8 @@ import { RosK8sCluster } from './edas.generated';
 export { RosK8sCluster as K8sClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::EDAS::K8sCluster`
+ * Properties for defining a `K8sCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8scluster
  */
 export interface K8sClusterProps {
 
@@ -25,14 +26,11 @@ export interface K8sClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EDAS::K8sCluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sCluster`, which is used to create a cluster of Container Service for Kubernetes (ACK).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosK8sCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8scluster
  */
 export class K8sCluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterId: The ID of the cluster.
@@ -84,8 +82,6 @@ export class K8sCluster extends ros.Resource {
     public readonly attrVswitchId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EDAS::K8sCluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.rds.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::RDS::Accounts</code>.
+ * Properties for defining a <code>Accounts</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-accounts
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.820Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.617Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.datasource.AccountsProps")
 @software.amazon.jsii.Jsii.Proxy(AccountsProps.Jsii$Proxy.class)
 public interface AccountsProps extends software.amazon.jsii.JsiiSerializable {

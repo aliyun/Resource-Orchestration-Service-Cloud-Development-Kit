@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CEN::CenBandwidthPackages`.</summary>
+    /// <summary>Properties for defining a `CenBandwidthPackages`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICenBandwidthPackagesProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.datasource.CenBandwidthPackagesProps")]
     public interface ICenBandwidthPackagesProps
     {
@@ -41,7 +44,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::CEN::CenBandwidthPackages`.</summary>
+        /// <summary>Properties for defining a `CenBandwidthPackages`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICenBandwidthPackagesProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.datasource.CenBandwidthPackagesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.Datasource.ICenBandwidthPackagesProps
         {

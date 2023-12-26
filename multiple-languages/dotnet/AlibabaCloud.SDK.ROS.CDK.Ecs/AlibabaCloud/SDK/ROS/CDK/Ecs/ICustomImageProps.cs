@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::CustomImage`.</summary>
+    /// <summary>Properties for defining a `CustomImage`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICustomImageProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.CustomImageProps")]
     public interface ICustomImageProps
     {
@@ -17,6 +20,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "architecture", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Architecture
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property bootMode: Modify the startup mode of the image.</summary>
+        /// <remarks>
+        /// Ranges:
+        /// BIOS: BIOS boot mode.
+        /// UEFI: UEFI boot mode.
+        /// You need to know the startup mode supported by the specified image. After modifying the startup mode through this parameter, it must match the startup mode supported by the image itself so that the instance can start normally.
+        /// </remarks>
+        [JsiiProperty(name: "bootMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BootMode
         {
             get
             {
@@ -40,6 +60,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
+        /// <summary>Property detectionStrategy: Image detection policy.</summary>
+        /// <remarks>
+        /// If this parameter is not configured, detection will not be triggered. Only Standard detection mode is supported.Currently, most Linux/Windows versions are supported.
+        /// </remarks>
+        [JsiiProperty(name: "detectionStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DetectionStrategy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property diskDeviceMapping:.</summary>
         [JsiiProperty(name: "diskDeviceMapping", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCustomImage.DiskDeviceMappingProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -51,7 +85,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property imageFamily: The name of the image family of the custom image.</summary>
+        /// <summary>Property imageFamily: The name of the image family of the image.</summary>
         /// <remarks>
         /// The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
         /// </remarks>
@@ -73,6 +107,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         [JsiiProperty(name: "imageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ImageName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property imageVersion: Image version.</summary>
+        /// <remarks>
+        /// When you specify an instance ID (InstanceId) and the image of the instance is a cloud market image or a custom image created from a cloud market image. This parameter must be the same as the ImageVersion of the current instance image or set to empty.
+        /// </remarks>
+        [JsiiProperty(name: "imageVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ImageVersion
         {
             get
             {
@@ -127,7 +175,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property sourceRegionId: ID of the region to where the instance/snapshot belongs.</summary>
+        /// <summary>Property sourceRegionId: ID of the region to where the instance\/snapshot belongs.</summary>
         /// <remarks>
         /// Default is current region ID.
         /// </remarks>
@@ -152,7 +200,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::CustomImage`.</summary>
+        /// <summary>Properties for defining a `CustomImage`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICustomImageProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.CustomImageProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.ICustomImageProps
         {
@@ -173,6 +224,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property bootMode: Modify the startup mode of the image.</summary>
+            /// <remarks>
+            /// Ranges:
+            /// BIOS: BIOS boot mode.
+            /// UEFI: UEFI boot mode.
+            /// You need to know the startup mode supported by the specified image. After modifying the startup mode through this parameter, it must match the startup mode supported by the image itself so that the instance can start normally.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bootMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BootMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property description: The description of the image.</summary>
             /// <remarks>
             /// It can be [0, 256] letters in length.
@@ -186,6 +251,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property detectionStrategy: Image detection policy.</summary>
+            /// <remarks>
+            /// If this parameter is not configured, detection will not be triggered. Only Standard detection mode is supported.Currently, most Linux/Windows versions are supported.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "detectionStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DetectionStrategy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property diskDeviceMapping:.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "diskDeviceMapping", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ecs.RosCustomImage.DiskDeviceMappingProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -194,7 +270,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property imageFamily: The name of the image family of the custom image.</summary>
+            /// <summary>Property imageFamily: The name of the image family of the image.</summary>
             /// <remarks>
             /// The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
             /// </remarks>
@@ -213,6 +289,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             [JsiiOptional]
             [JsiiProperty(name: "imageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ImageName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property imageVersion: Image version.</summary>
+            /// <remarks>
+            /// When you specify an instance ID (InstanceId) and the image of the instance is a cloud market image or a custom image created from a cloud market image. This parameter must be the same as the ImageVersion of the current instance image or set to empty.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "imageVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ImageVersion
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -252,7 +339,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property sourceRegionId: ID of the region to where the instance/snapshot belongs.</summary>
+            /// <summary>Property sourceRegionId: ID of the region to where the instance\/snapshot belongs.</summary>
             /// <remarks>
             /// Default is current region ID.
             /// </remarks>

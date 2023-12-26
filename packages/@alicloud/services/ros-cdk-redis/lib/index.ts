@@ -1,4 +1,5 @@
 export * from './account';
+export * from './auditlogconfig';
 export * from './connection';
 export * from './instance';
 export * from './prepayinstance';

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
-    /// <summary>Properties for defining a `ALIYUN::RAM::AttachPolicyToUser`.</summary>
+    /// <summary>Properties for defining a `RosAttachPolicyToUser`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAttachPolicyToUserProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosAttachPolicyToUserProps")]
     public interface IRosAttachPolicyToUserProps
     {
@@ -35,7 +38,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RAM::AttachPolicyToUser`.</summary>
+        /// <summary>Properties for defining a `RosAttachPolicyToUser`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAttachPolicyToUserProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosAttachPolicyToUserProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.IRosAttachPolicyToUserProps
         {

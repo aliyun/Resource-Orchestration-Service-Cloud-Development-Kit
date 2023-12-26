@@ -1,5 +1,12 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
 
+## [ros-cdk-cli 1.0.47] (2023-12-26)
+
+### Features
+
+- Update ROS resource sdk packages (Added the ALIYUN::HBase::Cluster, ALIYUN::HBase::MultiZoneCluster, ALIYUN::SLS::ServiceLog, ALIYUN::MaxCompute::Project, DATASOURCE::RDS::DBInstance, ALIYUN::Config::Aggregator, ALIYUN::Config::AggregateCompliancePack, ALIYUN::ESS::VServerGroupAttachment, ALIYUN::CDDC::MyBase, DATASOURCE::ComputeNest::ServiceInstances, ALIYUN::RAM::Application, ALIYUN::RAM::AppSecret, DATASOURCE::Hologram::Instance resource type).
+
+
 ## [ros-cdk-cli 1.0.46] (2023-11-07)
 
 ### Features

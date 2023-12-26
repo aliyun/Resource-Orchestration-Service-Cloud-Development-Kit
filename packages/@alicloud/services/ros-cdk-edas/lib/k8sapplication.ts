@@ -4,7 +4,8 @@ import { RosK8sApplication } from './edas.generated';
 export { RosK8sApplication as K8sApplicationProperty };
 
 /**
- * Properties for defining a `ALIYUN::EDAS::K8sApplication`
+ * Properties for defining a `K8sApplication`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
  */
 export interface K8sApplicationProps {
 
@@ -141,7 +142,7 @@ export interface K8sApplicationProps {
     readonly liveness?: RosK8sApplication.LivenessProperty | ros.IResolvable;
 
     /**
-     * Property localVolume: The configuration for mounting host files to the container where the application is running. For example, the value can be [{"type":"", "nodePath":"/localfiles", "mountPath":"/app/files"}, {"type":"Directory", "nodePath":"/mnt", "mountPath":"/app/storage"}].
+     * Property localVolume: The configuration for mounting host files to the container where the application is running. For example, the value can be [{"type":"", "nodePath":"\/localfiles", "mountPath":"\/app\/files"}, {"type":"Directory", "nodePath":"\/mnt", "mountPath":"\/app\/storage"}].
      */
     readonly localVolume?: Array<RosK8sApplication.LocalVolumeProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -151,7 +152,7 @@ export interface K8sApplicationProps {
     readonly logicalRegionId?: string | ros.IResolvable;
 
     /**
-     * Property mountDescs: The description of the NAS mounting configuration. For example, the value can be [{"NasPath": "/k8s","MountPath": "/mnt"}, {"NasPath": "/files", "MountPath": "/app/files"}].
+     * Property mountDescs: The description of the NAS mounting configuration. For example, the value can be [{"NasPath": "\/k8s","MountPath": "\/mnt"}, {"NasPath": "\/files", "MountPath": "\/app\/files"}].
      */
     readonly mountDescs?: Array<RosK8sApplication.MountDescsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -185,12 +186,12 @@ export interface K8sApplicationProps {
     readonly packageVersion?: string | ros.IResolvable;
 
     /**
-     * Property postStart: The post-start script. For example, {"Exec": {"Command": ["ls", "/"]}}.
+     * Property postStart: The post-start script. For example, {"Exec": {"Command": ["ls", "\/"]}}.
      */
     readonly postStart?: RosK8sApplication.PostStartProperty | ros.IResolvable;
 
     /**
-     * Property preStop: The pre-stop script. For example, {"Exec": {"Command": ["ls", "/"]}}.
+     * Property preStop: The pre-stop script. For example, {"Exec": {"Command": ["ls", "\/"]}}.
      */
     readonly preStop?: RosK8sApplication.PreStopProperty | ros.IResolvable;
 
@@ -266,14 +267,11 @@ export interface K8sApplicationProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EDAS::K8sApplication`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sApplication`, which is used to create an application in a Kubernetes cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosK8sApplication`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
  */
 export class K8sApplication extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AppId: The ID of the application.
@@ -301,8 +299,6 @@ export class K8sApplication extends ros.Resource {
     public readonly attrCsClusterId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EDAS::K8sApplication`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

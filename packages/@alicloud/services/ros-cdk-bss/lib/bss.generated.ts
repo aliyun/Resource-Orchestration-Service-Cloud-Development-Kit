@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::BSS::ResourcePackage`
+ * Properties for defining a `RosResourcePackage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
  */
 export interface RosResourcePackageProps {
 
@@ -91,18 +92,15 @@ function rosResourcePackagePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::BSS::ResourcePackage`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::ResourcePackage`, which is used to create an instance that uses a resource plan.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourcePackage` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
  */
 export class RosResourcePackage extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::BSS::ResourcePackage";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: The ID of the specified instance.
@@ -148,8 +146,6 @@ export class RosResourcePackage extends ros.RosResource {
     public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::BSS::ResourcePackage`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -185,7 +181,8 @@ export class RosResourcePackage extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::BSS::WaitOrder`
+ * Properties for defining a `RosWaitOrder`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
  */
 export interface RosWaitOrderProps {
 
@@ -251,18 +248,15 @@ function rosWaitOrderPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::BSS::WaitOrder`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::BSS::WaitOrder`, which is used to wait for an order to be fulfilled.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WaitOrder` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
  */
 export class RosWaitOrder extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::BSS::WaitOrder";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -284,8 +278,6 @@ export class RosWaitOrder extends ros.RosResource {
     public waitForOrderProduced: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::BSS::WaitOrder`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

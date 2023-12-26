@@ -1,0 +1,9 @@
+site_name: Ros Cdk References
+use_directory_urls: true
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+  palette:
+    primary: deep orange

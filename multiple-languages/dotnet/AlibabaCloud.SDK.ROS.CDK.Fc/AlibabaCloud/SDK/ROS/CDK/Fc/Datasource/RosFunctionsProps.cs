@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::FC::Functions`.</summary>
+    /// <summary>Properties for defining a `RosFunctions`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-functions
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.datasource.RosFunctionsProps")]
     public class RosFunctionsProps : AlibabaCloud.SDK.ROS.CDK.Fc.Datasource.IRosFunctionsProps
     {

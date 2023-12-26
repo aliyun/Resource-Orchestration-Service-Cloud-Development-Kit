@@ -4,7 +4,8 @@ import { RosVault } from './hbr.generated';
 export { RosVault as VaultProperty };
 
 /**
- * Properties for defining a `ALIYUN::HBR::Vault`
+ * Properties for defining a `Vault`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
  */
 export interface VaultProps {
 
@@ -61,14 +62,11 @@ export interface VaultProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::HBR::Vault`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::Vault`, which is used to create a backup vault.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVault`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-vault
  */
 export class Vault extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute BackupPlanStatistics: The statistics of backup plans that use the backup vault.
@@ -220,8 +218,6 @@ export class Vault extends ros.Resource {
     public readonly attrVaultType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::HBR::Vault`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CEN::TransitRouterVbrAttachment`.</summary>
+    /// <summary>Properties for defining a `TransitRouterVbrAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.TransitRouterVbrAttachmentProps")]
     public class TransitRouterVbrAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Cen.ITransitRouterVbrAttachmentProps
     {

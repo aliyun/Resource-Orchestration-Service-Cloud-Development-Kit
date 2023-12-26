@@ -4,7 +4,8 @@ import { RosRole } from './ram.generated';
 export { RosRole as RoleProperty };
 
 /**
- * Properties for defining a `ALIYUN::RAM::Role`
+ * Properties for defining a `Role`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
 export interface RoleProps {
 
@@ -55,14 +56,11 @@ export interface RoleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RAM::Role`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Role`, which is used to create a RAM role.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRole`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
 export class Role extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Arn: Name of alicloud resource.
@@ -80,8 +78,6 @@ export class Role extends ros.Resource {
     public readonly attrRoleName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::Role`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

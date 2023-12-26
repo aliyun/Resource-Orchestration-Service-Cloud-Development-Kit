@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::MSE::Cluster`
+ * Properties for defining a `RosCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
 export interface RosClusterProps {
 
@@ -256,18 +257,15 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::MSE::Cluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`, which is used to create a cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
 export class RosCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::Cluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
@@ -536,8 +534,6 @@ Optional parameters:
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::MSE::Cluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -625,7 +621,8 @@ Optional parameters:
 }
 
 /**
- * Properties for defining a `ALIYUN::MSE::Gateway`
+ * Properties for defining a `RosGateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
  */
 export interface RosGatewayProps {
 
@@ -734,18 +731,15 @@ function rosGatewayPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::MSE::Gateway`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway`, which is used to add a gateway.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Gateway` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
  */
 export class RosGateway extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::Gateway";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BackupVSwitchId: VSwitchId For Backup
@@ -831,8 +825,6 @@ export class RosGateway extends ros.RosResource {
     public slbSpec: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::MSE::Gateway`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -879,7 +871,8 @@ export class RosGateway extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::MSE::NacosConfig`
+ * Properties for defining a `RosNacosConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
 export interface RosNacosConfigProps {
 
@@ -988,18 +981,15 @@ function rosNacosConfigPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::MSE::NacosConfig`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosConfig`, which is used to create a Nacos configuration.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NacosConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
 export class RosNacosConfig extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::NacosConfig";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1055,8 +1045,6 @@ export class RosNacosConfig extends ros.RosResource {
     public type: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::MSE::NacosConfig`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1098,7 +1086,8 @@ export class RosNacosConfig extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::MSE::NacosService`
+ * Properties for defining a `RosNacosService`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
  */
 export interface RosNacosServiceProps {
 
@@ -1180,18 +1169,15 @@ function rosNacosServicePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::MSE::NacosService`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosService`, which is used to create a Nacos service.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NacosService` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
  */
 export class RosNacosService extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::NacosService";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1229,8 +1215,6 @@ export class RosNacosService extends ros.RosResource {
     public protectThreshold: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::MSE::NacosService`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1264,7 +1248,8 @@ export class RosNacosService extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::MSE::ServiceSource`
+ * Properties for defining a `RosServiceSource`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
  */
 export interface RosServiceSourceProps {
 
@@ -1379,18 +1364,15 @@ function rosServiceSourcePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::MSE::ServiceSource`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::ServiceSource`, which is used to create a Nacos service source.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ServiceSource` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
  */
 export class RosServiceSource extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::ServiceSource";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Address: Registration Address. If not specified, it will be automatically generated based on the selected instance.
@@ -1460,8 +1442,6 @@ If Type is set to NACOS, this parameter specifies the ID of the Nacos instance.
     public pathList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::MSE::ServiceSource`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

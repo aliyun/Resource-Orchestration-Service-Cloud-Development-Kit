@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::CLOUDFW::AddressBook`
+ * Properties for defining a `RosAddressBook`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
 export interface RosAddressBookProps {
 
@@ -29,8 +30,8 @@ export interface RosAddressBookProps {
     /**
      * @Property addressList: Address list of the address book, between multiple addresses separated by commas.
      * Note: When GroupType ip, it must be set to port or domain.
-     * When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4/32, 1.2.3.0/24
-     * When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
+     * When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4\/32, 1.2.3.0\/24
+     * When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100\/200
      * When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
      */
     readonly addressList?: string | ros.IResolvable;
@@ -140,18 +141,15 @@ function rosAddressBookPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::CLOUDFW::AddressBook`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`, which is used to create access control address books. Access control address books include IP address books, Elastic Compute Service (ECS) tag address books, port address books, and domain address books.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AddressBook` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
 export class RosAddressBook extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::AddressBook";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupUuid: After a successful return to the address book to add unique identification ID.
@@ -183,8 +181,8 @@ export class RosAddressBook extends ros.RosResource {
     /**
      * @Property addressList: Address list of the address book, between multiple addresses separated by commas.
      * Note: When GroupType ip, it must be set to port or domain.
-     * When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4/32, 1.2.3.0/24
-     * When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
+     * When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4\/32, 1.2.3.0\/24
+     * When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100\/200
      * When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
      */
     public addressList: string | ros.IResolvable | undefined;
@@ -212,8 +210,6 @@ export class RosAddressBook extends ros.RosResource {
     public tagRelation: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CLOUDFW::AddressBook`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -299,7 +295,8 @@ function rosAddressBookTagListPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CLOUDFW::ControlPolicy`
+ * Properties for defining a `RosControlPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
 export interface RosControlPolicyProps {
 
@@ -325,7 +322,7 @@ export interface RosControlPolicyProps {
 
     /**
      * @Property destination: Security Access Control destination address policy.
-     * When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4/24
+     * When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4\/24
      * When DestinationType as a group, Destination for the purpose of the address book name. For example: db_group
      * When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
      * When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
@@ -362,7 +359,7 @@ export interface RosControlPolicyProps {
 
     /**
      * @Property source: Security access control source address policy.
-     * When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0/24
+     * When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0\/24
      * When SourceType as a group, Source name for the source address book. For example: db_group
      * When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
      */
@@ -546,18 +543,15 @@ function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::CLOUDFW::ControlPolicy`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`, which is used to add an access control policy.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ControlPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
 export class RosControlPolicy extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::ControlPolicy";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AclUuid: Security access control ID that uniquely identifies the policy.
@@ -589,7 +583,7 @@ export class RosControlPolicy extends ros.RosResource {
 
     /**
      * @Property destination: Security Access Control destination address policy.
-     * When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4/24
+     * When DestinationType is net, Destination purpose CIDR. For example: 1.2.3.4\/24
      * When DestinationType as a group, Destination for the purpose of the address book name. For example: db_group
      * When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
      * When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
@@ -626,7 +620,7 @@ export class RosControlPolicy extends ros.RosResource {
 
     /**
      * @Property source: Security access control source address policy.
-     * When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0/24
+     * When SourceType for the net, Source is the source CIDR. For example: 1.2.3.0\/24
      * When SourceType as a group, Source name for the source address book. For example: db_group
      * When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
      */
@@ -665,8 +659,6 @@ export class RosControlPolicy extends ros.RosResource {
     public regionId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CLOUDFW::ControlPolicy`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -717,7 +709,8 @@ export class RosControlPolicy extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`
+ * Properties for defining a `RosVpcFirewallControlPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */
 export interface RosVpcFirewallControlPolicyProps {
 
@@ -759,7 +752,7 @@ export interface RosVpcFirewallControlPolicyProps {
      * @Property destination: The destination address in the access control policy.
      * Set this parameter in the following way:
      * If the DestinationType parameter is set to net, set the value to a Classless Inter-Domain Routing (CIDR) block.
-     * Example: 10.2.3.0/24.
+     * Example: 10.2.3.0\/24.
      * If the DestinationType parameter is set to group, set the value to the name of an address book.
      * Example: db_group.
      * If the DestinationType parameter is set to domain, set the value to a domain name.
@@ -789,7 +782,7 @@ export interface RosVpcFirewallControlPolicyProps {
 
     /**
      * @Property source: The source address in the access control policy.
-     * If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0/24.
+     * If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0\/24.
      * If the SourceType parameter is set to group, set the value to the name of an address book. Example: db_group.
      */
     readonly source: string | ros.IResolvable;
@@ -962,18 +955,15 @@ function rosVpcFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`, which is used to add an access control policy to a specified policy group for a Virtual Private Cloud (VPC) firewall.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallControlPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */
 export class RosVpcFirewallControlPolicy extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CLOUDFW::VpcFirewallControlPolicy";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AclUuid: The unique ID of the access control policy.
@@ -1021,7 +1011,7 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
      * @Property destination: The destination address in the access control policy.
      * Set this parameter in the following way:
      * If the DestinationType parameter is set to net, set the value to a Classless Inter-Domain Routing (CIDR) block.
-     * Example: 10.2.3.0/24.
+     * Example: 10.2.3.0\/24.
      * If the DestinationType parameter is set to group, set the value to the name of an address book.
      * Example: db_group.
      * If the DestinationType parameter is set to domain, set the value to a domain name.
@@ -1051,7 +1041,7 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
 
     /**
      * @Property source: The source address in the access control policy.
-     * If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0/24.
+     * If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0\/24.
      * If the SourceType parameter is set to group, set the value to the name of an address book. Example: db_group.
      */
     public source: string | ros.IResolvable;
@@ -1105,8 +1095,6 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
     public regionId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

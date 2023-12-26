@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>Properties for defining a `ALIYUN::SLB::LoadBalancer`.</summary>
+    /// <summary>Properties for defining a `LoadBalancer`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.LoadBalancerProps")]
     public class LoadBalancerProps : AlibabaCloud.SDK.ROS.CDK.Slb.ILoadBalancerProps
     {

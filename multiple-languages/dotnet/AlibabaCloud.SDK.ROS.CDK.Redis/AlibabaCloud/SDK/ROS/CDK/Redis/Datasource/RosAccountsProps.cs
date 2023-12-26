@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::REDIS::Accounts`.</summary>
+    /// <summary>Properties for defining a `RosAccounts`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-accounts
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.datasource.RosAccountsProps")]
     public class RosAccountsProps : AlibabaCloud.SDK.ROS.CDK.Redis.Datasource.IRosAccountsProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>Properties for defining a `ALIYUN::CMS::MetricRuleTemplate`.</summary>
+    /// <summary>Properties for defining a `RosMetricRuleTemplate`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosMetricRuleTemplateProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosMetricRuleTemplateProps")]
     public interface IRosMetricRuleTemplateProps
     {
@@ -71,7 +74,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CMS::MetricRuleTemplate`.</summary>
+        /// <summary>Properties for defining a `RosMetricRuleTemplate`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosMetricRuleTemplateProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosMetricRuleTemplateProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.IRosMetricRuleTemplateProps
         {

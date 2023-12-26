@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::NatIp`.</summary>
+    /// <summary>Properties for defining a `NatIp`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.NatIpProps")]
     public class NatIpProps : AlibabaCloud.SDK.ROS.CDK.Vpc.INatIpProps
     {

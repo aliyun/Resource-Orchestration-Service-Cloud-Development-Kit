@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS template type:  <code>ALIYUN::ECS::Invocation</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::Invocation</code>, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.952Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.447Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocation")
 public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::Invocation</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -134,6 +132,42 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getContainerId() {
+        return software.amazon.jsii.Kernel.get(this, "containerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setContainerId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "containerId", value);
+    }
+
+    /**
+     */
+    public void setContainerId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "containerId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getContainerName() {
+        return software.amazon.jsii.Kernel.get(this, "containerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setContainerName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "containerName", value);
+    }
+
+    /**
+     */
+    public void setContainerName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "containerName", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getFrequency() {
         return software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -182,6 +216,42 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRepeatMode() {
+        return software.amazon.jsii.Kernel.get(this, "repeatMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRepeatMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "repeatMode", value);
+    }
+
+    /**
+     */
+    public void setRepeatMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "repeatMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSync() {
         return software.amazon.jsii.Kernel.get(this, "sync", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -200,20 +270,236 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getTimed() {
-        return software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosInvocation.TagsProperty> getTags() {
+        return java.util.Optional.ofNullable((java.util.List<com.aliyun.ros.cdk.ecs.RosInvocation.TagsProperty>)(software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosInvocation.TagsProperty.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
     }
 
     /**
      */
-    public void setTimed(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
-        software.amazon.jsii.Kernel.set(this, "timed", value);
+    public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosInvocation.TagsProperty> value) {
+        software.amazon.jsii.Kernel.set(this, "tags", value);
     }
 
     /**
      */
-    public void setTimed(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "timed", value);
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
+        return software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTimeout(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "timeout", value);
+    }
+
+    /**
+     */
+    public void setTimeout(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "timeout", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUsername() {
+        return software.amazon.jsii.Kernel.get(this, "username", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setUsername(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "username", value);
+    }
+
+    /**
+     */
+    public void setUsername(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "username", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getWindowsPasswordName() {
+        return software.amazon.jsii.Kernel.get(this, "windowsPasswordName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setWindowsPasswordName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "windowsPasswordName", value);
+    }
+
+    /**
+     */
+    public void setWindowsPasswordName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "windowsPasswordName", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocation.TagsProperty")
+    @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface TagsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
+            java.lang.Object key;
+            java.lang.Object value;
+
+            /**
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link TagsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public TagsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TagsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = java.util.Objects.requireNonNull(builder.key, "key is required");
+                this.value = builder.value;
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("key", om.valueToTree(this.getKey()));
+                if (this.getValue() != null) {
+                    data.set("value", om.valueToTree(this.getValue()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosInvocation.TagsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                TagsProperty.Jsii$Proxy that = (TagsProperty.Jsii$Proxy) o;
+
+                if (!key.equals(that.key)) return false;
+                return this.value != null ? this.value.equals(that.value) : that.value == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value != null ? this.value.hashCode() : 0);
+                return result;
+            }
+        }
     }
 
     /**
@@ -295,6 +581,40 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param containerId This parameter is required.
+         */
+        public Builder containerId(final java.lang.String containerId) {
+            this.props.containerId(containerId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param containerId This parameter is required.
+         */
+        public Builder containerId(final com.aliyun.ros.cdk.core.IResolvable containerId) {
+            this.props.containerId(containerId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param containerName This parameter is required.
+         */
+        public Builder containerName(final java.lang.String containerName) {
+            this.props.containerName(containerName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param containerName This parameter is required.
+         */
+        public Builder containerName(final com.aliyun.ros.cdk.core.IResolvable containerName) {
+            this.props.containerName(containerName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param frequency This parameter is required.
          */
         public Builder frequency(final java.lang.String frequency) {
@@ -329,6 +649,40 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param repeatMode This parameter is required.
+         */
+        public Builder repeatMode(final java.lang.String repeatMode) {
+            this.props.repeatMode(repeatMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param repeatMode This parameter is required.
+         */
+        public Builder repeatMode(final com.aliyun.ros.cdk.core.IResolvable repeatMode) {
+            this.props.repeatMode(repeatMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param sync This parameter is required.
          */
         public Builder sync(final java.lang.Boolean sync) {
@@ -346,18 +700,61 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param timed This parameter is required.
+         * @param tags This parameter is required.
          */
-        public Builder timed(final java.lang.Boolean timed) {
-            this.props.timed(timed);
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInvocation.TagsProperty> tags) {
+            this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param timeout This parameter is required.
+         */
+        public Builder timeout(final java.lang.Number timeout) {
+            this.props.timeout(timeout);
             return this;
         }
         /**
          * @return {@code this}
-         * @param timed This parameter is required.
+         * @param timeout This parameter is required.
          */
-        public Builder timed(final com.aliyun.ros.cdk.core.IResolvable timed) {
-            this.props.timed(timed);
+        public Builder timeout(final com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.props.timeout(timeout);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param username This parameter is required.
+         */
+        public Builder username(final java.lang.String username) {
+            this.props.username(username);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param username This parameter is required.
+         */
+        public Builder username(final com.aliyun.ros.cdk.core.IResolvable username) {
+            this.props.username(username);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param windowsPasswordName This parameter is required.
+         */
+        public Builder windowsPasswordName(final java.lang.String windowsPasswordName) {
+            this.props.windowsPasswordName(windowsPasswordName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param windowsPasswordName This parameter is required.
+         */
+        public Builder windowsPasswordName(final com.aliyun.ros.cdk.core.IResolvable windowsPasswordName) {
+            this.props.windowsPasswordName(windowsPasswordName);
             return this;
         }
 

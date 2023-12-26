@@ -4,7 +4,8 @@ import { RosFlowProject } from './emr.generated';
 export { RosFlowProject as FlowProjectProperty };
 
 /**
- * Properties for defining a `ALIYUN::EMR::FlowProject`
+ * Properties for defining a `FlowProject`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
  */
 export interface FlowProjectProps {
 
@@ -25,14 +26,11 @@ export interface FlowProjectProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EMR::FlowProject`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::FlowProject`, which is used to create a data development project.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowProject`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-flowproject
  */
 export class FlowProject extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CreateTime: The time when the project was created.
@@ -65,8 +63,6 @@ export class FlowProject extends ros.Resource {
     public readonly attrUserId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EMR::FlowProject`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

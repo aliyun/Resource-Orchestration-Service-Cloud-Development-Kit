@@ -4,7 +4,8 @@ import { RosHandshake } from './resourcemanager.generated';
 export { RosHandshake as HandshakeProperty };
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::Handshake`
+ * Properties for defining a `Handshake`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-handshake
  */
 export interface HandshakeProps {
 
@@ -25,14 +26,11 @@ export interface HandshakeProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ResourceManager::Handshake`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Handshake`, which is used to create an invitation.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHandshake`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-handshake
  */
 export class Handshake extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute HandshakeId: This ID of Resource Manager handshake
@@ -70,8 +68,6 @@ export class Handshake extends ros.Resource {
     public readonly attrTargetType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::Handshake`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

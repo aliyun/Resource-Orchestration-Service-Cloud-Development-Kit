@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>Properties for defining a `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.</summary>
+    /// <summary>Properties for defining a `VpcFirewallControlPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IVpcFirewallControlPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicyProps")]
     public interface IVpcFirewallControlPolicyProps
     {
@@ -211,7 +214,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.</summary>
+        /// <summary>Properties for defining a `VpcFirewallControlPolicy`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IVpcFirewallControlPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cloudfw.IVpcFirewallControlPolicyProps
         {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::GA::BandwidthPackage`.</summary>
+    /// <summary>Properties for defining a `RosBandwidthPackage`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackage
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ga.RosBandwidthPackageProps")]
     public class RosBandwidthPackageProps : AlibabaCloud.SDK.ROS.CDK.Ga.IRosBandwidthPackageProps
     {

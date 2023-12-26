@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CDN::DomainConfig`.</summary>
+    /// <summary>Properties for defining a `RosDomainConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cdn.RosDomainConfigProps")]
     public class RosDomainConfigProps : AlibabaCloud.SDK.ROS.CDK.Cdn.IRosDomainConfigProps
     {

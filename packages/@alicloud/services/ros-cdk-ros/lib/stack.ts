@@ -4,7 +4,8 @@ import { RosStack } from './ros.generated';
 export { RosStack as StackProperty };
 
 /**
- * Properties for defining a `ALIYUN::ROS::Stack`
+ * Properties for defining a `Stack`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stack
  */
 export interface StackProps {
 
@@ -36,7 +37,7 @@ export interface StackProps {
     readonly templateId?: string | ros.IResolvable;
 
     /**
-     * Property templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
+     * Property templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss:\/\/ros-template\/demo?RegionId=cn-hangzhou, oss:\/\/ros-template\/demo. RegionId is default to the value of RegionId Parameter of the request.).
      * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
      */
     readonly templateUrl?: string | ros.IResolvable;
@@ -53,18 +54,13 @@ export interface StackProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ROS::Stack`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::Stack`, which is used to create a nested stack. You can nest stacks up to five levels of depth.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStack`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stack
  */
 export class Stack extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::ROS::Stack`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

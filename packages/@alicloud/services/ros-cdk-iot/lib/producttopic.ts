@@ -4,7 +4,8 @@ import { RosProductTopic } from './iot.generated';
 export { RosProductTopic as ProductTopicProperty };
 
 /**
- * Properties for defining a `ALIYUN::IOT::ProductTopic`
+ * Properties for defining a `ProductTopic`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
  */
 export interface ProductTopicProps {
 
@@ -22,7 +23,7 @@ export interface ProductTopicProps {
     readonly productKey: string | ros.IResolvable;
 
     /**
-     * Property topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+     * Property topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (\/) are used to delimit the topic hierarchies. The format of a topic category is productKey\/${deviceName}\/topicShortName.
      * Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
      */
     readonly topicShortName: string | ros.IResolvable;
@@ -39,14 +40,11 @@ export interface ProductTopicProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::IOT::ProductTopic`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::ProductTopic`, which is used to create a topic category for a specified product.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProductTopic`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
  */
 export class ProductTopic extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TopicId: Topic ID
@@ -54,8 +52,6 @@ export class ProductTopic extends ros.Resource {
     public readonly attrTopicId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::IOT::ProductTopic`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

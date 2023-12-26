@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ClickHouse::DBCluster`.</summary>
+    /// <summary>Properties for defining a `DBCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-dbcluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-clickhouse.DBClusterProps")]
     public class DBClusterProps : AlibabaCloud.SDK.ROS.CDK.Clickhouse.IDBClusterProps
     {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RDS::ADInfo`.</summary>
+    /// <summary>Properties for defining a `ADInfo`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-adinfo
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.ADInfoProps")]
     public class ADInfoProps : AlibabaCloud.SDK.ROS.CDK.Rds.IADInfoProps
     {

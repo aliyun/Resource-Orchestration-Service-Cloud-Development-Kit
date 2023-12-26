@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>Properties for defining a `ALIYUN::ROS::Stack`.</summary>
+    /// <summary>Properties for defining a `RosStack`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stack
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ros.RosStackProps")]
     public class RosStackProps : AlibabaCloud.SDK.ROS.CDK.Ros.IRosStackProps
     {
@@ -156,7 +159,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         private object? _templateUrl;
 
         /// <remarks>
-        /// <strong>Property</strong>: templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
+        /// <strong>Property</strong>: templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss:\/\/ros-template\/demo?RegionId=cn-hangzhou, oss:\/\/ros-template\/demo. RegionId is default to the value of RegionId Parameter of the request.).
         /// You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
         /// </remarks>
         [JsiiOptional]

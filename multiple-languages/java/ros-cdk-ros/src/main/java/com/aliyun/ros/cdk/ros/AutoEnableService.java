@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ros;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ROS::AutoEnableService</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROS::AutoEnableService</code>ALIYUN::ROS::CustomResource is used to create a custom resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.001Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.866Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableService")
 public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ROS::AutoEnableService</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ROS::AutoEnableService</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -124,6 +116,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * CDT: Cloud Data Transfer
          * CDTCb: Cloud Data Transfer for Cross Border
          * TransitRouter: Cen Transit Router
+         * PAI: Platform of Artificial Intelligence
          * <p>
          * @return {@code this}
          * @param serviceName Property serviceName: Which service to enable. This parameter is required.
@@ -174,6 +167,7 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
          * CDT: Cloud Data Transfer
          * CDTCb: Cloud Data Transfer for Cross Border
          * TransitRouter: Cen Transit Router
+         * PAI: Platform of Artificial Intelligence
          * <p>
          * @return {@code this}
          * @param serviceName Property serviceName: Which service to enable. This parameter is required.

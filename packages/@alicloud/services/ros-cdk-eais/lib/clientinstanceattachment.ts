@@ -4,7 +4,8 @@ import { RosClientInstanceAttachment } from './eais.generated';
 export { RosClientInstanceAttachment as ClientInstanceAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::EAIS::ClientInstanceAttachment`
+ * Properties for defining a `ClientInstanceAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
  */
 export interface ClientInstanceAttachmentProps {
 
@@ -20,14 +21,11 @@ export interface ClientInstanceAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EAIS::ClientInstanceAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EAIS::ClientInstanceAttachment`, which is used to attach an Elastic Accelerated Computing Instances (EAIS) instance to an Elastic Compute Service (ECS) instance or elastic container instance of a user.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClientInstanceAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
  */
 export class ClientInstanceAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClientInstanceId: The ID of the ECS or ECI instance bound to the EAIS instance.
@@ -45,8 +43,6 @@ export class ClientInstanceAttachment extends ros.Resource {
     public readonly attrVSwitchId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EAIS::ClientInstanceAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

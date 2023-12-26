@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oss;
 
 /**
- * A ROS resource type:  <code>ALIYUN::OSS::Bucket</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::Bucket</code>, which is used to create an Object Storage Service (OSS) bucket.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.317Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.092Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.Bucket")
 public class Bucket extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::OSS::Bucket</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::OSS::Bucket</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -188,6 +180,31 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
             this.props.deletionForce(deletionForce);
+            return this;
+        }
+
+        /**
+         * Property enableOssHdfsService: Whether enable OSS-HDFS service.
+         * <p>
+         * <strong>Note</strong>: Once it's enabled, it can't be disabled again.
+         * <p>
+         * @return {@code this}
+         * @param enableOssHdfsService Property enableOssHdfsService: Whether enable OSS-HDFS service. This parameter is required.
+         */
+        public Builder enableOssHdfsService(final java.lang.Boolean enableOssHdfsService) {
+            this.props.enableOssHdfsService(enableOssHdfsService);
+            return this;
+        }
+        /**
+         * Property enableOssHdfsService: Whether enable OSS-HDFS service.
+         * <p>
+         * <strong>Note</strong>: Once it's enabled, it can't be disabled again.
+         * <p>
+         * @return {@code this}
+         * @param enableOssHdfsService Property enableOssHdfsService: Whether enable OSS-HDFS service. This parameter is required.
+         */
+        public Builder enableOssHdfsService(final com.aliyun.ros.cdk.core.IResolvable enableOssHdfsService) {
+            this.props.enableOssHdfsService(enableOssHdfsService);
             return this;
         }
 

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::OTS::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instance
  */
 export interface RosInstanceProps {
 
@@ -110,18 +111,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::OTS::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Instance`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OTS::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceName: Instance name
@@ -175,8 +173,6 @@ export class RosInstance extends ros.RosResource {
     public tags: RosInstance.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::OTS::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -260,7 +256,8 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::OTS::SearchIndex`
+ * Properties for defining a `RosSearchIndex`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
  */
 export interface RosSearchIndexProps {
 
@@ -356,18 +353,15 @@ function rosSearchIndexPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::OTS::SearchIndex`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::SearchIndex`, which is used to create a search index for a data table. You can create multiple search indexes for a data table.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SearchIndex` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
  */
 export class RosSearchIndex extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OTS::SearchIndex";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute IndexName: Index name.
@@ -410,8 +404,6 @@ export class RosSearchIndex extends ros.RosResource {
     public indexSort: RosSearchIndex.IndexSortProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::OTS::SearchIndex`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -974,7 +966,8 @@ function rosSearchIndexSubFieldSchemasPropertyToRosTemplate(properties: any): an
 }
 
 /**
- * Properties for defining a `ALIYUN::OTS::Table`
+ * Properties for defining a `RosTable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
  */
 export interface RosTableProps {
 
@@ -1009,7 +1002,7 @@ export interface RosTableProps {
     readonly maxVersions?: number | ros.IResolvable;
 
     /**
-     * @Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
+     * @Property reservedThroughput: The initial reserved read\/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
      */
     readonly reservedThroughput?: RosTable.ReservedThroughputProperty | ros.IResolvable;
 
@@ -1116,18 +1109,15 @@ function rosTablePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::OTS::Table`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Table`, which is used to create a table based on a specified schema.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Table` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
  */
 export class RosTable extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OTS::Table";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TableName: Table name
@@ -1168,7 +1158,7 @@ export class RosTable extends ros.RosResource {
     public maxVersions: number | ros.IResolvable | undefined;
 
     /**
-     * @Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
+     * @Property reservedThroughput: The initial reserved read\/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
      */
     public reservedThroughput: RosTable.ReservedThroughputProperty | ros.IResolvable | undefined;
 
@@ -1183,8 +1173,6 @@ export class RosTable extends ros.RosResource {
     public timeToLive: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::OTS::Table`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1478,7 +1466,8 @@ function rosTableSecondaryIndicesPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::OTS::VpcBinder`
+ * Properties for defining a `RosVpcBinder`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vpcbinder
  */
 export interface RosVpcBinderProps {
 
@@ -1537,18 +1526,15 @@ function rosVpcBinderPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::OTS::VpcBinder`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VpcBinder`, which is used to bind a Tablestore instance to a virtual private cloud (VPC).
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcBinder` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vpcbinder
  */
 export class RosVpcBinder extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OTS::VpcBinder";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Domains: The domain names used to access the OTS instance in the VPC.
@@ -1574,8 +1560,6 @@ export class RosVpcBinder extends ros.RosResource {
     public vpcs: Array<RosVpcBinder.VpcsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OTS::VpcBinder`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

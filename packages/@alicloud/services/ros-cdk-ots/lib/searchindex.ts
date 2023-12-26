@@ -4,7 +4,8 @@ import { RosSearchIndex } from './ots.generated';
 export { RosSearchIndex as SearchIndexProperty };
 
 /**
- * Properties for defining a `ALIYUN::OTS::SearchIndex`
+ * Properties for defining a `SearchIndex`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
  */
 export interface SearchIndexProps {
 
@@ -42,14 +43,11 @@ export interface SearchIndexProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::OTS::SearchIndex`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::SearchIndex`, which is used to create a search index for a data table. You can create multiple search indexes for a data table.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSearchIndex`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
  */
 export class SearchIndex extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute IndexName: Index name.
@@ -57,8 +55,6 @@ export class SearchIndex extends ros.Resource {
     public readonly attrIndexName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OTS::SearchIndex`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

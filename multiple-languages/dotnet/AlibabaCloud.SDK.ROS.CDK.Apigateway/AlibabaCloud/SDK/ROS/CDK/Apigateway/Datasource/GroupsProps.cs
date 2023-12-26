@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ApiGateway::Groups`.</summary>
+    /// <summary>Properties for defining a `Groups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-groups
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.datasource.GroupsProps")]
     public class GroupsProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource.IGroupsProps
     {

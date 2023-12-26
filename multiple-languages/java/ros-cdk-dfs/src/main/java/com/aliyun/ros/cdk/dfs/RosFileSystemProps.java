@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.dfs;
 
 /**
- * Properties for defining a <code>ALIYUN::DFS::FileSystem</code>.
+ * Properties for defining a <code>RosFileSystem</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.430Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.RosFileSystemProps")
 @software.amazon.jsii.Jsii.Proxy(RosFileSystemProps.Jsii$Proxy.class)
 public interface RosFileSystemProps extends software.amazon.jsii.JsiiSerializable {

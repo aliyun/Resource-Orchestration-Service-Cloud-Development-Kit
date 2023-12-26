@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RAM::AttachPolicyToRole`.</summary>
+    /// <summary>Properties for defining a `AttachPolicyToRole`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytorole
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.AttachPolicyToRoleProps")]
     public class AttachPolicyToRoleProps : AlibabaCloud.SDK.ROS.CDK.Ram.IAttachPolicyToRoleProps
     {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ECS::DeploymentSet</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::DeploymentSet</code>, which is used to create a deployment set in a specified region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.736Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.202Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DeploymentSet")
 public class DeploymentSet extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class DeploymentSet extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::DeploymentSet</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class DeploymentSet extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::DeploymentSet</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -49,11 +41,7 @@ public class DeploymentSet extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::DeploymentSet</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -160,6 +148,35 @@ public class DeploymentSet extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property groupCount: Set the number of groups for the deployment set group high availability policy.
+         * <p>
+         * Value range: 1~7.
+         * Default value: 3.
+         * This parameter only takes effect when Strategy=AvailabilityGroup.
+         * <p>
+         * @return {@code this}
+         * @param groupCount Property groupCount: Set the number of groups for the deployment set group high availability policy. This parameter is required.
+         */
+        public Builder groupCount(final java.lang.Number groupCount) {
+            this.props().groupCount(groupCount);
+            return this;
+        }
+        /**
+         * Property groupCount: Set the number of groups for the deployment set group high availability policy.
+         * <p>
+         * Value range: 1~7.
+         * Default value: 3.
+         * This parameter only takes effect when Strategy=AvailabilityGroup.
+         * <p>
+         * @return {@code this}
+         * @param groupCount Property groupCount: Set the number of groups for the deployment set group high availability policy. This parameter is required.
+         */
+        public Builder groupCount(final com.aliyun.ros.cdk.core.IResolvable groupCount) {
+            this.props().groupCount(groupCount);
+            return this;
+        }
+
+        /**
          * Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set.
          * <p>
          * Valid values:
@@ -189,6 +206,37 @@ public class DeploymentSet extends com.aliyun.ros.cdk.core.Resource {
          */
         public Builder onUnableToRedeployFailedInstance(final com.aliyun.ros.cdk.core.IResolvable onUnableToRedeployFailedInstance) {
             this.props().onUnableToRedeployFailedInstance(onUnableToRedeployFailedInstance);
+            return this;
+        }
+
+        /**
+         * Property strategy: Deployment strategy.
+         * <p>
+         * Ranges:
+         * Availability: High availability strategy.
+         * AvailabilityGroup: Deployment group high availability strategy.
+         * LowLatency: Network low latency strategy.
+         * <p>
+         * @return {@code this}
+         * @param strategy Property strategy: Deployment strategy. This parameter is required.
+         */
+        public Builder strategy(final java.lang.String strategy) {
+            this.props().strategy(strategy);
+            return this;
+        }
+        /**
+         * Property strategy: Deployment strategy.
+         * <p>
+         * Ranges:
+         * Availability: High availability strategy.
+         * AvailabilityGroup: Deployment group high availability strategy.
+         * LowLatency: Network low latency strategy.
+         * <p>
+         * @return {@code this}
+         * @param strategy Property strategy: Deployment strategy. This parameter is required.
+         */
+        public Builder strategy(final com.aliyun.ros.cdk.core.IResolvable strategy) {
+            this.props().strategy(strategy);
             return this;
         }
 

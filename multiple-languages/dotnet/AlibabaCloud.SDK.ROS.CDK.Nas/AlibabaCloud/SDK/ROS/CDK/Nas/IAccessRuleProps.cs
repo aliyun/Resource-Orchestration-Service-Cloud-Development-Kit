@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>Properties for defining a `ALIYUN::NAS::AccessRule`.</summary>
+    /// <summary>Properties for defining a `AccessRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessrule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAccessRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.AccessRuleProps")]
     public interface IAccessRuleProps
     {
@@ -95,7 +98,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::NAS::AccessRule`.</summary>
+        /// <summary>Properties for defining a `AccessRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessrule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAccessRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.AccessRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nas.IAccessRuleProps
         {

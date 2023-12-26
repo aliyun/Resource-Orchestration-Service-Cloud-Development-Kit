@@ -4,7 +4,8 @@ import { RosElasticDBInstance } from './gpdb.generated';
 export { RosElasticDBInstance as ElasticDBInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::GPDB::ElasticDBInstance`
+ * Properties for defining a `ElasticDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
 export interface ElasticDBInstanceProps {
 
@@ -93,7 +94,7 @@ export interface ElasticDBInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
+     * Property periodUnit: Unit of subscription period, it could be Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -122,14 +123,11 @@ export interface ElasticDBInstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::GPDB::ElasticDBInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosElasticDBInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
 export class ElasticDBInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ConnectionString: The endpoint of the instance.
@@ -152,8 +150,6 @@ export class ElasticDBInstance extends ros.Resource {
     public readonly attrPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GPDB::ElasticDBInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::EMR::Cluster2`
+ * Properties for defining a `RosCluster2`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
  */
 export interface RosCluster2Props {
 
@@ -95,18 +96,15 @@ function rosCluster2PropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::EMR::Cluster2`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EMR::Cluster2`ALIYUN::ENS::Instance is used to create an Edge Node Service (ENS) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Cluster2` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
  */
 export class RosCluster2 extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::EMR::Cluster2";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterIds: The list of the cluster id.
@@ -157,8 +155,6 @@ export class RosCluster2 extends ros.RosResource {
     public tags: RosCluster2.TagsProperty[] | undefined;
 
     /**
-     * Create a new `DATASOURCE::EMR::Cluster2`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -244,7 +240,8 @@ function rosCluster2TagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::EMR::FlowProjects`
+ * Properties for defining a `RosFlowProjects`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
  */
 export interface RosFlowProjectsProps {
 
@@ -294,18 +291,15 @@ function rosFlowProjectsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `DATASOURCE::EMR::FlowProjects`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EMR::FlowProjects`, which is used to query projects.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FlowProjects` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
  */
 export class RosFlowProjects extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::EMR::FlowProjects";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FlowProjectIds: The list of flow project IDs.
@@ -331,8 +325,6 @@ export class RosFlowProjects extends ros.RosResource {
     public flowProjectName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::EMR::FlowProjects`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

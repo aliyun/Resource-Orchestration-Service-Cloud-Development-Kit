@@ -10,6 +10,7 @@ export * from './machinegroup';
 export * from './metricstore';
 export * from './project';
 export * from './savedsearch';
+export * from './servicelog';
 
 // ALIYUN::SLS Resources:
 export * from './sls.generated';

@@ -4,7 +4,8 @@ import { RosDevice } from './iot.generated';
 export { RosDevice as DeviceProperty };
 
 /**
- * Properties for defining a `ALIYUN::IOT::Device`
+ * Properties for defining a `Device`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
  */
 export interface DeviceProps {
 
@@ -48,14 +49,11 @@ export interface DeviceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::IOT::Device`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::Device`, which is used to register a Device.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDevice`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
  */
 export class Device extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DeviceName: Device name.
@@ -104,8 +102,6 @@ Description Keep, do not leak.
     public readonly attrProductName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::IOT::Device`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

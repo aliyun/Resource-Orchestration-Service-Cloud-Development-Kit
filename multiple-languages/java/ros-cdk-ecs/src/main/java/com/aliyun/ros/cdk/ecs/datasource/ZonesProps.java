@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecs.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::ECS::Zones</code>.
+ * Properties for defining a <code>Zones</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-zones
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.206Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.716Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.ZonesProps")
 @software.amazon.jsii.Jsii.Proxy(ZonesProps.Jsii$Proxy.class)
 public interface ZonesProps extends software.amazon.jsii.JsiiSerializable {

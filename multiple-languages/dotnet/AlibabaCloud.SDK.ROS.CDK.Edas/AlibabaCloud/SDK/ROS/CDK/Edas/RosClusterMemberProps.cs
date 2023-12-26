@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EDAS::ClusterMember`.</summary>
+    /// <summary>Properties for defining a `RosClusterMember`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-clustermember
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-edas.RosClusterMemberProps")]
     public class RosClusterMemberProps : AlibabaCloud.SDK.ROS.CDK.Edas.IRosClusterMemberProps
     {

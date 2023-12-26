@@ -4,7 +4,8 @@ import { RosCluster } from './mse.generated';
 export { RosCluster as ClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::MSE::Cluster`
+ * Properties for defining a `Cluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
 export interface ClusterProps {
 
@@ -104,14 +105,11 @@ export interface ClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::MSE::Cluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`, which is used to create a cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
 export class Cluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AclEntryList: The public network whitelist list is used only when the public network is enabled.
@@ -283,8 +281,6 @@ Optional parameters:
     public readonly attrVpcId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::MSE::Cluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

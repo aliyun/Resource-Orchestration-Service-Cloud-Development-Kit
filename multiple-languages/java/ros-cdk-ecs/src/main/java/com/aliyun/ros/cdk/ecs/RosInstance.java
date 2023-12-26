@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS template type:  <code>ALIYUN::ECS::Instance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::Instance</code>, which is used to create an Elastic Compute Service (ECS) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.899Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.384Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::Instance</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -105,24 +103,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getImageId() {
-        return software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setImageId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "imageId", java.util.Objects.requireNonNull(value, "imageId is required"));
-    }
-
-    /**
-     */
-    public void setImageId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "imageId", java.util.Objects.requireNonNull(value, "imageId is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType() {
         return software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -137,6 +117,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInstanceType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceType", java.util.Objects.requireNonNull(value, "instanceType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAffinity() {
+        return software.amazon.jsii.Kernel.get(this, "affinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAffinity(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "affinity", value);
+    }
+
+    /**
+     */
+    public void setAffinity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "affinity", value);
     }
 
     /**
@@ -195,6 +193,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCreditSpecification() {
+        return software.amazon.jsii.Kernel.get(this, "creditSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCreditSpecification(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "creditSpecification", value);
+    }
+
+    /**
+     */
+    public void setCreditSpecification(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "creditSpecification", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostId() {
         return software.amazon.jsii.Kernel.get(this, "dedicatedHostId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -227,6 +243,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDeletionProtection(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "deletionProtection", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetGroupNo() {
+        return software.amazon.jsii.Kernel.get(this, "deploymentSetGroupNo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeploymentSetGroupNo(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "deploymentSetGroupNo", value);
+    }
+
+    /**
+     */
+    public void setDeploymentSetGroupNo(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deploymentSetGroupNo", value);
     }
 
     /**
@@ -333,6 +367,78 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setHpcClusterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "hpcClusterId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHttpEndpoint() {
+        return software.amazon.jsii.Kernel.get(this, "httpEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHttpEndpoint(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "httpEndpoint", value);
+    }
+
+    /**
+     */
+    public void setHttpEndpoint(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "httpEndpoint", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHttpTokens() {
+        return software.amazon.jsii.Kernel.get(this, "httpTokens", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHttpTokens(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "httpTokens", value);
+    }
+
+    /**
+     */
+    public void setHttpTokens(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "httpTokens", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageFamily() {
+        return software.amazon.jsii.Kernel.get(this, "imageFamily", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setImageFamily(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "imageFamily", value);
+    }
+
+    /**
+     */
+    public void setImageFamily(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageFamily", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
+        return software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setImageId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "imageId", value);
+    }
+
+    /**
+     */
+    public void setImageId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageId", value);
     }
 
     /**
@@ -535,6 +641,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPrivatePoolOptions() {
+        return software.amazon.jsii.Kernel.get(this, "privatePoolOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPrivatePoolOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "privatePoolOptions", value);
+    }
+
+    /**
+     */
+    public void setPrivatePoolOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ecs.RosInstance.PrivatePoolOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "privatePoolOptions", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
         return software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -713,6 +837,42 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageSetId() {
+        return software.amazon.jsii.Kernel.get(this, "storageSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageSetId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "storageSetId", value);
+    }
+
+    /**
+     */
+    public void setStorageSetId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageSetId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStorageSetPartitionNumber() {
+        return software.amazon.jsii.Kernel.get(this, "storageSetPartitionNumber", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStorageSetPartitionNumber(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "storageSetPartitionNumber", value);
+    }
+
+    /**
+     */
+    public void setStorageSetPartitionNumber(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "storageSetPartitionNumber", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -811,6 +971,42 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosInstance.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTenancy() {
+        return software.amazon.jsii.Kernel.get(this, "tenancy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTenancy(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "tenancy", value);
+    }
+
+    /**
+     */
+    public void setTenancy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tenancy", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUseAdditionalService() {
+        return software.amazon.jsii.Kernel.get(this, "useAdditionalService", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setUseAdditionalService(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "useAdditionalService", value);
+    }
+
+    /**
+     */
+    public void setUseAdditionalService(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "useAdditionalService", value);
     }
 
     /**
@@ -1303,6 +1499,178 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstance.PrivatePoolOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(PrivatePoolOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface PrivatePoolOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMatchCriteria() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link PrivatePoolOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link PrivatePoolOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<PrivatePoolOptionsProperty> {
+            java.lang.Object id;
+            java.lang.Object matchCriteria;
+
+            /**
+             * Sets the value of {@link PrivatePoolOptionsProperty#getId}
+             * @param id the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder id(java.lang.String id) {
+                this.id = id;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PrivatePoolOptionsProperty#getId}
+             * @param id the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
+                this.id = id;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PrivatePoolOptionsProperty#getMatchCriteria}
+             * @param matchCriteria the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder matchCriteria(java.lang.String matchCriteria) {
+                this.matchCriteria = matchCriteria;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PrivatePoolOptionsProperty#getMatchCriteria}
+             * @param matchCriteria the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder matchCriteria(com.aliyun.ros.cdk.core.IResolvable matchCriteria) {
+                this.matchCriteria = matchCriteria;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link PrivatePoolOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public PrivatePoolOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link PrivatePoolOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PrivatePoolOptionsProperty {
+            private final java.lang.Object id;
+            private final java.lang.Object matchCriteria;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.matchCriteria = software.amazon.jsii.Kernel.get(this, "matchCriteria", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.id = builder.id;
+                this.matchCriteria = builder.matchCriteria;
+            }
+
+            @Override
+            public final java.lang.Object getId() {
+                return this.id;
+            }
+
+            @Override
+            public final java.lang.Object getMatchCriteria() {
+                return this.matchCriteria;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getId() != null) {
+                    data.set("id", om.valueToTree(this.getId()));
+                }
+                if (this.getMatchCriteria() != null) {
+                    data.set("matchCriteria", om.valueToTree(this.getMatchCriteria()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosInstance.PrivatePoolOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                PrivatePoolOptionsProperty.Jsii$Proxy that = (PrivatePoolOptionsProperty.Jsii$Proxy) o;
+
+                if (this.id != null ? !this.id.equals(that.id) : that.id != null) return false;
+                return this.matchCriteria != null ? this.matchCriteria.equals(that.matchCriteria) : that.matchCriteria == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.id != null ? this.id.hashCode() : 0;
+                result = 31 * result + (this.matchCriteria != null ? this.matchCriteria.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstance.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1498,23 +1866,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param imageId This parameter is required.
-         */
-        public Builder imageId(final java.lang.String imageId) {
-            this.props.imageId(imageId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param imageId This parameter is required.
-         */
-        public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
-            this.props.imageId(imageId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param instanceType This parameter is required.
          */
         public Builder instanceType(final java.lang.String instanceType) {
@@ -1527,6 +1878,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
             this.props.instanceType(instanceType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param affinity This parameter is required.
+         */
+        public Builder affinity(final java.lang.String affinity) {
+            this.props.affinity(affinity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param affinity This parameter is required.
+         */
+        public Builder affinity(final com.aliyun.ros.cdk.core.IResolvable affinity) {
+            this.props.affinity(affinity);
             return this;
         }
 
@@ -1583,6 +1951,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param creditSpecification This parameter is required.
+         */
+        public Builder creditSpecification(final java.lang.String creditSpecification) {
+            this.props.creditSpecification(creditSpecification);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param creditSpecification This parameter is required.
+         */
+        public Builder creditSpecification(final com.aliyun.ros.cdk.core.IResolvable creditSpecification) {
+            this.props.creditSpecification(creditSpecification);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param dedicatedHostId This parameter is required.
          */
         public Builder dedicatedHostId(final java.lang.String dedicatedHostId) {
@@ -1612,6 +1997,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder deletionProtection(final com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
             this.props.deletionProtection(deletionProtection);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deploymentSetGroupNo This parameter is required.
+         */
+        public Builder deploymentSetGroupNo(final java.lang.Number deploymentSetGroupNo) {
+            this.props.deploymentSetGroupNo(deploymentSetGroupNo);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deploymentSetGroupNo This parameter is required.
+         */
+        public Builder deploymentSetGroupNo(final com.aliyun.ros.cdk.core.IResolvable deploymentSetGroupNo) {
+            this.props.deploymentSetGroupNo(deploymentSetGroupNo);
             return this;
         }
 
@@ -1697,6 +2099,74 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder hpcClusterId(final com.aliyun.ros.cdk.core.IResolvable hpcClusterId) {
             this.props.hpcClusterId(hpcClusterId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param httpEndpoint This parameter is required.
+         */
+        public Builder httpEndpoint(final java.lang.String httpEndpoint) {
+            this.props.httpEndpoint(httpEndpoint);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param httpEndpoint This parameter is required.
+         */
+        public Builder httpEndpoint(final com.aliyun.ros.cdk.core.IResolvable httpEndpoint) {
+            this.props.httpEndpoint(httpEndpoint);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param httpTokens This parameter is required.
+         */
+        public Builder httpTokens(final java.lang.String httpTokens) {
+            this.props.httpTokens(httpTokens);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param httpTokens This parameter is required.
+         */
+        public Builder httpTokens(final com.aliyun.ros.cdk.core.IResolvable httpTokens) {
+            this.props.httpTokens(httpTokens);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param imageFamily This parameter is required.
+         */
+        public Builder imageFamily(final java.lang.String imageFamily) {
+            this.props.imageFamily(imageFamily);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imageFamily This parameter is required.
+         */
+        public Builder imageFamily(final com.aliyun.ros.cdk.core.IResolvable imageFamily) {
+            this.props.imageFamily(imageFamily);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param imageId This parameter is required.
+         */
+        public Builder imageId(final java.lang.String imageId) {
+            this.props.imageId(imageId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imageId This parameter is required.
+         */
+        public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
+            this.props.imageId(imageId);
             return this;
         }
 
@@ -1889,6 +2359,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param privatePoolOptions This parameter is required.
+         */
+        public Builder privatePoolOptions(final com.aliyun.ros.cdk.core.IResolvable privatePoolOptions) {
+            this.props.privatePoolOptions(privatePoolOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param privatePoolOptions This parameter is required.
+         */
+        public Builder privatePoolOptions(final com.aliyun.ros.cdk.ecs.RosInstance.PrivatePoolOptionsProperty privatePoolOptions) {
+            this.props.privatePoolOptions(privatePoolOptions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param ramRoleName This parameter is required.
          */
         public Builder ramRoleName(final java.lang.String ramRoleName) {
@@ -2042,6 +2529,40 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param storageSetId This parameter is required.
+         */
+        public Builder storageSetId(final java.lang.String storageSetId) {
+            this.props.storageSetId(storageSetId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageSetId This parameter is required.
+         */
+        public Builder storageSetId(final com.aliyun.ros.cdk.core.IResolvable storageSetId) {
+            this.props.storageSetId(storageSetId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param storageSetPartitionNumber This parameter is required.
+         */
+        public Builder storageSetPartitionNumber(final java.lang.Number storageSetPartitionNumber) {
+            this.props.storageSetPartitionNumber(storageSetPartitionNumber);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param storageSetPartitionNumber This parameter is required.
+         */
+        public Builder storageSetPartitionNumber(final com.aliyun.ros.cdk.core.IResolvable storageSetPartitionNumber) {
+            this.props.storageSetPartitionNumber(storageSetPartitionNumber);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param systemDiskCategory This parameter is required.
          */
         public Builder systemDiskCategory(final java.lang.String systemDiskCategory) {
@@ -2131,6 +2652,40 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInstance.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tenancy This parameter is required.
+         */
+        public Builder tenancy(final java.lang.String tenancy) {
+            this.props.tenancy(tenancy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tenancy This parameter is required.
+         */
+        public Builder tenancy(final com.aliyun.ros.cdk.core.IResolvable tenancy) {
+            this.props.tenancy(tenancy);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param useAdditionalService This parameter is required.
+         */
+        public Builder useAdditionalService(final java.lang.Boolean useAdditionalService) {
+            this.props.useAdditionalService(useAdditionalService);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param useAdditionalService This parameter is required.
+         */
+        public Builder useAdditionalService(final com.aliyun.ros.cdk.core.IResolvable useAdditionalService) {
+            this.props.useAdditionalService(useAdditionalService);
             return this;
         }
 

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MNS::Topic`.</summary>
+    /// <summary>Properties for defining a `Topic`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-topic
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mns.TopicProps")]
     public class TopicProps : AlibabaCloud.SDK.ROS.CDK.Mns.ITopicProps
     {

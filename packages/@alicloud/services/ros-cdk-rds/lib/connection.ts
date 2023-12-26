@@ -4,7 +4,8 @@ import { RosConnection } from './rds.generated';
 export { RosConnection as ConnectionProperty };
 
 /**
- * Properties for defining a `ALIYUN::RDS::Connection`
+ * Properties for defining a `Connection`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-connection
  */
 export interface ConnectionProps {
 
@@ -41,14 +42,11 @@ export interface ConnectionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RDS::Connection`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Connection`, which is used to apply for a public endpoint.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConnection`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-connection
  */
 export class Connection extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute BabelfishPort: The name of the dedicated cluster to which the instance belongs.
@@ -71,8 +69,6 @@ export class Connection extends ros.Resource {
     public readonly attrPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RDS::Connection`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

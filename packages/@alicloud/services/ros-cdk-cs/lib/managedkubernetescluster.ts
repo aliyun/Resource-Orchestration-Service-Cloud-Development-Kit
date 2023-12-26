@@ -4,7 +4,8 @@ import { RosManagedKubernetesCluster } from './cs.generated';
 export { RosManagedKubernetesCluster as ManagedKubernetesClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::CS::ManagedKubernetesCluster`
+ * Properties for defining a `ManagedKubernetesCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
 export interface ManagedKubernetesClusterProps {
 
@@ -82,7 +83,7 @@ export interface ManagedKubernetesClusterProps {
     readonly clusterSpec?: string | ros.IResolvable;
 
     /**
-     * Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
 
@@ -126,7 +127,7 @@ export interface ManagedKubernetesClusterProps {
      * How to mount a data disk:
      * If the ECS instances have data disks mounted and the file system of the last 
      * data disk is not initialized, the system automatically formats the data disk to ext4. 
-     * Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+     * Then, the system mounts the data disk to \/var\/lib\/docker and \/var\/lib\/kubelet.
      * The system does not create or mount a new data disk if no data disk has been 
      * mounted to the ECS instances.
      */
@@ -265,7 +266,7 @@ export interface ManagedKubernetesClusterProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
 
@@ -346,14 +347,11 @@ export interface ManagedKubernetesClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CS::ManagedKubernetesCluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) managed cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedKubernetesCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
 export class ManagedKubernetesCluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute APIServerSLBId: The id of API server SLB
@@ -406,8 +404,6 @@ export class ManagedKubernetesCluster extends ros.Resource {
     public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CS::ManagedKubernetesCluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

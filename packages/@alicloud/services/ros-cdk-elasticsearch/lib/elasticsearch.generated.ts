@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ElasticSearch::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
  */
 export interface RosInstanceProps {
 
@@ -73,7 +74,7 @@ export interface RosInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of prepaid time period, it could be Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -230,18 +231,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::ElasticSearch::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearch::Instance`, which is used to create an Elasticsearch cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ElasticSearch::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Domain: Instance connection domain (only VPC network access supported).
@@ -362,7 +360,7 @@ export class RosInstance extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of prepaid time period, it could be Month\/Year. Default value is Month.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -404,8 +402,6 @@ export class RosInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ElasticSearch::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

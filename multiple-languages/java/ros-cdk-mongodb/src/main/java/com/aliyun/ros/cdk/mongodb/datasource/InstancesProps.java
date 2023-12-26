@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.mongodb.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::MONGODB::Instances</code>.
+ * Properties for defining a <code>Instances</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.098Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.880Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.datasource.InstancesProps")
 @software.amazon.jsii.Jsii.Proxy(InstancesProps.Jsii$Proxy.class)
 public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {

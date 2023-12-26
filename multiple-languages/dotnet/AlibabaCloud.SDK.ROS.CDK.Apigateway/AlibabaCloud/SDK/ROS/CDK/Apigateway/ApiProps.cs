@@ -6,13 +6,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::Api`.</summary>
+    /// <summary>Properties for defining a `Api`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.ApiProps")]
     public class ApiProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IApiProps
     {
         private object _apiName;
 
-        /// <summary>Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
+        /// <summary>Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.</summary>
         [JsiiProperty(name: "apiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ApiName
         {

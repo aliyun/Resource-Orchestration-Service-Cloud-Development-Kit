@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::VSwitch`.</summary>
+    /// <summary>Properties for defining a `RosVSwitch`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosVSwitchProps")]
     public class RosVSwitchProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosVSwitchProps
     {

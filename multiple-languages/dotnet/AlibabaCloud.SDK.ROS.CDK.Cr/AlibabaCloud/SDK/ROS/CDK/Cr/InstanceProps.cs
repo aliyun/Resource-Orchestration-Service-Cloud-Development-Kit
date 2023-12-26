@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CR::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cr.InstanceProps")]
     public class InstanceProps : AlibabaCloud.SDK.ROS.CDK.Cr.IInstanceProps
     {

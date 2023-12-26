@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::EIP::Addresses`.</summary>
+    /// <summary>Properties for defining a `Addresses`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-addresses
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAddressesProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.AddressesProps")]
     public interface IAddressesProps
     {
@@ -138,7 +141,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::EIP::Addresses`.</summary>
+        /// <summary>Properties for defining a `Addresses`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eip-addresses
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAddressesProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.AddressesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IAddressesProps
         {

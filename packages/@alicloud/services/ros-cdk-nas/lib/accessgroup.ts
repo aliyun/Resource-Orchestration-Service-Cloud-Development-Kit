@@ -4,7 +4,8 @@ import { RosAccessGroup } from './nas.generated';
 export { RosAccessGroup as AccessGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::NAS::AccessGroup`
+ * Properties for defining a `AccessGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
  */
 export interface AccessGroupProps {
 
@@ -31,14 +32,11 @@ export interface AccessGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NAS::AccessGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessGroup`, which is used to create a permission group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
  */
 export class AccessGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccessGroupName: Permission group name
@@ -46,8 +44,6 @@ export class AccessGroup extends ros.Resource {
     public readonly attrAccessGroupName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NAS::AccessGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

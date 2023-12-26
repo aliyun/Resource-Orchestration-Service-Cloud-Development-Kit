@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.actiontrail;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ACTIONTRAIL::TrailLogging</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACTIONTRAIL::TrailLogging</code>, which is used to enable or disable trail logging.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.161Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.643Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailLogging")
 public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ACTIONTRAIL::TrailLogging</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class TrailLogging extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ACTIONTRAIL::TrailLogging</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

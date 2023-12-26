@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
 {
-    /// <summary>Properties for defining a `ALIYUN::PVTZ::ZoneRecord`.</summary>
+    /// <summary>Properties for defining a `RosZoneRecord`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosZoneRecordProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.RosZoneRecordProps")]
     public interface IRosZoneRecordProps
     {
@@ -81,7 +84,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::PVTZ::ZoneRecord`.</summary>
+        /// <summary>Properties for defining a `RosZoneRecord`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosZoneRecordProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.RosZoneRecordProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Pvtz.IRosZoneRecordProps
         {

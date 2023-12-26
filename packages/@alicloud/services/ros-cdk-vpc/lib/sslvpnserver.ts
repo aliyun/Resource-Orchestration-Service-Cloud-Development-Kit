@@ -4,7 +4,8 @@ import { RosSslVpnServer } from './vpc.generated';
 export { RosSslVpnServer as SslVpnServerProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::SslVpnServer`
+ * Properties for defining a `SslVpnServer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnserver
  */
 export interface SslVpnServerProps {
 
@@ -17,7 +18,7 @@ export interface SslVpnServerProps {
 
     /**
      * Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
-     * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
+     * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS\/OSS.
      */
     readonly localSubnet: string | ros.IResolvable;
 
@@ -39,7 +40,7 @@ export interface SslVpnServerProps {
 
     /**
      * Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-     * But it can't start with http:// or https://.
+     * But it can't start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -56,14 +57,11 @@ export interface SslVpnServerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::SslVpnServer`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SslVpnServer`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSslVpnServer`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnserver
  */
 export class SslVpnServer extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SslVpnServerId: ID of the SSL-VPN server.
@@ -71,8 +69,6 @@ export class SslVpnServer extends ros.Resource {
     public readonly attrSslVpnServerId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::SslVpnServer`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

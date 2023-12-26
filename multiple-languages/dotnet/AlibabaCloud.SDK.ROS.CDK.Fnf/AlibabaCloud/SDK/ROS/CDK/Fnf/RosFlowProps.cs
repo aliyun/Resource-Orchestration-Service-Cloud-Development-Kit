@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FNF::Flow`.</summary>
+    /// <summary>Properties for defining a `RosFlow`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fnf.RosFlowProps")]
     public class RosFlowProps : AlibabaCloud.SDK.ROS.CDK.Fnf.IRosFlowProps
     {

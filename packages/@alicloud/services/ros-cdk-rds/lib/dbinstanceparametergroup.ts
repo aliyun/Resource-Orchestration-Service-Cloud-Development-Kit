@@ -4,7 +4,8 @@ import { RosDBInstanceParameterGroup } from './rds.generated';
 export { RosDBInstanceParameterGroup as DBInstanceParameterGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::RDS::DBInstanceParameterGroup`
+ * Properties for defining a `DBInstanceParameterGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
  */
 export interface DBInstanceParameterGroupProps {
 
@@ -25,18 +26,13 @@ export interface DBInstanceParameterGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RDS::DBInstanceParameterGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceParameterGroup`, which is used to modify the parameters of an ApsaraDB RDS instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstanceParameterGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
  */
 export class DBInstanceParameterGroup extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::RDS::DBInstanceParameterGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

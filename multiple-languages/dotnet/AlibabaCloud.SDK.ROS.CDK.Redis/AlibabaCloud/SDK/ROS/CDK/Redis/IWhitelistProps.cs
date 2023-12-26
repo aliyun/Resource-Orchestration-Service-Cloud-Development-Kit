@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
-    /// <summary>Properties for defining a `ALIYUN::REDIS::Whitelist`.</summary>
+    /// <summary>Properties for defining a `Whitelist`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IWhitelistProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.WhitelistProps")]
     public interface IWhitelistProps
     {
@@ -47,7 +50,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::REDIS::Whitelist`.</summary>
+        /// <summary>Properties for defining a `Whitelist`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IWhitelistProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.WhitelistProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.IWhitelistProps
         {

@@ -4,7 +4,8 @@ import { RosScalingRule } from './ess.generated';
 export { RosScalingRule as ScalingRuleProperty };
 
 /**
- * Properties for defining a `ALIYUN::ESS::ScalingRule`
+ * Properties for defining a `ScalingRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
  */
 export interface ScalingRuleProps {
 
@@ -142,14 +143,11 @@ export interface ScalingRuleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ESS::ScalingRule`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingRule`, which is used to create a scaling rule.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
  */
 export class ScalingRule extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ScalingRuleAri: Unique identifier of a scaling rule.
@@ -162,8 +160,6 @@ export class ScalingRule extends ros.Resource {
     public readonly attrScalingRuleId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ESS::ScalingRule`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

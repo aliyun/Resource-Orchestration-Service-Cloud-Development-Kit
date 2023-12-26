@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bastionhost
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::BastionHost::Host`.</summary>
+    /// <summary>Properties for defining a `Host`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-host
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-bastionhost.HostProps")]
     public class HostProps : AlibabaCloud.SDK.ROS.CDK.Bastionhost.IHostProps
     {

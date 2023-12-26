@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
-    /// <summary>A ROS template type:  `ALIYUN::RAM::SecurityPreference`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SecurityPreference`, which is used to configure security preferences for Resource Access Management (RAM) users.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SecurityPreference` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ram.RosSecurityPreference), fullyQualifiedName: "@alicloud/ros-cdk-ram.RosSecurityPreference", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ram.RosSecurityPreferenceProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosSecurityPreference : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::RAM::SecurityPreference`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -304,7 +307,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// If you do not specify a subnet mask, RAM users can log on to the console by using
         /// all IP addresses.
         /// If you want to specify multiple subnet masks, separate the subnet masks with semicolons
-        /// (;). Example: 192.168.0.0/16;10.0.0.0/8.
+        /// (;). Example: 192.168.0.0\/16;10.0.0.0\/8.
         /// A maximum of 25 subnet masks can be set. The total length of the subnet masks can
         /// be 1 to 512 characters.
         /// </remarks>

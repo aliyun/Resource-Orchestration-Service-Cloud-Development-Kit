@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
-    /// <summary>Properties for defining a `ALIYUN::HBR::DbAgent`.</summary>
+    /// <summary>Properties for defining a `RosDbAgent`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDbAgentProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.RosDbAgentProps")]
     public interface IRosDbAgentProps
     {
@@ -17,7 +20,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::HBR::DbAgent`.</summary>
+        /// <summary>Properties for defining a `RosDbAgent`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbagent
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDbAgentProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.RosDbAgentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Hbr.IRosDbAgentProps
         {

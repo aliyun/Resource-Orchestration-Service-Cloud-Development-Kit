@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ehpc;
 
 /**
- * A ROS resource type:  <code>ALIYUN::EHPC::AutoScaleConfig</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::EHPC::AutoScaleConfig</code>, which is used to configure the auto scaling settings of a cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.306Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.811Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.AutoScaleConfig")
 public class AutoScaleConfig extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class AutoScaleConfig extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::EHPC::AutoScaleConfig</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class AutoScaleConfig extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::EHPC::AutoScaleConfig</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.

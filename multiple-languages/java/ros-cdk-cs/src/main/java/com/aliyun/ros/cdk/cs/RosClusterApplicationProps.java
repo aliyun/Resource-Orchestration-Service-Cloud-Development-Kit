@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * Properties for defining a <code>ALIYUN::CS::ClusterApplication</code>.
+ * Properties for defining a <code>RosClusterApplication</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterapplication
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.267Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.660Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterApplicationProps.Jsii$Proxy.class)
 public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -29,6 +31,12 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStage() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosClusterApplicationProps}
      */
     static Builder builder() {
@@ -42,6 +50,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
         java.lang.Object yamlContent;
         java.lang.Object defaultNamespace;
         java.lang.Object rolePolicy;
+        java.lang.Object stage;
 
         /**
          * Sets the value of {@link RosClusterApplicationProps#getClusterId}
@@ -124,6 +133,26 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosClusterApplicationProps#getStage}
+         * @param stage the value to be set.
+         * @return {@code this}
+         */
+        public Builder stage(java.lang.String stage) {
+            this.stage = stage;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterApplicationProps#getStage}
+         * @param stage the value to be set.
+         * @return {@code this}
+         */
+        public Builder stage(com.aliyun.ros.cdk.core.IResolvable stage) {
+            this.stage = stage;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosClusterApplicationProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -143,6 +172,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
         private final java.lang.Object yamlContent;
         private final java.lang.Object defaultNamespace;
         private final java.lang.Object rolePolicy;
+        private final java.lang.Object stage;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -154,6 +184,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
             this.yamlContent = software.amazon.jsii.Kernel.get(this, "yamlContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultNamespace = software.amazon.jsii.Kernel.get(this, "defaultNamespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.stage = software.amazon.jsii.Kernel.get(this, "stage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -165,6 +196,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
             this.yamlContent = java.util.Objects.requireNonNull(builder.yamlContent, "yamlContent is required");
             this.defaultNamespace = builder.defaultNamespace;
             this.rolePolicy = builder.rolePolicy;
+            this.stage = builder.stage;
         }
 
         @Override
@@ -188,6 +220,11 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
+        public final java.lang.Object getStage() {
+            return this.stage;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -200,6 +237,9 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
             }
             if (this.getRolePolicy() != null) {
                 data.set("rolePolicy", om.valueToTree(this.getRolePolicy()));
+            }
+            if (this.getStage() != null) {
+                data.set("stage", om.valueToTree(this.getStage()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -222,7 +262,8 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
             if (!clusterId.equals(that.clusterId)) return false;
             if (!yamlContent.equals(that.yamlContent)) return false;
             if (this.defaultNamespace != null ? !this.defaultNamespace.equals(that.defaultNamespace) : that.defaultNamespace != null) return false;
-            return this.rolePolicy != null ? this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy == null;
+            if (this.rolePolicy != null ? !this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy != null) return false;
+            return this.stage != null ? this.stage.equals(that.stage) : that.stage == null;
         }
 
         @Override
@@ -231,6 +272,7 @@ public interface RosClusterApplicationProps extends software.amazon.jsii.JsiiSer
             result = 31 * result + (this.yamlContent.hashCode());
             result = 31 * result + (this.defaultNamespace != null ? this.defaultNamespace.hashCode() : 0);
             result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);
+            result = 31 * result + (this.stage != null ? this.stage.hashCode() : 0);
             return result;
         }
     }

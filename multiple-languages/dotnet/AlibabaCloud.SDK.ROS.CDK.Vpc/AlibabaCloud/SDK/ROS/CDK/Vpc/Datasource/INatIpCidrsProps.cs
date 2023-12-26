@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::NatIpCidrs`.</summary>
+    /// <summary>Properties for defining a `NatIpCidrs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natipcidrs
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(INatIpCidrsProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.NatIpCidrsProps")]
     public interface INatIpCidrsProps
     {
@@ -29,7 +32,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::VPC::NatIpCidrs`.</summary>
+        /// <summary>Properties for defining a `NatIpCidrs`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natipcidrs
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(INatIpCidrsProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.datasource.NatIpCidrsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.INatIpCidrsProps
         {

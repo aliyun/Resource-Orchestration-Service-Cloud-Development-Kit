@@ -4,7 +4,8 @@ import { RosAssignIpv6Addresses } from './ecs.generated';
 export { RosAssignIpv6Addresses as AssignIpv6AddressesProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::AssignIpv6Addresses`
+ * Properties for defining a `AssignIpv6Addresses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */
 export interface AssignIpv6AddressesProps {
 
@@ -27,14 +28,11 @@ export interface AssignIpv6AddressesProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::AssignIpv6Addresses`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`, which is used to assign one or more IPv6 addresses to an elastic network interface (ENI).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAssignIpv6Addresses`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */
 export class AssignIpv6Addresses extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Ipv6AddressIds: Assigned IPv6 address IDs.
@@ -52,8 +50,6 @@ export class AssignIpv6Addresses extends ros.Resource {
     public readonly attrNetworkInterfaceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::AssignIpv6Addresses`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 {
-    /// <summary>Properties for defining a `ALIYUN::PrivateLink::VpcEndpointService`.</summary>
+    /// <summary>Properties for defining a `RosVpcEndpointService`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-privatelink.RosVpcEndpointServiceProps")]
     public class RosVpcEndpointServiceProps : AlibabaCloud.SDK.ROS.CDK.Privatelink.IRosVpcEndpointServiceProps
     {
@@ -46,7 +49,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         private object? _connectBandwidth;
 
         /// <remarks>
-        /// <strong>Property</strong>: connectBandwidth: The default maximum bandwidth of the endpoint connection. Valid values: 100 to 1024. Unit: Mbit/s.
+        /// <strong>Property</strong>: connectBandwidth: The default maximum bandwidth of the endpoint connection. Valid values: 100 to 1024. Unit: Mbit\/s.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "connectBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

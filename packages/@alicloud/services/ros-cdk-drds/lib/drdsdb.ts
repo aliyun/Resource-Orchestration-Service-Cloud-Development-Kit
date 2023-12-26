@@ -4,7 +4,8 @@ import { RosDrdsDB } from './drds.generated';
 export { RosDrdsDB as DrdsDBProperty };
 
 /**
- * Properties for defining a `ALIYUN::DRDS::DrdsDB`
+ * Properties for defining a `DrdsDB`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
  */
 export interface DrdsDBProps {
 
@@ -64,18 +65,13 @@ export interface DrdsDBProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DRDS::DrdsDB`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DRDS::DrdsDB`, which is used to create a Distributed Relational Database Service (DRDS) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsDB`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
  */
 export class DrdsDB extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::DRDS::DrdsDB`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

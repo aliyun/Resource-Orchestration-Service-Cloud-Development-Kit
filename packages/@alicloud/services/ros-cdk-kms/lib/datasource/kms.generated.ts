@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::KMS::Instances`
+ * Properties for defining a `RosInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-instances
  */
 export interface RosInstancesProps {
 }
@@ -39,18 +40,15 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::KMS::Instances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Instances`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-instances
  */
 export class RosInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::KMS::Instances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: The list of instance IDs.
@@ -66,8 +64,6 @@ export class RosInstances extends ros.RosResource {
 
 
     /**
-     * Create a new `DATASOURCE::KMS::Instances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -91,7 +87,8 @@ export class RosInstances extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::KMS::Secrets`
+ * Properties for defining a `RosSecrets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secrets
  */
 export interface RosSecretsProps {
 }
@@ -127,18 +124,15 @@ function rosSecretsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `DATASOURCE::KMS::Secrets`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Secrets`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Secrets` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secrets
  */
 export class RosSecrets extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::KMS::Secrets";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SecretNames: The list of secret names.
@@ -154,8 +148,6 @@ export class RosSecrets extends ros.RosResource {
 
 
     /**
-     * Create a new `DATASOURCE::KMS::Secrets`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

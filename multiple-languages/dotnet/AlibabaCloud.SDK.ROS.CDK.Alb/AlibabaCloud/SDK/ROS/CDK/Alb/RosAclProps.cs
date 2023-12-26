@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>Properties for defining a `ALIYUN::ALB::Acl`.</summary>
+    /// <summary>Properties for defining a `RosAcl`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RosAclProps")]
     public class RosAclProps : AlibabaCloud.SDK.ROS.CDK.Alb.IRosAclProps
     {

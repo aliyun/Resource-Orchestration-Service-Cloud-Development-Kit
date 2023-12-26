@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAG::App`.</summary>
+    /// <summary>Properties for defining a `RosApp`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-app
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sag.RosAppProps")]
     public class RosAppProps : AlibabaCloud.SDK.ROS.CDK.Sag.IRosAppProps
     {

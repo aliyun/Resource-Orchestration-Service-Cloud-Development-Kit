@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ROCKETMQ::Groups`.</summary>
+    /// <summary>Properties for defining a `Groups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-groups
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-rocketmq.datasource.GroupsProps")]
     public interface IGroupsProps
     {
@@ -41,7 +44,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ROCKETMQ::Groups`.</summary>
+        /// <summary>Properties for defining a `Groups`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-groups
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-rocketmq.datasource.GroupsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rocketmq.Datasource.IGroupsProps
         {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ResourceManager::ResourceGroup`.</summary>
+    /// <summary>Properties for defining a `RosResourceGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcegroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-resourcemanager.RosResourceGroupProps")]
     public class RosResourceGroupProps : AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IRosResourceGroupProps
     {

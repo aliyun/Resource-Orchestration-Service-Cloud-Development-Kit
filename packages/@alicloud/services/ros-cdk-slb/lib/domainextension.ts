@@ -4,7 +4,8 @@ import { RosDomainExtension } from './slb.generated';
 export { RosDomainExtension as DomainExtensionProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLB::DomainExtension`
+ * Properties for defining a `DomainExtension`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
  */
 export interface DomainExtensionProps {
 
@@ -31,14 +32,11 @@ export interface DomainExtensionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLB::DomainExtension`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::DomainExtension`, which is used to create a domain extension for an SLB instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainExtension`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
  */
 export class DomainExtension extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DomainExtensionId: The ID of the created domain name extension.
@@ -52,8 +50,6 @@ export class DomainExtension extends ros.Resource {
     public readonly attrListenerPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLB::DomainExtension`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

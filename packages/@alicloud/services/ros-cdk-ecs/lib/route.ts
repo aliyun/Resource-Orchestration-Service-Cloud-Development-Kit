@@ -4,7 +4,8 @@ import { RosRoute } from './ecs.generated';
 export { RosRoute as RouteProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::Route`
+ * Properties for defining a `Route`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */
 export interface RouteProps {
 
@@ -35,14 +36,11 @@ export interface RouteProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::Route`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Route`, which is used to create a custom route entry.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRoute`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */
 export class Route extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RouteEntryId: The ID of the route entry.
@@ -50,8 +48,6 @@ export class Route extends ros.Resource {
     public readonly attrRouteEntryId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::Route`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>Properties for defining a `ALIYUN::SLB::MasterSlaveServerGroup`.</summary>
+    /// <summary>Properties for defining a `MasterSlaveServerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IMasterSlaveServerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.MasterSlaveServerGroupProps")]
     public interface IMasterSlaveServerGroupProps
     {
@@ -15,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             get;
         }
 
-        /// <summary>Property masterSlaveBackendServers: A list of active/standby server group.</summary>
+        /// <summary>Property masterSlaveBackendServers: A list of active\/standby server group.</summary>
         /// <remarks>
         /// An active/standby server group can only contain two backend servers.
         /// </remarks>
@@ -25,7 +28,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             get;
         }
 
-        /// <summary>Property masterSlaveServerGroupName: The name of the active/standby server group.</summary>
+        /// <summary>Property masterSlaveServerGroupName: The name of the active\/standby server group.</summary>
         [JsiiProperty(name: "masterSlaveServerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? MasterSlaveServerGroupName
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLB::MasterSlaveServerGroup`.</summary>
+        /// <summary>Properties for defining a `MasterSlaveServerGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IMasterSlaveServerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.MasterSlaveServerGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.IMasterSlaveServerGroupProps
         {
@@ -51,7 +57,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property masterSlaveBackendServers: A list of active/standby server group.</summary>
+            /// <summary>Property masterSlaveBackendServers: A list of active\/standby server group.</summary>
             /// <remarks>
             /// An active/standby server group can only contain two backend servers.
             /// </remarks>
@@ -61,7 +67,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property masterSlaveServerGroupName: The name of the active/standby server group.</summary>
+            /// <summary>Property masterSlaveServerGroupName: The name of the active\/standby server group.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "masterSlaveServerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? MasterSlaveServerGroupName

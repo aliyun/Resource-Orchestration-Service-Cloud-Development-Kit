@@ -6,14 +6,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ComputeNest::ServiceInstance`.</summary>
+    /// <summary>Properties for defining a `ServiceInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-computenest-serviceinstance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-computenest.ServiceInstanceProps")]
     public class ServiceInstanceProps : AlibabaCloud.SDK.ROS.CDK.Computenest.IServiceInstanceProps
     {
         private object _service;
 
         /// <summary>Property service: Service details.</summary>
-        [JsiiProperty(name: "service", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-computenest.RosServiceInstance.ServiceProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "service", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-computenest.RosServiceInstance.ServiceProperty\"}]}}")]
         public object Service
         {
             get => _service;
@@ -23,17 +26,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Computenest
                 {
                     switch (value)
                     {
-                        case AlibabaCloud.SDK.ROS.CDK.Computenest.RosServiceInstance.IServiceProperty cast_cd4240:
-                            break;
                         case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Computenest.RosServiceInstance.IServiceProperty cast_cd4240:
                             break;
                         case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
                             // Not enough information to type-check...
                             break;
                         case null:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Computenest.RosServiceInstance.IServiceProperty).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Computenest.RosServiceInstance.IServiceProperty).FullName}; received null", nameof(value));
                         default:
-                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Computenest.RosServiceInstance.IServiceProperty).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Computenest.RosServiceInstance.IServiceProperty).FullName}; received {value.GetType().FullName}", nameof(value));
                     }
                 }
                 _service = value;

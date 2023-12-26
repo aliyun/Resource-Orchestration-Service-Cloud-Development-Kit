@@ -4,7 +4,8 @@ import { RosLogstore } from './sls.generated';
 export { RosLogstore as LogstoreProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLS::Logstore`
+ * Properties for defining a `Logstore`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
 export interface LogstoreProps {
 
@@ -37,7 +38,7 @@ export interface LogstoreProps {
     readonly autoSplit?: boolean | ros.IResolvable;
 
     /**
-     * Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.
+     * Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS\/Android\/APP access information.
      * Default to false.
      */
     readonly enableTracking?: boolean | ros.IResolvable;
@@ -74,14 +75,11 @@ export interface LogstoreProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLS::Logstore`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Log Service project.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogstore`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
 export class Logstore extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute LogstoreName: Logstore name.
@@ -89,8 +87,6 @@ export class Logstore extends ros.Resource {
     public readonly attrLogstoreName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLS::Logstore`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

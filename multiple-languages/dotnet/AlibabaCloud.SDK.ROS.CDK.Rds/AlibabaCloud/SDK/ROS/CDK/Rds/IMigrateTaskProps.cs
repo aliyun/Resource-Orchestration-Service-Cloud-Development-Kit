@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::MigrateTask`.</summary>
+    /// <summary>Properties for defining a `MigrateTask`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-migratetask
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IMigrateTaskProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.MigrateTaskProps")]
     public interface IMigrateTaskProps
     {
@@ -100,7 +103,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::MigrateTask`.</summary>
+        /// <summary>Properties for defining a `MigrateTask`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-migratetask
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IMigrateTaskProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.MigrateTaskProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IMigrateTaskProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::EIP`.</summary>
+    /// <summary>Properties for defining a `EIP`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IEIPProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.EIPProps")]
     public interface IEIPProps
     {
@@ -230,7 +233,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::EIP`.</summary>
+        /// <summary>Properties for defining a `EIP`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IEIPProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.EIPProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IEIPProps
         {

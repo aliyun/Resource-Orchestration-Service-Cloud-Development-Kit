@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>A ROS template type:  `ALIYUN::RDS::Account`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Account`, which is used to create a database account for an ApsaraDB for RDS instance.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-account
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Rds.RosAccount), fullyQualifiedName: "@alicloud/ros-cdk-rds.RosAccount", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-rds.RosAccountProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosAccount : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::RDS::Account`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -171,9 +174,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <remarks>
         /// <strong>Property</strong>: accountDescription: Account remarks.
-        /// It cannot begin with http:// or https://.
+        /// It cannot begin with http:\/\/ or https:\/\/.
         /// It must start with a Chinese character or English letter.
-        /// It can include Chinese and English characters/letters, underscores (_), hyphens (-), and digits.
+        /// It can include Chinese and English characters\/letters, underscores (_), hyphens (-), and digits.
         /// The length may be 2-256 characters.
         /// </remarks>
         [JsiiOptional]
@@ -209,8 +212,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Normal: Common privilege.
         /// Super: High privilege. And the default value is Normal.
         /// Sysadmin: Super privileges (SA) (only supported by SQL Server)
-        /// This parameter is valid for MySQL 5.5/5.6 only.
-        /// MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
+        /// This parameter is valid for MySQL 5.5\/5.6 only.
+        /// MySQL 5.7, SQL Server 2012\/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "accountType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

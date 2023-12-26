@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>A ROS template type:  `DATASOURCE::ECS::RecommendInstanceTypes`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::RecommendInstanceTypes`, which is used to query the recommended Elastic Compute Service (ECS) instance types.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `RecommendInstanceTypes` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.RosRecommendInstanceTypes), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.RosRecommendInstanceTypes", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ecs.datasource.RosRecommendInstanceTypesProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosRecommendInstanceTypes : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `DATASOURCE::ECS::RecommendInstanceTypes`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -279,9 +282,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ioOptimized: Specifies whether to match I/O optimized instances. The IoOptimized parameter cannot be specified when the instance is not I/O optimized. Valid values:
-        /// optimized: matches I/O optimized instances.
-        /// none: matches non-I/O optimized instances.
+        /// <strong>Property</strong>: ioOptimized: Specifies whether to match I\/O optimized instances. The IoOptimized parameter cannot be specified when the instance is not I\/O optimized. Valid values:
+        /// optimized: matches I\/O optimized instances.
+        /// none: matches non-I\/O optimized instances.
         /// Default value: optimized.
         /// If you query alternative instance types for retired instance types, this parameter is set to none by default.
         /// Default value: none.
@@ -529,8 +532,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         /// cloud_ssd: standard SSD
         /// cloud_essd: enhanced SSD (ESSD)
         /// cloud: basic disk
-        /// For non-I/O optimized instances, the default value is cloud.
-        /// For I/O optimized instances, the default value is cloud_efficiency.
+        /// For non-I\/O optimized instances, the default value is cloud.
+        /// For I\/O optimized instances, the default value is cloud_efficiency.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "systemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

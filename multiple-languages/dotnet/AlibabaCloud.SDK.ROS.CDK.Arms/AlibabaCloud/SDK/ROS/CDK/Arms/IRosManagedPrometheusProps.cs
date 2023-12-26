@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Arms
 {
-    /// <summary>Properties for defining a `ALIYUN::ARMS::ManagedPrometheus`.</summary>
+    /// <summary>Properties for defining a `RosManagedPrometheus`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosManagedPrometheusProps), fullyQualifiedName: "@alicloud/ros-cdk-arms.RosManagedPrometheusProps")]
     public interface IRosManagedPrometheusProps
     {
@@ -83,7 +86,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ARMS::ManagedPrometheus`.</summary>
+        /// <summary>Properties for defining a `RosManagedPrometheus`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosManagedPrometheusProps), fullyQualifiedName: "@alicloud/ros-cdk-arms.RosManagedPrometheusProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Arms.IRosManagedPrometheusProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Commands`.</summary>
+    /// <summary>Properties for defining a `Commands`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICommandsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.CommandsProps")]
     public interface ICommandsProps
     {
@@ -61,7 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::Commands`.</summary>
+        /// <summary>Properties for defining a `Commands`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICommandsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.CommandsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.ICommandsProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::RDS::DBInstances`.</summary>
+    /// <summary>Properties for defining a `DBInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.datasource.DBInstancesProps")]
     public class DBInstancesProps : AlibabaCloud.SDK.ROS.CDK.Rds.Datasource.IDBInstancesProps
     {

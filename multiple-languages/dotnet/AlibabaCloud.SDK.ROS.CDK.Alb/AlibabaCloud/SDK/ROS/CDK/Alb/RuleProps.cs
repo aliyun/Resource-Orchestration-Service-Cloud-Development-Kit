@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ALB::Rule`.</summary>
+    /// <summary>Properties for defining a `Rule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.RuleProps")]
     public class RuleProps : AlibabaCloud.SDK.ROS.CDK.Alb.IRuleProps
     {

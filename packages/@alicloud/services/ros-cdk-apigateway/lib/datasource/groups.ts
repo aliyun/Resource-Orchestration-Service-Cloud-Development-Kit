@@ -4,7 +4,8 @@ import { RosGroups } from './apigateway.generated';
 export { RosGroups as GroupsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ApiGateway::Groups`
+ * Properties for defining a `Groups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-groups
  */
 export interface GroupsProps {
 
@@ -30,14 +31,11 @@ export interface GroupsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ApiGateway::Groups`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ApiGateway::Groups`, which is used to query the details of existing API groups.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroups`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-groups
  */
 export class Groups extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ApiGroupIds: The list of The ApiGateway group ids.
@@ -50,8 +48,6 @@ export class Groups extends ros.Resource {
     public readonly attrApiGroups: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ApiGateway::Groups`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

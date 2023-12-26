@@ -4,7 +4,8 @@ import { RosTensorboard } from './paidlc.generated';
 export { RosTensorboard as TensorboardProperty };
 
 /**
- * Properties for defining a `ALIYUN::PAIDLC::Tensorboard`
+ * Properties for defining a `Tensorboard`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
  */
 export interface TensorboardProps {
 
@@ -80,21 +81,18 @@ export interface TensorboardProps {
 
     /**
      * Property uri: URI of a dataset:
-     * When DataSourceType is OSS, the format is: OSS: // [OSS-BUCET]. [Endpoint]/[Path].
-     * When the DataSourceType is NAS, the format is: nas:// [nas-filesystem-id]. [Region]/[PATH].
+     * When DataSourceType is OSS, the format is: OSS: \/\/ [OSS-BUCET]. [Endpoint]\/[Path].
+     * When the DataSourceType is NAS, the format is: nas:\/\/ [nas-filesystem-id]. [Region]\/[PATH].
      */
     readonly uri?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PAIDLC::Tensorboard`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAIDLC::Tensorboard`, which is used to create a TensorBoard instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTensorboard`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
  */
 export class Tensorboard extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TensorboardId: Tensorboard id.
@@ -107,8 +105,6 @@ export class Tensorboard extends ros.Resource {
     public readonly attrTensorboardUrl: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PAIDLC::Tensorboard`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::SLS::Logstores`.</summary>
+    /// <summary>Properties for defining a `RosLogstores`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-logstores
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosLogstoresProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.datasource.RosLogstoresProps")]
     public interface IRosLogstoresProps
     {
@@ -30,7 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::SLS::Logstores`.</summary>
+        /// <summary>Properties for defining a `RosLogstores`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-logstores
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosLogstoresProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.datasource.RosLogstoresProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.Datasource.IRosLogstoresProps
         {

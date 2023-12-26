@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::CopyImage`.</summary>
+    /// <summary>Properties for defining a `CopyImage`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICopyImageProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.CopyImageProps")]
     public interface ICopyImageProps
     {
@@ -22,7 +25,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
-        /// <summary>Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.</summary>
+        /// <summary>Property allowCopyInSameRegion: Whether to allow copying images in the same region.</summary>
+        /// <remarks>
+        /// If set to true, the image will not be copied, the source image id will be returned, and the original image will not be deleted.
+        /// </remarks>
+        [JsiiProperty(name: "allowCopyInSameRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AllowCopyInSameRegion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property destinationDescription: The description of the destination custom image.It cannot begin with http:\/\/ or https:\/\/.  Default value: null.</summary>
         [JsiiProperty(name: "destinationDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? DestinationDescription
@@ -105,7 +122,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::CopyImage`.</summary>
+        /// <summary>Properties for defining a `CopyImage`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICopyImageProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.CopyImageProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.ICopyImageProps
         {
@@ -127,7 +147,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.</summary>
+            /// <summary>Property allowCopyInSameRegion: Whether to allow copying images in the same region.</summary>
+            /// <remarks>
+            /// If set to true, the image will not be copied, the source image id will be returned, and the original image will not be deleted.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "allowCopyInSameRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AllowCopyInSameRegion
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property destinationDescription: The description of the destination custom image.It cannot begin with http:\/\/ or https:\/\/.  Default value: null.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "destinationDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? DestinationDescription

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`.</summary>
+    /// <summary>Properties for defining a `AutoSnapshotPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.AutoSnapshotPolicyProps")]
     public class AutoSnapshotPolicyProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IAutoSnapshotPolicyProps
     {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.computenest;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ComputeNest::ServiceInstance</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ComputeNest::ServiceInstance</code>, which is used to create and deploy a service instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.083Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.461Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.ServiceInstance")
 public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ComputeNest::ServiceInstance</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ComputeNest::ServiceInstance</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -251,7 +243,7 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param service Property service: Service details. This parameter is required.
          */
-        public Builder service(final com.aliyun.ros.cdk.computenest.RosServiceInstance.ServiceProperty service) {
+        public Builder service(final com.aliyun.ros.cdk.core.IResolvable service) {
             this.props.service(service);
             return this;
         }
@@ -261,7 +253,7 @@ public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource {
          * @return {@code this}
          * @param service Property service: Service details. This parameter is required.
          */
-        public Builder service(final com.aliyun.ros.cdk.core.IResolvable service) {
+        public Builder service(final com.aliyun.ros.cdk.computenest.RosServiceInstance.ServiceProperty service) {
             this.props.service(service);
             return this;
         }

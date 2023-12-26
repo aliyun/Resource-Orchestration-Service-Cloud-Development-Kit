@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 {
-    /// <summary>Properties for defining a `ALIYUN::MONGODB::ShardingInstance`.</summary>
+    /// <summary>Properties for defining a `RosShardingInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosShardingInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.RosShardingInstanceProps")]
     public interface IRosShardingInstanceProps
     {
@@ -316,7 +319,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::MONGODB::ShardingInstance`.</summary>
+        /// <summary>Properties for defining a `RosShardingInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosShardingInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.RosShardingInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mongodb.IRosShardingInstanceProps
         {

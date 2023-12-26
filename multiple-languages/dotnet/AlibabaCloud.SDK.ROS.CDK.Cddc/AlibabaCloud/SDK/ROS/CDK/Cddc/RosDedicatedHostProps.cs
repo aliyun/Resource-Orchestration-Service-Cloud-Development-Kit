@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CDDC::DedicatedHost`.</summary>
+    /// <summary>Properties for defining a `RosDedicatedHost`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhost
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cddc.RosDedicatedHostProps")]
     public class RosDedicatedHostProps : AlibabaCloud.SDK.ROS.CDK.Cddc.IRosDedicatedHostProps
     {

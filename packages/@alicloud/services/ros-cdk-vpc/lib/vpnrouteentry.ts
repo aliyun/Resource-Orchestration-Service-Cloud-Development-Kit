@@ -4,7 +4,8 @@ import { RosVpnRouteEntry } from './vpc.generated';
 export { RosVpnRouteEntry as VpnRouteEntryProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpnRouteEntry`
+ * Properties for defining a `VpnRouteEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnrouteentry
  */
 export interface VpnRouteEntryProps {
 
@@ -47,14 +48,11 @@ export interface VpnRouteEntryProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::VpnRouteEntry`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnRouteEntry`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnRouteEntry`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnrouteentry
  */
 export class VpnRouteEntry extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute NextHop: The next hop of the destination route entry.
@@ -72,8 +70,6 @@ export class VpnRouteEntry extends ros.Resource {
     public readonly attrVpnGatewayId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::VpnRouteEntry`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

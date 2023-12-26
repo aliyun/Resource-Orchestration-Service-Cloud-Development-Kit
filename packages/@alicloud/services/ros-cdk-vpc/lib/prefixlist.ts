@@ -4,7 +4,8 @@ import { RosPrefixList } from './vpc.generated';
 export { RosPrefixList as PrefixListProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::PrefixList`
+ * Properties for defining a `PrefixList`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-prefixlist
  */
 export interface PrefixListProps {
 
@@ -27,7 +28,7 @@ export interface PrefixListProps {
 
     /**
      * Property prefixListDescription: The description of the prefix list.
-     * It must be 2 to 256 characters in length and must start with a letter or Chinese, but cannot start with http:// or https.
+     * It must be 2 to 256 characters in length and must start with a letter or Chinese, but cannot start with http:\/\/ or https.
      */
     readonly prefixListDescription?: string | ros.IResolvable;
 
@@ -48,14 +49,11 @@ export interface PrefixListProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::PrefixList`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::PrefixList`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrefixList`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-prefixlist
  */
 export class PrefixList extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CreateTime: The time when the prefix list was created.
@@ -113,8 +111,6 @@ export class PrefixList extends ros.Resource {
     public readonly attrTags: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::PrefixList`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

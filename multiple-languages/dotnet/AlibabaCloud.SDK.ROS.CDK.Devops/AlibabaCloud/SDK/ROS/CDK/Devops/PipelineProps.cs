@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Devops
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DEVOPS::Pipeline`.</summary>
+    /// <summary>Properties for defining a `Pipeline`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-devops.PipelineProps")]
     public class PipelineProps : AlibabaCloud.SDK.ROS.CDK.Devops.IPipelineProps
     {

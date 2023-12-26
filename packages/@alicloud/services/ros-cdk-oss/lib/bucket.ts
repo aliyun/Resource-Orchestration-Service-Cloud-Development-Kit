@@ -4,7 +4,8 @@ import { RosBucket } from './oss.generated';
 export { RosBucket as BucketProperty };
 
 /**
- * Properties for defining a `ALIYUN::OSS::Bucket`
+ * Properties for defining a `Bucket`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
 export interface BucketProps {
 
@@ -27,6 +28,12 @@ export interface BucketProps {
      * Property deletionForce: Whether force delete the relative objects in the bucket. Default value is false.
      */
     readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
+     * Property enableOssHdfsService: Whether enable OSS-HDFS service. 
+     * **Note**: Once it's enabled, it can't be disabled again.
+     */
+    readonly enableOssHdfsService?: boolean | ros.IResolvable;
 
     /**
      * Property lifecycleConfiguration: Rules that define how oss bucket manages objects during their lifetime.
@@ -87,14 +94,11 @@ export interface BucketProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::OSS::Bucket`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Bucket`, which is used to create an Object Storage Service (OSS) bucket.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBucket`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
 export class Bucket extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DomainName: The public DNS name of the specified bucket.
@@ -112,8 +116,6 @@ export class Bucket extends ros.Resource {
     public readonly attrName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OSS::Bucket`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -123,6 +125,7 @@ export class Bucket extends ros.Resource {
 
         const rosBucket = new RosBucket(this, id,  {
             policy: props.policy,
+            enableOssHdfsService: props.enableOssHdfsService === undefined || props.enableOssHdfsService === null ? false : props.enableOssHdfsService,
             resourceGroupId: props.resourceGroupId,
             storageClass: props.storageClass,
             redundancyType: props.redundancyType === undefined || props.redundancyType === null ? 'LRS' : props.redundancyType,

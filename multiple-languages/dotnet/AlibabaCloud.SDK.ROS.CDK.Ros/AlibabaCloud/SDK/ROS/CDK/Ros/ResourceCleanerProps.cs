@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ROS::ResourceCleaner`.</summary>
+    /// <summary>Properties for defining a `ResourceCleaner`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ros.ResourceCleanerProps")]
     public class ResourceCleanerProps : AlibabaCloud.SDK.ROS.CDK.Ros.IResourceCleanerProps
     {

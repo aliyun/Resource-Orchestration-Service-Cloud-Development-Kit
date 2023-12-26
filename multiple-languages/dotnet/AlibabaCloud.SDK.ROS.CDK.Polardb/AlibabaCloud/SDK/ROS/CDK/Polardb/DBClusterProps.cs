@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::DBCluster`.</summary>
+    /// <summary>Properties for defining a `DBCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.DBClusterProps")]
     public class DBClusterProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IDBClusterProps
     {

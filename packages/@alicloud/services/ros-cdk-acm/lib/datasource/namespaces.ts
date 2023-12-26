@@ -4,20 +4,18 @@ import { RosNamespaces } from './acm.generated';
 export { RosNamespaces as NamespacesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ACM::Namespaces`
+ * Properties for defining a `Namespaces`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-namespaces
  */
 export interface NamespacesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ACM::Namespaces`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ACM::Namespaces`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespaces`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-namespaces
  */
 export class Namespaces extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute NamespaceIds: The list of namespace IDs.
@@ -30,8 +28,6 @@ export class Namespaces extends ros.Resource {
     public readonly attrNamespaces: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ACM::Namespaces`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

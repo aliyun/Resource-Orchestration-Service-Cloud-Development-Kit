@@ -4,7 +4,8 @@ import { RosBgpGroup } from './vpc.generated';
 export { RosBgpGroup as BgpGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::BgpGroup`
+ * Properties for defining a `BgpGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
  */
 export interface BgpGroupProps {
 
@@ -25,7 +26,7 @@ export interface BgpGroupProps {
 
     /**
      * Property description: The description of the BGP group. The description must be 2 to 256 characters in length.
-     * It must start with a letter but cannot start with http:// or https://.
+     * It must start with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -44,20 +45,17 @@ export interface BgpGroupProps {
     /**
      * Property name: The name of the BGP group. The name must be 2 to 128 characters in length and can
      * contain digits, periods (.), underscores (_), and hyphens (-). The name must start
-     * with a letter but cannot start with http:// or https://.
+     * with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::BgpGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::BgpGroup`, which is used to create a Border Gateway Protocol (BGP) (Multi-ISP) group for a specified virtual border router (VBR).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBgpGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
  */
 export class BgpGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute BgpGroupId: The ID of the BGP group.
@@ -70,8 +68,6 @@ export class BgpGroup extends ros.Resource {
     public readonly attrName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::BgpGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

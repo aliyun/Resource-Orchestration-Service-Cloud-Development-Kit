@@ -4,7 +4,8 @@ import { RosCustomDomain } from './fc.generated';
 export { RosCustomDomain as CustomDomainProperty };
 
 /**
- * Properties for defining a `ALIYUN::FC::CustomDomain`
+ * Properties for defining a `CustomDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-customdomain
  */
 export interface CustomDomainProps {
 
@@ -35,14 +36,11 @@ export interface CustomDomainProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FC::CustomDomain`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::CustomDomain`, which is used to create a custom domain name.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomDomain`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-customdomain
  */
 export class CustomDomain extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Domain: The domain with protocol.
@@ -55,8 +53,6 @@ export class CustomDomain extends ros.Resource {
     public readonly attrDomainName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FC::CustomDomain`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

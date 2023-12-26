@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Lindorm
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::Lindorm::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-lindorm.InstanceProps")]
     public class InstanceProps : AlibabaCloud.SDK.ROS.CDK.Lindorm.IInstanceProps
     {

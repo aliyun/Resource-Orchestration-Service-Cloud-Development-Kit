@@ -4,7 +4,8 @@ import { RosContactGroup } from './cms.generated';
 export { RosContactGroup as ContactGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::ContactGroup`
+ * Properties for defining a `ContactGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
  */
 export interface ContactGroupProps {
 
@@ -25,14 +26,11 @@ export interface ContactGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::ContactGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ContactGroup`, which is used to create an alert contact group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosContactGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
  */
 export class ContactGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ContactGroupName: The name of the alert contact group.
@@ -40,8 +38,6 @@ export class ContactGroup extends ros.Resource {
     public readonly attrContactGroupName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::ContactGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

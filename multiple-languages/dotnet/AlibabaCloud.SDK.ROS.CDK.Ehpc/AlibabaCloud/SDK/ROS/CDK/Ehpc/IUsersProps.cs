@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 {
-    /// <summary>Properties for defining a `ALIYUN::EHPC::Users`.</summary>
+    /// <summary>Properties for defining a `Users`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IUsersProps), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.UsersProps")]
     public interface IUsersProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EHPC::Users`.</summary>
+        /// <summary>Properties for defining a `Users`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IUsersProps), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.UsersProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ehpc.IUsersProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>Properties for defining a `ALIYUN::CMS::DynamicTagGroup`.</summary>
+    /// <summary>Properties for defining a `DynamicTagGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDynamicTagGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.DynamicTagGroupProps")]
     public interface IDynamicTagGroupProps
     {
@@ -100,7 +103,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CMS::DynamicTagGroup`.</summary>
+        /// <summary>Properties for defining a `DynamicTagGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDynamicTagGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.DynamicTagGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.IDynamicTagGroupProps
         {

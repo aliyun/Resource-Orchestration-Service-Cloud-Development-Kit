@@ -4,7 +4,8 @@ import { RosMetricRuleTargets } from './cms.generated';
 export { RosMetricRuleTargets as MetricRuleTargetsProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::MetricRuleTargets`
+ * Properties for defining a `MetricRuleTargets`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
  */
 export interface MetricRuleTargetsProps {
 
@@ -20,14 +21,11 @@ export interface MetricRuleTargetsProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::MetricRuleTargets`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTargets`, which is used to add or modify one or more message resources of an alert rule.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMetricRuleTargets`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
  */
 export class MetricRuleTargets extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Arns: The ARN list of targets
@@ -40,8 +38,6 @@ export class MetricRuleTargets extends ros.Resource {
     public readonly attrIds: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::MetricRuleTargets`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

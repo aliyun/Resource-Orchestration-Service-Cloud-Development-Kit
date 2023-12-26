@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::PluginAttachment`.</summary>
+    /// <summary>Properties for defining a `RosPluginAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosPluginAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.RosPluginAttachmentProps")]
     public interface IRosPluginAttachmentProps
     {
@@ -38,7 +41,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ApiGateway::PluginAttachment`.</summary>
+        /// <summary>Properties for defining a `RosPluginAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosPluginAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.RosPluginAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.IRosPluginAttachmentProps
         {

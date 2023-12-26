@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Acm.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ACM::Configurations`.</summary>
+    /// <summary>Properties for defining a `Configurations`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IConfigurationsProps), fullyQualifiedName: "@alicloud/ros-cdk-acm.datasource.ConfigurationsProps")]
     public interface IConfigurationsProps
     {
@@ -48,7 +51,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ACM::Configurations`.</summary>
+        /// <summary>Properties for defining a `Configurations`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IConfigurationsProps), fullyQualifiedName: "@alicloud/ros-cdk-acm.datasource.ConfigurationsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Acm.Datasource.IConfigurationsProps
         {

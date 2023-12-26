@@ -4,7 +4,8 @@ import { RosClusterNodePool } from './cs.generated';
 export { RosClusterNodePool as ClusterNodePoolProperty };
 
 /**
- * Properties for defining a `ALIYUN::CS::ClusterNodePool`
+ * Properties for defining a `ClusterNodePool`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
  */
 export interface ClusterNodePoolProps {
 
@@ -50,14 +51,11 @@ export interface ClusterNodePoolProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CS::ClusterNodePool`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterNodePool`, which is used to create a node pool for a Container Service for Kubernetes (ACK) cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterNodePool`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
  */
 export class ClusterNodePool extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute NodePoolId: Cluster node pool ID.
@@ -65,8 +63,6 @@ export class ClusterNodePool extends ros.Resource {
     public readonly attrNodePoolId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CS::ClusterNodePool`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Paidlc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::PAIDLC::Job`.</summary>
+    /// <summary>Properties for defining a `RosJob`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-paidlc.RosJobProps")]
     public class RosJobProps : AlibabaCloud.SDK.ROS.CDK.Paidlc.IRosJobProps
     {

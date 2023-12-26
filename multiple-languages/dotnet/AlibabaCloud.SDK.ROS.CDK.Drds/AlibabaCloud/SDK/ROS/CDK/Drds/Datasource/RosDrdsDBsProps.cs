@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::DRDS::DrdsDBs`.</summary>
+    /// <summary>Properties for defining a `RosDrdsDBs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdbs
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-drds.datasource.RosDrdsDBsProps")]
     public class RosDrdsDBsProps : AlibabaCloud.SDK.ROS.CDK.Drds.Datasource.IRosDrdsDBsProps
     {

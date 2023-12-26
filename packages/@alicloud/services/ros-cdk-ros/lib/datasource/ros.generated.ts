@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::ROS::StackGroups`
+ * Properties for defining a `RosStackGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ros-stackgroups
  */
 export interface RosStackGroupsProps {
 
@@ -46,18 +47,15 @@ function rosStackGroupsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ROS::StackGroups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROS::StackGroups`, which is used to query the details of stack groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `StackGroups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ros-stackgroups
  */
 export class RosStackGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ROS::StackGroups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute StackGroupNames: The list of stack group names.
@@ -78,8 +76,6 @@ export class RosStackGroups extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ROS::StackGroups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

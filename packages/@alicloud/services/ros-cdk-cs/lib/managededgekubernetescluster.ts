@@ -4,7 +4,8 @@ import { RosManagedEdgeKubernetesCluster } from './cs.generated';
 export { RosManagedEdgeKubernetesCluster as ManagedEdgeKubernetesClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::CS::ManagedEdgeKubernetesCluster`
+ * Properties for defining a `ManagedEdgeKubernetesCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
 export interface ManagedEdgeKubernetesClusterProps {
 
@@ -64,7 +65,7 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly clusterSpec?: string | ros.IResolvable;
 
     /**
-     * Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+     * Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
      */
     readonly containerCidr?: string | ros.IResolvable;
 
@@ -153,7 +154,7 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+     * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
      */
     readonly serviceCidr?: string | ros.IResolvable;
 
@@ -178,7 +179,7 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly timeoutMins?: number | ros.IResolvable;
 
     /**
-     * Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
+     * Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0\/16. 
      * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -235,14 +236,11 @@ export interface ManagedEdgeKubernetesClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CS::ManagedEdgeKubernetesCluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedEdgeKubernetesCluster`, which is used to create a managed edge cluster of Container Service for Kubernetes (ACK).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedEdgeKubernetesCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managededgekubernetescluster
  */
 export class ManagedEdgeKubernetesCluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute APIServerSLBId: The id of API server SLB
@@ -295,8 +293,6 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
     public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

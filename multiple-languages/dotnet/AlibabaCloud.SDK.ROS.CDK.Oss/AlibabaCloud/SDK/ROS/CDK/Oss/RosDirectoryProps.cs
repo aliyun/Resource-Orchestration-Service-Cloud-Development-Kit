@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::OSS::Directory`.</summary>
+    /// <summary>Properties for defining a `RosDirectory`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-oss.RosDirectoryProps")]
     public class RosDirectoryProps : AlibabaCloud.SDK.ROS.CDK.Oss.IRosDirectoryProps
     {

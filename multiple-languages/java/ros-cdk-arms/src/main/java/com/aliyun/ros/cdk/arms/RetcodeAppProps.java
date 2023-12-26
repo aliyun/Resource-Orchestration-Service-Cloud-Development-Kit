@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.arms;
 
 /**
- * Properties for defining a <code>ALIYUN::ARMS::RetcodeApp</code>.
+ * Properties for defining a <code>RetcodeApp</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-retcodeapp
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.482Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.950Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RetcodeAppProps")
 @software.amazon.jsii.Jsii.Proxy(RetcodeAppProps.Jsii$Proxy.class)
 public interface RetcodeAppProps extends software.amazon.jsii.JsiiSerializable {

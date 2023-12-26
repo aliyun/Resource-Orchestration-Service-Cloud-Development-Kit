@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::OTS::SearchIndex`.</summary>
+    /// <summary>Properties for defining a `RosSearchIndex`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.RosSearchIndexProps")]
     public class RosSearchIndexProps : AlibabaCloud.SDK.ROS.CDK.Ots.IRosSearchIndexProps
     {

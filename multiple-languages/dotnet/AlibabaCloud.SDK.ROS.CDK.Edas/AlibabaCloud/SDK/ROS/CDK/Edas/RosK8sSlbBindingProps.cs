@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EDAS::K8sSlbBinding`.</summary>
+    /// <summary>Properties for defining a `RosK8sSlbBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-edas.RosK8sSlbBindingProps")]
     public class RosK8sSlbBindingProps : AlibabaCloud.SDK.ROS.CDK.Edas.IRosK8sSlbBindingProps
     {

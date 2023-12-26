@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * Properties for defining a <code>ALIYUN::CS::ClusterHelmApplication</code>.
+ * Properties for defining a <code>RosClusterHelmApplication</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.269Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.662Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterHelmApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterHelmApplicationProps.Jsii$Proxy.class)
 public interface RosClusterHelmApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -39,6 +41,12 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRolePolicy() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosClusterHelmApplicationProps}
      */
     static Builder builder() {
@@ -54,6 +62,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         java.lang.Object chartValues;
         java.lang.Object credential;
         java.lang.Object namespace;
+        java.lang.Object rolePolicy;
 
         /**
          * Sets the value of {@link RosClusterHelmApplicationProps#getChartUrl}
@@ -176,6 +185,26 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link RosClusterHelmApplicationProps#getRolePolicy}
+         * @param rolePolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder rolePolicy(java.lang.String rolePolicy) {
+            this.rolePolicy = rolePolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterHelmApplicationProps#getRolePolicy}
+         * @param rolePolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder rolePolicy(com.aliyun.ros.cdk.core.IResolvable rolePolicy) {
+            this.rolePolicy = rolePolicy;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosClusterHelmApplicationProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -197,6 +226,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         private final java.lang.Object chartValues;
         private final java.lang.Object credential;
         private final java.lang.Object namespace;
+        private final java.lang.Object rolePolicy;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -210,6 +240,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             this.chartValues = software.amazon.jsii.Kernel.get(this, "chartValues", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.credential = software.amazon.jsii.Kernel.get(this, "credential", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.rolePolicy = software.amazon.jsii.Kernel.get(this, "rolePolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -223,6 +254,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             this.chartValues = builder.chartValues;
             this.credential = builder.credential;
             this.namespace = builder.namespace;
+            this.rolePolicy = builder.rolePolicy;
         }
 
         @Override
@@ -256,6 +288,11 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
         }
 
         @Override
+        public final java.lang.Object getRolePolicy() {
+            return this.rolePolicy;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -272,6 +309,9 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             }
             if (this.getNamespace() != null) {
                 data.set("namespace", om.valueToTree(this.getNamespace()));
+            }
+            if (this.getRolePolicy() != null) {
+                data.set("rolePolicy", om.valueToTree(this.getRolePolicy()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -296,7 +336,8 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             if (!name.equals(that.name)) return false;
             if (this.chartValues != null ? !this.chartValues.equals(that.chartValues) : that.chartValues != null) return false;
             if (this.credential != null ? !this.credential.equals(that.credential) : that.credential != null) return false;
-            return this.namespace != null ? this.namespace.equals(that.namespace) : that.namespace == null;
+            if (this.namespace != null ? !this.namespace.equals(that.namespace) : that.namespace != null) return false;
+            return this.rolePolicy != null ? this.rolePolicy.equals(that.rolePolicy) : that.rolePolicy == null;
         }
 
         @Override
@@ -307,6 +348,7 @@ public interface RosClusterHelmApplicationProps extends software.amazon.jsii.Jsi
             result = 31 * result + (this.chartValues != null ? this.chartValues.hashCode() : 0);
             result = 31 * result + (this.credential != null ? this.credential.hashCode() : 0);
             result = 31 * result + (this.namespace != null ? this.namespace.hashCode() : 0);
+            result = 31 * result + (this.rolePolicy != null ? this.rolePolicy.hashCode() : 0);
             return result;
         }
     }

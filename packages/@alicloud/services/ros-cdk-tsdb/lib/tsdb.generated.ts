@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::TSDB::HiTSDBInstance`
+ * Properties for defining a `RosHiTSDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
  */
 export interface RosHiTSDBInstanceProps {
 
@@ -59,7 +60,7 @@ export interface RosHiTSDBInstanceProps {
     readonly pricingCycle?: string | ros.IResolvable;
 
     /**
-     * @Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1/24"]
+     * @Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1\/24"]
      */
     readonly securityIpList?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
@@ -147,18 +148,15 @@ function rosHiTSDBInstancePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::TSDB::HiTSDBInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::TSDB::HiTSDBInstance`, which is used to create a Time Series Database (TSDB) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HiTSDBInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
  */
 export class RosHiTSDBInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::TSDB::HiTSDBInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConnectionString: Connection string of the instance.
@@ -250,13 +248,11 @@ export class RosHiTSDBInstance extends ros.RosResource {
     public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1/24"]
+     * @Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1\/24"]
      */
     public securityIpList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::TSDB::HiTSDBInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -307,7 +303,8 @@ export class RosHiTSDBInstance extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::TSDB::InfluxDBDatabase`
+ * Properties for defining a `RosInfluxDBDatabase`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbdatabase
  */
 export interface RosInfluxDBDatabaseProps {
 
@@ -366,18 +363,15 @@ function rosInfluxDBDatabasePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::TSDB::InfluxDBDatabase`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::TSDB::InfluxDBDatabase`, which is used to create a Time Series Database (TSDB) database.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InfluxDBDatabase` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbdatabase
  */
 export class RosInfluxDBDatabase extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::TSDB::InfluxDBDatabase";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBName: The name of database.
@@ -403,8 +397,6 @@ export class RosInfluxDBDatabase extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::TSDB::InfluxDBDatabase`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -432,7 +424,8 @@ export class RosInfluxDBDatabase extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::TSDB::InfluxDBUser`
+ * Properties for defining a `RosInfluxDBUser`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbuser
  */
 export interface RosInfluxDBUserProps {
 
@@ -529,18 +522,15 @@ function rosInfluxDBUserPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::TSDB::InfluxDBUser`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::TSDB::InfluxDBUser`, which is used to create a Time Series Database (TSDB) database account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InfluxDBUser` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbuser
  */
 export class RosInfluxDBUser extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::TSDB::InfluxDBUser";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: The ID of TSDB for InfluxDB.
@@ -588,8 +578,6 @@ export class RosInfluxDBUser extends ros.RosResource {
     public databasePermissions: Array<RosInfluxDBUser.DatabasePermissionsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::TSDB::InfluxDBUser`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

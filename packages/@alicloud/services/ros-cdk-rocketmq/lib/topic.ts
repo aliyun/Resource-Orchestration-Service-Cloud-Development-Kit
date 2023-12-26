@@ -4,7 +4,8 @@ import { RosTopic } from './rocketmq.generated';
 export { RosTopic as TopicProperty };
 
 /**
- * Properties for defining a `ALIYUN::ROCKETMQ::Topic`
+ * Properties for defining a `Topic`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
  */
 export interface TopicProps {
 
@@ -19,7 +20,7 @@ export interface TopicProps {
      * 1: partitionally ordered message
      * 2: globally ordered message
      * 4: transactional message
-     * 5: scheduled/delayed message
+     * 5: scheduled\/delayed message
      */
     readonly messageType: number | ros.IResolvable;
 
@@ -39,14 +40,11 @@ export interface TopicProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ROCKETMQ::Topic`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Topic`, which is used to create a topic.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopic`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
  */
 export class Topic extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceId: The ID of the instance.
@@ -64,8 +62,6 @@ export class Topic extends ros.Resource {
     public readonly attrTopic: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ::Topic`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECI::ImageCache`.</summary>
+    /// <summary>Properties for defining a `ImageCache`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-eci.ImageCacheProps")]
     public class ImageCacheProps : AlibabaCloud.SDK.ROS.CDK.Eci.IImageCacheProps
     {

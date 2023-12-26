@@ -4,7 +4,8 @@ import { RosManagedPrometheus } from './arms.generated';
 export { RosManagedPrometheus as ManagedPrometheusProperty };
 
 /**
- * Properties for defining a `ALIYUN::ARMS::ManagedPrometheus`
+ * Properties for defining a `ManagedPrometheus`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
 export interface ManagedPrometheusProps {
 
@@ -45,14 +46,11 @@ export interface ManagedPrometheusProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ARMS::ManagedPrometheus`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::ManagedPrometheus`, which is used to install a Prometheus agent in a ACK Serverless (ASK) cluster or an Elastic Compute Service (ECS) cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedPrometheus`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
 export class ManagedPrometheus extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterType: The type of the cluster.
@@ -65,8 +63,6 @@ export class ManagedPrometheus extends ros.Resource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ARMS::ManagedPrometheus`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

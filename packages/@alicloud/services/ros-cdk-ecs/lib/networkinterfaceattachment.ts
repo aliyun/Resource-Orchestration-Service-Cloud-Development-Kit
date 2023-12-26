@@ -4,7 +4,8 @@ import { RosNetworkInterfaceAttachment } from './ecs.generated';
 export { RosNetworkInterfaceAttachment as NetworkInterfaceAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::NetworkInterfaceAttachment`
+ * Properties for defining a `NetworkInterfaceAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfaceattachment
  */
 export interface NetworkInterfaceAttachmentProps {
 
@@ -30,14 +31,11 @@ export interface NetworkInterfaceAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::NetworkInterfaceAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfaceAttachment`, which is used to bind an elastic network interface (ENI) to an Elastic Compute Service (ECS) instance in a virtual private cloud (VPC).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterfaceAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfaceattachment
  */
 export class NetworkInterfaceAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceId: ID of ECS instance.
@@ -55,8 +53,6 @@ export class NetworkInterfaceAttachment extends ros.Resource {
     public readonly attrTrunkNetworkInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::NetworkInterfaceAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

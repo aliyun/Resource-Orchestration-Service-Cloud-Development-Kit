@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::ALB::LoadBalancers`
+ * Properties for defining a `RosLoadBalancers`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-alb-loadbalancers
  */
 export interface RosLoadBalancersProps {
 
@@ -161,18 +162,15 @@ function rosLoadBalancersPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ALB::LoadBalancers`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ALB::LoadBalancers`, which is used to query the basic information about created Application Load Balancer (ALB) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancers` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-alb-loadbalancers
  */
 export class RosLoadBalancers extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ALB::LoadBalancers";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute LoadBalancerIds: The list of load balancer IDs.
@@ -238,8 +236,6 @@ export class RosLoadBalancers extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ALB::LoadBalancers`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

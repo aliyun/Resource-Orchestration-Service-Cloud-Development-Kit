@@ -4,12 +4,15 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::AppUser`.</summary>
+    /// <summary>Properties for defining a `RosAppUser`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAppUserProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosAppUserProps")]
     public interface IRosAppUserProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: The bandwidth. Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+        /// <strong>Property</strong>: bandwidth: The bandwidth. Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
         /// </remarks>
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Bandwidth
@@ -96,7 +99,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::AppUser`.</summary>
+        /// <summary>Properties for defining a `RosAppUser`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-appuser
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAppUserProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosAppUserProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IRosAppUserProps
         {
@@ -105,7 +111,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: bandwidth: The bandwidth. Unit: Kbit/s. Maximum bandwidth: 2,000 Kbit/s.
+            /// <strong>Property</strong>: bandwidth: The bandwidth. Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
             /// </remarks>
             [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Bandwidth

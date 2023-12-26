@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::Route`.</summary>
+    /// <summary>Properties for defining a `Route`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RouteProps")]
     public class RouteProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRouteProps
     {

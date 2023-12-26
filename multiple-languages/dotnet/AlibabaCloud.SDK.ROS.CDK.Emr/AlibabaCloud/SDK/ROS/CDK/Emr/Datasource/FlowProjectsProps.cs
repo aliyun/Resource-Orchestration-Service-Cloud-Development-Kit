@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Emr.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::EMR::FlowProjects`.</summary>
+    /// <summary>Properties for defining a `FlowProjects`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-emr.datasource.FlowProjectsProps")]
     public class FlowProjectsProps : AlibabaCloud.SDK.ROS.CDK.Emr.Datasource.IFlowProjectsProps
     {

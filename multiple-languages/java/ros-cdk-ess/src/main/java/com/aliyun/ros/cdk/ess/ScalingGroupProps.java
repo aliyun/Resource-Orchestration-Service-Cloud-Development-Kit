@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * Properties for defining a <code>ALIYUN::ESS::ScalingGroup</code>.
+ * Properties for defining a <code>ScalingGroup</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.538Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.080Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingGroupProps.Jsii$Proxy.class)
 public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -11,14 +13,14 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
     /**
      * Property maxSize: Maximum number of ECS instances in the scaling group.
      * <p>
-     * Value range: [0, 1000].
+     * Value range: [0, 2000].
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMaxSize();
 
     /**
      * Property minSize: Minimum number of ECS instances in the scaling group.
      * <p>
-     * Value range: [0, 1000].
+     * Value range: [0, 2000].
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMinSize();
 
@@ -279,6 +281,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
      * Valid values:
      * recycle
      * release
+     * forcerelease
      * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getScalingPolicy() {
@@ -397,7 +400,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link ScalingGroupProps#getMaxSize}
          * @param maxSize Property maxSize: Maximum number of ECS instances in the scaling group. This parameter is required.
-         *                Value range: [0, 1000].
+         *                Value range: [0, 2000].
          * @return {@code this}
          */
         public Builder maxSize(java.lang.Number maxSize) {
@@ -408,7 +411,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link ScalingGroupProps#getMaxSize}
          * @param maxSize Property maxSize: Maximum number of ECS instances in the scaling group. This parameter is required.
-         *                Value range: [0, 1000].
+         *                Value range: [0, 2000].
          * @return {@code this}
          */
         public Builder maxSize(com.aliyun.ros.cdk.core.IResolvable maxSize) {
@@ -419,7 +422,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link ScalingGroupProps#getMinSize}
          * @param minSize Property minSize: Minimum number of ECS instances in the scaling group. This parameter is required.
-         *                Value range: [0, 1000].
+         *                Value range: [0, 2000].
          * @return {@code this}
          */
         public Builder minSize(java.lang.Number minSize) {
@@ -430,7 +433,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         /**
          * Sets the value of {@link ScalingGroupProps#getMinSize}
          * @param minSize Property minSize: Minimum number of ECS instances in the scaling group. This parameter is required.
-         *                Value range: [0, 1000].
+         *                Value range: [0, 2000].
          * @return {@code this}
          */
         public Builder minSize(com.aliyun.ros.cdk.core.IResolvable minSize) {
@@ -1052,6 +1055,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          *                      Valid values:
          *                      recycle
          *                      release
+         *                      forcerelease
          *                      ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
          * @return {@code this}
          */
@@ -1066,6 +1070,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          *                      Valid values:
          *                      recycle
          *                      release
+         *                      forcerelease
          *                      ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
          * @return {@code this}
          */

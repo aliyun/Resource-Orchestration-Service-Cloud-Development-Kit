@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::GlobalDatabaseNetwork`.</summary>
+    /// <summary>Properties for defining a `GlobalDatabaseNetwork`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IGlobalDatabaseNetworkProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.GlobalDatabaseNetworkProps")]
     public interface IGlobalDatabaseNetworkProps
     {
@@ -37,7 +40,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::POLARDB::GlobalDatabaseNetwork`.</summary>
+        /// <summary>Properties for defining a `GlobalDatabaseNetwork`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IGlobalDatabaseNetworkProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.GlobalDatabaseNetworkProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.IGlobalDatabaseNetworkProps
         {

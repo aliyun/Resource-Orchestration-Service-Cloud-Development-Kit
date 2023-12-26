@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::GA::Listener`.</summary>
+    /// <summary>Properties for defining a `Listener`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ga.ListenerProps")]
     public class ListenerProps : AlibabaCloud.SDK.ROS.CDK.Ga.IListenerProps
     {

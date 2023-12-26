@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CloudPhone::KeyPairs`.</summary>
+    /// <summary>Properties for defining a `RosKeyPairs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypairs
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosKeyPairsProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudphone.datasource.RosKeyPairsProps")]
     public interface IRosKeyPairsProps
     {
@@ -34,7 +37,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::CloudPhone::KeyPairs`.</summary>
+        /// <summary>Properties for defining a `RosKeyPairs`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-keypairs
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosKeyPairsProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudphone.datasource.RosKeyPairsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cloudphone.Datasource.IRosKeyPairsProps
         {

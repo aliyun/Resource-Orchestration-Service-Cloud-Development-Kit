@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::PolarDBX::Account`
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-account
  */
 export interface RosAccountProps {
 
@@ -70,18 +71,15 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::PolarDBX::Account`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::Account`, which is used to create an account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-account
  */
 export class RosAccount extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PolarDBX::Account";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountDescription: Account description information.
@@ -127,8 +125,6 @@ export class RosAccount extends ros.RosResource {
     public accountDescription: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PolarDBX::Account`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -162,7 +158,8 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::PolarDBX::DBInstance`
+ * Properties for defining a `RosDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-dbinstance
  */
 export interface RosDBInstanceProps {
 
@@ -343,18 +340,15 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::PolarDBX::DBInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::DBInstance`, which is used to create a PolarDB-X 1.0 instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-dbinstance
  */
 export class RosDBInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PolarDBX::DBInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConnectionString: Intranet connection string.
@@ -460,8 +454,6 @@ export class RosDBInstance extends ros.RosResource {
     public usedTime: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PolarDBX::DBInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -573,7 +565,8 @@ function rosDBInstanceSecurityIpConfigPropertyToRosTemplate(properties: any): an
 }
 
 /**
- * Properties for defining a `ALIYUN::PolarDBX::Database`
+ * Properties for defining a `RosDatabase`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-database
  */
 export interface RosDatabaseProps {
 
@@ -667,18 +660,15 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::PolarDBX::Database`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PolarDBX::Database`, which is used to create a database.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-database
  */
 export class RosDatabase extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PolarDBX::Database";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Accounts: List of accounts.
@@ -745,8 +735,6 @@ export class RosDatabase extends ros.RosResource {
     public mode: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PolarDBX::Database`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

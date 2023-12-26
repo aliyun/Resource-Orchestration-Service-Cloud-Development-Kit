@@ -4,7 +4,8 @@ import { RosEditingProjects } from './vod.generated';
 export { RosEditingProjects as EditingProjectsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::VOD::EditingProjects`
+ * Properties for defining a `EditingProjects`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-editingprojects
  */
 export interface EditingProjectsProps {
 
@@ -15,14 +16,11 @@ export interface EditingProjectsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::VOD::EditingProjects`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VOD::EditingProjects`, which is used to query the basic information about online editing projects.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEditingProjects`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-editingprojects
  */
 export class EditingProjects extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute EditingProjectIds: The list of editing project IDs.
@@ -35,8 +33,6 @@ export class EditingProjects extends ros.Resource {
     public readonly attrEditingProjects: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::VOD::EditingProjects`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RAM::Role`.</summary>
+    /// <summary>Properties for defining a `Role`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.RoleProps")]
     public class RoleProps : AlibabaCloud.SDK.ROS.CDK.Ram.IRoleProps
     {

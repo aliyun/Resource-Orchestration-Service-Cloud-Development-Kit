@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.computenest;
 
 /**
- * A ROS template type:  <code>ALIYUN::ComputeNest::ServiceInstance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ComputeNest::ServiceInstance</code>, which is used to create and deploy a service instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.079Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.457Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.RosServiceInstance")
 public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ComputeNest::ServiceInstance</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -201,13 +199,13 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setService(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.computenest.RosServiceInstance.ServiceProperty value) {
+    public void setService(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "service", java.util.Objects.requireNonNull(value, "service is required"));
     }
 
     /**
      */
-    public void setService(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setService(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.computenest.RosServiceInstance.ServiceProperty value) {
         software.amazon.jsii.Kernel.set(this, "service", java.util.Objects.requireNonNull(value, "service is required"));
     }
 
@@ -989,7 +987,7 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param service This parameter is required.
          */
-        public Builder service(final com.aliyun.ros.cdk.computenest.RosServiceInstance.ServiceProperty service) {
+        public Builder service(final com.aliyun.ros.cdk.core.IResolvable service) {
             this.props.service(service);
             return this;
         }
@@ -997,7 +995,7 @@ public class RosServiceInstance extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param service This parameter is required.
          */
-        public Builder service(final com.aliyun.ros.cdk.core.IResolvable service) {
+        public Builder service(final com.aliyun.ros.cdk.computenest.RosServiceInstance.ServiceProperty service) {
             this.props.service(service);
             return this;
         }

@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
-    /// <summary>A ROS template type:  `ALIYUN::GA::IpSets`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GA::IpSets`, which is used to create acceleration regions.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `IpSets` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ga.RosIpSets), fullyQualifiedName: "@alicloud/ros-cdk-ga.RosIpSets", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ga.RosIpSetsProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosIpSets : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::GA::IpSets`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -179,9 +182,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: bandwidth: The bandwidth allocated to the acceleration region. Unit: Mbit/s.
+            /// <strong>Property</strong>: bandwidth: The bandwidth allocated to the acceleration region. Unit: Mbit\/s.
             /// Note
-            /// The minimum bandwidth allocated to each accelerated region is 2 Mbit/s.
+            /// The minimum bandwidth allocated to each accelerated region is 2 Mbit\/s.
             /// The total bandwidth for all regions must not exceed the amount included in your basic
             /// bandwidth plan.
             /// </remarks>
@@ -234,9 +237,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: bandwidth: The bandwidth allocated to the acceleration region. Unit: Mbit/s.
+                /// <strong>Property</strong>: bandwidth: The bandwidth allocated to the acceleration region. Unit: Mbit\/s.
                 /// Note
-                /// The minimum bandwidth allocated to each accelerated region is 2 Mbit/s.
+                /// The minimum bandwidth allocated to each accelerated region is 2 Mbit\/s.
                 /// The total bandwidth for all regions must not exceed the amount included in your basic
                 /// bandwidth plan.
                 /// </remarks>
@@ -307,9 +310,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             private object _bandwidth;
 
             /// <remarks>
-            /// <strong>Property</strong>: bandwidth: The bandwidth allocated to the acceleration region. Unit: Mbit/s.
+            /// <strong>Property</strong>: bandwidth: The bandwidth allocated to the acceleration region. Unit: Mbit\/s.
             /// Note
-            /// The minimum bandwidth allocated to each accelerated region is 2 Mbit/s.
+            /// The minimum bandwidth allocated to each accelerated region is 2 Mbit\/s.
             /// The total bandwidth for all regions must not exceed the amount included in your basic
             /// bandwidth plan.
             /// </remarks>

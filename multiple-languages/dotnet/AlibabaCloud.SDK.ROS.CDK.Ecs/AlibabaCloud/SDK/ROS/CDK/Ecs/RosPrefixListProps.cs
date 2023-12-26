@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::PrefixList`.</summary>
+    /// <summary>Properties for defining a `RosPrefixList`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosPrefixListProps")]
     public class RosPrefixListProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosPrefixListProps
     {
@@ -97,7 +100,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object _prefixListName;
 
         /// <remarks>
-        /// <strong>Property</strong>: prefixListName: The name of the prefix. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http://, https://, com.aliyun, or com.alibabacloud. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
+        /// <strong>Property</strong>: prefixListName: The name of the prefix. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/, https:\/\/, com.aliyun, or com.alibabacloud. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "prefixListName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object PrefixListName
@@ -129,7 +132,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object? _description;
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of the prefix list. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+        /// <strong>Property</strong>: description: The description of the prefix list. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

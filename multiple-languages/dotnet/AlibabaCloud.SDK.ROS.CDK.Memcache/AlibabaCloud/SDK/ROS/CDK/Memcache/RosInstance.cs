@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Memcache
 {
-    /// <summary>A ROS template type:  `ALIYUN::Memcache::Instance`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Instance`ALIYUN::MEMCACHE::Instance is used to create an ApsaraDB for Memcache (OCS) instance.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Memcache.RosInstance), fullyQualifiedName: "@alicloud/ros-cdk-memcache.RosInstance", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-memcache.RosInstanceProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosInstance : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::Memcache::Instance`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -428,7 +431,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         }
 
         /// <remarks>
-        /// <strong></strong>: ), forward slashes (/), colons (:), equal signs (=), double quotation marks
+        /// <strong></strong>: ), forward slashes (\/), colons (:), equal signs (=), double quotation marks
         /// ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
         ///
         /// <strong>Property</strong>: instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
@@ -760,7 +763,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         public interface IBackupPolicyProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Only for PostPaid instance. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
+            /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Only for PostPaid instance. Valid values: Monday\/Tuesday\/Wednesday\/Thursday\/Friday\/Saturday\/Sunday
             /// </remarks>
             [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             object PreferredBackupPeriod
@@ -800,7 +803,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Only for PostPaid instance. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
+                /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Only for PostPaid instance. Valid values: Monday\/Tuesday\/Wednesday\/Thursday\/Friday\/Saturday\/Sunday
                 /// </remarks>
                 [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
                 public object PreferredBackupPeriod
@@ -838,7 +841,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             private object _preferredBackupPeriod;
 
             /// <remarks>
-            /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Only for PostPaid instance. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
+            /// <strong>Property</strong>: preferredBackupPeriod: The backup cycle. Only for PostPaid instance. Valid values: Monday\/Tuesday\/Wednesday\/Thursday\/Friday\/Saturday\/Sunday
             /// </remarks>
             [JsiiProperty(name: "preferredBackupPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object PreferredBackupPeriod

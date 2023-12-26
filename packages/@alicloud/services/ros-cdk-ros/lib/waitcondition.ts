@@ -4,7 +4,8 @@ import { RosWaitCondition } from './ros.generated';
 export { RosWaitCondition as WaitConditionProperty };
 
 /**
- * Properties for defining a `ALIYUN::ROS::WaitCondition`
+ * Properties for defining a `WaitCondition`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
  */
 export interface WaitConditionProps {
 
@@ -30,14 +31,11 @@ export interface WaitConditionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ROS::WaitCondition`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::WaitCondition`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWaitCondition`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
  */
 export class WaitCondition extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.
@@ -55,8 +53,6 @@ export class WaitCondition extends ros.Resource {
     public readonly attrJoinedErrorData: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ROS::WaitCondition`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::LogtailConfig`.</summary>
+    /// <summary>Properties for defining a `LogtailConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ILogtailConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.LogtailConfigProps")]
     public interface ILogtailConfigProps
     {
@@ -137,7 +140,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::LogtailConfig`.</summary>
+        /// <summary>Properties for defining a `LogtailConfig`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ILogtailConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.LogtailConfigProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.ILogtailConfigProps
         {

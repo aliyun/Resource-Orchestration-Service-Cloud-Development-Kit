@@ -4,7 +4,8 @@ import { RosDedicatedHostGroups } from './cddc.generated';
 export { RosDedicatedHostGroups as DedicatedHostGroupsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CDDC::DedicatedHostGroups`
+ * Properties for defining a `DedicatedHostGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cddc-dedicatedhostgroups
  */
 export interface DedicatedHostGroupsProps {
 
@@ -20,14 +21,11 @@ export interface DedicatedHostGroupsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CDDC::DedicatedHostGroups`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroups`, which is used to query the resources in a dedicated cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHostGroups`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cddc-dedicatedhostgroups
  */
 export class DedicatedHostGroups extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DedicatedHostGroupIds: The list of dedicated host group IDs.
@@ -40,8 +38,6 @@ export class DedicatedHostGroups extends ros.Resource {
     public readonly attrDedicatedHostGroups: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CDDC::DedicatedHostGroups`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

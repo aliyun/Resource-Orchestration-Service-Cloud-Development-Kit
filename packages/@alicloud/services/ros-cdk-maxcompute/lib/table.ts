@@ -4,7 +4,8 @@ import { RosTable } from './maxcompute.generated';
 export { RosTable as TableProperty };
 
 /**
- * Properties for defining a `ALIYUN::MaxCompute::Table`
+ * Properties for defining a `Table`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-table
  */
 export interface TableProps {
 
@@ -53,14 +54,11 @@ export interface TableProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::MaxCompute::Table`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Table`, which is used to create a table.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTable`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-table
  */
 export class Table extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Name: Table name
@@ -73,8 +71,6 @@ export class Table extends ros.Resource {
     public readonly attrProject: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::MaxCompute::Table`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

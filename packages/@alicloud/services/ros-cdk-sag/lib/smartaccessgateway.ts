@@ -4,7 +4,8 @@ import { RosSmartAccessGateway } from './sag.generated';
 export { RosSmartAccessGateway as SmartAccessGatewayProperty };
 
 /**
- * Properties for defining a `ALIYUN::SAG::SmartAccessGateway`
+ * Properties for defining a `SmartAccessGateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
  */
 export interface SmartAccessGatewayProps {
 
@@ -43,9 +44,9 @@ export interface SmartAccessGatewayProps {
 
     /**
      * Property maxBandWidth: The bandwidth of the SAG instance.
-     * If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit/s.
-     * If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit/s.
-     * If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit/s.
+     * If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit\/s.
+     * If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit\/s.
+     * If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit\/s.
      */
     readonly maxBandWidth: number | ros.IResolvable;
 
@@ -171,14 +172,11 @@ export interface SmartAccessGatewayProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SAG::SmartAccessGateway`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::SmartAccessGateway`, which is used to create a Smart Access Gateway (SAG) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSmartAccessGateway`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
  */
 export class SmartAccessGateway extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute OrderId: The ID of the order.
@@ -191,8 +189,6 @@ export class SmartAccessGateway extends ros.Resource {
     public readonly attrSmartAgId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::SmartAccessGateway`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vod.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VOD::EditingProjects`.</summary>
+    /// <summary>Properties for defining a `RosEditingProjects`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-editingprojects
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vod.datasource.RosEditingProjectsProps")]
     public class RosEditingProjectsProps : AlibabaCloud.SDK.ROS.CDK.Vod.Datasource.IRosEditingProjectsProps
     {

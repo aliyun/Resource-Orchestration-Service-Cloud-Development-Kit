@@ -4,7 +4,8 @@ import { RosCenBandwidthPackageAssociation } from './cen.generated';
 export { RosCenBandwidthPackageAssociation as CenBandwidthPackageAssociationProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenBandwidthPackageAssociation`
+ * Properties for defining a `CenBandwidthPackageAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
  */
 export interface CenBandwidthPackageAssociationProps {
 
@@ -20,18 +21,13 @@ export interface CenBandwidthPackageAssociationProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::CenBandwidthPackageAssociation`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthPackageAssociation`, which is used to bind a bandwidth package to the specified Cloud Enterprise Network (CEN) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthPackageAssociation`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
  */
 export class CenBandwidthPackageAssociation extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::CEN::CenBandwidthPackageAssociation`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

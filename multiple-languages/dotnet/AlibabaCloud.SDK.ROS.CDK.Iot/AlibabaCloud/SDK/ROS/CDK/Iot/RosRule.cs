@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
-    /// <summary>A ROS template type:  `ALIYUN::IOT::Rule`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Rule`, which is used to create a rule for a specific topic.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-rule
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Iot.RosRule), fullyQualifiedName: "@alicloud/ros-cdk-iot.RosRule", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-iot.RosRuleProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosRule : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::IOT::Rule`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -360,31 +363,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: shortTopic: The topic to which this rule is applied. Syntax: ${deviceName}/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.
+        /// <strong>Property</strong>: shortTopic: The topic to which this rule is applied. Syntax: ${deviceName}\/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.
         /// Basic communication topics or Thing Specification Language (TSL)-based communication
-        /// topics. Syntax: ${deviceName}/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the
+        /// topics. Syntax: ${deviceName}\/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the
         /// product. Valid values of topicShortName:
-        /// /thing/event/property/post: submits the property data of a device.
-        /// /thing/event/${tsl.event.identifier}/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL.
-        /// /thing/lifecycle: submits device lifecycle changes.
-        /// /thing/downlink/reply/message: sends a response to a request from IoT Platform.
-        /// /thing/list/found: submits the data when a gateway detects a new sub-device.
-        /// /thing/topo/lifecycle: submits device topology changes.
-        /// /thing/event/property/history/post: submits historical property data of a device.
-        /// /thing/event/${tsl.event.identifier}/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL.
-        /// /ota/upgrade: submits OTA update status.
-        /// /ota/version/post: submits OTA module versions.
-        /// /thing/deviceinfo/update: submits device tag changes.
-        /// /edge/driver/${driver_id}/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.
-        /// ${packageId}/${jobId}/ota/job/status: submits the status of OTA update batches. This topic is a basic communication topic.
+        /// \/thing\/event\/property\/post: submits the property data of a device.
+        /// \/thing\/event\/${tsl.event.identifier}\/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL.
+        /// \/thing\/lifecycle: submits device lifecycle changes.
+        /// \/thing\/downlink\/reply\/message: sends a response to a request from IoT Platform.
+        /// \/thing\/list\/found: submits the data when a gateway detects a new sub-device.
+        /// \/thing\/topo\/lifecycle: submits device topology changes.
+        /// \/thing\/event\/property\/history\/post: submits historical property data of a device.
+        /// \/thing\/event\/${tsl.event.identifier}\/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL.
+        /// \/ota\/upgrade: submits OTA update status.
+        /// \/ota\/version\/post: submits OTA module versions.
+        /// \/thing\/deviceinfo\/update: submits device tag changes.
+        /// \/edge\/driver\/${driver_id}\/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.
+        /// ${packageId}\/${jobId}\/ota\/job\/status: submits the status of OTA update batches. This topic is a basic communication topic.
         /// ${packageId}specifies the ID of the firmware. ${jobId}specifies the ID of the update batch.
-        /// Custom topics. Example:${deviceName}/user/get.
+        /// Custom topics. Example:${deviceName}\/user\/get.
         /// You can call theQueryProductTopicoperation to view all custom topics of the product.
         /// When you specify a custom topic, you can use the + and # wildcards.
         /// You can replace ${deviceName} with the+ wildcard. The wildcard indicates that the topic applies to all devices under the
         /// product.
-        /// You can replace the fields that follow ${deviceName} with /user/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that
-        /// follow/user.
+        /// You can replace the fields that follow ${deviceName} with \/user\/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that
+        /// follow\/user.
         /// For more information about how to use wildcards, see Wildcards in topics.
         /// Topic that is used to submit device status changes: ${deviceName}.
         /// You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
@@ -451,7 +454,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// <strong>Property</strong>: topicType: 0: The topic is a basic communication topic or TSL-based communication topic.
         /// 1: The topic is a custom topic.
-        /// 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
+        /// 2: The topic is used to submit device status changes. Syntax: \/as\/mqtt\/status\/${productKey}\/${deviceName}.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "topicType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::DiskCategories`.</summary>
+    /// <summary>Properties for defining a `RosDiskCategories`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDiskCategoriesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.RosDiskCategoriesProps")]
     public interface IRosDiskCategoriesProps
     {
@@ -81,7 +84,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::DiskCategories`.</summary>
+        /// <summary>Properties for defining a `RosDiskCategories`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDiskCategoriesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.RosDiskCategoriesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosDiskCategoriesProps
         {

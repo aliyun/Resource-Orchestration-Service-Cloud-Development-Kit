@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>Properties for defining a `ALIYUN::SLB::AccessControl`.</summary>
+    /// <summary>Properties for defining a `AccessControl`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesscontrol
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAccessControlProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.AccessControlProps")]
     public interface IAccessControlProps
     {
@@ -68,7 +71,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLB::AccessControl`.</summary>
+        /// <summary>Properties for defining a `AccessControl`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesscontrol
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAccessControlProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.AccessControlProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.IAccessControlProps
         {

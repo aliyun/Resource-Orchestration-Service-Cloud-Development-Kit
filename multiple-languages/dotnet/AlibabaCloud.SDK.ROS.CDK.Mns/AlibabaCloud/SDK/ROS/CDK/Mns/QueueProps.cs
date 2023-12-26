@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MNS::Queue`.</summary>
+    /// <summary>Properties for defining a `Queue`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mns.QueueProps")]
     public class QueueProps : AlibabaCloud.SDK.ROS.CDK.Mns.IQueueProps
     {

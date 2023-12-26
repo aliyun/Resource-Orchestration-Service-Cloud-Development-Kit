@@ -4,7 +4,8 @@ import { RosNamespaces } from './cr.generated';
 export { RosNamespaces as NamespacesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CR::Namespaces`
+ * Properties for defining a `Namespaces`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-namespaces
  */
 export interface NamespacesProps {
 
@@ -15,14 +16,11 @@ export interface NamespacesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CR::Namespaces`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CR::Namespaces`, which is used to query namespaces.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespaces`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cr-namespaces
  */
 export class Namespaces extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute NamespaceNames: The list of namespace names.
@@ -35,8 +33,6 @@ export class Namespaces extends ros.Resource {
     public readonly attrNamespaces: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CR::Namespaces`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

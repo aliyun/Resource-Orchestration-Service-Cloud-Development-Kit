@@ -4,7 +4,8 @@ import { RosInstanceClasses } from './mongodb.generated';
 export { RosInstanceClasses as InstanceClassesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::MONGODB::InstanceClasses`
+ * Properties for defining a `InstanceClasses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
  */
 export interface InstanceClassesProps {
 
@@ -34,14 +35,11 @@ export interface InstanceClassesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::MONGODB::InstanceClasses`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MONGODB::InstanceClasses`, which is used to query the instance types that are supported by ApsaraDB for MongoDB in the specified zone.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceClasses`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instanceclasses
  */
 export class InstanceClasses extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceClassIds: The list of The instance class Ids.
@@ -54,8 +52,6 @@ export class InstanceClasses extends ros.Resource {
     public readonly attrInstanceClasses: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::MONGODB::InstanceClasses`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

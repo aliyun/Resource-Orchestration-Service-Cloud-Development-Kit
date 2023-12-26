@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS template type:  <code>ALIYUN::ECS::DeploymentSet</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::DeploymentSet</code>, which is used to create a deployment set in a specified region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.889Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.373Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosDeploymentSet")
 public class RosDeploymentSet extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosDeploymentSet extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::DeploymentSet</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -99,6 +97,24 @@ public class RosDeploymentSet extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getGroupCount() {
+        return software.amazon.jsii.Kernel.get(this, "groupCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setGroupCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "groupCount", value);
+    }
+
+    /**
+     */
+    public void setGroupCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "groupCount", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getOnUnableToRedeployFailedInstance() {
         return software.amazon.jsii.Kernel.get(this, "onUnableToRedeployFailedInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -113,6 +129,24 @@ public class RosDeploymentSet extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setOnUnableToRedeployFailedInstance(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "onUnableToRedeployFailedInstance", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStrategy() {
+        return software.amazon.jsii.Kernel.get(this, "strategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStrategy(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "strategy", value);
+    }
+
+    /**
+     */
+    public void setStrategy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "strategy", value);
     }
 
     /**
@@ -177,6 +211,23 @@ public class RosDeploymentSet extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param groupCount This parameter is required.
+         */
+        public Builder groupCount(final java.lang.Number groupCount) {
+            this.props.groupCount(groupCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param groupCount This parameter is required.
+         */
+        public Builder groupCount(final com.aliyun.ros.cdk.core.IResolvable groupCount) {
+            this.props.groupCount(groupCount);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param onUnableToRedeployFailedInstance This parameter is required.
          */
         public Builder onUnableToRedeployFailedInstance(final java.lang.String onUnableToRedeployFailedInstance) {
@@ -189,6 +240,23 @@ public class RosDeploymentSet extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder onUnableToRedeployFailedInstance(final com.aliyun.ros.cdk.core.IResolvable onUnableToRedeployFailedInstance) {
             this.props.onUnableToRedeployFailedInstance(onUnableToRedeployFailedInstance);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param strategy This parameter is required.
+         */
+        public Builder strategy(final java.lang.String strategy) {
+            this.props.strategy(strategy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param strategy This parameter is required.
+         */
+        public Builder strategy(final com.aliyun.ros.cdk.core.IResolvable strategy) {
+            this.props.strategy(strategy);
             return this;
         }
 

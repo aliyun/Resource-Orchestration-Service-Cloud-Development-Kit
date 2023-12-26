@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::DedicatedHostClusters`.</summary>
+    /// <summary>Properties for defining a `RosDedicatedHostClusters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostclusters
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.RosDedicatedHostClustersProps")]
     public class RosDedicatedHostClustersProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosDedicatedHostClustersProps
     {

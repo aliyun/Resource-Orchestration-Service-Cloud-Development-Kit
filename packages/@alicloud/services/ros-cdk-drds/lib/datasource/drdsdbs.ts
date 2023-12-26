@@ -4,7 +4,8 @@ import { RosDrdsDBs } from './drds.generated';
 export { RosDrdsDBs as DrdsDBsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::DRDS::DrdsDBs`
+ * Properties for defining a `DrdsDBs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdbs
  */
 export interface DrdsDBsProps {
 
@@ -15,14 +16,11 @@ export interface DrdsDBsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::DRDS::DrdsDBs`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsDBs`, which is used to query the details of databases on an instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsDBs`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsdbs
  */
 export class DrdsDBs extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Databases: The list of drds databases.
@@ -35,8 +33,6 @@ export class DrdsDBs extends ros.Resource {
     public readonly attrDrdsDatabaseNames: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::DRDS::DrdsDBs`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

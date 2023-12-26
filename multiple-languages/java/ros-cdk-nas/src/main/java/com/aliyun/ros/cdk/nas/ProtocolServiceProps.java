@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.nas;
 
 /**
- * Properties for defining a <code>ALIYUN::NAS::ProtocolService</code>.
+ * Properties for defining a <code>ProtocolService</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.189Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.965Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.ProtocolServiceProps")
 @software.amazon.jsii.Jsii.Proxy(ProtocolServiceProps.Jsii$Proxy.class)
 public interface ProtocolServiceProps extends software.amazon.jsii.JsiiSerializable {

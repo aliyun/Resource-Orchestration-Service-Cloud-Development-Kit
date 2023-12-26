@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::SmartAccessGateway`.</summary>
+    /// <summary>Properties for defining a `RosSmartAccessGateway`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosSmartAccessGatewayProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosSmartAccessGatewayProps")]
     public interface IRosSmartAccessGatewayProps
     {
@@ -59,9 +62,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         /// <remarks>
         /// <strong>Property</strong>: maxBandWidth: The bandwidth of the SAG instance.
-        /// If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit/s.
-        /// If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit/s.
-        /// If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit/s.
+        /// If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit\/s.
+        /// If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit\/s.
+        /// If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit\/s.
         /// </remarks>
         [JsiiProperty(name: "maxBandWidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object MaxBandWidth
@@ -305,7 +308,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::SmartAccessGateway`.</summary>
+        /// <summary>Properties for defining a `RosSmartAccessGateway`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-smartaccessgateway
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosSmartAccessGatewayProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosSmartAccessGatewayProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IRosSmartAccessGatewayProps
         {
@@ -364,9 +370,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
             /// <remarks>
             /// <strong>Property</strong>: maxBandWidth: The bandwidth of the SAG instance.
-            /// If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit/s.
-            /// If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit/s.
-            /// If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit/s.
+            /// If you want to create an SAG CPE instance and the model is sag-100wm, valid values of this parameter are 2 to 50. Unit: Mbit\/s.
+            /// If you want to create an SAG CPE instance and the model is sag-1000, valid values of this parameter are 10 to 500. Unit: Mbit\/s.
+            /// If you want to create an SAG vCPE instance, valid values of this parameter are 10 to 1000. Unit: Mbit\/s.
             /// </remarks>
             [JsiiProperty(name: "maxBandWidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object MaxBandWidth

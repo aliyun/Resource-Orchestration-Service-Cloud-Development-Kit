@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Devops
 {
-    /// <summary>Properties for defining a `ALIYUN::DEVOPS::VariableGroup`.</summary>
+    /// <summary>Properties for defining a `RosVariableGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-variablegroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosVariableGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-devops.RosVariableGroupProps")]
     public interface IRosVariableGroupProps
     {
@@ -48,7 +51,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Devops
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DEVOPS::VariableGroup`.</summary>
+        /// <summary>Properties for defining a `RosVariableGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-variablegroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosVariableGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-devops.RosVariableGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Devops.IRosVariableGroupProps
         {

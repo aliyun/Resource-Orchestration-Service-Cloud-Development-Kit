@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>Properties for defining a `ALIYUN::NAS::Fileset`.</summary>
+    /// <summary>Properties for defining a `Fileset`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IFilesetProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.FilesetProps")]
     public interface IFilesetProps
     {
@@ -43,7 +46,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::NAS::Fileset`.</summary>
+        /// <summary>Properties for defining a `Fileset`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IFilesetProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.FilesetProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nas.IFilesetProps
         {

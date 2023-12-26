@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Eci
 {
-    /// <summary>Properties for defining a `ALIYUN::ECI::ImageCache`.</summary>
+    /// <summary>Properties for defining a `ImageCache`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IImageCacheProps), fullyQualifiedName: "@alicloud/ros-cdk-eci.ImageCacheProps")]
     public interface IImageCacheProps
     {
@@ -142,7 +145,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECI::ImageCache`.</summary>
+        /// <summary>Properties for defining a `ImageCache`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IImageCacheProps), fullyQualifiedName: "@alicloud/ros-cdk-eci.ImageCacheProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eci.IImageCacheProps
         {

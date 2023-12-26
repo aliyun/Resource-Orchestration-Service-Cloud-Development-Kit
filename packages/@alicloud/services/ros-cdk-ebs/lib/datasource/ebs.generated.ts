@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::EBS::DiskReplicaGroups`
+ * Properties for defining a `RosDiskReplicaGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicagroups
  */
 export interface RosDiskReplicaGroupsProps {
 
@@ -55,18 +56,15 @@ function rosDiskReplicaGroupsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `DATASOURCE::EBS::DiskReplicaGroups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DiskReplicaGroups`, which is used to query the information about one or more replication pair-consistent groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DiskReplicaGroups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicagroups
  */
 export class RosDiskReplicaGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::EBS::DiskReplicaGroups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DiskReplicaGroups: The list of disk replica groups.
@@ -94,8 +92,6 @@ export class RosDiskReplicaGroups extends ros.RosResource {
     public site: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::EBS::DiskReplicaGroups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -123,7 +119,8 @@ export class RosDiskReplicaGroups extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::EBS::DiskReplicaPairs`
+ * Properties for defining a `RosDiskReplicaPairs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
  */
 export interface RosDiskReplicaPairsProps {
 
@@ -166,18 +163,15 @@ function rosDiskReplicaPairsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `DATASOURCE::EBS::DiskReplicaPairs`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EBS::DiskReplicaPairs`, which is used to query the information about one or more replication pairs.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DiskReplicaPairs` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-diskreplicapairs
  */
 export class RosDiskReplicaPairs extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::EBS::DiskReplicaPairs";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DiskReplicaPairs: The list of disk replica pairs.
@@ -198,8 +192,6 @@ export class RosDiskReplicaPairs extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::EBS::DiskReplicaPairs`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

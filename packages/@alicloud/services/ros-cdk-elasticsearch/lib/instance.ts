@@ -4,7 +4,8 @@ import { RosInstance } from './elasticsearch.generated';
 export { RosInstance as InstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::ElasticSearch::Instance`
+ * Properties for defining a `Instance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
  */
 export interface InstanceProps {
 
@@ -74,7 +75,7 @@ export interface InstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: Unit of prepaid time period, it could be Month/Year. Default value is Month.
+     * Property periodUnit: Unit of prepaid time period, it could be Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -117,14 +118,11 @@ export interface InstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ElasticSearch::Instance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearch::Instance`, which is used to create an Elasticsearch cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
  */
 export class Instance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Domain: Instance connection domain (only VPC network access supported).
@@ -177,8 +175,6 @@ export class Instance extends ros.Resource {
     public readonly attrVersion: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ElasticSearch::Instance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

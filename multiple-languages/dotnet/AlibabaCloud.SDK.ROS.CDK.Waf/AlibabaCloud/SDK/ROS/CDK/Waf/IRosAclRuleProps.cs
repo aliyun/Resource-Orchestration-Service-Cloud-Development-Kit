@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Waf
 {
-    /// <summary>Properties for defining a `ALIYUN::WAF::AclRule`.</summary>
+    /// <summary>Properties for defining a `RosAclRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-aclrule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAclRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-waf.RosAclRuleProps")]
     public interface IRosAclRuleProps
     {
@@ -64,7 +67,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::WAF::AclRule`.</summary>
+        /// <summary>Properties for defining a `RosAclRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-aclrule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAclRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-waf.RosAclRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Waf.IRosAclRuleProps
         {

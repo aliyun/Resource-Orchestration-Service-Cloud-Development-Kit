@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLS::Project`.</summary>
+    /// <summary>Properties for defining a `RosProject`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosProjectProps")]
     public class RosProjectProps : AlibabaCloud.SDK.ROS.CDK.Sls.IRosProjectProps
     {

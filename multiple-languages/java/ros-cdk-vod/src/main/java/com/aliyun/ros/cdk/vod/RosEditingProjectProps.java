@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.vod;
 
 /**
- * Properties for defining a <code>ALIYUN::VOD::EditingProject</code>.
+ * Properties for defining a <code>RosEditingProject</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-editingproject
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.489Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.326Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.RosEditingProjectProps")
 @software.amazon.jsii.Jsii.Proxy(RosEditingProjectProps.Jsii$Proxy.class)
 public interface RosEditingProjectProps extends software.amazon.jsii.JsiiSerializable {

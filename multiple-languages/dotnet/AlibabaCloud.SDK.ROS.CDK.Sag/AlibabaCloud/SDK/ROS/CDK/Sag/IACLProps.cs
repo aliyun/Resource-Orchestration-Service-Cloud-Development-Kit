@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::ACL`.</summary>
+    /// <summary>Properties for defining a `ACL`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-acl
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IACLProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.ACLProps")]
     public interface IACLProps
     {
@@ -18,7 +21,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::ACL`.</summary>
+        /// <summary>Properties for defining a `ACL`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-acl
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IACLProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.ACLProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IACLProps
         {

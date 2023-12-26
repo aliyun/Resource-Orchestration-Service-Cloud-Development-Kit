@@ -4,7 +4,8 @@ import { RosAccelerator } from './ga.generated';
 export { RosAccelerator as AcceleratorProperty };
 
 /**
- * Properties for defining a `ALIYUN::GA::Accelerator`
+ * Properties for defining a `Accelerator`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
 export interface AcceleratorProps {
 
@@ -65,14 +66,11 @@ export interface AcceleratorProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::GA::Accelerator`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccelerator`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
 export class Accelerator extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AcceleratorId: The ID of the GA instance to query.
@@ -120,8 +118,6 @@ export class Accelerator extends ros.Resource {
     public readonly attrSpec: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GA::Accelerator`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

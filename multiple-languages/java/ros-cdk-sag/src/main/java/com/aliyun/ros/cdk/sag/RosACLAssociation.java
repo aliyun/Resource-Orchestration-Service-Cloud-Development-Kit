@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * A ROS template type:  <code>ALIYUN::SAG::ACLAssociation</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::ACLAssociation</code>, which is used to associate an access control list (ACL) with a Smart Access Gateway (SAG) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.146Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.980Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosACLAssociation")
 public class RosACLAssociation extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosACLAssociation extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::SAG::ACLAssociation</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -65,16 +63,10 @@ public class RosACLAssociation extends com.aliyun.ros.cdk.core.RosResource {
         software.amazon.jsii.Kernel.set(this, "aclId", java.util.Objects.requireNonNull(value, "aclId is required"));
     }
 
-    /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
-     */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
-    /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
-     */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
     }

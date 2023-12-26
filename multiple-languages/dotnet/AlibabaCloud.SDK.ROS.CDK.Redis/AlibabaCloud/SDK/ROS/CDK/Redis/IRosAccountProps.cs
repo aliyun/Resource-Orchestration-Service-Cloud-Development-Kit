@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
-    /// <summary>Properties for defining a `ALIYUN::REDIS::Account`.</summary>
+    /// <summary>Properties for defining a `RosAccount`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosAccountProps")]
     public interface IRosAccountProps
     {
@@ -45,7 +48,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 
         /// <remarks>
         /// <strong>Property</strong>: accountDescription: The description of the account.
-        /// The description must start with a letter, and cannot start with http:// or https://.
+        /// The description must start with a letter, and cannot start with http:\/\/ or https:\/\/.
         /// The description can contain letters, underscores (_), hyphens (-), and digits.
         /// It can be 2 to 256 characters in length.
         /// </remarks>
@@ -92,7 +95,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::REDIS::Account`.</summary>
+        /// <summary>Properties for defining a `RosAccount`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.RosAccountProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.IRosAccountProps
         {
@@ -137,7 +143,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 
             /// <remarks>
             /// <strong>Property</strong>: accountDescription: The description of the account.
-            /// The description must start with a letter, and cannot start with http:// or https://.
+            /// The description must start with a letter, and cannot start with http:\/\/ or https:\/\/.
             /// The description can contain letters, underscores (_), hyphens (-), and digits.
             /// It can be 2 to 256 characters in length.
             /// </remarks>

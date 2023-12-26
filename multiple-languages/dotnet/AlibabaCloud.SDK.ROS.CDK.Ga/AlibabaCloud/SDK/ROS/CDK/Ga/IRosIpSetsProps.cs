@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
-    /// <summary>Properties for defining a `ALIYUN::GA::IpSets`.</summary>
+    /// <summary>Properties for defining a `RosIpSets`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosIpSetsProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.RosIpSetsProps")]
     public interface IRosIpSetsProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GA::IpSets`.</summary>
+        /// <summary>Properties for defining a `RosIpSets`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosIpSetsProps), fullyQualifiedName: "@alicloud/ros-cdk-ga.RosIpSetsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ga.IRosIpSetsProps
         {

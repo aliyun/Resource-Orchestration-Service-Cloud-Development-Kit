@@ -4,7 +4,8 @@ import { RosBinding } from './amqp.generated';
 export { RosBinding as BindingProperty };
 
 /**
- * Properties for defining a `ALIYUN::AMQP::Binding`
+ * Properties for defining a `Binding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */
 export interface BindingProps {
 
@@ -47,18 +48,13 @@ export interface BindingProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::AMQP::Binding`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Binding`, which is used to bind a queue or exchange to an exchange.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBinding`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */
 export class Binding extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::AMQP::Binding`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

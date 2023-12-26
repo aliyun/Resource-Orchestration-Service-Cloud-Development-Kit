@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::REDIS::Accounts`
+ * Properties for defining a `RosAccounts`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-accounts
  */
 export interface RosAccountsProps {
 
@@ -54,18 +55,15 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::REDIS::Accounts`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Accounts`ALIYUN::ResourceManager::Account is used to create a resource account as a member account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Accounts` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-accounts
  */
 export class RosAccounts extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::REDIS::Accounts";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountNames: The list of The Redis account names.
@@ -91,8 +89,6 @@ export class RosAccounts extends ros.RosResource {
     public accountName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::REDIS::Accounts`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -120,7 +116,8 @@ export class RosAccounts extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::REDIS::InstanceClasses`
+ * Properties for defining a `RosInstanceClasses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */
 export interface RosInstanceClassesProps {
 
@@ -154,7 +151,7 @@ export interface RosInstanceClassesProps {
 
     /**
      * @Property nodeId: The ID of the data node for which you want to query available instance types. You can call the DescribeLogicInstanceTopology operation to query the ID of the data node. Remove the number sign (#) and the content that follows the number sign. For example, retain only r-bp10noxlhcoim2****-db-0.
-     *  Note Before you set this parameter, you must set the InstanceId parameter to the ID of an instance in the cluster or read/write splitting architecture.
+     *  Note Before you set this parameter, you must set the InstanceId parameter to the ID of an instance in the cluster or read\/write splitting architecture.
      */
     readonly nodeId?: string | ros.IResolvable;
 
@@ -236,18 +233,15 @@ function rosInstanceClassesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `DATASOURCE::REDIS::InstanceClasses`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::InstanceClasses`DATASOURCE::REDIS::Instances is used to query the information about ApsaraDB for Redis instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceClasses` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */
 export class RosInstanceClasses extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::REDIS::InstanceClasses";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceClassIds: The list of db instance class ids.
@@ -292,7 +286,7 @@ export class RosInstanceClasses extends ros.RosResource {
 
     /**
      * @Property nodeId: The ID of the data node for which you want to query available instance types. You can call the DescribeLogicInstanceTopology operation to query the ID of the data node. Remove the number sign (#) and the content that follows the number sign. For example, retain only r-bp10noxlhcoim2****-db-0.
-     *  Note Before you set this parameter, you must set the InstanceId parameter to the ID of an instance in the cluster or read/write splitting architecture.
+     *  Note Before you set this parameter, you must set the InstanceId parameter to the ID of an instance in the cluster or read\/write splitting architecture.
      */
     public nodeId: string | ros.IResolvable | undefined;
 
@@ -325,8 +319,6 @@ export class RosInstanceClasses extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::REDIS::InstanceClasses`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -368,7 +360,8 @@ export class RosInstanceClasses extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::REDIS::Instances`
+ * Properties for defining a `RosInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instances
  */
 export interface RosInstancesProps {
 
@@ -376,7 +369,7 @@ export interface RosInstancesProps {
      * @Property architectureType: The architecture of the instance. Valid values:
      * cluster: The instance is a cluster instance.
      * standard: The instance is a standard instance.
-     * rwsplit: The instance is a read/write splitting instance.
+     * rwsplit: The instance is a read\/write splitting instance.
      */
     readonly architectureType?: string | ros.IResolvable;
 
@@ -604,18 +597,15 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::REDIS::Instances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instances`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instances
  */
 export class RosInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::REDIS::Instances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: The list of The Redis instance Ids.
@@ -634,7 +624,7 @@ export class RosInstances extends ros.RosResource {
      * @Property architectureType: The architecture of the instance. Valid values:
      * cluster: The instance is a cluster instance.
      * standard: The instance is a standard instance.
-     * rwsplit: The instance is a read/write splitting instance.
+     * rwsplit: The instance is a read\/write splitting instance.
      */
     public architectureType: string | ros.IResolvable | undefined;
 
@@ -749,8 +739,6 @@ export class RosInstances extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::REDIS::Instances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

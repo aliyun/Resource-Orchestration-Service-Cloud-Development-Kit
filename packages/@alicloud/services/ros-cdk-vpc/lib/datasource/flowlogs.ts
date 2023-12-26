@@ -4,7 +4,8 @@ import { RosFlowLogs } from './vpc.generated';
 export { RosFlowLogs as FlowLogsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::VPC::FlowLogs`
+ * Properties for defining a `FlowLogs`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlogs
  */
 export interface FlowLogsProps {
 
@@ -56,14 +57,11 @@ export interface FlowLogsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::VPC::FlowLogs`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::FlowLogs`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowLogs`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlogs
  */
 export class FlowLogs extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute FlowLogIds: The list of flow log IDs.
@@ -76,8 +74,6 @@ export class FlowLogs extends ros.Resource {
     public readonly attrFlowLogs: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::VPC::FlowLogs`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

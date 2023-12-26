@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Searchengine.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::SearchEngine::Instances`.</summary>
+    /// <summary>Properties for defining a `Instances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-searchengine-instances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-searchengine.datasource.InstancesProps")]
     public class InstancesProps : AlibabaCloud.SDK.ROS.CDK.Searchengine.Datasource.IInstancesProps
     {

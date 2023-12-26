@@ -4,7 +4,8 @@ import { RosLoadBalancerClone } from './slb.generated';
 export { RosLoadBalancerClone as LoadBalancerCloneProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLB::LoadBalancerClone`
+ * Properties for defining a `LoadBalancerClone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
 export interface LoadBalancerCloneProps {
 
@@ -31,7 +32,7 @@ export interface LoadBalancerCloneProps {
     readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
-     * Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+     * Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
 
@@ -64,14 +65,11 @@ export interface LoadBalancerCloneProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLB::LoadBalancerClone`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::LoadBalancerClone`, which is used to clone a Server Load Balancer (SLB) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancerClone`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
 export class LoadBalancerClone extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute LoadBalancerId: The id of load balance generated
@@ -79,8 +77,6 @@ export class LoadBalancerClone extends ros.Resource {
     public readonly attrLoadBalancerId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLB::LoadBalancerClone`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

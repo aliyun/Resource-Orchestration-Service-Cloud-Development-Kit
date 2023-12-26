@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Edas.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::EDAS::Applications`.</summary>
+    /// <summary>Properties for defining a `RosApplications`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-edas.datasource.RosApplicationsProps")]
     public class RosApplicationsProps : AlibabaCloud.SDK.ROS.CDK.Edas.Datasource.IRosApplicationsProps
     {

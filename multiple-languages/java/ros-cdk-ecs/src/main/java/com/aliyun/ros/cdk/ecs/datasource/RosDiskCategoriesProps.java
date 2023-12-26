@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecs.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::ECS::DiskCategories</code>.
+ * Properties for defining a <code>RosDiskCategories</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.143Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.656Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosDiskCategoriesProps")
 @software.amazon.jsii.Jsii.Proxy(RosDiskCategoriesProps.Jsii$Proxy.class)
 public interface RosDiskCategoriesProps extends software.amazon.jsii.JsiiSerializable {

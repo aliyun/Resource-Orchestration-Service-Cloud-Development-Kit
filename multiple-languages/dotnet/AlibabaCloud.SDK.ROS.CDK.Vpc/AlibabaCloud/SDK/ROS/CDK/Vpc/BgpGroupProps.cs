@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::BgpGroup`.</summary>
+    /// <summary>Properties for defining a `BgpGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.BgpGroupProps")]
     public class BgpGroupProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IBgpGroupProps
     {

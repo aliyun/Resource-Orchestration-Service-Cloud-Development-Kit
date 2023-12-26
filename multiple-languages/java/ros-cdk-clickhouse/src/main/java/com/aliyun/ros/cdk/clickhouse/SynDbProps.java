@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.clickhouse;
 
 /**
- * Properties for defining a <code>ALIYUN::ClickHouse::SynDb</code>.
+ * Properties for defining a <code>SynDb</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-syndb
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.893Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.281Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.SynDbProps")
 @software.amazon.jsii.Jsii.Proxy(SynDbProps.Jsii$Proxy.class)
 public interface SynDbProps extends software.amazon.jsii.JsiiSerializable {

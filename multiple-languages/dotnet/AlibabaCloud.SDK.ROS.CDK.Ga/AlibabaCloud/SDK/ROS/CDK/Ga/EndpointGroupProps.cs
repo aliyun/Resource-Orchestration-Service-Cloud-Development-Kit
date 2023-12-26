@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::GA::EndpointGroup`.</summary>
+    /// <summary>Properties for defining a `EndpointGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ga.EndpointGroupProps")]
     public class EndpointGroupProps : AlibabaCloud.SDK.ROS.CDK.Ga.IEndpointGroupProps
     {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::GPDB::DBInstance`.</summary>
+    /// <summary>Properties for defining a `DBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-gpdb.DBInstanceProps")]
     public class DBInstanceProps : AlibabaCloud.SDK.ROS.CDK.Gpdb.IDBInstanceProps
     {
@@ -640,7 +643,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 
         private object? _periodUnit;
 
-        /// <summary>Property periodUnit: Unit of subscription period, it could be Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of subscription period, it could be Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.
         /// </remarks>

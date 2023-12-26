@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::EIPSegment`.</summary>
+    /// <summary>Properties for defining a `RosEIPSegment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosEIPSegmentProps")]
     public class RosEIPSegmentProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosEIPSegmentProps
     {
@@ -72,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _bandwidth;
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit/s. Default value: 5.
+        /// <strong>Property</strong>: bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit\/s. Default value: 5.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

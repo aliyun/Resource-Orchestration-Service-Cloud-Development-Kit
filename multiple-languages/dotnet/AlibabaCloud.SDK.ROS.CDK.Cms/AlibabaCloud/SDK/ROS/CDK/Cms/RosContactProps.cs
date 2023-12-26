@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CMS::Contact`.</summary>
+    /// <summary>Properties for defining a `RosContact`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contact
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.RosContactProps")]
     public class RosContactProps : AlibabaCloud.SDK.ROS.CDK.Cms.IRosContactProps
     {

@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>A ROS template type:  `ALIYUN::CMS::MetricRuleTargets`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTargets`, which is used to add or modify one or more message resources of an alert rule.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `MetricRuleTargets` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cms.RosMetricRuleTargets), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosMetricRuleTargets", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cms.RosMetricRuleTargetsProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosMetricRuleTargets : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::CMS::MetricRuleTargets`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -161,8 +164,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         public interface ITargetsProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: arn: The resource description in the format of acs:{Service name abbreviation}:{regionId}:{userId}:/{Message resource type}/{Resource
-            /// name}/message. Example: acs:mns:cn-hangzhou:111:/queues/test/message.
+            /// <strong>Property</strong>: arn: The resource description in the format of acs:{Service name abbreviation}:{regionId}:{userId}:\/{Message resource type}\/{Resource
+            /// name}\/message. Example: acs:mns:cn-hangzhou:111:\/queues\/test\/message.
             /// {Service name abbreviation}: the abbreviation of the service name. Set this value
             /// to mns.
             /// {regionId}: the region ID of the message queue or topic.
@@ -211,8 +214,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: arn: The resource description in the format of acs:{Service name abbreviation}:{regionId}:{userId}:/{Message resource type}/{Resource
-                /// name}/message. Example: acs:mns:cn-hangzhou:111:/queues/test/message.
+                /// <strong>Property</strong>: arn: The resource description in the format of acs:{Service name abbreviation}:{regionId}:{userId}:\/{Message resource type}\/{Resource
+                /// name}\/message. Example: acs:mns:cn-hangzhou:111:\/queues\/test\/message.
                 /// {Service name abbreviation}: the abbreviation of the service name. Set this value
                 /// to mns.
                 /// {regionId}: the region ID of the message queue or topic.
@@ -259,8 +262,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             private object _arn;
 
             /// <remarks>
-            /// <strong>Property</strong>: arn: The resource description in the format of acs:{Service name abbreviation}:{regionId}:{userId}:/{Message resource type}/{Resource
-            /// name}/message. Example: acs:mns:cn-hangzhou:111:/queues/test/message.
+            /// <strong>Property</strong>: arn: The resource description in the format of acs:{Service name abbreviation}:{regionId}:{userId}:\/{Message resource type}\/{Resource
+            /// name}\/message. Example: acs:mns:cn-hangzhou:111:\/queues\/test\/message.
             /// {Service name abbreviation}: the abbreviation of the service name. Set this value
             /// to mns.
             /// {regionId}: the region ID of the message queue or topic.

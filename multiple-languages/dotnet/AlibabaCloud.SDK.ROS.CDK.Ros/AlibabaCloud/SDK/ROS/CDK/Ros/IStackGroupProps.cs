@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
-    /// <summary>Properties for defining a `ALIYUN::ROS::StackGroup`.</summary>
+    /// <summary>Properties for defining a `StackGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IStackGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.StackGroupProps")]
     public interface IStackGroupProps
     {
@@ -147,7 +150,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ROS::StackGroup`.</summary>
+        /// <summary>Properties for defining a `StackGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IStackGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ros.StackGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ros.IStackGroupProps
         {

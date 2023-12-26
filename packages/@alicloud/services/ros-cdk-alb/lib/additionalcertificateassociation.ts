@@ -4,7 +4,8 @@ import { RosAdditionalCertificateAssociation } from './alb.generated';
 export { RosAdditionalCertificateAssociation as AdditionalCertificateAssociationProperty };
 
 /**
- * Properties for defining a `ALIYUN::ALB::AdditionalCertificateAssociation`
+ * Properties for defining a `AdditionalCertificateAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-additionalcertificateassociation
  */
 export interface AdditionalCertificateAssociationProps {
 
@@ -20,14 +21,11 @@ export interface AdditionalCertificateAssociationProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ALB::AdditionalCertificateAssociation`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AdditionalCertificateAssociation`, which is used to add additional certificates to a listener.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAdditionalCertificateAssociation`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-additionalcertificateassociation
  */
 export class AdditionalCertificateAssociation extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ListenerId: The ID of the listener.
@@ -35,8 +33,6 @@ export class AdditionalCertificateAssociation extends ros.Resource {
     public readonly attrListenerId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ALB::AdditionalCertificateAssociation`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

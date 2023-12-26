@@ -4,13 +4,14 @@ import { RosQosPolicy } from './sag.generated';
 export { RosQosPolicy as QosPolicyProperty };
 
 /**
- * Properties for defining a `ALIYUN::SAG::QosPolicy`
+ * Properties for defining a `QosPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
  */
 export interface QosPolicyProps {
 
     /**
      * Property destCidr: The range of the destination IP addresses.
-     * Specify the value of this parameter in CIDR notation. Example: 192.168.10.0/24.
+     * Specify the value of this parameter in CIDR notation. Example: 192.168.10.0\/24.
      */
     readonly destCidr: string | ros.IResolvable;
 
@@ -18,9 +19,9 @@ export interface QosPolicyProps {
      * Property destPortRange: The range of destination ports.
      * Valid values: 1 to 65535 and -1.
      * Set this parameter in one of the following formats:
-     * 1/200: a port range from 1 to 200
-     * 80/80: port 80
-     * -1/-1: all ports
+     * 1\/200: a port range from 1 to 200
+     * 80\/80: port 80
+     * -1\/-1: all ports
      */
     readonly destPortRange: string | ros.IResolvable;
 
@@ -44,7 +45,7 @@ export interface QosPolicyProps {
 
     /**
      * Property sourceCidr: The range of the source IP addresses.
-     * Specify the value of this parameter in CIDR notation. Example: 192.168.1.0/24.
+     * Specify the value of this parameter in CIDR notation. Example: 192.168.1.0\/24.
      */
     readonly sourceCidr: string | ros.IResolvable;
 
@@ -52,9 +53,9 @@ export interface QosPolicyProps {
      * Property sourcePortRange: The range of source ports.
      * Valid values: 1 to 65535 and -1.
      * Set this parameter in one of the following formats:
-     * 1/200: a port range from 1 to 200
-     * 80/80: port 80
-     * -1/-1: all ports
+     * 1\/200: a port range from 1 to 200
+     * 80\/80: port 80
+     * -1\/-1: all ports
      */
     readonly sourcePortRange: string | ros.IResolvable;
 
@@ -102,14 +103,11 @@ export interface QosPolicyProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SAG::QosPolicy`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosPolicy`, which is used to create a traffic classification rule for a quality of service (QoS) policy.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQosPolicy`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qospolicy
  */
 export class QosPolicy extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute QosPolicyId: The ID of the traffic classification rule.
@@ -117,8 +115,6 @@ export class QosPolicy extends ros.Resource {
     public readonly attrQosPolicyId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SAG::QosPolicy`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

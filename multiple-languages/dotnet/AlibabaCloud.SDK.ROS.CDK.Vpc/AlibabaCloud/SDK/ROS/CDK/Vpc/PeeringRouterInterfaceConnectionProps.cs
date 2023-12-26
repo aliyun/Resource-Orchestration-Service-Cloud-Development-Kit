@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::PeeringRouterInterfaceConnection`.</summary>
+    /// <summary>Properties for defining a `PeeringRouterInterfaceConnection`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfaceconnection
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.PeeringRouterInterfaceConnectionProps")]
     public class PeeringRouterInterfaceConnectionProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IPeeringRouterInterfaceConnectionProps
     {

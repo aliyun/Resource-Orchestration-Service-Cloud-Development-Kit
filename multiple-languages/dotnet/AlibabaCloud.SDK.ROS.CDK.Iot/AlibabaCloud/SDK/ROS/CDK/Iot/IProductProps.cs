@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
-    /// <summary>Properties for defining a `ALIYUN::IOT::Product`.</summary>
+    /// <summary>Properties for defining a `Product`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IProductProps), fullyQualifiedName: "@alicloud/ros-cdk-iot.ProductProps")]
     public interface IProductProps
     {
@@ -242,7 +245,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::IOT::Product`.</summary>
+        /// <summary>Properties for defining a `Product`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IProductProps), fullyQualifiedName: "@alicloud/ros-cdk-iot.ProductProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Iot.IProductProps
         {

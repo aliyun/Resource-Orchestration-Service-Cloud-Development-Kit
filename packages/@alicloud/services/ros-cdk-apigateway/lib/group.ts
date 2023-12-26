@@ -4,12 +4,13 @@ import { RosGroup } from './apigateway.generated';
 export { RosGroup as GroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Group`
+ * Properties for defining a `Group`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
 export interface GroupProps {
 
     /**
-     * Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     readonly groupName: string | ros.IResolvable;
 
@@ -51,14 +52,11 @@ export interface GroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ApiGateway::Group`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Group`, which is used to create an API group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
 export class Group extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute GroupId: The id of the created Group resource
@@ -76,8 +74,6 @@ export class Group extends ros.Resource {
     public readonly attrTags: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::Group`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

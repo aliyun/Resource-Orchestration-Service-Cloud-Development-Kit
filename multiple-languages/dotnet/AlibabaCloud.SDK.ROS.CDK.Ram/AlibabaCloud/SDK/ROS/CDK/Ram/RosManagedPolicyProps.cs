@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RAM::ManagedPolicy`.</summary>
+    /// <summary>Properties for defining a `RosManagedPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-managedpolicy
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.RosManagedPolicyProps")]
     public class RosManagedPolicyProps : AlibabaCloud.SDK.ROS.CDK.Ram.IRosManagedPolicyProps
     {

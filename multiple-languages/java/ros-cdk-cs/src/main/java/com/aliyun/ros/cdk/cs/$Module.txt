@@ -84,6 +84,8 @@
 @alicloud/ros-cdk-cs.datasource.ClusterNodePoolsProps=com.aliyun.ros.cdk.cs.datasource.ClusterNodePoolsProps
 @alicloud/ros-cdk-cs.datasource.ClusterUserKubeconfig=com.aliyun.ros.cdk.cs.datasource.ClusterUserKubeconfig
 @alicloud/ros-cdk-cs.datasource.ClusterUserKubeconfigProps=com.aliyun.ros.cdk.cs.datasource.ClusterUserKubeconfigProps
+@alicloud/ros-cdk-cs.datasource.KubernetesCluster=com.aliyun.ros.cdk.cs.datasource.KubernetesCluster
+@alicloud/ros-cdk-cs.datasource.KubernetesClusterProps=com.aliyun.ros.cdk.cs.datasource.KubernetesClusterProps
 @alicloud/ros-cdk-cs.datasource.KubernetesClusters=com.aliyun.ros.cdk.cs.datasource.KubernetesClusters
 @alicloud/ros-cdk-cs.datasource.KubernetesClustersProps=com.aliyun.ros.cdk.cs.datasource.KubernetesClustersProps
 @alicloud/ros-cdk-cs.datasource.RosClusterApplicationResources=com.aliyun.ros.cdk.cs.datasource.RosClusterApplicationResources
@@ -92,5 +94,7 @@
 @alicloud/ros-cdk-cs.datasource.RosClusterNodePoolsProps=com.aliyun.ros.cdk.cs.datasource.RosClusterNodePoolsProps
 @alicloud/ros-cdk-cs.datasource.RosClusterUserKubeconfig=com.aliyun.ros.cdk.cs.datasource.RosClusterUserKubeconfig
 @alicloud/ros-cdk-cs.datasource.RosClusterUserKubeconfigProps=com.aliyun.ros.cdk.cs.datasource.RosClusterUserKubeconfigProps
+@alicloud/ros-cdk-cs.datasource.RosKubernetesCluster=com.aliyun.ros.cdk.cs.datasource.RosKubernetesCluster
+@alicloud/ros-cdk-cs.datasource.RosKubernetesClusterProps=com.aliyun.ros.cdk.cs.datasource.RosKubernetesClusterProps
 @alicloud/ros-cdk-cs.datasource.RosKubernetesClusters=com.aliyun.ros.cdk.cs.datasource.RosKubernetesClusters
 @alicloud/ros-cdk-cs.datasource.RosKubernetesClustersProps=com.aliyun.ros.cdk.cs.datasource.RosKubernetesClustersProps

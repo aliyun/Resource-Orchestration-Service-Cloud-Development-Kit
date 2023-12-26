@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nlpautoml
 {
-    /// <summary>Properties for defining a `ALIYUN::NLPAUTOML::Dataset`.</summary>
+    /// <summary>Properties for defining a `RosDataset`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-dataset
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDatasetProps), fullyQualifiedName: "@alicloud/ros-cdk-nlpautoml.RosDatasetProps")]
     public interface IRosDatasetProps
     {
@@ -39,7 +42,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlpautoml
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::NLPAUTOML::Dataset`.</summary>
+        /// <summary>Properties for defining a `RosDataset`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-dataset
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDatasetProps), fullyQualifiedName: "@alicloud/ros-cdk-nlpautoml.RosDatasetProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Nlpautoml.IRosDatasetProps
         {

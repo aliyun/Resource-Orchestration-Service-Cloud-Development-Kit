@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ROCKETMQ::Topic`.</summary>
+    /// <summary>Properties for defining a `Topic`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rocketmq.TopicProps")]
     public class TopicProps : AlibabaCloud.SDK.ROS.CDK.Rocketmq.ITopicProps
     {

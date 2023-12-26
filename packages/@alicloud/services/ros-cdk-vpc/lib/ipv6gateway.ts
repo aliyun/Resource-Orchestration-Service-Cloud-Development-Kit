@@ -4,7 +4,8 @@ import { RosIpv6Gateway } from './vpc.generated';
 export { RosIpv6Gateway as Ipv6GatewayProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::Ipv6Gateway`
+ * Properties for defining a `Ipv6Gateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
  */
 export interface Ipv6GatewayProps {
 
@@ -15,13 +16,13 @@ export interface Ipv6GatewayProps {
 
     /**
      * Property description: Description of IPv6 gateway.
-     * Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): // or https: // at the beginning .
+     * Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): \/\/ or https: \/\/ at the beginning .
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * Property name: Name of the IPv6 gateway.
-     * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): // or with https: // .
+     * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): \/\/ or with https: \/\/ .
      */
     readonly name?: string | ros.IResolvable;
 
@@ -41,14 +42,11 @@ export interface Ipv6GatewayProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::Ipv6Gateway`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6Gateway`, which is used to create an IPv6 gateway.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpv6Gateway`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
  */
 export class Ipv6Gateway extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Ipv6GatewayId: ID IPv6 gateway.
@@ -56,8 +54,6 @@ export class Ipv6Gateway extends ros.Resource {
     public readonly attrIpv6GatewayId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::Ipv6Gateway`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

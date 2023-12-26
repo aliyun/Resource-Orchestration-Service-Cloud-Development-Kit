@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::VPC::NatIpCidrs`.</summary>
+    /// <summary>Properties for defining a `NatIpCidrs`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natipcidrs
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.datasource.NatIpCidrsProps")]
     public class NatIpCidrsProps : AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.INatIpCidrsProps
     {

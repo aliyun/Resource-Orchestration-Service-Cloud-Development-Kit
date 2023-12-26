@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
-    /// <summary>Properties for defining a `ALIYUN::AMQP::Queue`.</summary>
+    /// <summary>Properties for defining a `RosQueue`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosQueueProps), fullyQualifiedName: "@alicloud/ros-cdk-amqp.RosQueueProps")]
     public interface IRosQueueProps
     {
@@ -150,7 +153,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::AMQP::Queue`.</summary>
+        /// <summary>Properties for defining a `RosQueue`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosQueueProps), fullyQualifiedName: "@alicloud/ros-cdk-amqp.RosQueueProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Amqp.IRosQueueProps
         {

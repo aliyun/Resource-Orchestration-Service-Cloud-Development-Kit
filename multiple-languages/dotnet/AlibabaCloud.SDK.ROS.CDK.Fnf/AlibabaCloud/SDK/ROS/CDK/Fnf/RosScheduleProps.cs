@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FNF::Schedule`.</summary>
+    /// <summary>Properties for defining a `RosSchedule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fnf.RosScheduleProps")]
     public class RosScheduleProps : AlibabaCloud.SDK.ROS.CDK.Fnf.IRosScheduleProps
     {

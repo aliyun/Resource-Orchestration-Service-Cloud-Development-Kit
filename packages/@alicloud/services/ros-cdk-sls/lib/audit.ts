@@ -4,7 +4,8 @@ import { RosAudit } from './sls.generated';
 export { RosAudit as AuditProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLS::Audit`
+ * Properties for defining a `Audit`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
  */
 export interface AuditProps {
 
@@ -25,14 +26,11 @@ export interface AuditProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLS::Audit`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Audit`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAudit`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
  */
 export class Audit extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DisplayName: Name of SLS log audit.
@@ -40,8 +38,6 @@ export class Audit extends ros.Resource {
     public readonly attrDisplayName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLS::Audit`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

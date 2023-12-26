@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ECI::ContainerGroup`
+ * Properties for defining a `RosContainerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
 export interface RosContainerGroupProps {
 
@@ -133,7 +134,7 @@ export interface RosContainerGroupProps {
     readonly spotStrategy?: string | ros.IResolvable;
 
     /**
-     * @Property tag: The list of container group tags in the form of key/value pairs. You can define a maximum of 20 tags for each container group.
+     * @Property tag: The list of container group tags in the form of key\/value pairs. You can define a maximum of 20 tags for each container group.
      */
     readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
 
@@ -289,18 +290,15 @@ function rosContainerGroupPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECI::ContainerGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ContainerGroup`, which is used to create a container group. A container group is an elastic container instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ContainerGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
 export class RosContainerGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECI::ContainerGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ContainerGroupId: The ID of the container group.
@@ -481,7 +479,7 @@ export class RosContainerGroup extends ros.RosResource {
     public spotStrategy: string | ros.IResolvable | undefined;
 
     /**
-     * @Property tag: The list of container group tags in the form of key/value pairs. You can define a maximum of 20 tags for each container group.
+     * @Property tag: The list of container group tags in the form of key\/value pairs. You can define a maximum of 20 tags for each container group.
      */
     public tag: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -508,8 +506,6 @@ export class RosContainerGroup extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECI::ContainerGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -774,7 +770,7 @@ export namespace RosContainerGroup {
          */
         readonly volumeMount?: Array<RosContainerGroup.VolumeMountProperty | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
+         * @Property environmentVar: Environment variables in the operating system of the container. Each environment variable is a key\/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
          */
         readonly environmentVar?: Array<RosContainerGroup.EnvironmentVarProperty | ros.IResolvable> | ros.IResolvable;
     }
@@ -1061,7 +1057,7 @@ export namespace RosContainerGroup {
          */
         readonly userName: string | ros.IResolvable;
         /**
-         * @Property server: The IP address of the image repository. This address does not include a protocol prefix, such as http:// or https://.
+         * @Property server: The IP address of the image repository. This address does not include a protocol prefix, such as http:\/\/ or https:\/\/.
          */
         readonly server: string | ros.IResolvable;
         /**
@@ -1153,7 +1149,7 @@ export namespace RosContainerGroup {
          */
         readonly image?: string | ros.IResolvable;
         /**
-         * @Property environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
+         * @Property environmentVar: Environment variables in the operating system of the container. Each environment variable is a key\/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
          */
         readonly environmentVar?: Array<RosContainerGroup.InitContainerEnvironmentVarProperty | ros.IResolvable> | ros.IResolvable;
         /**
@@ -2142,7 +2138,8 @@ function rosContainerGroupVolumeMountPropertyToRosTemplate(properties: any): any
 }
 
 /**
- * Properties for defining a `ALIYUN::ECI::ImageCache`
+ * Properties for defining a `RosImageCache`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
  */
 export interface RosImageCacheProps {
 
@@ -2286,18 +2283,15 @@ function rosImageCachePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECI::ImageCache`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ImageCache`, which is used to create an image cache.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ImageCache` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
  */
 export class RosImageCache extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECI::ImageCache";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ImageCacheId: The ID of the image cache.
@@ -2374,8 +2368,6 @@ export class RosImageCache extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECI::ImageCache`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

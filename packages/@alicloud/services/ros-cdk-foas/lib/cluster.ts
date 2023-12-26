@@ -4,7 +4,8 @@ import { RosCluster } from './foas.generated';
 export { RosCluster as ClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::FOAS::Cluster`
+ * Properties for defining a `Cluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-cluster
  */
 export interface ClusterProps {
 
@@ -44,14 +45,11 @@ export interface ClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FOAS::Cluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FOAS::Cluster`, which is used to create a cluster for an order in exclusive mode.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-cluster
  */
 export class Cluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterId: Cluster ID.
@@ -94,8 +92,6 @@ export class Cluster extends ros.Resource {
     public readonly attrVSwitchIds: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FOAS::Cluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

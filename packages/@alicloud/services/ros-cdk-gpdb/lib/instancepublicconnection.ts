@@ -4,7 +4,8 @@ import { RosInstancePublicConnection } from './gpdb.generated';
 export { RosInstancePublicConnection as InstancePublicConnectionProperty };
 
 /**
- * Properties for defining a `ALIYUN::GPDB::InstancePublicConnection`
+ * Properties for defining a `InstancePublicConnection`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
  */
 export interface InstancePublicConnectionProps {
 
@@ -25,14 +26,11 @@ export interface InstancePublicConnectionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::GPDB::InstancePublicConnection`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`, which is used to allocate a public connection string to an instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstancePublicConnection`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
  */
 export class InstancePublicConnection extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ConnectionString: The connection string of the instance.
@@ -45,8 +43,6 @@ export class InstancePublicConnection extends ros.Resource {
     public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GPDB::InstancePublicConnection`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

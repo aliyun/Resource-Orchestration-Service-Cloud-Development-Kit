@@ -4,7 +4,8 @@ import { RosEIPSegment } from './vpc.generated';
 export { RosEIPSegment as EIPSegmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::EIPSegment`
+ * Properties for defining a `EIPSegment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
 export interface EIPSegmentProps {
 
@@ -21,7 +22,7 @@ export interface EIPSegmentProps {
     readonly eipMask: number | ros.IResolvable;
 
     /**
-     * Property bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit/s. Default value: 5.
+     * Property bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit\/s. Default value: 5.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
@@ -51,14 +52,11 @@ export interface EIPSegmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::EIPSegment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPSegment`, which is used to apply for contiguous elastic IP addresses (EIPs).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIPSegment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
 export class EIPSegment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute EipAddresses: List of EIP addresses. like [{"AllocationId": "eip-xxx", "IpAddress": "xx.xx.xx.xx"}]
@@ -71,8 +69,6 @@ export class EIPSegment extends ros.Resource {
     public readonly attrEipSegmentInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::EIPSegment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,8 @@ import { RosRoles } from './ram.generated';
 export { RosRoles as RolesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::RAM::Roles`
+ * Properties for defining a `Roles`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
  */
 export interface RolesProps {
 
@@ -15,14 +16,11 @@ export interface RolesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::RAM::Roles`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Roles`, which is used to query the details of RAM roles.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRoles`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
  */
 export class Roles extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RoleNames: The list of role names.
@@ -35,8 +33,6 @@ export class Roles extends ros.Resource {
     public readonly attrRoles: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::RAM::Roles`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

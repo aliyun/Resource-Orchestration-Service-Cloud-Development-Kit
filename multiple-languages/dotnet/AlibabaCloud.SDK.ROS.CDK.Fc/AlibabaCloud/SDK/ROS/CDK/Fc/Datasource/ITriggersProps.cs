@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::FC::Triggers`.</summary>
+    /// <summary>Properties for defining a `Triggers`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-triggers
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITriggersProps), fullyQualifiedName: "@alicloud/ros-cdk-fc.datasource.TriggersProps")]
     public interface ITriggersProps
     {
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::FC::Triggers`.</summary>
+        /// <summary>Properties for defining a `Triggers`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-triggers
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITriggersProps), fullyQualifiedName: "@alicloud/ros-cdk-fc.datasource.TriggersProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fc.Datasource.ITriggersProps
         {

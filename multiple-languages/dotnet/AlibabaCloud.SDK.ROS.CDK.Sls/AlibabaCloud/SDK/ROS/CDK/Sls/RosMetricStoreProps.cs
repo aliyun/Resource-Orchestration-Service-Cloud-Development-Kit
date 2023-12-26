@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLS::MetricStore`.</summary>
+    /// <summary>Properties for defining a `RosMetricStore`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-metricstore
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosMetricStoreProps")]
     public class RosMetricStoreProps : AlibabaCloud.SDK.ROS.CDK.Sls.IRosMetricStoreProps
     {

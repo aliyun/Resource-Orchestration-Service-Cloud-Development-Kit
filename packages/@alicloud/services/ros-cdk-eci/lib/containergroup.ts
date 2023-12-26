@@ -4,7 +4,8 @@ import { RosContainerGroup } from './eci.generated';
 export { RosContainerGroup as ContainerGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECI::ContainerGroup`
+ * Properties for defining a `ContainerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
 export interface ContainerGroupProps {
 
@@ -134,7 +135,7 @@ export interface ContainerGroupProps {
     readonly spotStrategy?: string | ros.IResolvable;
 
     /**
-     * Property tag: The list of container group tags in the form of key/value pairs. You can define a maximum of 20 tags for each container group.
+     * Property tag: The list of container group tags in the form of key\/value pairs. You can define a maximum of 20 tags for each container group.
      */
     readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
 
@@ -162,14 +163,11 @@ export interface ContainerGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECI::ContainerGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ContainerGroup`, which is used to create a container group. A container group is an elastic container instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosContainerGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
 export class ContainerGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ContainerGroupId: The ID of the container group.
@@ -222,8 +220,6 @@ export class ContainerGroup extends ros.Resource {
     public readonly attrZoneId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECI::ContainerGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

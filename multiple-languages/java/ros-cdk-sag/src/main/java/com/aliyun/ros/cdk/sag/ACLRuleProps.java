@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * Properties for defining a <code>ALIYUN::SAG::ACLRule</code>.
+ * Properties for defining a <code>ACLRule</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.111Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.963Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.ACLRuleProps")
 @software.amazon.jsii.Jsii.Proxy(ACLRuleProps.Jsii$Proxy.class)
 public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {

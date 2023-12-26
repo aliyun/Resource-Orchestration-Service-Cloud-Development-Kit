@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CMS::MetricRuleTargets`.</summary>
+    /// <summary>Properties for defining a `RosMetricRuleTargets`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.RosMetricRuleTargetsProps")]
     public class RosMetricRuleTargetsProps : AlibabaCloud.SDK.ROS.CDK.Cms.IRosMetricRuleTargetsProps
     {

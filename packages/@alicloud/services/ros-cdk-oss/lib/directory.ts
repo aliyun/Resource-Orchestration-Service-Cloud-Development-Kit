@@ -4,7 +4,8 @@ import { RosDirectory } from './oss.generated';
 export { RosDirectory as DirectoryProperty };
 
 /**
- * Properties for defining a `ALIYUN::OSS::Directory`
+ * Properties for defining a `Directory`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
 export interface DirectoryProps {
 
@@ -25,14 +26,11 @@ export interface DirectoryProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::OSS::Directory`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Directory`DATASOURCE::OSS::Buckets is used to query an Object Storage Service (OSS) bucket.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDirectory`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
 export class Directory extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute BucketName: The name of Bucket
@@ -45,8 +43,6 @@ export class Directory extends ros.Resource {
     public readonly attrDirectoryName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OSS::Directory`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

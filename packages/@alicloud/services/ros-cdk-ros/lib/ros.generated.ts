@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ROS::AutoEnableService`
+ * Properties for defining a `RosAutoEnableService`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
 export interface RosAutoEnableServiceProps {
 
@@ -47,6 +48,7 @@ export interface RosAutoEnableServiceProps {
      * CDT: Cloud Data Transfer
      * CDTCb: Cloud Data Transfer for Cross Border
      * TransitRouter: Cen Transit Router
+     * PAI: Platform of Artificial Intelligence
      */
     readonly serviceName: string | ros.IResolvable;
 }
@@ -65,7 +67,7 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["IOT","EMAS","MaxCompute","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","TransitRouter","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","SLS","NAS","CDTCb","OSS","MNS","TrafficMirror","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","CDT","AHAS","BrainIndustrial","OTS","CDN","PrivateLink"],
+          allowedValues: ["IOT","EMAS","MaxCompute","BatchCompute","IMM","Xtrace","DataWorks","FNF","FC","KMS","TransitRouter","PAI","CS","CR","DataHub","EDAS","CMS","RocketMQ","HBR","ApiGateway","NLP","SLS","NAS","CDTCb","OSS","MNS","TrafficMirror","ARMS","SAE","CloudStorageGateway","PrivateZone","DCDN","VS","CDT","AHAS","BrainIndustrial","OTS","CDN","PrivateLink"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
@@ -91,18 +93,15 @@ function rosAutoEnableServicePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROS::AutoEnableService`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`ALIYUN::ROS::CustomResource is used to create a custom resource.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AutoEnableService` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
 export class RosAutoEnableService extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::AutoEnableService";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -147,12 +146,11 @@ export class RosAutoEnableService extends ros.RosResource {
      * CDT: Cloud Data Transfer
      * CDTCb: Cloud Data Transfer for Cross Border
      * TransitRouter: Cen Transit Router
+     * PAI: Platform of Artificial Intelligence
      */
     public serviceName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ROS::AutoEnableService`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -176,29 +174,30 @@ export class RosAutoEnableService extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ROS::CustomResource`
+ * Properties for defining a `RosCustomResource`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
  */
 export interface RosCustomResourceProps {
 
     /**
      * @Property serviceToken: The service token that was given to the template developer by the service provider to access the service.
      * Allowed values:
-     * - Function Compute: acs:fc:<region_id>:<account_id>:services/<service_name>/functions/<function_name>
-     * - MNS Queue: acs:mns:<region_id>:<account_id>:queues/<queue_name> or acs:mns:<region_id>:<account_id>:/queues/<queue_name>
-     * - MNS Topic: acs:mns:<region_id>:<account_id>:topics/<topic_name> or acs:mns:<region_id>:<account_id>:/topics/<topic_name>
+     * - Function Compute: acs:fc:<region_id>:<account_id>:services\/<service_name>\/functions\/<function_name>
+     * - MNS Queue: acs:mns:<region_id>:<account_id>:queues\/<queue_name> or acs:mns:<region_id>:<account_id>:\/queues\/<queue_name>
+     * - MNS Topic: acs:mns:<region_id>:<account_id>:topics\/<topic_name> or acs:mns:<region_id>:<account_id>:\/topics\/<topic_name>
      * - HTTP&HTTPS: web[options]:<url>
      *   Two options are supported:
      *   - sync: sync HTTP&HTTPS request.
      *   - idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
      * Examples:
-     *   - acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function
-     *   - acs:mns:cn-hangzhou:123456789:queues/test-queue
-     *   - acs:mns:cn-hangzhou:123456789:/queues/test-queue
-     *   - acs:mns:cn-hangzhou:123456789:topics/test-topic
-     *   - acs:mns:cn-hangzhou:123456789:/topics/test-topic
-     *   - web:https://abc.com
-     *   - web[sync]:http://abc.com
-     *   - web[sync,idempotent]:https://abc.com
+     *   - acs:fc:cn-hangzhou:123456789:services\/test-service\/functions\/test-function
+     *   - acs:mns:cn-hangzhou:123456789:queues\/test-queue
+     *   - acs:mns:cn-hangzhou:123456789:\/queues\/test-queue
+     *   - acs:mns:cn-hangzhou:123456789:topics\/test-topic
+     *   - acs:mns:cn-hangzhou:123456789:\/topics\/test-topic
+     *   - web:https:\/\/abc.com
+     *   - web[sync]:http:\/\/abc.com
+     *   - web[sync,idempotent]:https:\/\/abc.com
      */
     readonly serviceToken: string | ros.IResolvable;
 
@@ -275,18 +274,15 @@ function rosCustomResourcePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROS::CustomResource`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::CustomResource`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CustomResource` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
  */
 export class RosCustomResource extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::CustomResource";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Outputs: Output data received from service provider.
@@ -299,22 +295,22 @@ export class RosCustomResource extends ros.RosResource {
     /**
      * @Property serviceToken: The service token that was given to the template developer by the service provider to access the service.
      * Allowed values:
-     * - Function Compute: acs:fc:<region_id>:<account_id>:services/<service_name>/functions/<function_name>
-     * - MNS Queue: acs:mns:<region_id>:<account_id>:queues/<queue_name> or acs:mns:<region_id>:<account_id>:/queues/<queue_name>
-     * - MNS Topic: acs:mns:<region_id>:<account_id>:topics/<topic_name> or acs:mns:<region_id>:<account_id>:/topics/<topic_name>
+     * - Function Compute: acs:fc:<region_id>:<account_id>:services\/<service_name>\/functions\/<function_name>
+     * - MNS Queue: acs:mns:<region_id>:<account_id>:queues\/<queue_name> or acs:mns:<region_id>:<account_id>:\/queues\/<queue_name>
+     * - MNS Topic: acs:mns:<region_id>:<account_id>:topics\/<topic_name> or acs:mns:<region_id>:<account_id>:\/topics\/<topic_name>
      * - HTTP&HTTPS: web[options]:<url>
      *   Two options are supported:
      *   - sync: sync HTTP&HTTPS request.
      *   - idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
      * Examples:
-     *   - acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function
-     *   - acs:mns:cn-hangzhou:123456789:queues/test-queue
-     *   - acs:mns:cn-hangzhou:123456789:/queues/test-queue
-     *   - acs:mns:cn-hangzhou:123456789:topics/test-topic
-     *   - acs:mns:cn-hangzhou:123456789:/topics/test-topic
-     *   - web:https://abc.com
-     *   - web[sync]:http://abc.com
-     *   - web[sync,idempotent]:https://abc.com
+     *   - acs:fc:cn-hangzhou:123456789:services\/test-service\/functions\/test-function
+     *   - acs:mns:cn-hangzhou:123456789:queues\/test-queue
+     *   - acs:mns:cn-hangzhou:123456789:\/queues\/test-queue
+     *   - acs:mns:cn-hangzhou:123456789:topics\/test-topic
+     *   - acs:mns:cn-hangzhou:123456789:\/topics\/test-topic
+     *   - web:https:\/\/abc.com
+     *   - web[sync]:http:\/\/abc.com
+     *   - web[sync,idempotent]:https:\/\/abc.com
      */
     public serviceToken: string | ros.IResolvable;
 
@@ -336,8 +332,6 @@ export class RosCustomResource extends ros.RosResource {
     public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROS::CustomResource`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -384,7 +378,7 @@ export namespace RosCustomResource {
      * The signature algorithm:
      * 1.Concatenating signature string:POST
      * \n
-     * <content type: if ContentType is specified, use it, else use application/json.>
+     * <content type: if ContentType is specified, use it, else use application\/json.>
      * \n
      * <md5 of request data: without Signature, json format, utf-8 encoded, sort keys, ensure ascii.>
      * \n
@@ -394,7 +388,7 @@ export namespace RosCustomResource {
      * \n
      * ...<header N key>:<header 2 value>
      * \n
-     * <url in ServiceToken: such as https://abc.com>
+     * <url in ServiceToken: such as https:\/\/abc.com>
      * 2.calculate signature with sha1.
          */
         readonly signKey?: string | ros.IResolvable;
@@ -456,7 +450,8 @@ function rosCustomResourceHttpConfigPropertyToRosTemplate(properties: any): any 
 }
 
 /**
- * Properties for defining a `ALIYUN::ROS::ResourceCleaner`
+ * Properties for defining a `RosResourceCleaner`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */
 export interface RosResourceCleanerProps {
 
@@ -588,7 +583,7 @@ function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult
     if(properties.mode && (typeof properties.mode) !== 'object') {
         errors.collect(ros.propertyValidator('mode', ros.validateAllowedValues)({
           data: properties.mode,
-          allowedValues: ["Strict","Loose"],
+          allowedValues: ["Strict","Loose","LooseWithResourceCleanerFailure"],
         }));
     }
     errors.collect(ros.propertyValidator('mode', ros.validateString)(properties.mode));
@@ -672,18 +667,15 @@ function rosResourceCleanerPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROS::ResourceCleaner`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourceCleaner` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */
 export class RosResourceCleaner extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::ResourceCleaner";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CleanResult: The cleanup result. Valid values:
@@ -865,8 +857,6 @@ The value is a list of dict. The dict contains the fields below:
     public resourceTypeOrder: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROS::ResourceCleaner`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -958,7 +948,7 @@ function RosResourceCleaner_ExcludedResourcesPropertyValidator(properties: any):
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DirectMail:Domain","DirectMail:Ipfilter","EAIS:Instance","ECD:Bundle","ECD:Desktop","ECD:SimpleOfficeSite","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","EMR:Cluster","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpoint","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ5:Instance","ROCKETMQ:Instance","ROS:ResourceType","ROS:Stack","ROS:StackGroup","ROS:Template","ROS:TemplateScratch","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
+          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:Namespace","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DLF:Catalog","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DTS:MigrationInstance","DirectMail:Domain","DirectMail:Ipfilter","EAIS:Instance","EBS:DiskReplicaGroup","EBS:DiskReplicaPair","ECD:Bundle","ECD:Desktop","ECD:SimpleOfficeSite","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","ECS:SnapshotGroup","EDAS:Application","EDAS:Cluster","EDAS:UserDefineRegion","EHPC:Cluster","EMR:Cluster","EMR:Cluster2","EMR:FlowProject","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpoint","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ5:Instance","ROCKETMQ:Instance","ROS:ResourceType","ROS:Stack","ROS:StackGroup","ROS:Template","ROS:TemplateScratch","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
@@ -1174,7 +1164,7 @@ function RosResourceCleaner_ResourcesPropertyValidator(properties: any): ros.Val
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DirectMail:Domain","DirectMail:Ipfilter","EAIS:Instance","ECD:Bundle","ECD:Desktop","ECD:SimpleOfficeSite","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","EDAS:Application","EDAS:Cluster","EMR:Cluster","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpoint","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ5:Instance","ROCKETMQ:Instance","ROS:ResourceType","ROS:Stack","ROS:StackGroup","ROS:Template","ROS:TemplateScratch","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
+          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:Namespace","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DLF:Catalog","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DTS:MigrationInstance","DirectMail:Domain","DirectMail:Ipfilter","EAIS:Instance","EBS:DiskReplicaGroup","EBS:DiskReplicaPair","ECD:Bundle","ECD:Desktop","ECD:SimpleOfficeSite","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","ECS:SnapshotGroup","EDAS:Application","EDAS:Cluster","EDAS:UserDefineRegion","EHPC:Cluster","EMR:Cluster","EMR:Cluster2","EMR:FlowProject","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpoint","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ5:Instance","ROCKETMQ:Instance","ROS:ResourceType","ROS:Stack","ROS:StackGroup","ROS:Template","ROS:TemplateScratch","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
@@ -1273,7 +1263,8 @@ function rosResourceCleanerTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ROS::Sleep`
+ * Properties for defining a `RosSleep`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-sleep
  */
 export interface RosSleepProps {
 
@@ -1372,18 +1363,15 @@ function rosSleepPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROS::Sleep`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Sleep`, which is used to delay the creation, deletion, update, and rollback of other resources.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Sleep` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-sleep
  */
 export class RosSleep extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::Sleep";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1414,8 +1402,6 @@ export class RosSleep extends ros.RosResource {
     public updateRollbackDuration: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROS::Sleep`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1447,7 +1433,8 @@ export class RosSleep extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ROS::Stack`
+ * Properties for defining a `RosStack`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stack
  */
 export interface RosStackProps {
 
@@ -1479,7 +1466,7 @@ export interface RosStackProps {
     readonly templateId?: string | ros.IResolvable;
 
     /**
-     * @Property templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
+     * @Property templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss:\/\/ros-template\/demo?RegionId=cn-hangzhou, oss:\/\/ros-template\/demo. RegionId is default to the value of RegionId Parameter of the request.).
      * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
      */
     readonly templateUrl?: string | ros.IResolvable;
@@ -1561,18 +1548,15 @@ function rosStackPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROS::Stack`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Stack`, which is used to create a nested stack. You can nest stacks up to five levels of depth.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Stack` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stack
  */
 export class RosStack extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::Stack";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1605,7 +1589,7 @@ export class RosStack extends ros.RosResource {
     public templateId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
+     * @Property templateUrl: Location of file containing the template body. The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss:\/\/ros-template\/demo?RegionId=cn-hangzhou, oss:\/\/ros-template\/demo. RegionId is default to the value of RegionId Parameter of the request.).
      * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
      */
     public templateUrl: string | ros.IResolvable | undefined;
@@ -1621,8 +1605,6 @@ export class RosStack extends ros.RosResource {
     public timeoutMins: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROS::Stack`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1708,7 +1690,8 @@ function rosStackTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ROS::StackGroup`
+ * Properties for defining a `RosStackGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
  */
 export interface RosStackGroupProps {
 
@@ -1836,18 +1819,15 @@ function rosStackGroupPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROS::StackGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackGroup`, which is used to create a stack group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `StackGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
  */
 export class RosStackGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::StackGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute StackGroupId: undefined
@@ -1923,8 +1903,6 @@ export class RosStackGroup extends ros.RosResource {
     public templateVersion: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROS::StackGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2021,7 +1999,8 @@ function rosStackGroupAutoDeploymentPropertyToRosTemplate(properties: any): any 
 }
 
 /**
- * Properties for defining a `ALIYUN::ROS::StackInstances`
+ * Properties for defining a `RosStackInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
  */
 export interface RosStackInstancesProps {
 
@@ -2129,18 +2108,15 @@ function rosStackInstancesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROS::StackInstances`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackInstances`, which is used to create stack instances within specified accounts in specified regions.
+ * @Note This class does not contain additional functions, so it is recommended to use the `StackInstances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
  */
 export class RosStackInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::StackInstances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute LastOperationId: undefined
@@ -2206,8 +2182,6 @@ export class RosStackInstances extends ros.RosResource {
     public timeoutInMinutes: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROS::StackInstances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2351,7 +2325,8 @@ function rosStackInstancesOperationPreferencesPropertyToRosTemplate(properties: 
 }
 
 /**
- * Properties for defining a `ALIYUN::ROS::WaitCondition`
+ * Properties for defining a `RosWaitCondition`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
  */
 export interface RosWaitConditionProps {
 
@@ -2430,18 +2405,15 @@ function rosWaitConditionPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROS::WaitCondition`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitCondition`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WaitCondition` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
  */
 export class RosWaitCondition extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::WaitCondition";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.
@@ -2482,8 +2454,6 @@ export class RosWaitCondition extends ros.RosResource {
     public showProgressEvent: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROS::WaitCondition`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2516,7 +2486,8 @@ export class RosWaitCondition extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ROS::WaitConditionHandle`
+ * Properties for defining a `RosWaitConditionHandle`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
  */
 export interface RosWaitConditionHandleProps {
 
@@ -2583,18 +2554,15 @@ function rosWaitConditionHandlePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROS::WaitConditionHandle`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitConditionHandle`, which is used to receive signals. You can use ALIYUN::ROS::WaitConditionHandle together with ALIYUN::ROS::WaitCondition to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WaitConditionHandle` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitconditionhandle
  */
 export class RosWaitConditionHandle extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROS::WaitConditionHandle";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used for signalling handle completion or failure.  You can signal success by adding --data-binary '{"status": "SUCCESS"}' , or signal failure by adding --data-binary '{"status": "FAILURE"}'
@@ -2646,8 +2614,6 @@ export class RosWaitConditionHandle extends ros.RosResource {
     public mode: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROS::WaitConditionHandle`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::HpcCluster`.</summary>
+    /// <summary>Properties for defining a `HpcCluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-hpccluster
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.HpcClusterProps")]
     public class HpcClusterProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IHpcClusterProps
     {

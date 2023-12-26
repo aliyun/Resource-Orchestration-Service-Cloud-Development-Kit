@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Foas
 {
-    /// <summary>Properties for defining a `ALIYUN::FOAS::Project`.</summary>
+    /// <summary>Properties for defining a `RosProject`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-project
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-foas.RosProjectProps")]
     public interface IRosProjectProps
     {
@@ -76,7 +79,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::FOAS::Project`.</summary>
+        /// <summary>Properties for defining a `RosProject`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-project
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosProjectProps), fullyQualifiedName: "@alicloud/ros-cdk-foas.RosProjectProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Foas.IRosProjectProps
         {

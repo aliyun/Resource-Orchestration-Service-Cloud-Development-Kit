@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::SLS::Logstores`.</summary>
+    /// <summary>Properties for defining a `RosLogstores`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-sls-logstores
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.datasource.RosLogstoresProps")]
     public class RosLogstoresProps : AlibabaCloud.SDK.ROS.CDK.Sls.Datasource.IRosLogstoresProps
     {

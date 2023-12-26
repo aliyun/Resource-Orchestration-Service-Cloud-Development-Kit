@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mps
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MPS::Pipeline`.</summary>
+    /// <summary>Properties for defining a `Pipeline`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mps.PipelineProps")]
     public class PipelineProps : AlibabaCloud.SDK.ROS.CDK.Mps.IPipelineProps
     {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::Config::DeliveryChannel`.</summary>
+    /// <summary>Properties for defining a `RosDeliveryChannel`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-config.RosDeliveryChannelProps")]
     public class RosDeliveryChannelProps : AlibabaCloud.SDK.ROS.CDK.Config.IRosDeliveryChannelProps
     {
@@ -52,8 +55,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         /// <strong>Property</strong>: deliveryChannelTargetArn: The ARN of the delivery destination. This parameter is required when you create a
         /// delivery method. The value must be in one of the following formats:
         /// acs:oss:{RegionId}:{Aliuid}:{bucketName} if your delivery destination is an Object Storage Service (OSS) bucket.
-        /// acs:mns:{RegionId}:{Aliuid}:/topics/{topicName} if your delivery destination is a Message Service (MNS) topic.
-        /// acs:log:{RegionId}:{Aliuid}:project/{projectName}/logstore/{logstoreName} if your delivery destination is a Log Service Logstore.
+        /// acs:mns:{RegionId}:{Aliuid}:\/topics\/{topicName} if your delivery destination is a Message Service (MNS) topic.
+        /// acs:log:{RegionId}:{Aliuid}:project\/{projectName}\/logstore\/{logstoreName} if your delivery destination is a Log Service Logstore.
         /// </remarks>
         [JsiiProperty(name: "deliveryChannelTargetArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DeliveryChannelTargetArn

@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * Properties for defining a <code>ALIYUN::MSE::ServiceSource</code>.
+ * Properties for defining a <code>RosServiceSource</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.148Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.929Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosServiceSourceProps")
 @software.amazon.jsii.Jsii.Proxy(RosServiceSourceProps.Jsii$Proxy.class)
 public interface RosServiceSourceProps extends software.amazon.jsii.JsiiSerializable {

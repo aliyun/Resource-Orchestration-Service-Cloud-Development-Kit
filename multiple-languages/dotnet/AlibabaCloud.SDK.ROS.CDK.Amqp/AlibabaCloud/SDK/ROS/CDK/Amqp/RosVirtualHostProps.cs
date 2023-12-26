@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::AMQP::VirtualHost`.</summary>
+    /// <summary>Properties for defining a `RosVirtualHost`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-virtualhost
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-amqp.RosVirtualHostProps")]
     public class RosVirtualHostProps : AlibabaCloud.SDK.ROS.CDK.Amqp.IRosVirtualHostProps
     {

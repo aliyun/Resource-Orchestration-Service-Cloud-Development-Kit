@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::FC::Alias`
+ * Properties for defining a `RosAlias`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-alias
  */
 export interface RosAliasProps {
 
@@ -97,18 +98,15 @@ function rosAliasPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::FC::Alias`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Alias`, which is used to create an Alias.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Alias` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-alias
  */
 export class RosAlias extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC::Alias";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AliasName: The alias name
@@ -159,8 +157,6 @@ export class RosAlias extends ros.RosResource {
     public versionId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FC::Alias`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -197,7 +193,8 @@ export class RosAlias extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::FC::CustomDomain`
+ * Properties for defining a `RosCustomDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-customdomain
  */
 export interface RosCustomDomainProps {
 
@@ -270,18 +267,15 @@ function rosCustomDomainPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::FC::CustomDomain`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::CustomDomain`, which is used to create a custom domain name.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-customdomain
  */
 export class RosCustomDomain extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC::CustomDomain";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Domain: The domain with protocol.
@@ -322,8 +316,6 @@ export class RosCustomDomain extends ros.RosResource {
     public routeConfig: RosCustomDomain.RouteConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FC::CustomDomain`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -460,7 +452,7 @@ export namespace RosCustomDomain {
      */
     export interface RoutesProperty {
         /**
-         * @Property path: HTTP request path when a function is called with a custom domain name, for example: "/login/*"
+         * @Property path: HTTP request path when a function is called with a custom domain name, for example: "\/login\/*"
          */
         readonly path: string | ros.IResolvable;
         /**
@@ -517,7 +509,8 @@ function rosCustomDomainRoutesPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::FC::Function`
+ * Properties for defining a `RosFunction`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
  */
 export interface RosFunctionProps {
 
@@ -772,18 +765,15 @@ function rosFunctionPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::FC::Function`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Function`, which is used to create a function. Functions must be associated with services. All functions of a service share the same attributes as the service, such as service authorization and log configurations.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Function` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
  */
 export class RosFunction extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC::Function";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ARN: The ARN for ALIYUN::ROS::CustomResource
@@ -934,8 +924,6 @@ export class RosFunction extends ros.RosResource {
     public timeout: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FC::Function`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1167,7 +1155,7 @@ export namespace RosFunction {
          */
         readonly instanceId?: string | ros.IResolvable;
         /**
-         * @Property command: Container start command. For example: ["/code/myserver"]
+         * @Property command: Container start command. For example: ["\/code\/myserver"]
          */
         readonly command?: string | ros.IResolvable;
         /**
@@ -1184,7 +1172,7 @@ export namespace RosFunction {
          */
         readonly webServerMode?: boolean | ros.IResolvable;
         /**
-         * @Property image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com/fc-demo/helloworld:v1beta1
+         * @Property image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com\/fc-demo\/helloworld:v1beta1
          */
         readonly image: string | ros.IResolvable;
     }
@@ -1680,7 +1668,8 @@ function rosFunctionPreStopPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::FC::FunctionInvoker`
+ * Properties for defining a `RosFunctionInvoker`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-functioninvoker
  */
 export interface RosFunctionInvokerProps {
 
@@ -1784,18 +1773,15 @@ function rosFunctionInvokerPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::FC::FunctionInvoker`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::FunctionInvoker`, which is used to invoke a function.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FunctionInvoker` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-functioninvoker
  */
 export class RosFunctionInvoker extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC::FunctionInvoker";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Result: Depends on result type:
@@ -1860,8 +1846,6 @@ Failure: Sync invoke fails.
     public serviceRegionId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FC::FunctionInvoker`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1901,7 +1885,8 @@ Failure: Sync invoke fails.
 }
 
 /**
- * Properties for defining a `ALIYUN::FC::Layer`
+ * Properties for defining a `RosLayer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-layer
  */
 export interface RosLayerProps {
 
@@ -1988,18 +1973,15 @@ function rosLayerPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::FC::Layer`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Layer`, which is used to publish layer versions.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Layer` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-layer
  */
 export class RosLayer extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC::Layer";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Arn: The name of the layer resource.
@@ -2040,8 +2022,6 @@ export class RosLayer extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FC::Layer`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2131,7 +2111,8 @@ function rosLayerCodePropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::FC::ProvisionConfig`
+ * Properties for defining a `RosProvisionConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-provisionconfig
  */
 export interface RosProvisionConfigProps {
 
@@ -2207,18 +2188,15 @@ function rosProvisionConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::FC::ProvisionConfig`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::ProvisionConfig`, which is used to create provisioned instances in Function Compute.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ProvisionConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-provisionconfig
  */
 export class RosProvisionConfig extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC::ProvisionConfig";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FunctionName: The function name
@@ -2270,8 +2248,6 @@ export class RosProvisionConfig extends ros.RosResource {
     public target: number | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FC::ProvisionConfig`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2306,7 +2282,8 @@ export class RosProvisionConfig extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::FC::Service`
+ * Properties for defining a `RosService`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
  */
 export interface RosServiceProps {
 
@@ -2449,18 +2426,15 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::FC::Service`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Service`, which is used to create a service in Function Compute. All functions of a service share the same settings, such as permission settings and log configurations. A service can have multiple functions, all of which share service resources, such as Logstores and RAM roles.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Service` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
  */
 export class RosService extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC::Service";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InternetAccess: Whether enable Internet access
@@ -2567,8 +2541,6 @@ export class RosService extends ros.RosResource {
     public vpcConfig: RosService.VpcConfigProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FC::Service`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3081,7 +3053,8 @@ function rosServiceVpcConfigPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::FC::Trigger`
+ * Properties for defining a `RosTrigger`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
  */
 export interface RosTriggerProps {
 
@@ -3114,7 +3087,7 @@ export interface RosTriggerProps {
 
     /**
      * @Property invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
-     * Example : "acs:ram::1234567890:role/fc-test"
+     * Example : "acs:ram::1234567890:role\/fc-test"
      */
     readonly invocationRole?: string | ros.IResolvable;
 
@@ -3190,18 +3163,15 @@ function rosTriggerPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::FC::Trigger`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Trigger`, which is used to trigger the invocation of a function.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Trigger` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-trigger
  */
 export class RosTrigger extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC::Trigger";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FunctionName: Function name.
@@ -3265,7 +3235,7 @@ export class RosTrigger extends ros.RosResource {
 
     /**
      * @Property invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
-     * Example : "acs:ram::1234567890:role/fc-test"
+     * Example : "acs:ram::1234567890:role\/fc-test"
      */
     public invocationRole: string | ros.IResolvable | undefined;
 
@@ -3282,8 +3252,6 @@ export class RosTrigger extends ros.RosResource {
     public sourceArn: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FC::Trigger`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3327,7 +3295,8 @@ export class RosTrigger extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::FC::Version`
+ * Properties for defining a `RosVersion`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-version
  */
 export interface RosVersionProps {
 
@@ -3385,18 +3354,15 @@ function rosVersionPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::FC::Version`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Version`, which is used to release a Version.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Version` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-version
  */
 export class RosVersion extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::FC::Version";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ServiceName: The service name
@@ -3422,8 +3388,6 @@ export class RosVersion extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::FC::Version`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

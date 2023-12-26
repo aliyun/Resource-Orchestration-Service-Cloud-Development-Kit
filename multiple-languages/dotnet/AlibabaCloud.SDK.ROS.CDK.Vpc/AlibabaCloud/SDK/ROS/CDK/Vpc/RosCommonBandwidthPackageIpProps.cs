@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::CommonBandwidthPackageIp`.</summary>
+    /// <summary>Properties for defining a `RosCommonBandwidthPackageIp`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackageip
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosCommonBandwidthPackageIpProps")]
     public class RosCommonBandwidthPackageIpProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosCommonBandwidthPackageIpProps
     {

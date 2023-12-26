@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::NetworkInterface`.</summary>
+    /// <summary>Properties for defining a `NetworkInterface`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(INetworkInterfaceProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.NetworkInterfaceProps")]
     public interface INetworkInterfaceProps
     {
@@ -192,7 +195,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::NetworkInterface`.</summary>
+        /// <summary>Properties for defining a `NetworkInterface`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(INetworkInterfaceProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.NetworkInterfaceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.INetworkInterfaceProps
         {

@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.oss;
 
 /**
- * Properties for defining a <code>ALIYUN::OSS::Bucket</code>.
+ * Properties for defining a <code>RosBucket</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.327Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.103Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucketProps")
 @software.amazon.jsii.Jsii.Proxy(RosBucketProps.Jsii$Proxy.class)
 public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,6 +29,12 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableOssHdfsService() {
         return null;
     }
 
@@ -110,6 +118,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object accessControl;
         java.lang.Object corsConfiguration;
         java.lang.Object deletionForce;
+        java.lang.Object enableOssHdfsService;
         java.lang.Object lifecycleConfiguration;
         java.lang.Object loggingConfiguration;
         java.lang.Object policy;
@@ -199,6 +208,26 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
             this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBucketProps#getEnableOssHdfsService}
+         * @param enableOssHdfsService the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableOssHdfsService(java.lang.Boolean enableOssHdfsService) {
+            this.enableOssHdfsService = enableOssHdfsService;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosBucketProps#getEnableOssHdfsService}
+         * @param enableOssHdfsService the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableOssHdfsService(com.aliyun.ros.cdk.core.IResolvable enableOssHdfsService) {
+            this.enableOssHdfsService = enableOssHdfsService;
             return this;
         }
 
@@ -433,6 +462,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object accessControl;
         private final java.lang.Object corsConfiguration;
         private final java.lang.Object deletionForce;
+        private final java.lang.Object enableOssHdfsService;
         private final java.lang.Object lifecycleConfiguration;
         private final java.lang.Object loggingConfiguration;
         private final java.lang.Object policy;
@@ -455,6 +485,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             this.accessControl = software.amazon.jsii.Kernel.get(this, "accessControl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.corsConfiguration = software.amazon.jsii.Kernel.get(this, "corsConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableOssHdfsService = software.amazon.jsii.Kernel.get(this, "enableOssHdfsService", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.lifecycleConfiguration = software.amazon.jsii.Kernel.get(this, "lifecycleConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loggingConfiguration = software.amazon.jsii.Kernel.get(this, "loggingConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -478,6 +509,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             this.accessControl = builder.accessControl;
             this.corsConfiguration = builder.corsConfiguration;
             this.deletionForce = builder.deletionForce;
+            this.enableOssHdfsService = builder.enableOssHdfsService;
             this.lifecycleConfiguration = builder.lifecycleConfiguration;
             this.loggingConfiguration = builder.loggingConfiguration;
             this.policy = builder.policy;
@@ -509,6 +541,11 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getDeletionForce() {
             return this.deletionForce;
+        }
+
+        @Override
+        public final java.lang.Object getEnableOssHdfsService() {
+            return this.enableOssHdfsService;
         }
 
         @Override
@@ -582,6 +619,9 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getDeletionForce() != null) {
                 data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
             }
+            if (this.getEnableOssHdfsService() != null) {
+                data.set("enableOssHdfsService", om.valueToTree(this.getEnableOssHdfsService()));
+            }
             if (this.getLifecycleConfiguration() != null) {
                 data.set("lifecycleConfiguration", om.valueToTree(this.getLifecycleConfiguration()));
             }
@@ -637,6 +677,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             if (this.accessControl != null ? !this.accessControl.equals(that.accessControl) : that.accessControl != null) return false;
             if (this.corsConfiguration != null ? !this.corsConfiguration.equals(that.corsConfiguration) : that.corsConfiguration != null) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
+            if (this.enableOssHdfsService != null ? !this.enableOssHdfsService.equals(that.enableOssHdfsService) : that.enableOssHdfsService != null) return false;
             if (this.lifecycleConfiguration != null ? !this.lifecycleConfiguration.equals(that.lifecycleConfiguration) : that.lifecycleConfiguration != null) return false;
             if (this.loggingConfiguration != null ? !this.loggingConfiguration.equals(that.loggingConfiguration) : that.loggingConfiguration != null) return false;
             if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
@@ -656,6 +697,7 @@ public interface RosBucketProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.accessControl != null ? this.accessControl.hashCode() : 0);
             result = 31 * result + (this.corsConfiguration != null ? this.corsConfiguration.hashCode() : 0);
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
+            result = 31 * result + (this.enableOssHdfsService != null ? this.enableOssHdfsService.hashCode() : 0);
             result = 31 * result + (this.lifecycleConfiguration != null ? this.lifecycleConfiguration.hashCode() : 0);
             result = 31 * result + (this.loggingConfiguration != null ? this.loggingConfiguration.hashCode() : 0);
             result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);

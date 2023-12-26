@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase
 {
-    /// <summary>Properties for defining a `ALIYUN::GraphDatabase::DbInstance`.</summary>
+    /// <summary>Properties for defining a `DbInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-dbinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDbInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-graphdatabase.DbInstanceProps")]
     public interface IDbInstanceProps
     {
@@ -220,7 +223,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Graphdatabase
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::GraphDatabase::DbInstance`.</summary>
+        /// <summary>Properties for defining a `DbInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-dbinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDbInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-graphdatabase.DbInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Graphdatabase.IDbInstanceProps
         {

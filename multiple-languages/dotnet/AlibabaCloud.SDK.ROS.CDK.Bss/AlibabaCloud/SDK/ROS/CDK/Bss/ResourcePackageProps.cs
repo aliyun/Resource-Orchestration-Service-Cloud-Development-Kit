@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bss
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::BSS::ResourcePackage`.</summary>
+    /// <summary>Properties for defining a `ResourcePackage`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-resourcepackage
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-bss.ResourcePackageProps")]
     public class ResourcePackageProps : AlibabaCloud.SDK.ROS.CDK.Bss.IResourcePackageProps
     {

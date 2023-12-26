@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ebs
 {
-    /// <summary>Properties for defining a `ALIYUN::EBS::DiskReplicaPair`.</summary>
+    /// <summary>Properties for defining a `RosDiskReplicaPair`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapair
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDiskReplicaPairProps), fullyQualifiedName: "@alicloud/ros-cdk-ebs.RosDiskReplicaPairProps")]
     public interface IRosDiskReplicaPairProps
     {
@@ -73,7 +76,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ebs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of the asynchronous replication relationship. 2 to 256 English or Chinese characters in length and cannot start with' http:// 'or' https.
+        /// <strong>Property</strong>: description: The description of the asynchronous replication relationship. 2 to 256 English or Chinese characters in length and cannot start with' http:\/\/ 'or' https.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -86,7 +89,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ebs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: diskReplicaPairName: The name of the asynchronous replication relationship. The length must be 2 to 128 characters in length and must start with a letter or Chinese name. It cannot start with http:// or https. It can contain Chinese, English, numbers, half-width colons (:), underscores (_), half-width periods (.), or dashes (-).
+        /// <strong>Property</strong>: diskReplicaPairName: The name of the asynchronous replication relationship. The length must be 2 to 128 characters in length and must start with a letter or Chinese name. It cannot start with http:\/\/ or https. It can contain Chinese, English, numbers, half-width colons (:), underscores (_), half-width periods (.), or dashes (-).
         /// </remarks>
         [JsiiProperty(name: "diskReplicaPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -178,7 +181,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ebs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::EBS::DiskReplicaPair`.</summary>
+        /// <summary>Properties for defining a `RosDiskReplicaPair`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapair
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDiskReplicaPairProps), fullyQualifiedName: "@alicloud/ros-cdk-ebs.RosDiskReplicaPairProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ebs.IRosDiskReplicaPairProps
         {
@@ -248,7 +254,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ebs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: description: The description of the asynchronous replication relationship. 2 to 256 English or Chinese characters in length and cannot start with' http:// 'or' https.
+            /// <strong>Property</strong>: description: The description of the asynchronous replication relationship. 2 to 256 English or Chinese characters in length and cannot start with' http:\/\/ 'or' https.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -258,7 +264,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ebs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: diskReplicaPairName: The name of the asynchronous replication relationship. The length must be 2 to 128 characters in length and must start with a letter or Chinese name. It cannot start with http:// or https. It can contain Chinese, English, numbers, half-width colons (:), underscores (_), half-width periods (.), or dashes (-).
+            /// <strong>Property</strong>: diskReplicaPairName: The name of the asynchronous replication relationship. The length must be 2 to 128 characters in length and must start with a letter or Chinese name. It cannot start with http:\/\/ or https. It can contain Chinese, English, numbers, half-width colons (:), underscores (_), half-width periods (.), or dashes (-).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "diskReplicaPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::CDDC::DedicatedHost`
+ * Properties for defining a `RosDedicatedHost`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhost
  */
 export interface RosDedicatedHostProps {
 
@@ -128,18 +129,15 @@ function rosDedicatedHostPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::CDDC::DedicatedHost`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHost`, which is used to create a host in a dedicated cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHost` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhost
  */
 export class RosDedicatedHost extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CDDC::DedicatedHost";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AutoRenew: Whether Auto Renew
@@ -320,8 +318,6 @@ export class RosDedicatedHost extends ros.RosResource {
     public usedTime: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CDDC::DedicatedHost`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -437,7 +433,8 @@ function rosDedicatedHostTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::CDDC::DedicatedHostGroup`
+ * Properties for defining a `RosDedicatedHostGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
  */
 export interface RosDedicatedHostGroupProps {
 
@@ -538,18 +535,15 @@ function rosDedicatedHostGroupPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::CDDC::DedicatedHostGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHostGroup`, which is used to create a dedicated cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
  */
 export class RosDedicatedHostGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CDDC::DedicatedHostGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AllocationPolicy: Allocation Policy
@@ -725,8 +719,6 @@ export class RosDedicatedHostGroup extends ros.RosResource {
     public openPermission: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::CDDC::DedicatedHostGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -787,5 +779,488 @@ export class RosDedicatedHostGroup extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDedicatedHostGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosMyBase`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-mybase
+ */
+export interface RosMyBaseProps {
+
+    /**
+     * @Property ecsClassList: ECS Class List.
+     */
+    readonly ecsClassList: Array<{ [key: string]: any }> | ros.IResolvable;
+
+    /**
+     * @Property engine: Database type.
+     */
+    readonly engine: string | ros.IResolvable;
+
+    /**
+     * @Property payType: Payment type, currently only supports PrePaid.
+     */
+    readonly payType: string | ros.IResolvable;
+
+    /**
+     * @Property period: The period of the subscription in months.
+     */
+    readonly period: number | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The ID of the security group.
+     */
+    readonly securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: Virtual switch ID.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Availability Zone ID.
+     */
+    readonly zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Whether to enable auto renew.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+
+    /**
+     * @Property dedicatedHostGroupDescription: The name of the dedicated cluster.
+     */
+    readonly dedicatedHostGroupDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property dedicatedHostGroupId: The ID of the dedicated cluster.
+     */
+    readonly dedicatedHostGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property ecsDeploymentSetId: The ID of the deployment set.
+     */
+    readonly ecsDeploymentSetId?: string | ros.IResolvable;
+
+    /**
+     * @Property ecsHostName: The host name of the ECS instance.
+     */
+    readonly ecsHostName?: string | ros.IResolvable;
+
+    /**
+     * @Property ecsInstanceName: The name of the ECS instance.
+     */
+    readonly ecsInstanceName?: string | ros.IResolvable;
+
+    /**
+     * @Property ecsUniqueSuffix: The unique suffix of the ECS instance.
+     */
+    readonly ecsUniqueSuffix?: boolean | ros.IResolvable;
+
+    /**
+     * @Property imageId: The image ID.
+     */
+    readonly imageId?: string | ros.IResolvable;
+
+    /**
+     * @Property internetChargeType: Network billing type. Value range: 
+     * PayByBandwidth: billed based on fixed bandwidth. 
+     * PayByTraffic: Pay by traffic usage.
+     */
+    readonly internetChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). 
+     * Range is [0,200]. Default is 1. 
+     * While the property is not 0, public ip will be assigned for instance.
+     */
+    readonly internetMaxBandwidthOut?: number | ros.IResolvable;
+
+    /**
+     * @Property keyPairName: The name of the key pair.
+     */
+    readonly keyPairName?: string | ros.IResolvable;
+
+    /**
+     * @Property osPassword: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
+     */
+    readonly osPassword?: string | ros.IResolvable;
+
+    /**
+     * @Property passwordInherit: Whether to inherit the password from the parent cluster.
+     */
+    readonly passwordInherit?: boolean | ros.IResolvable;
+
+    /**
+     * @Property periodType: Prepaid type, currently only supports Monthly (monthly subscription).
+     */
+    readonly periodType?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property userData: User-defined script data, the original data is up to 16KB.
+     */
+    readonly userData?: string | ros.IResolvable;
+
+    /**
+     * @Property userDataInBase64: The user data of the ECS instance.
+     */
+    readonly userDataInBase64?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosMyBaseProps`
+ *
+ * @param properties - the TypeScript properties of a `RosMyBaseProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosMyBasePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ecsInstanceName', ros.validateString)(properties.ecsInstanceName));
+    errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
+    errors.collect(ros.propertyValidator('dedicatedHostGroupDescription', ros.validateString)(properties.dedicatedHostGroupDescription));
+    errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('ecsUniqueSuffix', ros.validateBoolean)(properties.ecsUniqueSuffix));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    errors.collect(ros.propertyValidator('userDataInBase64', ros.validateBoolean)(properties.userDataInBase64));
+    errors.collect(ros.propertyValidator('ecsHostName', ros.validateString)(properties.ecsHostName));
+    errors.collect(ros.propertyValidator('engine', ros.requiredValidator)(properties.engine));
+    errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
+    errors.collect(ros.propertyValidator('passwordInherit', ros.validateBoolean)(properties.passwordInherit));
+    errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('ecsClassList', ros.requiredValidator)(properties.ecsClassList));
+    if(properties.ecsClassList && (Array.isArray(properties.ecsClassList) || (typeof properties.ecsClassList) === 'string')) {
+        errors.collect(ros.propertyValidator('ecsClassList', ros.validateLength)({
+            data: properties.ecsClassList.length,
+            min: 1,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ecsClassList', ros.listValidator(ros.validateAnyDict))(properties.ecsClassList));
+    errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateRange)({
+            data: properties.period,
+            min: 1,
+            max: 12,
+          }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["PayByBandwidth","PayByTraffic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('ecsDeploymentSetId', ros.validateString)(properties.ecsDeploymentSetId));
+    if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
+        errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
+            data: properties.internetMaxBandwidthOut,
+            min: 0,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('osPassword', ros.validateString)(properties.osPassword));
+    return errors.wrap('supplied properties not correct for "RosMyBaseProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CDDC::MyBase` resource
+ *
+ * @param properties - the TypeScript properties of a `RosMyBaseProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CDDC::MyBase` resource.
+ */
+// @ts-ignore TS6133
+function rosMyBasePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosMyBasePropsValidator(properties).assertSuccess();
+    }
+    return {
+      ECSClassList: ros.listMapper(ros.anyDictToRosTemplate)(properties.ecsClassList),
+      Engine: ros.stringToRosTemplate(properties.engine),
+      PayType: ros.stringToRosTemplate(properties.payType),
+      Period: ros.numberToRosTemplate(properties.period),
+      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      AutoRenew: ros.booleanToRosTemplate(properties.autoRenew),
+      DedicatedHostGroupDescription: ros.stringToRosTemplate(properties.dedicatedHostGroupDescription),
+      DedicatedHostGroupId: ros.stringToRosTemplate(properties.dedicatedHostGroupId),
+      EcsDeploymentSetId: ros.stringToRosTemplate(properties.ecsDeploymentSetId),
+      EcsHostName: ros.stringToRosTemplate(properties.ecsHostName),
+      EcsInstanceName: ros.stringToRosTemplate(properties.ecsInstanceName),
+      EcsUniqueSuffix: ros.booleanToRosTemplate(properties.ecsUniqueSuffix),
+      ImageId: ros.stringToRosTemplate(properties.imageId),
+      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      InternetMaxBandwidthOut: ros.numberToRosTemplate(properties.internetMaxBandwidthOut),
+      KeyPairName: ros.stringToRosTemplate(properties.keyPairName),
+      OsPassword: ros.stringToRosTemplate(properties.osPassword),
+      PasswordInherit: ros.booleanToRosTemplate(properties.passwordInherit),
+      PeriodType: ros.stringToRosTemplate(properties.periodType),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      UserData: ros.stringToRosTemplate(properties.userData),
+      UserDataInBase64: ros.booleanToRosTemplate(properties.userDataInBase64),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::MyBase`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MyBase` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-mybase
+ */
+export class RosMyBase extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CDDC::MyBase";
+
+    /**
+     * @Attribute InstanceIds: The instance id list of created ecs instances
+     */
+    public readonly attrInstanceIds: ros.IResolvable;
+
+    /**
+     * @Attribute OrderIds: The order id list.
+     */
+    public readonly attrOrderIds: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property ecsClassList: ECS Class List.
+     */
+    public ecsClassList: Array<{ [key: string]: any }> | ros.IResolvable;
+
+    /**
+     * @Property engine: Database type.
+     */
+    public engine: string | ros.IResolvable;
+
+    /**
+     * @Property payType: Payment type, currently only supports PrePaid.
+     */
+    public payType: string | ros.IResolvable;
+
+    /**
+     * @Property period: The period of the subscription in months.
+     */
+    public period: number | ros.IResolvable;
+
+    /**
+     * @Property securityGroupId: The ID of the security group.
+     */
+    public securityGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: Virtual switch ID.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Availability Zone ID.
+     */
+    public zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property autoRenew: Whether to enable auto renew.
+     */
+    public autoRenew: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property dedicatedHostGroupDescription: The name of the dedicated cluster.
+     */
+    public dedicatedHostGroupDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dedicatedHostGroupId: The ID of the dedicated cluster.
+     */
+    public dedicatedHostGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ecsDeploymentSetId: The ID of the deployment set.
+     */
+    public ecsDeploymentSetId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ecsHostName: The host name of the ECS instance.
+     */
+    public ecsHostName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ecsInstanceName: The name of the ECS instance.
+     */
+    public ecsInstanceName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ecsUniqueSuffix: The unique suffix of the ECS instance.
+     */
+    public ecsUniqueSuffix: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageId: The image ID.
+     */
+    public imageId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property internetChargeType: Network billing type. Value range: 
+     * PayByBandwidth: billed based on fixed bandwidth. 
+     * PayByTraffic: Pay by traffic usage.
+     */
+    public internetChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). 
+     * Range is [0,200]. Default is 1. 
+     * While the property is not 0, public ip will be assigned for instance.
+     */
+    public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property keyPairName: The name of the key pair.
+     */
+    public keyPairName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property osPassword: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
+     */
+    public osPassword: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property passwordInherit: Whether to inherit the password from the parent cluster.
+     */
+    public passwordInherit: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property periodType: Prepaid type, currently only supports Monthly (monthly subscription).
+     */
+    public periodType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property userData: User-defined script data, the original data is up to 16KB.
+     */
+    public userData: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property userDataInBase64: The user data of the ECS instance.
+     */
+    public userDataInBase64: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosMyBaseProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosMyBase.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInstanceIds = this.getAtt('InstanceIds');
+        this.attrOrderIds = this.getAtt('OrderIds');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.ecsClassList = props.ecsClassList;
+        this.engine = props.engine;
+        this.payType = props.payType;
+        this.period = props.period;
+        this.securityGroupId = props.securityGroupId;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.zoneId = props.zoneId;
+        this.autoRenew = props.autoRenew;
+        this.dedicatedHostGroupDescription = props.dedicatedHostGroupDescription;
+        this.dedicatedHostGroupId = props.dedicatedHostGroupId;
+        this.ecsDeploymentSetId = props.ecsDeploymentSetId;
+        this.ecsHostName = props.ecsHostName;
+        this.ecsInstanceName = props.ecsInstanceName;
+        this.ecsUniqueSuffix = props.ecsUniqueSuffix;
+        this.imageId = props.imageId;
+        this.internetChargeType = props.internetChargeType;
+        this.internetMaxBandwidthOut = props.internetMaxBandwidthOut;
+        this.keyPairName = props.keyPairName;
+        this.osPassword = props.osPassword;
+        this.passwordInherit = props.passwordInherit;
+        this.periodType = props.periodType;
+        this.resourceGroupId = props.resourceGroupId;
+        this.userData = props.userData;
+        this.userDataInBase64 = props.userDataInBase64;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            ecsClassList: this.ecsClassList,
+            engine: this.engine,
+            payType: this.payType,
+            period: this.period,
+            securityGroupId: this.securityGroupId,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            zoneId: this.zoneId,
+            autoRenew: this.autoRenew,
+            dedicatedHostGroupDescription: this.dedicatedHostGroupDescription,
+            dedicatedHostGroupId: this.dedicatedHostGroupId,
+            ecsDeploymentSetId: this.ecsDeploymentSetId,
+            ecsHostName: this.ecsHostName,
+            ecsInstanceName: this.ecsInstanceName,
+            ecsUniqueSuffix: this.ecsUniqueSuffix,
+            imageId: this.imageId,
+            internetChargeType: this.internetChargeType,
+            internetMaxBandwidthOut: this.internetMaxBandwidthOut,
+            keyPairName: this.keyPairName,
+            osPassword: this.osPassword,
+            passwordInherit: this.passwordInherit,
+            periodType: this.periodType,
+            resourceGroupId: this.resourceGroupId,
+            userData: this.userData,
+            userDataInBase64: this.userDataInBase64,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosMyBasePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

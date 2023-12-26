@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CR::UserInfo`.</summary>
+    /// <summary>Properties for defining a `UserInfo`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-userinfo
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cr.UserInfoProps")]
     public class UserInfoProps : AlibabaCloud.SDK.ROS.CDK.Cr.IUserInfoProps
     {

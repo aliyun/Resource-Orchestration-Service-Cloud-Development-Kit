@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
-    /// <summary>Properties for defining a `ALIYUN::RAM::SecurityPreference`.</summary>
+    /// <summary>Properties for defining a `RosSecurityPreference`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.RosSecurityPreferenceProps")]
     public class RosSecurityPreferenceProps : AlibabaCloud.SDK.ROS.CDK.Ram.IRosSecurityPreferenceProps
     {
@@ -198,7 +201,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// If you do not specify a subnet mask, RAM users can log on to the console by using
         /// all IP addresses.
         /// If you want to specify multiple subnet masks, separate the subnet masks with semicolons
-        /// (;). Example: 192.168.0.0/16;10.0.0.0/8.
+        /// (;). Example: 192.168.0.0\/16;10.0.0.0\/8.
         /// A maximum of 25 subnet masks can be set. The total length of the subnet masks can
         /// be 1 to 512 characters.
         /// </remarks>

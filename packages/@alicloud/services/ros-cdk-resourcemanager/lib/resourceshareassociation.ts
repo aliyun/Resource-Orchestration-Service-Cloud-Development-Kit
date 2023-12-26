@@ -4,7 +4,8 @@ import { RosResourceShareAssociation } from './resourcemanager.generated';
 export { RosResourceShareAssociation as ResourceShareAssociationProperty };
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::ResourceShareAssociation`
+ * Properties for defining a `ResourceShareAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshareassociation
  */
 export interface ResourceShareAssociationProps {
 
@@ -33,14 +34,11 @@ export interface ResourceShareAssociationProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ResourceManager::ResourceShareAssociation`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceShareAssociation`ALIYUN::ROCKETMQ::Instance is used to create a Standard Edition instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceShareAssociation`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshareassociation
  */
 export class ResourceShareAssociation extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ResourceShareId: The ID of the resource share.
@@ -48,8 +46,6 @@ export class ResourceShareAssociation extends ros.Resource {
     public readonly attrResourceShareId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::ResourceShareAssociation`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

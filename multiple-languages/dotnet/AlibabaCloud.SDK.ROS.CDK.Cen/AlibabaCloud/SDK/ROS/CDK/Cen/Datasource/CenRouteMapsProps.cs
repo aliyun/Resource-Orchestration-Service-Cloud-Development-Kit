@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::CEN::CenRouteMaps`.</summary>
+    /// <summary>Properties for defining a `CenRouteMaps`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cen.datasource.CenRouteMapsProps")]
     public class CenRouteMapsProps : AlibabaCloud.SDK.ROS.CDK.Cen.Datasource.ICenRouteMapsProps
     {

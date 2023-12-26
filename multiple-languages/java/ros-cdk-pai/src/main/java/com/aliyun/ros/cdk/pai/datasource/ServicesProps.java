@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.pai.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::PAI::Services</code>.
+ * Properties for defining a <code>Services</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-services
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.394Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.171Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.datasource.ServicesProps")
 @software.amazon.jsii.Jsii.Proxy(ServicesProps.Jsii$Proxy.class)
 public interface ServicesProps extends software.amazon.jsii.JsiiSerializable {

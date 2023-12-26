@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::Etl`.</summary>
+    /// <summary>Properties for defining a `Etl`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IEtlProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.EtlProps")]
     public interface IEtlProps
     {
@@ -54,7 +57,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::Etl`.</summary>
+        /// <summary>Properties for defining a `Etl`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IEtlProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.EtlProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.IEtlProps
         {

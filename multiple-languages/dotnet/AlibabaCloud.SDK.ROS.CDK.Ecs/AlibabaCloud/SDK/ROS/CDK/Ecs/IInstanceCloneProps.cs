@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::InstanceClone`.</summary>
+    /// <summary>Properties for defining a `InstanceClone`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instanceclone
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstanceCloneProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.InstanceCloneProps")]
     public interface IInstanceCloneProps
     {
@@ -272,7 +275,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::InstanceClone`.</summary>
+        /// <summary>Properties for defining a `InstanceClone`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instanceclone
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstanceCloneProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.InstanceCloneProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IInstanceCloneProps
         {

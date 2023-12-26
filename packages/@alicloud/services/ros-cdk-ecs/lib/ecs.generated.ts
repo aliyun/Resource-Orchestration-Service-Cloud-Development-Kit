@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ECS::Activation`
+ * Properties for defining a `RosActivation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-activation
  */
 export interface RosActivationProps {
 
@@ -18,7 +19,7 @@ export interface RosActivationProps {
     readonly instanceCount?: number | ros.IResolvable;
 
     /**
-     * @Property instanceName: The default instance name prefix. The instance name prefix must be 2 to 50 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). If you use the activation code that is created by calling this operation (CreateActivation) to register managed instances, the instances are assigned sequential names that are prefixed by the value of this parameter. You can also specify a new instance name to replace the assigned sequential name when you register a managed instance.If you specify InstanceName when you register a managed instance, an instance name in theformat of <InstanceName>-<Number> is generated. The number of digits in the <Number> value isdetermined by that in the InstanceCount value. Example: 001. If you do not specify InstanceName, the hostname (Hostname) is used as the instance name.
+     * @Property instanceName: The default instance name prefix. The instance name prefix must be 2 to 50 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). If you use the activation code that is created by calling this operation (CreateActivation) to register managed instances, the instances are assigned sequential names that are prefixed by the value of this parameter. You can also specify a new instance name to replace the assigned sequential name when you register a managed instance.If you specify InstanceName when you register a managed instance, an instance name in theformat of <InstanceName>-<Number> is generated. The number of digits in the <Number> value isdetermined by that in the InstanceCount value. Example: 001. If you do not specify InstanceName, the hostname (Hostname) is used as the instance name.
      */
     readonly instanceName?: string | ros.IResolvable;
 
@@ -109,18 +110,15 @@ function rosActivationPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::Activation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Activation`, which is used to create an activation code.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Activation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-activation
  */
 export class RosActivation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::Activation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ActivationCode: Activation code.
@@ -156,7 +154,7 @@ export class RosActivation extends ros.RosResource {
     public instanceCount: number | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceName: The default instance name prefix. The instance name prefix must be 2 to 50 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). If you use the activation code that is created by calling this operation (CreateActivation) to register managed instances, the instances are assigned sequential names that are prefixed by the value of this parameter. You can also specify a new instance name to replace the assigned sequential name when you register a managed instance.If you specify InstanceName when you register a managed instance, an instance name in theformat of <InstanceName>-<Number> is generated. The number of digits in the <Number> value isdetermined by that in the InstanceCount value. Example: 001. If you do not specify InstanceName, the hostname (Hostname) is used as the instance name.
+     * @Property instanceName: The default instance name prefix. The instance name prefix must be 2 to 50 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), underscores (_), hyphens (-), and colons (:). If you use the activation code that is created by calling this operation (CreateActivation) to register managed instances, the instances are assigned sequential names that are prefixed by the value of this parameter. You can also specify a new instance name to replace the assigned sequential name when you register a managed instance.If you specify InstanceName when you register a managed instance, an instance name in theformat of <InstanceName>-<Number> is generated. The number of digits in the <Number> value isdetermined by that in the InstanceCount value. Example: 001. If you do not specify InstanceName, the hostname (Hostname) is used as the instance name.
      */
     public instanceName: string | ros.IResolvable | undefined;
 
@@ -176,8 +174,6 @@ export class RosActivation extends ros.RosResource {
     public timeToLiveInHours: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::Activation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -263,7 +259,8 @@ function rosActivationTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::AssignIpv6Addresses`
+ * Properties for defining a `RosAssignIpv6Addresses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */
 export interface RosAssignIpv6AddressesProps {
 
@@ -337,18 +334,15 @@ function rosAssignIpv6AddressesPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::AssignIpv6Addresses`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`, which is used to assign one or more IPv6 addresses to an elastic network interface (ENI).
+ * @Note This class does not contain additional functions, so it is recommended to use the `AssignIpv6Addresses` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
  */
 export class RosAssignIpv6Addresses extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::AssignIpv6Addresses";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Ipv6AddressIds: Assigned IPv6 address IDs.
@@ -386,8 +380,6 @@ export class RosAssignIpv6Addresses extends ros.RosResource {
     public ipv6Addresses: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::AssignIpv6Addresses`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -418,7 +410,8 @@ export class RosAssignIpv6Addresses extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::AssignPrivateIpAddresses`
+ * Properties for defining a `RosAssignPrivateIpAddresses`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
  */
 export interface RosAssignPrivateIpAddressesProps {
 
@@ -495,18 +488,15 @@ function rosAssignPrivateIpAddressesPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::AssignPrivateIpAddresses`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`, which is used to assign one or more secondary private IP addresses to an ENI. You can specify private IP addresses within the CIDR block of the vSwitch that hosts the ENI. You can also specify the number of private IP addresses for ECS to assign them automatically.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AssignPrivateIpAddresses` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
  */
 export class RosAssignPrivateIpAddresses extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::AssignPrivateIpAddresses";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NetworkInterfaceId: The ID of the ENI.
@@ -542,8 +532,6 @@ export class RosAssignPrivateIpAddresses extends ros.RosResource {
     public secondaryPrivateIpAddressCount: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::AssignPrivateIpAddresses`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -573,7 +561,8 @@ export class RosAssignPrivateIpAddresses extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::AutoProvisioningGroup`
+ * Properties for defining a `RosAutoProvisioningGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
  */
 export interface RosAutoProvisioningGroupProps {
 
@@ -588,7 +577,7 @@ export interface RosAutoProvisioningGroupProps {
 
     /**
      * @Property autoProvisioningGroupName: The name of the auto provisioning group to be created. It must be 2 to 128 characters
-     * in length. It must start with a letter but cannot start with http:// or https://.
+     * in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
      * It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
      */
     readonly autoProvisioningGroupName?: string | ros.IResolvable;
@@ -856,18 +845,15 @@ function rosAutoProvisioningGroupPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::AutoProvisioningGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`, which is used to create an auto provisioning group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AutoProvisioningGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
  */
 export class RosAutoProvisioningGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::AutoProvisioningGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AutoProvisioningGroupId: The ID of the auto provisioning group.
@@ -893,7 +879,7 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
 
     /**
      * @Property autoProvisioningGroupName: The name of the auto provisioning group to be created. It must be 2 to 128 characters
-     * in length. It must start with a letter but cannot start with http:// or https://.
+     * in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
      * It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
      */
     public autoProvisioningGroupName: string | ros.IResolvable | undefined;
@@ -1049,8 +1035,6 @@ export class RosAutoProvisioningGroup extends ros.RosResource {
     public validUntil: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::AutoProvisioningGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1135,7 +1119,7 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly category?: string | ros.IResolvable;
         /**
-         * @Property description: The description of data disk N. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+         * @Property description: The description of data disk N. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
          */
         readonly description?: string | ros.IResolvable;
         /**
@@ -1148,10 +1132,10 @@ export namespace RosAutoProvisioningGroup {
         readonly encrypted?: boolean | ros.IResolvable;
         /**
          * @Property performanceLevel: The performance level of the ESSD used as data disk. Default value: PL1. Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
          */
         readonly performanceLevel?: string | ros.IResolvable;
         /**
@@ -1163,7 +1147,7 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly deleteWithInstance?: boolean | ros.IResolvable;
         /**
-         * @Property diskName: The name of data disk N. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:// or https://. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
+         * @Property diskName: The name of data disk N. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
          */
         readonly diskName?: string | ros.IResolvable;
         /**
@@ -1232,9 +1216,9 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly keyPairName?: string | ros.IResolvable;
         /**
-         * @Property ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
-     * none: The instance is not I/O optimized.
-     * optimized: The instance is I/O optimized.
+         * @Property ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
+     * none: The instance is not I\/O optimized.
+     * optimized: The instance is I\/O optimized.
          */
         readonly ioOptimized?: string | ros.IResolvable;
         /**
@@ -1250,7 +1234,7 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly userData?: string | ros.IResolvable;
         /**
-         * @Property systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+         * @Property systemDiskDescription: The description of the system disk. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
          */
         readonly systemDiskDescription?: string | ros.IResolvable;
         /**
@@ -1276,7 +1260,7 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly instanceName?: string | ros.IResolvable;
         /**
-         * @Property systemDiskName: The name of the system disk. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:// or https://. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
+         * @Property systemDiskName: The name of the system disk. The name must be 2 to 128 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, periods (.), colons (:), underscores (_), and hyphens (-).
          */
         readonly systemDiskName?: string | ros.IResolvable;
         /**
@@ -1288,15 +1272,15 @@ export namespace RosAutoProvisioningGroup {
          */
         readonly ramRoleName?: string | ros.IResolvable;
         /**
-         * @Property internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit/s. Valid values: 0 to 100. Default value: 0.
+         * @Property internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100. Default value: 0.
          */
         readonly internetMaxBandwidthOut?: number | ros.IResolvable;
         /**
          * @Property systemDiskPerformanceLevel: The performance level of the ESSD used as the system disk. Default value: PL0. Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
          */
         readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
         /**
@@ -1552,7 +1536,8 @@ function rosAutoProvisioningGroupTagPropertyToRosTemplate(properties: any): any 
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`
+ * Properties for defining a `RosAutoSnapshotPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
  */
 export interface RosAutoSnapshotPolicyProps {
 
@@ -1582,7 +1567,7 @@ export interface RosAutoSnapshotPolicyProps {
      * @Property autoSnapshotPolicyName: The name of the automatic snapshot policy.
      * It can consist of [2, 128] English or Chinese characters.
      * Must begin with an uppercase or lowercase letter or a Chinese character. Can contain numbers, periods (.), colons (:), underscores (_), and hyphens (-).
-     * Cannot start with http:// or https://.
+     * Cannot start with http:\/\/ or https:\/\/.
      * Default value: null.
      */
     readonly autoSnapshotPolicyName?: string | ros.IResolvable;
@@ -1665,18 +1650,15 @@ function rosAutoSnapshotPolicyPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::AutoSnapshotPolicy`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`, which is used to create an automatic snapshot policy.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AutoSnapshotPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
  */
 export class RosAutoSnapshotPolicy extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::AutoSnapshotPolicy";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
@@ -1712,7 +1694,7 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
      * @Property autoSnapshotPolicyName: The name of the automatic snapshot policy.
      * It can consist of [2, 128] English or Chinese characters.
      * Must begin with an uppercase or lowercase letter or a Chinese character. Can contain numbers, periods (.), colons (:), underscores (_), and hyphens (-).
-     * Cannot start with http:// or https://.
+     * Cannot start with http:\/\/ or https:\/\/.
      * Default value: null.
      */
     public autoSnapshotPolicyName: string | ros.IResolvable | undefined;
@@ -1733,8 +1715,6 @@ export class RosAutoSnapshotPolicy extends ros.RosResource {
     public tags: RosAutoSnapshotPolicy.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::AutoSnapshotPolicy`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1819,7 +1799,8 @@ function rosAutoSnapshotPolicyTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::Command`
+ * Properties for defining a `RosCommand`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
  */
 export interface RosCommandProps {
 
@@ -1920,18 +1901,15 @@ function rosCommandPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::Command`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Command`, which is used to create a Cloud Assistant command.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Command` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-command
  */
 export class RosCommand extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::Command";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CommandId: The id of command created.
@@ -1983,8 +1961,6 @@ export class RosCommand extends ros.RosResource {
     public workingDir: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::Command`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2071,7 +2047,8 @@ function rosCommandTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::CopyImage`
+ * Properties for defining a `RosCopyImage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
  */
 export interface RosCopyImageProps {
 
@@ -2086,7 +2063,13 @@ export interface RosCopyImageProps {
     readonly imageId: string | ros.IResolvable;
 
     /**
-     * @Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.
+     * @Property allowCopyInSameRegion: Whether to allow copying images in the same region. 
+     * If set to true, the image will not be copied, the source image id will be returned, and the original image will not be deleted.
+     */
+    readonly allowCopyInSameRegion?: boolean | ros.IResolvable;
+
+    /**
+     * @Property destinationDescription: The description of the destination custom image.It cannot begin with http:\/\/ or https:\/\/.  Default value: null.
      */
     readonly destinationDescription?: string | ros.IResolvable;
 
@@ -2134,6 +2117,7 @@ function RosCopyImagePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('sourceRegionId', ros.validateString)(properties.sourceRegionId));
     errors.collect(ros.propertyValidator('kmsKeyId', ros.validateString)(properties.kmsKeyId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('allowCopyInSameRegion', ros.validateBoolean)(properties.allowCopyInSameRegion));
     errors.collect(ros.propertyValidator('destinationRegionId', ros.requiredValidator)(properties.destinationRegionId));
     errors.collect(ros.propertyValidator('destinationRegionId', ros.validateString)(properties.destinationRegionId));
     errors.collect(ros.propertyValidator('encrypted', ros.validateBoolean)(properties.encrypted));
@@ -2161,6 +2145,7 @@ function rosCopyImagePropsToRosTemplate(properties: any, enableResourcePropertyC
     return {
       DestinationRegionId: ros.stringToRosTemplate(properties.destinationRegionId),
       ImageId: ros.stringToRosTemplate(properties.imageId),
+      AllowCopyInSameRegion: ros.booleanToRosTemplate(properties.allowCopyInSameRegion),
       DestinationDescription: ros.stringToRosTemplate(properties.destinationDescription),
       DestinationImageName: ros.stringToRosTemplate(properties.destinationImageName),
       Encrypted: ros.booleanToRosTemplate(properties.encrypted),
@@ -2172,18 +2157,15 @@ function rosCopyImagePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::CopyImage`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CopyImage`, which is used to copy a custom image from one region to another region.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CopyImage` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-copyimage
  */
 export class RosCopyImage extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::CopyImage";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DestinationRegionId: ID of the region to where the destination custom image belongs.
@@ -2214,7 +2196,13 @@ export class RosCopyImage extends ros.RosResource {
     public imageId: string | ros.IResolvable;
 
     /**
-     * @Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.
+     * @Property allowCopyInSameRegion: Whether to allow copying images in the same region. 
+     * If set to true, the image will not be copied, the source image id will be returned, and the original image will not be deleted.
+     */
+    public allowCopyInSameRegion: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property destinationDescription: The description of the destination custom image.It cannot begin with http:\/\/ or https:\/\/.  Default value: null.
      */
     public destinationDescription: string | ros.IResolvable | undefined;
 
@@ -2249,8 +2237,6 @@ export class RosCopyImage extends ros.RosResource {
     public tag: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::CopyImage`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2264,6 +2250,7 @@ export class RosCopyImage extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.destinationRegionId = props.destinationRegionId;
         this.imageId = props.imageId;
+        this.allowCopyInSameRegion = props.allowCopyInSameRegion;
         this.destinationDescription = props.destinationDescription;
         this.destinationImageName = props.destinationImageName;
         this.encrypted = props.encrypted;
@@ -2278,6 +2265,7 @@ export class RosCopyImage extends ros.RosResource {
         return {
             destinationRegionId: this.destinationRegionId,
             imageId: this.imageId,
+            allowCopyInSameRegion: this.allowCopyInSameRegion,
             destinationDescription: this.destinationDescription,
             destinationImageName: this.destinationImageName,
             encrypted: this.encrypted,
@@ -2340,7 +2328,8 @@ function rosCopyImageTagPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::CustomImage`
+ * Properties for defining a `RosCustomImage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
 export interface RosCustomImageProps {
 
@@ -2352,12 +2341,25 @@ export interface RosCustomImageProps {
     readonly architecture?: string | ros.IResolvable;
 
     /**
+     * @Property bootMode: Modify the startup mode of the image. Ranges:
+     * BIOS: BIOS boot mode.
+     * UEFI: UEFI boot mode.
+     * You need to know the startup mode supported by the specified image. After modifying the startup mode through this parameter, it must match the startup mode supported by the image itself so that the instance can start normally.
+     */
+    readonly bootMode?: string | ros.IResolvable;
+
+    /**
      * @Property description: The description of the image.
      * It can be [0, 256] letters in length.
-     * It cannot begin with http:// or https://.
+     * It cannot begin with http:\/\/ or https:\/\/.
      * Default value: null.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property detectionStrategy: Image detection policy. If this parameter is not configured, detection will not be triggered. Only Standard detection mode is supported.Currently, most Linux\/Windows versions are supported.
+     */
+    readonly detectionStrategy?: string | ros.IResolvable;
 
     /**
      * @Property diskDeviceMapping:
@@ -2365,16 +2367,22 @@ export interface RosCustomImageProps {
     readonly diskDeviceMapping?: Array<RosCustomImage.DiskDeviceMappingProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property imageFamily: The name of the image family of the custom image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+     * @Property imageFamily: The name of the image family of the image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:\/\/ or https:\/\/. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
      */
     readonly imageFamily?: string | ros.IResolvable;
 
     /**
      * @Property imageName: Image name.
      * Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      */
     readonly imageName?: string | ros.IResolvable;
+
+    /**
+     * @Property imageVersion: Image version.
+     * When you specify an instance ID (InstanceId) and the image of the instance is a cloud market image or a custom image created from a cloud market image. This parameter must be the same as the ImageVersion of the current instance image or set to empty.
+     */
+    readonly imageVersion?: string | ros.IResolvable;
 
     /**
      * @Property instanceId: Instance ID.
@@ -2397,7 +2405,7 @@ export interface RosCustomImageProps {
     readonly snapshotId?: string | ros.IResolvable;
 
     /**
-     * @Property sourceRegionId: ID of the region to where the instance/snapshot belongs. Default is current region ID.
+     * @Property sourceRegionId: ID of the region to where the instance\/snapshot belongs. Default is current region ID.
      */
     readonly sourceRegionId?: string | ros.IResolvable;
 
@@ -2417,17 +2425,26 @@ export interface RosCustomImageProps {
 function RosCustomImagePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.detectionStrategy && (typeof properties.detectionStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('detectionStrategy', ros.validateAllowedValues)({
+          data: properties.detectionStrategy,
+          allowedValues: ["Standard"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('detectionStrategy', ros.validateString)(properties.detectionStrategy));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
+    errors.collect(ros.propertyValidator('architecture', ros.validateString)(properties.architecture));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('bootMode', ros.validateString)(properties.bootMode));
+    errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
+    errors.collect(ros.propertyValidator('diskDeviceMapping', ros.listValidator(RosCustomImage_DiskDeviceMappingPropertyValidator))(properties.diskDeviceMapping));
     errors.collect(ros.propertyValidator('imageName', ros.validateString)(properties.imageName));
     errors.collect(ros.propertyValidator('sourceRegionId', ros.validateString)(properties.sourceRegionId));
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('platform', ros.validateString)(properties.platform));
-    errors.collect(ros.propertyValidator('architecture', ros.validateString)(properties.architecture));
-    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
-    errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
+    errors.collect(ros.propertyValidator('imageVersion', ros.validateString)(properties.imageVersion));
     errors.collect(ros.propertyValidator('tag', ros.listValidator(ros.validateRosTag))(properties.tag));
-    errors.collect(ros.propertyValidator('diskDeviceMapping', ros.listValidator(RosCustomImage_DiskDeviceMappingPropertyValidator))(properties.diskDeviceMapping));
     return errors.wrap('supplied properties not correct for "RosCustomImageProps"');
 }
 
@@ -2446,10 +2463,13 @@ function rosCustomImagePropsToRosTemplate(properties: any, enableResourcePropert
     }
     return {
       Architecture: ros.stringToRosTemplate(properties.architecture),
+      BootMode: ros.stringToRosTemplate(properties.bootMode),
       Description: ros.stringToRosTemplate(properties.description),
+      DetectionStrategy: ros.stringToRosTemplate(properties.detectionStrategy),
       DiskDeviceMapping: ros.listMapper(rosCustomImageDiskDeviceMappingPropertyToRosTemplate)(properties.diskDeviceMapping),
       ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
       ImageName: ros.stringToRosTemplate(properties.imageName),
+      ImageVersion: ros.stringToRosTemplate(properties.imageVersion),
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
       Platform: ros.stringToRosTemplate(properties.platform),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
@@ -2460,18 +2480,15 @@ function rosCustomImagePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::CustomImage`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::CustomImage`, which is used to create a custom image.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CustomImage` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
 export class RosCustomImage extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::CustomImage";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ImageId: Image ID
@@ -2494,12 +2511,25 @@ export class RosCustomImage extends ros.RosResource {
     public architecture: string | ros.IResolvable | undefined;
 
     /**
+     * @Property bootMode: Modify the startup mode of the image. Ranges:
+     * BIOS: BIOS boot mode.
+     * UEFI: UEFI boot mode.
+     * You need to know the startup mode supported by the specified image. After modifying the startup mode through this parameter, it must match the startup mode supported by the image itself so that the instance can start normally.
+     */
+    public bootMode: string | ros.IResolvable | undefined;
+
+    /**
      * @Property description: The description of the image.
      * It can be [0, 256] letters in length.
-     * It cannot begin with http:// or https://.
+     * It cannot begin with http:\/\/ or https:\/\/.
      * Default value: null.
      */
     public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property detectionStrategy: Image detection policy. If this parameter is not configured, detection will not be triggered. Only Standard detection mode is supported.Currently, most Linux\/Windows versions are supported.
+     */
+    public detectionStrategy: string | ros.IResolvable | undefined;
 
     /**
      * @Property diskDeviceMapping:
@@ -2507,16 +2537,22 @@ export class RosCustomImage extends ros.RosResource {
     public diskDeviceMapping: Array<RosCustomImage.DiskDeviceMappingProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property imageFamily: The name of the image family of the custom image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+     * @Property imageFamily: The name of the image family of the image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:\/\/ or https:\/\/. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
      */
     public imageFamily: string | ros.IResolvable | undefined;
 
     /**
      * @Property imageName: Image name.
      * Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      */
     public imageName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageVersion: Image version.
+     * When you specify an instance ID (InstanceId) and the image of the instance is a cloud market image or a custom image created from a cloud market image. This parameter must be the same as the ImageVersion of the current instance image or set to empty.
+     */
+    public imageVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceId: Instance ID.
@@ -2539,7 +2575,7 @@ export class RosCustomImage extends ros.RosResource {
     public snapshotId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceRegionId: ID of the region to where the instance/snapshot belongs. Default is current region ID.
+     * @Property sourceRegionId: ID of the region to where the instance\/snapshot belongs. Default is current region ID.
      */
     public sourceRegionId: string | ros.IResolvable | undefined;
 
@@ -2549,8 +2585,6 @@ export class RosCustomImage extends ros.RosResource {
     public tag: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::CustomImage`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2562,10 +2596,13 @@ export class RosCustomImage extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.architecture = props.architecture;
+        this.bootMode = props.bootMode;
         this.description = props.description;
+        this.detectionStrategy = props.detectionStrategy;
         this.diskDeviceMapping = props.diskDeviceMapping;
         this.imageFamily = props.imageFamily;
         this.imageName = props.imageName;
+        this.imageVersion = props.imageVersion;
         this.instanceId = props.instanceId;
         this.platform = props.platform;
         this.resourceGroupId = props.resourceGroupId;
@@ -2578,10 +2615,13 @@ export class RosCustomImage extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             architecture: this.architecture,
+            bootMode: this.bootMode,
             description: this.description,
+            detectionStrategy: this.detectionStrategy,
             diskDeviceMapping: this.diskDeviceMapping,
             imageFamily: this.imageFamily,
             imageName: this.imageName,
+            imageVersion: this.imageVersion,
             instanceId: this.instanceId,
             platform: this.platform,
             resourceGroupId: this.resourceGroupId,
@@ -2611,7 +2651,7 @@ export namespace RosCustomImage {
          */
         readonly snapshotId?: string | ros.IResolvable;
         /**
-         * @Property device: Specify the device name in DiskMirrorMapping.N. in the custom image. Value range: /dev/xvda~/dev/xvdz
+         * @Property device: Specify the device name in DiskMirrorMapping.N. in the custom image. Value range: \/dev\/xvda~\/dev\/xvdz
          */
         readonly device?: string | ros.IResolvable;
         /**
@@ -2674,11 +2714,11 @@ export namespace RosCustomImage {
      */
     export interface TagProperty {
         /**
-         * @Property value: The value of a tag of which n is a number from 1 to 20. Once you use this parameter, it can be a null string. It can be up to 128 characters in length. It cannot begin with "aliyun", "acs:", "http://", or "https://".
+         * @Property value: The value of a tag of which n is a number from 1 to 20. Once you use this parameter, it can be a null string. It can be up to 128 characters in length. It cannot begin with "aliyun", "acs:", "http:\/\/", or "https:\/\/".
          */
         readonly value?: string | ros.IResolvable;
         /**
-         * @Property key: The key of a tag of which n is from 1 to 20. Once you use this parameter, it cannot be a null string. It can be up to 64 characters in length. It cannot begin with "aliyun", "acs:", "http://", or "https://".
+         * @Property key: The key of a tag of which n is from 1 to 20. Once you use this parameter, it cannot be a null string. It can be up to 64 characters in length. It cannot begin with "aliyun", "acs:", "http:\/\/", or "https:\/\/".
          */
         readonly key?: string | ros.IResolvable;
     }
@@ -2716,7 +2756,8 @@ function rosCustomImageTagPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::DedicatedHost`
+ * Properties for defining a `RosDedicatedHost`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
 export interface RosDedicatedHostProps {
 
@@ -2756,7 +2797,7 @@ export interface RosDedicatedHostProps {
     readonly chargeType?: string | ros.IResolvable;
 
     /**
-     * @Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+     * @Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
      */
     readonly dedicatedHostName?: string | ros.IResolvable;
 
@@ -2781,7 +2822,7 @@ export interface RosDedicatedHostProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -2942,18 +2983,15 @@ function rosDedicatedHostPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::DedicatedHost`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DedicatedHost`, which is used to create a dedicated host.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHost` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
 export class RosDedicatedHost extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::DedicatedHost";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DedicatedHostIds: The host id list of created hosts
@@ -3004,7 +3042,7 @@ export class RosDedicatedHost extends ros.RosResource {
     public chargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+     * @Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
      */
     public dedicatedHostName: string | ros.IResolvable | undefined;
 
@@ -3029,7 +3067,7 @@ export class RosDedicatedHost extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -3054,8 +3092,6 @@ export class RosDedicatedHost extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::DedicatedHost`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3161,22 +3197,30 @@ function rosDedicatedHostTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::DeploymentSet`
+ * Properties for defining a `RosDeploymentSet`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
  */
 export interface RosDeploymentSetProps {
 
     /**
      * @Property deploymentSetName: The name of the deployment set. It must be 2 to 128 characters in length. It must
-     * start with a letter and cannot start with http:// or https://. It can contain letters,
+     * start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters,
      * digits, colons (:), underscores (_), and hyphens (-).
      */
     readonly deploymentSetName?: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the deployment set. It must be 2 to 256 characters in length. It
-     * cannot start with http:// or https://.
+     * cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property groupCount: Set the number of groups for the deployment set group high availability policy. Value range: 1~7.
+     * Default value: 3.
+     * This parameter only takes effect when Strategy=AvailabilityGroup.
+     */
+    readonly groupCount?: number | ros.IResolvable;
 
     /**
      * @Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set. Valid values:
@@ -3186,6 +3230,14 @@ export interface RosDeploymentSetProps {
      * set is replenished.
      */
     readonly onUnableToRedeployFailedInstance?: string | ros.IResolvable;
+
+    /**
+     * @Property strategy: Deployment strategy. Ranges:
+     * Availability: High availability strategy.
+     * AvailabilityGroup: Deployment group high availability strategy.
+     * LowLatency: Network low latency strategy.
+     */
+    readonly strategy?: string | ros.IResolvable;
 }
 
 /**
@@ -3206,6 +3258,21 @@ function RosDeploymentSetPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('onUnableToRedeployFailedInstance', ros.validateString)(properties.onUnableToRedeployFailedInstance));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.groupCount && (typeof properties.groupCount) !== 'object') {
+        errors.collect(ros.propertyValidator('groupCount', ros.validateRange)({
+            data: properties.groupCount,
+            min: 1,
+            max: 7,
+          }));
+    }
+    errors.collect(ros.propertyValidator('groupCount', ros.validateNumber)(properties.groupCount));
+    if(properties.strategy && (typeof properties.strategy) !== 'object') {
+        errors.collect(ros.propertyValidator('strategy', ros.validateAllowedValues)({
+          data: properties.strategy,
+          allowedValues: ["Availability","AvailabilityGroup","LowLatency"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('strategy', ros.validateString)(properties.strategy));
     errors.collect(ros.propertyValidator('deploymentSetName', ros.validateString)(properties.deploymentSetName));
     return errors.wrap('supplied properties not correct for "RosDeploymentSetProps"');
 }
@@ -3226,23 +3293,22 @@ function rosDeploymentSetPropsToRosTemplate(properties: any, enableResourcePrope
     return {
       DeploymentSetName: ros.stringToRosTemplate(properties.deploymentSetName),
       Description: ros.stringToRosTemplate(properties.description),
+      GroupCount: ros.numberToRosTemplate(properties.groupCount),
       OnUnableToRedeployFailedInstance: ros.stringToRosTemplate(properties.onUnableToRedeployFailedInstance),
+      Strategy: ros.stringToRosTemplate(properties.strategy),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::DeploymentSet`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DeploymentSet`, which is used to create a deployment set in a specified region.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DeploymentSet` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-deploymentset
  */
 export class RosDeploymentSet extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::DeploymentSet";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DeploymentSetId: The ID of the deployment set.
@@ -3254,16 +3320,23 @@ export class RosDeploymentSet extends ros.RosResource {
 
     /**
      * @Property deploymentSetName: The name of the deployment set. It must be 2 to 128 characters in length. It must
-     * start with a letter and cannot start with http:// or https://. It can contain letters,
+     * start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters,
      * digits, colons (:), underscores (_), and hyphens (-).
      */
     public deploymentSetName: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: The description of the deployment set. It must be 2 to 256 characters in length. It
-     * cannot start with http:// or https://.
+     * cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property groupCount: Set the number of groups for the deployment set group high availability policy. Value range: 1~7.
+     * Default value: 3.
+     * This parameter only takes effect when Strategy=AvailabilityGroup.
+     */
+    public groupCount: number | ros.IResolvable | undefined;
 
     /**
      * @Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set. Valid values:
@@ -3275,8 +3348,14 @@ export class RosDeploymentSet extends ros.RosResource {
     public onUnableToRedeployFailedInstance: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::DeploymentSet`.
-     *
+     * @Property strategy: Deployment strategy. Ranges:
+     * Availability: High availability strategy.
+     * AvailabilityGroup: Deployment group high availability strategy.
+     * LowLatency: Network low latency strategy.
+     */
+    public strategy: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3288,7 +3367,9 @@ export class RosDeploymentSet extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.deploymentSetName = props.deploymentSetName;
         this.description = props.description;
+        this.groupCount = props.groupCount;
         this.onUnableToRedeployFailedInstance = props.onUnableToRedeployFailedInstance;
+        this.strategy = props.strategy;
     }
 
 
@@ -3296,7 +3377,9 @@ export class RosDeploymentSet extends ros.RosResource {
         return {
             deploymentSetName: this.deploymentSetName,
             description: this.description,
+            groupCount: this.groupCount,
             onUnableToRedeployFailedInstance: this.onUnableToRedeployFailedInstance,
+            strategy: this.strategy,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -3305,7 +3388,8 @@ export class RosDeploymentSet extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::Disk`
+ * Properties for defining a `RosDisk`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
 export interface RosDiskProps {
 
@@ -3335,7 +3419,7 @@ export interface RosDiskProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
+     * @Property diskCategory: The disk category, now support cloud\/cloud_ssd\/cloud_essd\/cloud_efficiency\/san_ssd\/san_efficiency\/cloud_auto, depends the region.
      */
     readonly diskCategory?: string | ros.IResolvable;
 
@@ -3363,7 +3447,7 @@ export interface RosDiskProps {
     readonly multiAttach?: string | ros.IResolvable;
 
     /**
-     * @Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * @Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      */
     readonly performanceLevel?: string | ros.IResolvable;
 
@@ -3491,18 +3575,15 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::Disk`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Disk`, which is used to create a cloud disk for an Elastic Compute Service (ECS) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-disk
  */
 export class RosDisk extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::Disk";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DiskId: Id of created disk.
@@ -3543,7 +3624,7 @@ export class RosDisk extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency/cloud_auto, depends the region.
+     * @Property diskCategory: The disk category, now support cloud\/cloud_ssd\/cloud_essd\/cloud_efficiency\/san_ssd\/san_efficiency\/cloud_auto, depends the region.
      */
     public diskCategory: string | ros.IResolvable | undefined;
 
@@ -3571,7 +3652,7 @@ export class RosDisk extends ros.RosResource {
     public multiAttach: string | ros.IResolvable | undefined;
 
     /**
-     * @Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * @Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      */
     public performanceLevel: string | ros.IResolvable | undefined;
 
@@ -3611,8 +3692,6 @@ export class RosDisk extends ros.RosResource {
     public tags: RosDisk.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::Disk`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3720,7 +3799,8 @@ function rosDiskTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::DiskAttachment`
+ * Properties for defining a `RosDiskAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
 export interface RosDiskAttachmentProps {
 
@@ -3745,7 +3825,7 @@ export interface RosDiskAttachmentProps {
     readonly deleteWithInstance?: boolean | ros.IResolvable;
 
     /**
-     * @Property device: The device where the volume is exposed on the instance. could be /dev/xvd[b-z]. If not specification, will use default value.
+     * @Property device: The device where the volume is exposed on the instance. could be \/dev\/xvd[b-z]. If not specification, will use default value.
      */
     readonly device?: string | ros.IResolvable;
 }
@@ -3793,18 +3873,15 @@ function rosDiskAttachmentPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::DiskAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::DiskAttachment`, which is used to attach a disk to an ECS instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DiskAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-diskattachment
  */
 export class RosDiskAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::DiskAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Device: The device where the volume is exposed on ecs instance.
@@ -3845,13 +3922,11 @@ export class RosDiskAttachment extends ros.RosResource {
     public deleteWithInstance: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property device: The device where the volume is exposed on the instance. could be /dev/xvd[b-z]. If not specification, will use default value.
+     * @Property device: The device where the volume is exposed on the instance. could be \/dev\/xvd[b-z]. If not specification, will use default value.
      */
     public device: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::DiskAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3886,7 +3961,8 @@ export class RosDiskAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::ForwardEntry`
+ * Properties for defining a `RosForwardEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-forwardentry
  */
 export interface RosForwardEntryProps {
 
@@ -3896,7 +3972,7 @@ export interface RosForwardEntryProps {
     readonly externalIp: string | ros.IResolvable;
 
     /**
-     * @Property externalPort: Source port, now support [1-65535]|Any|x/y
+     * @Property externalPort: Source port, now support [1-65535]|Any|x\/y
      */
     readonly externalPort: string | ros.IResolvable;
 
@@ -3911,7 +3987,7 @@ export interface RosForwardEntryProps {
     readonly internalIp: string | ros.IResolvable;
 
     /**
-     * @Property internalPort: Destination port, now support [1-65535]|Any|x/y
+     * @Property internalPort: Destination port, now support [1-65535]|Any|x\/y
      */
     readonly internalPort: string | ros.IResolvable;
 
@@ -3921,7 +3997,7 @@ export interface RosForwardEntryProps {
     readonly ipProtocol: string | ros.IResolvable;
 
     /**
-     * @Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     * @Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
      */
     readonly forwardEntryName?: string | ros.IResolvable;
 
@@ -3990,18 +4066,15 @@ function rosForwardEntryPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::ForwardEntry`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ForwardEntry`, which is used to configure the Destination Network Address Translation (DNAT) table of a Network Address Translation (NAT) gateway.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ForwardEntry` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-forwardentry
  */
 export class RosForwardEntry extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::ForwardEntry";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ForwardEntryId: The id of created forward entry.
@@ -4017,7 +4090,7 @@ export class RosForwardEntry extends ros.RosResource {
     public externalIp: string | ros.IResolvable;
 
     /**
-     * @Property externalPort: Source port, now support [1-65535]|Any|x/y
+     * @Property externalPort: Source port, now support [1-65535]|Any|x\/y
      */
     public externalPort: string | ros.IResolvable;
 
@@ -4032,7 +4105,7 @@ export class RosForwardEntry extends ros.RosResource {
     public internalIp: string | ros.IResolvable;
 
     /**
-     * @Property internalPort: Destination port, now support [1-65535]|Any|x/y
+     * @Property internalPort: Destination port, now support [1-65535]|Any|x\/y
      */
     public internalPort: string | ros.IResolvable;
 
@@ -4042,7 +4115,7 @@ export class RosForwardEntry extends ros.RosResource {
     public ipProtocol: string | ros.IResolvable;
 
     /**
-     * @Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     * @Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
      */
     public forwardEntryName: string | ros.IResolvable | undefined;
 
@@ -4052,8 +4125,6 @@ export class RosForwardEntry extends ros.RosResource {
     public portBreak: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::ForwardEntry`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4092,20 +4163,21 @@ export class RosForwardEntry extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::HpcCluster`
+ * Properties for defining a `RosHpcCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-hpccluster
  */
 export interface RosHpcClusterProps {
 
     /**
      * @Property name: The name of the HPC cluster. The name must be 2 to 128 characters in length. It must
-     * start with a letter but cannot start with http:// or https://. It can contain letters,
+     * start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters,
      * digits, colons (:), underscores (_), and hyphens (-).
      */
     readonly name: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the HPC cluster. The description must be 2 to 256 characters in
-     * length. It cannot start with http:// or https://. Default value: empty string.
+     * length. It cannot start with http:\/\/ or https:\/\/. Default value: empty string.
      */
     readonly description?: string | ros.IResolvable;
 }
@@ -4146,18 +4218,15 @@ function rosHpcClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::HpcCluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::HpcCluster`, which is used to create a High Performance Computing (HPC) cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HpcCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-hpccluster
  */
 export class RosHpcCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::HpcCluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HpcClusterId: The ID of the HPC cluster.
@@ -4174,20 +4243,18 @@ export class RosHpcCluster extends ros.RosResource {
 
     /**
      * @Property name: The name of the HPC cluster. The name must be 2 to 128 characters in length. It must
-     * start with a letter but cannot start with http:// or https://. It can contain letters,
+     * start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters,
      * digits, colons (:), underscores (_), and hyphens (-).
      */
     public name: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the HPC cluster. The description must be 2 to 256 characters in
-     * length. It cannot start with http:// or https://. Default value: empty string.
+     * length. It cannot start with http:\/\/ or https:\/\/. Default value: empty string.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::HpcCluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4215,19 +4282,167 @@ export class RosHpcCluster extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::Instance`
+ * Properties for defining a `RosImageSharePermission`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagesharepermission
  */
-export interface RosInstanceProps {
+export interface RosImageSharePermissionProps {
 
     /**
-     * @Property imageId: Image ID to create ecs instance.
+     * @Property imageId: The shared custom image ID.
      */
     readonly imageId: string | ros.IResolvable;
+
+    /**
+     * @Property accounts: Alibaba Cloud account IDs authorized to share the image.
+     */
+    readonly accounts?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property isPublic: Whether to publish or remove community mirrors. 
+     * If this property is not set, no changes will be made to the community image
+     */
+    readonly isPublic?: boolean | ros.IResolvable;
+
+    /**
+     * @Property keepPermission: Whether to keep the original sharing permissions when resource is deleted, default is true.If set to false, Accounts will be removed if Accounts is set and IsPublic will be changed if IsPublic is set.
+     */
+    readonly keepPermission?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosImageSharePermissionProps`
+ *
+ * @param properties - the TypeScript properties of a `RosImageSharePermissionProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosImageSharePermissionPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('keepPermission', ros.validateBoolean)(properties.keepPermission));
+    errors.collect(ros.propertyValidator('isPublic', ros.validateBoolean)(properties.isPublic));
+    errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.accounts && (Array.isArray(properties.accounts) || (typeof properties.accounts) === 'string')) {
+        errors.collect(ros.propertyValidator('accounts', ros.validateLength)({
+            data: properties.accounts.length,
+            min: 0,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('accounts', ros.listValidator(ros.validateString))(properties.accounts));
+    return errors.wrap('supplied properties not correct for "RosImageSharePermissionProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::ImageSharePermission` resource
+ *
+ * @param properties - the TypeScript properties of a `RosImageSharePermissionProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::ImageSharePermission` resource.
+ */
+// @ts-ignore TS6133
+function rosImageSharePermissionPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosImageSharePermissionPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ImageId: ros.stringToRosTemplate(properties.imageId),
+      Accounts: ros.listMapper(ros.stringToRosTemplate)(properties.accounts),
+      IsPublic: ros.booleanToRosTemplate(properties.isPublic),
+      KeepPermission: ros.booleanToRosTemplate(properties.keepPermission),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::ImageSharePermission`DATASOURCE::ECS::AutoSnapshotPolicies is used to query automatic snapshot policies.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ImageSharePermission` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagesharepermission
+ */
+export class RosImageSharePermission extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::ImageSharePermission";
+
+    /**
+     * @Attribute ImageId: The shared custom image ID.
+     */
+    public readonly attrImageId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property imageId: The shared custom image ID.
+     */
+    public imageId: string | ros.IResolvable;
+
+    /**
+     * @Property accounts: Alibaba Cloud account IDs authorized to share the image.
+     */
+    public accounts: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property isPublic: Whether to publish or remove community mirrors. 
+     * If this property is not set, no changes will be made to the community image
+     */
+    public isPublic: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property keepPermission: Whether to keep the original sharing permissions when resource is deleted, default is true.If set to false, Accounts will be removed if Accounts is set and IsPublic will be changed if IsPublic is set.
+     */
+    public keepPermission: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosImageSharePermissionProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosImageSharePermission.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrImageId = this.getAtt('ImageId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.imageId = props.imageId;
+        this.accounts = props.accounts;
+        this.isPublic = props.isPublic;
+        this.keepPermission = props.keepPermission;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            imageId: this.imageId,
+            accounts: this.accounts,
+            isPublic: this.isPublic,
+            keepPermission: this.keepPermission,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosImageSharePermissionPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instance
+ */
+export interface RosInstanceProps {
 
     /**
      * @Property instanceType: Ecs instance supported instance type, make sure it should be correct.
      */
     readonly instanceType: string | ros.IResolvable;
+
+    /**
+     * @Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host. Valid values:
+     * - **default**: does not associate the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance is automatically deployed to another dedicated host in the automatic deployment resource pool if the available resources of the original dedicated host are insufficient.
+     * - **host**: associates the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance remains on the original dedicated host. If the available resources of the original dedicated host are insufficient, the instance cannot start.
+     * Default value: **default**.
+     */
+    readonly affinity?: string | ros.IResolvable;
 
     /**
      * @Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip. If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
@@ -4245,6 +4460,13 @@ export interface RosInstanceProps {
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
+     * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
+     * - **Standard**: the standard mode.
+     * - **Unlimited**: the unlimited mode.
+     */
+    readonly creditSpecification?: string | ros.IResolvable;
+
+    /**
      * @Property dedicatedHostId: which dedicated host will be deployed
      */
     readonly dedicatedHostId?: string | ros.IResolvable;
@@ -4253,6 +4475,11 @@ export interface RosInstanceProps {
      * @Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
+     * @Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance. If the deployment set specified by **DeploymentSetId** uses the high availability group strategy (AvailabilityGroup), you can use **DeploymentSetGroupNo** to specify a deployment set group in the deployment set. Valid values: 1 to 7.
+     */
+    readonly deploymentSetGroupNo?: number | ros.IResolvable;
 
     /**
      * @Property deploymentSetId: Deployment set ID.
@@ -4279,6 +4506,34 @@ export interface RosInstanceProps {
      * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
     readonly hpcClusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata. Valid values:
+     * - **enabled**
+     * - **disabled**
+     * Default value: **enabled**.
+     */
+    readonly httpEndpoint?: string | ros.IResolvable;
+
+    /**
+     * @Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata. Valid values:
+     * - **optional**: does not forcefully use the security-enhanced mode (IMDSv2).
+     * - **required**: forcefully uses the security-enhanced mode (IMDSv2). After you set this parameter to required, you cannot access instance metadata in normal mode.
+     * Default value: **optional**.
+     */
+    readonly httpTokens?: string | ros.IResolvable;
+
+    /**
+     * @Property imageFamily: The name of the image family. You can set this parameter to obtain the latest available custom image from the specified image family to create the instance.
+     * - **ImageFamily** must be empty if **ImageId** is specified.
+     * - **ImageFamily** can be specified if **ImageId** is not specified.
+     */
+    readonly imageFamily?: string | ros.IResolvable;
+
+    /**
+     * @Property imageId: Image ID to create ecs instance.
+     */
+    readonly imageId?: string | ros.IResolvable;
 
     /**
      * @Property instanceChargeType: Instance Charge type, allowed value: Prepaid and Postpaid. If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.
@@ -4326,7 +4581,7 @@ export interface RosInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -4334,6 +4589,11 @@ export interface RosInstanceProps {
      * @Property privateIpAddress: Private IP for the instance created. Only works for VPC instance and cannot duplicated with existing instance.
      */
     readonly privateIpAddress?: string | ros.IResolvable;
+
+    /**
+     * @Property privatePoolOptions: The options of the private pool.
+     */
+    readonly privatePoolOptions?: RosInstance.PrivatePoolOptionsProperty | ros.IResolvable;
 
     /**
      * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
@@ -4384,6 +4644,16 @@ export interface RosInstanceProps {
     readonly spotStrategy?: string | ros.IResolvable;
 
     /**
+     * @Property storageSetId: The storage set ID.
+     */
+    readonly storageSetId?: string | ros.IResolvable;
+
+    /**
+     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+     */
+    readonly storageSetPartitionNumber?: number | ros.IResolvable;
+
+    /**
      * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
@@ -4399,7 +4669,7 @@ export interface RosInstanceProps {
     readonly systemDiskDiskName?: string | ros.IResolvable;
 
     /**
-     * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      */
     readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
 
@@ -4412,6 +4682,19 @@ export interface RosInstanceProps {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosInstance.TagsProperty[];
+
+    /**
+     * @Property tenancy: Specifies whether to create the instance on a dedicated host. Valid values:
+     * - **default**: creates the instance on a non-dedicated host.
+     * - **host**: creates the instance on a dedicated host. If you do not specify **DedicatedHostId**, Alibaba Cloud selects a dedicated host for the instance.
+     * Default value: **default**.
+     */
+    readonly tenancy?: string | ros.IResolvable;
+
+    /**
+     * @Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud. System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
+     */
+    readonly useAdditionalService?: boolean | ros.IResolvable;
 
     /**
      * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -4452,26 +4735,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dedicatedHostId', ros.validateString)(properties.dedicatedHostId));
-    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    if(properties.diskMappings && (Array.isArray(properties.diskMappings) || (typeof properties.diskMappings) === 'string')) {
-        errors.collect(ros.propertyValidator('diskMappings', ros.validateLength)({
-            data: properties.diskMappings.length,
-            min: undefined,
-            max: 16,
-          }));
-    }
-    errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosInstance_DiskMappingsPropertyValidator))(properties.diskMappings));
-    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
-    if(properties.systemDiskSize && (typeof properties.systemDiskSize) !== 'object') {
-        errors.collect(ros.propertyValidator('systemDiskSize', ros.validateRange)({
-            data: properties.systemDiskSize,
-            min: 20,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('systemDiskDescription', ros.validateString)(properties.systemDiskDescription));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
@@ -4480,32 +4744,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
-    if(properties.autoRenew && (typeof properties.autoRenew) !== 'object') {
-        errors.collect(ros.propertyValidator('autoRenew', ros.validateAllowedValues)({
-          data: properties.autoRenew,
-          allowedValues: ["True","False"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateString)(properties.autoRenew));
-    errors.collect(ros.propertyValidator('spotDuration', ros.validateNumber)(properties.spotDuration));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('privatePoolOptions', RosInstance_PrivatePoolOptionsPropertyValidator)(properties.privatePoolOptions));
     errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
-    errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
     errors.collect(ros.propertyValidator('systemDiskDiskName', ros.validateString)(properties.systemDiskDiskName));
-    errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateString)(properties.spotPriceLimit));
-    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
-    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
-    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
-    errors.collect(ros.propertyValidator('allocatePublicIp', ros.validateBoolean)(properties.allocatePublicIp));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('storageSetId', ros.validateString)(properties.storageSetId));
+    errors.collect(ros.propertyValidator('useAdditionalService', ros.validateBoolean)(properties.useAdditionalService));
     if(properties.hostName && (Array.isArray(properties.hostName) || (typeof properties.hostName) === 'string')) {
         errors.collect(ros.propertyValidator('hostName', ros.validateLength)({
             data: properties.hostName.length,
@@ -4514,6 +4759,114 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('hostName', ros.validateString)(properties.hostName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
+    if(properties.deletionProtection && (typeof properties.deletionProtection) !== 'object') {
+        errors.collect(ros.propertyValidator('deletionProtection', ros.validateAllowedValues)({
+          data: properties.deletionProtection,
+          allowedValues: [true,false],
+        }));
+    }
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('httpEndpoint', ros.validateString)(properties.httpEndpoint));
+    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
+        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
+            data: properties.securityGroupIds.length,
+            min: 1,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('spotInterruptionBehavior', ros.validateString)(properties.spotInterruptionBehavior));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
+    if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
+        errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
+            data: properties.internetMaxBandwidthOut,
+            min: 0,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('affinity', ros.validateString)(properties.affinity));
+    if(properties.securityEnhancementStrategy && (typeof properties.securityEnhancementStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateAllowedValues)({
+          data: properties.securityEnhancementStrategy,
+          allowedValues: ["Active","Deactive"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateString)(properties.securityEnhancementStrategy));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Week","Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('tenancy', ros.validateString)(properties.tenancy));
+    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.diskMappings && (Array.isArray(properties.diskMappings) || (typeof properties.diskMappings) === 'string')) {
+        errors.collect(ros.propertyValidator('diskMappings', ros.validateLength)({
+            data: properties.diskMappings.length,
+            min: undefined,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('diskMappings', ros.listValidator(RosInstance_DiskMappingsPropertyValidator))(properties.diskMappings));
+    if(properties.systemDiskSize && (typeof properties.systemDiskSize) !== 'object') {
+        errors.collect(ros.propertyValidator('systemDiskSize', ros.validateRange)({
+            data: properties.systemDiskSize,
+            min: 20,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
+    errors.collect(ros.propertyValidator('userData', ros.validateString)(properties.userData));
+    if(properties.autoRenew && (typeof properties.autoRenew) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenew', ros.validateAllowedValues)({
+          data: properties.autoRenew,
+          allowedValues: ["True","False"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateString)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('spotDuration', ros.validateNumber)(properties.spotDuration));
+    if(properties.storageSetPartitionNumber && (typeof properties.storageSetPartitionNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('storageSetPartitionNumber', ros.validateRange)({
+            data: properties.storageSetPartitionNumber,
+            min: 2,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('storageSetPartitionNumber', ros.validateNumber)(properties.storageSetPartitionNumber));
+    errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateString)(properties.spotPriceLimit));
+    errors.collect(ros.propertyValidator('zoneIds', ros.listValidator(ros.validateString))(properties.zoneIds));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('allocatePublicIp', ros.validateBoolean)(properties.allocatePublicIp));
     if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
           data: properties.spotStrategy,
@@ -4540,64 +4893,18 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('ioOptimized', ros.validateString)(properties.ioOptimized));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    if(properties.deletionProtection && (typeof properties.deletionProtection) !== 'object') {
-        errors.collect(ros.propertyValidator('deletionProtection', ros.validateAllowedValues)({
-          data: properties.deletionProtection,
-          allowedValues: [true,false],
-        }));
-    }
-    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
-    if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
-        errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
-            data: properties.securityGroupIds.length,
+    if(properties.deploymentSetGroupNo && (typeof properties.deploymentSetGroupNo) !== 'object') {
+        errors.collect(ros.propertyValidator('deploymentSetGroupNo', ros.validateRange)({
+            data: properties.deploymentSetGroupNo,
             min: 1,
-            max: 16,
+            max: 7,
           }));
     }
-    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
-    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
-          data: properties.internetChargeType,
-          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('deploymentSetGroupNo', ros.validateNumber)(properties.deploymentSetGroupNo));
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
-    errors.collect(ros.propertyValidator('spotInterruptionBehavior', ros.validateString)(properties.spotInterruptionBehavior));
-    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
-    if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
-        errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
-            data: properties.internetMaxBandwidthOut,
-            min: 0,
-            max: undefined,
-          }));
-    }
-    errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    if(properties.securityEnhancementStrategy && (typeof properties.securityEnhancementStrategy) !== 'object') {
-        errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateAllowedValues)({
-          data: properties.securityEnhancementStrategy,
-          allowedValues: ["Active","Deactive"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateString)(properties.securityEnhancementStrategy));
-    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
-          data: properties.periodUnit,
-          allowedValues: ["Week","Month","Year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('httpTokens', ros.validateString)(properties.httpTokens));
+    errors.collect(ros.propertyValidator('creditSpecification', ros.validateString)(properties.creditSpecification));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -4615,18 +4922,24 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosInstancePropsValidator(properties).assertSuccess();
     }
     return {
-      ImageId: ros.stringToRosTemplate(properties.imageId),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      Affinity: ros.stringToRosTemplate(properties.affinity),
       AllocatePublicIP: ros.booleanToRosTemplate(properties.allocatePublicIp),
       AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
       AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
+      CreditSpecification: ros.stringToRosTemplate(properties.creditSpecification),
       DedicatedHostId: ros.stringToRosTemplate(properties.dedicatedHostId),
       DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
+      DeploymentSetGroupNo: ros.numberToRosTemplate(properties.deploymentSetGroupNo),
       DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
       Description: ros.stringToRosTemplate(properties.description),
       DiskMappings: ros.listMapper(rosInstanceDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
       HostName: ros.stringToRosTemplate(properties.hostName),
       HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
+      HttpEndpoint: ros.stringToRosTemplate(properties.httpEndpoint),
+      HttpTokens: ros.stringToRosTemplate(properties.httpTokens),
+      ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
+      ImageId: ros.stringToRosTemplate(properties.imageId),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
@@ -4638,6 +4951,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
+      PrivatePoolOptions: rosInstancePrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
       RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
@@ -4647,12 +4961,16 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       SpotInterruptionBehavior: ros.stringToRosTemplate(properties.spotInterruptionBehavior),
       SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
+      StorageSetId: ros.stringToRosTemplate(properties.storageSetId),
+      StorageSetPartitionNumber: ros.numberToRosTemplate(properties.storageSetPartitionNumber),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
       SystemDiskDescription: ros.stringToRosTemplate(properties.systemDiskDescription),
       SystemDiskDiskName: ros.stringToRosTemplate(properties.systemDiskDiskName),
       SystemDiskPerformanceLevel: ros.stringToRosTemplate(properties.systemDiskPerformanceLevel),
       SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
       Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
+      Tenancy: ros.stringToRosTemplate(properties.tenancy),
+      UseAdditionalService: ros.booleanToRosTemplate(properties.useAdditionalService),
       UserData: ros.stringToRosTemplate(properties.userData),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -4662,18 +4980,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Instance`, which is used to create an Elastic Compute Service (ECS) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HostName: Host name of created instance.
@@ -4719,14 +5034,17 @@ export class RosInstance extends ros.RosResource {
 
 
     /**
-     * @Property imageId: Image ID to create ecs instance.
-     */
-    public imageId: string | ros.IResolvable;
-
-    /**
      * @Property instanceType: Ecs instance supported instance type, make sure it should be correct.
      */
     public instanceType: string | ros.IResolvable;
+
+    /**
+     * @Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host. Valid values:
+     * - **default**: does not associate the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance is automatically deployed to another dedicated host in the automatic deployment resource pool if the available resources of the original dedicated host are insufficient.
+     * - **host**: associates the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance remains on the original dedicated host. If the available resources of the original dedicated host are insufficient, the instance cannot start.
+     * Default value: **default**.
+     */
+    public affinity: string | ros.IResolvable | undefined;
 
     /**
      * @Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip. If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
@@ -4744,6 +5062,13 @@ export class RosInstance extends ros.RosResource {
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 
     /**
+     * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
+     * - **Standard**: the standard mode.
+     * - **Unlimited**: the unlimited mode.
+     */
+    public creditSpecification: string | ros.IResolvable | undefined;
+
+    /**
      * @Property dedicatedHostId: which dedicated host will be deployed
      */
     public dedicatedHostId: string | ros.IResolvable | undefined;
@@ -4752,6 +5077,11 @@ export class RosInstance extends ros.RosResource {
      * @Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
      */
     public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance. If the deployment set specified by **DeploymentSetId** uses the high availability group strategy (AvailabilityGroup), you can use **DeploymentSetGroupNo** to specify a deployment set group in the deployment set. Valid values: 1 to 7.
+     */
+    public deploymentSetGroupNo: number | ros.IResolvable | undefined;
 
     /**
      * @Property deploymentSetId: Deployment set ID.
@@ -4778,6 +5108,34 @@ export class RosInstance extends ros.RosResource {
      * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
     public hpcClusterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata. Valid values:
+     * - **enabled**
+     * - **disabled**
+     * Default value: **enabled**.
+     */
+    public httpEndpoint: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata. Valid values:
+     * - **optional**: does not forcefully use the security-enhanced mode (IMDSv2).
+     * - **required**: forcefully uses the security-enhanced mode (IMDSv2). After you set this parameter to required, you cannot access instance metadata in normal mode.
+     * Default value: **optional**.
+     */
+    public httpTokens: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageFamily: The name of the image family. You can set this parameter to obtain the latest available custom image from the specified image family to create the instance.
+     * - **ImageFamily** must be empty if **ImageId** is specified.
+     * - **ImageFamily** can be specified if **ImageId** is not specified.
+     */
+    public imageFamily: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageId: Image ID to create ecs instance.
+     */
+    public imageId: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceChargeType: Instance Charge type, allowed value: Prepaid and Postpaid. If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.
@@ -4825,7 +5183,7 @@ export class RosInstance extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -4833,6 +5191,11 @@ export class RosInstance extends ros.RosResource {
      * @Property privateIpAddress: Private IP for the instance created. Only works for VPC instance and cannot duplicated with existing instance.
      */
     public privateIpAddress: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property privatePoolOptions: The options of the private pool.
+     */
+    public privatePoolOptions: RosInstance.PrivatePoolOptionsProperty | ros.IResolvable | undefined;
 
     /**
      * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
@@ -4883,6 +5246,16 @@ export class RosInstance extends ros.RosResource {
     public spotStrategy: string | ros.IResolvable | undefined;
 
     /**
+     * @Property storageSetId: The storage set ID.
+     */
+    public storageSetId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+     */
+    public storageSetPartitionNumber: number | ros.IResolvable | undefined;
+
+    /**
      * @Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry
      */
     public systemDiskCategory: string | ros.IResolvable | undefined;
@@ -4898,7 +5271,7 @@ export class RosInstance extends ros.RosResource {
     public systemDiskDiskName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      */
     public systemDiskPerformanceLevel: string | ros.IResolvable | undefined;
 
@@ -4911,6 +5284,19 @@ export class RosInstance extends ros.RosResource {
      * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     public tags: RosInstance.TagsProperty[] | undefined;
+
+    /**
+     * @Property tenancy: Specifies whether to create the instance on a dedicated host. Valid values:
+     * - **default**: creates the instance on a non-dedicated host.
+     * - **host**: creates the instance on a dedicated host. If you do not specify **DedicatedHostId**, Alibaba Cloud selects a dedicated host for the instance.
+     * Default value: **default**.
+     */
+    public tenancy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud. System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
+     */
+    public useAdditionalService: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -4940,8 +5326,6 @@ export class RosInstance extends ros.RosResource {
     public zoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4958,18 +5342,24 @@ export class RosInstance extends ros.RosResource {
         this.attrZoneId = this.getAtt('ZoneId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.imageId = props.imageId;
         this.instanceType = props.instanceType;
+        this.affinity = props.affinity;
         this.allocatePublicIp = props.allocatePublicIp;
         this.autoRenew = props.autoRenew;
         this.autoRenewPeriod = props.autoRenewPeriod;
+        this.creditSpecification = props.creditSpecification;
         this.dedicatedHostId = props.dedicatedHostId;
         this.deletionProtection = props.deletionProtection;
+        this.deploymentSetGroupNo = props.deploymentSetGroupNo;
         this.deploymentSetId = props.deploymentSetId;
         this.description = props.description;
         this.diskMappings = props.diskMappings;
         this.hostName = props.hostName;
         this.hpcClusterId = props.hpcClusterId;
+        this.httpEndpoint = props.httpEndpoint;
+        this.httpTokens = props.httpTokens;
+        this.imageFamily = props.imageFamily;
+        this.imageId = props.imageId;
         this.instanceChargeType = props.instanceChargeType;
         this.instanceName = props.instanceName;
         this.internetChargeType = props.internetChargeType;
@@ -4981,6 +5371,7 @@ export class RosInstance extends ros.RosResource {
         this.period = props.period;
         this.periodUnit = props.periodUnit;
         this.privateIpAddress = props.privateIpAddress;
+        this.privatePoolOptions = props.privatePoolOptions;
         this.ramRoleName = props.ramRoleName;
         this.resourceGroupId = props.resourceGroupId;
         this.securityEnhancementStrategy = props.securityEnhancementStrategy;
@@ -4990,12 +5381,16 @@ export class RosInstance extends ros.RosResource {
         this.spotInterruptionBehavior = props.spotInterruptionBehavior;
         this.spotPriceLimit = props.spotPriceLimit;
         this.spotStrategy = props.spotStrategy;
+        this.storageSetId = props.storageSetId;
+        this.storageSetPartitionNumber = props.storageSetPartitionNumber;
         this.systemDiskCategory = props.systemDiskCategory;
         this.systemDiskDescription = props.systemDiskDescription;
         this.systemDiskDiskName = props.systemDiskDiskName;
         this.systemDiskPerformanceLevel = props.systemDiskPerformanceLevel;
         this.systemDiskSize = props.systemDiskSize;
         this.tags = props.tags;
+        this.tenancy = props.tenancy;
+        this.useAdditionalService = props.useAdditionalService;
         this.userData = props.userData;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
@@ -5006,18 +5401,24 @@ export class RosInstance extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            imageId: this.imageId,
             instanceType: this.instanceType,
+            affinity: this.affinity,
             allocatePublicIp: this.allocatePublicIp,
             autoRenew: this.autoRenew,
             autoRenewPeriod: this.autoRenewPeriod,
+            creditSpecification: this.creditSpecification,
             dedicatedHostId: this.dedicatedHostId,
             deletionProtection: this.deletionProtection,
+            deploymentSetGroupNo: this.deploymentSetGroupNo,
             deploymentSetId: this.deploymentSetId,
             description: this.description,
             diskMappings: this.diskMappings,
             hostName: this.hostName,
             hpcClusterId: this.hpcClusterId,
+            httpEndpoint: this.httpEndpoint,
+            httpTokens: this.httpTokens,
+            imageFamily: this.imageFamily,
+            imageId: this.imageId,
             instanceChargeType: this.instanceChargeType,
             instanceName: this.instanceName,
             internetChargeType: this.internetChargeType,
@@ -5029,6 +5430,7 @@ export class RosInstance extends ros.RosResource {
             period: this.period,
             periodUnit: this.periodUnit,
             privateIpAddress: this.privateIpAddress,
+            privatePoolOptions: this.privatePoolOptions,
             ramRoleName: this.ramRoleName,
             resourceGroupId: this.resourceGroupId,
             securityEnhancementStrategy: this.securityEnhancementStrategy,
@@ -5038,12 +5440,16 @@ export class RosInstance extends ros.RosResource {
             spotInterruptionBehavior: this.spotInterruptionBehavior,
             spotPriceLimit: this.spotPriceLimit,
             spotStrategy: this.spotStrategy,
+            storageSetId: this.storageSetId,
+            storageSetPartitionNumber: this.storageSetPartitionNumber,
             systemDiskCategory: this.systemDiskCategory,
             systemDiskDescription: this.systemDiskDescription,
             systemDiskDiskName: this.systemDiskDiskName,
             systemDiskPerformanceLevel: this.systemDiskPerformanceLevel,
             systemDiskSize: this.systemDiskSize,
             tags: this.tags,
+            tenancy: this.tenancy,
+            useAdditionalService: this.useAdditionalService,
             userData: this.userData,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
@@ -5074,11 +5480,11 @@ export namespace RosInstance {
          */
         readonly description?: string | ros.IResolvable;
         /**
-         * @Property device: The device where the volume is exposed on the instance. could be /dev/xvd[a-z]. If not specification, will use default value.
+         * @Property device: The device where the volume is exposed on the instance. could be \/dev\/xvd[a-z]. If not specification, will use default value.
          */
         readonly device?: string | ros.IResolvable;
         /**
-         * @Property performanceLevel: The performance level of the enhanced SSD used as the Nth data disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+         * @Property performanceLevel: The performance level of the enhanced SSD used as the Nth data disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
          */
         readonly performanceLevel?: string | ros.IResolvable;
         /**
@@ -5138,6 +5544,61 @@ export namespace RosInstance {
     /**
      * @stability external
      */
+    export interface PrivatePoolOptionsProperty {
+        /**
+         * @Property matchCriteria: The type of the private pool to use to create the instance. A private pool is generated when an elasticity assurance or a capacity reservation takes effect. You can select a private pool when you create an instance. Valid values:
+     * - **Open**: open private pool. The system selects a matching open private pool to create the instance. If no matching private pools are found, resources in the public pool are used. When you set this parameter to Open, you can leave PrivatePoolOptions.Id empty.
+     * - **Target**: specified private pool. The system uses the capacity in a specified private pool to create the instance. If the specified private pool is unavailable, the instance cannot be created. If you set this parameter to Target, you must specify PrivatePoolOptions.Id.
+     * - **None**: no private pool. The capacity in private pools is not used.
+     * Default value: **None**.
+     * In the following scenarios, PrivatePoolOptions.MatchCriteria can be set only to **None** or left empty:
+     * - Create a preemptible instance.
+     * - Create an instance in the classic network.
+     * - Create an instance on a dedicated host.
+         */
+        readonly matchCriteria?: string | ros.IResolvable;
+        /**
+         * @Property id: The private pool ID. The ID of a private pool is the same as that of the elasticity assurance or capacity reservation for which the private pool is generated.
+         */
+        readonly id?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PrivatePoolOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PrivatePoolOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_PrivatePoolOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('matchCriteria', ros.validateString)(properties.matchCriteria));
+    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
+    return errors.wrap('supplied properties not correct for "PrivatePoolOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::Instance.PrivatePoolOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `PrivatePoolOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::Instance.PrivatePoolOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePrivatePoolOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_PrivatePoolOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      MatchCriteria: ros.stringToRosTemplate(properties.matchCriteria),
+      Id: ros.stringToRosTemplate(properties.id),
+    };
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
     export interface TagsProperty {
         /**
          * @Property value: undefined
@@ -5183,7 +5644,8 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::InstanceClone`
+ * Properties for defining a `RosInstanceClone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instanceclone
  */
 export interface RosInstanceCloneProps {
 
@@ -5415,18 +5877,15 @@ function rosInstanceClonePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::InstanceClone`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceClone`, which is used to clone an Elastic Compute Service (ECS) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceClone` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instanceclone
  */
 export class RosInstanceClone extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::InstanceClone";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HostName: Host name of created instance.
@@ -5575,8 +6034,6 @@ export class RosInstanceClone extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::InstanceClone`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5663,11 +6120,11 @@ export namespace RosInstanceClone {
          */
         readonly description?: string | ros.IResolvable;
         /**
-         * @Property device: The device where the volume is exposed on the instance. could be /dev/xvd[a-z]. If not specification, will use default value.
+         * @Property device: The device where the volume is exposed on the instance. could be \/dev\/xvd[a-z]. If not specification, will use default value.
          */
         readonly device?: string | ros.IResolvable;
         /**
-         * @Property performanceLevel: The performance level of the enhanced SSD used as the Nth data disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+         * @Property performanceLevel: The performance level of the enhanced SSD used as the Nth data disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
          */
         readonly performanceLevel?: string | ros.IResolvable;
         /**
@@ -5772,14 +6229,10 @@ function rosInstanceCloneTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::InstanceGroup`
+ * Properties for defining a `RosInstanceGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
 export interface RosInstanceGroupProps {
-
-    /**
-     * @Property imageId: Image ID to create ecs instance.
-     */
-    readonly imageId: string | ros.IResolvable;
 
     /**
      * @Property instanceType: Ecs instance supported instance type, make sure it should be correct.
@@ -5790,6 +6243,14 @@ export interface RosInstanceGroupProps {
      * @Property maxAmount: Max number of instances to create, should be bigger than 'MinAmount' and smaller than 1000.
      */
     readonly maxAmount: number | ros.IResolvable;
+
+    /**
+     * @Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host. Valid values:
+     * - **default**: does not associate the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance is automatically deployed to another dedicated host in the automatic deployment resource pool if the available resources of the original dedicated host are insufficient.
+     * - **host**: associates the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance remains on the original dedicated host. If the available resources of the original dedicated host are insufficient, the instance cannot start.
+     * Default value: **default**.
+     */
+    readonly affinity?: string | ros.IResolvable;
 
     /**
      * @Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip. If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
@@ -5812,6 +6273,13 @@ export interface RosInstanceGroupProps {
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
+     * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
+     * - **Standard**: the standard mode.
+     * - **Unlimited**: the unlimited mode.
+     */
+    readonly creditSpecification?: string | ros.IResolvable;
+
+    /**
      * @Property dedicatedHostId: which dedicated host will be deployed
      */
     readonly dedicatedHostId?: string | ros.IResolvable;
@@ -5820,6 +6288,11 @@ export interface RosInstanceGroupProps {
      * @Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
+     * @Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance. If the deployment set specified by **DeploymentSetId** uses the high availability group strategy (AvailabilityGroup), you can use **DeploymentSetGroupNo** to specify a deployment set group in the deployment set. Valid values: 1 to 7.
+     */
+    readonly deploymentSetGroupNo?: number | ros.IResolvable;
 
     /**
      * @Property deploymentSetId: Deployment set ID. The change of the property does not affect existing instances.
@@ -5861,6 +6334,34 @@ export interface RosInstanceGroupProps {
      * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.The change of the property does not affect existing instances.
      */
     readonly hpcClusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata. Valid values:
+     * - **enabled**
+     * - **disabled**
+     * Default value: **enabled**.
+     */
+    readonly httpEndpoint?: string | ros.IResolvable;
+
+    /**
+     * @Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata. Valid values:
+     * - **optional**: does not forcefully use the security-enhanced mode (IMDSv2).
+     * - **required**: forcefully uses the security-enhanced mode (IMDSv2). After you set this parameter to required, you cannot access instance metadata in normal mode.
+     * Default value: **optional**.
+     */
+    readonly httpTokens?: string | ros.IResolvable;
+
+    /**
+     * @Property imageFamily: The name of the image family. You can set this parameter to obtain the latest available custom image from the specified image family to create the instance.
+     * - **ImageFamily** must be empty if **ImageId** is specified.
+     * - **ImageFamily** can be specified if **ImageId** is not specified.
+     */
+    readonly imageFamily?: string | ros.IResolvable;
+
+    /**
+     * @Property imageId: Image ID to create ecs instance.
+     */
+    readonly imageId?: string | ros.IResolvable;
 
     /**
      * @Property instanceChargeType: Instance Charge type, allowed value: Prepaid and Postpaid. If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.Old instances will not be changed.
@@ -5952,7 +6453,7 @@ export interface RosInstanceGroupProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.Old instances will not be changed.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -5960,6 +6461,11 @@ export interface RosInstanceGroupProps {
      * @Property privateIpAddress: Private IP for the instance created. Only works for VPC instance and cannot duplicated with existing instance.
      */
     readonly privateIpAddress?: string | ros.IResolvable;
+
+    /**
+     * @Property privatePoolOptions: The options of the private pool.
+     */
+    readonly privatePoolOptions?: RosInstanceGroup.PrivatePoolOptionsProperty | ros.IResolvable;
 
     /**
      * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
@@ -5984,7 +6490,7 @@ export interface RosInstanceGroupProps {
     /**
      * @Property securityGroupIds: The IDs of security groups N to which the instance belongs. The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
      */
-    readonly securityGroupIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
@@ -6008,6 +6514,16 @@ export interface RosInstanceGroupProps {
      * @Property spotStrategy: The spot strategy of a Pay-As-You-Go instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Value range: "NoSpot: A regular Pay-As-You-Go instance", "SpotWithPriceLimit: A price threshold for a spot instance, ""SpotAsPriceGo: A price that is based on the highest Pay-As-You-Go instance. "Default value: NoSpot.
      */
     readonly spotStrategy?: string | ros.IResolvable;
+
+    /**
+     * @Property storageSetId: The storage set ID.
+     */
+    readonly storageSetId?: string | ros.IResolvable;
+
+    /**
+     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+     */
+    readonly storageSetPartitionNumber?: number | ros.IResolvable;
 
     /**
      * @Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
@@ -6056,7 +6572,7 @@ export interface RosInstanceGroupProps {
     readonly systemDiskKmsKeyId?: string | ros.IResolvable;
 
     /**
-     * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      */
     readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
 
@@ -6081,12 +6597,25 @@ export interface RosInstanceGroupProps {
     readonly tags?: RosInstanceGroup.TagsProperty[];
 
     /**
+     * @Property tenancy: Specifies whether to create the instance on a dedicated host. Valid values:
+     * - **default**: creates the instance on a non-dedicated host.
+     * - **host**: creates the instance on a dedicated host. If you do not specify **DedicatedHostId**, Alibaba Cloud selects a dedicated host for the instance.
+     * Default value: **default**.
+     */
+    readonly tenancy?: string | ros.IResolvable;
+
+    /**
      * @Property updatePolicy: Specify the policy at update. 
      * The value can be 'ForNewInstances' or 'ForAllInstances'.
      * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
      * The default is 'ForNewInstances'
      */
     readonly updatePolicy?: string | ros.IResolvable;
+
+    /**
+     * @Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud. System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
+     */
+    readonly useAdditionalService?: boolean | ros.IResolvable;
 
     /**
      * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -6145,10 +6674,12 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('systemDiskEncryptAlgorithm', ros.validateString)(properties.systemDiskEncryptAlgorithm));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
+    errors.collect(ros.propertyValidator('privatePoolOptions', RosInstanceGroup_PrivatePoolOptionsPropertyValidator)(properties.privatePoolOptions));
     errors.collect(ros.propertyValidator('systemDiskPerformanceLevel', ros.validateString)(properties.systemDiskPerformanceLevel));
-    errors.collect(ros.propertyValidator('imageId', ros.requiredValidator)(properties.imageId));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
     errors.collect(ros.propertyValidator('systemDiskDiskName', ros.validateString)(properties.systemDiskDiskName));
+    errors.collect(ros.propertyValidator('storageSetId', ros.validateString)(properties.storageSetId));
+    errors.collect(ros.propertyValidator('useAdditionalService', ros.validateBoolean)(properties.useAdditionalService));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -6176,6 +6707,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
     errors.collect(ros.propertyValidator('launchTemplateId', ros.validateString)(properties.launchTemplateId));
     if(properties.deletionProtection && (typeof properties.deletionProtection) !== 'object') {
         errors.collect(ros.propertyValidator('deletionProtection', ros.validateAllowedValues)({
@@ -6184,7 +6716,8 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
-    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateAny))(properties.securityGroupIds));
+    errors.collect(ros.propertyValidator('httpEndpoint', ros.validateString)(properties.httpEndpoint));
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
@@ -6192,8 +6725,8 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
-    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('spotInterruptionBehavior', ros.validateString)(properties.spotInterruptionBehavior));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('deploymentSetId', ros.validateString)(properties.deploymentSetId));
     if(properties.internetMaxBandwidthOut && (typeof properties.internetMaxBandwidthOut) !== 'object') {
         errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateRange)({
@@ -6211,6 +6744,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('launchTemplateVersion', ros.validateString)(properties.launchTemplateVersion));
+    errors.collect(ros.propertyValidator('affinity', ros.validateString)(properties.affinity));
     if(properties.securityEnhancementStrategy && (typeof properties.securityEnhancementStrategy) !== 'object') {
         errors.collect(ros.propertyValidator('securityEnhancementStrategy', ros.validateAllowedValues)({
           data: properties.securityEnhancementStrategy,
@@ -6226,6 +6760,7 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('tenancy', ros.validateString)(properties.tenancy));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     if(properties.diskMappings && (Array.isArray(properties.diskMappings) || (typeof properties.diskMappings) === 'string')) {
@@ -6253,6 +6788,14 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('autoRenew', ros.validateString)(properties.autoRenew));
     errors.collect(ros.propertyValidator('spotDuration', ros.validateNumber)(properties.spotDuration));
+    if(properties.storageSetPartitionNumber && (typeof properties.storageSetPartitionNumber) !== 'object') {
+        errors.collect(ros.propertyValidator('storageSetPartitionNumber', ros.validateRange)({
+            data: properties.storageSetPartitionNumber,
+            min: 2,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('storageSetPartitionNumber', ros.validateNumber)(properties.storageSetPartitionNumber));
     if(properties.ipv6Addresses && (Array.isArray(properties.ipv6Addresses) || (typeof properties.ipv6Addresses) === 'string')) {
         errors.collect(ros.propertyValidator('ipv6Addresses', ros.validateLength)({
             data: properties.ipv6Addresses.length,
@@ -6325,7 +6868,16 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('hpcClusterId', ros.validateString)(properties.hpcClusterId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    if(properties.deploymentSetGroupNo && (typeof properties.deploymentSetGroupNo) !== 'object') {
+        errors.collect(ros.propertyValidator('deploymentSetGroupNo', ros.validateRange)({
+            data: properties.deploymentSetGroupNo,
+            min: 1,
+            max: 7,
+          }));
+    }
+    errors.collect(ros.propertyValidator('deploymentSetGroupNo', ros.validateNumber)(properties.deploymentSetGroupNo));
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
+    errors.collect(ros.propertyValidator('systemDiskBurstingEnabled', ros.validateBoolean)(properties.systemDiskBurstingEnabled));
     if(properties.eniMappings && (Array.isArray(properties.eniMappings) || (typeof properties.eniMappings) === 'string')) {
         errors.collect(ros.propertyValidator('eniMappings', ros.validateLength)({
             data: properties.eniMappings.length,
@@ -6334,7 +6886,8 @@ function RosInstanceGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('eniMappings', ros.listValidator(RosInstanceGroup_EniMappingsPropertyValidator))(properties.eniMappings));
-    errors.collect(ros.propertyValidator('systemDiskBurstingEnabled', ros.validateBoolean)(properties.systemDiskBurstingEnabled));
+    errors.collect(ros.propertyValidator('httpTokens', ros.validateString)(properties.httpTokens));
+    errors.collect(ros.propertyValidator('creditSpecification', ros.validateString)(properties.creditSpecification));
     return errors.wrap('supplied properties not correct for "RosInstanceGroupProps"');
 }
 
@@ -6352,21 +6905,27 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
         RosInstanceGroupPropsValidator(properties).assertSuccess();
     }
     return {
-      ImageId: ros.stringToRosTemplate(properties.imageId),
       InstanceType: ros.stringToRosTemplate(properties.instanceType),
       MaxAmount: ros.numberToRosTemplate(properties.maxAmount),
+      Affinity: ros.stringToRosTemplate(properties.affinity),
       AllocatePublicIP: ros.booleanToRosTemplate(properties.allocatePublicIp),
       AutoReleaseTime: ros.stringToRosTemplate(properties.autoReleaseTime),
       AutoRenew: ros.stringToRosTemplate(properties.autoRenew),
       AutoRenewPeriod: ros.numberToRosTemplate(properties.autoRenewPeriod),
+      CreditSpecification: ros.stringToRosTemplate(properties.creditSpecification),
       DedicatedHostId: ros.stringToRosTemplate(properties.dedicatedHostId),
       DeletionProtection: ros.booleanToRosTemplate(properties.deletionProtection),
+      DeploymentSetGroupNo: ros.numberToRosTemplate(properties.deploymentSetGroupNo),
       DeploymentSetId: ros.stringToRosTemplate(properties.deploymentSetId),
       Description: ros.stringToRosTemplate(properties.description),
       DiskMappings: ros.listMapper(rosInstanceGroupDiskMappingsPropertyToRosTemplate)(properties.diskMappings),
       EniMappings: ros.listMapper(rosInstanceGroupEniMappingsPropertyToRosTemplate)(properties.eniMappings),
       HostName: ros.stringToRosTemplate(properties.hostName),
       HpcClusterId: ros.stringToRosTemplate(properties.hpcClusterId),
+      HttpEndpoint: ros.stringToRosTemplate(properties.httpEndpoint),
+      HttpTokens: ros.stringToRosTemplate(properties.httpTokens),
+      ImageFamily: ros.stringToRosTemplate(properties.imageFamily),
+      ImageId: ros.stringToRosTemplate(properties.imageId),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
@@ -6384,15 +6943,18 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       Period: ros.numberToRosTemplate(properties.period),
       PeriodUnit: ros.stringToRosTemplate(properties.periodUnit),
       PrivateIpAddress: ros.stringToRosTemplate(properties.privateIpAddress),
+      PrivatePoolOptions: rosInstanceGroupPrivatePoolOptionsPropertyToRosTemplate(properties.privatePoolOptions),
       RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityEnhancementStrategy: ros.stringToRosTemplate(properties.securityEnhancementStrategy),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SecurityGroupIds: ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
+      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
       SpotDuration: ros.numberToRosTemplate(properties.spotDuration),
       SpotInterruptionBehavior: ros.stringToRosTemplate(properties.spotInterruptionBehavior),
       SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
+      StorageSetId: ros.stringToRosTemplate(properties.storageSetId),
+      StorageSetPartitionNumber: ros.numberToRosTemplate(properties.storageSetPartitionNumber),
       SystemDiskAutoSnapshotPolicyId: ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
       SystemDiskBurstingEnabled: ros.booleanToRosTemplate(properties.systemDiskBurstingEnabled),
       SystemDiskCategory: ros.stringToRosTemplate(properties.systemDiskCategory),
@@ -6406,7 +6968,9 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
       SystemDiskSize: ros.numberToRosTemplate(properties.systemDiskSize),
       SystemDiskStorageClusterId: ros.stringToRosTemplate(properties.systemDiskStorageClusterId),
       Tags: ros.listMapper(rosInstanceGroupTagsPropertyToRosTemplate)(properties.tags),
+      Tenancy: ros.stringToRosTemplate(properties.tenancy),
       UpdatePolicy: ros.stringToRosTemplate(properties.updatePolicy),
+      UseAdditionalService: ros.booleanToRosTemplate(properties.useAdditionalService),
       UserData: ros.stringToRosTemplate(properties.userData),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -6416,18 +6980,15 @@ function rosInstanceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::InstanceGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroup`, which is used to create a group of Elastic Compute Service (ECS) instances that have the same configurations.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
 export class RosInstanceGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::InstanceGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HostNames: Host names of created instances.
@@ -6478,11 +7039,6 @@ export class RosInstanceGroup extends ros.RosResource {
 
 
     /**
-     * @Property imageId: Image ID to create ecs instance.
-     */
-    public imageId: string | ros.IResolvable;
-
-    /**
      * @Property instanceType: Ecs instance supported instance type, make sure it should be correct.
      */
     public instanceType: string | ros.IResolvable;
@@ -6491,6 +7047,14 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Property maxAmount: Max number of instances to create, should be bigger than 'MinAmount' and smaller than 1000.
      */
     public maxAmount: number | ros.IResolvable;
+
+    /**
+     * @Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host. Valid values:
+     * - **default**: does not associate the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance is automatically deployed to another dedicated host in the automatic deployment resource pool if the available resources of the original dedicated host are insufficient.
+     * - **host**: associates the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance remains on the original dedicated host. If the available resources of the original dedicated host are insufficient, the instance cannot start.
+     * Default value: **default**.
+     */
+    public affinity: string | ros.IResolvable | undefined;
 
     /**
      * @Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip. If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
@@ -6513,6 +7077,13 @@ export class RosInstanceGroup extends ros.RosResource {
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 
     /**
+     * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
+     * - **Standard**: the standard mode.
+     * - **Unlimited**: the unlimited mode.
+     */
+    public creditSpecification: string | ros.IResolvable | undefined;
+
+    /**
      * @Property dedicatedHostId: which dedicated host will be deployed
      */
     public dedicatedHostId: string | ros.IResolvable | undefined;
@@ -6521,6 +7092,11 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
      */
     public deletionProtection: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance. If the deployment set specified by **DeploymentSetId** uses the high availability group strategy (AvailabilityGroup), you can use **DeploymentSetGroupNo** to specify a deployment set group in the deployment set. Valid values: 1 to 7.
+     */
+    public deploymentSetGroupNo: number | ros.IResolvable | undefined;
 
     /**
      * @Property deploymentSetId: Deployment set ID. The change of the property does not affect existing instances.
@@ -6562,6 +7138,34 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Property hpcClusterId: The HPC cluster ID to which the instance belongs.The change of the property does not affect existing instances.
      */
     public hpcClusterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata. Valid values:
+     * - **enabled**
+     * - **disabled**
+     * Default value: **enabled**.
+     */
+    public httpEndpoint: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata. Valid values:
+     * - **optional**: does not forcefully use the security-enhanced mode (IMDSv2).
+     * - **required**: forcefully uses the security-enhanced mode (IMDSv2). After you set this parameter to required, you cannot access instance metadata in normal mode.
+     * Default value: **optional**.
+     */
+    public httpTokens: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageFamily: The name of the image family. You can set this parameter to obtain the latest available custom image from the specified image family to create the instance.
+     * - **ImageFamily** must be empty if **ImageId** is specified.
+     * - **ImageFamily** can be specified if **ImageId** is not specified.
+     */
+    public imageFamily: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property imageId: Image ID to create ecs instance.
+     */
+    public imageId: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceChargeType: Instance Charge type, allowed value: Prepaid and Postpaid. If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.Old instances will not be changed.
@@ -6653,7 +7257,7 @@ export class RosInstanceGroup extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.Old instances will not be changed.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -6661,6 +7265,11 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Property privateIpAddress: Private IP for the instance created. Only works for VPC instance and cannot duplicated with existing instance.
      */
     public privateIpAddress: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property privatePoolOptions: The options of the private pool.
+     */
+    public privatePoolOptions: RosInstanceGroup.PrivatePoolOptionsProperty | ros.IResolvable | undefined;
 
     /**
      * @Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
@@ -6685,7 +7294,7 @@ export class RosInstanceGroup extends ros.RosResource {
     /**
      * @Property securityGroupIds: The IDs of security groups N to which the instance belongs. The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
      */
-    public securityGroupIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
@@ -6709,6 +7318,16 @@ export class RosInstanceGroup extends ros.RosResource {
      * @Property spotStrategy: The spot strategy of a Pay-As-You-Go instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Value range: "NoSpot: A regular Pay-As-You-Go instance", "SpotWithPriceLimit: A price threshold for a spot instance, ""SpotAsPriceGo: A price that is based on the highest Pay-As-You-Go instance. "Default value: NoSpot.
      */
     public spotStrategy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageSetId: The storage set ID.
+     */
+    public storageSetId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+     */
+    public storageSetPartitionNumber: number | ros.IResolvable | undefined;
 
     /**
      * @Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
@@ -6757,7 +7376,7 @@ export class RosInstanceGroup extends ros.RosResource {
     public systemDiskKmsKeyId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * @Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      */
     public systemDiskPerformanceLevel: string | ros.IResolvable | undefined;
 
@@ -6782,12 +7401,25 @@ export class RosInstanceGroup extends ros.RosResource {
     public tags: RosInstanceGroup.TagsProperty[] | undefined;
 
     /**
+     * @Property tenancy: Specifies whether to create the instance on a dedicated host. Valid values:
+     * - **default**: creates the instance on a non-dedicated host.
+     * - **host**: creates the instance on a dedicated host. If you do not specify **DedicatedHostId**, Alibaba Cloud selects a dedicated host for the instance.
+     * Default value: **default**.
+     */
+    public tenancy: string | ros.IResolvable | undefined;
+
+    /**
      * @Property updatePolicy: Specify the policy at update. 
      * The value can be 'ForNewInstances' or 'ForAllInstances'.
      * If UpdatePolicy is 'ForAllInstance', The updatable parameters are InstanceType, ImageId, SystemDiskSize, SystemDiskCategory, Password, UserData,InternetChargeType, InternetMaxBandwidthOut, InternetMaxBandwidthIn.
      * The default is 'ForNewInstances'
      */
     public updatePolicy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud. System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
+     */
+    public useAdditionalService: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -6817,8 +7449,6 @@ export class RosInstanceGroup extends ros.RosResource {
     public zoneIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::InstanceGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -6836,21 +7466,27 @@ export class RosInstanceGroup extends ros.RosResource {
         this.attrZoneIds = this.getAtt('ZoneIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.imageId = props.imageId;
         this.instanceType = props.instanceType;
         this.maxAmount = props.maxAmount;
+        this.affinity = props.affinity;
         this.allocatePublicIp = props.allocatePublicIp;
         this.autoReleaseTime = props.autoReleaseTime;
         this.autoRenew = props.autoRenew;
         this.autoRenewPeriod = props.autoRenewPeriod;
+        this.creditSpecification = props.creditSpecification;
         this.dedicatedHostId = props.dedicatedHostId;
         this.deletionProtection = props.deletionProtection;
+        this.deploymentSetGroupNo = props.deploymentSetGroupNo;
         this.deploymentSetId = props.deploymentSetId;
         this.description = props.description;
         this.diskMappings = props.diskMappings;
         this.eniMappings = props.eniMappings;
         this.hostName = props.hostName;
         this.hpcClusterId = props.hpcClusterId;
+        this.httpEndpoint = props.httpEndpoint;
+        this.httpTokens = props.httpTokens;
+        this.imageFamily = props.imageFamily;
+        this.imageId = props.imageId;
         this.instanceChargeType = props.instanceChargeType;
         this.instanceName = props.instanceName;
         this.internetChargeType = props.internetChargeType;
@@ -6868,6 +7504,7 @@ export class RosInstanceGroup extends ros.RosResource {
         this.period = props.period;
         this.periodUnit = props.periodUnit;
         this.privateIpAddress = props.privateIpAddress;
+        this.privatePoolOptions = props.privatePoolOptions;
         this.ramRoleName = props.ramRoleName;
         this.resourceGroupId = props.resourceGroupId;
         this.securityEnhancementStrategy = props.securityEnhancementStrategy;
@@ -6877,6 +7514,8 @@ export class RosInstanceGroup extends ros.RosResource {
         this.spotInterruptionBehavior = props.spotInterruptionBehavior;
         this.spotPriceLimit = props.spotPriceLimit;
         this.spotStrategy = props.spotStrategy;
+        this.storageSetId = props.storageSetId;
+        this.storageSetPartitionNumber = props.storageSetPartitionNumber;
         this.systemDiskAutoSnapshotPolicyId = props.systemDiskAutoSnapshotPolicyId;
         this.systemDiskBurstingEnabled = props.systemDiskBurstingEnabled;
         this.systemDiskCategory = props.systemDiskCategory;
@@ -6890,7 +7529,9 @@ export class RosInstanceGroup extends ros.RosResource {
         this.systemDiskSize = props.systemDiskSize;
         this.systemDiskStorageClusterId = props.systemDiskStorageClusterId;
         this.tags = props.tags;
+        this.tenancy = props.tenancy;
         this.updatePolicy = props.updatePolicy;
+        this.useAdditionalService = props.useAdditionalService;
         this.userData = props.userData;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
@@ -6901,21 +7542,27 @@ export class RosInstanceGroup extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            imageId: this.imageId,
             instanceType: this.instanceType,
             maxAmount: this.maxAmount,
+            affinity: this.affinity,
             allocatePublicIp: this.allocatePublicIp,
             autoReleaseTime: this.autoReleaseTime,
             autoRenew: this.autoRenew,
             autoRenewPeriod: this.autoRenewPeriod,
+            creditSpecification: this.creditSpecification,
             dedicatedHostId: this.dedicatedHostId,
             deletionProtection: this.deletionProtection,
+            deploymentSetGroupNo: this.deploymentSetGroupNo,
             deploymentSetId: this.deploymentSetId,
             description: this.description,
             diskMappings: this.diskMappings,
             eniMappings: this.eniMappings,
             hostName: this.hostName,
             hpcClusterId: this.hpcClusterId,
+            httpEndpoint: this.httpEndpoint,
+            httpTokens: this.httpTokens,
+            imageFamily: this.imageFamily,
+            imageId: this.imageId,
             instanceChargeType: this.instanceChargeType,
             instanceName: this.instanceName,
             internetChargeType: this.internetChargeType,
@@ -6933,6 +7580,7 @@ export class RosInstanceGroup extends ros.RosResource {
             period: this.period,
             periodUnit: this.periodUnit,
             privateIpAddress: this.privateIpAddress,
+            privatePoolOptions: this.privatePoolOptions,
             ramRoleName: this.ramRoleName,
             resourceGroupId: this.resourceGroupId,
             securityEnhancementStrategy: this.securityEnhancementStrategy,
@@ -6942,6 +7590,8 @@ export class RosInstanceGroup extends ros.RosResource {
             spotInterruptionBehavior: this.spotInterruptionBehavior,
             spotPriceLimit: this.spotPriceLimit,
             spotStrategy: this.spotStrategy,
+            storageSetId: this.storageSetId,
+            storageSetPartitionNumber: this.storageSetPartitionNumber,
             systemDiskAutoSnapshotPolicyId: this.systemDiskAutoSnapshotPolicyId,
             systemDiskBurstingEnabled: this.systemDiskBurstingEnabled,
             systemDiskCategory: this.systemDiskCategory,
@@ -6955,7 +7605,9 @@ export class RosInstanceGroup extends ros.RosResource {
             systemDiskSize: this.systemDiskSize,
             systemDiskStorageClusterId: this.systemDiskStorageClusterId,
             tags: this.tags,
+            tenancy: this.tenancy,
             updatePolicy: this.updatePolicy,
+            useAdditionalService: this.useAdditionalService,
             userData: this.userData,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
@@ -7001,11 +7653,11 @@ export namespace RosInstanceGroup {
          */
         readonly encrypted?: string | ros.IResolvable;
         /**
-         * @Property device: The device where the volume is exposed on the instance. could be /dev/xvd[a-z]. If not specification, will use default value.
+         * @Property device: The device where the volume is exposed on the instance. could be \/dev\/xvd[a-z]. If not specification, will use default value.
          */
         readonly device?: string | ros.IResolvable;
         /**
-         * @Property performanceLevel: The performance level of the enhanced SSD used as the Nth data disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+         * @Property performanceLevel: The performance level of the enhanced SSD used as the Nth data disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
          */
         readonly performanceLevel?: string | ros.IResolvable;
         /**
@@ -7222,6 +7874,61 @@ export namespace RosInstanceGroup {
     /**
      * @stability external
      */
+    export interface PrivatePoolOptionsProperty {
+        /**
+         * @Property matchCriteria: The type of the private pool to use to create the instance. A private pool is generated when an elasticity assurance or a capacity reservation takes effect. You can select a private pool when you create an instance. Valid values:
+     * - **Open**: open private pool. The system selects a matching open private pool to create the instance. If no matching private pools are found, resources in the public pool are used. When you set this parameter to Open, you can leave PrivatePoolOptions.Id empty.
+     * - **Target**: specified private pool. The system uses the capacity in a specified private pool to create the instance. If the specified private pool is unavailable, the instance cannot be created. If you set this parameter to Target, you must specify PrivatePoolOptions.Id.
+     * - **None**: no private pool. The capacity in private pools is not used.
+     * Default value: **None**.
+     * In the following scenarios, PrivatePoolOptions.MatchCriteria can be set only to **None** or left empty:
+     * - Create a preemptible instance.
+     * - Create an instance in the classic network.
+     * - Create an instance on a dedicated host.
+         */
+        readonly matchCriteria?: string | ros.IResolvable;
+        /**
+         * @Property id: The private pool ID. The ID of a private pool is the same as that of the elasticity assurance or capacity reservation for which the private pool is generated.
+         */
+        readonly id?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PrivatePoolOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PrivatePoolOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstanceGroup_PrivatePoolOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('matchCriteria', ros.validateString)(properties.matchCriteria));
+    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
+    return errors.wrap('supplied properties not correct for "PrivatePoolOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::InstanceGroup.PrivatePoolOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `PrivatePoolOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::InstanceGroup.PrivatePoolOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceGroupPrivatePoolOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstanceGroup_PrivatePoolOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      MatchCriteria: ros.stringToRosTemplate(properties.matchCriteria),
+      Id: ros.stringToRosTemplate(properties.id),
+    };
+}
+
+export namespace RosInstanceGroup {
+    /**
+     * @stability external
+     */
     export interface TagsProperty {
         /**
          * @Property value: undefined
@@ -7267,7 +7974,8 @@ function rosInstanceGroupTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::InstanceGroupClone`
+ * Properties for defining a `RosInstanceGroupClone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
 export interface RosInstanceGroupCloneProps {
 
@@ -7417,7 +8125,7 @@ export interface RosInstanceGroupCloneProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.Old instances will not be changed.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -7439,7 +8147,7 @@ export interface RosInstanceGroupCloneProps {
     /**
      * @Property securityGroupIds: The IDs of security groups N to which the instance belongs. The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
      */
-    readonly securityGroupIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
@@ -7664,7 +8372,7 @@ function RosInstanceGroupClonePropsValidator(properties: any): ros.ValidationRes
         }));
     }
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
-    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateAny))(properties.securityGroupIds));
+    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     errors.collect(ros.propertyValidator('loadBalancerIdToAttach', ros.validateString)(properties.loadBalancerIdToAttach));
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
@@ -7756,7 +8464,7 @@ function rosInstanceGroupClonePropsToRosTemplate(properties: any, enableResource
       RamRoleName: ros.stringToRosTemplate(properties.ramRoleName),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
-      SecurityGroupIds: ros.listMapper(ros.objectToRosTemplate)(properties.securityGroupIds),
+      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
       SpotPriceLimit: ros.stringToRosTemplate(properties.spotPriceLimit),
       SpotStrategy: ros.stringToRosTemplate(properties.spotStrategy),
       SystemDiskAutoSnapshotPolicyId: ros.stringToRosTemplate(properties.systemDiskAutoSnapshotPolicyId),
@@ -7776,18 +8484,15 @@ function rosInstanceGroupClonePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::InstanceGroupClone`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroupClone`, which is used to create clones of an Elastic Compute Service (ECS) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InstanceGroupClone` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
 export class RosInstanceGroupClone extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::InstanceGroupClone";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HostNames: Host names of created instances.
@@ -7983,7 +8688,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
+     * @Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.Old instances will not be changed.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -8005,7 +8710,7 @@ export class RosInstanceGroupClone extends ros.RosResource {
     /**
      * @Property securityGroupIds: The IDs of security groups N to which the instance belongs. The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
      */
-    public securityGroupIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
@@ -8094,8 +8799,6 @@ export class RosInstanceGroupClone extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::InstanceGroupClone`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -8250,11 +8953,11 @@ export namespace RosInstanceGroupClone {
          */
         readonly encrypted?: string | ros.IResolvable;
         /**
-         * @Property device: The device where the volume is exposed on the instance. could be /dev/xvd[a-z]. If not specification, will use default value.
+         * @Property device: The device where the volume is exposed on the instance. could be \/dev\/xvd[a-z]. If not specification, will use default value.
          */
         readonly device?: string | ros.IResolvable;
         /**
-         * @Property performanceLevel: The performance level of the enhanced SSD used as the Nth data disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+         * @Property performanceLevel: The performance level of the enhanced SSD used as the Nth data disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
          */
         readonly performanceLevel?: string | ros.IResolvable;
         /**
@@ -8516,7 +9219,8 @@ function rosInstanceGroupCloneTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::Invocation`
+ * Properties for defining a `RosInvocation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */
 export interface RosInvocationProps {
 
@@ -8536,6 +9240,25 @@ export interface RosInvocationProps {
     readonly commandName?: string | ros.IResolvable;
 
     /**
+     * @Property containerId: The ID of the container. Only 64-bit hexadecimal strings are supported. You can use container IDs that are prefixed with docker:\/\/, containerd:\/\/, or cri-o:\/\/ to specify container runtimes.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.- If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    readonly containerId?: string | ros.IResolvable;
+
+    /**
+     * @Property containerName: The name of the container.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.
+     * - If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    readonly containerName?: string | ros.IResolvable;
+
+    /**
      * @Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
      */
     readonly frequency?: string | ros.IResolvable;
@@ -8552,14 +9275,54 @@ export interface RosInvocationProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * @Property repeatMode: Specifies how to run the command. Valid values:
+     * - **Once**: immediately runs the command.
+     * - **Period**: runs the command on a schedule. If you set this parameter to Period, you must specify **Frequency**.
+     * - **NextRebootOnly**: runs the command the next time the instance is started.
+     * - **EveryReboot*: runs the command every time the instance is started.
+     * Default value:
+     * - If you do not specify Frequency, the default value is Once.
+     * - If you specify **Frequency**, **Period** is used as the value of RepeatMode regardless of whether RepeatMode is set to Period.
+     */
+    readonly repeatMode?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which to assign the command executions. The instances specified by InstanceIds must belong to the specified resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property sync: Whether to invoke synchronously.
      */
     readonly sync?: boolean | ros.IResolvable;
 
     /**
-     * @Property timed: Whether it is timed execution. Default is False.
+     * @Property tags: Tags to attach to invocation. Max support 20 tags to add during create invocation. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly timed?: boolean | ros.IResolvable;
+    readonly tags?: RosInvocation.TagsProperty[];
+
+    /**
+     * @Property timeout: The timeout period for the command execution. Unit: seconds.
+     * - The timeout period cannot be less than 10 seconds.
+     * - A timeout error occurs if the command cannot be run because the process slows down or because a specific module or Cloud Assistant Agent does not exist. When the specified timeout period ends, the command process is forcefully terminated.
+     * - If you do not specify this parameter, the timeout period that is specified when the command is created is used.
+     * - This timeout period is applicable only to this execution. The timeout period of the command is not modified.
+     */
+    readonly timeout?: number | ros.IResolvable;
+
+    /**
+     * @Property username: The username to use to run the command on instances. The username can be up to 255 characters in length.
+     * - For Linux instances, the root username is used by default.
+     * - For Windows instances, the System username is used by default.
+     * You can also specify other usernames that already exist in the instances to run the command. For security purposes, we recommend that you run Cloud Assistant commands as a regular user.
+     */
+    readonly username?: string | ros.IResolvable;
+
+    /**
+     * @Property windowsPasswordName: The name of the password to use to run the command on Windows instances. The name can be up to 255 characters in length.
+     * If you do not want to use the default System user to run the command on Windows instances, specify both **WindowsPasswordName** and **Username**. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
+     */
+    readonly windowsPasswordName?: string | ros.IResolvable;
 }
 
 /**
@@ -8573,7 +9336,34 @@ function RosInvocationPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
-    errors.collect(ros.propertyValidator('timed', ros.validateBoolean)(properties.timed));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.timeout && (typeof properties.timeout) !== 'object') {
+        errors.collect(ros.propertyValidator('timeout', ros.validateRange)({
+            data: properties.timeout,
+            min: 10,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
+    if(properties.windowsPasswordName && (Array.isArray(properties.windowsPasswordName) || (typeof properties.windowsPasswordName) === 'string')) {
+        errors.collect(ros.propertyValidator('windowsPasswordName', ros.validateLength)({
+            data: properties.windowsPasswordName.length,
+            min: undefined,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('windowsPasswordName', ros.validateString)(properties.windowsPasswordName));
+    errors.collect(ros.propertyValidator('repeatMode', ros.validateString)(properties.repeatMode));
+    if(properties.username && (Array.isArray(properties.username) || (typeof properties.username) === 'string')) {
+        errors.collect(ros.propertyValidator('username', ros.validateLength)({
+            data: properties.username.length,
+            min: undefined,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
+    errors.collect(ros.propertyValidator('containerName', ros.validateString)(properties.containerName));
+    errors.collect(ros.propertyValidator('containerId', ros.validateString)(properties.containerId));
     errors.collect(ros.propertyValidator('frequency', ros.validateString)(properties.frequency));
     errors.collect(ros.propertyValidator('commandName', ros.validateString)(properties.commandName));
     errors.collect(ros.propertyValidator('commandId', ros.validateString)(properties.commandId));
@@ -8587,6 +9377,14 @@ function RosInvocationPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateAny))(properties.instanceIds));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInvocation_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosInvocationProps"');
 }
 
@@ -8607,26 +9405,30 @@ function rosInvocationPropsToRosTemplate(properties: any, enableResourceProperty
       InstanceIds: ros.listMapper(ros.objectToRosTemplate)(properties.instanceIds),
       CommandId: ros.stringToRosTemplate(properties.commandId),
       CommandName: ros.stringToRosTemplate(properties.commandName),
+      ContainerId: ros.stringToRosTemplate(properties.containerId),
+      ContainerName: ros.stringToRosTemplate(properties.containerName),
       Frequency: ros.stringToRosTemplate(properties.frequency),
       Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      RepeatMode: ros.stringToRosTemplate(properties.repeatMode),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Sync: ros.booleanToRosTemplate(properties.sync),
-      Timed: ros.booleanToRosTemplate(properties.timed),
+      Tags: ros.listMapper(rosInvocationTagsPropertyToRosTemplate)(properties.tags),
+      Timeout: ros.numberToRosTemplate(properties.timeout),
+      Username: ros.stringToRosTemplate(properties.username),
+      WindowsPasswordName: ros.stringToRosTemplate(properties.windowsPasswordName),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::Invocation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Invocation`, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Invocation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-invocation
  */
 export class RosInvocation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::Invocation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InvokeId: The id of command execution.
@@ -8662,6 +9464,25 @@ export class RosInvocation extends ros.RosResource {
     public commandName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property containerId: The ID of the container. Only 64-bit hexadecimal strings are supported. You can use container IDs that are prefixed with docker:\/\/, containerd:\/\/, or cri-o:\/\/ to specify container runtimes.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.- If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    public containerId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property containerName: The name of the container.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.
+     * - If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    public containerName: string | ros.IResolvable | undefined;
+
+    /**
      * @Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
      */
     public frequency: string | ros.IResolvable | undefined;
@@ -8678,18 +9499,56 @@ export class RosInvocation extends ros.RosResource {
     public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
+     * @Property repeatMode: Specifies how to run the command. Valid values:
+     * - **Once**: immediately runs the command.
+     * - **Period**: runs the command on a schedule. If you set this parameter to Period, you must specify **Frequency**.
+     * - **NextRebootOnly**: runs the command the next time the instance is started.
+     * - **EveryReboot*: runs the command every time the instance is started.
+     * Default value:
+     * - If you do not specify Frequency, the default value is Once.
+     * - If you specify **Frequency**, **Period** is used as the value of RepeatMode regardless of whether RepeatMode is set to Period.
+     */
+    public repeatMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which to assign the command executions. The instances specified by InstanceIds must belong to the specified resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property sync: Whether to invoke synchronously.
      */
     public sync: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property timed: Whether it is timed execution. Default is False.
+     * @Property tags: Tags to attach to invocation. Max support 20 tags to add during create invocation. Each tag with two properties Key and Value, and Key is required.
      */
-    public timed: boolean | ros.IResolvable | undefined;
+    public tags: RosInvocation.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::Invocation`.
-     *
+     * @Property timeout: The timeout period for the command execution. Unit: seconds.
+     * - The timeout period cannot be less than 10 seconds.
+     * - A timeout error occurs if the command cannot be run because the process slows down or because a specific module or Cloud Assistant Agent does not exist. When the specified timeout period ends, the command process is forcefully terminated.
+     * - If you do not specify this parameter, the timeout period that is specified when the command is created is used.
+     * - This timeout period is applicable only to this execution. The timeout period of the command is not modified.
+     */
+    public timeout: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property username: The username to use to run the command on instances. The username can be up to 255 characters in length.
+     * - For Linux instances, the root username is used by default.
+     * - For Windows instances, the System username is used by default.
+     * You can also specify other usernames that already exist in the instances to run the command. For security purposes, we recommend that you run Cloud Assistant commands as a regular user.
+     */
+    public username: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property windowsPasswordName: The name of the password to use to run the command on Windows instances. The name can be up to 255 characters in length.
+     * If you do not want to use the default System user to run the command on Windows instances, specify both **WindowsPasswordName** and **Username**. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
+     */
+    public windowsPasswordName: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -8704,10 +9563,17 @@ export class RosInvocation extends ros.RosResource {
         this.instanceIds = props.instanceIds;
         this.commandId = props.commandId;
         this.commandName = props.commandName;
+        this.containerId = props.containerId;
+        this.containerName = props.containerName;
         this.frequency = props.frequency;
         this.parameters = props.parameters;
+        this.repeatMode = props.repeatMode;
+        this.resourceGroupId = props.resourceGroupId;
         this.sync = props.sync;
-        this.timed = props.timed;
+        this.tags = props.tags;
+        this.timeout = props.timeout;
+        this.username = props.username;
+        this.windowsPasswordName = props.windowsPasswordName;
     }
 
 
@@ -8716,10 +9582,17 @@ export class RosInvocation extends ros.RosResource {
             instanceIds: this.instanceIds,
             commandId: this.commandId,
             commandName: this.commandName,
+            containerId: this.containerId,
+            containerName: this.containerName,
             frequency: this.frequency,
             parameters: this.parameters,
+            repeatMode: this.repeatMode,
+            resourceGroupId: this.resourceGroupId,
             sync: this.sync,
-            timed: this.timed,
+            tags: this.tags,
+            timeout: this.timeout,
+            username: this.username,
+            windowsPasswordName: this.windowsPasswordName,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -8727,8 +9600,57 @@ export class RosInvocation extends ros.RosResource {
     }
 }
 
+export namespace RosInvocation {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
 /**
- * Properties for defining a `ALIYUN::ECS::JoinSecurityGroup`
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInvocation_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECS::Invocation.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECS::Invocation.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosInvocationTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInvocation_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosJoinSecurityGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-joinsecuritygroup
  */
 export interface RosJoinSecurityGroupProps {
 
@@ -8793,18 +9715,15 @@ function rosJoinSecurityGroupPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::JoinSecurityGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::JoinSecurityGroup`, which is used to add one or more ECS instances to a specified security group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `JoinSecurityGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-joinsecuritygroup
  */
 export class RosJoinSecurityGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::JoinSecurityGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -8830,8 +9749,6 @@ export class RosJoinSecurityGroup extends ros.RosResource {
     public networkInterfaceList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::JoinSecurityGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -8861,7 +9778,8 @@ export class RosJoinSecurityGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::LaunchTemplate`
+ * Properties for defining a `RosLaunchTemplate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
  */
 export interface RosLaunchTemplateProps {
 
@@ -9048,10 +9966,10 @@ export interface RosLaunchTemplateProps {
 
     /**
      * @Property systemDiskPerformanceLevel: The performance level of the ESSD that is used as the system disk. Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
      */
     readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
 
@@ -9310,18 +10228,15 @@ function rosLaunchTemplatePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::LaunchTemplate`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::LaunchTemplate`, which is used to create a launch template. You can use a launch template to create an Elastic Compute Service (ECS) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `LaunchTemplate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-launchtemplate
  */
 export class RosLaunchTemplate extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::LaunchTemplate";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DefaultVersionNumber: The default version number of launch template.
@@ -9529,10 +10444,10 @@ export class RosLaunchTemplate extends ros.RosResource {
 
     /**
      * @Property systemDiskPerformanceLevel: The performance level of the ESSD that is used as the system disk. Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
      */
     public systemDiskPerformanceLevel: string | ros.IResolvable | undefined;
 
@@ -9577,8 +10492,6 @@ export class RosLaunchTemplate extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::LaunchTemplate`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -9710,10 +10623,10 @@ export namespace RosLaunchTemplate {
         readonly encrypted?: boolean | ros.IResolvable;
         /**
          * @Property performanceLevel: The performance level of the ESSD used as data disk. The value of Valid values:
-     * PL0: A single ESSD can deliver up to 10,000 random read/write IOPS.
-     * PL1: A single ESSD can deliver up to 50,000 random read/write IOPS.
-     * PL2: A single ESSD can deliver up to 100,000 random read/write IOPS.
-     * PL3: A single ESSD can deliver up to 1,000,000 random read/write IOPS.
+     * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
+     * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
+     * PL2: A single ESSD can deliver up to 100,000 random read\/write IOPS.
+     * PL3: A single ESSD can deliver up to 1,000,000 random read\/write IOPS.
          */
         readonly performanceLevel?: string | ros.IResolvable;
         /**
@@ -9934,7 +10847,8 @@ function rosLaunchTemplateTemplateTagsPropertyToRosTemplate(properties: any): an
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::NetworkInterface`
+ * Properties for defining a `RosNetworkInterface`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */
 export interface RosNetworkInterfaceProps {
 
@@ -10114,18 +11028,15 @@ function rosNetworkInterfacePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::NetworkInterface`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterface`, which is used to create an elastic network interface (ENI).
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkInterface` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */
 export class RosNetworkInterface extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::NetworkInterface";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute MacAddress: The MAC address of your Network Interface.
@@ -10225,8 +11136,6 @@ export class RosNetworkInterface extends ros.RosResource {
     public tags: RosNetworkInterface.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::NetworkInterface`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -10328,7 +11237,8 @@ function rosNetworkInterfaceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::NetworkInterfaceAttachment`
+ * Properties for defining a `RosNetworkInterfaceAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfaceattachment
  */
 export interface RosNetworkInterfaceAttachmentProps {
 
@@ -10400,18 +11310,15 @@ function rosNetworkInterfaceAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::NetworkInterfaceAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterfaceAttachment`, which is used to bind an elastic network interface (ENI) to an Elastic Compute Service (ECS) instance in a virtual private cloud (VPC).
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkInterfaceAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfaceattachment
  */
 export class RosNetworkInterfaceAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::NetworkInterfaceAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: ID of ECS instance.
@@ -10452,8 +11359,6 @@ export class RosNetworkInterfaceAttachment extends ros.RosResource {
     public trunkNetworkInstanceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::NetworkInterfaceAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -10486,7 +11391,8 @@ export class RosNetworkInterfaceAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::NetworkInterfacePermission`
+ * Properties for defining a `RosNetworkInterfacePermission`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfacepermission
  */
 export interface RosNetworkInterfacePermissionProps {
 
@@ -10546,18 +11452,15 @@ function rosNetworkInterfacePermissionPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::NetworkInterfacePermission`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`, which is used to grant an account the permission to attach an elastic network interface (ENI) to an instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkInterfacePermission` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfacepermission
  */
 export class RosNetworkInterfacePermission extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::NetworkInterfacePermission";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NetworkInterfacePermissionId: the network interface permission id
@@ -10583,8 +11486,6 @@ export class RosNetworkInterfacePermission extends ros.RosResource {
     public permission: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::NetworkInterfacePermission`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -10613,7 +11514,8 @@ export class RosNetworkInterfacePermission extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::PrefixList`
+ * Properties for defining a `RosPrefixList`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
  */
 export interface RosPrefixListProps {
 
@@ -10628,12 +11530,12 @@ export interface RosPrefixListProps {
     readonly maxEntries: number | ros.IResolvable;
 
     /**
-     * @Property prefixListName: The name of the prefix. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http://, https://, com.aliyun, or com.alibabacloud. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
+     * @Property prefixListName: The name of the prefix. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/, https:\/\/, com.aliyun, or com.alibabacloud. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
      */
     readonly prefixListName: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of the prefix list. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     * @Property description: The description of the prefix list. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -10707,18 +11609,15 @@ function rosPrefixListPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::PrefixList`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::PrefixList`, which is used to create a prefix list.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PrefixList` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
  */
 export class RosPrefixList extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::PrefixList";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute PrefixListId: The ID of the prefix list.
@@ -10739,12 +11638,12 @@ export class RosPrefixList extends ros.RosResource {
     public maxEntries: number | ros.IResolvable;
 
     /**
-     * @Property prefixListName: The name of the prefix. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http://, https://, com.aliyun, or com.alibabacloud. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
+     * @Property prefixListName: The name of the prefix. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/, https:\/\/, com.aliyun, or com.alibabacloud. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
      */
     public prefixListName: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of the prefix list. The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     * @Property description: The description of the prefix list. The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -10754,8 +11653,6 @@ export class RosPrefixList extends ros.RosResource {
     public entries: Array<RosPrefixList.EntriesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::PrefixList`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -10793,17 +11690,17 @@ export namespace RosPrefixList {
      */
     export interface EntriesProperty {
         /**
-         * @Property description: The description in entry. The description must be 2 to 32 characters in length and cannot start with http:// or https://.
+         * @Property description: The description in entry. The description must be 2 to 32 characters in length and cannot start with http:\/\/ or https:\/\/.
          */
         readonly description?: string | ros.IResolvable;
         /**
          * @Property cidr: The CIDR block in entry. Take note of the following items: 
      * The total number of entries must not exceed the MaxEntries value.
      * CIDR block types are determined by the IP address family. You cannot combine IPv4 and IPv6 CIDR blocks in a single prefix list.
-     * CIDR blocks must be unique across all entries in a prefix list. For example, you cannot specify 192.168.1.0/24 twice in the entries of the prefix list.
+     * CIDR blocks must be unique across all entries in a prefix list. For example, you cannot specify 192.168.1.0\/24 twice in the entries of the prefix list.
      * IP addresses are supported. 
-     * The system converts IP addresses into CIDR blocks. For example, if you specify 192.168.1.100, the system converts it into the 192.168.1.100/32 CIDR block.
-     * If an IPv6 CIDR block is used, the system converts it to the zero compression format and changes uppercase letters into lowercase ones. For example, if you specify 2001:0DB8:0000:0000:0000:0000:0000:0000/32,the system converts it into 2001:db8::/32.
+     * The system converts IP addresses into CIDR blocks. For example, if you specify 192.168.1.100, the system converts it into the 192.168.1.100\/32 CIDR block.
+     * If an IPv6 CIDR block is used, the system converts it to the zero compression format and changes uppercase letters into lowercase ones. For example, if you specify 2001:0DB8:0000:0000:0000:0000:0000:0000\/32,the system converts it into 2001:db8::\/32.
          */
         readonly cidr: string | ros.IResolvable;
     }
@@ -10842,7 +11739,8 @@ function rosPrefixListEntriesPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::RamRoleAttachment`
+ * Properties for defining a `RosRamRoleAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-ramroleattachment
  */
 export interface RosRamRoleAttachmentProps {
 
@@ -10916,18 +11814,15 @@ function rosRamRoleAttachmentPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::RamRoleAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::RamRoleAttachment`, which is used to attach an instance Resource Access Management (RAM) role to Elastic Compute Service (ECS) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RamRoleAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-ramroleattachment
  */
 export class RosRamRoleAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::RamRoleAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceIds: The list of ecs instance id
@@ -10959,8 +11854,6 @@ export class RosRamRoleAttachment extends ros.RosResource {
     public policy: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::RamRoleAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -10990,7 +11883,8 @@ export class RosRamRoleAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::Route`
+ * Properties for defining a `RosRoute`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */
 export interface RosRouteProps {
 
@@ -11063,18 +11957,15 @@ function rosRoutePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::Route`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Route`, which is used to create a custom route entry.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Route` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */
 export class RosRoute extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::Route";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RouteEntryId: The ID of the route entry.
@@ -11110,8 +12001,6 @@ export class RosRoute extends ros.RosResource {
     public nextHopType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::Route`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -11192,7 +12081,8 @@ function rosRouteNextHopListPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::RunCommand`
+ * Properties for defining a `RosRunCommand`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-runcommand
  */
 export interface RosRunCommandProps {
 
@@ -11218,6 +12108,25 @@ export interface RosRunCommandProps {
      * RunShellScript: shell scripts for Linux instances
      */
     readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property containerId: The ID of the container. Only 64-bit hexadecimal strings are supported. You can use container IDs that are prefixed with docker:\/\/, containerd:\/\/, or cri-o:\/\/ to specify container runtimes.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.- If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    readonly containerId?: string | ros.IResolvable;
+
+    /**
+     * @Property containerName: The name of the container.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.
+     * - If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    readonly containerName?: string | ros.IResolvable;
 
     /**
      * @Property contentEncoding: The encoding mode of script content (CommandContent). Valid values (case insensitive):
@@ -11269,6 +12178,23 @@ export interface RosRunCommandProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
+     * @Property repeatMode: Specifies how to run the command. Valid values:
+     * - **Once**: immediately runs the command.
+     * - **Period**: runs the command on a schedule. If you set this parameter to Period, you must specify **Frequency**.
+     * - **NextRebootOnly**: runs the command the next time the instance is started.
+     * - **EveryReboot*: runs the command every time the instance is started.
+     * Default value:
+     * - If you do not specify Frequency, the default value is Once.
+     * - If you specify **Frequency**, **Period** is used as the value of RepeatMode regardless of whether RepeatMode is set to Period.
+     */
+    readonly repeatMode?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which to assign the command executions. The instances specified by InstanceIds must belong to the specified resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
      * @Property runAgainOn: The stage of executing the command again.
      */
     readonly runAgainOn?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -11284,23 +12210,29 @@ export interface RosRunCommandProps {
     readonly tags?: RosRunCommand.TagsProperty[];
 
     /**
-     * @Property timed: Specifies whether to periodically run the script. Valid values:
-     * true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
-     * false: runs once only.
-     * Default value: false
-     */
-    readonly timed?: boolean | ros.IResolvable;
-
-    /**
      * @Property timeout: The timeout period for script execution. Unit: seconds. A timeout error occurs when a script cannot be run because the process slows down, a specific module or the Cloud Assistant client does not exist. When the script times out, the script process is forcibly terminated.
      * Default value: 60.
      */
     readonly timeout?: number | ros.IResolvable;
 
     /**
+     * @Property username: The username to use to run the command on instances. The username can be up to 255 characters in length.
+     * - For Linux instances, the root username is used by default.
+     * - For Windows instances, the System username is used by default.
+     * You can also specify other usernames that already exist in the instances to run the command. For security purposes, we recommend that you run Cloud Assistant commands as a regular user.
+     */
+    readonly username?: string | ros.IResolvable;
+
+    /**
+     * @Property windowsPasswordName: The name of the password to use to run the command on Windows instances. The name can be up to 255 characters in length.
+     * If you do not want to use the default System user to run the command on Windows instances, specify both **WindowsPasswordName** and **Username**. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
+     */
+    readonly windowsPasswordName?: string | ros.IResolvable;
+
+    /**
      * @Property workingDir: The running directory of the script in the ECS instance.
      * Default value:
-     * Linux instances: under the home directory of the administrator (root user): /root.
+     * Linux instances: under the home directory of the administrator (root user): \/root.
      * Windows instances: under the directory where the process of the Cloud Assistant client is located, such as C:\ProgramData\aliyun\assist\$(version).
      */
     readonly workingDir?: string | ros.IResolvable;
@@ -11316,17 +12248,36 @@ export interface RosRunCommandProps {
 function RosRunCommandPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('parameters', ros.hashValidator(ros.validateAny))(properties.parameters));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('timeout', ros.validateNumber)(properties.timeout));
-    errors.collect(ros.propertyValidator('timed', ros.validateBoolean)(properties.timed));
+    if(properties.windowsPasswordName && (Array.isArray(properties.windowsPasswordName) || (typeof properties.windowsPasswordName) === 'string')) {
+        errors.collect(ros.propertyValidator('windowsPasswordName', ros.validateLength)({
+            data: properties.windowsPasswordName.length,
+            min: undefined,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('windowsPasswordName', ros.validateString)(properties.windowsPasswordName));
     errors.collect(ros.propertyValidator('contentEncoding', ros.validateString)(properties.contentEncoding));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('workingDir', ros.validateString)(properties.workingDir));
     errors.collect(ros.propertyValidator('commandContent', ros.requiredValidator)(properties.commandContent));
     errors.collect(ros.propertyValidator('commandContent', ros.validateString)(properties.commandContent));
+    errors.collect(ros.propertyValidator('repeatMode', ros.validateString)(properties.repeatMode));
     errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    if(properties.username && (Array.isArray(properties.username) || (typeof properties.username) === 'string')) {
+        errors.collect(ros.propertyValidator('username', ros.validateLength)({
+            data: properties.username.length,
+            min: undefined,
+            max: 255,
+          }));
+    }
+    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
+    errors.collect(ros.propertyValidator('containerName', ros.validateString)(properties.containerName));
+    errors.collect(ros.propertyValidator('containerId', ros.validateString)(properties.containerId));
     errors.collect(ros.propertyValidator('frequency', ros.validateString)(properties.frequency));
     if(properties.runAgainOn && (Array.isArray(properties.runAgainOn) || (typeof properties.runAgainOn) === 'string')) {
         errors.collect(ros.propertyValidator('runAgainOn', ros.validateLength)({
@@ -11376,6 +12327,8 @@ function rosRunCommandPropsToRosTemplate(properties: any, enableResourceProperty
       CommandContent: ros.stringToRosTemplate(properties.commandContent),
       InstanceIds: ros.listMapper(ros.stringToRosTemplate)(properties.instanceIds),
       Type: ros.stringToRosTemplate(properties.type),
+      ContainerId: ros.stringToRosTemplate(properties.containerId),
+      ContainerName: ros.stringToRosTemplate(properties.containerName),
       ContentEncoding: ros.stringToRosTemplate(properties.contentEncoding),
       Description: ros.stringToRosTemplate(properties.description),
       EnableParameter: ros.booleanToRosTemplate(properties.enableParameter),
@@ -11383,28 +12336,28 @@ function rosRunCommandPropsToRosTemplate(properties: any, enableResourceProperty
       KeepCommand: ros.booleanToRosTemplate(properties.keepCommand),
       Name: ros.stringToRosTemplate(properties.name),
       Parameters: ros.hashMapper(ros.objectToRosTemplate)(properties.parameters),
+      RepeatMode: ros.stringToRosTemplate(properties.repeatMode),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       RunAgainOn: ros.listMapper(ros.stringToRosTemplate)(properties.runAgainOn),
       Sync: ros.booleanToRosTemplate(properties.sync),
       Tags: ros.listMapper(rosRunCommandTagsPropertyToRosTemplate)(properties.tags),
-      Timed: ros.booleanToRosTemplate(properties.timed),
       Timeout: ros.numberToRosTemplate(properties.timeout),
+      Username: ros.stringToRosTemplate(properties.username),
+      WindowsPasswordName: ros.stringToRosTemplate(properties.windowsPasswordName),
       WorkingDir: ros.stringToRosTemplate(properties.workingDir),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::RunCommand`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::RunCommand`, which is used to run a shell, PowerShell, or batch command on Elastic Compute Service (ECS) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RunCommand` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-runcommand
  */
 export class RosRunCommand extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::RunCommand";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CommandId: The id of command created.
@@ -11451,6 +12404,25 @@ export class RosRunCommand extends ros.RosResource {
      * RunShellScript: shell scripts for Linux instances
      */
     public type: string | ros.IResolvable;
+
+    /**
+     * @Property containerId: The ID of the container. Only 64-bit hexadecimal strings are supported. You can use container IDs that are prefixed with docker:\/\/, containerd:\/\/, or cri-o:\/\/ to specify container runtimes.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.- If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    public containerId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property containerName: The name of the container.
+     * Take note of the following items:
+     * - If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.
+     * - If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.
+     * - If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container. 
+     * - If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!\/usr\/bin\/python at the beginning of a script to specify a script interpreter.
+     */
+    public containerName: string | ros.IResolvable | undefined;
 
     /**
      * @Property contentEncoding: The encoding mode of script content (CommandContent). Valid values (case insensitive):
@@ -11502,6 +12474,23 @@ export class RosRunCommand extends ros.RosResource {
     public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
+     * @Property repeatMode: Specifies how to run the command. Valid values:
+     * - **Once**: immediately runs the command.
+     * - **Period**: runs the command on a schedule. If you set this parameter to Period, you must specify **Frequency**.
+     * - **NextRebootOnly**: runs the command the next time the instance is started.
+     * - **EveryReboot*: runs the command every time the instance is started.
+     * Default value:
+     * - If you do not specify Frequency, the default value is Once.
+     * - If you specify **Frequency**, **Period** is used as the value of RepeatMode regardless of whether RepeatMode is set to Period.
+     */
+    public repeatMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which to assign the command executions. The instances specified by InstanceIds must belong to the specified resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property runAgainOn: The stage of executing the command again.
      */
     public runAgainOn: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
@@ -11517,30 +12506,34 @@ export class RosRunCommand extends ros.RosResource {
     public tags: RosRunCommand.TagsProperty[] | undefined;
 
     /**
-     * @Property timed: Specifies whether to periodically run the script. Valid values:
-     * true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
-     * false: runs once only.
-     * Default value: false
-     */
-    public timed: boolean | ros.IResolvable | undefined;
-
-    /**
      * @Property timeout: The timeout period for script execution. Unit: seconds. A timeout error occurs when a script cannot be run because the process slows down, a specific module or the Cloud Assistant client does not exist. When the script times out, the script process is forcibly terminated.
      * Default value: 60.
      */
     public timeout: number | ros.IResolvable | undefined;
 
     /**
+     * @Property username: The username to use to run the command on instances. The username can be up to 255 characters in length.
+     * - For Linux instances, the root username is used by default.
+     * - For Windows instances, the System username is used by default.
+     * You can also specify other usernames that already exist in the instances to run the command. For security purposes, we recommend that you run Cloud Assistant commands as a regular user.
+     */
+    public username: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property windowsPasswordName: The name of the password to use to run the command on Windows instances. The name can be up to 255 characters in length.
+     * If you do not want to use the default System user to run the command on Windows instances, specify both **WindowsPasswordName** and **Username**. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
+     */
+    public windowsPasswordName: string | ros.IResolvable | undefined;
+
+    /**
      * @Property workingDir: The running directory of the script in the ECS instance.
      * Default value:
-     * Linux instances: under the home directory of the administrator (root user): /root.
+     * Linux instances: under the home directory of the administrator (root user): \/root.
      * Windows instances: under the directory where the process of the Cloud Assistant client is located, such as C:\ProgramData\aliyun\assist\$(version).
      */
     public workingDir: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::RunCommand`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -11556,6 +12549,8 @@ export class RosRunCommand extends ros.RosResource {
         this.commandContent = props.commandContent;
         this.instanceIds = props.instanceIds;
         this.type = props.type;
+        this.containerId = props.containerId;
+        this.containerName = props.containerName;
         this.contentEncoding = props.contentEncoding;
         this.description = props.description;
         this.enableParameter = props.enableParameter;
@@ -11563,11 +12558,14 @@ export class RosRunCommand extends ros.RosResource {
         this.keepCommand = props.keepCommand;
         this.name = props.name;
         this.parameters = props.parameters;
+        this.repeatMode = props.repeatMode;
+        this.resourceGroupId = props.resourceGroupId;
         this.runAgainOn = props.runAgainOn;
         this.sync = props.sync;
         this.tags = props.tags;
-        this.timed = props.timed;
         this.timeout = props.timeout;
+        this.username = props.username;
+        this.windowsPasswordName = props.windowsPasswordName;
         this.workingDir = props.workingDir;
     }
 
@@ -11577,6 +12575,8 @@ export class RosRunCommand extends ros.RosResource {
             commandContent: this.commandContent,
             instanceIds: this.instanceIds,
             type: this.type,
+            containerId: this.containerId,
+            containerName: this.containerName,
             contentEncoding: this.contentEncoding,
             description: this.description,
             enableParameter: this.enableParameter,
@@ -11584,11 +12584,14 @@ export class RosRunCommand extends ros.RosResource {
             keepCommand: this.keepCommand,
             name: this.name,
             parameters: this.parameters,
+            repeatMode: this.repeatMode,
+            resourceGroupId: this.resourceGroupId,
             runAgainOn: this.runAgainOn,
             sync: this.sync,
             tags: this.tags,
-            timed: this.timed,
             timeout: this.timeout,
+            username: this.username,
+            windowsPasswordName: this.windowsPasswordName,
             workingDir: this.workingDir,
         };
     }
@@ -11646,7 +12649,8 @@ function rosRunCommandTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::SNatEntry`
+ * Properties for defining a `RosSNatEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snatentry
  */
 export interface RosSNatEntryProps {
 
@@ -11661,12 +12665,12 @@ export interface RosSNatEntryProps {
     readonly sNatTableId: string | ros.IResolvable;
 
     /**
-     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
      */
     readonly snatEntryName?: string | ros.IResolvable;
 
     /**
-     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
     readonly sourceCidr?: string | ros.IResolvable;
 
@@ -11719,18 +12723,15 @@ function rosSNatEntryPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::SNatEntry`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SNatEntry`, which is used to configure the Source Network Address Translation (SNAT) table of a NAT gateway.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SNatEntry` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snatentry
  */
 export class RosSNatEntry extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SNatEntry";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SNatEntryId: The id of created SNAT entry.
@@ -11751,12 +12752,12 @@ export class RosSNatEntry extends ros.RosResource {
     public sNatTableId: string | ros.IResolvable;
 
     /**
-     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
      */
     public snatEntryName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
     public sourceCidr: string | ros.IResolvable | undefined;
 
@@ -11766,8 +12767,6 @@ export class RosSNatEntry extends ros.RosResource {
     public sourceVSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::SNatEntry`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -11800,12 +12799,13 @@ export class RosSNatEntry extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::SSHKeyPair`
+ * Properties for defining a `RosSSHKeyPair`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */
 export interface RosSSHKeyPairProps {
 
     /**
-     * @Property keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
+     * @Property keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http:\/\/, or https:\/\/. It can contain digits, ".", "_", or "-".
      */
     readonly keyPairName: string | ros.IResolvable;
 
@@ -11872,18 +12872,15 @@ function rosSSHKeyPairPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::SSHKeyPair`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPair`, which is used to create an SSH key pair or import an existing SSH key pair to access an Elastic Compute Service (ECS) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SSHKeyPair` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */
 export class RosSSHKeyPair extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SSHKeyPair";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute KeyPairFingerPrint: The fingerprint of the key pair. The public key fingerprint format defined in RFC4716: MD5 message digest algorithm. Refer to http://tools.ietf.org/html/rfc4716.
@@ -11904,7 +12901,7 @@ export class RosSSHKeyPair extends ros.RosResource {
 
 
     /**
-     * @Property keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
+     * @Property keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http:\/\/, or https:\/\/. It can contain digits, ".", "_", or "-".
      */
     public keyPairName: string | ros.IResolvable;
 
@@ -11924,8 +12921,6 @@ export class RosSSHKeyPair extends ros.RosResource {
     public tags: RosSSHKeyPair.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::SSHKeyPair`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -12006,7 +13001,8 @@ function rosSSHKeyPairTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::SSHKeyPairAttachment`
+ * Properties for defining a `RosSSHKeyPairAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
  */
 export interface RosSSHKeyPairAttachmentProps {
 
@@ -12066,18 +13062,15 @@ function rosSSHKeyPairAttachmentPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::SSHKeyPairAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPairAttachment`, which is used to attach an SSH key pair to Elastic Compute Service (ECS) instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SSHKeyPairAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
  */
 export class RosSSHKeyPairAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SSHKeyPairAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -12099,8 +13092,6 @@ export class RosSSHKeyPairAttachment extends ros.RosResource {
     public autoReboot: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::SSHKeyPairAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -12128,7 +13119,8 @@ export class RosSSHKeyPairAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::SecurityGroup`
+ * Properties for defining a `RosSecurityGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroup
  */
 export interface RosSecurityGroupProps {
 
@@ -12235,18 +13227,15 @@ function rosSecurityGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::SecurityGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroup`, which is used to create a security group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroup
  */
 export class RosSecurityGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SecurityGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SecurityGroupId: generated security group id for security group.
@@ -12304,8 +13293,6 @@ export class RosSecurityGroup extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::SecurityGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -12354,7 +13341,7 @@ export namespace RosSecurityGroup {
          */
         readonly policy?: string | ros.IResolvable;
         /**
-         * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+         * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
          */
         readonly portRange: string | ros.IResolvable;
         /**
@@ -12506,7 +13493,7 @@ export namespace RosSecurityGroup {
          */
         readonly description?: string | ros.IResolvable;
         /**
-         * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (/). Correct example: 1/200. Incorrect example: 200/1.ICMP: -1/-1.GRE: -1/-1.ALL: -1/-1.
+         * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
          */
         readonly sourcePortRange?: string | ros.IResolvable;
         /**
@@ -12531,7 +13518,7 @@ export namespace RosSecurityGroup {
          */
         readonly nicType?: string | ros.IResolvable;
         /**
-         * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+         * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
          */
         readonly portRange: string | ros.IResolvable;
         /**
@@ -12687,7 +13674,8 @@ function rosSecurityGroupTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::SecurityGroupClone`
+ * Properties for defining a `RosSecurityGroupClone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupclone
  */
 export interface RosSecurityGroupCloneProps {
 
@@ -12794,18 +13782,15 @@ function rosSecurityGroupClonePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::SecurityGroupClone`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupClone`, which is used to clone a security group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupClone` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupclone
  */
 export class RosSecurityGroupClone extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SecurityGroupClone";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SecurityGroupId: Generated security group id of new security group.
@@ -12858,8 +13843,6 @@ export class RosSecurityGroupClone extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::SecurityGroupClone`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -12898,7 +13881,8 @@ export class RosSecurityGroupClone extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::SecurityGroupEgress`
+ * Properties for defining a `RosSecurityGroupEgress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegress
  */
 export interface RosSecurityGroupEgressProps {
 
@@ -12908,7 +13892,7 @@ export interface RosSecurityGroupEgressProps {
     readonly ipProtocol: string | ros.IResolvable;
 
     /**
-     * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+     * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
      */
     readonly portRange: string | ros.IResolvable;
 
@@ -13055,18 +14039,15 @@ function rosSecurityGroupEgressPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::SecurityGroupEgress`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupEgress`, which is used to create an outbound access rule for a security group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupEgress` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupegress
  */
 export class RosSecurityGroupEgress extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SecurityGroupEgress";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -13077,7 +14058,7 @@ export class RosSecurityGroupEgress extends ros.RosResource {
     public ipProtocol: string | ros.IResolvable;
 
     /**
-     * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+     * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
      */
     public portRange: string | ros.IResolvable;
 
@@ -13135,8 +14116,6 @@ export class RosSecurityGroupEgress extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::SecurityGroupEgress`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -13182,7 +14161,8 @@ export class RosSecurityGroupEgress extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::SecurityGroupIngress`
+ * Properties for defining a `RosSecurityGroupIngress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingress
  */
 export interface RosSecurityGroupIngressProps {
 
@@ -13192,7 +14172,7 @@ export interface RosSecurityGroupIngressProps {
     readonly ipProtocol: string | ros.IResolvable;
 
     /**
-     * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+     * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
      */
     readonly portRange: string | ros.IResolvable;
 
@@ -13243,7 +14223,7 @@ export interface RosSecurityGroupIngressProps {
     readonly sourceGroupOwnerId?: string | ros.IResolvable;
 
     /**
-     * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (/). Correct example: 1/200. Incorrect example: 200/1.ICMP: -1/-1.GRE: -1/-1.ALL: -1/-1.
+     * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
      */
     readonly sourcePortRange?: string | ros.IResolvable;
 
@@ -13346,18 +14326,15 @@ function rosSecurityGroupIngressPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::SecurityGroupIngress`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SecurityGroupIngress`, which is used to create an inbound rule for a security group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupIngress` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingress
  */
 export class RosSecurityGroupIngress extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::SecurityGroupIngress";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -13368,7 +14345,7 @@ export class RosSecurityGroupIngress extends ros.RosResource {
     public ipProtocol: string | ros.IResolvable;
 
     /**
-     * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+     * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1\/200'For icmp|gre|all protocel, the port range should be '-1\/-1'
      */
     public portRange: string | ros.IResolvable;
 
@@ -13419,7 +14396,7 @@ export class RosSecurityGroupIngress extends ros.RosResource {
     public sourceGroupOwnerId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (/). Correct example: 1/200. Incorrect example: 200/1.ICMP: -1/-1.GRE: -1/-1.ALL: -1/-1.
+     * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP\/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (\/). Correct example: 1\/200. Incorrect example: 200\/1.ICMP: -1\/-1.GRE: -1\/-1.ALL: -1\/-1.
      */
     public sourcePortRange: string | ros.IResolvable | undefined;
 
@@ -13431,8 +14408,6 @@ export class RosSecurityGroupIngress extends ros.RosResource {
     public sourcePrefixListId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::SecurityGroupIngress`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -13480,7 +14455,8 @@ export class RosSecurityGroupIngress extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::Snapshot`
+ * Properties for defining a `RosSnapshot`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
  */
 export interface RosSnapshotProps {
 
@@ -13490,7 +14466,7 @@ export interface RosSnapshotProps {
     readonly diskId: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://. The description will appear on the console. By default, the value is zero.
+     * @Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/. The description will appear on the console. By default, the value is zero.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -13525,7 +14501,7 @@ export interface RosSnapshotProps {
     readonly retentionDays?: number | ros.IResolvable;
 
     /**
-     * @Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+     * @Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
      */
     readonly snapshotName?: string | ros.IResolvable;
 
@@ -13611,18 +14587,15 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::Snapshot`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Snapshot`, which is used to create a snapshot for a disk.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Snapshot` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
  */
 export class RosSnapshot extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::Snapshot";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SnapshotId: The snapshot ID.
@@ -13638,7 +14611,7 @@ export class RosSnapshot extends ros.RosResource {
     public diskId: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:// or https://. The description will appear on the console. By default, the value is zero.
+     * @Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/. The description will appear on the console. By default, the value is zero.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -13673,7 +14646,7 @@ export class RosSnapshot extends ros.RosResource {
     public retentionDays: number | ros.IResolvable | undefined;
 
     /**
-     * @Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+     * @Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
      */
     public snapshotName: string | ros.IResolvable | undefined;
 
@@ -13688,8 +14661,6 @@ export class RosSnapshot extends ros.RosResource {
     public timeout: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::Snapshot`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -13778,15 +14749,16 @@ function rosSnapshotTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::VPC`
+ * Properties for defining a `RosVPC`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
  */
 export interface RosVPCProps {
 
     /**
      * @Property cidrBlock: The IP address range of the VPC in the CIDR block form. You can use the following IP address ranges and their subnets:
-     * 10.0.0.0/8
-     * 172.16.0.0/12 (Default)
-     * 192.168.0.0/16
+     * 10.0.0.0\/8
+     * 172.16.0.0\/12 (Default)
+     * 192.168.0.0\/16
      */
     readonly cidrBlock?: string | ros.IResolvable;
 
@@ -13914,18 +14886,15 @@ function rosVPCPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::VPC`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::VPC`, which is used to create a virtual private cloud (VPC).
+ * @Note This class does not contain additional functions, so it is recommended to use the `VPC` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vpc
  */
 export class RosVPC extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::VPC";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RouteTableId: The router table id of created VPC.
@@ -13947,9 +14916,9 @@ export class RosVPC extends ros.RosResource {
 
     /**
      * @Property cidrBlock: The IP address range of the VPC in the CIDR block form. You can use the following IP address ranges and their subnets:
-     * 10.0.0.0/8
-     * 172.16.0.0/12 (Default)
-     * 192.168.0.0/16
+     * 10.0.0.0\/8
+     * 172.16.0.0\/12 (Default)
+     * 192.168.0.0\/16
      */
     public cidrBlock: string | ros.IResolvable | undefined;
 
@@ -14005,8 +14974,6 @@ export class RosVPC extends ros.RosResource {
     public vpcName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::VPC`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -14099,7 +15066,8 @@ function rosVPCTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ECS::VSwitch`
+ * Properties for defining a `RosVSwitch`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
  */
 export interface RosVSwitchProps {
 
@@ -14218,18 +15186,15 @@ function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::ECS::VSwitch`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::VSwitch`, which is used to create a vSwitch.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VSwitch` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-vswitch
  */
 export class RosVSwitch extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ECS::VSwitch";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CidrBlock: CIDR Block of created VSwitch
@@ -14298,8 +15263,6 @@ export class RosVSwitch extends ros.RosResource {
     public zoneType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ECS::VSwitch`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

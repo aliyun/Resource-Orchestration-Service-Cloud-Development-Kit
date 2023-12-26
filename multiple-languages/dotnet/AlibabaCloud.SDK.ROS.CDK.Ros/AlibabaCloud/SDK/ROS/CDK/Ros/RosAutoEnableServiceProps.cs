@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ROS::AutoEnableService`.</summary>
+    /// <summary>Properties for defining a `RosAutoEnableService`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ros.RosAutoEnableServiceProps")]
     public class RosAutoEnableServiceProps : AlibabaCloud.SDK.ROS.CDK.Ros.IRosAutoEnableServiceProps
     {
@@ -52,6 +55,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// CDT: Cloud Data Transfer
         /// CDTCb: Cloud Data Transfer for Cross Border
         /// TransitRouter: Cen Transit Router
+        /// PAI: Platform of Artificial Intelligence
         /// </remarks>
         [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object ServiceName

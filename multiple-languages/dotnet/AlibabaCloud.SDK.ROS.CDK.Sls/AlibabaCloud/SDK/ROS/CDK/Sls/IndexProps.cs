@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLS::Index`.</summary>
+    /// <summary>Properties for defining a `Index`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-index
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.IndexProps")]
     public class IndexProps : AlibabaCloud.SDK.ROS.CDK.Sls.IIndexProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::RamRoleAttachment`.</summary>
+    /// <summary>Properties for defining a `RamRoleAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-ramroleattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRamRoleAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RamRoleAttachmentProps")]
     public interface IRamRoleAttachmentProps
     {
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::RamRoleAttachment`.</summary>
+        /// <summary>Properties for defining a `RamRoleAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-ramroleattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRamRoleAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RamRoleAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IRamRoleAttachmentProps
         {

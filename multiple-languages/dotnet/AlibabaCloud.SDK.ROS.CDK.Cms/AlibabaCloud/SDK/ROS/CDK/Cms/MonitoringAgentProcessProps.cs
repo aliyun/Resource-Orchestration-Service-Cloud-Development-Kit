@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CMS::MonitoringAgentProcess`.</summary>
+    /// <summary>Properties for defining a `MonitoringAgentProcess`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cms.MonitoringAgentProcessProps")]
     public class MonitoringAgentProcessProps : AlibabaCloud.SDK.ROS.CDK.Cms.IMonitoringAgentProcessProps
     {

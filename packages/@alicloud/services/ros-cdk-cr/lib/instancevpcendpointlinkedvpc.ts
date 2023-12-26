@@ -4,7 +4,8 @@ import { RosInstanceVpcEndpointLinkedVpc } from './cr.generated';
 export { RosInstanceVpcEndpointLinkedVpc as InstanceVpcEndpointLinkedVpcProperty };
 
 /**
- * Properties for defining a `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`
+ * Properties for defining a `InstanceVpcEndpointLinkedVpc`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
 export interface InstanceVpcEndpointLinkedVpcProps {
 
@@ -41,14 +42,11 @@ export interface InstanceVpcEndpointLinkedVpcProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`, which is used to associate a virtual private cloud (VPC) with a Container Registry instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceVpcEndpointLinkedVpc`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instancevpcendpointlinkedvpc
  */
 export class InstanceVpcEndpointLinkedVpc extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceId: The ID of the instance.
@@ -66,8 +64,6 @@ export class InstanceVpcEndpointLinkedVpc extends ros.Resource {
     public readonly attrVswitchId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

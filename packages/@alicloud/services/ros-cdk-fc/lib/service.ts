@@ -4,7 +4,8 @@ import { RosService } from './fc.generated';
 export { RosService as ServiceProperty };
 
 /**
- * Properties for defining a `ALIYUN::FC::Service`
+ * Properties for defining a `Service`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
  */
 export interface ServiceProps {
 
@@ -71,14 +72,11 @@ export interface ServiceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::FC::Service`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Service`, which is used to create a service in Function Compute. All functions of a service share the same settings, such as permission settings and log configurations. A service can have multiple functions, all of which share service resources, such as Logstores and RAM roles.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosService`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
  */
 export class Service extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InternetAccess: Whether enable Internet access
@@ -121,8 +119,6 @@ export class Service extends ros.Resource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::FC::Service`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

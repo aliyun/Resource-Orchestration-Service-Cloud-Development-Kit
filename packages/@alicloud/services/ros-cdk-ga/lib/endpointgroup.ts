@@ -4,7 +4,8 @@ import { RosEndpointGroup } from './ga.generated';
 export { RosEndpointGroup as EndpointGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::GA::EndpointGroup`
+ * Properties for defining a `EndpointGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
 export interface EndpointGroupProps {
 
@@ -97,14 +98,11 @@ export interface EndpointGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::GA::EndpointGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::EndpointGroup`, which is used to create an endpoint group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEndpointGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
 export class EndpointGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute EndpointGroupId: The ID of the endpoint group.
@@ -112,8 +110,6 @@ export class EndpointGroup extends ros.Resource {
     public readonly attrEndpointGroupId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GA::EndpointGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::VpcAccessConfig`.</summary>
+    /// <summary>Properties for defining a `VpcAccessConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IVpcAccessConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.VpcAccessConfigProps")]
     public interface IVpcAccessConfigProps
     {
-        /// <summary>Property instanceId: The id of the instance (ECS/SLB).</summary>
+        /// <summary>Property instanceId: The id of the instance (ECS\/SLB).</summary>
         [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InstanceId
         {
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ApiGateway::VpcAccessConfig`.</summary>
+        /// <summary>Properties for defining a `VpcAccessConfig`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IVpcAccessConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.VpcAccessConfigProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.IVpcAccessConfigProps
         {
@@ -44,7 +50,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             {
             }
 
-            /// <summary>Property instanceId: The id of the instance (ECS/SLB).</summary>
+            /// <summary>Property instanceId: The id of the instance (ECS\/SLB).</summary>
             [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceId
             {

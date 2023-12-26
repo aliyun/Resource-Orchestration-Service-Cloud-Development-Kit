@@ -4,7 +4,8 @@ import { RosPolicies } from './ram.generated';
 export { RosPolicies as PoliciesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::RAM::Policies`
+ * Properties for defining a `Policies`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-policies
  */
 export interface PoliciesProps {
 
@@ -35,14 +36,11 @@ export interface PoliciesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::RAM::Policies`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Policies`, which is used to query policies.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPolicies`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-policies
  */
 export class Policies extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Policies: The list of policies.
@@ -55,8 +53,6 @@ export class Policies extends ros.Resource {
     public readonly attrPolicyNames: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::RAM::Policies`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

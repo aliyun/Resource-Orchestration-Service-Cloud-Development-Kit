@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Asm
 {
-    /// <summary>Properties for defining a `ALIYUN::ASM::ServiceMesh`.</summary>
+    /// <summary>Properties for defining a `ServiceMesh`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IServiceMeshProps), fullyQualifiedName: "@alicloud/ros-cdk-asm.ServiceMeshProps")]
     public interface IServiceMeshProps
     {
@@ -216,7 +219,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Asm
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ASM::ServiceMesh`.</summary>
+        /// <summary>Properties for defining a `ServiceMesh`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IServiceMeshProps), fullyQualifiedName: "@alicloud/ros-cdk-asm.ServiceMeshProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Asm.IServiceMeshProps
         {

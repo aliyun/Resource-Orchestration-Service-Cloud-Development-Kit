@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vod
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VOD::MessageCallback`.</summary>
+    /// <summary>Properties for defining a `MessageCallback`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-messagecallback
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vod.MessageCallbackProps")]
     public class MessageCallbackProps : AlibabaCloud.SDK.ROS.CDK.Vod.IMessageCallbackProps
     {

@@ -4,7 +4,8 @@ import { RosListener } from './ga.generated';
 export { RosListener as ListenerProperty };
 
 /**
- * Properties for defining a `ALIYUN::GA::Listener`
+ * Properties for defining a `Listener`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
  */
 export interface ListenerProps {
 
@@ -78,14 +79,11 @@ export interface ListenerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::GA::Listener`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Listener`, which is used to create a listener for a Global Accelerator (GA) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
  */
 export class Listener extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ListenerId: The ID of the listener.
@@ -93,8 +91,6 @@ export class Listener extends ros.Resource {
     public readonly attrListenerId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GA::Listener`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

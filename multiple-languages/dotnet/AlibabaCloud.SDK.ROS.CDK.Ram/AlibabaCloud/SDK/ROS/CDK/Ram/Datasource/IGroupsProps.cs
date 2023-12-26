@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::RAM::Groups`.</summary>
+    /// <summary>Properties for defining a `Groups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-groups
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.datasource.GroupsProps")]
     public interface IGroupsProps
     {
@@ -33,7 +36,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::RAM::Groups`.</summary>
+        /// <summary>Properties for defining a `Groups`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-groups
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.datasource.GroupsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.Datasource.IGroupsProps
         {

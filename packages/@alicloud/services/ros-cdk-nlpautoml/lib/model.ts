@@ -4,7 +4,8 @@ import { RosModel } from './nlpautoml.generated';
 export { RosModel as ModelProperty };
 
 /**
- * Properties for defining a `ALIYUN::NLPAUTOML::Model`
+ * Properties for defining a `Model`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-model
  */
 export interface ModelProps {
 
@@ -46,14 +47,11 @@ export interface ModelProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NLPAUTOML::Model`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLPAUTOML::Model`, which is used to create a model.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosModel`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-model
  */
 export class Model extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ModelId: The ID of model.
@@ -66,8 +64,6 @@ export class Model extends ros.Resource {
     public readonly attrModelVersion: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NLPAUTOML::Model`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

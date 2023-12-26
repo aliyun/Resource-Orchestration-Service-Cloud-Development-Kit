@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::WAF::LogServiceEnable`.</summary>
+    /// <summary>Properties for defining a `RosLogServiceEnable`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-waf.RosLogServiceEnableProps")]
     public class RosLogServiceEnableProps : AlibabaCloud.SDK.ROS.CDK.Waf.IRosLogServiceEnableProps
     {

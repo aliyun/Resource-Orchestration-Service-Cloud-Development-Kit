@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::MSE::Clusters`.</summary>
+    /// <summary>Properties for defining a `Clusters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-clusters
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mse.datasource.ClustersProps")]
     public class ClustersProps : AlibabaCloud.SDK.ROS.CDK.Mse.Datasource.IClustersProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::VPC::HaVips`.</summary>
+    /// <summary>Properties for defining a `HaVips`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havips
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.datasource.HaVipsProps")]
     public class HaVipsProps : AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource.IHaVipsProps
     {

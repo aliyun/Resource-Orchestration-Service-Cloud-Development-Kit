@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>Properties for defining a `ALIYUN::ESS::ScalingGroupEnable`.</summary>
+    /// <summary>Properties for defining a `ScalingGroupEnable`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IScalingGroupEnableProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.ScalingGroupEnableProps")]
     public interface IScalingGroupEnableProps
     {
@@ -103,7 +106,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ESS::ScalingGroupEnable`.</summary>
+        /// <summary>Properties for defining a `ScalingGroupEnable`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IScalingGroupEnableProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.ScalingGroupEnableProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ess.IScalingGroupEnableProps
         {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Devops
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DEVOPS::PipelineRun`.</summary>
+    /// <summary>Properties for defining a `RosPipelineRun`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerun
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-devops.RosPipelineRunProps")]
     public class RosPipelineRunProps : AlibabaCloud.SDK.ROS.CDK.Devops.IRosPipelineRunProps
     {

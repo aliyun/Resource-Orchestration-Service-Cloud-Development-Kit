@@ -4,7 +4,8 @@ import { RosSecurityGroup } from './ecs.generated';
 export { RosSecurityGroup as SecurityGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::SecurityGroup`
+ * Properties for defining a `SecurityGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroup
  */
 export interface SecurityGroupProps {
 
@@ -52,14 +53,11 @@ export interface SecurityGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::SecurityGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroup`, which is used to create a security group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroup
  */
 export class SecurityGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SecurityGroupId: generated security group id for security group.
@@ -72,8 +70,6 @@ export class SecurityGroup extends ros.Resource {
     public readonly attrSecurityGroupName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::SecurityGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

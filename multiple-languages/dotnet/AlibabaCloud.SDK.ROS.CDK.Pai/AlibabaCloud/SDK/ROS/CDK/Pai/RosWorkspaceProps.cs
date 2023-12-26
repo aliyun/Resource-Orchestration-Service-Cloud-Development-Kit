@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::PAI::Workspace`.</summary>
+    /// <summary>Properties for defining a `RosWorkspace`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-pai.RosWorkspaceProps")]
     public class RosWorkspaceProps : AlibabaCloud.SDK.ROS.CDK.Pai.IRosWorkspaceProps
     {

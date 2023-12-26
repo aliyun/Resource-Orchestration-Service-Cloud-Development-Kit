@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::RamRoleAttachment`.</summary>
+    /// <summary>Properties for defining a `RosRamRoleAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-ramroleattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosRamRoleAttachmentProps")]
     public class RosRamRoleAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosRamRoleAttachmentProps
     {

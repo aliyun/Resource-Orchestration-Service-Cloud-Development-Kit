@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CR::InstanceEndpointAclPolicy`.</summary>
+    /// <summary>Properties for defining a `InstanceEndpointAclPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cr.InstanceEndpointAclPolicyProps")]
     public class InstanceEndpointAclPolicyProps : AlibabaCloud.SDK.ROS.CDK.Cr.IInstanceEndpointAclPolicyProps
     {

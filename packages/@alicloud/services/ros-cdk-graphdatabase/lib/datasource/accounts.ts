@@ -4,7 +4,8 @@ import { RosAccounts } from './graphdatabase.generated';
 export { RosAccounts as AccountsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::GraphDatabase::Accounts`
+ * Properties for defining a `Accounts`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-accounts
  */
 export interface AccountsProps {
 
@@ -20,14 +21,11 @@ export interface AccountsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::GraphDatabase::Accounts`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::Accounts`, which is used to query the information about accounts.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccounts`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-accounts
  */
 export class Accounts extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccountNames: The list of account names.
@@ -40,8 +38,6 @@ export class Accounts extends ros.Resource {
     public readonly attrAccounts: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::GraphDatabase::Accounts`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

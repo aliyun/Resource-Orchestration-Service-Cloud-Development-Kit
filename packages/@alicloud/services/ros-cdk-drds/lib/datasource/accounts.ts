@@ -4,7 +4,8 @@ import { RosAccounts } from './drds.generated';
 export { RosAccounts as AccountsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::DRDS::Accounts`
+ * Properties for defining a `Accounts`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-accounts
  */
 export interface AccountsProps {
 
@@ -15,14 +16,11 @@ export interface AccountsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::DRDS::Accounts`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::Accounts`ALIYUN::DTS::ConsumerGroup is used to create a consumer group for a change tracking instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccounts`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-accounts
  */
 export class Accounts extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Accounts: Indicates the information about the instance accounts.
@@ -35,8 +33,6 @@ export class Accounts extends ros.Resource {
     public readonly attrDrdsAccountNames: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::DRDS::Accounts`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

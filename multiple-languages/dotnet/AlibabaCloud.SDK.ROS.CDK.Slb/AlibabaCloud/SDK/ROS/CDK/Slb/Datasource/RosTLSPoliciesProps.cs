@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::SLB::TLSPolicies`.</summary>
+    /// <summary>Properties for defining a `RosTLSPolicies`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-tlspolicies
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.datasource.RosTLSPoliciesProps")]
     public class RosTLSPoliciesProps : AlibabaCloud.SDK.ROS.CDK.Slb.Datasource.IRosTLSPoliciesProps
     {

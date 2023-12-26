@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CLOUDFW::AddressBook`.</summary>
+    /// <summary>Properties for defining a `AddressBook`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cloudfw.AddressBookProps")]
     public class AddressBookProps : AlibabaCloud.SDK.ROS.CDK.Cloudfw.IAddressBookProps
     {

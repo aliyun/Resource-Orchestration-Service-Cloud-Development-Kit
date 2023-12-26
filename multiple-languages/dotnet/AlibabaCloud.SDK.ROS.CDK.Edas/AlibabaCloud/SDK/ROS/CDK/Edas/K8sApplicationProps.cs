@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EDAS::K8sApplication`.</summary>
+    /// <summary>Properties for defining a `K8sApplication`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sapplication
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-edas.K8sApplicationProps")]
     public class K8sApplicationProps : AlibabaCloud.SDK.ROS.CDK.Edas.IK8sApplicationProps
     {

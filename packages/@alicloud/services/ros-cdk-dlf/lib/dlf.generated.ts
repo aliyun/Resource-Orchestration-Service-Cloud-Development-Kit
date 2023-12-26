@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DLF::Catalog`
+ * Properties for defining a `RosCatalog`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
  */
 export interface RosCatalogProps {
 
@@ -18,7 +19,7 @@ export interface RosCatalogProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property locationUri: Location uri, for example: oss://dlf-test-oss-location/
+     * @Property locationUri: Location uri, for example: oss:\/\/dlf-test-oss-location\/
      */
     readonly locationUri?: string | ros.IResolvable;
 
@@ -74,18 +75,15 @@ function rosCatalogPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::DLF::Catalog`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DLF::Catalog`, which is used to create a catalog in Data Lake Formation (DLF).
+ * @Note This class does not contain additional functions, so it is recommended to use the `Catalog` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
  */
 export class RosCatalog extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DLF::Catalog";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CatalogId: Catalog ID
@@ -106,7 +104,7 @@ export class RosCatalog extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property locationUri: Location uri, for example: oss://dlf-test-oss-location/
+     * @Property locationUri: Location uri, for example: oss:\/\/dlf-test-oss-location\/
      */
     public locationUri: string | ros.IResolvable | undefined;
 
@@ -116,8 +114,6 @@ export class RosCatalog extends ros.RosResource {
     public owner: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DLF::Catalog`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

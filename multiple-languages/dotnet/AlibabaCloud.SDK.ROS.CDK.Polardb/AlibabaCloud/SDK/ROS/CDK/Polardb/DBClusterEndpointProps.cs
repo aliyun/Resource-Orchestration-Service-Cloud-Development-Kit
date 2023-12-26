@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::DBClusterEndpoint`.</summary>
+    /// <summary>Properties for defining a `DBClusterEndpoint`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.DBClusterEndpointProps")]
     public class DBClusterEndpointProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IDBClusterEndpointProps
     {
@@ -177,7 +180,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
         private object? _readWriteMode;
 
-        /// <summary>Property readWriteMode: The read/write mode of the cluster connection point.</summary>
+        /// <summary>Property readWriteMode: The read\/write mode of the cluster connection point.</summary>
         /// <remarks>
         /// Valid values:
         /// ReadWrite: receives and forwards read and write requests (automatic read-write splitting).

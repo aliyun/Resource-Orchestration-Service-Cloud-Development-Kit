@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
-    /// <summary>Properties for defining a `ALIYUN::ResourceManager::ResourceShare`.</summary>
+    /// <summary>Properties for defining a `ResourceShare`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IResourceShareProps), fullyQualifiedName: "@alicloud/ros-cdk-resourcemanager.ResourceShareProps")]
     public interface IResourceShareProps
     {
@@ -76,7 +79,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ResourceManager::ResourceShare`.</summary>
+        /// <summary>Properties for defining a `ResourceShare`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IResourceShareProps), fullyQualifiedName: "@alicloud/ros-cdk-resourcemanager.ResourceShareProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IResourceShareProps
         {

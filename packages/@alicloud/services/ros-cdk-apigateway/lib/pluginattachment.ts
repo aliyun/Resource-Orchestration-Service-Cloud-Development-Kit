@@ -4,7 +4,8 @@ import { RosPluginAttachment } from './apigateway.generated';
 export { RosPluginAttachment as PluginAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::PluginAttachment`
+ * Properties for defining a `PluginAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
  */
 export interface PluginAttachmentProps {
 
@@ -28,14 +29,11 @@ export interface PluginAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ApiGateway::PluginAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::PluginAttachment`, which is used to bind a plug-in to an API.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPluginAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
  */
 export class PluginAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ApiId: The api id.
@@ -48,8 +46,6 @@ export class PluginAttachment extends ros.Resource {
     public readonly attrPluginId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::PluginAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

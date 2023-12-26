@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::AssignIpv6Addresses`.</summary>
+    /// <summary>Properties for defining a `RosAssignIpv6Addresses`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAssignIpv6AddressesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosAssignIpv6AddressesProps")]
     public interface IRosAssignIpv6AddressesProps
     {
@@ -45,7 +48,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::AssignIpv6Addresses`.</summary>
+        /// <summary>Properties for defining a `RosAssignIpv6Addresses`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignipv6addresses
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAssignIpv6AddressesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosAssignIpv6AddressesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IRosAssignIpv6AddressesProps
         {

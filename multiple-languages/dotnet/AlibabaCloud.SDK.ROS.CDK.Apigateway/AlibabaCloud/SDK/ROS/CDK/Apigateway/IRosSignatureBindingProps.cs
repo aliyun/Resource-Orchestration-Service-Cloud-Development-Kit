@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::SignatureBinding`.</summary>
+    /// <summary>Properties for defining a `RosSignatureBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosSignatureBindingProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.RosSignatureBindingProps")]
     public interface IRosSignatureBindingProps
     {
@@ -44,7 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ApiGateway::SignatureBinding`.</summary>
+        /// <summary>Properties for defining a `RosSignatureBinding`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosSignatureBindingProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.RosSignatureBindingProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.IRosSignatureBindingProps
         {

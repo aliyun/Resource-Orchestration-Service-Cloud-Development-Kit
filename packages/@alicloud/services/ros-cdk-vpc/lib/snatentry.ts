@@ -4,7 +4,8 @@ import { RosSnatEntry } from './vpc.generated';
 export { RosSnatEntry as SnatEntryProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::SnatEntry`
+ * Properties for defining a `SnatEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */
 export interface SnatEntryProps {
 
@@ -27,30 +28,27 @@ export interface SnatEntryProps {
     readonly eipAffinity?: number | ros.IResolvable;
 
     /**
-     * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
      */
     readonly snatEntryName?: string | ros.IResolvable;
 
     /**
-     * Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
     readonly sourceCidr?: string | ros.IResolvable;
 
     /**
      * Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
      */
-    readonly sourceVSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly sourceVSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::SnatEntry`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SnatEntry`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnatEntry`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */
 export class SnatEntry extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute SnatEntryIds: The IDS of the SNAT entry.
@@ -58,8 +56,6 @@ export class SnatEntry extends ros.Resource {
     public readonly attrSnatEntryIds: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::SnatEntry`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

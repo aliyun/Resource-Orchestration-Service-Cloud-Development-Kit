@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Commands`.</summary>
+    /// <summary>Properties for defining a `RosCommands`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-commands
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.RosCommandsProps")]
     public class RosCommandsProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosCommandsProps
     {

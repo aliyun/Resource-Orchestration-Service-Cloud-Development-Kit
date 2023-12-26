@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::HBR::DbVault`.</summary>
+    /// <summary>Properties for defining a `RosDbVault`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-hbr.RosDbVaultProps")]
     public class RosDbVaultProps : AlibabaCloud.SDK.ROS.CDK.Hbr.IRosDbVaultProps
     {

@@ -4,7 +4,8 @@ import { RosBgpNetwork } from './vpc.generated';
 export { RosBgpNetwork as BgpNetworkProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::BgpNetwork`
+ * Properties for defining a `BgpNetwork`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
  */
 export interface BgpNetworkProps {
 
@@ -21,14 +22,11 @@ export interface BgpNetworkProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::BgpNetwork`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::BgpNetwork`, which is used to advertise a Border Gateway Protocol (BGP) network.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBgpNetwork`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
  */
 export class BgpNetwork extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DstCidrBlock: The CIDR block of the virtual private cloud (VPC) or vSwitch that you want to connect
@@ -42,8 +40,6 @@ to a data center.
     public readonly attrRouterId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::BgpNetwork`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

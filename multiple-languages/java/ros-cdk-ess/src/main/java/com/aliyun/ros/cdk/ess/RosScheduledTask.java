@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * A ROS template type:  <code>ALIYUN::ESS::ScheduledTask</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ScheduledTask</code>, which is used to create a scheduled task based on specified parameters.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.508Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.034Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScheduledTask")
 public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ESS::ScheduledTask</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -81,24 +79,6 @@ public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getScheduledAction() {
-        return software.amazon.jsii.Kernel.get(this, "scheduledAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setScheduledAction(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "scheduledAction", java.util.Objects.requireNonNull(value, "scheduledAction is required"));
-    }
-
-    /**
-     */
-    public void setScheduledAction(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "scheduledAction", java.util.Objects.requireNonNull(value, "scheduledAction is required"));
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -117,6 +97,24 @@ public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDesiredCapacity() {
+        return software.amazon.jsii.Kernel.get(this, "desiredCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDesiredCapacity(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "desiredCapacity", value);
+    }
+
+    /**
+     */
+    public void setDesiredCapacity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "desiredCapacity", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getLaunchExpirationTime() {
         return software.amazon.jsii.Kernel.get(this, "launchExpirationTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -131,6 +129,42 @@ public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setLaunchExpirationTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "launchExpirationTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMaxValue() {
+        return software.amazon.jsii.Kernel.get(this, "maxValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMaxValue(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "maxValue", value);
+    }
+
+    /**
+     */
+    public void setMaxValue(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "maxValue", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMinValue() {
+        return software.amazon.jsii.Kernel.get(this, "minValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMinValue(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "minValue", value);
+    }
+
+    /**
+     */
+    public void setMinValue(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "minValue", value);
     }
 
     /**
@@ -185,6 +219,42 @@ public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setRecurrenceValue(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "recurrenceValue", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScalingGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setScalingGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "scalingGroupId", value);
+    }
+
+    /**
+     */
+    public void setScalingGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scalingGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScheduledAction() {
+        return software.amazon.jsii.Kernel.get(this, "scheduledAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setScheduledAction(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "scheduledAction", value);
+    }
+
+    /**
+     */
+    public void setScheduledAction(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scheduledAction", value);
     }
 
     /**
@@ -268,23 +338,6 @@ public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param scheduledAction This parameter is required.
-         */
-        public Builder scheduledAction(final java.lang.String scheduledAction) {
-            this.props.scheduledAction(scheduledAction);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param scheduledAction This parameter is required.
-         */
-        public Builder scheduledAction(final com.aliyun.ros.cdk.core.IResolvable scheduledAction) {
-            this.props.scheduledAction(scheduledAction);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
@@ -302,6 +355,23 @@ public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param desiredCapacity This parameter is required.
+         */
+        public Builder desiredCapacity(final java.lang.Number desiredCapacity) {
+            this.props.desiredCapacity(desiredCapacity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param desiredCapacity This parameter is required.
+         */
+        public Builder desiredCapacity(final com.aliyun.ros.cdk.core.IResolvable desiredCapacity) {
+            this.props.desiredCapacity(desiredCapacity);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param launchExpirationTime This parameter is required.
          */
         public Builder launchExpirationTime(final java.lang.Number launchExpirationTime) {
@@ -314,6 +384,40 @@ public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder launchExpirationTime(final com.aliyun.ros.cdk.core.IResolvable launchExpirationTime) {
             this.props.launchExpirationTime(launchExpirationTime);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param maxValue This parameter is required.
+         */
+        public Builder maxValue(final java.lang.Number maxValue) {
+            this.props.maxValue(maxValue);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param maxValue This parameter is required.
+         */
+        public Builder maxValue(final com.aliyun.ros.cdk.core.IResolvable maxValue) {
+            this.props.maxValue(maxValue);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param minValue This parameter is required.
+         */
+        public Builder minValue(final java.lang.Number minValue) {
+            this.props.minValue(minValue);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param minValue This parameter is required.
+         */
+        public Builder minValue(final com.aliyun.ros.cdk.core.IResolvable minValue) {
+            this.props.minValue(minValue);
             return this;
         }
 
@@ -365,6 +469,40 @@ public class RosScheduledTask extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder recurrenceValue(final com.aliyun.ros.cdk.core.IResolvable recurrenceValue) {
             this.props.recurrenceValue(recurrenceValue);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param scalingGroupId This parameter is required.
+         */
+        public Builder scalingGroupId(final java.lang.String scalingGroupId) {
+            this.props.scalingGroupId(scalingGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scalingGroupId This parameter is required.
+         */
+        public Builder scalingGroupId(final com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
+            this.props.scalingGroupId(scalingGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param scheduledAction This parameter is required.
+         */
+        public Builder scheduledAction(final java.lang.String scheduledAction) {
+            this.props.scheduledAction(scheduledAction);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scheduledAction This parameter is required.
+         */
+        public Builder scheduledAction(final com.aliyun.ros.cdk.core.IResolvable scheduledAction) {
+            this.props.scheduledAction(scheduledAction);
             return this;
         }
 

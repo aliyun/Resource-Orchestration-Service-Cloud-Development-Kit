@@ -4,7 +4,8 @@ import { RosClusterMember } from './edas.generated';
 export { RosClusterMember as ClusterMemberProperty };
 
 /**
- * Properties for defining a `ALIYUN::EDAS::ClusterMember`
+ * Properties for defining a `ClusterMember`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-clustermember
  */
 export interface ClusterMemberProps {
 
@@ -25,14 +26,11 @@ export interface ClusterMemberProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EDAS::ClusterMember`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::ClusterMember`, which is used to add Elastic Compute Service (ECS) instances to a cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterMember`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-clustermember
  */
 export class ClusterMember extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterId: Cluster ID.
@@ -55,8 +53,6 @@ export class ClusterMember extends ros.Resource {
     public readonly attrInstanceIds: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EDAS::ClusterMember`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

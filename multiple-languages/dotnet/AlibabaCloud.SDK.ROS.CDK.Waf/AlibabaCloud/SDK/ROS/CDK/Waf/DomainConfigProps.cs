@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::WAF::DomainConfig`.</summary>
+    /// <summary>Properties for defining a `DomainConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domainconfig
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-waf.DomainConfigProps")]
     public class DomainConfigProps : AlibabaCloud.SDK.ROS.CDK.Waf.IDomainConfigProps
     {

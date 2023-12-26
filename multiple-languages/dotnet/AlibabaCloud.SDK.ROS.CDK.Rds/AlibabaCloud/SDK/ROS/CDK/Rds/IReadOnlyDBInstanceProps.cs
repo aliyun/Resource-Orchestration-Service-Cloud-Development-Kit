@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
-    /// <summary>Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`.</summary>
+    /// <summary>Properties for defining a `ReadOnlyDBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IReadOnlyDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.ReadOnlyDBInstanceProps")]
     public interface IReadOnlyDBInstanceProps
     {
@@ -271,7 +274,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`.</summary>
+        /// <summary>Properties for defining a `ReadOnlyDBInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IReadOnlyDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-rds.ReadOnlyDBInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Rds.IReadOnlyDBInstanceProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mps
 {
-    /// <summary>Properties for defining a `ALIYUN::MPS::Pipeline`.</summary>
+    /// <summary>Properties for defining a `Pipeline`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IPipelineProps), fullyQualifiedName: "@alicloud/ros-cdk-mps.PipelineProps")]
     public interface IPipelineProps
     {
@@ -94,7 +97,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mps
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::MPS::Pipeline`.</summary>
+        /// <summary>Properties for defining a `Pipeline`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IPipelineProps), fullyQualifiedName: "@alicloud/ros-cdk-mps.PipelineProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mps.IPipelineProps
         {

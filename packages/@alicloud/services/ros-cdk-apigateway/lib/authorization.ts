@@ -4,7 +4,8 @@ import { RosAuthorization } from './apigateway.generated';
 export { RosAuthorization as AuthorizationProperty };
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::Authorization`
+ * Properties for defining a `Authorization`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
  */
 export interface AuthorizationProps {
 
@@ -41,18 +42,13 @@ export interface AuthorizationProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ApiGateway::Authorization`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Authorization`, which is used to authorize APIs to access applications.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAuthorization`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
  */
 export class Authorization extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::ApiGateway::Authorization`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

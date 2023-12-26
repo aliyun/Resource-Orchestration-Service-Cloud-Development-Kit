@@ -4,7 +4,8 @@ import { RosDeviceGroup } from './iot.generated';
 export { RosDeviceGroup as DeviceGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::IOT::DeviceGroup`
+ * Properties for defining a `DeviceGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
  */
 export interface DeviceGroupProps {
 
@@ -31,14 +32,11 @@ export interface DeviceGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::IOT::DeviceGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IOT::DeviceGroup`, which is used to create a group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeviceGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
  */
 export class DeviceGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute GroupId: Packet, ID, System for the globally unique identifier generated packet.
@@ -51,8 +49,6 @@ export class DeviceGroup extends ros.Resource {
     public readonly attrIotInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::IOT::DeviceGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

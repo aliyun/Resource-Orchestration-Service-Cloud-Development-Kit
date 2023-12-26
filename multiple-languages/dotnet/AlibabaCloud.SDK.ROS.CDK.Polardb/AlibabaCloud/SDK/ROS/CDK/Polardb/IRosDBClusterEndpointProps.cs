@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::DBClusterEndpoint`.</summary>
+    /// <summary>Properties for defining a `RosDBClusterEndpoint`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDBClusterEndpointProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBClusterEndpointProps")]
     public interface IRosDBClusterEndpointProps
     {
@@ -73,7 +76,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: readWriteMode: The read/write mode of the cluster connection point. Valid values:
+        /// <strong>Property</strong>: readWriteMode: The read\/write mode of the cluster connection point. Valid values:
         /// ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
         /// ReadOnly: receives and forwards only read requests.
         /// Default value: ReadOnly.
@@ -88,7 +91,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::POLARDB::DBClusterEndpoint`.</summary>
+        /// <summary>Properties for defining a `RosDBClusterEndpoint`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDBClusterEndpointProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.RosDBClusterEndpointProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Polardb.IRosDBClusterEndpointProps
         {
@@ -149,7 +155,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: readWriteMode: The read/write mode of the cluster connection point. Valid values:
+            /// <strong>Property</strong>: readWriteMode: The read\/write mode of the cluster connection point. Valid values:
             /// ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
             /// ReadOnly: receives and forwards only read requests.
             /// Default value: ReadOnly.

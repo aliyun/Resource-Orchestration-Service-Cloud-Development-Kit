@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::PAI::Datasets`.</summary>
+    /// <summary>Properties for defining a `Datasets`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-datasets
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-pai.datasource.DatasetsProps")]
     public class DatasetsProps : AlibabaCloud.SDK.ROS.CDK.Pai.Datasource.IDatasetsProps
     {

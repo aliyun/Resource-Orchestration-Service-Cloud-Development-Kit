@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::AutoProvisioningGroup`.</summary>
+    /// <summary>Properties for defining a `AutoProvisioningGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAutoProvisioningGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.AutoProvisioningGroupProps")]
     public interface IAutoProvisioningGroupProps
     {
@@ -348,7 +351,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::AutoProvisioningGroup`.</summary>
+        /// <summary>Properties for defining a `AutoProvisioningGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAutoProvisioningGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.AutoProvisioningGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IAutoProvisioningGroupProps
         {

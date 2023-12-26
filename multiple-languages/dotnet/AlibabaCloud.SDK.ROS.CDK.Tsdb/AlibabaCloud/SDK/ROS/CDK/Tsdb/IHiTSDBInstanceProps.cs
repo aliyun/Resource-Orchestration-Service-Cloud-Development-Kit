@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
 {
-    /// <summary>Properties for defining a `ALIYUN::TSDB::HiTSDBInstance`.</summary>
+    /// <summary>Properties for defining a `HiTSDBInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IHiTSDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-tsdb.HiTSDBInstanceProps")]
     public interface IHiTSDBInstanceProps
     {
@@ -114,7 +117,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
             }
         }
 
-        /// <summary>Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1/24"].</summary>
+        /// <summary>Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1\/24"].</summary>
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SecurityIpList
@@ -125,7 +128,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::TSDB::HiTSDBInstance`.</summary>
+        /// <summary>Properties for defining a `HiTSDBInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IHiTSDBInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-tsdb.HiTSDBInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Tsdb.IHiTSDBInstanceProps
         {
@@ -224,7 +230,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Tsdb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1/24"].</summary>
+            /// <summary>Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1\/24"].</summary>
             [JsiiOptional]
             [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? SecurityIpList

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::RAM::Roles`.</summary>
+    /// <summary>Properties for defining a `RosRoles`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosRolesProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.datasource.RosRolesProps")]
     public interface IRosRolesProps
     {
@@ -21,7 +24,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::RAM::Roles`.</summary>
+        /// <summary>Properties for defining a `RosRoles`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-roles
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosRolesProps), fullyQualifiedName: "@alicloud/ros-cdk-ram.datasource.RosRolesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ram.Datasource.IRosRolesProps
         {

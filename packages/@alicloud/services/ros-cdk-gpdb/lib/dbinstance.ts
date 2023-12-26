@@ -4,7 +4,8 @@ import { RosDBInstance } from './gpdb.generated';
 export { RosDBInstance as DBInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::GPDB::DBInstance`
+ * Properties for defining a `DBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
 export interface DBInstanceProps {
 
@@ -103,7 +104,7 @@ export interface DBInstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: Unit of subscription period, it could be Month/Year. Default value is Month.
+     * Property periodUnit: Unit of subscription period, it could be Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -176,14 +177,11 @@ export interface DBInstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::GPDB::DBInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::DBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
 export class DBInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ConnectionString: The endpoint of the instance.
@@ -206,8 +204,6 @@ export class DBInstance extends ros.Resource {
     public readonly attrPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GPDB::DBInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RDS::Database`.</summary>
+    /// <summary>Properties for defining a `Database`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.DatabaseProps")]
     public class DatabaseProps : AlibabaCloud.SDK.ROS.CDK.Rds.IDatabaseProps
     {

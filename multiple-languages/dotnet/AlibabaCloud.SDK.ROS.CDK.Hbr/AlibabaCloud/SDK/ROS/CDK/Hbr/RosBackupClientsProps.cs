@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::HBR::BackupClients`.</summary>
+    /// <summary>Properties for defining a `RosBackupClients`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-hbr.RosBackupClientsProps")]
     public class RosBackupClientsProps : AlibabaCloud.SDK.ROS.CDK.Hbr.IRosBackupClientsProps
     {

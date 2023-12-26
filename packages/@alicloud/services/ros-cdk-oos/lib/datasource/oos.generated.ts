@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::OOS::PatchBaselines`
+ * Properties for defining a `RosPatchBaselines`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
  */
 export interface RosPatchBaselinesProps {
 
@@ -66,18 +67,15 @@ function rosPatchBaselinesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `DATASOURCE::OOS::PatchBaselines`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaselines`, which is used to query patch baselines.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaselines` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
  */
 export class RosPatchBaselines extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OOS::PatchBaselines";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute PatchBaselineNames: The list of patch baseline names.
@@ -108,8 +106,6 @@ export class RosPatchBaselines extends ros.RosResource {
     public shareType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::OOS::PatchBaselines`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -139,7 +135,8 @@ export class RosPatchBaselines extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::OOS::SecretParameters`
+ * Properties for defining a `RosSecretParameters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
  */
 export interface RosSecretParametersProps {
 
@@ -189,18 +186,15 @@ function rosSecretParametersPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `DATASOURCE::OOS::SecretParameters`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`, which is used to query encryption parameters.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameters` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
  */
 export class RosSecretParameters extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OOS::SecretParameters";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SecretParameterNames: The list of secret parameter names.
@@ -226,8 +220,6 @@ export class RosSecretParameters extends ros.RosResource {
     public secretParameterName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::OOS::SecretParameters`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

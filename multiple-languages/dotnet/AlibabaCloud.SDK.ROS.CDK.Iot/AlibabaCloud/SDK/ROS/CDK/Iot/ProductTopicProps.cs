@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::IOT::ProductTopic`.</summary>
+    /// <summary>Properties for defining a `ProductTopic`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-iot.ProductTopicProps")]
     public class ProductTopicProps : AlibabaCloud.SDK.ROS.CDK.Iot.IProductTopicProps
     {

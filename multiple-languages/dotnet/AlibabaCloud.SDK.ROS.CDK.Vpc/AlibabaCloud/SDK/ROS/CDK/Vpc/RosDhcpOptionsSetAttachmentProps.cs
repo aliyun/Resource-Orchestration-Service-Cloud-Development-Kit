@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::DhcpOptionsSetAttachment`.</summary>
+    /// <summary>Properties for defining a `RosDhcpOptionsSetAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionssetattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosDhcpOptionsSetAttachmentProps")]
     public class RosDhcpOptionsSetAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosDhcpOptionsSetAttachmentProps
     {

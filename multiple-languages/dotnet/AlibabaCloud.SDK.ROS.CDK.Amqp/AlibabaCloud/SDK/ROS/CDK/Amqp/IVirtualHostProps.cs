@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
-    /// <summary>Properties for defining a `ALIYUN::AMQP::VirtualHost`.</summary>
+    /// <summary>Properties for defining a `VirtualHost`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-virtualhost
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IVirtualHostProps), fullyQualifiedName: "@alicloud/ros-cdk-amqp.VirtualHostProps")]
     public interface IVirtualHostProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::AMQP::VirtualHost`.</summary>
+        /// <summary>Properties for defining a `VirtualHost`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-virtualhost
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IVirtualHostProps), fullyQualifiedName: "@alicloud/ros-cdk-amqp.VirtualHostProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Amqp.IVirtualHostProps
         {

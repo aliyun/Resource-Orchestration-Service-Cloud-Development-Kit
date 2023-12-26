@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ALB::LoadBalancer`.</summary>
+    /// <summary>Properties for defining a `LoadBalancer`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.LoadBalancerProps")]
     public class LoadBalancerProps : AlibabaCloud.SDK.ROS.CDK.Alb.ILoadBalancerProps
     {

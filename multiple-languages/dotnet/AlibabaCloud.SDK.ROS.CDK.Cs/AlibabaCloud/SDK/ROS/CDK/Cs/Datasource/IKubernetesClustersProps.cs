@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CS::KubernetesClusters`.</summary>
+    /// <summary>Properties for defining a `KubernetesClusters`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetesclusters
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IKubernetesClustersProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.datasource.KubernetesClustersProps")]
     public interface IKubernetesClustersProps
     {
@@ -73,7 +76,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::CS::KubernetesClusters`.</summary>
+        /// <summary>Properties for defining a `KubernetesClusters`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetesclusters
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IKubernetesClustersProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.datasource.KubernetesClustersProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.Datasource.IKubernetesClustersProps
         {

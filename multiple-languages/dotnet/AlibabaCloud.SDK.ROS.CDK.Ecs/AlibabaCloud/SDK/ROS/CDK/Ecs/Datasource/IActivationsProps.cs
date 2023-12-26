@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Activations`.</summary>
+    /// <summary>Properties for defining a `Activations`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activations
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IActivationsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.ActivationsProps")]
     public interface IActivationsProps
     {
@@ -30,7 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::Activations`.</summary>
+        /// <summary>Properties for defining a `Activations`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-activations
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IActivationsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.ActivationsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IActivationsProps
         {

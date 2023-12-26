@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::LogConfig`.</summary>
+    /// <summary>Properties for defining a `LogConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-logconfig
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ILogConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.LogConfigProps")]
     public interface ILogConfigProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ApiGateway::LogConfig`.</summary>
+        /// <summary>Properties for defining a `LogConfig`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-logconfig
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ILogConfigProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.LogConfigProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.ILogConfigProps
         {

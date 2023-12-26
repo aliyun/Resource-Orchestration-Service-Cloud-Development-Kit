@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
-    /// <summary>Properties for defining a `ALIYUN::MSE::NacosService`.</summary>
+    /// <summary>Properties for defining a `NacosService`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(INacosServiceProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.NacosServiceProps")]
     public interface INacosServiceProps
     {
@@ -71,7 +74,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::MSE::NacosService`.</summary>
+        /// <summary>Properties for defining a `NacosService`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(INacosServiceProps), fullyQualifiedName: "@alicloud/ros-cdk-mse.NacosServiceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mse.INacosServiceProps
         {

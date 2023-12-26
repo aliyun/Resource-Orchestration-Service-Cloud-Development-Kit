@@ -4,7 +4,8 @@ import { RosDbVault } from './hbr.generated';
 export { RosDbVault as DbVaultProperty };
 
 /**
- * Properties for defining a `ALIYUN::HBR::DbVault`
+ * Properties for defining a `DbVault`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
  */
 export interface DbVaultProps {
 
@@ -35,14 +36,11 @@ export interface DbVaultProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::HBR::DbVault`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbVault`, which is used to create a mirror vault.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbVault`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbvault
  */
 export class DbVault extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Description: Description of the vault.
@@ -70,8 +68,6 @@ export class DbVault extends ros.Resource {
     public readonly attrVaultRegionId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::HBR::DbVault`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

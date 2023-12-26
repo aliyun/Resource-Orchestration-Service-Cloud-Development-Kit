@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::RDS::Accounts`.</summary>
+    /// <summary>Properties for defining a `Accounts`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-accounts
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rds.datasource.AccountsProps")]
     public class AccountsProps : AlibabaCloud.SDK.ROS.CDK.Rds.Datasource.IAccountsProps
     {

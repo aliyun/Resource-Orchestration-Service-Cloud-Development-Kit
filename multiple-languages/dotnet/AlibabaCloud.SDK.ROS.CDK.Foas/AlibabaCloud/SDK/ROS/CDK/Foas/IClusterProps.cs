@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Foas
 {
-    /// <summary>Properties for defining a `ALIYUN::FOAS::Cluster`.</summary>
+    /// <summary>Properties for defining a `Cluster`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-cluster
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-foas.ClusterProps")]
     public interface IClusterProps
     {
@@ -71,7 +74,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::FOAS::Cluster`.</summary>
+        /// <summary>Properties for defining a `Cluster`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-cluster
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-foas.ClusterProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Foas.IClusterProps
         {

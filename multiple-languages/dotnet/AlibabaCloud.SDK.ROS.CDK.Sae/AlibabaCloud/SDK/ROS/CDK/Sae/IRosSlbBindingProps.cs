@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sae
 {
-    /// <summary>Properties for defining a `ALIYUN::SAE::SlbBinding`.</summary>
+    /// <summary>Properties for defining a `RosSlbBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-slbbinding
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosSlbBindingProps), fullyQualifiedName: "@alicloud/ros-cdk-sae.RosSlbBindingProps")]
     public interface IRosSlbBindingProps
     {
@@ -69,7 +72,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAE::SlbBinding`.</summary>
+        /// <summary>Properties for defining a `RosSlbBinding`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-slbbinding
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosSlbBindingProps), fullyQualifiedName: "@alicloud/ros-cdk-sae.RosSlbBindingProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sae.IRosSlbBindingProps
         {

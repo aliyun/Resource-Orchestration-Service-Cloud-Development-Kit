@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::Qos`.</summary>
+    /// <summary>Properties for defining a `Qos`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qos
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IQosProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.QosProps")]
     public interface IQosProps
     {
@@ -34,7 +37,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::Qos`.</summary>
+        /// <summary>Properties for defining a `Qos`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qos
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IQosProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.QosProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IQosProps
         {

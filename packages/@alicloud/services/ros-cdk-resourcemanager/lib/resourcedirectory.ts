@@ -4,20 +4,18 @@ import { RosResourceDirectory } from './resourcemanager.generated';
 export { RosResourceDirectory as ResourceDirectoryProperty };
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::ResourceDirectory`
+ * Properties for defining a `ResourceDirectory`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcedirectory
  */
 export interface ResourceDirectoryProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ResourceManager::ResourceDirectory`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceDirectory`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceDirectory`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcedirectory
  */
 export class ResourceDirectory extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute MasterAccountId: The ID of the master account
@@ -40,8 +38,6 @@ export class ResourceDirectory extends ros.Resource {
     public readonly attrRootFolderId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::ResourceDirectory`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

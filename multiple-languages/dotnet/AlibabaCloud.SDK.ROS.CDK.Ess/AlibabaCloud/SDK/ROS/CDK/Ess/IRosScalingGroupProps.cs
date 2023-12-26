@@ -4,12 +4,15 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>Properties for defining a `ALIYUN::ESS::ScalingGroup`.</summary>
+    /// <summary>Properties for defining a `RosScalingGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosScalingGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.RosScalingGroupProps")]
     public interface IRosScalingGroupProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 1000].
+        /// <strong>Property</strong>: maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 2000].
         /// </remarks>
         [JsiiProperty(name: "maxSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object MaxSize
@@ -18,7 +21,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 1000].
+        /// <strong>Property</strong>: minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 2000].
         /// </remarks>
         [JsiiProperty(name: "minSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object MinSize
@@ -361,7 +364,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
+        /// <strong>Property</strong>: scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
         /// If this parameter is not specified, the default value is ScalingGroupId.
         /// </remarks>
         [JsiiProperty(name: "scalingGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -378,6 +381,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <strong>Property</strong>: scalingPolicy: The reclaim mode of the scaling group. Valid values:
         /// recycle
         /// release
+        /// forcerelease
         /// ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
         /// </remarks>
         [JsiiProperty(name: "scalingPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -488,7 +492,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ESS::ScalingGroup`.</summary>
+        /// <summary>Properties for defining a `RosScalingGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosScalingGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ess.RosScalingGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ess.IRosScalingGroupProps
         {
@@ -497,7 +504,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 1000].
+            /// <strong>Property</strong>: maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 2000].
             /// </remarks>
             [JsiiProperty(name: "maxSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object MaxSize
@@ -506,7 +513,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 1000].
+            /// <strong>Property</strong>: minSize: Minimum number of ECS instances in the scaling group. Value range: [0, 2000].
             /// </remarks>
             [JsiiProperty(name: "minSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object MinSize
@@ -780,7 +787,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
+            /// <strong>Property</strong>: scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
             /// If this parameter is not specified, the default value is ScalingGroupId.
             /// </remarks>
             [JsiiOptional]
@@ -794,6 +801,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// <strong>Property</strong>: scalingPolicy: The reclaim mode of the scaling group. Valid values:
             /// recycle
             /// release
+            /// forcerelease
             /// ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
             /// </remarks>
             [JsiiOptional]

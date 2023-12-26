@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::MSE::Gateways`.</summary>
+    /// <summary>Properties for defining a `RosGateways`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mse.datasource.RosGatewaysProps")]
     public class RosGatewaysProps : AlibabaCloud.SDK.ROS.CDK.Mse.Datasource.IRosGatewaysProps
     {

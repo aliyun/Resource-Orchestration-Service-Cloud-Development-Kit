@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecd
 {
-    /// <summary>Properties for defining a `ALIYUN::ECD::Desktops`.</summary>
+    /// <summary>Properties for defining a `RosDesktops`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDesktopsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecd.RosDesktopsProps")]
     public interface IRosDesktopsProps
     {
@@ -248,7 +251,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tags: The list of desktops tags in the form of key/value pairs.
+        /// <strong>Property</strong>: tags: The list of desktops tags in the form of key\/value pairs.
         /// You can define a maximum of 20 tags for each desktops.
         /// </remarks>
         [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecd.RosDesktops.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
@@ -334,7 +337,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECD::Desktops`.</summary>
+        /// <summary>Properties for defining a `RosDesktops`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDesktopsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecd.RosDesktopsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecd.IRosDesktopsProps
         {
@@ -543,7 +549,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: tags: The list of desktops tags in the form of key/value pairs.
+            /// <strong>Property</strong>: tags: The list of desktops tags in the form of key\/value pairs.
             /// You can define a maximum of 20 tags for each desktops.
             /// </remarks>
             [JsiiOptional]

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>Properties for defining a `ALIYUN::SLB::Certificate`.</summary>
+    /// <summary>Properties for defining a `Certificate`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.CertificateProps")]
     public class CertificateProps : AlibabaCloud.SDK.ROS.CDK.Slb.ICertificateProps
     {

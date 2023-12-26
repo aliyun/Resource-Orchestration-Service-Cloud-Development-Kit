@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::Memcache::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
  */
 export interface RosInstanceProps {
 
@@ -74,7 +75,7 @@ export interface RosInstanceProps {
 
     /**
      * @Property instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
-     * with a letter. The following characters are not supported: at signs (@), forward slashes (/), colons (:), equal signs (=), double quotation marks
+     * with a letter. The following characters are not supported: at signs (@), forward slashes (\/), colons (:), equal signs (=), double quotation marks
      * ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
      */
     readonly instanceName?: string | ros.IResolvable;
@@ -208,18 +209,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::Memcache::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Instance`ALIYUN::MEMCACHE::Instance is used to create an ApsaraDB for Memcache (OCS) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Memcache::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConnectionDomain: The internal endpoint of the instance.
@@ -316,7 +314,7 @@ export class RosInstance extends ros.RosResource {
 
     /**
      * @Property instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
-     * with a letter. The following characters are not supported: at signs (@), forward slashes (/), colons (:), equal signs (=), double quotation marks
+     * with a letter. The following characters are not supported: at signs (@), forward slashes (\/), colons (:), equal signs (=), double quotation marks
      * ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
      */
     public instanceName: string | ros.IResolvable | undefined;
@@ -381,8 +379,6 @@ export class RosInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::Memcache::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -452,7 +448,7 @@ export namespace RosInstance {
      */
     export interface BackupPolicyProperty {
         /**
-         * @Property preferredBackupPeriod: The backup cycle. Only for PostPaid instance. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
+         * @Property preferredBackupPeriod: The backup cycle. Only for PostPaid instance. Valid values: Monday\/Tuesday\/Wednesday\/Thursday\/Friday\/Saturday\/Sunday
          */
         readonly preferredBackupPeriod: string | ros.IResolvable;
         /**
@@ -504,7 +500,8 @@ function rosInstanceBackupPolicyPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::Memcache::Whitelist`
+ * Properties for defining a `RosWhitelist`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-whitelist
  */
 export interface RosWhitelistProps {
 
@@ -583,18 +580,15 @@ function rosWhitelistPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::Memcache::Whitelist`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Whitelist`, which is used to create a Whitelist.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Whitelist` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-whitelist
  */
 export class RosWhitelist extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Memcache::Whitelist";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
@@ -635,8 +629,6 @@ export class RosWhitelist extends ros.RosResource {
     public securityIpGroupName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::Memcache::Whitelist`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

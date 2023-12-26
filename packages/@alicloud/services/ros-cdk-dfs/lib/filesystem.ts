@@ -4,7 +4,8 @@ import { RosFileSystem } from './dfs.generated';
 export { RosFileSystem as FileSystemProperty };
 
 /**
- * Properties for defining a `ALIYUN::DFS::FileSystem`
+ * Properties for defining a `FileSystem`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
  */
 export interface FileSystemProps {
 
@@ -61,7 +62,7 @@ export interface FileSystemProps {
 
     /**
      * Property provisionedThroughputInMiBps: Preset handling capacity.
-     * Unit: MB/sdata range: 1-5120
+     * Unit: MB\/sdata range: 1-5120
      */
     readonly provisionedThroughputInMiBps?: number | ros.IResolvable;
 
@@ -79,14 +80,11 @@ export interface FileSystemProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DFS::FileSystem`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DFS::FileSystem`, which is used to create a file system.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileSystem`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
  */
 export class FileSystem extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute FileSystemId: The ID of the file system.
@@ -94,8 +92,6 @@ export class FileSystem extends ros.Resource {
     public readonly attrFileSystemId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DFS::FileSystem`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

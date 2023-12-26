@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>Properties for defining a `ALIYUN::ALB::Listener`.</summary>
+    /// <summary>Properties for defining a `RosListener`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosListenerProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosListenerProps")]
     public interface IRosListenerProps
     {
@@ -101,7 +104,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: http2Enabled: Specifies whether to enable HTTP/2. Default value: on.
+        /// <strong>Property</strong>: http2Enabled: Specifies whether to enable HTTP\/2. Default value: on.
         /// Valid values: true and false.
         /// Default value: true.
         /// Note Only HTTPS listeners support this parameter.
@@ -219,7 +222,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ALB::Listener`.</summary>
+        /// <summary>Properties for defining a `RosListener`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosListenerProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosListenerProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.IRosListenerProps
         {
@@ -308,7 +314,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: http2Enabled: Specifies whether to enable HTTP/2. Default value: on.
+            /// <strong>Property</strong>: http2Enabled: Specifies whether to enable HTTP\/2. Default value: on.
             /// Valid values: true and false.
             /// Default value: true.
             /// Note Only HTTPS listeners support this parameter.

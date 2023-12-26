@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::PAI::Dataset`
+ * Properties for defining a `RosDataset`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
  */
 export interface RosDatasetProps {
 
@@ -31,11 +32,11 @@ export interface RosDatasetProps {
 
     /**
      * @Property uri: The Uri configuration sample is as follows:
-     * - The data source type is OSS:'oss:// bucket.endpoint/object'
+     * - The data source type is OSS:'oss:\/\/ bucket.endpoint\/object'
      * - The data source type is NAS:
-     * The general NAS format is: 'nas://<nasfisid>.region/subpath/to/dir/';
-     * CPFS1.0:'nas://<cpfs-fsid>.region/subpath/to/dir /';
-     * CPFS2.0:'nas://<cpfs-fsid>.region/<protocolserviceid>/'.
+     * The general NAS format is: 'nas:\/\/<nasfisid>.region\/subpath\/to\/dir\/';
+     * CPFS1.0:'nas:\/\/<cpfs-fsid>.region\/subpath\/to\/dir \/';
+     * CPFS2.0:'nas:\/\/<cpfs-fsid>.region\/<protocolserviceid>\/'.
      * CPFS1.0 and CPFS2.0 are distinguished by the format of fsid: CPFS1.0 is cpfs-<8-bit ascii characters>;CPFS2.0 is cpfs-<16 ascii characters>.
      */
     readonly uri: string | ros.IResolvable;
@@ -179,18 +180,15 @@ function rosDatasetPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::PAI::Dataset`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Dataset`, which is used to create a dataset.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Dataset` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
  */
 export class RosDataset extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::Dataset";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Accessibility: Workspace visibility.
@@ -299,11 +297,11 @@ export class RosDataset extends ros.RosResource {
 
     /**
      * @Property uri: The Uri configuration sample is as follows:
-     * - The data source type is OSS:'oss:// bucket.endpoint/object'
+     * - The data source type is OSS:'oss:\/\/ bucket.endpoint\/object'
      * - The data source type is NAS:
-     * The general NAS format is: 'nas://<nasfisid>.region/subpath/to/dir/';
-     * CPFS1.0:'nas://<cpfs-fsid>.region/subpath/to/dir /';
-     * CPFS2.0:'nas://<cpfs-fsid>.region/<protocolserviceid>/'.
+     * The general NAS format is: 'nas:\/\/<nasfisid>.region\/subpath\/to\/dir\/';
+     * CPFS1.0:'nas:\/\/<cpfs-fsid>.region\/subpath\/to\/dir \/';
+     * CPFS2.0:'nas:\/\/<cpfs-fsid>.region\/<protocolserviceid>\/'.
      * CPFS1.0 and CPFS2.0 are distinguished by the format of fsid: CPFS1.0 is cpfs-<8-bit ascii characters>;CPFS2.0 is cpfs-<16 ascii characters>.
      */
     public uri: string | ros.IResolvable;
@@ -359,8 +357,6 @@ export class RosDataset extends ros.RosResource {
     public sourceType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PAI::Dataset`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -420,7 +416,8 @@ export class RosDataset extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::PAI::Service`
+ * Properties for defining a `RosService`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-service
  */
 export interface RosServiceProps {
 
@@ -478,18 +475,15 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::PAI::Service`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Service`, which is used to create an Elastic Algorithm Service (EAS) service in Machine Learning Platform for AI (PAI).
+ * @Note This class does not contain additional functions, so it is recommended to use the `Service` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-service
  */
 export class RosService extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::Service";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccessToken: Service Request authentication token.
@@ -665,8 +659,6 @@ export class RosService extends ros.RosResource {
     public labels: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PAI::Service`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -725,7 +717,8 @@ export class RosService extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::PAI::Workspace`
+ * Properties for defining a `RosWorkspace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
  */
 export interface RosWorkspaceProps {
 
@@ -812,18 +805,15 @@ function rosWorkspacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::PAI::Workspace`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Workspace`, which is used to create a workspace.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Workspace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
  */
 export class RosWorkspace extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::Workspace";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AdminNames: List of administrator account names.
@@ -907,8 +897,6 @@ export class RosWorkspace extends ros.RosResource {
     public displayName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::PAI::Workspace`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

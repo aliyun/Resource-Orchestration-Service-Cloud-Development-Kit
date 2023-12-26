@@ -4,7 +4,8 @@ import { RosCatalog } from './dlf.generated';
 export { RosCatalog as CatalogProperty };
 
 /**
- * Properties for defining a `ALIYUN::DLF::Catalog`
+ * Properties for defining a `Catalog`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
  */
 export interface CatalogProps {
 
@@ -19,7 +20,7 @@ export interface CatalogProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property locationUri: Location uri, for example: oss://dlf-test-oss-location/
+     * Property locationUri: Location uri, for example: oss:\/\/dlf-test-oss-location\/
      */
     readonly locationUri?: string | ros.IResolvable;
 
@@ -30,14 +31,11 @@ export interface CatalogProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DLF::Catalog`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DLF::Catalog`, which is used to create a catalog in Data Lake Formation (DLF).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCatalog`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
  */
 export class Catalog extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CatalogId: Catalog ID
@@ -45,8 +43,6 @@ export class Catalog extends ros.Resource {
     public readonly attrCatalogId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DLF::Catalog`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::ManagedInstances`.</summary>
+    /// <summary>Properties for defining a `ManagedInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IManagedInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.ManagedInstancesProps")]
     public interface IManagedInstancesProps
     {
@@ -82,7 +85,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::ManagedInstances`.</summary>
+        /// <summary>Properties for defining a `ManagedInstances`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-managedinstances
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IManagedInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.ManagedInstancesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IManagedInstancesProps
         {

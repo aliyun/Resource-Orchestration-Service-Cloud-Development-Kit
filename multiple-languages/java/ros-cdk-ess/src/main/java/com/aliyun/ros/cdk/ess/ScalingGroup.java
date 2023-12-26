@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ESS::ScalingGroup</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingGroup</code>, which is used to create a scaling group.
+ * <p>
+ * A scaling group is a group of Elastic Compute Service (ECS) instances that are dynamically scaled based on the configured scenario. A scaling group does not immediately take effect after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group to trigger scaling activities and execute scaling rules.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:35.531Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:16.073Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroup")
 public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +18,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ESS::ScalingGroup</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +31,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ESS::ScalingGroup</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -99,7 +93,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property maxSize: Maximum number of ECS instances in the scaling group.
          * <p>
-         * Value range: [0, 1000].
+         * Value range: [0, 2000].
          * <p>
          * @return {@code this}
          * @param maxSize Property maxSize: Maximum number of ECS instances in the scaling group. This parameter is required.
@@ -111,7 +105,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property maxSize: Maximum number of ECS instances in the scaling group.
          * <p>
-         * Value range: [0, 1000].
+         * Value range: [0, 2000].
          * <p>
          * @return {@code this}
          * @param maxSize Property maxSize: Maximum number of ECS instances in the scaling group. This parameter is required.
@@ -124,7 +118,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property minSize: Minimum number of ECS instances in the scaling group.
          * <p>
-         * Value range: [0, 1000].
+         * Value range: [0, 2000].
          * <p>
          * @return {@code this}
          * @param minSize Property minSize: Minimum number of ECS instances in the scaling group. This parameter is required.
@@ -136,7 +130,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
         /**
          * Property minSize: Minimum number of ECS instances in the scaling group.
          * <p>
-         * Value range: [0, 1000].
+         * Value range: [0, 2000].
          * <p>
          * @return {@code this}
          * @param minSize Property minSize: Minimum number of ECS instances in the scaling group. This parameter is required.
@@ -822,6 +816,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * Valid values:
          * recycle
          * release
+         * forcerelease
          * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
          * <p>
          * @return {@code this}
@@ -837,6 +832,7 @@ public class ScalingGroup extends com.aliyun.ros.cdk.core.Resource {
          * Valid values:
          * recycle
          * release
+         * forcerelease
          * ScalingPolicy specifies the reclaim modes of scaling groups, but the policy that is used to remove ECS instances from scaling groups is determined by the RemovePolicy parameter of the RemoveInstances operation.
          * <p>
          * @return {@code this}

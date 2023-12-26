@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::NetworkInterfaces`.</summary>
+    /// <summary>Properties for defining a `RosNetworkInterfaces`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-networkinterfaces
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.RosNetworkInterfacesProps")]
     public class RosNetworkInterfacesProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosNetworkInterfacesProps
     {

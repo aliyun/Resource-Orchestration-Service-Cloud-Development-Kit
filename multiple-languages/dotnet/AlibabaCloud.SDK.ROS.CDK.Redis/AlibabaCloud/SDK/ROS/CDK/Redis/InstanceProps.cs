@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis
 {
-    /// <summary>Properties for defining a `ALIYUN::REDIS::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-redis.InstanceProps")]
     public class InstanceProps : AlibabaCloud.SDK.ROS.CDK.Redis.IInstanceProps
     {

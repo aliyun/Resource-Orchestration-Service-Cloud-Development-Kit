@@ -4,7 +4,8 @@ import { RosZones } from './nas.generated';
 export { RosZones as ZonesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::NAS::Zones`
+ * Properties for defining a `Zones`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-zones
  */
 export interface ZonesProps {
 
@@ -18,14 +19,11 @@ export interface ZonesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::NAS::Zones`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::Zones`, which is used to query zones.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZones`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-zones
  */
 export class Zones extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ZoneIds: The list of zone IDs.
@@ -38,8 +36,6 @@ export class Zones extends ros.Resource {
     public readonly attrZones: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::NAS::Zones`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

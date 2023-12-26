@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::MetricStore`.</summary>
+    /// <summary>Properties for defining a `RosMetricStore`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-metricstore
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosMetricStoreProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosMetricStoreProps")]
     public interface IRosMetricStoreProps
     {
@@ -75,7 +78,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::MetricStore`.</summary>
+        /// <summary>Properties for defining a `RosMetricStore`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-metricstore
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosMetricStoreProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosMetricStoreProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.IRosMetricStoreProps
         {

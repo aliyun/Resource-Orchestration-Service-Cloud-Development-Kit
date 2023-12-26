@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MONGODB::ShardingInstance`.</summary>
+    /// <summary>Properties for defining a `RosShardingInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardinginstance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mongodb.RosShardingInstanceProps")]
     public class RosShardingInstanceProps : AlibabaCloud.SDK.ROS.CDK.Mongodb.IRosShardingInstanceProps
     {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Threatdetection
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ThreatDetection::AntiBruteForceRule`.</summary>
+    /// <summary>Properties for defining a `AntiBruteForceRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-antibruteforcerule
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-threatdetection.AntiBruteForceRuleProps")]
     public class AntiBruteForceRuleProps : AlibabaCloud.SDK.ROS.CDK.Threatdetection.IAntiBruteForceRuleProps
     {

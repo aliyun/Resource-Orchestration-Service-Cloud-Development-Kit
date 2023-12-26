@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eais
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EAIS::Instance`.</summary>
+    /// <summary>Properties for defining a `Instance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-instance
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-eais.InstanceProps")]
     public class InstanceProps : AlibabaCloud.SDK.ROS.CDK.Eais.IInstanceProps
     {

@@ -4,7 +4,8 @@ import { RosCustomImage } from './ecs.generated';
 export { RosCustomImage as CustomImageProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::CustomImage`
+ * Properties for defining a `CustomImage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
 export interface CustomImageProps {
 
@@ -16,12 +17,25 @@ export interface CustomImageProps {
     readonly architecture?: string | ros.IResolvable;
 
     /**
+     * Property bootMode: Modify the startup mode of the image. Ranges:
+     * BIOS: BIOS boot mode.
+     * UEFI: UEFI boot mode.
+     * You need to know the startup mode supported by the specified image. After modifying the startup mode through this parameter, it must match the startup mode supported by the image itself so that the instance can start normally.
+     */
+    readonly bootMode?: string | ros.IResolvable;
+
+    /**
      * Property description: The description of the image.
      * It can be [0, 256] letters in length.
-     * It cannot begin with http:// or https://.
+     * It cannot begin with http:\/\/ or https:\/\/.
      * Default value: null.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property detectionStrategy: Image detection policy. If this parameter is not configured, detection will not be triggered. Only Standard detection mode is supported.Currently, most Linux\/Windows versions are supported.
+     */
+    readonly detectionStrategy?: string | ros.IResolvable;
 
     /**
      * Property diskDeviceMapping:
@@ -29,16 +43,22 @@ export interface CustomImageProps {
     readonly diskDeviceMapping?: Array<RosCustomImage.DiskDeviceMappingProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property imageFamily: The name of the image family of the custom image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:// or https://. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
+     * Property imageFamily: The name of the image family of the image. The name must be 2 to 128 characters in length and can contain letters, digits, colons (:), underscores (_), and hyphens (-). It cannot contain http:\/\/ or https:\/\/. It must start with a letter and cannot start with acs: or aliyun.This parameter is empty by default.
      */
     readonly imageFamily?: string | ros.IResolvable;
 
     /**
      * Property imageName: Image name.
      * Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
-     * Cannot begin with http:// or https://.
+     * Cannot begin with http:\/\/ or https:\/\/.
      */
     readonly imageName?: string | ros.IResolvable;
+
+    /**
+     * Property imageVersion: Image version.
+     * When you specify an instance ID (InstanceId) and the image of the instance is a cloud market image or a custom image created from a cloud market image. This parameter must be the same as the ImageVersion of the current instance image or set to empty.
+     */
+    readonly imageVersion?: string | ros.IResolvable;
 
     /**
      * Property instanceId: Instance ID.
@@ -61,7 +81,7 @@ export interface CustomImageProps {
     readonly snapshotId?: string | ros.IResolvable;
 
     /**
-     * Property sourceRegionId: ID of the region to where the instance/snapshot belongs. Default is current region ID.
+     * Property sourceRegionId: ID of the region to where the instance\/snapshot belongs. Default is current region ID.
      */
     readonly sourceRegionId?: string | ros.IResolvable;
 
@@ -72,14 +92,11 @@ export interface CustomImageProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::CustomImage`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CustomImage`, which is used to create a custom image.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomImage`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-customimage
  */
 export class CustomImage extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ImageId: Image ID
@@ -92,8 +109,6 @@ export class CustomImage extends ros.Resource {
     public readonly attrSourceRegionId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::CustomImage`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -102,17 +117,20 @@ export class CustomImage extends ros.Resource {
         super(scope, id);
 
         const rosCustomImage = new RosCustomImage(this, id,  {
+            detectionStrategy: props.detectionStrategy,
+            description: props.description,
+            platform: props.platform,
+            architecture: props.architecture,
+            resourceGroupId: props.resourceGroupId,
+            instanceId: props.instanceId,
+            bootMode: props.bootMode,
+            imageFamily: props.imageFamily,
+            diskDeviceMapping: props.diskDeviceMapping,
             imageName: props.imageName,
             sourceRegionId: props.sourceRegionId,
             snapshotId: props.snapshotId,
-            description: props.description,
-            resourceGroupId: props.resourceGroupId,
-            platform: props.platform,
-            architecture: props.architecture,
-            instanceId: props.instanceId,
-            imageFamily: props.imageFamily,
+            imageVersion: props.imageVersion,
             tag: props.tag,
-            diskDeviceMapping: props.diskDeviceMapping,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCustomImage;
         this.attrImageId = rosCustomImage.attrImageId;

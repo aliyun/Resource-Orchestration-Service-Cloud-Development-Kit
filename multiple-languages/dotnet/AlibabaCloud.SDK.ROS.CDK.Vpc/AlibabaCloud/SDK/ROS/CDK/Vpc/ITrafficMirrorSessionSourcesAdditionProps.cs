@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`.</summary>
+    /// <summary>Properties for defining a `TrafficMirrorSessionSourcesAddition`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsessionsourcesaddition
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITrafficMirrorSessionSourcesAdditionProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.TrafficMirrorSessionSourcesAdditionProps")]
     public interface ITrafficMirrorSessionSourcesAdditionProps
     {
@@ -22,7 +25,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`.</summary>
+        /// <summary>Properties for defining a `TrafficMirrorSessionSourcesAddition`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsessionsourcesaddition
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITrafficMirrorSessionSourcesAdditionProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.TrafficMirrorSessionSourcesAdditionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.ITrafficMirrorSessionSourcesAdditionProps
         {

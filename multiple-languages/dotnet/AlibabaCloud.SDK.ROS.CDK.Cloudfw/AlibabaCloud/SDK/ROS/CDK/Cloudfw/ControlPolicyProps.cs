@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CLOUDFW::ControlPolicy`.</summary>
+    /// <summary>Properties for defining a `ControlPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cloudfw.ControlPolicyProps")]
     public class ControlPolicyProps : AlibabaCloud.SDK.ROS.CDK.Cloudfw.IControlPolicyProps
     {

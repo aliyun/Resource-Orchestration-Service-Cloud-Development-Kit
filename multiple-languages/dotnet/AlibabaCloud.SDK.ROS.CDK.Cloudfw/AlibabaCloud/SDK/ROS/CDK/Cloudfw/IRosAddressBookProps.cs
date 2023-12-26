@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>Properties for defining a `ALIYUN::CLOUDFW::AddressBook`.</summary>
+    /// <summary>Properties for defining a `RosAddressBook`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAddressBookProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.RosAddressBookProps")]
     public interface IRosAddressBookProps
     {
@@ -42,8 +45,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <remarks>
         /// <strong>Property</strong>: addressList: Address list of the address book, between multiple addresses separated by commas.
         /// Note: When GroupType ip, it must be set to port or domain.
-        /// When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4/32, 1.2.3.0/24
-        /// When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
+        /// When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4\/32, 1.2.3.0\/24
+        /// When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100\/200
         /// When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
         /// </remarks>
         [JsiiProperty(name: "addressList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -110,7 +113,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CLOUDFW::AddressBook`.</summary>
+        /// <summary>Properties for defining a `RosAddressBook`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAddressBookProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.RosAddressBookProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cloudfw.IRosAddressBookProps
         {
@@ -152,8 +158,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// <remarks>
             /// <strong>Property</strong>: addressList: Address list of the address book, between multiple addresses separated by commas.
             /// Note: When GroupType ip, it must be set to port or domain.
-            /// When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4/32, 1.2.3.0/24
-            /// When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
+            /// When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4\/32, 1.2.3.0\/24
+            /// When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100\/200
             /// When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
             /// </remarks>
             [JsiiOptional]

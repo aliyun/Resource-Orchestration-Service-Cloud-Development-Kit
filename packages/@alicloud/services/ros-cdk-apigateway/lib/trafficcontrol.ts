@@ -4,7 +4,8 @@ import { RosTrafficControl } from './apigateway.generated';
 export { RosTrafficControl as TrafficControlProperty };
 
 /**
- * Properties for defining a `ALIYUN::ApiGateway::TrafficControl`
+ * Properties for defining a `TrafficControl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */
 export interface TrafficControlProps {
 
@@ -14,12 +15,12 @@ export interface TrafficControlProps {
     readonly apiDefault: number | ros.IResolvable;
 
     /**
-     * Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese\/English character.
      */
     readonly trafficControlName: string | ros.IResolvable;
 
     /**
-     * Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
+     * Property trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.
      */
     readonly trafficControlUnit: string | ros.IResolvable;
 
@@ -45,14 +46,11 @@ export interface TrafficControlProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ApiGateway::TrafficControl`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::TrafficControl`, which is used to create a custom throttling policy.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficControl`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */
 export class TrafficControl extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TrafficControlId: The id of the traffic control
@@ -60,8 +58,6 @@ export class TrafficControl extends ros.Resource {
     public readonly attrTrafficControlId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ApiGateway::TrafficControl`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

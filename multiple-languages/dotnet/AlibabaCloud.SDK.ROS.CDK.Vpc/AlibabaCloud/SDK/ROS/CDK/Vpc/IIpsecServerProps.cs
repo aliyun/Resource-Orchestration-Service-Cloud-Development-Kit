@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::IpsecServer`.</summary>
+    /// <summary>Properties for defining a `IpsecServer`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IIpsecServerProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.IpsecServerProps")]
     public interface IIpsecServerProps
     {
@@ -113,7 +116,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::IpsecServer`.</summary>
+        /// <summary>Properties for defining a `IpsecServer`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IIpsecServerProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.IpsecServerProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IIpsecServerProps
         {

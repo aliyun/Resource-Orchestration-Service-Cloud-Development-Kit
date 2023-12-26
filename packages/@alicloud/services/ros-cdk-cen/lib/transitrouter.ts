@@ -4,7 +4,8 @@ import { RosTransitRouter } from './cen.generated';
 export { RosTransitRouter as TransitRouterProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::TransitRouter`
+ * Properties for defining a `TransitRouter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouter
  */
 export interface TransitRouterProps {
 
@@ -25,14 +26,11 @@ export interface TransitRouterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::TransitRouter`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouter`, which is used to create an Enterprise Edition transit router.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouter`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouter
  */
 export class TransitRouter extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AliUid: AliUid
@@ -70,8 +68,6 @@ export class TransitRouter extends ros.Resource {
     public readonly attrType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::TransitRouter`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

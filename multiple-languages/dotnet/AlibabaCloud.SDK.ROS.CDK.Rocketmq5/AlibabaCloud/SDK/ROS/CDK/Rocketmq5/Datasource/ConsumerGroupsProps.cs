@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::ROCKETMQ5::ConsumerGroups`.</summary>
+    /// <summary>Properties for defining a `ConsumerGroups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq5-consumergroups
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-rocketmq5.datasource.ConsumerGroupsProps")]
     public class ConsumerGroupsProps : AlibabaCloud.SDK.ROS.CDK.Rocketmq5.Datasource.IConsumerGroupsProps
     {

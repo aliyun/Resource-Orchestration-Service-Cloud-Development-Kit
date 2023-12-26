@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dbs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::DBS::BackupPlans`.</summary>
+    /// <summary>Properties for defining a `BackupPlans`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dbs-backupplans
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-dbs.datasource.BackupPlansProps")]
     public class BackupPlansProps : AlibabaCloud.SDK.ROS.CDK.Dbs.Datasource.IBackupPlansProps
     {

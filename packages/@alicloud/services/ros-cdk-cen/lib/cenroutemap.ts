@@ -4,7 +4,8 @@ import { RosCenRouteMap } from './cen.generated';
 export { RosCenRouteMap as CenRouteMapProperty };
 
 /**
- * Properties for defining a `ALIYUN::CEN::CenRouteMap`
+ * Properties for defining a `CenRouteMap`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
  */
 export interface CenRouteMapProps {
 
@@ -50,9 +51,9 @@ export interface CenRouteMapProps {
     /**
      * Property cidrMatchMode: Match statements are used to match the prefixes. Valid values: 
      *  Include: uses fuzzy match. If the routing prefix in the condition contains the routing prefix of the route, the match is successful. 
-     *  For example, the 1.1.0.0/16 policy can match the 1.1.1.0/24 route. 
+     *  For example, the 1.1.0.0\/16 policy can match the 1.1.1.0\/24 route. 
      *  Complete: uses exact match. Only when the routing prefix in the condition is the same as the routing prefix of the route, the match is successful. 
-     *  For example, the 1.1.0.0/16 policy can match the 1.1.0.0/16 route.
+     *  For example, the 1.1.0.0\/16 policy can match the 1.1.0.0\/16 route.
      */
     readonly cidrMatchMode?: string | ros.IResolvable;
 
@@ -191,14 +192,11 @@ export interface CenRouteMapProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CEN::CenRouteMap`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenRouteMap`, which is used to create a routing policy.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenRouteMap`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
  */
 export class CenRouteMap extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute RouteMapId: The ID of the route map.
@@ -206,8 +204,6 @@ export class CenRouteMap extends ros.Resource {
     public readonly attrRouteMapId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CEN::CenRouteMap`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

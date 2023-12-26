@@ -4,7 +4,8 @@ import { RosStorage } from './vod.generated';
 export { RosStorage as StorageProperty };
 
 /**
- * Properties for defining a `ALIYUN::VOD::Storage`
+ * Properties for defining a `Storage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-storage
  */
 export interface StorageProps {
 
@@ -25,14 +26,11 @@ export interface StorageProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VOD::Storage`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VOD::Storage`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStorage`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vod-storage
  */
 export class Storage extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CreateTime: The creation time of the storage.
@@ -80,8 +78,6 @@ export class Storage extends ros.Resource {
     public readonly attrType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VOD::Storage`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

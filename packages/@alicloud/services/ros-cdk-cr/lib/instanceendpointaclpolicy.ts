@@ -4,7 +4,8 @@ import { RosInstanceEndpointAclPolicy } from './cr.generated';
 export { RosInstanceEndpointAclPolicy as InstanceEndpointAclPolicyProperty };
 
 /**
- * Properties for defining a `ALIYUN::CR::InstanceEndpointAclPolicy`
+ * Properties for defining a `InstanceEndpointAclPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
  */
 export interface InstanceEndpointAclPolicyProps {
 
@@ -41,14 +42,11 @@ export interface InstanceEndpointAclPolicyProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CR::InstanceEndpointAclPolicy`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CR::InstanceEndpointAclPolicy`, which is used to create a whitelist for the access port of a public-facing instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceEndpointAclPolicy`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instanceendpointaclpolicy
  */
 export class InstanceEndpointAclPolicy extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Entry: The IP address range that is allowed to access the instance.
@@ -61,8 +59,6 @@ export class InstanceEndpointAclPolicy extends ros.Resource {
     public readonly attrInstanceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CR::InstanceEndpointAclPolicy`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

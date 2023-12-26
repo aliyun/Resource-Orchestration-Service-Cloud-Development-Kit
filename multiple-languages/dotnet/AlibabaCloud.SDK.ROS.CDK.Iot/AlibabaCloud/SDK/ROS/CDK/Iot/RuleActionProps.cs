@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::IOT::RuleAction`.</summary>
+    /// <summary>Properties for defining a `RuleAction`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-iot.RuleActionProps")]
     public class RuleActionProps : AlibabaCloud.SDK.ROS.CDK.Iot.IRuleActionProps
     {

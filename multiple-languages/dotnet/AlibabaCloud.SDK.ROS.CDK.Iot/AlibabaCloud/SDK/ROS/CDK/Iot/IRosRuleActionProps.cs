@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
-    /// <summary>Properties for defining a `ALIYUN::IOT::RuleAction`.</summary>
+    /// <summary>Properties for defining a `RosRuleAction`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosRuleActionProps), fullyQualifiedName: "@alicloud/ros-cdk-iot.RosRuleActionProps")]
     public interface IRosRuleActionProps
     {
@@ -85,7 +88,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::IOT::RuleAction`.</summary>
+        /// <summary>Properties for defining a `RosRuleAction`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosRuleActionProps), fullyQualifiedName: "@alicloud/ros-cdk-iot.RosRuleActionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Iot.IRosRuleActionProps
         {

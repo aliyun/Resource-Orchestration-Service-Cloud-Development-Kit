@@ -4,11 +4,16 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>A ROS template type:  `ALIYUN::CLOUDFW::AddressBook`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`, which is used to create access control address books.</summary>
+    /// <remarks>
+    /// Access control address books include IP address books, Elastic Compute Service (ECS) tag address books, port address books, and domain address books.
+    ///
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AddressBook` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cloudfw.RosAddressBook), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.RosAddressBook", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cloudfw.RosAddressBookProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosAddressBook : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::CLOUDFW::AddressBook`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -169,8 +174,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <remarks>
         /// <strong>Property</strong>: addressList: Address list of the address book, between multiple addresses separated by commas.
         /// Note: When GroupType ip, it must be set to port or domain.
-        /// When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4/32, 1.2.3.0/24
-        /// When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
+        /// When GroupType as ip, address list, fill in the IP address. For example: 1.2.3.4\/32, 1.2.3.0\/24
+        /// When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100\/200
         /// When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
         /// </remarks>
         [JsiiOptional]

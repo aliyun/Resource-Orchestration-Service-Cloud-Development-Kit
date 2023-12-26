@@ -4,7 +4,8 @@ import { RosIpsecServer } from './vpc.generated';
 export { RosIpsecServer as IpsecServerProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::IpsecServer`
+ * Properties for defining a `IpsecServer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
  */
 export interface IpsecServerProps {
 
@@ -14,7 +15,7 @@ export interface IpsecServerProps {
     readonly clientIpPool: string | ros.IResolvable;
 
     /**
-     * Property localSubnet: The local network segment refers to the network segment on the VPC side that needs to be interconnected with the client network segment. Use half-width commas (,) to separate multiple network segments, for example: 192.168.1.0/24,192.168.2.0/24.
+     * Property localSubnet: The local network segment refers to the network segment on the VPC side that needs to be interconnected with the client network segment. Use half-width commas (,) to separate multiple network segments, for example: 192.168.1.0\/24,192.168.2.0\/24.
      */
     readonly localSubnet: string | ros.IResolvable;
 
@@ -56,14 +57,11 @@ export interface IpsecServerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::IpsecServer`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::IpsecServer`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpsecServer`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
  */
 export class IpsecServer extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute IpsecServerId: IPsec server ID.
@@ -76,8 +74,6 @@ export class IpsecServer extends ros.Resource {
     public readonly attrIpsecServerName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::IpsecServer`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

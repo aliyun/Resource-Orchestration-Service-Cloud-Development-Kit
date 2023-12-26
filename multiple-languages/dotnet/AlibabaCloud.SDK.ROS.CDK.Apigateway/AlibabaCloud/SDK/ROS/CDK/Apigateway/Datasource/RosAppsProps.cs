@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ApiGateway::Apps`.</summary>
+    /// <summary>Properties for defining a `RosApps`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apps
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.datasource.RosAppsProps")]
     public class RosAppsProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.Datasource.IRosAppsProps
     {

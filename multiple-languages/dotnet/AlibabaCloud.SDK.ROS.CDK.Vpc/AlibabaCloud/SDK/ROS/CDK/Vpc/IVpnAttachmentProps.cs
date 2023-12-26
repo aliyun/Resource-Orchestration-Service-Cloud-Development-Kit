@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::VpnAttachment`.</summary>
+    /// <summary>Properties for defining a `VpnAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IVpnAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.VpnAttachmentProps")]
     public interface IVpnAttachmentProps
     {
@@ -192,7 +195,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::VpnAttachment`.</summary>
+        /// <summary>Properties for defining a `VpnAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IVpnAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.VpnAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IVpnAttachmentProps
         {

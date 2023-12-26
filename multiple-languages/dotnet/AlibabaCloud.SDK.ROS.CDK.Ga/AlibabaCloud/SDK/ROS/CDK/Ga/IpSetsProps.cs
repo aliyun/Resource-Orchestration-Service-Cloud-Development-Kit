@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::GA::IpSets`.</summary>
+    /// <summary>Properties for defining a `IpSets`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ga.IpSetsProps")]
     public class IpSetsProps : AlibabaCloud.SDK.ROS.CDK.Ga.IIpSetsProps
     {

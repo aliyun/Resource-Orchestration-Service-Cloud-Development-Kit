@@ -4,7 +4,8 @@ import { RosTrafficMirrorSession } from './vpc.generated';
 export { RosTrafficMirrorSession as TrafficMirrorSessionProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::TrafficMirrorSession`
+ * Properties for defining a `TrafficMirrorSession`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
  */
 export interface TrafficMirrorSessionProps {
 
@@ -60,13 +61,13 @@ export interface TrafficMirrorSessionProps {
 
     /**
      * Property trafficMirrorSessionDescription: The description of the traffic mirror session.
-     * The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly trafficMirrorSessionDescription?: string | ros.IResolvable;
 
     /**
      * Property trafficMirrorSessionName: The name of the traffic mirror session.
-     * The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+     * The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly trafficMirrorSessionName?: string | ros.IResolvable;
 
@@ -78,14 +79,11 @@ export interface TrafficMirrorSessionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::TrafficMirrorSession`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`DATASOURCE::VPC::NatGateways is used to query NAT gateways.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrafficMirrorSession`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
  */
 export class TrafficMirrorSession extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TrafficMirrorSessionId: The ID of the traffic mirror session.
@@ -93,8 +91,6 @@ export class TrafficMirrorSession extends ros.Resource {
     public readonly attrTrafficMirrorSessionId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::TrafficMirrorSession`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

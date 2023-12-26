@@ -4,7 +4,8 @@ import { RosVServerGroup } from './slb.generated';
 export { RosVServerGroup as VServerGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLB::VServerGroup`
+ * Properties for defining a `VServerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
 export interface VServerGroupProps {
 
@@ -25,14 +26,11 @@ export interface VServerGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLB::VServerGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::VServerGroup`, which is used to create a vServer group and attach backend servers to a Server Load Balancer (SLB) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVServerGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-vservergroup
  */
 export class VServerGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute BackendServers: Backend server list in this VServerGroup.
@@ -40,13 +38,16 @@ export class VServerGroup extends ros.Resource {
     public readonly attrBackendServers: ros.IResolvable;
 
     /**
+     * Attribute LoadBalancerId: The id of load balancer.
+     */
+    public readonly attrLoadBalancerId: ros.IResolvable;
+
+    /**
      * Attribute VServerGroupId: The id of VServerGroup created.
      */
     public readonly attrVServerGroupId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLB::VServerGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -61,6 +62,7 @@ export class VServerGroup extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVServerGroup;
         this.attrBackendServers = rosVServerGroup.attrBackendServers;
+        this.attrLoadBalancerId = rosVServerGroup.attrLoadBalancerId;
         this.attrVServerGroupId = rosVServerGroup.attrVServerGroupId;
     }
 }

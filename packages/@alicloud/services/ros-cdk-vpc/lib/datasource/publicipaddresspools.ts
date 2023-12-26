@@ -4,7 +4,8 @@ import { RosPublicIpAddressPools } from './vpc.generated';
 export { RosPublicIpAddressPools as PublicIpAddressPoolsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::VPC::PublicIpAddressPools`
+ * Properties for defining a `PublicIpAddressPools`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
  */
 export interface PublicIpAddressPoolsProps {
 
@@ -29,7 +30,7 @@ export interface PublicIpAddressPoolsProps {
      * Property publicIpAddressPoolName: The name of the IP address pool.
      * This parameter is optional. The name must be 1 to 128 characters in length, 
      * and can contain digits, periods (.), underscores (_), and hyphens (-). 
-     * The name must start with a letter but cannot start with http:// or https://.
+     * The name must start with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly publicIpAddressPoolName?: string | ros.IResolvable;
 
@@ -40,14 +41,11 @@ export interface PublicIpAddressPoolsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::VPC::PublicIpAddressPools`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::PublicIpAddressPools`, which is used to query available IP address pools.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPublicIpAddressPools`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-publicipaddresspools
  */
 export class PublicIpAddressPools extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute PublicIpAddressPoolIds: The list of public ip address pool IDs.
@@ -60,8 +58,6 @@ export class PublicIpAddressPools extends ros.Resource {
     public readonly attrPublicIpAddressPools: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::VPC::PublicIpAddressPools`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

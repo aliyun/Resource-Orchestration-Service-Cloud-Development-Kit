@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NAS::Fileset`.</summary>
+    /// <summary>Properties for defining a `RosFileset`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nas.RosFilesetProps")]
     public class RosFilesetProps : AlibabaCloud.SDK.ROS.CDK.Nas.IRosFilesetProps
     {
@@ -48,7 +51,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <strong>Property</strong>: fileSystemPath: The absolute path of Fileset to be created.
         /// The parent catalog of specified the directory must be a directory in the file system.
         /// The length is 2 to 1024 characters.
-        /// Specify the directory must start with positive (/).
+        /// Specify the directory must start with positive (\/).
         /// </remarks>
         [JsiiProperty(name: "fileSystemPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object FileSystemPath
@@ -82,7 +85,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <remarks>
         /// <strong>Property</strong>: description: Fileset description information.
         /// The length is 2 to 128 English or Chinese characters.
-        /// Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+        /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
         /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
         /// </remarks>
         [JsiiOptional]

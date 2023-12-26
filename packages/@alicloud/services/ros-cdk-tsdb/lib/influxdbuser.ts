@@ -4,7 +4,8 @@ import { RosInfluxDBUser } from './tsdb.generated';
 export { RosInfluxDBUser as InfluxDBUserProperty };
 
 /**
- * Properties for defining a `ALIYUN::TSDB::InfluxDBUser`
+ * Properties for defining a `InfluxDBUser`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbuser
  */
 export interface InfluxDBUserProps {
 
@@ -37,14 +38,11 @@ export interface InfluxDBUserProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::TSDB::InfluxDBUser`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::InfluxDBUser`, which is used to create a Time Series Database (TSDB) database account.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInfluxDBUser`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-influxdbuser
  */
 export class InfluxDBUser extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute InstanceId: The ID of TSDB for InfluxDB.
@@ -62,8 +60,6 @@ export class InfluxDBUser extends ros.Resource {
     public readonly attrUserType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::TSDB::InfluxDBUser`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

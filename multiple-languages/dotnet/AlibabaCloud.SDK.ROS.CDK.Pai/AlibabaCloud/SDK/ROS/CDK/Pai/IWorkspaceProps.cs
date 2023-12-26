@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pai
 {
-    /// <summary>Properties for defining a `ALIYUN::PAI::Workspace`.</summary>
+    /// <summary>Properties for defining a `Workspace`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IWorkspaceProps), fullyQualifiedName: "@alicloud/ros-cdk-pai.WorkspaceProps")]
     public interface IWorkspaceProps
     {
@@ -63,7 +66,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::PAI::Workspace`.</summary>
+        /// <summary>Properties for defining a `Workspace`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IWorkspaceProps), fullyQualifiedName: "@alicloud/ros-cdk-pai.WorkspaceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Pai.IWorkspaceProps
         {

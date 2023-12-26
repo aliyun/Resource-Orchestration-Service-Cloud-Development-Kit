@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>Properties for defining a `ALIYUN::CLOUDFW::ControlPolicy`.</summary>
+    /// <summary>Properties for defining a `ControlPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IControlPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.ControlPolicyProps")]
     public interface IControlPolicyProps
     {
@@ -178,7 +181,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CLOUDFW::ControlPolicy`.</summary>
+        /// <summary>Properties for defining a `ControlPolicy`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IControlPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.ControlPolicyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cloudfw.IControlPolicyProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ESS::ScalingConfigurations`.</summary>
+    /// <summary>Properties for defining a `RosScalingConfigurations`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalingconfigurations
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ess.datasource.RosScalingConfigurationsProps")]
     public class RosScalingConfigurationsProps : AlibabaCloud.SDK.ROS.CDK.Ess.Datasource.IRosScalingConfigurationsProps
     {

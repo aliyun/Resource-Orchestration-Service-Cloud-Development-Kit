@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ALB::SecurityPolicy`.</summary>
+    /// <summary>Properties for defining a `SecurityPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-alb.SecurityPolicyProps")]
     public class SecurityPolicyProps : AlibabaCloud.SDK.ROS.CDK.Alb.ISecurityPolicyProps
     {

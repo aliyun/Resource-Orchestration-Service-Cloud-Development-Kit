@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Eci
 {
-    /// <summary>Properties for defining a `ALIYUN::ECI::ContainerGroup`.</summary>
+    /// <summary>Properties for defining a `ContainerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IContainerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-eci.ContainerGroupProps")]
     public interface IContainerGroupProps
     {
@@ -284,7 +287,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
         }
 
-        /// <summary>Property tag: The list of container group tags in the form of key/value pairs.</summary>
+        /// <summary>Property tag: The list of container group tags in the form of key\/value pairs.</summary>
         /// <remarks>
         /// You can define a maximum of 20 tags for each container group.
         /// </remarks>
@@ -352,7 +355,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECI::ContainerGroup`.</summary>
+        /// <summary>Properties for defining a `ContainerGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IContainerGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-eci.ContainerGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Eci.IContainerGroupProps
         {
@@ -573,7 +579,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property tag: The list of container group tags in the form of key/value pairs.</summary>
+            /// <summary>Property tag: The list of container group tags in the form of key\/value pairs.</summary>
             /// <remarks>
             /// You can define a maximum of 20 tags for each container group.
             /// </remarks>

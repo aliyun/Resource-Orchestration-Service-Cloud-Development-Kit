@@ -4,7 +4,8 @@ import { RosRule } from './pvtz.generated';
 export { RosRule as RuleProperty };
 
 /**
- * Properties for defining a `ALIYUN::PVTZ::Rule`
+ * Properties for defining a `Rule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-rule
  */
 export interface RuleProps {
 
@@ -36,14 +37,11 @@ export interface RuleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PVTZ::Rule`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::Rule`, which is used to add a forwarding rule.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-rule
  */
 export class Rule extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CreateTime: The timestamp when the forwarding rule was created.
@@ -86,8 +84,6 @@ export class Rule extends ros.Resource {
     public readonly attrZoneName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PVTZ::Rule`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

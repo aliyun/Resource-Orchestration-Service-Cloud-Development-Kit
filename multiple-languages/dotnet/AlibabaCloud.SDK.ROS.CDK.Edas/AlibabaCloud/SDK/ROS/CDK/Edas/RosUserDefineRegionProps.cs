@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EDAS::UserDefineRegion`.</summary>
+    /// <summary>Properties for defining a `RosUserDefineRegion`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-userdefineregion
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-edas.RosUserDefineRegionProps")]
     public class RosUserDefineRegionProps : AlibabaCloud.SDK.ROS.CDK.Edas.IRosUserDefineRegionProps
     {

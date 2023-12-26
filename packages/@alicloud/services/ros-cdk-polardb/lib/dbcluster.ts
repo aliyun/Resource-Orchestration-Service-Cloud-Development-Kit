@@ -4,7 +4,8 @@ import { RosDBCluster } from './polardb.generated';
 export { RosDBCluster as DBClusterProperty };
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBCluster`
+ * Properties for defining a `DBCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
 export interface DBClusterProps {
 
@@ -110,7 +111,7 @@ export interface DBClusterProps {
      * Property dbClusterDescription: The description of the cluster. The description must comply with the following rules:
      * It must start with a Chinese character or an English letter.
      * It can contain Chinese and English characters, digits, underscores (_), and hyphens (-).
-     * It cannot start with http:// or https://.
+     * It cannot start with http:\/\/ or https:\/\/.
      * It must be 2 to 256 characters in length.
      */
     readonly dbClusterDescription?: string | ros.IResolvable;
@@ -381,14 +382,11 @@ export interface DBClusterProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::POLARDB::DBCluster`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBCluster`, which is used to create a PolarDB cluster.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
 export class DBCluster extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterConnectionString: The cluster connection string of the db cluster.
@@ -451,8 +449,6 @@ export class DBCluster extends ros.Resource {
     public readonly attrPrimaryEndpointIds: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBCluster`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

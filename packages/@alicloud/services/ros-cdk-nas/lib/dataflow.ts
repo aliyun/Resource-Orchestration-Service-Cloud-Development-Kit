@@ -4,7 +4,8 @@ import { RosDataFlow } from './nas.generated';
 export { RosDataFlow as DataFlowProperty };
 
 /**
- * Properties for defining a `ALIYUN::NAS::DataFlow`
+ * Properties for defining a `DataFlow`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */
 export interface DataFlowProps {
 
@@ -19,20 +20,20 @@ export interface DataFlowProps {
     readonly fsetId: string | ros.IResolvable;
 
     /**
-     * Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>.
+     * Property sourceStorage: Access path stored at the source.Format: <storage Type>: \/\/ <PATH>.
      * in:
      * Storage Type: Currently only supports OSS.
      * PATH: OSS's bucket name.Limit the following.
      * Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
      * The length is 8 ~ 128 English characters.
      * Use UTF-8 encoding.
-     * Can't start with http: // and https: //.
+     * Can't start with http: \/\/ and https: \/\/.
      * Explain that the OSS BUCKET must be the bucket that exists in the region.
      */
     readonly sourceStorage: string | ros.IResolvable;
 
     /**
-     * Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s.
+     * Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s.
      * Value: 
      * 600
      * 1200
@@ -64,7 +65,7 @@ export interface DataFlowProps {
      * Property description: Description of data flow.
      * limit:
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     readonly description?: string | ros.IResolvable;
@@ -78,14 +79,11 @@ export interface DataFlowProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NAS::DataFlow`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::DataFlow`, which is used to create a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDataFlow`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */
 export class DataFlow extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DataFlowId: Data flow ID.
@@ -98,8 +96,6 @@ export class DataFlow extends ros.Resource {
     public readonly attrFileSystemId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NAS::DataFlow`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

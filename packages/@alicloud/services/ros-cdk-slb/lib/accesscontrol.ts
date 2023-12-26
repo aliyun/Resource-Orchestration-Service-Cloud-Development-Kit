@@ -4,7 +4,8 @@ import { RosAccessControl } from './slb.generated';
 export { RosAccessControl as AccessControlProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLB::AccessControl`
+ * Properties for defining a `AccessControl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesscontrol
  */
 export interface AccessControlProps {
 
@@ -35,14 +36,11 @@ export interface AccessControlProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLB::AccessControl`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessControl`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessControl`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesscontrol
  */
 export class AccessControl extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AclId: The ID of the access control list.
@@ -50,8 +48,6 @@ export class AccessControl extends ros.Resource {
     public readonly attrAclId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::SLB::AccessControl`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

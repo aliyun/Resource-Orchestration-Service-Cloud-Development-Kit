@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * Properties for defining a <code>ALIYUN::ECS::NetworkInterfaceAttachment</code>.
+ * Properties for defining a <code>NetworkInterfaceAttachment</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfaceattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.850Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.322Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterfaceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkInterfaceAttachmentProps.Jsii$Proxy.class)
 public interface NetworkInterfaceAttachmentProps extends software.amazon.jsii.JsiiSerializable {

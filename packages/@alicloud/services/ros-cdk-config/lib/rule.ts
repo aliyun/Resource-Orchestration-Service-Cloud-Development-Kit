@@ -4,7 +4,8 @@ import { RosRule } from './config.generated';
 export { RosRule as RuleProperty };
 
 /**
- * Properties for defining a `ALIYUN::Config::Rule`
+ * Properties for defining a `Rule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-rule
  */
 export interface RuleProps {
 
@@ -85,14 +86,11 @@ export interface RuleProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::Config::Rule`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Config::Rule`, which is used to create or modify a rule.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRule`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-rule
  */
 export class Rule extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ConfigRuleArn: config rule arn
@@ -180,8 +178,6 @@ export class Rule extends ros.Resource {
     public readonly attrTagValueScope: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::Config::Rule`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

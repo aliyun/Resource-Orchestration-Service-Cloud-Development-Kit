@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DFS::AccessGroup`
+ * Properties for defining a `RosAccessGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessgroup
  */
 export interface RosAccessGroupProps {
 
@@ -83,18 +84,15 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::DFS::AccessGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessgroup
  */
 export class RosAccessGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DFS::AccessGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccessGroupId: The ID of the access_group.
@@ -123,8 +121,6 @@ export class RosAccessGroup extends ros.RosResource {
     public networkType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DFS::AccessGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -153,7 +149,8 @@ export class RosAccessGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DFS::AccessRule`
+ * Properties for defining a `RosAccessRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessrule
  */
 export interface RosAccessRuleProps {
 
@@ -168,7 +165,7 @@ export interface RosAccessRuleProps {
     readonly networkSegment: string | ros.IResolvable;
 
     /**
-     * @Property rwAccessType: The read/write permission of the authorized object on the file system.
+     * @Property rwAccessType: The read\/write permission of the authorized object on the file system.
      * Values:
      * RDWR (default) : read and write.
      * RDONLY: read-only
@@ -252,18 +249,15 @@ function rosAccessRulePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::DFS::AccessRule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessRule`, which is used to create a rule for a permission group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessrule
  */
 export class RosAccessRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DFS::AccessRule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccessRuleId: The ID of the access_rule.
@@ -284,7 +278,7 @@ export class RosAccessRule extends ros.RosResource {
     public networkSegment: string | ros.IResolvable;
 
     /**
-     * @Property rwAccessType: The read/write permission of the authorized object on the file system.
+     * @Property rwAccessType: The read\/write permission of the authorized object on the file system.
      * Values:
      * RDWR (default) : read and write.
      * RDONLY: read-only
@@ -304,8 +298,6 @@ export class RosAccessRule extends ros.RosResource {
     public priority: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DFS::AccessRule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -338,7 +330,8 @@ export class RosAccessRule extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DFS::FileSystem`
+ * Properties for defining a `RosFileSystem`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
  */
 export interface RosFileSystemProps {
 
@@ -395,7 +388,7 @@ export interface RosFileSystemProps {
 
     /**
      * @Property provisionedThroughputInMiBps: Preset handling capacity.
-     * Unit: MB/sdata range: 1-5120
+     * Unit: MB\/sdata range: 1-5120
      */
     readonly provisionedThroughputInMiBps?: number | ros.IResolvable;
 
@@ -521,18 +514,15 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::DFS::FileSystem`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::FileSystem`, which is used to create a file system.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FileSystem` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-filesystem
  */
 export class RosFileSystem extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DFS::FileSystem";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FileSystemId: The ID of the file system.
@@ -595,7 +585,7 @@ export class RosFileSystem extends ros.RosResource {
 
     /**
      * @Property provisionedThroughputInMiBps: Preset handling capacity.
-     * Unit: MB/sdata range: 1-5120
+     * Unit: MB\/sdata range: 1-5120
      */
     public provisionedThroughputInMiBps: number | ros.IResolvable | undefined;
 
@@ -612,8 +602,6 @@ export class RosFileSystem extends ros.RosResource {
     public throughputMode: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DFS::FileSystem`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -658,7 +646,8 @@ export class RosFileSystem extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DFS::MountPoint`
+ * Properties for defining a `RosMountPoint`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
  */
 export interface RosMountPointProps {
 
@@ -761,18 +750,15 @@ function rosMountPointPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::DFS::MountPoint`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::MountPoint`, which is used to create a mount target.
+ * @Note This class does not contain additional functions, so it is recommended to use the `MountPoint` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
  */
 export class RosMountPoint extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DFS::MountPoint";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute MountPointId: The ID of the mount point.
@@ -819,8 +805,6 @@ export class RosMountPoint extends ros.RosResource {
     public status: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DFS::MountPoint`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

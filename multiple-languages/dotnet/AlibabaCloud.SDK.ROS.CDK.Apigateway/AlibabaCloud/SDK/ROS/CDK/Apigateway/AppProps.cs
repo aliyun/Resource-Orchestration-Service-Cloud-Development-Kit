@@ -6,13 +6,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::App`.</summary>
+    /// <summary>Properties for defining a `App`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.AppProps")]
     public class AppProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IAppProps
     {
         private object _appName;
 
-        /// <summary>Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
+        /// <summary>Property appName: The name of the App.Need [4, 26] Chinese\English\Number characters or "_",and should start with Chinese\/English character.</summary>
         [JsiiProperty(name: "appName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AppName
         {

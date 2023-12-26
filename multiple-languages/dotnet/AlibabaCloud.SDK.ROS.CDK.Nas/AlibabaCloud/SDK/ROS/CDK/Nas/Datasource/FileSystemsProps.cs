@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::NAS::FileSystems`.</summary>
+    /// <summary>Properties for defining a `FileSystems`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nas.datasource.FileSystemsProps")]
     public class FileSystemsProps : AlibabaCloud.SDK.ROS.CDK.Nas.Datasource.IFileSystemsProps
     {

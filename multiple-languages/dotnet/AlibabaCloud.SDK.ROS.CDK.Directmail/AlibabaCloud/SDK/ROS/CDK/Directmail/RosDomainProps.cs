@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Directmail
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::DirectMail::Domain`.</summary>
+    /// <summary>Properties for defining a `RosDomain`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-directmail-domain
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-directmail.RosDomainProps")]
     public class RosDomainProps : AlibabaCloud.SDK.ROS.CDK.Directmail.IRosDomainProps
     {

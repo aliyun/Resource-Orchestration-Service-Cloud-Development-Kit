@@ -4,7 +4,8 @@ import { RosAnycastEIP } from './vpc.generated';
 export { RosAnycastEIP as AnycastEIPProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::AnycastEIP`
+ * Properties for defining a `AnycastEIP`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteip
  */
 export interface AnycastEIPProps {
 
@@ -40,14 +41,11 @@ export interface AnycastEIPProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::AnycastEIP`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::AnycastEIP`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAnycastEIP`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteip
  */
 export class AnycastEIP extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AnycastId: Anycast EIP instance ID
@@ -70,8 +68,6 @@ export class AnycastEIP extends ros.Resource {
     public readonly attrOrderId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::AnycastEIP`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::NetworkInterfaceAttachment`.</summary>
+    /// <summary>Properties for defining a `RosNetworkInterfaceAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfaceattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.RosNetworkInterfaceAttachmentProps")]
     public class RosNetworkInterfaceAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IRosNetworkInterfaceAttachmentProps
     {

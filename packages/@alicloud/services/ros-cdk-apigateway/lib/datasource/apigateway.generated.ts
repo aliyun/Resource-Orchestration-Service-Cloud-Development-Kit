@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::ApiGateway::Apis`
+ * Properties for defining a `RosApis`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
  */
 export interface RosApisProps {
 
@@ -87,18 +88,15 @@ function rosApisPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ApiGateway::Apis`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Apis`, which is used to query APIs in API Gateway.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Apis` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
  */
 export class RosApis extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ApiGateway::Apis";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ApiIds: The list of The ApiGateway api ids.
@@ -144,8 +142,6 @@ export class RosApis extends ros.RosResource {
     public visibility: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ApiGateway::Apis`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -181,7 +177,8 @@ export class RosApis extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ApiGateway::Apps`
+ * Properties for defining a `RosApps`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apps
  */
 export interface RosAppsProps {
 
@@ -231,18 +228,15 @@ function rosAppsPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ApiGateway::Apps`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Apps`, which is used to query applications.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Apps` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apps
  */
 export class RosApps extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ApiGateway::Apps";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AppIds: The list of The ApiGateway app ids.
@@ -268,8 +262,6 @@ export class RosApps extends ros.RosResource {
     public appOwner: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ApiGateway::Apps`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -297,7 +289,8 @@ export class RosApps extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ApiGateway::Groups`
+ * Properties for defining a `RosGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-groups
  */
 export interface RosGroupsProps {
 
@@ -367,18 +360,15 @@ function rosGroupsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ApiGateway::Groups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Groups`, which is used to query the details of existing API groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Groups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-groups
  */
 export class RosGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ApiGateway::Groups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ApiGroupIds: The list of The ApiGateway group ids.
@@ -414,8 +404,6 @@ export class RosGroups extends ros.RosResource {
     public sort: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ApiGateway::Groups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -447,7 +435,8 @@ export class RosGroups extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::ApiGateway::Instances`
+ * Properties for defining a `RosInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-instances
  */
 export interface RosInstancesProps {
 
@@ -503,18 +492,15 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::ApiGateway::Instances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Instances`, which is used to query instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-instances
  */
 export class RosInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ApiGateway::Instances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ApiGatewayInstanceIds: The list of The ApiGateway group ids.
@@ -540,8 +526,6 @@ export class RosInstances extends ros.RosResource {
     public language: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::ApiGateway::Instances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

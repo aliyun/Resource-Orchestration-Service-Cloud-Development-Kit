@@ -4,7 +4,8 @@ import { RosDisks } from './ecs.generated';
 export { RosDisks as DisksProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ECS::Disks`
+ * Properties for defining a `Disks`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
  */
 export interface DisksProps {
 
@@ -27,7 +28,7 @@ export interface DisksProps {
      * ephemeral: retired local disk
      * ephemeral_ssd: local SSD
      * cloud_essd: ESSD
-     * local_ssd_pro: I/O-intensive local disk
+     * local_ssd_pro: I\/O-intensive local disk
      * local_hdd_pro: throughput-intensive local disk
      */
     readonly category?: string | ros.IResolvable;
@@ -172,14 +173,11 @@ export interface DisksProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ECS::Disks`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disks`, which is used to query the Elastic Block Storage (EBS) devices that you created. The following EBS devices are supported: cloud disks and local disks.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisks`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
  */
 export class Disks extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DiskIds: The list of disk IDs.
@@ -192,8 +190,6 @@ export class Disks extends ros.Resource {
     public readonly attrDisks: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ECS::Disks`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

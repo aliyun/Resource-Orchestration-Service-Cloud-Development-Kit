@@ -11,7 +11,7 @@ ARG1=$2
 python3 -V
 
 usage() {
-    echo "Usage: $PROG_NAME {setup-dependency|clear-dependency|generate-tsconfig|build|spec2ts|jsii-pack|copy-js|convert-maven-project}"
+    echo "Usage: $PROG_NAME {setup-dependency|clear-dependency|generate-tsconfig|build|generate-webs|spec2ts|jsii-pack|copy-js|convert-maven-project}"
     exit 1;
 }
 
@@ -93,6 +93,61 @@ spec2ts() {
 
     cd $root
 }
+
+generate_webs() {
+    root=$PWD
+
+    TMPDIR="$PWD/temp"
+    REFDIR="$PWD/references"
+    DOCDIR="$REFDIR/docs"
+
+    rm -fr ${TMPDIR}
+    mkdir -p ${TMPDIR}
+
+    rm -fr ${REFDIR}/site
+    rm -fr ${DOCDIR}/python
+    mkdir -p ${DOCDIR}/python
+    rm -fr ${DOCDIR}/java
+    mkdir -p ${DOCDIR}/java
+    rm -fr ${DOCDIR}/csharp
+    mkdir -p ${DOCDIR}/csharp
+    rm -fr ${DOCDIR}/typescript
+    mkdir -p ${DOCDIR}/typescript
+
+    # Split out jsii and non-jsii packages. Jsii packages will be built all at once.
+    # Non-jsii packages will be run individually.
+    echo "Collecting package list..." >&2
+    node scripts/list-packages $TMPDIR/jsii.txt $TMPDIR/nonjsii.txt
+
+    cat $TMPDIR/jsii.txt | while read line
+    do
+      echo "generate docs on ->" + $line
+      cd $line
+      jsii-docgen -o docs/API -l java -l python -l typescript -l csharp
+      basename=$(basename "$line")
+      python3 ${root}/tools/process_markdown_file.py --file_path=${line}/docs/API.python.md --output_path=${DOCDIR}/python/${basename}/
+      python3 ${root}/tools/process_markdown_file.py --file_path=${line}/docs/API.java.md --output_path=${DOCDIR}/java/${basename}/
+      python3 ${root}/tools/process_markdown_file.py --file_path=${line}/docs/API.csharp.md --output_path=${DOCDIR}/csharp/${basename}/
+      python3 ${root}/tools/process_markdown_file.py --file_path=${line}/docs/API.typescript.md --output_path=${DOCDIR}/typescript/${basename}/
+      rm -rf docs/
+    done
+
+    cd $root
+    rm -fr ${TMPDIR}
+    cd $REFDIR
+    mkdocs build
+
+    python3 ${root}/tools/remove_html_empty_lines.py --folder_path=${REFDIR}/site
+    cd site
+    zip -r assets.zip assets/*
+    zip -r csharp.zip csharp/*
+    zip -r java.zip java/*
+    zip -r python.zip python/*
+    zip -r typescript.zip typescript/*
+    zip -r search.zip search/*
+#    zip -r site.zip site/*
+}
+
 
 convert_maven_project() {
     root=$PWD
@@ -313,6 +368,9 @@ case "$ACTION" in
     ;;
     spec2ts)
         spec2ts
+    ;;
+    generate-webs)
+        generate_webs
     ;;
     jsii-pack)
         jsii_pack

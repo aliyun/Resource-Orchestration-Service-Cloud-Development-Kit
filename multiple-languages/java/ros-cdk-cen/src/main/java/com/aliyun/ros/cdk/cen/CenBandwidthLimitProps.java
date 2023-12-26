@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * Properties for defining a <code>ALIYUN::CEN::CenBandwidthLimit</code>.
+ * Properties for defining a <code>CenBandwidthLimit</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.586Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.088Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthLimitProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthLimitProps.Jsii$Proxy.class)
 public interface CenBandwidthLimitProps extends software.amazon.jsii.JsiiSerializable {

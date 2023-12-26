@@ -4,7 +4,8 @@ import { RosNatIp } from './vpc.generated';
 export { RosNatIp as NatIpProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::NatIp`
+ * Properties for defining a `NatIp`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
  */
 export interface NatIpProps {
 
@@ -22,7 +23,7 @@ export interface NatIpProps {
     /**
      * Property natIpDescription: The description of the NAT IP address.
      * The description must be 2 to 256 characters in length. It must start with a letter
-     * but cannot start with http:// or https://.
+     * but cannot start with http:\/\/ or https:\/\/.
      */
     readonly natIpDescription: string | ros.IResolvable;
 
@@ -30,7 +31,7 @@ export interface NatIpProps {
      * Property natIpName: The name of the NAT IP address.
      * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
      * (.), underscores (_), and hyphens (-). It must start with a letter. It cannot start
-     * with http:// or https://.
+     * with http:\/\/ or https:\/\/.
      */
     readonly natIpName: string | ros.IResolvable;
 
@@ -48,14 +49,11 @@ export interface NatIpProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::NatIp`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatIp`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatIp`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
  */
 export class NatIp extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute NatIp: NAT IP address.
@@ -68,8 +66,6 @@ export class NatIp extends ros.Resource {
     public readonly attrNatIpId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::NatIp`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

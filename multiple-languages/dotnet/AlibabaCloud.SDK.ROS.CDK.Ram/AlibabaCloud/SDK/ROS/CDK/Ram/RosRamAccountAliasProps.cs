@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RAM::RamAccountAlias`.</summary>
+    /// <summary>Properties for defining a `RosRamAccountAlias`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.RosRamAccountAliasProps")]
     public class RosRamAccountAliasProps : AlibabaCloud.SDK.ROS.CDK.Ram.IRosRamAccountAliasProps
     {

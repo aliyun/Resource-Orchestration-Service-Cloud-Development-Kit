@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Kafka.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::KAFKA::Instances`.</summary>
+    /// <summary>Properties for defining a `Instances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-instances
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-kafka.datasource.InstancesProps")]
     public interface IInstancesProps
     {
@@ -30,7 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::KAFKA::Instances`.</summary>
+        /// <summary>Properties for defining a `Instances`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kafka-instances
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IInstancesProps), fullyQualifiedName: "@alicloud/ros-cdk-kafka.datasource.InstancesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Kafka.Datasource.IInstancesProps
         {

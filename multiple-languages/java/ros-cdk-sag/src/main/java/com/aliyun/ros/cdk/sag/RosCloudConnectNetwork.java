@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * A ROS template type:  <code>ALIYUN::SAG::CloudConnectNetwork</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAG::CloudConnectNetwork</code>, which is used to create a Cloud Connect Network (CCN) instance.
+ * <p>
+ * CNN is a device access matrix composed of Alibaba Cloud distributed Smart Access Gateways (SAGs). You can add multiple SAGs to a CCN instance and then attach the CCN instance to a Cloud Enterprise Network (CEN) instance. In this way, you can connect your local branches to Alibaba Cloud.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.155Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.993Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosCloudConnectNetwork")
 public class RosCloudConnectNetwork extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +22,6 @@ public class RosCloudConnectNetwork extends com.aliyun.ros.cdk.core.RosResource 
     }
 
     /**
-     * Create a new <code>ALIYUN::SAG::CloudConnectNetwork</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.

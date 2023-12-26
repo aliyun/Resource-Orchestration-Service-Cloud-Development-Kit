@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLS::Audit`.</summary>
+    /// <summary>Properties for defining a `Audit`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.AuditProps")]
     public class AuditProps : AlibabaCloud.SDK.ROS.CDK.Sls.IAuditProps
     {

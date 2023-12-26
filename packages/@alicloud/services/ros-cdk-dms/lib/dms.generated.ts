@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DMS::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance
  */
 export interface RosInstanceProps {
 
@@ -242,18 +243,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::DMS::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::Instance`, which is used to register a database instance for your enterprise.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DMS::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Host: The endpoint of the database instance.
@@ -410,8 +408,6 @@ export class RosInstance extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DMS::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -478,7 +474,8 @@ export class RosInstance extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DMS::User`
+ * Properties for defining a `RosUser`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */
 export interface RosUserProps {
 
@@ -557,18 +554,15 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::DMS::User`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DMS::User`, which is used to add a user to Data Management (DMS).
+ * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-user
  */
 export class RosUser extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DMS::User";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Mobile: UserMobile
@@ -639,8 +633,6 @@ export class RosUser extends ros.RosResource {
     public userName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DMS::User`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

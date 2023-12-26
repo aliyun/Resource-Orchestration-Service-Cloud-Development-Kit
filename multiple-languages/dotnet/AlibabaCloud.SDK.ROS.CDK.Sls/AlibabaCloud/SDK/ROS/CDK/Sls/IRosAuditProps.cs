@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::Audit`.</summary>
+    /// <summary>Properties for defining a `RosAudit`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAuditProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAuditProps")]
     public interface IRosAuditProps
     {
@@ -39,7 +42,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::Audit`.</summary>
+        /// <summary>Properties for defining a `RosAudit`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-audit
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAuditProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAuditProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.IRosAuditProps
         {

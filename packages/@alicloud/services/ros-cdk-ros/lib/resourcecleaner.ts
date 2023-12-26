@@ -4,7 +4,8 @@ import { RosResourceCleaner } from './ros.generated';
 export { RosResourceCleaner as ResourceCleanerProperty };
 
 /**
- * Properties for defining a `ALIYUN::ROS::ResourceCleaner`
+ * Properties for defining a `ResourceCleaner`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */
 export interface ResourceCleanerProps {
 
@@ -94,14 +95,11 @@ export interface ResourceCleanerProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ROS::ResourceCleaner`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::ResourceCleaner`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceCleaner`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */
 export class ResourceCleaner extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CleanResult: The cleanup result. Valid values:
@@ -196,8 +194,6 @@ The value is a list of dict. The dict contains the fields below:
     public readonly attrScanErrors: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ROS::ResourceCleaner`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

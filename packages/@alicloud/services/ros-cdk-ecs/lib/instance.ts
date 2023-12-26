@@ -4,19 +4,23 @@ import { RosInstance } from './ecs.generated';
 export { RosInstance as InstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::Instance`
+ * Properties for defining a `Instance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instance
  */
 export interface InstanceProps {
-
-    /**
-     * Property imageId: Image ID to create ecs instance.
-     */
-    readonly imageId: string | ros.IResolvable;
 
     /**
      * Property instanceType: Ecs instance supported instance type, make sure it should be correct.
      */
     readonly instanceType: string | ros.IResolvable;
+
+    /**
+     * Property affinity: Specifies whether to associate the instance on a dedicated host with the dedicated host. Valid values:
+     * - **default**: does not associate the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance is automatically deployed to another dedicated host in the automatic deployment resource pool if the available resources of the original dedicated host are insufficient.
+     * - **host**: associates the ECS instance with the dedicated host. When you start an instance that was stopped in economical mode, the instance remains on the original dedicated host. If the available resources of the original dedicated host are insufficient, the instance cannot start.
+     * Default value: **default**.
+     */
+    readonly affinity?: string | ros.IResolvable;
 
     /**
      * Property allocatePublicIp: The public ip for ecs instance, if properties is true, will allocate public ip. If property InternetMaxBandwidthOut set to 0, it will not assign public ip.
@@ -34,6 +38,13 @@ export interface InstanceProps {
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
+     * Property creditSpecification: The performance mode of the burstable instance. Valid values:
+     * - **Standard**: the standard mode.
+     * - **Unlimited**: the unlimited mode.
+     */
+    readonly creditSpecification?: string | ros.IResolvable;
+
+    /**
      * Property dedicatedHostId: which dedicated host will be deployed
      */
     readonly dedicatedHostId?: string | ros.IResolvable;
@@ -42,6 +53,11 @@ export interface InstanceProps {
      * Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
      */
     readonly deletionProtection?: boolean | ros.IResolvable;
+
+    /**
+     * Property deploymentSetGroupNo: The number of the deployment set group to which to deploy the instance. If the deployment set specified by **DeploymentSetId** uses the high availability group strategy (AvailabilityGroup), you can use **DeploymentSetGroupNo** to specify a deployment set group in the deployment set. Valid values: 1 to 7.
+     */
+    readonly deploymentSetGroupNo?: number | ros.IResolvable;
 
     /**
      * Property deploymentSetId: Deployment set ID.
@@ -68,6 +84,34 @@ export interface InstanceProps {
      * Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
     readonly hpcClusterId?: string | ros.IResolvable;
+
+    /**
+     * Property httpEndpoint: Specifies whether the access channel is enabled for instance metadata. Valid values:
+     * - **enabled**
+     * - **disabled**
+     * Default value: **enabled**.
+     */
+    readonly httpEndpoint?: string | ros.IResolvable;
+
+    /**
+     * Property httpTokens: Specifies whether the security hardening mode (IMDSv2) is forcefully used to access instance metadata. Valid values:
+     * - **optional**: does not forcefully use the security-enhanced mode (IMDSv2).
+     * - **required**: forcefully uses the security-enhanced mode (IMDSv2). After you set this parameter to required, you cannot access instance metadata in normal mode.
+     * Default value: **optional**.
+     */
+    readonly httpTokens?: string | ros.IResolvable;
+
+    /**
+     * Property imageFamily: The name of the image family. You can set this parameter to obtain the latest available custom image from the specified image family to create the instance.
+     * - **ImageFamily** must be empty if **ImageId** is specified.
+     * - **ImageFamily** can be specified if **ImageId** is not specified.
+     */
+    readonly imageFamily?: string | ros.IResolvable;
+
+    /**
+     * Property imageId: Image ID to create ecs instance.
+     */
+    readonly imageId?: string | ros.IResolvable;
 
     /**
      * Property instanceChargeType: Instance Charge type, allowed value: Prepaid and Postpaid. If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.
@@ -115,7 +159,7 @@ export interface InstanceProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.
+     * Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -123,6 +167,11 @@ export interface InstanceProps {
      * Property privateIpAddress: Private IP for the instance created. Only works for VPC instance and cannot duplicated with existing instance.
      */
     readonly privateIpAddress?: string | ros.IResolvable;
+
+    /**
+     * Property privatePoolOptions: The options of the private pool.
+     */
+    readonly privatePoolOptions?: RosInstance.PrivatePoolOptionsProperty | ros.IResolvable;
 
     /**
      * Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
@@ -173,6 +222,16 @@ export interface InstanceProps {
     readonly spotStrategy?: string | ros.IResolvable;
 
     /**
+     * Property storageSetId: The storage set ID.
+     */
+    readonly storageSetId?: string | ros.IResolvable;
+
+    /**
+     * Property storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+     */
+    readonly storageSetPartitionNumber?: number | ros.IResolvable;
+
+    /**
      * Property systemDiskCategory: Category of system disk. Default is cloud_efficiency. support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd|cloud_auto|cloud_essd_entry
      */
     readonly systemDiskCategory?: string | ros.IResolvable;
@@ -188,7 +247,7 @@ export interface InstanceProps {
     readonly systemDiskDiskName?: string | ros.IResolvable;
 
     /**
-     * Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+     * Property systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
      */
     readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
 
@@ -201,6 +260,19 @@ export interface InstanceProps {
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: RosInstance.TagsProperty[];
+
+    /**
+     * Property tenancy: Specifies whether to create the instance on a dedicated host. Valid values:
+     * - **default**: creates the instance on a non-dedicated host.
+     * - **host**: creates the instance on a dedicated host. If you do not specify **DedicatedHostId**, Alibaba Cloud selects a dedicated host for the instance.
+     * Default value: **default**.
+     */
+    readonly tenancy?: string | ros.IResolvable;
+
+    /**
+     * Property useAdditionalService: Specifies whether to use the system configurations for virtual machines provided by Alibaba Cloud. System configurations for Windows: NTP and KMS. System configurations for Linux: NTP and YUM.
+     */
+    readonly useAdditionalService?: boolean | ros.IResolvable;
 
     /**
      * Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
@@ -231,14 +303,11 @@ export interface InstanceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::Instance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Instance`, which is used to create an Elastic Compute Service (ECS) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instance
  */
 export class Instance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute HostName: Host name of created instance.
@@ -281,8 +350,6 @@ export class Instance extends ros.Resource {
     public readonly attrZoneId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::Instance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties
@@ -292,26 +359,46 @@ export class Instance extends ros.Resource {
 
         const rosInstance = new RosInstance(this, id,  {
             dedicatedHostId: props.dedicatedHostId,
-            privateIpAddress: props.privateIpAddress,
-            description: props.description,
             resourceGroupId: props.resourceGroupId,
-            diskMappings: props.diskMappings,
-            userData: props.userData,
-            systemDiskSize: props.systemDiskSize,
             systemDiskDescription: props.systemDiskDescription,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
-            autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
-            spotDuration: props.spotDuration,
             ramRoleName: props.ramRoleName,
+            privatePoolOptions: props.privatePoolOptions,
             systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
             imageId: props.imageId,
             systemDiskDiskName: props.systemDiskDiskName,
+            storageSetId: props.storageSetId,
+            useAdditionalService: props.useAdditionalService,
+            hostName: props.hostName,
+            tags: props.tags,
+            vSwitchId: props.vSwitchId,
+            period: props.period === undefined || props.period === null ? 1 : props.period,
+            imageFamily: props.imageFamily,
+            deletionProtection: props.deletionProtection,
+            httpEndpoint: props.httpEndpoint,
+            securityGroupIds: props.securityGroupIds,
+            internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
+            spotInterruptionBehavior: props.spotInterruptionBehavior === undefined || props.spotInterruptionBehavior === null ? 'Terminate' : props.spotInterruptionBehavior,
+            instanceName: props.instanceName,
+            deploymentSetId: props.deploymentSetId,
+            internetMaxBandwidthOut: props.internetMaxBandwidthOut === undefined || props.internetMaxBandwidthOut === null ? 1 : props.internetMaxBandwidthOut,
+            vpcId: props.vpcId,
+            affinity: props.affinity,
+            securityEnhancementStrategy: props.securityEnhancementStrategy,
+            periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
+            tenancy: props.tenancy,
+            privateIpAddress: props.privateIpAddress,
+            description: props.description,
+            diskMappings: props.diskMappings,
+            systemDiskSize: props.systemDiskSize,
+            userData: props.userData,
+            autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
+            spotDuration: props.spotDuration,
+            storageSetPartitionNumber: props.storageSetPartitionNumber,
             spotPriceLimit: props.spotPriceLimit,
             zoneIds: props.zoneIds,
             instanceType: props.instanceType,
             allocatePublicIp: props.allocatePublicIp === undefined || props.allocatePublicIp === null ? true : props.allocatePublicIp,
-            tags: props.tags,
-            hostName: props.hostName,
             spotStrategy: props.spotStrategy,
             passwordInherit: props.passwordInherit,
             password: props.password,
@@ -320,20 +407,11 @@ export class Instance extends ros.Resource {
             ioOptimized: props.ioOptimized === undefined || props.ioOptimized === null ? 'optimized' : props.ioOptimized,
             zoneId: props.zoneId,
             hpcClusterId: props.hpcClusterId,
-            vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
-            period: props.period === undefined || props.period === null ? 1 : props.period,
-            deletionProtection: props.deletionProtection,
-            securityGroupIds: props.securityGroupIds,
-            internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
+            deploymentSetGroupNo: props.deploymentSetGroupNo,
             systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,
-            spotInterruptionBehavior: props.spotInterruptionBehavior,
-            instanceName: props.instanceName,
-            deploymentSetId: props.deploymentSetId,
-            internetMaxBandwidthOut: props.internetMaxBandwidthOut === undefined || props.internetMaxBandwidthOut === null ? 1 : props.internetMaxBandwidthOut,
-            vpcId: props.vpcId,
-            securityEnhancementStrategy: props.securityEnhancementStrategy,
-            periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
+            httpTokens: props.httpTokens,
+            creditSpecification: props.creditSpecification,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrHostName = rosInstance.attrHostName;

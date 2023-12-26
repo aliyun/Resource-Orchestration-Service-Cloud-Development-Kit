@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::CEN::CenBandwidthPackages`
+ * Properties for defining a `RosCenBandwidthPackages`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
  */
 export interface RosCenBandwidthPackagesProps {
 
@@ -60,18 +61,15 @@ function rosCenBandwidthPackagesPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CEN::CenBandwidthPackages`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`, which is used to query the details of Cloud Enterprise Network (CEN) bandwidth plans within the current Alibaba Cloud account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackages` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
  */
 export class RosCenBandwidthPackages extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CEN::CenBandwidthPackages";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CenBandwidthPackageIds: The list of The Cen bandwidth ids.
@@ -102,8 +100,6 @@ export class RosCenBandwidthPackages extends ros.RosResource {
     public isOrKey: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CEN::CenBandwidthPackages`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -181,7 +177,8 @@ function rosCenBandwidthPackagesFilterPropertyToRosTemplate(properties: any): an
 }
 
 /**
- * Properties for defining a `DATASOURCE::CEN::CenInstances`
+ * Properties for defining a `RosCenInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
  */
 export interface RosCenInstancesProps {
 
@@ -224,18 +221,15 @@ function rosCenInstancesPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CEN::CenInstances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenInstances`, which is used to query the details of Cloud Enterprise Network (CEN) instances within the current Alibaba Cloud account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenInstances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-ceninstances
  */
 export class RosCenInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CEN::CenInstances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CenIds: The list of The Cen instance ids.
@@ -256,8 +250,6 @@ export class RosCenInstances extends ros.RosResource {
     public filter: Array<RosCenInstances.FilterProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CEN::CenInstances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -331,7 +323,8 @@ function rosCenInstancesFilterPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `DATASOURCE::CEN::CenRouteMaps`
+ * Properties for defining a `RosCenRouteMaps`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */
 export interface RosCenRouteMapsProps {
 
@@ -409,18 +402,15 @@ function rosCenRouteMapsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CEN::CenRouteMaps`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenRouteMaps`, which is used to query the details of routing policies.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CenRouteMaps` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */
 export class RosCenRouteMaps extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CEN::CenRouteMaps";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RouteMapIds: The list of The RouteMap ids.
@@ -461,8 +451,6 @@ export class RosCenRouteMaps extends ros.RosResource {
     public transmitDirection: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CEN::CenRouteMaps`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -496,7 +484,8 @@ export class RosCenRouteMaps extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::CEN::TransitRouterRouteTables`
+ * Properties for defining a `RosTransitRouterRouteTables`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterroutetables
  */
 export interface RosTransitRouterRouteTablesProps {
 
@@ -590,18 +579,15 @@ function rosTransitRouterRouteTablesPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CEN::TransitRouterRouteTables`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`, which is used to query the route tables of an Enterprise Edition transit router.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTables` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterroutetables
  */
 export class RosTransitRouterRouteTables extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CEN::TransitRouterRouteTables";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TransitRouterRouteTableIds: The list of TransitRouterRouteTable IDs.
@@ -650,8 +636,6 @@ export class RosTransitRouterRouteTables extends ros.RosResource {
     public transitRouterRouteTableType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CEN::TransitRouterRouteTables`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -685,7 +669,8 @@ export class RosTransitRouterRouteTables extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::CEN::TransitRouters`
+ * Properties for defining a `RosTransitRouters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouters
  */
 export interface RosTransitRoutersProps {
 
@@ -744,18 +729,15 @@ function rosTransitRoutersPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `DATASOURCE::CEN::TransitRouters`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouters`, which is used to query the transit routers of a Cloud Enterprise Network (CEN) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouters` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouters
  */
 export class RosTransitRouters extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::CEN::TransitRouters";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TransitRouterIds: The list of TransitRouter IDs.
@@ -787,8 +769,6 @@ export class RosTransitRouters extends ros.RosResource {
     public transitRouterId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::CEN::TransitRouters`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

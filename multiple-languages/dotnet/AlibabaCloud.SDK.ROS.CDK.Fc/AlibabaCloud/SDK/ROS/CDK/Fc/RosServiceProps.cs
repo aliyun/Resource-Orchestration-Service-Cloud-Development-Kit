@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FC::Service`.</summary>
+    /// <summary>Properties for defining a `RosService`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.RosServiceProps")]
     public class RosServiceProps : AlibabaCloud.SDK.ROS.CDK.Fc.IRosServiceProps
     {

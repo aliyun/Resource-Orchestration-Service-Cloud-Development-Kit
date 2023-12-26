@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Disks`.</summary>
+    /// <summary>Properties for defining a `RosDisks`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.RosDisksProps")]
     public class RosDisksProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosDisksProps
     {
@@ -102,7 +105,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         /// ephemeral: retired local disk
         /// ephemeral_ssd: local SSD
         /// cloud_essd: ESSD
-        /// local_ssd_pro: I/O-intensive local disk
+        /// local_ssd_pro: I\/O-intensive local disk
         /// local_hdd_pro: throughput-intensive local disk
         /// </remarks>
         [JsiiOptional]

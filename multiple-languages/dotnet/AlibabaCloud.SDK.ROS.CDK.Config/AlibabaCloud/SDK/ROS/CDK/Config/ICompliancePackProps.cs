@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Config
 {
-    /// <summary>Properties for defining a `ALIYUN::Config::CompliancePack`.</summary>
+    /// <summary>Properties for defining a `CompliancePack`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICompliancePackProps), fullyQualifiedName: "@alicloud/ros-cdk-config.CompliancePackProps")]
     public interface ICompliancePackProps
     {
@@ -51,7 +54,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::Config::CompliancePack`.</summary>
+        /// <summary>Properties for defining a `CompliancePack`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICompliancePackProps), fullyQualifiedName: "@alicloud/ros-cdk-config.CompliancePackProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Config.ICompliancePackProps
         {

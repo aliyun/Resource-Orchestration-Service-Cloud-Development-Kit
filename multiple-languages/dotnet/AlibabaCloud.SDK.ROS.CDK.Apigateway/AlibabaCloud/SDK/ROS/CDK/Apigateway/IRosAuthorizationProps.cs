@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::Authorization`.</summary>
+    /// <summary>Properties for defining a `RosAuthorization`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAuthorizationProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.RosAuthorizationProps")]
     public interface IRosAuthorizationProps
     {
@@ -71,7 +74,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ApiGateway::Authorization`.</summary>
+        /// <summary>Properties for defining a `RosAuthorization`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAuthorizationProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.RosAuthorizationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.IRosAuthorizationProps
         {

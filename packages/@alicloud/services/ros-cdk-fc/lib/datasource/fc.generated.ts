@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::FC::Aliases`
+ * Properties for defining a `RosAliases`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-aliases
  */
 export interface RosAliasesProps {
 
@@ -54,18 +55,15 @@ function rosAliasesPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `DATASOURCE::FC::Aliases`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Aliases`, which is used to query the aliases of a Function Compute service.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Aliases` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-aliases
  */
 export class RosAliases extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::FC::Aliases";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AliasNames: The list of alias names.
@@ -91,8 +89,6 @@ export class RosAliases extends ros.RosResource {
     public prefix: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::FC::Aliases`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -120,7 +116,8 @@ export class RosAliases extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::FC::CustomDomains`
+ * Properties for defining a `RosCustomDomains`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-customdomains
  */
 export interface RosCustomDomainsProps {
 
@@ -163,18 +160,15 @@ function rosCustomDomainsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `DATASOURCE::FC::CustomDomains`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::CustomDomains`, which is used to query custom domain names in Function Compute.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomains` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-customdomains
  */
 export class RosCustomDomains extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::FC::CustomDomains";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CustomDomains: The list of custom_domain.
@@ -195,8 +189,6 @@ export class RosCustomDomains extends ros.RosResource {
     public prefix: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::FC::CustomDomains`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -222,7 +214,8 @@ export class RosCustomDomains extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::FC::Functions`
+ * Properties for defining a `RosFunctions`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-functions
  */
 export interface RosFunctionsProps {
 
@@ -280,18 +273,15 @@ function rosFunctionsPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::FC::Functions`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Functions`, which is used to query functions.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Functions` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-functions
  */
 export class RosFunctions extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::FC::Functions";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FunctionNames: The list of function names.
@@ -322,8 +312,6 @@ export class RosFunctions extends ros.RosResource {
     public qualifier: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::FC::Functions`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -353,7 +341,8 @@ export class RosFunctions extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::FC::Services`
+ * Properties for defining a `RosServices`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-services
  */
 export interface RosServicesProps {
 
@@ -396,18 +385,15 @@ function rosServicesPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::FC::Services`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Services`, which is used to query services.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Services` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-services
  */
 export class RosServices extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::FC::Services";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ServiceNames: The list of service names.
@@ -428,8 +414,6 @@ export class RosServices extends ros.RosResource {
     public prefix: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::FC::Services`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -455,7 +439,8 @@ export class RosServices extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::FC::Triggers`
+ * Properties for defining a `RosTriggers`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-triggers
  */
 export interface RosTriggersProps {
 
@@ -514,18 +499,15 @@ function rosTriggersPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::FC::Triggers`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Triggers`, which is used to query triggers.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Triggers` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-triggers
  */
 export class RosTriggers extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::FC::Triggers";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TriggerNames: The list of trigger names.
@@ -556,8 +538,6 @@ export class RosTriggers extends ros.RosResource {
     public prefix: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::FC::Triggers`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

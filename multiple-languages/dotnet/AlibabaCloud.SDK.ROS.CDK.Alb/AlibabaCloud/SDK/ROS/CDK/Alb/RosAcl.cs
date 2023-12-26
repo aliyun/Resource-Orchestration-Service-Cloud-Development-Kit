@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>A ROS template type:  `ALIYUN::ALB::Acl`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Acl`, which is used to create an access control list (ACL).</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Alb.RosAcl), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosAcl", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-alb.RosAclProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosAcl : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ALB::Acl`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -195,9 +198,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong></strong>: -]){2,256}$/.
+            /// <strong></strong>: -]){2,256}$\/.
             ///
-            /// <strong>Property</strong>: description: The description of ACL entries. The description must be 2 to 256 characters in length, and can contain only the characters specified by the following expression:/^([^\x00-\xff]|[\w.,;/
+            /// <strong>Property</strong>: description: The description of ACL entries. The description must be 2 to 256 characters in length, and can contain only the characters specified by the following expression:\/^([^\x00-\xff]|[\w.,;\/
             /// </remarks>
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -226,9 +229,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
                 }
 
                 /// <remarks>
-                /// <strong></strong>: -]){2,256}$/.
+                /// <strong></strong>: -]){2,256}$\/.
                 ///
-                /// <strong>Property</strong>: description: The description of ACL entries. The description must be 2 to 256 characters in length, and can contain only the characters specified by the following expression:/^([^\x00-\xff]|[\w.,;/
+                /// <strong>Property</strong>: description: The description of ACL entries. The description must be 2 to 256 characters in length, and can contain only the characters specified by the following expression:\/^([^\x00-\xff]|[\w.,;\/
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -278,9 +281,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             private object? _description;
 
             /// <remarks>
-            /// <strong></strong>: -]){2,256}$/.
+            /// <strong></strong>: -]){2,256}$\/.
             ///
-            /// <strong>Property</strong>: description: The description of ACL entries. The description must be 2 to 256 characters in length, and can contain only the characters specified by the following expression:/^([^\x00-\xff]|[\w.,;/
+            /// <strong>Property</strong>: description: The description of ACL entries. The description must be 2 to 256 characters in length, and can contain only the characters specified by the following expression:\/^([^\x00-\xff]|[\w.,;\/
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>Properties for defining a `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`.</summary>
+    /// <summary>Properties for defining a `RosChildInstanceRouteEntryToAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosChildInstanceRouteEntryToAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosChildInstanceRouteEntryToAttachmentProps")]
     public interface IRosChildInstanceRouteEntryToAttachmentProps
     {
@@ -44,7 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             get;
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`.</summary>
+        /// <summary>Properties for defining a `RosChildInstanceRouteEntryToAttachment`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosChildInstanceRouteEntryToAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.RosChildInstanceRouteEntryToAttachmentProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.IRosChildInstanceRouteEntryToAttachmentProps
         {

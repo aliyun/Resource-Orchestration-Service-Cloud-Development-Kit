@@ -4,7 +4,8 @@ import { RosHiTSDBInstance } from './tsdb.generated';
 export { RosHiTSDBInstance as HiTSDBInstanceProperty };
 
 /**
- * Properties for defining a `ALIYUN::TSDB::HiTSDBInstance`
+ * Properties for defining a `HiTSDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
  */
 export interface HiTSDBInstanceProps {
 
@@ -60,20 +61,17 @@ export interface HiTSDBInstanceProps {
     readonly pricingCycle?: string | ros.IResolvable;
 
     /**
-     * Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1/24"]
+     * Property securityIpList: List of the IP patterns.For example, ["127.0.0.1", "192.168.0.1\/24"]
      */
     readonly securityIpList?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::TSDB::HiTSDBInstance`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::TSDB::HiTSDBInstance`, which is used to create a Time Series Database (TSDB) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHiTSDBInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
  */
 export class HiTSDBInstance extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ConnectionString: Connection string of the instance.
@@ -111,8 +109,6 @@ export class HiTSDBInstance extends ros.Resource {
     public readonly attrReverseVpcPort: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::TSDB::HiTSDBInstance`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

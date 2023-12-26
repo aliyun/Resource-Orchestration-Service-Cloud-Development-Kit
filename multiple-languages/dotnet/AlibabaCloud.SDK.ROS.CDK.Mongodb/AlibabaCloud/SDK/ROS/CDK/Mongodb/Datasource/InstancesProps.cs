@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mongodb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::MONGODB::Instances`.</summary>
+    /// <summary>Properties for defining a `Instances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mongodb.datasource.InstancesProps")]
     public class InstancesProps : AlibabaCloud.SDK.ROS.CDK.Mongodb.Datasource.IInstancesProps
     {

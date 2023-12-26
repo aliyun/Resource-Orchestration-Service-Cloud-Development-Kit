@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oss.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::OSS::Buckets`.</summary>
+    /// <summary>Properties for defining a `Buckets`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oss-buckets
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-oss.datasource.BucketsProps")]
     public class BucketsProps : AlibabaCloud.SDK.ROS.CDK.Oss.Datasource.IBucketsProps
     {

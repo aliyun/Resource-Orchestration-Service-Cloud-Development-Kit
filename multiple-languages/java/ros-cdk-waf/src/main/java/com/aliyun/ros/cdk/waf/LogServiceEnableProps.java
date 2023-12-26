@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.waf;
 
 /**
- * Properties for defining a <code>ALIYUN::WAF::LogServiceEnable</code>.
+ * Properties for defining a <code>LogServiceEnable</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.837Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.704Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.LogServiceEnableProps")
 @software.amazon.jsii.Jsii.Proxy(LogServiceEnableProps.Jsii$Proxy.class)
 public interface LogServiceEnableProps extends software.amazon.jsii.JsiiSerializable {

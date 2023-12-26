@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * A ROS template type:  <code>ALIYUN::CS::ClusterApplication</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CS::ClusterApplication</code>, which is used to deploy a container application.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.267Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.659Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosClusterApplication")
 public class RosClusterApplication extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +20,6 @@ public class RosClusterApplication extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::CS::ClusterApplication</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.
@@ -134,6 +132,24 @@ public class RosClusterApplication extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getStage() {
+        return software.amazon.jsii.Kernel.get(this, "stage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setStage(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "stage", value);
+    }
+
+    /**
+     */
+    public void setStage(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "stage", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.cs.RosClusterApplication}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cs.RosClusterApplication> {
@@ -224,6 +240,23 @@ public class RosClusterApplication extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder rolePolicy(final com.aliyun.ros.cdk.core.IResolvable rolePolicy) {
             this.props.rolePolicy(rolePolicy);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param stage This parameter is required.
+         */
+        public Builder stage(final java.lang.String stage) {
+            this.props.stage(stage);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param stage This parameter is required.
+         */
+        public Builder stage(final com.aliyun.ros.cdk.core.IResolvable stage) {
+            this.props.stage(stage);
             return this;
         }
 

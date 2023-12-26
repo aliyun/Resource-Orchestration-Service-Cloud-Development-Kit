@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLS::Logstore`.</summary>
+    /// <summary>Properties for defining a `RosLogstore`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.RosLogstoreProps")]
     public class RosLogstoreProps : AlibabaCloud.SDK.ROS.CDK.Sls.IRosLogstoreProps
     {
@@ -151,7 +154,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         private object? _enableTracking;
 
         /// <remarks>
-        /// <strong>Property</strong>: enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.
+        /// <strong>Property</strong>: enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS\/Android\/APP access information.
         /// Default to false.
         /// </remarks>
         [JsiiOptional]

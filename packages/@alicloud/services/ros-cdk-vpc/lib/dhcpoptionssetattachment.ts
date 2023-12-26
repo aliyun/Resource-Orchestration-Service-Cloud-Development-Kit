@@ -4,7 +4,8 @@ import { RosDhcpOptionsSetAttachment } from './vpc.generated';
 export { RosDhcpOptionsSetAttachment as DhcpOptionsSetAttachmentProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::DhcpOptionsSetAttachment`
+ * Properties for defining a `DhcpOptionsSetAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionssetattachment
  */
 export interface DhcpOptionsSetAttachmentProps {
 
@@ -20,14 +21,11 @@ export interface DhcpOptionsSetAttachmentProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::DhcpOptionsSetAttachment`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::DhcpOptionsSetAttachment`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDhcpOptionsSetAttachment`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionssetattachment
  */
 export class DhcpOptionsSetAttachment extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DhcpOptionsSetId: The ID of the DHCP options set.
@@ -40,8 +38,6 @@ export class DhcpOptionsSetAttachment extends ros.Resource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::DhcpOptionsSetAttachment`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

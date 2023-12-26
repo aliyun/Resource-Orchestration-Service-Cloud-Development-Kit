@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sag
 {
-    /// <summary>Properties for defining a `ALIYUN::SAG::QosCar`.</summary>
+    /// <summary>Properties for defining a `RosQosCar`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qoscar
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosQosCarProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosQosCarProps")]
     public interface IRosQosCarProps
     {
@@ -139,7 +142,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SAG::QosCar`.</summary>
+        /// <summary>Properties for defining a `RosQosCar`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qoscar
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosQosCarProps), fullyQualifiedName: "@alicloud/ros-cdk-sag.RosQosCarProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sag.IRosQosCarProps
         {

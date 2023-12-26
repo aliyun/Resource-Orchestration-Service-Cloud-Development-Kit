@@ -28,6 +28,8 @@
 @alicloud/ros-cdk-vpc.Eip=com.aliyun.ros.cdk.vpc.Eip
 @alicloud/ros-cdk-vpc.FlowLog=com.aliyun.ros.cdk.vpc.FlowLog
 @alicloud/ros-cdk-vpc.FlowLogProps=com.aliyun.ros.cdk.vpc.FlowLogProps
+@alicloud/ros-cdk-vpc.ForwardEntry=com.aliyun.ros.cdk.vpc.ForwardEntry
+@alicloud/ros-cdk-vpc.ForwardEntryProps=com.aliyun.ros.cdk.vpc.ForwardEntryProps
 @alicloud/ros-cdk-vpc.GrantInstanceToCen=com.aliyun.ros.cdk.vpc.GrantInstanceToCen
 @alicloud/ros-cdk-vpc.GrantInstanceToCenProps=com.aliyun.ros.cdk.vpc.GrantInstanceToCenProps
 @alicloud/ros-cdk-vpc.HaVip=com.aliyun.ros.cdk.vpc.HaVip
@@ -90,6 +92,8 @@
 @alicloud/ros-cdk-vpc.RosEIPSegmentProps=com.aliyun.ros.cdk.vpc.RosEIPSegmentProps
 @alicloud/ros-cdk-vpc.RosFlowLog=com.aliyun.ros.cdk.vpc.RosFlowLog
 @alicloud/ros-cdk-vpc.RosFlowLogProps=com.aliyun.ros.cdk.vpc.RosFlowLogProps
+@alicloud/ros-cdk-vpc.RosForwardEntry=com.aliyun.ros.cdk.vpc.RosForwardEntry
+@alicloud/ros-cdk-vpc.RosForwardEntryProps=com.aliyun.ros.cdk.vpc.RosForwardEntryProps
 @alicloud/ros-cdk-vpc.RosGrantInstanceToCen=com.aliyun.ros.cdk.vpc.RosGrantInstanceToCen
 @alicloud/ros-cdk-vpc.RosGrantInstanceToCenProps=com.aliyun.ros.cdk.vpc.RosGrantInstanceToCenProps
 @alicloud/ros-cdk-vpc.RosHaVip=com.aliyun.ros.cdk.vpc.RosHaVip

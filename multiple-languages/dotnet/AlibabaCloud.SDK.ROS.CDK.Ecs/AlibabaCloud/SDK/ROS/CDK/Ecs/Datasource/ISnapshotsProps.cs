@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Snapshots`.</summary>
+    /// <summary>Properties for defining a `Snapshots`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshots
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISnapshotsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.SnapshotsProps")]
     public interface ISnapshotsProps
     {
@@ -217,7 +220,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::ECS::Snapshots`.</summary>
+        /// <summary>Properties for defining a `Snapshots`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshots
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISnapshotsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.datasource.SnapshotsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.ISnapshotsProps
         {

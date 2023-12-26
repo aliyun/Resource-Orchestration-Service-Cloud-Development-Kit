@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::IOT::Product`.</summary>
+    /// <summary>Properties for defining a `RosProduct`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-iot.RosProductProps")]
     public class RosProductProps : AlibabaCloud.SDK.ROS.CDK.Iot.IRosProductProps
     {
@@ -217,7 +220,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
         /// This parameter is only available and required when you create a Pro Edition product.
         /// Options:
-        /// 0: Do not parse/Custom.
+        /// 0: Do not parse\/Custom.
         /// 1: Alink JSON.
         /// </remarks>
         [JsiiOptional]

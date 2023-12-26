@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CEN::CenRouteMaps`.</summary>
+    /// <summary>Properties for defining a `CenRouteMaps`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICenRouteMapsProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.datasource.CenRouteMapsProps")]
     public interface ICenRouteMapsProps
     {
@@ -59,7 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::CEN::CenRouteMaps`.</summary>
+        /// <summary>Properties for defining a `CenRouteMaps`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICenRouteMapsProps), fullyQualifiedName: "@alicloud/ros-cdk-cen.datasource.CenRouteMapsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.Datasource.ICenRouteMapsProps
         {

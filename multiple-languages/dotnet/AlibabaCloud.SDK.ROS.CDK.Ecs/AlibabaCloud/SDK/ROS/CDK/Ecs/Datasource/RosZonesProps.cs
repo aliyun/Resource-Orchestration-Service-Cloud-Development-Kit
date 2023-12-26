@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ECS::Zones`.</summary>
+    /// <summary>Properties for defining a `RosZones`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-zones
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.datasource.RosZonesProps")]
     public class RosZonesProps : AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource.IRosZonesProps
     {
@@ -118,9 +121,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs.Datasource
         private object? _ioOptimized;
 
         /// <remarks>
-        /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I/O optimized. Valid values:
-        /// none: non-I/O optimized
-        /// optimized: I/O optimized
+        /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I\/O optimized. Valid values:
+        /// none: non-I\/O optimized
+        /// optimized: I\/O optimized
         /// Default value: optimized.
         /// </remarks>
         [JsiiOptional]

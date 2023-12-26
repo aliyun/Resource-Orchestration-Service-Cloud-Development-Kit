@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 {
-    /// <summary>Properties for defining a `ALIYUN::FNF::Flow`.</summary>
+    /// <summary>Properties for defining a `Flow`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IFlowProps), fullyQualifiedName: "@alicloud/ros-cdk-fnf.FlowProps")]
     public interface IFlowProps
     {
@@ -61,7 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::FNF::Flow`.</summary>
+        /// <summary>Properties for defining a `Flow`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IFlowProps), fullyQualifiedName: "@alicloud/ros-cdk-fnf.FlowProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Fnf.IFlowProps
         {

@@ -4,7 +4,8 @@ import { RosServerGroup } from './nlb.generated';
 export { RosServerGroup as ServerGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::NLB::ServerGroup`
+ * Properties for defining a `ServerGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */
 export interface ServerGroupProps {
 
@@ -80,14 +81,11 @@ export interface ServerGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NLB::ServerGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::ServerGroup`, which is used to create a server group for a Network Load Balancer (NLB) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServerGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */
 export class ServerGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ServerGroupId: ID of ServerGroup
@@ -95,8 +93,6 @@ export class ServerGroup extends ros.Resource {
     public readonly attrServerGroupId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NLB::ServerGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

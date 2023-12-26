@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ADB::Account`
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-account
  */
 export interface RosAccountProps {
 
@@ -28,7 +29,7 @@ export interface RosAccountProps {
 
     /**
      * @Property accountDescription: The description of the account.
-     * The description cannot start with http://or https://.
+     * The description cannot start with http:\/\/or https:\/\/.
      * The description can be up to 256 characters in length.
      */
     readonly accountDescription?: string | ros.IResolvable;
@@ -90,18 +91,15 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::ADB::Account`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::Account`, which is used to create a database account for an AnalyticDB for MySQL cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-account
  */
 export class RosAccount extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ADB::Account";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccountName: The name of the account.
@@ -142,7 +140,7 @@ export class RosAccount extends ros.RosResource {
 
     /**
      * @Property accountDescription: The description of the account.
-     * The description cannot start with http://or https://.
+     * The description cannot start with http:\/\/or https:\/\/.
      * The description can be up to 256 characters in length.
      */
     public accountDescription: string | ros.IResolvable | undefined;
@@ -154,8 +152,6 @@ export class RosAccount extends ros.RosResource {
     public accountType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ADB::Account`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -190,7 +186,8 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ADB::DBCluster`
+ * Properties for defining a `RosDBCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
 export interface RosDBClusterProps {
 
@@ -414,18 +411,15 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::ADB::DBCluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::DBCluster`, which is used to create an AnalyticDB for MySQL cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
 export class RosDBCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ADB::DBCluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ConnectionString: Vpc connection string.
@@ -559,8 +553,6 @@ export class RosDBCluster extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ADB::DBCluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>Properties for defining a `ALIYUN::ALB::HealthCheckTemplate`.</summary>
+    /// <summary>Properties for defining a `RosHealthCheckTemplate`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosHealthCheckTemplateProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosHealthCheckTemplateProps")]
     public interface IRosHealthCheckTemplateProps
     {
@@ -108,12 +111,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong></strong>: $ ^ : ' , +. The URL path must start with a forward slash (/).
+        /// <strong></strong>: $ ^ : ' , +. The URL path must start with a forward slash (\/).
         /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
         ///
         /// <strong>Property</strong>: healthCheckPath: The URL path that is used for health checks.
         /// It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-        /// (-), forward slashes (/), periods (.), percent signs (%), question marks (?), number
+        /// (-), forward slashes (\/), periods (.), percent signs (%), question marks (?), number
         /// signs (#), and ampersands (&). It can also contain the following extended characters:
         /// _ ; ~ ! ( ) * [ ]
         /// </remarks>
@@ -197,7 +200,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ALB::HealthCheckTemplate`.</summary>
+        /// <summary>Properties for defining a `RosHealthCheckTemplate`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosHealthCheckTemplateProps), fullyQualifiedName: "@alicloud/ros-cdk-alb.RosHealthCheckTemplateProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Alb.IRosHealthCheckTemplateProps
         {
@@ -290,12 +296,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong></strong>: $ ^ : ' , +. The URL path must start with a forward slash (/).
+            /// <strong></strong>: $ ^ : ' , +. The URL path must start with a forward slash (\/).
             /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
             ///
             /// <strong>Property</strong>: healthCheckPath: The URL path that is used for health checks.
             /// It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-            /// (-), forward slashes (/), periods (.), percent signs (%), question marks (?), number
+            /// (-), forward slashes (\/), periods (.), percent signs (%), question marks (?), number
             /// signs (#), and ampersands (&). It can also contain the following extended characters:
             /// _ ; ~ ! ( ) * [ ]
             /// </remarks>

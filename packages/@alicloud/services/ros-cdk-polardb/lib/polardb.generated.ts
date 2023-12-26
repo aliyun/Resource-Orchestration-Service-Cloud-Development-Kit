@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::AITask`
+ * Properties for defining a `RosAITask`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
  */
 export interface RosAITaskProps {
 
@@ -72,18 +73,15 @@ function rosAITaskPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::AITask`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`DATASOURCE::POLARDB::DBNodeClasses is used to query the available resources of a PolarDB cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AITask` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
  */
 export class RosAITask extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::AITask";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBClusterId: The ID of the DB cluster.
@@ -116,8 +114,6 @@ export class RosAITask extends ros.RosResource {
     public nodeType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::POLARDB::AITask`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -148,7 +144,8 @@ export class RosAITask extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::Account`
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
 export interface RosAccountProps {
 
@@ -174,7 +171,7 @@ export interface RosAccountProps {
 
     /**
      * @Property accountDescription: The description of the database account. The description must comply with the following rules:
-     * - It cannot start with http:// or https://.
+     * - It cannot start with http:\/\/ or https:\/\/.
      * - It must be 2 to 256 characters in length.
      */
     readonly accountDescription?: string | ros.IResolvable;
@@ -281,18 +278,15 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::Account`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Account`, which is used to create a database account for a specified PolarDB cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
 export class RosAccount extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::Account";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -319,7 +313,7 @@ export class RosAccount extends ros.RosResource {
 
     /**
      * @Property accountDescription: The description of the database account. The description must comply with the following rules:
-     * - It cannot start with http:// or https://.
+     * - It cannot start with http:\/\/ or https:\/\/.
      * - It must be 2 to 256 characters in length.
      */
     public accountDescription: string | ros.IResolvable | undefined;
@@ -351,8 +345,6 @@ export class RosAccount extends ros.RosResource {
     public dbName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::POLARDB::Account`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -388,7 +380,8 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::AccountPrivilege`
+ * Properties for defining a `RosAccountPrivilege`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege
  */
 export interface RosAccountPrivilegeProps {
 
@@ -485,18 +478,15 @@ function rosAccountPrivilegePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::AccountPrivilege`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`, which is used to grant access permissions on one or more databases in a specified ApsaraDB for POLARDB cluster to a standard account.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccountPrivilege` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege
  */
 export class RosAccountPrivilege extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::AccountPrivilege";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -530,8 +520,6 @@ export class RosAccountPrivilege extends ros.RosResource {
     public dbName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::POLARDB::AccountPrivilege`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -561,7 +549,8 @@ export class RosAccountPrivilege extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBCluster`
+ * Properties for defining a `RosDBCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
 export interface RosDBClusterProps {
 
@@ -667,7 +656,7 @@ export interface RosDBClusterProps {
      * @Property dbClusterDescription: The description of the cluster. The description must comply with the following rules:
      * It must start with a Chinese character or an English letter.
      * It can contain Chinese and English characters, digits, underscores (_), and hyphens (-).
-     * It cannot start with http:// or https://.
+     * It cannot start with http:\/\/ or https:\/\/.
      * It must be 2 to 256 characters in length.
      */
     readonly dbClusterDescription?: string | ros.IResolvable;
@@ -1186,18 +1175,15 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::DBCluster`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBCluster`, which is used to create a PolarDB cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
 export class RosDBCluster extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::DBCluster";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterConnectionString: The cluster connection string of the db cluster.
@@ -1364,7 +1350,7 @@ export class RosDBCluster extends ros.RosResource {
      * @Property dbClusterDescription: The description of the cluster. The description must comply with the following rules:
      * It must start with a Chinese character or an English letter.
      * It can contain Chinese and English characters, digits, underscores (_), and hyphens (-).
-     * It cannot start with http:// or https://.
+     * It cannot start with http:\/\/ or https:\/\/.
      * It must be 2 to 256 characters in length.
      */
     public dbClusterDescription: string | ros.IResolvable | undefined;
@@ -1634,8 +1620,6 @@ export class RosDBCluster extends ros.RosResource {
     public zoneId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBCluster`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1947,7 +1931,8 @@ function rosDBClusterTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBClusterAccessWhiteList`
+ * Properties for defining a `RosDBClusterAccessWhiteList`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
  */
 export interface RosDBClusterAccessWhiteListProps {
 
@@ -1961,8 +1946,8 @@ export interface RosDBClusterAccessWhiteListProps {
      * whitelist group can contain a maximum of 1,000 IP addresses. Separate multiple IP
      * addresses with a comma (,). The following two formats are supported:
      * IP address: for example, 10.23.12.24.
-     * Classless inter-domain routing (CIDR) block: for example, 10.23.12.24/24, where the
-     * suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
+     * Classless inter-domain routing (CIDR) block: for example, 10.23.12.24\/24, where the
+     * suffix \/24 indicates the number of bits for the prefix of the IP address. The suffix
      * ranges from 1 to 32.
      */
     readonly securityIps: string | ros.IResolvable;
@@ -2021,18 +2006,15 @@ function rosDBClusterAccessWhiteListPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::DBClusterAccessWhiteList`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`, which is used to modify the list of IP addresses that are allowed to access an ApsaraDB for POLARDB cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterAccessWhiteList` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
  */
 export class RosDBClusterAccessWhiteList extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::DBClusterAccessWhiteList";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
@@ -2052,8 +2034,8 @@ export class RosDBClusterAccessWhiteList extends ros.RosResource {
      * whitelist group can contain a maximum of 1,000 IP addresses. Separate multiple IP
      * addresses with a comma (,). The following two formats are supported:
      * IP address: for example, 10.23.12.24.
-     * Classless inter-domain routing (CIDR) block: for example, 10.23.12.24/24, where the
-     * suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
+     * Classless inter-domain routing (CIDR) block: for example, 10.23.12.24\/24, where the
+     * suffix \/24 indicates the number of bits for the prefix of the IP address. The suffix
      * ranges from 1 to 32.
      */
     public securityIps: string | ros.IResolvable;
@@ -2066,8 +2048,6 @@ export class RosDBClusterAccessWhiteList extends ros.RosResource {
     public dbClusterIpArrayName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2096,7 +2076,8 @@ export class RosDBClusterAccessWhiteList extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBClusterEndpoint`
+ * Properties for defining a `RosDBClusterEndpoint`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
  */
 export interface RosDBClusterEndpointProps {
 
@@ -2129,7 +2110,7 @@ export interface RosDBClusterEndpointProps {
     readonly nodes?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property readWriteMode: The read/write mode of the cluster connection point. Valid values:
+     * @Property readWriteMode: The read\/write mode of the cluster connection point. Valid values:
      * ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
      * ReadOnly: receives and forwards only read requests.
      * Default value: ReadOnly.
@@ -2200,18 +2181,15 @@ function rosDBClusterEndpointPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::DBClusterEndpoint`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`, which is used to create a custom endpoint for a PolarDB cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterEndpoint` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
  */
 export class RosDBClusterEndpoint extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::DBClusterEndpoint";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Addresses: The address items of the db cluster endpoint.
@@ -2260,7 +2238,7 @@ export class RosDBClusterEndpoint extends ros.RosResource {
     public nodes: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property readWriteMode: The read/write mode of the cluster connection point. Valid values:
+     * @Property readWriteMode: The read\/write mode of the cluster connection point. Valid values:
      * ReadWrite: receives and forwards read and write requests (automatic read-write splitting).
      * ReadOnly: receives and forwards only read requests.
      * Default value: ReadOnly.
@@ -2268,8 +2246,6 @@ export class RosDBClusterEndpoint extends ros.RosResource {
     public readWriteMode: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBClusterEndpoint`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2366,9 +2342,9 @@ export namespace RosDBClusterEndpoint {
          */
         readonly maxParallelDegree?: string | ros.IResolvable;
         /**
-         * @Property enableHtapImci: Set up row/column storage to automatically divert traffic. Valid values: 
-     * on: Turn on the automatic traffic diversion function of row storage/column storage
-     * off: Turn off the automatic drainage function of row storage/column storage (default)
+         * @Property enableHtapImci: Set up row\/column storage to automatically divert traffic. Valid values: 
+     * on: Turn on the automatic traffic diversion function of row storage\/column storage
+     * off: Turn off the automatic drainage function of row storage\/column storage (default)
          */
         readonly enableHtapImci?: string | ros.IResolvable;
     }
@@ -2428,7 +2404,8 @@ function rosDBClusterEndpointEndpointConfigPropertyToRosTemplate(properties: any
 }
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBClusterEndpointAddress`
+ * Properties for defining a `RosDBClusterEndpointAddress`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
  */
 export interface RosDBClusterEndpointAddressProps {
 
@@ -2511,18 +2488,15 @@ function rosDBClusterEndpointAddressPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::DBClusterEndpointAddress`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`, which is used to create a public endpoint for an Apsara PolarDB cluster. The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterEndpointAddress` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
  */
 export class RosDBClusterEndpointAddress extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::DBClusterEndpointAddress";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Address: The details of the endpoint address.
@@ -2563,8 +2537,6 @@ export class RosDBClusterEndpointAddress extends ros.RosResource {
     public netType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBClusterEndpointAddress`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2596,7 +2568,8 @@ export class RosDBClusterEndpointAddress extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBInstance`
+ * Properties for defining a `RosDBInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbinstance
  */
 export interface RosDBInstanceProps {
 
@@ -2651,7 +2624,7 @@ export interface RosDBInstanceProps {
 
     /**
      * @Property dbDescription: The description of the database. Valid values:
-     * It cannot start with http:// or https://.
+     * It cannot start with http:\/\/ or https:\/\/.
      * It must be 2 to 256 characters in length.
      */
     readonly dbDescription?: string | ros.IResolvable;
@@ -2726,18 +2699,15 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::DBInstance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBInstance`, which is used to create a database in a PolarDB cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbinstance
  */
 export class RosDBInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::DBInstance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2793,14 +2763,12 @@ export class RosDBInstance extends ros.RosResource {
 
     /**
      * @Property dbDescription: The description of the database. Valid values:
-     * It cannot start with http:// or https://.
+     * It cannot start with http:\/\/ or https:\/\/.
      * It must be 2 to 256 characters in length.
      */
     public dbDescription: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBInstance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2838,7 +2806,8 @@ export class RosDBInstance extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::DBNodes`
+ * Properties for defining a `RosDBNodes`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbnodes
  */
 export interface RosDBNodesProps {
 
@@ -2930,18 +2899,15 @@ function rosDBNodesPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::DBNodes`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBNodes`, which is used to add nodes to a PolarDB cluster.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBNodes` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbnodes
  */
 export class RosDBNodes extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::DBNodes";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DBNodeIds: The ID list of added cluster nodes.
@@ -2982,8 +2948,6 @@ export class RosDBNodes extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::POLARDB::DBNodes`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3017,7 +2981,8 @@ export class RosDBNodes extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::GlobalDatabaseNetwork`
+ * Properties for defining a `RosGlobalDatabaseNetwork`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
  */
 export interface RosGlobalDatabaseNetworkProps {
 
@@ -3075,18 +3040,15 @@ function rosGlobalDatabaseNetworkPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::GlobalDatabaseNetwork`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalDatabaseNetwork`, which is used to create a global database network (GDN).
+ * @Note This class does not contain additional functions, so it is recommended to use the `GlobalDatabaseNetwork` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
  */
 export class RosGlobalDatabaseNetwork extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::GlobalDatabaseNetwork";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Connections: The information about the connection to the cluster.
@@ -3142,8 +3104,6 @@ export class RosGlobalDatabaseNetwork extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::POLARDB::GlobalDatabaseNetwork`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3178,7 +3138,8 @@ export class RosGlobalDatabaseNetwork extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::POLARDB::ParameterGroup`
+ * Properties for defining a `RosParameterGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
  */
 export interface RosParameterGroupProps {
 
@@ -3260,18 +3221,15 @@ function rosParameterGroupPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::POLARDB::ParameterGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::ParameterGroup`, which is used to create a parameter template of PolarDB.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ParameterGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
  */
 export class RosParameterGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::ParameterGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateTime: The time when the parameter template was created.
@@ -3357,8 +3315,6 @@ export class RosParameterGroup extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::POLARDB::ParameterGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

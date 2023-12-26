@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::VpcPeerConnection`.</summary>
+    /// <summary>Properties for defining a `RosVpcPeerConnection`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosVpcPeerConnectionProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpcPeerConnectionProps")]
     public interface IRosVpcPeerConnectionProps
     {
@@ -80,7 +83,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: description: The description of the VPC peering connection.
         /// The description must be 2 to 256 characters in length. It must start with a letter
-        /// but cannot start with http:// or https://.
+        /// but cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -107,7 +110,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::VpcPeerConnection`.</summary>
+        /// <summary>Properties for defining a `RosVpcPeerConnection`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosVpcPeerConnectionProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosVpcPeerConnectionProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IRosVpcPeerConnectionProps
         {
@@ -178,7 +184,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <remarks>
             /// <strong>Property</strong>: description: The description of the VPC peering connection.
             /// The description must be 2 to 256 characters in length. It must start with a letter
-            /// but cannot start with http:// or https://.
+            /// but cannot start with http:\/\/ or https:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

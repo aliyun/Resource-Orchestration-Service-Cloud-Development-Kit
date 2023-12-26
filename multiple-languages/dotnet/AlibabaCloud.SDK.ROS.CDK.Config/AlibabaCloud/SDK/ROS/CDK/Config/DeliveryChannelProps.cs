@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::Config::DeliveryChannel`.</summary>
+    /// <summary>Properties for defining a `DeliveryChannel`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-config.DeliveryChannelProps")]
     public class DeliveryChannelProps : AlibabaCloud.SDK.ROS.CDK.Config.IDeliveryChannelProps
     {

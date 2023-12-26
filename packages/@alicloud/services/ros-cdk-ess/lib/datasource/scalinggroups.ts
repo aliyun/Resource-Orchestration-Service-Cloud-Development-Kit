@@ -4,7 +4,8 @@ import { RosScalingGroups } from './ess.generated';
 export { RosScalingGroups as ScalingGroupsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ESS::ScalingGroups`
+ * Properties for defining a `ScalingGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalinggroups
  */
 export interface ScalingGroupsProps {
 
@@ -28,14 +29,11 @@ export interface ScalingGroupsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ESS::ScalingGroups`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingGroups`, which is used to query scaling groups.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroups`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalinggroups
  */
 export class ScalingGroups extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ScalingGroupIds: The list of scaling group IDs.
@@ -48,8 +46,6 @@ export class ScalingGroups extends ros.Resource {
     public readonly attrScalingGroups: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ESS::ScalingGroups`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

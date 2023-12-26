@@ -4,7 +4,8 @@ import { RosFlowProjects } from './emr.generated';
 export { RosFlowProjects as FlowProjectsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::EMR::FlowProjects`
+ * Properties for defining a `FlowProjects`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
  */
 export interface FlowProjectsProps {
 
@@ -20,14 +21,11 @@ export interface FlowProjectsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::EMR::FlowProjects`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EMR::FlowProjects`, which is used to query projects.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowProjects`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
  */
 export class FlowProjects extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute FlowProjectIds: The list of flow project IDs.
@@ -40,8 +38,6 @@ export class FlowProjects extends ros.Resource {
     public readonly attrFlowProjects: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::EMR::FlowProjects`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

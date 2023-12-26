@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::FC::FunctionInvoker`.</summary>
+    /// <summary>Properties for defining a `FunctionInvoker`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-functioninvoker
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.FunctionInvokerProps")]
     public class FunctionInvokerProps : AlibabaCloud.SDK.ROS.CDK.Fc.IFunctionInvokerProps
     {

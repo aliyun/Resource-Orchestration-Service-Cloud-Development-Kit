@@ -4,7 +4,8 @@ import { RosPipelineRelations } from './devops.generated';
 export { RosPipelineRelations as PipelineRelationsProperty };
 
 /**
- * Properties for defining a `ALIYUN::DEVOPS::PipelineRelations`
+ * Properties for defining a `PipelineRelations`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerelations
  */
 export interface PipelineRelationsProps {
 
@@ -33,18 +34,13 @@ export interface PipelineRelationsProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DEVOPS::PipelineRelations`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::PipelineRelations`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPipelineRelations`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerelations
  */
 export class PipelineRelations extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::DEVOPS::PipelineRelations`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

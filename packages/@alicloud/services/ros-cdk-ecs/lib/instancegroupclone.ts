@@ -4,7 +4,8 @@ import { RosInstanceGroupClone } from './ecs.generated';
 export { RosInstanceGroupClone as InstanceGroupCloneProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::InstanceGroupClone`
+ * Properties for defining a `InstanceGroupClone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
 export interface InstanceGroupCloneProps {
 
@@ -154,7 +155,7 @@ export interface InstanceGroupCloneProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year. Default value is Month.Old instances will not be changed.
+     * Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year. Default value is Month.Old instances will not be changed.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -176,7 +177,7 @@ export interface InstanceGroupCloneProps {
     /**
      * Property securityGroupIds: The IDs of security groups N to which the instance belongs. The valid values of N are based on the maximum number of security groups to which an instance can belong. For more information, see Security group limits.Note: You cannot specify both SecurityGroupId and SecurityGroupIds at the same time.
      */
-    readonly securityGroupIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid. Three decimals is allowed at most.
@@ -266,14 +267,11 @@ export interface InstanceGroupCloneProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::InstanceGroupClone`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroupClone`, which is used to create clones of an Elastic Compute Service (ECS) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroupClone`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
 export class InstanceGroupClone extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute HostNames: Host names of created instances.
@@ -321,8 +319,6 @@ export class InstanceGroupClone extends ros.Resource {
     public readonly attrZoneIds: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::InstanceGroupClone`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

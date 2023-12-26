@@ -4,7 +4,8 @@ import { RosClusterUserKubeconfig } from './cs.generated';
 export { RosClusterUserKubeconfig as ClusterUserKubeconfigProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CS::ClusterUserKubeconfig`
+ * Properties for defining a `ClusterUserKubeconfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusteruserkubeconfig
  */
 export interface ClusterUserKubeconfigProps {
 
@@ -29,14 +30,11 @@ export interface ClusterUserKubeconfigProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CS::ClusterUserKubeconfig`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::ClusterUserKubeconfig`, which is used to query the kubeconfig configurations of a Container Service for Kubernetes (ACK) cluster by cluster ID.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterUserKubeconfig`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusteruserkubeconfig
  */
 export class ClusterUserKubeconfig extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterId: The ID of the ACK cluster.
@@ -54,8 +52,6 @@ export class ClusterUserKubeconfig extends ros.Resource {
     public readonly attrExpiration: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CS::ClusterUserKubeconfig`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecd
 {
-    /// <summary>Properties for defining a `ALIYUN::ECD::Desktops`.</summary>
+    /// <summary>Properties for defining a `Desktops`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDesktopsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecd.DesktopsProps")]
     public interface IDesktopsProps
     {
@@ -240,7 +243,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
             }
         }
 
-        /// <summary>Property tags: The list of desktops tags in the form of key/value pairs.</summary>
+        /// <summary>Property tags: The list of desktops tags in the form of key\/value pairs.</summary>
         /// <remarks>
         /// You can define a maximum of 20 tags for each desktops.
         /// </remarks>
@@ -323,7 +326,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECD::Desktops`.</summary>
+        /// <summary>Properties for defining a `Desktops`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDesktopsProps), fullyQualifiedName: "@alicloud/ros-cdk-ecd.DesktopsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecd.IDesktopsProps
         {
@@ -524,7 +530,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property tags: The list of desktops tags in the form of key/value pairs.</summary>
+            /// <summary>Property tags: The list of desktops tags in the form of key\/value pairs.</summary>
             /// <remarks>
             /// You can define a maximum of 20 tags for each desktops.
             /// </remarks>

@@ -4,7 +4,8 @@ import { RosWaitOrder } from './bss.generated';
 export { RosWaitOrder as WaitOrderProperty };
 
 /**
- * Properties for defining a `ALIYUN::BSS::WaitOrder`
+ * Properties for defining a `WaitOrder`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
  */
 export interface WaitOrderProps {
 
@@ -26,18 +27,13 @@ export interface WaitOrderProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::BSS::WaitOrder`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::BSS::WaitOrder`, which is used to wait for an order to be fulfilled.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWaitOrder`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
  */
 export class WaitOrder extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::BSS::WaitOrder`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

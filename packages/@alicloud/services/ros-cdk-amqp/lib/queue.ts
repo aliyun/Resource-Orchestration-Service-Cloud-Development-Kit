@@ -4,7 +4,8 @@ import { RosQueue } from './amqp.generated';
 export { RosQueue as QueueProperty };
 
 /**
- * Properties for defining a `ALIYUN::AMQP::Queue`
+ * Properties for defining a `Queue`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */
 export interface QueueProps {
 
@@ -76,14 +77,11 @@ export interface QueueProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::AMQP::Queue`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Queue`, which is used to create a queue.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQueue`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */
 export class Queue extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute QueueName: The name of the queue.
@@ -91,8 +89,6 @@ export class Queue extends ros.Resource {
     public readonly attrQueueName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::AMQP::Queue`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RAM::AttachPolicyToUser`.</summary>
+    /// <summary>Properties for defining a `RosAttachPolicyToUser`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.RosAttachPolicyToUserProps")]
     public class RosAttachPolicyToUserProps : AlibabaCloud.SDK.ROS.CDK.Ram.IRosAttachPolicyToUserProps
     {

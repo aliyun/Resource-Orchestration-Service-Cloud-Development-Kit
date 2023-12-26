@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.slb.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::SLB::DomainExtensions</code>.
+ * Properties for defining a <code>DomainExtensions</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.304Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.105Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.DomainExtensionsProps")
 @software.amazon.jsii.Jsii.Proxy(DomainExtensionsProps.Jsii$Proxy.class)
 public interface DomainExtensionsProps extends software.amazon.jsii.JsiiSerializable {

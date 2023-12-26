@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dfs
 {
-    /// <summary>Properties for defining a `ALIYUN::DFS::AccessRule`.</summary>
+    /// <summary>Properties for defining a `AccessRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessrule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAccessRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-dfs.AccessRuleProps")]
     public interface IAccessRuleProps
     {
@@ -22,7 +25,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
             get;
         }
 
-        /// <summary>Property rwAccessType: The read/write permission of the authorized object on the file system.</summary>
+        /// <summary>Property rwAccessType: The read\/write permission of the authorized object on the file system.</summary>
         /// <remarks>
         /// Values:
         /// RDWR (default) : read and write.
@@ -61,7 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DFS::AccessRule`.</summary>
+        /// <summary>Properties for defining a `AccessRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessrule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAccessRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-dfs.AccessRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dfs.IAccessRuleProps
         {
@@ -83,7 +89,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dfs
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property rwAccessType: The read/write permission of the authorized object on the file system.</summary>
+            /// <summary>Property rwAccessType: The read\/write permission of the authorized object on the file system.</summary>
             /// <remarks>
             /// Values:
             /// RDWR (default) : read and write.

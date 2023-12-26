@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.rocketmq;
 
 /**
- * A ROS template type:  <code>ALIYUN::ROCKETMQ::Instance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ::Instance</code>ALIYUN::ROCKETMQ::Group is used to create a Group ID on the ROCKETMQ client.
+ * <p>
+ * The Group ID that you create is used to publish and subscribe to messages.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:36.964Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.826Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -20,8 +22,6 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ROCKETMQ::Instance</code>.
-     * <p>
      * @param scope <ul><li>scope in which this resource is defined.</li></ul> This parameter is required.
      * @param id <ul><li>scoped id of the resource.</li></ul> This parameter is required.
      * @param props <ul><li>resource properties.</li></ul> This parameter is required.

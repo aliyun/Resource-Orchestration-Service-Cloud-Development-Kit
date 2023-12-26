@@ -4,7 +4,8 @@ import { RosBandwidthPackageAcceleratorAddition } from './ga.generated';
 export { RosBandwidthPackageAcceleratorAddition as BandwidthPackageAcceleratorAdditionProperty };
 
 /**
- * Properties for defining a `ALIYUN::GA::BandwidthPackageAcceleratorAddition`
+ * Properties for defining a `BandwidthPackageAcceleratorAddition`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackageacceleratoraddition
  */
 export interface BandwidthPackageAcceleratorAdditionProps {
 
@@ -21,14 +22,11 @@ export interface BandwidthPackageAcceleratorAdditionProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::GA::BandwidthPackageAcceleratorAddition`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BandwidthPackageAcceleratorAddition`, which is used to bind a bandwidth plan to a global acceleration instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBandwidthPackageAcceleratorAddition`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackageacceleratoraddition
  */
 export class BandwidthPackageAcceleratorAddition extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AcceleratorId: The ID of the Global Accelerator instance
@@ -41,8 +39,6 @@ export class BandwidthPackageAcceleratorAddition extends ros.Resource {
     public readonly attrBandwidthPackageId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

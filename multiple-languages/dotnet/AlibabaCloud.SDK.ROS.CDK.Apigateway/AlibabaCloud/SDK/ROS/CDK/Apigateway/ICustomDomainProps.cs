@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::CustomDomain`.</summary>
+    /// <summary>Properties for defining a `CustomDomain`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICustomDomainProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.CustomDomainProps")]
     public interface ICustomDomainProps
     {
@@ -55,7 +58,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ApiGateway::CustomDomain`.</summary>
+        /// <summary>Properties for defining a `CustomDomain`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICustomDomainProps), fullyQualifiedName: "@alicloud/ros-cdk-apigateway.CustomDomainProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Apigateway.ICustomDomainProps
         {

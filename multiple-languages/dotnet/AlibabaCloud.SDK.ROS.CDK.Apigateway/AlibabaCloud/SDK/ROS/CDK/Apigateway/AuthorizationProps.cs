@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::Authorization`.</summary>
+    /// <summary>Properties for defining a `Authorization`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.AuthorizationProps")]
     public class AuthorizationProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IAuthorizationProps
     {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::PrefixList`.</summary>
+    /// <summary>Properties for defining a `PrefixList`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IPrefixListProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.PrefixListProps")]
     public interface IPrefixListProps
     {
@@ -63,7 +66,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::PrefixList`.</summary>
+        /// <summary>Properties for defining a `PrefixList`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IPrefixListProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.PrefixListProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IPrefixListProps
         {

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cas
 {
-    /// <summary>Properties for defining a `ALIYUN::CAS::Certificate`.</summary>
+    /// <summary>Properties for defining a `Certificate`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-certificate
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ICertificateProps), fullyQualifiedName: "@alicloud/ros-cdk-cas.CertificateProps")]
     public interface ICertificateProps
     {
@@ -60,7 +63,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CAS::Certificate`.</summary>
+        /// <summary>Properties for defining a `Certificate`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-certificate
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ICertificateProps), fullyQualifiedName: "@alicloud/ros-cdk-cas.CertificateProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cas.ICertificateProps
         {

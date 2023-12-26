@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`.</summary>
+    /// <summary>Properties for defining a `RosAutoSnapshotPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAutoSnapshotPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosAutoSnapshotPolicyProps")]
     public interface IRosAutoSnapshotPolicyProps
     {
@@ -46,7 +49,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: autoSnapshotPolicyName: The name of the automatic snapshot policy.
         /// It can consist of [2, 128] English or Chinese characters.
         /// Must begin with an uppercase or lowercase letter or a Chinese character. Can contain numbers, periods (.), colons (:), underscores (_), and hyphens (-).
-        /// Cannot start with http:// or https://.
+        /// Cannot start with http:\/\/ or https:\/\/.
         /// Default value: null.
         /// </remarks>
         [JsiiProperty(name: "autoSnapshotPolicyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -98,7 +101,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::AutoSnapshotPolicy`.</summary>
+        /// <summary>Properties for defining a `RosAutoSnapshotPolicy`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autosnapshotpolicy
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAutoSnapshotPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosAutoSnapshotPolicyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IRosAutoSnapshotPolicyProps
         {
@@ -144,7 +150,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// <strong>Property</strong>: autoSnapshotPolicyName: The name of the automatic snapshot policy.
             /// It can consist of [2, 128] English or Chinese characters.
             /// Must begin with an uppercase or lowercase letter or a Chinese character. Can contain numbers, periods (.), colons (:), underscores (_), and hyphens (-).
-            /// Cannot start with http:// or https://.
+            /// Cannot start with http:\/\/ or https:\/\/.
             /// Default value: null.
             /// </remarks>
             [JsiiOptional]

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ResourceManager::ControlPolicyAttachment`.</summary>
+    /// <summary>Properties for defining a `ControlPolicyAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicyattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-resourcemanager.ControlPolicyAttachmentProps")]
     public class ControlPolicyAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IControlPolicyAttachmentProps
     {

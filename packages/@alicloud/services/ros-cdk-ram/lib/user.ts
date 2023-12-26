@@ -4,7 +4,8 @@ import { RosUser } from './ram.generated';
 export { RosUser as UserProperty };
 
 /**
- * Properties for defining a `ALIYUN::RAM::User`
+ * Properties for defining a `User`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
  */
 export interface UserProps {
 
@@ -60,14 +61,11 @@ export interface UserProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::RAM::User`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::User`, which is used to create a Resource Access Management (RAM) user.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
  */
 export class User extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CreateDate: Create date of ram user.
@@ -90,8 +88,6 @@ export class User extends ros.Resource {
     public readonly attrUserName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::RAM::User`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::EIPAssociation`.</summary>
+    /// <summary>Properties for defining a `EIPAssociation`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipassociation
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IEIPAssociationProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.EIPAssociationProps")]
     public interface IEIPAssociationProps
     {
@@ -15,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.</summary>
+        /// <summary>Property instanceId: ECS\/SLB\/NAT\/HaVip\/ENI instance id to bid the EIP.</summary>
         [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object InstanceId
         {
@@ -54,7 +57,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::EIPAssociation`.</summary>
+        /// <summary>Properties for defining a `EIPAssociation`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipassociation
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IEIPAssociationProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.EIPAssociationProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IEIPAssociationProps
         {
@@ -69,7 +75,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.</summary>
+            /// <summary>Property instanceId: ECS\/SLB\/NAT\/HaVip\/ENI instance id to bid the EIP.</summary>
             [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object InstanceId
             {

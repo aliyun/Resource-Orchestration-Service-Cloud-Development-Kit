@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 {
-    /// <summary>A ROS template type:  `ALIYUN::EHPC::Users`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::Users`DATASOURCE::EHPC::Nodes is used to query nodes in an Elastic High Performance Computing (E-HPC) cluster.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Users` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ehpc.RosUsers), fullyQualifiedName: "@alicloud/ros-cdk-ehpc.RosUsers", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ehpc.RosUsersProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosUsers : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::EHPC::Users`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -86,7 +89,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
         }
 
-        /// <summary>A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.</summary>
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
         public virtual bool EnableResourcePropertyConstraint
         {
@@ -166,7 +168,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             }
 
             /// <remarks>
-            /// <strong></strong>: #$%^&*-_+=|{}[]:;'/<>,.?/
+            /// <strong></strong>: #$%^&*-_+=|{}[]:;'\/<>,.?\/
             /// Valid values of N: 1 to 100.
             ///
             /// <strong>Property</strong>: password: The password of the Nth user. The password must be 8 to 30 characters in length and contain three of the following items:
@@ -211,7 +213,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
                 }
 
                 /// <remarks>
-                /// <strong></strong>: #$%^&*-_+=|{}[]:;'/<>,.?/
+                /// <strong></strong>: #$%^&*-_+=|{}[]:;'\/<>,.?\/
                 /// Valid values of N: 1 to 100.
                 ///
                 /// <strong>Property</strong>: password: The password of the Nth user. The password must be 8 to 30 characters in length and contain three of the following items:
@@ -303,7 +305,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
             private object _password;
 
             /// <remarks>
-            /// <strong></strong>: #$%^&*-_+=|{}[]:;'/<>,.?/
+            /// <strong></strong>: #$%^&*-_+=|{}[]:;'\/<>,.?\/
             /// Valid values of N: 1 to 100.
             ///
             /// <strong>Property</strong>: password: The password of the Nth user. The password must be 8 to 30 characters in length and contain three of the following items:

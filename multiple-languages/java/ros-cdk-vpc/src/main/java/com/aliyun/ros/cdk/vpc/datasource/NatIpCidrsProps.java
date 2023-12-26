@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.vpc.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::VPC::NatIpCidrs</code>.
+ * Properties for defining a <code>NatIpCidrs</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natipcidrs
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.774Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:18.614Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.NatIpCidrsProps")
 @software.amazon.jsii.Jsii.Proxy(NatIpCidrsProps.Jsii$Proxy.class)
 public interface NatIpCidrsProps extends software.amazon.jsii.JsiiSerializable {

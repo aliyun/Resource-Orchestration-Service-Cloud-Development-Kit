@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ARMS::AlertContactGroup`.</summary>
+    /// <summary>Properties for defining a `AlertContactGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-alertcontactgroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-arms.AlertContactGroupProps")]
     public class AlertContactGroupProps : AlibabaCloud.SDK.ROS.CDK.Arms.IAlertContactGroupProps
     {

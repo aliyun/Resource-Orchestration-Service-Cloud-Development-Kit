@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>Properties for defining a `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.</summary>
+    /// <summary>Properties for defining a `RosVpcFirewallControlPolicy`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosVpcFirewallControlPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps")]
     public interface IRosVpcFirewallControlPolicyProps
     {
@@ -58,7 +61,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <strong>Property</strong>: destination: The destination address in the access control policy.
         /// Set this parameter in the following way:
         /// If the DestinationType parameter is set to net, set the value to a Classless Inter-Domain Routing (CIDR) block.
-        /// Example: 10.2.3.0/24.
+        /// Example: 10.2.3.0\/24.
         /// If the DestinationType parameter is set to group, set the value to the name of an address book.
         /// Example: db_group.
         /// If the DestinationType parameter is set to domain, set the value to a domain name.
@@ -104,7 +107,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
         /// <remarks>
         /// <strong>Property</strong>: source: The source address in the access control policy.
-        /// If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0/24.
+        /// If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0\/24.
         /// If the SourceType parameter is set to group, set the value to the name of an address book. Example: db_group.
         /// </remarks>
         [JsiiProperty(name: "source", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -209,7 +212,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.</summary>
+        /// <summary>Properties for defining a `RosVpcFirewallControlPolicy`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosVpcFirewallControlPolicyProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cloudfw.IRosVpcFirewallControlPolicyProps
         {
@@ -267,7 +273,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// <strong>Property</strong>: destination: The destination address in the access control policy.
             /// Set this parameter in the following way:
             /// If the DestinationType parameter is set to net, set the value to a Classless Inter-Domain Routing (CIDR) block.
-            /// Example: 10.2.3.0/24.
+            /// Example: 10.2.3.0\/24.
             /// If the DestinationType parameter is set to group, set the value to the name of an address book.
             /// Example: db_group.
             /// If the DestinationType parameter is set to domain, set the value to a domain name.
@@ -313,7 +319,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 
             /// <remarks>
             /// <strong>Property</strong>: source: The source address in the access control policy.
-            /// If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0/24.
+            /// If the SourceType parameter is set to net, set the value to a CIDR block. Example: 10.2.3.0\/24.
             /// If the SourceType parameter is set to group, set the value to the name of an address book. Example: db_group.
             /// </remarks>
             [JsiiProperty(name: "source", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]

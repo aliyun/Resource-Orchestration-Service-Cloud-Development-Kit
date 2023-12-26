@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ROCKETMQ::Group`
+ * Properties for defining a `RosGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-group
  */
 export interface RosGroupProps {
 
@@ -87,18 +88,15 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROCKETMQ::Group`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Group`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-group
  */
 export class RosGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROCKETMQ::Group";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupId: Group ID
@@ -144,8 +142,6 @@ export class RosGroup extends ros.RosResource {
     public remark: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ::Group`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -178,7 +174,8 @@ export class RosGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ROCKETMQ::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-instance
  */
 export interface RosInstanceProps {
 
@@ -250,18 +247,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROCKETMQ::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Instance`ALIYUN::ROCKETMQ::Group is used to create a Group ID on the ROCKETMQ client. The Group ID that you create is used to publish and subscribe to messages.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROCKETMQ::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
@@ -317,8 +311,6 @@ export class RosInstance extends ros.RosResource {
     public tags: RosInstance.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -401,7 +393,8 @@ function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::ROCKETMQ::Topic`
+ * Properties for defining a `RosTopic`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
  */
 export interface RosTopicProps {
 
@@ -416,7 +409,7 @@ export interface RosTopicProps {
      * 1: partitionally ordered message
      * 2: globally ordered message
      * 4: transactional message
-     * 5: scheduled/delayed message
+     * 5: scheduled\/delayed message
      */
     readonly messageType: number | ros.IResolvable;
 
@@ -483,18 +476,15 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::ROCKETMQ::Topic`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Topic`, which is used to create a topic.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-topic
  */
 export class RosTopic extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROCKETMQ::Topic";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: The ID of the instance.
@@ -525,7 +515,7 @@ export class RosTopic extends ros.RosResource {
      * 1: partitionally ordered message
      * 2: globally ordered message
      * 4: transactional message
-     * 5: scheduled/delayed message
+     * 5: scheduled\/delayed message
      */
     public messageType: number | ros.IResolvable;
 
@@ -544,8 +534,6 @@ export class RosTopic extends ros.RosResource {
     public remark: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ROCKETMQ::Topic`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

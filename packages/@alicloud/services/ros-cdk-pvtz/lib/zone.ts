@@ -4,7 +4,8 @@ import { RosZone } from './pvtz.generated';
 export { RosZone as ZoneProperty };
 
 /**
- * Properties for defining a `ALIYUN::PVTZ::Zone`
+ * Properties for defining a `Zone`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
 export interface ZoneProps {
 
@@ -52,14 +53,11 @@ export interface ZoneProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PVTZ::Zone`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a private zone.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZone`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
 export class Zone extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ZoneId: Zone ID.
@@ -82,8 +80,6 @@ export class Zone extends ros.Resource {
     public readonly attrZoneType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PVTZ::Zone`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

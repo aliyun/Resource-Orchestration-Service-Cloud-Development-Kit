@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ECS::DedicatedHost`.</summary>
+    /// <summary>Properties for defining a `DedicatedHost`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ecs.DedicatedHostProps")]
     public class DedicatedHostProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IDedicatedHostProps
     {
@@ -490,7 +493,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _periodUnit;
 
-        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week/Month/Year.</summary>
+        /// <summary>Property periodUnit: Unit of prepaid time period, it could be Week\/Month\/Year.</summary>
         /// <remarks>
         /// Default value is Month.
         /// </remarks>

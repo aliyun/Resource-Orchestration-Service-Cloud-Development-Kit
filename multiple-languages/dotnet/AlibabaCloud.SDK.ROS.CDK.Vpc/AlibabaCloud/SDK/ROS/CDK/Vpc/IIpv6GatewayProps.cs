@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::Ipv6Gateway`.</summary>
+    /// <summary>Properties for defining a `Ipv6Gateway`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IIpv6GatewayProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.Ipv6GatewayProps")]
     public interface IIpv6GatewayProps
     {
@@ -73,7 +76,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::VPC::Ipv6Gateway`.</summary>
+        /// <summary>Properties for defining a `Ipv6Gateway`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IIpv6GatewayProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.Ipv6GatewayProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Vpc.IIpv6GatewayProps
         {

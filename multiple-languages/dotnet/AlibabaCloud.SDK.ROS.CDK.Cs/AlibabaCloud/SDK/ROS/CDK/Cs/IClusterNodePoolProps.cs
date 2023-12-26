@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
-    /// <summary>Properties for defining a `ALIYUN::CS::ClusterNodePool`.</summary>
+    /// <summary>Properties for defining a `ClusterNodePool`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IClusterNodePoolProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.ClusterNodePoolProps")]
     public interface IClusterNodePoolProps
     {
@@ -88,7 +91,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CS::ClusterNodePool`.</summary>
+        /// <summary>Properties for defining a `ClusterNodePool`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IClusterNodePoolProps), fullyQualifiedName: "@alicloud/ros-cdk-cs.ClusterNodePoolProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cs.IClusterNodePoolProps
         {

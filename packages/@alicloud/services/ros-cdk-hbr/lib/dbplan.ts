@@ -4,7 +4,8 @@ import { RosDbPlan } from './hbr.generated';
 export { RosDbPlan as DbPlanProperty };
 
 /**
- * Properties for defining a `ALIYUN::HBR::DbPlan`
+ * Properties for defining a `DbPlan`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
  */
 export interface DbPlanProps {
 
@@ -80,14 +81,11 @@ export interface DbPlanProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::HBR::DbPlan`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::DbPlan`, which is used to create a backup plan.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDbPlan`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-dbplan
  */
 export class DbPlan extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ContinuousPlan: Continuous backup plan schedule. Use {   "type": "continuous" }.
@@ -190,8 +188,6 @@ export class DbPlan extends ros.Resource {
     public readonly attrVaultId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::HBR::DbPlan`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::REDIS::Accounts`.</summary>
+    /// <summary>Properties for defining a `Accounts`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-accounts
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IAccountsProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.datasource.AccountsProps")]
     public interface IAccountsProps
     {
@@ -26,7 +29,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::REDIS::Accounts`.</summary>
+        /// <summary>Properties for defining a `Accounts`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-accounts
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IAccountsProps), fullyQualifiedName: "@alicloud/ros-cdk-redis.datasource.AccountsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Redis.Datasource.IAccountsProps
         {

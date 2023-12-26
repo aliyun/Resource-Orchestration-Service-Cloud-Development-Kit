@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::CMS::SlsGroups`.</summary>
+    /// <summary>Properties for defining a `SlsGroups`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-slsgroups
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ISlsGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.datasource.SlsGroupsProps")]
     public interface ISlsGroupsProps
     {
@@ -19,7 +22,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::CMS::SlsGroups`.</summary>
+        /// <summary>Properties for defining a `SlsGroups`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-slsgroups
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ISlsGroupsProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.datasource.SlsGroupsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.Datasource.ISlsGroupsProps
         {

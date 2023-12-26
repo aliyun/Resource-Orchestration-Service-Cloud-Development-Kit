@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>Properties for defining a `ALIYUN::OOS::Template`.</summary>
+    /// <summary>Properties for defining a `Template`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITemplateProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.TemplateProps")]
     public interface ITemplateProps
     {
@@ -50,7 +53,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::OOS::Template`.</summary>
+        /// <summary>Properties for defining a `Template`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITemplateProps), fullyQualifiedName: "@alicloud/ros-cdk-oos.TemplateProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Oos.ITemplateProps
         {

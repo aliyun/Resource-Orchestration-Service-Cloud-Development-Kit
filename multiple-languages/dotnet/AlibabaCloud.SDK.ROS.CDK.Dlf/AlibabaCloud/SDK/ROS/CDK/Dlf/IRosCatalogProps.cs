@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dlf
 {
-    /// <summary>Properties for defining a `ALIYUN::DLF::Catalog`.</summary>
+    /// <summary>Properties for defining a `RosCatalog`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosCatalogProps), fullyQualifiedName: "@alicloud/ros-cdk-dlf.RosCatalogProps")]
     public interface IRosCatalogProps
     {
@@ -31,7 +34,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dlf
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: locationUri: Location uri, for example: oss://dlf-test-oss-location/
+        /// <strong>Property</strong>: locationUri: Location uri, for example: oss:\/\/dlf-test-oss-location\/
         /// </remarks>
         [JsiiProperty(name: "locationUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -56,7 +59,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dlf
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::DLF::Catalog`.</summary>
+        /// <summary>Properties for defining a `RosCatalog`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dlf-catalog
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosCatalogProps), fullyQualifiedName: "@alicloud/ros-cdk-dlf.RosCatalogProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dlf.IRosCatalogProps
         {
@@ -84,7 +90,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dlf
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: locationUri: Location uri, for example: oss://dlf-test-oss-location/
+            /// <strong>Property</strong>: locationUri: Location uri, for example: oss:\/\/dlf-test-oss-location\/
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "locationUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

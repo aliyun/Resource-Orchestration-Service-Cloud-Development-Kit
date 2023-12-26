@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::DATAHUB::Project`
+ * Properties for defining a `RosProject`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datahub-project
  */
 export interface RosProjectProps {
 
@@ -69,18 +70,15 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::DATAHUB::Project`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DATAHUB::Project`, which is used to create a DataHub project.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datahub-project
  */
 export class RosProject extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DATAHUB::Project";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ProjectName: Project name
@@ -101,8 +99,6 @@ export class RosProject extends ros.RosResource {
     public projectName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DATAHUB::Project`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -129,7 +125,8 @@ export class RosProject extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::DATAHUB::Topic`
+ * Properties for defining a `RosTopic`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datahub-topic
  */
 export interface RosTopicProps {
 
@@ -252,18 +249,15 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::DATAHUB::Topic`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DATAHUB::Topic`, which is used to create a topic.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datahub-topic
  */
 export class RosTopic extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DATAHUB::Topic";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ProjectName: Project name
@@ -314,8 +308,6 @@ export class RosTopic extends ros.RosResource {
     public shardCount: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::DATAHUB::Topic`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

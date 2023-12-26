@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::IOT::Device`
+ * Properties for defining a `RosDevice`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
  */
 export interface RosDeviceProps {
 
@@ -90,18 +91,15 @@ function rosDevicePropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::IOT::Device`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Device`, which is used to register a Device.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Device` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
  */
 export class RosDevice extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::IOT::Device";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DeviceName: Device name.
@@ -191,8 +189,6 @@ Description Keep, do not leak.
     public pinCode: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::IOT::Device`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -235,7 +231,8 @@ Description Keep, do not leak.
 }
 
 /**
- * Properties for defining a `ALIYUN::IOT::DeviceGroup`
+ * Properties for defining a `RosDeviceGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
  */
 export interface RosDeviceGroupProps {
 
@@ -301,18 +298,15 @@ function rosDeviceGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::IOT::DeviceGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::DeviceGroup`, which is used to create a group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DeviceGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
  */
 export class RosDeviceGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::IOT::DeviceGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GroupId: Packet, ID, System for the globally unique identifier generated packet.
@@ -349,8 +343,6 @@ export class RosDeviceGroup extends ros.RosResource {
     public superGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::IOT::DeviceGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -382,7 +374,8 @@ export class RosDeviceGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::IOT::Product`
+ * Properties for defining a `RosProduct`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
 export interface RosProductProps {
 
@@ -433,7 +426,7 @@ export interface RosProductProps {
      * @Property dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
      * This parameter is only available and required when you create a Pro Edition product.
      * Options:
-     * 0: Do not parse/Custom.
+     * 0: Do not parse\/Custom.
      * 1: Alink JSON.
      */
     readonly dataFormat?: number | ros.IResolvable;
@@ -594,18 +587,15 @@ function rosProductPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::IOT::Product`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Product`, which is used to create a product.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Product` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
 export class RosProduct extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::IOT::Product";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute IotInstanceId: IOT instance ID.
@@ -667,7 +657,7 @@ export class RosProduct extends ros.RosResource {
      * @Property dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
      * This parameter is only available and required when you create a Pro Edition product.
      * Options:
-     * 0: Do not parse/Custom.
+     * 0: Do not parse\/Custom.
      * 1: Alink JSON.
      */
     public dataFormat: number | ros.IResolvable | undefined;
@@ -743,8 +733,6 @@ export class RosProduct extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::IOT::Product`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -796,7 +784,8 @@ export class RosProduct extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::IOT::ProductTopic`
+ * Properties for defining a `RosProductTopic`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
  */
 export interface RosProductTopicProps {
 
@@ -814,7 +803,7 @@ export interface RosProductTopicProps {
     readonly productKey: string | ros.IResolvable;
 
     /**
-     * @Property topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+     * @Property topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (\/) are used to delimit the topic hierarchies. The format of a topic category is productKey\/${deviceName}\/topicShortName.
      * Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
      */
     readonly topicShortName: string | ros.IResolvable;
@@ -887,18 +876,15 @@ function rosProductTopicPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::IOT::ProductTopic`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::ProductTopic`, which is used to create a topic category for a specified product.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ProductTopic` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
  */
 export class RosProductTopic extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::IOT::ProductTopic";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TopicId: Topic ID
@@ -922,7 +908,7 @@ export class RosProductTopic extends ros.RosResource {
     public productKey: string | ros.IResolvable;
 
     /**
-     * @Property topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+     * @Property topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (\/) are used to delimit the topic hierarchies. The format of a topic category is productKey\/${deviceName}\/topicShortName.
      * Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
      */
     public topicShortName: string | ros.IResolvable;
@@ -938,8 +924,6 @@ export class RosProductTopic extends ros.RosResource {
     public iotInstanceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::IOT::ProductTopic`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -972,7 +956,8 @@ export class RosProductTopic extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::IOT::Rule`
+ * Properties for defining a `RosRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-rule
  */
 export interface RosRuleProps {
 
@@ -1031,31 +1016,31 @@ export interface RosRuleProps {
     readonly select?: string | ros.IResolvable;
 
     /**
-     * @Property shortTopic: The topic to which this rule is applied. Syntax: ${deviceName}/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.
+     * @Property shortTopic: The topic to which this rule is applied. Syntax: ${deviceName}\/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.
      * Basic communication topics or Thing Specification Language (TSL)-based communication
-     * topics. Syntax: ${deviceName}/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the
+     * topics. Syntax: ${deviceName}\/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the
      * product. Valid values of topicShortName:
-     * /thing/event/property/post: submits the property data of a device.
-     * /thing/event/${tsl.event.identifier}/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL.
-     * /thing/lifecycle: submits device lifecycle changes.
-     * /thing/downlink/reply/message: sends a response to a request from IoT Platform.
-     * /thing/list/found: submits the data when a gateway detects a new sub-device.
-     * /thing/topo/lifecycle: submits device topology changes.
-     * /thing/event/property/history/post: submits historical property data of a device.
-     * /thing/event/${tsl.event.identifier}/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL.
-     * /ota/upgrade: submits OTA update status.
-     * /ota/version/post: submits OTA module versions.
-     * /thing/deviceinfo/update: submits device tag changes.
-     * /edge/driver/${driver_id}/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.
-     * ${packageId}/${jobId}/ota/job/status: submits the status of OTA update batches. This topic is a basic communication topic.
+     * \/thing\/event\/property\/post: submits the property data of a device.
+     * \/thing\/event\/${tsl.event.identifier}\/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL.
+     * \/thing\/lifecycle: submits device lifecycle changes.
+     * \/thing\/downlink\/reply\/message: sends a response to a request from IoT Platform.
+     * \/thing\/list\/found: submits the data when a gateway detects a new sub-device.
+     * \/thing\/topo\/lifecycle: submits device topology changes.
+     * \/thing\/event\/property\/history\/post: submits historical property data of a device.
+     * \/thing\/event\/${tsl.event.identifier}\/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL.
+     * \/ota\/upgrade: submits OTA update status.
+     * \/ota\/version\/post: submits OTA module versions.
+     * \/thing\/deviceinfo\/update: submits device tag changes.
+     * \/edge\/driver\/${driver_id}\/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.
+     * ${packageId}\/${jobId}\/ota\/job\/status: submits the status of OTA update batches. This topic is a basic communication topic.
      * ${packageId}specifies the ID of the firmware. ${jobId}specifies the ID of the update batch.
-     * Custom topics. Example:${deviceName}/user/get.
+     * Custom topics. Example:${deviceName}\/user\/get.
      * You can call theQueryProductTopicoperation to view all custom topics of the product.
      * When you specify a custom topic, you can use the + and # wildcards.
      * You can replace ${deviceName} with the+ wildcard. The wildcard indicates that the topic applies to all devices under the
      * product.
-     * You can replace the fields that follow ${deviceName} with /user/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that
-     * follow/user.
+     * You can replace the fields that follow ${deviceName} with \/user\/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that
+     * follow\/user.
      * For more information about how to use wildcards, see Wildcards in topics.
      * Topic that is used to submit device status changes: ${deviceName}.
      * You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
@@ -1070,7 +1055,7 @@ export interface RosRuleProps {
     /**
      * @Property topicType: 0: The topic is a basic communication topic or TSL-based communication topic.
      * 1: The topic is a custom topic.
-     * 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
+     * 2: The topic is used to submit device status changes. Syntax: \/as\/mqtt\/status\/${productKey}\/${deviceName}.
      */
     readonly topicType?: number | ros.IResolvable;
 
@@ -1150,18 +1135,15 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * A ROS template type:  `ALIYUN::IOT::Rule`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Rule`, which is used to create a rule for a specific topic.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-rule
  */
 export class RosRule extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::IOT::Rule";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ActionId: The ID of the rule action.
@@ -1231,31 +1213,31 @@ export class RosRule extends ros.RosResource {
     public select: string | ros.IResolvable | undefined;
 
     /**
-     * @Property shortTopic: The topic to which this rule is applied. Syntax: ${deviceName}/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.
+     * @Property shortTopic: The topic to which this rule is applied. Syntax: ${deviceName}\/topicShortName. ${deviceName}specifies the name of the device, and topicShortNamespecifies the custom name of the topic.
      * Basic communication topics or Thing Specification Language (TSL)-based communication
-     * topics. Syntax: ${deviceName}/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the
+     * topics. Syntax: ${deviceName}\/topicShortName. You can replace ${deviceName} with the + wildcard. The wildcard indicates that the topic applies to all devices under the
      * product. Valid values of topicShortName:
-     * /thing/event/property/post: submits the property data of a device.
-     * /thing/event/${tsl.event.identifier}/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL.
-     * /thing/lifecycle: submits device lifecycle changes.
-     * /thing/downlink/reply/message: sends a response to a request from IoT Platform.
-     * /thing/list/found: submits the data when a gateway detects a new sub-device.
-     * /thing/topo/lifecycle: submits device topology changes.
-     * /thing/event/property/history/post: submits historical property data of a device.
-     * /thing/event/${tsl.event.identifier}/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL.
-     * /ota/upgrade: submits OTA update status.
-     * /ota/version/post: submits OTA module versions.
-     * /thing/deviceinfo/update: submits device tag changes.
-     * /edge/driver/${driver_id}/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.
-     * ${packageId}/${jobId}/ota/job/status: submits the status of OTA update batches. This topic is a basic communication topic.
+     * \/thing\/event\/property\/post: submits the property data of a device.
+     * \/thing\/event\/${tsl.event.identifier}\/post: submits the event data of a device.${tsl.event.identifier} specifies the identifier of an event in the TSL.
+     * \/thing\/lifecycle: submits device lifecycle changes.
+     * \/thing\/downlink\/reply\/message: sends a response to a request from IoT Platform.
+     * \/thing\/list\/found: submits the data when a gateway detects a new sub-device.
+     * \/thing\/topo\/lifecycle: submits device topology changes.
+     * \/thing\/event\/property\/history\/post: submits historical property data of a device.
+     * \/thing\/event\/${tsl.event.identifier}\/post: submits the historical event data of a device.${tsl.event.identifier}specifies the identifier of an event in the TSL.
+     * \/ota\/upgrade: submits OTA update status.
+     * \/ota\/version\/post: submits OTA module versions.
+     * \/thing\/deviceinfo\/update: submits device tag changes.
+     * \/edge\/driver\/${driver_id}\/point_post: submits pass-through data from Link IoT Edge.${driver_id} specifies the ID of the driver that a device uses to access Link IoT Edge.
+     * ${packageId}\/${jobId}\/ota\/job\/status: submits the status of OTA update batches. This topic is a basic communication topic.
      * ${packageId}specifies the ID of the firmware. ${jobId}specifies the ID of the update batch.
-     * Custom topics. Example:${deviceName}/user/get.
+     * Custom topics. Example:${deviceName}\/user\/get.
      * You can call theQueryProductTopicoperation to view all custom topics of the product.
      * When you specify a custom topic, you can use the + and # wildcards.
      * You can replace ${deviceName} with the+ wildcard. The wildcard indicates that the topic applies to all devices under the
      * product.
-     * You can replace the fields that follow ${deviceName} with /user/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that
-     * follow/user.
+     * You can replace the fields that follow ${deviceName} with \/user\/#. The # wildcard indicates that the topic applies whatever values are specified for the fields that
+     * follow\/user.
      * For more information about how to use wildcards, see Wildcards in topics.
      * Topic that is used to submit device status changes: ${deviceName}.
      * You can use the+wildcard. In this case, the status changes of all devices under the product are submitted.
@@ -1270,7 +1252,7 @@ export class RosRule extends ros.RosResource {
     /**
      * @Property topicType: 0: The topic is a basic communication topic or TSL-based communication topic.
      * 1: The topic is a custom topic.
-     * 2: The topic is used to submit device status changes. Syntax: /as/mqtt/status/${productKey}/${deviceName}.
+     * 2: The topic is used to submit device status changes. Syntax: \/as\/mqtt\/status\/${productKey}\/${deviceName}.
      */
     public topicType: number | ros.IResolvable | undefined;
 
@@ -1281,8 +1263,6 @@ export class RosRule extends ros.RosResource {
     public where: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::IOT::Rule`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1419,7 +1399,8 @@ function rosRuleRuleActionPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::IOT::RuleAction`
+ * Properties for defining a `RosRuleAction`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
  */
 export interface RosRuleActionProps {
 
@@ -1523,18 +1504,15 @@ function rosRuleActionPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::IOT::RuleAction`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::RuleAction`, which is used to create a rule action for a specified rule.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RuleAction` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
  */
 export class RosRuleAction extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::IOT::RuleAction";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ActionId: The ID of the rule action.
@@ -1594,8 +1572,6 @@ export class RosRuleAction extends ros.RosResource {
     public iotInstanceId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::IOT::RuleAction`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

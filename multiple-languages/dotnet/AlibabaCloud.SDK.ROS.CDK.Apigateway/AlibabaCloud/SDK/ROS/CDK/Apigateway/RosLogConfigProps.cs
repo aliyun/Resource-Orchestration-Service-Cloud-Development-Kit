@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::LogConfig`.</summary>
+    /// <summary>Properties for defining a `RosLogConfig`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-logconfig
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.RosLogConfigProps")]
     public class RosLogConfigProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IRosLogConfigProps
     {

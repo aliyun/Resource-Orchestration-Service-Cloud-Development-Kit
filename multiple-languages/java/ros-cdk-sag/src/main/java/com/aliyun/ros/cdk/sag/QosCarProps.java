@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.sag;
 
 /**
- * Properties for defining a <code>ALIYUN::SAG::QosCar</code>.
+ * Properties for defining a <code>QosCar</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qoscar
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:37.137Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:17.974Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.QosCarProps")
 @software.amazon.jsii.Jsii.Proxy(QosCarProps.Jsii$Proxy.class)
 public interface QosCarProps extends software.amazon.jsii.JsiiSerializable {

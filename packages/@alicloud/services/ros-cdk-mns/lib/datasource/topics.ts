@@ -4,7 +4,8 @@ import { RosTopics } from './mns.generated';
 export { RosTopics as TopicsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::MNS::Topics`
+ * Properties for defining a `Topics`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topics
  */
 export interface TopicsProps {
 
@@ -15,14 +16,11 @@ export interface TopicsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::MNS::Topics`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Topics`, which is used to query topics.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopics`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-topics
  */
 export class Topics extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute TopicNames: The list of topic names.
@@ -35,8 +33,6 @@ export class Topics extends ros.Resource {
     public readonly attrTopics: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::MNS::Topics`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

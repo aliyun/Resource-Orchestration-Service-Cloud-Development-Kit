@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SAE::Application`.</summary>
+    /// <summary>Properties for defining a `Application`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sae.ApplicationProps")]
     public class ApplicationProps : AlibabaCloud.SDK.ROS.CDK.Sae.IApplicationProps
     {
@@ -836,7 +839,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         private object? _postStart;
 
-        /// <summary>Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}.</summary>
+        /// <summary>Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "\/ etc \/ group"}}.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "postStart", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PostStart
@@ -867,7 +870,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         private object? _preStop;
 
-        /// <summary>Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "/ etc / group"}}.</summary>
+        /// <summary>Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "\/ etc \/ group"}}.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "preStop", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PreStop

@@ -4,7 +4,8 @@ import { RosPrometheis } from './arms.generated';
 export { RosPrometheis as PrometheisProperty };
 
 /**
- * Properties for defining a `DATASOURCE::ARMS::Prometheis`
+ * Properties for defining a `Prometheis`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheis
  */
 export interface PrometheisProps {
 
@@ -15,14 +16,11 @@ export interface PrometheisProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::ARMS::Prometheis`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::Prometheis`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrometheis`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheis
  */
 export class Prometheis extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ClusterIds: The list of cluster IDs.
@@ -35,8 +33,6 @@ export class Prometheis extends ros.Resource {
     public readonly attrPrometheis: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::ARMS::Prometheis`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

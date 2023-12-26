@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::CR::Namespace`.</summary>
+    /// <summary>Properties for defining a `Namespace`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-namespace
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cr.NamespaceProps")]
     public class NamespaceProps : AlibabaCloud.SDK.ROS.CDK.Cr.INamespaceProps
     {

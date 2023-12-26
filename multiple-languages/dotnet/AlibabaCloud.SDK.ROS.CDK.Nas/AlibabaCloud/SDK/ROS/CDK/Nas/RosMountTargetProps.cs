@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::NAS::MountTarget`.</summary>
+    /// <summary>Properties for defining a `RosMountTarget`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-nas.RosMountTargetProps")]
     public class RosMountTargetProps : AlibabaCloud.SDK.ROS.CDK.Nas.IRosMountTargetProps
     {

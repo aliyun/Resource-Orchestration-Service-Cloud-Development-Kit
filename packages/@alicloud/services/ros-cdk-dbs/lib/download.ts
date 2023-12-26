@@ -4,7 +4,8 @@ import { RosDownload } from './dbs.generated';
 export { RosDownload as DownloadProperty };
 
 /**
- * Properties for defining a `ALIYUN::DBS::Download`
+ * Properties for defining a `Download`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
  */
 export interface DownloadProps {
 
@@ -87,14 +88,11 @@ export interface DownloadProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::DBS::Download`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DBS::Download`DATASOURCE::DBS::BackupPlans is used to query the information about backup schedules.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDownload`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
  */
 export class Download extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute BakSetId: The ID of the backup set.
@@ -117,8 +115,6 @@ export class Download extends ros.Resource {
     public readonly attrTaskId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::DBS::Download`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

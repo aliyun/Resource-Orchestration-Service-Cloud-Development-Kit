@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>A ROS template type:  `ALIYUN::CMS::MonitorGroupInstances`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroupInstances`, which is used to add instances to an application group.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `MonitorGroupInstances` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cms.RosMonitorGroupInstances), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosMonitorGroupInstances", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cms.RosMonitorGroupInstancesProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosMonitorGroupInstances : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::CMS::MonitorGroupInstances`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -171,7 +174,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// IOT_EDGE (IoT Edge)
             /// K8S_POD (k8s pod )
             /// KVSTORE_SHARDING (ApsaraDB for Redis cluster version)
-            /// KVSTORE_SPLITRW (ApsaraDB for Redis read/write splitting version)
+            /// KVSTORE_SPLITRW (ApsaraDB for Redis read\/write splitting version)
             /// KVSTORE_STANDARD (ApsaraDB for Redis standard version)
             /// MEMCACHE (ApsaraDB for Memcache)
             /// MNS (Message Service)
@@ -249,7 +252,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 /// IOT_EDGE (IoT Edge)
                 /// K8S_POD (k8s pod )
                 /// KVSTORE_SHARDING (ApsaraDB for Redis cluster version)
-                /// KVSTORE_SPLITRW (ApsaraDB for Redis read/write splitting version)
+                /// KVSTORE_SPLITRW (ApsaraDB for Redis read\/write splitting version)
                 /// KVSTORE_STANDARD (ApsaraDB for Redis standard version)
                 /// MEMCACHE (ApsaraDB for Memcache)
                 /// MNS (Message Service)
@@ -328,7 +331,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// IOT_EDGE (IoT Edge)
             /// K8S_POD (k8s pod )
             /// KVSTORE_SHARDING (ApsaraDB for Redis cluster version)
-            /// KVSTORE_SPLITRW (ApsaraDB for Redis read/write splitting version)
+            /// KVSTORE_SPLITRW (ApsaraDB for Redis read\/write splitting version)
             /// KVSTORE_STANDARD (ApsaraDB for Redis standard version)
             /// MEMCACHE (ApsaraDB for Memcache)
             /// MNS (Message Service)

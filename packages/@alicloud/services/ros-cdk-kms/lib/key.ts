@@ -4,7 +4,8 @@ import { RosKey } from './kms.generated';
 export { RosKey as KeyProperty };
 
 /**
- * Properties for defining a `ALIYUN::KMS::Key`
+ * Properties for defining a `Key`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
 export interface KeyProps {
 
@@ -24,20 +25,20 @@ export interface KeyProps {
     readonly enable?: boolean | ros.IResolvable;
 
     /**
-     * Property enableAutomaticRotation: Whether to enable automatic key rotation. Valid value: true/false (default)
+     * Property enableAutomaticRotation: Whether to enable automatic key rotation. Valid value: true\/false (default)
      */
     readonly enableAutomaticRotation?: boolean | ros.IResolvable;
 
     /**
-     * Property keySpec: Key type. Valid value: Aliyun_AES_256/Aliyun_SM4/RSA_2048/EC_P256/EC_P256K/EC_SM2
+     * Property keySpec: Key type. Valid value: Aliyun_AES_256\/Aliyun_SM4\/RSA_2048\/EC_P256\/EC_P256K\/EC_SM2
      */
     readonly keySpec?: string | ros.IResolvable;
 
     /**
      * Property keyUsage: The usage of the CMK. Valid values:
-     * ENCRYPT/DECRYPT: encrypts or decrypts data.
-     * SIGN/VERIFY: generates or verifies a digital signature.
-     * If the CMK supports signature verification, the default value is SIGN/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT/DECRYPT.
+     * ENCRYPT\/DECRYPT: encrypts or decrypts data.
+     * SIGN\/VERIFY: generates or verifies a digital signature.
+     * If the CMK supports signature verification, the default value is SIGN\/VERIFY. If the CMK does not support signature verification, the default value is ENCRYPT\/DECRYPT.
      */
     readonly keyUsage?: string | ros.IResolvable;
 
@@ -60,14 +61,11 @@ export interface KeyProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::KMS::Key`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Key`, which is used to create a customer master key (CMK).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKey`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
 export class Key extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute KeyId: The globally unique identifier for the CMK.
@@ -75,8 +73,6 @@ export class Key extends ros.Resource {
     public readonly attrKeyId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::KMS::Key`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

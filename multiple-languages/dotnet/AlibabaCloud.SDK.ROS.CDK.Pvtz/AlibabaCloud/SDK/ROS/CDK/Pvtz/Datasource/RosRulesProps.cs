@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pvtz.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::PVTZ::Rules`.</summary>
+    /// <summary>Properties for defining a `RosRules`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-rules
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-pvtz.datasource.RosRulesProps")]
     public class RosRulesProps : AlibabaCloud.SDK.ROS.CDK.Pvtz.Datasource.IRosRulesProps
     {

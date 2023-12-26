@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dbs.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::DBS::BackupPlans`.</summary>
+    /// <summary>Properties for defining a `RosBackupPlans`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dbs-backupplans
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosBackupPlansProps), fullyQualifiedName: "@alicloud/ros-cdk-dbs.datasource.RosBackupPlansProps")]
     public interface IRosBackupPlansProps
     {
@@ -47,7 +50,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::DBS::BackupPlans`.</summary>
+        /// <summary>Properties for defining a `RosBackupPlans`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dbs-backupplans
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosBackupPlansProps), fullyQualifiedName: "@alicloud/ros-cdk-dbs.datasource.RosBackupPlansProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Dbs.Datasource.IRosBackupPlansProps
         {

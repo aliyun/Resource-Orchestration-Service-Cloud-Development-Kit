@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::RAM::Users`.</summary>
+    /// <summary>Properties for defining a `RosUsers`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-users
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.datasource.RosUsersProps")]
     public class RosUsersProps : AlibabaCloud.SDK.ROS.CDK.Ram.Datasource.IRosUsersProps
     {

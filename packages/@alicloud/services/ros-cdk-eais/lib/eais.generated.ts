@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::EAIS::ClientInstanceAttachment`
+ * Properties for defining a `RosClientInstanceAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
  */
 export interface RosClientInstanceAttachmentProps {
 
@@ -55,18 +56,15 @@ function rosClientInstanceAttachmentPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::EAIS::ClientInstanceAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EAIS::ClientInstanceAttachment`, which is used to attach an Elastic Accelerated Computing Instances (EAIS) instance to an Elastic Compute Service (ECS) instance or elastic container instance of a user.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ClientInstanceAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-clientinstanceattachment
  */
 export class RosClientInstanceAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EAIS::ClientInstanceAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClientInstanceId: The ID of the ECS or ECI instance bound to the EAIS instance.
@@ -97,8 +95,6 @@ export class RosClientInstanceAttachment extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EAIS::ClientInstanceAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -127,7 +123,8 @@ export class RosClientInstanceAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::EAIS::Instance`
+ * Properties for defining a `RosInstance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-instance
  */
 export interface RosInstanceProps {
 
@@ -229,18 +226,15 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::EAIS::Instance`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EAIS::Instance`, which is used to create an Elastic Accelerated Computing Instances (EAIS) instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eais-instance
  */
 export class RosInstance extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EAIS::Instance";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClientInstanceId: The ID of the ECS instance to be bound.
@@ -346,8 +340,6 @@ export class RosInstance extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::EAIS::Instance`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

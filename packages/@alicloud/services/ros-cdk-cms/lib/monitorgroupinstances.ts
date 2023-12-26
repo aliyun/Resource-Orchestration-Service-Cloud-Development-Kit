@@ -4,7 +4,8 @@ import { RosMonitorGroupInstances } from './cms.generated';
 export { RosMonitorGroupInstances as MonitorGroupInstancesProperty };
 
 /**
- * Properties for defining a `ALIYUN::CMS::MonitorGroupInstances`
+ * Properties for defining a `MonitorGroupInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
  */
 export interface MonitorGroupInstancesProps {
 
@@ -20,14 +21,11 @@ export interface MonitorGroupInstancesProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::CMS::MonitorGroupInstances`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MonitorGroupInstances`, which is used to add instances to an application group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitorGroupInstances`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
  */
 export class MonitorGroupInstances extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute GroupId: The ID of the application group.
@@ -35,8 +33,6 @@ export class MonitorGroupInstances extends ros.Resource {
     public readonly attrGroupId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::CMS::MonitorGroupInstances`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

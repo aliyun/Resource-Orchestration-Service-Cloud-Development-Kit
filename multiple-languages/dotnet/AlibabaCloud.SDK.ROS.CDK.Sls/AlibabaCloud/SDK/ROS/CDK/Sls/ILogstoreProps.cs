@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::Logstore`.</summary>
+    /// <summary>Properties for defining a `Logstore`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ILogstoreProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.LogstoreProps")]
     public interface ILogstoreProps
     {
@@ -60,7 +63,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.</summary>
+        /// <summary>Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS\/Android\/APP access information.</summary>
         /// <remarks>
         /// Default to false.
         /// </remarks>
@@ -143,7 +146,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::Logstore`.</summary>
+        /// <summary>Properties for defining a `Logstore`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ILogstoreProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.LogstoreProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.ILogstoreProps
         {
@@ -197,7 +203,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.</summary>
+            /// <summary>Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS\/Android\/APP access information.</summary>
             /// <remarks>
             /// Default to false.
             /// </remarks>

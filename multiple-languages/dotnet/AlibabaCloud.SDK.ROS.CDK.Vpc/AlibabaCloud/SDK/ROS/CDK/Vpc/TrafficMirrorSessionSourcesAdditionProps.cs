@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`.</summary>
+    /// <summary>Properties for defining a `TrafficMirrorSessionSourcesAddition`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsessionsourcesaddition
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.TrafficMirrorSessionSourcesAdditionProps")]
     public class TrafficMirrorSessionSourcesAdditionProps : AlibabaCloud.SDK.ROS.CDK.Vpc.ITrafficMirrorSessionSourcesAdditionProps
     {

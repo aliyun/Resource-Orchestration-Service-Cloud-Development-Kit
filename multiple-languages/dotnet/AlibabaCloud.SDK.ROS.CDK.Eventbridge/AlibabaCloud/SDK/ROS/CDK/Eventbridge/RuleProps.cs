@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EventBridge::Rule`.</summary>
+    /// <summary>Properties for defining a `Rule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eventbridge-rule
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-eventbridge.RuleProps")]
     public class RuleProps : AlibabaCloud.SDK.ROS.CDK.Eventbridge.IRuleProps
     {

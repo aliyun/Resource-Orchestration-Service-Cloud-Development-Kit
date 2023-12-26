@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::OSS::Bucket`
+ * Properties for defining a `RosBucket`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
 export interface RosBucketProps {
 
@@ -26,6 +27,12 @@ export interface RosBucketProps {
      * @Property deletionForce: Whether force delete the relative objects in the bucket. Default value is false.
      */
     readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableOssHdfsService: Whether enable OSS-HDFS service. 
+     * **Note**: Once it's enabled, it can't be disabled again.
+     */
+    readonly enableOssHdfsService?: boolean | ros.IResolvable;
 
     /**
      * @Property lifecycleConfiguration: Rules that define how oss bucket manages objects during their lifetime.
@@ -96,6 +103,7 @@ function RosBucketPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('policy', ros.hashValidator(ros.validateAny))(properties.policy));
+    errors.collect(ros.propertyValidator('enableOssHdfsService', ros.validateBoolean)(properties.enableOssHdfsService));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.storageClass && (typeof properties.storageClass) !== 'object') {
         errors.collect(ros.propertyValidator('storageClass', ros.validateAllowedValues)({
@@ -150,6 +158,7 @@ function rosBucketPropsToRosTemplate(properties: any, enableResourcePropertyCons
       AccessControl: ros.stringToRosTemplate(properties.accessControl),
       CORSConfiguration: rosBucketCORSConfigurationPropertyToRosTemplate(properties.corsConfiguration),
       DeletionForce: ros.booleanToRosTemplate(properties.deletionForce),
+      EnableOssHdfsService: ros.booleanToRosTemplate(properties.enableOssHdfsService),
       LifecycleConfiguration: rosBucketLifecycleConfigurationPropertyToRosTemplate(properties.lifecycleConfiguration),
       LoggingConfiguration: rosBucketLoggingConfigurationPropertyToRosTemplate(properties.loggingConfiguration),
       Policy: ros.hashMapper(ros.objectToRosTemplate)(properties.policy),
@@ -165,18 +174,15 @@ function rosBucketPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::OSS::Bucket`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`, which is used to create an Object Storage Service (OSS) bucket.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Bucket` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
 export class RosBucket extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::Bucket";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DomainName: The public DNS name of the specified bucket.
@@ -215,6 +221,12 @@ export class RosBucket extends ros.RosResource {
      * @Property deletionForce: Whether force delete the relative objects in the bucket. Default value is false.
      */
     public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableOssHdfsService: Whether enable OSS-HDFS service. 
+     * **Note**: Once it's enabled, it can't be disabled again.
+     */
+    public enableOssHdfsService: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property lifecycleConfiguration: Rules that define how oss bucket manages objects during their lifetime.
@@ -274,8 +286,6 @@ export class RosBucket extends ros.RosResource {
     public websiteConfiguration: RosBucket.WebsiteConfigurationProperty | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::OSS::Bucket`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -291,6 +301,7 @@ export class RosBucket extends ros.RosResource {
         this.accessControl = props.accessControl;
         this.corsConfiguration = props.corsConfiguration;
         this.deletionForce = props.deletionForce;
+        this.enableOssHdfsService = props.enableOssHdfsService;
         this.lifecycleConfiguration = props.lifecycleConfiguration;
         this.loggingConfiguration = props.loggingConfiguration;
         this.policy = props.policy;
@@ -311,6 +322,7 @@ export class RosBucket extends ros.RosResource {
             accessControl: this.accessControl,
             corsConfiguration: this.corsConfiguration,
             deletionForce: this.deletionForce,
+            enableOssHdfsService: this.enableOssHdfsService,
             lifecycleConfiguration: this.lifecycleConfiguration,
             loggingConfiguration: this.loggingConfiguration,
             policy: this.policy,
@@ -887,7 +899,8 @@ function rosBucketWebsiteConfigurationPropertyToRosTemplate(properties: any): an
 }
 
 /**
- * Properties for defining a `ALIYUN::OSS::Directory`
+ * Properties for defining a `RosDirectory`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
 export interface RosDirectoryProps {
 
@@ -952,18 +965,15 @@ function rosDirectoryPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `ALIYUN::OSS::Directory`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Directory`DATASOURCE::OSS::Buckets is used to query an Object Storage Service (OSS) bucket.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Directory` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
 export class RosDirectory extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::Directory";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BucketName: The name of Bucket
@@ -994,8 +1004,6 @@ export class RosDirectory extends ros.RosResource {
     public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::OSS::Directory`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1025,7 +1033,8 @@ export class RosDirectory extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::OSS::Domain`
+ * Properties for defining a `RosDomain`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
  */
 export interface RosDomainProps {
 
@@ -1084,18 +1093,15 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::OSS::Domain`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`, which is used to bind a custom domain name.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
  */
 export class RosDomain extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::Domain";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BucketName: The name of Bucket
@@ -1121,8 +1127,6 @@ export class RosDomain extends ros.RosResource {
     public domainName: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::OSS::Domain`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

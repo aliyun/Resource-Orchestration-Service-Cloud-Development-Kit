@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>Properties for defining a `ALIYUN::CMS::GroupMetricRule`.</summary>
+    /// <summary>Properties for defining a `RosGroupMetricRule`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosGroupMetricRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosGroupMetricRuleProps")]
     public interface IRosGroupMetricRuleProps
     {
@@ -28,7 +31,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// IOT_EDGE (IoT Edge)
         /// K8S_POD (k8s pod)
         /// KVSTORE_SHARDING (ApsaraDB for Redis cluster version)
-        /// KVSTORE_SPLITRW (ApsaraDB for Redis read/write splitting version)
+        /// KVSTORE_SPLITRW (ApsaraDB for Redis read\/write splitting version)
         /// KVSTORE_STANDARD (ApsaraDB for Redis standard version)
         /// MEMCACHE (ApsaraDB for Memcache)
         /// MNS (Message Service)
@@ -213,7 +216,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::CMS::GroupMetricRule`.</summary>
+        /// <summary>Properties for defining a `RosGroupMetricRule`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosGroupMetricRuleProps), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosGroupMetricRuleProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cms.IRosGroupMetricRuleProps
         {
@@ -241,7 +247,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// IOT_EDGE (IoT Edge)
             /// K8S_POD (k8s pod)
             /// KVSTORE_SHARDING (ApsaraDB for Redis cluster version)
-            /// KVSTORE_SPLITRW (ApsaraDB for Redis read/write splitting version)
+            /// KVSTORE_SPLITRW (ApsaraDB for Redis read\/write splitting version)
             /// KVSTORE_STANDARD (ApsaraDB for Redis standard version)
             /// MEMCACHE (ApsaraDB for Memcache)
             /// MNS (Message Service)

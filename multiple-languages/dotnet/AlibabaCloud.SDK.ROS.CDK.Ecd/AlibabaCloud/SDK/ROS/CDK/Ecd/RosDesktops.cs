@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecd
 {
-    /// <summary>A ROS template type:  `ALIYUN::ECD::Desktops`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Desktops` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ecd.RosDesktops), fullyQualifiedName: "@alicloud/ros-cdk-ecd.RosDesktops", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ecd.RosDesktopsProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosDesktops : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::ECD::Desktops`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -660,7 +663,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tags: The list of desktops tags in the form of key/value pairs.
+        /// <strong>Property</strong>: tags: The list of desktops tags in the form of key\/value pairs.
         /// You can define a maximum of 20 tags for each desktops.
         /// </remarks>
         [JsiiOptional]

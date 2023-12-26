@@ -4,7 +4,8 @@ import { RosNetworkInterface } from './ecs.generated';
 export { RosNetworkInterface as NetworkInterfaceProperty };
 
 /**
- * Properties for defining a `ALIYUN::ECS::NetworkInterface`
+ * Properties for defining a `NetworkInterface`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */
 export interface NetworkInterfaceProps {
 
@@ -84,14 +85,11 @@ export interface NetworkInterfaceProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ECS::NetworkInterface`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterface`, which is used to create an elastic network interface (ENI).
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterface`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */
 export class NetworkInterface extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute MacAddress: The MAC address of your Network Interface.
@@ -114,8 +112,6 @@ export class NetworkInterface extends ros.Resource {
     public readonly attrSecondaryPrivateIpAddresses: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ECS::NetworkInterface`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

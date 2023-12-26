@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::Ipv6InternetBandwidth`.</summary>
+    /// <summary>Properties for defining a `RosIpv6InternetBandwidth`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6internetbandwidth
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.RosIpv6InternetBandwidthProps")]
     public class RosIpv6InternetBandwidthProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRosIpv6InternetBandwidthProps
     {

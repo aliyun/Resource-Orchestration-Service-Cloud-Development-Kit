@@ -4,7 +4,8 @@ import { RosCenBandwidthPackages } from './cen.generated';
 export { RosCenBandwidthPackages as CenBandwidthPackagesProperty };
 
 /**
- * Properties for defining a `DATASOURCE::CEN::CenBandwidthPackages`
+ * Properties for defining a `CenBandwidthPackages`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
  */
 export interface CenBandwidthPackagesProps {
 
@@ -25,14 +26,11 @@ export interface CenBandwidthPackagesProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::CEN::CenBandwidthPackages`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CEN::CenBandwidthPackages`, which is used to query the details of Cloud Enterprise Network (CEN) bandwidth plans within the current Alibaba Cloud account.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthPackages`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenbandwidthpackages
  */
 export class CenBandwidthPackages extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute CenBandwidthPackageIds: The list of The Cen bandwidth ids.
@@ -45,8 +43,6 @@ export class CenBandwidthPackages extends ros.Resource {
     public readonly attrCenBandwidthPackages: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::CEN::CenBandwidthPackages`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

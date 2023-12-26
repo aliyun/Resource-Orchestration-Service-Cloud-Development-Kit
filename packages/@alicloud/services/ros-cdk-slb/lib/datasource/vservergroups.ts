@@ -4,7 +4,8 @@ import { RosVServerGroups } from './slb.generated';
 export { RosVServerGroups as VServerGroupsProperty };
 
 /**
- * Properties for defining a `DATASOURCE::SLB::VServerGroups`
+ * Properties for defining a `VServerGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
  */
 export interface VServerGroupsProps {
 
@@ -15,14 +16,11 @@ export interface VServerGroupsProps {
 }
 
 /**
- * A ROS resource type:  `DATASOURCE::SLB::VServerGroups`
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroups`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVServerGroups`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroups
  */
 export class VServerGroups extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute VServerGroupIds: The list of VServer group IDs.
@@ -35,8 +33,6 @@ export class VServerGroups extends ros.Resource {
     public readonly attrVServerGroups: ros.IResolvable;
 
     /**
-     * Create a new `DATASOURCE::SLB::VServerGroups`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

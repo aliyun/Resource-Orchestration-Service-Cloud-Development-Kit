@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ApiGateway::SignatureBinding`.</summary>
+    /// <summary>Properties for defining a `SignatureBinding`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.SignatureBindingProps")]
     public class SignatureBindingProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.ISignatureBindingProps
     {

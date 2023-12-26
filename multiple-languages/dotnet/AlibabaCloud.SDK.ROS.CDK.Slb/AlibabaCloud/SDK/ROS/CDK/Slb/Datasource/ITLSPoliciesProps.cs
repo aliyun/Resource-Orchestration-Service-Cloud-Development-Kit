@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::SLB::TLSPolicies`.</summary>
+    /// <summary>Properties for defining a `TLSPolicies`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-tlspolicies
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITLSPoliciesProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.datasource.TLSPoliciesProps")]
     public interface ITLSPoliciesProps
     {
@@ -29,7 +32,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::SLB::TLSPolicies`.</summary>
+        /// <summary>Properties for defining a `TLSPolicies`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-tlspolicies
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITLSPoliciesProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.datasource.TLSPoliciesProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.Datasource.ITLSPoliciesProps
         {

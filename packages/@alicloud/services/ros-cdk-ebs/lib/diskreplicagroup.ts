@@ -4,7 +4,8 @@ import { RosDiskReplicaGroup } from './ebs.generated';
 export { RosDiskReplicaGroup as DiskReplicaGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::EBS::DiskReplicaGroup`
+ * Properties for defining a `DiskReplicaGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicagroup
  */
 export interface DiskReplicaGroupProps {
 
@@ -55,14 +56,11 @@ export interface DiskReplicaGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::EBS::DiskReplicaGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaGroup`, which is used to create a replication pair-consistent group.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicagroup
  */
 export class DiskReplicaGroup extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Description: The description of the consistent replication group.
@@ -155,8 +153,6 @@ export class DiskReplicaGroup extends ros.Resource {
     public readonly attrTags: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::EBS::DiskReplicaGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

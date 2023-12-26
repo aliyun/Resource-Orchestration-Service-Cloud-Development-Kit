@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>Properties for defining a `ALIYUN::VPC::PrefixList`.</summary>
+    /// <summary>Properties for defining a `PrefixList`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-prefixlist
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.PrefixListProps")]
     public class PrefixListProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IPrefixListProps
     {

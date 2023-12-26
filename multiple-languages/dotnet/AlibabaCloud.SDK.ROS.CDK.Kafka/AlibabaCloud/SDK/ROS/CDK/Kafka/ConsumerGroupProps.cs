@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::KAFKA::ConsumerGroup`.</summary>
+    /// <summary>Properties for defining a `ConsumerGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-consumergroup
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-kafka.ConsumerGroupProps")]
     public class ConsumerGroupProps : AlibabaCloud.SDK.ROS.CDK.Kafka.IConsumerGroupProps
     {

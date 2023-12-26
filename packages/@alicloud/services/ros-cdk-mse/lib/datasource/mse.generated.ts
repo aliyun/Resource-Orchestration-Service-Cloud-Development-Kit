@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::MSE::Clusters`
+ * Properties for defining a `RosClusters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-clusters
  */
 export interface RosClustersProps {
 
@@ -46,18 +47,15 @@ function rosClustersPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::MSE::Clusters`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MSE::Clusters`, which is used to query the clusters of Microservices Registry.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Clusters` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-clusters
  */
 export class RosClusters extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::MSE::Clusters";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ClusterIds: The list of cluster IDs.
@@ -78,8 +76,6 @@ export class RosClusters extends ros.RosResource {
     public clusterAliasName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::MSE::Clusters`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -105,7 +101,8 @@ export class RosClusters extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::MSE::Gateways`
+ * Properties for defining a `RosGateways`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
  */
 export interface RosGatewaysProps {
 
@@ -176,18 +173,15 @@ function rosGatewaysPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `DATASOURCE::MSE::Gateways`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::MSE::Gateways`, which is used to query gateways.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Gateways` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mse-gateways
  */
 export class RosGateways extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::MSE::Gateways";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute GatewayIds: The list of gateway IDs.
@@ -228,8 +222,6 @@ export class RosGateways extends ros.RosResource {
     public vpc: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::MSE::Gateways`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

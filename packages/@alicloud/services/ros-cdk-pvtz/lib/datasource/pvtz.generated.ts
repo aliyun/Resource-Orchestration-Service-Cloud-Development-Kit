@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::PVTZ::Rules`
+ * Properties for defining a `RosRules`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-rules
  */
 export interface RosRulesProps {
 
@@ -46,18 +47,15 @@ function rosRulesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::PVTZ::Rules`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Rules`, which is used to query forwarding rules.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Rules` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-rules
  */
 export class RosRules extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::PVTZ::Rules";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RuleIds: The list of rule IDs.
@@ -78,8 +76,6 @@ export class RosRules extends ros.RosResource {
     public endpointId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::PVTZ::Rules`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -105,7 +101,8 @@ export class RosRules extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::PVTZ::Zones`
+ * Properties for defining a `RosZones`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zones
  */
 export interface RosZonesProps {
 
@@ -148,18 +145,15 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::PVTZ::Zones`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Zones`, which is used to query private zones.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zones
  */
 export class RosZones extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::PVTZ::Zones";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ZoneIds: The list of zone IDs.
@@ -180,8 +174,6 @@ export class RosZones extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::PVTZ::Zones`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EHPC::Users`.</summary>
+    /// <summary>Properties for defining a `Users`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ehpc.UsersProps")]
     public class UsersProps : AlibabaCloud.SDK.ROS.CDK.Ehpc.IUsersProps
     {

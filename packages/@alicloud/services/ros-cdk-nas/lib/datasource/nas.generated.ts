@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::NAS::AccessGroups`
+ * Properties for defining a `RosAccessGroups`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroups
  */
 export interface RosAccessGroupsProps {
 
@@ -46,18 +47,15 @@ function rosAccessGroupsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `DATASOURCE::NAS::AccessGroups`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::AccessGroups`, which is used to query the details of permission groups.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AccessGroups` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroups
  */
 export class RosAccessGroups extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::NAS::AccessGroups";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AccessGroupNames: The list of access group names.
@@ -78,8 +76,6 @@ export class RosAccessGroups extends ros.RosResource {
     public accessGroupName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::NAS::AccessGroups`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -105,7 +101,8 @@ export class RosAccessGroups extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::NAS::FileSystems`
+ * Properties for defining a `RosFileSystems`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
  */
 export interface RosFileSystemsProps {
 
@@ -165,18 +162,15 @@ function rosFileSystemsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `DATASOURCE::NAS::FileSystems`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::FileSystems`, which is used to query the details of file systems.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FileSystems` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems
  */
 export class RosFileSystems extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::NAS::FileSystems";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute FileSystemIds: The list of file system IDs.
@@ -206,8 +200,6 @@ export class RosFileSystems extends ros.RosResource {
     public fileSystemType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::NAS::FileSystems`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -235,7 +227,8 @@ export class RosFileSystems extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::NAS::Zones`
+ * Properties for defining a `RosZones`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-zones
  */
 export interface RosZonesProps {
 
@@ -281,18 +274,15 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `DATASOURCE::NAS::Zones`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::Zones`, which is used to query zones.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-zones
  */
 export class RosZones extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::NAS::Zones";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ZoneIds: The list of zone IDs.
@@ -316,8 +306,6 @@ export class RosZones extends ros.RosResource {
     public fileSystemType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::NAS::Zones`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

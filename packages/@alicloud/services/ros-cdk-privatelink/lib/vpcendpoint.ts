@@ -4,7 +4,8 @@ import { RosVpcEndpoint } from './privatelink.generated';
 export { RosVpcEndpoint as VpcEndpointProperty };
 
 /**
- * Properties for defining a `ALIYUN::PrivateLink::VpcEndpoint`
+ * Properties for defining a `VpcEndpoint`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
 export interface VpcEndpointProps {
 
@@ -20,7 +21,7 @@ export interface VpcEndpointProps {
 
     /**
      * Property endpointDescription: The description of the endpoint.
-     * The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly endpointDescription?: string | ros.IResolvable;
 
@@ -70,14 +71,11 @@ export interface VpcEndpointProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::PrivateLink::VpcEndpoint`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PrivateLink::VpcEndpoint`, which is used to create an endpoint.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcEndpoint`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
 export class VpcEndpoint extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Bandwidth: The bandwidth of the endpoint.
@@ -120,8 +118,6 @@ export class VpcEndpoint extends ros.Resource {
     public readonly attrZoneDomains: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::PrivateLink::VpcEndpoint`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

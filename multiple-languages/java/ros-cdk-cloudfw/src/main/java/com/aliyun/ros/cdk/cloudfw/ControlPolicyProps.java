@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * Properties for defining a <code>ALIYUN::CLOUDFW::ControlPolicy</code>.
+ * Properties for defining a <code>ControlPolicy</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.917Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.ControlPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(ControlPolicyProps.Jsii$Proxy.class)
 public interface ControlPolicyProps extends software.amazon.jsii.JsiiSerializable {

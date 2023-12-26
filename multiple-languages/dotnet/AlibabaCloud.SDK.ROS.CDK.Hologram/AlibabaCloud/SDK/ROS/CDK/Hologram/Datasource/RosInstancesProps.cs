@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hologram.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::Hologram::Instances`.</summary>
+    /// <summary>Properties for defining a `RosInstances`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hologram-instances
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-hologram.datasource.RosInstancesProps")]
     public class RosInstancesProps : AlibabaCloud.SDK.ROS.CDK.Hologram.Datasource.IRosInstancesProps
     {

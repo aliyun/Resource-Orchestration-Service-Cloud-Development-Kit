@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::PolarDBX::Account`.</summary>
+    /// <summary>Properties for defining a `Account`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-account
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardbx.AccountProps")]
     public class AccountProps : AlibabaCloud.SDK.ROS.CDK.Polardbx.IAccountProps
     {

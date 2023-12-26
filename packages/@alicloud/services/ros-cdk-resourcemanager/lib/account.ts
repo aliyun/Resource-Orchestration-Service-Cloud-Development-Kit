@@ -4,7 +4,8 @@ import { RosAccount } from './resourcemanager.generated';
 export { RosAccount as AccountProperty };
 
 /**
- * Properties for defining a `ALIYUN::ResourceManager::Account`
+ * Properties for defining a `Account`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-account
  */
 export interface AccountProps {
 
@@ -25,14 +26,11 @@ export interface AccountProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ResourceManager::Account`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Account`ALIYUN::ResourceManager::ControlPolicy is used to create a custom control policy.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-account
  */
 export class Account extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute AccountId: This ID of Resource Manager Account
@@ -65,8 +63,6 @@ export class Account extends ros.Resource {
     public readonly attrType: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ResourceManager::Account`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

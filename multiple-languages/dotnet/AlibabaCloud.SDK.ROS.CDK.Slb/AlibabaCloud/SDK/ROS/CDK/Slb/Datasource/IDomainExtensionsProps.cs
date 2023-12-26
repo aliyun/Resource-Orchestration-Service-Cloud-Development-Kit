@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::SLB::DomainExtensions`.</summary>
+    /// <summary>Properties for defining a `DomainExtensions`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IDomainExtensionsProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.datasource.DomainExtensionsProps")]
     public interface IDomainExtensionsProps
     {
@@ -36,7 +39,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
             }
         }
 
-        /// <summary>Properties for defining a `DATASOURCE::SLB::DomainExtensions`.</summary>
+        /// <summary>Properties for defining a `DomainExtensions`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IDomainExtensionsProps), fullyQualifiedName: "@alicloud/ros-cdk-slb.datasource.DomainExtensionsProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.Datasource.IDomainExtensionsProps
         {

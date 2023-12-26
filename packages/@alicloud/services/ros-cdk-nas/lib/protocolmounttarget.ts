@@ -4,7 +4,8 @@ import { RosProtocolMountTarget } from './nas.generated';
 export { RosProtocolMountTarget as ProtocolMountTargetProperty };
 
 /**
- * Properties for defining a `ALIYUN::NAS::ProtocolMountTarget`
+ * Properties for defining a `ProtocolMountTarget`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */
 export interface ProtocolMountTargetProps {
 
@@ -38,7 +39,7 @@ export interface ProtocolMountTargetProps {
      * Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
      * limit:
      * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
      * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
      */
     readonly description?: string | ros.IResolvable;
@@ -61,20 +62,17 @@ export interface ProtocolMountTargetProps {
      * Format:
      * The length is 1 to 1024 characters.
      * Use UTF-8 encoding.
-     * It must start with the positive oblique line (/), and the root directory must be/.
+     * It must start with the positive oblique line (\/), and the root directory must be\/.
      */
     readonly path?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NAS::ProtocolMountTarget`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`, which is used to create an export directory for a protocol service.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProtocolMountTarget`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */
 export class ProtocolMountTarget extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ExportId: The protocol service exports directory ID.
@@ -97,8 +95,6 @@ export class ProtocolMountTarget extends ros.Resource {
     public readonly attrProtocolServiceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NAS::ProtocolMountTarget`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

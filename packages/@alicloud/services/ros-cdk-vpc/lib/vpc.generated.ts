@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::VPC::AnycastEIP`
+ * Properties for defining a `RosAnycastEIP`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteip
  */
 export interface RosAnycastEIPProps {
 
@@ -99,18 +100,15 @@ function rosAnycastEIPPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::AnycastEIP`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::AnycastEIP`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AnycastEIP` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteip
  */
 export class RosAnycastEIP extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::AnycastEIP";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AnycastId: Anycast EIP instance ID
@@ -166,8 +164,6 @@ export class RosAnycastEIP extends ros.RosResource {
     public serviceLocation: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::AnycastEIP`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -205,7 +201,8 @@ export class RosAnycastEIP extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::AnycastEIPAssociation`
+ * Properties for defining a `RosAnycastEIPAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteipassociation
  */
 export interface RosAnycastEIPAssociationProps {
 
@@ -273,18 +270,15 @@ function rosAnycastEIPAssociationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::AnycastEIPAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::AnycastEIPAssociation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AnycastEIPAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteipassociation
  */
 export class RosAnycastEIPAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::AnycastEIPAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AnycastId: Anycast EIP instance ID.
@@ -330,8 +324,6 @@ export class RosAnycastEIPAssociation extends ros.RosResource {
     public bindInstanceType: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::AnycastEIPAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -365,7 +357,8 @@ export class RosAnycastEIPAssociation extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::BgpGroup`
+ * Properties for defining a `RosBgpGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
  */
 export interface RosBgpGroupProps {
 
@@ -386,7 +379,7 @@ export interface RosBgpGroupProps {
 
     /**
      * @Property description: The description of the BGP group. The description must be 2 to 256 characters in length.
-     * It must start with a letter but cannot start with http:// or https://.
+     * It must start with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -405,7 +398,7 @@ export interface RosBgpGroupProps {
     /**
      * @Property name: The name of the BGP group. The name must be 2 to 128 characters in length and can
      * contain digits, periods (.), underscores (_), and hyphens (-). The name must start
-     * with a letter but cannot start with http:// or https://.
+     * with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 }
@@ -457,18 +450,15 @@ function rosBgpGroupPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::BgpGroup`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpGroup`, which is used to create a Border Gateway Protocol (BGP) (Multi-ISP) group for a specified virtual border router (VBR).
+ * @Note This class does not contain additional functions, so it is recommended to use the `BgpGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
  */
 export class RosBgpGroup extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::BgpGroup";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BgpGroupId: The ID of the BGP group.
@@ -500,7 +490,7 @@ export class RosBgpGroup extends ros.RosResource {
 
     /**
      * @Property description: The description of the BGP group. The description must be 2 to 256 characters in length.
-     * It must start with a letter but cannot start with http:// or https://.
+     * It must start with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -519,13 +509,11 @@ export class RosBgpGroup extends ros.RosResource {
     /**
      * @Property name: The name of the BGP group. The name must be 2 to 128 characters in length and can
      * contain digits, periods (.), underscores (_), and hyphens (-). The name must start
-     * with a letter but cannot start with http:// or https://.
+     * with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::BgpGroup`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -563,7 +551,8 @@ export class RosBgpGroup extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::BgpNetwork`
+ * Properties for defining a `RosBgpNetwork`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
  */
 export interface RosBgpNetworkProps {
 
@@ -616,18 +605,15 @@ function rosBgpNetworkPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::BgpNetwork`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpNetwork`, which is used to advertise a Border Gateway Protocol (BGP) network.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BgpNetwork` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
  */
 export class RosBgpNetwork extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::BgpNetwork";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DstCidrBlock: The CIDR block of the virtual private cloud (VPC) or vSwitch that you want to connect
@@ -655,8 +641,6 @@ to a data center.
     public routerId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::BgpNetwork`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -684,7 +668,8 @@ to a data center.
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::BgpPeer`
+ * Properties for defining a `RosBgpPeer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgppeer
  */
 export interface RosBgpPeerProps {
 
@@ -745,18 +730,15 @@ function rosBgpPeerPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::BgpPeer`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpPeer`, which is used to add a Border Gateway Protocol (BGP) peer to a specific BGP group.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BgpPeer` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgppeer
  */
 export class RosBgpPeer extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::BgpPeer";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BgpPeerId: The ID of the BGP peer.
@@ -785,8 +767,6 @@ export class RosBgpPeer extends ros.RosResource {
     public peerIpAddress: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::BgpPeer`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -815,19 +795,20 @@ export class RosBgpPeer extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::CommonBandwidthPackage`
+ * Properties for defining a `RosCommonBandwidthPackage`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackage
  */
 export interface RosCommonBandwidthPackageProps {
 
     /**
-     * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit/s.
+     * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit\/s.
      */
     readonly bandwidth: number | ros.IResolvable;
 
     /**
      * @Property description: The description of the Internet Shared Bandwidth instance.
      * The description must be 2 to 256 characters in length. It must start with a letter,
-     * and cannot start with http:// or https://.
+     * and cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -847,7 +828,7 @@ export interface RosCommonBandwidthPackageProps {
      * @Property name: The name of the Internet Shared Bandwidth instance.
      * The name must be 2 to 128 characters in length and can contain letters, numbers, periods
      * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-     * start with http:// or https://.
+     * start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -958,18 +939,15 @@ function rosCommonBandwidthPackagePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::CommonBandwidthPackage`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackage`, which is used to create an elastic IP address (EIP) bandwidth plan.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackage` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackage
  */
 export class RosCommonBandwidthPackage extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::CommonBandwidthPackage";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
@@ -980,14 +958,14 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
 
 
     /**
-     * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit/s.
+     * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit\/s.
      */
     public bandwidth: number | ros.IResolvable;
 
     /**
      * @Property description: The description of the Internet Shared Bandwidth instance.
      * The description must be 2 to 256 characters in length. It must start with a letter,
-     * and cannot start with http:// or https://.
+     * and cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -1007,7 +985,7 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
      * @Property name: The name of the Internet Shared Bandwidth instance.
      * The name must be 2 to 128 characters in length and can contain letters, numbers, periods
      * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-     * start with http:// or https://.
+     * start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -1033,8 +1011,6 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
     public zone: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::CommonBandwidthPackage`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1123,7 +1099,8 @@ function rosCommonBandwidthPackageTagsPropertyToRosTemplate(properties: any): an
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::CommonBandwidthPackageIp`
+ * Properties for defining a `RosCommonBandwidthPackageIp`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackageip
  */
 export interface RosCommonBandwidthPackageIpProps {
 
@@ -1175,18 +1152,15 @@ function rosCommonBandwidthPackageIpPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::CommonBandwidthPackageIp`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CommonBandwidthPackageIp`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackageIp` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackageip
  */
 export class RosCommonBandwidthPackageIp extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::CommonBandwidthPackageIp";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AllocationIds: All eip allocation ids of common bandwidth package.
@@ -1212,8 +1186,6 @@ export class RosCommonBandwidthPackageIp extends ros.RosResource {
     public eips: Array<RosCommonBandwidthPackageIp.EipsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::CommonBandwidthPackageIp`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1298,7 +1270,8 @@ function rosCommonBandwidthPackageIpEipsPropertyToRosTemplate(properties: any): 
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::CustomerGateway`
+ * Properties for defining a `RosCustomerGateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-customergateway
  */
 export interface RosCustomerGatewayProps {
 
@@ -1314,13 +1287,13 @@ export interface RosCustomerGatewayProps {
 
     /**
      * @Property description: Description of the user gateway.
-     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
+     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the user gateway.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 }
@@ -1386,18 +1359,15 @@ function rosCustomerGatewayPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::CustomerGateway`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::CustomerGateway`, which is used to create a customer gateway.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CustomerGateway` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-customergateway
  */
 export class RosCustomerGateway extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::CustomerGateway";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CustomerGatewayId: The ID of the user gateway.
@@ -1419,19 +1389,17 @@ export class RosCustomerGateway extends ros.RosResource {
 
     /**
      * @Property description: Description of the user gateway.
-     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
+     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the user gateway.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::CustomerGateway`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1462,13 +1430,14 @@ export class RosCustomerGateway extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::DhcpOptionsSet`
+ * Properties for defining a `RosDhcpOptionsSet`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
  */
 export interface RosDhcpOptionsSetProps {
 
     /**
      * @Property dhcpOptionsSetDescription: The description of the DHCP options set.
-     * The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly dhcpOptionsSetDescription?: string | ros.IResolvable;
 
@@ -1536,18 +1505,15 @@ function rosDhcpOptionsSetPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::DhcpOptionsSet`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::DhcpOptionsSet`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DhcpOptionsSet` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
  */
 export class RosDhcpOptionsSet extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::DhcpOptionsSet";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DhcpOptionsSetId: The ID of the DHCP options set that is created.
@@ -1559,7 +1525,7 @@ export class RosDhcpOptionsSet extends ros.RosResource {
 
     /**
      * @Property dhcpOptionsSetDescription: The description of the DHCP options set.
-     * The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     public dhcpOptionsSetDescription: string | ros.IResolvable | undefined;
 
@@ -1581,8 +1547,6 @@ export class RosDhcpOptionsSet extends ros.RosResource {
     public domainNameServers: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::DhcpOptionsSet`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1613,7 +1577,8 @@ export class RosDhcpOptionsSet extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::DhcpOptionsSetAttachment`
+ * Properties for defining a `RosDhcpOptionsSetAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionssetattachment
  */
 export interface RosDhcpOptionsSetAttachmentProps {
 
@@ -1665,18 +1630,15 @@ function rosDhcpOptionsSetAttachmentPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::DhcpOptionsSetAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::DhcpOptionsSetAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DhcpOptionsSetAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionssetattachment
  */
 export class RosDhcpOptionsSetAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::DhcpOptionsSetAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DhcpOptionsSetId: The ID of the DHCP options set.
@@ -1702,8 +1664,6 @@ export class RosDhcpOptionsSetAttachment extends ros.RosResource {
     public vpcId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::DhcpOptionsSetAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -1731,7 +1691,8 @@ export class RosDhcpOptionsSetAttachment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::EIP`
+ * Properties for defining a `RosEIP`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
  */
 export interface RosEIPProps {
 
@@ -1752,7 +1713,7 @@ export interface RosEIPProps {
     readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
-     * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
+     * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http:\/\/  or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -1774,7 +1735,7 @@ export interface RosEIPProps {
     readonly isp?: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
+     * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http:\/\/  or https:\/\/
      */
     readonly name?: string | ros.IResolvable;
 
@@ -1807,7 +1768,7 @@ export interface RosEIPProps {
     /**
      * @Property securityProtectionTypes: The edition of Anti-DDoS.
      * If you do not set this parameter, Anti-DDoS Origin Basic is used.
-     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro\/Premium is used.
      */
     readonly securityProtectionTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -1923,18 +1884,15 @@ function rosEIPPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::EIP`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIP`, which is used to apply for an elastic IP address (EIP).
+ * @Note This class does not contain additional functions, so it is recommended to use the `EIP` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
  */
 export class RosEIP extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::EIP";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
@@ -1976,7 +1934,7 @@ export class RosEIP extends ros.RosResource {
     public deletionProtection: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
+     * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http:\/\/  or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -1998,7 +1956,7 @@ export class RosEIP extends ros.RosResource {
     public isp: string | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
+     * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http:\/\/  or https:\/\/
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -2031,7 +1989,7 @@ export class RosEIP extends ros.RosResource {
     /**
      * @Property securityProtectionTypes: The edition of Anti-DDoS.
      * If you do not set this parameter, Anti-DDoS Origin Basic is used.
-     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro\/Premium is used.
      */
     public securityProtectionTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -2046,8 +2004,6 @@ export class RosEIP extends ros.RosResource {
     public zone: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::EIP`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2153,7 +2109,8 @@ function rosEIPTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::EIPAssociation`
+ * Properties for defining a `RosEIPAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipassociation
  */
 export interface RosEIPAssociationProps {
 
@@ -2163,7 +2120,7 @@ export interface RosEIPAssociationProps {
     readonly allocationId: string | ros.IResolvable;
 
     /**
-     * @Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
+     * @Property instanceId: ECS\/SLB\/NAT\/HaVip\/ENI instance id to bid the EIP.
      */
     readonly instanceId: string | ros.IResolvable;
 
@@ -2237,18 +2194,15 @@ function rosEIPAssociationPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::EIPAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPAssociation`, which is used to associate an elastic IP address (EIP) with a cloud service instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EIPAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipassociation
  */
 export class RosEIPAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::EIPAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
@@ -2269,7 +2223,7 @@ export class RosEIPAssociation extends ros.RosResource {
     public allocationId: string | ros.IResolvable;
 
     /**
-     * @Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
+     * @Property instanceId: ECS\/SLB\/NAT\/HaVip\/ENI instance id to bid the EIP.
      */
     public instanceId: string | ros.IResolvable;
 
@@ -2289,8 +2243,6 @@ export class RosEIPAssociation extends ros.RosResource {
     public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::EIPAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2322,7 +2274,8 @@ export class RosEIPAssociation extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::EIPPro`
+ * Properties for defining a `RosEIPPro`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eippro
  */
 export interface RosEIPProProps {
 
@@ -2343,7 +2296,7 @@ export interface RosEIPProProps {
     readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
-     * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
+     * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http:\/\/  or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -2375,7 +2328,7 @@ export interface RosEIPProProps {
     readonly isp?: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
+     * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http:\/\/  or https:\/\/
      */
     readonly name?: string | ros.IResolvable;
 
@@ -2408,7 +2361,7 @@ export interface RosEIPProProps {
     /**
      * @Property securityProtectionTypes: The edition of Anti-DDoS.
      * If you do not set this parameter, Anti-DDoS Origin Basic is used.
-     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro\/Premium is used.
      */
     readonly securityProtectionTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -2521,18 +2474,15 @@ function rosEIPProPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::EIPPro`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPPro`, which is used to create an elastic IP address (EIP).
+ * @Note This class does not contain additional functions, so it is recommended to use the `EIPPro` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eippro
  */
 export class RosEIPPro extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::EIPPro";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
@@ -2574,7 +2524,7 @@ export class RosEIPPro extends ros.RosResource {
     public deletionProtection: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
+     * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http:\/\/  or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -2606,7 +2556,7 @@ export class RosEIPPro extends ros.RosResource {
     public isp: string | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
+     * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http:\/\/  or https:\/\/
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -2639,7 +2589,7 @@ export class RosEIPPro extends ros.RosResource {
     /**
      * @Property securityProtectionTypes: The edition of Anti-DDoS.
      * If you do not set this parameter, Anti-DDoS Origin Basic is used.
-     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro/Premium is used.
+     * If you set the value to AntiDDoS_Enhanced, Anti-DDoS Pro\/Premium is used.
      */
     public securityProtectionTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -2649,8 +2599,6 @@ export class RosEIPPro extends ros.RosResource {
     public tags: RosEIPPro.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::EIPPro`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2758,7 +2706,8 @@ function rosEIPProTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::EIPSegment`
+ * Properties for defining a `RosEIPSegment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
 export interface RosEIPSegmentProps {
 
@@ -2775,7 +2724,7 @@ export interface RosEIPSegmentProps {
     readonly eipMask: number | ros.IResolvable;
 
     /**
-     * @Property bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit/s. Default value: 5.
+     * @Property bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit\/s. Default value: 5.
      */
     readonly bandwidth?: number | ros.IResolvable;
 
@@ -2864,18 +2813,15 @@ function rosEIPSegmentPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::EIPSegment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIPSegment`, which is used to apply for contiguous elastic IP addresses (EIPs).
+ * @Note This class does not contain additional functions, so it is recommended to use the `EIPSegment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
 export class RosEIPSegment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::EIPSegment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute EipAddresses: List of EIP addresses. like [{"AllocationId": "eip-xxx", "IpAddress": "xx.xx.xx.xx"}]
@@ -2903,7 +2849,7 @@ export class RosEIPSegment extends ros.RosResource {
     public eipMask: number | ros.IResolvable;
 
     /**
-     * @Property bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit/s. Default value: 5.
+     * @Property bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit\/s. Default value: 5.
      */
     public bandwidth: number | ros.IResolvable | undefined;
 
@@ -2932,8 +2878,6 @@ export class RosEIPSegment extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::EIPSegment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2967,7 +2911,8 @@ export class RosEIPSegment extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::FlowLog`
+ * Properties for defining a `RosFlowLog`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
  */
 export interface RosFlowLogProps {
 
@@ -3057,18 +3002,15 @@ function rosFlowLogPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::FlowLog`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FlowLog`, which is used to create a flow log.
+ * @Note This class does not contain additional functions, so it is recommended to use the `FlowLog` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
  */
 export class RosFlowLog extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::FlowLog";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Description: The Description of flow log.
@@ -3149,8 +3091,6 @@ export class RosFlowLog extends ros.RosResource {
     public flowLogName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::FlowLog`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3194,7 +3134,210 @@ export class RosFlowLog extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::GrantInstanceToCen`
+ * Properties for defining a `RosForwardEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-forwardentry
+ */
+export interface RosForwardEntryProps {
+
+    /**
+     * @Property externalIp: Source IP, must belongs to bandwidth package internet IP
+     */
+    readonly externalIp: string | ros.IResolvable;
+
+    /**
+     * @Property externalPort: Source port, now support [1-65535]|Any|x\/y
+     */
+    readonly externalPort: string | ros.IResolvable;
+
+    /**
+     * @Property forwardTableId: Create forward entry in specified forward table.
+     */
+    readonly forwardTableId: string | ros.IResolvable;
+
+    /**
+     * @Property internalIp: Destination IP, must belong to VPC private IP
+     */
+    readonly internalIp: string | ros.IResolvable;
+
+    /**
+     * @Property internalPort: Destination port, now support [1-65535]|Any|x\/y
+     */
+    readonly internalPort: string | ros.IResolvable;
+
+    /**
+     * @Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'
+     */
+    readonly ipProtocol: string | ros.IResolvable;
+
+    /**
+     * @Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
+     */
+    readonly forwardEntryName?: string | ros.IResolvable;
+
+    /**
+     * @Property portBreak: Specifies whether to remove limits on the port range.
+     */
+    readonly portBreak?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosForwardEntryProps`
+ *
+ * @param properties - the TypeScript properties of a `RosForwardEntryProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosForwardEntryPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('externalPort', ros.requiredValidator)(properties.externalPort));
+    errors.collect(ros.propertyValidator('externalPort', ros.validateString)(properties.externalPort));
+    errors.collect(ros.propertyValidator('externalIp', ros.requiredValidator)(properties.externalIp));
+    errors.collect(ros.propertyValidator('externalIp', ros.validateString)(properties.externalIp));
+    errors.collect(ros.propertyValidator('ipProtocol', ros.requiredValidator)(properties.ipProtocol));
+    if(properties.ipProtocol && (typeof properties.ipProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('ipProtocol', ros.validateAllowedValues)({
+          data: properties.ipProtocol,
+          allowedValues: ["TCP","UDP","Any"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ipProtocol', ros.validateString)(properties.ipProtocol));
+    errors.collect(ros.propertyValidator('portBreak', ros.validateBoolean)(properties.portBreak));
+    errors.collect(ros.propertyValidator('internalPort', ros.requiredValidator)(properties.internalPort));
+    errors.collect(ros.propertyValidator('internalPort', ros.validateString)(properties.internalPort));
+    errors.collect(ros.propertyValidator('forwardEntryName', ros.validateString)(properties.forwardEntryName));
+    errors.collect(ros.propertyValidator('internalIp', ros.requiredValidator)(properties.internalIp));
+    errors.collect(ros.propertyValidator('internalIp', ros.validateString)(properties.internalIp));
+    errors.collect(ros.propertyValidator('forwardTableId', ros.requiredValidator)(properties.forwardTableId));
+    errors.collect(ros.propertyValidator('forwardTableId', ros.validateString)(properties.forwardTableId));
+    return errors.wrap('supplied properties not correct for "RosForwardEntryProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::ForwardEntry` resource
+ *
+ * @param properties - the TypeScript properties of a `RosForwardEntryProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::ForwardEntry` resource.
+ */
+// @ts-ignore TS6133
+function rosForwardEntryPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosForwardEntryPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ExternalIp: ros.stringToRosTemplate(properties.externalIp),
+      ExternalPort: ros.stringToRosTemplate(properties.externalPort),
+      ForwardTableId: ros.stringToRosTemplate(properties.forwardTableId),
+      InternalIp: ros.stringToRosTemplate(properties.internalIp),
+      InternalPort: ros.stringToRosTemplate(properties.internalPort),
+      IpProtocol: ros.stringToRosTemplate(properties.ipProtocol),
+      ForwardEntryName: ros.stringToRosTemplate(properties.forwardEntryName),
+      PortBreak: ros.booleanToRosTemplate(properties.portBreak),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::ForwardEntry`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ForwardEntry` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-forwardentry
+ */
+export class RosForwardEntry extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::ForwardEntry";
+
+    /**
+     * @Attribute ForwardEntryId: The id of created forward entry.
+     */
+    public readonly attrForwardEntryId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property externalIp: Source IP, must belongs to bandwidth package internet IP
+     */
+    public externalIp: string | ros.IResolvable;
+
+    /**
+     * @Property externalPort: Source port, now support [1-65535]|Any|x\/y
+     */
+    public externalPort: string | ros.IResolvable;
+
+    /**
+     * @Property forwardTableId: Create forward entry in specified forward table.
+     */
+    public forwardTableId: string | ros.IResolvable;
+
+    /**
+     * @Property internalIp: Destination IP, must belong to VPC private IP
+     */
+    public internalIp: string | ros.IResolvable;
+
+    /**
+     * @Property internalPort: Destination port, now support [1-65535]|Any|x\/y
+     */
+    public internalPort: string | ros.IResolvable;
+
+    /**
+     * @Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'
+     */
+    public ipProtocol: string | ros.IResolvable;
+
+    /**
+     * @Property forwardEntryName: the name of the DNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
+     */
+    public forwardEntryName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property portBreak: Specifies whether to remove limits on the port range.
+     */
+    public portBreak: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosForwardEntryProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosForwardEntry.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrForwardEntryId = this.getAtt('ForwardEntryId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.externalIp = props.externalIp;
+        this.externalPort = props.externalPort;
+        this.forwardTableId = props.forwardTableId;
+        this.internalIp = props.internalIp;
+        this.internalPort = props.internalPort;
+        this.ipProtocol = props.ipProtocol;
+        this.forwardEntryName = props.forwardEntryName;
+        this.portBreak = props.portBreak;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            externalIp: this.externalIp,
+            externalPort: this.externalPort,
+            forwardTableId: this.forwardTableId,
+            internalIp: this.internalIp,
+            internalPort: this.internalPort,
+            ipProtocol: this.ipProtocol,
+            forwardEntryName: this.forwardEntryName,
+            portBreak: this.portBreak,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosForwardEntryPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosGrantInstanceToCen`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-grantinstancetocen
  */
 export interface RosGrantInstanceToCenProps {
 
@@ -3271,18 +3414,15 @@ function rosGrantInstanceToCenPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::GrantInstanceToCen`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::GrantInstanceToCen`, which is used to authorize a CEN instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `GrantInstanceToCen` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-grantinstancetocen
  */
 export class RosGrantInstanceToCen extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::GrantInstanceToCen";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CenId: The ID of the CEN instance to be authorized.
@@ -3321,8 +3461,6 @@ export class RosGrantInstanceToCen extends ros.RosResource {
     public instanceType: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::GrantInstanceToCen`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3354,7 +3492,8 @@ export class RosGrantInstanceToCen extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::HaVip`
+ * Properties for defining a `RosHaVip`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
  */
 export interface RosHaVipProps {
 
@@ -3365,7 +3504,7 @@ export interface RosHaVipProps {
 
     /**
      * @Property description: The description of the HAVIP.
-     * The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -3376,7 +3515,7 @@ export interface RosHaVipProps {
 
     /**
      * @Property name: The name of the HAVIP.
-     * The name must be 1 to 128 characters in length, and cannot start with http:// or https://.
+     * The name must be 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -3442,18 +3581,15 @@ function rosHaVipPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::HaVip`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVip`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HaVip` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havip
  */
 export class RosHaVip extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::HaVip";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute HaVipId: Assigned HaVip ID.
@@ -3475,7 +3611,7 @@ export class RosHaVip extends ros.RosResource {
 
     /**
      * @Property description: The description of the HAVIP.
-     * The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -3486,7 +3622,7 @@ export class RosHaVip extends ros.RosResource {
 
     /**
      * @Property name: The name of the HAVIP.
-     * The name must be 1 to 128 characters in length, and cannot start with http:// or https://.
+     * The name must be 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -3501,8 +3637,6 @@ export class RosHaVip extends ros.RosResource {
     public tags: RosHaVip.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::HaVip`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3586,7 +3720,8 @@ function rosHaVipTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::HaVipAssociation`
+ * Properties for defining a `RosHaVipAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havipassociation
  */
 export interface RosHaVipAssociationProps {
 
@@ -3647,18 +3782,15 @@ function rosHaVipAssociationPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::HaVipAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::HaVipAssociation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `HaVipAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-havipassociation
  */
 export class RosHaVipAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::HaVipAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3681,8 +3813,6 @@ export class RosHaVipAssociation extends ros.RosResource {
     public instanceType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::HaVipAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -3710,7 +3840,8 @@ export class RosHaVipAssociation extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::IpsecServer`
+ * Properties for defining a `RosIpsecServer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
  */
 export interface RosIpsecServerProps {
 
@@ -3720,7 +3851,7 @@ export interface RosIpsecServerProps {
     readonly clientIpPool: string | ros.IResolvable;
 
     /**
-     * @Property localSubnet: The local network segment refers to the network segment on the VPC side that needs to be interconnected with the client network segment. Use half-width commas (,) to separate multiple network segments, for example: 192.168.1.0/24,192.168.2.0/24.
+     * @Property localSubnet: The local network segment refers to the network segment on the VPC side that needs to be interconnected with the client network segment. Use half-width commas (,) to separate multiple network segments, for example: 192.168.1.0\/24,192.168.2.0\/24.
      */
     readonly localSubnet: string | ros.IResolvable;
 
@@ -3813,18 +3944,15 @@ function rosIpsecServerPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::IpsecServer`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::IpsecServer`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `IpsecServer` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
  */
 export class RosIpsecServer extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::IpsecServer";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute IpsecServerId: IPsec server ID.
@@ -3845,7 +3973,7 @@ export class RosIpsecServer extends ros.RosResource {
     public clientIpPool: string | ros.IResolvable;
 
     /**
-     * @Property localSubnet: The local network segment refers to the network segment on the VPC side that needs to be interconnected with the client network segment. Use half-width commas (,) to separate multiple network segments, for example: 192.168.1.0/24,192.168.2.0/24.
+     * @Property localSubnet: The local network segment refers to the network segment on the VPC side that needs to be interconnected with the client network segment. Use half-width commas (,) to separate multiple network segments, for example: 192.168.1.0\/24,192.168.2.0\/24.
      */
     public localSubnet: string | ros.IResolvable;
 
@@ -3886,8 +4014,6 @@ export class RosIpsecServer extends ros.RosResource {
     public pskEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::IpsecServer`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4071,7 +4197,8 @@ function rosIpsecServerIpsecConfigPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::Ipv4Gateway`
+ * Properties for defining a `RosIpv4Gateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv4gateway
  */
 export interface RosIpv4GatewayProps {
 
@@ -4129,18 +4256,15 @@ function rosIpv4GatewayPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::Ipv4Gateway`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv4Gateway`, which is used to create an IPv4 gateway.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Ipv4Gateway` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv4gateway
  */
 export class RosIpv4Gateway extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::Ipv4Gateway";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateTime: The creation time of the resource.
@@ -4191,8 +4315,6 @@ export class RosIpv4Gateway extends ros.RosResource {
     public ipv4GatewayName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::Ipv4Gateway`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4226,7 +4348,8 @@ export class RosIpv4Gateway extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::Ipv6Gateway`
+ * Properties for defining a `RosIpv6Gateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
  */
 export interface RosIpv6GatewayProps {
 
@@ -4237,13 +4360,13 @@ export interface RosIpv6GatewayProps {
 
     /**
      * @Property description: Description of IPv6 gateway.
-     * Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): // or https: // at the beginning .
+     * Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): \/\/ or https: \/\/ at the beginning .
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * @Property name: Name of the IPv6 gateway.
-     * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): // or with https: // .
+     * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): \/\/ or with https: \/\/ .
      */
     readonly name?: string | ros.IResolvable;
 
@@ -4311,18 +4434,15 @@ function rosIpv6GatewayPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::Ipv6Gateway`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6Gateway`, which is used to create an IPv6 gateway.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Ipv6Gateway` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6gateway
  */
 export class RosIpv6Gateway extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::Ipv6Gateway";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Ipv6GatewayId: ID IPv6 gateway.
@@ -4339,13 +4459,13 @@ export class RosIpv6Gateway extends ros.RosResource {
 
     /**
      * @Property description: Description of IPv6 gateway.
-     * Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): // or https: // at the beginning .
+     * Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): \/\/ or https: \/\/ at the beginning .
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: Name of the IPv6 gateway.
-     * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): // or with https: // .
+     * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): \/\/ or with https: \/\/ .
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -4364,8 +4484,6 @@ export class RosIpv6Gateway extends ros.RosResource {
     public tags: RosIpv6Gateway.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::Ipv6Gateway`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4446,7 +4564,8 @@ function rosIpv6GatewayTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::Ipv6InternetBandwidth`
+ * Properties for defining a `RosIpv6InternetBandwidth`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6internetbandwidth
  */
 export interface RosIpv6InternetBandwidthProps {
 
@@ -4533,18 +4652,15 @@ function rosIpv6InternetBandwidthPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::Ipv6InternetBandwidth`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`, which is used to purchase Internet bandwidth for an IPv6 address.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Ipv6InternetBandwidth` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipv6internetbandwidth
  */
 export class RosIpv6InternetBandwidth extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::Ipv6InternetBandwidth";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InternetBandwidthId: Purchase of public network bandwidth.
@@ -4582,8 +4698,6 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::Ipv6InternetBandwidth`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4614,7 +4728,8 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::NatGateway`
+ * Properties for defining a `RosNatGateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
 export interface RosNatGatewayProps {
 
@@ -4825,18 +4940,15 @@ function rosNatGatewayPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::NatGateway`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatGateway`, which is used to create a NAT gateway.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NatGateway` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
 export class RosNatGateway extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::NatGateway";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute ForwardTableId: The forward table id.
@@ -4953,8 +5065,6 @@ export class RosNatGateway extends ros.RosResource {
     public tags: RosNatGateway.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::NatGateway`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5061,7 +5171,8 @@ function rosNatGatewayTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::NatIp`
+ * Properties for defining a `RosNatIp`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
  */
 export interface RosNatIpProps {
 
@@ -5079,7 +5190,7 @@ export interface RosNatIpProps {
     /**
      * @Property natIpDescription: The description of the NAT IP address.
      * The description must be 2 to 256 characters in length. It must start with a letter
-     * but cannot start with http:// or https://.
+     * but cannot start with http:\/\/ or https:\/\/.
      */
     readonly natIpDescription: string | ros.IResolvable;
 
@@ -5087,7 +5198,7 @@ export interface RosNatIpProps {
      * @Property natIpName: The name of the NAT IP address.
      * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
      * (.), underscores (_), and hyphens (-). It must start with a letter. It cannot start
-     * with http:// or https://.
+     * with http:\/\/ or https:\/\/.
      */
     readonly natIpName: string | ros.IResolvable;
 
@@ -5165,18 +5276,15 @@ function rosNatIpPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::NatIp`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NatIp`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NatIp` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
  */
 export class RosNatIp extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::NatIp";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NatIp: NAT IP address.
@@ -5205,7 +5313,7 @@ export class RosNatIp extends ros.RosResource {
     /**
      * @Property natIpDescription: The description of the NAT IP address.
      * The description must be 2 to 256 characters in length. It must start with a letter
-     * but cannot start with http:// or https://.
+     * but cannot start with http:\/\/ or https:\/\/.
      */
     public natIpDescription: string | ros.IResolvable;
 
@@ -5213,7 +5321,7 @@ export class RosNatIp extends ros.RosResource {
      * @Property natIpName: The name of the NAT IP address.
      * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
      * (.), underscores (_), and hyphens (-). It must start with a letter. It cannot start
-     * with http:// or https://.
+     * with http:\/\/ or https:\/\/.
      */
     public natIpName: string | ros.IResolvable;
 
@@ -5230,8 +5338,6 @@ export class RosNatIp extends ros.RosResource {
     public natIpCidrId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::NatIp`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5267,7 +5373,8 @@ export class RosNatIp extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::NetworkAcl`
+ * Properties for defining a `RosNetworkAcl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkacl
  */
 export interface RosNetworkAclProps {
 
@@ -5279,7 +5386,7 @@ export interface RosNetworkAclProps {
     /**
      * @Property description: The description of the network ACL.
      * The description must be 2 to 256 characters in length. The description must start
-     * with a letter but cannot start with http:// or https://.
+     * with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -5297,7 +5404,7 @@ export interface RosNetworkAclProps {
      * @Property networkAclName: The name of the network ACL.
      * The name must be 2 to 128 characters in length and can contain letters, digits, periods
      * (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-     * start with http:// or https://.
+     * start with http:\/\/ or https:\/\/.
      */
     readonly networkAclName?: string | ros.IResolvable;
 }
@@ -5358,18 +5465,15 @@ function rosNetworkAclPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::NetworkAcl`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NetworkAcl`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAcl` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkacl
  */
 export class RosNetworkAcl extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::NetworkAcl";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NetworkAclEntryName: The name of the inbound rule.
@@ -5392,7 +5496,7 @@ export class RosNetworkAcl extends ros.RosResource {
     /**
      * @Property description: The description of the network ACL.
      * The description must be 2 to 256 characters in length. The description must start
-     * with a letter but cannot start with http:// or https://.
+     * with a letter but cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -5410,13 +5514,11 @@ export class RosNetworkAcl extends ros.RosResource {
      * @Property networkAclName: The name of the network ACL.
      * The name must be 2 to 128 characters in length and can contain letters, digits, periods
      * (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-     * start with http:// or https://.
+     * start with http:\/\/ or https:\/\/.
      */
     public networkAclName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::NetworkAcl`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5475,7 +5577,7 @@ export namespace RosNetworkAcl {
          */
         readonly entryType?: string | ros.IResolvable;
         /**
-         * @Property port: The source ports. The value range is from 1 to 65535; setting formats such as "1/200" and "80/80", where "-1/-1" cannot be set individually, which means that the port is not restricted.
+         * @Property port: The source ports. The value range is from 1 to 65535; setting formats such as "1\/200" and "80\/80", where "-1\/-1" cannot be set individually, which means that the port is not restricted.
          */
         readonly port: string | ros.IResolvable;
         /**
@@ -5578,7 +5680,7 @@ export namespace RosNetworkAcl {
          */
         readonly entryType?: string | ros.IResolvable;
         /**
-         * @Property port: The source ports. The value range is from 1 to 65535; setting formats such as "1/200" and "80/80", where "-1/-1" cannot be set individually, which means that the port is not restricted.
+         * @Property port: The source ports. The value range is from 1 to 65535; setting formats such as "1\/200" and "80\/80", where "-1\/-1" cannot be set individually, which means that the port is not restricted.
          */
         readonly port: string | ros.IResolvable;
         /**
@@ -5664,7 +5766,8 @@ function rosNetworkAclIngressAclEntriesPropertyToRosTemplate(properties: any): a
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::NetworkAclAssociation`
+ * Properties for defining a `RosNetworkAclAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkaclassociation
  */
 export interface RosNetworkAclAssociationProps {
 
@@ -5723,18 +5826,15 @@ function rosNetworkAclAssociationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::NetworkAclAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::NetworkAclAssociation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAclAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkaclassociation
  */
 export class RosNetworkAclAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::NetworkAclAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NetworkAclId: The ID of the network ACL.
@@ -5755,8 +5855,6 @@ export class RosNetworkAclAssociation extends ros.RosResource {
     public resources: Array<RosNetworkAclAssociation.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::NetworkAclAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5837,7 +5935,8 @@ function rosNetworkAclAssociationResourcesPropertyToRosTemplate(properties: any)
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::PeeringRouterInterfaceBinding`
+ * Properties for defining a `RosPeeringRouterInterfaceBinding`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfacebinding
  */
 export interface RosPeeringRouterInterfaceBindingProps {
 
@@ -5903,18 +6002,15 @@ function rosPeeringRouterInterfaceBindingPropsToRosTemplate(properties: any, ena
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::PeeringRouterInterfaceBinding`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceBinding`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PeeringRouterInterfaceBinding` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfacebinding
  */
 export class RosPeeringRouterInterfaceBinding extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::PeeringRouterInterfaceBinding";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RouterInterfaceId: The RouterInterface ID.
@@ -5945,8 +6041,6 @@ export class RosPeeringRouterInterfaceBinding extends ros.RosResource {
     public oppositeRouterId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::PeeringRouterInterfaceBinding`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -5977,7 +6071,8 @@ export class RosPeeringRouterInterfaceBinding extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::PeeringRouterInterfaceConnection`
+ * Properties for defining a `RosPeeringRouterInterfaceConnection`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfaceconnection
  */
 export interface RosPeeringRouterInterfaceConnectionProps {
 
@@ -6029,18 +6124,15 @@ function rosPeeringRouterInterfaceConnectionPropsToRosTemplate(properties: any, 
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::PeeringRouterInterfaceConnection`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PeeringRouterInterfaceConnection`, which is used to initiate a router interface connection.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PeeringRouterInterfaceConnection` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-peeringrouterinterfaceconnection
  */
 export class RosPeeringRouterInterfaceConnection extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::PeeringRouterInterfaceConnection";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute OppositeInterfaceId: The receiver RouterInterface ID.
@@ -6066,8 +6158,6 @@ export class RosPeeringRouterInterfaceConnection extends ros.RosResource {
     public routerInterfaceId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -6095,7 +6185,8 @@ export class RosPeeringRouterInterfaceConnection extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::PrefixList`
+ * Properties for defining a `RosPrefixList`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-prefixlist
  */
 export interface RosPrefixListProps {
 
@@ -6118,7 +6209,7 @@ export interface RosPrefixListProps {
 
     /**
      * @Property prefixListDescription: The description of the prefix list.
-     * It must be 2 to 256 characters in length and must start with a letter or Chinese, but cannot start with http:// or https.
+     * It must be 2 to 256 characters in length and must start with a letter or Chinese, but cannot start with http:\/\/ or https.
      */
     readonly prefixListDescription?: string | ros.IResolvable;
 
@@ -6203,18 +6294,15 @@ function rosPrefixListPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::PrefixList`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::PrefixList`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PrefixList` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-prefixlist
  */
 export class RosPrefixList extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::PrefixList";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute CreateTime: The time when the prefix list was created.
@@ -6293,7 +6381,7 @@ export class RosPrefixList extends ros.RosResource {
 
     /**
      * @Property prefixListDescription: The description of the prefix list.
-     * It must be 2 to 256 characters in length and must start with a letter or Chinese, but cannot start with http:// or https.
+     * It must be 2 to 256 characters in length and must start with a letter or Chinese, but cannot start with http:\/\/ or https.
      */
     public prefixListDescription: string | ros.IResolvable | undefined;
 
@@ -6313,8 +6401,6 @@ export class RosPrefixList extends ros.RosResource {
     public tags: RosPrefixList.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::PrefixList`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -6457,7 +6543,8 @@ function rosPrefixListTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::RouteTable`
+ * Properties for defining a `RosRouteTable`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */
 export interface RosRouteTableProps {
 
@@ -6468,13 +6555,13 @@ export interface RosRouteTableProps {
 
     /**
      * @Property description: The description of the route table.
-     * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
+     * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * @Property routeTableName: The name of the route table.
-     * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
+     * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:\/\/ or https:\/\/.
      */
     readonly routeTableName?: string | ros.IResolvable;
 
@@ -6531,18 +6618,15 @@ function rosRouteTablePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::RouteTable`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTable`, which is used to create a custom route table.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RouteTable` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */
 export class RosRouteTable extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::RouteTable";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RouteTableId: The ID of the route table.
@@ -6579,13 +6663,13 @@ export class RosRouteTable extends ros.RosResource {
 
     /**
      * @Property description: The description of the route table.
-     * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
+     * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property routeTableName: The name of the route table.
-     * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
+     * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:\/\/ or https:\/\/.
      */
     public routeTableName: string | ros.IResolvable | undefined;
 
@@ -6595,8 +6679,6 @@ export class RosRouteTable extends ros.RosResource {
     public tags: RosRouteTable.TagsProperty[] | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::RouteTable`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -6679,7 +6761,8 @@ function rosRouteTableTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::RouteTableAssociation`
+ * Properties for defining a `RosRouteTableAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetableassociation
  */
 export interface RosRouteTableAssociationProps {
 
@@ -6731,18 +6814,15 @@ function rosRouteTableAssociationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::RouteTableAssociation`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTableAssociation`, which is used to associate a custom routing table with a vSwitch in the same VPC.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RouteTableAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetableassociation
  */
 export class RosRouteTableAssociation extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::RouteTableAssociation";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RouteTableId: The ID of the route table.
@@ -6768,8 +6848,6 @@ export class RosRouteTableAssociation extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::RouteTableAssociation`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -6797,7 +6875,8 @@ export class RosRouteTableAssociation extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::RouterInterface`
+ * Properties for defining a `RosRouterInterface`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routerinterface
  */
 export interface RosRouterInterfaceProps {
 
@@ -7007,18 +7086,15 @@ function rosRouterInterfacePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::RouterInterface`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouterInterface`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `RouterInterface` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routerinterface
  */
 export class RosRouterInterface extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::RouterInterface";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute RouterInterfaceId: The ID of created RouterInterface.
@@ -7127,8 +7203,6 @@ export class RosRouterInterface extends ros.RosResource {
     public spec: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::RouterInterface`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -7189,7 +7263,8 @@ export class RosRouterInterface extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::SnatEntry`
+ * Properties for defining a `RosSnatEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */
 export interface RosSnatEntryProps {
 
@@ -7212,19 +7287,19 @@ export interface RosSnatEntryProps {
     readonly eipAffinity?: number | ros.IResolvable;
 
     /**
-     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
      */
     readonly snatEntryName?: string | ros.IResolvable;
 
     /**
-     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
     readonly sourceCidr?: string | ros.IResolvable;
 
     /**
      * @Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
      */
-    readonly sourceVSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly sourceVSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -7245,7 +7320,7 @@ function RosSnatEntryPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('eipAffinity', ros.validateNumber)(properties.eipAffinity));
     errors.collect(ros.propertyValidator('snatEntryName', ros.validateString)(properties.snatEntryName));
-    errors.collect(ros.propertyValidator('sourceVSwitchIds', ros.listValidator(ros.validateAny))(properties.sourceVSwitchIds));
+    errors.collect(ros.propertyValidator('sourceVSwitchIds', ros.listValidator(ros.validateString))(properties.sourceVSwitchIds));
     errors.collect(ros.propertyValidator('sourceCidr', ros.validateString)(properties.sourceCidr));
     errors.collect(ros.propertyValidator('snatIp', ros.requiredValidator)(properties.snatIp));
     errors.collect(ros.propertyValidator('snatIp', ros.validateString)(properties.snatIp));
@@ -7273,23 +7348,20 @@ function rosSnatEntryPropsToRosTemplate(properties: any, enableResourcePropertyC
       EipAffinity: ros.numberToRosTemplate(properties.eipAffinity),
       SnatEntryName: ros.stringToRosTemplate(properties.snatEntryName),
       SourceCIDR: ros.stringToRosTemplate(properties.sourceCidr),
-      SourceVSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.sourceVSwitchIds),
+      SourceVSwitchIds: ros.listMapper(ros.stringToRosTemplate)(properties.sourceVSwitchIds),
     };
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::SnatEntry`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SnatEntry`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SnatEntry` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */
 export class RosSnatEntry extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::SnatEntry";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SnatEntryIds: The IDS of the SNAT entry.
@@ -7318,23 +7390,21 @@ export class RosSnatEntry extends ros.RosResource {
     public eipAffinity: number | ros.IResolvable | undefined;
 
     /**
-     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
      */
     public snatEntryName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1\/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
     public sourceCidr: string | ros.IResolvable | undefined;
 
     /**
      * @Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
      */
-    public sourceVSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public sourceVSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::SnatEntry`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -7369,7 +7439,8 @@ export class RosSnatEntry extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::SslVpnClientCert`
+ * Properties for defining a `RosSslVpnClientCert`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
  */
 export interface RosSslVpnClientCertProps {
 
@@ -7380,7 +7451,7 @@ export interface RosSslVpnClientCertProps {
 
     /**
      * @Property name: The name of the client certificate.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 }
@@ -7428,18 +7499,15 @@ function rosSslVpnClientCertPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::SslVpnClientCert`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SslVpnClientCert`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SslVpnClientCert` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnclientcert
  */
 export class RosSslVpnClientCert extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::SslVpnClientCert";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SslVpnClientCertId: The ID of the client certificate.
@@ -7456,13 +7524,11 @@ export class RosSslVpnClientCert extends ros.RosResource {
 
     /**
      * @Property name: The name of the client certificate.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::SslVpnClientCert`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -7489,7 +7555,8 @@ export class RosSslVpnClientCert extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::SslVpnServer`
+ * Properties for defining a `RosSslVpnServer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnserver
  */
 export interface RosSslVpnServerProps {
 
@@ -7502,7 +7569,7 @@ export interface RosSslVpnServerProps {
 
     /**
      * @Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
-     * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
+     * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS\/OSS.
      */
     readonly localSubnet: string | ros.IResolvable;
 
@@ -7524,7 +7591,7 @@ export interface RosSslVpnServerProps {
 
     /**
      * @Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-     * But it can't start with http:// or https://.
+     * But it can't start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -7609,18 +7676,15 @@ function rosSslVpnServerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::SslVpnServer`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::SslVpnServer`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `SslVpnServer` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-sslvpnserver
  */
 export class RosSslVpnServer extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::SslVpnServer";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute SslVpnServerId: ID of the SSL-VPN server.
@@ -7639,7 +7703,7 @@ export class RosSslVpnServer extends ros.RosResource {
 
     /**
      * @Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
-     * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
+     * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS\/OSS.
      */
     public localSubnet: string | ros.IResolvable;
 
@@ -7661,7 +7725,7 @@ export class RosSslVpnServer extends ros.RosResource {
 
     /**
      * @Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-     * But it can't start with http:// or https://.
+     * But it can't start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -7677,8 +7741,6 @@ export class RosSslVpnServer extends ros.RosResource {
     public proto: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::SslVpnServer`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -7717,7 +7779,8 @@ export class RosSslVpnServer extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::TrafficMirrorFilter`
+ * Properties for defining a `RosTrafficMirrorFilter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorfilter
  */
 export interface RosTrafficMirrorFilterProps {
 
@@ -7732,12 +7795,12 @@ export interface RosTrafficMirrorFilterProps {
     readonly ingressRules?: Array<RosTrafficMirrorFilter.IngressRulesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property trafficMirrorFilterDescription: The description of the filter. The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     * @Property trafficMirrorFilterDescription: The description of the filter. The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly trafficMirrorFilterDescription?: string | ros.IResolvable;
 
     /**
-     * @Property trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+     * @Property trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly trafficMirrorFilterName?: string | ros.IResolvable;
 }
@@ -7795,18 +7858,15 @@ function rosTrafficMirrorFilterPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::TrafficMirrorFilter`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorFilter`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorFilter` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorfilter
  */
 export class RosTrafficMirrorFilter extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::TrafficMirrorFilter";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute EgressRules: Egress rules.
@@ -7847,18 +7907,16 @@ export class RosTrafficMirrorFilter extends ros.RosResource {
     public ingressRules: Array<RosTrafficMirrorFilter.IngressRulesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property trafficMirrorFilterDescription: The description of the filter. The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     * @Property trafficMirrorFilterDescription: The description of the filter. The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     public trafficMirrorFilterDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+     * @Property trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     public trafficMirrorFilterName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::TrafficMirrorFilter`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -7898,7 +7956,7 @@ export namespace RosTrafficMirrorFilter {
      */
     export interface EgressRulesProperty {
         /**
-         * @Property destinationPortRange: The destination port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80. You cannot set this parameter to only -1/-1. The value -1/-1 specifies all ports.
+         * @Property destinationPortRange: The destination port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80. You cannot set this parameter to only -1\/-1. The value -1\/-1 specifies all ports.
          */
         readonly destinationPortRange?: string | ros.IResolvable;
         /**
@@ -7908,7 +7966,7 @@ export namespace RosTrafficMirrorFilter {
          */
         readonly action: string | ros.IResolvable;
         /**
-         * @Property sourcePortRange: The source port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80. You cannot set this parameter to only -1/-1. The value -1/-1 specifies all ports.
+         * @Property sourcePortRange: The source port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80. You cannot set this parameter to only -1\/-1. The value -1\/-1 specifies all ports.
          */
         readonly sourcePortRange?: string | ros.IResolvable;
         /**
@@ -7995,7 +8053,7 @@ export namespace RosTrafficMirrorFilter {
      */
     export interface IngressRulesProperty {
         /**
-         * @Property destinationPortRange: The destination port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80.
+         * @Property destinationPortRange: The destination port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80.
          */
         readonly destinationPortRange?: string | ros.IResolvable;
         /**
@@ -8005,7 +8063,7 @@ export namespace RosTrafficMirrorFilter {
          */
         readonly action: string | ros.IResolvable;
         /**
-         * @Property sourcePortRange: The source port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80.
+         * @Property sourcePortRange: The source port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80.
          */
         readonly sourcePortRange?: string | ros.IResolvable;
         /**
@@ -8087,7 +8145,8 @@ function rosTrafficMirrorFilterIngressRulesPropertyToRosTemplate(properties: any
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::TrafficMirrorSession`
+ * Properties for defining a `RosTrafficMirrorSession`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
  */
 export interface RosTrafficMirrorSessionProps {
 
@@ -8143,13 +8202,13 @@ export interface RosTrafficMirrorSessionProps {
 
     /**
      * @Property trafficMirrorSessionDescription: The description of the traffic mirror session.
-     * The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly trafficMirrorSessionDescription?: string | ros.IResolvable;
 
     /**
      * @Property trafficMirrorSessionName: The name of the traffic mirror session.
-     * The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+     * The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     readonly trafficMirrorSessionName?: string | ros.IResolvable;
 
@@ -8248,18 +8307,15 @@ function rosTrafficMirrorSessionPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::TrafficMirrorSession`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSession`DATASOURCE::VPC::NatGateways is used to query NAT gateways.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorSession` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsession
  */
 export class RosTrafficMirrorSession extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::TrafficMirrorSession";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TrafficMirrorSessionId: The ID of the traffic mirror session.
@@ -8321,13 +8377,13 @@ export class RosTrafficMirrorSession extends ros.RosResource {
 
     /**
      * @Property trafficMirrorSessionDescription: The description of the traffic mirror session.
-     * The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+     * The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     public trafficMirrorSessionDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property trafficMirrorSessionName: The name of the traffic mirror session.
-     * The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+     * The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
      */
     public trafficMirrorSessionName: string | ros.IResolvable | undefined;
 
@@ -8338,8 +8394,6 @@ export class RosTrafficMirrorSession extends ros.RosResource {
     public virtualNetworkId: number | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::TrafficMirrorSession`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -8433,7 +8487,8 @@ function rosTrafficMirrorSessionTagPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`
+ * Properties for defining a `RosTrafficMirrorSessionSourcesAddition`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsessionsourcesaddition
  */
 export interface RosTrafficMirrorSessionSourcesAdditionProps {
 
@@ -8485,18 +8540,15 @@ function rosTrafficMirrorSessionSourcesAdditionPropsToRosTemplate(properties: an
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TrafficMirrorSessionSourcesAddition` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorsessionsourcesaddition
  */
 export class RosTrafficMirrorSessionSourcesAddition extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::TrafficMirrorSessionSourcesAddition";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -8512,8 +8564,6 @@ export class RosTrafficMirrorSessionSourcesAddition extends ros.RosResource {
     public trafficMirrorSourceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::TrafficMirrorSessionSourcesAddition`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -8539,7 +8589,8 @@ export class RosTrafficMirrorSessionSourcesAddition extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::VirtualBorderRouter`
+ * Properties for defining a `RosVirtualBorderRouter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
  */
 export interface RosVirtualBorderRouterProps {
 
@@ -8585,14 +8636,14 @@ export interface RosVirtualBorderRouterProps {
     /**
      * @Property description: The description of the VBR.
      * The description must be 2 to 256 characters in length. It must start with a letter
-     * but cannot start with http:// or https://.
+     * but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the VBR.
      * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-     * underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+     * underscores (_), and hyphens (-). The name cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 }
@@ -8656,18 +8707,15 @@ function rosVirtualBorderRouterPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::VirtualBorderRouter`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VirtualBorderRouter`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VirtualBorderRouter` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
  */
 export class RosVirtualBorderRouter extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VirtualBorderRouter";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Name: The name of the VBR.
@@ -8734,20 +8782,18 @@ export class RosVirtualBorderRouter extends ros.RosResource {
     /**
      * @Property description: The description of the VBR.
      * The description must be 2 to 256 characters in length. It must start with a letter
-     * but cannot start with http:// or https://.
+     * but cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the VBR.
      * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-     * underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+     * underscores (_), and hyphens (-). The name cannot start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::VirtualBorderRouter`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -8789,7 +8835,8 @@ export class RosVirtualBorderRouter extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpcPeerConnection`
+ * Properties for defining a `RosVpcPeerConnection`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */
 export interface RosVpcPeerConnectionProps {
 
@@ -8833,7 +8880,7 @@ export interface RosVpcPeerConnectionProps {
     /**
      * @Property description: The description of the VPC peering connection.
      * The description must be 2 to 256 characters in length. It must start with a letter
-     * but cannot start with http:// or https://.
+     * but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -8892,18 +8939,15 @@ function rosVpcPeerConnectionPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::VpcPeerConnection`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcPeerConnection`, which is used to create a peering connection between virtual private clouds (VPCs).
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpcPeerConnection` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */
 export class RosVpcPeerConnection extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpcPeerConnection";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceId: The ID of the VPC peering connection.
@@ -8953,7 +8997,7 @@ export class RosVpcPeerConnection extends ros.RosResource {
     /**
      * @Property description: The description of the VPC peering connection.
      * The description must be 2 to 256 characters in length. It must start with a letter
-     * but cannot start with http:// or https://.
+     * but cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -8965,8 +9009,6 @@ export class RosVpcPeerConnection extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::VpcPeerConnection`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -9003,7 +9045,8 @@ export class RosVpcPeerConnection extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpnAttachment`
+ * Properties for defining a `RosVpnAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
  */
 export interface RosVpnAttachmentProps {
 
@@ -9014,13 +9057,13 @@ export interface RosVpnAttachmentProps {
 
     /**
      * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+     * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
      */
     readonly localSubnet: string | ros.IResolvable;
 
     /**
      * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+     * Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
      */
     readonly remoteSubnet: string | ros.IResolvable;
 
@@ -9078,7 +9121,7 @@ export interface RosVpnAttachmentProps {
 
     /**
      * @Property name: The name of the IPsec connection.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
      */
     readonly name?: string | ros.IResolvable;
 
@@ -9170,18 +9213,15 @@ function rosVpnAttachmentPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::VpnAttachment`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpnAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
  */
 export class RosVpnAttachment extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpnAttachment";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InternetIp: The gateway IP address of the IPsec connection.
@@ -9208,13 +9248,13 @@ export class RosVpnAttachment extends ros.RosResource {
 
     /**
      * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+     * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
      */
     public localSubnet: string | ros.IResolvable;
 
     /**
      * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+     * Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
      */
     public remoteSubnet: string | ros.IResolvable;
 
@@ -9272,7 +9312,7 @@ export class RosVpnAttachment extends ros.RosResource {
 
     /**
      * @Property name: The name of the IPsec connection.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -9289,8 +9329,6 @@ export class RosVpnAttachment extends ros.RosResource {
     public remoteCaCert: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::VpnAttachment`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -9357,7 +9395,7 @@ export namespace RosVpnAttachment {
          */
         readonly localAsn?: number | ros.IResolvable;
         /**
-         * @Property tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0/16. The subnet mask of the CIDR block must be 30 bits in length.
+         * @Property tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0\/16. The subnet mask of the CIDR block must be 30 bits in length.
          */
         readonly tunnelCidr?: string | ros.IResolvable;
         /**
@@ -9721,19 +9759,20 @@ function rosVpnAttachmentIpsecConfigPropertyToRosTemplate(properties: any): any 
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpnConnection`
+ * Properties for defining a `RosVpnConnection`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnconnection
  */
 export interface RosVpnConnectionProps {
 
     /**
      * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+     * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
      */
     readonly localSubnet: string | ros.IResolvable;
 
     /**
      * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+     * Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
      */
     readonly remoteSubnet: string | ros.IResolvable;
 
@@ -9807,7 +9846,7 @@ export interface RosVpnConnectionProps {
 
     /**
      * @Property name: The name of the IPsec connection.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
      */
     readonly name?: string | ros.IResolvable;
 
@@ -9898,18 +9937,15 @@ function rosVpnConnectionPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::VpnConnection`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnConnection`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpnConnection` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnconnection
  */
 export class RosVpnConnection extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpnConnection";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute PeerVpnConnectionConfig: Peer vpc connection config.
@@ -9931,13 +9967,13 @@ export class RosVpnConnection extends ros.RosResource {
 
     /**
      * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+     * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
      */
     public localSubnet: string | ros.IResolvable;
 
     /**
      * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
-     * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+     * Multiple network segments are separated by commas, for example: 192.168.3.0\/24, 192.168.4.0\/24.
      */
     public remoteSubnet: string | ros.IResolvable;
 
@@ -10011,7 +10047,7 @@ export class RosVpnConnection extends ros.RosResource {
 
     /**
      * @Property name: The name of the IPsec connection.
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:\/\/ or https:\/\/ .
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -10029,8 +10065,6 @@ export class RosVpnConnection extends ros.RosResource {
     public tunnelOptionsSpecification: Array<RosVpnConnection.TunnelOptionsSpecificationProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::VpnConnection`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -10101,7 +10135,7 @@ export namespace RosVpnConnection {
          */
         readonly localAsn?: number | ros.IResolvable;
         /**
-         * @Property tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0/16. The subnet mask of the CIDR block must be 30 bits in length.
+         * @Property tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0\/16. The subnet mask of the CIDR block must be 30 bits in length.
          */
         readonly tunnelCidr?: string | ros.IResolvable;
         /**
@@ -10474,7 +10508,7 @@ export namespace RosVpnConnection {
          */
         readonly localAsn?: number | ros.IResolvable;
         /**
-         * @Property tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0/16. The subnet mask of the CIDR block must be 30 bits in length.
+         * @Property tunnelCidr: the CIDR block of the IPsec tunnel. The CIDR block must fall within 169.254.0.0\/16. The subnet mask of the CIDR block must be 30 bits in length.
          */
         readonly tunnelCidr?: string | ros.IResolvable;
         /**
@@ -10860,7 +10894,8 @@ function rosVpnConnectionTunnelOptionsSpecificationPropertyToRosTemplate(propert
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpnGateway`
+ * Properties for defining a `RosVpnGateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
 export interface RosVpnGatewayProps {
 
@@ -10885,7 +10920,7 @@ export interface RosVpnGatewayProps {
 
     /**
      * @Property description: Description of the VPN gateway.
-     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
+     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -10920,7 +10955,7 @@ export interface RosVpnGatewayProps {
 
     /**
      * @Property name: Name of the VPN gateway. The default value is the ID of the VPN gateway.
-     * The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:// or https://.
+     * The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -11064,18 +11099,15 @@ function rosVpnGatewayPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::VpnGateway`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnGateway`, which is used to create a VPN gateway.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpnGateway` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
 export class RosVpnGateway extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpnGateway";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute DisasterRecoveryInternetIp: The second IP address assigned by the system to create an IPsec-VPN connection.This attribute is returned only when the VPN gateway supports the dual-tunnel mode.
@@ -11156,7 +11188,7 @@ export class RosVpnGateway extends ros.RosResource {
 
     /**
      * @Property description: Description of the VPN gateway.
-     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
+     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:\/\/ or https:\/\/.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -11191,7 +11223,7 @@ export class RosVpnGateway extends ros.RosResource {
 
     /**
      * @Property name: Name of the VPN gateway. The default value is the ID of the VPN gateway.
-     * The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:// or https://.
+     * The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:\/\/ or https:\/\/.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -11227,8 +11259,6 @@ export class RosVpnGateway extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::VpnGateway`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -11339,7 +11369,8 @@ function rosVpnGatewayTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpnPbrRouteEntry`
+ * Properties for defining a `RosVpnPbrRouteEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnpbrrouteentry
  */
 export interface RosVpnPbrRouteEntryProps {
 
@@ -11439,18 +11470,15 @@ function rosVpnPbrRouteEntryPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::VpnPbrRouteEntry`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnPbrRouteEntry`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpnPbrRouteEntry` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnpbrrouteentry
  */
 export class RosVpnPbrRouteEntry extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpnPbrRouteEntry";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NextHop: The next hop of the destination route entry.
@@ -11518,8 +11546,6 @@ export class RosVpnPbrRouteEntry extends ros.RosResource {
     public overlayMode: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::VpnPbrRouteEntry`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -11561,7 +11587,8 @@ export class RosVpnPbrRouteEntry extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::VPC::VpnRouteEntry`
+ * Properties for defining a `RosVpnRouteEntry`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnrouteentry
  */
 export interface RosVpnRouteEntryProps {
 
@@ -11653,18 +11680,15 @@ function rosVpnRouteEntryPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * A ROS template type:  `ALIYUN::VPC::VpnRouteEntry`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpnRouteEntry`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `VpnRouteEntry` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnrouteentry
  */
 export class RosVpnRouteEntry extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VpnRouteEntry";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute NextHop: The next hop of the destination route entry.
@@ -11722,8 +11746,6 @@ export class RosVpnRouteEntry extends ros.RosResource {
     public overlayMode: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::VPC::VpnRouteEntry`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

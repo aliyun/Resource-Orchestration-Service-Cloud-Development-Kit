@@ -4,7 +4,8 @@ import { RosApplyConfigToMachineGroup } from './sls.generated';
 export { RosApplyConfigToMachineGroup as ApplyConfigToMachineGroupProperty };
 
 /**
- * Properties for defining a `ALIYUN::SLS::ApplyConfigToMachineGroup`
+ * Properties for defining a `ApplyConfigToMachineGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
  */
 export interface ApplyConfigToMachineGroupProps {
 
@@ -25,18 +26,13 @@ export interface ApplyConfigToMachineGroupProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::SLS::ApplyConfigToMachineGroup`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`, which is used to apply Log Service configurations to machine groups.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplyConfigToMachineGroup`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
  */
 export class ApplyConfigToMachineGroup extends ros.Resource {
 
     /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
-
-    /**
-     * Create a new `ALIYUN::SLS::ApplyConfigToMachineGroup`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

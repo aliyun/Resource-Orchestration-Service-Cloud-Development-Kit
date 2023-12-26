@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::VPC::VpnAttachment`.</summary>
+    /// <summary>Properties for defining a `VpnAttachment`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-vpc.VpnAttachmentProps")]
     public class VpnAttachmentProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IVpnAttachmentProps
     {

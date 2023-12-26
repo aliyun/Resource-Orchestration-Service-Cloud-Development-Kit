@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>A ROS template type:  `ALIYUN::NAS::DataFlow`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`, which is used to create a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DataFlow` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Nas.RosDataFlow), fullyQualifiedName: "@alicloud/ros-cdk-nas.RosDataFlow", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-nas.RosDataFlowProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosDataFlow : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::NAS::DataFlow`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -142,14 +145,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>.
+        /// <strong>Property</strong>: sourceStorage: Access path stored at the source.Format: <storage Type>: \/\/ <PATH>.
         /// in:
         /// Storage Type: Currently only supports OSS.
         /// PATH: OSS's bucket name.Limit the following.
         /// Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
         /// The length is 8 ~ 128 English characters.
         /// Use UTF-8 encoding.
-        /// Can't start with http: // and https: //.
+        /// Can't start with http: \/\/ and https: \/\/.
         /// Explain that the OSS BUCKET must be the bucket that exists in the region.
         /// </remarks>
         [JsiiProperty(name: "sourceStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -180,7 +183,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s.
+        /// <strong>Property</strong>: throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s.
         /// Value:
         /// 600
         /// 1200
@@ -372,7 +375,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <strong>Property</strong>: description: Description of data flow.
         /// limit:
         /// The length is 2 to 128 English or Chinese characters.
-        /// Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
+        /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
         /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
         /// </remarks>
         [JsiiOptional]
@@ -444,7 +447,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             /// limit:
             /// The length is 2 to 1024 characters.
             /// Use UTF-8 encoding.
-            /// It must start with a positive oblique line (/).
+            /// It must start with a positive oblique line (\/).
             /// This directory must be existing directory on CPFS and must be located in the Fileset directory that flows in the data.
             /// </remarks>
             [JsiiProperty(name: "refreshPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -466,7 +469,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 /// limit:
                 /// The length is 2 to 1024 characters.
                 /// Use UTF-8 encoding.
-                /// It must start with a positive oblique line (/).
+                /// It must start with a positive oblique line (\/).
                 /// This directory must be existing directory on CPFS and must be located in the Fileset directory that flows in the data.
                 /// </remarks>
                 [JsiiProperty(name: "refreshPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -489,7 +492,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             /// limit:
             /// The length is 2 to 1024 characters.
             /// Use UTF-8 encoding.
-            /// It must start with a positive oblique line (/).
+            /// It must start with a positive oblique line (\/).
             /// This directory must be existing directory on CPFS and must be located in the Fileset directory that flows in the data.
             /// </remarks>
             [JsiiProperty(name: "refreshPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]

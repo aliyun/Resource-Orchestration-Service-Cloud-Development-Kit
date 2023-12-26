@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::Flink::Namespace`.</summary>
+    /// <summary>Properties for defining a `RosNamespace`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-flink.RosNamespaceProps")]
     public class RosNamespaceProps : AlibabaCloud.SDK.ROS.CDK.Flink.IRosNamespaceProps
     {

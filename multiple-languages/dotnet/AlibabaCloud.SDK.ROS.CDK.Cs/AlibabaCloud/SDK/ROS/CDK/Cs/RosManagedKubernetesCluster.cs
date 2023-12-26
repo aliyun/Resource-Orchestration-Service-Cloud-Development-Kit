@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
-    /// <summary>A ROS template type:  `ALIYUN::CS::ManagedKubernetesCluster`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`, which is used to create a Container Service for Kubernetes (ACK) managed cluster.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ManagedKubernetesCluster` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedKubernetesCluster), fullyQualifiedName: "@alicloud/ros-cdk-cs.RosManagedKubernetesCluster", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosManagedKubernetesCluster : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::CS::ManagedKubernetesCluster`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -521,7 +524,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
+        /// <strong>Property</strong>: containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0\/16 is used by default.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -695,7 +698,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// How to mount a data disk:
         /// If the ECS instances have data disks mounted and the file system of the last
         /// data disk is not initialized, the system automatically formats the data disk to ext4.
-        /// Then, the system mounts the data disk to /var/lib/docker and /var/lib/kubelet.
+        /// Then, the system mounts the data disk to \/var\/lib\/docker and \/var\/lib\/kubelet.
         /// The system does not create or mount a new data disk if no data disk has been
         /// mounted to the ECS instances.
         /// </remarks>
@@ -1428,7 +1431,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+        /// <strong>Property</strong>: serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0\/20 is used by default.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "serviceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2202,10 +2205,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <remarks>
             /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -2279,10 +2282,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
                 /// <remarks>
                 /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-                /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-                /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-                /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-                /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+                /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+                /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+                /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+                /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2418,10 +2421,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <remarks>
             /// <strong>Property</strong>: performanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "performanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -3670,10 +3673,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <remarks>
             /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -3687,7 +3690,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <remarks>
             /// <strong>Property</strong>: tags: Adds labels only to ECS instances.
-            /// A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+            /// A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:\/\/ or http:\/\/.
             /// </remarks>
             [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -3895,10 +3898,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
                 /// <remarks>
                 /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-                /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-                /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-                /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-                /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+                /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+                /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+                /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+                /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -3909,7 +3912,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
                 /// <remarks>
                 /// <strong>Property</strong>: tags: Adds labels only to ECS instances.
-                /// A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+                /// A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:\/\/ or http:\/\/.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
@@ -4608,10 +4611,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <remarks>
             /// <strong>Property</strong>: systemDiskPerformanceLevel: The performance level of the enhanced SSD used as the system disk. Default value: PL1. Valid values:
-            /// PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.
-            /// PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.
-            /// PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.
-            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
+            /// PL0: A single enhanced SSD delivers up to 10,000 random read\/write IOPS.
+            /// PL1: A single enhanced SSD delivers up to 50,000 random read\/write IOPS.
+            /// PL2: A single enhanced SSD delivers up to 100,000 random read\/write IOPS.
+            /// PL3: A single enhanced SSD delivers up to 1,000,000 random read\/write IOPS.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "systemDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -4643,7 +4646,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <remarks>
             /// <strong>Property</strong>: tags: Adds labels only to ECS instances.
-            /// A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:// or http://.
+            /// A key must be unique and cannot exceed 128 characters in length. Neither keys nor values can start with aliyun or acs:. Neither keys nor values can contain https:\/\/ or http:\/\/.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.ScalingGroupTagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]

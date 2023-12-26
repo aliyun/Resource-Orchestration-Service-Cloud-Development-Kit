@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ebs
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::EBS::DiskReplicaPairAddition`.</summary>
+    /// <summary>Properties for defining a `DiskReplicaPairAddition`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapairaddition
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ebs.DiskReplicaPairAdditionProps")]
     public class DiskReplicaPairAdditionProps : AlibabaCloud.SDK.ROS.CDK.Ebs.IDiskReplicaPairAdditionProps
     {

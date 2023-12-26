@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource
 {
-    /// <summary>Properties for defining a `DATASOURCE::ThreatDetection::AntiBruteForceRules`.</summary>
+    /// <summary>Properties for defining a `AntiBruteForceRules`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-threatdetection-antibruteforcerules
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-threatdetection.datasource.AntiBruteForceRulesProps")]
     public class AntiBruteForceRulesProps : AlibabaCloud.SDK.ROS.CDK.Threatdetection.Datasource.IAntiBruteForceRulesProps
     {

@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::POLARDB::AccountPrivilege`.</summary>
+    /// <summary>Properties for defining a `AccountPrivilege`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-polardb.AccountPrivilegeProps")]
     public class AccountPrivilegeProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IAccountPrivilegeProps
     {

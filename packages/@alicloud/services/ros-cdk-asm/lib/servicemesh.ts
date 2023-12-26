@@ -4,7 +4,8 @@ import { RosServiceMesh } from './asm.generated';
 export { RosServiceMesh as ServiceMeshProperty };
 
 /**
- * Properties for defining a `ALIYUN::ASM::ServiceMesh`
+ * Properties for defining a `ServiceMesh`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
  */
 export interface ServiceMeshProps {
 
@@ -108,14 +109,11 @@ export interface ServiceMeshProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ASM::ServiceMesh`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ASM::ServiceMesh`, which is used to create an Alibaba Cloud Service Mesh (ASM) instance.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceMesh`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
  */
 export class ServiceMesh extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute ServiceMeshId: The ID of the ASM instance.
@@ -123,8 +121,6 @@ export class ServiceMesh extends ros.Resource {
     public readonly attrServiceMeshId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ASM::ServiceMesh`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

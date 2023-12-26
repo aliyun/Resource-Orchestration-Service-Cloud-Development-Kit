@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::FC::Aliases`.</summary>
+    /// <summary>Properties for defining a `RosAliases`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-aliases
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-fc.datasource.RosAliasesProps")]
     public class RosAliasesProps : AlibabaCloud.SDK.ROS.CDK.Fc.Datasource.IRosAliasesProps
     {

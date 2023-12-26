@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::SLS::Savedsearch`.</summary>
+    /// <summary>Properties for defining a `Savedsearch`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-sls.SavedsearchProps")]
     public class SavedsearchProps : AlibabaCloud.SDK.ROS.CDK.Sls.ISavedsearchProps
     {

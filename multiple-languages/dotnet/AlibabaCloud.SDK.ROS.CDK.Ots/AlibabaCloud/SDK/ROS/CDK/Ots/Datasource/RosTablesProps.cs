@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots.Datasource
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `DATASOURCE::OTS::Tables`.</summary>
+    /// <summary>Properties for defining a `RosTables`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-tables
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ots.datasource.RosTablesProps")]
     public class RosTablesProps : AlibabaCloud.SDK.ROS.CDK.Ots.Datasource.IRosTablesProps
     {

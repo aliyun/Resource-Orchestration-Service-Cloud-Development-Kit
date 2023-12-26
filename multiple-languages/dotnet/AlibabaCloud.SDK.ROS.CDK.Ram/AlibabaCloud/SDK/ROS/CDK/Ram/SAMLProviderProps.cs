@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::RAM::SAMLProvider`.</summary>
+    /// <summary>Properties for defining a `SAMLProvider`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-ram.SAMLProviderProps")]
     public class SAMLProviderProps : AlibabaCloud.SDK.ROS.CDK.Ram.ISAMLProviderProps
     {

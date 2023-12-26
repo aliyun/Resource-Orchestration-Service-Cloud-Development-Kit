@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sls
 {
-    /// <summary>Properties for defining a `ALIYUN::SLS::Dashboard`.</summary>
+    /// <summary>Properties for defining a `RosDashboard`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosDashboardProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosDashboardProps")]
     public interface IRosDashboardProps
     {
@@ -64,7 +67,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::SLS::Dashboard`.</summary>
+        /// <summary>Properties for defining a `RosDashboard`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosDashboardProps), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosDashboardProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Sls.IRosDashboardProps
         {

@@ -4,7 +4,8 @@ import { RosDataset } from './nlpautoml.generated';
 export { RosDataset as DatasetProperty };
 
 /**
- * Properties for defining a `ALIYUN::NLPAUTOML::Dataset`
+ * Properties for defining a `Dataset`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-dataset
  */
 export interface DatasetProps {
 
@@ -25,14 +26,11 @@ export interface DatasetProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::NLPAUTOML::Dataset`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLPAUTOML::Dataset`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDataset`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlpautoml-dataset
  */
 export class Dataset extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute DatasetId: The dataset ID.
@@ -40,8 +38,6 @@ export class Dataset extends ros.Resource {
     public readonly attrDatasetId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::NLPAUTOML::Dataset`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

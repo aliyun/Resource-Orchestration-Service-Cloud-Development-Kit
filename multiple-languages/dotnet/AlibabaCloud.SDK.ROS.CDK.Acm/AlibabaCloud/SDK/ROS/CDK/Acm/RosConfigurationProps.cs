@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::ACM::Configuration`.</summary>
+    /// <summary>Properties for defining a `RosConfiguration`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-acm.RosConfigurationProps")]
     public class RosConfigurationProps : AlibabaCloud.SDK.ROS.CDK.Acm.IRosConfigurationProps
     {
@@ -222,7 +225,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
 
         /// <remarks>
         /// <strong>Property</strong>: type: Provisioning content format, optional values as follows:
-        /// text, json, xml, yaml, text/html, properties
+        /// text, json, xml, yaml, text\/html, properties
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

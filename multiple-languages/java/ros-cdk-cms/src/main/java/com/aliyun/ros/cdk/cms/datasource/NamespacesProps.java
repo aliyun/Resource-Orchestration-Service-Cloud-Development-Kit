@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cms.datasource;
 
 /**
- * Properties for defining a <code>DATASOURCE::CMS::Namespaces</code>.
+ * Properties for defining a <code>Namespaces</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-namespaces
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.072Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:14.451Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.NamespacesProps")
 @software.amazon.jsii.Jsii.Proxy(NamespacesProps.Jsii$Proxy.class)
 public interface NamespacesProps extends software.amazon.jsii.JsiiSerializable {

@@ -4,7 +4,8 @@ import { RosVirtualBorderRouter } from './vpc.generated';
 export { RosVirtualBorderRouter as VirtualBorderRouterProperty };
 
 /**
- * Properties for defining a `ALIYUN::VPC::VirtualBorderRouter`
+ * Properties for defining a `VirtualBorderRouter`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
  */
 export interface VirtualBorderRouterProps {
 
@@ -50,27 +51,24 @@ export interface VirtualBorderRouterProps {
     /**
      * Property description: The description of the VBR.
      * The description must be 2 to 256 characters in length. It must start with a letter
-     * but cannot start with http:// or https://.
+     * but cannot start with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
      * Property name: The name of the VBR.
      * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-     * underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+     * underscores (_), and hyphens (-). The name cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 }
 
 /**
- * A ROS resource type:  `ALIYUN::VPC::VirtualBorderRouter`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VirtualBorderRouter`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVirtualBorderRouter`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
  */
 export class VirtualBorderRouter extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Name: The name of the VBR.
@@ -93,8 +91,6 @@ export class VirtualBorderRouter extends ros.Resource {
     public readonly attrVlanInterfaceId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::VPC::VirtualBorderRouter`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

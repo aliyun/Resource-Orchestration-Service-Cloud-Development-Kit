@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 {
-    /// <summary>Properties for defining a `ALIYUN::KAFKA::Topic`.</summary>
+    /// <summary>Properties for defining a `Topic`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(ITopicProps), fullyQualifiedName: "@alicloud/ros-cdk-kafka.TopicProps")]
     public interface ITopicProps
     {
@@ -156,7 +159,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::KAFKA::Topic`.</summary>
+        /// <summary>Properties for defining a `Topic`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(ITopicProps), fullyQualifiedName: "@alicloud/ros-cdk-kafka.TopicProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Kafka.ITopicProps
         {

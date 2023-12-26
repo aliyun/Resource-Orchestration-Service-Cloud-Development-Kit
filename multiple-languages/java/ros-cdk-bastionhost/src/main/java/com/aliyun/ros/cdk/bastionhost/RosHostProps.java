@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.bastionhost;
 
 /**
- * Properties for defining a <code>ALIYUN::BastionHost::Host</code>.
+ * Properties for defining a <code>RosHost</code>.
+ * <p>
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-host
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.526Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.995Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.RosHostProps")
 @software.amazon.jsii.Jsii.Proxy(RosHostProps.Jsii$Proxy.class)
 public interface RosHostProps extends software.amazon.jsii.JsiiSerializable {

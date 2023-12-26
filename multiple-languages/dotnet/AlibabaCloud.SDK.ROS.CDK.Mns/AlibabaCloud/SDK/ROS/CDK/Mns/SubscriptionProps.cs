@@ -6,7 +6,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
 {
     #pragma warning disable CS8618
 
-    /// <summary>Properties for defining a `ALIYUN::MNS::Subscription`.</summary>
+    /// <summary>Properties for defining a `Subscription`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
+    /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-mns.SubscriptionProps")]
     public class SubscriptionProps : AlibabaCloud.SDK.ROS.CDK.Mns.ISubscriptionProps
     {

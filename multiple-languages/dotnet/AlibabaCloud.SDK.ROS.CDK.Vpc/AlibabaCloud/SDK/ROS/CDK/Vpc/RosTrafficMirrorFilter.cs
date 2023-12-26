@@ -4,11 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 {
-    /// <summary>A ROS template type:  `ALIYUN::VPC::TrafficMirrorFilter`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::TrafficMirrorFilter`.</summary>
+    /// <remarks>
+    /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `TrafficMirrorFilter` class instead of this class for a more convenient development experience.
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-trafficmirrorfilter
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Vpc.RosTrafficMirrorFilter), fullyQualifiedName: "@alicloud/ros-cdk-vpc.RosTrafficMirrorFilter", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-vpc.RosTrafficMirrorFilterProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
     public class RosTrafficMirrorFilter : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
     {
-        /// <summary>Create a new `ALIYUN::VPC::TrafficMirrorFilter`.</summary>
         /// <param name="scope">- scope in which this resource is defined.</param>
         /// <param name="id">- scoped id of the resource.</param>
         /// <param name="props">- resource properties.</param>
@@ -205,7 +208,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: trafficMirrorFilterDescription: The description of the filter. The description must be 1 to 256 characters in length and cannot start with http:// or https://.
+        /// <strong>Property</strong>: trafficMirrorFilterDescription: The description of the filter. The description must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "trafficMirrorFilterDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -236,7 +239,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:// or https://.
+        /// <strong>Property</strong>: trafficMirrorFilterName: The name of the filter.The name must be 1 to 128 characters in length and cannot start with http:\/\/ or https:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "trafficMirrorFilterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -306,7 +309,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: destinationPortRange: The destination port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80. You cannot set this parameter to only -1/-1. The value -1/-1 specifies all ports.
+            /// <strong>Property</strong>: destinationPortRange: The destination port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80. You cannot set this parameter to only -1\/-1. The value -1\/-1 specifies all ports.
             /// </remarks>
             [JsiiProperty(name: "destinationPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -345,7 +348,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: sourcePortRange: The source port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80. You cannot set this parameter to only -1/-1. The value -1/-1 specifies all ports.
+            /// <strong>Property</strong>: sourcePortRange: The source port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80. You cannot set this parameter to only -1\/-1. The value -1\/-1 specifies all ports.
             /// </remarks>
             [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -399,7 +402,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: destinationPortRange: The destination port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80. You cannot set this parameter to only -1/-1. The value -1/-1 specifies all ports.
+                /// <strong>Property</strong>: destinationPortRange: The destination port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80. You cannot set this parameter to only -1\/-1. The value -1\/-1 specifies all ports.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "destinationPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -429,7 +432,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: sourcePortRange: The source port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80. You cannot set this parameter to only -1/-1. The value -1/-1 specifies all ports.
+                /// <strong>Property</strong>: sourcePortRange: The source port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80. You cannot set this parameter to only -1\/-1. The value -1\/-1 specifies all ports.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -550,7 +553,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             private object? _destinationPortRange;
 
             /// <remarks>
-            /// <strong>Property</strong>: destinationPortRange: The destination port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80. You cannot set this parameter to only -1/-1. The value -1/-1 specifies all ports.
+            /// <strong>Property</strong>: destinationPortRange: The destination port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80. You cannot set this parameter to only -1\/-1. The value -1\/-1 specifies all ports.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "destinationPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -669,7 +672,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             private object? _sourcePortRange;
 
             /// <remarks>
-            /// <strong>Property</strong>: sourcePortRange: The source port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80. You cannot set this parameter to only -1/-1. The value -1/-1 specifies all ports.
+            /// <strong>Property</strong>: sourcePortRange: The source port range of the outbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80. You cannot set this parameter to only -1\/-1. The value -1\/-1 specifies all ports.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -740,7 +743,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: destinationPortRange: The destination port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80.
+            /// <strong>Property</strong>: destinationPortRange: The destination port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80.
             /// </remarks>
             [JsiiProperty(name: "destinationPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -779,7 +782,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: sourcePortRange: The source port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80.
+            /// <strong>Property</strong>: sourcePortRange: The source port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80.
             /// </remarks>
             [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -833,7 +836,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: destinationPortRange: The destination port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80.
+                /// <strong>Property</strong>: destinationPortRange: The destination port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "destinationPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -863,7 +866,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: sourcePortRange: The source port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80.
+                /// <strong>Property</strong>: sourcePortRange: The source port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -984,7 +987,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             private object? _destinationPortRange;
 
             /// <remarks>
-            /// <strong>Property</strong>: destinationPortRange: The destination port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80.
+            /// <strong>Property</strong>: destinationPortRange: The destination port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "destinationPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1103,7 +1106,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             private object? _sourcePortRange;
 
             /// <remarks>
-            /// <strong>Property</strong>: sourcePortRange: The source port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (/). Examples: 1/200 and 80/80.
+            /// <strong>Property</strong>: sourcePortRange: The source port range of the inbound traffic. Valid values for a port: 1 to 65535. Separate the first port and the last port with a forward slash (\/). Examples: 1\/200 and 80\/80.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

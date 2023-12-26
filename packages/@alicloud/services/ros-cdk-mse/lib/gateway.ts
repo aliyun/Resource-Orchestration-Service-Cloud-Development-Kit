@@ -4,7 +4,8 @@ import { RosGateway } from './mse.generated';
 export { RosGateway as GatewayProperty };
 
 /**
- * Properties for defining a `ALIYUN::MSE::Gateway`
+ * Properties for defining a `Gateway`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
  */
 export interface GatewayProps {
 
@@ -55,14 +56,11 @@ export interface GatewayProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::MSE::Gateway`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Gateway`, which is used to add a gateway.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGateway`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
  */
 export class Gateway extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute BackupVSwitchId: VSwitchId For Backup
@@ -100,8 +98,6 @@ export class Gateway extends ros.Resource {
     public readonly attrVpcId: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::MSE::Gateway`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

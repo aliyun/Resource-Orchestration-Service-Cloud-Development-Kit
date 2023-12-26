@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>Properties for defining a `ALIYUN::ECS::JoinSecurityGroup`.</summary>
+    /// <summary>Properties for defining a `RosJoinSecurityGroup`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-joinsecuritygroup
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosJoinSecurityGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosJoinSecurityGroupProps")]
     public interface IRosJoinSecurityGroupProps
     {
@@ -56,7 +59,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ECS::JoinSecurityGroup`.</summary>
+        /// <summary>Properties for defining a `RosJoinSecurityGroup`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-joinsecuritygroup
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosJoinSecurityGroupProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosJoinSecurityGroupProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IRosJoinSecurityGroupProps
         {

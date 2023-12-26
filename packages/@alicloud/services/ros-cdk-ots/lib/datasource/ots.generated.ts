@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `DATASOURCE::OTS::Instances`
+ * Properties for defining a `RosInstances`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-instances
  */
 export interface RosInstancesProps {
 
@@ -53,18 +54,15 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * A ROS template type:  `DATASOURCE::OTS::Instances`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OTS::Instances`, which is used to query Tablestore instances.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-instances
  */
 export class RosInstances extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OTS::Instances";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute InstanceNames: The list of instance names.
@@ -90,8 +88,6 @@ export class RosInstances extends ros.RosResource {
     public status: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::OTS::Instances`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -119,7 +115,8 @@ export class RosInstances extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `DATASOURCE::OTS::Tables`
+ * Properties for defining a `RosTables`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-tables
  */
 export interface RosTablesProps {
 
@@ -170,18 +167,15 @@ function rosTablesPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * A ROS template type:  `DATASOURCE::OTS::Tables`
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OTS::Tables`, which is used to query the names of all tables that are created in a Tablestore instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Tables` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-tables
  */
 export class RosTables extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::OTS::Tables";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute TableNames: The list of table names.
@@ -207,8 +201,6 @@ export class RosTables extends ros.RosResource {
     public tableName: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `DATASOURCE::OTS::Tables`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Adb
 {
-    /// <summary>Properties for defining a `ALIYUN::ADB::Account`.</summary>
+    /// <summary>Properties for defining a `RosAccount`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-account
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-adb.RosAccountProps")]
     public interface IRosAccountProps
     {
@@ -43,7 +46,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
 
         /// <remarks>
         /// <strong>Property</strong>: accountDescription: The description of the account.
-        /// The description cannot start with http://or https://.
+        /// The description cannot start with http:\/\/or https:\/\/.
         /// The description can be up to 256 characters in length.
         /// </remarks>
         [JsiiProperty(name: "accountDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -70,7 +73,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::ADB::Account`.</summary>
+        /// <summary>Properties for defining a `RosAccount`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-account
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-adb.RosAccountProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Adb.IRosAccountProps
         {
@@ -113,7 +119,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
 
             /// <remarks>
             /// <strong>Property</strong>: accountDescription: The description of the account.
-            /// The description cannot start with http://or https://.
+            /// The description cannot start with http:\/\/or https:\/\/.
             /// The description can be up to 256 characters in length.
             /// </remarks>
             [JsiiOptional]

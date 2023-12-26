@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Paidswapi
 {
-    /// <summary>Properties for defining a `ALIYUN::PaiDswApi::Instance`.</summary>
+    /// <summary>Properties for defining a `RosInstance`.</summary>
+    /// <remarks>
+    /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidswapi-instance
+    /// </remarks>
     [JsiiInterface(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-paidswapi.RosInstanceProps")]
     public interface IRosInstanceProps
     {
@@ -130,7 +133,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Paidswapi
             }
         }
 
-        /// <summary>Properties for defining a `ALIYUN::PaiDswApi::Instance`.</summary>
+        /// <summary>Properties for defining a `RosInstance`.</summary>
+        /// <remarks>
+        /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidswapi-instance
+        /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRosInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-paidswapi.RosInstanceProps")]
         internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Paidswapi.IRosInstanceProps
         {

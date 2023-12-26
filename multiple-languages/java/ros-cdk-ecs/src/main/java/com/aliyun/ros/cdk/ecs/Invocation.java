@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * A ROS resource type:  <code>ALIYUN::ECS::Invocation</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Invocation</code>, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:34.825Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:15.294Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Invocation")
 public class Invocation extends com.aliyun.ros.cdk.core.Resource {
 
@@ -16,11 +16,7 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::Invocation</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -33,11 +29,7 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
-     * Create a new <code>ALIYUN::ECS::Invocation</code>.
-     * <p>
-     * Param scope - scope in which this resource is defined
-     * Param id    - scoped id of the resource
-     * Param props - resource properties
+     * Param scope - scope in which this resource is defined Param id    - scoped id of the resource Param props - resource properties.
      * <p>
      * @param scope This parameter is required.
      * @param id This parameter is required.
@@ -175,6 +167,84 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property containerId: The ID of the container.
+         * <p>
+         * Only 64-bit hexadecimal strings are supported. You can use container IDs that are prefixed with docker://, containerd://, or cri-o:// to specify container runtimes.
+         * Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.</li>
+         * <li>If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.- If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container.</li>
+         * <li>If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!/usr/bin/python at the beginning of a script to specify a script interpreter.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param containerId Property containerId: The ID of the container. This parameter is required.
+         */
+        public Builder containerId(final java.lang.String containerId) {
+            this.props.containerId(containerId);
+            return this;
+        }
+        /**
+         * Property containerId: The ID of the container.
+         * <p>
+         * Only 64-bit hexadecimal strings are supported. You can use container IDs that are prefixed with docker://, containerd://, or cri-o:// to specify container runtimes.
+         * Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.</li>
+         * <li>If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.- If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container.</li>
+         * <li>If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!/usr/bin/python at the beginning of a script to specify a script interpreter.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param containerId Property containerId: The ID of the container. This parameter is required.
+         */
+        public Builder containerId(final com.aliyun.ros.cdk.core.IResolvable containerId) {
+            this.props.containerId(containerId);
+            return this;
+        }
+
+        /**
+         * Property containerName: The name of the container.
+         * <p>
+         * Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.</li>
+         * <li>If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.</li>
+         * <li>If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container.</li>
+         * <li>If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!/usr/bin/python at the beginning of a script to specify a script interpreter.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param containerName Property containerName: The name of the container. This parameter is required.
+         */
+        public Builder containerName(final java.lang.String containerName) {
+            this.props.containerName(containerName);
+            return this;
+        }
+        /**
+         * Property containerName: The name of the container.
+         * <p>
+         * Take note of the following items:
+         * <p>
+         * <ul>
+         * <li>If you specify this parameter, Cloud Assistant runs scripts in the specified container of the instance.</li>
+         * <li>If you specify this parameter, make sure that the version of Cloud Assistant Agent installed on Linux instances is 2.2.3.344 or later.</li>
+         * <li>If you specify this parameter, Username that is specified in a request to call this operation and WorkingDir that is specified in a request to call the CreateCommand operation do not take effect. You can run the command only in the default working directory of the container by using the default user of the container.</li>
+         * <li>If you specify this parameter, only shell scripts can be run in Linux containers. You cannot add a command in the format similar to #!/usr/bin/python at the beginning of a script to specify a script interpreter.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param containerName Property containerName: The name of the container. This parameter is required.
+         */
+        public Builder containerName(final com.aliyun.ros.cdk.core.IResolvable containerName) {
+            this.props.containerName(containerName);
+            return this;
+        }
+
+        /**
          * Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute).
          * <p>
          * It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
@@ -235,6 +305,76 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property repeatMode: Specifies how to run the command.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>Once</strong>: immediately runs the command.</li>
+         * <li><strong>Period</strong>: runs the command on a schedule. If you set this parameter to Period, you must specify <strong>Frequency</strong>.</li>
+         * <li><strong>NextRebootOnly</strong>: runs the command the next time the instance is started.</li>
+         * <li>*<em>EveryReboot</em>: runs the command every time the instance is started.
+         * Default value:</li>
+         * <li>If you do not specify Frequency, the default value is Once.</li>
+         * <li>If you specify <strong>Frequency</strong>, <strong>Period</strong> is used as the value of RepeatMode regardless of whether RepeatMode is set to Period.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param repeatMode Property repeatMode: Specifies how to run the command. This parameter is required.
+         */
+        public Builder repeatMode(final java.lang.String repeatMode) {
+            this.props.repeatMode(repeatMode);
+            return this;
+        }
+        /**
+         * Property repeatMode: Specifies how to run the command.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>Once</strong>: immediately runs the command.</li>
+         * <li><strong>Period</strong>: runs the command on a schedule. If you set this parameter to Period, you must specify <strong>Frequency</strong>.</li>
+         * <li><strong>NextRebootOnly</strong>: runs the command the next time the instance is started.</li>
+         * <li>*<em>EveryReboot</em>: runs the command every time the instance is started.
+         * Default value:</li>
+         * <li>If you do not specify Frequency, the default value is Once.</li>
+         * <li>If you specify <strong>Frequency</strong>, <strong>Period</strong> is used as the value of RepeatMode regardless of whether RepeatMode is set to Period.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param repeatMode Property repeatMode: Specifies how to run the command. This parameter is required.
+         */
+        public Builder repeatMode(final com.aliyun.ros.cdk.core.IResolvable repeatMode) {
+            this.props.repeatMode(repeatMode);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group to which to assign the command executions.
+         * <p>
+         * The instances specified by InstanceIds must belong to the specified resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which to assign the command executions. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group to which to assign the command executions.
+         * <p>
+         * The instances specified by InstanceIds must belong to the specified resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which to assign the command executions. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
          * Property sync: Whether to invoke synchronously.
          * <p>
          * @return {@code this}
@@ -256,27 +396,118 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
-         * Property timed: Whether it is timed execution.
+         * Property tags: Tags to attach to invocation.
          * <p>
-         * Default is False.
+         * Max support 20 tags to add during create invocation. Each tag with two properties Key and Value, and Key is required.
          * <p>
          * @return {@code this}
-         * @param timed Property timed: Whether it is timed execution. This parameter is required.
+         * @param tags Property tags: Tags to attach to invocation. This parameter is required.
          */
-        public Builder timed(final java.lang.Boolean timed) {
-            this.props.timed(timed);
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosInvocation.TagsProperty> tags) {
+            this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property timeout: The timeout period for the command execution.
+         * <p>
+         * Unit: seconds.
+         * <p>
+         * <ul>
+         * <li>The timeout period cannot be less than 10 seconds.</li>
+         * <li>A timeout error occurs if the command cannot be run because the process slows down or because a specific module or Cloud Assistant Agent does not exist. When the specified timeout period ends, the command process is forcefully terminated.</li>
+         * <li>If you do not specify this parameter, the timeout period that is specified when the command is created is used.</li>
+         * <li>This timeout period is applicable only to this execution. The timeout period of the command is not modified.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param timeout Property timeout: The timeout period for the command execution. This parameter is required.
+         */
+        public Builder timeout(final java.lang.Number timeout) {
+            this.props.timeout(timeout);
             return this;
         }
         /**
-         * Property timed: Whether it is timed execution.
+         * Property timeout: The timeout period for the command execution.
          * <p>
-         * Default is False.
+         * Unit: seconds.
+         * <p>
+         * <ul>
+         * <li>The timeout period cannot be less than 10 seconds.</li>
+         * <li>A timeout error occurs if the command cannot be run because the process slows down or because a specific module or Cloud Assistant Agent does not exist. When the specified timeout period ends, the command process is forcefully terminated.</li>
+         * <li>If you do not specify this parameter, the timeout period that is specified when the command is created is used.</li>
+         * <li>This timeout period is applicable only to this execution. The timeout period of the command is not modified.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param timed Property timed: Whether it is timed execution. This parameter is required.
+         * @param timeout Property timeout: The timeout period for the command execution. This parameter is required.
          */
-        public Builder timed(final com.aliyun.ros.cdk.core.IResolvable timed) {
-            this.props.timed(timed);
+        public Builder timeout(final com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.props.timeout(timeout);
+            return this;
+        }
+
+        /**
+         * Property username: The username to use to run the command on instances.
+         * <p>
+         * The username can be up to 255 characters in length.
+         * <p>
+         * <ul>
+         * <li>For Linux instances, the root username is used by default.</li>
+         * <li>For Windows instances, the System username is used by default.
+         * You can also specify other usernames that already exist in the instances to run the command. For security purposes, we recommend that you run Cloud Assistant commands as a regular user.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param username Property username: The username to use to run the command on instances. This parameter is required.
+         */
+        public Builder username(final java.lang.String username) {
+            this.props.username(username);
+            return this;
+        }
+        /**
+         * Property username: The username to use to run the command on instances.
+         * <p>
+         * The username can be up to 255 characters in length.
+         * <p>
+         * <ul>
+         * <li>For Linux instances, the root username is used by default.</li>
+         * <li>For Windows instances, the System username is used by default.
+         * You can also specify other usernames that already exist in the instances to run the command. For security purposes, we recommend that you run Cloud Assistant commands as a regular user.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param username Property username: The username to use to run the command on instances. This parameter is required.
+         */
+        public Builder username(final com.aliyun.ros.cdk.core.IResolvable username) {
+            this.props.username(username);
+            return this;
+        }
+
+        /**
+         * Property windowsPasswordName: The name of the password to use to run the command on Windows instances.
+         * <p>
+         * The name can be up to 255 characters in length.
+         * If you do not want to use the default System user to run the command on Windows instances, specify both <strong>WindowsPasswordName</strong> and <strong>Username</strong>. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
+         * <p>
+         * @return {@code this}
+         * @param windowsPasswordName Property windowsPasswordName: The name of the password to use to run the command on Windows instances. This parameter is required.
+         */
+        public Builder windowsPasswordName(final java.lang.String windowsPasswordName) {
+            this.props.windowsPasswordName(windowsPasswordName);
+            return this;
+        }
+        /**
+         * Property windowsPasswordName: The name of the password to use to run the command on Windows instances.
+         * <p>
+         * The name can be up to 255 characters in length.
+         * If you do not want to use the default System user to run the command on Windows instances, specify both <strong>WindowsPasswordName</strong> and <strong>Username</strong>. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
+         * <p>
+         * @return {@code this}
+         * @param windowsPasswordName Property windowsPasswordName: The name of the password to use to run the command on Windows instances. This parameter is required.
+         */
+        public Builder windowsPasswordName(final com.aliyun.ros.cdk.core.IResolvable windowsPasswordName) {
+            this.props.windowsPasswordName(windowsPasswordName);
             return this;
         }
 

@@ -4,7 +4,8 @@ import { RosTrail } from './actiontrail.generated';
 export { RosTrail as TrailProperty };
 
 /**
- * Properties for defining a `ALIYUN::ACTIONTRAIL::Trail`
+ * Properties for defining a `Trail`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */
 export interface TrailProps {
 
@@ -45,14 +46,11 @@ export interface TrailProps {
 }
 
 /**
- * A ROS resource type:  `ALIYUN::ACTIONTRAIL::Trail`
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`, which is used to create a trail to deliver events to a Log Service Logstore or an Object Storage Service (OSS) bucket.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrail`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */
 export class Trail extends ros.Resource {
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource, which will be assigned to ROS resource.
-     */
 
     /**
      * Attribute Name: The name of the trail to be created, which must be unique for an account.
@@ -60,8 +58,6 @@ export class Trail extends ros.Resource {
     public readonly attrName: ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ACTIONTRAIL::Trail`.
-     *
      * Param scope - scope in which this resource is defined
      * Param id    - scoped id of the resource
      * Param props - resource properties

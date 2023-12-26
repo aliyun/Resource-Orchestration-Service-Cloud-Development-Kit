@@ -3,7 +3,8 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
- * Properties for defining a `ALIYUN::ACTIONTRAIL::Trail`
+ * Properties for defining a `RosTrail`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */
 export interface RosTrailProps {
 
@@ -97,18 +98,15 @@ function rosTrailPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * A ROS template type:  `ALIYUN::ACTIONTRAIL::Trail`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::Trail`, which is used to create a trail to deliver events to a Log Service Logstore or an Object Storage Service (OSS) bucket.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Trail` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-trail
  */
 export class RosTrail extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ACTIONTRAIL::Trail";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute Name: The name of the trail to be created, which must be unique for an account.
@@ -154,8 +152,6 @@ export class RosTrail extends ros.RosResource {
     public slsWriteRoleArn: string | ros.IResolvable | undefined;
 
     /**
-     * Create a new `ALIYUN::ACTIONTRAIL::Trail`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -192,7 +188,8 @@ export class RosTrail extends ros.RosResource {
 }
 
 /**
- * Properties for defining a `ALIYUN::ACTIONTRAIL::TrailLogging`
+ * Properties for defining a `RosTrailLogging`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
  */
 export interface RosTrailLoggingProps {
 
@@ -244,18 +241,15 @@ function rosTrailLoggingPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * A ROS template type:  `ALIYUN::ACTIONTRAIL::TrailLogging`
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`, which is used to enable or disable trail logging.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TrailLogging` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
  */
 export class RosTrailLogging extends ros.RosResource {
     /**
      * The resource type name for this resource class.
      */
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ACTIONTRAIL::TrailLogging";
-
-    /**
-     * A factory method that creates a new instance of this class from an object
-     * containing the properties of this ROS resource.
-     */
 
     /**
      * @Attribute IsLogging: Indicates whether the trail is logging API invocations.
@@ -296,8 +290,6 @@ export class RosTrailLogging extends ros.RosResource {
     public name: string | ros.IResolvable;
 
     /**
-     * Create a new `ALIYUN::ACTIONTRAIL::TrailLogging`.
-     *
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties

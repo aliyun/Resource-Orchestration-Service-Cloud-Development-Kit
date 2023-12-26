@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * Can be used to return a string, list or numeric value whose actual value
  * will only be calculated later, during synthesis.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-11-07T09:08:33.096Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2023-12-26T06:30:13.578Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Lazy")
 public class Lazy extends software.amazon.jsii.JsiiObject {
 
